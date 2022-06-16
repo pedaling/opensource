@@ -5,6 +5,7 @@
     "design-system-components": "packages/design-system-components",
     "design-system-core": "packages/design-system-core",
     "design-system-icons": "packages/design-system-icons",
+    "design-system-utils": "packages/design-system-utils",
     "utils-eslint-config": "packages/utils-eslint-config"
   }
 }
