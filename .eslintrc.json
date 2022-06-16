@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": ["@class101/eslint-config"],
+  "overrides": [
+    {
+      "files": ["*.mdx"],
+      "parser": "eslint-mdx",
+      "settings": {
+        "mdx/code-blocks": true
+      },
+      "rules": {
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/return-await": "off",
+        "react/jsx-filename-extension": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-undef": "warn"
+      }
+    }
+  ],
+  "settings": {
+    "import/internal-regex": "^@class101/"
+  }
+}

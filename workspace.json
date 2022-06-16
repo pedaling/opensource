@@ -1,0 +1,10 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "design-system-components": "packages/design-system-components",
+    "design-system-core": "packages/design-system-core",
+    "design-system-icons": "packages/design-system-icons",
+    "utils-eslint-config": "packages/utils-eslint-config"
+  }
+}

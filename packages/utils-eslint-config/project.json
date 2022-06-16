@@ -1,0 +1,34 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/utils-eslint-config/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/shared-utils-eslint-config",
+        "tsConfig": "packages/utils-eslint-config/tsconfig.lib.json",
+        "packageJson": "packages/utils-eslint-config/package.json",
+        "main": "packages/utils-eslint-config/src/index.ts",
+        "assets": ["shared-utils-eslint-config/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/utils-eslint-config/**/*.{ts,tsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/utils-eslint-config"],
+      "options": {
+        "jestConfig": "packages/utils-eslint-config/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["scope:shared", "type:utils"]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "@class101/eslint-config",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "main": "index.js",
+  "peerDependencies": {
+    "eslint": ">= 3"
+  }
+}
