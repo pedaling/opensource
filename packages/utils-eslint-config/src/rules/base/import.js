@@ -6,6 +6,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/no-named-as-default': 0,
     'import/prefer-default-export': 'off',
+    'import/no-relative-packages': 'off',
 
     // `import` 문이 아래 설정된 그룹 순으로 정렬되어 있지 않으면 오류를 표시한다.
     'import/order': [

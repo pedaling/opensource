@@ -12,12 +12,10 @@
     "jest.config.ts",
     "**/*.spec.ts",
     "**/*.test.ts",
+    "**/*.stories.ts",
     "**/*.spec.tsx",
     "**/*.test.tsx",
-    "**/*.spec.js",
-    "**/*.test.js",
-    "**/*.spec.jsx",
-    "**/*.test.jsx"
+    "**/*.stories.tsx"
   ],
-  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
