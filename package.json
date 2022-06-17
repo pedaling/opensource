@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nx test",
     "lint": "nx workspace-lint && nx run-many --target=lint --all",
-    "lint:fix": "nx workspace-lint && nx run-many --target=lint --all --fix"
+    "lint:fix": "nx workspace-lint && nx run-many --target=lint --all --fix",
+    "storybook": "nx storybook"
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
