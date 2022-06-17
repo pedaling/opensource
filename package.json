@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
+    "@mdx-js/react": "2.1.1",
     "@nrwl/cli": "14.3.5",
     "@nrwl/eslint-plugin-nx": "14.3.5",
     "@nrwl/jest": "14.3.5",
@@ -20,6 +21,15 @@
     "@nrwl/storybook": "14.3.5",
     "@nrwl/web": "14.3.5",
     "@nrwl/workspace": "14.3.5",
+    "@storybook/addon-actions": "6.5.9",
+    "@storybook/addon-controls": "6.5.9",
+    "@storybook/addon-links": "6.5.9",
+    "@storybook/addon-measure": "6.5.9",
+    "@storybook/addon-toolbars": "6.5.9",
+    "@storybook/addon-viewport": "6.5.9",
+    "@storybook/builder-vite": "0.1.36",
+    "@storybook/core-server": "6.5.9",
+    "@storybook/react": "6.5.9",
     "@swc-node/register": "1.4.2",
     "@swc/core": "1.2.173",
     "@testing-library/react": "13.3.0",
@@ -52,10 +62,11 @@
     "typescript": "4.7.2"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
+    "core-js": "3.6.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "regenerator-runtime": "0.13.7",
-    "tslib": "^2.3.0"
+    "tslib": "2.3.0",
+    "vite": "2.9.12"
   }
 }
