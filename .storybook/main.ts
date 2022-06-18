@@ -1,5 +1,6 @@
 import * as path from 'path';
 import { mergeConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const config: StorybookViteConfig = {
@@ -27,6 +28,7 @@ const config: StorybookViteConfig = {
           this: 'window',
         },
       },
+      plugins: [tsconfigPaths()],
     });
   },
 };
