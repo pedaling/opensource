@@ -4,16 +4,17 @@ module.exports = {
   rules: {
     '@typescript-eslint/array-type': ['error', { default: 'array' }],
     '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
-    '@typescript-eslint/dot-notation': 0,
+    '@typescript-eslint/dot-notation': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-implied-eval': 0,
-    '@typescript-eslint/no-namespace': 0,
-    '@typescript-eslint/no-throw-literal': 0,
+    '@typescript-eslint/no-implied-eval': 'off',
+    '@typescript-eslint/no-namespace': 'off',
+    '@typescript-eslint/no-throw-literal': 'off',
     '@typescript-eslint/no-unused-expressions': ['error', { allowTaggedTemplates: true }],
     '@typescript-eslint/no-unused-vars': ['warn', { vars: 'all', varsIgnorePattern: '^(query|mutation|fragment|_)$' }],
-    '@typescript-eslint/no-use-before-define': 0,
+    '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/return-await': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
 
     // 클래스 멤버 사이에는 한 줄로 띄워져 있어야 한다.
     // 단, 한 줄로 끝나는 코드의 경우 예외적으로 이 규칙이 적용되지 않는다.
@@ -31,6 +32,7 @@ module.exports = {
       'error',
       // 기본적인 네이밍은 camelCase여야함
       { selector: 'default', format: ['strictCamelCase'] },
+
       // 제네릭의 이름은 두글자 이상이여야한다
       {
         selector: 'typeParameter',
@@ -40,16 +42,20 @@ module.exports = {
           match: true,
         },
       },
+
       // 일반 변수는 camelCase여야한다
       { selector: 'variable', format: ['strictCamelCase'] },
+
       // 글로벌 스코프 상수는 camelCase, PascalCase, UPPER_CASE가 올 수 있음
       {
         selector: 'variable',
         format: ['strictCamelCase', 'UPPER_CASE', 'StrictPascalCase'],
         modifiers: ['global', 'const'],
       },
+
       // 타입 정의는 PascalCase
       { selector: 'typeLike', format: ['StrictPascalCase'] },
+
       // type의 property는 기본적으로 camelCase다
       { selector: 'typeProperty', format: ['strictCamelCase'] },
 
@@ -59,22 +65,12 @@ module.exports = {
         filter: { regex: '^(web|native|ios|android)_', match: true },
       },
 
-      // `KR`, `US`, `JP`, `KRW`, `USD`, `JPY`, `AUID` 허용
-      {
-        selector: ['default', 'variable', 'typeLike', 'enumMember', 'typeProperty', 'objectLiteralProperty'],
-        format: null,
-        filter: {
-          regex: '(KR|US|JP|KRW|USD|JPY|AUID)',
-          match: true,
-        },
-      },
-
-      // `VStack`, `HStack`, `ZStack`, `graphQL`, `Class101App`은 허용한다
+      // `VStack`, `HStack`, `ZStack`
       {
         selector: ['default', 'variable', 'typeLike'],
         format: null,
         filter: {
-          regex: '^(VStack|HStack|ZStack|graphQL|Class101App)',
+          regex: '^(VStack|HStack|ZStack)',
           match: true,
         },
       },
@@ -96,28 +92,20 @@ module.exports = {
         filter: { regex: 'Component[s]?$', match: true },
         format: ['StrictPascalCase'],
       },
-      // _id와 __typename은 허용된다
-      {
-        selector: ['typeProperty', 'objectLiteralProperty', 'classProperty'],
-        format: null,
-        filter: { regex: '^(_id|__typename)$', match: true },
-      },
+
       // __html은 허용된다
       {
         selector: ['objectLiteralProperty'],
         format: null,
         filter: { regex: '^(__html|dangerouslySetInnerHTML)$', match: true },
       },
-      // __variable__ 은 허용한다
-      {
-        selector: ['typeProperty', 'objectLiteralProperty'],
-        format: null,
-        filter: { regex: '^__(.*)__$', match: true },
-      },
+
       // enum의 이름은 PascalCase로 사용한다
       { selector: 'enum', format: ['StrictPascalCase'] },
+
       // enum의 member는 PascalCase로 사용한다
       { selector: 'enumMember', format: ['StrictPascalCase'] },
+
       // 사용하지 않는 파리미터는 _를 허용한다
       {
         selector: ['parameter', 'variable'],
@@ -125,8 +113,10 @@ module.exports = {
         format: null,
         custom: { regex: '^_', match: true },
       },
+
       // object에서 destructuring된 값들은 룰을 적용시키지 않는다
       { selector: 'variable', modifiers: ['destructured'], format: null },
+
       // 따음표로 감싼 프로퍼티 키는 전부 허용한다
       {
         selector: [
