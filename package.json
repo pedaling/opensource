@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
-    "@mdx-js/react": "2.1.1",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
     "@nrwl/cli": "14.3.5",
     "@nrwl/eslint-plugin-nx": "14.3.5",
     "@nrwl/jest": "14.3.5",
@@ -22,6 +22,7 @@
     "@nrwl/storybook": "14.3.5",
     "@nrwl/web": "14.3.5",
     "@nrwl/workspace": "14.3.5",
+    "@nx-plus/docusaurus": "14.0.0",
     "@storybook/addon-actions": "6.5.9",
     "@storybook/addon-controls": "6.5.9",
     "@storybook/addon-links": "6.5.9",
@@ -63,7 +64,12 @@
     "typescript": "4.7.2"
   },
   "dependencies": {
+    "@docusaurus/core": "2.0.0-beta.21",
+    "@docusaurus/preset-classic": "2.0.0-beta.21",
+    "@mdx-js/react": "1.6.22",
+    "clsx": "1.1.1",
     "core-js": "3.6.5",
+    "prism-react-renderer": "1.2.1",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "regenerator-runtime": "0.13.7",

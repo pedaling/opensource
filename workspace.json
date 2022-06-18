@@ -6,6 +6,7 @@
     "design-system-core": "packages/design-system-core",
     "design-system-icons": "packages/design-system-icons",
     "design-system-utils": "packages/design-system-utils",
+    "design-system-website": "packages/design-system-website",
     "utils-eslint-config": "packages/utils-eslint-config"
   }
 }
