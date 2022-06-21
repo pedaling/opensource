@@ -14,6 +14,17 @@
       "options": {
         "port": 3000
       }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/design-system-website/**/*.{ts,tsx,js,jsx,mdx}"
+        ]
+      }
     }
   },
   "tags": []

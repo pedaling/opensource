@@ -5,8 +5,10 @@
   "license": "MIT",
   "scripts": {
     "test": "nx test",
-    "lint": "nx workspace-lint && nx run-many --target=lint --all",
-    "lint:fix": "nx workspace-lint && nx run-many --target=lint --all --fix",
+    "build": "nx build",
+    "lint": "nx lint",
+    "lint:all": "nx workspace-lint && nx run-many --target=lint --all",
+    "lint:all:fix": "nx workspace-lint && nx run-many --target=lint --all --fix",
     "storybook": "nx storybook"
   },
   "devDependencies": {
