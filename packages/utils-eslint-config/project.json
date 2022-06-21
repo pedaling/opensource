@@ -2,6 +2,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/utils-eslint-config/src",
   "projectType": "library",
+  "tags": ["scope:eslint-config"],
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
@@ -29,6 +30,5 @@
         "passWithNoTests": true
       }
     }
-  },
-  "tags": ["scope:shared", "type:utils"]
+  }
 }
