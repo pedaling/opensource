@@ -12,6 +12,7 @@ const config: StorybookViteConfig = {
     '@storybook/addon-measure',
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
+    'storybook-addon-performance/register',
   ],
   core: {
     builder: '@storybook/builder-vite',
