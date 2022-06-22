@@ -2,7 +2,7 @@ import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
 import styled from '@emotion/styled';
 import type { BoxProps } from './BoxProps';
-import { shouldForwardProp, interpolations } from './BoxProps';
+import { shouldForwardProp, interpolation } from './BoxProps';
 
 export const Box = styled(
   forwardRef<HTMLElement, BoxProps>(({ as, base, ...restProps }, ref) => {
@@ -13,4 +13,4 @@ export const Box = styled(
   {
     shouldForwardProp,
   }
-)(interpolations);
+)(interpolation);

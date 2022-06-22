@@ -26,7 +26,7 @@ const systemPropCache: Record<string, SystemProp | null> = {};
 
 const isObject = (obj: Record<string, any>) => typeof obj === 'object' && obj !== null;
 
-const propertyInterpolation = (props: Record<string, any>): Record<string, any> => {
+export const interpolation = (props: Record<string, any>): Record<string, any> => {
   let result = {};
 
   if (!isObject(props)) {
@@ -34,7 +34,7 @@ const propertyInterpolation = (props: Record<string, any>): Record<string, any> 
   }
 
   if (Array.isArray(props)) {
-    return props.map(prop => propertyInterpolation(prop));
+    return props.map(prop => interpolation(prop));
   }
 
   for (const [key, value] of Object.entries(props)) {
@@ -51,7 +51,7 @@ const propertyInterpolation = (props: Record<string, any>): Record<string, any> 
     systemPropCache[key] ||= matchedSystemProp;
 
     const prop = {
-      [key]: isObject(value) ? propertyInterpolation(value) : value,
+      [key]: interpolation(value),
     };
 
     result = {
@@ -62,21 +62,3 @@ const propertyInterpolation = (props: Record<string, any>): Record<string, any> 
 
   return result;
 };
-
-export const interpolations = systemProps.map(systemProp => (props: Record<string, any>) => {
-  let result = {};
-  const key = systemProp.propName;
-
-  systemPropCache[key] ||= systemProp;
-
-  if (props[key]) {
-    const value = isObject(props[key]) ? propertyInterpolation(props[key]) : props[key];
-
-    result = {
-      ...result,
-      ...systemProp({ [key]: value }),
-    };
-  }
-
-  return result;
-});
