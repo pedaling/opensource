@@ -8,6 +8,7 @@ import styles from './index.module.css';
 
 const HomepageHeader = () => {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -25,6 +26,7 @@ const HomepageHeader = () => {
 
 const Home = (): JSX.Element => {
   const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout title={`Hello from ${siteConfig.title}`} description="Description will go into a meta tag in <head />">
       <HomepageHeader />
