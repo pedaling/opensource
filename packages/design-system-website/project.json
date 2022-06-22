@@ -1,7 +1,8 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
   "sourceRoot": "packages/design-system-website/src",
+  "projectType": "application",
+  "tags": ["scope:design-system"],
   "targets": {
     "build": {
       "executor": "@nx-plus/docusaurus:browser",
@@ -26,6 +27,5 @@
         ]
       }
     }
-  },
-  "tags": []
+  }
 }
