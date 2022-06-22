@@ -107,7 +107,7 @@ describe('createSystemProp', () => {
         style = systemProp({ pressable: false });
       });
 
-      it('cursor pointer set', () => {
+      it('empty object set', () => {
         expect(style).toEqual({});
       });
     });
