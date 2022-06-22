@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Box /> as prop when empty box created match snapshot 1`] = `
+<div>
+  <div
+    class="emotion-test-renderer-0"
+  />
+</div>
+`;
+
+exports[`<Box /> as prop when span box created match snapshot 1`] = `
+<div>
+  <span
+    class="emotion-test-renderer-0"
+  />
+</div>
+`;
+
+exports[`<Box /> base prop when function component box created match snapshot 1`] = `
+<div>
+  <span
+    class="emotion-test-renderer-0"
+    id="component"
+  >
+    <div />
+  </span>
+</div>
+`;

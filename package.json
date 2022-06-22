@@ -14,6 +14,7 @@
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
     "@docusaurus/module-type-aliases": "2.0.0-beta.21",
+    "@emotion/cache": "11.9.3",
     "@nrwl/cli": "14.3.5",
     "@nrwl/eslint-plugin-nx": "14.3.5",
     "@nrwl/jest": "14.3.5",
@@ -41,6 +42,7 @@
     "@types/node": "16.11.7",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
+    "@types/react-test-renderer": "18.0.0",
     "@typescript-eslint/eslint-plugin": "5.28.0",
     "@typescript-eslint/experimental-utils": "5.28.0",
     "@typescript-eslint/parser": "5.28.0",
