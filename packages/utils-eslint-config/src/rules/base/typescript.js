@@ -16,6 +16,14 @@ module.exports = {
     '@typescript-eslint/triple-slash-reference': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
 
+    '@typescript-eslint/padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: ['expression'], next: ['expression'] },
+      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+    ],
+
     // 클래스 멤버 사이에는 한 줄로 띄워져 있어야 한다.
     // 단, 한 줄로 끝나는 코드의 경우 예외적으로 이 규칙이 적용되지 않는다.
     'lines-between-class-members': 'off',
