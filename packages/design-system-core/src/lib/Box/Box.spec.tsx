@@ -1,4 +1,5 @@
 import { createRenderer } from '@class101/design-system-utils';
+import { ThemeProvider } from '../ThemeProvider';
 import { Box } from './Box';
 
 describe('<Box />', () => {
@@ -55,6 +56,62 @@ describe('<Box />', () => {
 
       it('id prop injected', () => {
         expect(container.querySelector('span')?.id).toBe('component');
+      });
+
+      it('match snapshot', () => {
+        expect(container).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe('default style', () => {
+    describe('when styled box created', () => {
+      beforeEach(() => {
+        container = render(<Box width={300} height={300} backgroundColor="red" />).container;
+      });
+
+      it('css apply on div', () => {
+        expect(container.querySelector('div')).toHaveStyleRule('width', '300px');
+
+        expect(container.querySelector('div')).toHaveStyleRule('height', '300px');
+
+        expect(container.querySelector('div')).toHaveStyleRule('background-color', 'red');
+      });
+
+      it('match snapshot', () => {
+        expect(container).toMatchSnapshot();
+      });
+    });
+
+    describe('when themed box created', () => {
+      beforeEach(() => {
+        container = render(
+          <ThemeProvider theme={{ breakpoints: ['200px', '400px'], colors: { primary: 'orange', secondary: 'black' } }}>
+            <Box width={[300, 400]} height={[200, 300]} backgroundColor={['primary', 'secondary']} />
+          </ThemeProvider>
+        ).container;
+      });
+
+      it('default style apply on div', () => {
+        expect(container.querySelector('div')).toHaveStyleRule('width', '300px');
+
+        expect(container.querySelector('div')).toHaveStyleRule('height', '200px');
+
+        expect(container.querySelector('div')).toHaveStyleRule('background-color', 'orange');
+      });
+
+      it('responsive style apply on div', () => {
+        expect(container.querySelector('div')).toHaveStyleRule('width', '400px', {
+          media: '@media screen and (min-width: 200px)',
+        });
+
+        expect(container.querySelector('div')).toHaveStyleRule('height', '300px', {
+          media: '@media screen and (min-width: 200px)',
+        });
+
+        expect(container.querySelector('div')).toHaveStyleRule('background-color', 'black', {
+          media: '@media screen and (min-width: 200px)',
+        });
       });
 
       it('match snapshot', () => {

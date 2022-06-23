@@ -141,4 +141,28 @@ describe('createSystemProp', () => {
       expect(systemProp({ backgroundColor: 'secondary' })).toEqual({ backgroundColor: 'black' });
     });
   });
+
+  describe('when breakpoints set', () => {
+    beforeEach(() => {
+      useTheme.mockImplementation(() => ({
+        theme: {
+          breakpoints: ['200px', '400px'],
+          space: {},
+          colors: {},
+          opacity: {},
+        },
+      }));
+
+      systemProp = createSystemProp({
+        property: 'width',
+      });
+    });
+
+    it('responsive value create media query', () => {
+      expect(systemProp({ width: [200, 300] })).toEqual({
+        width: 200,
+        '@media screen and (min-width: 200px)': { width: 300 },
+      });
+    });
+  });
 });

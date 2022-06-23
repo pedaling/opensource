@@ -54,11 +54,20 @@ export const interpolation = (props: Record<string, any>): Record<string, any> =
       [key]: interpolation(value),
     };
 
-    result = {
-      ...result,
-      ...matchedSystemProp(prop),
-    };
+    result = mergeMediaQueries(result, matchedSystemProp(prop));
   }
 
   return result;
+};
+
+const mergeMediaQueries = (original: Record<string, any>, next: Record<string, any>) => {
+  const mediaQueryProperties: Record<string, any> = {};
+
+  for (const key of Object.keys(next)) {
+    if (key.startsWith('@media')) {
+      mediaQueryProperties[key] = { ...(original[key] ?? {}), ...next[key] };
+    }
+  }
+
+  return { ...original, ...next, ...mediaQueryProperties };
 };
