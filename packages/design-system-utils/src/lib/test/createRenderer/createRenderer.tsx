@@ -4,9 +4,8 @@ import { matchers } from '@emotion/jest';
 import { CacheProvider as EmotionCacheProvider } from '@emotion/react';
 import { render } from '@testing-library/react';
 
-expect.extend(matchers);
-
 export const createRenderer = () => {
+  expect.extend(matchers);
   const emotionCache = createEmotionCache({ key: 'emotion' });
 
   return {
