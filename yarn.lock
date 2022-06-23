@@ -2366,6 +2366,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/css-prettifier@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@emotion/css-prettifier@npm:1.0.1"
+  dependencies:
+    "@emotion/memoize": ^0.7.4
+    stylis: 4.0.13
+  checksum: 3c75e59b072fc4c6d1e555696ac01e41a02d29324c2e95795b6c1b2caae765f1967f561b64cf19522a06ec0d7bf89948ccf9ba8c000335a6693b6a4b43b74b92
+  languageName: node
+  linkType: hard
+
 "@emotion/hash@npm:^0.8.0":
   version: 0.8.0
   resolution: "@emotion/hash@npm:0.8.0"
@@ -2379,6 +2389,27 @@ __metadata:
   dependencies:
     "@emotion/memoize": ^0.7.4
   checksum: 511997c3bbaab5a967db65b65a111afc46c4aac8b3b87a436fd9e3dc2891829a9ada1405b77326f407d93934ee3b831e62248b498c071089312c5be080af75dd
+  languageName: node
+  linkType: hard
+
+"@emotion/jest@npm:11.9.3":
+  version: 11.9.3
+  resolution: "@emotion/jest@npm:11.9.3"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+    "@emotion/css-prettifier": ^1.0.1
+    chalk: ^4.1.0
+    specificity: ^0.4.1
+    stylis: 4.0.13
+  peerDependencies:
+    "@types/jest": ^26.0.14 || ^27.0.0
+    enzyme-to-json: ^3.2.1
+  peerDependenciesMeta:
+    "@types/jest":
+      optional: true
+    enzyme-to-json:
+      optional: true
+  checksum: c710609b5bf31de2b5558fc0d2a0b086d976fe69b41e7e113d11d6170c61665221412dc001c9ee98cf38531a22aa47cf5b464599b7d1c85656ffcf9823da09fe
   languageName: node
   linkType: hard
 
@@ -8423,6 +8454,7 @@ __metadata:
     "@docusaurus/module-type-aliases": 2.0.0-beta.21
     "@docusaurus/preset-classic": 2.0.0-beta.21
     "@emotion/cache": 11.9.3
+    "@emotion/jest": 11.9.3
     "@emotion/react": 11.9.3
     "@emotion/styled": 11.9.3
     "@mdx-js/react": 1.6.22
@@ -20809,6 +20841,15 @@ __metadata:
     select-hose: ^2.0.0
     spdy-transport: ^3.0.0
   checksum: 2c739d0ff6f56ad36d2d754d0261d5ec358457bea7cbf77b1b05b0c6464f2ce65b85f196305f50b7bd9120723eb94bae9933466f28e67e5cd8cde4e27f1d75f8
+  languageName: node
+  linkType: hard
+
+"specificity@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "specificity@npm:0.4.1"
+  bin:
+    specificity: ./bin/specificity
+  checksum: e558f1098f85aa54a8e90277309ac0d1913c84812c0bd349aa449076aa700964f71ab69f04f5fda9b7898bef9b7da3faa1cad9caedfd3f1a1ebfebedc18604ab
   languageName: node
   linkType: hard
 

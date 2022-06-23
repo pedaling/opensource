@@ -3,7 +3,7 @@
 exports[`<Box /> as prop when empty box created match snapshot 1`] = `
 <div>
   <div
-    class="emotion-test-renderer-0"
+    class="emotion-0"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`<Box /> as prop when empty box created match snapshot 1`] = `
 exports[`<Box /> as prop when span box created match snapshot 1`] = `
 <div>
   <span
-    class="emotion-test-renderer-0"
+    class="emotion-0"
   />
 </div>
 `;
@@ -19,10 +19,46 @@ exports[`<Box /> as prop when span box created match snapshot 1`] = `
 exports[`<Box /> base prop when function component box created match snapshot 1`] = `
 <div>
   <span
-    class="emotion-test-renderer-0"
+    class="emotion-0"
     id="component"
   >
     <div />
   </span>
+</div>
+`;
+
+exports[`<Box /> default style when styled box created match snapshot 1`] = `
+.emotion-0 {
+  width: 300px;
+  height: 300px;
+  background-color: red;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;
+
+exports[`<Box /> default style when themed box created match snapshot 1`] = `
+.emotion-0 {
+  width: 300px;
+  height: 200px;
+  background-color: orange;
+}
+
+@media screen and (min-width: 200px) {
+  .emotion-0 {
+    width: 400px;
+    height: 300px;
+    background-color: black;
+  }
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
 </div>
 `;

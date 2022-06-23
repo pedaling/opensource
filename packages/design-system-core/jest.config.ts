@@ -7,4 +7,7 @@ export default {
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   coverageDirectory: "../../coverage/packages/design-system-core",
+  snapshotSerializers: [
+    '@emotion/jest/serializer'
+  ]
 };
