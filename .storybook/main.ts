@@ -33,6 +33,7 @@ const config: StorybookViteConfig = {
           'react-native': require.resolve('react-native-web'),
         },
       },
+      root: path.join(__dirname, '../'),
       esbuild: {
         define: {
           this: 'window',
