@@ -6,16 +6,16 @@ import { systemProps } from '../props';
 
 export type BoxProps<
   BaseComponent extends ComponentType,
-  Element extends keyof JSX.IntrinsicElements,
-  Props extends JSX.IntrinsicElements[Element]
+  ElementName extends keyof JSX.IntrinsicElements,
+  ElementProps extends JSX.IntrinsicElements[ElementName]
 > = (BaseComponent extends ComponentType<infer BaseComponentProps> ? BaseComponentProps : Record<never, never>) &
   SystemProps & {
-    as?: Element;
+    as?: ElementName;
     base?: BaseComponent;
     id?: string;
     ref?: Ref<BaseComponent extends abstract new (...args: any) => any ? InstanceType<BaseComponent> : HTMLElement>;
     children?: ReactNode;
-  } & Props;
+  } & ElementProps;
 
 const propNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
 
