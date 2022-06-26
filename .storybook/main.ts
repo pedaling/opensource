@@ -1,7 +1,10 @@
 import * as path from 'path';
+import type { InlineConfig } from 'vite';
 import { mergeConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import type { StorybookViteConfig } from '@storybook/builder-vite';
+
+const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
 
 const config: StorybookViteConfig = {
   stories: [],
@@ -13,7 +16,7 @@ const config: StorybookViteConfig = {
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
     'storybook-addon-performance/register',
-  ],
+  ].filter(Boolean),
   core: {
     builder: '@storybook/builder-vite',
   },
@@ -21,16 +24,22 @@ const config: StorybookViteConfig = {
     return mergeConfig(viteConfig, {
       cacheDir: path.join(
         __dirname,
-        '../node_modules/.cache/.vite-storybook',
+        `../node_modules/.cache/.vite-storybook${IS_NATIVE ? '-native' : ''}`,
         viteConfig.root?.split('/').pop() ?? 'default'
       ),
+      resolve: {
+        extensions: IS_NATIVE ? ['.native.ts', '.native.tsx', '.js', '.ts', '.jsx', '.tsx', '.json'] : undefined,
+        alias: {
+          'react-native': require.resolve('react-native-web'),
+        },
+      },
       esbuild: {
         define: {
           this: 'window',
         },
       },
       plugins: [tsconfigPaths()],
-    });
+    } as InlineConfig);
   },
 };
 
