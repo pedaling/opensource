@@ -1,13 +1,3 @@
-/* eslint-disable */
 export default {
-  displayName: "design-system-core",
-  preset: "../../jest.preset.js",
-  transform: {
-    "^.+\\.[tj]sx?$": "babel-jest",
-  },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-  coverageDirectory: "../../coverage/packages/design-system-core",
-  snapshotSerializers: [
-    '@emotion/jest/serializer'
-  ]
+  projects: ['packages/design-system-core/jest.config.web.ts', 'packages/design-system-core/jest.config.native.ts'],
 };
