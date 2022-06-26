@@ -15,6 +15,10 @@ export const Box = styled(
   {
     shouldForwardProp,
   }
-)(interpolation) as <BaseComponent, As extends keyof JSX.IntrinsicElements, Props extends JSX.IntrinsicElements[As]>(
-  props: BoxProps<BaseComponent, As, Props>
+)(interpolation) as <
+  BaseComponent extends ComponentType,
+  Element extends keyof JSX.IntrinsicElements,
+  Props extends JSX.IntrinsicElements[Element]
+>(
+  props: BoxProps<BaseComponent, Element, Props>
 ) => ReactElement;
