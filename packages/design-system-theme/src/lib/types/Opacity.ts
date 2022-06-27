@@ -1,4 +1,4 @@
-import type { ThemeMode } from './mode';
+import type { ThemeMode } from './Mode';
 
 export type Opacity = {
   overlay: {
