@@ -1,0 +1,1 @@
+export { palettes } from './palettes';

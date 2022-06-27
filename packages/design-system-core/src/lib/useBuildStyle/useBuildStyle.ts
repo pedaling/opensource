@@ -12,7 +12,7 @@ export const useBuildStyle =
       return {
         ...result,
         ...(theme && index >= 1
-          ? { [`@media screen and (min-width: ${theme.breakpoints[index - 1]})`]: style }
+          ? { [`@media screen and (min-width: ${theme.breakpoints[index - 1]}px)`]: style }
           : styleObject),
       };
     }, {});

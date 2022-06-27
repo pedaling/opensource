@@ -1,7 +1,8 @@
 import type { FC, ReactElement } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import type { DeepPartial } from '@class101/design-system-utils';
-import type { Theme } from '../types';
+import { baseTheme } from '../theme';
+import type { CurrentTheme, Theme } from '../types';
 
 export type ThemeProviderProps = {
   theme: DeepPartial<Theme>;
@@ -15,18 +16,8 @@ type ThemeContextValue = {
 };
 
 const ThemeContext = createContext<ThemeContextValue>({
-  rootTheme: {
-    breakpoints: [],
-    space: {},
-    colors: {},
-    opacity: {},
-  },
-  theme: {
-    breakpoints: [],
-    space: {},
-    colors: {},
-    opacity: {},
-  },
+  rootTheme: baseTheme,
+  theme: baseTheme,
 });
 
 export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, children }) => {
@@ -37,7 +28,14 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
       ({
         ...parentTheme,
         ...theme,
-        colors: { ...parentTheme.colors, ...theme.colors },
+        colors: {
+          light: { ...parentTheme.colors.light, ...(theme.colors?.light ?? {}) },
+          dark: { ...parentTheme.colors.dark, ...(theme.colors?.dark ?? {}) },
+        },
+        opacity: {
+          light: { ...parentTheme.opacity.light, ...(theme.opacity?.light ?? {}) },
+          dark: { ...parentTheme.opacity.dark, ...(theme.opacity?.dark ?? {}) },
+        },
       } as Theme),
     [parentTheme, theme]
   );
@@ -53,10 +51,18 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 };
 
-export const useTheme = ({ root } = { root: false }): { theme: Theme } => {
+export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentTheme } => {
   const { rootTheme, theme } = useContext(ThemeContext);
 
+  const currentTheme = root ? rootTheme : theme;
+
+  const currentThemeValues = {
+    ...currentTheme,
+    colors: currentTheme.colors[currentTheme.mode],
+    opacity: currentTheme.opacity[currentTheme.mode],
+  };
+
   return {
-    theme: root ? rootTheme : theme,
+    theme: currentThemeValues,
   };
 };
