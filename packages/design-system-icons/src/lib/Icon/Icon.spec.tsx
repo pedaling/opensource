@@ -44,10 +44,10 @@ describe('<Icon />', () => {
       });
 
       it('equal svg element count', () => {
-        expect(renderer.container.querySelector('svg')?.querySelectorAll('*').length).toBeGreaterThan(0);
+        expect(renderer.container.querySelectorAll('svg *').length).toBeGreaterThan(0);
 
-        expect(renderer.container.querySelector('svg')?.querySelectorAll('*').length).toBe(
-          svgFragment.querySelector('svg')?.querySelectorAll('*').length
+        expect(renderer.container.querySelectorAll('svg *').length).toBe(
+          svgFragment.querySelectorAll('svg *').length
         );
       });
 
