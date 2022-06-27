@@ -71,6 +71,25 @@
           "quiet": true
         }
       }
+    },
+    "generate-icons": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npx @svgr/cli -d packages/design-system-icons/src/lib/Icon/generated --config-file packages/design-system-icons/.svgrrc.js --typescript packages/design-system-icons/assets/icons",
+          "yarn nx workspace-generator generateIndex --sourceDirectory packages/design-system-icons/src/lib/Icon/generated --outIndexFile packages/design-system-icons/src/lib/Icon/generated/index.ts --wildcardAlias",
+          "yarn eslint --fix packages/design-system-icons/src/lib/Icon/generated"
+        ],
+        "parallel": false
+      }
+    },
+    "optimize-icons": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "npx svgo@latest -r packages/design-system-icons/assets/icons -o packages/design-system-icons/assets/icons --config packages/design-system-icons/svgo.config.js"
+        ]
+      }
     }
   }
 }

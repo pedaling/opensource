@@ -1,0 +1,20 @@
+{
+  "cli": "nx",
+  "id": "generate-index",
+  "type": "object",
+  "properties": {
+    "sourceDirectory": {
+      "type": "string"
+    },
+    "outIndexFile": {
+      "type": "string"
+    },
+    "wildcardAlias": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "sourceDirectory",
+    "outIndexFile"
+  ]
+}

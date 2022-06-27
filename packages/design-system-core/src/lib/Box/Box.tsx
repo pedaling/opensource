@@ -5,13 +5,11 @@ import type { BoxProps } from './BoxProps';
 import { shouldForwardProp, interpolation } from './BoxProps';
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps<ComponentType<unknown>, 'div', JSX.IntrinsicElements['div']>>(
-    ({ as, base, ...restProps }, ref) => {
-      const Component = base ?? as ?? 'div';
+  forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
+    const Component = (base as ComponentType) ?? as ?? 'div';
 
-      return <Component ref={ref} {...restProps} />;
-    }
-  ),
+    return <Component ref={ref} {...restProps} />;
+  }),
   {
     shouldForwardProp,
   }
