@@ -1,8 +1,11 @@
 import * as ThemeModule from '@class101/design-system-theme';
+import type { CurrentTheme } from '@class101/design-system-theme';
+import type { DeepPartial } from '@class101/design-system-utils';
 import { createSystemProp } from './createSystemProp';
 import type { SystemProp } from './type';
+import SpyInstance = jest.SpyInstance;
 
-const useCurrentTheme = jest.spyOn(ThemeModule, 'useCurrentTheme');
+const useCurrentTheme = jest.spyOn(ThemeModule, 'useCurrentTheme') as SpyInstance<{ theme: DeepPartial<CurrentTheme> }>;
 
 describe('createSystemProp', () => {
   let systemProp: SystemProp;
@@ -11,7 +14,6 @@ describe('createSystemProp', () => {
     useCurrentTheme.mockImplementation(() => ({
       theme: {
         breakpoints: [],
-        space: {},
         colors: {},
         opacity: {},
       },
@@ -118,7 +120,6 @@ describe('createSystemProp', () => {
       useCurrentTheme.mockImplementation(() => ({
         theme: {
           breakpoints: [],
-          space: {},
           colors: {
             primary: 'orange',
             secondary: 'black',
