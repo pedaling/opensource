@@ -9,7 +9,8 @@
     "lint": "nx lint",
     "lint:all": "nx workspace-lint && nx run-many --target=lint --all",
     "lint:all:fix": "nx workspace-lint && nx run-many --target=lint --all --fix",
-    "storybook": "nx storybook"
+    "storybook": "nx storybook",
+    "generate-icons": "nx generate-icons"
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
@@ -17,6 +18,7 @@
     "@emotion/cache": "11.9.3",
     "@emotion/jest": "11.9.3",
     "@nrwl/cli": "14.3.5",
+    "@nrwl/devkit": "14.3.5",
     "@nrwl/eslint-plugin-nx": "14.3.5",
     "@nrwl/jest": "14.3.5",
     "@nrwl/js": "14.3.5",
@@ -36,12 +38,15 @@
     "@storybook/builder-vite": "0.1.36",
     "@storybook/core-server": "6.5.9",
     "@storybook/react": "6.5.9",
+    "@svgr/cli": "6.2.1",
+    "@svgr/core": "6.2.1",
     "@swc-node/register": "1.4.2",
     "@swc/core": "1.2.173",
     "@testing-library/jest-native": "4.0.5",
     "@testing-library/react": "13.3.0",
     "@testing-library/react-native": "10.0.0",
     "@types/jest": "27.4.1",
+    "@types/jsdom": "16.2.14",
     "@types/node": "16.11.7",
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",

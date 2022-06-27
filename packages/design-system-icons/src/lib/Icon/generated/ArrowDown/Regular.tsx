@@ -1,0 +1,9 @@
+import type { FC } from 'react';
+import { Svg } from '../../../Svg';
+import type { IconProps } from '../../IconProp';
+
+export const Regular: FC<IconProps> = ({ size = 24, fill = 'onColor', ...props }) => (
+  <Svg fill={fill} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" {...props}>
+    <Svg.Path d="m4.05 13.8 1.4-1.4c.1-.1.25-.1.35 0l4.9 4.9V2.25c.05-.15.15-.25.3-.25h2c.15 0 .25.1.25.25V17.3l4.9-4.9c.1-.1.25-.1.35 0l1.4 1.4c.1.1.1.25 0 .35l-7.7 7.8c-.1.1-.25.1-.35 0l-7.8-7.75c-.05-.1-.05-.3 0-.4Z" />
+  </Svg>
+);
