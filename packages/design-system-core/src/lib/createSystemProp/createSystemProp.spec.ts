@@ -147,8 +147,7 @@ describe('createSystemProp', () => {
     beforeEach(() => {
       useCurrentTheme.mockImplementation(() => ({
         theme: {
-          breakpoints: ['200px', '400px'],
-          space: {},
+          breakpoints: [200, 400],
           colors: {},
           opacity: {},
         },

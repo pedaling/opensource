@@ -88,7 +88,7 @@ describe('<Box />', () => {
       beforeEach(() => {
         renderer = render(
           <ThemeProvider
-            theme={{ breakpoints: ['200px', '400px'], colors: { light: { primary: 'orange', informative: 'black' } } }}
+            theme={{ breakpoints: [200, 400], colors: { light: { primary: 'orange', informative: 'black' } } }}
           >
             <Box width={[300, 400]} height={[200, 300]} backgroundColor={['primary', 'informative']} />
           </ThemeProvider>

@@ -5,7 +5,7 @@ import { lightModeColors } from './lightModeColors';
 import { lightModeOpacity } from './lightModeOpacity';
 
 export const baseTheme: Theme = {
-  breakpoints: ['640px', '1024px', '1312px'],
+  breakpoints: [640, 1024, 1312],
   colors: {
     light: lightModeColors,
     dark: darkModeColors,
