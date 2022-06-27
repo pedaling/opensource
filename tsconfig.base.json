@@ -24,6 +24,9 @@
       "@class101/design-system-icons": [
         "packages/design-system-icons/src/index.ts"
       ],
+      "@class101/design-system-theme": [
+        "packages/design-system-theme/src/index.ts"
+      ],
       "@class101/design-system-utils": [
         "packages/design-system-utils/src/index.ts"
       ]

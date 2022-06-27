@@ -1,7 +1,7 @@
 import flatten from 'lodash/flatten';
 import get from 'lodash/get';
+import { useCurrentTheme } from '@class101/design-system-theme';
 import { isDefined } from '@class101/design-system-utils';
-import { useTheme } from '../ThemeProvider';
 import { useBuildStyle } from '../useBuildStyle';
 import type { SystemProp, SystemPropConfig } from './type';
 
@@ -14,7 +14,7 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
 
   return Object.assign(
     (props: Record<string, any>) => {
-      const { theme } = useTheme();
+      const { theme } = useCurrentTheme();
       const buildStyle = useBuildStyle();
 
       const input = props[property];

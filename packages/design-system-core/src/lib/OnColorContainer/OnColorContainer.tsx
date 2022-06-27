@@ -1,8 +1,8 @@
 import type { FC, ReactElement, ReactNode } from 'react';
 import { cloneElement } from 'react';
 import { Global } from '@emotion/react';
+import { useCurrentTheme } from '@class101/design-system-theme';
 import { Box } from '../Box';
-import { useTheme } from '../ThemeProvider';
 import type { ResponsiveValue } from '../types';
 import { useBuildStyle } from '../useBuildStyle';
 
@@ -20,7 +20,7 @@ type OnColorContainerProps = {
 );
 
 export const OnColorContainer: FC<OnColorContainerProps> = ({ color, injectTo = 'forward', children }) => {
-  const { theme } = useTheme({ root: injectTo === 'root' });
+  const { theme } = useCurrentTheme({ root: injectTo === 'root' });
   const { colors } = theme;
 
   const responsiveColor = Array.isArray(color) ? color : [color];
