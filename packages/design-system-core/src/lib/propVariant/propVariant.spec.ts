@@ -1,0 +1,318 @@
+import type { ResponsiveValue } from '../types';
+import { propVariant } from './propVariant';
+import type { AnyPropConfig, VariantsConfig } from './type';
+
+const testPropVariant =
+  <Props>() =>
+  <PropsConfig extends AnyPropConfig<Props>[], Variants extends VariantsConfig<Props, PropsConfig>>(args: {
+    props: [...PropsConfig];
+    variants: Variants;
+  }) =>
+    propVariant<Props, PropsConfig, Variants>(args);
+
+describe('propVariant', () => {
+  describe('variants type is object', () => {
+    describe('prop is responsive value', () => {
+      const propVariantFn = testPropVariant<{ size: ResponsiveValue<'sm' | 'md'> }>()({
+        props: [
+          {
+            name: 'size',
+            responsive: true,
+          },
+        ],
+        variants: {
+          sm: {
+            width: 10,
+          },
+          md: {
+            width: 20,
+          },
+        },
+      });
+
+      it('should return variants value by received prop value', () => {
+        expect(propVariantFn({ size: 'sm' })).toEqual({ width: [10] });
+
+        expect(propVariantFn({ size: ['sm', 'md'] })).toEqual({ width: [10, 20] });
+      });
+    });
+
+    describe('prop is not responsive value', () => {
+      const propVariantFn = testPropVariant<{ kind: 'primary' | 'secondary' }>()({
+        props: [
+          {
+            name: 'kind',
+          },
+        ],
+        variants: {
+          primary: {
+            backgroundColor: 'orange',
+          },
+          secondary: {
+            backgroundColor: 'black',
+          },
+        },
+      });
+
+      it('should return variants value by received prop value', () => {
+        expect(propVariantFn({ kind: 'primary' })).toEqual({ backgroundColor: 'orange' });
+
+        expect(propVariantFn({ kind: 'secondary' })).toEqual({ backgroundColor: 'black' });
+      });
+    });
+
+    describe('prop is optional', () => {
+      describe('with no default value', () => {
+        const propVariantFn = testPropVariant<{ kind?: 'primary' | 'secondary' }>()({
+          props: [
+            {
+              name: 'kind',
+            },
+          ],
+          variants: {
+            primary: {
+              backgroundColor: 'orange',
+            },
+            secondary: {
+              backgroundColor: 'black',
+            },
+          },
+        });
+
+        it('should return empty object', () => {
+          expect(propVariantFn({})).toStrictEqual({});
+        });
+      });
+
+      describe('with default value', () => {
+        const propVariantFn = testPropVariant<{ kind?: 'primary' | 'secondary' }>()({
+          props: [
+            {
+              name: 'kind',
+              default: 'primary',
+            },
+          ],
+          variants: {
+            primary: {
+              backgroundColor: 'orange',
+            },
+            secondary: {
+              backgroundColor: 'black',
+            },
+          },
+        });
+
+        it('should return default variants value', () => {
+          expect(propVariantFn({})).toStrictEqual({ backgroundColor: 'orange' });
+        });
+      });
+    });
+
+    describe('if keep is true', () => {
+      const propVariantFn = testPropVariant<{ kind: 'primary' | 'secondary' }>()({
+        props: [
+          {
+            name: 'kind',
+            keep: true,
+          },
+        ],
+        variants: {
+          primary: {
+            backgroundColor: 'orange',
+          },
+          secondary: {
+            backgroundColor: 'black',
+          },
+        },
+      });
+
+      it('should return variant value with prop', () => {
+        expect(propVariantFn({ kind: 'primary' })).toStrictEqual({ kind: 'primary', backgroundColor: 'orange' });
+      });
+    });
+  });
+
+  describe('when variants type is function', () => {
+    const variantsFn = jest.fn();
+    let result: Record<string, any>;
+
+    afterEach(() => {
+      variantsFn.mockReset();
+    });
+
+    describe('prop is responsive value', () => {
+      const propVariantFn = testPropVariant<{ size: ResponsiveValue<'sm' | 'md'>; disabled: boolean }>()({
+        props: [
+          {
+            name: 'size',
+            responsive: true,
+          },
+          {
+            name: 'disabled',
+          },
+        ],
+        variants: ({ size, disabled }) => {
+          variantsFn({ size, disabled });
+
+          if (size === 'sm') {
+            return {
+              width: 10,
+              backgroundColor: disabled ? 'gray' : 'orange',
+            };
+          }
+
+          if (size === 'md') {
+            return {
+              width: 20,
+              backgroundColor: disabled ? 'gray' : 'orange',
+            };
+          }
+
+          return {};
+        },
+      });
+
+      beforeEach(() => {
+        result = propVariantFn({ size: ['sm', 'sm', 'md'], disabled: false });
+      });
+
+      it('variants function called 3 times', () => {
+        expect(variantsFn).toBeCalledTimes(3);
+
+        expect(variantsFn).nthCalledWith(1, { size: 'sm', disabled: false });
+
+        expect(variantsFn).nthCalledWith(2, { size: 'sm', disabled: false });
+
+        expect(variantsFn).nthCalledWith(3, { size: 'md', disabled: false });
+      });
+
+      it('should return merged values by key', () => {
+        expect(result).toStrictEqual({ width: [10, 10, 20], backgroundColor: ['orange', 'orange', 'orange'] });
+      });
+    });
+
+    describe('prop is not responsive value', () => {
+      const propVariantFn = testPropVariant<{ kind: 'primary' | 'secondary' }>()({
+        props: [
+          {
+            name: 'kind',
+          },
+        ],
+        variants: ({ kind }) => {
+          variantsFn({ kind });
+
+          if (kind === 'primary') {
+            return {
+              backgroundColor: 'orange',
+            };
+          }
+
+          if (kind === 'secondary') {
+            return {
+              backgroundColor: 'black',
+            };
+          }
+
+          return {};
+        },
+      });
+
+      beforeEach(() => {
+        result = propVariantFn({ kind: 'secondary' });
+      });
+
+      it('variants function called only once', () => {
+        expect(variantsFn).toBeCalledTimes(1);
+
+        expect(variantsFn).nthCalledWith(1, { kind: 'secondary' });
+      });
+
+      it('should return backgroundColor is black', () => {
+        expect(result).toStrictEqual({ backgroundColor: 'black' });
+      });
+    });
+
+    describe('prop is optional', () => {
+      describe('with no default value', () => {
+        beforeEach(() => {
+          const propVariantFn = testPropVariant<{ kind?: 'primary' | 'secondary' }>()({
+            props: [
+              {
+                name: 'kind',
+              },
+            ],
+            variants: ({ kind }) => {
+              variantsFn({ kind });
+
+              if (kind === 'primary') {
+                return {
+                  backgroundColor: 'orange',
+                };
+              }
+
+              if (kind === 'secondary') {
+                return {
+                  backgroundColor: 'black',
+                };
+              }
+
+              return {};
+            },
+          });
+
+          result = propVariantFn({});
+        });
+
+        it('should called with kind is undefined', () => {
+          expect(variantsFn).toBeCalledWith({ kind: undefined });
+        });
+
+        it('should return empty object', () => {
+          expect(result).toStrictEqual({});
+        });
+      });
+
+      describe('with default value', () => {
+        beforeEach(() => {
+          const propVariantFn = testPropVariant<{ kind?: 'primary' | 'secondary' }>()({
+            props: [
+              {
+                name: 'kind',
+                default: 'primary',
+              },
+            ],
+            variants: ({ kind }) => {
+              variantsFn({ kind });
+
+              if (kind === 'primary') {
+                return {
+                  backgroundColor: 'orange',
+                };
+              }
+
+              if (kind === 'secondary') {
+                return {
+                  backgroundColor: 'black',
+                };
+              }
+
+              return {};
+            },
+          });
+
+          result = propVariantFn({});
+        });
+
+        it('should called with default value', () => {
+          expect(variantsFn).toBeCalledWith({ kind: 'primary' });
+        });
+
+        it('should return default variants value', () => {
+          expect(result).toStrictEqual({
+            backgroundColor: 'orange',
+          });
+        });
+      });
+    });
+  });
+});
