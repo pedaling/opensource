@@ -31,9 +31,9 @@ describe('propVariant', () => {
       });
 
       it('should return variants value by received prop value', () => {
-        expect(propVariantFn({ size: 'sm' })).toEqual({ width: [10] });
+        expect(propVariantFn({ size: 'sm' })).toStrictEqual({ width: [10] });
 
-        expect(propVariantFn({ size: ['sm', 'md'] })).toEqual({ width: [10, 20] });
+        expect(propVariantFn({ size: ['sm', 'md'] })).toStrictEqual({ width: [10, 20] });
       });
     });
 
@@ -55,9 +55,9 @@ describe('propVariant', () => {
       });
 
       it('should return variants value by received prop value', () => {
-        expect(propVariantFn({ kind: 'primary' })).toEqual({ backgroundColor: 'orange' });
+        expect(propVariantFn({ kind: 'primary' })).toStrictEqual({ backgroundColor: 'orange' });
 
-        expect(propVariantFn({ kind: 'secondary' })).toEqual({ backgroundColor: 'black' });
+        expect(propVariantFn({ kind: 'secondary' })).toStrictEqual({ backgroundColor: 'black' });
       });
     });
 
