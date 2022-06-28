@@ -2,7 +2,8 @@ import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
-import { interpolation } from '../interpolation';
+import { createInterpolation } from '../createInterpolation';
+import { systemProps } from '../props';
 import type { BoxProps } from './BoxProps';
 import { shouldForwardProp } from './BoxProps';
 
@@ -35,4 +36,4 @@ export const Box = styled(
   {
     shouldForwardProp,
   }
-)(interpolation);
+)(createInterpolation(systemProps));
