@@ -1,6 +1,6 @@
-import { ThemeProvider } from '@class101/design-system-theme';
 import type { ReactRenderer } from '@class101/design-system-utils';
 import { createReactRenderer } from '@class101/design-system-utils';
+import { ThemeProvider } from '../ThemeProvider';
 import { Box } from './Box';
 
 describe('<Box />', () => {

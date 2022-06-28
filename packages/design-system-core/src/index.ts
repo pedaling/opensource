@@ -3,3 +3,4 @@ export type { BoxProps } from './lib/Box';
 export type { ResponsiveValue } from './lib/types';
 export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
+export { ThemeProvider, useCurrentTheme } from './lib/ThemeProvider';
