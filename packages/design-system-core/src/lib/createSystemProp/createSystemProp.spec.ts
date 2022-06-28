@@ -1,6 +1,6 @@
-import * as ThemeModule from '@class101/design-system-theme';
 import type { CurrentTheme } from '@class101/design-system-theme';
 import type { DeepPartial } from '@class101/design-system-utils';
+import * as ThemeModule from '../ThemeProvider';
 import { createSystemProp } from './createSystemProp';
 import type { SystemProp } from './type';
 import SpyInstance = jest.SpyInstance;

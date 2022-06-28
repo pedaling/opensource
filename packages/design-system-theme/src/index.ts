@@ -1,5 +1,4 @@
-export { ThemeProvider, useCurrentTheme } from './lib/ThemeProvider';
-export type { baseTheme } from './lib/theme';
+export { baseTheme } from './lib/theme';
 export type {
   Colors,
   ThemeMode,

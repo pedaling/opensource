@@ -1,8 +1,8 @@
 import type { FC, ReactElement } from 'react';
 import { createContext, useContext, useMemo } from 'react';
+import type { CurrentTheme, Theme } from '@class101/design-system-theme';
+import { baseTheme } from '@class101/design-system-theme';
 import type { DeepPartial } from '@class101/design-system-utils';
-import { baseTheme } from '../theme';
-import type { CurrentTheme, Theme } from '../types';
 
 export type ThemeProviderProps = {
   theme: DeepPartial<Theme>;
