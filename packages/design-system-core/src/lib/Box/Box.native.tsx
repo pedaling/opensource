@@ -1,11 +1,11 @@
-import type { ComponentType, FC } from 'react';
+import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
 import type { BoxProps } from './BoxProps';
 import { shouldForwardProp, interpolation } from './BoxProps';
 
-const transformAs = (as: keyof JSX.IntrinsicElements) => {
+const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
   switch (as) {
     case 'button':
       return TouchableOpacity;
@@ -25,9 +25,9 @@ const transformAs = (as: keyof JSX.IntrinsicElements) => {
   }
 };
 
-export const Box: FC<BoxProps> = styled(
-  forwardRef<HTMLElement, BoxProps>(({ as, base, ...restProps }, ref) => {
-    const Component = base ? (base as unknown as ComponentType<any>) : transformAs(as ?? 'div');
+export const Box = styled(
+  forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
+    const Component = base ? (base as ComponentType) : transformAs(as ?? 'div');
 
     return <Component ref={ref} {...restProps} />;
   }),
