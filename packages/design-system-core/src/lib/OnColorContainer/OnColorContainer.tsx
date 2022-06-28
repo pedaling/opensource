@@ -1,13 +1,14 @@
 import type { FC, ReactElement, ReactNode } from 'react';
 import { cloneElement } from 'react';
 import { Global } from '@emotion/react';
+import type { OnColorToken } from '@class101/design-system-theme';
 import { useCurrentTheme } from '@class101/design-system-theme';
 import { Box } from '../Box';
 import type { ResponsiveValue } from '../types';
 import { useBuildStyle } from '../useBuildStyle';
 
 type OnColorContainerProps = {
-  color: ResponsiveValue<`on${string}`>;
+  color: ResponsiveValue<OnColorToken>;
 } & (
   | {
       injectTo: 'root' | 'self';
@@ -53,7 +54,7 @@ export const OnColorContainer: FC<OnColorContainerProps> = ({ color, injectTo = 
 
   if (injectTo === 'self') {
     return (
-      <Box systemOnColor={responsiveColor} width="100%" height="100%">
+      <Box width="100%" height="100%">
         {children}
       </Box>
     );

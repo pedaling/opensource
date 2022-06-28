@@ -11,9 +11,11 @@
   "exclude": [
     "jest.config.ts",
     "**/*.spec.ts",
+    "**/*.spec.native.ts",
     "**/*.test.ts",
     "**/*.stories.ts",
     "**/*.spec.tsx",
+    "**/*.spec.native.tsx",
     "**/*.test.tsx",
     "**/*.stories.tsx"
   ],
