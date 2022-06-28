@@ -1,0 +1,1 @@
+export { interpolation } from './interpolation';
