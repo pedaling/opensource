@@ -1,6 +1,8 @@
 import type { SystemProp } from '../createSystemProp';
 import type { BackgroundProps } from './background';
 import { backgroundProps } from './background';
+import type { BorderProps } from './border';
+import { borderProps } from './border';
 import type { ColorProps } from './color';
 import { colorProps } from './color';
 import type { DisplayProps } from './display';
@@ -15,6 +17,7 @@ import type { TypographyProps } from './typography';
 import { typographyProps } from './typography';
 
 export type SystemProps = BackgroundProps &
+  BorderProps &
   ColorProps &
   DisplayProps &
   FlexboxProps &
@@ -24,6 +27,7 @@ export type SystemProps = BackgroundProps &
 
 export const systemProps: SystemProp[] = [
   ...backgroundProps,
+  ...borderProps,
   ...colorProps,
   ...displayProps,
   ...flexboxProps,
