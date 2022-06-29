@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GlobalStyle /> match snapshot 1`] = `
+NodeList [
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    ul{list-style:none;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    button,input,select{margin:0;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    html{box-sizing:border-box;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    *,*::before,*::after{box-sizing:inherit;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    img,video{height:auto;max-width:100%;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    iframe{border:0;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    table{border-collapse:collapse;border-spacing:0;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    td,th{padding:0;}
+  </style>,
+]
+`;
