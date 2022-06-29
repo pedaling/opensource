@@ -16,6 +16,7 @@ module.exports = function rollupConfig(config, options) {
         moduleSuffixes,
       },
     },
+    include: [options.entryRoot],
   });
 
   return config;
