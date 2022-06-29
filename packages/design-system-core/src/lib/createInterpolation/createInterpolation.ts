@@ -3,6 +3,7 @@ import type { SystemProp } from '../createSystemProp';
 const isObject = (obj: any) => typeof obj === 'object' && obj !== null;
 
 export const createInterpolation = (systemProps: SystemProp[]) => {
+  const cache: Record<string, SystemProp | null> = {};
   const propNames = systemProps.filter(prop => !prop.disabled).map(systemProp => systemProp.propName);
 
   const interpolation = (props: Record<string, any>): Record<string, any> => {
@@ -22,17 +23,15 @@ export const createInterpolation = (systemProps: SystemProp[]) => {
 
     for (const [key, value] of Object.entries(props)) {
       const matchedSystemProp =
-        systemPropCache[key] === undefined
-          ? systemProps.find(systemProp => systemProp.propName === key)
-          : systemPropCache[key];
+        cache[key] === undefined ? systemProps.find(systemProp => systemProp.propName === key) : cache[key];
 
       if (!matchedSystemProp) {
-        systemPropCache[key] = null;
+        cache[key] = null;
 
         continue;
       }
 
-      systemPropCache[key] ||= matchedSystemProp;
+      cache[key] ||= matchedSystemProp;
 
       const prop = {
         [key]: interpolation(value),
