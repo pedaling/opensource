@@ -74,5 +74,3 @@ NodeList [
   </style>,
 ]
 `;
-
-exports[`<GlobalStyle /> should rendered 1`] = `<div />`;
