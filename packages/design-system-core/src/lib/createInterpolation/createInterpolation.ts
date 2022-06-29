@@ -1,8 +1,6 @@
 import type { SystemProp } from '../createSystemProp';
 
-const systemPropCache: Record<string, SystemProp | null> = {};
-
-const isObject = (obj: Record<string, any>) => typeof obj === 'object' && obj !== null;
+const isObject = (obj: any) => typeof obj === 'object' && obj !== null;
 
 export const createInterpolation = (systemProps: SystemProp[]) => {
   const propNames = systemProps.filter(prop => !prop.disabled).map(systemProp => systemProp.propName);
