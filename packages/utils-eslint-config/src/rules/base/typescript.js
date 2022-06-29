@@ -73,12 +73,12 @@ module.exports = {
         filter: { regex: '^(web|native|ios|android)_', match: true },
       },
 
-      // `VStack`, `HStack`, `ZStack`
+      // 일부 단어들을 허용한다
       {
         selector: ['default', 'variable', 'typeLike'],
         format: null,
         filter: {
-          regex: '^(VStack|HStack|ZStack)',
+          regex: '(^(VStack|HStack|ZStack)|CSS)',
           match: true,
         },
       },
