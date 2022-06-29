@@ -10,6 +10,8 @@
   ],
   "exclude": [
     "jest.config.ts",
+    "jest.config.web.ts",
+    "jest.config.native.ts",
     "**/*.spec.ts",
     "**/*.spec.native.ts",
     "**/*.test.ts",
@@ -19,5 +21,5 @@
     "**/*.test.tsx",
     "**/*.stories.tsx"
   ],
-  "include": ["src/**/*.ts", "src/**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

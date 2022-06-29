@@ -1,10 +1,3 @@
-/* eslint-disable */
 export default {
-  displayName: "design-system-utils",
-  preset: "../../jest.preset.js",
-  transform: {
-    "^.+\\.[tj]sx?$": "babel-jest",
-  },
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-  coverageDirectory: "../../coverage/packages/design-system-utils",
+  projects: ['packages/design-system-utils/jest.config.web.ts', 'packages/design-system-utils/jest.config.native.ts'],
 };
