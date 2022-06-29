@@ -51,25 +51,35 @@ describe('createInterpolation', () => {
           },
         });
       });
+    });
 
-      describe('if prop include non-systemProp key', () => {
-        beforeEach(() => {
-          props = { width: 100, disabled: true };
-        });
-
-        it('should removed non-systemProp key', () => {
-          expect(interpolation(props)).toStrictEqual({ width: 100 });
-        });
+    describe('if prop include non-systemProp key', () => {
+      beforeEach(() => {
+        props = { width: 100, disabled: true };
       });
 
-      describe('if prop has only non-systemProp key', () => {
-        beforeEach(() => {
-          props = { disabled: true };
-        });
+      it('should removed non-systemProp key', () => {
+        expect(interpolation(props)).toStrictEqual({ width: 100 });
+      });
+    });
 
-        it('should return empty object', () => {
-          expect(interpolation(props)).toStrictEqual({});
-        });
+    describe('if prop has only non-systemProp key', () => {
+      beforeEach(() => {
+        props = { disabled: true };
+      });
+
+      it('should return empty object', () => {
+        expect(interpolation(props)).toStrictEqual({});
+      });
+    });
+
+    describe('if value is undefined', () => {
+      beforeEach(() => {
+        props = { width: undefined };
+      });
+
+      it('should return empty object', () => {
+        expect(interpolation(props)).toStrictEqual({});
       });
     });
   });

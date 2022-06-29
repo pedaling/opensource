@@ -1,3 +1,4 @@
+import { isDefined } from '@class101/design-system-utils';
 import type { SystemProp } from '../createSystemProp';
 
 const isObject = (obj: any) => typeof obj === 'object' && obj !== null;
@@ -32,6 +33,10 @@ export const createInterpolation = (systemProps: SystemProp[]) => {
       }
 
       cache[key] ||= matchedSystemProp;
+
+      if (!isDefined(value)) {
+        continue;
+      }
 
       const prop = {
         [key]: interpolation(value),
