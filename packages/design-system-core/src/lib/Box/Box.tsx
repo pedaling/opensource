@@ -1,8 +1,10 @@
 import type { ComponentType, ReactElement } from 'react';
 import { forwardRef } from 'react';
 import styled from '@emotion/styled';
+import { createInterpolation } from '../createInterpolation';
+import { systemProps } from '../props';
 import type { BoxProps } from './BoxProps';
-import { shouldForwardProp, interpolation } from './BoxProps';
+import { shouldForwardProp } from './BoxProps';
 
 export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
@@ -13,7 +15,7 @@ export const Box = styled(
   {
     shouldForwardProp,
   }
-)(interpolation) as <
+)(createInterpolation(systemProps)) as <
   BaseComponent extends ComponentType,
   ElementName extends keyof JSX.IntrinsicElements,
   ElementProps extends JSX.IntrinsicElements[ElementName]

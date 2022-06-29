@@ -1,0 +1,1 @@
+export { createInterpolation } from './createInterpolation';

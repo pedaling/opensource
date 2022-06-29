@@ -2,8 +2,10 @@ import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
+import { createInterpolation } from '../createInterpolation';
+import { systemProps } from '../props';
 import type { BoxProps } from './BoxProps';
-import { shouldForwardProp, interpolation } from './BoxProps';
+import { shouldForwardProp } from './BoxProps';
 
 const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
   switch (as) {
@@ -34,4 +36,4 @@ export const Box = styled(
   {
     shouldForwardProp,
   }
-)(interpolation);
+)(createInterpolation(systemProps));
