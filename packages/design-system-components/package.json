@@ -1,4 +1,14 @@
 {
   "name": "@class101/design-system-components",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "sideEffects": false,
+  "peerDependencies": {
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  }
 }

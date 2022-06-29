@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 function replaceName(nameObj) {
   if (nameObj.name === 'svg') {
     nameObj.name = 'Svg';

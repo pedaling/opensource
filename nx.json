@@ -10,7 +10,8 @@
       "devDependencies": "*"
     },
     ".eslintrc.json": "*",
-    "tools/eslint-rules/**/*": "*"
+    "tools/eslint-rules/**/*": "*",
+    "tools/config/**": "*"
   },
   "tasksRunnerOptions": {
     "default": {
@@ -19,11 +20,6 @@
         "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "ZDlmMzIwMjgtZThjZS00MWExLThlZTgtMGEyMGQyMzUyMmFifHJlYWQ="
       }
-    }
-  },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"]
     }
   },
   "workspaceLayout": {
