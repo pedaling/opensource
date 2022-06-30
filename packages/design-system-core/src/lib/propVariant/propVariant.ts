@@ -1,4 +1,3 @@
-import mergeWith from 'lodash/mergeWith';
 import type { ResponsiveValue } from '../types';
 import type { VariantFn, SkipForwards, AnyPropConfig, VariantsReturnProps, VariantsConfig } from './type';
 
@@ -59,19 +58,30 @@ export const propVariant =
     let variantProps;
 
     if (shouldHandleResponsive) {
-      variantProps = mergeWith(
-        {},
-        ...Array(maxLength)
-          .fill(null)
-          .map(
-            (_: unknown, index: number) =>
-              Object.fromEntries(
-                Object.entries(responsiveProps).map(([key, values]) => [key, values[index]])
-              ) as Record<keyof Props, unknown>
-          )
-          .map(flattenProps => getVariationProps(variants, flattenProps, flattenProps[props[0].name])),
-        (a: any, b: any) => (a ? [...a, b] : [b])
-      );
+      variantProps = Array(maxLength)
+        .fill(null)
+        .map(
+          (_: unknown, index: number) =>
+            Object.fromEntries(Object.entries(responsiveProps).map(([key, values]) => [key, values[index]])) as Record<
+              keyof Props,
+              unknown
+            >
+        )
+        .map(flattenProps => getVariationProps(variants, flattenProps, flattenProps[props[0].name]))
+        .reduce((prevProp, currentProp) => {
+          for (const key of Object.keys(prevProp)) {
+            prevProp[key].push(prevProp[key]);
+          }
+          for (const key of Object.keys(currentProp)) {
+            if (!prevProp[key]) {
+              prevProp[key] = [currentProp[key]];
+            } else {
+              prevProp[key][prevProp[key].length - 1] = currentProp[key];
+            }
+          }
+
+          return prevProp;
+        }, {});
     } else {
       variantProps = getVariationProps(variants, responsiveProps, responsiveProps[props[0].name]);
     }

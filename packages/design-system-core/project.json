@@ -7,13 +7,18 @@
     "build": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": [{
+        "target": "build-native",
+        "projects": "self"
+      }],
       "options": {
         "outputPath": "dist/packages/design-system-core",
         "tsConfig": "packages/design-system-core/tsconfig.lib.json",
         "project": "packages/design-system-core/package.json",
         "entryFile": "packages/design-system-core/src/index.ts",
         "external": ["react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "format": ["esm", "cjs"],
+        "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",
         "assets": [
           {
@@ -22,6 +27,21 @@
             "output": "."
           }
         ]
+      }
+    },
+    "build-native": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/design-system-core-native",
+        "tsConfig": "packages/design-system-core/tsconfig.lib.json",
+        "project": "packages/design-system-core/package.native.json",
+        "entryFile": "packages/design-system-core/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "format": ["esm", "cjs"],
+        "moduleSuffixes": [".native", ""],
+        "rollupConfig": "tools/config/rollup-config",
+        "compiler": "babel"
       }
     },
     "lint": {

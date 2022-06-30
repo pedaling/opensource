@@ -30,7 +30,7 @@ const config: StorybookViteConfig = {
       resolve: {
         extensions: IS_NATIVE ? ['.native.ts', '.native.tsx', '.js', '.ts', '.jsx', '.tsx', '.json'] : undefined,
         alias: {
-          'react-native': require.resolve('react-native-web'),
+          'react-native': 'react-native-web',
         },
       },
       root: path.join(__dirname, '../'),

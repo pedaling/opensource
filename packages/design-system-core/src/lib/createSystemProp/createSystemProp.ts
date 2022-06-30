@@ -1,4 +1,3 @@
-import flatten from 'lodash/flatten';
 import get from 'lodash/get';
 import { isDefined } from '@class101/design-system-utils';
 import { useCurrentTheme } from '../ThemeProvider';
@@ -25,7 +24,8 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
         }
 
         const targetProperty = styleProperty ?? property;
-        const styleObjects = flatten([input])
+        const styleObjects = [input]
+          .flat()
           .map(value => (isDefined(transform) ? transform(value) ?? {} : { [targetProperty]: value }))
           .map(rawStyleObject =>
             Object.entries(rawStyleObject).reduce(

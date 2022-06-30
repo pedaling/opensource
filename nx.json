@@ -10,20 +10,16 @@
       "devDependencies": "*"
     },
     ".eslintrc.json": "*",
-    "tools/eslint-rules/**/*": "*"
+    "tools/eslint-rules/**/*": "*",
+    "tools/config/**": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheableOperations": ["build", "lint", "test", "e2e", "build-native"],
         "accessToken": "ZDlmMzIwMjgtZThjZS00MWExLThlZTgtMGEyMGQyMzUyMmFifHJlYWQ="
       }
-    }
-  },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"]
     }
   },
   "workspaceLayout": {
