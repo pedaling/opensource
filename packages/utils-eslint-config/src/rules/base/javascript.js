@@ -12,11 +12,12 @@ module.exports = {
     'no-console': 'error',
     'no-continue': 0,
     'no-implicit-coercion': ['error', { string: true, number: true, boolean: true }],
-    'no-param-reassign': 1,
+    'no-param-reassign': ['error', { props: false }],
     'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
     'no-underscore-dangle': 'off',
     'prefer-destructuring': [
       'error',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       { AssignmentExpression: { array: false, object: false }, VariableDeclarator: { array: false, object: true } },
     ],
     quotes: ['error', 'single', { avoidEscape: true }],

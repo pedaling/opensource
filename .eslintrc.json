@@ -15,12 +15,6 @@
         "import/no-extraneous-dependencies": "off",
         "no-undef": "warn"
       }
-    },
-    {
-      "files": ["*.js"],
-      "rules": {
-        "no-param-reassign": "off"
-      }
     }
   ],
   "settings": {
