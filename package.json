@@ -10,9 +10,7 @@
     "lint:all": "nx workspace-lint && nx run-many --target=lint --all",
     "lint:all:fix": "nx workspace-lint && nx run-many --target=lint --all --fix",
     "storybook": "nx storybook",
-    "generate-icons": "nx generate-icons",
-    "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "generate-icons": "nx generate-icons"
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
@@ -71,10 +69,9 @@
     "eslint-plugin-react": "7.30.0",
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-unused-imports": "2.0.0",
-    "husky": "^8.0.0",
+    "husky": "8.0.0",
     "jest": "27.5.1",
     "nx": "14.3.5",
-    "pinst": "^3.0.0",
     "prettier": "2.7.1",
     "react-native": "0.69.0",
     "react-native-web": "0.18.1",
