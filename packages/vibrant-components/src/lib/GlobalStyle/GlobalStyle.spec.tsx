@@ -1,6 +1,6 @@
 import { waitFor } from '@testing-library/react';
 import { GlobalStyle } from '@vibrant-ui/components';
-import { createReactRenderer } from '@vibrant-ui/utils';
+import { createReactRenderer } from '@vibrant-ui/utils/testing';
 
 describe('<GlobalStyle />', () => {
   const { render } = createReactRenderer();

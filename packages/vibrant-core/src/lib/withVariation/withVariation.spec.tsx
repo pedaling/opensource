@@ -1,4 +1,4 @@
-import { createReactRenderer } from '@vibrant-ui/utils';
+import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { withVariation } from './withVariation';
 
 type Props = {

@@ -1,5 +1,5 @@
 import type { CurrentTheme } from '@vibrant-ui/theme';
-import type { DeepPartial } from '@vibrant-ui/utils';
+import type { DeepPartial } from '@vibrant-ui/utils/testing';
 import { createSystemProp } from '../createSystemProp';
 import * as ThemeModule from '../ThemeProvider';
 import { createInterpolation } from './createInterpolation';

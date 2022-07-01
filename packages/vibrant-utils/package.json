@@ -1,5 +1,28 @@
 {
   "name": "@vibrant-ui/utils",
-  "version": "0.0.1",
-  "sideEffects": false
+  "version": "0.0.2",
+  "private": false,
+  "sideEffects": false,
+  "peerDependencies": {
+    "@emotion/react": "^11.5.0",
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "@testing-library/jest-native": "^4.0.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/react-native": "^10.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@testing-library/jest-native": {
+      "optional": true
+    },
+    "@testing-library/react": {
+      "optional": true
+    },
+    "@testing-library/react-native": {
+      "optional": true
+    }
+  }
 }

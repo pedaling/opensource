@@ -9008,6 +9008,7 @@ __metadata:
     react-native-web: 0.18.1
     react-test-renderer: 18.2.0
     regenerator-runtime: 0.13.7
+    rollup-plugin-multi-input: 1.3.1
     rollup-plugin-typescript2: 0.31.2
     storybook-addon-performance: 0.16.1
     ts-jest: 27.1.4
@@ -9597,6 +9598,13 @@ __metadata:
   version: 3.23.1
   resolution: "core-js@npm:3.23.1"
   checksum: 460328e0b743900d48fc744aab475f6dabdae498cc73f6d038321b0ae1488cb5e73d1670b5914abfe7dd84d0843a828b5d4dd3eba0a5b6a4450f0d7094cda2a5
+  languageName: node
+  linkType: hard
+
+"core-js@npm:^3.1.3":
+  version: 3.23.3
+  resolution: "core-js@npm:3.23.3"
+  checksum: f517546388e468bd3155afbf06f38f8fe0448134fe086c4ed9c4d371d52db71e80585073b59362948777e01f2377ef7064925e1a3d9312a1c56da47eadfaca9a
   languageName: node
   linkType: hard
 
@@ -12362,7 +12370,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.0.0, fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
   dependencies:
@@ -21465,6 +21473,17 @@ __metadata:
     globby: 10.0.1
     is-plain-object: ^3.0.0
   checksum: 6eed5b2498fbe44d694f65ae9a9287b13a606b98a232b5a144a94140e8631efae5f5953b573ba68bf2dc59ab11c223ad3ea6f6cd15b51f42287f4bcc234f0e8b
+  languageName: node
+  linkType: hard
+
+"rollup-plugin-multi-input@npm:1.3.1":
+  version: 1.3.1
+  resolution: "rollup-plugin-multi-input@npm:1.3.1"
+  dependencies:
+    core-js: ^3.1.3
+    fast-glob: ^3.0.0
+    lodash: ^4.17.11
+  checksum: b4e3288ac5173b8e7ec236a8ae6fd20110d90a22b51ea7eb89034e7011615edd3d55e018ba684af1fbb04bcaa469398b4913b21a18517417e40895e14ff8a503
   languageName: node
   linkType: hard
 

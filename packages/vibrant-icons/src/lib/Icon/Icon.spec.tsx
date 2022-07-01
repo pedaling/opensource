@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
 import * as path from 'path';
 import { JSDOM } from 'jsdom';
-import type { ReactRenderer } from '@vibrant-ui/utils';
-import { createReactRenderer } from '@vibrant-ui/utils';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing';
+import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { Icon } from './Icon';
 
 type IconName = keyof typeof Icon;
