@@ -1,5 +1,5 @@
 import type { DecoratorFn } from '@storybook/react';
-import { GlobalStyle } from '@class101/design-system-components';
+import { GlobalStyle } from '@vibrant-ui/components';
 
 export const withGlobalStyle: DecoratorFn = storyFn => (
   <>

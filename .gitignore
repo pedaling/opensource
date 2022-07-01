@@ -42,4 +42,4 @@ Thumbs.db
 /.yarn/install-state.gz
 /.yarn/cache/*
 
-/packages/design-system-website/.docusaurus/
+/packages/vibrant-website/.docusaurus/
