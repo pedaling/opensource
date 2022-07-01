@@ -1,0 +1,96 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/vibrant-core/src",
+  "projectType": "library",
+  "tags": ["scope:vibrant"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": [
+        {
+          "target": "build-native",
+          "projects": "self"
+        }
+      ],
+      "options": {
+        "outputPath": "dist/packages/vibrant-core",
+        "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
+        "project": "packages/vibrant-core/package.json",
+        "entryFile": "packages/vibrant-core/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "format": ["esm", "cjs"],
+        "rollupConfig": "tools/config/rollup-config",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/vibrant-core/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "build-native": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/vibrant-core-native",
+        "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
+        "project": "packages/vibrant-core/package.native.json",
+        "entryFile": "packages/vibrant-core/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "format": ["esm", "cjs"],
+        "moduleSuffixes": [".native", ""],
+        "rollupConfig": "tools/config/rollup-config",
+        "compiler": "babel"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/vibrant-core/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/vibrant-core"],
+      "options": {
+        "jestConfig": "packages/vibrant-core/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "packages/vibrant-core/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/vibrant-core",
+        "config": {
+          "configFolder": "packages/vibrant-core/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    }
+  }
+}

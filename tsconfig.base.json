@@ -15,21 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@class101/design-system-components": [
-        "packages/design-system-components/src/index.ts"
+      "@vibrant-ui/components": [
+        "packages/vibrant-components/src/index.ts"
       ],
-      "@class101/design-system-core": [
-        "packages/design-system-core/src/index.ts"
-      ],
-      "@class101/design-system-icons": [
-        "packages/design-system-icons/src/index.ts"
-      ],
-      "@class101/design-system-theme": [
-        "packages/design-system-theme/src/index.ts"
-      ],
-      "@class101/design-system-utils": [
-        "packages/design-system-utils/src/index.ts"
-      ]
+      "@vibrant-ui/core": ["packages/vibrant-core/src/index.ts"],
+      "@vibrant-ui/icons": ["packages/vibrant-icons/src/index.ts"],
+      "@vibrant-ui/theme": ["packages/vibrant-theme/src/index.ts"],
+      "@vibrant-ui/utils": ["packages/vibrant-utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
