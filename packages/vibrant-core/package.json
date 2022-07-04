@@ -1,6 +1,7 @@
 {
   "name": "@vibrant-ui/core",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "private": false,
   "sideEffects": false,
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
@@ -11,8 +12,8 @@
     "@emotion/styled": "^11.3.0",
     "@emotion/is-prop-valid": "^1.1.3",
     "@emotion/memoize": "^0.7.4",
-    "@vibrant-ui/utils": "0.0.1",
-    "@vibrant-ui/theme": "0.0.1"
+    "@vibrant-ui/utils": "0.0.2",
+    "@vibrant-ui/theme": "0.0.2"
   },
   "peerDependenciesMeta": {
     "@types/react": {

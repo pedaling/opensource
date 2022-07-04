@@ -21,7 +21,8 @@
       "@vibrant-ui/core": ["packages/vibrant-core/src/index.ts"],
       "@vibrant-ui/icons": ["packages/vibrant-icons/src/index.ts"],
       "@vibrant-ui/theme": ["packages/vibrant-theme/src/index.ts"],
-      "@vibrant-ui/utils": ["packages/vibrant-utils/src/index.ts"]
+      "@vibrant-ui/utils": ["packages/vibrant-utils/src/index.ts"],
+      "@vibrant-ui/utils/testing": ["packages/vibrant-utils/src/testing.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -11,7 +11,7 @@
         "outputPath": "dist/packages/vibrant-utils",
         "tsConfig": "packages/vibrant-utils/tsconfig.lib.json",
         "project": "packages/vibrant-utils/package.json",
-        "entryFile": "packages/vibrant-utils/src/index.ts",
+        "entryFile": "packages/vibrant-utils/src/*.ts",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",

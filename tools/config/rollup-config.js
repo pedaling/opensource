@@ -1,3 +1,4 @@
+const multiInput = require('rollup-plugin-multi-input').default;
 const rollupTypescript = require('rollup-plugin-typescript2');
 
 module.exports = function rollupConfig(config, options) {
@@ -18,6 +19,8 @@ module.exports = function rollupConfig(config, options) {
     },
     include: [options.entryRoot],
   });
+
+  config.plugins.splice(0, 0, multiInput({ relative: options.entryRoot }));
 
   return config;
 };
