@@ -1,8 +1,10 @@
+import type { MutableRefObject } from 'react';
 import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { withVariation } from './withVariation';
 
 type Props = {
   kind: 'primary' | 'secondary';
+  ref?: MutableRefObject<{ test?: number }>;
 };
 
 describe('withVariation', () => {
@@ -16,7 +18,7 @@ describe('withVariation', () => {
     color: 'white',
   }));
 
-  const mockRender = jest.fn(props => <div {...props} />);
+  const mockRender = jest.fn<any, any>(() => null);
 
   const Component = withVariation<Props>()(mockFirstPropVariant, mockSecondPropVariant)(props => mockRender(props));
 
@@ -39,6 +41,20 @@ describe('withVariation', () => {
 
     it('component received second propVariant return value', () => {
       expect(mockRender).toBeCalledWith({ color: 'white' });
+    });
+  });
+
+  describe('when component with ref rendered', () => {
+    const refObject: Props['ref'] = { current: {} };
+
+    beforeEach(() => {
+      refObject.current = { test: 3 };
+
+      render(<Component kind="primary" ref={refObject} />);
+    });
+
+    it('component received innerRef', () => {
+      expect(mockRender).toBeCalledWith(expect.objectContaining({ innerRef: { current: { test: 3 } } }));
     });
   });
 });
