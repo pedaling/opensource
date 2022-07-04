@@ -2,8 +2,8 @@ import type { FC, ReactElement, ReactNode } from 'react';
 import { cloneElement } from 'react';
 import { Global } from '@emotion/react';
 import type { OnColorToken } from '@vibrant-ui/theme';
-import { useCurrentTheme } from '@vibrant-ui/theme';
 import { Box } from '../Box';
+import { useCurrentTheme } from '../ThemeProvider';
 import type { ResponsiveValue } from '../types';
 import { useBuildStyle } from '../useBuildStyle';
 
