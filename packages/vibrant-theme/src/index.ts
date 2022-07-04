@@ -9,5 +9,7 @@ export type {
   CurrentTheme,
   Opacity,
   ThemeColors,
+  TypographySize,
+  TypographyWeight,
 } from './lib/types';
 export { baseColorTokens, onColorTokens, colorTokens } from './lib/types';
