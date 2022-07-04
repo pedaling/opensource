@@ -1,9 +1,9 @@
-import type { FC, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes, ForwardedRef } from 'react';
+import type { FC, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes, RefObject } from 'react';
 import { forwardRef } from 'react';
 import type { VariantFn } from '../propVariant';
 
 type PickRefElement<Props, DefaultElement = HTMLElement> = Props extends {
-  ref?: ForwardedRef<infer Element>;
+  ref?: RefObject<infer Element>;
 }
   ? Element
   : DefaultElement;
@@ -12,9 +12,9 @@ type ComponentWithRef<Props, DefaultElement = HTMLElement> = ForwardRefExoticCom
   PropsWithoutRef<Props> & RefAttributes<PickRefElement<Props, DefaultElement>>
 >;
 
-type ComponentWithInnerRef<Props> = FC<
-  Props extends { ref?: infer Ref } ? Omit<Props, 'ref'> & { innerRef?: Ref } : Props
->;
+type WithInnerRef<Props> = Props extends { ref?: infer Ref } ? Omit<Props, 'ref'> & { innerRef?: Ref } : Props;
+
+type ComponentWithInnerRef<Props> = FC<WithInnerRef<Props>>;
 
 type WithVariationFn<Props> = {
   (): (c: ComponentWithInnerRef<Props>) => ComponentWithRef<Props>;
@@ -87,12 +87,12 @@ type WithVariationFn<Props> = {
 
 export function withVariation<Props>(): WithVariationFn<Props> {
   return (...variantFns: VariantFn<Props, any>[]) =>
-    (BaseComponent: any) =>
+    (BaseComponent: ComponentWithInnerRef<Props>) =>
       forwardRef<PickRefElement<Props>, Props>((props, ref) => {
         const nextProps = variantFns.reduce<Props>((prevProps, variantFn) => variantFn(prevProps), {
           ...props,
         });
 
-        return <BaseComponent {...nextProps} {...(ref ? { innerRef: ref } : {})} />;
+        return <BaseComponent {...nextProps} {...((ref ? { innerRef: ref } : {}) as WithInnerRef<Props>)} />;
       });
 }
