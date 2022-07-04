@@ -3,9 +3,8 @@ import { createSystemProp } from '../../createSystemProp';
 const typographyProp = createSystemProp({
   property: 'typography',
   scale: 'typography',
-  transform: ({ defaultFontWeight, ...value }) => ({
+  transform: value => ({
     ...value,
-    fontWeight: defaultFontWeight,
   }),
 });
 

@@ -25,7 +25,7 @@ export type TypographyKind =
 type TypographyStyle = {
   fontFamily: string;
   fontSize: number | string;
-  defaultFontWeight: TypographyWeight;
+  fontWeight: TypographyWeight;
   lineHeight: number | string;
 };
 
