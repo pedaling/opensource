@@ -1,12 +1,5 @@
 export type TypographyWeight = 'regular' | 'medium' | 'bold' | 'extraBold';
 
-type TypographyStyle = {
-  fontFamily: string;
-  fontSize: number | string;
-  defaultFontWeight: TypographyWeight;
-  lineHeight: number | string;
-};
-
 export type TypographySize =
   | 'display1'
   | 'display2'
@@ -29,11 +22,17 @@ export type TypographySize =
   | 'paragraph2'
   | 'paragraph3';
 
+type TypographyStyle = {
+  fontFamily: string;
+  fontSize: number | string;
+  defaultFontWeight: TypographyWeight;
+  lineHeight: number | string;
+};
+
 export type ThemeTypography = {
-  size: {
-    [key in TypographySize]: TypographyStyle;
-  };
-  weight: {
-    [key in TypographyWeight]: number;
-  };
+  [key in TypographySize]: TypographyStyle;
+};
+
+export type ThemeTypographyWeight = {
+  [key in TypographyWeight]: number;
 };

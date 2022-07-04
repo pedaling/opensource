@@ -4,7 +4,7 @@ import type { Path } from '@vibrant-ui/utils';
 export type SystemPropConfig = {
   property: string;
   styleProperty?: string;
-  scale?: Extract<Path<Theme>, 'colors' | 'opacity' | 'typography.size' | 'typography.weight'>;
+  scale?: Extract<Path<Theme>, 'colors' | 'opacity' | 'typography' | 'typographyWeight'>;
   disabled?: boolean;
   transform?: (value: any) => Record<string, any> | undefined;
 };

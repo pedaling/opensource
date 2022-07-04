@@ -1,18 +1,17 @@
 import { createSystemProp } from '../../createSystemProp';
 
-const typographySizeProp = createSystemProp({
-  property: 'typographySize',
-  scale: 'typography.size',
+const typographyProp = createSystemProp({
+  property: 'typography',
+  scale: 'typography',
   transform: ({ defaultFontWeight, ...value }) => ({
     ...value,
     fontWeight: defaultFontWeight,
   }),
 });
 
-const typographyWeightProp = createSystemProp({
-  property: 'typographyWeight',
-  styleProperty: 'fontWeight',
-  scale: 'typography.weight',
+const fontWeightProp = createSystemProp({
+  property: 'fontWeight',
+  scale: 'typographyWeight',
 });
 
 const fontStyleProp = createSystemProp({
@@ -32,8 +31,8 @@ const textTransformProp = createSystemProp({
 });
 
 export const typographyProps = [
-  typographySizeProp,
-  typographyWeightProp,
+  typographyProp,
+  fontWeightProp,
   fontStyleProp,
   letterSpacingProp,
   textAlignProp,
