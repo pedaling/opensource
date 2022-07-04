@@ -1,5 +1,4 @@
-import get from 'lodash/get';
-import { isDefined } from '@vibrant-ui/utils';
+import { get, isDefined } from '@vibrant-ui/utils';
 import { useCurrentTheme } from '../ThemeProvider';
 import { useBuildStyle } from '../useBuildStyle';
 import type { SystemProp, SystemPropConfig } from './type';
@@ -24,18 +23,12 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
         }
 
         const targetProperty = styleProperty ?? property;
-        const styleObjects = [input]
-          .flat()
-          .map(value => (isDefined(transform) ? transform(value) ?? {} : { [targetProperty]: value }))
-          .map(rawStyleObject =>
-            Object.entries(rawStyleObject).reduce(
-              (acc, [key, value]) => ({
-                ...acc,
-                [key]: (isDefined(theme) && isDefined(scale) ? get(theme[scale], value) : undefined) ?? value,
-              }),
-              {}
-            )
-          );
+
+        const styleObjects = [input].flat().map(value => {
+          const result = get(theme, `${scale}.${value}`, value);
+
+          return isDefined(transform) ? transform(result) ?? {} : { [targetProperty]: result };
+        });
 
         return buildStyle(styleObjects, { theme });
       };
