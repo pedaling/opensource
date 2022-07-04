@@ -3,7 +3,7 @@ export type TypographyWeight = 'regular' | 'medium' | 'bold' | 'extraBold';
 type TypographyStyle = {
   fontFamily: string;
   fontSize: number | string;
-  fontWeight: TypographyWeight;
+  defaultFontWeight: TypographyWeight;
   lineHeight: number | string;
 };
 
