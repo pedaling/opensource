@@ -6,7 +6,7 @@ import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
 
-const config: StorybookViteConfig = {
+const config: StorybookViteConfig & { previewHead?: (head: string) => string } = {
   stories: [],
   addons: [
     '@storybook/addon-actions',
@@ -20,6 +20,15 @@ const config: StorybookViteConfig = {
   core: {
     builder: '@storybook/builder-vite',
   },
+  previewHead: head => `
+    ${head}
+    <link
+      href="https://cdn.class101.net/fonts/pretendard-1.3.0/pretendard-dynamic-subset.css"
+      rel="preload"
+      as="style"
+    />
+    <link href="https://cdn.class101.net/fonts/pretendard-1.3.0/pretendard-dynamic-subset.css" rel="stylesheet" />
+  `,
   async viteFinal(viteConfig) {
     return mergeConfig(viteConfig, {
       cacheDir: path.join(
