@@ -1,6 +1,6 @@
 export type TypographyWeight = 'regular' | 'medium' | 'bold' | 'extraBold';
 
-export type TypographySize =
+export type TypographyKind =
   | 'display1'
   | 'display2'
   | 'display3'
@@ -30,7 +30,7 @@ type TypographyStyle = {
 };
 
 export type ThemeTypography = {
-  [key in TypographySize]: TypographyStyle;
+  [key in TypographyKind]: TypographyStyle;
 };
 
 export type ThemeTypographyWeight = {
