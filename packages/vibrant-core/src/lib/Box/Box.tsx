@@ -16,7 +16,7 @@ export const Box = styled(
     shouldForwardProp,
   }
 )(createInterpolation(systemProps)) as <
-  BaseComponent extends ComponentType,
+  BaseComponent extends ComponentType | unknown,
   ElementName extends keyof JSX.IntrinsicElements,
   ElementProps extends JSX.IntrinsicElements[ElementName]
 >(
