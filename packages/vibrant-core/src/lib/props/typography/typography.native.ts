@@ -1,5 +1,13 @@
 import { createSystemProp } from '../../createSystemProp';
 
+const transformRem = (value: any) => {
+  if (typeof value === 'string' && value.endsWith('rem')) {
+    return parseInt(value.replace('rem', ''), 10) * 16;
+  }
+
+  return value;
+};
+
 const typographyProp = createSystemProp({
   property: 'typography',
   scale: 'typography',
@@ -15,10 +23,12 @@ const fontFamilyProp = createSystemProp({
 
 const fontSizeProp = createSystemProp({
   property: 'fontSize',
+  transform: value => ({ fontSize: transformRem(value) }),
 });
 
 const lineHeightProp = createSystemProp({
   property: 'lineHeight',
+  transform: value => ({ lineHeight: transformRem(value) }),
 });
 
 const fontWeightProp = createSystemProp({

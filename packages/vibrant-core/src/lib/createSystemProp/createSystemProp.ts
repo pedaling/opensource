@@ -1,36 +1,33 @@
 import { get, isDefined } from '@vibrant-ui/utils';
-import { useCurrentTheme } from '../ThemeProvider';
-import { useBuildStyle } from '../useBuildStyle';
-import type { SystemProp, SystemPropConfig } from './type';
+import type { SystemProp, SystemPropConfig, SystemPropThemeScale } from './type';
 
 export const createSystemProp = (config: SystemPropConfig): SystemProp => {
-  const { property, styleProperty, scale, disabled, transform } = config;
+  const { property, styleProperty, scale, disabled, shouldInterpolation, transform } = config;
 
   if (disabled) {
-    return Object.assign(() => ({}), { propName: property, disabled: true });
+    return Object.assign(() => [], { propName: property, disabled: true });
   }
 
   return Object.assign(
-    (props: Record<string, any>) => {
-      const { theme } = useCurrentTheme();
-      const buildStyle = useBuildStyle();
-
-      const input = props[property];
-
+    (input: any, theme: Record<SystemPropThemeScale, any>, interpolation: (props: any) => any = props => props) => {
       const style = () => {
         if (input === undefined) {
-          return {};
+          return [];
         }
 
         const targetProperty = styleProperty ?? property;
 
         const styleObjects = [input].flat().map(value => {
-          const result = get(theme, `${scale}.${value}`, value);
+          let result = get(theme, `${scale}.${value}`, value);
+
+          if (shouldInterpolation && typeof result === 'object' && result !== null) {
+            result = interpolation(result);
+          }
 
           return isDefined(transform) ? transform(result) ?? {} : { [targetProperty]: result };
         });
 
-        return buildStyle(styleObjects, { theme });
+        return styleObjects;
       };
 
       return style();

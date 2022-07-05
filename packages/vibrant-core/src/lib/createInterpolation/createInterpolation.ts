@@ -1,5 +1,8 @@
+import type { CurrentTheme } from '@vibrant-ui/theme';
 import { isDefined } from '@vibrant-ui/utils';
+import { buildStyle } from '../buildStyle';
 import type { SystemProp } from '../createSystemProp';
+import { useCurrentTheme } from '../ThemeProvider';
 
 const isObject = (obj: any) => typeof obj === 'object' && obj !== null;
 
@@ -8,19 +11,15 @@ export const createInterpolation = (systemProps: SystemProp[]) => {
   const enabledSystemProps = systemProps.filter(systemProp => !systemProp.disabled);
   const enabledSystemPropNames = enabledSystemProps.map(systemProp => systemProp.propName);
 
-  const interpolation = (props: Record<string, any>): Record<string, any> => {
-    let result = {};
+  const childInterpolation = (props: Record<string, any>, theme: CurrentTheme): Record<string, any>[] => {
+    let result: Record<string, any>[] = [];
 
     if (!isObject(props)) {
-      return props;
-    }
-
-    if (Array.isArray(props)) {
-      return props.map(prop => interpolation(prop));
+      return [props];
     }
 
     if (!Object.keys(props).some(key => enabledSystemPropNames.includes(key))) {
-      return {};
+      return [];
     }
 
     for (const [key, value] of Object.entries(props)) {
@@ -39,27 +38,31 @@ export const createInterpolation = (systemProps: SystemProp[]) => {
         continue;
       }
 
-      const prop = {
-        [key]: interpolation(value),
-      };
+      const matchedProps = matchedSystemProp(
+        value,
+        theme,
+        interpolationProps => childInterpolation(interpolationProps, theme)[0]
+      );
 
-      result = mergeMediaQueries(result, matchedSystemProp(prop));
+      result = mergeResponsiveValue(result, matchedProps);
     }
 
     return result;
   };
 
-  return interpolation;
+  return (props: Record<string, any>) => {
+    const { theme } = useCurrentTheme();
+
+    const interpolationResult = childInterpolation(props, theme);
+
+    return buildStyle(interpolationResult, { theme });
+  };
 };
 
-const mergeMediaQueries = (original: Record<string, any>, next: Record<string, any>) => {
-  const mediaQueryProperties: Record<string, any> = {};
+const mergeResponsiveValue = (original: Record<string, any>[], next: Record<string, any>[]) => {
+  next.forEach((value, index) => {
+    original[index] = { ...(original[index] ?? {}), ...value };
+  });
 
-  for (const key of Object.keys(next)) {
-    if (key.startsWith('@media')) {
-      mediaQueryProperties[key] = { ...(original[key] ?? {}), ...next[key] };
-    }
-  }
-
-  return { ...original, ...next, ...mediaQueryProperties };
+  return original;
 };

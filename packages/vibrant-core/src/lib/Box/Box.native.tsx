@@ -22,6 +22,8 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
     case 'h4':
     case 'h5':
       return Text;
+    case 'br':
+      return (props: any) => <Text {...props}>{'\n'}</Text>;
     default:
       return View;
   }

@@ -3,6 +3,8 @@ import type { ResponsiveValue } from '../../types';
 
 export type TypographyProps = {
   typography?: ResponsiveValue<TypographyKind>;
+  fontFamily?: ResponsiveValue<string>;
+  lineHeight?: ResponsiveValue<string | number>;
   fontWeight?: ResponsiveValue<TypographyWeight>;
   fontStyle?: ResponsiveValue<'italic' | 'normal' | 'oblique'>;
   letterSpacing?: ResponsiveValue<string | number>;

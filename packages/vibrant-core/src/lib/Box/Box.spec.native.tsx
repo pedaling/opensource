@@ -36,6 +36,24 @@ describe('Native <Box />', () => {
         expect(renderer.toJSON()).toMatchSnapshot();
       });
     });
+
+    describe('when br box created', () => {
+      beforeEach(() => {
+        renderer = render(<Box as="br" />);
+      });
+
+      it('Text component used', () => {
+        expect(renderer.container.findByType(Text)).toBeTruthy();
+      });
+
+      it('children is new line', () => {
+        expect(renderer.container.findByType(Text).props['children']).toBe('\n');
+      });
+
+      it('match snapshot', () => {
+        expect(renderer.toJSON()).toMatchSnapshot();
+      });
+    });
   });
 
   describe('base prop', () => {

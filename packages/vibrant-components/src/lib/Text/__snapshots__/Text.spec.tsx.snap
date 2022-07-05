@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> when Text with newline children rendered match snapshot 1`] = `
+.emotion-1 {
+  font-family: Pretendard;
+  font-size: 2.125rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+}
+
+<div>
+  <span
+    class="emotion-1"
+  >
+    Some
+    <br
+      class="emotion-1"
+    />
+    Thing
+  </span>
+</div>
+`;
+
+exports[`<Text /> when title1 Text rendered match snapshot 1`] = `
+.emotion-0 {
+  font-family: Pretendard;
+  font-size: 2.125rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+}
+
+<div>
+  <span
+    class="emotion-0"
+  >
+    Something
+  </span>
+</div>
+`;
