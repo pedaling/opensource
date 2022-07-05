@@ -4,6 +4,10 @@ import { withGlobalStyle } from './decorators/withGlobalStyle';
 
 export const parameters: Parameters = {
   layout: 'fullscreen',
+  controls: {
+    sort: 'requiredFirst',
+    expanded: true,
+  },
 };
 
 export const decorators: DecoratorFn[] = [withPerformance, withGlobalStyle];
