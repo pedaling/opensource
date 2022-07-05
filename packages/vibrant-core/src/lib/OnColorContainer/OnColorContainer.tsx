@@ -3,9 +3,9 @@ import { cloneElement } from 'react';
 import { Global } from '@emotion/react';
 import type { OnColorToken } from '@vibrant-ui/theme';
 import { Box } from '../Box';
+import { buildStyle } from '../buildStyle';
 import { useCurrentTheme } from '../ThemeProvider';
 import type { ResponsiveValue } from '../types';
-import { useBuildStyle } from '../useBuildStyle';
 
 type OnColorContainerProps = {
   color: ResponsiveValue<OnColorToken>;
@@ -26,7 +26,7 @@ export const OnColorContainer: FC<OnColorContainerProps> = ({ color, injectTo = 
 
   const responsiveColor = Array.isArray(color) ? color : [color];
 
-  const forwardStyle = useBuildStyle()(
+  const forwardStyle = buildStyle(
     responsiveColor.map(value => ({
       color: colors[value],
       systemOnColor: colors[value],
@@ -34,7 +34,7 @@ export const OnColorContainer: FC<OnColorContainerProps> = ({ color, injectTo = 
     { theme }
   );
 
-  const rootStyle = useBuildStyle()(
+  const rootStyle = buildStyle(
     responsiveColor.map(value => ({
       ':root': {
         '--system-on-color': colors[value],

@@ -1,5 +1,5 @@
 import type { CurrentTheme } from '@vibrant-ui/theme';
-import type { DeepPartial } from '@vibrant-ui/utils/testing';
+import type { DeepPartial } from '@vibrant-ui/utils';
 import { createSystemProp } from '../createSystemProp';
 import * as ThemeModule from '../ThemeProvider';
 import { createInterpolation } from './createInterpolation';
@@ -24,8 +24,9 @@ const heightProp = createSystemProp({
   property: 'height',
 });
 
-const backgroundColorProp = createSystemProp({
-  property: 'backgroundColor',
+const marginProp = createSystemProp({
+  property: 'm',
+  styleProperty: 'margin',
 });
 
 const pseudoHoverProp = createSystemProp({
@@ -33,10 +34,11 @@ const pseudoHoverProp = createSystemProp({
   transform: value => ({
     '&:hover': value,
   }),
+  shouldInterpolation: true,
 });
 
 describe('createInterpolation', () => {
-  const interpolation = createInterpolation([widthProp, heightProp, backgroundColorProp, pseudoHoverProp]);
+  const interpolation = createInterpolation([widthProp, heightProp, marginProp, pseudoHoverProp]);
   let props: Record<string, any>;
 
   describe('when prop is 1 depth object', () => {
@@ -90,12 +92,12 @@ describe('createInterpolation', () => {
 
   describe('when prop is 2 depth object', () => {
     beforeEach(() => {
-      props = { pseudoHover: { backgroundColor: 'primary' } };
+      props = { pseudoHover: { m: 3 } };
     });
 
     it('should return return value of all nested systemProp', () => {
       expect(interpolation(props)).toStrictEqual({
-        '&:hover': { backgroundColor: 'primary' },
+        '&:hover': { margin: 3 },
       });
     });
   });

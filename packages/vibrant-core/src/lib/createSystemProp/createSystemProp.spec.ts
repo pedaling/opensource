@@ -1,23 +1,17 @@
-import type { CurrentTheme } from '@vibrant-ui/theme';
-import type { DeepPartial } from '@vibrant-ui/utils';
-import * as ThemeModule from '../ThemeProvider';
 import { createSystemProp } from './createSystemProp';
-import type { SystemProp } from './type';
-import SpyInstance = jest.SpyInstance;
-
-const useCurrentTheme = jest.spyOn(ThemeModule, 'useCurrentTheme') as SpyInstance<{ theme: DeepPartial<CurrentTheme> }>;
+import type { SystemProp, SystemPropThemeScale } from './type';
 
 describe('createSystemProp', () => {
   let systemProp: SystemProp;
+  let currentTheme: Record<SystemPropThemeScale, any>;
 
   beforeEach(() => {
-    useCurrentTheme.mockImplementation(() => ({
-      theme: {
-        breakpoints: [],
-        colors: {},
-        opacity: {},
-      },
-    }));
+    currentTheme = {
+      colors: {},
+      opacity: {},
+      typography: {},
+      typographyWeight: {},
+    };
   });
 
   describe('when only property set', () => {
@@ -28,7 +22,7 @@ describe('createSystemProp', () => {
     });
 
     it('height transform to height', () => {
-      expect(systemProp({ height: 300 })).toEqual({ height: 300 });
+      expect(systemProp(300, currentTheme)).toStrictEqual([{ height: 300 }]);
     });
 
     it('systemProp propName is height', () => {
@@ -39,8 +33,8 @@ describe('createSystemProp', () => {
       expect(systemProp.disabled).toBe(false);
     });
 
-    it('empty object transform empty object', () => {
-      expect(systemProp({})).toEqual({});
+    it('empty value transform empty value', () => {
+      expect(systemProp(undefined, currentTheme)).toStrictEqual([]);
     });
   });
 
@@ -57,7 +51,7 @@ describe('createSystemProp', () => {
     });
 
     it('width not transform', () => {
-      expect(systemProp({ width: 300 })).toEqual({});
+      expect(systemProp(300, currentTheme)).toStrictEqual([]);
     });
   });
 
@@ -70,7 +64,7 @@ describe('createSystemProp', () => {
     });
 
     it('p transform to padding', () => {
-      expect(systemProp({ p: 10 })).toEqual({ padding: 10 });
+      expect(systemProp(10, currentTheme)).toStrictEqual([{ padding: 10 }]);
     });
   });
 
@@ -94,11 +88,11 @@ describe('createSystemProp', () => {
       let style: object;
 
       beforeEach(() => {
-        style = systemProp({ pressable: true });
+        style = systemProp(true, currentTheme);
       });
 
       it('cursor pointer set', () => {
-        expect(style).toEqual({ cursor: 'pointer' });
+        expect(style).toStrictEqual([{ cursor: 'pointer' }]);
       });
     });
 
@@ -106,27 +100,26 @@ describe('createSystemProp', () => {
       let style: object;
 
       beforeEach(() => {
-        style = systemProp({ pressable: false });
+        style = systemProp(false, currentTheme);
       });
 
       it('empty object set', () => {
-        expect(style).toEqual({});
+        expect(style).toStrictEqual([{}]);
       });
     });
   });
 
   describe('when scale set', () => {
     beforeEach(() => {
-      useCurrentTheme.mockImplementation(() => ({
-        theme: {
-          breakpoints: [],
-          colors: {
-            primary: 'orange',
-            secondary: 'black',
-          },
-          opacity: {},
+      currentTheme = {
+        colors: {
+          primary: 'orange',
+          secondary: 'black',
         },
-      }));
+        opacity: {},
+        typography: {},
+        typographyWeight: {},
+      };
 
       systemProp = createSystemProp({
         property: 'backgroundColor',
@@ -135,37 +128,65 @@ describe('createSystemProp', () => {
     });
 
     it('backgroundColor primary is orange', () => {
-      expect(systemProp({ backgroundColor: 'primary' })).toEqual({
-        backgroundColor: 'orange',
-      });
+      expect(systemProp('primary', currentTheme)).toStrictEqual([
+        {
+          backgroundColor: 'orange',
+        },
+      ]);
     });
 
     it('backgroundColor secondary is black', () => {
-      expect(systemProp({ backgroundColor: 'secondary' })).toEqual({
-        backgroundColor: 'black',
-      });
+      expect(systemProp('secondary', currentTheme)).toStrictEqual([
+        {
+          backgroundColor: 'black',
+        },
+      ]);
     });
   });
 
-  describe('when breakpoints set', () => {
+  describe('when responsive value passed', () => {
     beforeEach(() => {
-      useCurrentTheme.mockImplementation(() => ({
-        theme: {
-          breakpoints: [200, 400],
-          colors: {},
-          opacity: {},
-        },
-      }));
-
       systemProp = createSystemProp({
         property: 'width',
       });
     });
 
-    it('responsive value create media query', () => {
-      expect(systemProp({ width: [200, 300] })).toEqual({
-        width: 200,
-        '@media screen and (min-width: 200px)': { width: 300 },
+    it('responsive value array result', () => {
+      expect(systemProp([200, 300], currentTheme)).toStrictEqual([
+        {
+          width: 200,
+        },
+        { width: 300 },
+      ]);
+    });
+  });
+
+  describe('when shouldInterpolation is true', () => {
+    let mockInterpolation: (props: any) => any;
+
+    beforeEach(() => {
+      mockInterpolation = jest.fn(props => props);
+
+      systemProp = createSystemProp({
+        property: 'pseudoHover',
+        styleProperty: '&:hover',
+        shouldInterpolation: true,
+      });
+    });
+
+    describe('when use object value', () => {
+      let result: any;
+
+      beforeEach(() => {
+        result = systemProp({ backgroundColor: 'white' }, currentTheme, mockInterpolation);
+      });
+
+      it('interpolation called', () => {
+        expect(mockInterpolation).toBeCalled();
+      });
+
+      it('set style in &:hover', () => {
+        expect(result).toStrictEqual([{ '&:hover': { backgroundColor: 'white' } }]);
       });
     });
   });

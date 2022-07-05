@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`native <Text /> when Text with newline children rendered match snapshot 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "Pretendard",
+        "fontSize": 32,
+        "fontWeight": 700,
+        "lineHeight": 32,
+      },
+      undefined,
+    ]
+  }
+>
+  Some
+  <Text
+    style={
+      Array [
+        Object {},
+        undefined,
+      ]
+    }
+  >
+    
+
+  </Text>
+  Thing
+</Text>
+`;
+
+exports[`native <Text /> when title1 Text rendered match snapshot 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "Pretendard",
+        "fontSize": 32,
+        "fontWeight": 700,
+        "lineHeight": 32,
+      },
+      undefined,
+    ]
+  }
+>
+  Something
+</Text>
+`;

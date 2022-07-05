@@ -17,7 +17,7 @@ import { spacingProps } from './spacing';
 import type { TypographyProps } from './typography';
 import { typographyProps } from './typography';
 
-export type SystemProps = BackgroundProps &
+type SystemProps = BackgroundProps &
   BorderProps &
   ColorProps &
   DisplayProps &
@@ -26,6 +26,19 @@ export type SystemProps = BackgroundProps &
   SizingProps &
   SpacingProps &
   TypographyProps;
+
+export type {
+  SystemProps,
+  BackgroundProps,
+  BorderProps,
+  ColorProps,
+  DisplayProps,
+  FlexboxProps,
+  PseudoClassProps,
+  SizingProps,
+  SpacingProps,
+  TypographyProps,
+};
 
 export const systemProps = [
   ...backgroundProps,
