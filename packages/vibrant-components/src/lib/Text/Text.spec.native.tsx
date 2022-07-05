@@ -16,7 +16,7 @@ describe('native <Text />', () => {
       );
     });
 
-    it('span element rendered', () => {
+    it('RNText element rendered', () => {
       expect(renderer.container.findByType(RNText)).toBeTruthy();
     });
 
