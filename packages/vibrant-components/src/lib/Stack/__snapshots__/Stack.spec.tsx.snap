@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Stack /> when empty stack rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="stack"
+  />
+</div>
+`;
+
 exports[`<Stack /> when horizontal stack with spacing rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
