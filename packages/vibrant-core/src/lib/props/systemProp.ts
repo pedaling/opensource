@@ -8,6 +8,8 @@ import type { DisplayProps } from './display';
 import { displayProps } from './display';
 import type { FlexboxProps } from './flexbox';
 import { flexboxProps } from './flexbox';
+import type { PositionProps } from './position';
+import { positionProps } from './position';
 import type { PseudoClassProps } from './pseudoClass';
 import { pseudoClassProps } from './pseudoClass';
 import type { SizingProps } from './sizing';
@@ -22,22 +24,24 @@ type SystemProps = BackgroundProps &
   ColorProps &
   DisplayProps &
   FlexboxProps &
+  PositionProps &
   PseudoClassProps &
   SizingProps &
   SpacingProps &
   TypographyProps;
 
 export type {
-  SystemProps,
   BackgroundProps,
   BorderProps,
   ColorProps,
   DisplayProps,
   FlexboxProps,
+  PositionProps,
   PseudoClassProps,
   SizingProps,
   SpacingProps,
   TypographyProps,
+  SystemProps,
 };
 
 export const systemProps = [
@@ -46,6 +50,7 @@ export const systemProps = [
   ...colorProps,
   ...displayProps,
   ...flexboxProps,
+  ...positionProps,
   ...pseudoClassProps,
   ...sizingProps,
   ...spacingProps,
