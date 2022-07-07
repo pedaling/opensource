@@ -78,7 +78,7 @@ module.exports = {
         selector: ['default', 'variable', 'typeLike'],
         format: null,
         filter: {
-          regex: '(^(HStack|HStack|ZStack)|CSS)',
+          regex: '(VStack|HStack|ZStack|CSS)',
           match: true,
         },
       },
