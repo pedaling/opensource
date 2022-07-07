@@ -35,9 +35,11 @@ export const Input = withInputVariation(
         const start = event.currentTarget.selectionStart ?? 0;
         const end = event.currentTarget.selectionEnd ?? 0;
 
-        event.currentTarget.value = `${currentValue.substring(0, start)}${replacedValue}${currentValue.substring(
-          end
-        )}`.substring(0, maxLength);
+        event.currentTarget.value = (
+          currentValue.substring(0, start) +
+          replacedValue +
+          currentValue.substring(end)
+        ).substring(0, maxLength);
 
         event.currentTarget.selectionStart = start + replacedValue.length;
 
@@ -45,7 +47,7 @@ export const Input = withInputVariation(
 
         event.preventDefault();
 
-        onValueChange?.(replacedValue);
+        onValueChange?.(event.currentTarget.value);
       }}
       onFocus={() => onFocus?.()}
       onBlur={() => onBlur?.()}
