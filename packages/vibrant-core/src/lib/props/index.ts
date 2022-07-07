@@ -1,13 +1,14 @@
 export type {
-  SystemProps,
   BackgroundProps,
-  TypographyProps,
   BorderProps,
   ColorProps,
   DisplayProps,
   FlexboxProps,
+  PositionProps,
   PseudoClassProps,
   SizingProps,
   SpacingProps,
+  TypographyProps,
+  SystemProps,
 } from './systemProp';
 export { systemProps, propNames } from './systemProp';
