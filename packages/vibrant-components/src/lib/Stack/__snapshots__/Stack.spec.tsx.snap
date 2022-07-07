@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stack /> when empty stack rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="stack"
+  />
+</div>
+`;
+
+exports[`<Stack /> when horizontal stack with spacing rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 200px;
+}
+
+.emotion-2 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 20px;
+  height: 0;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="stack"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-2"
+    />
+    <div
+      class="emotion-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Stack /> when responsive direction stack rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 640px) {
+  .emotion-0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 200px;
+}
+
+.emotion-2 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 0;
+  height: 20px;
+}
+
+@media screen and (min-width: 640px) {
+  .emotion-2 {
+    width: 30px;
+    height: 0;
+  }
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="stack"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-2"
+    />
+    <div
+      class="emotion-1"
+    />
+  </div>
+</div>
+`;
+
+exports[`<Stack /> when vertical stack with spacing rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  width: 200px;
+  height: 200px;
+}
+
+.emotion-2 {
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 0;
+  height: 20px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="stack"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-2"
+    />
+    <div
+      class="emotion-1"
+    />
+  </div>
+</div>
+`;
