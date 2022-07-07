@@ -1,12 +1,18 @@
+import type { RefObject } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
-type InputProps = {
+export type InputProps = {
+  ref?: RefObject<HTMLInputElement>;
   allowPattern?: RegExp;
-  placeholder?: string;
   defaultValue?: string;
+  placeholder?: string;
+  maxLength?: number;
+  disabled?: boolean;
+  readOnly?: boolean;
+  tabIndex?: number;
   onFocus?: () => void;
   onBlur?: () => void;
-  onKeyPress?: (_: { key: string; prevent: () => void }) => void;
+  onKeyDown?: (_: { key: string; prevent: () => void }) => void;
   onValueChange?: (_: string) => void;
 };
 

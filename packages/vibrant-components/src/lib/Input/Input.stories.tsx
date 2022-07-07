@@ -1,5 +1,4 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Box } from '@vibrant-ui/core';
 import { Input } from './Input';
 
 export default {
@@ -25,9 +24,4 @@ export default {
   },
 } as ComponentMeta<typeof Input>;
 
-export const Basic: ComponentStory<typeof Input> = props => (
-  <Box>
-    <Input {...props} />
-    <Input />
-  </Box>
-);
+export const Basic: ComponentStory<typeof Input> = props => <Input {...props} />;

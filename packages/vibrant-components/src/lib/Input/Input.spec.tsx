@@ -7,7 +7,7 @@ import { Input } from './Input';
 describe('<Input />', () => {
   const mockHandleFocus = jest.fn();
   const mockHandleBlur = jest.fn();
-  const mockHandleKeyPress = jest.fn();
+  const mockHandleKeyDown = jest.fn();
   const mockHandleValueChange = jest.fn();
 
   const { render } = createReactRenderer();
@@ -19,7 +19,7 @@ describe('<Input />', () => {
 
     mockHandleBlur.mockClear();
 
-    mockHandleKeyPress.mockClear();
+    mockHandleKeyDown.mockClear();
 
     mockHandleValueChange.mockClear();
   });
@@ -30,7 +30,7 @@ describe('<Input />', () => {
         <Input
           onFocus={mockHandleFocus}
           onBlur={mockHandleBlur}
-          onKeyPress={({ key }) => mockHandleKeyPress(key)}
+          onKeyDown={({ key }) => mockHandleKeyDown(key)}
           onValueChange={mockHandleValueChange}
         />
       );
@@ -63,8 +63,8 @@ describe('<Input />', () => {
         await waitFor(() => userEvent.type(inputElement, 'a'));
       });
 
-      it('keyPress event should called with entered value', () => {
-        expect(mockHandleKeyPress).toBeCalledWith('a');
+      it('keyDown event should called with entered value', () => {
+        expect(mockHandleKeyDown).toBeCalledWith('a');
       });
 
       it('valueChange event should called with entered value', () => {
@@ -83,8 +83,8 @@ describe('<Input />', () => {
         userEvent.paste('123asdf456');
       });
 
-      it('keyPress event should not called', () => {
-        expect(mockHandleKeyPress).not.toBeCalled();
+      it('keyDown event should not called', () => {
+        expect(mockHandleKeyDown).not.toBeCalled();
       });
 
       it('valueChange event should called with entered value', () => {
@@ -102,7 +102,7 @@ describe('<Input />', () => {
       renderer = render(
         <Input
           allowPattern={/\d/}
-          onKeyPress={({ key }) => mockHandleKeyPress(key)}
+          onKeyDown={({ key }) => mockHandleKeyDown(key)}
           onValueChange={mockHandleValueChange}
         />
       );
@@ -111,7 +111,7 @@ describe('<Input />', () => {
     });
 
     afterEach(() => {
-      mockHandleKeyPress.mockClear();
+      mockHandleKeyDown.mockClear();
 
       mockHandleValueChange.mockClear();
     });
@@ -121,8 +121,8 @@ describe('<Input />', () => {
         await waitFor(() => userEvent.type(inputElement, 'a'));
       });
 
-      it('keyPress event should called with entered value', () => {
-        expect(mockHandleKeyPress).toBeCalledWith('a');
+      it('keyDown event should called with entered value', () => {
+        expect(mockHandleKeyDown).toBeCalledWith('a');
       });
 
       it('valueChange event should not called', () => {
@@ -139,8 +139,8 @@ describe('<Input />', () => {
         await waitFor(() => userEvent.type(inputElement, '1'));
       });
 
-      it('keyPress event should called with entered value', () => {
-        expect(mockHandleKeyPress).toBeCalledWith('1');
+      it('keyDown event should called with entered value', () => {
+        expect(mockHandleKeyDown).toBeCalledWith('1');
       });
 
       it('valueChange event should called with entered value', () => {
@@ -159,8 +159,8 @@ describe('<Input />', () => {
         userEvent.paste('123asdf456');
       });
 
-      it('keyPress event should not called', () => {
-        expect(mockHandleKeyPress).not.toBeCalled();
+      it('keyDown event should not called', () => {
+        expect(mockHandleKeyDown).not.toBeCalled();
       });
 
       it('valueChange event should called with replaced value', () => {
