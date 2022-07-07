@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HStack /> when HStack rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  width: 20px;
+  height: 20px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="hstack"
+  >
+    <div
+      class="emotion-1"
+    />
+    <div
+      class="emotion-1"
+    />
+  </div>
+</div>
+`;
