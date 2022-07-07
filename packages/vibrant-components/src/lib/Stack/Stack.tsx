@@ -2,11 +2,11 @@ import { Children, Fragment, isValidElement } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { withStackVariation } from './StackProps';
 
-export const Stack = withStackVariation(({ spacing, spaceWidth, spaceHeight, children, ...restProps }) => {
+export const Stack = withStackVariation(({ innerRef, spacing, spaceWidth, spaceHeight, children, ...restProps }) => {
   const validChildren = Children.toArray(children).filter(child => isValidElement(child));
 
   return (
-    <Box display="flex" {...restProps}>
+    <Box display="flex" ref={innerRef} {...restProps}>
       {spacing
         ? validChildren.map((child, index, { length: childLength }) => (
             <Fragment key={index}>

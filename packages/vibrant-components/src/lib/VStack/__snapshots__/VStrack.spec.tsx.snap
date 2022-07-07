@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HStack /> when HStack rendered match snapshot 1`] = `
+exports[`<VStack /> when VStack rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;

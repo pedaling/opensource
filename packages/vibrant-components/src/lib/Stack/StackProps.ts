@@ -1,9 +1,10 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, RefObject } from 'react';
 import type { DisplayProps, FlexboxProps, ResponsiveValue, SizingProps, SpacingProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type StackProps = {
   direction: ResponsiveValue<'horizontal' | 'vertical'>;
+  ref?: RefObject<HTMLDivElement>;
   spacing?: ResponsiveValue<number>;
   children?: ReactNode;
 } & SpacingProps &

@@ -20,7 +20,7 @@ describe('<HStack />', () => {
       element = await renderer.findByTestId('hstack');
     });
 
-    it('stack alignItem is center', () => {
+    it('stack justifyContent is center', () => {
       expect(element).toHaveStyleRule('justify-content', 'center');
     });
 
