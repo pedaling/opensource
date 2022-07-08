@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Paragraph /> when Paragraph with level 3 rendered match snapshot 1`] = `
+.emotion-0 {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+}
+
+<div>
+  <span
+    class="emotion-0"
+    data-testid="paragraph"
+  >
+    Hello World
+  </span>
+</div>
+`;
