@@ -4,6 +4,7 @@ export type {
   ColorProps,
   DisplayProps,
   FlexboxProps,
+  InteractionProps,
   PositionProps,
   PseudoClassProps,
   SizingProps,
