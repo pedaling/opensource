@@ -17,8 +17,8 @@ const nl2br = (value: any) => {
   });
 };
 
-export const Text = withTextVariation(({ as = 'span', kind, weight, children, ...restProps }) => (
-  <Box as={as} typography={kind} fontWeight={weight} {...restProps}>
+export const Text = withTextVariation(({ innerRef, as = 'span', kind, weight, children, ...restProps }) => (
+  <Box as={as} ref={innerRef} typography={kind} fontWeight={weight} {...restProps}>
     {nl2br(children)}
   </Box>
 ));

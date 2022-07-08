@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Display /> when Display with level 3 rendered match snapshot 1`] = `
+.emotion-0 {
+  font-family: Pretendard;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3.75rem;
+}
+
+<div>
+  <span
+    class="emotion-0"
+    data-testid="display"
+  >
+    Hello World
+  </span>
+</div>
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> when Title with level 3 rendered match snapshot 1`] = `
+.emotion-0 {
+  font-family: Pretendard;
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+}
+
+<div>
+  <span
+    class="emotion-0"
+    data-testid="title"
+  >
+    Hello World
+  </span>
+</div>
+`;
