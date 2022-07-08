@@ -90,4 +90,5 @@ export type FlexboxProps = {
     | 'stretch'
   >;
   order?: ResponsiveValue<number>;
+  rowGap?: ResponsiveValue<number>;
 };
