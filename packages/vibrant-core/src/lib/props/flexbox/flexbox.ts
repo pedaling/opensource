@@ -52,6 +52,10 @@ const orderProp = createSystemProp({
   property: 'order',
 });
 
+const rowGapProp = createSystemProp({
+  property: 'rowGap',
+});
+
 export const flexboxProps = [
   flexProp,
   flexGrowProp,
@@ -66,4 +70,5 @@ export const flexboxProps = [
   justifyItemsProp,
   justifySelfProp,
   orderProp,
+  rowGapProp,
 ];
