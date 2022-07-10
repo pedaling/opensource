@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
@@ -11,20 +11,18 @@ import { withVerificationCodeFieldVariation } from './VerificationCodeFieldProps
 export const VerificationCodeField = withVerificationCodeFieldVariation(
   ({ length, state, errorMessage, ...restProps }) => {
     const [code, setCode] = useState<string[]>([]);
-    const [focusIndex, setFocusIndex] = useState<number>(-1);
-    const inputIdRef = useRef(uuid());
+    const [focusIndex, setFocusIndex] = useState(-1);
+    const inputId = useMemo(() => uuid(), []);
 
     const splitIndex = Math.ceil(length / 2);
 
     return (
       <Box {...restProps}>
-        <Box
-          base={Input}
-          id={inputIdRef.current}
+        <Input
+          id={inputId}
           position="absolute"
           width={0}
           height={0}
-          opacity={0}
           allowPattern={/\d/}
           maxLength={length}
           onFocus={() => setFocusIndex(Math.min(length - 1, code.length))}
@@ -46,7 +44,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
               {Array.from({ length: splitIndex }).map((_, index) => (
                 <VerificationCodeItem
                   key={index}
-                  inputId={inputIdRef.current}
+                  inputId={inputId}
                   value={code[index]}
                   state={state}
                   active={focusIndex === index}
@@ -57,7 +55,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
               {Array.from({ length: length - splitIndex }).map((_, index) => (
                 <VerificationCodeItem
                   key={index + splitIndex}
-                  inputId={inputIdRef.current}
+                  inputId={inputId}
                   value={code[index + splitIndex]}
                   state={state}
                   active={focusIndex === index + splitIndex}
