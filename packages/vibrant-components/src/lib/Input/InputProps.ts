@@ -1,8 +1,10 @@
 import type { RefObject } from 'react';
+import type { DisplayProps, SizingProps, PositionProps, BorderProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type InputProps = {
   ref?: RefObject<HTMLInputElement>;
+  id?: string;
   allowPattern?: RegExp;
   defaultValue?: string;
   placeholder?: string;
@@ -14,7 +16,10 @@ export type InputProps = {
   onBlur?: () => void;
   onKeyDown?: (_: { key: string; prevent: () => void }) => void;
   onValueChange?: (_: string) => void;
-};
+} & BorderProps &
+  DisplayProps &
+  PositionProps &
+  SizingProps;
 
 export const withInputVariation = withVariation<InputProps>()(
   propVariant({

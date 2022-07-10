@@ -59,6 +59,9 @@ export const Input = withInputVariation(
         onKeyDown?.({ key: event.key, prevent: () => event.preventDefault() });
       }}
       onChange={event => onValueChange?.(event.target.value)}
+      borderWidth={0}
+      borderRadius={0}
+      p={0}
       {...restProps}
     />
   )

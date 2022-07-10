@@ -91,4 +91,5 @@ export type FlexboxProps = {
   >;
   order?: ResponsiveValue<number>;
   rowGap?: ResponsiveValue<number>;
+  columnGap?: ResponsiveValue<number>;
 };
