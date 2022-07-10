@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tab /> when Tab rendered match snapshot 1`] = `
+.emotion-0 {
+  border-width: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  position: relative;
+  cursor: pointer;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  background-color: inherit;
+}
+
+.emotion-1 {
+  font-family: Pretendard;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  color: #7C7C7C;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-1 {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
+<div>
+  <button
+    class="emotion-0"
+    data-testid="tab"
+  >
+    <span
+      class="emotion-1"
+    >
+      tab1
+    </span>
+  </button>
+</div>
+`;
