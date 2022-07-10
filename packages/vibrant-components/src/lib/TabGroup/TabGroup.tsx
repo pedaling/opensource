@@ -17,7 +17,7 @@ export const TabGroup = withTabGroupVariation(({ tabFlex, overflowX, tabId, onTa
 
   return (
     <VStack>
-      <HStack overflowX={overflowX} hideScroll={true} mb={-1} px={[20, 0]} {...restProps}>
+      <HStack overflowX={overflowX} hideScroll={true} mb={-1} px={[20, 20, 0]} {...restProps}>
         {tabElements.map((element, index) => (
           <HStack
             mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}

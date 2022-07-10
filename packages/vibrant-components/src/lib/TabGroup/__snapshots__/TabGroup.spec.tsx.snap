@@ -32,7 +32,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   display: none;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
   .emotion-1 {
     padding-left: 0;
     padding-right: 0;
