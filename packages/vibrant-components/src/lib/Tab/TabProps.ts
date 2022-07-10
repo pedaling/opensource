@@ -13,7 +13,7 @@ export type TabProps = {
   display?: ResponsiveValue<'flex' | 'none'>;
 };
 
-export const withTab2Variation = withVariation<TabProps>()(
+export const withTabVariation = withVariation<TabProps>()(
   propVariant({
     props: [
       {

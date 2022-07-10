@@ -2,9 +2,9 @@ import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { NotificationBadge } from '../NotificationBadge';
 import { Title } from '../Title';
-import { withTab2Variation } from './TabProps';
+import { withTabVariation } from './TabProps';
 
-export const Tab = withTab2Variation(
+export const Tab = withTabVariation(
   ({ innerRef, title, borderBottomColor, textColor, update, description, id, onClick, ...restProps }) => (
     <Box
       as="button"
