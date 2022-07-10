@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { Box } from '@vibrant-ui/core';
+import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { Input } from '../Input';
-import { Text } from '../Text';
 import { VerificationCodeItem } from '../VerificationCodeItem';
 import { VStack } from '../VStack';
 import { withVerificationCodeFieldVariation } from './VerificationCodeFieldProps';
@@ -66,9 +66,9 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
             </HStack>
           </HStack>
           {state === 'error' && errorMessage && (
-            <Text kind="body4" color="error">
+            <Body level={4} color="error">
               {errorMessage}
-            </Text>
+            </Body>
           )}
         </VStack>
       </Box>
