@@ -4,26 +4,11 @@ import { VerificationCodeItem } from './VerificationCodeItem';
 export default {
   title: 'VerificationCodeItem',
   component: VerificationCodeItem,
-  argTypes: {
-    inputId: {
-      defaultValue: 'input',
-      control: 'text',
-    },
-    value: {
-      defaultValue: '1',
-      control: 'text',
-    },
-    state: {
-      defaultValue: 'default',
-      control: {
-        type: 'radio',
-        options: ['default', 'error'],
-      },
-    },
-    active: {
-      defaultValue: false,
-      control: 'boolean',
-    },
+  args: {
+    inputId: 'input',
+    value: '1',
+    state: 'default',
+    active: false,
   },
 } as ComponentMeta<typeof VerificationCodeItem>;
 
