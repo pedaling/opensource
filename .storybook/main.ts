@@ -52,7 +52,12 @@ const config: StorybookViteConfig & { previewHead?: (head: string) => string } =
           ) {
             return false;
           }
-          prop.type.value = filteredValue;
+
+          if (filteredValue[0]?.value === 'false' && filteredValue[1]?.value === 'true') {
+            prop.type.name = 'boolean';
+          } else {
+            prop.type.value = filteredValue;
+          }
         }
 
         return true;
