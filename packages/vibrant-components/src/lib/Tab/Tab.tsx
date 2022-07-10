@@ -8,6 +8,7 @@ export const Tab = withTab2Variation(
   ({ innerRef, title, borderBottomColor, textColor, update, description, id, onClick, ...restProps }) => (
     <Box
       as="button"
+      borderWidth={0}
       ref={innerRef}
       flexShrink={0}
       flexGrow={1}
@@ -22,6 +23,7 @@ export const Tab = withTab2Variation(
       onClick={() => onClick?.(id)}
       pt={12}
       pb={10}
+      backgroundColor="inherit"
       {...restProps}
     >
       <Title level={[6, 6, 5]} weight="bold" color={textColor}>

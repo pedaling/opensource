@@ -2,6 +2,7 @@
 
 exports[`<Tab /> when Tab rendered match snapshot 1`] = `
 .emotion-0 {
+  border-width: 0;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -28,6 +29,7 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   align-items: center;
   padding-top: 12px;
   padding-bottom: 10px;
+  background-color: inherit;
 }
 
 .emotion-1 {
