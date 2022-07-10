@@ -1,5 +1,5 @@
 import type { ForwardedRef } from 'react';
-import type { ResponsiveValue } from '@vibrant-ui/core';
+import type { DisplayProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type TabProps = {
@@ -10,8 +10,7 @@ export type TabProps = {
   description?: string;
   onClick?: (id: string) => void;
   ref?: ForwardedRef<HTMLButtonElement>;
-  hidden?: ResponsiveValue<boolean>;
-};
+} & Pick<DisplayProps, 'hidden'>;
 
 export const withTabVariation = withVariation<TabProps>()(
   propVariant({
