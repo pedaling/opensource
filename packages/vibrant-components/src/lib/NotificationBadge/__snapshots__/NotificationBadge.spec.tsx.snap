@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotificationBadge /> when NotificationBadge with dot rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #E10923;
+  white-space: nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 4px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="notificationBadge"
+  />
+</div>
+`;
+
+exports[`<NotificationBadge /> when NotificationBadge with number rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #E10923;
+  white-space: nowrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  padding-bottom: 0.5px;
+}
+
+.emotion-1 {
+  font-family: Pretendard;
+  font-size: 0.625rem;
+  font-weight: 500;
+  line-height: 0.75rem;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="notificationBadge"
+  >
+    <span
+      class="emotion-1"
+    >
+      5
+    </span>
+  </div>
+</div>
+`;

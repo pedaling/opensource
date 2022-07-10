@@ -11,4 +11,5 @@ export type TypographyProps = {
   letterSpacing?: ResponsiveValue<string | number>;
   textAlign?: ResponsiveValue<'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start'>;
   textTransform?: ResponsiveValue<'capitalize' | 'full-size-kana' | 'full-width' | 'lowercase' | 'none' | 'uppercase'>;
+  whiteSpace?: ResponsiveValue<'normal' | 'nowrap' | 'pre-line' | 'pre-wrap' | 'break-spaces' | 'pre'>;
 };

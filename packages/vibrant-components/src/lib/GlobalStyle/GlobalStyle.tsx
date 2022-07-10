@@ -78,6 +78,13 @@ const resetCSS = css`
   th {
     padding: 0;
   }
+
+  button {
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background-color: inherit;
+  }
 `;
 
 export const GlobalStyle = () => <Global styles={resetCSS} />;
