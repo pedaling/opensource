@@ -26,9 +26,12 @@ describe('<VerificationCodeField />', () => {
         await waitFor(() => userEvent.type(renderer.getByRole('textbox'), value));
       });
 
-      it('each character should be content of label', async () => {
-        labelElements.map((labelElement, index) => expect(labelElement.textContent).toStrictEqual(value[index]));
-      });
+      it.each(value.split('').map((expected, index) => ({ index, expected })))(
+        "'$expected' should be content of labelElements[$index]",
+        ({ index, expected }) => {
+          expect(labelElements[index].textContent).toStrictEqual(expected);
+        }
+      );
     });
   });
 });
