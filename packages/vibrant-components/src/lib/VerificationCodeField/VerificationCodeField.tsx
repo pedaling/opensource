@@ -40,7 +40,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
             }
           }}
         />
-        <VStack display="inline-flex" alignment="center" spacing={8}>
+        <VStack alignment="center" spacing={8}>
           <HStack justifyItems="center" flexWrap="wrap" rowGap={12} columnGap={8}>
             <HStack flex={1} alignment="center" spacing={8}>
               {Array.from({ length: splitIndex }).map((_, index) => (
