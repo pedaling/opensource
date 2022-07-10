@@ -37,7 +37,7 @@ export const Tab = withTabVariation(
         </Box>
       )}
       {update && (
-        <Box mt={2} ml={4} height="100%" display="flex" alignSelf="flex-start">
+        <Box mt={2} ml={4} display="flex" alignSelf="flex-start">
           <NotificationBadge kind="dot" size="sm" />
         </Box>
       )}
