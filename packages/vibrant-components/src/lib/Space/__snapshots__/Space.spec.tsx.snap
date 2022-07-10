@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Space /> when Space rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 20px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="space"
+  />
+</div>
+`;
+
+exports[`<Space /> when hidden Space rendered match snapshot 1`] = `
+.emotion-0 {
+  display: none;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="space"
+  />
+</div>
+`;
