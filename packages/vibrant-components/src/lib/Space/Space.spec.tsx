@@ -26,7 +26,7 @@ describe('<Space />', () => {
 
   describe('when hidden Space rendered', () => {
     beforeEach(() => {
-      renderer = render(<Space data-testid="space" visible={false} />);
+      renderer = render(<Space data-testid="space" hidden={true} />);
 
       element = renderer.getByTestId('space');
     });

@@ -2,11 +2,11 @@
 
 exports[`<Space /> when Space rendered match snapshot 1`] = `
 .emotion-0 {
-  width: 20px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 20px;
 }
 
 <div>
