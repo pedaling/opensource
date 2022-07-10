@@ -54,6 +54,7 @@ const textTransformProp = createSystemProp({
 
 const whiteSpaceProp = createSystemProp({
   property: 'whiteSpace',
+  disabled: true,
 });
 
 export const typographyProps = [
