@@ -47,7 +47,9 @@ export const Input = withInputVariation(
 
         event.preventDefault();
 
-        onValueChange?.(event.currentTarget.value);
+        if (replacedValue.length !== 0) {
+          onValueChange?.(event.currentTarget.value);
+        }
       }}
       onFocus={() => onFocus?.()}
       onBlur={() => onBlur?.()}
@@ -63,7 +65,9 @@ export const Input = withInputVariation(
 
         event.currentTarget.value = replacedValue;
 
-        onValueChange?.(replacedValue);
+        if (!event.nativeEvent.data || replaceValue(event.nativeEvent.data ?? '').length !== 0) {
+          onValueChange?.(replacedValue);
+        }
       }}
       borderWidth={0}
       borderRadius={0}
