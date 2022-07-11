@@ -15,6 +15,7 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId
     textAlign="center"
     borderWidth={1}
     borderStyle="solid"
+    borderRadius={2}
     cursor="text"
     htmlFor={inputId}
     onMouseDown={event => {
