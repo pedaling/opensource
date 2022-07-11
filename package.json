@@ -12,7 +12,7 @@
     "storybook": "nx storybook",
     "generate-icons": "nx generate-icons",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=63f8b1f25b70"
+    "chromatic": "npx chromatic"
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
