@@ -58,7 +58,13 @@ export const Input = withInputVariation(
 
         onKeyDown?.({ key: event.key, prevent: () => event.preventDefault() });
       }}
-      onChange={event => onValueChange?.(event.target.value)}
+      onInput={(event: SyntheticEvent<HTMLInputElement, InputEvent>) => {
+        const replacedValue = replaceValue(event.currentTarget.value);
+
+        event.currentTarget.value = replacedValue;
+
+        onValueChange?.(replacedValue);
+      }}
       borderWidth={0}
       borderRadius={0}
       p={0}
