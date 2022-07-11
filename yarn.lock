@@ -3953,6 +3953,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-jest@npm:6.5.9":
+  version: 6.5.9
+  resolution: "@storybook/addon-jest@npm:6.5.9"
+  dependencies:
+    "@storybook/addons": 6.5.9
+    "@storybook/api": 6.5.9
+    "@storybook/client-logger": 6.5.9
+    "@storybook/components": 6.5.9
+    "@storybook/core-events": 6.5.9
+    "@storybook/theming": 6.5.9
+    core-js: ^3.8.2
+    global: ^4.4.0
+    react-sizeme: ^3.0.1
+    regenerator-runtime: ^0.13.7
+    upath: ^1.2.0
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 17b32eda9ddc14e78be5abd25be5c50e4cbe05b23acece42e3e1ed749c1cd4bb8c51f62ec4de775c3db86d7651f0737b632b726e3ba341bee52e71dd00bdc972
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-links@npm:6.5.9":
   version: 6.5.9
   resolution: "@storybook/addon-links@npm:6.5.9"
@@ -6179,7 +6206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-env@npm:^1.16.0":
+"@types/webpack-env@npm:^1.16.0, @types/webpack-env@npm:^1.17.0":
   version: 1.17.0
   resolution: "@types/webpack-env@npm:1.17.0"
   checksum: 9ad4d208c4429c9427191d1f4c92e4c43e530384c17a6bc298acb89003fc47fcde1d8372e50acefa3061e9100e57fd9d616e96def875afd06c0c2afe508f298e
@@ -8057,6 +8084,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"batch-processor@npm:1.0.0":
+  version: 1.0.0
+  resolution: "batch-processor@npm:1.0.0"
+  checksum: 5519b024f6cd0e95a543bb3edf0ae19e5badae0c32b30b41839b4469bbb1f91e14fc04bff3759cd9c2621aa9e16def48c938783e9027e7ec977fba62d537a468
+  languageName: node
+  linkType: hard
+
 "batch@npm:0.6.1":
   version: 0.6.1
   resolution: "batch@npm:0.6.1"
@@ -8893,6 +8927,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chromatic@npm:6.7.0":
+  version: 6.7.0
+  resolution: "chromatic@npm:6.7.0"
+  dependencies:
+    "@types/webpack-env": ^1.17.0
+  bin:
+    chroma: bin/main.cjs
+    chromatic: bin/main.cjs
+    chromatic-cli: bin/main.cjs
+  checksum: 0e5ebc9d8c4f4d54a0dd256f7c509b375d76bfec08a78ca5cb7a18cea04d8c88071768a7d108b21f620143f7381819d66c32b8cc3828f9a2a04c032e3a460b57
+  languageName: node
+  linkType: hard
+
 "chrome-trace-event@npm:^1.0.2":
   version: 1.0.3
   resolution: "chrome-trace-event@npm:1.0.3"
@@ -8973,6 +9020,7 @@ __metadata:
     "@rollup/plugin-node-resolve": 13.3.0
     "@storybook/addon-actions": 6.5.9
     "@storybook/addon-controls": 6.5.9
+    "@storybook/addon-jest": 6.5.9
     "@storybook/addon-links": 6.5.9
     "@storybook/addon-measure": 6.5.9
     "@storybook/addon-toolbars": 6.5.9
@@ -9001,6 +9049,7 @@ __metadata:
     "@typescript-eslint/parser": 5.28.0
     babel-jest: 27.5.1
     babel-plugin-react-native-web: 0.18.1
+    chromatic: 6.7.0
     clsx: 1.1.1
     core-js: 3.6.5
     eslint: 8.17.0
@@ -10863,6 +10912,15 @@ __metadata:
   version: 1.4.160
   resolution: "electron-to-chromium@npm:1.4.160"
   checksum: cd1058ddf8c4d1a38d2826938f9e99945bb45f96ea5eca5af96a2df4a40f23eec19e187cda739b4438174352129bcb733950f366a494d0a923385a46868a0d38
+  languageName: node
+  linkType: hard
+
+"element-resize-detector@npm:^1.2.2":
+  version: 1.2.4
+  resolution: "element-resize-detector@npm:1.2.4"
+  dependencies:
+    batch-processor: 1.0.0
+  checksum: 81c47b7e229c303889d3a9d78ec3f3232e88a6682f1e2424fb0632d9b4f503b2ca011e6954321060604da07749a5a972b6a175fdf6c6806093a3b80a304cde7b
   languageName: node
   linkType: hard
 
@@ -20688,6 +20746,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-sizeme@npm:^3.0.1":
+  version: 3.0.2
+  resolution: "react-sizeme@npm:3.0.2"
+  dependencies:
+    element-resize-detector: ^1.2.2
+    invariant: ^2.2.4
+    shallowequal: ^1.1.0
+    throttle-debounce: ^3.0.1
+  checksum: 97cb852c24bbd50acb310da89df564e0d069415f6635676dae3d3bdc583ece88090c0f2ee88a6b0dc36d2793af4a11e83bf6bbb41b86225dd0cf338e8f7e8552
+  languageName: node
+  linkType: hard
+
 "react-syntax-highlighter@npm:^15.4.5":
   version: 15.5.0
   resolution: "react-syntax-highlighter@npm:15.5.0"
@@ -23404,6 +23474,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"throttle-debounce@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "throttle-debounce@npm:3.0.1"
+  checksum: e34ef638e8df3a9154249101b68afcbf2652a139c803415ef8a2f6a8bc577bcd4d79e4bb914ad3cd206523ac78b9fb7e80885bfa049f64fbb1927f99d98b5736
+  languageName: node
+  linkType: hard
+
 "through2@npm:^2.0.0, through2@npm:^2.0.1":
   version: 2.0.5
   resolution: "through2@npm:2.0.5"
@@ -24258,7 +24335,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"upath@npm:^1.1.1":
+"upath@npm:^1.1.1, upath@npm:^1.2.0":
   version: 1.2.0
   resolution: "upath@npm:1.2.0"
   checksum: 4c05c094797cb733193a0784774dbea5b1889d502fc9f0572164177e185e4a59ba7099bf0b0adf945b232e2ac60363f9bf18aac9b2206fb99cbef971a8455445

@@ -17,6 +17,7 @@ jobs:
         yarn nx affected --target=lint --parallel=3
         yarn nx affected --target=test --parallel=3 --ci --code-coverage
         yarn nx affected --target=build --parallel=3
+        yarn chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}
 
   agents:
     name: Nx Cloud - Agents
