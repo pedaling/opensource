@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  main:
+  nx_workflow:
     name: Nx Cloud - Main Job
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.4
     with:
@@ -17,9 +17,28 @@ jobs:
         yarn nx affected --target=lint --parallel=3
         yarn nx affected --target=test --parallel=3 --ci --code-coverage
         yarn nx affected --target=build --parallel=3
+        yarn chromatic
 
   agents:
     name: Nx Cloud - Agents
     uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.4
     with:
       number-of-agents: 3
+
+  chromatic:
+    needs: nx_workflow
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: yarn
+      - name: Publish to Chromatic
+        if: github.ref != 'refs/heads/main'
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+      - name: Publish to Chromatic and auto accept changes
+        if: github.ref == 'refs/heads/main'
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+          autoAcceptChanges: true

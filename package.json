@@ -10,7 +10,9 @@
     "lint:all": "nx workspace-lint && nx run-many --target=lint --all",
     "lint:all:fix": "nx workspace-lint && nx run-many --target=lint --all --fix",
     "storybook": "nx storybook",
-    "generate-icons": "nx generate-icons"
+    "generate-icons": "nx generate-icons",
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=63f8b1f25b70"
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
@@ -33,6 +35,7 @@
     "@rollup/plugin-node-resolve": "13.3.0",
     "@storybook/addon-actions": "6.5.9",
     "@storybook/addon-controls": "6.5.9",
+    "@storybook/addon-jest": "6.5.9",
     "@storybook/addon-links": "6.5.9",
     "@storybook/addon-measure": "6.5.9",
     "@storybook/addon-toolbars": "6.5.9",
@@ -61,6 +64,7 @@
     "@typescript-eslint/parser": "5.28.0",
     "babel-jest": "27.5.1",
     "babel-plugin-react-native-web": "0.18.1",
+    "chromatic": "6.7.0",
     "eslint": "8.17.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "17.0.0",
@@ -104,5 +108,7 @@
     "regenerator-runtime": "0.13.7",
     "tslib": "2.3.0",
     "uuid": "8.3.2"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "class101@0.0.0"
 }

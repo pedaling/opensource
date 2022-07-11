@@ -6,8 +6,14 @@ import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
 
+const storybookLibraries = ['vibrant-core', 'vibrant-components', 'vibrant-icons'];
+
 const config: StorybookViteConfig & { previewHead?: (head: string) => string } = {
-  stories: [],
+  stories: storybookLibraries.map(name => ({
+    directory: `../packages/${name}`,
+    files: '**/*.stories.tsx',
+    titlePrefix: name,
+  })),
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-controls',
