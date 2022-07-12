@@ -7,19 +7,41 @@ const pseudoHoverProp = createSystemProp({
       '&:hover': value,
     },
   }),
-  shouldInterpolation: true,
+  shouldInterpolation: 'before',
 });
 
 const pseudoFocusProp = createSystemProp({
   property: 'pseudoFocus',
   styleProperty: '&:focus',
-  shouldInterpolation: true,
+  shouldInterpolation: 'before',
 });
 
 const pseudoActiveProp = createSystemProp({
   property: 'pseudoActive',
   styleProperty: '&:active',
-  shouldInterpolation: true,
+  shouldInterpolation: 'before',
 });
 
-export const pseudoClassProps = [pseudoHoverProp, pseudoFocusProp, pseudoActiveProp];
+const pseudoBeforeProp = createSystemProp({
+  property: 'pseudoBefore',
+  transform: value => ({
+    '&::before': {
+      content: '""',
+      ...value,
+    },
+  }),
+  shouldInterpolation: 'before',
+});
+
+const pseudoAfterProp = createSystemProp({
+  property: 'pseudoAfter',
+  transform: value => ({
+    '&::after': {
+      content: '""',
+      ...value,
+    },
+  }),
+  shouldInterpolation: 'before',
+});
+
+export const pseudoClassProps = [pseudoHoverProp, pseudoFocusProp, pseudoActiveProp, pseudoBeforeProp, pseudoAfterProp];

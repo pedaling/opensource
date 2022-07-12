@@ -7,7 +7,7 @@ export type SystemPropConfig = {
   property: string;
   styleProperty?: string;
   scale?: SystemPropThemeScale;
-  shouldInterpolation?: boolean;
+  shouldInterpolation?: 'before' | 'after' | false;
   disabled?: boolean;
   transform?: (value: any) => Record<string, any> | undefined;
 };

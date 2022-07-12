@@ -1,10 +1,8 @@
 import type { CurrentTheme } from '@vibrant-ui/theme';
-import { isDefined } from '@vibrant-ui/utils';
+import { isDefined, isRecord } from '@vibrant-ui/utils';
 import { buildStyle } from '../buildStyle';
 import type { SystemProp } from '../createSystemProp';
 import { useCurrentTheme } from '../ThemeProvider';
-
-const isObject = (obj: any) => typeof obj === 'object' && obj !== null;
 
 export const createInterpolation = (systemProps: SystemProp[]) => {
   const cache: Record<string, SystemProp | null> = {};
@@ -14,7 +12,7 @@ export const createInterpolation = (systemProps: SystemProp[]) => {
   const childInterpolation = (props: Record<string, any>, theme: CurrentTheme): Record<string, any>[] => {
     let result: Record<string, any>[] = [];
 
-    if (!isObject(props)) {
+    if (!isRecord(props)) {
       return [props];
     }
 
