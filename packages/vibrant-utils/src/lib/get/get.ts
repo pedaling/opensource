@@ -1,4 +1,4 @@
-export const get = (obj: Record<string, any>, path: string, defaultValue = undefined): any => {
+export const get = (obj: Record<string, any>, path: string, defaultValue?: any): any => {
   const travel = (regexp: RegExp) =>
     String.prototype.split
       .call(path, regexp)
