@@ -6,7 +6,7 @@ const typographyProp = createSystemProp({
   transform: value => ({
     ...value,
   }),
-  shouldInterpolation: true,
+  shouldInterpolation: 'after',
 });
 
 const fontFamilyProp = createSystemProp({
