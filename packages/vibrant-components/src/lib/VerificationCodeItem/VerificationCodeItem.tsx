@@ -9,6 +9,7 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId
     justifyContent="center"
     width={44}
     height={60}
+    color="onColor"
     typography="title1"
     fontWeight="extraBold"
     textAlign="center"
