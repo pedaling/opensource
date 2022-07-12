@@ -6,6 +6,7 @@ exports[`<Title /> when Title with level 3 rendered match snapshot 1`] = `
   font-size: 1.625rem;
   font-weight: 700;
   line-height: 2.25rem;
+  color: #101010;
 }
 
 <div>

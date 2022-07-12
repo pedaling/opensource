@@ -6,6 +6,7 @@ exports[`<Display /> when Display with level 3 rendered match snapshot 1`] = `
   font-size: 3rem;
   font-weight: 800;
   line-height: 3.75rem;
+  color: #101010;
 }
 
 <div>
