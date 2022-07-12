@@ -190,4 +190,27 @@ describe('createSystemProp', () => {
       });
     });
   });
+
+  describe('when value starts with $', () => {
+    beforeEach(() => {
+      currentTheme = {
+        colors: {
+          onView1: 'black',
+          onColor: '$colors.onView1',
+        },
+        opacity: {},
+        typography: {},
+        typographyWeight: {},
+      };
+
+      systemProp = createSystemProp({
+        property: 'color',
+        scale: 'colors',
+      });
+    });
+
+    it('should convert to theme value', () => {
+      expect(systemProp('onColor', currentTheme)).toStrictEqual([{ color: currentTheme.colors.onView1 }]);
+    });
+  });
 });
