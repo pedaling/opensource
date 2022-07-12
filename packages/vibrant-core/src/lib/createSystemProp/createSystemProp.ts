@@ -24,11 +24,20 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
             result = get(theme, result.replace('$', ''), result);
           }
 
-          if (shouldInterpolation && typeof result === 'object' && result !== null) {
+          if (shouldInterpolation === 'before' && typeof result === 'object' && result !== null) {
+            result = interpolation(result) ?? result;
+          }
+          if (isDefined(transform)) {
+            result = transform(result) ?? {};
+          } else {
+            result = { [targetProperty]: result };
+          }
+
+          if (shouldInterpolation === 'after' && typeof result === 'object' && result !== null) {
             result = interpolation(result);
           }
 
-          return isDefined(transform) ? transform(result) ?? {} : { [targetProperty]: result };
+          return result;
         });
       };
 

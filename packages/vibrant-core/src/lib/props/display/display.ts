@@ -10,6 +10,7 @@ const visibilityProp = createSystemProp({
 
 const opacityProp = createSystemProp({
   property: 'opacity',
+  scale: 'opacity',
 });
 
 const hiddenProp = createSystemProp({

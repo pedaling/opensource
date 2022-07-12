@@ -161,7 +161,7 @@ describe('createSystemProp', () => {
     });
   });
 
-  describe('when shouldInterpolation is true', () => {
+  describe('when shouldInterpolation is before', () => {
     let mockInterpolation: (props: any) => any;
 
     beforeEach(() => {
@@ -170,7 +170,7 @@ describe('createSystemProp', () => {
       systemProp = createSystemProp({
         property: 'pseudoHover',
         styleProperty: '&:hover',
-        shouldInterpolation: true,
+        shouldInterpolation: 'before',
       });
     });
 
@@ -181,12 +181,42 @@ describe('createSystemProp', () => {
         result = systemProp({ backgroundColor: 'white' }, currentTheme, mockInterpolation);
       });
 
-      it('interpolation called', () => {
-        expect(mockInterpolation).toBeCalled();
+      it('interpolation called with backgroundColor', () => {
+        expect(mockInterpolation).toBeCalledWith({ backgroundColor: 'white' });
       });
 
       it('set style in &:hover', () => {
         expect(result).toStrictEqual([{ '&:hover': { backgroundColor: 'white' } }]);
+      });
+    });
+  });
+
+  describe('when shouldInterpolation is after', () => {
+    let mockInterpolation: (props: any) => any;
+
+    beforeEach(() => {
+      mockInterpolation = jest.fn(props => props);
+
+      systemProp = createSystemProp({
+        property: 'redBackground',
+        transform: value => (value ? { backgroundColor: 'red' } : {}),
+        shouldInterpolation: 'after',
+      });
+    });
+
+    describe('when use object value', () => {
+      let result: any;
+
+      beforeEach(() => {
+        result = systemProp({ redBackground: true }, currentTheme, mockInterpolation);
+      });
+
+      it('interpolation called with backgroundColor', () => {
+        expect(mockInterpolation).toBeCalledWith({ backgroundColor: 'red' });
+      });
+
+      it('style is background', () => {
+        expect(result).toStrictEqual([{ backgroundColor: 'red' }]);
       });
     });
   });

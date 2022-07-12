@@ -34,7 +34,7 @@ const pseudoHoverProp = createSystemProp({
   transform: value => ({
     '&:hover': value,
   }),
-  shouldInterpolation: true,
+  shouldInterpolation: 'before',
 });
 
 describe('createInterpolation', () => {
