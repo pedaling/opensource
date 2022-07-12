@@ -17,8 +17,12 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
 
         const targetProperty = styleProperty ?? property;
 
-        const styleObjects = [input].flat().map(value => {
+        return [input].flat().map(value => {
           let result = get(theme, `${scale}.${value}`, value);
+
+          if (typeof result === 'string' && result.startsWith('$')) {
+            result = get(theme, result.replace('$', ''), result);
+          }
 
           if (shouldInterpolation && typeof result === 'object' && result !== null) {
             result = interpolation(result);
@@ -26,8 +30,6 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
 
           return isDefined(transform) ? transform(result) ?? {} : { [targetProperty]: result };
         });
-
-        return styleObjects;
       };
 
       return style();

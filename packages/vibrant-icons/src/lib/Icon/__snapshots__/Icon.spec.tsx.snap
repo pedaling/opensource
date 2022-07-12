@@ -17,7 +17,7 @@ exports[`<Icon /> when Add.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -55,7 +55,7 @@ exports[`<Icon /> when Add.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -93,7 +93,7 @@ exports[`<Icon /> when Add.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -131,7 +131,7 @@ exports[`<Icon /> when AddCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -169,7 +169,7 @@ exports[`<Icon /> when AddCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -211,7 +211,7 @@ exports[`<Icon /> when AddCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -253,7 +253,7 @@ exports[`<Icon /> when Alert.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -291,7 +291,7 @@ exports[`<Icon /> when Alert.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -333,7 +333,7 @@ exports[`<Icon /> when Alert.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -375,7 +375,7 @@ exports[`<Icon /> when AlertCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -413,7 +413,7 @@ exports[`<Icon /> when AlertCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -455,7 +455,7 @@ exports[`<Icon /> when AlertCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -497,7 +497,7 @@ exports[`<Icon /> when Analysis.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -535,7 +535,7 @@ exports[`<Icon /> when Analysis.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -573,7 +573,7 @@ exports[`<Icon /> when Analysis.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -611,7 +611,7 @@ exports[`<Icon /> when AppDownloadCircle.Fill Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -649,7 +649,7 @@ exports[`<Icon /> when AppDownloadCircle.Regular Icon rendered match snapshot 1`
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -691,7 +691,7 @@ exports[`<Icon /> when AppDownloadCircle.Thin Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -737,7 +737,7 @@ exports[`<Icon /> when AppleCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -775,7 +775,7 @@ exports[`<Icon /> when AppleCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -819,7 +819,7 @@ exports[`<Icon /> when AppleCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -863,7 +863,7 @@ exports[`<Icon /> when Archive.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -901,7 +901,7 @@ exports[`<Icon /> when Archive.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -943,7 +943,7 @@ exports[`<Icon /> when Archive.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -985,7 +985,7 @@ exports[`<Icon /> when ArrowDown.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1023,7 +1023,7 @@ exports[`<Icon /> when ArrowDown.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1061,7 +1061,7 @@ exports[`<Icon /> when ArrowDown.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1099,7 +1099,7 @@ exports[`<Icon /> when ArrowDownToLine.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1137,7 +1137,7 @@ exports[`<Icon /> when ArrowDownToLine.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1175,7 +1175,7 @@ exports[`<Icon /> when ArrowDownToLine.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1213,7 +1213,7 @@ exports[`<Icon /> when ArrowLeft.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1251,7 +1251,7 @@ exports[`<Icon /> when ArrowLeft.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1289,7 +1289,7 @@ exports[`<Icon /> when ArrowLeft.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1327,7 +1327,7 @@ exports[`<Icon /> when ArrowLeftToLine.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1365,7 +1365,7 @@ exports[`<Icon /> when ArrowLeftToLine.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1403,7 +1403,7 @@ exports[`<Icon /> when ArrowLeftToLine.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1441,7 +1441,7 @@ exports[`<Icon /> when ArrowRight.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1479,7 +1479,7 @@ exports[`<Icon /> when ArrowRight.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1517,7 +1517,7 @@ exports[`<Icon /> when ArrowRight.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1555,7 +1555,7 @@ exports[`<Icon /> when ArrowRightToLine.Fill Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1593,7 +1593,7 @@ exports[`<Icon /> when ArrowRightToLine.Regular Icon rendered match snapshot 1`]
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1631,7 +1631,7 @@ exports[`<Icon /> when ArrowRightToLine.Thin Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1669,7 +1669,7 @@ exports[`<Icon /> when ArrowTriangleDown.Fill Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1707,7 +1707,7 @@ exports[`<Icon /> when ArrowTriangleDown.Regular Icon rendered match snapshot 1`
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1745,7 +1745,7 @@ exports[`<Icon /> when ArrowTriangleDown.Thin Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1783,7 +1783,7 @@ exports[`<Icon /> when ArrowTriangleUp.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1821,7 +1821,7 @@ exports[`<Icon /> when ArrowTriangleUp.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1859,7 +1859,7 @@ exports[`<Icon /> when ArrowTriangleUp.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1897,7 +1897,7 @@ exports[`<Icon /> when ArrowUp.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1935,7 +1935,7 @@ exports[`<Icon /> when ArrowUp.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -1973,7 +1973,7 @@ exports[`<Icon /> when ArrowUp.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2011,7 +2011,7 @@ exports[`<Icon /> when ArrowUpToLine.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2049,7 +2049,7 @@ exports[`<Icon /> when ArrowUpToLine.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2087,7 +2087,7 @@ exports[`<Icon /> when ArrowUpToLine.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2125,7 +2125,7 @@ exports[`<Icon /> when Aspectratio.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2165,7 +2165,7 @@ exports[`<Icon /> when Aspectratio.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2205,7 +2205,7 @@ exports[`<Icon /> when Aspectratio.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2245,7 +2245,7 @@ exports[`<Icon /> when BCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2287,7 +2287,7 @@ exports[`<Icon /> when BCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2329,7 +2329,7 @@ exports[`<Icon /> when BCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2371,7 +2371,7 @@ exports[`<Icon /> when Badge.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2409,7 +2409,7 @@ exports[`<Icon /> when Badge.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2451,7 +2451,7 @@ exports[`<Icon /> when Badge.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2493,7 +2493,7 @@ exports[`<Icon /> when Bell.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2531,7 +2531,7 @@ exports[`<Icon /> when Bell.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2569,7 +2569,7 @@ exports[`<Icon /> when Bell.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2607,7 +2607,7 @@ exports[`<Icon /> when BellOff.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2645,7 +2645,7 @@ exports[`<Icon /> when BellOff.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2683,7 +2683,7 @@ exports[`<Icon /> when BellOff.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2721,7 +2721,7 @@ exports[`<Icon /> when Bold.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2759,7 +2759,7 @@ exports[`<Icon /> when Bold.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2797,7 +2797,7 @@ exports[`<Icon /> when Bold.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2835,7 +2835,7 @@ exports[`<Icon /> when Bookmark.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2873,7 +2873,7 @@ exports[`<Icon /> when Bookmark.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2911,7 +2911,7 @@ exports[`<Icon /> when Bookmark.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2949,7 +2949,7 @@ exports[`<Icon /> when Brightness.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -2987,7 +2987,7 @@ exports[`<Icon /> when Brightness.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3025,7 +3025,7 @@ exports[`<Icon /> when Brightness.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3063,7 +3063,7 @@ exports[`<Icon /> when Calendar.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3101,7 +3101,7 @@ exports[`<Icon /> when Calendar.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3143,7 +3143,7 @@ exports[`<Icon /> when Calendar.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3185,7 +3185,7 @@ exports[`<Icon /> when Camera.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3227,7 +3227,7 @@ exports[`<Icon /> when Camera.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3269,7 +3269,7 @@ exports[`<Icon /> when Camera.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3311,7 +3311,7 @@ exports[`<Icon /> when Caption.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3353,7 +3353,7 @@ exports[`<Icon /> when Caption.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3395,7 +3395,7 @@ exports[`<Icon /> when Caption.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3437,7 +3437,7 @@ exports[`<Icon /> when Cart.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3475,7 +3475,7 @@ exports[`<Icon /> when Cart.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3513,7 +3513,7 @@ exports[`<Icon /> when Cart.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3551,7 +3551,7 @@ exports[`<Icon /> when Check.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3589,7 +3589,7 @@ exports[`<Icon /> when Check.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3627,7 +3627,7 @@ exports[`<Icon /> when Check.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3665,7 +3665,7 @@ exports[`<Icon /> when CheckCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3703,7 +3703,7 @@ exports[`<Icon /> when CheckCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3745,7 +3745,7 @@ exports[`<Icon /> when CheckCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3787,7 +3787,7 @@ exports[`<Icon /> when CheckboxIndeterminated.Fill Icon rendered match snapshot 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3825,7 +3825,7 @@ exports[`<Icon /> when CheckboxIndeterminated.Regular Icon rendered match snapsh
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3863,7 +3863,7 @@ exports[`<Icon /> when CheckboxIndeterminated.Thin Icon rendered match snapshot 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3901,7 +3901,7 @@ exports[`<Icon /> when CheckboxOff.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3941,7 +3941,7 @@ exports[`<Icon /> when CheckboxOff.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -3981,7 +3981,7 @@ exports[`<Icon /> when CheckboxOff.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4021,7 +4021,7 @@ exports[`<Icon /> when CheckboxOn.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4061,7 +4061,7 @@ exports[`<Icon /> when CheckboxOn.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4101,7 +4101,7 @@ exports[`<Icon /> when CheckboxOn.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4141,7 +4141,7 @@ exports[`<Icon /> when ChevronDown.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4179,7 +4179,7 @@ exports[`<Icon /> when ChevronDown.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4217,7 +4217,7 @@ exports[`<Icon /> when ChevronDown.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4255,7 +4255,7 @@ exports[`<Icon /> when ChevronLeft.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4293,7 +4293,7 @@ exports[`<Icon /> when ChevronLeft.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4331,7 +4331,7 @@ exports[`<Icon /> when ChevronLeft.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4369,7 +4369,7 @@ exports[`<Icon /> when ChevronRight.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4407,7 +4407,7 @@ exports[`<Icon /> when ChevronRight.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4445,7 +4445,7 @@ exports[`<Icon /> when ChevronRight.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4483,7 +4483,7 @@ exports[`<Icon /> when ChevronUp.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4521,7 +4521,7 @@ exports[`<Icon /> when ChevronUp.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4559,7 +4559,7 @@ exports[`<Icon /> when ChevronUp.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4597,7 +4597,7 @@ exports[`<Icon /> when Clap.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4635,7 +4635,7 @@ exports[`<Icon /> when Clap.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4673,7 +4673,7 @@ exports[`<Icon /> when Clap.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4711,7 +4711,7 @@ exports[`<Icon /> when ClearStyle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4749,7 +4749,7 @@ exports[`<Icon /> when ClearStyle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4787,7 +4787,7 @@ exports[`<Icon /> when ClearStyle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4825,7 +4825,7 @@ exports[`<Icon /> when Clip.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4863,7 +4863,7 @@ exports[`<Icon /> when Clip.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4901,7 +4901,7 @@ exports[`<Icon /> when Clip.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4939,7 +4939,7 @@ exports[`<Icon /> when Clock.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -4977,7 +4977,7 @@ exports[`<Icon /> when Clock.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5019,7 +5019,7 @@ exports[`<Icon /> when Clock.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5061,7 +5061,7 @@ exports[`<Icon /> when Close.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5099,7 +5099,7 @@ exports[`<Icon /> when Close.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5137,7 +5137,7 @@ exports[`<Icon /> when Close.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5175,7 +5175,7 @@ exports[`<Icon /> when CloseCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5213,7 +5213,7 @@ exports[`<Icon /> when CloseCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5255,7 +5255,7 @@ exports[`<Icon /> when CloseCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5297,7 +5297,7 @@ exports[`<Icon /> when Comment.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5335,7 +5335,7 @@ exports[`<Icon /> when Comment.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5377,7 +5377,7 @@ exports[`<Icon /> when Comment.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5419,7 +5419,7 @@ exports[`<Icon /> when Compass.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5457,7 +5457,7 @@ exports[`<Icon /> when Compass.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5499,7 +5499,7 @@ exports[`<Icon /> when Compass.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5541,7 +5541,7 @@ exports[`<Icon /> when Confetti.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5589,7 +5589,7 @@ exports[`<Icon /> when Confetti.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5627,7 +5627,7 @@ exports[`<Icon /> when Confetti.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5675,7 +5675,7 @@ exports[`<Icon /> when Contents.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5713,7 +5713,7 @@ exports[`<Icon /> when Contents.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5755,7 +5755,7 @@ exports[`<Icon /> when Contents.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5797,7 +5797,7 @@ exports[`<Icon /> when Copy.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5839,7 +5839,7 @@ exports[`<Icon /> when Copy.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5881,7 +5881,7 @@ exports[`<Icon /> when Copy.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5923,7 +5923,7 @@ exports[`<Icon /> when Coupon.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5961,7 +5961,7 @@ exports[`<Icon /> when Coupon.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -5999,7 +5999,7 @@ exports[`<Icon /> when Coupon.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6037,7 +6037,7 @@ exports[`<Icon /> when CreditCard.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6075,7 +6075,7 @@ exports[`<Icon /> when CreditCard.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6113,7 +6113,7 @@ exports[`<Icon /> when CreditCard.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6151,7 +6151,7 @@ exports[`<Icon /> when Crop.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6189,7 +6189,7 @@ exports[`<Icon /> when Crop.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6227,7 +6227,7 @@ exports[`<Icon /> when Crop.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6265,7 +6265,7 @@ exports[`<Icon /> when Crown.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6303,7 +6303,7 @@ exports[`<Icon /> when Crown.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6341,7 +6341,7 @@ exports[`<Icon /> when Crown.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6379,7 +6379,7 @@ exports[`<Icon /> when CrownCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6419,7 +6419,7 @@ exports[`<Icon /> when CrownCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6463,7 +6463,7 @@ exports[`<Icon /> when CrownCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6507,7 +6507,7 @@ exports[`<Icon /> when DepositPassbook.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6545,7 +6545,7 @@ exports[`<Icon /> when DepositPassbook.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6583,7 +6583,7 @@ exports[`<Icon /> when DepositPassbook.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6621,7 +6621,7 @@ exports[`<Icon /> when Dislike.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6659,7 +6659,7 @@ exports[`<Icon /> when Dislike.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6697,7 +6697,7 @@ exports[`<Icon /> when Dislike.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6735,7 +6735,7 @@ exports[`<Icon /> when Divider.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6773,7 +6773,7 @@ exports[`<Icon /> when Divider.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6811,7 +6811,7 @@ exports[`<Icon /> when Divider.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6849,7 +6849,7 @@ exports[`<Icon /> when Download.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6891,7 +6891,7 @@ exports[`<Icon /> when Download.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6933,7 +6933,7 @@ exports[`<Icon /> when Download.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -6975,7 +6975,7 @@ exports[`<Icon /> when Edit.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7013,7 +7013,7 @@ exports[`<Icon /> when Edit.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7051,7 +7051,7 @@ exports[`<Icon /> when Edit.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7089,7 +7089,7 @@ exports[`<Icon /> when EyeOff.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7127,7 +7127,7 @@ exports[`<Icon /> when EyeOff.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7165,7 +7165,7 @@ exports[`<Icon /> when EyeOff.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7203,7 +7203,7 @@ exports[`<Icon /> when EyeOn.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7245,7 +7245,7 @@ exports[`<Icon /> when EyeOn.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7287,7 +7287,7 @@ exports[`<Icon /> when EyeOn.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7329,7 +7329,7 @@ exports[`<Icon /> when FacebookCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7367,7 +7367,7 @@ exports[`<Icon /> when FacebookCircle.Regular Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7411,7 +7411,7 @@ exports[`<Icon /> when FacebookCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7455,7 +7455,7 @@ exports[`<Icon /> when Filter.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7493,7 +7493,7 @@ exports[`<Icon /> when Filter.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7531,7 +7531,7 @@ exports[`<Icon /> when Filter.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7569,7 +7569,7 @@ exports[`<Icon /> when Flash.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7607,7 +7607,7 @@ exports[`<Icon /> when Flash.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7645,7 +7645,7 @@ exports[`<Icon /> when Flash.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7683,7 +7683,7 @@ exports[`<Icon /> when FlashAuto.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7721,7 +7721,7 @@ exports[`<Icon /> when FlashAuto.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7759,7 +7759,7 @@ exports[`<Icon /> when FlashAuto.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7797,7 +7797,7 @@ exports[`<Icon /> when FlashOff.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7835,7 +7835,7 @@ exports[`<Icon /> when FlashOff.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7873,7 +7873,7 @@ exports[`<Icon /> when FlashOff.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7911,7 +7911,7 @@ exports[`<Icon /> when FullScreen.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7949,7 +7949,7 @@ exports[`<Icon /> when FullScreen.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -7987,7 +7987,7 @@ exports[`<Icon /> when FullScreen.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8029,7 +8029,7 @@ exports[`<Icon /> when FullScreenExit.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8067,7 +8067,7 @@ exports[`<Icon /> when FullScreenExit.Regular Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8105,7 +8105,7 @@ exports[`<Icon /> when FullScreenExit.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8147,7 +8147,7 @@ exports[`<Icon /> when Gear.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8185,7 +8185,7 @@ exports[`<Icon /> when Gear.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8223,7 +8223,7 @@ exports[`<Icon /> when Gear.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8261,7 +8261,7 @@ exports[`<Icon /> when Gift.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8299,7 +8299,7 @@ exports[`<Icon /> when Gift.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8337,7 +8337,7 @@ exports[`<Icon /> when Gift.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8375,7 +8375,7 @@ exports[`<Icon /> when GridRectangle1x2.Fill Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8413,7 +8413,7 @@ exports[`<Icon /> when GridRectangle1x2.Regular Icon rendered match snapshot 1`]
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8453,7 +8453,7 @@ exports[`<Icon /> when GridRectangle1x2.Thin Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8493,7 +8493,7 @@ exports[`<Icon /> when GridSqaure2x2.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8531,7 +8531,7 @@ exports[`<Icon /> when GridSqaure2x2.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8569,7 +8569,7 @@ exports[`<Icon /> when GridSqaure2x2.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8607,7 +8607,7 @@ exports[`<Icon /> when Groove.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8645,7 +8645,7 @@ exports[`<Icon /> when Groove.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8683,7 +8683,7 @@ exports[`<Icon /> when Groove.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8721,7 +8721,7 @@ exports[`<Icon /> when Hashtag.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8759,7 +8759,7 @@ exports[`<Icon /> when Hashtag.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8797,7 +8797,7 @@ exports[`<Icon /> when Hashtag.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8835,7 +8835,7 @@ exports[`<Icon /> when Heart.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8873,7 +8873,7 @@ exports[`<Icon /> when Heart.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8911,7 +8911,7 @@ exports[`<Icon /> when Heart.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8949,7 +8949,7 @@ exports[`<Icon /> when HelpCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -8987,7 +8987,7 @@ exports[`<Icon /> when HelpCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9029,7 +9029,7 @@ exports[`<Icon /> when HelpCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9071,7 +9071,7 @@ exports[`<Icon /> when Home.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9109,7 +9109,7 @@ exports[`<Icon /> when Home.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9147,7 +9147,7 @@ exports[`<Icon /> when Home.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9185,7 +9185,7 @@ exports[`<Icon /> when Hot.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9223,7 +9223,7 @@ exports[`<Icon /> when Hot.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9265,7 +9265,7 @@ exports[`<Icon /> when Hot.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9307,7 +9307,7 @@ exports[`<Icon /> when InfoCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9345,7 +9345,7 @@ exports[`<Icon /> when InfoCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9387,7 +9387,7 @@ exports[`<Icon /> when InfoCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9429,7 +9429,7 @@ exports[`<Icon /> when InstagramCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9471,7 +9471,7 @@ exports[`<Icon /> when InstagramCircle.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9517,7 +9517,7 @@ exports[`<Icon /> when InstagramCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9563,7 +9563,7 @@ exports[`<Icon /> when Laptop.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9601,7 +9601,7 @@ exports[`<Icon /> when Laptop.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9639,7 +9639,7 @@ exports[`<Icon /> when Laptop.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9677,7 +9677,7 @@ exports[`<Icon /> when Like.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9715,7 +9715,7 @@ exports[`<Icon /> when Like.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9753,7 +9753,7 @@ exports[`<Icon /> when Like.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9791,7 +9791,7 @@ exports[`<Icon /> when Link.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9833,7 +9833,7 @@ exports[`<Icon /> when Link.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9875,7 +9875,7 @@ exports[`<Icon /> when Link.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9917,7 +9917,7 @@ exports[`<Icon /> when LinkOutside.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -9959,7 +9959,7 @@ exports[`<Icon /> when LinkOutside.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10001,7 +10001,7 @@ exports[`<Icon /> when LinkOutside.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10043,7 +10043,7 @@ exports[`<Icon /> when ListBullet.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10081,7 +10081,7 @@ exports[`<Icon /> when ListBullet.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10119,7 +10119,7 @@ exports[`<Icon /> when ListBullet.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10157,7 +10157,7 @@ exports[`<Icon /> when ListBulletBackward.Fill Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10195,7 +10195,7 @@ exports[`<Icon /> when ListBulletBackward.Regular Icon rendered match snapshot 1
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10233,7 +10233,7 @@ exports[`<Icon /> when ListBulletBackward.Thin Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10271,7 +10271,7 @@ exports[`<Icon /> when ListNumber.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10309,7 +10309,7 @@ exports[`<Icon /> when ListNumber.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10347,7 +10347,7 @@ exports[`<Icon /> when ListNumber.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10385,7 +10385,7 @@ exports[`<Icon /> when Location.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10423,7 +10423,7 @@ exports[`<Icon /> when Location.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10465,7 +10465,7 @@ exports[`<Icon /> when Location.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10507,7 +10507,7 @@ exports[`<Icon /> when LocationCurrent.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10545,7 +10545,7 @@ exports[`<Icon /> when LocationCurrent.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10583,7 +10583,7 @@ exports[`<Icon /> when LocationCurrent.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10621,7 +10621,7 @@ exports[`<Icon /> when Lock.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10659,7 +10659,7 @@ exports[`<Icon /> when Lock.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10701,7 +10701,7 @@ exports[`<Icon /> when Lock.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10743,7 +10743,7 @@ exports[`<Icon /> when LockOff.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10781,7 +10781,7 @@ exports[`<Icon /> when LockOff.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10823,7 +10823,7 @@ exports[`<Icon /> when LockOff.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10865,7 +10865,7 @@ exports[`<Icon /> when Logout.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10903,7 +10903,7 @@ exports[`<Icon /> when Logout.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10941,7 +10941,7 @@ exports[`<Icon /> when Logout.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -10979,7 +10979,7 @@ exports[`<Icon /> when Menu.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11017,7 +11017,7 @@ exports[`<Icon /> when Menu.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11055,7 +11055,7 @@ exports[`<Icon /> when Menu.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11093,7 +11093,7 @@ exports[`<Icon /> when Message.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11135,7 +11135,7 @@ exports[`<Icon /> when Message.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11173,7 +11173,7 @@ exports[`<Icon /> when Message.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11211,7 +11211,7 @@ exports[`<Icon /> when Mic.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11253,7 +11253,7 @@ exports[`<Icon /> when Mic.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11295,7 +11295,7 @@ exports[`<Icon /> when Mic.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11337,7 +11337,7 @@ exports[`<Icon /> when Minus.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11375,7 +11375,7 @@ exports[`<Icon /> when Minus.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11413,7 +11413,7 @@ exports[`<Icon /> when Minus.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11451,7 +11451,7 @@ exports[`<Icon /> when MinusCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11489,7 +11489,7 @@ exports[`<Icon /> when MinusCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11531,7 +11531,7 @@ exports[`<Icon /> when MinusCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11573,7 +11573,7 @@ exports[`<Icon /> when Mobile.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11611,7 +11611,7 @@ exports[`<Icon /> when Mobile.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11653,7 +11653,7 @@ exports[`<Icon /> when Mobile.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11695,7 +11695,7 @@ exports[`<Icon /> when Monitor.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11733,7 +11733,7 @@ exports[`<Icon /> when Monitor.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11771,7 +11771,7 @@ exports[`<Icon /> when Monitor.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11809,7 +11809,7 @@ exports[`<Icon /> when MoreHorizontal.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11847,7 +11847,7 @@ exports[`<Icon /> when MoreHorizontal.Regular Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11885,7 +11885,7 @@ exports[`<Icon /> when MoreHorizontal.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11923,7 +11923,7 @@ exports[`<Icon /> when MoreVertical.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11961,7 +11961,7 @@ exports[`<Icon /> when MoreVertical.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -11999,7 +11999,7 @@ exports[`<Icon /> when MoreVertical.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12037,7 +12037,7 @@ exports[`<Icon /> when NaverCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12075,7 +12075,7 @@ exports[`<Icon /> when NaverCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12117,7 +12117,7 @@ exports[`<Icon /> when NaverCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12159,7 +12159,7 @@ exports[`<Icon /> when Notice.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12197,7 +12197,7 @@ exports[`<Icon /> when Notice.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12235,7 +12235,7 @@ exports[`<Icon /> when Notice.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12273,7 +12273,7 @@ exports[`<Icon /> when Paper1.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12311,7 +12311,7 @@ exports[`<Icon /> when Paper1.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12349,7 +12349,7 @@ exports[`<Icon /> when Paper1.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12387,7 +12387,7 @@ exports[`<Icon /> when Paper2.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12425,7 +12425,7 @@ exports[`<Icon /> when Paper2.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12467,7 +12467,7 @@ exports[`<Icon /> when Paper2.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12509,7 +12509,7 @@ exports[`<Icon /> when Paper3.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12547,7 +12547,7 @@ exports[`<Icon /> when Paper3.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12589,7 +12589,7 @@ exports[`<Icon /> when Paper3.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12631,7 +12631,7 @@ exports[`<Icon /> when Pause.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12669,7 +12669,7 @@ exports[`<Icon /> when Pause.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12707,7 +12707,7 @@ exports[`<Icon /> when Pause.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12745,7 +12745,7 @@ exports[`<Icon /> when PauseCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12783,7 +12783,7 @@ exports[`<Icon /> when PauseCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12825,7 +12825,7 @@ exports[`<Icon /> when PauseCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12867,7 +12867,7 @@ exports[`<Icon /> when Person.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12905,7 +12905,7 @@ exports[`<Icon /> when Person.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12943,7 +12943,7 @@ exports[`<Icon /> when Person.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -12981,7 +12981,7 @@ exports[`<Icon /> when Phone.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13019,7 +13019,7 @@ exports[`<Icon /> when Phone.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13057,7 +13057,7 @@ exports[`<Icon /> when Phone.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13095,7 +13095,7 @@ exports[`<Icon /> when Photo.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13137,7 +13137,7 @@ exports[`<Icon /> when Photo.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13179,7 +13179,7 @@ exports[`<Icon /> when Photo.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13221,7 +13221,7 @@ exports[`<Icon /> when PhotoAdd.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13263,7 +13263,7 @@ exports[`<Icon /> when PhotoAdd.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13309,7 +13309,7 @@ exports[`<Icon /> when PhotoAdd.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13351,7 +13351,7 @@ exports[`<Icon /> when PhotoDouble.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13397,7 +13397,7 @@ exports[`<Icon /> when PhotoDouble.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13439,7 +13439,7 @@ exports[`<Icon /> when PhotoDouble.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13481,7 +13481,7 @@ exports[`<Icon /> when Pin.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13519,7 +13519,7 @@ exports[`<Icon /> when Pin.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13557,7 +13557,7 @@ exports[`<Icon /> when Pin.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13595,7 +13595,7 @@ exports[`<Icon /> when Pip.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13637,7 +13637,7 @@ exports[`<Icon /> when Pip.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13679,7 +13679,7 @@ exports[`<Icon /> when Pip.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13725,7 +13725,7 @@ exports[`<Icon /> when Play.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13763,7 +13763,7 @@ exports[`<Icon /> when Play.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13801,7 +13801,7 @@ exports[`<Icon /> when Play.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13839,7 +13839,7 @@ exports[`<Icon /> when PlayBackA.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13881,7 +13881,7 @@ exports[`<Icon /> when PlayBackA.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13923,7 +13923,7 @@ exports[`<Icon /> when PlayBackA.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13961,7 +13961,7 @@ exports[`<Icon /> when PlayCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -13999,7 +13999,7 @@ exports[`<Icon /> when PlayCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14041,7 +14041,7 @@ exports[`<Icon /> when PlayCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14083,7 +14083,7 @@ exports[`<Icon /> when PlayFast.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14121,7 +14121,7 @@ exports[`<Icon /> when PlayFast.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14159,7 +14159,7 @@ exports[`<Icon /> when PlayFast.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14197,7 +14197,7 @@ exports[`<Icon /> when PlayFast5sec.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14239,7 +14239,7 @@ exports[`<Icon /> when PlayFast5sec.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14281,7 +14281,7 @@ exports[`<Icon /> when PlayFast5sec.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14323,7 +14323,7 @@ exports[`<Icon /> when PlayFast10sec.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14365,7 +14365,7 @@ exports[`<Icon /> when PlayFast10sec.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14407,7 +14407,7 @@ exports[`<Icon /> when PlayFast10sec.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14449,7 +14449,7 @@ exports[`<Icon /> when PlayFast15sec.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14491,7 +14491,7 @@ exports[`<Icon /> when PlayFast15sec.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14533,7 +14533,7 @@ exports[`<Icon /> when PlayFast15sec.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14575,7 +14575,7 @@ exports[`<Icon /> when PlayNext.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14613,7 +14613,7 @@ exports[`<Icon /> when PlayNext.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14651,7 +14651,7 @@ exports[`<Icon /> when PlayNext.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14689,7 +14689,7 @@ exports[`<Icon /> when PlayPrevious.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14727,7 +14727,7 @@ exports[`<Icon /> when PlayPrevious.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14765,7 +14765,7 @@ exports[`<Icon /> when PlayPrevious.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14803,7 +14803,7 @@ exports[`<Icon /> when PlayRewind5sec.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14845,7 +14845,7 @@ exports[`<Icon /> when PlayRewind5sec.Regular Icon rendered match snapshot 1`] =
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14887,7 +14887,7 @@ exports[`<Icon /> when PlayRewind5sec.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14929,7 +14929,7 @@ exports[`<Icon /> when PlayRewind10sec.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -14971,7 +14971,7 @@ exports[`<Icon /> when PlayRewind10sec.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15013,7 +15013,7 @@ exports[`<Icon /> when PlayRewind10sec.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15055,7 +15055,7 @@ exports[`<Icon /> when PlayRewind15sec.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15097,7 +15097,7 @@ exports[`<Icon /> when PlayRewind15sec.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15139,7 +15139,7 @@ exports[`<Icon /> when PlayRewind15sec.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15181,7 +15181,7 @@ exports[`<Icon /> when PlaySlowly.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15219,7 +15219,7 @@ exports[`<Icon /> when PlaySlowly.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15257,7 +15257,7 @@ exports[`<Icon /> when PlaySlowly.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15295,7 +15295,7 @@ exports[`<Icon /> when PlaySpeedX05.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15333,7 +15333,7 @@ exports[`<Icon /> when PlaySpeedX05.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15371,7 +15371,7 @@ exports[`<Icon /> when PlaySpeedX05.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15409,7 +15409,7 @@ exports[`<Icon /> when PlaySpeedX025.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 .emotion-2 {
@@ -15469,7 +15469,7 @@ exports[`<Icon /> when PlaySpeedX025.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 .emotion-2 {
@@ -15529,7 +15529,7 @@ exports[`<Icon /> when PlaySpeedX025.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15567,7 +15567,7 @@ exports[`<Icon /> when PlaySpeedX1.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15605,7 +15605,7 @@ exports[`<Icon /> when PlaySpeedX1.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15643,7 +15643,7 @@ exports[`<Icon /> when PlaySpeedX1.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15681,7 +15681,7 @@ exports[`<Icon /> when PlaySpeedX2.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15719,7 +15719,7 @@ exports[`<Icon /> when PlaySpeedX2.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15757,7 +15757,7 @@ exports[`<Icon /> when PlaySpeedX2.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15795,7 +15795,7 @@ exports[`<Icon /> when PlaySpeedX15.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15833,7 +15833,7 @@ exports[`<Icon /> when PlaySpeedX15.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15871,7 +15871,7 @@ exports[`<Icon /> when PlaySpeedX15.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15909,7 +15909,7 @@ exports[`<Icon /> when PlaystoreCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15947,7 +15947,7 @@ exports[`<Icon /> when PlaystoreCircle.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -15989,7 +15989,7 @@ exports[`<Icon /> when PlaystoreCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16031,7 +16031,7 @@ exports[`<Icon /> when PointCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16073,7 +16073,7 @@ exports[`<Icon /> when PointCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16115,7 +16115,7 @@ exports[`<Icon /> when PointCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16157,7 +16157,7 @@ exports[`<Icon /> when Project.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16195,7 +16195,7 @@ exports[`<Icon /> when Project.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16233,7 +16233,7 @@ exports[`<Icon /> when Project.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16271,7 +16271,7 @@ exports[`<Icon /> when Quote.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16309,7 +16309,7 @@ exports[`<Icon /> when Quote.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16347,7 +16347,7 @@ exports[`<Icon /> when Quote.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16385,7 +16385,7 @@ exports[`<Icon /> when QuoteReverse.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16423,7 +16423,7 @@ exports[`<Icon /> when QuoteReverse.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16461,7 +16461,7 @@ exports[`<Icon /> when QuoteReverse.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16499,7 +16499,7 @@ exports[`<Icon /> when Receipt.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16537,7 +16537,7 @@ exports[`<Icon /> when Receipt.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16579,7 +16579,7 @@ exports[`<Icon /> when Receipt.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16621,7 +16621,7 @@ exports[`<Icon /> when Repeat.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16659,7 +16659,7 @@ exports[`<Icon /> when Repeat.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16697,7 +16697,7 @@ exports[`<Icon /> when Repeat.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16735,7 +16735,7 @@ exports[`<Icon /> when Replay.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16777,7 +16777,7 @@ exports[`<Icon /> when Replay.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16819,7 +16819,7 @@ exports[`<Icon /> when Replay.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16861,7 +16861,7 @@ exports[`<Icon /> when Reply.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16899,7 +16899,7 @@ exports[`<Icon /> when Reply.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16941,7 +16941,7 @@ exports[`<Icon /> when Reply.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -16983,7 +16983,7 @@ exports[`<Icon /> when Report.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17021,7 +17021,7 @@ exports[`<Icon /> when Report.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17059,7 +17059,7 @@ exports[`<Icon /> when Report.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17097,7 +17097,7 @@ exports[`<Icon /> when RotateClockwise.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17135,7 +17135,7 @@ exports[`<Icon /> when RotateClockwise.Regular Icon rendered match snapshot 1`] 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17173,7 +17173,7 @@ exports[`<Icon /> when RotateClockwise.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17211,7 +17211,7 @@ exports[`<Icon /> when Sad.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17249,7 +17249,7 @@ exports[`<Icon /> when Sad.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17295,7 +17295,7 @@ exports[`<Icon /> when Sad.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17341,7 +17341,7 @@ exports[`<Icon /> when Search.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17379,7 +17379,7 @@ exports[`<Icon /> when Search.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17417,7 +17417,7 @@ exports[`<Icon /> when Search.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17455,7 +17455,7 @@ exports[`<Icon /> when Send.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17493,7 +17493,7 @@ exports[`<Icon /> when Send.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17531,7 +17531,7 @@ exports[`<Icon /> when Send.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17569,7 +17569,7 @@ exports[`<Icon /> when Send2.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17607,7 +17607,7 @@ exports[`<Icon /> when Send2.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17645,7 +17645,7 @@ exports[`<Icon /> when Send2.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17683,7 +17683,7 @@ exports[`<Icon /> when Serious.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17721,7 +17721,7 @@ exports[`<Icon /> when Serious.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17763,7 +17763,7 @@ exports[`<Icon /> when Serious.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17809,7 +17809,7 @@ exports[`<Icon /> when Share.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17847,7 +17847,7 @@ exports[`<Icon /> when Share.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17885,7 +17885,7 @@ exports[`<Icon /> when Share.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17923,7 +17923,7 @@ exports[`<Icon /> when Sheild.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -17961,7 +17961,7 @@ exports[`<Icon /> when Sheild.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18003,7 +18003,7 @@ exports[`<Icon /> when Sheild.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18045,7 +18045,7 @@ exports[`<Icon /> when ShippingTruck.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18087,7 +18087,7 @@ exports[`<Icon /> when ShippingTruck.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18125,7 +18125,7 @@ exports[`<Icon /> when ShippingTruck.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18163,7 +18163,7 @@ exports[`<Icon /> when Smile.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18201,7 +18201,7 @@ exports[`<Icon /> when Smile.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18243,7 +18243,7 @@ exports[`<Icon /> when Smile.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18289,7 +18289,7 @@ exports[`<Icon /> when Sorting.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18327,7 +18327,7 @@ exports[`<Icon /> when Sorting.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18365,7 +18365,7 @@ exports[`<Icon /> when Sorting.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18403,7 +18403,7 @@ exports[`<Icon /> when Star.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18441,7 +18441,7 @@ exports[`<Icon /> when Star.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18479,7 +18479,7 @@ exports[`<Icon /> when Star.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18517,7 +18517,7 @@ exports[`<Icon /> when StarFull.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18555,7 +18555,7 @@ exports[`<Icon /> when StarFull.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18593,7 +18593,7 @@ exports[`<Icon /> when StarFull.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18631,7 +18631,7 @@ exports[`<Icon /> when StarHalf.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18669,7 +18669,7 @@ exports[`<Icon /> when StarHalf.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18707,7 +18707,7 @@ exports[`<Icon /> when StarHalf.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18745,7 +18745,7 @@ exports[`<Icon /> when Store.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18787,7 +18787,7 @@ exports[`<Icon /> when Store.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18825,7 +18825,7 @@ exports[`<Icon /> when Store.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18867,7 +18867,7 @@ exports[`<Icon /> when Subtitle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18905,7 +18905,7 @@ exports[`<Icon /> when Subtitle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18947,7 +18947,7 @@ exports[`<Icon /> when Subtitle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -18989,7 +18989,7 @@ exports[`<Icon /> when TalkHelp.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19027,7 +19027,7 @@ exports[`<Icon /> when TalkHelp.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19069,7 +19069,7 @@ exports[`<Icon /> when TalkHelp.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19111,7 +19111,7 @@ exports[`<Icon /> when TextH1.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19149,7 +19149,7 @@ exports[`<Icon /> when TextH1.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19187,7 +19187,7 @@ exports[`<Icon /> when TextH1.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19225,7 +19225,7 @@ exports[`<Icon /> when TextH2.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19263,7 +19263,7 @@ exports[`<Icon /> when TextH2.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19301,7 +19301,7 @@ exports[`<Icon /> when TextH2.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19339,7 +19339,7 @@ exports[`<Icon /> when TextH3.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19377,7 +19377,7 @@ exports[`<Icon /> when TextH3.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19415,7 +19415,7 @@ exports[`<Icon /> when TextH3.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19453,7 +19453,7 @@ exports[`<Icon /> when ThunderCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19491,7 +19491,7 @@ exports[`<Icon /> when ThunderCircle.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19533,7 +19533,7 @@ exports[`<Icon /> when ThunderCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19575,7 +19575,7 @@ exports[`<Icon /> when Timer.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19613,7 +19613,7 @@ exports[`<Icon /> when Timer.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19655,7 +19655,7 @@ exports[`<Icon /> when Timer.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19697,7 +19697,7 @@ exports[`<Icon /> when ToggleOff.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19735,7 +19735,7 @@ exports[`<Icon /> when ToggleOff.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19773,7 +19773,7 @@ exports[`<Icon /> when ToggleOff.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19811,7 +19811,7 @@ exports[`<Icon /> when ToggleOn.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19849,7 +19849,7 @@ exports[`<Icon /> when ToggleOn.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19887,7 +19887,7 @@ exports[`<Icon /> when ToggleOn.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19925,7 +19925,7 @@ exports[`<Icon /> when ToteBag.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -19963,7 +19963,7 @@ exports[`<Icon /> when ToteBag.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20001,7 +20001,7 @@ exports[`<Icon /> when ToteBag.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20039,7 +20039,7 @@ exports[`<Icon /> when Translate.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20081,7 +20081,7 @@ exports[`<Icon /> when Translate.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20123,7 +20123,7 @@ exports[`<Icon /> when Translate.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20165,7 +20165,7 @@ exports[`<Icon /> when Trash.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20203,7 +20203,7 @@ exports[`<Icon /> when Trash.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20245,7 +20245,7 @@ exports[`<Icon /> when Trash.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20287,7 +20287,7 @@ exports[`<Icon /> when TwitterCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20325,7 +20325,7 @@ exports[`<Icon /> when TwitterCircle.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20367,7 +20367,7 @@ exports[`<Icon /> when TwitterCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20409,7 +20409,7 @@ exports[`<Icon /> when Undo.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20447,7 +20447,7 @@ exports[`<Icon /> when Undo.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20485,7 +20485,7 @@ exports[`<Icon /> when Undo.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20523,7 +20523,7 @@ exports[`<Icon /> when Video.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20561,7 +20561,7 @@ exports[`<Icon /> when Video.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20603,7 +20603,7 @@ exports[`<Icon /> when Video.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20645,7 +20645,7 @@ exports[`<Icon /> when Volume.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20687,7 +20687,7 @@ exports[`<Icon /> when Volume.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 .emotion-2 {
@@ -20751,7 +20751,7 @@ exports[`<Icon /> when Volume.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 .emotion-2 {
@@ -20815,7 +20815,7 @@ exports[`<Icon /> when VolumeMute.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20853,7 +20853,7 @@ exports[`<Icon /> when VolumeMute.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20891,7 +20891,7 @@ exports[`<Icon /> when VolumeMute.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 .emotion-2 {
@@ -20951,7 +20951,7 @@ exports[`<Icon /> when Web.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -20989,7 +20989,7 @@ exports[`<Icon /> when Web.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21027,7 +21027,7 @@ exports[`<Icon /> when Web.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21065,7 +21065,7 @@ exports[`<Icon /> when Won.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21103,7 +21103,7 @@ exports[`<Icon /> when Won.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21141,7 +21141,7 @@ exports[`<Icon /> when Won.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21179,7 +21179,7 @@ exports[`<Icon /> when WonCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21217,7 +21217,7 @@ exports[`<Icon /> when WonCircle.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21259,7 +21259,7 @@ exports[`<Icon /> when WonCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21301,7 +21301,7 @@ exports[`<Icon /> when Write.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21339,7 +21339,7 @@ exports[`<Icon /> when Write.Regular Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21377,7 +21377,7 @@ exports[`<Icon /> when Write.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21415,7 +21415,7 @@ exports[`<Icon /> when YoutubeCircle.Fill Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21457,7 +21457,7 @@ exports[`<Icon /> when YoutubeCircle.Regular Icon rendered match snapshot 1`] = 
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
@@ -21499,7 +21499,7 @@ exports[`<Icon /> when YoutubeCircle.Thin Icon rendered match snapshot 1`] = `
   display: inline-flex;
   width: 100%;
   height: 100%;
-  fill: var(--system-on-color);
+  fill: #101010;
 }
 
 <div>
