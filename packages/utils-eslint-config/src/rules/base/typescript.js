@@ -83,6 +83,16 @@ module.exports = {
         },
       },
 
+      // 일부 스타일들을 허용한다
+      {
+        selector: ['objectLiteralProperty'],
+        format: null,
+        filter: {
+          regex: '^(Moz|Webkit)',
+          match: true,
+        },
+      },
+
       // 맨 앞이 동사인 경우 `camelCase`로 쓴다.
       // 바로 뒤에 나오는 `...Component` 규칙에 예외를 두기 위해 이 규칙을 추가했다.
       {

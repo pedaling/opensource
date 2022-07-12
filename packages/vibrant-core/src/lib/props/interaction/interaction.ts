@@ -44,7 +44,8 @@ const pressable = createSystemProp({
     return {
       cursor: 'pointer',
       position: 'relative',
-      overflow: 'hidden',
+      overflowX: 'hidden',
+      overflowY: 'hidden',
       zIndex: 0,
       pseudoBefore: {
         position: 'absolute',

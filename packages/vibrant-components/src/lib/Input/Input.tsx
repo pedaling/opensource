@@ -7,7 +7,6 @@ export const Input = withInputVariation(
     innerRef,
     defaultValue,
     placeholder,
-    maxLength,
     onFocus,
     onBlur,
     onKeyDown,
@@ -20,8 +19,9 @@ export const Input = withInputVariation(
       ref={innerRef}
       as="input"
       value={defaultValue}
+      typography="body2"
+      fontWeight="regular"
       placeholder={placeholder}
-      maxLength={maxLength}
       onPaste={(event: SyntheticEvent<HTMLInputElement, ClipboardEvent>) => {
         const inputValue = event.nativeEvent.clipboardData?.getData('text') ?? '';
 
@@ -39,7 +39,7 @@ export const Input = withInputVariation(
           currentValue.substring(0, start) +
           replacedValue +
           currentValue.substring(end)
-        ).substring(0, maxLength);
+        ).substring(0, event.currentTarget.maxLength);
 
         event.currentTarget.selectionStart = start + replacedValue.length;
 

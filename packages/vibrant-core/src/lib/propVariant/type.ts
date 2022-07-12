@@ -1,3 +1,6 @@
+import type { DeepWritable } from '@vibrant-ui/utils';
+import type { ResponsiveValue } from '../types';
+
 export type VariantFn<PrevProps, NextProps> = (props: PrevProps) => NextProps;
 
 type IsNullable<Value> = Value extends undefined ? true : false;
@@ -50,11 +53,11 @@ export type VariantsReturnProps<PropsConfig, Variants> = Variants extends (args:
     : unknown
   : unknown;
 
-export type VariantsValue<PropsConfig, Value> = IncludeResponsiveProp<PropsConfig> extends true
-  ? {
-      [key in keyof Value]: Value[key] extends undefined ? Value[key] : Value[key] | Value[key][];
-    }
-  : Value;
+export type VariantsValue<PropsConfig, Value> = {
+  [key in keyof Value]: Value[key] extends undefined
+    ? Value[key]
+    : DeepWritable<IncludeResponsiveProp<PropsConfig> extends true ? ResponsiveValue<Value[key]> : Value[key]>;
+};
 
 type VariantsFnProps<Props, PropsConfig> = PropsConfig extends [infer First, ...infer Rest]
   ? (First extends { name: keyof Props }

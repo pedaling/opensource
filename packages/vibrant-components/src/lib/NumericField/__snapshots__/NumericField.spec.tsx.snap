@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
+.emotion-6 {
+  position: relative;
+  width: 128px;
+  height: 36px;
+}
+
+.emotion-1 {
+  font-family: Pretendard;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  border-width: 1px;
+  border-radius: 2px;
+  padding: 0;
+  padding-left: 38px;
+  padding-right: 38px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-color: rgba(0, 0, 0, 0.15);
+  -moz-appearance: textfield;
+}
+
+.emotion-1::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.emotion-1::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.emotion-1:focus {
+  border-color: #101010;
+  border-width: 1px;
+  outline-width: 0;
+}
+
+.emotion-2 {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  bottom: 3px;
+}
+
+.emotion-3 {
+  padding: 7px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-width: 0;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: 0;
+}
+
+.emotion-3::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  background-color: #101010;
+}
+
+@media (hover: hover) {
+  .emotion-3:hover::before {
+    content: "";
+    opacity: 0.08;
+  }
+}
+
+.emotion-3:active::before {
+  content: "";
+  opacity: 0.16;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  fill: #101010;
+}
+
+.emotion-7 {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+}
+
+<div>
+  <div
+    class="emotion-6"
+    data-testid="numericField"
+  >
+    <input
+      class="emotion-1"
+      type="number"
+      value=""
+    />
+    <div
+      class="emotion-2"
+    >
+      <button
+        class="emotion-3"
+      >
+        <span
+          class="emotion-4"
+        >
+          <svg
+            class="emotion-5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="emotion-6"
+              d="M21.25 13.25H2.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h18.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25Z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="emotion-7"
+    >
+      <button
+        class="emotion-3"
+      >
+        <span
+          class="emotion-4"
+        >
+          <svg
+            class="emotion-5"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="emotion-6"
+              d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
