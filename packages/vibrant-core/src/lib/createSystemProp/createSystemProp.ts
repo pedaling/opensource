@@ -1,4 +1,4 @@
-import { get, isDefined } from '@vibrant-ui/utils';
+import { get, isDefined, isRecord } from '@vibrant-ui/utils';
 import type { SystemProp, SystemPropConfig, SystemPropThemeScale } from './type';
 
 export const createSystemProp = (config: SystemPropConfig): SystemProp => {
@@ -24,16 +24,17 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
             result = get(theme, result.replace('$', ''), result);
           }
 
-          if (shouldInterpolation === 'before' && typeof result === 'object' && result !== null) {
-            result = interpolation(result) ?? result;
+          if (shouldInterpolation === 'before' && isRecord(result)) {
+            result = interpolation(result);
           }
+
           if (isDefined(transform)) {
             result = transform(result) ?? {};
           } else {
             result = { [targetProperty]: result };
           }
 
-          if (shouldInterpolation === 'after' && typeof result === 'object' && result !== null) {
+          if (shouldInterpolation === 'after' && isRecord(result)) {
             result = interpolation(result);
           }
 
