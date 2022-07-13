@@ -1,6 +1,5 @@
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Icon } from '@vibrant-ui/icons';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing';
 import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { OperatorButton } from './OperatorButton';
@@ -18,9 +17,7 @@ describe('<OperatorButton />', () => {
 
   describe('when OperatorButton rendered', () => {
     beforeEach(() => {
-      renderer = render(
-        <OperatorButton data-testid="operatorButton" IconComponent={Icon.Add.Regular} onClick={mockOnClick} />
-      );
+      renderer = render(<OperatorButton data-testid="operatorButton" operator="plus" onClick={mockOnClick} />);
 
       element = renderer.getByTestId('operatorButton');
     });

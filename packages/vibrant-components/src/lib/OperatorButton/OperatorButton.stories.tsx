@@ -1,12 +1,11 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Icon } from '@vibrant-ui/icons';
 import { OperatorButton } from './OperatorButton';
 
 export default {
   title: 'OperatorButton',
   component: OperatorButton,
   args: {
-    IconComponent: Icon.Add.Regular,
+    operator: 'plus',
   },
 } as ComponentMeta<typeof OperatorButton>;
 

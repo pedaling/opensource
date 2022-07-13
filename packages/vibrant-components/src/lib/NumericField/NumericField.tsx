@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
-import { Icon } from '@vibrant-ui/icons';
 import { Input } from '../Input';
 import { OperatorButton } from '../OperatorButton';
 import { withNumericFieldVariation } from './NumericFieldProps';
@@ -106,7 +105,7 @@ export const NumericField = withNumericFieldVariation(
         />
         <Box position="absolute" top={4} left={4} bottom={4}>
           <OperatorButton
-            IconComponent={Icon.Minus.Regular}
+            operator="minus"
             disabled={(inputValue !== undefined && min === inputValue) || disabled}
             onClick={() =>
               setInputValue((value = placeholder ?? 0) => (min !== undefined ? Math.max(value - 1, min) : value - 1))
@@ -115,7 +114,7 @@ export const NumericField = withNumericFieldVariation(
         </Box>
         <Box position="absolute" top={4} right={4} bottom={4}>
           <OperatorButton
-            IconComponent={Icon.Add.Regular}
+            operator="plus"
             disabled={(inputValue !== undefined && max === inputValue) || disabled}
             onClick={() =>
               setInputValue((value = placeholder ?? 0) => (max !== undefined ? Math.min(value + 1, max) : value + 1))

@@ -1,10 +1,9 @@
-import type { ComponentType } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { IconProps } from '@vibrant-ui/icons';
+import { Icon } from '@vibrant-ui/icons';
 
 export type OperatorButtonProps = {
   disabled?: boolean;
-  IconComponent: ComponentType<IconProps>;
+  operator: 'plus' | 'minus';
   onClick?: () => void;
 };
 
@@ -29,5 +28,20 @@ export const withOperationButtonVariation = withVariation<OperatorButtonProps>()
         iconFill: 'onView1',
       },
     } as const,
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'operator',
+      },
+    ],
+    variants: {
+      plus: {
+        IconComponent: Icon.Add.Regular,
+      },
+      minus: {
+        IconComponent: Icon.Minus.Regular,
+      },
+    },
   })
 );
