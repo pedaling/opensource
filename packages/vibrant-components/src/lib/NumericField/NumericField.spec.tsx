@@ -9,48 +9,99 @@ describe('<NumericField />', () => {
 
   let renderer: ReactRenderer;
   let element: HTMLElement;
+  let mockOnValueChange: jest.Mock;
+
+  beforeEach(() => {
+    mockOnValueChange = jest.fn();
+  });
 
   describe('when NumericField rendered', () => {
-    let inputElement: HTMLInputElement | null;
+    let plusButtonElement: HTMLButtonElement;
+    let minusButtonElement: HTMLButtonElement;
 
     beforeEach(() => {
-      renderer = render(<NumericField data-testid="numericField" />);
+      renderer = render(<NumericField data-testid="numericField" onValueChange={mockOnValueChange} />);
 
       element = renderer.getByTestId('numericField');
 
-      inputElement = element.querySelector('input');
-    });
-
-    it('input element exists', () => {
-      expect(inputElement).toBeTruthy();
+      [minusButtonElement, plusButtonElement] = Array.from(element.querySelectorAll('button')) as HTMLButtonElement[];
     });
 
     it('input value is empty', () => {
-      expect(inputElement?.value).toBe('');
+      expect(element.querySelector('input')?.value).toBe('');
+    });
+
+    it('onValueChange not called', () => {
+      expect(mockOnValueChange).not.toBeCalled();
     });
 
     describe('when plus button clicked', () => {
       beforeEach(async () => {
-        await waitFor(() => userEvent.click(element.querySelectorAll('button')[1]));
+        await waitFor(() => userEvent.click(plusButtonElement));
       });
 
-      it('input value is 1', () => {
-        expect(inputElement?.value).toBe('1');
+      it('onChangeValue called with 1', () => {
+        expect(mockOnValueChange).toBeCalledWith(1);
       });
     });
 
     describe('when minus button clicked', () => {
       beforeEach(async () => {
-        await waitFor(() => userEvent.click(element.querySelectorAll('button')[0]));
+        await waitFor(() => userEvent.click(minusButtonElement));
       });
 
-      it('input value is -1', () => {
-        expect(inputElement?.value).toBe('-1');
+      it('onChangeValue called with -1', () => {
+        expect(mockOnValueChange).toBeCalledWith(-1);
       });
     });
 
     it('match snapshot', () => {
       expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('when NumberField with min and max rendered', () => {
+    let plusButtonElement: HTMLButtonElement;
+    let minusButtonElement: HTMLButtonElement;
+
+    beforeEach(() => {
+      renderer = render(<NumericField data-testid="numericField" min={0} max={5} onValueChange={mockOnValueChange} />);
+
+      element = renderer.getByTestId('numericField');
+
+      [minusButtonElement, plusButtonElement] = Array.from(element.querySelectorAll('button')) as HTMLButtonElement[];
+    });
+
+    describe('when minus button clicked', () => {
+      beforeEach(async () => {
+        await waitFor(() => userEvent.click(minusButtonElement));
+      });
+
+      it('onValueChange called with min value', () => {
+        expect(mockOnValueChange).toBeCalledWith(0);
+      });
+
+      it('minus button is disabled', () => {
+        expect(minusButtonElement.disabled).toBe(true);
+      });
+
+      it('plus button is enabled', () => {
+        expect(plusButtonElement.disabled).toBe(false);
+      });
+
+      describe('when plus button clicked', () => {
+        beforeEach(async () => {
+          await waitFor(() => userEvent.click(plusButtonElement));
+        });
+
+        it('onValueChange called with 1', () => {
+          expect(mockOnValueChange).toBeCalledWith(1);
+        });
+
+        it('minus button is enabled', () => {
+          expect(minusButtonElement.disabled).toBe(false);
+        });
+      });
     });
   });
 });

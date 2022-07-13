@@ -8,6 +8,7 @@ import type {
   TypographyProps,
   PseudoClassProps,
   ColorProps,
+  BackgroundProps,
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
@@ -18,11 +19,12 @@ export type BaseInputProps<Value> = {
   disabled?: boolean;
   onValueChange?: (value: Value) => void;
   tabIndex?: number;
+  placeholder?: Value;
 };
 
-export type InputProps = BaseInputProps<any> & {
+export type InputProps = BaseInputProps<string> & {
   allowPattern?: RegExp;
-  placeholder?: string;
+  value?: string;
   readOnly?: boolean;
   onFocus?: () => void;
   onBlur?: () => void;
@@ -35,6 +37,7 @@ export type InputProps = BaseInputProps<any> & {
   TypographyProps &
   PseudoClassProps &
   ColorProps &
+  BackgroundProps &
   (
     | {
         type: 'number';

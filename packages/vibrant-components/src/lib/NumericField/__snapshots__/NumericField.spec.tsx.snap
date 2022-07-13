@@ -4,7 +4,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
 .emotion-6 {
   position: relative;
   width: 128px;
-  height: 36px;
+  height: 38px;
 }
 
 .emotion-1 {
@@ -21,7 +21,10 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   height: 100%;
   text-align: center;
   border-color: rgba(0, 0, 0, 0.15);
+  border-style: solid;
+  background-color: #FFFFFF;
   -moz-appearance: textfield;
+  color: #101010;
 }
 
 .emotion-1::-webkit-outer-spin-button {
@@ -42,9 +45,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
 
 .emotion-2 {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  bottom: 3px;
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
 }
 
 .emotion-3 {
@@ -108,9 +111,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
 
 .emotion-7 {
   position: absolute;
-  top: 3px;
-  right: 3px;
-  bottom: 3px;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
 }
 
 <div>

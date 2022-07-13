@@ -12,6 +12,7 @@ export const withNumericFieldVariation = withVariation<NumericFieldProps>()(
       {
         name: 'disabled',
         keep: true,
+        default: false,
       },
     ],
     variants: {
