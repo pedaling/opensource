@@ -5,6 +5,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   position: relative;
   width: 128px;
   height: 38px;
+  background-color: #AFAFAF;
 }
 
 .emotion-1 {
@@ -22,7 +23,6 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   text-align: center;
   border-color: rgba(0, 0, 0, 0.15);
   border-style: solid;
-  background-color: #FFFFFF;
   -moz-appearance: textfield;
   color: #101010;
 }
