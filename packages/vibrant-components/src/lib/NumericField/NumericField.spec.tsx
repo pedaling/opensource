@@ -103,6 +103,7 @@ describe('<NumericField />', () => {
 
           return;
         }
+
         waitFor(() => userEvent.type(input, '1')).then(done);
       });
 

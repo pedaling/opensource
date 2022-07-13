@@ -39,6 +39,7 @@ export const NumericField = withNumericFieldVariation(
 
           return;
         }
+
         setInputValue(nextInputValue);
       },
       [max, min]
@@ -70,6 +71,7 @@ export const NumericField = withNumericFieldVariation(
 
               return;
             }
+
             innerRef.current = ref;
           }}
           type="number"

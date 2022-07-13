@@ -26,6 +26,7 @@ function replaceJsxChild(jsx) {
   if (jsx.closingElement) {
     replaceName(jsx.closingElement.name);
   }
+
   if (jsx.children) {
     jsx.children.forEach(replaceJsxChild);
   }

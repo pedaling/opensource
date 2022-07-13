@@ -12,6 +12,7 @@ export const TabGroup = withTabGroupVariation(({ tabFlex, overflowX, tabId, onTa
     if (!tabRefs.current[tabId]) {
       return;
     }
+
     tabRefs.current[tabId].scrollIntoView({ behavior: 'smooth', inline: 'center' });
   }, [tabId]);
 
@@ -32,6 +33,7 @@ export const TabGroup = withTabGroupVariation(({ tabFlex, overflowX, tabId, onTa
                 if (!domRef) {
                   return;
                 }
+
                 tabRefs.current[element.props.id] = domRef;
               },
             })}

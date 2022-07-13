@@ -31,6 +31,7 @@ const pressable = createSystemProp({
         cursor: 'default',
       };
     }
+
     const { overlayColor, interactions } = value;
 
     if (!overlayColor) {
