@@ -18,9 +18,11 @@ export const withNumericFieldVariation = withVariation<NumericFieldProps>()(
     variants: {
       false: {
         color: 'onView1',
+        backgroundColor: 'onView3',
       },
       true: {
         color: 'onView3',
+        backgroundColor: 'disable',
       },
     },
   })

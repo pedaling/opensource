@@ -65,7 +65,6 @@ export const NumericField = withNumericFieldVariation(
           borderWidth={1}
           borderColor="outline1"
           borderStyle="solid"
-          backgroundColor="surface3"
           borderRadius={2}
           placeholder={placeholder?.toString()}
           disabled={disabled}
