@@ -12,6 +12,7 @@ export const NumericField = withNumericFieldVariation(
     defaultValue,
     id,
     max,
+    placeholderColor,
     placeholder,
     onValueChange,
     backgroundColor,
@@ -92,6 +93,9 @@ export const NumericField = withNumericFieldVariation(
             borderColor: 'outlineNeutral',
             borderWidth: 1,
             outlineWidth: 0,
+          }}
+          pseudoPlaceholder={{
+            color: placeholderColor,
           }}
           color={color}
           id={id}

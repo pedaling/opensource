@@ -43,6 +43,22 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   outline-width: 0;
 }
 
+.emotion-1::-webkit-input-placeholder {
+  color: #7C7C7C;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #7C7C7C;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #7C7C7C;
+}
+
+.emotion-1::placeholder {
+  color: #7C7C7C;
+}
+
 .emotion-2 {
   position: absolute;
   top: 4px;
