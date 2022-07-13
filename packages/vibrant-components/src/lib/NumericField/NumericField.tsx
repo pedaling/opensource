@@ -23,10 +23,6 @@ export const NumericField = withNumericFieldVariation(
     const [inputValue, setInputValue] = useState<number | undefined>(defaultValue);
 
     useEffect(() => {
-      if (defaultValue === undefined) {
-        return;
-      }
-
       setInputValue(defaultValue);
     }, [defaultValue]);
 
@@ -48,12 +44,16 @@ export const NumericField = withNumericFieldVariation(
     );
 
     useEffect(() => {
-      if (inputValue === undefined) {
+      if (
+        inputValue === undefined ||
+        (min !== undefined && min > inputValue) ||
+        (max !== undefined && max < inputValue)
+      ) {
         return;
       }
 
       onValueChange?.(inputValue);
-    }, [inputValue, onValueChange]);
+    }, [inputValue, max, min, onValueChange]);
 
     return (
       <Box position="relative" width={128} height={38} {...restProps}>
@@ -93,14 +93,10 @@ export const NumericField = withNumericFieldVariation(
           id={id}
           max={max}
           onValueChange={value => {
-            if (!value) {
-              setInputValue(min ?? 0);
-
-              return;
-            }
-            const numberValue = parseInt(value, 10);
-
-            updateInputValue(numberValue);
+            setInputValue(value ? parseInt(value, 10) : undefined);
+          }}
+          onBlur={() => {
+            updateInputValue(inputValue ?? min ?? 0);
           }}
           min={min}
           tabIndex={tabIndex}

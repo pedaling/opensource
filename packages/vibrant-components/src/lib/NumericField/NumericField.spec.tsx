@@ -116,8 +116,18 @@ describe('<NumericField />', () => {
         waitFor(() => userEvent.type(input, '1')).then(done);
       });
 
-      it('onValueChange called with min value', () => {
-        expect(mockOnValueChange).toBeCalledWith(3);
+      it('onValueChange not called', () => {
+        expect(mockOnValueChange).not.toBeCalled();
+      });
+
+      describe('when blur', () => {
+        beforeEach(async () => {
+          await waitFor(() => userEvent.tab());
+        });
+
+        it('onValueChange called with min value', () => {
+          expect(mockOnValueChange).toBeCalledWith(3);
+        });
       });
     });
   });
