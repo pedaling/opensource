@@ -6,6 +6,9 @@ import { withTheme } from './decorators/withTheme';
 
 export const parameters: Parameters = {
   layout: 'fullscreen',
+  actions: {
+    argTypesRegex: '^on[A-Z].*',
+  },
   controls: {
     sort: 'requiredFirst',
     expanded: true,

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
@@ -9,12 +9,18 @@ import { VStack } from '../VStack';
 import { withVerificationCodeFieldVariation } from './VerificationCodeFieldProps';
 
 export const VerificationCodeField = withVerificationCodeFieldVariation(
-  ({ length, state, errorMessage, ...restProps }) => {
+  ({ length, state: stateProp = 'default', errorMessage, onValueChange, ...restProps }) => {
+    const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [code, setCode] = useState<string[]>([]);
     const [focusIndex, setFocusIndex] = useState(-1);
+
     const inputId = useMemo(() => uuid(), []);
 
     const splitIndex = Math.ceil(length / 2);
+
+    useEffect(() => {
+      setState(stateProp);
+    }, [stateProp]);
 
     return (
       <Box {...restProps}>
@@ -25,12 +31,18 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
           height={0}
           allowPattern={/\d/}
           maxLength={length}
-          onFocus={() => setFocusIndex(Math.min(length - 1, code.length))}
+          onFocus={() => {
+            setState('default');
+
+            setFocusIndex(Math.min(length - 1, code.length));
+          }}
           onBlur={() => setFocusIndex(-1)}
           onValueChange={(value: string) => {
             setCode(value.split(''));
 
             setFocusIndex(Math.min(length - 1, value.length));
+
+            onValueChange?.(value);
           }}
           onKeyDown={({ key, prevent }: { key: string; prevent: () => void }) => {
             if (/Arrow/.test(key)) {

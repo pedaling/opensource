@@ -47,7 +47,9 @@ export const Input = withInputVariation(
 
         event.preventDefault();
 
-        onValueChange?.(event.currentTarget.value);
+        if (replacedValue.length !== 0) {
+          onValueChange?.(event.currentTarget.value);
+        }
       }}
       onFocus={() => onFocus?.()}
       onBlur={() => onBlur?.()}
@@ -58,7 +60,15 @@ export const Input = withInputVariation(
 
         onKeyDown?.({ key: event.key, prevent: () => event.preventDefault() });
       }}
-      onChange={event => onValueChange?.(event.target.value)}
+      onInput={(event: SyntheticEvent<HTMLInputElement, InputEvent>) => {
+        const replacedValue = replaceValue(event.currentTarget.value);
+
+        event.currentTarget.value = replacedValue;
+
+        if (!event.nativeEvent.data || replaceValue(event.nativeEvent.data ?? '').length !== 0) {
+          onValueChange?.(replacedValue);
+        }
+      }}
       borderWidth={0}
       borderRadius={0}
       p={0}
