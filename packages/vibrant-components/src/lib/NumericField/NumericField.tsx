@@ -6,7 +6,20 @@ import { OperatorButton } from '../OperatorButton';
 import { withNumericFieldVariation } from './NumericFieldProps';
 
 export const NumericField = withNumericFieldVariation(
-  ({ innerRef, disabled, color, defaultValue, id, max, placeholder, onValueChange, min, tabIndex, ...restProps }) => {
+  ({
+    innerRef,
+    disabled,
+    color,
+    defaultValue,
+    id,
+    max,
+    placeholder,
+    onValueChange,
+    backgroundColor,
+    min,
+    tabIndex,
+    ...restProps
+  }) => {
     const inputRef = useRef<HTMLInputElement>();
     const [inputValue, setInputValue] = useState<number | undefined>(defaultValue);
 
@@ -60,6 +73,7 @@ export const NumericField = withNumericFieldVariation(
           px={38}
           value={inputValue?.toString() ?? ''}
           width="100%"
+          backgroundColor={backgroundColor}
           height="100%"
           textAlign="center"
           borderWidth={1}
