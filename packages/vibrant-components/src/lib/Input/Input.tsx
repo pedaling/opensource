@@ -3,22 +3,10 @@ import { Box } from '@vibrant-ui/core';
 import { withInputVariation } from './InputProps';
 
 export const Input = withInputVariation(
-  ({
-    innerRef,
-    defaultValue,
-    placeholder,
-    onFocus,
-    onBlur,
-    onKeyDown,
-    onValueChange,
-    isValidValue,
-    replaceValue,
-    ...restProps
-  }) => (
+  ({ innerRef, placeholder, onFocus, onBlur, onKeyDown, onValueChange, isValidValue, replaceValue, ...restProps }) => (
     <Box
       ref={innerRef}
       as="input"
-      value={defaultValue}
       typography="body2"
       fontWeight="regular"
       placeholder={placeholder}

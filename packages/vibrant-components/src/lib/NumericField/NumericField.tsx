@@ -110,7 +110,9 @@ export const NumericField = withNumericFieldVariation(
             operator="minus"
             disabled={(inputValue !== undefined && min === inputValue) || disabled}
             onClick={() =>
-              setInputValue((value = placeholder ?? 0) => (min !== undefined ? Math.max(value - 1, min) : value - 1))
+              setInputValue((value = placeholder ?? min ?? 0) =>
+                min !== undefined ? Math.max(value - 1, min) : value - 1
+              )
             }
           />
         </Box>
@@ -119,7 +121,9 @@ export const NumericField = withNumericFieldVariation(
             operator="plus"
             disabled={(inputValue !== undefined && max === inputValue) || disabled}
             onClick={() =>
-              setInputValue((value = placeholder ?? 0) => (max !== undefined ? Math.min(value + 1, max) : value + 1))
+              setInputValue((value = placeholder ?? min ?? 0) =>
+                max !== undefined ? Math.min(value + 1, max) : value + 1
+              )
             }
           />
         </Box>
