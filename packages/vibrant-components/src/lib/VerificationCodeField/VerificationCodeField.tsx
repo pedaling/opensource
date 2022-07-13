@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
@@ -14,17 +14,26 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
     const [code, setCode] = useState<string[]>([]);
     const [focusIndex, setFocusIndex] = useState(-1);
 
+    const inputRef = useRef<HTMLInputElement>(null);
+
     const inputId = useMemo(() => uuid(), []);
 
     const splitIndex = Math.ceil(length / 2);
 
     useEffect(() => {
       setState(stateProp);
+
+      if (stateProp === 'error') {
+        inputRef.current?.blur();
+
+        setCode([]);
+      }
     }, [stateProp]);
 
     return (
       <Box {...restProps}>
         <Input
+          ref={inputRef}
           id={inputId}
           position="absolute"
           width={0}
