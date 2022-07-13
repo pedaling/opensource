@@ -9,7 +9,7 @@ import { VStack } from '../VStack';
 import { withVerificationCodeFieldVariation } from './VerificationCodeFieldProps';
 
 export const VerificationCodeField = withVerificationCodeFieldVariation(
-  ({ length, state: stateProp = 'default', errorMessage, onValueChange, ...restProps }) => {
+  ({ length, state: stateProp = 'default', errorMessage, blurOnComplete, onComplete, ...restProps }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [code, setCode] = useState<string[]>([]);
     const [focusIndex, setFocusIndex] = useState(-1);
@@ -40,6 +40,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
           height={0}
           allowPattern={/\d/}
           maxLength={length}
+          value={code.join('')}
           onFocus={() => {
             setState('default');
 
@@ -47,11 +48,17 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
           }}
           onBlur={() => setFocusIndex(-1)}
           onValueChange={(value: string) => {
+            if (code.length !== length && value.length === length) {
+              onComplete?.(value);
+
+              if (blurOnComplete) {
+                inputRef.current?.blur();
+              }
+            }
+
             setCode(value.split(''));
 
             setFocusIndex(Math.min(length - 1, value.length));
-
-            onValueChange?.(value);
           }}
           onKeyDown={({ key, prevent }: { key: string; prevent: () => void }) => {
             if (/Arrow/.test(key)) {
@@ -85,7 +92,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
             </HStack>
           </HStack>
           {state === 'error' && errorMessage && (
-            <Body level={4} color="error">
+            <Body level={4} color="error" textAlign="center">
               {errorMessage}
             </Body>
           )}
