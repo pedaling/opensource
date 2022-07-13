@@ -18,7 +18,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   padding-left: 38px;
   padding-right: 38px;
   width: 100%;
-  background-color: #AFAFAF;
+  background-color: #FFFFFF;
   height: 100%;
   text-align: center;
   border-color: rgba(0, 0, 0, 0.15);
