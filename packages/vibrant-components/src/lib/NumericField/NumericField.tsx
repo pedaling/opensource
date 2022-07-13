@@ -104,7 +104,7 @@ export const NumericField = withNumericFieldVariation(
         <Box position="absolute" top={4} left={4} bottom={4}>
           <OperatorButton
             operator="minus"
-            disabled={(inputValue !== undefined && min === inputValue) || disabled}
+            disabled={(min !== undefined && min >= (inputValue ?? 0)) || disabled}
             onClick={() =>
               setInputValue((value = placeholder ?? min ?? 0) =>
                 min !== undefined ? Math.max(value - 1, min) : value - 1
@@ -115,7 +115,7 @@ export const NumericField = withNumericFieldVariation(
         <Box position="absolute" top={4} right={4} bottom={4}>
           <OperatorButton
             operator="plus"
-            disabled={(inputValue !== undefined && max === inputValue) || disabled}
+            disabled={(max !== undefined && max <= (inputValue ?? 0)) || disabled}
             onClick={() =>
               setInputValue((value = placeholder ?? min ?? 0) =>
                 max !== undefined ? Math.min(value + 1, max) : value + 1

@@ -72,35 +72,25 @@ describe('<NumericField />', () => {
       [minusButtonElement, plusButtonElement] = Array.from(element.querySelectorAll('button')) as HTMLButtonElement[];
     });
 
-    describe('when minus button clicked', () => {
+    it('minus button is disabled', () => {
+      expect(minusButtonElement.disabled).toBe(true);
+    });
+
+    it('plus button is enabled', () => {
+      expect(plusButtonElement.disabled).toBe(false);
+    });
+
+    describe('when plus button clicked', () => {
       beforeEach(async () => {
-        await waitFor(() => userEvent.click(minusButtonElement));
+        await waitFor(() => userEvent.click(plusButtonElement));
       });
 
-      it('onValueChange called with min value', () => {
-        expect(mockOnValueChange).toBeCalledWith(3);
+      it('onValueChange called with 4', () => {
+        expect(mockOnValueChange).toBeCalledWith(4);
       });
 
-      it('minus button is disabled', () => {
-        expect(minusButtonElement.disabled).toBe(true);
-      });
-
-      it('plus button is enabled', () => {
-        expect(plusButtonElement.disabled).toBe(false);
-      });
-
-      describe('when plus button clicked', () => {
-        beforeEach(async () => {
-          await waitFor(() => userEvent.click(plusButtonElement));
-        });
-
-        it('onValueChange called with 4', () => {
-          expect(mockOnValueChange).toBeCalledWith(4);
-        });
-
-        it('minus button is enabled', () => {
-          expect(minusButtonElement.disabled).toBe(false);
-        });
+      it('minus button is enabled', () => {
+        expect(minusButtonElement.disabled).toBe(false);
       });
     });
 
