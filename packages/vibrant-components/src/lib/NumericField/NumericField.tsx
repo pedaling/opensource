@@ -33,6 +33,7 @@ export const NumericField = withNumericFieldVariation(
 
           return;
         }
+
         if (max !== undefined && max < nextInputValue) {
           setInputValue(max);
 
@@ -63,6 +64,7 @@ export const NumericField = withNumericFieldVariation(
             if (!innerRef) {
               return;
             }
+
             if (typeof innerRef === 'function') {
               innerRef(ref);
 
@@ -92,12 +94,8 @@ export const NumericField = withNumericFieldVariation(
           color={color}
           id={id}
           max={max}
-          onValueChange={value => {
-            setInputValue(value ? parseInt(value, 10) : undefined);
-          }}
-          onBlur={() => {
-            updateInputValue(inputValue ?? min ?? 0);
-          }}
+          onValueChange={value => setInputValue(value ? parseInt(value, 10) : undefined)}
+          onBlur={() => updateInputValue(inputValue ?? min ?? 0)}
           min={min}
           tabIndex={tabIndex}
         />
