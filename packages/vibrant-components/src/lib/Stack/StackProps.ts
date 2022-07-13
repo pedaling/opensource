@@ -52,6 +52,7 @@ export const withStackVariation = withVariation<StackProps>()(
           spaceHeight: 0,
         };
       }
+
       if (direction === 'horizontal') {
         return {
           spaceWidth: spacing,

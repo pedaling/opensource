@@ -7,4 +7,5 @@ export type PseudoClassProps = {
   pseudoActive?: ResponsiveValue<SystemProps>;
   pseudoBefore?: ResponsiveValue<SystemProps>;
   pseudoAfter?: ResponsiveValue<SystemProps>;
+  pseudoPlaceholder?: ResponsiveValue<SystemProps>;
 };

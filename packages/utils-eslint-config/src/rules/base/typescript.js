@@ -20,6 +20,7 @@ module.exports = {
       'error',
       { blankLine: 'always', prev: '*', next: 'return' },
       { blankLine: 'always', prev: ['expression'], next: ['expression'] },
+      { blankLine: 'always', prev: ['if'], next: '*' },
       { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
       { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
     ],
@@ -79,6 +80,16 @@ module.exports = {
         format: null,
         filter: {
           regex: '(VStack|HStack|ZStack|CSS|overflowX|overflowY)',
+          match: true,
+        },
+      },
+
+      // 일부 스타일들을 허용한다
+      {
+        selector: ['objectLiteralProperty'],
+        format: null,
+        filter: {
+          regex: '^(Moz|Webkit)',
           match: true,
         },
       },

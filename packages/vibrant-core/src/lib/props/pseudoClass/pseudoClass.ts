@@ -44,4 +44,17 @@ const pseudoAfterProp = createSystemProp({
   shouldInterpolation: 'before',
 });
 
-export const pseudoClassProps = [pseudoHoverProp, pseudoFocusProp, pseudoActiveProp, pseudoBeforeProp, pseudoAfterProp];
+const pseudoPlaceholder = createSystemProp({
+  property: 'pseudoPlaceholder',
+  styleProperty: '&::placeholder',
+  shouldInterpolation: 'before',
+});
+
+export const pseudoClassProps = [
+  pseudoHoverProp,
+  pseudoFocusProp,
+  pseudoActiveProp,
+  pseudoBeforeProp,
+  pseudoAfterProp,
+  pseudoPlaceholder,
+];

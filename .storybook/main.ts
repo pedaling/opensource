@@ -14,6 +14,9 @@ const config: StorybookViteConfig & { previewHead?: (head: string) => string } =
     files: '**/*.stories.tsx',
     titlePrefix: name,
   })),
+  features: {
+    storyStoreV7: true,
+  },
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-controls',
