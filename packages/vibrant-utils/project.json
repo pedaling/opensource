@@ -13,6 +13,7 @@
         "project": "packages/vibrant-utils/package.json",
         "entryFile": "packages/vibrant-utils/src/*.ts",
         "external": ["react/jsx-runtime"],
+        "buildableProjectDepsInPackageJsonType": "dependencies",
         "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",
         "assets": [

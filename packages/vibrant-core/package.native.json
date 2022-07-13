@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/core-native",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
@@ -13,8 +13,6 @@
     "@emotion/styled": "^11.3.0",
     "@emotion/is-prop-valid": "^1.1.3",
     "@emotion/memoize": "^0.7.4",
-    "@vibrant-ui/utils": "0.0.2",
-    "@vibrant-ui/theme": "0.0.2",
     "@emotion/native": "^11.5.0"
   },
   "peerDependenciesMeta": {
