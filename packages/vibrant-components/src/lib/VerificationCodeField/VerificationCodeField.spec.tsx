@@ -12,9 +12,6 @@ describe('<VerificationCodeField />', () => {
   let labelElements: HTMLLabelElement[];
 
   const mockHandleComplete = jest.fn();
-  const mockHandleBlur = jest.fn();
-
-  HTMLInputElement.prototype.blur = mockHandleBlur;
 
   describe('when VerificationCodeField rendered', () => {
     beforeEach(() => {
@@ -31,8 +28,6 @@ describe('<VerificationCodeField />', () => {
 
     afterEach(() => {
       mockHandleComplete.mockClear();
-
-      mockHandleBlur.mockClear();
     });
 
     describe('enter 12345', () => {
@@ -66,8 +61,8 @@ describe('<VerificationCodeField />', () => {
           expect(mockHandleComplete).toBeCalledWith('123456');
         });
 
-        it('onBlur is not called', () => {
-          expect(mockHandleBlur).not.toBeCalled();
+        it('activeElement is input', () => {
+          expect(document.activeElement).toStrictEqual(inputElement);
         });
       });
 
@@ -84,8 +79,8 @@ describe('<VerificationCodeField />', () => {
           );
         });
 
-        it('onBlur is called', () => {
-          expect(mockHandleBlur).toBeCalled();
+        it('activeElement is not input', () => {
+          expect(document.activeElement).not.toStrictEqual(inputElement);
         });
 
         it('input value will be clear', () => {
@@ -118,8 +113,8 @@ describe('<VerificationCodeField />', () => {
         await userEvent.type(inputElement, '123456');
       });
 
-      it('onBlur called', () => {
-        expect(mockHandleBlur).toBeCalled();
+      it('activeElement is not input', () => {
+        expect(document.activeElement).not.toStrictEqual(inputElement);
       });
     });
   });
