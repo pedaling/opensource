@@ -6,6 +6,7 @@
     "vibrant-components": "packages/vibrant-components",
     "vibrant-core": "packages/vibrant-core",
     "vibrant-icons": "packages/vibrant-icons",
+    "vibrant-motion": "packages/vibrant-motion",
     "vibrant-theme": "packages/vibrant-theme",
     "vibrant-utils": "packages/vibrant-utils",
     "vibrant-website": "packages/vibrant-website"
