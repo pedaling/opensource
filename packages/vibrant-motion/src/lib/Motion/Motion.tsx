@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { animated, useSpring } from 'react-spring';
+import { animated, easings, useSpring } from 'react-spring';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(({ children, duration, loop, from, to }) => {
@@ -16,6 +16,7 @@ export const Motion = withMotionVariation(({ children, duration, loop, from, to 
     to,
     config: {
       duration,
+      easing: easings.easeInQuad,
     },
     loop,
   });

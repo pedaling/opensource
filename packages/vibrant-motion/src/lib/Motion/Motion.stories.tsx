@@ -11,7 +11,7 @@ export default {
     style: {
       x: {
         from: 0,
-        to: 500,
+        to: 250,
       },
     },
   },
@@ -19,6 +19,6 @@ export default {
 
 export const Basic: ComponentStory<typeof Motion> = props => (
   <Motion {...props}>
-    <Box width={300} height={300} backgroundColor="primary" />
+    <Box width={150} height={150} backgroundColor="primary" borderRadius={20} />
   </Motion>
 );
