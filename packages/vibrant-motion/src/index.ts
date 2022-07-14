@@ -1,1 +1,1 @@
-export * from "./lib/vibrant-motion";
+export { Motion } from './lib/Motion';
