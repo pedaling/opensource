@@ -4,7 +4,7 @@ import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { VerificationCodeField } from './VerificationCodeField';
 
 describe('<VerificationCodeField />', () => {
-  const { render } = createReactRenderer();
+  const { render, rerender } = createReactRenderer();
 
   let renderer: ReactRenderer;
   let element: HTMLElement;
@@ -55,8 +55,6 @@ describe('<VerificationCodeField />', () => {
 
       describe('enter 6 in last value', () => {
         beforeEach(async () => {
-          inputElement.value = '12345';
-
           await userEvent.type(inputElement, '6');
         });
 
@@ -72,32 +70,27 @@ describe('<VerificationCodeField />', () => {
           expect(mockHandleBlur).not.toBeCalled();
         });
       });
-    });
 
-    describe('if state prop is changed to error', () => {
-      beforeEach(() => {
-        renderer.rerender(
-          <VerificationCodeField
-            data-testid="verification-code-field"
-            length={6}
-            onComplete={mockHandleComplete}
-            state="error"
-          />
-        );
+      describe('if state prop is changed to error', () => {
+        beforeEach(() => {
+          rerender(
+            renderer,
+            <VerificationCodeField
+              data-testid="verification-code-field"
+              length={6}
+              onComplete={mockHandleComplete}
+              state="error"
+            />
+          );
+        });
 
-        element = renderer.getByTestId('verification-code-field');
+        it('onBlur is called', () => {
+          expect(mockHandleBlur).toBeCalled();
+        });
 
-        inputElement = element.getElementsByTagName('input')[0];
-
-        labelElements = Array.from(element.getElementsByTagName('label'));
-      });
-
-      it('onBlur is called', () => {
-        expect(mockHandleBlur).toBeCalled();
-      });
-
-      it('input value will be clear', () => {
-        expect(inputElement.value).toStrictEqual('');
+        it('input value will be clear', () => {
+          expect(inputElement.value).toStrictEqual('');
+        });
       });
     });
   });
