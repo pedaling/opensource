@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import React from 'react';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '../components/HomepageFeatures';
@@ -14,11 +13,6 @@ const HomepageHeader = () => {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
       </div>
     </header>
   );
@@ -28,7 +22,10 @@ const Home = (): JSX.Element => {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description="Description will go into a meta tag in <head />">
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="Open source design system for building modern, cross-platform web and mobile applications."
+    >
       <HomepageHeader />
       <main>
         <HomepageFeatures />
