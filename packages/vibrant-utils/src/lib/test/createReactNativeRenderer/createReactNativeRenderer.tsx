@@ -25,5 +25,7 @@ export const createReactNativeRenderer = () => {
   return {
     render: (element: ReactElement): ReactNativeRenderer =>
       render(<EmotionCacheProvider value={emotionCache}>{element}</EmotionCacheProvider>),
+    rerender: (renderer: ReactNativeRenderer, element: ReactElement) =>
+      renderer.rerender(<EmotionCacheProvider value={emotionCache}>{element}</EmotionCacheProvider>),
   };
 };
