@@ -2,6 +2,10 @@ const multiInput = require('rollup-plugin-multi-input').default;
 const rollupTypescript = require('rollup-plugin-typescript2');
 
 module.exports = function rollupConfig(config, options) {
+  if (!options.watch) {
+    process.env.NODE_ENV = 'production';
+  }
+
   const { moduleSuffixes = [''], typeCheck = true } = options;
 
   const tsPluginIndex = config.plugins.findIndex(plugin => plugin.name === 'rpt2');
