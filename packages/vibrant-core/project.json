@@ -20,7 +20,6 @@
         "entryFile": "packages/vibrant-core/src/index.ts",
         "external": ["react/jsx-runtime"],
         "buildableProjectDepsInPackageJsonType": "dependencies",
-        "format": ["esm", "cjs"],
         "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",
         "assets": [
@@ -42,7 +41,6 @@
         "entryFile": "packages/vibrant-core/src/index.ts",
         "external": ["react/jsx-runtime"],
         "buildableProjectDepsInPackageJsonType": "dependencies",
-        "format": ["esm", "cjs"],
         "moduleSuffixes": [".native", ""],
         "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel"
