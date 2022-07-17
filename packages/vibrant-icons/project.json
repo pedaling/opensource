@@ -13,6 +13,7 @@
         "project": "packages/vibrant-icons/package.json",
         "entryFile": "packages/vibrant-icons/src/index.ts",
         "external": ["react/jsx-runtime"],
+        "format": ["esm", "cjs"],
         "buildableProjectDepsInPackageJsonType": "dependencies",
         "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",
