@@ -39,7 +39,8 @@ const resetCSS = css`
     font-weight: normal;
   }
 
-  ul {
+  ul,
+  li {
     list-style: none;
   }
 
