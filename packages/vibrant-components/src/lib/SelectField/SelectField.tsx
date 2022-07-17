@@ -159,7 +159,6 @@ export const SelectField = withSelectFieldVariation(
             bottom={position === 'top' ? 54 : 'initial'}
             hidden={!isOpened}
             width="100%"
-            // height={[optionGroupHeight, optionGroupHeight, 'auto']}
             maxHeight={[optionGroupHeight, optionGroupHeight, 320]}
             options={options}
             focusIndex={focusIndex}
