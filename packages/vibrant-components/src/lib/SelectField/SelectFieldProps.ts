@@ -1,27 +1,20 @@
-import type { ReactElement } from 'react';
 import { withVariation } from '@vibrant-ui/core';
+import type { SelectOptionGroupProps } from '../SelectOptionGroup';
 
-export type SelectOption = {
-  label: string;
-  value: string;
-};
-
-type SelectFieldProps = {
-  options: SelectOption[];
+export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderItem'> & {
   state?: 'default' | 'error';
   errorMessage?: string;
-  renderItem?: (_: SelectOption) => ReactElement;
 } & (
-  | {
-      label: string;
-      inlineLabel?: boolean;
-      placeholder?: never;
-    }
-  | {
-      label?: never;
-      inlineLabel?: never;
-      placeholder: string;
-    }
-);
+    | {
+        label: string;
+        inlineLabel?: boolean;
+        placeholder?: never;
+      }
+    | {
+        label?: never;
+        inlineLabel?: never;
+        placeholder: string;
+      }
+  );
 
 export const withSelectFieldVariation = withVariation<SelectFieldProps>()();

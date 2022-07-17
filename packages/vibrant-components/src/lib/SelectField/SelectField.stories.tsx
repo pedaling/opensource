@@ -56,27 +56,45 @@ export const Basic: ComponentStory<typeof SelectField> = props => (
   </Box>
 );
 
-export const WithRenderItem: ComponentStory<typeof SelectField> = props => (
-  <Box>
-    <Box height={500} />
-    <SelectField
-      {...props}
-      renderItem={({ label }) => (
-        <VStack spacing={8}>
-          <Body level={2} color="onView1">
-            {label}
-          </Body>
-          <HStack spacing={4}>
-            <Body level={2} weight="bold" color="error">
-              22%
+export const WithRenderItem: ComponentStory<typeof SelectField> = props => {
+  const data = [
+    {
+      label: 'option 1',
+      value: '1',
+      discountRate: 10,
+      price: 10000,
+    },
+    {
+      label: 'option 2',
+      value: '2',
+      discountRate: 20,
+      price: 20000,
+    },
+  ];
+
+  return (
+    <Box>
+      <Box height={500} />
+      <SelectField
+        {...props}
+        options={data.map(item => ({ label: item.label, value: item.value }))}
+        renderItem={index => (
+          <VStack spacing={8}>
+            <Body level={2} color="onView1">
+              {data[index].label}
             </Body>
-            <Body level={2} weight="bold" color="onView1">
-              224,700원
-            </Body>
-          </HStack>
-        </VStack>
-      )}
-    />
-    <Box height={500} />
-  </Box>
-);
+            <HStack spacing={4}>
+              <Body level={2} weight="bold" color="error">
+                {data[index].discountRate}%
+              </Body>
+              <Body level={2} weight="bold" color="onView1">
+                {data[index].price.toLocaleString()}
+              </Body>
+            </HStack>
+          </VStack>
+        )}
+      />
+      <Box height={500} />
+    </Box>
+  );
+};

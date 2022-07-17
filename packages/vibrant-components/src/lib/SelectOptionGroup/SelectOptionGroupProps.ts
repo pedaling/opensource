@@ -2,17 +2,12 @@ import type { ReactElement } from 'react';
 import type { DisplayProps, PositionProps, SizingProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
-export type SelectOption = {
-  label: string;
-  value: string;
-};
-
-type SelectOptionGroupProps = {
-  options: SelectOption[];
+export type SelectOptionGroupProps = {
   focusIndex: number;
   onItemClick: (index: number) => void;
+  options: { label: string; value: string }[];
   state?: 'default' | 'error';
-  renderItem?: (option: SelectOption) => ReactElement;
+  renderItem?: (index: number) => ReactElement;
 } & DisplayProps &
   PositionProps &
   SizingProps;

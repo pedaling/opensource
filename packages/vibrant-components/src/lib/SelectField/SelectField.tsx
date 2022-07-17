@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { Body } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
 import { Input } from '../Input';
-import { SelectOptionGroup } from '../SelectOptionGroup/SelectOptionGroup';
+import { SelectOptionGroup } from '../SelectOptionGroup';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { withSelectFieldVariation } from './SelectFieldProps';
@@ -159,8 +159,8 @@ export const SelectField = withSelectFieldVariation(
             bottom={position === 'top' ? 54 : 'initial'}
             hidden={!isOpened}
             width="100%"
-            height={[optionGroupHeight, optionGroupHeight, 'auto']}
-            maxHeight={['initial', 'initial', 320]}
+            // height={[optionGroupHeight, optionGroupHeight, 'auto']}
+            maxHeight={[optionGroupHeight, optionGroupHeight, 320]}
             options={options}
             focusIndex={focusIndex}
             onItemClick={index => {

@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react';
 import { Divider } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
-import { SelectOptionItem } from '../SelectOptionItem/SelectOptionItem';
+import { SelectOptionItem } from '../SelectOptionItem';
 import { withSelectOptionGroupVariation } from './SelectOptionGroupProps';
 
 export const SelectOptionGroup = withSelectOptionGroupVariation(
@@ -47,7 +47,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
           <Fragment key={option.value}>
             {index !== 0 && <Divider direction="horizontal" thickness={1} />}
             <SelectOptionItem onClick={() => onItemClick(index)} active={focusIndex === index}>
-              {renderItem?.(option) || option.label}
+              {renderItem?.(index) || option.label}
             </SelectOptionItem>
           </Fragment>
         ))}
