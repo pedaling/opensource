@@ -17,6 +17,7 @@ export const withSelectOptionGroupVariation = withVariation<SelectOptionGroupPro
     props: [
       {
         name: 'state',
+        default: 'default',
       },
     ],
     variants: {
