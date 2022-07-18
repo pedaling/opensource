@@ -157,10 +157,10 @@ export const SelectField = withSelectFieldVariation(
             position="absolute"
             top={position === 'bottom' ? 54 : 'initial'}
             bottom={position === 'top' ? 54 : 'initial'}
-            hidden={!isOpened}
+            hidden={false}
             width="100%"
             maxHeight={[optionGroupHeight, optionGroupHeight, 320]}
-            options={options}
+            options={position === 'top' ? [...options].reverse() : options}
             focusIndex={focusIndex}
             onItemClick={index => {
               setSelectedOptionIndex(index);
