@@ -41,6 +41,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         borderRadius={2}
         overflowY="scroll"
         hidden={hidden}
+        hideScroll={true}
         {...restProps}
       >
         {options.map((option, index) => (
