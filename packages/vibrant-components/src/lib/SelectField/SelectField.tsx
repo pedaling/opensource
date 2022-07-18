@@ -172,9 +172,8 @@ export const SelectField = withSelectFieldVariation(
             hidden={!isOpened}
             width="100%"
             maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
-            focusIndex={focusIndex}
             onItemClick={index => {
-              setSelectedOptionIndex(index);
+              setSelectedOptionIndex(direction === 'up' ? options.length - 1 - index : index);
 
               close();
             }}
@@ -184,10 +183,12 @@ export const SelectField = withSelectFieldVariation(
               ? {
                   top: 54,
                   options,
+                  focusIndex,
                 }
               : {
                   bottom: 54,
                   options: [...options].reverse(),
+                  focusIndex: options.length - 1 - focusIndex,
                 })}
           />
         </Box>
