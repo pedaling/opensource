@@ -90,6 +90,26 @@
           "npx svgo@latest -r packages/vibrant-icons/assets/icons -o packages/vibrant-icons/assets/icons --config packages/vibrant-icons/svgo.config.js"
         ]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "postTargets": ["vibrant-icons:github", "vibrant-icons:deploy"]
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
     }
   }
 }
