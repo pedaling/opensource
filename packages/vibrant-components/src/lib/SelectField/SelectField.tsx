@@ -4,7 +4,6 @@ import { Body } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
 import { Input } from '../Input';
 import { SelectOptionGroup } from '../SelectOptionGroup';
-import { Stack } from '../Stack';
 import { Text } from '../Text';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
@@ -13,9 +12,9 @@ export const SelectField = withSelectFieldVariation(
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isFocused, setIsFocused] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
-    const [position, setPosition] = useState<'top' | 'bottom'>();
+    const [direction, setDirection] = useState<'up' | 'down'>();
     const [focusIndex, setFocusIndex] = useState(-1);
-    const [optionGroupHeight, setOptionGroupHeight] = useState<string | number>('auto');
+    const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<string | number>('auto');
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
 
     const ref = useRef<HTMLLabelElement>(null);
@@ -23,6 +22,7 @@ export const SelectField = withSelectFieldVariation(
 
     const inputId = useMemo(() => uuid(), []);
 
+    const labelColor = state === 'error' ? 'error' : 'onView2';
     const borderColor = isFocused ? 'outlineNeutral' : 'outline1';
 
     const selectedOption = options[selectedOptionIndex];
@@ -42,20 +42,24 @@ export const SelectField = withSelectFieldVariation(
 
       inputRef.current?.focus();
 
-      const { top, height } = ref.current.getBoundingClientRect();
+      const { top, bottom } = ref.current.getBoundingClientRect();
 
-      const remainTop = top;
-      const remainBottom = window.innerHeight - remainTop - height;
+      const spaceAbove = top;
+      const spaceBelow = window.innerHeight - bottom;
 
-      if (selectedOptionIndex !== -1) {
-        setFocusIndex(selectedOptionIndex);
+      if (spaceAbove > spaceBelow) {
+        setFocusIndex(selectedOptionIndex !== -1 ? selectedOptionIndex : options.length - 1 - index);
+
+        setOptionGroupMaxHeight(spaceAbove - 44);
+
+        setDirection('up');
       } else {
-        setFocusIndex(remainTop > remainBottom ? options.length - 1 - index : index);
+        setFocusIndex(selectedOptionIndex !== -1 ? selectedOptionIndex : index);
+
+        setOptionGroupMaxHeight(spaceBelow - 84);
+
+        setDirection('down');
       }
-
-      setOptionGroupHeight(remainTop > remainBottom ? remainTop - 40 : remainBottom - 80);
-
-      setPosition(remainTop > remainBottom ? 'top' : 'bottom');
 
       setIsFocused(true);
 
@@ -135,32 +139,39 @@ export const SelectField = withSelectFieldVariation(
               return isOpened ? close() : open(-1);
             }}
           >
-            <Stack direction={inlineLabel ? 'horizontal' : 'vertical'}>
-              {label && selectedOption && (
+            <Box display="flex" flexDirection={inlineLabel ? 'row' : 'column'} color={labelColor}>
+              {selectedOption ? (
                 <>
-                  <Text kind={inlineLabel ? 'body2' : 'body6'} color={state === 'error' ? 'error' : 'onView2'}>
-                    {label}
+                  {label &&
+                    (inlineLabel ? (
+                      <Text kind="body2" color={labelColor}>
+                        {label}
+                        <Box as="span" color="onView2">
+                          &nbsp;/&nbsp;
+                        </Box>
+                      </Text>
+                    ) : (
+                      <Text kind="body6" color={labelColor}>
+                        {label}
+                      </Text>
+                    ))}
+                  <Text kind="body2" color="onView1">
+                    {selectedOption.label}
                   </Text>
-                  {inlineLabel && (
-                    <Box as="span" color="onView2">
-                      &nbsp;/&nbsp;
-                    </Box>
-                  )}
                 </>
+              ) : (
+                <Text kind="body2" color={labelColor}>
+                  {label || placeholder}
+                </Text>
               )}
-
-              {selectedOption?.label || label || placeholder}
-            </Stack>
+            </Box>
           </Box>
 
           <SelectOptionGroup
             position="absolute"
-            top={position === 'bottom' ? 54 : 'initial'}
-            bottom={position === 'top' ? 54 : 'initial'}
-            hidden={false}
+            hidden={!isOpened}
             width="100%"
-            maxHeight={[optionGroupHeight, optionGroupHeight, 320]}
-            options={position === 'top' ? [...options].reverse() : options}
+            maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
             focusIndex={focusIndex}
             onItemClick={index => {
               setSelectedOptionIndex(index);
@@ -169,6 +180,15 @@ export const SelectField = withSelectFieldVariation(
             }}
             state={state}
             renderItem={renderItem}
+            {...(direction === 'down'
+              ? {
+                  top: 54,
+                  options,
+                }
+              : {
+                  bottom: 54,
+                  options: [...options].reverse(),
+                })}
           />
         </Box>
         {state === 'error' && errorMessage && (
