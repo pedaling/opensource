@@ -18,15 +18,5 @@ export const Basic: ComponentStory<typeof TabGroup> = props => (
     <Tab title="Tab4" id="tab4" />
     <Tab title="Tab5" id="tab5" />
     <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
-    <Tab title="Tab6" id="tab6" />
   </TabGroup>
 );
