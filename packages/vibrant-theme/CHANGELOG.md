@@ -1,0 +1,33 @@
+# Changelog
+
+This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
+
+## 0.1.0 (2022-07-18)
+
+
+### Features
+
+* npm 배포를 설정한다 (0.0.2) ([#33](https://github.com/pedaling/opensource/issues/33)) ([c85a748](https://github.com/pedaling/opensource/commit/c85a748b5b4d9883e48120410baaf1f0b49f66f8))
+* **vibrant-core:** typography 관련 systemProp을 추가한다 ([#36](https://github.com/pedaling/opensource/issues/36)) ([00e56f9](https://github.com/pedaling/opensource/commit/00e56f9d64fb5eedf87616efaa518fb960336a17))
+* **vibrant-theme:** theme에 typography scale을 추가한다 ([#34](https://github.com/pedaling/opensource/issues/34)) ([ce63c42](https://github.com/pedaling/opensource/commit/ce63c4200f53dfdf2398d3961e0b05646e223c53))
+
+
+### Bug Fixes
+
+* cjs빌드를 전부 활성화한다 ([#73](https://github.com/pedaling/opensource/issues/73)) ([c49eba4](https://github.com/pedaling/opensource/commit/c49eba4461680be09d89dcc4bcaf4ef0b284a142))
+* **vibrant-core:** systemProp의 값으로 $를 사용하면 theme 값을 조회해서 사용하도록 수정한다 ([#63](https://github.com/pedaling/opensource/issues/63)) ([8ddec6d](https://github.com/pedaling/opensource/commit/8ddec6d5ae3327614c4baa2ab0c64b10e7f16eda))
+
+## 0.1.0 (2022-07-18)
+
+
+### Features
+
+* npm 배포를 설정한다 (0.0.2) ([#33](https://github.com/pedaling/opensource/issues/33)) ([c85a748](https://github.com/pedaling/opensource/commit/c85a748b5b4d9883e48120410baaf1f0b49f66f8))
+* **vibrant-core:** typography 관련 systemProp을 추가한다 ([#36](https://github.com/pedaling/opensource/issues/36)) ([00e56f9](https://github.com/pedaling/opensource/commit/00e56f9d64fb5eedf87616efaa518fb960336a17))
+* **vibrant-theme:** theme에 typography scale을 추가한다 ([#34](https://github.com/pedaling/opensource/issues/34)) ([ce63c42](https://github.com/pedaling/opensource/commit/ce63c4200f53dfdf2398d3961e0b05646e223c53))
+
+
+### Bug Fixes
+
+* cjs빌드를 전부 활성화한다 ([#73](https://github.com/pedaling/opensource/issues/73)) ([c49eba4](https://github.com/pedaling/opensource/commit/c49eba4461680be09d89dcc4bcaf4ef0b284a142))
+* **vibrant-core:** systemProp의 값으로 $를 사용하면 theme 값을 조회해서 사용하도록 수정한다 ([#63](https://github.com/pedaling/opensource/issues/63)) ([8ddec6d](https://github.com/pedaling/opensource/commit/8ddec6d5ae3327614c4baa2ab0c64b10e7f16eda))
