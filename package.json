@@ -1,7 +1,7 @@
 {
   "name": "class101",
   "packageManager": "yarn@3.2.1",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "test": "nx test",
@@ -16,9 +16,12 @@
   },
   "devDependencies": {
     "@class101/eslint-config": "link:./packages/utils-eslint-config",
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@docusaurus/module-type-aliases": "2.0.0-beta.21",
     "@emotion/cache": "11.9.3",
     "@emotion/jest": "11.9.3",
+    "@jscutlery/semver": "2.25.2",
     "@nrwl/cli": "14.3.6",
     "@nrwl/devkit": "14.3.6",
     "@nrwl/eslint-plugin-nx": "14.3.6",

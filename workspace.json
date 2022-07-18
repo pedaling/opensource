@@ -9,6 +9,36 @@
     "vibrant-motion": "packages/vibrant-motion",
     "vibrant-theme": "packages/vibrant-theme",
     "vibrant-utils": "packages/vibrant-utils",
-    "vibrant-website": "packages/vibrant-website"
+    "vibrant-website": "packages/vibrant-website",
+    "workspace": {
+      "root": ".",
+      "targets": {
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": true,
+            "preset": "conventional"
+          }
+        },
+        "lint": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "exit 0"
+          }
+        },
+        "test": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "exit 0"
+          }
+        },
+        "build": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "exit 0"
+          }
+        }
+      }
+    }
   }
 }
