@@ -23,6 +23,9 @@ jobs:
         run: |
           git config user.name "GitHub Bot"
           git config user.email "opensource@101.inc"
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
       - uses: actions/cache@v3
         id: yarn-cache
         with:
