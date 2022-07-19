@@ -3453,6 +3453,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/nx-plugin@npm:14.3.6":
+  version: 14.3.6
+  resolution: "@nrwl/nx-plugin@npm:14.3.6"
+  dependencies:
+    "@nrwl/devkit": 14.3.6
+    "@nrwl/jest": 14.3.6
+    "@nrwl/js": 14.3.6
+    "@nrwl/linter": 14.3.6
+    fs-extra: ^10.1.0
+    rxjs: ^6.5.4
+    semver: 7.3.4
+    tslib: ^2.3.0
+  checksum: 96bd440a032c2385c57d2bb7a598245f8916914889639c24e39adf8cdccf238f87c9b8ce354b75ea0ac4ef35035b40ca0401ecf24035921bdb19fb9d76c068d1
+  languageName: node
+  linkType: hard
+
 "@nrwl/react@npm:14.3.6":
   version: 14.3.6
   resolution: "@nrwl/react@npm:14.3.6"
@@ -5476,6 +5492,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/cli@npm:~0.1.55":
+  version: 0.1.57
+  resolution: "@swc/cli@npm:0.1.57"
+  dependencies:
+    commander: ^7.1.0
+    fast-glob: ^3.2.5
+    slash: 3.0.0
+    source-map: ^0.7.3
+  peerDependencies:
+    "@swc/core": ^1.2.66
+    chokidar: ^3.5.1
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  bin:
+    spack: bin/spack.js
+    swc: bin/swc.js
+  checksum: d19f02233f5ca18df9d5e9da1d0c847d47c81f4548d8465553b9c54b9ab0aca6ebc61b47f1eff085fe211aea0594e0c694bac3d5097f836fbfaa40d31d0a8dfd
+  languageName: node
+  linkType: hard
+
 "@swc/core-android-arm-eabi@npm:1.2.173":
   version: 1.2.173
   resolution: "@swc/core-android-arm-eabi@npm:1.2.173"
@@ -5755,6 +5792,15 @@ __metadata:
   bin:
     swcx: run_swcx.js
   checksum: ef7a7a5fe0eb95ba85d286c61c6e19890c1b3382437cf5cbe8834a5d5031b60f8f97b285d304ff222b8fc35c3f6cd0d4dd727fb5da76babb8d2382811802e8cf
+  languageName: node
+  linkType: hard
+
+"@swc/helpers@npm:~0.3.3":
+  version: 0.3.17
+  resolution: "@swc/helpers@npm:0.3.17"
+  dependencies:
+    tslib: ^2.4.0
+  checksum: ce3a5146d738b707f0608bba731aa1fd0a8e3f75f140ff7281225d775a769f085f085e0293b570a9d201c76e09951af178c9222d8c706d4ed0d1c85b25f55cb6
   languageName: node
   linkType: hard
 
@@ -9434,6 +9480,7 @@ __metadata:
     "@nrwl/js": 14.3.6
     "@nrwl/linter": 14.3.6
     "@nrwl/nx-cloud": 14.1.3
+    "@nrwl/nx-plugin": 14.3.6
     "@nrwl/react": 14.3.6
     "@nrwl/storybook": 14.3.6
     "@nrwl/web": 14.3.6
@@ -9454,7 +9501,9 @@ __metadata:
     "@svgr/cli": 6.2.1
     "@svgr/core": 6.2.1
     "@swc-node/register": 1.4.2
+    "@swc/cli": ~0.1.55
     "@swc/core": 1.2.173
+    "@swc/helpers": ~0.3.3
     "@testing-library/jest-native": 4.0.5
     "@testing-library/react": 13.3.0
     "@testing-library/react-native": 10.0.0
@@ -9489,6 +9538,7 @@ __metadata:
     eslint-plugin-unused-imports: 2.0.0
     husky: 8.0.0
     jest: 27.5.1
+    jsonc-eslint-parser: ^2.1.0
     ngx-deploy-npm: 4.1.1
     nx: 14.3.6
     prettier: 2.7.1
@@ -9505,7 +9555,7 @@ __metadata:
     storybook-addon-performance: 0.16.1
     ts-jest: 27.1.4
     ts-node: 10.8.0
-    tslib: 2.3.0
+    tslib: ^2.0.0
     typescript: 4.7.2
     uuid: 8.3.2
     vite: 2.9.12
@@ -9802,7 +9852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^7.2.0":
+"commander@npm:^7.1.0, commander@npm:^7.2.0":
   version: 7.2.0
   resolution: "commander@npm:7.2.0"
   checksum: 53501cbeee61d5157546c0bef0fedb6cdfc763a882136284bed9a07225f09a14b82d2a84e7637edfd1a679fb35ed9502fd58ef1d091e6287f60d790147f68ddc
@@ -12723,7 +12773,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-visitor-keys@npm:^3.1.0, eslint-visitor-keys@npm:^3.3.0":
+"eslint-visitor-keys@npm:^3.0.0, eslint-visitor-keys@npm:^3.1.0, eslint-visitor-keys@npm:^3.3.0":
   version: 3.3.0
   resolution: "eslint-visitor-keys@npm:3.3.0"
   checksum: d59e68a7c5a6d0146526b0eec16ce87fbf97fe46b8281e0d41384224375c4e52f5ffb9e16d48f4ea50785cde93f766b0c898e31ab89978d88b0e1720fbfb7808
@@ -12834,7 +12884,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"espree@npm:^9.2.0, espree@npm:^9.3.2":
+"espree@npm:^9.0.0, espree@npm:^9.2.0, espree@npm:^9.3.2":
   version: 9.3.2
   resolution: "espree@npm:9.3.2"
   dependencies:
@@ -13181,7 +13231,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.0.0, fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
+"fast-glob@npm:^3.0.0, fast-glob@npm:^3.0.3, fast-glob@npm:^3.2.11, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.7, fast-glob@npm:^3.2.9":
   version: 3.2.11
   resolution: "fast-glob@npm:3.2.11"
   dependencies:
@@ -17071,6 +17121,18 @@ __metadata:
   bin:
     json5: lib/cli.js
   checksum: e76ea23dbb8fc1348c143da628134a98adf4c5a4e8ea2adaa74a80c455fc2cdf0e2e13e6398ef819bfe92306b610ebb2002668ed9fc1af386d593691ef346fc3
+  languageName: node
+  linkType: hard
+
+"jsonc-eslint-parser@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "jsonc-eslint-parser@npm:2.1.0"
+  dependencies:
+    acorn: ^8.5.0
+    eslint-visitor-keys: ^3.0.0
+    espree: ^9.0.0
+    semver: ^7.3.5
+  checksum: 58a36c835a1d021a1cb91cf29f340420093443b91b307c09761ee00517cae2e4dc665436b3ef9caef6cc2feb768453087ce1bf2e8dfc2934067c9227ed69c6dc
   languageName: node
   linkType: hard
 
@@ -23309,17 +23371,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"slash@npm:3.0.0, slash@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "slash@npm:3.0.0"
+  checksum: 94a93fff615f25a999ad4b83c9d5e257a7280c90a32a7cb8b4a87996e4babf322e469c42b7f649fd5796edd8687652f3fb452a86dc97a816f01113183393f11c
+  languageName: node
+  linkType: hard
+
 "slash@npm:^2.0.0":
   version: 2.0.0
   resolution: "slash@npm:2.0.0"
   checksum: 512d4350735375bd11647233cb0e2f93beca6f53441015eea241fe784d8068281c3987fbaa93e7ef1c38df68d9c60013045c92837423c69115297d6169aa85e6
-  languageName: node
-  linkType: hard
-
-"slash@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "slash@npm:3.0.0"
-  checksum: 94a93fff615f25a999ad4b83c9d5e257a7280c90a32a7cb8b4a87996e4babf322e469c42b7f649fd5796edd8687652f3fb452a86dc97a816f01113183393f11c
   languageName: node
   linkType: hard
 
@@ -25011,13 +25073,6 @@ __metadata:
     minimist: ^1.2.6
     strip-bom: ^3.0.0
   checksum: a8cf746ffe438513a71c70c1bcdee8da7d62ab2af286efbe2728ff55c4d4c92c2aea80a0822982ded6d0a13c7686c24632934d7c0f4f564be9e1b2cdc3d65eea
-  languageName: node
-  linkType: hard
-
-"tslib@npm:2.3.0":
-  version: 2.3.0
-  resolution: "tslib@npm:2.3.0"
-  checksum: 8869694c26e4a7b56d449662fd54a4f9ba872c889d991202c74462bd99f10e61d5bd63199566c4284c0f742277736292a969642cc7b590f98727a7cae9529122
   languageName: node
   linkType: hard
 
