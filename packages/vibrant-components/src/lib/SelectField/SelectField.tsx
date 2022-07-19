@@ -171,7 +171,14 @@ export const SelectField = withSelectFieldVariation(
             }}
             {...restProps}
           >
-            <Box display="flex" flexDirection={inlineLabel ? 'row' : 'column'} color={labelColor}>
+            <Box
+              display="flex"
+              flexDirection={inlineLabel ? 'row' : 'column'}
+              color={labelColor}
+              wordBreak="break-all"
+              wordWrap="break-word"
+              lineLimit={1}
+            >
               {selectedOption ? (
                 <>
                   {label &&
@@ -214,17 +221,11 @@ export const SelectField = withSelectFieldVariation(
             reverse={direction === 'up'}
             options={options}
             focusIndex={focusIndex}
-            {...(direction === 'down'
-              ? {
-                  top: 54,
-                }
-              : {
-                  bottom: 54,
-                })}
+            {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
           />
         </Box>
         {helperText && (
-          <Body level={4} color={state === 'error' ? 'error' : 'onView2'}>
+          <Body level={4} color={state === 'error' ? 'error' : 'onView2'} wordBreak="keep-all" wordWrap="break-word">
             {helperText}
           </Body>
         )}
