@@ -1,6 +1,7 @@
 import { withPerformance } from 'storybook-addon-performance';
 import type { GlobalTypes } from '@storybook/csf';
 import type { DecoratorFn, Parameters } from '@storybook/react';
+import { systemPropNames } from '@vibrant-ui/core';
 import { withGlobalStyle } from './decorators/withGlobalStyle';
 import { withTheme } from './decorators/withTheme';
 
@@ -10,6 +11,7 @@ export const parameters: Parameters = {
     argTypesRegex: '^on[A-Z].*',
   },
   controls: {
+    exclude: systemPropNames,
     sort: 'requiredFirst',
     expanded: true,
   },
