@@ -7,12 +7,6 @@
     "build": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
-      "dependsOn": [
-        {
-          "target": "build-native",
-          "projects": "self"
-        }
-      ],
       "options": {
         "outputPath": "dist/packages/vibrant-core",
         "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
@@ -30,22 +24,13 @@
             "output": "."
           }
         ]
-      }
-    },
-    "build-native": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/vibrant-core-native",
-        "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
-        "project": "packages/vibrant-core/package.native.json",
-        "entryFile": "packages/vibrant-core/src/index.ts",
-        "external": ["react/jsx-runtime"],
-        "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "moduleSuffixes": [".native", ""],
-        "rollupConfig": "tools/config/rollup-config",
-        "compiler": "babel"
+      },
+      "configurations": {
+        "native": {
+          "outputPath": "dist/packages/vibrant-core-native",
+          "project": "packages/vibrant-core/package.native.json",
+          "moduleSuffixes": [".native", ""]
+        }
       }
     },
     "lint": {
@@ -99,7 +84,7 @@
       "options": {
         "preset": "conventional",
         "trackDeps": true,
-        "postTargets": ["vibrant-core:github", "vibrant-core:deploy"]
+        "postTargets": ["vibrant-core:github", "vibrant-core:deploy", "vibrant-core:deploy-native"]
       }
     },
     "github": {
@@ -113,6 +98,13 @@
       "executor": "ngx-deploy-npm:deploy",
       "options": {
         "access": "public"
+      }
+    },
+    "deploy-native": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "buildTarget": "native"
       }
     }
   }

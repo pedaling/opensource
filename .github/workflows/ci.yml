@@ -7,22 +7,28 @@ on:
   pull_request:
 
 jobs:
-  nx_workflow:
-    name: Nx Cloud - Main Job
-    uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.4
-    with:
-      parallel-commands: |
-        yarn nx-cloud record -- yarn nx workspace-lint
-      parallel-commands-on-agents: |
-        yarn nx affected --target=lint --parallel=3
-        yarn nx affected --target=test --parallel=3 --ci --code-coverage
-        yarn nx affected --target=build --parallel=3
-
-  agents:
-    name: Nx Cloud - Agents
-    uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.4
-    with:
-      number-of-agents: 3
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Install Packages
+        run: yarn install --immutable
+      - name: Lint Affected Project
+        run: yarn nx affected --target=lint --parallel=3
+      - name: Test Affected Project
+        run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
 
   chromatic:
     needs: nx_workflow
