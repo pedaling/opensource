@@ -21,7 +21,7 @@ NodeList [
     data-s=""
   >
     
-    ul{list-style:none;}
+    ul,li{list-style:none;}
   </style>,
   <style
     data-emotion="emotion-global"

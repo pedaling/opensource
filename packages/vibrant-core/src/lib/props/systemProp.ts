@@ -62,4 +62,6 @@ export const systemProps = [
   ...typographyProps,
 ];
 
-export const propNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
+export const systemPropNames = systemProps
+  .filter(systemProp => !systemProp.disabled)
+  .map(systemProp => systemProp.propName);

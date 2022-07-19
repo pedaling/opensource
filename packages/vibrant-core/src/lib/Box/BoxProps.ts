@@ -1,7 +1,7 @@
 import type { Ref, ComponentType, ReactNode } from 'react';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps } from '../props';
-import { propNames } from '../props';
+import { systemPropNames } from '../props';
 
 export type BoxProps<
   BaseComponent extends ComponentType | unknown = unknown,
@@ -18,4 +18,4 @@ export type BoxProps<
     children?: ReactNode;
   };
 
-export const shouldForwardProp = createShouldForwardProp(propNames);
+export const shouldForwardProp = createShouldForwardProp(systemPropNames);

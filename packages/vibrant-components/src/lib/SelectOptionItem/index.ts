@@ -1,0 +1,1 @@
+export { SelectOptionItem } from './SelectOptionItem';

@@ -57,6 +57,21 @@ const whiteSpaceProp = createSystemProp({
   disabled: true,
 });
 
+const wordBreakProp = createSystemProp({
+  property: 'wordBreak',
+  disabled: true,
+});
+
+const wordWrapProp = createSystemProp({
+  property: 'wordWrap',
+  disabled: true,
+});
+
+const lineLimitProp = createSystemProp({
+  property: 'lineLimit',
+  disabled: true,
+});
+
 export const typographyProps = [
   typographyProp,
   fontWeightProp,
@@ -68,4 +83,7 @@ export const typographyProps = [
   lineHeightProp,
   fontSizeProp,
   whiteSpaceProp,
+  wordBreakProp,
+  wordWrapProp,
+  lineLimitProp,
 ];
