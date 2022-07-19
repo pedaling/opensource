@@ -1,9 +1,10 @@
-import { withVariation } from '@vibrant-ui/core';
+import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { SelectOptionGroupProps } from '../SelectOptionGroup';
 
 export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderOption'> & {
   state?: 'default' | 'error';
-  errorMessage?: string;
+  helperText?: string;
+  disabled?: boolean;
 } & (
     | {
         label: string;
@@ -17,4 +18,22 @@ export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderO
       }
   );
 
-export const withSelectFieldVariation = withVariation<SelectFieldProps>()();
+export const withSelectFieldVariation = withVariation<SelectFieldProps>()(
+  propVariant({
+    props: [
+      {
+        name: 'disabled',
+        default: false,
+        keep: true,
+      },
+    ],
+    variants: {
+      true: {
+        backgroundColor: 'disable',
+      },
+      false: {
+        backgroundColor: 'surface3',
+      },
+    } as const,
+  })
+);

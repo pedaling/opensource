@@ -8,7 +8,17 @@ import { Text } from '../Text';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
-  ({ label, placeholder, inlineLabel, options, state: stateProp = 'default', errorMessage, renderOption }) => {
+  ({
+    label,
+    placeholder,
+    inlineLabel,
+    options,
+    state: stateProp = 'default',
+    helperText,
+    renderOption,
+    disabled,
+    ...restProps
+  }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isFocused, setIsFocused] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
@@ -22,8 +32,28 @@ export const SelectField = withSelectFieldVariation(
 
     const inputId = useMemo(() => uuid(), []);
 
-    const labelColor = state === 'error' ? 'error' : 'onView2';
-    const borderColor = isFocused ? 'outlineNeutral' : 'outline1';
+    const labelColor = useMemo(() => {
+      if (disabled) {
+        return 'onView3';
+      }
+
+      if (state === 'error') {
+        return 'error';
+      }
+
+      return 'onView2';
+    }, [disabled, state]);
+    const borderColor = useMemo(() => {
+      if (disabled) {
+        return 'outline1';
+      }
+
+      if (state === 'error') {
+        return 'error';
+      }
+
+      return isFocused ? 'outlineNeutral' : 'outline1';
+    }, [disabled, state, isFocused]);
 
     const selectedOption = options[selectedOptionIndex];
 
@@ -36,7 +66,7 @@ export const SelectField = withSelectFieldVariation(
     }, [stateProp]);
 
     const open = (index: number) => {
-      if (!ref.current) {
+      if (!ref.current || disabled) {
         return;
       }
 
@@ -82,6 +112,7 @@ export const SelectField = withSelectFieldVariation(
           height={0}
           value={selectedOption?.value ?? ''}
           readOnly={true}
+          disabled={disabled}
           onKeyDown={({ key, prevent }) => {
             if (key === 'Enter') {
               if (!isOpened) {
@@ -125,19 +156,18 @@ export const SelectField = withSelectFieldVariation(
             alignItems="center"
             height={50}
             px={16}
-            backgroundColor="surface3"
             borderWidth={1}
             borderStyle="solid"
-            borderColor={state === 'error' ? 'error' : borderColor}
+            borderColor={borderColor}
             borderRadius={2}
             typography="body2"
-            color={selectedOption ? 'onView1' : 'onView2'}
             cursor="pointer"
             onMouseDown={event => {
               event.preventDefault();
 
               return isOpened ? close() : open(-1);
             }}
+            {...restProps}
           >
             <Box display="flex" flexDirection={inlineLabel ? 'row' : 'column'} color={labelColor}>
               {selectedOption ? (
@@ -192,9 +222,9 @@ export const SelectField = withSelectFieldVariation(
                 })}
           />
         </Box>
-        {state === 'error' && errorMessage && (
-          <Body level={4} color="error" textAlign="center">
-            {errorMessage}
+        {helperText && (
+          <Body level={4} color={state === 'error' ? 'error' : 'onView2'}>
+            {helperText}
           </Body>
         )}
       </Box>
