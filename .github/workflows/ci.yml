@@ -31,7 +31,7 @@ jobs:
         run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
 
   chromatic:
-    needs: nx_workflow
+    needs: ci
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
