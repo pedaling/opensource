@@ -4,6 +4,7 @@ export { Divider } from './lib/Divider';
 export { GlobalStyle } from './lib/GlobalStyle';
 export { HStack } from './lib/HStack';
 export { Paragraph } from './lib/Paragraph';
+export { SelectField } from './lib/SelectField';
 export { Space } from './lib/Space';
 export { NumericField } from './lib/NumericField';
 export { Tab } from './lib/Tab';
