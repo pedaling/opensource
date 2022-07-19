@@ -77,15 +77,17 @@ export const SelectField = withSelectFieldVariation(
       const spaceAbove = top;
       const spaceBelow = window.innerHeight - bottom;
 
-      if (spaceAbove > spaceBelow) {
-        setFocusIndex(selectedOptionIndex !== -1 ? selectedOptionIndex : options.length - 1 - index);
+      if (selectedOptionIndex !== -1) {
+        setFocusIndex(selectedOptionIndex);
+      } else {
+        setFocusIndex(index);
+      }
 
+      if (spaceAbove > spaceBelow) {
         setOptionGroupMaxHeight(spaceAbove - 44);
 
         setDirection('up');
       } else {
-        setFocusIndex(selectedOptionIndex !== -1 ? selectedOptionIndex : index);
-
         setOptionGroupMaxHeight(spaceBelow - 84);
 
         setDirection('down');
@@ -209,16 +211,15 @@ export const SelectField = withSelectFieldVariation(
             }}
             state={state}
             renderOption={renderOption}
+            reverse={direction === 'up'}
+            options={options}
+            focusIndex={focusIndex}
             {...(direction === 'down'
               ? {
                   top: 54,
-                  options,
-                  focusIndex,
                 }
               : {
                   bottom: 54,
-                  options: [...options].reverse(),
-                  focusIndex: options.length - 1 - focusIndex,
                 })}
           />
         </Box>

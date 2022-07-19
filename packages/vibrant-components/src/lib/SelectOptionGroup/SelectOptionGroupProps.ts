@@ -7,6 +7,7 @@ export type SelectOptionGroupProps = {
   onOptionClick: (index: number) => void;
   options: { label: string; value: string }[];
   state?: 'default' | 'error';
+  reverse?: boolean;
   renderOption?: (index: number) => ReactElement;
 } & DisplayProps &
   PositionProps &
