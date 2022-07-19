@@ -45,6 +45,7 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
+        "trackDeps": true,
         "postTargets": ["vibrant-theme:github", "vibrant-theme:deploy"]
       }
     },

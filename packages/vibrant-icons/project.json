@@ -95,6 +95,7 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
+        "trackDeps": true,
         "postTargets": ["vibrant-icons:github", "vibrant-icons:deploy"]
       }
     },

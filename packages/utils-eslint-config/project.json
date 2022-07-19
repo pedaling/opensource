@@ -34,6 +34,7 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
+        "trackDeps": true,
         "postTargets": ["utils-eslint-config:github", "utils-eslint-config:deploy"]
       }
     },
