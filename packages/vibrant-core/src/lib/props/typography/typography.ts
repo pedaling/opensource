@@ -46,6 +46,25 @@ const whiteSpaceProp = createSystemProp({
   property: 'whiteSpace',
 });
 
+const wordBreakProp = createSystemProp({
+  property: 'wordBreak',
+});
+
+const wordWrapProp = createSystemProp({
+  property: 'wordWrap',
+});
+
+const lineLimitProp = createSystemProp({
+  property: 'lineLimit',
+  transform: (value: number) => ({
+    display: '-webkit-box',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: value,
+  }),
+});
+
 export const typographyProps = [
   typographyProp,
   fontWeightProp,
@@ -57,4 +76,7 @@ export const typographyProps = [
   lineHeightProp,
   fontSizeProp,
   whiteSpaceProp,
+  wordBreakProp,
+  wordWrapProp,
+  lineLimitProp,
 ];

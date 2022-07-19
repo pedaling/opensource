@@ -12,4 +12,7 @@ export type TypographyProps = {
   textAlign?: ResponsiveValue<'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start'>;
   textTransform?: ResponsiveValue<'capitalize' | 'full-size-kana' | 'full-width' | 'lowercase' | 'none' | 'uppercase'>;
   whiteSpace?: ResponsiveValue<'normal' | 'nowrap' | 'pre-line' | 'pre-wrap' | 'break-spaces' | 'pre'>;
+  wordBreak?: ResponsiveValue<'break-all' | 'break-word' | 'keep-all' | 'normal'>;
+  wordWrap?: ResponsiveValue<'break-word' | 'normal'>;
+  lineLimit?: number;
 };
