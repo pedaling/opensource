@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.1.1...vibrant-components-0.2.0) (2022-07-19)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.2.0`
+* `vibrant-core` updated to version `0.2.0`
+* `vibrant-icons` updated to version `0.1.2`
+
+### Features
+
+* **vibrant-components:** SelectField 컴포넌트를 구현한다 ([#74](https://github.com/pedaling/opensource/issues/74)) ([9cb3b15](https://github.com/pedaling/opensource/commit/9cb3b158689a31ee8698e19f980c347b4aab2791))
+
 ### [0.1.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.1.0...vibrant-components-0.1.1) (2022-07-19)
 
 ### Dependency Updates
