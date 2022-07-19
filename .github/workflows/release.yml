@@ -23,7 +23,14 @@ jobs:
         run: |
           git config user.name "GitHub Bot"
           git config user.email "opensource@101.inc"
-      - run: yarn install --frozen-lockfile
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn install --immutable
       - name: Version
         shell: bash
         run: yarn nx affected --base=last-release --target=version --parallel=1 --push
