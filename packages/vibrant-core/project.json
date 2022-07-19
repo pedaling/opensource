@@ -84,7 +84,7 @@
       "options": {
         "preset": "conventional",
         "trackDeps": true,
-        "postTargets": ["vibrant-core:github", "vibrant-core:deploy", "vibrant-core:deploy-native"]
+        "postTargets": ["vibrant-core:github", "vibrant-core:deploy", "vibrant-core:generate-native-package", "vibrant-core:deploy-native"]
       }
     },
     "github": {
@@ -98,6 +98,13 @@
       "executor": "ngx-deploy-npm:deploy",
       "options": {
         "access": "public"
+      }
+    },
+    "generate-native-package": {
+      "executor": "@class101/workspace-plugin:updateNativePackageJson",
+      "options": {
+        "packageJsonName": "package.json",
+        "nativePackageJsonName": "package.native.json"
       }
     },
     "deploy-native": {

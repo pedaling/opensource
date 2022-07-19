@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "UpdateNativePackageJson executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "packageJsonName": {
+      "type": "string",
+      "description": "package.json name"
+    },
+    "nativePackageJsonName": {
+      "type": "string",
+      "description": "native package.json name"
+    }
+  },
+  "required": []
+}

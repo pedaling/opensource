@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "executors": {
+    "updateNativePackageJson": {
+      "implementation": "./src/executors/update-native-package-json/executor",
+      "schema": "./src/executors/update-native-package-json/schema.json",
+      "description": "updateNativePackageJson executor"
+    }
+  }
+}
