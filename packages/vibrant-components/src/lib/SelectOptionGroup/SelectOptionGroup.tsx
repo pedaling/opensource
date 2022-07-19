@@ -8,14 +8,14 @@ import { withSelectOptionGroupVariation } from './SelectOptionGroupProps';
 export const SelectOptionGroup = withSelectOptionGroupVariation(
   ({ options, focusIndex, onOptionClick, renderOption, hidden, reverse, ...restProps }) => {
     const ref = useRef<HTMLUListElement>(null);
-    const indices = reverse ? range(options.length).reverse() : range(options.length);
+    const renderIndices = reverse ? range(options.length).reverse() : range(options.length);
 
     useEffect(() => {
       if (!ref.current) {
         return;
       }
 
-      const index = indices[Math.min(indices.length - 1, Math.max(0, focusIndex))];
+      const index = renderIndices[Math.min(renderIndices.length - 1, Math.max(0, focusIndex))];
       const optionElements = ref.current.querySelectorAll('li');
       const focusElement = optionElements[index];
 
@@ -32,7 +32,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
           top: focusElement.offsetTop + focusElement.offsetHeight - ref.current.offsetHeight,
         });
       }
-    }, [hidden, focusIndex, reverse, indices]);
+    }, [hidden, focusIndex, reverse, renderIndices]);
 
     return (
       <Box
@@ -48,11 +48,11 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         hideScroll={true}
         {...restProps}
       >
-        {indices.map((index, i) => (
-          <Fragment key={options[index].value}>
-            {i !== 0 && <Divider direction="horizontal" thickness={1} />}
-            <SelectOptionItem onClick={() => onOptionClick(index)} active={focusIndex === index}>
-              {renderOption?.(index) || options[index].label}
+        {renderIndices.map((renderIndex, index) => (
+          <Fragment key={options[renderIndex].value}>
+            {index !== 0 && <Divider direction="horizontal" thickness={1} />}
+            <SelectOptionItem onClick={() => onOptionClick(renderIndex)} active={focusIndex === renderIndex}>
+              {renderOption?.(renderIndex) || options[renderIndex].label}
             </SelectOptionItem>
           </Fragment>
         ))}
