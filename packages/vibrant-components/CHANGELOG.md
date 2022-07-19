@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.1.0...vibrant-components-0.1.1) (2022-07-19)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.1.1`
+* `vibrant-utils` updated to version `0.1.0`
+* `vibrant-core` updated to version `0.1.1`
+* `vibrant-icons` updated to version `0.1.1`
+
+### Bug Fixes
+
+* 디펜던시를 트레킹하도록 한다 ([9d2030b](https://github.com/pedaling/opensource/commit/9d2030b8d401c129a2e28d3a4f711b4a64599b2c))
+* TabGroup 스크롤 동작을 수정한다 ([#75](https://github.com/pedaling/opensource/issues/75)) ([e12ddb2](https://github.com/pedaling/opensource/commit/e12ddb2f66d8974f83badd45495b33fe42bbc909))
+
 ## 0.1.0 (2022-07-18)
 
 
