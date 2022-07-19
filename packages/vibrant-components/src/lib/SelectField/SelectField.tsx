@@ -178,7 +178,7 @@ export const SelectField = withSelectFieldVariation(
                     (inlineLabel ? (
                       <Text kind="body2" color={labelColor}>
                         {label}
-                        <Box as="span" color="onView2">
+                        <Box as="span" color={disabled ? 'onView3' : 'onView2'}>
                           &nbsp;/&nbsp;
                         </Box>
                       </Text>
@@ -187,7 +187,7 @@ export const SelectField = withSelectFieldVariation(
                         {label}
                       </Text>
                     ))}
-                  <Text kind="body2" color="onView1">
+                  <Text kind="body2" color={disabled ? 'onView3' : 'onView1'}>
                     {selectedOption.label}
                   </Text>
                 </>
