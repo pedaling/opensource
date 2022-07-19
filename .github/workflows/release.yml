@@ -15,10 +15,10 @@ jobs:
         with:
           node-version: '16'
           registry-url: 'https://registry.npmjs.org'
-      - name: Setup Git
-        run: |
-          git config user.name "GitHub Bot"
-          git config user.email "opensource@101.inc"
+      - name: Check npm credentials
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - run: yarn install --frozen-lockfile
       - name: Version
         shell: bash
