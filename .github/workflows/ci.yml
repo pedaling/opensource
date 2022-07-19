@@ -21,6 +21,10 @@ jobs:
         if: ${{ github.event_name != 'pull_request' }}
         with:
           fetch-depth: 0
+       - name: Derive appropriate SHAs for base and head for `nx affected` commands
+         uses: nrwl/nx-set-shas@v2
+         with:
+           main-branch-name: main
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
