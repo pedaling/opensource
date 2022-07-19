@@ -21,7 +21,7 @@ jobs:
       - run: yarn install --frozen-lockfile
       - name: Version
         shell: bash
-        run: yarn nx affected --base=last-release --target=version --parallel=1
+        run: yarn nx affected --base=last-release --target=version --parallel=1 --push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
