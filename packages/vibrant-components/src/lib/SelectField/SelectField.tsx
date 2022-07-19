@@ -202,7 +202,7 @@ export const SelectField = withSelectFieldVariation(
             hidden={!isOpened}
             width="100%"
             maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
-            onItemClick={index => {
+            onOptionClick={index => {
               setSelectedOptionIndex(direction === 'up' ? options.length - 1 - index : index);
 
               close();

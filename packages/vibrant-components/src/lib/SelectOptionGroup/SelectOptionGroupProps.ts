@@ -4,7 +4,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type SelectOptionGroupProps = {
   focusIndex: number;
-  onItemClick: (index: number) => void;
+  onOptionClick: (index: number) => void;
   options: { label: string; value: string }[];
   state?: 'default' | 'error';
   renderOption?: (index: number) => ReactElement;
