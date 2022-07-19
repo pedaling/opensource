@@ -212,7 +212,7 @@ export const SelectField = withSelectFieldVariation(
             width="100%"
             maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
             onOptionClick={index => {
-              setSelectedOptionIndex(direction === 'up' ? options.length - 1 - index : index);
+              setSelectedOptionIndex(index);
 
               close();
             }}
