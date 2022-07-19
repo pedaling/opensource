@@ -128,13 +128,13 @@ export const SelectField = withSelectFieldVariation(
               }
             }
 
-            if (key === 'ArrowUp') {
+            if (key === (direction === 'up' ? 'ArrowDown' : 'ArrowUp')) {
               setFocusIndex(Math.max(0, focusIndex - 1));
 
               prevent();
             }
 
-            if (key === 'ArrowDown') {
+            if (key === (direction === 'up' ? 'ArrowUp' : 'ArrowDown')) {
               setFocusIndex(Math.min(options.length - 1, focusIndex + 1));
 
               prevent();
