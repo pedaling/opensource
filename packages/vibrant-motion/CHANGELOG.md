@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.1.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.1.0...vibrant-motion-0.1.1) (2022-07-19)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.1.1`
+
+### Bug Fixes
+
+* 디펜던시를 트레킹하도록 한다 ([9d2030b](https://github.com/pedaling/opensource/commit/9d2030b8d401c129a2e28d3a4f711b4a64599b2c))
+
 ## 0.1.0 (2022-07-18)
 
 
