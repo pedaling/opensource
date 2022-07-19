@@ -17,9 +17,11 @@
       }
     },
     {
-      "files": "*.json",
-      "parser": "jsonc-eslint-parser",
-      "rules": {}
+      "files": ["*.json"],
+      "rules": {
+        "@typescript-eslint/no-unused-expressions": "off",
+        "quotes": "off"
+      }
     }
   ],
   "settings": {
