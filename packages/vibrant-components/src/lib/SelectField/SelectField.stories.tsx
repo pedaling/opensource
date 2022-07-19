@@ -56,7 +56,7 @@ export const Basic: ComponentStory<typeof SelectField> = props => (
   </Box>
 );
 
-export const WithRenderItem: ComponentStory<typeof SelectField> = props => {
+export const WithRenderOption: ComponentStory<typeof SelectField> = props => {
   const data = [
     {
       label: 'option 1',
@@ -78,7 +78,7 @@ export const WithRenderItem: ComponentStory<typeof SelectField> = props => {
       <SelectField
         {...props}
         options={data.map(item => ({ label: item.label, value: item.value }))}
-        renderItem={index => (
+        renderOption={index => (
           <VStack spacing={8}>
             <Body level={2} color="onView1">
               {data[index].label}

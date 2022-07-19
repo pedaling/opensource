@@ -1,7 +1,7 @@
 import { withVariation } from '@vibrant-ui/core';
 import type { SelectOptionGroupProps } from '../SelectOptionGroup';
 
-export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderItem'> & {
+export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderOption'> & {
   state?: 'default' | 'error';
   errorMessage?: string;
 } & (

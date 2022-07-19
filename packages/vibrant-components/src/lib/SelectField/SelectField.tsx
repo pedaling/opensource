@@ -8,7 +8,7 @@ import { Text } from '../Text';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
-  ({ label, placeholder, inlineLabel, options, state: stateProp = 'default', errorMessage, renderItem }) => {
+  ({ label, placeholder, inlineLabel, options, state: stateProp = 'default', errorMessage, renderOption }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isFocused, setIsFocused] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
@@ -178,7 +178,7 @@ export const SelectField = withSelectFieldVariation(
               close();
             }}
             state={state}
-            renderItem={renderItem}
+            renderOption={renderOption}
             {...(direction === 'down'
               ? {
                   top: 54,

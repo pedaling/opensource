@@ -5,7 +5,7 @@ import { SelectOptionItem } from '../SelectOptionItem';
 import { withSelectOptionGroupVariation } from './SelectOptionGroupProps';
 
 export const SelectOptionGroup = withSelectOptionGroupVariation(
-  ({ options, focusIndex, onItemClick, renderItem, hidden, ...restProps }) => {
+  ({ options, focusIndex, onItemClick, renderOption, hidden, ...restProps }) => {
     const ref = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
@@ -48,7 +48,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
           <Fragment key={option.value}>
             {index !== 0 && <Divider direction="horizontal" thickness={1} />}
             <SelectOptionItem onClick={() => onItemClick(index)} active={focusIndex === index}>
-              {renderItem?.(index) || option.label}
+              {renderOption?.(index) || option.label}
             </SelectOptionItem>
           </Fragment>
         ))}
