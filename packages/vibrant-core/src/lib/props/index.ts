@@ -12,4 +12,4 @@ export type {
   TypographyProps,
   SystemProps,
 } from './systemProp';
-export { systemProps, propNames } from './systemProp';
+export { systemProps, systemPropNames } from './systemProp';

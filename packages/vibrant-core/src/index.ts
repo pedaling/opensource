@@ -15,6 +15,7 @@ export type {
   TypographyProps,
   SystemProps,
 } from './lib/props';
+export { systemPropNames } from './lib/props';
 export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
 export { ThemeProvider, useCurrentTheme } from './lib/ThemeProvider';
