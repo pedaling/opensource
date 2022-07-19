@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.1.0...vibrant-utils-0.2.0) (2022-07-19)
+
+
+### Features
+
+* **vibrant-components:** SelectField 컴포넌트를 구현한다 ([#74](https://github.com/pedaling/opensource/issues/74)) ([9cb3b15](https://github.com/pedaling/opensource/commit/9cb3b158689a31ee8698e19f980c347b4aab2791))
+
+
+### Bug Fixes
+
+* util 라이브러리에서 core-js를 비활성화한다 ([#76](https://github.com/pedaling/opensource/issues/76)) ([5b66f25](https://github.com/pedaling/opensource/commit/5b66f25ea518e38328a4c229bad14b2d02609a54))
+
 ## 0.1.0 (2022-07-19)
 
 
