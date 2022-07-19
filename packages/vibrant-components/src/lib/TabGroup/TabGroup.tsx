@@ -7,18 +7,29 @@ import { withTabGroupVariation } from './TabGroupProps';
 export const TabGroup = withTabGroupVariation(({ tabFlex, overflowX, tabId, onTabChange, children, ...restProps }) => {
   const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
   const tabRefs = useRef<Record<string, HTMLElement>>({});
+  const tabGroupRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!tabRefs.current[tabId]) {
+    if (!tabRefs.current[tabId] || !tabGroupRef.current) {
       return;
     }
 
-    tabRefs.current[tabId].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    const defaultOffset =
+      ((tabGroupRef.current.children[0] as HTMLElement)?.offsetLeft ?? 0) - tabGroupRef.current.offsetLeft;
+
+    tabGroupRef.current.scrollTo({
+      left:
+        tabRefs.current[tabId].offsetLeft -
+        defaultOffset -
+        tabGroupRef.current.offsetWidth / 2 +
+        tabRefs.current[tabId].offsetWidth / 2,
+      behavior: 'smooth',
+    });
   }, [tabId]);
 
   return (
     <VStack>
-      <HStack overflowX={overflowX} hideScroll={true} mb={-1} px={[20, 20, 0]} {...restProps}>
+      <HStack ref={tabGroupRef} overflowX={overflowX} hideScroll={true} mb={-1} px={[20, 20, 0]} {...restProps}>
         {tabElements.map((element, index) => (
           <HStack
             mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}

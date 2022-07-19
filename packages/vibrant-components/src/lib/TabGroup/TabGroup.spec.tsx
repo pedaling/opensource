@@ -12,12 +12,12 @@ describe('<TabGroup />', () => {
   let renderer: ReactRenderer;
   let element: HTMLElement;
 
-  let mockScrollIntoView: () => void;
+  let mockScrollTo: () => void;
 
   beforeEach(() => {
-    mockScrollIntoView = jest.fn();
+    mockScrollTo = jest.fn();
 
-    Element.prototype.scrollIntoView = mockScrollIntoView;
+    Element.prototype.scrollTo = mockScrollTo;
   });
 
   describe('when TabGroup rendered', () => {
@@ -43,7 +43,7 @@ describe('<TabGroup />', () => {
     });
 
     it('scrollIntoView called', () => {
-      expect(mockScrollIntoView).toBeCalled();
+      expect(mockScrollTo).toBeCalled();
     });
 
     describe('when tab2 clicked', () => {
