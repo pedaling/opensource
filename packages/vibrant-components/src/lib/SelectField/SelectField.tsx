@@ -195,7 +195,7 @@ export const SelectField = withSelectFieldVariation(
                   </Body>
                 </Box>
               ) : (
-                <Body level={2} color={labelColor}>
+                <Body level={2} color={labelColor} lineLimit={1}>
                   {label || placeholder}
                 </Body>
               )}
