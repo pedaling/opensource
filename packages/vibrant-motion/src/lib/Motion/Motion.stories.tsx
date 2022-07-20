@@ -13,6 +13,10 @@ export default {
         from: 0,
         to: 250,
       },
+      backgroundColor: {
+        from: 'primary',
+        to: 'informative',
+      },
     },
   },
 } as ComponentMeta<typeof Motion>;

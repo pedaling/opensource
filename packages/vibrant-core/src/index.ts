@@ -20,3 +20,4 @@ export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
 export { ThemeProvider, useCurrentTheme } from './lib/ThemeProvider';
 export { OnColorContainer } from './lib/OnColorContainer';
+export type { SystemPropThemeScale } from './lib/createSystemProp';
