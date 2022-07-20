@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { animated, easings, useSpring } from 'react-spring';
+import { animated, easings, useSpring } from '../external/ReactSpring';
+import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(({ children, duration, loop, from, to }) => {
@@ -21,5 +22,5 @@ export const Motion = withMotionVariation(({ children, duration, loop, from, to 
     loop,
   });
 
-  return <AnimatedComponent style={style} {...children.props} />;
+  return <AnimatedComponent style={withTransformStyle(style)} {...children.props} />;
 });

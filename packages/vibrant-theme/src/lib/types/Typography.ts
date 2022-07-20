@@ -34,5 +34,5 @@ export type ThemeTypography = {
 };
 
 export type ThemeTypographyWeight = {
-  [key in TypographyWeight]: number;
+  [key in TypographyWeight]: string;
 };
