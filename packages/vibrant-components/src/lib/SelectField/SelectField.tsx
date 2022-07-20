@@ -161,7 +161,6 @@ export const SelectField = withSelectFieldVariation(
             borderStyle="solid"
             borderColor={borderColor}
             borderRadius={2}
-            typography="body2"
             cursor="pointer"
             onMouseDown={event => {
               event.preventDefault();
@@ -171,34 +170,32 @@ export const SelectField = withSelectFieldVariation(
             {...restProps}
           >
             <Box
+              as="span"
               display="flex"
               flexDirection={inlineLabel ? 'row' : 'column'}
-              color={labelColor}
               wordBreak="break-all"
               wordWrap="break-word"
-              lineLimit={1}
             >
               {selectedOption ? (
-                <>
-                  {label &&
-                    (inlineLabel ? (
-                      <Body level={2} color={labelColor}>
+                <Box as="span" lineLimit={inlineLabel ? 1 : undefined}>
+                  {label && (
+                    <>
+                      <Body level={2} color={labelColor} lineLimit={inlineLabel ? undefined : 1}>
                         {label}
-                        <Box as="span" color={disabled ? 'onView3' : 'onView2'}>
+                      </Body>
+                      {inlineLabel && (
+                        <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
                           &nbsp;/&nbsp;
-                        </Box>
-                      </Body>
-                    ) : (
-                      <Body level={6} color={labelColor}>
-                        {label}
-                      </Body>
-                    ))}
-                  <Body level={2} color={disabled ? 'onView3' : 'onView1'}>
+                        </Body>
+                      )}
+                    </>
+                  )}
+                  <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={inlineLabel ? undefined : 1}>
                     {selectedOption.label}
                   </Body>
-                </>
+                </Box>
               ) : (
-                <Body level={2} color={labelColor}>
+                <Body level={2} color={labelColor} lineLimit={1}>
                   {label || placeholder}
                 </Body>
               )}
