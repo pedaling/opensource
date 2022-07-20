@@ -137,10 +137,10 @@ export const baseTheme: Theme = {
     },
   },
   typographyWeight: {
-    regular: 400,
-    medium: 500,
-    bold: 700,
-    extraBold: 800,
+    regular: '400',
+    medium: '500',
+    bold: '700',
+    extraBold: '800',
   },
   mode: 'light',
 };
