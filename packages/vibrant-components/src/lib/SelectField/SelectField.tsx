@@ -177,10 +177,10 @@ export const SelectField = withSelectFieldVariation(
               wordWrap="break-word"
             >
               {selectedOption ? (
-                <Box as="span" {...(inlineLabel ? { lineLimit: 1 } : {})}>
+                <Box as="span" lineLimit={inlineLabel ? 1 : undefined}>
                   {label && (
                     <>
-                      <Body level={2} color={labelColor} {...(inlineLabel ? {} : { lineLimit: 1 })}>
+                      <Body level={2} color={labelColor} lineLimit={inlineLabel ? undefined : 1}>
                         {label}
                       </Body>
                       {inlineLabel && (
@@ -190,7 +190,7 @@ export const SelectField = withSelectFieldVariation(
                       )}
                     </>
                   )}
-                  <Body level={2} color={disabled ? 'onView3' : 'onView1'} {...(inlineLabel ? {} : { lineLimit: 1 })}>
+                  <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={inlineLabel ? undefined : 1}>
                     {selectedOption.label}
                   </Body>
                 </Box>
