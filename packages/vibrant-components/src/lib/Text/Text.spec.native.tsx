@@ -28,7 +28,7 @@ describe('native <Text />', () => {
       expect(renderer.container.findByType(RNText)).toHaveStyle({
         fontSize: 34,
         lineHeight: 44,
-        fontWeight: 700,
+        fontWeight: '700',
       });
     });
 
