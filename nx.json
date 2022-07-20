@@ -46,5 +46,6 @@
         "babel": true
       }
     }
-  }
+  },
+  "defaultProject": "vibrant-example-app"
 }

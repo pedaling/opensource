@@ -2,7 +2,7 @@ import { createSystemProp } from '../../createSystemProp';
 
 const transformRem = (value: any) => {
   if (typeof value === 'string' && value.endsWith('rem')) {
-    return parseInt(value.replace('rem', ''), 10) * 16;
+    return parseFloat(value.replace('rem', '')) * 16;
   }
 
   return value;
