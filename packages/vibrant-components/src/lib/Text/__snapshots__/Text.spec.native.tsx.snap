@@ -7,9 +7,9 @@ exports[`native <Text /> when Text with newline children rendered match snapshot
       Object {
         "color": "#101010",
         "fontFamily": "Pretendard",
-        "fontSize": 32,
+        "fontSize": 34,
         "fontWeight": 700,
-        "lineHeight": 32,
+        "lineHeight": 44,
       },
       undefined,
     ]
@@ -38,9 +38,9 @@ exports[`native <Text /> when title1 Text rendered match snapshot 1`] = `
       Object {
         "color": "#101010",
         "fontFamily": "Pretendard",
-        "fontSize": 32,
+        "fontSize": 34,
         "fontWeight": 700,
-        "lineHeight": 32,
+        "lineHeight": 44,
       },
       undefined,
     ]
