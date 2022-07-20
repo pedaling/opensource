@@ -2,6 +2,28 @@ import { createSystemProp } from '../../createSystemProp';
 
 const displayProp = createSystemProp({
   property: 'display',
+  transform: (value: string) => {
+    if (value === 'none') {
+      return { display: 'none' };
+    }
+
+    if (value === 'inline-flex') {
+      return {
+        display: 'inline-flex',
+        flexDirection: 'row',
+        alignSelf: 'flex-start',
+        alignContent: 'stretch',
+        flexShrink: 0,
+      };
+    }
+
+    return {
+      display: 'flex',
+      flexDirection: 'row',
+      alignContent: 'stretch',
+      flexShrink: 0,
+    };
+  },
 });
 
 const visibilityProp = createSystemProp({

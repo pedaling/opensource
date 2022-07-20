@@ -6,6 +6,7 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ onClick, childr
     as="li"
     p={16}
     color="onView1"
+    width="100%"
     typography="body2"
     cursor="pointer"
     pressable={{

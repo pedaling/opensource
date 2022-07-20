@@ -7,6 +7,8 @@ import { systemProps } from '../props';
 import type { BoxProps } from './BoxProps';
 import { shouldForwardProp } from './BoxProps';
 
+const interpolation = createInterpolation(systemProps, { display: 'flex' });
+
 const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
   switch (as) {
     case 'button':
@@ -40,4 +42,4 @@ export const Box = styled(
   {
     shouldForwardProp,
   }
-)(createInterpolation(systemProps));
+)(interpolation);
