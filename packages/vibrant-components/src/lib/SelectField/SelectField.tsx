@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { v4 as uuid } from 'uuid';
-import { Body } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
+import { Body } from '../Body';
 import { Input } from '../Input';
 import { SelectOptionGroup } from '../SelectOptionGroup';
-import { Text } from '../Text';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
@@ -183,25 +182,25 @@ export const SelectField = withSelectFieldVariation(
                 <>
                   {label &&
                     (inlineLabel ? (
-                      <Text kind="body2" color={labelColor}>
+                      <Body level={2} color={labelColor}>
                         {label}
                         <Box as="span" color={disabled ? 'onView3' : 'onView2'}>
                           &nbsp;/&nbsp;
                         </Box>
-                      </Text>
+                      </Body>
                     ) : (
-                      <Text kind="body6" color={labelColor}>
+                      <Body level={6} color={labelColor}>
                         {label}
-                      </Text>
+                      </Body>
                     ))}
-                  <Text kind="body2" color={disabled ? 'onView3' : 'onView1'}>
+                  <Body level={2} color={disabled ? 'onView3' : 'onView1'}>
                     {selectedOption.label}
-                  </Text>
+                  </Body>
                 </>
               ) : (
-                <Text kind="body2" color={labelColor}>
+                <Body level={2} color={labelColor}>
                   {label || placeholder}
-                </Text>
+                </Body>
               )}
             </Box>
           </Box>

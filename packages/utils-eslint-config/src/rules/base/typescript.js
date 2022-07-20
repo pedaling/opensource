@@ -79,7 +79,7 @@ module.exports = {
         selector: ['default', 'variable', 'typeLike'],
         format: null,
         filter: {
-          regex: '(VStack|HStack|ZStack|CSS|overflowX|overflowY)',
+          regex: '(VStack|HStack|ZStack|CSS|overflowX|overflowY|Pretendard)',
           match: true,
         },
       },

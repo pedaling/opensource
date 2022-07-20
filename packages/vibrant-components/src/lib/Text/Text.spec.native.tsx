@@ -26,8 +26,8 @@ describe('native <Text />', () => {
 
     it('element have title1 style', () => {
       expect(renderer.container.findByType(RNText)).toHaveStyle({
-        fontSize: 32,
-        lineHeight: 32,
+        fontSize: 34,
+        lineHeight: 44,
         fontWeight: 700,
       });
     });

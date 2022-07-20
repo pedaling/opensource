@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react';
-import { Divider } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
 import { range } from '@vibrant-ui/utils';
+import { Divider } from '../Divider';
 import { SelectOptionItem } from '../SelectOptionItem';
 import { withSelectOptionGroupVariation } from './SelectOptionGroupProps';
 
