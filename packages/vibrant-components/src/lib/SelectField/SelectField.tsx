@@ -24,7 +24,7 @@ export const SelectField = withSelectFieldVariation(
     const [direction, setDirection] = useState<'up' | 'down'>('down');
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<string | number>('auto');
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(0);
+    const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
 
     const ref = useRef<HTMLLabelElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
