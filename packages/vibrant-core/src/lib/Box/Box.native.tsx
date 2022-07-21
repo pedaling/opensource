@@ -23,7 +23,7 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
     case 'h3':
     case 'h4':
     case 'h5':
-      return ({ lineLimit, ...props }: any) => <Text numberOfLines={lineLimit} lineBreakMode="tail" {...props} />;
+      return Text;
     case 'br':
       return (props: any) => <Text {...props}>{'\n'}</Text>;
     default:
