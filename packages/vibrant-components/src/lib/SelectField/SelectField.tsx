@@ -196,7 +196,7 @@ export const SelectField = withSelectFieldVariation(
                       )}
                     </>
                   )}
-                  <Box flex={inlineLabel ? 1 : 0}>
+                  <Box flex={1}>
                     <Body
                       level={2}
                       color={disabled ? 'onView3' : 'onView1'}
