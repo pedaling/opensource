@@ -1,3 +1,4 @@
+import { Text } from 'react-native';
 import { createSystemProp } from '../../createSystemProp';
 
 const transformRem = (value: any) => {
@@ -69,7 +70,13 @@ const wordWrapProp = createSystemProp({
 
 const lineLimitProp = createSystemProp({
   property: 'lineLimit',
-  disabled: true,
+  transform: value => ({
+    BaseComponent: Text,
+    props: {
+      numberOfLines: value,
+      lineBreakMode: 'tail',
+    },
+  }),
 });
 
 export const typographyProps = [

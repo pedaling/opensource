@@ -6,7 +6,6 @@ export const OperatorButton = withOperationButtonVariation(
     <Box
       as="button"
       p={7}
-      display="flex"
       borderWidth={0}
       borderRadius={2}
       backgroundColor={backgroundColor}

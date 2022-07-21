@@ -13051,6 +13051,7 @@ __metadata:
     react-native-screens: ~3.11.1
     react-native-svg: 12.3.0
     react-native-svg-transformer: 1.0.0
+    react-native-uuid: 2.0.1
     react-native-web: 0.17.7
     react-spring: 9.5.0
     react-test-renderer: 18.2.0
@@ -28213,6 +28214,13 @@ __metadata:
     react: "*"
     react-native: ">=0.50.0"
   checksum: 9bed890d030819ed650fdc84ae8127f78f72a28d81a160dd574729b81f237c85be6a5ff4a0951b4dd28bd2836189f18afffef1fd6447fb3b6537c7ecd23f08c2
+  languageName: node
+  linkType: hard
+
+"react-native-uuid@npm:2.0.1":
+  version: 2.0.1
+  resolution: "react-native-uuid@npm:2.0.1"
+  checksum: 2fae6e2ee6cef108a31ae9d5be661a1947a86f4c6a812c7386b57d970861b364dc887bc4fe3225227aeea7925ccdc24d4478ff30193305abc283eb4a30ee2138
   languageName: node
   linkType: hard
 

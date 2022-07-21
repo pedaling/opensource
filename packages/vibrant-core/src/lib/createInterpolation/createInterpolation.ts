@@ -4,7 +4,7 @@ import { buildStyle } from '../buildStyle';
 import type { SystemProp } from '../createSystemProp';
 import { useCurrentTheme } from '../ThemeProvider';
 
-export const createInterpolation = (systemProps: SystemProp[]) => {
+export const createInterpolation = (systemProps: SystemProp[], defaultProps: any = {}) => {
   const cache: Record<string, SystemProp | null> = {};
   const enabledSystemProps = systemProps.filter(systemProp => !systemProp.disabled);
   const enabledSystemPropNames = enabledSystemProps.map(systemProp => systemProp.propName);
@@ -51,7 +51,7 @@ export const createInterpolation = (systemProps: SystemProp[]) => {
   return (props: Record<string, any>) => {
     const { theme } = useCurrentTheme();
 
-    const interpolationResult = childInterpolation(props, theme);
+    const interpolationResult = childInterpolation({ ...defaultProps, ...props }, theme);
 
     return buildStyle(interpolationResult, { theme });
   };

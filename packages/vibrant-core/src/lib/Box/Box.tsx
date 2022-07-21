@@ -6,6 +6,8 @@ import { systemProps } from '../props';
 import type { BoxProps } from './BoxProps';
 import { shouldForwardProp } from './BoxProps';
 
+const interpolation = createInterpolation(systemProps, { display: 'flex' });
+
 export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
     const Component = (base as ComponentType) ?? as ?? 'div';
@@ -15,7 +17,7 @@ export const Box = styled(
   {
     shouldForwardProp,
   }
-)(createInterpolation(systemProps)) as <
+)(interpolation) as <
   BaseComponent extends ComponentType | unknown,
   ElementName extends keyof JSX.IntrinsicElements,
   ElementProps extends JSX.IntrinsicElements[ElementName]

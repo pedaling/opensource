@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import { Box } from '@vibrant-ui/core';
+import { uuidV4 } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { Input } from '../Input';
 import { SelectOptionGroup } from '../SelectOptionGroup';
@@ -29,7 +29,7 @@ export const SelectField = withSelectFieldVariation(
     const ref = useRef<HTMLLabelElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const inputId = useMemo(() => uuid(), []);
+    const inputId = useMemo(() => uuidV4(), []);
 
     const labelColor = useMemo(() => {
       if (disabled) {
@@ -153,8 +153,8 @@ export const SelectField = withSelectFieldVariation(
             ref={ref}
             as="label"
             htmlFor={inputId}
-            display="flex"
             alignItems="center"
+            flexDirection="row"
             height={50}
             px={16}
             borderWidth={1}
@@ -169,30 +169,44 @@ export const SelectField = withSelectFieldVariation(
             }}
             {...restProps}
           >
-            <Box
-              as="span"
-              display="flex"
-              flexDirection={inlineLabel ? 'row' : 'column'}
-              wordBreak="break-all"
-              wordWrap="break-word"
-            >
+            <Box width="100%" overflowX="hidden">
               {selectedOption ? (
-                <Box as="span" lineLimit={inlineLabel ? 1 : undefined}>
+                <Box flexDirection={inlineLabel ? 'row' : 'column'}>
                   {label && (
                     <>
-                      <Body level={2} color={labelColor} lineLimit={inlineLabel ? undefined : 1}>
+                      <Body
+                        level={2}
+                        color={labelColor}
+                        maxWidth="100%"
+                        lineLimit={1}
+                        wordBreak="break-all"
+                        wordWrap="break-word"
+                      >
                         {label}
                       </Body>
                       {inlineLabel && (
-                        <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
+                        <Body
+                          level={2}
+                          color={disabled ? 'onView3' : 'onView2'}
+                          wordBreak="break-all"
+                          wordWrap="break-word"
+                        >
                           &nbsp;/&nbsp;
                         </Body>
                       )}
                     </>
                   )}
-                  <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={inlineLabel ? undefined : 1}>
-                    {selectedOption.label}
-                  </Body>
+                  <Box flex={1}>
+                    <Body
+                      level={2}
+                      color={disabled ? 'onView3' : 'onView1'}
+                      wordBreak="break-all"
+                      wordWrap="break-word"
+                      lineLimit={1}
+                    >
+                      {selectedOption.label}
+                    </Body>
+                  </Box>
                 </Box>
               ) : (
                 <Body level={2} color={labelColor} lineLimit={1}>

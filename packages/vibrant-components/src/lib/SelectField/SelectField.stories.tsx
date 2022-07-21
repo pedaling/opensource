@@ -49,7 +49,7 @@ export default {
 } as ComponentMeta<typeof SelectField>;
 
 export const Basic: ComponentStory<typeof SelectField> = props => (
-  <Box>
+  <Box width="100%">
     <Box height={500} />
     <SelectField {...props} />
     <Box height={500} />
@@ -73,7 +73,7 @@ export const WithRenderOption: ComponentStory<typeof SelectField> = props => {
   ];
 
   return (
-    <Box>
+    <VStack width="100%">
       <Box height={500} />
       <SelectField
         {...props}
@@ -95,6 +95,6 @@ export const WithRenderOption: ComponentStory<typeof SelectField> = props => {
         )}
       />
       <Box height={500} />
-    </Box>
+    </VStack>
   );
 };

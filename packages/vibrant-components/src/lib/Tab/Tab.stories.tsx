@@ -1,4 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { VStack } from '../VStack';
 import { Tab } from './Tab';
 
 export default {
@@ -12,4 +13,8 @@ export default {
   },
 } as ComponentMeta<typeof Tab>;
 
-export const Basic: ComponentStory<typeof Tab> = props => <Tab {...props} />;
+export const Basic: ComponentStory<typeof Tab> = props => (
+  <VStack>
+    <Tab {...props} />
+  </VStack>
+);
