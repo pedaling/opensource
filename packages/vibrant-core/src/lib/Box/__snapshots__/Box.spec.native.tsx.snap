@@ -31,7 +31,6 @@ exports[`Native <Box /> as prop when empty box created match snapshot 1`] = `
 
 exports[`Native <Box /> as prop when span box created match snapshot 1`] = `
 <Text
-  lineBreakMode="tail"
   style={
     Object {
       "alignContent": "stretch",

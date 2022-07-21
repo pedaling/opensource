@@ -2,7 +2,6 @@
 
 exports[`native <Text /> when Text with newline children rendered match snapshot 1`] = `
 <Text
-  lineBreakMode="tail"
   style={
     Object {
       "alignContent": "stretch",
@@ -37,7 +36,6 @@ exports[`native <Text /> when Text with newline children rendered match snapshot
 
 exports[`native <Text /> when title1 Text rendered match snapshot 1`] = `
 <Text
-  lineBreakMode="tail"
   style={
     Object {
       "alignContent": "stretch",
