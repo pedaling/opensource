@@ -12,6 +12,7 @@ export const Tab = withTabVariation(
       ref={innerRef}
       flexShrink={0}
       flexGrow={1}
+      flexDirection="row"
       display="inline-flex"
       borderBottomWidth={2}
       borderBottomStyle="solid"
