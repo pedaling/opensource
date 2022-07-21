@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
 import { createInterpolation } from '../createInterpolation';
 import { systemProps } from '../props';
@@ -30,10 +30,12 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
 };
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
-    const Component = base ? (base as ComponentType) : transformAs(as ?? 'div');
+  forwardRef<HTMLDivElement, BoxProps>(({ as, base, style, ...restProps }, ref) => {
+    const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style) as any;
 
-    return <Component ref={ref} {...restProps} />;
+    const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
+
+    return <Component ref={ref} style={restStyle} {...restProps} {...props} />;
   }),
   {
     shouldForwardProp,
