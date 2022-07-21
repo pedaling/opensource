@@ -1,3 +1,4 @@
+import { Body } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
 import { withSelectOptionItemVariation } from './SelectOptionItemProps';
 
@@ -7,7 +8,6 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ onClick, childr
     p={16}
     color="onView1"
     width="100%"
-    typography="body2"
     cursor="pointer"
     pressable={{
       overlayColor: 'onView1',
@@ -16,6 +16,6 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ onClick, childr
     onMouseDown={onClick}
     {...restProps}
   >
-    {children}
+    <Body level={2}>{children}</Body>
   </Box>
 ));

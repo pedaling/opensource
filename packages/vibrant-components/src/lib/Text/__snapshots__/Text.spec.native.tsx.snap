@@ -2,7 +2,9 @@
 
 exports[`native <Text /> when Text with newline children rendered match snapshot 1`] = `
 <Text
+  lineBreakMode="tail"
   style={
+<<<<<<< HEAD
     Object {
       "color": "#101010",
       "fontFamily": "Pretendard",
@@ -10,11 +12,41 @@ exports[`native <Text /> when Text with newline children rendered match snapshot
       "fontWeight": "700",
       "lineHeight": 44,
     }
+=======
+    Array [
+      Object {
+        "alignContent": "stretch",
+        "color": "#101010",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "fontFamily": "Pretendard",
+        "fontSize": 34,
+        "fontWeight": "700",
+        "lineHeight": 44,
+      },
+      undefined,
+    ]
+>>>>>>> 9537e41 (fix: update snapshot)
   }
 >
   Some
   <Text
+<<<<<<< HEAD
     style={Object {}}
+=======
+    style={
+      Array [
+        Object {
+          "alignContent": "stretch",
+          "display": "flex",
+          "flexDirection": "column",
+          "flexShrink": 0,
+        },
+        undefined,
+      ]
+    }
+>>>>>>> 9537e41 (fix: update snapshot)
   >
     
 
@@ -25,7 +57,9 @@ exports[`native <Text /> when Text with newline children rendered match snapshot
 
 exports[`native <Text /> when title1 Text rendered match snapshot 1`] = `
 <Text
+  lineBreakMode="tail"
   style={
+<<<<<<< HEAD
     Object {
       "color": "#101010",
       "fontFamily": "Pretendard",
@@ -33,6 +67,22 @@ exports[`native <Text /> when title1 Text rendered match snapshot 1`] = `
       "fontWeight": "700",
       "lineHeight": 44,
     }
+=======
+    Array [
+      Object {
+        "alignContent": "stretch",
+        "color": "#101010",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "fontFamily": "Pretendard",
+        "fontSize": 34,
+        "fontWeight": "700",
+        "lineHeight": 44,
+      },
+      undefined,
+    ]
+>>>>>>> 9537e41 (fix: update snapshot)
   }
 >
   Something

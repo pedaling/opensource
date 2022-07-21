@@ -9,8 +9,8 @@ const displayProp = createSystemProp({
 
     if (value === 'inline-flex') {
       return {
-        display: 'inline-flex',
-        flexDirection: 'row',
+        display: 'flex',
+        flexDirection: 'column',
         alignSelf: 'flex-start',
         alignContent: 'stretch',
         flexShrink: 0,
@@ -19,7 +19,7 @@ const displayProp = createSystemProp({
 
     return {
       display: 'flex',
-      flexDirection: 'row',
+      flexDirection: 'column',
       alignContent: 'stretch',
       flexShrink: 0,
     };

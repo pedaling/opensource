@@ -6,7 +6,7 @@ exports[`Native <Box /> as prop when br box created match snapshot 1`] = `
     Object {
       "alignContent": "stretch",
       "display": "flex",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "flexShrink": 0,
     }
   }
@@ -22,7 +22,7 @@ exports[`Native <Box /> as prop when empty box created match snapshot 1`] = `
     Object {
       "alignContent": "stretch",
       "display": "flex",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "flexShrink": 0,
     }
   }
@@ -31,11 +31,12 @@ exports[`Native <Box /> as prop when empty box created match snapshot 1`] = `
 
 exports[`Native <Box /> as prop when span box created match snapshot 1`] = `
 <Text
+  lineBreakMode="tail"
   style={
     Object {
       "alignContent": "stretch",
       "display": "flex",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "flexShrink": 0,
     }
   }
@@ -61,7 +62,7 @@ exports[`Native <Box /> base prop when Pressable box created match snapshot 1`] 
     Object {
       "alignContent": "stretch",
       "display": "flex",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "flexShrink": 0,
     }
   }
@@ -74,7 +75,7 @@ exports[`Native <Box /> default style when styled box created match snapshot 1`]
     Object {
       "alignContent": "stretch",
       "display": "flex",
-      "flexDirection": "row",
+      "flexDirection": "column",
       "flexShrink": 0,
       "height": 300,
       "width": 300,
