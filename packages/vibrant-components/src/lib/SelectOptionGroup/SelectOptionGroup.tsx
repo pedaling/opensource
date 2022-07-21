@@ -15,23 +15,23 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         return;
       }
 
-      // const index = renderIndices[Math.min(renderIndices.length - 1, Math.max(0, focusIndex))];
-      // const optionElements = ref.current.querySelectorAll('li');
-      // const focusElement = optionElements[index];
-      //
-      // if (!focusElement) {
-      //   return;
-      // }
-      //
-      // if (ref.current.scrollTop > focusElement.offsetTop) {
-      //   ref.current.scrollTo({ top: focusElement.offsetTop });
-      // }
-      //
-      // if (ref.current.scrollTop + ref.current.offsetHeight < focusElement.offsetTop + focusElement.offsetHeight) {
-      //   ref.current.scrollTo({
-      //     top: focusElement.offsetTop + focusElement.offsetHeight - ref.current.offsetHeight,
-      //   });
-      // }
+      const index = renderIndices[Math.min(renderIndices.length - 1, Math.max(0, focusIndex))];
+      const optionElements = ref.current.querySelectorAll('li');
+      const focusElement = optionElements[index];
+
+      if (!focusElement) {
+        return;
+      }
+
+      if (ref.current.scrollTop > focusElement.offsetTop) {
+        ref.current.scrollTo({ top: focusElement.offsetTop });
+      }
+
+      if (ref.current.scrollTop + ref.current.offsetHeight < focusElement.offsetTop + focusElement.offsetHeight) {
+        ref.current.scrollTo({
+          top: focusElement.offsetTop + focusElement.offsetHeight - ref.current.offsetHeight,
+        });
+      }
     }, [hidden, focusIndex, reverse, renderIndices]);
 
     return (
