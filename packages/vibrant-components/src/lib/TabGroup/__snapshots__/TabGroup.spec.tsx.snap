@@ -12,9 +12,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   width: 100%;
 }
 
@@ -29,9 +29,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -133,9 +133,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   font-family: Pretendard;
   font-size: 1rem;
   font-weight: 700;
@@ -201,9 +201,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   font-family: Pretendard;
   font-size: 1rem;
   font-weight: 700;
@@ -317,9 +317,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;

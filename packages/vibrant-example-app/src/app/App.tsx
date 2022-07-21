@@ -1,5 +1,5 @@
 import { useFonts } from 'expo-font';
-import { VStack, Title, SelectField } from '@vibrant-ui/components';
+import { VStack, Title } from '@vibrant-ui/components';
 
 const App = () => {
   const [loaded] = useFonts({
@@ -13,11 +13,6 @@ const App = () => {
   return (
     <VStack alignment="center" justifyContent="center" height="100%" px={20}>
       <Title level={5}>Welcome VibrantExampleApp 👋</Title>
-      <SelectField
-        options={[{ label: 'ladsafasdfljdasklgjad fklgsj fldksj aksdfhasdjkfhasdkljfhjkbel', value: 'value' }]}
-        label="label"
-        inlineLabel={true}
-      />
     </VStack>
   );
 };

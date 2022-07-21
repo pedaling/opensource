@@ -13,7 +13,7 @@ const displayProp = createSystemProp({
         flexDirection: 'column',
         alignSelf: 'flex-start',
         alignContent: 'stretch',
-        flexShrink: 0,
+        flexShrink: 1,
       };
     }
 
@@ -21,7 +21,7 @@ const displayProp = createSystemProp({
       display: 'flex',
       flexDirection: 'column',
       alignContent: 'stretch',
-      flexShrink: 0,
+      flexShrink: 1,
     };
   },
 });

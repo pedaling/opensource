@@ -12,9 +12,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   position: relative;
   width: 128px;
   height: 38px;
@@ -31,9 +31,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   font-family: Pretendard;
   font-size: 0.875rem;
   font-weight: 400;
@@ -96,9 +96,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   position: absolute;
   top: 4px;
   left: 4px;
@@ -116,9 +116,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   padding: 7px;
   border-width: 0;
   border-radius: 2px;
@@ -168,9 +168,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   width: 16px;
   height: 16px;
 }
@@ -189,9 +189,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   width: 100%;
   height: 100%;
   fill: #101010;
@@ -208,9 +208,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
 }
 
 .emotion-7 {
@@ -224,9 +224,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   position: absolute;
   top: 4px;
   right: 4px;

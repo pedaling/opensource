@@ -4,49 +4,29 @@ exports[`native <Text /> when Text with newline children rendered match snapshot
 <Text
   lineBreakMode="tail"
   style={
-<<<<<<< HEAD
     Object {
+      "alignContent": "stretch",
       "color": "#101010",
+      "display": "flex",
+      "flexDirection": "column",
+      "flexShrink": 1,
       "fontFamily": "Pretendard",
       "fontSize": 34,
       "fontWeight": "700",
       "lineHeight": 44,
     }
-=======
-    Array [
-      Object {
-        "alignContent": "stretch",
-        "color": "#101010",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
-        "fontFamily": "Pretendard",
-        "fontSize": 34,
-        "fontWeight": "700",
-        "lineHeight": 44,
-      },
-      undefined,
-    ]
->>>>>>> 9537e41 (fix: update snapshot)
   }
 >
   Some
   <Text
-<<<<<<< HEAD
-    style={Object {}}
-=======
     style={
-      Array [
-        Object {
-          "alignContent": "stretch",
-          "display": "flex",
-          "flexDirection": "column",
-          "flexShrink": 0,
-        },
-        undefined,
-      ]
+      Object {
+        "alignContent": "stretch",
+        "display": "flex",
+        "flexDirection": "column",
+        "flexShrink": 1,
+      }
     }
->>>>>>> 9537e41 (fix: update snapshot)
   >
     
 
@@ -59,30 +39,17 @@ exports[`native <Text /> when title1 Text rendered match snapshot 1`] = `
 <Text
   lineBreakMode="tail"
   style={
-<<<<<<< HEAD
     Object {
+      "alignContent": "stretch",
       "color": "#101010",
+      "display": "flex",
+      "flexDirection": "column",
+      "flexShrink": 1,
       "fontFamily": "Pretendard",
       "fontSize": 34,
       "fontWeight": "700",
       "lineHeight": 44,
     }
-=======
-    Array [
-      Object {
-        "alignContent": "stretch",
-        "color": "#101010",
-        "display": "flex",
-        "flexDirection": "column",
-        "flexShrink": 0,
-        "fontFamily": "Pretendard",
-        "fontSize": 34,
-        "fontWeight": "700",
-        "lineHeight": 44,
-      },
-      undefined,
-    ]
->>>>>>> 9537e41 (fix: update snapshot)
   }
 >
   Something

@@ -20,7 +20,7 @@ export const withTabGroupVariation = withVariation<TabGroupProps>()(
       fitContent: {
         tabFlexGrow: 0,
         tabFlexShrink: 0,
-        tabFlexBasis: 1,
+        tabFlexBasis: 0,
         overflowX: 'scroll',
         width: 'auto',
       },

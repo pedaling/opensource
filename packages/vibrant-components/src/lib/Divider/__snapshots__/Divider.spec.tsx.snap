@@ -12,9 +12,9 @@ exports[`<Divider /> when Divider with margin rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
