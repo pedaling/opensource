@@ -3,26 +3,18 @@
 exports[`native <Text /> when Text with newline children rendered match snapshot 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "#101010",
-        "fontFamily": "Pretendard",
-        "fontSize": 34,
-        "fontWeight": "700",
-        "lineHeight": 44,
-      },
-      undefined,
-    ]
+    Object {
+      "color": "#101010",
+      "fontFamily": "Pretendard",
+      "fontSize": 34,
+      "fontWeight": "700",
+      "lineHeight": 44,
+    }
   }
 >
   Some
   <Text
-    style={
-      Array [
-        Object {},
-        undefined,
-      ]
-    }
+    style={Object {}}
   >
     
 
@@ -34,16 +26,13 @@ exports[`native <Text /> when Text with newline children rendered match snapshot
 exports[`native <Text /> when title1 Text rendered match snapshot 1`] = `
 <Text
   style={
-    Array [
-      Object {
-        "color": "#101010",
-        "fontFamily": "Pretendard",
-        "fontSize": 34,
-        "fontWeight": "700",
-        "lineHeight": 44,
-      },
-      undefined,
-    ]
+    Object {
+      "color": "#101010",
+      "fontFamily": "Pretendard",
+      "fontSize": 34,
+      "fontWeight": "700",
+      "lineHeight": 44,
+    }
   }
 >
   Something
