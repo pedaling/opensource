@@ -11,6 +11,13 @@ const importRules = {
     'error',
     {
       groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
+      pathGroups: [
+        {
+          pattern: '@*/**',
+          group: 'external',
+          position: 'after',
+        },
+      ],
       alphabetize: {
         order: 'asc',
         caseInsensitive: true,
