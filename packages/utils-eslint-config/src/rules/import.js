@@ -18,6 +18,7 @@ const importRules = {
           position: 'after',
         },
       ],
+      pathGroupsExcludedImportTypes: [],
       alphabetize: {
         order: 'asc',
         caseInsensitive: true,
