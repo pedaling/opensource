@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
 import type { ComponentType, ReactElement } from 'react';
 import { forwardRef } from 'react';
+import styled from '@emotion/styled';
 import { createInterpolation } from '../createInterpolation';
 import { systemProps } from '../props';
 import type { BoxProps } from './BoxProps';
