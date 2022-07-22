@@ -4,7 +4,7 @@ import { get } from '@vibrant-ui/utils';
 import type { Animation } from '../types';
 
 export type StyleConfig<Props extends { style: Record<string, Animation<any>> }> = {
-  name: keyof Props['style'];
+  name: keyof Props['style'] & string;
   scale: SystemPropThemeScale;
 };
 
@@ -16,13 +16,15 @@ export const motionVariant =
   props => {
     const { theme } = useCurrentTheme();
 
-    if (props.style[name as string] === undefined) {
+    if (props.style[name] === undefined) {
       return props;
     }
 
-    for (const key of Object.keys(props.style[name as string])) {
-      (props.style as any)[name][key] = get(theme, `${scale}.${(props.style as any)[name][key]}`);
+    const motionStyle: Record<string, any> = { ...props.style[name] };
+
+    for (const key of Object.keys(props.style[name])) {
+      motionStyle[key] = get(theme, `${scale}.${motionStyle[key]}`);
     }
 
-    return props;
+    return { ...props, style: { ...props.style, [name]: motionStyle } };
   };
