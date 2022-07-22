@@ -3,7 +3,7 @@ import { animated, useSpring } from '../external/ReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
-export const Motion = withMotionVariation(({ innerRef, children, duration, loop, from, pause, to }) => {
+export const Motion = withMotionVariation(({ innerRef, children, duration, loop, from, to }) => {
   const AnimatedComponent = useMemo(
     () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
     [children.type]
@@ -37,14 +37,12 @@ export const Motion = withMotionVariation(({ innerRef, children, duration, loop,
   );
 
   useEffect(() => {
-    if (pause) {
-      springApi.pause();
-
+    if (innerRef) {
       return;
     }
 
     springApi.start(option);
-  }, [option, pause, springApi]);
+  }, [innerRef, option, springApi]);
 
   return <AnimatedComponent style={withTransformStyle(styles)} {...children.props} />;
 });

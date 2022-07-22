@@ -23,7 +23,6 @@ type MotionProps = {
     opacity?: Animation<number>;
     backgroundColor?: Animation<ColorToken>;
   };
-  pause?: boolean;
 };
 
 export const withMotionVariation = withVariation<MotionProps>()(
