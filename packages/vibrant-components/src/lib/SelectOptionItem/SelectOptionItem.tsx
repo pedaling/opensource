@@ -1,5 +1,5 @@
-import { Body } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
+import { Body } from '../Body';
 import { withSelectOptionItemVariation } from './SelectOptionItemProps';
 
 export const SelectOptionItem = withSelectOptionItemVariation(({ onClick, children, ...restProps }) => (
