@@ -1,7 +1,7 @@
 const javascriptRules = require('./javascript');
 
 const typescriptRules = {
-  ...['lines-between-class-members'].reduce(
+  ...['lines-between-class-members', 'no-empty-function'].reduce(
     (prevRules, name) => ({
       ...prevRules,
       [name]: 'off',

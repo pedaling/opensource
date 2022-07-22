@@ -10,6 +10,7 @@ const javascriptRules = {
   'no-bitwise': ['off'],
   'no-console': ['error'],
   'no-continue': ['off'],
+  'no-empty-function': ['off'],
   'no-implicit-coercion': ['error', { string: true, number: true, boolean: true }],
   'no-param-reassign': ['error', { props: false }],
   'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
