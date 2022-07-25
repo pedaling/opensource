@@ -12,7 +12,6 @@
     "jest.config.ts",
     "jest.config.web.ts",
     "jest.config.native.ts",
-    "test/*.ts",
     "**/*.spec.ts",
     "**/*.spec.native.ts",
     "**/*.test.ts",
