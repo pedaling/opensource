@@ -30,7 +30,7 @@ const typescriptRules = {
     { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
   ],
   '@typescript-eslint/return-await': ['off'],
-  '@typescript-eslint/sort-type-union-intersection-members': ['error'],
+  '@typescript-eslint/sort-type-union-intersection-members': ['error', { checkIntersections: false }],
   '@typescript-eslint/triple-slash-reference': ['off'],
 
   // 네이밍 컨벤션
