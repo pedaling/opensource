@@ -1,7 +1,10 @@
 import type { Theme } from '@vibrant-ui/theme';
 import type { Path } from '@vibrant-ui/utils';
 
-export type SystemPropThemeScale = Extract<Path<Theme>, 'colors' | 'opacity' | 'typography' | 'typographyWeight'>;
+export type SystemPropThemeScale = Extract<
+  Path<Theme>,
+  'colors' | 'gradient' | 'opacity' | 'typography' | 'typographyWeight'
+>;
 
 export type SystemPropConfig = {
   property: string;

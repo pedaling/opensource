@@ -1,3 +1,5 @@
+import { LinearGradient as RNLinearGradient } from 'expo-linear-gradient';
+import { deg } from 'react-native-linear-gradient-degree';
 import type { AnyGradient, LinearGradient } from '@vibrant-ui/theme';
 import { createSystemProp } from '../../createSystemProp';
 
@@ -34,9 +36,12 @@ const gradientProp = createSystemProp({
 const linearGradientProp = createSystemProp({
   property: 'linearGradient',
   transform: ({ colors, locations, degree }: LinearGradient) => ({
-    background: `linear-gradient(${degree}deg, ${colors
-      .map((color, index) => `${color} ${locations[index]}%`)
-      .join(', ')})`,
+    BaseComponent: RNLinearGradient,
+    props: {
+      colors,
+      locations: locations.map(location => location / 100),
+      ...deg(degree),
+    },
   }),
 });
 
