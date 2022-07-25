@@ -20,6 +20,7 @@ const javascriptRules = {
     { AssignmentExpression: { array: false, object: false }, VariableDeclarator: { array: false, object: true } },
   ],
   quotes: ['error', 'single', { avoidEscape: true }],
+  'sort-imports': ['error', { ignoreDeclarationSort: true }],
   'sort-keys': ['off'],
 };
 
