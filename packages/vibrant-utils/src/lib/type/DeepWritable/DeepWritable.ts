@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/ban-types */
+
 export type DeepWritable<Type> = Type extends
-  | string
-  | number
-  | boolean
-  | undefined
-  | null
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  | Function
   | Date
   | Error
+  | Function
   | RegExp
+  | boolean
+  | number
+  | string
+  | null
+  | undefined
   ? Type
   : Type extends Map<infer K, infer V>
   ? Map<DeepWritable<K>, DeepWritable<V>>
