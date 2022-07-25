@@ -40,6 +40,6 @@ export const lightModeColors: Colors = {
   gradientBottom:
     ' linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.00583476) 8.3%, rgba(255, 255, 255, 0.0229418) 15.51%, rgba(255, 255, 255, 0.0507253) 21.85%, rgba(255, 255, 255, 0.0885893) 27.49%, rgba(255, 255, 255, 0.135938) 32.64%, rgba(255, 255, 255, 0.192176) 37.49%, rgba(255, 255, 255, 0.256707) 42.25%, rgba(255, 255, 255, 0.328934) 47.09%, rgba(255, 255, 255, 0.408264) 52.22%, rgba(255, 255, 255, 0.494098) 57.83%, rgba(255, 255, 255, 0.585843) 64.13%, rgba(255, 255, 255, 0.682901) 71.3%, rgba(255, 255, 255, 0.784677) 79.53%, rgba(255, 255, 255, 0.890576) 89.04%, #FFFFFF 100%)',
   hoverOverlay: palettes.whiteAlpha['10'],
-
+  transparent: palettes.transparent,
   onColor: '$colors.onView1',
 };
