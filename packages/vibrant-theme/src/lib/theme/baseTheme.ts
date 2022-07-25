@@ -1,7 +1,9 @@
 import type { Theme } from '../types';
 import { darkModeColors } from './darkModeColors';
+import { darkModeGradient } from './darkModeGradient';
 import { darkModeOpacity } from './darkModeOpacity';
 import { lightModeColors } from './lightModeColors';
+import { lightModeGradient } from './lightModeGradient';
 import { lightModeOpacity } from './lightModeOpacity';
 
 export const baseTheme: Theme = {
@@ -13,6 +15,10 @@ export const baseTheme: Theme = {
   opacity: {
     light: lightModeOpacity,
     dark: darkModeOpacity,
+  },
+  gradient: {
+    light: lightModeGradient,
+    dark: darkModeGradient,
   },
   typography: {
     display1: {
