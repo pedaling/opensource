@@ -1,7 +1,7 @@
 import type { ForwardedRef, ReactElement } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { motionVariant } from '../motionVariant';
-import type { AnimationStyle, WithTransition } from '../types';
+import type { Animation, AnimationStyle } from '../types';
 
 export type MotionRefValue = {
   start: (options?: { reverse?: boolean; reset?: boolean }) => void;
@@ -10,12 +10,14 @@ export type MotionRefValue = {
   resume: () => void;
 };
 
+type WithMotion<Style> = { [key in keyof Style]?: Animation<Style[key]> };
+
 type MotionProps = {
   ref?: ForwardedRef<MotionRefValue>;
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
-  style: WithTransition<AnimationStyle>;
+  style: WithMotion<AnimationStyle>;
 };
 
 export const withMotionVariation = withVariation<MotionProps>()(
