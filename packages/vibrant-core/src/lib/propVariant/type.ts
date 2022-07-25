@@ -13,25 +13,24 @@ type IsResponsiveValue<Value> = 1 | 2 extends (
   ? true
   : false;
 
-type BooleanToKey<Prop> = (true extends Prop ? 'true' : Prop) | (false extends Prop ? 'false' : Prop);
+type BooleanToKey<Prop> = false extends Prop ? 'false' : Prop | true extends Prop ? 'true' : Prop;
 
-type PropConfig<Props, PropKey extends keyof Props> = {
-  name: PropKey;
-  keep?: boolean;
-} & (IsNullable<Props[PropKey]> extends true
+type PropConfig<Props, PropKey extends keyof Props> = IsNullable<Props[PropKey]> extends true
   ? {
       default: Props[PropKey];
     }
-  : {
+  : IsResponsiveValue<Props[PropKey]> & {
       default?: Props[PropKey];
-    }) &
-  (IsResponsiveValue<Props[PropKey]> extends true
-    ? {
-        responsive: true;
-      }
-    : {
-        responsive?: false;
-      });
+    } extends true
+  ? {
+      responsive: true;
+    }
+  : {
+      name: PropKey;
+      keep?: boolean;
+    } & {
+      responsive?: false;
+    };
 
 export type AnyPropConfig<Props> = {
   [PropKey in keyof Props]-?: PropConfig<Props, PropKey>;
@@ -47,7 +46,7 @@ export type VariantsReturnProps<PropsConfig, Variants> = Variants extends (args:
   ? VariantsValue<PropsConfig, FnResult>
   : Variants extends infer F
   ? keyof F extends infer K
-    ? F extends { [k in K & (string | number | symbol)]: infer O }
+    ? F extends { [k in K & (number | string | symbol)]: infer O }
       ? VariantsValue<PropsConfig, O>
       : unknown
     : unknown
@@ -60,15 +59,14 @@ export type VariantsValue<PropsConfig, Value> = {
 };
 
 type VariantsFnProps<Props, PropsConfig> = PropsConfig extends [infer First, ...infer Rest]
-  ? (First extends { name: keyof Props }
-      ? {
-          [key in First['name']]-?: Exclude<
-            UnResponsiveValue<Props[First['name']]>,
-            First extends { default: any } ? undefined : never
-          >;
-        }
-      : unknown) &
-      VariantsFnProps<Props, Rest>
+  ? First & VariantsFnProps<Props, Rest> extends { name: keyof Props }
+    ? {
+        [key in First['name']]-?: Exclude<
+          UnResponsiveValue<Props[First['name']]>,
+          First extends { default: any } ? undefined : never
+        >;
+      }
+    : unknown
   : Record<never, never>;
 
 export type SkipForwards<Props, PropsConfig> = PropsConfig extends [infer First, ...infer Rest]
@@ -77,7 +75,7 @@ export type SkipForwards<Props, PropsConfig> = PropsConfig extends [infer First,
     }
     ? First extends { keep: true }
       ? SkipForwards<Props, Rest>
-      : Omit<SkipForwards<Props, Rest>, P & (string | number | symbol)>
+      : Omit<SkipForwards<Props, Rest>, P & (number | string | symbol)>
     : Props
   : Props;
 
@@ -89,7 +87,7 @@ export type VariantsConfig<Props, PropsConfig, VariantsReturn = Record<string, a
     ? (props: VariantsFnProps<Props, PropsConfig>) => VariantsReturn
     : First extends { name: keyof Props }
     ?
+        | Record<BooleanToKey<UnResponsiveValue<Props[First['name']] & (number | string | symbol)>>, VariantsReturn>
         | ((props: VariantsFnProps<Props, PropsConfig>) => VariantsReturn)
-        | Record<BooleanToKey<UnResponsiveValue<Props[First['name']] & (string | number | symbol)>>, VariantsReturn>
     : unknown
   : unknown;

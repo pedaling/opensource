@@ -1,15 +1,15 @@
 import type { ResponsiveValue } from '../../types';
 
 export type InteractionProps = {
-  cursor?: ResponsiveValue<'default' | 'text' | 'pointer'>;
+  cursor?: ResponsiveValue<'default' | 'pointer' | 'text'>;
   pressable?:
+    | false
     | {
         overlayColor: ResponsiveValue<string>;
-        interactions?: ('hover' | 'focus' | 'active')[];
+        interactions?: ('active' | 'focus' | 'hover')[];
       }
     | {
         overlayColor?: never;
-        interactions?: ('focus' | 'active')[];
-      }
-    | false;
+        interactions?: ('active' | 'focus')[];
+      };
 };

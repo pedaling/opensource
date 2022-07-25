@@ -1,4 +1,4 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { VStack } from '../VStack';

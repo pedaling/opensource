@@ -7,13 +7,13 @@ export type SpaceProps = Pick<DisplayProps, 'hidden'> &
         width?: never;
         height?: never;
       })
-    | (Pick<SizingProps, 'width'> & {
-        flex?: never;
-        height?: never;
-      })
     | (Pick<SizingProps, 'height'> & {
         flex?: never;
         width?: never;
+      })
+    | (Pick<SizingProps, 'width'> & {
+        flex?: never;
+        height?: never;
       })
   );
 

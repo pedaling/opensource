@@ -3,13 +3,14 @@ import type { ResponsiveValue, SizingProps, TypographyProps } from '@vibrant-ui/
 import { withVariation } from '@vibrant-ui/core';
 import type { ColorToken, TypographyKind, TypographyWeight } from '@vibrant-ui/theme';
 
-export type TextProps = Omit<TypographyProps, 'typography' | 'fontWeight'> & {
-  as?: 'span' | 'p';
-  ref?: RefObject<HTMLElement>;
-  kind: ResponsiveValue<TypographyKind>;
-  weight?: ResponsiveValue<TypographyWeight>;
-  color?: ResponsiveValue<ColorToken>;
-  children: ReactNode;
-} & Pick<SizingProps, 'maxWidth'>;
+export type TextProps = Omit<TypographyProps, 'fontWeight' | 'typography'> &
+  Pick<SizingProps, 'maxWidth'> & {
+    as?: 'p' | 'span';
+    ref?: RefObject<HTMLElement>;
+    kind: ResponsiveValue<TypographyKind>;
+    weight?: ResponsiveValue<TypographyWeight>;
+    color?: ResponsiveValue<ColorToken>;
+    children: ReactNode;
+  };
 
 export const withTextVariation = withVariation<TextProps>()();

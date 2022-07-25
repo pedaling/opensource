@@ -1,14 +1,14 @@
 import type { ForwardedRef } from 'react';
 import type {
-  DisplayProps,
-  SizingProps,
-  PositionProps,
+  BackgroundProps,
   BorderProps,
+  ColorProps,
+  DisplayProps,
+  PositionProps,
+  PseudoClassProps,
+  SizingProps,
   SpacingProps,
   TypographyProps,
-  PseudoClassProps,
-  ColorProps,
-  BackgroundProps,
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
@@ -22,24 +22,14 @@ export type BaseInputProps<Value> = {
   placeholder?: Value;
 };
 
-export type InputProps = BaseInputProps<string> & {
+export type InputProps = BackgroundProps & BaseInputProps<string> & BorderProps & ColorProps & DisplayProps & PositionProps & PseudoClassProps & SizingProps & SpacingProps & TypographyProps & {
   allowPattern?: RegExp;
   value?: string;
   readOnly?: boolean;
   onFocus?: () => void;
   onBlur?: () => void;
   onKeyDown?: (_: { key: string; prevent: () => void }) => void;
-} & BorderProps &
-  DisplayProps &
-  PositionProps &
-  SpacingProps &
-  SizingProps &
-  TypographyProps &
-  PseudoClassProps &
-  ColorProps &
-  BackgroundProps &
-  (
-    | {
+} & | {
         type: 'number';
         min?: number;
         max?: number;
@@ -47,8 +37,7 @@ export type InputProps = BaseInputProps<string> & {
     | {
         type?: 'text';
         maxLength?: number;
-      }
-  );
+      };
 
 export const withInputVariation = withVariation<InputProps>()(
   propVariant({

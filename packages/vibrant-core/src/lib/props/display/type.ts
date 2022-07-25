@@ -5,8 +5,8 @@ export type DisplayProps = {
   visibility?: ResponsiveValue<'collapse' | 'hidden' | 'visible'>;
   opacity?: ResponsiveValue<number>;
   hidden?: ResponsiveValue<boolean>;
-  overflowX?: ResponsiveValue<'visible' | 'hidden' | 'scroll'>;
-  overflowY?: ResponsiveValue<'visible' | 'hidden' | 'scroll'>;
+  overflowX?: ResponsiveValue<'hidden' | 'scroll' | 'visible'>;
+  overflowY?: ResponsiveValue<'hidden' | 'scroll' | 'visible'>;
   hideScroll?: ResponsiveValue<boolean>;
   hideInputSpinButton?: ResponsiveValue<boolean>;
 };

@@ -1,7 +1,7 @@
 import { withVariation } from '@vibrant-ui/core';
 import type { StackProps } from '../Stack';
 
-export type VStackProps = Omit<StackProps, 'direction' | 'alignItems'> & {
+export type VStackProps = Omit<StackProps, 'alignItems' | 'direction'> & {
   alignment?: StackProps['alignItems'];
 };
 

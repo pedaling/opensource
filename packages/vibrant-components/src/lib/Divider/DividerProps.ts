@@ -4,7 +4,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 export type DividerProps = {
   direction: 'horizontal' | 'vertical';
   thickness: ResponsiveValue<1 | 12>;
-  margin?: ResponsiveValue<'none' | 'md' | 'lg'>;
+  margin?: ResponsiveValue<'lg' | 'md' | 'none'>;
 };
 
 export const withDividerVariation = withVariation<DividerProps>()(

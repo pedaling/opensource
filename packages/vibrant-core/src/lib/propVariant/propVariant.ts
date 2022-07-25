@@ -1,5 +1,5 @@
 import type { ResponsiveValue } from '../types';
-import type { VariantFn, SkipForwards, AnyPropConfig, VariantsReturnProps, VariantsConfig } from './type';
+import type { AnyPropConfig, SkipForwards, VariantFn, VariantsConfig, VariantsReturnProps } from './type';
 
 export const toResponsiveValue = <Type>(value: ResponsiveValue<Type>, length: number) => {
   const responsiveValue = Array.isArray(value) ? value : [value];

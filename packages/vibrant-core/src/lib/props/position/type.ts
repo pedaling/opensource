@@ -2,9 +2,9 @@ import type { ResponsiveValue } from '../../types';
 
 export type PositionProps = {
   position?: ResponsiveValue<'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'>;
-  top?: ResponsiveValue<string | number>;
-  right?: ResponsiveValue<string | number>;
-  bottom?: ResponsiveValue<string | number>;
-  left?: ResponsiveValue<string | number>;
+  top?: ResponsiveValue<number | string>;
+  right?: ResponsiveValue<number | string>;
+  bottom?: ResponsiveValue<number | string>;
+  left?: ResponsiveValue<number | string>;
   zIndex?: ResponsiveValue<number>;
 };
