@@ -6,11 +6,11 @@ import { isDefined } from '@vibrant-ui/utils';
 
 type BaseSvgProps = Omit<
   SVGProps<SVGElement>,
-  keyof BoxProps<unknown, 'svg' | 'path' | 'mark' | 'g' | 'defs' | 'clipPath' | 'linearGradient' | 'stop'>
+  keyof BoxProps<unknown, 'clipPath' | 'defs' | 'g' | 'linearGradient' | 'mark' | 'path' | 'stop' | 'svg'>
 > & { children?: ReactNode; fill?: string; id?: string };
 
 export type SvgProps = Omit<BaseSvgProps, 'fill'> &
-  Pick<BoxProps, 'className' | 'width' | 'fill' | 'height' | 'id' | 'opacity'>;
+  Pick<BoxProps, 'className' | 'fill' | 'height' | 'id' | 'opacity' | 'width'>;
 
 const Path: FC<BaseSvgProps> = props => <Box as="path" {...props} />;
 
