@@ -10,7 +10,7 @@ export type LinearGradient = {
 
 export type AnyGradient = LinearGradient;
 
-type Gradient = {
+export type Gradient = {
   linear: {
     top: LinearGradient;
     bottom: LinearGradient;
