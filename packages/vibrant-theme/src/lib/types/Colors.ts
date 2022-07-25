@@ -38,6 +38,7 @@ export const colorTokens = [
   'gradientBottom',
   'hoverOverlay',
   'onColor',
+  'transparent',
 ] as const;
 
 export type ColorToken = typeof colorTokens[number];
