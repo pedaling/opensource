@@ -1,15 +1,14 @@
 import type { SystemPropThemeScale } from '@vibrant-ui/core';
 import { useCurrentTheme } from '@vibrant-ui/core';
-import { get } from '@vibrant-ui/utils';
-import type { Animation } from '../types';
+import { get, isRecord } from '@vibrant-ui/utils';
 
-export type StyleConfig<Props extends { style: Record<string, Animation<any>> }> = {
+export type StyleConfig<Props extends { style: any }> = {
   name: string & keyof Props['style'];
   scale: SystemPropThemeScale;
 };
 
 export const motionVariant =
-  <Props extends { style: Record<string, Animation<any>> }, Config extends StyleConfig<Props>>({
+  <Props extends { style: Record<string, any> }, Config extends StyleConfig<Props>>({
     name,
     scale,
   }: Config): ((props: Props) => Props) =>
@@ -18,6 +17,10 @@ export const motionVariant =
 
     if (props.style[name] === undefined) {
       return props;
+    }
+
+    if (!isRecord(props.style[name])) {
+      return { ...props, style: { ...props.style, [name]: get(theme, `${scale}.${props.style[name]}`) } };
     }
 
     const motionStyle: Record<string, any> = { ...props.style[name] };
