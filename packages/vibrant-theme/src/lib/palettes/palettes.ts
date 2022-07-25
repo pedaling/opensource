@@ -117,4 +117,6 @@ export const palettes = {
     80: 'rgba(0, 0, 0, 0.8)',
     90: 'rgba(0, 0, 0, 0.9)',
   },
+
+  transparent: 'rgba(0, 0, 0, 0)',
 };
