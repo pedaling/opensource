@@ -2,7 +2,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 
 export type OperatorButtonProps = {
-  operator: 'plus' | 'minus';
+  operator: 'minus' | 'plus';
   disabled?: boolean;
   onClick?: () => void;
 };

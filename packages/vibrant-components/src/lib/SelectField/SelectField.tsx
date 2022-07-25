@@ -21,9 +21,9 @@ export const SelectField = withSelectFieldVariation(
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isFocused, setIsFocused] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
-    const [direction, setDirection] = useState<'up' | 'down'>('down');
+    const [direction, setDirection] = useState<'down' | 'up'>('down');
     const [focusIndex, setFocusIndex] = useState(-1);
-    const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<string | number>('auto');
+    const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
 
     const ref = useRef<HTMLLabelElement>(null);

@@ -1,5 +1,5 @@
 import { useFonts } from 'expo-font';
-import { VStack, Title } from '@vibrant-ui/components';
+import { Title, VStack } from '@vibrant-ui/components';
 
 const App = () => {
   const [loaded] = useFonts({

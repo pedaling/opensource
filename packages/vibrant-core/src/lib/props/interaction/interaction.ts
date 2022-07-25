@@ -1,6 +1,6 @@
 import { createSystemProp } from '../../createSystemProp';
 
-const makePressableStyle = (interactions: ('hover' | 'focus' | 'active')[], overlayColor?: string) =>
+const makePressableStyle = (interactions: ('active' | 'focus' | 'hover')[], overlayColor?: string) =>
   interactions.reduce((acc, cur) => {
     const style = overlayColor
       ? {

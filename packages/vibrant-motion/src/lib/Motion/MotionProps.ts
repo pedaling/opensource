@@ -15,7 +15,7 @@ type MotionProps = {
   ref?: ForwardedRef<MotionRefValue>;
   children: ReactElement;
   duration?: number;
-  loop?: true | false | 'reverse';
+  loop?: 'reverse' | false | true;
   style: {
     x?: Animation<number | string>;
     y?: Animation<number | string>;

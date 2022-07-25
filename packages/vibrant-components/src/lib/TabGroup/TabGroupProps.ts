@@ -4,7 +4,7 @@ import type { TabProps } from '../Tab';
 
 export type TabGroupProps = {
   tabId: string;
-  type: 'fullWidth' | 'fitContent';
+  type: 'fitContent' | 'fullWidth';
   onTabChange: (tabId: string) => void;
   children: ReactElement<TabProps>[];
 };

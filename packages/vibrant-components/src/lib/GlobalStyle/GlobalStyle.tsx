@@ -1,4 +1,4 @@
-import { css, Global } from '@emotion/react';
+import { Global, css } from '@emotion/react';
 
 const resetCSS = css`
   /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */

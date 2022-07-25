@@ -14,7 +14,7 @@ describe('propVariant', () => {
   describe('variants type is object', () => {
     describe('prop is responsive value', () => {
       const propVariantFn = testPropVariant<{
-        size: ResponsiveValue<'sm' | 'md'>;
+        size: ResponsiveValue<'md' | 'sm'>;
       }>()({
         props: [
           {
@@ -180,7 +180,7 @@ describe('propVariant', () => {
     describe('prop is responsive value', () => {
       beforeEach(() => {
         const propVariantFn = testPropVariant<{
-          size: ResponsiveValue<'sm' | 'md'>;
+          size: ResponsiveValue<'md' | 'sm'>;
           disabled?: boolean;
         }>()({
           props: [
@@ -218,7 +218,7 @@ describe('propVariant', () => {
 
     describe('prop is not responsive value', () => {
       const propVariantFn = testPropVariant<{
-        size: 'sm' | 'md';
+        size: 'md' | 'sm';
         disabled: boolean;
       }>()({
         props: [
@@ -251,7 +251,7 @@ describe('propVariant', () => {
       describe('with no default value', () => {
         beforeEach(() => {
           const propVariantFn = testPropVariant<{
-            size?: 'sm' | 'md';
+            size?: 'md' | 'sm';
             disabled?: boolean;
           }>()({
             props: [
@@ -283,7 +283,7 @@ describe('propVariant', () => {
       describe('with default value', () => {
         beforeEach(() => {
           const propVariantFn = testPropVariant<{
-            size?: 'sm' | 'md';
+            size?: 'md' | 'sm';
             disabled?: boolean;
           }>()({
             props: [

@@ -4,7 +4,7 @@ import { get } from '@vibrant-ui/utils';
 import type { Animation } from '../types';
 
 export type StyleConfig<Props extends { style: Record<string, Animation<any>> }> = {
-  name: keyof Props['style'] & string;
+  name: string & keyof Props['style'];
   scale: SystemPropThemeScale;
 };
 

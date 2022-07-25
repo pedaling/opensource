@@ -6,5 +6,5 @@ export type BackgroundProps = {
   backgroundImage?: ResponsiveValue<string>;
   backgroundSize?: ResponsiveValue<'auto' | 'contain' | 'cover'>;
   backgroundPosition?: ResponsiveValue<'bottom' | 'center' | 'left' | 'right' | 'top'>;
-  backgroundRepeat?: ResponsiveValue<'no-repeat' | 'repeat' | 'repeat-x' | 'repeat-y' | 'round' | 'space'>;
+  backgroundRepeat?: ResponsiveValue<'no-repeat' | 'repeat-x' | 'repeat-y' | 'repeat' | 'round' | 'space'>;
 };

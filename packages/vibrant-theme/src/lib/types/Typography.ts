@@ -1,26 +1,26 @@
-export type TypographyWeight = 'regular' | 'medium' | 'bold' | 'extraBold';
+export type TypographyWeight = 'bold' | 'extraBold' | 'medium' | 'regular';
 
 export type TypographyKind =
-  | 'display1'
-  | 'display2'
-  | 'display3'
-  | 'display4'
-  | 'title1'
-  | 'title2'
-  | 'title3'
-  | 'title4'
-  | 'title5'
-  | 'title6'
-  | 'title7'
   | 'body1'
   | 'body2'
   | 'body3'
   | 'body4'
   | 'body5'
   | 'body6'
+  | 'display1'
+  | 'display2'
+  | 'display3'
+  | 'display4'
   | 'paragraph1'
   | 'paragraph2'
-  | 'paragraph3';
+  | 'paragraph3'
+  | 'title1'
+  | 'title2'
+  | 'title3'
+  | 'title4'
+  | 'title5'
+  | 'title6'
+  | 'title7';
 
 type TypographyStyle = {
   fontFamily: string;

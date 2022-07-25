@@ -1,92 +1,92 @@
 import type { ResponsiveValue } from '../../types';
 
 export type FlexboxProps = {
-  flex?: ResponsiveValue<string | number>;
-  flexGrow?: ResponsiveValue<string | number>;
-  flexShrink?: ResponsiveValue<string | number>;
-  flexBasis?: ResponsiveValue<string | number>;
-  flexDirection?: ResponsiveValue<'column' | 'column-reverse' | 'row' | 'row-reverse'>;
-  flexWrap?: ResponsiveValue<'nowrap' | 'wrap' | 'wrap-reverse'>;
+  flex?: ResponsiveValue<number | string>;
+  flexGrow?: ResponsiveValue<number | string>;
+  flexShrink?: ResponsiveValue<number | string>;
+  flexBasis?: ResponsiveValue<number | string>;
+  flexDirection?: ResponsiveValue<'column-reverse' | 'column' | 'row-reverse' | 'row'>;
+  flexWrap?: ResponsiveValue<'nowrap' | 'wrap-reverse' | 'wrap'>;
   alignContent?: ResponsiveValue<
+    | 'baseline'
+    | 'center'
+    | 'end'
+    | 'flex-end'
+    | 'flex-start'
+    | 'normal'
     | 'space-around'
     | 'space-between'
     | 'space-evenly'
-    | 'stretch'
-    | 'center'
-    | 'end'
-    | 'flex-end'
-    | 'flex-start'
     | 'start'
-    | 'baseline'
-    | 'normal'
+    | 'stretch'
   >;
   alignItems?: ResponsiveValue<
+    | 'baseline'
     | 'center'
     | 'end'
     | 'flex-end'
     | 'flex-start'
+    | 'normal'
     | 'self-end'
     | 'self-start'
     | 'start'
-    | 'baseline'
-    | 'normal'
     | 'stretch'
   >;
   alignSelf?: ResponsiveValue<
+    | 'auto'
+    | 'baseline'
     | 'center'
     | 'end'
     | 'flex-end'
     | 'flex-start'
+    | 'normal'
     | 'self-end'
     | 'self-start'
     | 'start'
-    | 'auto'
-    | 'baseline'
-    | 'normal'
     | 'stretch'
   >;
   justifyContent?: ResponsiveValue<
-    | 'space-around'
-    | 'space-between'
-    | 'space-evenly'
-    | 'stretch'
     | 'center'
     | 'end'
     | 'flex-end'
     | 'flex-start'
-    | 'start'
     | 'left'
     | 'normal'
     | 'right'
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly'
+    | 'start'
+    | 'stretch'
   >;
   justifyItems?: ResponsiveValue<
+    | 'baseline'
     | 'center'
     | 'end'
     | 'flex-end'
     | 'flex-start'
-    | 'self-end'
-    | 'self-start'
-    | 'start'
-    | 'baseline'
     | 'left'
     | 'legacy'
     | 'normal'
     | 'right'
+    | 'self-end'
+    | 'self-start'
+    | 'start'
     | 'stretch'
   >;
   justifySelf?: ResponsiveValue<
+    | 'auto'
+    | 'baseline'
     | 'center'
     | 'end'
     | 'flex-end'
     | 'flex-start'
-    | 'self-end'
-    | 'self-start'
-    | 'start'
-    | 'auto'
-    | 'baseline'
     | 'left'
     | 'normal'
     | 'right'
+    | 'self-end'
+    | 'self-start'
+    | 'start'
     | 'stretch'
   >;
   order?: ResponsiveValue<number>;

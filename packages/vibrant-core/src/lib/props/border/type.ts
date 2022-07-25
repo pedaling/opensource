@@ -2,19 +2,19 @@ import type { ResponsiveValue } from '../../types';
 
 export type BorderProps = {
   borderWidth?: ResponsiveValue<number>;
-  borderStyle?: ResponsiveValue<'solid' | 'none'>;
+  borderStyle?: ResponsiveValue<'none' | 'solid'>;
   borderColor?: ResponsiveValue<string>;
   borderTopWidth?: ResponsiveValue<number>;
-  borderTopStyle?: ResponsiveValue<'solid' | 'none'>;
+  borderTopStyle?: ResponsiveValue<'none' | 'solid'>;
   borderTopColor?: ResponsiveValue<string>;
   borderRightWidth?: ResponsiveValue<number>;
-  borderRightStyle?: ResponsiveValue<'solid' | 'none'>;
+  borderRightStyle?: ResponsiveValue<'none' | 'solid'>;
   borderRightColor?: ResponsiveValue<string>;
   borderBottomWidth?: ResponsiveValue<number>;
-  borderBottomStyle?: ResponsiveValue<'solid' | 'none'>;
+  borderBottomStyle?: ResponsiveValue<'none' | 'solid'>;
   borderBottomColor?: ResponsiveValue<string>;
   borderLeftWidth?: ResponsiveValue<number>;
-  borderLeftStyle?: ResponsiveValue<'solid' | 'none'>;
+  borderLeftStyle?: ResponsiveValue<'none' | 'solid'>;
   borderLeftColor?: ResponsiveValue<string>;
   borderRadius?: ResponsiveValue<number | string>;
   borderTopLeftRadius?: ResponsiveValue<number | string>;
@@ -22,7 +22,7 @@ export type BorderProps = {
   borderBottomLeftRadius?: ResponsiveValue<number | string>;
   borderBottomRightRadius?: ResponsiveValue<number | string>;
   outlineWidth?: ResponsiveValue<number>;
-  outlineStyle?: ResponsiveValue<'solid' | 'none'>;
+  outlineStyle?: ResponsiveValue<'none' | 'solid'>;
   outlineColor?: ResponsiveValue<string>;
   outlineOffset?: ResponsiveValue<number>;
 };

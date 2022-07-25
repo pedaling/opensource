@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 type SelectOptionItemProps = {
-  children: string | ReactElement;
+  children: ReactElement | string;
   onClick: () => void;
   active?: boolean;
 };

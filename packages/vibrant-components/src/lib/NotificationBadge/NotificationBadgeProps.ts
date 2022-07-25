@@ -7,14 +7,14 @@ export type NotificationBadgeProps = {
   borderColor?: BaseColorToken;
 } & (
   | {
+      kind: 'dot';
+      size: ResponsiveValue<'lg' | 'md' | 'sm'>;
+      count?: never;
+    }
+  | {
       kind: 'number';
       size?: never;
       count: number;
-    }
-  | {
-      kind: 'dot';
-      size: ResponsiveValue<'sm' | 'md' | 'lg'>;
-      count?: never;
     }
 );
 

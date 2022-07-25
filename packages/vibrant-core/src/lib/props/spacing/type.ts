@@ -1,18 +1,18 @@
 import type { ResponsiveValue } from '../../types';
 
 export type SpacingProps = {
-  m?: ResponsiveValue<string | number>;
-  mt?: ResponsiveValue<string | number>;
-  mr?: ResponsiveValue<string | number>;
-  mb?: ResponsiveValue<string | number>;
-  ml?: ResponsiveValue<string | number>;
-  my?: ResponsiveValue<string | number>;
-  mx?: ResponsiveValue<string | number>;
-  p?: ResponsiveValue<string | number>;
-  pt?: ResponsiveValue<string | number>;
-  pr?: ResponsiveValue<string | number>;
-  pb?: ResponsiveValue<string | number>;
-  pl?: ResponsiveValue<string | number>;
-  py?: ResponsiveValue<string | number>;
-  px?: ResponsiveValue<string | number>;
+  m?: ResponsiveValue<number | string>;
+  mt?: ResponsiveValue<number | string>;
+  mr?: ResponsiveValue<number | string>;
+  mb?: ResponsiveValue<number | string>;
+  ml?: ResponsiveValue<number | string>;
+  my?: ResponsiveValue<number | string>;
+  mx?: ResponsiveValue<number | string>;
+  p?: ResponsiveValue<number | string>;
+  pt?: ResponsiveValue<number | string>;
+  pr?: ResponsiveValue<number | string>;
+  pb?: ResponsiveValue<number | string>;
+  pl?: ResponsiveValue<number | string>;
+  py?: ResponsiveValue<number | string>;
+  px?: ResponsiveValue<number | string>;
 };
