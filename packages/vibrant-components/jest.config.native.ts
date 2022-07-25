@@ -10,5 +10,6 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/vibrant-components',
+  setupFilesAfterEnv: ['<rootDir>/test/setup.native.ts'],
   ...reactNativePreset,
 };
