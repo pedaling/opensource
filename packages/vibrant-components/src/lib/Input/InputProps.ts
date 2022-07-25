@@ -22,14 +22,24 @@ export type BaseInputProps<Value> = {
   placeholder?: Value;
 };
 
-export type InputProps = BackgroundProps & BaseInputProps<string> & BorderProps & ColorProps & DisplayProps & PositionProps & PseudoClassProps & SizingProps & SpacingProps & TypographyProps & {
-  allowPattern?: RegExp;
-  value?: string;
-  readOnly?: boolean;
-  onFocus?: () => void;
-  onBlur?: () => void;
-  onKeyDown?: (_: { key: string; prevent: () => void }) => void;
-} & | {
+export type InputProps = BackgroundProps &
+  BaseInputProps<string> &
+  BorderProps &
+  ColorProps &
+  DisplayProps &
+  PositionProps &
+  PseudoClassProps &
+  SizingProps &
+  SpacingProps &
+  TypographyProps & {
+    allowPattern?: RegExp;
+    value?: string;
+    readOnly?: boolean;
+    onFocus?: () => void;
+    onBlur?: () => void;
+    onKeyDown?: (_: { key: string; prevent: () => void }) => void;
+  } & (
+    | {
         type: 'number';
         min?: number;
         max?: number;
@@ -37,7 +47,8 @@ export type InputProps = BackgroundProps & BaseInputProps<string> & BorderProps 
     | {
         type?: 'text';
         maxLength?: number;
-      };
+      }
+  );
 
 export const withInputVariation = withVariation<InputProps>()(
   propVariant({
