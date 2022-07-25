@@ -9,12 +9,12 @@ export const withTheme: DecoratorFn = (storyFn, context) => {
     return (
       <HStack>
         <ThemeProvider theme={{ mode: 'light' }} root={true}>
-          <Box alignItems="start" width="50%" minHeight="100vh" p={20} backgroundColor="background">
+          <Box alignItems="start" width="50%" minHeight="100vh" backgroundColor="background">
             {storyFn()}
           </Box>
         </ThemeProvider>
         <ThemeProvider theme={{ mode: 'dark' }} root={true}>
-          <Box alignItems="start" width="50%" minHeight="100vh" p={20} backgroundColor="background">
+          <Box alignItems="start" width="50%" minHeight="100vh" backgroundColor="background">
             {storyFn()}
           </Box>
         </ThemeProvider>
@@ -24,7 +24,7 @@ export const withTheme: DecoratorFn = (storyFn, context) => {
 
   return (
     <ThemeProvider theme={{ mode: theme }} root={true}>
-      <Box alignItems="start" width="100%" minHeight="100vh" p={20} backgroundColor="background">
+      <Box alignItems="start" width="100%" minHeight="100vh" backgroundColor="background">
         {storyFn()}
       </Box>
     </ThemeProvider>
