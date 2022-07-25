@@ -3,7 +3,7 @@ import { useCurrentTheme } from '@vibrant-ui/core';
 import { get, isRecord } from '@vibrant-ui/utils';
 
 export type StyleConfig<Props extends { style: any }> = {
-  name: keyof Props['style'] & string;
+  name: string & keyof Props['style'];
   scale: SystemPropThemeScale;
 };
 

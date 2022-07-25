@@ -1,8 +1,8 @@
 import type { ColorToken } from '@vibrant-ui/theme';
 
 export type AnimationStyle = {
-  x?: string | number;
-  y?: string | number;
+  x?: number | string;
+  y?: number | string;
   scale?: number;
   opacity?: number;
   backgroundColor?: ColorToken;
