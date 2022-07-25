@@ -42,6 +42,13 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
           },
           dark: { ...parentTheme.opacity.dark, ...(theme.opacity?.dark ?? {}) },
         },
+        gradient: {
+          light: {
+            ...parentTheme.gradient.light,
+            ...(theme.gradient?.light ?? {}),
+          },
+          dark: { ...parentTheme.gradient.dark, ...(theme.gradient?.dark ?? {}) },
+        },
       } as Theme),
     [parentTheme, theme]
   );
@@ -66,6 +73,7 @@ export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentThe
     ...currentTheme,
     colors: currentTheme.colors[currentTheme.mode],
     opacity: currentTheme.opacity[currentTheme.mode],
+    gradient: currentTheme.gradient[currentTheme.mode],
   };
 
   return {
