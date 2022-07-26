@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import type { ResponsiveValue } from '@vibrant-ui/core';
-import { useCurrentTheme } from '@vibrant-ui/core';
+import { useCurrentTheme } from '../ThemeProvider';
+import type { ResponsiveValue } from '../types';
 
 export const useResponsiveValue = () => {
   const {

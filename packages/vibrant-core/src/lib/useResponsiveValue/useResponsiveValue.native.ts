@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
-import type { ResponsiveValue } from '@vibrant-ui/core';
-import { useCurrentTheme } from '@vibrant-ui/core';
+import { useCurrentTheme } from '../ThemeProvider';
+import type { ResponsiveValue } from '../types';
 
 export const useResponsiveValue = () => {
   const { width } = useWindowDimensions();
@@ -13,7 +13,7 @@ export const useResponsiveValue = () => {
     const index = breakpoints.findIndex(breakpoint => breakpoint >= width);
 
     if (index === -1) {
-      return breakpoints.length + 1;
+      return breakpoints.length;
     }
 
     return index;
