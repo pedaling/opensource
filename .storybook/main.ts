@@ -27,7 +27,7 @@ const config: StorybookViteConfig & { previewHead?: (head: string) => string } =
     'storybook-addon-performance/register',
   ].filter(Boolean),
   typescript: {
-    check: false,
+    check: true,
     reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
