@@ -11662,7 +11662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-preset-expo@npm:~9.1.0":
+"babel-preset-expo@npm:9.1.0, babel-preset-expo@npm:~9.1.0":
   version: 9.1.0
   resolution: "babel-preset-expo@npm:9.1.0"
   dependencies:
@@ -13013,7 +13013,7 @@ __metadata:
     "@typescript-eslint/parser": 5.28.0
     babel-jest: 27.5.1
     babel-plugin-react-native-web: 0.18.1
-    babel-preset-expo: ~9.1.0
+    babel-preset-expo: 9.1.0
     chromatic: 6.7.0
     clsx: 1.1.1
     core-js: 3.23.4

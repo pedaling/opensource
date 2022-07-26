@@ -2,8 +2,7 @@
   "babelrcRoots": ["*"],
   "overrides": [
     {
-      "test": ["node_modules/react-native/**", "node_modules/@react-native/**"],
-      "presets": ["module:metro-react-native-babel-preset"]
+      "presets": ["babel-preset-expo"]
     }
   ]
 }

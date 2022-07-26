@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const reactNativePreset = require('react-native/jest-preset');
-
 export default {
   displayName: 'vibrant-utils-native',
   preset: '../../jest.preset.native.js',
@@ -10,5 +7,4 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/vibrant-utils',
-  ...reactNativePreset,
 };
