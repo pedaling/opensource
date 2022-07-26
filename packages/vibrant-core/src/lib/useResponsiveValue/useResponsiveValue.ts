@@ -42,7 +42,7 @@ export const useResponsiveValue = () => {
   const getResponsiveValue = useCallback(
     (responsiveValue: ResponsiveValue<any>) =>
       Array.isArray(responsiveValue)
-        ? responsiveValue[Math.max(currentIndex, responsiveValue.length - 1)]
+        ? responsiveValue[Math.min(currentIndex, responsiveValue.length - 1)]
         : responsiveValue,
     [currentIndex]
   ) as <Value>(responsiveValue: ResponsiveValue<Value>) => Value;
