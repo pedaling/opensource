@@ -1,4 +1,5 @@
 const javascriptRules = {
+  'arrow-body-style': ['error'],
   'class-methods-use-this': ['off'],
   'consistent-return': ['off'],
   curly: ['error', 'all'],

@@ -5,10 +5,11 @@ const prettierRules = require('./rules/prettier');
 const reactRules = require('./rules/react');
 const reactHooksRules = require('./rules/react-hooks');
 const typescriptRules = require('./rules/typescript');
+const unusedImportsRules = require('./rules/unused-imports');
 
 const eslintConfig = {
   extends: ['plugin:@nrwl/nx/javascript', 'prettier'],
-  plugins: ['@nrwl/nx', 'prettier', 'react', 'react-hooks', 'import'],
+  plugins: ['@nrwl/nx', 'prettier', 'react', 'react-hooks', 'import', 'unused-imports'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -23,6 +24,7 @@ const eslintConfig = {
     ...reactRules,
     ...reactHooksRules,
     ...importRules,
+    ...unusedImportsRules,
   },
   overrides: [
     {
@@ -35,7 +37,7 @@ const eslintConfig = {
     {
       files: ['*.mdx'],
       rules: {
-        '@typescript-eslint/no-unused-vars': ['off'],
+        'unused-imports/no-unused-imports': ['off'],
       },
     },
     {
