@@ -1,4 +1,4 @@
-import type { ComponentType, ReactNode, Ref } from 'react';
+import type { ComponentType, Ref } from 'react';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps } from '../props';
 import { systemPropNames } from '../props';
