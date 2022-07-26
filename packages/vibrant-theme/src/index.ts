@@ -14,5 +14,6 @@ export type {
   ThemeColors,
   TypographyKind,
   TypographyWeight,
+  OpacityToken,
 } from './lib/types';
 export { baseColorTokens, onColorTokens, colorTokens } from './lib/types';
