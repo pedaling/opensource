@@ -20,13 +20,16 @@ export const motionVariant =
     }
 
     if (!isRecord(props.style[name])) {
-      return { ...props, style: { ...props.style, [name]: get(theme, `${scale}.${props.style[name]}`) } };
+      return {
+        ...props,
+        style: { ...props.style, [name]: get(theme, `${scale}.${props.style[name]}`, props.style[name]) },
+      };
     }
 
     const motionStyle: Record<string, any> = { ...props.style[name] };
 
     for (const key of Object.keys(props.style[name])) {
-      motionStyle[key] = get(theme, `${scale}.${motionStyle[key]}`);
+      motionStyle[key] = get(theme, `${scale}.${motionStyle[key]}`, motionStyle[key]);
     }
 
     return { ...props, style: { ...props.style, [name]: motionStyle } };

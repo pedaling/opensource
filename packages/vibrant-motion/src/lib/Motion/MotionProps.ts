@@ -29,6 +29,10 @@ export const withMotionVariation = withVariation<MotionProps>()(
     name: 'borderColor',
     scale: 'colors',
   }),
+  motionVariant({
+    name: 'opacity',
+    scale: 'opacity',
+  }),
   ({ style, ...restProps }) => {
     const { from, to } = Object.entries(style).reduce(
       (acc, [key, value]) => ({

@@ -17,5 +17,9 @@ export const withTransitionVariation = withVariation<TransitionProps>()(
   motionVariant({
     name: 'borderColor',
     scale: 'colors',
+  }),
+  motionVariant({
+    name: 'opacity',
+    scale: 'opacity',
   })
 );
