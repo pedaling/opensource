@@ -24,6 +24,13 @@
             "output": "."
           }
         ]
+      },
+      "configurations": {
+        "native": {
+          "outputPath": "dist/packages/vibrant-components-native",
+          "project": "packages/vibrant-components/package.native.json",
+          "moduleSuffixes": [".native", ""]
+        }
       }
     },
     "lint": {
@@ -77,7 +84,12 @@
       "options": {
         "preset": "conventional",
         "trackDeps": true,
-        "postTargets": ["vibrant-components:github", "vibrant-components:deploy"]
+        "postTargets": [
+          "vibrant-components:github",
+          "vibrant-components:deploy",
+          "vibrant-components:generate-native-package",
+          "vibrant-components:deploy-native"
+        ]
       }
     },
     "github": {
@@ -91,6 +103,20 @@
       "executor": "ngx-deploy-npm:deploy",
       "options": {
         "access": "public"
+      }
+    },
+    "generate-native-package": {
+      "executor": "@class101/workspace-plugin:updateNativePackageJson",
+      "options": {
+        "packageJsonName": "package.json",
+        "nativePackageJsonName": "package.native.json"
+      }
+    },
+    "deploy-native": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public",
+        "buildTarget": "native"
       }
     }
   }
