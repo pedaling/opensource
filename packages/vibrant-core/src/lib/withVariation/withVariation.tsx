@@ -1,9 +1,9 @@
-import type { FC, ForwardRefExoticComponent, PropsWithoutRef, RefAttributes, RefObject } from 'react';
+import type { FC, ForwardRefExoticComponent, PropsWithoutRef, Ref, RefAttributes } from 'react';
 import { forwardRef } from 'react';
 import type { VariantFn } from '../propVariant';
 
 type PickRefElement<Props, DefaultElement = HTMLElement> = Props extends {
-  ref?: RefObject<infer Element>;
+  ref?: Ref<infer Element>;
 }
   ? Element
   : DefaultElement;
@@ -12,7 +12,9 @@ type ComponentWithRef<Props, DefaultElement = HTMLElement> = ForwardRefExoticCom
   PropsWithoutRef<Props> & RefAttributes<PickRefElement<Props, DefaultElement>>
 >;
 
-type WithInnerRef<Props> = Props extends { ref?: infer Ref } ? Omit<Props, 'ref'> & { innerRef?: Ref } : Props;
+type WithInnerRef<Props> = Props extends { ref?: infer RefValue }
+  ? Omit<Props, 'ref'> & { innerRef?: RefValue }
+  : Props;
 
 type ComponentWithInnerRef<Props> = FC<WithInnerRef<Props>>;
 

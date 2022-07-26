@@ -16,7 +16,6 @@ export type BoxProps<
     base?: BaseComponent;
     id?: string;
     ref?: Ref<BaseComponent extends abstract new (...args: any) => any ? InstanceType<BaseComponent> : HTMLElement>;
-    children?: ReactNode;
   };
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
