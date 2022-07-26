@@ -1,8 +1,8 @@
 import type { CurrentTheme } from '@vibrant-ui/theme';
 import { isDefined, isRecord } from '@vibrant-ui/utils';
-import { buildStyle } from '../buildStyle';
 import type { SystemProp } from '../createSystemProp';
 import { useCurrentTheme } from '../ThemeProvider';
+import { useBuildStyle } from '../useBuildStyle';
 
 export const createInterpolation = (systemProps: SystemProp[], defaultProps: any = {}) => {
   const cache: Record<string, SystemProp | null> = {};
@@ -53,7 +53,7 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
 
     const interpolationResult = childInterpolation({ ...defaultProps, ...props }, theme);
 
-    return buildStyle(interpolationResult, { theme });
+    return useBuildStyle(interpolationResult);
   };
 };
 

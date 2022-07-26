@@ -1,7 +1,10 @@
+import { useCurrentTheme } from '../ThemeProvider';
 import type { BuildStyleFn } from './type';
 
-export const buildStyle: BuildStyleFn = (styleObjects, { theme }) =>
-  styleObjects.reduce((result, styleObject, index) => {
+export const useBuildStyle: BuildStyleFn = styleObjects => {
+  const { theme } = useCurrentTheme();
+
+  return styleObjects.reduce((result, styleObject, index) => {
     const prevStyleObject = styleObjects[index - 1] ?? {};
     const style = Object.fromEntries(
       Object.entries(styleObject).filter(([key, value]) => prevStyleObject[key] !== value)
@@ -16,3 +19,4 @@ export const buildStyle: BuildStyleFn = (styleObjects, { theme }) =>
         : styleObject),
     };
   }, {});
+};
