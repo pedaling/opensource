@@ -79,6 +79,10 @@ const resetCSS = css`
   th {
     padding: 0;
   }
+
+  *:focus {
+    outline: 0;
+  }
 `;
 
 export const GlobalStyle = () => <Global styles={resetCSS} />;
