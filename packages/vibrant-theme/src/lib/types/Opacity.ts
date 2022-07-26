@@ -1,3 +1,4 @@
+import type { Path } from '@vibrant-ui/utils';
 import type { ThemeMode } from './Mode';
 
 export type Opacity = {
@@ -11,6 +12,8 @@ export type Opacity = {
     active: number;
   };
 };
+
+export type OpacityToken = Exclude<Path<Opacity>, 'overlay' | 'text'>;
 
 export type ThemeOpacity = {
   [mode in ThemeMode]: Opacity;
