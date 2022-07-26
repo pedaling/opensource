@@ -72,5 +72,12 @@ NodeList [
     
     td,th{padding:0;}
   </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    *:focus{outline:0;}
+  </style>,
 ]
 `;
