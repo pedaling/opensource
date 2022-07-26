@@ -1,10 +1,11 @@
-import type { ColorToken } from '@vibrant-ui/theme';
+import type { ResponsiveValue } from '@vibrant-ui/core';
+import type { ColorToken, OpacityToken } from '@vibrant-ui/theme';
 
 export type AnimationStyle = {
-  x?: number | string;
-  y?: number | string;
-  scale?: number;
-  opacity?: number;
-  backgroundColor?: ColorToken;
-  borderColor?: ColorToken;
+  x?: ResponsiveValue<number>;
+  y?: ResponsiveValue<number>;
+  scale?: ResponsiveValue<number>;
+  opacity?: ResponsiveValue<OpacityToken | number>;
+  backgroundColor?: ResponsiveValue<ColorToken>;
+  borderColor?: ResponsiveValue<ColorToken>;
 };

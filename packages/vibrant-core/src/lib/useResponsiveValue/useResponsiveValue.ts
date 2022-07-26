@@ -15,7 +15,7 @@ export const useResponsiveValue = () => {
         window.matchMedia(
           `(min-width: ${breakpoint}px)${
             breakpoints[index + 1] ? ` and (max-width: ${breakpoints[index + 1] - 1}px)` : ''
-          })`
+          }`
         )
       )
     );
@@ -26,6 +26,10 @@ export const useResponsiveValue = () => {
           setCurrentIndex(index);
         }
       };
+
+      if (mediaQuery.matches) {
+        setCurrentIndex(index);
+      }
 
       mediaQuery.addEventListener('change', handler);
 

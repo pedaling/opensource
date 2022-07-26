@@ -1,4 +1,5 @@
 import { useEffect, useImperativeHandle, useMemo } from 'react';
+import { useResponsiveValue } from '@vibrant-ui/core';
 import { animated, useSpring } from '../external/ReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
@@ -8,17 +9,27 @@ export const Motion = withMotionVariation(({ innerRef, children, duration, loop,
     () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
     [children.type]
   );
+  const { getResponsiveValue } = useResponsiveValue();
+
+  const [fromStyle, toStyle] = useMemo(
+    () => [
+      Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)])),
+      Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)])),
+    ],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [JSON.stringify(from), JSON.stringify(to), getResponsiveValue]
+  );
 
   const option = useMemo(
     () => ({
-      from,
-      to,
+      from: fromStyle,
+      to: toStyle,
       config: {
         duration,
       },
       loop,
     }),
-    [duration, from, loop, to]
+    [duration, fromStyle, loop, toStyle]
   );
 
   const [styles, springApi] = useSpring(() => ({
