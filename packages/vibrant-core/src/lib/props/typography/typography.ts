@@ -19,6 +19,7 @@ const fontSizeProp = createSystemProp({
 
 const lineHeightProp = createSystemProp({
   property: 'lineHeight',
+  transform: (value: number | string) => ({ lineHeight: typeof value === 'number' ? `${value}px` : value }),
 });
 
 const fontWeightProp = createSystemProp({
