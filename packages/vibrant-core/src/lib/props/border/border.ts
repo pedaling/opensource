@@ -85,6 +85,36 @@ const borderBottomRightRadiusProp = createSystemProp({
   property: 'borderBottomRightRadius',
 });
 
+const borderRadiusLevelProp = createSystemProp({
+  property: 'borderRadiusLevel',
+  styleProperty: 'borderRadius',
+  scale: 'borderRadius',
+});
+
+const borderTopLeftRadiusLevelProp = createSystemProp({
+  property: 'borderTopLeftRadiusLevel',
+  styleProperty: 'borderRadius',
+  scale: 'borderRadius',
+});
+
+const borderTopRightRadiusLevelProp = createSystemProp({
+  property: 'borderTopRightRadiusLevel',
+  styleProperty: 'borderRadius',
+  scale: 'borderRadius',
+});
+
+const borderBottomLeftRadiusLevelProp = createSystemProp({
+  property: 'borderBottomLeftRadiusLevel',
+  styleProperty: 'borderRadius',
+  scale: 'borderRadius',
+});
+
+const borderBottomRightRadiusLevelProp = createSystemProp({
+  property: 'borderBottomRightRadiusLevel',
+  styleProperty: 'borderRadius',
+  scale: 'borderRadius',
+});
+
 const outlineWidthProp = createSystemProp({
   property: 'outlineWidth',
 });
@@ -123,6 +153,11 @@ export const borderProps = [
   borderTopRightRadiusProp,
   borderBottomLeftRadiusProp,
   borderBottomRightRadiusProp,
+  borderRadiusLevelProp,
+  borderTopLeftRadiusLevelProp,
+  borderTopRightRadiusLevelProp,
+  borderBottomLeftRadiusLevelProp,
+  borderBottomRightRadiusLevelProp,
   outlineWidthProp,
   outlineStyleProp,
   outlineColorProp,
