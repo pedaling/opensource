@@ -2,8 +2,6 @@ import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type SwitchProps = {
-  id?: string;
-  name?: string;
   size?: ResponsiveValue<'md' | 'sm'>;
   defaultValue?: boolean;
   onValueChange?: (state: boolean) => void;
