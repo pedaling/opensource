@@ -14,6 +14,7 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ onClick, childr
     overlayColor="onView1"
     interactions={['hover', 'active']}
     onClick={onClick}
+    flexShrink={0}
     {...restProps}
   >
     <Body level={2}>{children}</Body>
