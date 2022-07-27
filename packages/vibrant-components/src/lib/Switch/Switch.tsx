@@ -5,19 +5,7 @@ import { Pressable } from '../Pressable';
 import { withSwitchVariation } from './SwitchProps';
 
 export const Switch = withSwitchVariation(
-  ({
-    defaultValue,
-    backgroundColor,
-    activeColor,
-    roundRadius,
-    roundSize,
-    inActiveBorderColor,
-    onValueChange,
-    borderRadius,
-    height,
-    disabled,
-    width,
-  }) => {
+  ({ defaultValue, opacity, roundRadius, roundSize, onValueChange, borderRadius, height, disabled, width }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
 
     useEffect(() => {
@@ -33,8 +21,8 @@ export const Switch = withSwitchVariation(
     return (
       <Transition
         animation={{
-          backgroundColor: isChecked ? activeColor : backgroundColor,
-          borderColor: isChecked ? 'transparent' : inActiveBorderColor,
+          opacity,
+          backgroundColor: isChecked ? 'informative' : 'surface4',
         }}
         duration={200}
       >
@@ -44,13 +32,11 @@ export const Switch = withSwitchVariation(
           height={height}
           borderRadius={borderRadius}
           p={2}
-          borderStyle="solid"
-          borderWidth={1}
           onClick={toggleChecked}
           disabled={disabled}
         >
           <Transition animation={{ x: isChecked ? roundSize : 0 }} duration={200}>
-            <Box width={roundSize} height={roundSize} borderRadius={roundRadius} backgroundColor="onPrimary" />
+            <Box width={roundSize} height={roundSize} borderRadius={roundRadius} backgroundColor="white" />
           </Transition>
         </Box>
       </Transition>

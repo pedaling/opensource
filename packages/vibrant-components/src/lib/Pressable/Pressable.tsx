@@ -21,7 +21,7 @@ export const Pressable = withPressableVariation(
     });
 
     return (
-      <Transition animation={{ opacity: textOpacity }} duration={200} {...restProps}>
+      <Transition animation={textOpacity ? { opacity: textOpacity } : {}} duration={200} {...restProps}>
         <Box
           as={as}
           position="relative"
@@ -50,7 +50,7 @@ export const Pressable = withPressableVariation(
               })}
         >
           {overlayColor && (
-            <Transition animation={{ opacity: overlayOpacity }} duration={200}>
+            <Transition animation={overlayOpacity ? { opacity: overlayOpacity } : {}} duration={200}>
               <Box
                 position="absolute"
                 zIndex={-1}

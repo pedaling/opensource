@@ -16,9 +16,9 @@ export const getOpacity = ({
   overlayColor?: ResponsiveValue<ColorToken>;
   interactions: ('active' | 'focus' | 'hover')[];
 }) => {
-  const getOverlayOpacity = (): OpacityToken | number => {
+  const getOverlayOpacity = (): OpacityToken | number | null => {
     if (disabled || !overlayColor) {
-      return 0;
+      return null;
     }
 
     if (isActivated && interactions?.includes('active')) {
@@ -36,9 +36,9 @@ export const getOpacity = ({
     return 0;
   };
 
-  const getTextOpacity = (): OpacityToken | number => {
+  const getTextOpacity = (): OpacityToken | number | null => {
     if (disabled || overlayColor) {
-      return 1;
+      return null;
     }
 
     if (isActivated && interactions?.includes('active')) {

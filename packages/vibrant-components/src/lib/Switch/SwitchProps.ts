@@ -19,15 +19,15 @@ export const withSwitchVariation = withVariation<SwitchProps>()(
     ],
     variants: {
       sm: {
-        width: 34,
-        height: 20,
+        width: 32,
+        height: 18,
         roundSize: 14,
         roundRadius: 7,
         borderRadius: 10,
       },
       md: {
-        width: 46,
-        height: 26,
+        width: 44,
+        height: 24,
         roundSize: 20,
         roundRadius: 10,
         borderRadius: 13,
@@ -44,14 +44,10 @@ export const withSwitchVariation = withVariation<SwitchProps>()(
     ],
     variants: {
       true: {
-        backgroundColor: 'disable',
-        activeColor: 'disable',
-        inActiveBorderColor: 'transparent',
+        opacity: 0.4,
       },
       false: {
-        backgroundColor: 'surface1',
-        activeColor: 'informative',
-        inActiveBorderColor: 'outline2',
+        opacity: 1,
       },
     } as const,
   })
