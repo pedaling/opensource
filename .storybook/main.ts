@@ -6,7 +6,7 @@ import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
 
-const storybookLibraries = ['vibrant-core', 'vibrant-components', 'vibrant-icons'];
+const storybookLibraries = ['vibrant-core', 'vibrant-components', 'vibrant-icons', 'vibrant-motion'];
 
 const config: StorybookViteConfig & { previewHead?: (head: string) => string } = {
   stories: storybookLibraries.map(name => ({

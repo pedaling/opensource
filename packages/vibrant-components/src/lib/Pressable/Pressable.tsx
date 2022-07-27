@@ -6,7 +6,7 @@ import { getOpacity } from './getOpacity';
 import { withPressableVariation } from './PressableProp';
 
 export const Pressable = withPressableVariation(
-  ({ innerRef, as = 'button', children, overlayColor, onClick, interactions, disabled = false, ...restProps }) => {
+  ({ as = 'button', children, overlayColor, onClick, interactions, disabled = false, ...restProps }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [isActivated, setIsActivated] = useState(false);
@@ -21,9 +21,8 @@ export const Pressable = withPressableVariation(
     });
 
     return (
-      <Transition style={{ opacity: textOpacity }} duration={200}>
+      <Transition animation={{ opacity: textOpacity }} duration={200} {...restProps}>
         <Box
-          ref={innerRef}
           as={as}
           position="relative"
           overflowX="hidden"
@@ -49,10 +48,9 @@ export const Pressable = withPressableVariation(
                 onKeyPress: (event =>
                   !disabled && event.key === 'Enter' ? onClick?.() : null) as KeyboardEventHandler,
               })}
-          {...restProps}
         >
           {overlayColor && (
-            <Transition style={{ opacity: overlayOpacity }} duration={200}>
+            <Transition animation={{ opacity: overlayOpacity }} duration={200}>
               <Box
                 position="absolute"
                 zIndex={-1}

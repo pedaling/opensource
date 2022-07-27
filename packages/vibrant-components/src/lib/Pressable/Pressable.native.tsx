@@ -19,7 +19,7 @@ export const Pressable = withPressableVariation(
     });
 
     return (
-      <Transition style={{ opacity: textOpacity }} duration={200}>
+      <Transition animation={{ opacity: textOpacity }} duration={200}>
         <Box
           ref={innerRef}
           base={NativePressable}
@@ -35,7 +35,7 @@ export const Pressable = withPressableVariation(
           {...restProps}
         >
           {overlayColor && (
-            <Transition style={{ opacity: overlayOpacity }} duration={200}>
+            <Transition animation={{ opacity: overlayOpacity }} duration={200}>
               <Box
                 position="absolute"
                 zIndex={-1}
