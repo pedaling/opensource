@@ -22,6 +22,7 @@ export const darkModeColors: Colors = {
   surface1: palettes.whiteAlpha['10'],
   surface2: palettes.neutral['10'],
   surface3: palettes.black,
+  surface4: palettes.neutral['30'],
   onView1: palettes.neutral['95'],
   onView2: palettes.neutral['60'],
   onView3: palettes.neutral['40'],
@@ -42,4 +43,5 @@ export const darkModeColors: Colors = {
   hoverOverlay: palettes.whiteAlpha['15'],
   transparent: palettes.transparent,
   onColor: '$colors.onView1',
+  white: palettes.white,
 };

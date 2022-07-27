@@ -21,6 +21,7 @@ export const colorTokens = [
   'surface1',
   'surface2',
   'surface3',
+  'surface4',
   'onView1',
   'onView2',
   'onView3',
@@ -39,6 +40,7 @@ export const colorTokens = [
   'hoverOverlay',
   'onColor',
   'transparent',
+  'white',
 ] as const;
 
 export type ColorToken = typeof colorTokens[number];
