@@ -21,8 +21,14 @@ export const Pressable = withPressableVariation(
     });
 
     return (
+<<<<<<< HEAD
       <Transition animation={{ opacity: textOpacity }} duration={200} {...restProps}>
         <Box
+=======
+      <Transition style={{ opacity: textOpacity }} duration={200}>
+        <Box
+          ref={innerRef}
+>>>>>>> 4c6d00d (fix: add textOpacity)
           as={as}
           position="relative"
           overflowX="hidden"
@@ -48,9 +54,16 @@ export const Pressable = withPressableVariation(
                 onKeyPress: (event =>
                   !disabled && event.key === 'Enter' ? onClick?.() : null) as KeyboardEventHandler,
               })}
+<<<<<<< HEAD
         >
           {overlayColor && (
             <Transition animation={{ opacity: overlayOpacity }} duration={200}>
+=======
+          {...restProps}
+        >
+          {overlayColor && (
+            <Transition style={{ opacity: overlayOpacity }} duration={200}>
+>>>>>>> 4c6d00d (fix: add textOpacity)
               <Box
                 position="absolute"
                 zIndex={-1}
