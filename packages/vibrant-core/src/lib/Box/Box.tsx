@@ -12,7 +12,7 @@ export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
     const Component = (base as ComponentType) ?? as ?? 'div';
 
-    return <Component ref={ref} {...restProps} />;
+    return <Component ref={ref} {...(base ? { as } : {})} {...restProps} />;
   }),
   {
     shouldForwardProp,

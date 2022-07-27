@@ -6,8 +6,9 @@ export default {
   title: 'Transition',
   component: Transition,
   args: {
-    style: {
+    animation: {
       x: 50,
+      opacity: 1,
     },
   },
 } as ComponentMeta<typeof Transition>;

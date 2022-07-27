@@ -6,7 +6,7 @@ import type { StyleConfig } from './motionVariant';
 import { motionVariant } from './motionVariant';
 
 const testMotionVariant =
-  <Props extends { style: Record<string, Animation<any>> }>() =>
+  <Props extends { animation: Record<string, Animation<any>> }>() =>
   <Config extends StyleConfig<Props>>(args: Config) =>
     motionVariant<Props, Config>(args);
 
@@ -27,7 +27,7 @@ const testMotionVariant =
 
 describe('motionVariant', () => {
   describe('when backgroundColor motionVariant defined', () => {
-    type Props = { style: { backgroundColor: Animation<ColorToken> } };
+    type Props = { animation: { backgroundColor: Animation<ColorToken> } };
     const motionVariantFn = testMotionVariant<Props>()({
       name: 'backgroundColor',
       scale: 'colors',
@@ -37,11 +37,11 @@ describe('motionVariant', () => {
       let result: Props;
 
       beforeEach(() => {
-        result = motionVariantFn({ style: { backgroundColor: { from: 'primary', to: 'informative' } } });
+        result = motionVariantFn({ animation: { backgroundColor: { from: 'primary', to: 'informative' } } });
       });
 
       it('return prop is converted to color value', () => {
-        expect(result.style.backgroundColor).toStrictEqual({
+        expect(result.animation.backgroundColor).toStrictEqual({
           from: 'red',
           to: 'yellow',
         });

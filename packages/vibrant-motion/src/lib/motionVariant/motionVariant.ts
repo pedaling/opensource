@@ -2,35 +2,38 @@ import type { SystemPropThemeScale } from '@vibrant-ui/core';
 import { useCurrentTheme } from '@vibrant-ui/core';
 import { get, isRecord } from '@vibrant-ui/utils';
 
-export type StyleConfig<Props extends { style: any }> = {
-  name: string & keyof Props['style'];
+export type StyleConfig<Props extends { animation: any }> = {
+  name: string & keyof Props['animation'];
   scale: SystemPropThemeScale;
 };
 
 export const motionVariant =
-  <Props extends { style: Record<string, any> }, Config extends StyleConfig<Props>>({
+  <Props extends { animation: Record<string, any> }, Config extends StyleConfig<Props>>({
     name,
     scale,
   }: Config): ((props: Props) => Props) =>
   props => {
     const { theme } = useCurrentTheme();
 
-    if (props.style[name] === undefined) {
+    if (props.animation[name] === undefined) {
       return props;
     }
 
-    if (!isRecord(props.style[name])) {
+    if (!isRecord(props.animation[name])) {
       return {
         ...props,
-        style: { ...props.style, [name]: get(theme, `${scale}.${props.style[name]}`, props.style[name]) },
+        animation: {
+          ...props.animation,
+          [name]: get(theme, `${scale}.${props.animation[name]}`, props.animation[name]),
+        },
       };
     }
 
-    const motionStyle: Record<string, any> = { ...props.style[name] };
+    const motionStyle: Record<string, any> = { ...props.animation[name] };
 
-    for (const key of Object.keys(props.style[name])) {
+    for (const key of Object.keys(props.animation[name])) {
       motionStyle[key] = get(theme, `${scale}.${motionStyle[key]}`, motionStyle[key]);
     }
 
-    return { ...props, style: { ...props.style, [name]: motionStyle } };
+    return { ...props, animation: { ...props.animation, [name]: motionStyle } };
   };
