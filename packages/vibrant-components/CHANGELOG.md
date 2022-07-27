@@ -2,6 +2,38 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.3.0...vibrant-components-0.4.0) (2022-07-27)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.3.0`
+* `vibrant-utils` updated to version `0.3.1`
+* `vibrant-core` updated to version `0.4.0`
+* `vibrant-icons` updated to version `0.2.1`
+* `vibrant-motion` updated to version `0.3.0`
+
+### Features
+
+* **vibrant-components:** add onValueChange prop to SelectField ([#122](https://github.com/pedaling/opensource/issues/122)) ([942d7f4](https://github.com/pedaling/opensource/commit/942d7f48489260f27c48deae2b6c2c90a9f44878))
+* **vibrant-components:** add Paper component ([#116](https://github.com/pedaling/opensource/issues/116)) ([c0a1b54](https://github.com/pedaling/opensource/commit/c0a1b54856b5c2c5a5747ec213a8882bdf9d49c6))
+* **vibrant-components:** add Switch component ([#112](https://github.com/pedaling/opensource/issues/112)) ([79b5f69](https://github.com/pedaling/opensource/commit/79b5f691cc2707048b8d13fd0fcc4d5f48e99eb4))
+* **vibrant-components:** pressable prop을 제거하고 Pressable 컴포넌트를 추가한다 ([#110](https://github.com/pedaling/opensource/issues/110)) ([a4246cd](https://github.com/pedaling/opensource/commit/a4246cd525c7cd8910db1d495d40e0802f74a5fa))
+* **vibrant-core:** 네이티브 Box 컴포넌트가 systemProp에서 설정한 BaseComponent를 사용할 수 있게한다 ([#88](https://github.com/pedaling/opensource/issues/88)) ([ea6b849](https://github.com/pedaling/opensource/commit/ea6b8496d4ed4a3e7aaadcea076ee17f96bc9c9b))
+
+
+### Bug Fixes
+
+* box 컴포넌트가 기본적으로 flex로 동작되도록 한다 ([#86](https://github.com/pedaling/opensource/issues/86)) ([7377ef7](https://github.com/pedaling/opensource/commit/7377ef75938539186d13fa25bab558fbec4ba0e9))
+* motion을 ref로 컨트롤할 수 있도록 한다 ([#89](https://github.com/pedaling/opensource/issues/89)) ([ed2479e](https://github.com/pedaling/opensource/commit/ed2479ecd0b871c673b2ddf6285082da72ea21d4))
+* update native jest config to use jest-expo preset ([#109](https://github.com/pedaling/opensource/issues/109)) ([0ef07f1](https://github.com/pedaling/opensource/commit/0ef07f108156cffd0e4cdb535d6689dfeb8f9463))
+* vibrant-component native 배포를 지원한다 ([#113](https://github.com/pedaling/opensource/issues/113)) ([9cbf665](https://github.com/pedaling/opensource/commit/9cbf6653abe6ec378eb8256990e2c34f0cef9be9))
+* **vibrant-components:** add linear-gradient to dependency ([0f1f2b0](https://github.com/pedaling/opensource/commit/0f1f2b0709f646ceb57650dcf7695b2e56356189))
+* **vibrant-components:** change Stack children type ([#115](https://github.com/pedaling/opensource/issues/115)) ([f424907](https://github.com/pedaling/opensource/commit/f42490728cc467146103c097d6eed653a0eb608b))
+* **vibrant-components:** fix SelectOptionItem flex-shrink value to 0 ([#121](https://github.com/pedaling/opensource/issues/121)) ([354302a](https://github.com/pedaling/opensource/commit/354302a238a2a55af737f998c3394a17c3d7242e))
+* **vibrant-components:** focus될 때 outline이 나오지 않도록 한다 ([#108](https://github.com/pedaling/opensource/issues/108)) ([3c711bb](https://github.com/pedaling/opensource/commit/3c711bb9866cfdc654a761a364a629386ffebf99))
+* **vibrant-components:** inlineLabel이 false 일 때도 라벨이 inline으로 보이는 문제를 해결한다 ([#85](https://github.com/pedaling/opensource/issues/85)) ([a8835e7](https://github.com/pedaling/opensource/commit/a8835e7ca4ed0aa2ddb620da258fb29069afa350))
+* **vibrant-motion:** fix native transform motion ([#84](https://github.com/pedaling/opensource/issues/84)) ([2b87295](https://github.com/pedaling/opensource/commit/2b872951a052906d9590f07f95cbc92545d91f39))
+
 ## [0.3.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.2.0...vibrant-components-0.3.0) (2022-07-19)
 
 
