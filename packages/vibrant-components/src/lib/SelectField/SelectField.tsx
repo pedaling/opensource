@@ -16,6 +16,7 @@ export const SelectField = withSelectFieldVariation(
     helperText,
     renderOption,
     disabled,
+    onValueChange,
     ...restProps
   }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
@@ -54,11 +55,17 @@ export const SelectField = withSelectFieldVariation(
       return isFocused ? 'outlineNeutral' : 'outline1';
     }, [disabled, state, isFocused]);
 
-    const selectedOption = options[selectedOptionIndex];
+    const selectedOption = useMemo(() => options[selectedOptionIndex], [options, selectedOptionIndex]);
 
     useEffect(() => {
+      if (!selectedOption) {
+        return;
+      }
+
       setState('default');
-    }, [selectedOptionIndex]);
+
+      onValueChange?.(selectedOption.value);
+    }, [onValueChange, selectedOption]);
 
     useEffect(() => {
       setState(stateProp);
