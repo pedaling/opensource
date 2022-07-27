@@ -55,7 +55,7 @@ export const SelectField = withSelectFieldVariation(
       return isFocused ? 'outlineNeutral' : 'outline1';
     }, [disabled, state, isFocused]);
 
-    const selectedOption = useMemo(() => options[selectedOptionIndex], [options, selectedOptionIndex]);
+    const selectedOption = options[selectedOptionIndex];
 
     useEffect(() => {
       if (!selectedOption) {
