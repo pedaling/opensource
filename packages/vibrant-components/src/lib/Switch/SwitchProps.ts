@@ -19,15 +19,15 @@ export const withSwitchVariation = withVariation<SwitchProps>()(
     ],
     variants: {
       sm: {
-        width: 32,
-        height: 18,
+        width: 34,
+        height: 20,
         roundSize: 14,
         roundRadius: 7,
         borderRadius: 10,
       },
       md: {
-        width: 44,
-        height: 24,
+        width: 46,
+        height: 26,
         roundSize: 20,
         roundRadius: 10,
         borderRadius: 13,

@@ -31,7 +31,7 @@ export const Switch = withSwitchVariation(
           width={width}
           height={height}
           borderRadius={borderRadius}
-          p={2}
+          p={3}
           onClick={toggleChecked}
           disabled={disabled}
         >
