@@ -263,11 +263,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
     >
       <button
         class="emotion-3"
-        style="opacity: 1;"
       >
         <div
           class="emotion-4"
-          style="opacity: 0;"
         />
         <span
           class="emotion-5"
@@ -290,11 +288,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
     >
       <button
         class="emotion-3"
-        style="opacity: 1;"
       >
         <div
           class="emotion-4"
-          style="opacity: 0;"
         />
         <span
           class="emotion-5"
