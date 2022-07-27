@@ -36,6 +36,7 @@ export const Switch = withSwitchVariation(
           backgroundColor: isChecked ? activeColor : backgroundColor,
           borderColor: isChecked ? 'transparent' : inActiveBorderColor,
         }}
+        duration={200}
       >
         <Box
           base={Pressable}
@@ -48,7 +49,7 @@ export const Switch = withSwitchVariation(
           onClick={toggleChecked}
           disabled={disabled}
         >
-          <Transition animation={{ x: isChecked ? roundSize : 0 }}>
+          <Transition animation={{ x: isChecked ? roundSize : 0 }} duration={200}>
             <Box width={roundSize} height={roundSize} borderRadius={roundRadius} backgroundColor="onPrimary" />
           </Transition>
         </Box>
