@@ -1,8 +1,0 @@
-{
-  "babelrcRoots": ["*"],
-  "overrides": [
-    {
-      "presets": ["babel-preset-expo"]
-    }
-  ]
-}
