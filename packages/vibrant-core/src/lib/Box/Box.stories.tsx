@@ -9,11 +9,6 @@ export default {
     height: 300,
     backgroundColor: 'primary',
   },
-  parameters: {
-    controls: {
-      exclude: [],
-    },
-  },
 } as ComponentMeta<typeof Box>;
 
 export const Basic: ComponentStory<typeof Box> = props => <Box {...props}>Box</Box>;

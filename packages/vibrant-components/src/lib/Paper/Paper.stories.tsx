@@ -4,6 +4,9 @@ import { Paper } from './Paper';
 export default {
   title: 'Paper',
   component: Paper,
+  args: {
+    backgroundColor: 'primary',
+  },
 } as ComponentMeta<typeof Paper>;
 
 export const Basic: ComponentStory<typeof Paper> = props => <Paper {...props} width={200} height={200} />;
