@@ -1,3 +1,4 @@
+import type { BorderRadiusLevel } from '@vibrant-ui/theme';
 import type { ResponsiveValue } from '../../types';
 
 export type BorderProps = {
@@ -21,6 +22,11 @@ export type BorderProps = {
   borderTopRightRadius?: ResponsiveValue<number | string>;
   borderBottomLeftRadius?: ResponsiveValue<number | string>;
   borderBottomRightRadius?: ResponsiveValue<number | string>;
+  borderRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
+  borderTopLeftRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
+  borderTopRightRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
+  borderBottomLeftRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
+  borderBottomRightRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
   outlineWidth?: ResponsiveValue<number>;
   outlineStyle?: ResponsiveValue<'none' | 'solid'>;
   outlineColor?: ResponsiveValue<string>;
