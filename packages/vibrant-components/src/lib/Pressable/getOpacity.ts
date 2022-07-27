@@ -1,5 +1,5 @@
 import type { ResponsiveValue } from '@vibrant-ui/core';
-import type { ColorToken } from '@vibrant-ui/theme';
+import type { ColorToken, OpacityToken } from '@vibrant-ui/theme';
 
 export const getOpacity = ({
   disabled,
@@ -16,7 +16,7 @@ export const getOpacity = ({
   overlayColor?: ResponsiveValue<ColorToken>;
   interactions: ('active' | 'focus' | 'hover')[];
 }) => {
-  const getOverlayOpacity = () => {
+  const getOverlayOpacity = (): OpacityToken | number => {
     if (disabled || !overlayColor) {
       return 0;
     }
@@ -36,7 +36,7 @@ export const getOpacity = ({
     return 0;
   };
 
-  const getTextOpacity = () => {
+  const getTextOpacity = (): OpacityToken | number => {
     if (disabled || overlayColor) {
       return 1;
     }
