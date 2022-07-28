@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.2.2](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.1...utils-eslint-config-0.2.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* utils-eslint-config 빌드파일이 비어있는 문제를 수정한다 ([#125](https://github.com/pedaling/opensource/issues/125)) ([f64abc5](https://github.com/pedaling/opensource/commit/f64abc5d2803c9482a9d5eaab1be17a2b09a1760))
+
 ### [0.2.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.0...utils-eslint-config-0.2.1) (2022-07-27)
 
 ## [0.2.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.1.1...utils-eslint-config-0.2.0) (2022-07-19)
