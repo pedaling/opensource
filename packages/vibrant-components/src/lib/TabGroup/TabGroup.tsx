@@ -54,7 +54,7 @@ export const TabGroup = withTabGroupVariation(
             </HStack>
           ))}
         </HStack>
-        <Divider direction="horizontal" thickness={1} />
+        <Divider direction="horizontal" />
       </VStack>
     );
   }

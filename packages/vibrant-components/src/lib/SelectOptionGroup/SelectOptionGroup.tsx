@@ -50,7 +50,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
       >
         {renderIndices.map((renderIndex, index) => (
           <Fragment key={options[renderIndex].value}>
-            {index !== 0 && <Divider direction="horizontal" thickness={1} />}
+            {index !== 0 && <Divider direction="horizontal" />}
             <SelectOptionItem onClick={() => onOptionClick(renderIndex)} active={focusIndex === renderIndex}>
               {renderOption?.(renderIndex) || options[renderIndex].label}
             </SelectOptionItem>

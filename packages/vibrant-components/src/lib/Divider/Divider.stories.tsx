@@ -7,7 +7,7 @@ export default {
   args: {
     direction: 'horizontal',
     margin: 'md',
-    thickness: 1,
+    kind: 'default',
   },
 } as ComponentMeta<typeof Divider>;
 
