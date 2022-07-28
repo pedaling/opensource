@@ -323,11 +323,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
+  border-width: 0;
   border-color: rgba(0, 0, 0, 0.15);
   border-style: solid;
   width: 100%;
   height: 0;
-  border-width: 0;
   border-top-width: 1px;
   margin-top: 0;
   margin-bottom: 0;
