@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.4.0...vibrant-core-0.5.0) (2022-07-28)
+
+
+### Features
+
+* **vibrant-core:** add VibrantProvider for inject external dependencies ([#124](https://github.com/pedaling/opensource/issues/124)) ([80248bc](https://github.com/pedaling/opensource/commit/80248bc36230a388da5329c08e02cd8321698380))
+* **vibrant-core:** 웹에서 lineHeight 값이 숫자라면 px 단위를 붙인다 ([#117](https://github.com/pedaling/opensource/issues/117)) ([1b22b8c](https://github.com/pedaling/opensource/commit/1b22b8cad8334b37669b586aa713132aa732bdbe))
+
 ## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.3.0...vibrant-core-0.4.0) (2022-07-27)
 
 ### Dependency Updates
