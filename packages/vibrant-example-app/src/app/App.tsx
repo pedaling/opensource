@@ -1,5 +1,11 @@
 import { useFonts } from 'expo-font';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Title, VStack } from '@vibrant-ui/components';
+import { VibrantProvider } from '@vibrant-ui/core';
+
+const dependencies = {
+  nativeLinearGradient: LinearGradient,
+};
 
 const App = () => {
   const [loaded] = useFonts({
@@ -11,9 +17,11 @@ const App = () => {
   }
 
   return (
-    <VStack alignment="center" justifyContent="center" height="100%" px={20}>
-      <Title level={5}>Welcome VibrantExampleApp 👋</Title>
-    </VStack>
+    <VibrantProvider dependencies={dependencies}>
+      <VStack alignment="center" justifyContent="center" height="100%" px={20}>
+        <Title level={5}>Welcome VibrantExampleApp 👋</Title>
+      </VStack>
+    </VibrantProvider>
   );
 };
 

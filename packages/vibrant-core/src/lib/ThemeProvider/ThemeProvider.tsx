@@ -1,13 +1,14 @@
-import type { FC, ReactElement } from 'react';
+import type { FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import type { CurrentTheme, Theme } from '@vibrant-ui/theme';
 import { baseTheme } from '@vibrant-ui/theme';
 import type { DeepPartial } from '@vibrant-ui/utils';
+import type { ReactElementChild } from '../types';
 
 export type ThemeProviderProps = {
   theme: DeepPartial<Theme>;
   root?: boolean;
-  children: ReactElement;
+  children: ReactElementChild;
 };
 
 type ThemeContextValue = {
