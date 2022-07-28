@@ -22,3 +22,4 @@ export { ThemeProvider, useCurrentTheme } from './lib/ThemeProvider';
 export { OnColorContainer } from './lib/OnColorContainer';
 export type { SystemPropThemeScale } from './lib/createSystemProp';
 export { useResponsiveValue } from './lib/useResponsiveValue';
+export { VibrantProvider } from './lib/VibrantProvider';
