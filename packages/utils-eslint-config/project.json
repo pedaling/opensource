@@ -11,7 +11,7 @@
         "outputPath": "dist/shared-utils-eslint-config",
         "tsConfig": "packages/utils-eslint-config/tsconfig.lib.json",
         "packageJson": "packages/utils-eslint-config/package.json",
-        "main": "packages/utils-eslint-config/src/index.ts",
+        "main": "packages/utils-eslint-config/src/index.js",
         "assets": ["shared-utils-eslint-config/*.md"]
       }
     },
