@@ -2,6 +2,36 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.3.0...vibrant-core-0.4.0) (2022-07-27)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.3.1`
+* `vibrant-theme` updated to version `0.3.0`
+
+### Features
+
+* motion 컴포넌트가 ResponsiveValue로 동작되도록 한다 ([#106](https://github.com/pedaling/opensource/issues/106)) ([e15b8fb](https://github.com/pedaling/opensource/commit/e15b8fb2ccca804aa7069faf85165e0ede8ac1e0))
+* native responsiveValue를 지원한다 ([#104](https://github.com/pedaling/opensource/issues/104)) ([d09f8e1](https://github.com/pedaling/opensource/commit/d09f8e1bb565d1bac5d78fd8367d314733014c6a))
+* opacity Token을 추가한다 ([#105](https://github.com/pedaling/opensource/issues/105)) ([cd5c406](https://github.com/pedaling/opensource/commit/cd5c4067b08d22d4d0c68c482b95528896aa6738))
+* useResponsiveValue hook을 추가한다 ([#102](https://github.com/pedaling/opensource/issues/102)) ([7456046](https://github.com/pedaling/opensource/commit/74560461d72ac181f9f622dfb5675663dfec52d6))
+* **vibrant-components:** pressable prop을 제거하고 Pressable 컴포넌트를 추가한다 ([#110](https://github.com/pedaling/opensource/issues/110)) ([a4246cd](https://github.com/pedaling/opensource/commit/a4246cd525c7cd8910db1d495d40e0802f74a5fa))
+* **vibrant-core:** 네이티브 Box 컴포넌트가 systemProp에서 설정한 BaseComponent를 사용할 수 있게한다 ([#88](https://github.com/pedaling/opensource/issues/88)) ([ea6b849](https://github.com/pedaling/opensource/commit/ea6b8496d4ed4a3e7aaadcea076ee17f96bc9c9b))
+* **vibrant-core:** add borderRadiusLevel systemProp ([#119](https://github.com/pedaling/opensource/issues/119)) ([b6c62cf](https://github.com/pedaling/opensource/commit/b6c62cfc1a2196adcb57ef7b6acfd24ff6ff106d))
+* **vibrant-core:** add gradient systemProp ([#111](https://github.com/pedaling/opensource/issues/111)) ([a87b045](https://github.com/pedaling/opensource/commit/a87b04521cb1f2cc4e7447b24e7a5f6a94ebe41d))
+* **vibrant-core:** add ReactElementChild type ([#114](https://github.com/pedaling/opensource/issues/114)) ([efe5c1a](https://github.com/pedaling/opensource/commit/efe5c1a417753f72c4a6c86085bbca52d367e01a))
+* **vibrant-motion:** add backgroundColor prop to Motion ([#83](https://github.com/pedaling/opensource/issues/83)) ([7cbbfdf](https://github.com/pedaling/opensource/commit/7cbbfdfaa1048951a76873cd93c057ac93d99e12))
+* **vibrant-theme, vibrant-components:** gradient scale을 theme에 추가한다 ([#91](https://github.com/pedaling/opensource/issues/91)) ([5a9c70b](https://github.com/pedaling/opensource/commit/5a9c70b4013e44534b536c25c5ee7769a0ead55e))
+
+
+### Bug Fixes
+
+* box 컴포넌트가 기본적으로 flex로 동작되도록 한다 ([#86](https://github.com/pedaling/opensource/issues/86)) ([7377ef7](https://github.com/pedaling/opensource/commit/7377ef75938539186d13fa25bab558fbec4ba0e9))
+* update native jest config to use jest-expo preset ([#109](https://github.com/pedaling/opensource/issues/109)) ([0ef07f1](https://github.com/pedaling/opensource/commit/0ef07f108156cffd0e4cdb535d6689dfeb8f9463))
+* vibrant-component native 배포를 지원한다 ([#113](https://github.com/pedaling/opensource/issues/113)) ([9cbf665](https://github.com/pedaling/opensource/commit/9cbf6653abe6ec378eb8256990e2c34f0cef9be9))
+* **vibrant-core:** fix box prop type ([#95](https://github.com/pedaling/opensource/issues/95)) ([6aeee4d](https://github.com/pedaling/opensource/commit/6aeee4d6609c1b86a13bf2bd4c6382ab58f04898))
+* withVariation에서 ref와 children 타입이 잘못 설정되는 문제를 수정한다 ([#101](https://github.com/pedaling/opensource/issues/101)) ([0554d53](https://github.com/pedaling/opensource/commit/0554d534fa51933e8a336bd0964639cd797573cf))
+
 ## [0.3.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.2.1...vibrant-core-0.3.0) (2022-07-19)
 
 ### [0.2.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.2.0...vibrant-core-0.2.1) (2022-07-19)

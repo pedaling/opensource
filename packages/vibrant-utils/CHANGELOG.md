@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.3.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.3.0...vibrant-utils-0.3.1) (2022-07-27)
+
+
+### Bug Fixes
+
+* box 컴포넌트가 기본적으로 flex로 동작되도록 한다 ([#86](https://github.com/pedaling/opensource/issues/86)) ([7377ef7](https://github.com/pedaling/opensource/commit/7377ef75938539186d13fa25bab558fbec4ba0e9))
+* update native jest config to use jest-expo preset ([#109](https://github.com/pedaling/opensource/issues/109)) ([0ef07f1](https://github.com/pedaling/opensource/commit/0ef07f108156cffd0e4cdb535d6689dfeb8f9463))
+
 ## [0.3.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.2.0...vibrant-utils-0.3.0) (2022-07-19)
 
 ## [0.2.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.1.0...vibrant-utils-0.2.0) (2022-07-19)

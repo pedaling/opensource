@@ -16,6 +16,7 @@ export const SelectField = withSelectFieldVariation(
     helperText,
     renderOption,
     disabled,
+    onValueChange,
     ...restProps
   }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
@@ -57,8 +58,14 @@ export const SelectField = withSelectFieldVariation(
     const selectedOption = options[selectedOptionIndex];
 
     useEffect(() => {
+      if (!selectedOption) {
+        return;
+      }
+
       setState('default');
-    }, [selectedOptionIndex]);
+
+      onValueChange?.(selectedOption.value);
+    }, [onValueChange, selectedOption]);
 
     useEffect(() => {
       setState(stateProp);

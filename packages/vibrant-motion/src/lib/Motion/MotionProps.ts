@@ -1,4 +1,4 @@
-import type { ForwardedRef, ReactElement } from 'react';
+import type { ReactElement, Ref } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { motionVariant } from '../motionVariant';
 import type { Animation, AnimationStyle } from '../types';
@@ -13,11 +13,12 @@ export type MotionRefValue = {
 type WithMotion<Style> = { [key in keyof Style]?: Animation<Style[key]> };
 
 type MotionProps = {
-  ref?: ForwardedRef<MotionRefValue>;
+  ref?: Ref<any>;
+  motionRef?: Ref<MotionRefValue>;
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
-  style: WithMotion<AnimationStyle>;
+  animation: WithMotion<AnimationStyle>;
 };
 
 export const withMotionVariation = withVariation<MotionProps>()(
@@ -33,8 +34,8 @@ export const withMotionVariation = withVariation<MotionProps>()(
     name: 'opacity',
     scale: 'opacity',
   }),
-  ({ style, ...restProps }) => {
-    const { from, to } = Object.entries(style).reduce(
+  ({ animation, ...restProps }) => {
+    const { from, to } = Object.entries(animation).reduce(
       (acc, [key, value]) => ({
         from: {
           ...acc.from,

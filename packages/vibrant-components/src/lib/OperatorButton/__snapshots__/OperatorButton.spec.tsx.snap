@@ -15,42 +15,57 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  cursor: pointer;
+  z-index: 0;
+  background-color: inherit;
+  border-width: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   padding: 7px;
   border-width: 0;
   border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  z-index: 0;
 }
 
-.emotion-0::before {
-  content: "";
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   position: absolute;
   z-index: -1;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  opacity: 0;
   background-color: #101010;
 }
 
-@media (hover: hover) {
-  .emotion-0:hover::before {
-    content: "";
-    opacity: 0.08;
-  }
-}
-
-.emotion-0:active::before {
-  content: "";
-  opacity: 0.16;
-}
-
-.emotion-1 {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -71,7 +86,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   height: 16px;
 }
 
-.emotion-2 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -93,7 +108,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   fill: #101010;
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -114,16 +129,19 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
     class="emotion-0"
     data-testid="operatorButton"
   >
-    <span
+    <div
       class="emotion-1"
+    />
+    <span
+      class="emotion-2"
     >
       <svg
-        class="emotion-2"
+        class="emotion-3"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          class="emotion-3"
+          class="emotion-4"
           d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
         />
       </svg>

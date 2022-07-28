@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.2.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.2.0...vibrant-icons-0.2.1) (2022-07-27)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.3.1`
+* `vibrant-core` updated to version `0.4.0`
+
+### Bug Fixes
+
+* box 컴포넌트가 기본적으로 flex로 동작되도록 한다 ([#86](https://github.com/pedaling/opensource/issues/86)) ([7377ef7](https://github.com/pedaling/opensource/commit/7377ef75938539186d13fa25bab558fbec4ba0e9))
+* update native jest config to use jest-expo preset ([#109](https://github.com/pedaling/opensource/issues/109)) ([0ef07f1](https://github.com/pedaling/opensource/commit/0ef07f108156cffd0e4cdb535d6689dfeb8f9463))
+
 ## [0.2.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.1.2...vibrant-icons-0.2.0) (2022-07-19)
 
 ### [0.1.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.1.1...vibrant-icons-0.1.2) (2022-07-19)

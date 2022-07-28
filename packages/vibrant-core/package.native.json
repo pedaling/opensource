@@ -1,12 +1,12 @@
 {
   "name": "@vibrant-ui/core-native",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
-    "react-native": "^0.62.0"
+    "react-native": "^0.63.0"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",

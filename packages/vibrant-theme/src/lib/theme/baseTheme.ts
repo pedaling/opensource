@@ -148,5 +148,12 @@ export const baseTheme: Theme = {
     bold: '700',
     extraBold: '800',
   },
+  borderRadius: {
+    0: 0,
+    1: 2,
+    2: 12,
+    3: 16,
+    4: 20,
+  },
   mode: 'light',
 };

@@ -4,34 +4,43 @@ import { animated, useSpring } from '../external/ReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withTransitionVariation } from './TransitionProp';
 
-export const Transition = withTransitionVariation(({ children, style, duration }) => {
-  const AnimatedComponent = useMemo(
-    () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
-    [children.type]
-  );
-  const { getResponsiveValue } = useResponsiveValue();
+export const Transition = withTransitionVariation(
+  ({ innerRef, children, style, animation, duration, ...restProps }) => {
+    const AnimatedComponent = useMemo(
+      () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
+      [children.type]
+    );
+    const { getResponsiveValue } = useResponsiveValue();
 
-  const currentStyle = useMemo(
-    () => Object.fromEntries(Object.entries(style).map(([key, value]) => [key, getResponsiveValue(value)])),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [JSON.stringify(style), getResponsiveValue]
-  );
+    const currentStyle = useMemo(
+      () => Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)])),
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [JSON.stringify(animation), getResponsiveValue]
+    );
 
-  const option = useMemo(
-    () => ({
-      to: currentStyle,
-      config: {
-        duration,
-      },
-    }),
-    [duration, currentStyle]
-  );
+    const option = useMemo(
+      () => ({
+        to: currentStyle,
+        config: {
+          duration,
+        },
+      }),
+      [duration, currentStyle]
+    );
 
-  const [styles, springApi] = useSpring(() => ({ from: style }));
+    const [styles, springApi] = useSpring(() => ({ from: animation }));
 
-  useEffect(() => {
-    springApi.start(option);
-  }, [option, springApi]);
+    useEffect(() => {
+      springApi.start(option);
+    }, [option, springApi]);
 
-  return <AnimatedComponent style={withTransformStyle(styles)} {...children.props} />;
-});
+    return (
+      <AnimatedComponent
+        ref={innerRef}
+        style={{ ...style, ...withTransformStyle(styles) }}
+        {...restProps}
+        {...children.props}
+      />
+    );
+  }
+);

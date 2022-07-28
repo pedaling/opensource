@@ -1,5 +1,12 @@
-import type { ReactNode, RefObject } from 'react';
-import type { DisplayProps, FlexboxProps, ResponsiveValue, SizingProps, SpacingProps } from '@vibrant-ui/core';
+import type { RefObject } from 'react';
+import type {
+  DisplayProps,
+  FlexboxProps,
+  ReactElementChild,
+  ResponsiveValue,
+  SizingProps,
+  SpacingProps,
+} from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'nav' | 'section';
@@ -12,7 +19,7 @@ export type StackProps = DisplayProps &
     direction: ResponsiveValue<'horizontal' | 'vertical'>;
     ref?: RefObject<HTMLElement>;
     spacing?: ResponsiveValue<number>;
-    children?: ReactNode;
+    children?: ReactElementChild | ReactElementChild[];
   };
 
 export const withStackVariation = withVariation<StackProps>()(

@@ -37,7 +37,7 @@ export const Box = styled(
 
     const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
 
-    return <Component ref={ref} style={restStyle} {...restProps} {...props} />;
+    return <Component ref={ref} style={restStyle} {...(base ? { as } : {})} {...restProps} {...props} />;
   }),
   {
     shouldForwardProp,

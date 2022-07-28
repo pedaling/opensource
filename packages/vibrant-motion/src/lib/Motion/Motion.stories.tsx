@@ -9,7 +9,7 @@ export default {
   component: Motion,
   args: {
     duration: 1000,
-    style: {
+    animation: {
       x: {
         from: 0,
         to: 250,
@@ -52,7 +52,7 @@ export const WithRef: ComponentStory<typeof Motion> = props => {
       <Box as="button" onClick={() => motionRef.current.resume()}>
         Resume
       </Box>
-      <Motion {...props} ref={motionRef}>
+      <Motion {...props} motionRef={motionRef}>
         <Box width={150} height={150} backgroundColor="primary" borderRadius={20} />
       </Motion>
     </Box>
