@@ -16,10 +16,9 @@ function getTransformValue(value: number | string | undefined) {
 const transformProp = createSystemProp({
   property: 'transform',
   transform: value => {
-    const style = Object.keys(value).reduce(
-      (style, key) => (isDefined(key) ? `${style} ${key}(${getTransformValue(value[key])})` : ''),
-      ''
-    );
+    const style = Object.keys(value)
+      .reduce((style, key) => (isDefined(key) ? `${style} ${key}(${getTransformValue(value[key])})` : ''), '')
+      .trim();
 
     return {
       transform: style,

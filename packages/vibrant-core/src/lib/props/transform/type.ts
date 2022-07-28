@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../types';
 
-export type Translate = {
+export type Transform = {
   rotate?: string;
   rotateX?: string;
   rotateY?: string;
@@ -15,5 +15,5 @@ export type Translate = {
 };
 
 export type TransformProps = {
-  transform?: ResponsiveValue<Translate>;
+  transform?: ResponsiveValue<Transform>;
 };
