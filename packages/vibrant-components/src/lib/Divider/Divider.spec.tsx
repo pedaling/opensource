@@ -10,7 +10,7 @@ describe('<Divider />', () => {
 
   describe('when Divider with margin rendered', () => {
     beforeEach(() => {
-      renderer = render(<Divider data-testid="divider" direction="horizontal" margin="md" thickness={1} />);
+      renderer = render(<Divider data-testid="divider" direction="horizontal" margin="md" kind="default" />);
 
       element = renderer.getByTestId('divider');
     });
@@ -23,6 +23,10 @@ describe('<Divider />', () => {
 
     it('width is 100%', () => {
       expect(element).toHaveStyleRule('width', '100%');
+    });
+
+    it('border-top-width is 1px', () => {
+      expect(element).toHaveStyleRule('border-top-width', '1px');
     });
 
     it('match snapshot', () => {

@@ -3,7 +3,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type DividerProps = {
   direction: 'horizontal' | 'vertical';
-  thickness: ResponsiveValue<1 | 12>;
+  kind?: ResponsiveValue<'dashed' | 'default' | 'thick'>;
   margin?: ResponsiveValue<'lg' | 'md' | 'none'>;
 };
 
@@ -31,19 +31,29 @@ export const withDividerVariation = withVariation<DividerProps>()(
   propVariant({
     props: [
       {
-        name: 'thickness',
+        name: 'kind',
         responsive: true,
         keep: true,
+        default: 'default',
       },
     ],
     variants: {
-      1: {
-        backgroundColor: 'outline1',
+      dashed: {
+        borderColor: 'outline1',
+        size: 1,
+        borderStyle: 'dashed',
       },
-      12: {
-        backgroundColor: 'outline2',
+      thick: {
+        borderColor: 'outline2',
+        size: 12,
+        borderStyle: 'solid',
       },
-    },
+      default: {
+        borderColor: 'outline1',
+        size: 1,
+        borderStyle: 'solid',
+      },
+    } as const,
   }),
   propVariant({
     props: [
@@ -51,25 +61,26 @@ export const withDividerVariation = withVariation<DividerProps>()(
         name: 'direction',
       },
       {
-        name: 'thickness',
-        responsive: true,
+        name: 'size',
       },
       {
         name: 'spacing',
         responsive: true,
       },
     ],
-    variants: ({ direction, thickness, spacing }) => {
+    variants: ({ direction, size, spacing }) => {
       if (direction === 'horizontal') {
         return {
           width: '100%',
-          height: thickness,
+          height: 0,
+          borderTopWidth: size,
           my: spacing,
         };
       }
 
       return {
-        width: thickness,
+        width: 0,
+        borderRightWidth: size,
         height: '100%',
         mx: spacing,
       };
