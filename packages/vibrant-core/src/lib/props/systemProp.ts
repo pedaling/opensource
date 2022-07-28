@@ -18,8 +18,10 @@ import type { SizingProps } from './sizing';
 import { sizingProps } from './sizing';
 import type { SpacingProps } from './spacing';
 import { spacingProps } from './spacing';
-import type { TypographyProps } from './typography';
+import { transformProps } from './transform';
+import type { TransformProps } from './transform';
 import { typographyProps } from './typography';
+import type { TypographyProps } from './typography';
 
 type SystemProps = BackgroundProps &
   BorderProps &
@@ -31,7 +33,8 @@ type SystemProps = BackgroundProps &
   PseudoClassProps &
   SizingProps &
   SpacingProps &
-  TypographyProps;
+  TypographyProps &
+  TransformProps;
 
 export type {
   BackgroundProps,
@@ -60,6 +63,7 @@ export const systemProps = [
   ...sizingProps,
   ...spacingProps,
   ...typographyProps,
+  ...transformProps,
 ];
 
 export const systemPropNames = systemProps
