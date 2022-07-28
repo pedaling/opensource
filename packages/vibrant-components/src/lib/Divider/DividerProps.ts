@@ -73,7 +73,6 @@ export const withDividerVariation = withVariation<DividerProps>()(
         return {
           width: '100%',
           height: 0,
-          borderWidth: 0,
           borderTopWidth: size,
           my: spacing,
         };
@@ -81,7 +80,6 @@ export const withDividerVariation = withVariation<DividerProps>()(
 
       return {
         width: 0,
-        borderWidth: 0,
         borderRightWidth: size,
         height: '100%',
         mx: spacing,
