@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "net.pedaling.vibrantExample"
     },
     "web": {
       "favicon": "./assets/favicon.png"
