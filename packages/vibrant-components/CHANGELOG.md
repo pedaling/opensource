@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.4.1...vibrant-components-0.5.0) (2022-07-29)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.6.0`
+* `vibrant-icons` updated to version `0.2.4`
+* `vibrant-motion` updated to version `0.3.3`
+
+### Features
+
+* **vibrant-components:** Divider에 dashed kind를 추가한다 ([#128](https://github.com/pedaling/opensource/issues/128)) ([b6c1551](https://github.com/pedaling/opensource/commit/b6c1551c213a3f40d2820f42565ffc0cb061fb35))
+
+
+### Bug Fixes
+
+* Tab 컴포넌트의 flex-basis를 수정한다 ([#129](https://github.com/pedaling/opensource/issues/129)) ([e84f88c](https://github.com/pedaling/opensource/commit/e84f88cf09949fdfa38dafe4a49e1d40d227c11c))
+
 ### [0.4.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.4.0...vibrant-components-0.4.1) (2022-07-28)
 
 ### Dependency Updates
