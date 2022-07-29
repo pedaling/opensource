@@ -16,6 +16,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * **eslint:** _id와 __typename eslint rule을 비활성화합니다 ([#131](https://github.com/pedaling/opensource/issues/131)) ([da99663](https://github.com/pedaling/opensource/commit/da9966343cf532526a18375161693642c40fb539))
 
+### [0.2.3](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.2...utils-eslint-config-0.2.3) (2022-07-29)
+
+
+### Bug Fixes
+
+* **eslint:** _id와 __typename eslint rule을 비활성화합니다 ([#131](https://github.com/pedaling/opensource/issues/131)) ([da99663](https://github.com/pedaling/opensource/commit/da9966343cf532526a18375161693642c40fb539))
+
 ### [0.2.2](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.1...utils-eslint-config-0.2.2) (2022-07-28)
 
 
