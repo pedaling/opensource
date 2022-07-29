@@ -109,6 +109,13 @@ const typescriptRules = {
       format: ['StrictPascalCase'],
     },
 
+    // _id와 __typename은 허용된다
+    {
+      selector: ['typeProperty', 'objectLiteralProperty', 'classProperty'],
+      format: null,
+      filter: { regex: '^(_id|__typename)$', match: true },
+    },
+
     // __html은 허용된다
     {
       selector: ['objectLiteralProperty'],
