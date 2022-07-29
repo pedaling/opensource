@@ -30,7 +30,7 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
         continue;
       }
 
-      cache[key] ||= matchedSystemProp;
+      cache[key] = cache[key] || matchedSystemProp;
 
       if (!isDefined(value)) {
         continue;
