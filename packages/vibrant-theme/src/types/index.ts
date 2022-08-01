@@ -6,4 +6,4 @@ export type { Opacity, OpacityToken } from './Opacity';
 export type { LinearGradient, AnyGradient, GradientKind } from './Gradient';
 export type { BorderRadiusLevel } from './BorderRadius';
 export type { TypographyKind, TypographyWeight } from './Typography';
-export type { Shadow } from './Shadow';
+export type { Shadow, ElevationLevel } from './Elevation';
