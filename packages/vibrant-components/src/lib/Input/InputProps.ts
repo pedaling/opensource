@@ -1,15 +1,5 @@
 import type { ForwardedRef } from 'react';
-import type {
-  BackgroundProps,
-  BorderProps,
-  ColorProps,
-  DisplayProps,
-  PositionProps,
-  PseudoClassProps,
-  SizingProps,
-  SpacingProps,
-  TypographyProps,
-} from '@vibrant-ui/core';
+
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type BaseInputProps<Value> = {
@@ -22,23 +12,14 @@ export type BaseInputProps<Value> = {
   placeholder?: Value;
 };
 
-export type InputProps = BackgroundProps &
-  BaseInputProps<string> &
-  BorderProps &
-  ColorProps &
-  DisplayProps &
-  PositionProps &
-  PseudoClassProps &
-  SizingProps &
-  SpacingProps &
-  TypographyProps & {
-    allowPattern?: RegExp;
-    value?: string;
-    readOnly?: boolean;
-    onFocus?: () => void;
-    onBlur?: () => void;
-    onKeyDown?: (_: { key: string; prevent: () => void }) => void;
-  } & (
+export type InputProps = BaseInputProps<string> & {
+  allowPattern?: RegExp;
+  value?: string;
+  readOnly?: boolean;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  onKeyDown?: (_: { key: string; prevent: () => void }) => void;
+} & (
     | {
         type: 'number';
         min?: number;

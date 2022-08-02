@@ -13,7 +13,7 @@ export const Box = styled(
     const Component = base ? (base as ComponentType<any>) : undefined;
 
     if (Component) {
-      return <Component ref={ref} {...(base ? { as } : {})} {...restProps} />;
+      return <Component ref={ref} {...(as ? { as } : {})} {...restProps} />;
     }
 
     return createElement(as ?? 'div', {

@@ -32,7 +32,8 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
 
     return (
       <Box {...restProps}>
-        <Input
+        <Box<typeof Input>
+          base={Input}
           ref={inputRef}
           id={inputId}
           position="absolute"
