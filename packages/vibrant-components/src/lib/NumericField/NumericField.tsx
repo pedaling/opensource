@@ -60,7 +60,8 @@ export const NumericField = withNumericFieldVariation(
 
     return (
       <Box position="relative" width={128} height={38} {...restProps}>
-        <Input
+        <Box<typeof Input>
+          base={Input}
           ref={(ref: HTMLInputElement) => {
             inputRef.current = ref;
             if (!innerRef) {

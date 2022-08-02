@@ -112,7 +112,8 @@ export const SelectField = withSelectFieldVariation(
 
     return (
       <Box<undefined, 'div'> as="div" onMouseDown={event => event.preventDefault()}>
-        <Input
+        <Box<typeof Input>
+          base={Input}
           ref={inputRef}
           id={inputId}
           position="absolute"
