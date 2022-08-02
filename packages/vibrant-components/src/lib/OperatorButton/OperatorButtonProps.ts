@@ -19,12 +19,10 @@ export const withOperationButtonVariation = withVariation<OperatorButtonProps>('
     variants: {
       true: {
         backgroundColor: 'disable',
-        pressableProps: {},
         iconFill: 'onView3',
       },
       false: {
         backgroundColor: 'surface1',
-        pressableProps: { overlayColor: 'onView1', interactions: ['hover', 'focus', 'active'] },
         iconFill: 'onView1',
       },
     } as const,
