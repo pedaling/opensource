@@ -4,7 +4,7 @@ import { withInputVariation } from './InputProps';
 
 export const Input = withInputVariation(
   ({ innerRef, placeholder, onFocus, onBlur, onKeyDown, onValueChange, isValidValue, replaceValue, ...restProps }) => (
-    <Box
+    <Box<undefined, 'input'>
       ref={innerRef}
       as="input"
       typography="body2"
