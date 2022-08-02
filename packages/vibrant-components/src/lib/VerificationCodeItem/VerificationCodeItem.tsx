@@ -10,8 +10,6 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId
     justifyContent="center"
     width={44}
     height={60}
-    color="onColor"
-    textAlign="center"
     borderWidth={1}
     borderStyle="solid"
     borderRadius={2}
@@ -24,7 +22,7 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId
     }}
     {...restProps}
   >
-    <Text kind="title1" weight="extraBold">
+    <Text kind="title1" weight="extraBold" textAlign="center">
       {value}
     </Text>
   </Box>
