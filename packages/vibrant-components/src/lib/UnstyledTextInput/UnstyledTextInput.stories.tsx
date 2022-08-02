@@ -1,9 +1,9 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Input } from './Input';
+import { UnstyledTextInput } from './UnstyledTextInput';
 
 export default {
-  title: 'Input',
-  component: Input,
+  title: 'UnstyledTextInput',
+  component: UnstyledTextInput,
   argTypes: {
     allowPattern: {
       defaultValue: /\d/,
@@ -22,6 +22,6 @@ export default {
       action: 'onValueChange',
     },
   },
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof UnstyledTextInput>;
 
-export const Basic: ComponentStory<typeof Input> = props => <Input {...props} />;
+export const Basic: ComponentStory<typeof UnstyledTextInput> = props => <UnstyledTextInput {...props} />;

@@ -1,7 +1,8 @@
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { BaseInputProps } from '../Input';
+import type { BaseInputProps } from '../../types';
 
 export type NumericFieldProps = BaseInputProps<number> & {
+  placeholder?: number;
   min?: number;
   max?: number;
 };

@@ -2,9 +2,9 @@ import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing';
 import { createReactRenderer } from '@vibrant-ui/utils/testing';
-import { Input } from './Input';
+import { UnstyledTextInput } from './UnstyledTextInput';
 
-describe('<Input />', () => {
+describe('<UnstyledTextInput />', () => {
   const mockHandleFocus = jest.fn();
   const mockHandleBlur = jest.fn();
   const mockHandleKeyDown = jest.fn();
@@ -27,7 +27,7 @@ describe('<Input />', () => {
   describe('when allowPattern is undefined', () => {
     beforeEach(async () => {
       renderer = render(
-        <Input
+        <UnstyledTextInput
           onFocus={mockHandleFocus}
           onBlur={mockHandleBlur}
           onKeyDown={({ key }) => mockHandleKeyDown(key)}
@@ -100,7 +100,7 @@ describe('<Input />', () => {
   describe('when allowPattern is number', () => {
     beforeEach(async () => {
       renderer = render(
-        <Input
+        <UnstyledTextInput
           allowPattern={/\d/}
           onKeyDown={({ key }) => mockHandleKeyDown(key)}
           onValueChange={mockHandleValueChange}

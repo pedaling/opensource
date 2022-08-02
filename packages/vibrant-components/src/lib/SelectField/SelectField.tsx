@@ -2,8 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { uuidV4 } from '@vibrant-ui/utils';
 import { Body } from '../Body';
-import { Input } from '../Input';
 import { SelectOptionGroup } from '../SelectOptionGroup';
+import { UnstyledTextInput } from '../UnstyledTextInput';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
@@ -112,8 +112,8 @@ export const SelectField = withSelectFieldVariation(
 
     return (
       <Box<undefined, 'div'> as="div" onMouseDown={event => event.preventDefault()}>
-        <Box<typeof Input>
-          base={Input}
+        <Box<typeof UnstyledTextInput>
+          base={UnstyledTextInput}
           ref={inputRef}
           id={inputId}
           position="absolute"

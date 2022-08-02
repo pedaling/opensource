@@ -1,8 +1,8 @@
 import type { SyntheticEvent } from 'react';
 import { Box } from '@vibrant-ui/core';
-import { withInputVariation } from './InputProps';
+import { withUnstyledTextInputVariation } from './UnstyledTextInputProps';
 
-export const Input = withInputVariation(
+export const UnstyledTextInput = withUnstyledTextInputVariation(
   ({ innerRef, placeholder, onFocus, onBlur, onKeyDown, onValueChange, isValidValue, replaceValue, ...restProps }) => (
     <Box<undefined, 'input'>
       ref={innerRef}

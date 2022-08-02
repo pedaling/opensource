@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
-import { Input } from '../Input';
 import { OperatorButton } from '../OperatorButton';
+import { UnstyledTextInput } from '../UnstyledTextInput';
 import { withNumericFieldVariation } from './NumericFieldProps';
 
 export const NumericField = withNumericFieldVariation(
@@ -60,8 +60,8 @@ export const NumericField = withNumericFieldVariation(
 
     return (
       <Box position="relative" width={128} height={38} {...restProps}>
-        <Box<typeof Input>
-          base={Input}
+        <Box<typeof UnstyledTextInput>
+          base={UnstyledTextInput}
           ref={(ref: HTMLInputElement) => {
             inputRef.current = ref;
             if (!innerRef) {
