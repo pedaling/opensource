@@ -128,9 +128,11 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   <button
     class="emotion-0"
     data-testid="operatorButton"
+    style="opacity: 1;"
   >
     <div
       class="emotion-1"
+      style="opacity: 0;"
     />
     <span
       class="emotion-2"
