@@ -1,6 +1,6 @@
 import type { ThemeBorderRadius } from './BorderRadius';
 import type { Colors, ThemeColors } from './Colors';
-import type { ThemeGradient } from './Gradient';
+import type { Gradient, ThemeGradient } from './Gradient';
 import type { ThemeMode } from './Mode';
 import type { Opacity, ThemeOpacity } from './Opacity';
 import type { ThemeTypography, ThemeTypographyWeight } from './Typography';
@@ -20,6 +20,7 @@ export type CurrentTheme = {
   breakpoints: number[];
   colors: Colors;
   opacity: Opacity;
+  gradient: Gradient;
   borderRadius: ThemeBorderRadius;
   typography: ThemeTypography;
   typographyWeight: ThemeTypographyWeight;
