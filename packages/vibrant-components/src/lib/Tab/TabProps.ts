@@ -12,7 +12,7 @@ export type TabProps = Pick<DisplayProps, 'hidden'> & {
   ref?: ForwardedRef<HTMLButtonElement>;
 };
 
-export const withTabVariation = withVariation<TabProps>()(
+export const withTabVariation = withVariation<TabProps>('Tab')(
   propVariant({
     props: [
       {

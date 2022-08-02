@@ -8,7 +8,7 @@ export type SwitchProps = {
   disabled?: boolean;
 };
 
-export const withSwitchVariation = withVariation<SwitchProps>()(
+export const withSwitchVariation = withVariation<SwitchProps>('Switch')(
   propVariant({
     props: [
       {

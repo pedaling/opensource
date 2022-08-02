@@ -7,7 +7,7 @@ type VerificationCodeItemProps = {
   active?: boolean;
 };
 
-export const withVerificationCodeItemVariation = withVariation<VerificationCodeItemProps>()(
+export const withVerificationCodeItemVariation = withVariation<VerificationCodeItemProps>('VerificationCodeItem')(
   propVariant({
     props: [
       {

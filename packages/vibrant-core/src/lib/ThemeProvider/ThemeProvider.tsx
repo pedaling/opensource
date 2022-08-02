@@ -65,6 +65,8 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
 };
 
+ThemeProvider.displayName = 'ThemeProvider';
+
 export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentTheme } => {
   const { rootTheme, theme } = useContext(ThemeContext);
 

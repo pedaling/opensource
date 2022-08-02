@@ -16,3 +16,5 @@ export const VibrantProvider: FC<VibrantProviderProps> = ({ children, theme, roo
     </ThemeProvider>
   </DependencyProvider>
 );
+
+VibrantProvider.displayName = 'VibrantProvider';

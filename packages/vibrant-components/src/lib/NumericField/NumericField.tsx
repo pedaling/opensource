@@ -131,3 +131,5 @@ export const NumericField = withNumericFieldVariation(
     );
   }
 );
+
+NumericField.displayName = 'NumericField';

@@ -8,4 +8,4 @@ type VerificationCodeFieldProps = {
   onComplete?: (value: string) => void;
 };
 
-export const withVerificationCodeFieldVariation = withVariation<VerificationCodeFieldProps>()();
+export const withVerificationCodeFieldVariation = withVariation<VerificationCodeFieldProps>('VerificationCodeField')();

@@ -31,3 +31,5 @@ export const DependencyProvider: FC<DependencyProviderProps> = ({ children, depe
 );
 
 export const useDependency = (): DependencyContextValue => useContext(DependencyContext);
+
+DependencyProvider.displayName = 'DependencyProvider';

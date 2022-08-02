@@ -7,7 +7,7 @@ export type OperatorButtonProps = {
   onClick?: () => void;
 };
 
-export const withOperationButtonVariation = withVariation<OperatorButtonProps>()(
+export const withOperationButtonVariation = withVariation<OperatorButtonProps>('OperatorButton')(
   propVariant({
     props: [
       {

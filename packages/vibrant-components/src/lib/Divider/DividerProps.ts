@@ -7,7 +7,7 @@ export type DividerProps = {
   margin?: ResponsiveValue<'lg' | 'md' | 'none'>;
 };
 
-export const withDividerVariation = withVariation<DividerProps>()(
+export const withDividerVariation = withVariation<DividerProps>('Divider')(
   propVariant({
     props: [
       {

@@ -87,14 +87,17 @@ type WithVariationFn<Props> = {
   ): (c: ComponentWithInnerRef<V10>) => ComponentWithRef<Props>;
 };
 
-export function withVariation<Props>(): WithVariationFn<Props> {
+export function withVariation<Props>(componentName: string): WithVariationFn<Props> {
   return (...variantFns: VariantFn<Props, any>[]) =>
     (BaseComponent: ComponentWithInnerRef<Props>) =>
-      forwardRef<PickRefElement<Props>, Props>((props, ref) => {
-        const nextProps = variantFns.reduce<Props>((prevProps, variantFn) => variantFn(prevProps), {
-          ...props,
-        });
+      Object.assign(
+        forwardRef<PickRefElement<Props>, Props>((props, ref) => {
+          const nextProps = variantFns.reduce<Props>((prevProps, variantFn) => variantFn(prevProps), {
+            ...props,
+          });
 
-        return <BaseComponent {...nextProps} {...((ref ? { innerRef: ref } : {}) as WithInnerRef<Props>)} />;
-      });
+          return <BaseComponent {...nextProps} {...((ref ? { innerRef: ref } : {}) as WithInnerRef<Props>)} />;
+        }),
+        { displayName: componentName }
+      );
 }

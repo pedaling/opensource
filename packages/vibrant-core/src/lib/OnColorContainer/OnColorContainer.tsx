@@ -19,3 +19,5 @@ export const OnColorContainer: FC<OnColorContainerProps> = ({ color, children })
     {children}
   </ThemeProvider>
 );
+
+OnColorContainer.displayName = 'OnColorContainer';

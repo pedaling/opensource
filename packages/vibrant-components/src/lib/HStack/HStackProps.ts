@@ -5,4 +5,4 @@ export type HStackProps = Omit<StackProps, 'direction' | 'justifyContent'> & {
   alignment?: StackProps['justifyContent'];
 };
 
-export const withHStackVariation = withVariation<HStackProps>()();
+export const withHStackVariation = withVariation<HStackProps>('HStack')();

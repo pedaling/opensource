@@ -5,4 +5,4 @@ export type VStackProps = Omit<StackProps, 'alignItems' | 'direction'> & {
   alignment?: StackProps['alignItems'];
 };
 
-export const withVStackVariation = withVariation<VStackProps>()();
+export const withVStackVariation = withVariation<VStackProps>('VStack')();

@@ -7,7 +7,7 @@ type SelectOptionItemProps = {
   active?: boolean;
 };
 
-export const withSelectOptionItemVariation = withVariation<SelectOptionItemProps>()(
+export const withSelectOptionItemVariation = withVariation<SelectOptionItemProps>('SelectOptionItem')(
   propVariant({
     props: [
       {

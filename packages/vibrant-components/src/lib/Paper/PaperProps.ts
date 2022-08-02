@@ -1,3 +1,4 @@
+import type { Ref } from 'react';
 import type {
   BorderProps,
   DisplayProps,
@@ -10,6 +11,7 @@ import { withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 
 type PaperProps = {
+  ref?: Ref<any>;
   children?: ReactElementChild;
 } & (
   | {
@@ -26,4 +28,4 @@ type PaperProps = {
   SpacingProps &
   SizingProps;
 
-export const withPaperVariation = withVariation<PaperProps>()();
+export const withPaperVariation = withVariation<PaperProps>('Paper')();
