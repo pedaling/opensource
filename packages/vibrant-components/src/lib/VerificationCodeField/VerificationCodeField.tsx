@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
-import { Input } from '../Input';
+import { UnstyledTextInput } from '../UnstyledTextInput';
 import { VerificationCodeItem } from '../VerificationCodeItem';
 import { VStack } from '../VStack';
 import { withVerificationCodeFieldVariation } from './VerificationCodeFieldProps';
@@ -32,8 +32,8 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
 
     return (
       <Box {...restProps}>
-        <Box<typeof Input>
-          base={Input}
+        <Box<typeof UnstyledTextInput>
+          base={UnstyledTextInput}
           ref={inputRef}
           id={inputId}
           position="absolute"

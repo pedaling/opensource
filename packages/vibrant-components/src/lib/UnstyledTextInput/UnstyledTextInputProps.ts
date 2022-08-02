@@ -1,18 +1,8 @@
-import type { ForwardedRef } from 'react';
-
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { BaseInputProps } from '../../types';
 
-export type BaseInputProps<Value> = {
-  ref?: ForwardedRef<HTMLInputElement>;
-  id?: string;
-  defaultValue?: Value;
-  disabled?: boolean;
-  onValueChange?: (value: Value) => void;
-  tabIndex?: number;
-  placeholder?: Value;
-};
-
-export type InputProps = BaseInputProps<string> & {
+export type UnstyledTextInputProps = BaseInputProps<string> & {
+  placeholder?: string;
   allowPattern?: RegExp;
   value?: string;
   readOnly?: boolean;
@@ -31,7 +21,7 @@ export type InputProps = BaseInputProps<string> & {
       }
   );
 
-export const withInputVariation = withVariation<InputProps>('Input')(
+export const withUnstyledTextInputVariation = withVariation<UnstyledTextInputProps>('UnstyledTextInput')(
   propVariant({
     props: [
       {
