@@ -1,4 +1,4 @@
-import type { ComponentType, ReactElement } from 'react';
+import type { ComponentType, FC, ReactElement } from 'react';
 import { forwardRef } from 'react';
 import styled from '@emotion/styled';
 import { createInterpolation } from '../createInterpolation';
@@ -23,3 +23,5 @@ export const Box = styled(
 >(
   props: BoxProps<BaseComponent, ElementName>
 ) => ReactElement;
+
+(Box as FC).displayName = 'Box';

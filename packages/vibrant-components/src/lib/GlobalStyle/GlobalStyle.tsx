@@ -1,3 +1,4 @@
+import type { FC } from 'react';
 import { Global, css } from '@emotion/react';
 
 const resetCSS = css`
@@ -85,4 +86,6 @@ const resetCSS = css`
   }
 `;
 
-export const GlobalStyle = () => <Global styles={resetCSS} />;
+export const GlobalStyle: FC = () => <Global styles={resetCSS} />;
+
+GlobalStyle.displayName = 'GlobalStyle';

@@ -20,4 +20,4 @@ export type PressableProps = {
     }
 );
 
-export const withPressableVariation = withVariation<PressableProps>()();
+export const withPressableVariation = withVariation<PressableProps>('Pressable')();

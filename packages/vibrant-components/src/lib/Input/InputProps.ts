@@ -50,7 +50,7 @@ export type InputProps = BackgroundProps &
       }
   );
 
-export const withInputVariation = withVariation<InputProps>()(
+export const withInputVariation = withVariation<InputProps>('Input')(
   propVariant({
     props: [
       {

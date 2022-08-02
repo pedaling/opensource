@@ -17,4 +17,4 @@ export type SpaceProps = Pick<DisplayProps, 'hidden'> &
       })
   );
 
-export const withSpaceVariation = withVariation<SpaceProps>()();
+export const withSpaceVariation = withVariation<SpaceProps>('Space')();

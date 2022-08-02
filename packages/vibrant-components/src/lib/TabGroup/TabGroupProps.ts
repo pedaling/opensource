@@ -9,7 +9,7 @@ export type TabGroupProps = {
   children: ReactElement<TabProps>[];
 };
 
-export const withTabGroupVariation = withVariation<TabGroupProps>()(
+export const withTabGroupVariation = withVariation<TabGroupProps>('TabGroup')(
   propVariant({
     props: [
       {

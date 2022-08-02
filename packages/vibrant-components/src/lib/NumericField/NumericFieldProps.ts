@@ -6,7 +6,7 @@ export type NumericFieldProps = BaseInputProps<number> & {
   max?: number;
 };
 
-export const withNumericFieldVariation = withVariation<NumericFieldProps>()(
+export const withNumericFieldVariation = withVariation<NumericFieldProps>('NumericField')(
   propVariant({
     props: [
       {

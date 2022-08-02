@@ -13,4 +13,4 @@ export type TextProps = Omit<TypographyProps, 'fontWeight' | 'typography'> &
     children: ReactNode;
   };
 
-export const withTextVariation = withVariation<TextProps>()();
+export const withTextVariation = withVariation<TextProps>('Text')();

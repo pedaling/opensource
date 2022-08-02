@@ -18,7 +18,7 @@ export type NotificationBadgeProps = {
     }
 );
 
-export const withNotificationBadgeVariation = withVariation<NotificationBadgeProps>()(
+export const withNotificationBadgeVariation = withVariation<NotificationBadgeProps>('NotificationBadge')(
   propVariant({
     props: [
       {

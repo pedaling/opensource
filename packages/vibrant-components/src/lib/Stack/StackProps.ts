@@ -22,7 +22,7 @@ export type StackProps = DisplayProps &
     children?: ReactElementChild | ReactElementChild[];
   };
 
-export const withStackVariation = withVariation<StackProps>()(
+export const withStackVariation = withVariation<StackProps>('Stack')(
   propVariant({
     props: [
       {

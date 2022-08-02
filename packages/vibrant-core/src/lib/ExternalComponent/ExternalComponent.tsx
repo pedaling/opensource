@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, FC } from 'react';
 import type { ExternalComponentName } from '../DependencyProvider';
 import { useDependency } from '../DependencyProvider';
 
@@ -6,7 +6,7 @@ type ExternalComponentProps = {
   name: ExternalComponentName;
 };
 
-export const ExternalComponent = ({ name, ...restProps }: ExternalComponentProps) => {
+export const ExternalComponent: FC<ExternalComponentProps> = ({ name, ...restProps }) => {
   const { dependencies } = useDependency();
 
   const Component = dependencies[name] as ComponentType<any>;
@@ -17,3 +17,5 @@ export const ExternalComponent = ({ name, ...restProps }: ExternalComponentProps
 
   return null;
 };
+
+ExternalComponent.displayName = 'ExternalComponent';

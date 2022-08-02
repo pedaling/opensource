@@ -6,7 +6,7 @@ export type TitleProps = Omit<TextProps, 'kind'> & {
   level: ResponsiveValue<1 | 2 | 3 | 4 | 5 | 6 | 7>;
 };
 
-export const withTitleVariation = withVariation<TitleProps>()(
+export const withTitleVariation = withVariation<TitleProps>('Title')(
   propVariant({
     props: [
       {

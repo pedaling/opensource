@@ -6,7 +6,7 @@ export type ParagraphProps = Omit<TextProps, 'kind'> & {
   level: ResponsiveValue<1 | 2 | 3>;
 };
 
-export const withParagraphVariation = withVariation<ParagraphProps>()(
+export const withParagraphVariation = withVariation<ParagraphProps>('Paragraph')(
   propVariant({
     props: [
       {

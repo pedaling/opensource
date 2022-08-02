@@ -19,7 +19,7 @@ export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderO
       }
   );
 
-export const withSelectFieldVariation = withVariation<SelectFieldProps>()(
+export const withSelectFieldVariation = withVariation<SelectFieldProps>('SelectField')(
   propVariant({
     props: [
       {

@@ -21,7 +21,7 @@ type MotionProps = {
   animation: WithMotion<AnimationStyle>;
 };
 
-export const withMotionVariation = withVariation<MotionProps>()(
+export const withMotionVariation = withVariation<MotionProps>('Motion')(
   motionVariant({
     name: 'backgroundColor',
     scale: 'colors',

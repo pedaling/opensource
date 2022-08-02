@@ -11,7 +11,7 @@ type TransitionProps = {
   ref?: Ref<any>;
 };
 
-export const withTransitionVariation = withVariation<TransitionProps>()(
+export const withTransitionVariation = withVariation<TransitionProps>('Transition')(
   motionVariant({
     name: 'backgroundColor',
     scale: 'colors',

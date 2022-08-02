@@ -13,7 +13,7 @@ export type SelectOptionGroupProps = DisplayProps &
     renderOption?: (index: number) => ReactElement;
   };
 
-export const withSelectOptionGroupVariation = withVariation<SelectOptionGroupProps>()(
+export const withSelectOptionGroupVariation = withVariation<SelectOptionGroupProps>('SelectOptionGroup')(
   propVariant({
     props: [
       {

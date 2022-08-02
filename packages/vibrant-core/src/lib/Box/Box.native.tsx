@@ -43,3 +43,5 @@ export const Box = styled(
     shouldForwardProp,
   }
 )(interpolation);
+
+Box.displayName = 'Box';

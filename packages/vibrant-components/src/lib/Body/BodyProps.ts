@@ -6,7 +6,7 @@ export type BodyProps = Omit<TextProps, 'kind'> & {
   level: ResponsiveValue<1 | 2 | 3 | 4 | 5 | 6>;
 };
 
-export const withBodyVariation = withVariation<BodyProps>()(
+export const withBodyVariation = withVariation<BodyProps>('Body')(
   propVariant({
     props: [
       {
