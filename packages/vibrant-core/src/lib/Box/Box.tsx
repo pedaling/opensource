@@ -9,8 +9,8 @@ import { shouldForwardProp } from './BoxProps';
 const interpolation = createInterpolation(systemProps, { display: 'flex' });
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
-    const Component = (base as ComponentType) ?? as ?? 'div';
+  forwardRef<HTMLDivElement, BoxProps>(({ as = 'div', base, ...restProps }, ref) => {
+    const Component = base ? (base as ComponentType<any>) : as;
 
     return <Component ref={ref} {...(base ? { as } : {})} {...restProps} />;
   }),
@@ -18,9 +18,8 @@ export const Box = styled(
     shouldForwardProp,
   }
 )(interpolation) as <
-  BaseComponent extends ComponentType | unknown,
-  ElementName extends keyof JSX.IntrinsicElements,
-  ElementProps extends JSX.IntrinsicElements[ElementName]
+  BaseComponent extends ComponentType | undefined = undefined,
+  ElementName extends keyof JSX.IntrinsicElements | undefined = undefined
 >(
-  props: BoxProps<BaseComponent, ElementName, ElementProps>
+  props: BoxProps<BaseComponent, ElementName>
 ) => ReactElement;

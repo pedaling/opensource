@@ -111,7 +111,7 @@ export const SelectField = withSelectFieldVariation(
     };
 
     return (
-      <Box as="div" onMouseDown={event => event.preventDefault()}>
+      <Box<undefined, 'div'> as="div" onMouseDown={event => event.preventDefault()}>
         <Input
           ref={inputRef}
           id={inputId}
@@ -156,7 +156,7 @@ export const SelectField = withSelectFieldVariation(
           }}
         />
         <Box position="relative">
-          <Box
+          <Box<undefined, 'label'>
             ref={ref}
             as="label"
             htmlFor={inputId}
@@ -179,7 +179,7 @@ export const SelectField = withSelectFieldVariation(
             <Box width="100%" overflowX="hidden">
               {selectedOption ? (
                 <Box flexDirection={inlineLabel ? 'row' : 'column'}>
-                  {label && (
+                  {label ? (
                     <>
                       <Body
                         level={2}
@@ -202,7 +202,7 @@ export const SelectField = withSelectFieldVariation(
                         </Body>
                       )}
                     </>
-                  )}
+                  ) : null}
                   <Box flex={1}>
                     <Body
                       level={2}
@@ -241,11 +241,11 @@ export const SelectField = withSelectFieldVariation(
             {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
           />
         </Box>
-        {helperText && (
+        {helperText ? (
           <Body level={4} color={state === 'error' ? 'error' : 'onView2'} wordBreak="keep-all" wordWrap="break-word">
             {helperText}
           </Body>
-        )}
+        ) : null}
       </Box>
     );
   }
