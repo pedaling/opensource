@@ -1,5 +1,5 @@
 import type { BorderRadiusLevel } from '@vibrant-ui/theme';
-import type { ResponsiveValue } from '../../types';
+import type { ResponsiveValue } from '../../../types';
 
 type BorderStyle = 'dashed' | 'none' | 'solid';
 

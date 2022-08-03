@@ -1,9 +1,9 @@
 import type { FC } from 'react';
+import type { ReactElementChild } from '../../types';
 import { DependencyProvider } from '../DependencyProvider';
 import type { DependencyProviderProps } from '../DependencyProvider';
 import { ThemeProvider } from '../ThemeProvider';
 import type { ThemeProviderProps } from '../ThemeProvider';
-import type { ReactElementChild } from '../types';
 
 export type VibrantProviderProps = Partial<DependencyProviderProps & ThemeProviderProps> & {
   children: ReactElementChild;

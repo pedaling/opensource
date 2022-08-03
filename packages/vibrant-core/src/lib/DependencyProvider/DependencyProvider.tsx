@@ -1,6 +1,6 @@
 import type { ComponentType, FC } from 'react';
 import { createContext, useContext } from 'react';
-import type { ReactElementChild } from '../types';
+import type { ReactElementChild } from '../../types';
 
 type Dependencies = {
   nativeLinearGradient?: ComponentType<{

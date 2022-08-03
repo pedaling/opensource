@@ -1,8 +1,8 @@
 import type { ComponentType, Ref } from 'react';
+import type { ReactElementChild } from '../../types';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps } from '../props';
 import { systemPropNames } from '../props';
-import type { ReactElementChild } from '../types';
 
 export type BoxProps<
   BaseComponent extends ComponentType | undefined = undefined,

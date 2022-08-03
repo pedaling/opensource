@@ -1,4 +1,4 @@
-import type { Gradient } from '../types/Gradient';
+import type { Gradient } from '../../types';
 
 export const darkModeGradient: Gradient = {
   linearTop: {

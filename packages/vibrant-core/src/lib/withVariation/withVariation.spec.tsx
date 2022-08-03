@@ -20,7 +20,9 @@ describe('withVariation', () => {
 
   const mockRender = jest.fn<any, any>(() => null);
 
-  const Component = withVariation<Props>()(mockFirstPropVariant, mockSecondPropVariant)(props => mockRender(props));
+  const Component = withVariation<Props>('Test')(mockFirstPropVariant, mockSecondPropVariant)(props =>
+    mockRender(props)
+  );
 
   afterEach(() => {
     mockRender.mockClear();

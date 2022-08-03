@@ -18,10 +18,10 @@ import type { SizingProps } from './sizing';
 import { sizingProps } from './sizing';
 import type { SpacingProps } from './spacing';
 import { spacingProps } from './spacing';
-import { transformProps } from './transform';
 import type { TransformProps } from './transform';
-import { typographyProps } from './typography';
+import { transformProps } from './transform';
 import type { TypographyProps } from './typography';
+import { typographyProps } from './typography';
 
 type SystemProps = BackgroundProps &
   BorderProps &
