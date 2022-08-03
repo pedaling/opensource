@@ -7,6 +7,7 @@ export { Paper } from './lib/Paper';
 export { Paragraph } from './lib/Paragraph';
 export { SelectField } from './lib/SelectField';
 export { Space } from './lib/Space';
+export { Switch } from './lib/Switch';
 export { NumericField } from './lib/NumericField';
 export { Tab } from './lib/Tab';
 export { TabGroup } from './lib/TabGroup';
