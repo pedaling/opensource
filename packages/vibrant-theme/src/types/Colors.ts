@@ -35,8 +35,6 @@ export const colorTokens = [
   'inverseBackground',
   'onInverseBackground',
   'dim',
-  'gradientTop',
-  'gradientBottom',
   'hoverOverlay',
   'onColor',
   'transparent',
