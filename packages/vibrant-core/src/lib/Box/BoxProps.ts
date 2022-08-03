@@ -1,4 +1,5 @@
 import type { ComponentType, Ref } from 'react';
+import type { DistributiveOmit } from '@vibrant-ui/utils';
 import type { ReactElementChild } from '../../types';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps } from '../props';
@@ -7,11 +8,14 @@ import { systemPropNames } from '../props';
 export type BoxProps<
   BaseComponent extends ComponentType | undefined = undefined,
   ElementName extends keyof JSX.IntrinsicElements | undefined = undefined
-> = (BaseComponent extends ComponentType<infer BaseComponentProps>
-  ? BaseComponentProps
-  : ElementName extends keyof JSX.IntrinsicElements
-  ? Omit<JSX.IntrinsicElements[ElementName], keyof SystemProps>
-  : Record<never, never>) &
+> = DistributiveOmit<
+  BaseComponent extends ComponentType<infer BaseComponentProps>
+    ? BaseComponentProps
+    : ElementName extends keyof JSX.IntrinsicElements
+    ? JSX.IntrinsicElements[ElementName]
+    : Record<never, never>,
+  keyof SystemProps
+> &
   SystemProps & {
     as?: ElementName;
     base?: BaseComponent;

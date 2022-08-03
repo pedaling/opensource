@@ -14,9 +14,12 @@ export type UnstyledTextInputProps = BaseInputProps<string> & {
         type: 'number';
         min?: number;
         max?: number;
+        maxLength?: never;
       }
     | {
         type?: 'text';
+        min?: never;
+        max?: never;
         maxLength?: number;
       }
   );
