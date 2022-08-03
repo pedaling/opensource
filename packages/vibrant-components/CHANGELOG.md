@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.5.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.5.2...vibrant-components-0.5.3) (2022-08-03)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.4.0`
+* `vibrant-core` updated to version `0.7.2`
+* `vibrant-icons` updated to version `0.2.7`
+* `vibrant-motion` updated to version `0.3.6`
+
+### Bug Fixes
+
+* 네이티브에서 Pressable ref가 동작되지 않는 문제를 수정한다 ([#143](https://github.com/pedaling/opensource/issues/143)) ([4eb7f56](https://github.com/pedaling/opensource/commit/4eb7f561f27535fe0bceebbfede7d81aaecb6bad))
+
 ### [0.5.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.5.1...vibrant-components-0.5.2) (2022-08-03)
 
 ### Dependency Updates
