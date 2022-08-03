@@ -3,7 +3,7 @@ import { createContext, useContext, useMemo } from 'react';
 import type { CurrentTheme, Theme } from '@vibrant-ui/theme';
 import { baseTheme } from '@vibrant-ui/theme';
 import type { DeepPartial } from '@vibrant-ui/utils';
-import type { ReactElementChild } from '../types';
+import type { ReactElementChild } from '../../types';
 
 export type ThemeProviderProps = {
   theme: DeepPartial<Theme>;

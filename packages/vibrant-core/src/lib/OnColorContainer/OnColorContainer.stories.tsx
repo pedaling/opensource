@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '../Box';
-import { OnColorContainer } from '.';
+import { OnColorContainer } from './OnColorContainer';
 
 export default {
   title: 'OnColorContainer',

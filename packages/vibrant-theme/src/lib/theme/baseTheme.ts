@@ -1,4 +1,4 @@
-import type { Theme } from '../types';
+import type { Theme } from '../../types';
 import { darkModeColors } from './darkModeColors';
 import { darkModeGradient } from './darkModeGradient';
 import { darkModeOpacity } from './darkModeOpacity';

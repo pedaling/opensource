@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
+import type { ResponsiveValue } from '../../types';
 import { useCurrentTheme } from '../ThemeProvider';
-import type { ResponsiveValue } from '../types';
 
 export const useResponsiveValue = () => {
   const {

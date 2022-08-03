@@ -1,5 +1,5 @@
 import type { OpacityToken } from '@vibrant-ui/theme';
-import type { ResponsiveValue } from '../../types';
+import type { ResponsiveValue } from '../../../types';
 
 export type DisplayProps = {
   display?: ResponsiveValue<'flex' | 'inline-flex' | 'none'>;

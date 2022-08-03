@@ -1,4 +1,4 @@
-import type { ResponsiveValue } from '../../types';
+import type { ResponsiveValue } from '../../../types';
 
 export type SizingProps = {
   width?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;

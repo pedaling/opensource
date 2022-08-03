@@ -1,5 +1,5 @@
 import type { DeepWritable } from '@vibrant-ui/utils';
-import type { ResponsiveValue } from '../types';
+import type { ResponsiveValue } from '../../types';
 
 export type VariantFn<PrevProps, NextProps> = (props: PrevProps) => NextProps;
 

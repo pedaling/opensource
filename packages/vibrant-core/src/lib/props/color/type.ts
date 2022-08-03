@@ -1,5 +1,5 @@
 import type { GradientKind, LinearGradient } from '@vibrant-ui/theme';
-import type { ResponsiveValue } from '../../types';
+import type { ResponsiveValue } from '../../../types';
 
 export type ColorProps = {
   color?: ResponsiveValue<string>;

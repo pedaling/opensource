@@ -1,4 +1,4 @@
-import type { ResponsiveValue } from '../../types';
+import type { ResponsiveValue } from '../../../types';
 
 export type Transform = {
   rotate?: string;

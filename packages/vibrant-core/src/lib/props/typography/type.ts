@@ -1,5 +1,5 @@
 import type { TypographyKind, TypographyWeight } from '@vibrant-ui/theme';
-import type { ResponsiveValue } from '../../types';
+import type { ResponsiveValue } from '../../../types';
 
 export type TypographyProps = {
   typography?: ResponsiveValue<TypographyKind>;

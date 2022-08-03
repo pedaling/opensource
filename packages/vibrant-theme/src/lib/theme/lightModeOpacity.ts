@@ -1,4 +1,4 @@
-import type { Opacity } from '../types';
+import type { Opacity } from '../../types';
 
 export const lightModeOpacity: Opacity = {
   overlay: {

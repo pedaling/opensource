@@ -1,4 +1,4 @@
-import type { ResponsiveValue } from '../types';
+import type { ResponsiveValue } from '../../types';
 import type { AnyPropConfig, SkipForwards, VariantFn, VariantsConfig, VariantsReturnProps } from './type';
 
 export const toResponsiveValue = <Type>(value: ResponsiveValue<Type>, length: number) => {

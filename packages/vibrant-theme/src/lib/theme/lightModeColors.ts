@@ -1,5 +1,5 @@
+import type { Colors } from '../../types';
 import { palettes } from '../palettes';
-import type { Colors } from '../types';
 
 export const lightModeColors: Colors = {
   primary: palettes.orange['50'],

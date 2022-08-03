@@ -1,7 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
+import type { ResponsiveValue } from '../../types';
 import { useCurrentTheme } from '../ThemeProvider';
-import type { ResponsiveValue } from '../types';
 
 export const useResponsiveValue = () => {
   const { width } = useWindowDimensions();
