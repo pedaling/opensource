@@ -9,5 +9,4 @@ export type DisplayProps = {
   overflowX?: ResponsiveValue<'hidden' | 'scroll' | 'visible'>;
   overflowY?: ResponsiveValue<'hidden' | 'scroll' | 'visible'>;
   hideScroll?: ResponsiveValue<boolean>;
-  hideInputSpinButton?: ResponsiveValue<boolean>;
 };

@@ -6,10 +6,12 @@ import type { ColorProps } from './color';
 import { colorProps } from './color';
 import type { DisplayProps } from './display';
 import { displayProps } from './display';
+import type { ElevationProps } from './elevation';
 import { elevationProps } from './elevation';
-import type { ElevationProps } from './elevation/type';
 import type { FlexboxProps } from './flexbox';
 import { flexboxProps } from './flexbox';
+import type { InputProps } from './input';
+import { inputProps } from './input';
 import type { InteractionProps } from './interaction';
 import { interactionProps } from './interaction';
 import type { PositionProps } from './position';
@@ -30,6 +32,7 @@ type SystemProps = BackgroundProps &
   ColorProps &
   DisplayProps &
   FlexboxProps &
+  InputProps &
   InteractionProps &
   PositionProps &
   PseudoClassProps &
@@ -45,6 +48,7 @@ export type {
   ColorProps,
   DisplayProps,
   FlexboxProps,
+  InputProps,
   InteractionProps,
   PositionProps,
   PseudoClassProps,
@@ -61,6 +65,7 @@ export const systemProps = [
   ...colorProps,
   ...displayProps,
   ...flexboxProps,
+  ...inputProps,
   ...interactionProps,
   ...positionProps,
   ...pseudoClassProps,
