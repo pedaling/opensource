@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.7.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.7.1...vibrant-core-0.7.2) (2022-08-03)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.4.0`
+
+### Bug Fixes
+
+* fix type import path ([#142](https://github.com/pedaling/opensource/issues/142)) ([d0150df](https://github.com/pedaling/opensource/commit/d0150dfd4547672cf4751084ef04f981af1c61af))
+
 ### [0.7.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.7.0...vibrant-core-0.7.1) (2022-08-03)
 
 ### Dependency Updates
