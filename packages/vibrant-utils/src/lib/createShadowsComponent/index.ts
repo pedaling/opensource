@@ -1,0 +1,1 @@
+export { createShadowsComponent } from './createShadowsComponent';
