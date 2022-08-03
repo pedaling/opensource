@@ -6,3 +6,4 @@ export { range } from './lib/range';
 export { isRecord } from './lib/isRecord';
 export type { DeepWritable } from './lib/type/DeepWritable';
 export { uuidV4 } from './lib/uuidV4';
+export { useSafeDeps } from './lib/useSafeDeps';
