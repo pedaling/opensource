@@ -57,6 +57,8 @@ export const UnstyledTextInput = withUnstyledTextInputVariation(
           onValueChange?.(replacedValue);
         }
       }}
+      backgroundColor="transparent"
+      color="onColor"
       borderWidth={0}
       borderRadius={0}
       p={0}
