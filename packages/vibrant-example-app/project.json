@@ -88,6 +88,12 @@
       "executor": "@nrwl/expo:eject",
       "options": {}
     },
+    "typecheck": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["yarn tsc --project ./packages/vibrant-example-app/tsconfig.app.json"]
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],

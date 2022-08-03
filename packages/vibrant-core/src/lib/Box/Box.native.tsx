@@ -32,8 +32,8 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
 };
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps>(({ as, base, style, ...restProps }, ref) => {
-    const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style) as any;
+  forwardRef<HTMLDivElement, BoxProps & { style: any }>(({ as, base, style, ...restProps }, ref) => {
+    const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
 
     const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
 
