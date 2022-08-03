@@ -38,7 +38,7 @@ function template({ componentName, jsx }, { tpl }) {
   const componentNameWithPropType = `${fileName}: FC<IconProps>`;
 
   jsx.openingElement.attributes = jsx.openingElement.attributes.filter(
-    attribute => !['width', 'height'].includes(attribute.name.name)
+    attribute => !['width', 'height', 'fill', 'xmlns'].includes(attribute.name.name)
   );
 
   replaceJsxChild(jsx);
@@ -72,9 +72,9 @@ module.exports = {
   template,
   indexTemplate,
   svgProps: {
+    viewBox: '0 0 24 24',
     width: '{size}',
     height: '{size}',
-    viewBox: '0 0 24 24',
     fill: '{fill}',
   },
   plugins: ['@svgr/plugin-jsx'],
