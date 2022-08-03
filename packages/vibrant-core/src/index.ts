@@ -1,5 +1,7 @@
 export { Box } from './lib/Box';
 export type { BoxProps } from './lib/Box';
+export { Svg } from './lib/Svg';
+export type { SvgProps } from './lib/Svg';
 export type { ReactElementChild, ResponsiveValue } from './types';
 export type {
   BackgroundProps,

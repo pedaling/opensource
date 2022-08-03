@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { Svg } from '../../../Svg';
+import { Svg } from '@vibrant-ui/core';
 import type { IconProps } from '../../IconProp';
 
 export const Fill: FC<IconProps> = ({ size = 24, fill = 'onColor', ...props }) => (

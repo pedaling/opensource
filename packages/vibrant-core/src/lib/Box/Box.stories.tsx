@@ -11,4 +11,4 @@ export default {
   },
 } as ComponentMeta<typeof Box>;
 
-export const Basic: ComponentStory<typeof Box> = props => <Box {...props}>Box</Box>;
+export const Basic: ComponentStory<typeof Box> = props => <Box {...props} />;

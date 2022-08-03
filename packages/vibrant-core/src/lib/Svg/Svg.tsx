@@ -1,16 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { FC, ReactNode, SVGProps } from 'react';
-import type { BoxProps } from '@vibrant-ui/core';
-import { Box } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
-
-type BaseSvgProps = Omit<
-  SVGProps<SVGElement>,
-  keyof BoxProps<unknown, 'clipPath' | 'defs' | 'g' | 'linearGradient' | 'mark' | 'path' | 'stop' | 'svg'>
-> & { children?: ReactNode; fill?: string; id?: string };
-
-export type SvgProps = Omit<BaseSvgProps, 'fill'> &
-  Pick<BoxProps, 'className' | 'fill' | 'height' | 'id' | 'opacity' | 'width'>;
+import type { FC } from 'react';
+import { Box } from '../Box';
+import type { BaseSvgProps, SvgProps } from './SvgProps';
 
 const Path: FC<BaseSvgProps> = props => <Box as="path" {...props} />;
 
@@ -34,16 +25,8 @@ export const Svg: FC<SvgProps> & {
   ClipPath: FC<BaseSvgProps>;
   LinearGradient: FC<BaseSvgProps>;
   Stop: FC<BaseSvgProps>;
-} = ({ width, height, className, ...restProps }) => (
-  <Box as="span" display="inline-flex" width={width || 'auto'} height={height || 'auto'} className={className}>
-    <Box
-      as="svg"
-      display="inline-flex"
-      width={isDefined(width) && width !== 'auto' ? '100%' : 'auto'}
-      height={isDefined(height) && height !== 'auto' ? '100%' : 'auto'}
-      {...restProps}
-    />
-  </Box>
+} = ({ width, height, ...restProps }) => (
+  <Box as="svg" display="inline-flex" width={width || 'auto'} height={height || 'auto'} {...restProps} />
 );
 
 Svg.Mask = Mask;

@@ -203,6 +203,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   flex-shrink: 1;
   width: 16px;
   height: 16px;
+  fill: #101010;
 }
 
 .emotion-6 {
@@ -213,37 +214,15 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  width: 100%;
-  height: 100%;
-  fill: #101010;
 }
 
 .emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-}
-
-.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -284,24 +263,20 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
           class="emotion-4"
           style="opacity: 0;"
         />
-        <span
+        <svg
           class="emotion-5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
+          <path
             class="emotion-6"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              class="emotion-7"
-              d="M21.25 13.25H2.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h18.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25Z"
-            />
-          </svg>
-        </span>
+            d="M21.25 13.25H2.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h18.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25Z"
+          />
+        </svg>
       </button>
     </div>
     <div
-      class="emotion-8"
+      class="emotion-7"
     >
       <button
         class="emotion-3"
@@ -311,20 +286,16 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
           class="emotion-4"
           style="opacity: 0;"
         />
-        <span
+        <svg
           class="emotion-5"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <svg
+          <path
             class="emotion-6"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              class="emotion-7"
-              d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
-            />
-          </svg>
-        </span>
+            d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
+          />
+        </svg>
       </button>
     </div>
   </div>
