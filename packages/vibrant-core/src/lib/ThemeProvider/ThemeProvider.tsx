@@ -36,12 +36,12 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
           },
           dark: { ...parentTheme.colors.dark, ...(theme.colors?.dark ?? {}) },
         },
-        opacity: {
+        elevation: {
           light: {
-            ...parentTheme.opacity.light,
-            ...(theme.opacity?.light ?? {}),
+            ...parentTheme.elevation.light,
+            ...(theme.elevation?.light ?? {}),
           },
-          dark: { ...parentTheme.opacity.dark, ...(theme.opacity?.dark ?? {}) },
+          dark: { ...parentTheme.elevation.dark, ...(theme.elevation?.dark ?? {}) },
         },
         gradient: {
           light: {
@@ -49,6 +49,13 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
             ...(theme.gradient?.light ?? {}),
           },
           dark: { ...parentTheme.gradient.dark, ...(theme.gradient?.dark ?? {}) },
+        },
+        opacity: {
+          light: {
+            ...parentTheme.opacity.light,
+            ...(theme.opacity?.light ?? {}),
+          },
+          dark: { ...parentTheme.opacity.dark, ...(theme.opacity?.dark ?? {}) },
         },
       } as Theme),
     [parentTheme, theme]
@@ -75,9 +82,9 @@ export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentThe
   const currentThemeValues = {
     ...currentTheme,
     colors: currentTheme.colors[currentTheme.mode],
-    opacity: currentTheme.opacity[currentTheme.mode],
-    gradient: currentTheme.gradient[currentTheme.mode],
     elevation: currentTheme.elevation[currentTheme.mode],
+    gradient: currentTheme.gradient[currentTheme.mode],
+    opacity: currentTheme.opacity[currentTheme.mode],
   };
 
   return {

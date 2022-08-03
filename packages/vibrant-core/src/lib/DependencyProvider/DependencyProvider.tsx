@@ -9,6 +9,13 @@ type Dependencies = {
     start?: any;
     end?: any;
   }>;
+  nativeShadows?: ComponentType<{
+    shadows: {
+      startColor?: any;
+      distance?: any;
+      offset?: any;
+    }[];
+  }>;
 };
 
 export type ExternalComponentName = keyof Dependencies;
