@@ -19,7 +19,7 @@ const elevationLevelProp = createSystemProp({
   scale: 'elevation',
   shouldInterpolation: 'after',
   transform: (value: Shadow[]) => ({
-    boxShadow: value,
+    boxShadow: [value],
   }),
 });
 
