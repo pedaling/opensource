@@ -77,6 +77,7 @@ export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentThe
     colors: currentTheme.colors[currentTheme.mode],
     opacity: currentTheme.opacity[currentTheme.mode],
     gradient: currentTheme.gradient[currentTheme.mode],
+    elevation: currentTheme.elevation[currentTheme.mode],
   };
 
   return {
