@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.3.1...vibrant-theme-0.4.0) (2022-08-03)
+
+
+### Features
+
+* **vibrant-core:** add elevation theme value ([#132](https://github.com/pedaling/opensource/issues/132)) ([ea3711b](https://github.com/pedaling/opensource/commit/ea3711b998f1cb324bf3b70a3aaa06003331b23e))
+
+
+### Bug Fixes
+
+* fix type import path ([#142](https://github.com/pedaling/opensource/issues/142)) ([d0150df](https://github.com/pedaling/opensource/commit/d0150dfd4547672cf4751084ef04f981af1c61af))
+
 ### [0.3.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.3.0...vibrant-theme-0.3.1) (2022-08-03)
 
 

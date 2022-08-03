@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/theme",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
