@@ -109,7 +109,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-basis: auto;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: #101010;
+  border-bottom-color: #0C0C0C;
   position: relative;
   cursor: pointer;
   -webkit-box-pack: center;
@@ -143,7 +143,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
-  color: #101010;
+  color: #0C0C0C;
 }
 
 @media screen and (min-width: 1024px) {

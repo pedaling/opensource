@@ -19,7 +19,7 @@ exports[`<Text /> when Text with newline children rendered match snapshot 1`] = 
   font-size: 2.125rem;
   font-weight: 700;
   line-height: 2.75rem;
-  color: #101010;
+  color: #0C0C0C;
 }
 
 .emotion-1 {
@@ -70,7 +70,7 @@ exports[`<Text /> when title1 Text rendered match snapshot 1`] = `
   font-size: 2.125rem;
   font-weight: 700;
   line-height: 2.75rem;
-  color: #101010;
+  color: #0C0C0C;
 }
 
 <div>
