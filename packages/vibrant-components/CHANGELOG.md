@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.5.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.5.1...vibrant-components-0.5.2) (2022-08-03)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.3.1`
+* `vibrant-core` updated to version `0.7.1`
+* `vibrant-icons` updated to version `0.2.6`
+* `vibrant-motion` updated to version `0.3.5`
+
+### Bug Fixes
+
+* pressable의 동작이 이상한 문제를 수정한다 ([#136](https://github.com/pedaling/opensource/issues/136)) ([7dd7b44](https://github.com/pedaling/opensource/commit/7dd7b44e30d69627bca42e6c92adc6773078a35c))
+* set flex basis auto to TabGroup ([#138](https://github.com/pedaling/opensource/issues/138)) ([79755fe](https://github.com/pedaling/opensource/commit/79755feb9468ad283c383051c0c556d90c848e61))
+* **vibrant-core:** remove box 'as' prop default value ([#137](https://github.com/pedaling/opensource/issues/137)) ([abb2b30](https://github.com/pedaling/opensource/commit/abb2b303272c0e29236d9baff2a1cc2507208a7d))
+* **vibrant-core:** remove ElementName default type ([#135](https://github.com/pedaling/opensource/issues/135)) ([c8ee71b](https://github.com/pedaling/opensource/commit/c8ee71b7489c30aae82381ff5942c99b356da84d))
+
 ### [0.5.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.5.0...vibrant-components-0.5.1) (2022-07-29)
 
 ### Dependency Updates
