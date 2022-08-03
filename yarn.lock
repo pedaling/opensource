@@ -13055,6 +13055,7 @@ __metadata:
     react-native-reanimated: ~2.8.0
     react-native-safe-area-context: 4.2.4
     react-native-screens: ~3.11.1
+    react-native-shadow-2: 6.0.6
     react-native-svg: 12.3.0
     react-native-svg-transformer: 1.0.0
     react-native-uuid: 2.0.1
@@ -26241,7 +26242,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"polished@npm:^4.2.2":
+"polished@npm:^4.1.4, polished@npm:^4.2.2":
   version: 4.2.2
   resolution: "polished@npm:4.2.2"
   dependencies:
@@ -28210,6 +28211,18 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 8792203c2a1f9ab80b33814f78e7bd10be8c09dcc105f44fa22ca70f4417bc028613f49831c8972fbb49531ef45433e8971f07d6e0365d3da3042dc40f30f7a3
+  languageName: node
+  linkType: hard
+
+"react-native-shadow-2@npm:6.0.6":
+  version: 6.0.6
+  resolution: "react-native-shadow-2@npm:6.0.6"
+  dependencies:
+    polished: ^4.1.4
+  peerDependencies:
+    react-native: "*"
+    react-native-svg: ^12.1.0
+  checksum: d3110eeca24ec8f2479279637074210d3781f00db66935873f9a946ca8f9155e1b6f2972f6b5a3655f07c597f9a092e78fbee0b7ca5a243ef8ab64bd224ef6f5
   languageName: node
   linkType: hard
 
