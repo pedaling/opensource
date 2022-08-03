@@ -1,4 +1,3 @@
-import { withPerformance } from 'storybook-addon-performance';
 import type { GlobalTypes } from '@storybook/csf';
 import type { DecoratorFn, Parameters } from '@storybook/react';
 import { withGlobalStyle } from './decorators/withGlobalStyle';
@@ -32,4 +31,4 @@ export const globalTypes: GlobalTypes = {
   },
 };
 
-export const decorators: DecoratorFn[] = [withPerformance, withGlobalStyle, withTheme];
+export const decorators: DecoratorFn[] = [withGlobalStyle, withTheme];

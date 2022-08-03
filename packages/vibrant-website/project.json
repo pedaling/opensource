@@ -10,6 +10,12 @@
         "outputPath": "dist/packages/vibrant-website"
       }
     },
+    "typecheck": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["yarn tsc --project ./packages/vibrant-website/tsconfig.json"]
+      }
+    },
     "serve": {
       "executor": "@nx-plus/docusaurus:dev-server",
       "options": {

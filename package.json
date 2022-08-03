@@ -12,7 +12,8 @@
     "storybook": "nx storybook",
     "generate-icons": "nx generate-icons",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic"
+    "chromatic": "npx chromatic",
+    "typecheck": "nx typecheck"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-namespace-from": "7.18.9",

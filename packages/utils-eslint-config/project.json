@@ -15,6 +15,12 @@
         "assets": ["shared-utils-eslint-config/*.md"]
       }
     },
+    "typecheck": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["yarn tsc --project ./packages/utils-eslint-config/tsconfig.lib.json"]
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],

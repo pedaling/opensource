@@ -3,3 +3,4 @@
 
 yarn nx affected --target=lint --base=main
 yarn nx affected --target=test --base=main
+yarn nx affected --target=typecheck --base=main
