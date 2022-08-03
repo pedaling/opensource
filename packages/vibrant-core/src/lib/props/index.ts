@@ -3,7 +3,9 @@ export type {
   BorderProps,
   ColorProps,
   DisplayProps,
+  ElevationProps,
   FlexboxProps,
+  InputProps,
   InteractionProps,
   PositionProps,
   PseudoClassProps,
@@ -11,6 +13,5 @@ export type {
   SpacingProps,
   TypographyProps,
   SystemProps,
-  ElevationProps,
 } from './systemProp';
 export { systemProps, systemPropNames } from './systemProp';
