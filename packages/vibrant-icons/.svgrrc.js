@@ -47,7 +47,7 @@ function template({ componentName, jsx }, { tpl }) {
   return tpl`
   import { FC } from 'react';
   import type { IconProps } from '../../IconProp';
-  import { Svg } from '../../../Svg';
+  import { Svg } from '@vibrant-ui/core';
   ${nl}
   export const ${componentNameWithPropType} = ({ size = 24, fill = 'onColor', ...props }) => (
     ${jsx}

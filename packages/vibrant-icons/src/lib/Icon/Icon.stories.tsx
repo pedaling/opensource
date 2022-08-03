@@ -26,7 +26,6 @@ export default {
     },
     fill: {
       type: 'string',
-      defaultValue: 'black',
     },
   },
 };
