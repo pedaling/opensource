@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
-import { uuidV4 } from '@vibrant-ui/utils';
+import { useSafeDeps, uuidV4 } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { SelectOptionGroup } from '../SelectOptionGroup';
 import { UnstyledTextInput } from '../UnstyledTextInput';
@@ -26,6 +26,7 @@ export const SelectField = withSelectFieldVariation(
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
+    const onValueChangeRef = useSafeDeps(onValueChange);
 
     const ref = useRef<HTMLLabelElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -64,8 +65,8 @@ export const SelectField = withSelectFieldVariation(
 
       setState('default');
 
-      onValueChange?.(selectedOption.value);
-    }, [onValueChange, selectedOption]);
+      onValueChangeRef.current?.(selectedOption.value);
+    }, [onValueChangeRef, selectedOption]);
 
     useEffect(() => {
       setState(stateProp);

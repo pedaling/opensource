@@ -1,0 +1,1 @@
+export { useSafeDeps } from './useSafeDeps';
