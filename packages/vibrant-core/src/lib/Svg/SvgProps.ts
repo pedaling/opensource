@@ -1,21 +1,40 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+import type { FC } from 'react';
+import type {
+  ClipPath as RNClipPath,
+  Defs as RNDefs,
+  G as RNG,
+  LinearGradient as RNLinearGradient,
+  Mask as RNMask,
+  Path as RNPath,
+  Stop as RNStop,
+  Svg as RNSvg,
+} from 'react-native-svg';
 import type { BoxProps } from '../Box';
+import type { SystemProps } from '../props';
 
-export type ClipPathProps = BoxProps<undefined, 'clipPath'>;
+export type ClipPathProps = Omit<BoxProps<typeof RNClipPath>, 'ref'>;
 
-export type DefsProps = BoxProps<undefined, 'defs'>;
+export type DefsProps = Omit<BoxProps<typeof RNDefs>, 'ref'>;
 
-// eslint-disable-next-line @typescript-eslint/naming-convention
-export type GProps = BoxProps<undefined, 'g'>;
+export type GProps = Omit<BoxProps<typeof RNG>, 'ref'>;
 
-export type LinearGradientProps = BoxProps<undefined, 'linearGradient'>;
+export type LinearGradientProps = Omit<BoxProps<typeof RNLinearGradient>, 'ref'>;
 
-export type MaskProps = BoxProps<undefined, 'mask'>;
+export type MaskProps = Omit<BoxProps<typeof RNMask>, 'ref'>;
 
-export type PathProps = BoxProps<undefined, 'path'>;
+export type PathProps = Omit<BoxProps<typeof RNPath>, 'ref'>;
 
-export type StopProps = BoxProps<undefined, 'stop'>;
+export type StopProps = Omit<BoxProps<typeof RNStop>, 'ref'>;
 
-export type SvgProps = Pick<
-  BoxProps<undefined, 'svg'>,
-  keyof JSX.IntrinsicElements['svg'] | 'children' | 'fill' | 'height' | 'id' | 'width'
->;
+export type SvgProps = Omit<BoxProps<typeof RNSvg>, Exclude<keyof SystemProps, 'fill' | 'height' | 'width'> | 'ref'>;
+
+export type SvgComponentType = FC<SvgProps> & {
+  ClipPath: FC<ClipPathProps>;
+  Defs: FC<DefsProps>;
+  G: FC<GProps>;
+  LinearGradient: FC<LinearGradientProps>;
+  Mask: FC<MaskProps>;
+  Path: FC<PathProps>;
+  Stop: FC<StopProps>;
+};

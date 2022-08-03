@@ -9,7 +9,7 @@ import type {
   MaskProps,
   PathProps,
   StopProps,
-  SvgProps,
+  SvgComponentType,
 } from './SvgProps';
 
 const ClipPath: FC<ClipPathProps> = props => <Box as="clipPath" {...props} />;
@@ -26,16 +26,8 @@ const Path: FC<PathProps> = props => <Box as="path" {...props} />;
 
 const Stop: FC<StopProps> = props => <Box as="stop" {...props} />;
 
-export const Svg: FC<SvgProps> & {
-  ClipPath: FC<ClipPathProps>;
-  Defs: FC<DefsProps>;
-  G: FC<GProps>;
-  LinearGradient: FC<LinearGradientProps>;
-  Mask: FC<MaskProps>;
-  Path: FC<PathProps>;
-  Stop: FC<StopProps>;
-} = ({ width, height, ...restProps }) => (
-  <Box as="svg" display="inline-flex" width={width || 'auto'} height={height || 'auto'} {...restProps}></Box>
+export const Svg: SvgComponentType = ({ width, height, ...restProps }) => (
+  <Box as="svg" width={width || 'auto'} height={height || 'auto'} {...restProps}></Box>
 );
 
 Svg.ClipPath = ClipPath;
