@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.7.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.7.0...vibrant-core-0.7.1) (2022-08-03)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.3.1`
+
+### Bug Fixes
+
+* **vibrant-core:** remove box 'as' prop default value ([#137](https://github.com/pedaling/opensource/issues/137)) ([abb2b30](https://github.com/pedaling/opensource/commit/abb2b303272c0e29236d9baff2a1cc2507208a7d))
+* **vibrant-core:** remove ElementName default type ([#135](https://github.com/pedaling/opensource/issues/135)) ([c8ee71b](https://github.com/pedaling/opensource/commit/c8ee71b7489c30aae82381ff5942c99b356da84d))
+
 ## [0.7.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.6.0...vibrant-core-0.7.0) (2022-07-29)
 
 
