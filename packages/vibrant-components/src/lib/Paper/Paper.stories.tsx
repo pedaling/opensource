@@ -1,4 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { HStack } from '../HStack';
 import { Paper } from './Paper';
 
 export default {
@@ -9,10 +10,10 @@ export default {
   },
 } as ComponentMeta<typeof Paper>;
 
-export const Basic: ComponentStory<typeof Paper> = props => <Paper {...props} width={200} height={200} />;
+export const Basic: ComponentStory<typeof Paper> = props => <Paper {...props} m={20} width={200} height={200} />;
 
 export const BackgroundColor: ComponentStory<typeof Paper> = () => (
-  <Paper width={200} height={200} backgroundColor="primary" borderRadiusLevel={1} />
+  <Paper m={20} width={200} height={200} backgroundColor="primary" borderRadiusLevel={1} />
 );
 
 export const BackgroundGradient: ComponentStory<typeof Paper> = () => (
@@ -22,5 +23,14 @@ export const BackgroundGradient: ComponentStory<typeof Paper> = () => (
 );
 
 export const BorderSolid: ComponentStory<typeof Paper> = () => (
-  <Paper width={200} height={200} borderWidth={1} borderColor="outline1" borderStyle="solid" />
+  <Paper m={20} width={200} height={200} borderWidth={1} borderColor="outline1" borderStyle="solid" />
+);
+
+export const Elevation: ComponentStory<typeof Paper> = () => (
+  <HStack m={20} spacing={30}>
+    <Paper width={200} height={200} elevationLevel={1} />
+    <Paper width={200} height={200} elevationLevel={2} />
+    <Paper width={200} height={200} elevationLevel={3} />
+    <Paper width={200} height={200} elevationLevel={4} />
+  </HStack>
 );
