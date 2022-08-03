@@ -16,6 +16,7 @@ export type {
   SpacingProps,
   TypographyProps,
   SystemProps,
+  ElevationProps,
 } from './lib/props';
 export { systemPropNames } from './lib/props';
 export { propVariant } from './lib/propVariant';
