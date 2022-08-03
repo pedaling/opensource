@@ -42,7 +42,7 @@ jobs:
       - name: Test Affected Project
         run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
       - name: Typecheck Affected Project
-        run: yarn nx affected --target=test --parallel=1
+        run: yarn nx affected --target=typecheck --parallel=1
 
   chromatic:
     needs: ci
