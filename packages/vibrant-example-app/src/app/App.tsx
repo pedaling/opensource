@@ -7,7 +7,7 @@ import { createShadowsComponent } from '@vibrant-ui/utils';
 
 const dependencies = {
   nativeLinearGradient: LinearGradient,
-  nativeShadow: createShadowsComponent(Shadow),
+  nativeShadows: createShadowsComponent(Shadow),
 };
 
 const App = () => {

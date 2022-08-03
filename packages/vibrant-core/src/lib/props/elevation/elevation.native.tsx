@@ -24,7 +24,7 @@ const boxShadowProp = createSystemProp({
   transform: (shadows: Shadow | Shadow[]) => ({
     BaseComponent: ExternalComponent,
     props: {
-      name: 'nativeShadow',
+      name: 'nativeShadows',
       shadows: [shadows].flat().map(({ color, offsetX, offsetY, blurRadius }) =>
         getBoxShadowValue({
           color,

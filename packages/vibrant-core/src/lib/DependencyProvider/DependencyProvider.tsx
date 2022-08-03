@@ -9,7 +9,7 @@ type Dependencies = {
     start?: any;
     end?: any;
   }>;
-  nativeShadow?: ComponentType<{
+  nativeShadows?: ComponentType<{
     shadows: {
       startColor?: any;
       distance?: any;
