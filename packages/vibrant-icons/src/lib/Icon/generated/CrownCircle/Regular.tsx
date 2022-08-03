@@ -3,7 +3,7 @@ import { Svg } from '@vibrant-ui/core';
 import type { IconProps } from '../../IconProp';
 
 export const Regular: FC<IconProps> = ({ size = 24, fill = 'onColor', ...props }) => (
-  <Svg fill={fill} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" {...props}>
+  <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} {...props}>
     <Svg.Path d="M12.223 6.638a.25.25 0 0 0-.447 0l-2.011 4.023-3.15-1.633a.25.25 0 0 0-.36.268l1.25 6.75a.25.25 0 0 0 .245.204h8.5a.25.25 0 0 0 .246-.204l1.25-6.75a.25.25 0 0 0-.361-.268l-3.15 1.633-2.011-4.023Z" />
     <Svg.Path
       fillRule="evenodd"
