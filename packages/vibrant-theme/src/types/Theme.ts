@@ -1,5 +1,6 @@
 import type { ThemeBorderRadius } from './BorderRadius';
 import type { Colors, ThemeColors } from './Colors';
+import type { Elevation, ThemeElevation } from './Elevation';
 import type { Gradient, ThemeGradient } from './Gradient';
 import type { ThemeMode } from './Mode';
 import type { Opacity, ThemeOpacity } from './Opacity';
@@ -8,8 +9,9 @@ import type { ThemeTypography, ThemeTypographyWeight } from './Typography';
 export type Theme = {
   breakpoints: number[];
   colors: ThemeColors;
-  opacity: ThemeOpacity;
+  elevation: ThemeElevation;
   gradient: ThemeGradient;
+  opacity: ThemeOpacity;
   borderRadius: ThemeBorderRadius;
   typography: ThemeTypography;
   typographyWeight: ThemeTypographyWeight;
@@ -19,8 +21,9 @@ export type Theme = {
 export type CurrentTheme = {
   breakpoints: number[];
   colors: Colors;
-  opacity: Opacity;
+  elevation: Elevation;
   gradient: Gradient;
+  opacity: Opacity;
   borderRadius: ThemeBorderRadius;
   typography: ThemeTypography;
   typographyWeight: ThemeTypographyWeight;

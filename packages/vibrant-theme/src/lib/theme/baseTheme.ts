@@ -1,8 +1,10 @@
-import type { Theme } from '../types';
+import type { Theme } from '../../types';
 import { darkModeColors } from './darkModeColors';
+import { darkModeElevation } from './darkModeElevation';
 import { darkModeGradient } from './darkModeGradient';
 import { darkModeOpacity } from './darkModeOpacity';
 import { lightModeColors } from './lightModeColors';
+import { lightModeElevation } from './lightModeElevation';
 import { lightModeGradient } from './lightModeGradient';
 import { lightModeOpacity } from './lightModeOpacity';
 
@@ -12,13 +14,17 @@ export const baseTheme: Theme = {
     light: lightModeColors,
     dark: darkModeColors,
   },
-  opacity: {
-    light: lightModeOpacity,
-    dark: darkModeOpacity,
+  elevation: {
+    light: lightModeElevation,
+    dark: darkModeElevation,
   },
   gradient: {
     light: lightModeGradient,
     dark: darkModeGradient,
+  },
+  opacity: {
+    light: lightModeOpacity,
+    dark: darkModeOpacity,
   },
   typography: {
     display1: {
