@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.3.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.3.0...vibrant-theme-0.3.1) (2022-08-03)
+
+
+### Bug Fixes
+
+* **vibrant-theme:** add gradient to CurrentTheme type ([#140](https://github.com/pedaling/opensource/issues/140)) ([35e9195](https://github.com/pedaling/opensource/commit/35e9195fc326b2f4c0990ba76c43cd3950b62e24))
+
 ## [0.3.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.2.0...vibrant-theme-0.3.0) (2022-07-27)
 
 ### Dependency Updates
