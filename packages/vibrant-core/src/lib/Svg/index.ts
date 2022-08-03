@@ -1,2 +1,2 @@
 export { Svg } from './Svg';
-export type { SvgProps } from './Svg';
+export type { SvgProps } from './SvgProps';
