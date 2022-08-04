@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.4.0...vibrant-theme-0.5.0) (2022-08-04)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.4.0`
+
+### Features
+
+* borderRadiusLevel에 5를 추가한다 ([#158](https://github.com/pedaling/opensource/issues/158)) ([00a60cd](https://github.com/pedaling/opensource/commit/00a60cdc33a4e87651b7b9014b3a21f8b645a0e2))
+
+
+### Bug Fixes
+
+* **vibrant-theme:** 일부 palette와 dark mode 색상을 수정한다 ([#147](https://github.com/pedaling/opensource/issues/147)) ([8493254](https://github.com/pedaling/opensource/commit/8493254f657ac410bf5fee4c89d296ceb8620869))
+
 ## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.3.1...vibrant-theme-0.4.0) (2022-08-03)
 
 
