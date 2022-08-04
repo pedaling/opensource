@@ -2,6 +2,29 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.5.3...vibrant-components-0.6.0) (2022-08-04)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.5.0`
+* `vibrant-utils` updated to version `0.4.0`
+* `vibrant-core` updated to version `0.8.0`
+* `vibrant-icons` updated to version `0.3.0`
+* `vibrant-motion` updated to version `0.3.7`
+
+### Features
+
+* onValueChange가 SelectField에서 무한호출되는 문제를 수정한다 ([#149](https://github.com/pedaling/opensource/issues/149)) ([d2b2f4e](https://github.com/pedaling/opensource/commit/d2b2f4ea2f43db933032fd07e1451cf9d89126f5))
+* **vibrant-components:** Paper에서 elevationLevel 속성을 지원한다 [WP-2495] ([#150](https://github.com/pedaling/opensource/issues/150)) ([845ae1b](https://github.com/pedaling/opensource/commit/845ae1b206b7f4c077c9079bcb37df98cf089260))
+* **vibrant-core:** add Svg native component ([#151](https://github.com/pedaling/opensource/issues/151)) ([fec0a49](https://github.com/pedaling/opensource/commit/fec0a49dd35619b6f5941ea22486273712a72712))
+* **vibrant-utils:** add DistributiveOmit utility type ([#153](https://github.com/pedaling/opensource/issues/153)) ([aea13ce](https://github.com/pedaling/opensource/commit/aea13ceff4caeae22a7554d17ade8939164c8e0d))
+
+
+### Bug Fixes
+
+* **vibrant-components:** pass rest props to Box component ([#157](https://github.com/pedaling/opensource/issues/157)) ([7bdb9e0](https://github.com/pedaling/opensource/commit/7bdb9e03d263ca337f8a5931cb34b74d1e3005e5))
+* **vibrant-theme:** 일부 palette와 dark mode 색상을 수정한다 ([#147](https://github.com/pedaling/opensource/issues/147)) ([8493254](https://github.com/pedaling/opensource/commit/8493254f657ac410bf5fee4c89d296ceb8620869))
+
 ### [0.5.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.5.2...vibrant-components-0.5.3) (2022-08-03)
 
 ### Dependency Updates
