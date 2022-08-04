@@ -2,6 +2,27 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.7.2...vibrant-core-0.8.0) (2022-08-04)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.4.0`
+* `vibrant-theme` updated to version `0.5.0`
+
+### Features
+
+* **vibrant-components:** Paper에서 elevationLevel 속성을 지원한다 [WP-2495] ([#150](https://github.com/pedaling/opensource/issues/150)) ([845ae1b](https://github.com/pedaling/opensource/commit/845ae1b206b7f4c077c9079bcb37df98cf089260))
+* **vibrant-core, vibrant-utils:**  boxShadow, elevationLevel 속성을 systemProp으로 추가한다. [WP-2622] ([#148](https://github.com/pedaling/opensource/issues/148)) ([084e38d](https://github.com/pedaling/opensource/commit/084e38dbabc5cba35890017f85190088bacf6cbc))
+* **vibrant-core:** add input systemProp ([#156](https://github.com/pedaling/opensource/issues/156)) ([53bc0a2](https://github.com/pedaling/opensource/commit/53bc0a2c162029a779a032f959fa43542fb6b6b7))
+* **vibrant-core:** add Svg native component ([#151](https://github.com/pedaling/opensource/issues/151)) ([fec0a49](https://github.com/pedaling/opensource/commit/fec0a49dd35619b6f5941ea22486273712a72712))
+* **vibrant-utils:** add DistributiveOmit utility type ([#153](https://github.com/pedaling/opensource/issues/153)) ([aea13ce](https://github.com/pedaling/opensource/commit/aea13ceff4caeae22a7554d17ade8939164c8e0d))
+
+
+### Bug Fixes
+
+* **vibrant-core:** fix Svg component type error ([#146](https://github.com/pedaling/opensource/issues/146)) ([fb6bdd9](https://github.com/pedaling/opensource/commit/fb6bdd99414c4fba18be0d749fbf89c289884ecd))
+* **vibrant-core:** fix SvgProps export path ([#152](https://github.com/pedaling/opensource/issues/152)) ([a5f5d66](https://github.com/pedaling/opensource/commit/a5f5d665f34637380dc5d1b09323e4568239d703))
+
 ### [0.7.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.7.1...vibrant-core-0.7.2) (2022-08-03)
 
 ### Dependency Updates
