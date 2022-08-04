@@ -7,7 +7,7 @@ import { withUnstyledTextInputVariation } from './UnstyledTextInputProps';
 export const UnstyledTextInput = withUnstyledTextInputVariation(
   forwardRef(
     (
-      { placeholder, defaultValue, onFocus, onBlur, onKeyDown, onValueChange, replaceValue },
+      { placeholder, defaultValue, onFocus, onBlur, onKeyDown, onValueChange, replaceValue, ...restProps },
       ref: ForwardedRef<RNTextInput>
     ) => {
       const [value, setValue] = useState(defaultValue ?? '');
@@ -30,6 +30,12 @@ export const UnstyledTextInput = withUnstyledTextInputVariation(
 
             onValueChange?.(replacedValue);
           }}
+          backgroundColor="transparent"
+          color="onColor"
+          borderWidth={0}
+          borderRadius={0}
+          p={0}
+          {...restProps}
         />
       );
     }
