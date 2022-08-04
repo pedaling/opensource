@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.3.7](https://github.com/pedaling/opensource/compare/vibrant-motion-0.3.6...vibrant-motion-0.3.7) (2022-08-04)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.8.0`
+* `vibrant-utils` updated to version `0.4.0`
+* `vibrant-theme` updated to version `0.5.0`
 ### [0.3.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.3.5...vibrant-motion-0.3.6) (2022-08-03)
 
 ### Dependency Updates
