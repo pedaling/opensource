@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.3.1...vibrant-utils-0.4.0) (2022-08-04)
+
+
+### Features
+
+* onValueChange가 SelectField에서 무한호출되는 문제를 수정한다 ([#149](https://github.com/pedaling/opensource/issues/149)) ([d2b2f4e](https://github.com/pedaling/opensource/commit/d2b2f4ea2f43db933032fd07e1451cf9d89126f5))
+* **vibrant-core, vibrant-utils:**  boxShadow, elevationLevel 속성을 systemProp으로 추가한다. [WP-2622] ([#148](https://github.com/pedaling/opensource/issues/148)) ([084e38d](https://github.com/pedaling/opensource/commit/084e38dbabc5cba35890017f85190088bacf6cbc))
+* **vibrant-utils:** add DistributiveOmit utility type ([#153](https://github.com/pedaling/opensource/issues/153)) ([aea13ce](https://github.com/pedaling/opensource/commit/aea13ceff4caeae22a7554d17ade8939164c8e0d))
+
 ### [0.3.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.3.0...vibrant-utils-0.3.1) (2022-07-27)
 
 
