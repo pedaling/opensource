@@ -7,7 +7,7 @@ import { withUnstyledTextInputVariation } from './UnstyledTextInputProps';
 export const UnstyledTextInput = withUnstyledTextInputVariation(
   forwardRef(
     (
-      { placeholder, defaultValue, onFocus, onBlur, onKeyDown, onValueChange, replaceValue, ...restProps },
+      { placeholder, defaultValue, onValueChange, onFocus, onBlur, onKeyDown, onSubmit, replaceValue, ...restProps },
       ref: ForwardedRef<RNTextInput>
     ) => {
       const [value, setValue] = useState(defaultValue ?? '');
@@ -21,7 +21,7 @@ export const UnstyledTextInput = withUnstyledTextInputVariation(
           onFocus={() => onFocus?.()}
           onBlur={() => onBlur?.()}
           onKeyPress={event => {
-            onKeyDown?.({ key: event.nativeEvent.key, prevent: event.preventDefault });
+            onKeyDown?.({ key: event.nativeEvent.key, prevent: () => event.preventDefault });
           }}
           onChange={event => {
             const replacedValue = replaceValue(event.nativeEvent.text);
@@ -35,6 +35,7 @@ export const UnstyledTextInput = withUnstyledTextInputVariation(
           borderWidth={0}
           borderRadius={0}
           p={0}
+          onSubmitEditing={() => onSubmit?.(value)}
           {...restProps}
         />
       );
