@@ -160,6 +160,7 @@ export const baseTheme: Theme = {
     2: 12,
     3: 16,
     4: 20,
+    5: '50%',
   },
   mode: 'light',
 };
