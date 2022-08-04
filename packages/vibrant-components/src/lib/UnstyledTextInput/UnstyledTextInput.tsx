@@ -3,7 +3,18 @@ import { Box } from '@vibrant-ui/core';
 import { withUnstyledTextInputVariation } from './UnstyledTextInputProps';
 
 export const UnstyledTextInput = withUnstyledTextInputVariation(
-  ({ innerRef, placeholder, onFocus, onBlur, onKeyDown, onValueChange, isValidValue, replaceValue, ...restProps }) => (
+  ({
+    innerRef,
+    placeholder,
+    onValueChange,
+    onFocus,
+    onBlur,
+    onKeyDown,
+    isValidValue,
+    onSubmit,
+    replaceValue,
+    ...restProps
+  }) => (
     <Box<undefined, 'input'>
       ref={innerRef}
       as="input"
@@ -46,7 +57,11 @@ export const UnstyledTextInput = withUnstyledTextInputVariation(
           event.preventDefault();
         }
 
-        onKeyDown?.({ key: event.key, prevent: () => event.preventDefault() });
+        if (event.key === 'Enter') {
+          onSubmit?.(event.currentTarget.value);
+        } else {
+          onKeyDown?.({ key: event.key, prevent: () => event.preventDefault() });
+        }
       }}
       onInput={(event: SyntheticEvent<HTMLInputElement, InputEvent>) => {
         const replacedValue = replaceValue(event.currentTarget.value);

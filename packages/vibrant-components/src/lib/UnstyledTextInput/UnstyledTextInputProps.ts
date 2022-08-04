@@ -2,6 +2,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
 export type UnstyledTextInputProps = BaseInputProps<string> & {
+  autoFocus?: boolean;
   placeholder?: string;
   allowPattern?: RegExp;
   value?: string;
@@ -9,6 +10,7 @@ export type UnstyledTextInputProps = BaseInputProps<string> & {
   onFocus?: () => void;
   onBlur?: () => void;
   onKeyDown?: (_: { key: string; prevent: () => void }) => void;
+  onSubmit?: (value: string) => void;
 } & (
     | {
         type: 'number';
