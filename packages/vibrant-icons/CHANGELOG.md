@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.2.7...vibrant-icons-0.3.0) (2022-08-04)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.8.0`
+* `vibrant-utils` updated to version `0.4.0`
+
+### Features
+
+* **vibrant-core:** add Svg native component ([#151](https://github.com/pedaling/opensource/issues/151)) ([fec0a49](https://github.com/pedaling/opensource/commit/fec0a49dd35619b6f5941ea22486273712a72712))
+
+
+### Bug Fixes
+
+* **vibrant-theme:** 일부 palette와 dark mode 색상을 수정한다 ([#147](https://github.com/pedaling/opensource/issues/147)) ([8493254](https://github.com/pedaling/opensource/commit/8493254f657ac410bf5fee4c89d296ceb8620869))
+
 ### [0.2.7](https://github.com/pedaling/opensource/compare/vibrant-icons-0.2.6...vibrant-icons-0.2.7) (2022-08-03)
 
 ### Dependency Updates
