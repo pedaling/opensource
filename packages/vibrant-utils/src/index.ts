@@ -8,4 +8,3 @@ export { range } from './lib/range';
 export { isRecord } from './lib/isRecord';
 export { uuidV4 } from './lib/uuidV4';
 export { useSafeDeps } from './lib/useSafeDeps';
-export { createShadowsComponent } from './lib/createShadowsComponent';

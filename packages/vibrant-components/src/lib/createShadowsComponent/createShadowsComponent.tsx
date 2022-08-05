@@ -1,4 +1,6 @@
-import type { ComponentType, ReactNode } from 'react';
+import type { ComponentType, ReactElement, ReactNode } from 'react';
+import { forwardRef } from 'react';
+import { Box } from '@vibrant-ui/core';
 
 type ShadowComponentType = ComponentType<{
   startColor?: any;
@@ -15,21 +17,21 @@ type ShadowsProps = {
     distance?: number;
   }[];
   style?: any;
-  children?: ReactNode;
+  children?: ReactElement;
 };
 
 export const createShadowsComponent = (ShadowComponent: ShadowComponentType) => {
-  const ShadowsComponent = ({ shadows, style, children }: ShadowsProps) => (
+  const ShadowsComponent = forwardRef<any, ShadowsProps>(({ shadows, style, children }, ref) => (
     <ShadowComponent viewStyle={shadows.length <= 1 ? style : undefined} {...(shadows[0] ?? { distance: 0 })}>
       {shadows.length <= 1 ? (
-        children
+        <Box ref={ref}>{children}</Box>
       ) : (
-        <ShadowsComponent shadows={shadows.slice(1)} style={style}>
+        <ShadowsComponent ref={ref} shadows={shadows.slice(1)} style={style}>
           {children}
         </ShadowsComponent>
       )}
     </ShadowComponent>
-  );
+  ));
 
   return ShadowsComponent;
 };
