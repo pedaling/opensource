@@ -1,0 +1,1 @@
+export { getWindowSize } from './getWindowSize';
