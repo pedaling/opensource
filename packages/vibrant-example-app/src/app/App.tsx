@@ -1,9 +1,8 @@
 import { useFonts } from 'expo-font';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Shadow } from 'react-native-shadow-2';
-import { VStack } from '@vibrant-ui/components';
+import { VStack, createShadowsComponent } from '@vibrant-ui/components';
 import { VibrantProvider } from '@vibrant-ui/core';
-import { createShadowsComponent } from '@vibrant-ui/utils';
 import { StoryView } from './StoryView';
 import { useStorybookInformation } from './useStorybookInformation';
 
