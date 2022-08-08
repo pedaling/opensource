@@ -44,7 +44,8 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "nx g @class101/workspace-plugin:generateStoryImport --outputFile=./packages/vibrant-example-app/src/stories.ts --stories=./packages/**/*.stories.tsx"
+          "nx g @class101/workspace-plugin:generateStoryImport --outputFile=./packages/vibrant-example-app/src/stories.ts --stories=./packages/**/*.stories.tsx",
+          "yarn eslint --fix ./packages/vibrant-example-app/src/stories.ts"
         ],
         "parallel": false
       }
