@@ -1,5 +1,8 @@
+import './initializeEnv';
 import type { GlobalTypes } from '@storybook/csf';
+import { DeviceDecorator } from '@storybook/native-addon';
 import type { DecoratorFn, Parameters } from '@storybook/react';
+import { withAppetize } from './decorators/withAppetize';
 import { withGlobalStyle } from './decorators/withGlobalStyle';
 import { withTheme } from './decorators/withTheme';
 
@@ -29,6 +32,17 @@ export const globalTypes: GlobalTypes = {
       ],
     },
   },
+  platform: {
+    name: 'App',
+    description: 'View Native',
+    defaultValue: 'web',
+    toolbar: {
+      icon: 'mobile',
+      items: [{ value: 'web', title: 'web only' }, 'android', 'ios'],
+      showName: true,
+      dynamicTitle: true,
+    },
+  },
 };
 
-export const decorators: DecoratorFn[] = [withGlobalStyle, withTheme];
+export const decorators: DecoratorFn[] = [withGlobalStyle, withTheme, withAppetize, DeviceDecorator];

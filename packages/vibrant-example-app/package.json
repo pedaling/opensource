@@ -17,10 +17,29 @@
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
     "react-native-svg": "*",
-    "react-native-web": "*"
+    "react-native-web": "*",
+    "@expo/metro-config": "*",
+    "@nrwl/expo": "*",
+    "expo-font": "*",
+    "expo-linear-gradient": "*",
+    "react-native-shadow-2": "*",
+    "@storybook/builder-vite": "*",
+    "expo-modules-autolinking": "*",
+    "@storybook/react": "*",
+    "uuid": "*",
+    "@emotion/react": "*",
+    "@types/react": "*",
+    "react": "*",
+    "@testing-library/react": "*",
+    "@emotion/cache": "*",
+    "@emotion/jest": "*",
+    "react-native-uuid": "*",
+    "@emotion/styled": "*",
+    "@emotion/native": "*",
+    "react-native-linear-gradient-degree": "*",
+    "@testing-library/user-event": "*"
   },
   "scripts": {
-    "eas-build-pre-install": "cd ../../ && cp yarn.lock ./packages/vibrant-example-app/",
-    "postinstall": "rm -r node_modules && cd ../../ && yarn install && npx nx sync-deps vibrant-example-app && npx nx ensure-symlink vibrant-example-app"
+    "eas-build-pre-install": "cd ../../ && cp yarn.lock ./packages/vibrant-example-app/"
   }
 }

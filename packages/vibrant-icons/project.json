@@ -83,7 +83,7 @@
       "options": {
         "commands": [
           "npx @svgr/cli -d packages/vibrant-icons/src/lib/Icon/generated --config-file packages/vibrant-icons/.svgrrc.js --typescript packages/vibrant-icons/assets/icons",
-          "yarn nx workspace-generator generateIndex --sourceDirectory packages/vibrant-icons/src/lib/Icon/generated --outIndexFile packages/vibrant-icons/src/lib/Icon/generated/index.ts --wildcardAlias",
+          "yarn nx g @class101/workspace-plugin:generateIndex --sourceDirectory packages/vibrant-icons/src/lib/Icon/generated --outIndexFile packages/vibrant-icons/src/lib/Icon/generated/index.ts --wildcardAlias",
           "yarn eslint --fix packages/vibrant-icons/src/lib/Icon/generated"
         ],
         "parallel": false

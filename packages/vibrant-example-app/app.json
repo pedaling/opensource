@@ -1,7 +1,9 @@
 {
   "expo": {
+    "owner": "vibrant-ui",
     "name": "VibrantExampleApp",
     "slug": "vibrant-example-app",
+    "scheme": "vibrant",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

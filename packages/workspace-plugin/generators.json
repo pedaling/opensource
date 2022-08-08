@@ -2,5 +2,16 @@
   "$schema": "http://json-schema.org/schema",
   "name": "workspace-plugin",
   "version": "0.0.1",
-  "generators": {}
+  "generators": {
+    "generateIndex": {
+      "implementation": "./src/generators/generateIndex",
+      "schema": "./src/generators/generateIndex/schema.json",
+      "description": "generateIndex executor"
+    },
+    "generateStoryImport": {
+      "factory": "./src/generators/generate-story-import/generator",
+      "schema": "./src/generators/generate-story-import/schema.json",
+      "description": "generateStoryImport generator"
+    }
+  }
 }
