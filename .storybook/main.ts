@@ -8,7 +8,10 @@ const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
 
 const storybookLibraries = ['vibrant-core', 'vibrant-components', 'vibrant-icons', 'vibrant-motion'];
 
-const config: StorybookViteConfig & { previewHead?: (head: string) => string } = {
+const config: StorybookViteConfig & {
+  previewHead?: (head: string) => string;
+  env?: (config: Record<string, any>, context: { configType: 'DEVELOPMENT' | 'PRODUCTION' }) => Record<string, any>;
+} = {
   stories: storybookLibraries.map(name => ({
     directory: `../packages/${name}`,
     files: '**/*.stories.tsx',
@@ -25,6 +28,7 @@ const config: StorybookViteConfig & { previewHead?: (head: string) => string } =
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
     'storybook-addon-performance/register',
+    '@storybook/native-addon/dist/register.js',
   ].filter(Boolean),
   typescript: {
     check: true,
@@ -99,6 +103,9 @@ const config: StorybookViteConfig & { previewHead?: (head: string) => string } =
         },
       },
       root: path.join(__dirname, '../'),
+      optimizeDeps: {
+        include: ['@storybook/native-addon', '@storybook/native-components', '@emotion/react'],
+      },
       esbuild: {
         define: {
           this: 'window',
@@ -106,6 +113,17 @@ const config: StorybookViteConfig & { previewHead?: (head: string) => string } =
       },
       plugins: [tsconfigPaths()],
     } as InlineConfig);
+  },
+  env(config, { configType }) {
+    if (configType === 'DEVELOPMENT') {
+      return {
+        ...config,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        STORYBOOK_NATIVE_LOCAL_EMULATOR: true,
+      };
+    }
+
+    return config;
   },
 };
 
