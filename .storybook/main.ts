@@ -119,7 +119,7 @@ const config: StorybookViteConfig & {
       return {
         ...config,
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        STORYBOOK_NATIVE_LOCAL_EMULATOR: true,
+        STORYBOOK_NATIVE_LOCAL_EMULATOR: !process.env.DISABLE_SIMULATOR,
       };
     }
 

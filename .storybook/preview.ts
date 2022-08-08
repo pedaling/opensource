@@ -35,11 +35,12 @@ export const globalTypes: GlobalTypes = {
   platform: {
     name: 'App',
     description: 'View Native',
-    defaultValue: 'off',
+    defaultValue: 'web',
     toolbar: {
       icon: 'mobile',
-      items: ['off', 'android', 'ios'],
+      items: [{ value: 'web', title: 'web only' }, 'android', 'ios'],
       showName: true,
+      dynamicTitle: true,
     },
   },
 };
