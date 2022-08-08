@@ -11,6 +11,9 @@ export default {
       opacity: 1,
     },
   },
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 } as ComponentMeta<typeof Transition>;
 
 export const Basic: ComponentStory<typeof Transition> = props => (
