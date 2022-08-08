@@ -9,13 +9,13 @@ export function getElementRect(element: TargetElement): Promise<Rect> {
     } else {
       const observer = new IntersectionObserver(([entry], observer) => {
         observer.disconnect();
-  
+
         const { boundingClientRect } = entry;
         const { x, y, width, height } = boundingClientRect;
-  
+
         resolve({ x, y, width, height });
       });
-  
+
       observer.observe(element);
     }
   });
