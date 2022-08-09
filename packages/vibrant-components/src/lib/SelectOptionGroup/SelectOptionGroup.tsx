@@ -38,6 +38,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
       <Box
         ref={ref}
         as="ul"
+        zIndex={1}
         width="100%"
         backgroundColor="surface3"
         borderWidth={1}
