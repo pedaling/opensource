@@ -94,10 +94,10 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   -ms-flex-negative: 1;
   flex-shrink: 1;
   font-family: Pretendard;
+  color: #0C0C0C;
   font-size: 0.625rem;
   font-weight: 500;
   line-height: 0.75rem;
-  color: #0C0C0C;
 }
 
 <div>

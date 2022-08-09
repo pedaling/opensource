@@ -140,10 +140,10 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   font-family: Pretendard;
+  color: #0C0C0C;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
-  color: #0C0C0C;
 }
 
 @media screen and (min-width: 1024px) {
@@ -211,10 +211,10 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   font-family: Pretendard;
+  color: #7C7C7C;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
-  color: #7C7C7C;
 }
 
 @media screen and (min-width: 1024px) {

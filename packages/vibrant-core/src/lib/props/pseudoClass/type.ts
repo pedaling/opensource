@@ -1,11 +1,10 @@
 import type { ResponsiveValue } from '../../../types';
-import type { SystemProps } from '../systemProp';
 
 export type PseudoClassSystemProps = {
-  pseudoHover?: ResponsiveValue<SystemProps>;
-  pseudoFocus?: ResponsiveValue<SystemProps>;
-  pseudoActive?: ResponsiveValue<SystemProps>;
-  pseudoBefore?: ResponsiveValue<SystemProps>;
-  pseudoAfter?: ResponsiveValue<SystemProps>;
-  pseudoPlaceholder?: ResponsiveValue<SystemProps>;
+  pseudoHover?: ResponsiveValue<any>;
+  pseudoFocus?: ResponsiveValue<any>;
+  pseudoActive?: ResponsiveValue<any>;
+  pseudoBefore?: ResponsiveValue<any>;
+  pseudoAfter?: ResponsiveValue<any>;
+  pseudoPlaceholder?: ResponsiveValue<any>;
 };

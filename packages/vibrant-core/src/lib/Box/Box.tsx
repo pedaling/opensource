@@ -1,12 +1,8 @@
 import type { ComponentType, FC, ReactElement } from 'react';
 import { createElement, forwardRef } from 'react';
 import styled from '@emotion/styled';
-import { createInterpolation } from '../createInterpolation';
-import { systemProps } from '../props';
-import type { BoxProps } from './BoxProps';
-import { shouldForwardProp } from './BoxProps';
-
-const interpolation = createInterpolation(systemProps, { display: 'flex' });
+import type { BoxElements, BoxProps } from './BoxProps';
+import { interpolation, shouldForwardProp } from './BoxProps';
 
 export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps>(({ as, base, ...restProps }, ref) => {
@@ -26,7 +22,7 @@ export const Box = styled(
   }
 )(interpolation) as <
   BaseComponent extends ComponentType<any> | undefined = undefined,
-  ElementName extends keyof JSX.IntrinsicElements | undefined = undefined
+  ElementName extends BoxElements | undefined = undefined
 >(
   props: BoxProps<BaseComponent, ElementName>
 ) => ReactElement;

@@ -10,6 +10,4 @@ export default {
   },
 } as ComponentMeta<typeof Title>;
 
-export const Basic: ComponentStory<typeof Title> = ({ children, ...restProps }) => (
-  <Title {...restProps}>{children}</Title>
-);
+export const Basic: ComponentStory<typeof Title> = props => <Title {...props} />;

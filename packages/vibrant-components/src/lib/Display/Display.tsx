@@ -1,8 +1,4 @@
-import { Text } from '../Text';
+import { Text } from '@vibrant-ui/core';
 import { withDisplayVariation } from './DisplayProps';
 
-export const Display = withDisplayVariation(({ innerRef, children, ...textProps }) => (
-  <Text ref={innerRef} {...textProps}>
-    {children}
-  </Text>
-));
+export const Display = withDisplayVariation(({ innerRef, ...restProps }) => <Text ref={innerRef} {...restProps} />);

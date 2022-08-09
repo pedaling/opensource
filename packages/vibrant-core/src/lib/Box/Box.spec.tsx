@@ -21,20 +21,6 @@ describe('<Box />', () => {
         expect(renderer.container).toMatchSnapshot();
       });
     });
-
-    describe('when span box created', () => {
-      beforeEach(() => {
-        renderer = render(<Box as="span" />);
-      });
-
-      it('span element created', () => {
-        expect(renderer.container.querySelector('span')).toBeTruthy();
-      });
-
-      it('match snapshot', () => {
-        expect(renderer.container).toMatchSnapshot();
-      });
-    });
   });
 
   describe('base prop', () => {

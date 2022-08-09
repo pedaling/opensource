@@ -2,6 +2,8 @@ export { Box } from './lib/Box';
 export type { BoxProps } from './lib/Box';
 export { Svg } from './lib/Svg';
 export type { SvgProps } from './lib/Svg';
+export { Text } from './lib/Text';
+export type { TextProps } from './lib/Text';
 export type { ReactElementChild, ResponsiveValue } from './types';
 export type {
   BackgroundSystemProps,
@@ -20,9 +22,7 @@ export type {
   TextSystemProps,
   TransformSystemProps,
   TypographySystemProps,
-  SystemProps,
 } from './lib/props';
-export { systemPropNames } from './lib/props';
 export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
 export { ThemeProvider, useCurrentTheme } from './lib/ThemeProvider';

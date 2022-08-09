@@ -1,5 +1,4 @@
-import { Box } from '@vibrant-ui/core';
-import { Text } from '../Text';
+import { Box, Text } from '@vibrant-ui/core';
 import { withVerificationCodeItemVariation } from './VerificationCodeItemProps';
 
 export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId, value, ...restProps }) => (
@@ -22,7 +21,7 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId
     }}
     {...restProps}
   >
-    <Text kind="title1" weight="extraBold" textAlign="center">
+    <Text typography="title1" fontWeight="extraBold" textAlign="center">
       {value}
     </Text>
   </Box>

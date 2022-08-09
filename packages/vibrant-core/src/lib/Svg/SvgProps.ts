@@ -11,7 +11,7 @@ import type {
   Svg as RNSvg,
 } from 'react-native-svg';
 import type { BoxProps } from '../Box';
-import type { SystemProps } from '../props';
+import type { SystemProps } from '../Box/BoxProps';
 
 export type ClipPathProps = Omit<BoxProps<typeof RNClipPath>, 'ref'>;
 

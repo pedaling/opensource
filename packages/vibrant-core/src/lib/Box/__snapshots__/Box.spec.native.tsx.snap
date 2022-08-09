@@ -1,36 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Native <Box /> as prop when br box created match snapshot 1`] = `
-<Text
-  style={
-    Object {
-      "alignContent": "stretch",
-      "display": "flex",
-      "flexDirection": "column",
-      "flexShrink": 1,
-    }
-  }
->
-  
-
-</Text>
-`;
-
 exports[`Native <Box /> as prop when empty box created match snapshot 1`] = `
 <View
-  style={
-    Object {
-      "alignContent": "stretch",
-      "display": "flex",
-      "flexDirection": "column",
-      "flexShrink": 1,
-    }
-  }
-/>
-`;
-
-exports[`Native <Box /> as prop when span box created match snapshot 1`] = `
-<Text
   style={
     Object {
       "alignContent": "stretch",

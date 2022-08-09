@@ -1,21 +1,34 @@
-export type {
-  BackgroundSystemProps,
-  BorderSystemProps,
-  ColorSystemProps,
-  DisplaySystemProps,
-  ElevationSystemProps,
-  FlexboxSystemProps,
-  InputSystemProps,
-  InteractionSystemProps,
-  OverflowSystemProps,
-  PositionSystemProps,
-  PseudoClassSystemProps,
-  SizingSystemProps,
-  SpacingSystemProps,
-  SvgSystemProps,
-  TextSystemProps,
-  TransformSystemProps,
-  TypographySystemProps,
-  SystemProps,
-} from './systemProp';
-export { systemProps, systemPropNames } from './systemProp';
+export { backgroundSystemProps } from './background';
+export type { BackgroundSystemProps } from './background';
+export { borderSystemProps } from './border';
+export type { BorderSystemProps } from './border';
+export { colorSystemProps } from './color';
+export type { ColorSystemProps } from './color';
+export { displaySystemProps } from './display';
+export type { DisplaySystemProps } from './display';
+export { elevationSystemProps } from './elevation';
+export type { ElevationSystemProps } from './elevation';
+export { flexboxSystemProps } from './flexbox';
+export type { FlexboxSystemProps } from './flexbox';
+export { inputSystemProps } from './input';
+export type { InputSystemProps } from './input';
+export { interactionSystemProps } from './interaction';
+export type { InteractionSystemProps } from './interaction';
+export { overflowSystemProps } from './overflow';
+export type { OverflowSystemProps } from './overflow';
+export { positionSystemProps } from './position';
+export type { PositionSystemProps } from './position';
+export { pseudoClassSystemProps } from './pseudoClass';
+export type { PseudoClassSystemProps } from './pseudoClass';
+export { sizingSystemProps } from './sizing';
+export type { SizingSystemProps } from './sizing';
+export { spacingSystemProps } from './spacing';
+export type { SpacingSystemProps } from './spacing';
+export { svgSystemProps } from './svg';
+export type { SvgSystemProps } from './svg';
+export { textSystemProps } from './text';
+export type { TextSystemProps } from './text';
+export { transformSystemProps } from './transform';
+export type { TransformSystemProps } from './transform';
+export { typographySystemProps } from './typography';
+export type { TypographySystemProps } from './typography';
