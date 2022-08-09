@@ -1,2 +1,2 @@
-export type { ElevationProps } from './type';
-export { elevationProps } from './elevation';
+export type { ElevationSystemProps } from './type';
+export { elevationSystemProps } from './elevation';

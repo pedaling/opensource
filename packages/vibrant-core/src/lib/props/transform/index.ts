@@ -1,2 +1,2 @@
-export { transformProps } from './transform';
-export type { TransformProps } from './type';
+export { transformSystemProps } from './transform';
+export type { TransformSystemProps } from './type';

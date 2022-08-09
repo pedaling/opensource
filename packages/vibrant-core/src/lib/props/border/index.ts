@@ -1,2 +1,2 @@
-export type { BorderProps } from './type';
-export { borderProps } from './border';
+export type { BorderSystemProps } from './type';
+export { borderSystemProps } from './border';

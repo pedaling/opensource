@@ -1,2 +1,2 @@
-export type { BackgroundProps } from './type';
-export { backgroundProps } from './background';
+export type { BackgroundSystemProps } from './type';
+export { backgroundSystemProps } from './background';

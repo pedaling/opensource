@@ -1,26 +1,26 @@
 import type { Ref } from 'react';
 import type {
-  BorderProps,
-  DisplayProps,
-  ElevationProps,
+  BorderSystemProps,
+  DisplaySystemProps,
+  ElevationSystemProps,
   ReactElementChild,
   ResponsiveValue,
-  SizingProps,
-  SpacingProps,
+  SizingSystemProps,
+  SpacingSystemProps,
 } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 type PaperProps = {
   ref?: Ref<any>;
   children?: ReactElementChild;
-} & Pick<BorderProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
-  DisplayProps &
-  SpacingProps &
-  Pick<ElevationProps, 'elevationLevel'> &
-  SizingProps &
+} & Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
+  DisplaySystemProps &
+  SpacingSystemProps &
+  Pick<ElevationSystemProps, 'elevationLevel'> &
+  SizingSystemProps &
   (
     | {
-        elevationLevel: ElevationProps['elevationLevel'];
+        elevationLevel: ElevationSystemProps['elevationLevel'];
         backgroundColor: ResponsiveValue<Exclude<BaseColorToken, 'transparent'>>;
         gradient?: never;
       }

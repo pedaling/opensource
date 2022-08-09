@@ -15,4 +15,4 @@ const hideInputSpinButtonProp = createSystemProp({
   disabled: true,
 });
 
-export const inputProps = [placeholderColorProp, hideInputSpinButtonProp];
+export const inputSystemProps = [placeholderColorProp, hideInputSpinButtonProp];

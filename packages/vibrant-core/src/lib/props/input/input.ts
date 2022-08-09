@@ -2,8 +2,12 @@ import { createSystemProp } from '../../createSystemProp';
 
 const placeholderColorProp = createSystemProp({
   property: 'placeholderColor',
-  styleProperty: '&::placeholder',
   scale: 'colors',
+  transform: value => ({
+    '&::placeholder': {
+      color: value,
+    },
+  }),
 });
 
 const hideInputSpinButtonProp = createSystemProp({
@@ -24,4 +28,4 @@ const hideInputSpinButtonProp = createSystemProp({
       : {},
 });
 
-export const inputProps = [placeholderColorProp, hideInputSpinButtonProp];
+export const inputSystemProps = [placeholderColorProp, hideInputSpinButtonProp];

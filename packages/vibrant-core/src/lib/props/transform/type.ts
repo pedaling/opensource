@@ -14,6 +14,6 @@ export type Transform = {
   skewY?: string;
 };
 
-export type TransformProps = {
+export type TransformSystemProps = {
   transform?: ResponsiveValue<Transform>;
 };

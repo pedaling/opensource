@@ -26,7 +26,7 @@ const backgroundRepeatProp = createSystemProp({
   property: 'backgroundRepeat',
 });
 
-export const backgroundProps = [
+export const backgroundSystemProps = [
   backgroundProp,
   backgroundColorProp,
   backgroundImageProp,

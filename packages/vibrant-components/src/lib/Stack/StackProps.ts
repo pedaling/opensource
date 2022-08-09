@@ -1,22 +1,22 @@
 import type { RefObject } from 'react';
 import type {
-  DisplayProps,
-  FlexboxProps,
-  OverflowProps,
+  DisplaySystemProps,
+  FlexboxSystemProps,
+  OverflowSystemProps,
   ReactElementChild,
   ResponsiveValue,
-  SizingProps,
-  SpacingProps,
+  SizingSystemProps,
+  SpacingSystemProps,
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'nav' | 'section';
 
-export type StackProps = DisplayProps &
-  FlexboxProps &
-  OverflowProps &
-  SizingProps &
-  SpacingProps & {
+export type StackProps = DisplaySystemProps &
+  FlexboxSystemProps &
+  OverflowSystemProps &
+  SizingSystemProps &
+  SpacingSystemProps & {
     as?: SemanticTagName | 'div' | 'label';
     direction: ResponsiveValue<'horizontal' | 'vertical'>;
     ref?: RefObject<HTMLElement>;

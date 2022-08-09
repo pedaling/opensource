@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
-export type PositionProps = {
+export type PositionSystemProps = {
   position?: ResponsiveValue<'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'>;
   top?: ResponsiveValue<number | string>;
   right?: ResponsiveValue<number | string>;

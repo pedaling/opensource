@@ -27,6 +27,6 @@ export const withNumericFieldVariation = withVariation<NumericFieldProps>('Numer
         placeholderColor: 'onView3',
         backgroundColor: 'disable',
       },
-    },
+    } as const,
   })
 );

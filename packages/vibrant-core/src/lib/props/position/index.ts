@@ -1,2 +1,2 @@
-export type { PositionProps } from './type';
-export { positionProps } from './position';
+export type { PositionSystemProps } from './type';
+export { positionSystemProps } from './position';

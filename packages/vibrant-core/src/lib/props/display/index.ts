@@ -1,2 +1,2 @@
-export type { DisplayProps } from './type';
-export { displayProps } from './display';
+export type { DisplaySystemProps } from './type';
+export { displaySystemProps } from './display';

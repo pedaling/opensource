@@ -95,9 +95,7 @@ export const NumericField = withNumericFieldVariation(
             borderWidth: 1,
             outlineWidth: 0,
           }}
-          pseudoPlaceholder={{
-            color: placeholderColor,
-          }}
+          placeholderColor={placeholderColor}
           color={color}
           id={id}
           max={max}

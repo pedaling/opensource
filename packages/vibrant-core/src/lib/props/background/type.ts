@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
-export type BackgroundProps = {
+export type BackgroundSystemProps = {
   background?: ResponsiveValue<string>;
   backgroundColor?: ResponsiveValue<string>;
   backgroundImage?: ResponsiveValue<string>;

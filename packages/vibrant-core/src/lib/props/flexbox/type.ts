@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
-export type FlexboxProps = {
+export type FlexboxSystemProps = {
   flex?: ResponsiveValue<number | string>;
   flexGrow?: ResponsiveValue<number | string>;
   flexShrink?: ResponsiveValue<number | string>;

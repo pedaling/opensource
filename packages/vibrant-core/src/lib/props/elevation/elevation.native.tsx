@@ -37,4 +37,4 @@ const boxShadowProp = createSystemProp({
   }),
 });
 
-export const elevationProps = [elevationLevelProp, boxShadowProp];
+export const elevationSystemProps = [elevationLevelProp, boxShadowProp];

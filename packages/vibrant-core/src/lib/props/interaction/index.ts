@@ -1,2 +1,2 @@
-export type { InteractionProps } from './type';
-export { interactionProps } from './interaction';
+export type { InteractionSystemProps } from './type';
+export { interactionSystemProps } from './interaction';

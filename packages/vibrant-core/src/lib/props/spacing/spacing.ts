@@ -82,7 +82,7 @@ const paddingHorizontalProp = createSystemProp({
   }),
 });
 
-export const spacingProps = [
+export const spacingSystemProps = [
   marginProp,
   marginTopProp,
   marginLeftProp,

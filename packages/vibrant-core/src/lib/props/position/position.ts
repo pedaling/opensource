@@ -24,4 +24,4 @@ const zIndexProp = createSystemProp({
   property: 'zIndex',
 });
 
-export const positionProps = [positionProp, topProp, rightProp, bottomProp, leftProp, zIndexProp];
+export const positionSystemProps = [positionProp, topProp, rightProp, bottomProp, leftProp, zIndexProp];
