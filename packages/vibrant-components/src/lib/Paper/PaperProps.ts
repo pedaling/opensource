@@ -19,18 +19,11 @@ type PaperProps = {
   Pick<ElevationProps, 'elevationLevel'> &
   SizingProps &
   (
-    | ({
+    | {
         elevationLevel: ElevationProps['elevationLevel'];
-      } & (
-        | {
-            backgroundColor: ResponsiveValue<BaseColorToken>;
-            gradient?: never;
-          }
-        | {
-            backgroundColor?: never;
-            gradient: ResponsiveValue<GradientKind>;
-          }
-      ))
+        backgroundColor: ResponsiveValue<BaseColorToken>;
+        gradient?: never;
+      }
     | ({
         elevationLevel?: never;
       } & (
