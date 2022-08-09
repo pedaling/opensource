@@ -7,6 +7,7 @@ export type {
   FlexboxProps,
   InputProps,
   InteractionProps,
+  OverflowProps,
   PositionProps,
   PseudoClassProps,
   SizingProps,

@@ -10,6 +10,7 @@ export type {
   DisplayProps,
   FlexboxProps,
   InteractionProps,
+  OverflowProps,
   PositionProps,
   PseudoClassProps,
   SizingProps,

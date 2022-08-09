@@ -2,6 +2,7 @@ import type { RefObject } from 'react';
 import type {
   DisplayProps,
   FlexboxProps,
+  OverflowProps,
   ReactElementChild,
   ResponsiveValue,
   SizingProps,
@@ -13,6 +14,7 @@ type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'nav' | 'sect
 
 export type StackProps = DisplayProps &
   FlexboxProps &
+  OverflowProps &
   SizingProps &
   SpacingProps & {
     as?: SemanticTagName | 'div' | 'label';
