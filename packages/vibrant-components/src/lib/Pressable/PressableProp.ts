@@ -9,6 +9,8 @@ export type PressableProps = {
   disabled?: boolean;
   children?: ReactElement;
   onClick?: () => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
 } & (
   | {
       overlayColor: ResponsiveValue<ColorToken>;
