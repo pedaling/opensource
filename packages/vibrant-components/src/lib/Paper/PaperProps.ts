@@ -21,7 +21,7 @@ type PaperProps = {
   (
     | {
         elevationLevel: ElevationProps['elevationLevel'];
-        backgroundColor: ResponsiveValue<BaseColorToken>;
+        backgroundColor: ResponsiveValue<Exclude<BaseColorToken, 'transparent'>>;
         gradient?: never;
       }
     | ({
