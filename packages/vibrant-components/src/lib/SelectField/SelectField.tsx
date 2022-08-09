@@ -225,9 +225,11 @@ export const SelectField = withSelectFieldVariation(
             </Box>
           </Box>
 
-          <SelectOptionGroup
+          <Box<typeof SelectOptionGroup, 'div'>
+            base={SelectOptionGroup}
             position="absolute"
             hidden={!isOpened}
+            zIndex={1}
             width="100%"
             maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
             onOptionClick={index => {
