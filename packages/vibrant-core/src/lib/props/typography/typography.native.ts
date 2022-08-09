@@ -1,4 +1,3 @@
-import { Text } from 'react-native';
 import { createSystemProp } from '../../createSystemProp';
 
 const transformRem = (value: any) => {
@@ -27,11 +26,6 @@ const fontSizeProp = createSystemProp({
   transform: value => ({ fontSize: transformRem(value) }),
 });
 
-const lineHeightProp = createSystemProp({
-  property: 'lineHeight',
-  transform: value => ({ lineHeight: transformRem(value) }),
-});
-
 const fontWeightProp = createSystemProp({
   property: 'fontWeight',
   scale: 'typographyWeight',
@@ -41,56 +35,16 @@ const fontStyleProp = createSystemProp({
   property: 'fontStyle',
 });
 
-const letterSpacingProp = createSystemProp({
-  property: 'letterSpacing',
-});
-
-const textAlignProp = createSystemProp({
-  property: 'textAlign',
-});
-
-const textTransformProp = createSystemProp({
-  property: 'textTransform',
-});
-
-const whiteSpaceProp = createSystemProp({
-  property: 'whiteSpace',
-  disabled: true,
-});
-
-const wordBreakProp = createSystemProp({
-  property: 'wordBreak',
-  disabled: true,
-});
-
-const wordWrapProp = createSystemProp({
-  property: 'wordWrap',
-  disabled: true,
-});
-
-const lineLimitProp = createSystemProp({
-  property: 'lineLimit',
-  transform: value => ({
-    BaseComponent: Text,
-    props: {
-      numberOfLines: value,
-      lineBreakMode: 'tail',
-    },
-  }),
+const lineHeightProp = createSystemProp({
+  property: 'lineHeight',
+  transform: value => ({ lineHeight: transformRem(value) }),
 });
 
 export const typographyProps = [
   typographyProp,
+  fontFamilyProp,
+  fontSizeProp,
   fontWeightProp,
   fontStyleProp,
-  letterSpacingProp,
-  textAlignProp,
-  textTransformProp,
-  fontFamilyProp,
   lineHeightProp,
-  fontSizeProp,
-  whiteSpaceProp,
-  wordBreakProp,
-  wordWrapProp,
-  lineLimitProp,
 ];
