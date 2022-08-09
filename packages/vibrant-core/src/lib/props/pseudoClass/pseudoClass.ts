@@ -50,7 +50,7 @@ const pseudoPlaceholder = createSystemProp({
   shouldInterpolation: 'before',
 });
 
-export const pseudoClassProps = [
+export const pseudoClassSystemProps = [
   pseudoHoverProp,
   pseudoFocusProp,
   pseudoActiveProp,

@@ -1,8 +1,8 @@
 import type { ForwardedRef } from 'react';
-import type { DisplayProps } from '@vibrant-ui/core';
+import type { DisplaySystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
-export type TabProps = Pick<DisplayProps, 'hidden'> & {
+export type TabProps = Pick<DisplaySystemProps, 'hidden'> & {
   title: string;
   active?: boolean;
   update?: boolean;

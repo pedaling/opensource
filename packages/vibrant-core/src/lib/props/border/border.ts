@@ -132,7 +132,7 @@ const outlineOffsetProp = createSystemProp({
   property: 'outlineOffset',
 });
 
-export const borderProps = [
+export const borderSystemProps = [
   borderWidthProp,
   borderStyleProp,
   borderColorProp,

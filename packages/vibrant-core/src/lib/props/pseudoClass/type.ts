@@ -1,7 +1,7 @@
 import type { ResponsiveValue } from '../../../types';
 import type { SystemProps } from '../systemProp';
 
-export type PseudoClassProps = {
+export type PseudoClassSystemProps = {
   pseudoHover?: ResponsiveValue<SystemProps>;
   pseudoFocus?: ResponsiveValue<SystemProps>;
   pseudoActive?: ResponsiveValue<SystemProps>;

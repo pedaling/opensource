@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
-export type SizingProps = {
+export type SizingSystemProps = {
   width?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;
   minWidth?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;
   maxWidth?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content' | 'none'>;

@@ -4,21 +4,21 @@ export { Svg } from './lib/Svg';
 export type { SvgProps } from './lib/Svg';
 export type { ReactElementChild, ResponsiveValue } from './types';
 export type {
-  BackgroundProps,
-  BorderProps,
-  ColorProps,
-  DisplayProps,
-  FlexboxProps,
-  InteractionProps,
-  OverflowProps,
-  PositionProps,
-  PseudoClassProps,
-  SizingProps,
-  SpacingProps,
-  TextProps,
+  BackgroundSystemProps,
+  BorderSystemProps,
+  ColorSystemProps,
+  DisplaySystemProps,
+  ElevationSystemProps,
+  FlexboxSystemProps,
+  InteractionSystemProps,
+  OverflowSystemProps,
+  PositionSystemProps,
+  PseudoClassSystemProps,
+  SizingSystemProps,
+  SpacingSystemProps,
+  TextSystemProps,
   TypographyProps,
   SystemProps,
-  ElevationProps,
 } from './lib/props';
 export { systemPropNames } from './lib/props';
 export { propVariant } from './lib/propVariant';

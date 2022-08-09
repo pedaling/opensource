@@ -35,7 +35,7 @@ const lineLimitProp = createSystemProp({
   }),
 });
 
-export const textProps = [
+export const textSystemProps = [
   letterSpacingProp,
   textAlignProp,
   textTransformProp,

@@ -45,4 +45,4 @@ const hiddenProp = createSystemProp({
       : {},
 });
 
-export const displayProps = [displayProp, visibilityProp, opacityProp, hiddenProp];
+export const displaySystemProps = [displayProp, visibilityProp, opacityProp, hiddenProp];

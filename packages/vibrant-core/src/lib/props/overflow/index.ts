@@ -1,2 +1,2 @@
-export type { OverflowProps } from './type';
-export { overflowProps } from './overflow';
+export type { OverflowSystemProps } from './type';
+export { overflowSystemProps } from './overflow';

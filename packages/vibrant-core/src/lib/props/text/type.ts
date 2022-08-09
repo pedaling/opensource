@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
-export type TextProps = {
+export type TextSystemProps = {
   letterSpacing?: ResponsiveValue<number | string>;
   textAlign?: ResponsiveValue<'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start'>;
   textTransform?: ResponsiveValue<'capitalize' | 'full-size-kana' | 'full-width' | 'lowercase' | 'none' | 'uppercase'>;

@@ -4,4 +4,4 @@ const cursorProp = createSystemProp({
   property: 'cursor',
 });
 
-export const interactionProps = [cursorProp];
+export const interactionSystemProps = [cursorProp];

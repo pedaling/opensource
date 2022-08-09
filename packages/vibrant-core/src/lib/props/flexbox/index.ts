@@ -1,2 +1,2 @@
-export type { FlexboxProps } from './type';
-export { flexboxProps } from './flexbox';
+export type { FlexboxSystemProps } from './type';
+export { flexboxSystemProps } from './flexbox';

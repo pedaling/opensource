@@ -60,7 +60,7 @@ const columnGapProp = createSystemProp({
   property: 'columnGap',
 });
 
-export const flexboxProps = [
+export const flexboxSystemProps = [
   flexProp,
   flexGrowProp,
   flexShrinkProp,

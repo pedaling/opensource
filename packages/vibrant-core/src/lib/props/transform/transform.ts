@@ -23,4 +23,4 @@ const transformProp = createSystemProp({
   },
 });
 
-export const transformProps = [transformProp];
+export const transformSystemProps = [transformProp];

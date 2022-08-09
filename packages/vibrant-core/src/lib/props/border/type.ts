@@ -3,7 +3,7 @@ import type { ResponsiveValue } from '../../../types';
 
 type BorderStyle = 'dashed' | 'none' | 'solid';
 
-export type BorderProps = {
+export type BorderSystemProps = {
   borderWidth?: ResponsiveValue<number>;
   borderStyle?: ResponsiveValue<BorderStyle>;
   borderColor?: ResponsiveValue<string>;

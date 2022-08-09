@@ -46,4 +46,4 @@ const linearGradientProp = createSystemProp({
   }),
 });
 
-export const colorProps = [colorProp, fillProp, strokeProp, gradientProp, linearGradientProp];
+export const colorSystemProps = [colorProp, fillProp, strokeProp, gradientProp, linearGradientProp];

@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
-export type SpacingProps = {
+export type SpacingSystemProps = {
   m?: ResponsiveValue<number | string>;
   mt?: ResponsiveValue<number | string>;
   mr?: ResponsiveValue<number | string>;

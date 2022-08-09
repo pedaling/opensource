@@ -1,5 +1,5 @@
 import type { ResponsiveValue } from '../../../types';
 
-export type InteractionProps = {
+export type InteractionSystemProps = {
   cursor?: ResponsiveValue<'default' | 'pointer' | 'text'>;
 };

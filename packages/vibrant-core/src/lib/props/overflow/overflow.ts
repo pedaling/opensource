@@ -22,4 +22,4 @@ const hideScrollProp = createSystemProp({
       : {},
 });
 
-export const overflowProps = [overflowXProp, overflowYProp, hideScrollProp];
+export const overflowSystemProps = [overflowXProp, overflowYProp, hideScrollProp];

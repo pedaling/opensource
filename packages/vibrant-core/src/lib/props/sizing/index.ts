@@ -1,2 +1,2 @@
-export type { SizingProps } from './type';
-export { sizingProps } from './sizing';
+export type { SizingSystemProps } from './type';
+export { sizingSystemProps } from './sizing';
