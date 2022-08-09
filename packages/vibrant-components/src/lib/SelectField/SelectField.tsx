@@ -225,7 +225,7 @@ export const SelectField = withSelectFieldVariation(
             </Box>
           </Box>
 
-          <Box<typeof SelectOptionGroup, 'div'>
+          <Box<typeof SelectOptionGroup>
             base={SelectOptionGroup}
             position="absolute"
             hidden={!isOpened}
