@@ -15,9 +15,7 @@ function replaceName(nameObj) {
 }
 
 function replaceJsxChild(jsx) {
-  if (jsx.openingElement.name.name === 'path') {
-    jsx.openingElement.attributes = jsx.openingElement.attributes.filter(attribute => attribute.name.name !== 'fill');
-  }
+  jsx.openingElement.attributes = jsx.openingElement.attributes.filter(attribute => attribute.name.name !== 'fill');
 
   if (jsx.openingElement) {
     replaceName(jsx.openingElement.name);

@@ -16,8 +16,10 @@ export type {
   PseudoClassSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
+  SvgSystemProps,
   TextSystemProps,
-  TypographyProps,
+  TransformSystemProps,
+  TypographySystemProps,
   SystemProps,
 } from './lib/props';
 export { systemPropNames } from './lib/props';

@@ -31,7 +31,7 @@ const lineHeightProp = createSystemProp({
   transform: (value: number | string) => ({ lineHeight: typeof value === 'number' ? `${value}px` : value }),
 });
 
-export const typographyProps = [
+export const typographySystemProps = [
   typographyProp,
   fontFamilyProp,
   fontSizeProp,

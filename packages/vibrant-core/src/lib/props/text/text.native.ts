@@ -1,4 +1,3 @@
-import { Text } from 'react-native';
 import { createSystemProp } from '../../createSystemProp';
 
 const letterSpacingProp = createSystemProp({
@@ -31,7 +30,6 @@ const wordWrapProp = createSystemProp({
 const lineLimitProp = createSystemProp({
   property: 'lineLimit',
   transform: value => ({
-    BaseComponent: Text,
     props: {
       numberOfLines: value,
       lineBreakMode: 'tail',
