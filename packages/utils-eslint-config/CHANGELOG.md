@@ -6,21 +6,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ### [0.2.3](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.2...utils-eslint-config-0.2.3) (2022-07-29)
 
-
-### Bug Fixes
-
-* **eslint:** _id와 __typename eslint rule을 비활성화합니다 ([#131](https://github.com/pedaling/opensource/issues/131)) ([da99663](https://github.com/pedaling/opensource/commit/da9966343cf532526a18375161693642c40fb539))
-
-### [0.2.3](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.2...utils-eslint-config-0.2.3) (2022-07-29)
-
-
-### Bug Fixes
-
-* **eslint:** _id와 __typename eslint rule을 비활성화합니다 ([#131](https://github.com/pedaling/opensource/issues/131)) ([da99663](https://github.com/pedaling/opensource/commit/da9966343cf532526a18375161693642c40fb539))
-
-### [0.2.3](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.2...utils-eslint-config-0.2.3) (2022-07-29)
-
-
 ### Bug Fixes
 
 * **eslint:** _id와 __typename eslint rule을 비활성화합니다 ([#131](https://github.com/pedaling/opensource/issues/131)) ([da99663](https://github.com/pedaling/opensource/commit/da9966343cf532526a18375161693642c40fb539))
@@ -35,13 +20,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 ### [0.2.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.0...utils-eslint-config-0.2.1) (2022-07-27)
 
 ## [0.2.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.1.1...utils-eslint-config-0.2.0) (2022-07-19)
-
-### [0.1.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.1.0...utils-eslint-config-0.1.1) (2022-07-19)
-
-
-### Bug Fixes
-
-* 디펜던시를 트레킹하도록 한다 ([9d2030b](https://github.com/pedaling/opensource/commit/9d2030b8d401c129a2e28d3a4f711b4a64599b2c))
 
 ### [0.1.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.1.0...utils-eslint-config-0.1.1) (2022-07-19)
 

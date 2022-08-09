@@ -2,7 +2,6 @@ import * as fs from 'fs';
 import type { ExecutorContext } from 'nx/src/config/misc-interfaces';
 import { getProjectRoots } from 'nx/src/utils/command-line-utils';
 import { joinPathFragments } from 'nx/src/utils/path';
-import { commit, formatCommitMessage } from '@jscutlery/semver/src/executors/version/utils/commit';
 import { addToStage } from '@jscutlery/semver/src/executors/version/utils/git';
 import type { UpdateNativePackageJsonExecutorSchema } from './schema';
 
@@ -24,17 +23,17 @@ export default async function runExecutor(options: UpdateNativePackageJsonExecut
     dryRun: false,
   }).toPromise();
 
-  await commit({
-    dryRun: false,
-    projectName: context.projectName,
-    commitMessage: formatCommitMessage({
-      // eslint-disable-next-line no-template-curly-in-string
-      commitMessageFormat: 'chore(${projectName}): release version ${version}',
-      projectName: `${context.projectName}-native`,
-      version: nativePackageJson.version,
-    }),
-    noVerify: false,
-  }).toPromise();
+  // await commit({
+  //   dryRun: false,
+  //   projectName: context.projectName,
+  //   commitMessage: formatCommitMessage({
+  //     // eslint-disable-next-line no-template-curly-in-string
+  //     commitMessageFormat: 'chore(${projectName}): release version ${version}',
+  //     projectName: `${context.projectName}-native`,
+  //     version: nativePackageJson.version,
+  //   }),
+  //   noVerify: false,
+  // }).toPromise();
 
   return {
     success: true,

@@ -56,29 +56,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * android에서 앱이 켜지지 않는 문제를 수정한다 ([#130](https://github.com/pedaling/opensource/issues/130)) ([0d38b3a](https://github.com/pedaling/opensource/commit/0d38b3a8880f897c78e40e3efad530cd6f5f68f3))
 
-## [0.7.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.6.0...vibrant-core-0.7.0) (2022-07-29)
-
-
-### Features
-
-* **vibrant-core:** add transform props to system props ([#126](https://github.com/pedaling/opensource/issues/126)) ([9c2eac1](https://github.com/pedaling/opensource/commit/9c2eac108e6e8fd498e54d27853d95a1bbd992ad))
-
-
-### Bug Fixes
-
-* android에서 앱이 켜지지 않는 문제를 수정한다 ([#130](https://github.com/pedaling/opensource/issues/130)) ([0d38b3a](https://github.com/pedaling/opensource/commit/0d38b3a8880f897c78e40e3efad530cd6f5f68f3))
-
-## [0.7.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.6.0...vibrant-core-0.7.0) (2022-07-29)
-
-
-### Features
-
-* **vibrant-core:** add transform props to system props ([#126](https://github.com/pedaling/opensource/issues/126)) ([9c2eac1](https://github.com/pedaling/opensource/commit/9c2eac108e6e8fd498e54d27853d95a1bbd992ad))
-
-
-### Bug Fixes
-
-* android에서 앱이 켜지지 않는 문제를 수정한다 ([#130](https://github.com/pedaling/opensource/issues/130)) ([0d38b3a](https://github.com/pedaling/opensource/commit/0d38b3a8880f897c78e40e3efad530cd6f5f68f3))
 
 ## [0.6.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.5.1...vibrant-core-0.6.0) (2022-07-29)
 

@@ -44,6 +44,10 @@
       {
         "target": "version",
         "projects": "dependencies"
+      },
+      {
+        "target": "build",
+        "projects": "dependencies"
       }
     ]
   },
