@@ -1,6 +1,7 @@
+import type { ColorToken } from '@vibrant-ui/theme';
 import type { ResponsiveValue } from '../../../types';
 
 export type SvgSystemProps = {
-  fill?: ResponsiveValue<string>;
-  stroke?: ResponsiveValue<string>;
+  fill?: ResponsiveValue<ColorToken>;
+  stroke?: ResponsiveValue<ColorToken>;
 };
