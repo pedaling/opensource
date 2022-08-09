@@ -24,12 +24,14 @@ import type { SizingSystemProps } from './sizing';
 import { sizingSystemProps } from './sizing';
 import type { SpacingSystemProps } from './spacing';
 import { spacingSystemProps } from './spacing';
+import type { SvgSystemProps } from './svg';
+import { svgSystemProps } from './svg';
 import type { TextSystemProps } from './text';
 import { textSystemProps } from './text';
 import type { TransformSystemProps } from './transform';
 import { transformSystemProps } from './transform';
-import type { TypographyProps } from './typography';
-import { typographyProps } from './typography';
+import type { TypographySystemProps } from './typography';
+import { typographySystemProps } from './typography';
 
 type SystemProps = BackgroundSystemProps &
   BorderSystemProps &
@@ -44,8 +46,9 @@ type SystemProps = BackgroundSystemProps &
   PseudoClassSystemProps &
   SizingSystemProps &
   SpacingSystemProps &
+  SvgSystemProps &
   TextSystemProps &
-  TypographyProps &
+  TypographySystemProps &
   TransformSystemProps;
 
 export const systemProps = [
@@ -62,8 +65,9 @@ export const systemProps = [
   ...pseudoClassSystemProps,
   ...sizingSystemProps,
   ...spacingSystemProps,
+  ...svgSystemProps,
   ...textSystemProps,
-  ...typographyProps,
+  ...typographySystemProps,
   ...transformSystemProps,
 ];
 
@@ -85,7 +89,9 @@ export type {
   PseudoClassSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
+  SvgSystemProps,
   TextSystemProps,
-  TypographyProps,
+  TransformSystemProps,
+  TypographySystemProps,
   SystemProps,
 };

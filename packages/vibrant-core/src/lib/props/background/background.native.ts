@@ -3,19 +3,30 @@ import type { AnyGradient, LinearGradient } from '@vibrant-ui/theme';
 import { createSystemProp } from '../../createSystemProp';
 import { ExternalComponent } from '../../ExternalComponent';
 
-const colorProp = createSystemProp({
-  property: 'color',
+const backgroundProp = createSystemProp({
+  property: 'background',
   scale: 'colors',
 });
 
-const fillProp = createSystemProp({
-  property: 'fill',
+const backgroundColorProp = createSystemProp({
+  property: 'backgroundColor',
   scale: 'colors',
 });
 
-const strokeProp = createSystemProp({
-  property: 'stroke',
-  scale: 'colors',
+const backgroundImageProp = createSystemProp({
+  property: 'backgroundImage',
+});
+
+const backgroundSizeProp = createSystemProp({
+  property: 'backgroundSize',
+});
+
+const backgroundPositionProp = createSystemProp({
+  property: 'backgroundPosition',
+});
+
+const backgroundRepeatProp = createSystemProp({
+  property: 'backgroundRepeat',
 });
 
 const gradientProp = createSystemProp({
@@ -46,4 +57,13 @@ const linearGradientProp = createSystemProp({
   }),
 });
 
-export const colorSystemProps = [colorProp, fillProp, strokeProp, gradientProp, linearGradientProp];
+export const backgroundSystemProps = [
+  backgroundProp,
+  backgroundColorProp,
+  backgroundImageProp,
+  backgroundSizeProp,
+  backgroundPositionProp,
+  backgroundRepeatProp,
+  gradientProp,
+  linearGradientProp,
+];

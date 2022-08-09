@@ -12,8 +12,10 @@ export type {
   PseudoClassSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
+  SvgSystemProps,
   TextSystemProps,
-  TypographyProps,
+  TransformSystemProps,
+  TypographySystemProps,
   SystemProps,
 } from './systemProp';
 export { systemProps, systemPropNames } from './systemProp';

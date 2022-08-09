@@ -40,7 +40,7 @@ const lineHeightProp = createSystemProp({
   transform: value => ({ lineHeight: transformRem(value) }),
 });
 
-export const typographyProps = [
+export const typographySystemProps = [
   typographyProp,
   fontFamilyProp,
   fontSizeProp,

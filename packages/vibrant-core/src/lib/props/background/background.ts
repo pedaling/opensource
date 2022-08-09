@@ -1,3 +1,4 @@
+import type { AnyGradient, LinearGradient } from '@vibrant-ui/theme';
 import { createSystemProp } from '../../createSystemProp';
 
 const backgroundProp = createSystemProp({
@@ -26,6 +27,30 @@ const backgroundRepeatProp = createSystemProp({
   property: 'backgroundRepeat',
 });
 
+const gradientProp = createSystemProp({
+  property: 'gradient',
+  scale: 'gradient',
+  shouldInterpolation: 'after',
+  transform: ({ type, ...value }: AnyGradient) => {
+    if (type === 'linear') {
+      return {
+        linearGradient: value,
+      };
+    }
+
+    return {};
+  },
+});
+
+const linearGradientProp = createSystemProp({
+  property: 'linearGradient',
+  transform: ({ colors, locations, degree }: LinearGradient) => ({
+    background: `linear-gradient(${degree}deg, ${colors
+      .map((color, index) => `${color} ${locations[index]}%`)
+      .join(', ')})`,
+  }),
+});
+
 export const backgroundSystemProps = [
   backgroundProp,
   backgroundColorProp,
@@ -33,4 +58,6 @@ export const backgroundSystemProps = [
   backgroundSizeProp,
   backgroundPositionProp,
   backgroundRepeatProp,
+  gradientProp,
+  linearGradientProp,
 ];
