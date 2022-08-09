@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import type { ReactNativeRenderer } from '@vibrant-ui/utils/testing';
 import { createReactNativeRenderer } from '@vibrant-ui/utils/testing';
 import { Box } from './Box';
@@ -16,38 +16,6 @@ describe('Native <Box />', () => {
 
       it('View component used', () => {
         expect(renderer.container.findByType(View)).toBeTruthy();
-      });
-
-      it('match snapshot', () => {
-        expect(renderer.toJSON()).toMatchSnapshot();
-      });
-    });
-
-    describe('when span box created', () => {
-      beforeEach(() => {
-        renderer = render(<Box as="span" />);
-      });
-
-      it('Text component used', () => {
-        expect(renderer.container.findByType(Text)).toBeTruthy();
-      });
-
-      it('match snapshot', () => {
-        expect(renderer.toJSON()).toMatchSnapshot();
-      });
-    });
-
-    describe('when br box created', () => {
-      beforeEach(() => {
-        renderer = render(<Box as="br" />);
-      });
-
-      it('Text component used', () => {
-        expect(renderer.container.findByType(Text)).toBeTruthy();
-      });
-
-      it('children is new line', () => {
-        expect(renderer.container.findByType(Text).props['children']).toBe('\n');
       });
 
       it('match snapshot', () => {

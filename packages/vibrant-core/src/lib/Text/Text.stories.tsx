@@ -6,7 +6,6 @@ export default {
   component: Text,
   args: {
     children: 'Sample Text',
-    kind: 'title1',
   },
 } as ComponentMeta<typeof Text>;
 

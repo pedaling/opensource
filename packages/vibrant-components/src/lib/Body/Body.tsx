@@ -1,8 +1,4 @@
-import { Text } from '../Text';
+import { Text } from '@vibrant-ui/core';
 import { withBodyVariation } from './BodyProps';
 
-export const Body = withBodyVariation(({ innerRef, children, ...textProps }) => (
-  <Text ref={innerRef} {...textProps}>
-    {children}
-  </Text>
-));
+export const Body = withBodyVariation(({ innerRef, ...restProps }) => <Text ref={innerRef} {...restProps} />);

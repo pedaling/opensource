@@ -25,6 +25,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/VStack/VStack.stories.tsx'),
   require('../../vibrant-core/src/lib/Box/Box.stories.tsx'),
   require('../../vibrant-core/src/lib/OnColorContainer/OnColorContainer.stories.tsx'),
+  require('../../vibrant-core/src/lib/Text/Text.stories.tsx'),
   require('../../vibrant-icons/src/lib/Icon/Icon.stories.tsx'),
   require('../../vibrant-motion/src/lib/Motion/Motion.stories.tsx'),
   require('../../vibrant-motion/src/lib/Transition/Transition.stories.tsx'),

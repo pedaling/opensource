@@ -1,9 +1,10 @@
-import type { ResponsiveValue } from '@vibrant-ui/core';
+import type { ResponsiveValue, TextProps, TypographySystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { TextProps } from '../Text';
+import type { TypographyWeight } from '@vibrant-ui/theme';
 
-export type BodyProps = Omit<TextProps, 'kind'> & {
+export type BodyProps = Omit<TextProps, Exclude<keyof TypographySystemProps, 'fontStyle' | 'lineHeight'>> & {
   level: ResponsiveValue<1 | 2 | 3 | 4 | 5 | 6>;
+  weight?: ResponsiveValue<TypographyWeight>;
 };
 
 export const withBodyVariation = withVariation<BodyProps>('Body')(
@@ -15,7 +16,19 @@ export const withBodyVariation = withVariation<BodyProps>('Body')(
       },
     ],
     variants: ({ level }) => ({
-      kind: `body${level}` as const,
+      typography: `body${level}` as const,
+    }),
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'weight',
+        responsive: true,
+        default: 'regular' as const,
+      },
+    ],
+    variants: ({ weight }) => ({
+      fontWeight: weight,
     }),
   })
 );

@@ -16,10 +16,10 @@ exports[`<Paragraph /> when Paragraph with level 3 rendered match snapshot 1`] =
   -ms-flex-negative: 1;
   flex-shrink: 1;
   font-family: Pretendard;
+  color: #0C0C0C;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.75rem;
-  color: #0C0C0C;
 }
 
 <div>

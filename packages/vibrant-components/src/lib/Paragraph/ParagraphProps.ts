@@ -1,9 +1,10 @@
-import type { ResponsiveValue } from '@vibrant-ui/core';
+import type { ResponsiveValue, TextProps, TypographySystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { TextProps } from '../Text';
+import type { TypographyWeight } from '@vibrant-ui/theme';
 
-export type ParagraphProps = Omit<TextProps, 'kind'> & {
+export type ParagraphProps = Omit<TextProps, Exclude<keyof TypographySystemProps, 'fontStyle' | 'lineHeight'>> & {
   level: ResponsiveValue<1 | 2 | 3>;
+  weight?: ResponsiveValue<TypographyWeight>;
 };
 
 export const withParagraphVariation = withVariation<ParagraphProps>('Paragraph')(
@@ -15,7 +16,19 @@ export const withParagraphVariation = withVariation<ParagraphProps>('Paragraph')
       },
     ],
     variants: ({ level }) => ({
-      kind: `paragraph${level}` as const,
+      typography: `paragraph${level}` as const,
+    }),
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'weight',
+        responsive: true,
+        default: 'regular' as const,
+      },
+    ],
+    variants: ({ weight }) => ({
+      fontWeight: weight,
     }),
   })
 );
