@@ -6,7 +6,7 @@ import { SelectOptionItem } from '../SelectOptionItem';
 import { withSelectOptionGroupVariation } from './SelectOptionGroupProps';
 
 export const SelectOptionGroup = withSelectOptionGroupVariation(
-  ({ options, focusIndex, onOptionClick, renderOption, hidden, reverse, ...restProps }) => {
+  ({ options, focusIndex, onOptionClick, renderOption, reverse, ...restProps }) => {
     const ref = useRef<HTMLUListElement>(null);
     const renderIndices = reverse ? range(options.length).reverse() : range(options.length);
 
@@ -32,7 +32,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
           top: focusElement.offsetTop + focusElement.offsetHeight - ref.current.offsetHeight,
         });
       }
-    }, [hidden, focusIndex, reverse, renderIndices]);
+    }, [focusIndex, reverse, renderIndices]);
 
     return (
       <Box
@@ -44,7 +44,6 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         borderStyle="solid"
         borderRadius={2}
         overflowY="scroll"
-        hidden={hidden}
         hideScroll={true}
         {...restProps}
       >
