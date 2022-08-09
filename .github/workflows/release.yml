@@ -40,6 +40,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Commit Release
+        shell: bash
+        run: |
+          git commit -m "chore: release versions"
+      - name: Push to protected branch
+        uses: CasperWA/push-protected@v2
+        with:
+          token: ${{ secrets.DEPLOY_TOKEN }}
+          branch: main
+          unprotect_reviews: false
       - name: Tag last-release
         shell: bash
         run: |
