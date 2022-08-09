@@ -22,6 +22,8 @@ import type { SizingProps } from './sizing';
 import { sizingProps } from './sizing';
 import type { SpacingProps } from './spacing';
 import { spacingProps } from './spacing';
+import type { TextProps } from './text';
+import { textProps } from './text';
 import type { TransformProps } from './transform';
 import { transformProps } from './transform';
 import type { TypographyProps } from './typography';
@@ -38,6 +40,7 @@ type SystemProps = BackgroundProps &
   PseudoClassProps &
   SizingProps &
   SpacingProps &
+  TextProps &
   TypographyProps &
   TransformProps &
   ElevationProps;
@@ -54,6 +57,7 @@ export type {
   PseudoClassProps,
   SizingProps,
   SpacingProps,
+  TextProps,
   TypographyProps,
   SystemProps,
   ElevationProps,
@@ -71,6 +75,7 @@ export const systemProps = [
   ...pseudoClassProps,
   ...sizingProps,
   ...spacingProps,
+  ...textProps,
   ...typographyProps,
   ...transformProps,
   ...elevationProps,
