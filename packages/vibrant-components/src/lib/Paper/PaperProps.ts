@@ -13,20 +13,36 @@ import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 type PaperProps = {
   ref?: Ref<any>;
   children?: ReactElementChild;
-} & (
-  | {
-      backgroundColor?: never;
-      gradient?: ResponsiveValue<GradientKind>;
-    }
-  | {
-      backgroundColor?: ResponsiveValue<BaseColorToken>;
-      gradient?: never;
-    }
-) &
-  Pick<BorderProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
+} & Pick<BorderProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
   DisplayProps &
   SpacingProps &
   Pick<ElevationProps, 'elevationLevel'> &
-  SizingProps;
+  SizingProps &
+  (
+    | ({
+        elevationLevel: ElevationProps['elevationLevel'];
+      } & (
+        | {
+            backgroundColor: ResponsiveValue<BaseColorToken>;
+            gradient?: never;
+          }
+        | {
+            backgroundColor?: never;
+            gradient: ResponsiveValue<GradientKind>;
+          }
+      ))
+    | ({
+        elevationLevel?: never;
+      } & (
+        | {
+            backgroundColor?: never;
+            gradient?: ResponsiveValue<GradientKind>;
+          }
+        | {
+            backgroundColor?: ResponsiveValue<BaseColorToken>;
+            gradient?: never;
+          }
+      ))
+  );
 
 export const withPaperVariation = withVariation<PaperProps>('Paper')();

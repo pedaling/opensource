@@ -28,9 +28,9 @@ export const BorderSolid: ComponentStory<typeof Paper> = () => (
 
 export const Elevation: ComponentStory<typeof Paper> = () => (
   <HStack m={20} spacing={30}>
-    <Paper width={200} height={200} elevationLevel={1} />
-    <Paper width={200} height={200} elevationLevel={2} />
-    <Paper width={200} height={200} elevationLevel={3} />
-    <Paper width={200} height={200} elevationLevel={4} />
+    <Paper width={200} height={200} backgroundColor="background" elevationLevel={1} />
+    <Paper width={200} height={200} backgroundColor="background" elevationLevel={2} />
+    <Paper width={200} height={200} backgroundColor="background" elevationLevel={3} />
+    <Paper width={200} height={200} backgroundColor="background" elevationLevel={4} />
   </HStack>
 );
