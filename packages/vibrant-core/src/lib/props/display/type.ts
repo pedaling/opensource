@@ -6,7 +6,4 @@ export type DisplayProps = {
   visibility?: ResponsiveValue<'collapse' | 'hidden' | 'visible'>;
   opacity?: ResponsiveValue<OpacityToken | number>;
   hidden?: ResponsiveValue<boolean>;
-  overflowX?: ResponsiveValue<'hidden' | 'scroll' | 'visible'>;
-  overflowY?: ResponsiveValue<'hidden' | 'scroll' | 'visible'>;
-  hideScroll?: ResponsiveValue<boolean>;
 };

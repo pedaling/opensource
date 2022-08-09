@@ -14,6 +14,8 @@ import type { InputProps } from './input';
 import { inputProps } from './input';
 import type { InteractionProps } from './interaction';
 import { interactionProps } from './interaction';
+import type { OverflowProps } from './overflow';
+import { overflowProps } from './overflow';
 import type { PositionProps } from './position';
 import { positionProps } from './position';
 import type { PseudoClassProps } from './pseudoClass';
@@ -33,44 +35,29 @@ type SystemProps = BackgroundProps &
   BorderProps &
   ColorProps &
   DisplayProps &
+  ElevationProps &
   FlexboxProps &
   InputProps &
   InteractionProps &
+  OverflowProps &
   PositionProps &
   PseudoClassProps &
   SizingProps &
   SpacingProps &
   TextProps &
   TypographyProps &
-  TransformProps &
-  ElevationProps;
-
-export type {
-  BackgroundProps,
-  BorderProps,
-  ColorProps,
-  DisplayProps,
-  FlexboxProps,
-  InputProps,
-  InteractionProps,
-  PositionProps,
-  PseudoClassProps,
-  SizingProps,
-  SpacingProps,
-  TextProps,
-  TypographyProps,
-  SystemProps,
-  ElevationProps,
-};
+  TransformProps;
 
 export const systemProps = [
   ...backgroundProps,
   ...borderProps,
   ...colorProps,
   ...displayProps,
+  ...elevationProps,
   ...flexboxProps,
   ...inputProps,
   ...interactionProps,
+  ...overflowProps,
   ...positionProps,
   ...pseudoClassProps,
   ...sizingProps,
@@ -78,9 +65,27 @@ export const systemProps = [
   ...textProps,
   ...typographyProps,
   ...transformProps,
-  ...elevationProps,
 ];
 
 export const systemPropNames = systemProps
   .filter(systemProp => !systemProp.disabled)
   .map(systemProp => systemProp.propName);
+
+export type {
+  BackgroundProps,
+  BorderProps,
+  ColorProps,
+  DisplayProps,
+  ElevationProps,
+  FlexboxProps,
+  InputProps,
+  InteractionProps,
+  OverflowProps,
+  PositionProps,
+  PseudoClassProps,
+  SizingProps,
+  SpacingProps,
+  TextProps,
+  TypographyProps,
+  SystemProps,
+};
