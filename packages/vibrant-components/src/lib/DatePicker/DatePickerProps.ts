@@ -3,7 +3,6 @@ import { withVariation } from '@vibrant-ui/core';
 export type DatePickerProps =
   | {
       date: Date | undefined;
-      rangeDate?: never;
       range?: false;
       onDateRangeSelect?: never;
       onDateSelect: (date: Date) => void;
