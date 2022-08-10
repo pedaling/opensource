@@ -38,8 +38,17 @@ export const Pressable = withPressableVariation(
           overflowX="hidden"
           overflowY="hidden"
           cursor={disabled ? 'default' : 'pointer'}
+          alignItems="stretch"
           zIndex={0}
-          onClick={() => !disabled && onClick?.()}
+          onClick={(event: { stopPropagation: () => void }) => {
+            if (disabled) {
+              return;
+            }
+
+            event.stopPropagation();
+
+            onClick?.();
+          }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onFocus={() => {

@@ -1,6 +1,6 @@
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
-export type DatePickerDayProps = {
+export type CalendarDateItemProps = {
   otherMonth: boolean;
   active: boolean;
   day: Date;
@@ -9,7 +9,7 @@ export type DatePickerDayProps = {
   range: 'end' | 'start' | false | true;
 };
 
-export const withDatePickerDayVariation = withVariation<DatePickerDayProps>('DatePickerDay')(
+export const withCalendarDateItemVariation = withVariation<CalendarDateItemProps>('CalendarDateItem')(
   propVariant({
     props: [
       {

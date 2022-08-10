@@ -25,6 +25,7 @@ export const Pressable = withPressableVariation(
           position="relative"
           overflowX="hidden"
           overflowY="hidden"
+          alignItems="stretch"
           disabled={disabled}
           onPress={() => onClick?.()}
           onPressIn={() => setIsActivated(true)}

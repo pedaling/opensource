@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { cloneElement, useEffect, useMemo, useRef } from 'react';
+import { cloneElement, useEffect, useRef } from 'react';
 import { useGlobalEvent } from '@vibrant-ui/core';
 import type { ClickEvent } from '@vibrant-ui/core';
 import { getElementRect } from '@vibrant-ui/utils';
@@ -32,14 +32,16 @@ export const Dismissible: FC<DismissibleProps> = ({ active = false, onDismiss, c
       }
     };
 
-    addEventListener('click', onClick);
+    requestAnimationFrame(() => {
+      addEventListener('click', onClick);
+    });
 
     return () => {
-      removeEventListener('click', onClick);
+      requestAnimationFrame(() => {
+        removeEventListener('click', onClick);
+      });
     };
   }, [active, addEventListener, onDismiss, removeEventListener]);
 
-  const clonedChildren = useMemo(() => cloneElement(children, { ref: targetRef }), [children]);
-
-  return <>{clonedChildren}</>;
+  return <>{cloneElement(children, { ref: targetRef })}</>;
 };

@@ -2,17 +2,17 @@ import { useCallback, useMemo, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
-import { DatePickerDay } from '../DatePickerDay';
+import { CalenderDateItem } from '../CalendarDateItem';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
 import { Pressable } from '../Pressable';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
-import { withDatePickerVariation } from './DatePickerProps';
+import { withCalendarVariation } from './CalendarProps';
 
 const DAY_NAMES = ['일', '월', '화', '수', '목', '금', '토'];
 
-export const DatePicker = withDatePickerVariation(
+export const Calendar = withCalendarVariation(
   ({ date, startDate, endDate, onDateRangeSelect, range, onDateSelect, ...restProps }) => {
     const [displayMonth, setDisplayMonth] = useState(() => {
       const initialDate = date ?? startDate ?? new Date();
@@ -60,7 +60,7 @@ export const DatePicker = withDatePickerVariation(
       (selectedDate: Date) => {
         if (range) {
           if (startDate && endDate) {
-            return onDateRangeSelect?.(startDate, undefined);
+            return onDateRangeSelect?.(selectedDate, undefined);
           }
 
           if (startDate) {
@@ -82,7 +82,11 @@ export const DatePicker = withDatePickerVariation(
 
     const getRange = useCallback(
       (date: Date) => {
-        if (!startDate && !endDate) {
+        if (!endDate) {
+          return false;
+        }
+
+        if (startDate === endDate) {
           return false;
         }
 
@@ -104,15 +108,7 @@ export const DatePicker = withDatePickerVariation(
     );
 
     return (
-      <Paper
-        px={16}
-        py={24}
-        backgroundColor="background"
-        minWidth={280}
-        maxWidth={400}
-        elevationLevel={1}
-        {...restProps}
-      >
+      <Paper px={16} py={24} backgroundColor="surface2" width={320} elevationLevel={2} {...restProps}>
         <VStack spacing={24}>
           <HStack spacing={8} alignItems="center">
             <Pressable as="button" onClick={movePrevMonth}>
@@ -139,12 +135,12 @@ export const DatePicker = withDatePickerVariation(
             </HStack>
             <VStack spacing={2}>
               {Array.from({ length: days.length / 7 }).map((_, index) => (
-                <HStack key={index} spacing={4}>
+                <HStack key={index} spacing={1.33}>
                   {days
                     .slice(index * 7, (index + 1) * 7)
                     .map(pickerDay =>
                       range ? (
-                        <DatePickerDay
+                        <CalenderDateItem
                           key={pickerDay.getTime()}
                           otherMonth={pickerDay.getMonth() !== displayMonth.getMonth()}
                           day={pickerDay}
@@ -154,7 +150,7 @@ export const DatePicker = withDatePickerVariation(
                           range={getRange(pickerDay)}
                         />
                       ) : (
-                        <DatePickerDay
+                        <CalenderDateItem
                           key={pickerDay.getTime()}
                           otherMonth={pickerDay.getMonth() !== displayMonth.getMonth()}
                           active={date ? isSameDate(pickerDay, date) : false}

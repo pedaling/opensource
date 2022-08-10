@@ -1,6 +1,6 @@
 import { withVariation } from '@vibrant-ui/core';
 
-export type DatePickerProps =
+export type CalendarProps =
   | {
       date: Date | undefined;
       range?: false;
@@ -18,4 +18,4 @@ export type DatePickerProps =
       endDate: Date | undefined;
     };
 
-export const withDatePickerVariation = withVariation<DatePickerProps>('DatePicker')();
+export const withCalendarVariation = withVariation<CalendarProps>('Calendar')();

@@ -1,9 +1,9 @@
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { Pressable } from '../Pressable';
-import { withDatePickerDayVariation } from './DatePickerDayProps';
+import { withCalendarDateItemVariation } from './CalendarDateItemProps';
 
-export const DatePickerDay = withDatePickerDayVariation(({ day, onClick, color, today, range, ...restProps }) => (
+export const CalenderDateItem = withCalendarDateItemVariation(({ day, onClick, color, today, range, ...restProps }) => (
   <Box
     base={Pressable}
     onClick={() => onClick(day)}
@@ -16,7 +16,7 @@ export const DatePickerDay = withDatePickerDayVariation(({ day, onClick, color, 
     <>
       <Box
         position="absolute"
-        left={-2}
+        left={-1}
         top={0}
         bottom={0}
         right="50%"
@@ -33,7 +33,7 @@ export const DatePickerDay = withDatePickerDayVariation(({ day, onClick, color, 
         left="50%"
         top={0}
         bottom={0}
-        right={-2}
+        right={-1}
         hidden={!range || range === 'end'}
         backgroundColor="primaryContainer"
         borderColor="outlinePrimary"

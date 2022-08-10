@@ -4,13 +4,18 @@ import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
 import { Calendar } from '../Calendar';
 import { DateInput } from '../DateInput';
 import { Dismissible } from '../Dismissible';
-import { withDatePickerFieldVariation } from './DatePickerFieldProps';
+import { withRangePickerFieldVariation } from './RangePickerFieldProps';
 
-export const DatePickerField = withDatePickerFieldVariation(
-  ({ defaultValue, disabled, onValueChange, placeholder }) => {
-    const [value, setValue] = useState(defaultValue);
+const getRangeString = (start: Date, end?: Date) =>
+  `${getDateString(start, '/')} - ${end ? getDateString(end, '/') : ''}`;
+
+export const RangePickerField = withRangePickerFieldVariation(
+  ({ defaultValue, onValueChange, disabled, placeholder }) => {
+    const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
-    const [inputValue, setInputValue] = useState(defaultValue ? getDateString(defaultValue) : '');
+    const [inputValue, setInputValue] = useState(() =>
+      defaultValue ? getRangeString(defaultValue.start, defaultValue.end) : ''
+    );
     const onValueChangeRef = useSafeDeps(onValueChange);
 
     useEffect(() => {
@@ -26,9 +31,16 @@ export const DatePickerField = withDatePickerFieldVariation(
         return;
       }
 
-      onValueChangeRef.current?.(value);
+      const { start, end } = value;
 
-      setInputValue(getDateString(value));
+      setInputValue(getRangeString(start, end));
+      if (!end) {
+        return;
+      }
+
+      onValueChangeRef.current?.({ start, end });
+
+      return;
     }, [onValueChangeRef, value]);
 
     return (
@@ -44,10 +56,15 @@ export const DatePickerField = withDatePickerFieldVariation(
         <Dismissible active={isCalendarOpened} onDismiss={() => setIsCalendarOpened(false)}>
           <Box position="absolute" top={56} left={0} hidden={!isCalendarOpened}>
             <Calendar
-              range={false}
-              date={value}
-              onDateSelect={selectedDate => {
-                setValue(selectedDate);
+              range={true}
+              startDate={value?.start}
+              endDate={value?.end}
+              onDateRangeSelect={(startDate, endDate) => {
+                setValue({ start: startDate, end: endDate });
+
+                if (!endDate) {
+                  return;
+                }
 
                 setIsCalendarOpened(false);
               }}
