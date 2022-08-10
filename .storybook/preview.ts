@@ -3,6 +3,7 @@ import type { GlobalTypes } from '@storybook/csf';
 import { DeviceDecorator } from '@storybook/native-addon';
 import type { DecoratorFn, Parameters } from '@storybook/react';
 import { withAppetize } from './decorators/withAppetize';
+import { withGlobalEvent } from './decorators/withGlobalEvent';
 import { withGlobalStyle } from './decorators/withGlobalStyle';
 import { withTheme } from './decorators/withTheme';
 
@@ -45,4 +46,4 @@ export const globalTypes: GlobalTypes = {
   },
 };
 
-export const decorators: DecoratorFn[] = [withGlobalStyle, withTheme, withAppetize, DeviceDecorator];
+export const decorators: DecoratorFn[] = [withGlobalStyle, withTheme, withGlobalEvent, withAppetize, DeviceDecorator];
