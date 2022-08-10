@@ -1,7 +1,9 @@
+import type { Ref } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
 export type UnstyledTextInputProps = BaseInputProps<string> & {
+  ref?: Ref<HTMLInputElement>;
   autoFocus?: boolean;
   placeholder?: string;
   allowPattern?: RegExp;
