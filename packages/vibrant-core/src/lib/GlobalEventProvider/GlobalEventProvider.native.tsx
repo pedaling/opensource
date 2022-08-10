@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { createContext, useCallback, useContext, useMemo, useRef } from 'react';
 import { View } from 'react-native';
-import type { EventListener, GlobalEventContextValue, GlobalEventProviderProps } from './types';
+import type { Event, EventListener, EventType, GlobalEventContextValue, GlobalEventProviderProps } from './types';
 
 const GlobalEventContext = createContext<GlobalEventContextValue>({
   addEventListener: () => {},
@@ -9,15 +9,15 @@ const GlobalEventContext = createContext<GlobalEventContextValue>({
 });
 
 export const GlobalEventProvider: FC<GlobalEventProviderProps> = ({ children }) => {
-  const clickEventListenersRef = useRef<EventListener[]>([]);
+  const clickEventListenersRef = useRef<EventListener<Event<EventType>>[]>([]);
 
-  const addEventListener = useCallback((eventType: EventType, listener: EventListener) => {
+  const addEventListener = useCallback((eventType: EventType, listener: EventListener<Event<EventType>>) => {
     if (eventType === 'click') {
       clickEventListenersRef.current = [...clickEventListenersRef.current, listener];
     }
   }, []);
 
-  const removeEventListener = useCallback((eventType: EventType, listener: EventListener) => {
+  const removeEventListener = useCallback((eventType: EventType, listener: EventListener<Event<EventType>>) => {
     if (eventType === 'click') {
       clickEventListenersRef.current = clickEventListenersRef.current.filter(
         clickEventListener => clickEventListener !== listener
