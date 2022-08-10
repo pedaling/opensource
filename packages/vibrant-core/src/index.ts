@@ -30,3 +30,5 @@ export { OnColorContainer } from './lib/OnColorContainer';
 export type { SystemPropThemeScale } from './lib/createSystemProp';
 export { useResponsiveValue } from './lib/useResponsiveValue';
 export { VibrantProvider } from './lib/VibrantProvider';
+export { useGlobalEvent, GlobalEventProvider } from './lib/GlobalEventProvider';
+export type { ClickEvent } from './lib/GlobalEventProvider';
