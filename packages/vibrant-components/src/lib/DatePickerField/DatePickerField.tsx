@@ -23,6 +23,8 @@ export const DatePickerField = withDatePickerFieldVariation(
 
     useEffect(() => {
       if (!value) {
+        setInputValue('');
+
         return;
       }
 
@@ -37,7 +39,7 @@ export const DatePickerField = withDatePickerFieldVariation(
           value={inputValue}
           onClick={() => setIsCalendarOpened(true)}
           disabled={disabled}
-          onClear={() => setInputValue('')}
+          onClear={() => setValue(undefined)}
           placeholder={placeholder}
           calendarOpened={isCalendarOpened}
         />

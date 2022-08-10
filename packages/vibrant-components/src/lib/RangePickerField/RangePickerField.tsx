@@ -28,6 +28,8 @@ export const RangePickerField = withRangePickerFieldVariation(
 
     useEffect(() => {
       if (!value) {
+        setInputValue('');
+
         return;
       }
 
@@ -49,7 +51,7 @@ export const RangePickerField = withRangePickerFieldVariation(
           value={inputValue}
           onClick={() => setIsCalendarOpened(true)}
           disabled={disabled}
-          onClear={() => setInputValue('')}
+          onClear={() => setValue(undefined)}
           placeholder={placeholder}
           calendarOpened={isCalendarOpened}
         />
