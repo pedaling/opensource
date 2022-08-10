@@ -1,12 +1,14 @@
 import type { FC } from 'react';
-import { useEffect } from 'react';
+import { cloneElement, useEffect, useMemo, useRef } from 'react';
 import { useGlobalEvent } from '@vibrant-ui/core';
 import type { ClickEvent } from '@vibrant-ui/core';
 import { getElementRect } from '@vibrant-ui/utils';
 import type { DismissibleProps } from './DismissibleProps';
 
-export const Dismissible: FC<DismissibleProps> = ({ active = false, onDismiss, targetRef, children }) => {
+export const Dismissible: FC<DismissibleProps> = ({ active = false, onDismiss, children }) => {
   const { addEventListener, removeEventListener } = useGlobalEvent();
+
+  const targetRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!active) {
@@ -35,7 +37,9 @@ export const Dismissible: FC<DismissibleProps> = ({ active = false, onDismiss, t
     return () => {
       removeEventListener('click', onClick);
     };
-  }, [active, addEventListener, onDismiss, removeEventListener, targetRef]);
+  }, [active, addEventListener, onDismiss, removeEventListener]);
 
-  return <>{children}</>;
+  const clonedChildren = useMemo(() => cloneElement(children, { ref: targetRef }), [children]);
+
+  return <>{clonedChildren}</>;
 };

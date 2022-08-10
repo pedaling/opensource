@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
@@ -15,15 +14,10 @@ export default {
   },
 } as ComponentMeta<typeof Dismissible>;
 
-export const Basic: ComponentStory<typeof Dismissible> = props => {
-  const targetRef = useRef<HTMLElement>(null);
-
-  return (
-    <>
-      <Box ref={targetRef} width={100} height={100} backgroundColor="primary">
-        <Body level={2}>Click outside</Body>
-      </Box>
-      <Dismissible {...props} targetRef={targetRef} />
-    </>
-  );
-};
+export const Basic: ComponentStory<typeof Dismissible> = props => (
+  <Dismissible {...props}>
+    <Box width={100} height={100} backgroundColor="primary">
+      <Body level={2}>Click outside</Body>
+    </Box>
+  </Dismissible>
+);

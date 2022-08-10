@@ -1,8 +1,7 @@
-import type { ReactElement, RefObject } from 'react';
+import type { ReactElement } from 'react';
 
 export type DismissibleProps = {
   active?: boolean;
   onDismiss: () => void;
-  targetRef?: RefObject<HTMLElement>;
-  children?: ReactElement;
+  children: ReactElement;
 };
