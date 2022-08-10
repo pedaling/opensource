@@ -1,5 +1,6 @@
 export const stories = [
   require('../../vibrant-components/src/lib/Body/Body.stories.tsx'),
+  require('../../vibrant-components/src/lib/Dismissible/Dismissible.stories.tsx'),
   require('../../vibrant-components/src/lib/Display/Display.stories.tsx'),
   require('../../vibrant-components/src/lib/Divider/Divider.stories.tsx'),
   require('../../vibrant-components/src/lib/HStack/HStack.stories.tsx'),
