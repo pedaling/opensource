@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { useEffect } from 'react';
-import { ClickEvent, useGlobalEvent } from '@vibrant-ui/core';
+import { useGlobalEvent } from '@vibrant-ui/core';
+import type { ClickEvent } from '@vibrant-ui/core';
 import { getElementRect } from '@vibrant-ui/utils';
 import type { DismissibleProps } from './DismissibleProps';
 
