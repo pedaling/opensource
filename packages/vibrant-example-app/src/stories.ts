@@ -1,5 +1,9 @@
 export const stories = [
   require('../../vibrant-components/src/lib/Body/Body.stories.tsx'),
+  require('../../vibrant-components/src/lib/DateInput/DateInput.stories.tsx'),
+  require('../../vibrant-components/src/lib/Calendar/Calendar.stories.tsx'),
+  require('../../vibrant-components/src/lib/CalendarDateItem/CalendarDateItem.stories.tsx'),
+  require('../../vibrant-components/src/lib/DatePickerField/DatePickerField.stories.tsx'),
   require('../../vibrant-components/src/lib/Dismissible/Dismissible.stories.tsx'),
   require('../../vibrant-components/src/lib/Display/Display.stories.tsx'),
   require('../../vibrant-components/src/lib/Divider/Divider.stories.tsx'),
@@ -10,6 +14,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/Paper/Paper.stories.tsx'),
   require('../../vibrant-components/src/lib/Paragraph/Paragraph.stories.tsx'),
   require('../../vibrant-components/src/lib/Pressable/Pressable.stories.tsx'),
+  require('../../vibrant-components/src/lib/RangePickerField/RangePickerField.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectField/SelectField.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectOptionGroup/SelectOptionGroup.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectOptionItem/SelectOptionItem.stories.tsx'),

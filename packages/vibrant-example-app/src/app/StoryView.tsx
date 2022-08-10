@@ -15,6 +15,21 @@ export type StoryViewProps = {
   componentProps: Record<string, any>;
 };
 
+const parseProps = (props: any): any =>
+  Object.fromEntries(
+    Object.entries(props).map(([key, value]) => {
+      if (typeof value === 'string' && value.length === 24 && value[10] === 'T') {
+        return [key, new Date(value)];
+      }
+
+      if (typeof value === 'object' && value !== null) {
+        return [key, parseProps(value)];
+      }
+
+      return [key, value];
+    })
+  );
+
 const componentStories = stories.reduce((prev, story) => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
 
@@ -31,7 +46,11 @@ const componentStories = stories.reduce((prev, story) => {
       (prev, curr) => ({
         ...prev,
         [storyNameFromExport(curr)]: ({ children, ...restProps }: any) =>
-          createElement(stories[curr], { ...(storyMeta.args ?? {}), ...restProps }, children),
+          createElement(
+            stories[curr],
+            parseProps({ ...(storyMeta.args ?? {}), ...(stories[curr].args ?? {}), ...restProps }),
+            children
+          ),
       }),
       {}
     ),

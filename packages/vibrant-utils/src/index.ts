@@ -9,3 +9,5 @@ export { isRecord } from './lib/isRecord';
 export { uuidV4 } from './lib/uuidV4';
 export { useSafeDeps } from './lib/useSafeDeps';
 export { getElementRect } from './lib/getElementRect';
+export { toZeroPadded } from './lib/toZeroPadded';
+export { getDateString } from './lib/getDateString';

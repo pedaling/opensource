@@ -6,7 +6,7 @@ import { getOpacity } from './getOpacity';
 import { withPressableVariation } from './PressableProp';
 
 export const Pressable = withPressableVariation(
-  ({ overlayColor, onClick, interactions, disabled = false, children, ...restProps }) => {
+  ({ overlayColor, onClick, interactions, onFocus, onBlur, disabled = false, children, ...restProps }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isActivated, setIsActivated] = useState(false);
     const { textOpacity, overlayOpacity } = getOpacity({
@@ -25,12 +25,21 @@ export const Pressable = withPressableVariation(
           position="relative"
           overflowX="hidden"
           overflowY="hidden"
+          alignItems="stretch"
           disabled={disabled}
           onPress={() => onClick?.()}
           onPressIn={() => setIsActivated(true)}
           onPressOut={() => setIsActivated(false)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
+          onFocus={() => {
+            setIsFocused(true);
+
+            onFocus?.();
+          }}
+          onBlur={() => {
+            setIsFocused(false);
+
+            onBlur?.();
+          }}
         >
           {overlayColor && (
             <Transition animation={{ opacity: overlayOpacity }} duration={200}>

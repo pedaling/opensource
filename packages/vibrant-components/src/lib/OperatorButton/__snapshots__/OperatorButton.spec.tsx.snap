@@ -19,6 +19,10 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: hidden;
   cursor: pointer;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   z-index: 0;
   background-color: inherit;
   border-width: 0;

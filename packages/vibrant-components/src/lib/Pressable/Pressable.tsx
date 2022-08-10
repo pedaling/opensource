@@ -6,7 +6,17 @@ import { getOpacity } from './getOpacity';
 import { withPressableVariation } from './PressableProp';
 
 export const Pressable = withPressableVariation(
-  ({ as = 'button', children, overlayColor, onClick, interactions, disabled = false, ...restProps }) => {
+  ({
+    as = 'button',
+    children,
+    overlayColor,
+    onFocus,
+    onBlur,
+    onClick,
+    interactions,
+    disabled = false,
+    ...restProps
+  }) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [isActivated, setIsActivated] = useState(false);
@@ -28,12 +38,29 @@ export const Pressable = withPressableVariation(
           overflowX="hidden"
           overflowY="hidden"
           cursor={disabled ? 'default' : 'pointer'}
+          alignItems="stretch"
           zIndex={0}
-          onClick={() => !disabled && onClick?.()}
+          onClick={(event: { stopPropagation: () => void }) => {
+            if (disabled) {
+              return;
+            }
+
+            event.stopPropagation();
+
+            onClick?.();
+          }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
+          onFocus={() => {
+            setIsFocused(true);
+
+            onFocus?.();
+          }}
+          onBlur={() => {
+            setIsFocused(false);
+
+            onBlur?.();
+          }}
           onMouseDown={() => setIsActivated(true)}
           onMouseUp={() => setIsActivated(false)}
           {...(as === 'button'

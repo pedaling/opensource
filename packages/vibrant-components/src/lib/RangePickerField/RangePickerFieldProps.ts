@@ -1,0 +1,8 @@
+import { withVariation } from '@vibrant-ui/core';
+import type { BaseInputProps } from '../../types';
+
+export type RangePickerFieldProps = BaseInputProps<{ start: Date; end: Date }> & {
+  placeholder?: string;
+};
+
+export const withRangePickerFieldVariation = withVariation<RangePickerFieldProps>('RangePickerField')();
