@@ -7,13 +7,16 @@ export type DatePickerProps =
       range?: false;
       onDateRangeSelect?: never;
       onDateSelect: (date: Date) => void;
+      startDate?: never;
+      endDate?: never;
     }
   | {
       date?: never;
-      rangeDate: { start: Date | undefined; end: Date | undefined };
       range: true;
-      onDateRangeSelect: (days: { start: Date | undefined; end: Date | undefined }) => void;
+      onDateRangeSelect: (startDate: Date, endDate: Date | undefined) => void;
       onDateSelect?: never;
+      startDate: Date | undefined;
+      endDate: Date | undefined;
     };
 
 export const withDatePickerVariation = withVariation<DatePickerProps>('DatePicker')();

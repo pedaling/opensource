@@ -13,9 +13,9 @@ import { withDatePickerVariation } from './DatePickerProps';
 const DAY_NAMES = ['일', '월', '화', '수', '목', '금', '토'];
 
 export const DatePicker = withDatePickerVariation(
-  ({ date, rangeDate, onDateRangeSelect, range, onDateSelect, ...restProps }) => {
+  ({ date, startDate, endDate, onDateRangeSelect, range, onDateSelect, ...restProps }) => {
     const [displayMonth, setDisplayMonth] = useState(() => {
-      const initialDate = date ?? rangeDate?.start ?? new Date();
+      const initialDate = date ?? startDate ?? new Date();
 
       return new Date(initialDate.getFullYear(), initialDate.getMonth());
     });
@@ -59,48 +59,48 @@ export const DatePicker = withDatePickerVariation(
     const handleDateSelected = useCallback(
       (selectedDate: Date) => {
         if (range) {
-          if (rangeDate?.start) {
-            if (rangeDate?.end) {
-              return onDateRangeSelect?.({ start: selectedDate, end: undefined });
-            }
-
-            const startDate = rangeDate.start.getTime() > selectedDate.getTime() ? selectedDate : rangeDate.start;
-            const endDate = rangeDate.start.getTime() > selectedDate.getTime() ? rangeDate.start : selectedDate;
-
-            return onDateRangeSelect?.({ start: startDate, end: endDate });
+          if (startDate && endDate) {
+            return onDateRangeSelect?.(startDate, undefined);
           }
 
-          return onDateRangeSelect?.({ start: selectedDate, end: undefined });
+          if (startDate) {
+            const firstDate = startDate.getTime() > selectedDate.getTime() ? selectedDate : startDate;
+            const secondDate = startDate.getTime() > selectedDate.getTime() ? startDate : selectedDate;
+
+            return onDateRangeSelect?.(firstDate, secondDate);
+          }
+
+          return onDateRangeSelect?.(selectedDate, undefined);
         }
 
         onDateSelect?.(selectedDate);
       },
-      [onDateRangeSelect, onDateSelect, range, rangeDate?.end, rangeDate?.start]
+      [endDate, onDateRangeSelect, onDateSelect, range, startDate]
     );
 
     const getIsToday = useCallback((date: Date) => isSameDate(date, new Date()), [isSameDate]);
 
     const getRange = useCallback(
       (date: Date) => {
-        if (!rangeDate) {
+        if (!startDate && !endDate) {
           return false;
         }
 
-        if (rangeDate.start && isSameDate(rangeDate.start, date)) {
+        if (startDate && isSameDate(startDate, date)) {
           return 'start';
         }
 
-        if (rangeDate.end && isSameDate(rangeDate.end, date)) {
+        if (endDate && isSameDate(endDate, date)) {
           return 'end';
         }
 
-        if (!rangeDate.start || !rangeDate.end) {
+        if (!startDate || !endDate) {
           return false;
         }
 
-        return rangeDate.start.getTime() < date.getTime() && rangeDate.end.getTime() > date.getTime();
+        return startDate.getTime() < date.getTime() && endDate.getTime() > date.getTime();
       },
-      [isSameDate, rangeDate]
+      [endDate, isSameDate, startDate]
     );
 
     return (
@@ -148,7 +148,7 @@ export const DatePicker = withDatePickerVariation(
                           key={pickerDay.getTime()}
                           otherMonth={pickerDay.getMonth() !== displayMonth.getMonth()}
                           day={pickerDay}
-                          active={[rangeDate?.start, rangeDate?.end].some(date => date && isSameDate(date, pickerDay))}
+                          active={[startDate, endDate].some(date => date && isSameDate(date, pickerDay))}
                           today={getIsToday(pickerDay)}
                           onClick={handleDateSelected}
                           range={getRange(pickerDay)}

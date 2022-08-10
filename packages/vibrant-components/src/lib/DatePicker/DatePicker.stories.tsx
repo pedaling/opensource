@@ -13,10 +13,9 @@ export default {
 export const Basic: ComponentStory<typeof DatePicker> = props => <DatePicker {...props} />;
 
 export const Range: ComponentStory<typeof DatePicker> = props => <DatePicker {...props} />;
+
 Range.args = {
   range: true,
-  rangeDate: {
-    start: new Date('2022-08-02'),
-    end: new Date('2022-08-24'),
-  },
+  startDate: new Date('2022-08-02'),
+  endDate: new Date('2022-08-24'),
 };
