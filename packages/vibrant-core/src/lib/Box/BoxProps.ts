@@ -100,6 +100,7 @@ export type BoxElements =
   | 'nav'
   | 'path'
   | 'section'
+  | 'span'
   | 'stop'
   | 'svg'
   | 'ul';

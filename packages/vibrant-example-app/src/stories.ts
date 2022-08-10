@@ -15,6 +15,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/Paragraph/Paragraph.stories.tsx'),
   require('../../vibrant-components/src/lib/Pressable/Pressable.stories.tsx'),
   require('../../vibrant-components/src/lib/RangePickerField/RangePickerField.stories.tsx'),
+  require('../../vibrant-components/src/lib/SearchInput/SearchInput.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectField/SelectField.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectOptionGroup/SelectOptionGroup.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectOptionItem/SelectOptionItem.stories.tsx'),
