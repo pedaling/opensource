@@ -6,7 +6,6 @@ import { withNumericFieldVariation } from './NumericFieldProps';
 
 export const NumericField = withNumericFieldVariation(
   ({
-    innerRef,
     disabled,
     color,
     defaultValue,
@@ -20,7 +19,7 @@ export const NumericField = withNumericFieldVariation(
     tabIndex,
     ...restProps
   }) => {
-    const inputRef = useRef<HTMLInputElement>();
+    const inputRef = useRef<HTMLInputElement>(null);
     const [inputValue, setInputValue] = useState<number | undefined>(defaultValue);
 
     useEffect(() => {
@@ -62,20 +61,7 @@ export const NumericField = withNumericFieldVariation(
       <Box position="relative" width={128} height={38} {...restProps}>
         <Box<typeof UnstyledTextInput>
           base={UnstyledTextInput}
-          ref={(ref: HTMLInputElement) => {
-            inputRef.current = ref;
-            if (!innerRef) {
-              return;
-            }
-
-            if (typeof innerRef === 'function') {
-              innerRef(ref);
-
-              return;
-            }
-
-            innerRef.current = ref;
-          }}
+          ref={inputRef}
           type="number"
           px={38}
           value={inputValue?.toString() ?? ''}
