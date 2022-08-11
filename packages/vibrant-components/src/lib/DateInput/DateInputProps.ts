@@ -27,10 +27,12 @@ export const withDateInputVariation = withVariation<DateInputProps>('DateInput')
       default: {
         color: 'onView1',
         borderColor: 'outline1',
+        helperColor: 'onView2',
       },
       error: {
         color: 'error',
         borderColor: 'outlineError',
+        helperColor: 'error',
       },
     } as const,
   }),

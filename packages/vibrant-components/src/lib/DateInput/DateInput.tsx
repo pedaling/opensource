@@ -18,6 +18,7 @@ export const DateInput = withDateInputVariation(
     onClear,
     calendarOpened,
     onClick,
+    helperColor,
     color,
     disabled,
     borderColor,
@@ -69,9 +70,9 @@ export const DateInput = withDateInputVariation(
             <Icon.Calendar.Regular size={20} fill="onView2" />
           </HStack>
         </Box>
-        <Space height={8} />
+        <Space height={6} />
         {helperText ? (
-          <Body level={4} textAlign="left" color={color}>
+          <Body level={4} textAlign="left" color={helperColor}>
             {helperText}
           </Body>
         ) : null}
