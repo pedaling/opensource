@@ -94,6 +94,7 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   -ms-flex-negative: 1;
   flex-shrink: 1;
   font-family: Pretendard;
+  text-align: left;
   color: #0C0C0C;
   font-size: 0.625rem;
   font-weight: 500;

@@ -59,6 +59,7 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   font-family: Pretendard;
+  text-align: left;
   color: #7C7C7C;
   font-size: 1rem;
   font-weight: 700;

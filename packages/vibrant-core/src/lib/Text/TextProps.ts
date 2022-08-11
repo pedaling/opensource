@@ -31,5 +31,6 @@ export const shouldForwardProp = createShouldForwardProp(systemPropNames);
 export const interpolation = createInterpolation(systemProps, {
   display: 'flex',
   fontFamily: 'Pretendard',
+  textAlign: 'left',
   color: 'onColor',
 });
