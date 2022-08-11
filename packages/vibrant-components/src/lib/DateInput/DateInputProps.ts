@@ -48,6 +48,7 @@ export const withDateInputVariation = withVariation<DateInputProps>('DateInput')
       true: {
         backgroundColor: 'disable',
         borderColor: 'disableOutline',
+        helperColor: 'onView3',
       },
       false: {
         backgroundColor: 'surface3',
