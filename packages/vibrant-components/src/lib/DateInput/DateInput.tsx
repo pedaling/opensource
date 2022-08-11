@@ -54,7 +54,7 @@ export const DateInput = withDateInputVariation(
                       {label}
                     </Body>
                   ) : null}
-                  <Body level={2} color={value ? color : 'onView2'} textAlign="left">
+                  <Body level={2} color={color} textAlign="left">
                     {value || placeholder}
                   </Body>
                 </VStack>
