@@ -50,11 +50,11 @@ export const DateInput = withDateInputVariation(
         >
           <VStack spacing={4}>
             {isContentExists && label ? (
-              <Body level={6} color={color} textAlign="left">
+              <Body level={6} color={color}>
                 {label}
               </Body>
             ) : null}
-            <Body level={2} lineLimit={1} color={color} textAlign="left">
+            <Body level={2} lineLimit={1} color={color}>
               {value || label || placeholder}
             </Body>
           </VStack>
@@ -72,7 +72,7 @@ export const DateInput = withDateInputVariation(
         </Box>
         <Space height={6} />
         {helperText ? (
-          <Body level={4} textAlign="left" color={helperColor}>
+          <Body level={4} color={helperColor}>
             {helperText}
           </Body>
         ) : null}
