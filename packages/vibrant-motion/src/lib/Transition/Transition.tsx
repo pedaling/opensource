@@ -5,8 +5,8 @@ import { withTransformStyle } from '../withTransformStyle';
 import { withTransitionVariation } from './TransitionProp';
 
 export const Transition = withTransitionVariation(
-  ({ innerRef, children, style, animation, duration, ...restProps }) => {
-    const { animated, useSpring } = useReactSpring();
+  ({ innerRef, children, style, animation, duration, easing, ...restProps }) => {
+    const { animated, useSpring, easings } = useReactSpring();
 
     const AnimatedComponent = useMemo(
       () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
@@ -25,9 +25,10 @@ export const Transition = withTransitionVariation(
         to: currentStyle,
         config: {
           duration,
+          easing: easing && easings[easing],
         },
       }),
-      [duration, currentStyle]
+      [currentStyle, duration, easing, easings]
     );
 
     const [styles, springApi] = useSpring(() => ({ from: animation }));
