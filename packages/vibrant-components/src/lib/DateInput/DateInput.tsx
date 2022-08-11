@@ -13,8 +13,10 @@ export const DateInput = withDateInputVariation(
     innerRef,
     value,
     placeholder,
+    placeholderColor,
     state,
     label,
+    labelColor,
     onClear,
     calendarOpened,
     onClick,
@@ -45,16 +47,17 @@ export const DateInput = withDateInputVariation(
           disabled={disabled}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          height={50}
           borderRadius={2}
           {...restProps}
         >
           <VStack spacing={4}>
             {isContentExists && label ? (
-              <Body level={6} color={color}>
+              <Body level={6} color={labelColor}>
                 {label}
               </Body>
             ) : null}
-            <Body level={2} lineLimit={1} color={color}>
+            <Body level={2} lineLimit={1} color={value ? color : label ? labelColor : placeholderColor}>
               {value || label || placeholder}
             </Body>
           </VStack>
@@ -62,11 +65,11 @@ export const DateInput = withDateInputVariation(
 
         <Box position="absolute" top={15} right={15}>
           <HStack spacing={12}>
-            {!disabled && (
+            {!disabled && value ? (
               <Pressable onClick={onClear} as="button">
                 <Icon.CloseCircle.Fill size={20} fill="onView2" />
               </Pressable>
-            )}
+            ) : null}
             <Icon.Calendar.Regular size={20} fill="onView2" />
           </HStack>
         </Box>

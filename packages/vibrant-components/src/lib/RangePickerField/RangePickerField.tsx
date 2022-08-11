@@ -69,6 +69,7 @@ export const RangePickerField = withRangePickerFieldVariation(
     return (
       <Box position="relative" width="100%" height={50}>
         <DateInput
+          ref={inputRef}
           value={inputValue}
           onClick={openCalendar}
           disabled={disabled}
@@ -82,7 +83,6 @@ export const RangePickerField = withRangePickerFieldVariation(
         <Dismissible active={isCalendarOpened} onDismiss={handleDismiss}>
           <Box
             position="absolute"
-            top={56}
             left={0}
             hidden={!isCalendarOpened}
             {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}

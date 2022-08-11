@@ -3,9 +3,9 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 export type CalendarDateItemProps = {
   otherMonth: boolean;
   active: boolean;
-  day: Date;
+  date: Date;
   today: boolean;
-  onClick: (day: Date) => void;
+  onClick: (date: Date) => void;
   range: 'end' | 'start' | false | true;
 };
 

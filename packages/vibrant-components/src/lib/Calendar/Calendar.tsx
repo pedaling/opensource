@@ -120,7 +120,7 @@ export const Calendar = withCalendarVariation(
         {...restProps}
       >
         <VStack spacing={24}>
-          <HStack spacing={8} alignItems="center">
+          <HStack spacing={8} alignItems="center" mx={12}>
             <Pressable as="button" onClick={movePrevMonth}>
               <Icon.ChevronLeft.Regular size={16} />
             </Pressable>
@@ -155,7 +155,7 @@ export const Calendar = withCalendarVariation(
                         <CalenderDateItem
                           key={pickerDay.getTime()}
                           otherMonth={pickerDay.getMonth() !== displayMonth.getMonth()}
-                          day={pickerDay}
+                          date={pickerDay}
                           active={[startDate, endDate].some(date => date && isSameDate(date, pickerDay))}
                           today={getIsToday(pickerDay)}
                           onClick={handleDateSelected}
@@ -166,7 +166,7 @@ export const Calendar = withCalendarVariation(
                           key={pickerDay.getTime()}
                           otherMonth={pickerDay.getMonth() !== displayMonth.getMonth()}
                           active={date ? isSameDate(pickerDay, date) : false}
-                          day={pickerDay}
+                          date={pickerDay}
                           today={getIsToday(pickerDay)}
                           onClick={handleDateSelected}
                           range={false}
