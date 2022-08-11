@@ -88,6 +88,12 @@ const config: StorybookViteConfig & {
       as="style"
     />
     <link href="https://cdn.class101.net/fonts/pretendard-1.3.0/pretendard-dynamic-subset.css" rel="stylesheet" />
+    <link
+      href="https://cdn.class101.net/fonts/pretendard-1.3.0/pretendard-jp-dynamic-subset.css"
+      rel="preload"
+      as="style"
+    />
+    <link href="https://cdn.class101.net/fonts/pretendard-1.3.0/pretendard-jp-dynamic-subset.css" rel="stylesheet" />
   `,
   async viteFinal(viteConfig) {
     return mergeConfig(viteConfig, {

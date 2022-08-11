@@ -26,11 +26,13 @@ export const withDateInputVariation = withVariation<DateInputProps>('DateInput')
     variants: {
       default: {
         color: 'onView1',
+        labelColor: 'onView2',
         borderColor: 'outline1',
         helperColor: 'onView2',
       },
       error: {
-        color: 'error',
+        color: 'onView1',
+        labelColor: 'error',
         borderColor: 'outlineError',
         helperColor: 'error',
       },
@@ -47,12 +49,15 @@ export const withDateInputVariation = withVariation<DateInputProps>('DateInput')
     variants: {
       true: {
         color: 'onView3',
+        labelColor: 'onView3',
         backgroundColor: 'disable',
         borderColor: 'disableOutline',
         helperColor: 'onView3',
+        placeholderColor: 'onView3',
       },
       false: {
         backgroundColor: 'surface3',
+        placeholderColor: 'onView2',
       },
     } as const,
   })

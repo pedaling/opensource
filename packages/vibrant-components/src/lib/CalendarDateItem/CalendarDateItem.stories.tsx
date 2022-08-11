@@ -5,7 +5,7 @@ export default {
   title: 'CalendarDateItem',
   component: CalenderDateItem,
   args: {
-    day: new Date('2022-08-09'),
+    date: new Date('2022-08-09'),
     otherMonth: false,
     active: false,
     range: false,
