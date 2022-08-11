@@ -5,7 +5,7 @@ export default {
   title: 'DatePickerField',
   component: DatePickerField,
   args: {
-    placeholder: '0000-00-00',
+    placeholder: '0000/00/00',
     label: '날짜 선택',
   },
 } as ComponentMeta<typeof DatePickerField>;

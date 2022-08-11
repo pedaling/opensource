@@ -10,6 +10,7 @@ export type DateInputProps = {
   label?: string;
   placeholder?: string;
   calendarOpened?: boolean;
+  helperText?: string;
   state?: 'default' | 'error';
 };
 

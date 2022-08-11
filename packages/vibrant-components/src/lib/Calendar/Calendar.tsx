@@ -108,7 +108,7 @@ export const Calendar = withCalendarVariation(
     );
 
     return (
-      <Paper px={16} py={24} backgroundColor="surface2" width={320} elevationLevel={2} {...restProps}>
+      <Paper px={16} py={24} backgroundColor="surface2" width={320} elevationLevel={2} borderRadiusLevel={1} {...restProps}>
         <VStack spacing={24}>
           <HStack spacing={8} alignItems="center">
             <Pressable as="button" onClick={movePrevMonth}>

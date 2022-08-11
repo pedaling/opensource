@@ -6,8 +6,7 @@ import { DateInput } from '../DateInput';
 import { Dismissible } from '../Dismissible';
 import { withRangePickerFieldVariation } from './RangePickerFieldProps';
 
-const getRangeString = (start: Date, end?: Date) =>
-  `${getDateString(start, '/')} - ${end ? getDateString(end, '/') : ''}`;
+const getRangeString = (start: Date, end?: Date) => `${getDateString(start)} - ${end ? getDateString(end) : ''}`;
 
 export const RangePickerField = withRangePickerFieldVariation(
   ({ defaultValue, onValueChange, label, disabled, placeholder }) => {

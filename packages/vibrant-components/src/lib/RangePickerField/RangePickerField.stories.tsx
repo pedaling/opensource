@@ -6,7 +6,7 @@ export default {
   component: RangePickerField,
   args: {
     label: '범위 선택',
-    placeholder: '0000-00-00 ~ 0000-00-00',
+    placeholder: '0000/00/00 ~ 0000/00/00',
   },
 } as ComponentMeta<typeof RangePickerField>;
 
