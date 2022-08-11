@@ -67,6 +67,7 @@ export type TextInputProps = SystemProps & {
 
 export const interpolation = createInterpolation(systemProps, {
   display: 'flex',
+  boxSizing: 'border-box',
   backgroundColor: 'transparent',
   borderWidth: 0,
   color: 'onColor',
