@@ -7,4 +7,5 @@ export type SizingSystemProps = {
   height?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;
   minHeight?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;
   maxHeight?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content' | 'none'>;
+  boxSizing?: 'border-box';
 };

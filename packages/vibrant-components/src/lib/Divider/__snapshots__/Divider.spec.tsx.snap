@@ -15,6 +15,7 @@ exports[`<Divider /> when Divider with margin rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;

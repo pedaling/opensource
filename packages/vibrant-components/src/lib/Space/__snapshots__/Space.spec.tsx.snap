@@ -15,6 +15,7 @@ exports[`<Space /> when Space rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   width: 20px;
 }
 
@@ -38,6 +39,7 @@ exports[`<Space /> when hidden Space rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
 }
 
 <div>

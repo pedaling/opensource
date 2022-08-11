@@ -15,6 +15,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   width: 100%;
 }
 
@@ -32,6 +33,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -66,6 +68,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  box-sizing: border-box;
   margin-right: 20px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -99,6 +102,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  box-sizing: border-box;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -171,6 +175,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  box-sizing: border-box;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -237,6 +242,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  box-sizing: border-box;
   margin-right: 20px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -267,6 +273,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  box-sizing: border-box;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -307,6 +314,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  box-sizing: border-box;
   margin-right: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -331,6 +339,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;

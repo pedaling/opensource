@@ -24,4 +24,16 @@ const maxHeightProp = createSystemProp({
   property: 'maxHeight',
 });
 
-export const sizingSystemProps = [widthProp, minWidthProp, maxWidthProp, heightProp, minHeightProp, maxHeightProp];
+const boxSizingProp = createSystemProp({
+  property: 'boxSizing',
+});
+
+export const sizingSystemProps = [
+  widthProp,
+  minWidthProp,
+  maxWidthProp,
+  heightProp,
+  minHeightProp,
+  maxHeightProp,
+  boxSizingProp,
+];

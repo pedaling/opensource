@@ -15,6 +15,7 @@ exports[`<Box /> as prop when empty box created match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
 }
 
 <div>
@@ -39,6 +40,7 @@ exports[`<Box /> base prop when function component box created match snapshot 1`
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
 }
 
 <div>
@@ -66,6 +68,7 @@ exports[`<Box /> default style when styled box created match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   width: 300px;
   height: 300px;
   background-color: red;
@@ -93,6 +96,7 @@ exports[`<Box /> default style when themed box created match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   width: 300px;
   height: 200px;
   background-color: orange;

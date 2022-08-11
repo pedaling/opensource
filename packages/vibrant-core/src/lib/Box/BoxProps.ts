@@ -124,6 +124,6 @@ export type BoxProps<
     children?: ReactElementChild | ReactElementChild[];
   };
 
-export const interpolation = createInterpolation(systemProps, { display: 'flex' });
+export const interpolation = createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box' });
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
