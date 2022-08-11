@@ -14,7 +14,3 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
-
-global.wrap = children => (
-  <VibrantProvider dependencies={{ reactSpringModule: require('@react-spring/web') }}>{children}</VibrantProvider>
-);
