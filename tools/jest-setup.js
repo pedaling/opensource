@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+import { VibrantProvider } from '../packages/vibrant-core/src';
+
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
   value: jest.fn().mockImplementation(query => ({
@@ -12,3 +14,7 @@ Object.defineProperty(window, 'matchMedia', {
     dispatchEvent: jest.fn(),
   })),
 });
+
+global.wrap = children => (
+  <VibrantProvider dependencies={{ reactSpringModule: require('@react-spring/web') }}>{children}</VibrantProvider>
+);
