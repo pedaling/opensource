@@ -19,4 +19,4 @@ export { Pressable } from './lib/Pressable';
 export { createShadowsComponent } from './lib/createShadowsComponent';
 export { DatePickerField } from './lib/DatePickerField';
 export { RangePickerField } from './lib/RangePickerField';
-export { calendarLocale } from './lib/Calendar';
+export { calendarTranslation } from './lib/Calendar';

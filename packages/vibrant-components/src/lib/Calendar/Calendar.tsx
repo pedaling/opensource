@@ -13,7 +13,7 @@ import { withCalendarVariation } from './CalendarProps';
 export const Calendar = withCalendarVariation(
   ({ date, startDate, endDate, onDateRangeSelect, range, onDateSelect, ...restProps }) => {
     const {
-      translation: { calendar: calendarTranslation },
+      translations: { calendar: calendarTranslation },
     } = useConfig();
 
     const [displayMonth, setDisplayMonth] = useState(() => {

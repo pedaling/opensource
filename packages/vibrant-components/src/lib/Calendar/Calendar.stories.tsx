@@ -2,7 +2,7 @@ import type { ComponentProps, FC } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ConfigProvider } from '@vibrant-ui/core';
 import { Calendar } from './Calendar';
-import { calendarLocale } from '.';
+import { calendarTranslation } from '.';
 
 export default {
   title: 'Calendar',
@@ -26,7 +26,7 @@ const LocalizedCalendar: FC<ComponentProps<typeof Calendar> & { locale?: 'en' | 
   locale = 'ko',
   ...props
 }) => (
-  <ConfigProvider translation={{ calendar: calendarLocale[locale] }}>
+  <ConfigProvider translations={{ calendar: calendarTranslation[locale] }}>
     <Calendar {...props} />
   </ConfigProvider>
 );

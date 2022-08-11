@@ -1,2 +1,2 @@
 export { Calendar } from './Calendar';
-export * as calendarLocale from './locale';
+export * as calendarTranslation from './translation';

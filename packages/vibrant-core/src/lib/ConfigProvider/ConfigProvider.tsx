@@ -31,12 +31,12 @@ export type DependencyName = keyof Dependencies;
 
 type ConfigContextValue = {
   dependencies: Dependencies;
-  translation: Translation;
+  translations: Translation;
 };
 
 const ConfigContext = createContext<ConfigContextValue>({
   dependencies: {},
-  translation: {
+  translations: {
     calendar: {
       title: '{year}년 {month}',
       days: ['일', '월', '화', '수', '목', '금', '토'],
@@ -48,25 +48,25 @@ const ConfigContext = createContext<ConfigContextValue>({
 export type DependencyProviderProps = {
   children: ReactElementChild;
   dependencies?: Dependencies;
-  translation?: Partial<Translation>;
+  translations?: Partial<Translation>;
 };
 
-export const ConfigProvider: FC<DependencyProviderProps> = ({ children, dependencies, translation }) => {
+export const ConfigProvider: FC<DependencyProviderProps> = ({ children, dependencies, translations }) => {
   const config = useConfig();
 
   const mergedConfig = useMemo<ConfigContextValue>(
     () => ({
       ...config,
-      translation: {
-        ...config.translation,
-        ...translation,
+      translations: {
+        ...config.translations,
+        ...translations,
       },
       dependencies: {
         ...config.dependencies,
         ...dependencies,
       },
     }),
-    [config, dependencies, translation]
+    [config, dependencies, translations]
   );
 
   return <ConfigContext.Provider value={mergedConfig}>{children}</ConfigContext.Provider>;
