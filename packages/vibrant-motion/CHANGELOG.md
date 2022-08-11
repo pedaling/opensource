@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.3.7...vibrant-motion-0.4.0) (2022-08-11)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.9.0`
+* `vibrant-utils` updated to version `0.5.0`
+* `vibrant-theme` updated to version `0.5.1`
+
+### Features
+
+* support localization to Calendar ([#180](https://github.com/pedaling/opensource/issues/180)) ([b3a1ec2](https://github.com/pedaling/opensource/commit/b3a1ec266ed5fa4aaaac9b5b41868529bbbfc54c))
+
+
+### Bug Fixes
+
+* disable snapshot on Motion and Transition ([#164](https://github.com/pedaling/opensource/issues/164)) ([1bdfb9a](https://github.com/pedaling/opensource/commit/1bdfb9ab3a8d6b2a93336b156d8ba68ee6ca688d))
+* react-spring을 ExternalDependency에서 주입받도록 한다 ([#178](https://github.com/pedaling/opensource/issues/178)) ([5de8a2c](https://github.com/pedaling/opensource/commit/5de8a2c841edb29805e81820aae2fe3127f6a405))
+
 ### [0.3.7](https://github.com/pedaling/opensource/compare/vibrant-motion-0.3.6...vibrant-motion-0.3.7) (2022-08-04)
 
 ### Dependency Updates

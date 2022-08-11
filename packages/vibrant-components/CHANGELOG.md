@@ -2,6 +2,38 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.6.0...vibrant-components-0.7.0) (2022-08-11)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.5.1`
+* `vibrant-utils` updated to version `0.5.0`
+* `vibrant-core` updated to version `0.9.0`
+* `vibrant-icons` updated to version `0.4.0`
+* `vibrant-motion` updated to version `0.4.0`
+
+### Features
+
+* 글로벌 이벤트를 관리하는 GlobalEventProvider와 Dismissible 컴포넌트를 추가한다. [WP-2666] ([#174](https://github.com/pedaling/opensource/issues/174)) ([993bdbd](https://github.com/pedaling/opensource/commit/993bdbdc2161381ec57faa31fadf5405ae7670df))
+* add box-sizing default prop to Box, Input ([#183](https://github.com/pedaling/opensource/issues/183)) ([4b5914c](https://github.com/pedaling/opensource/commit/4b5914c4dd2e39858aea28eb730325313355e902))
+* add DatePickerField, RangePickerField ([#172](https://github.com/pedaling/opensource/issues/172)) ([6e56b67](https://github.com/pedaling/opensource/commit/6e56b6759280f7fd83469fc8081f659c7301bfd6))
+* add label, state, helperText prop to DateInput ([#176](https://github.com/pedaling/opensource/issues/176)) ([7cad1d9](https://github.com/pedaling/opensource/commit/7cad1d9ca3c6ec669c6b5bd14945bdff06dc648e))
+* add textAlign left prop to Text component ([#184](https://github.com/pedaling/opensource/issues/184)) ([9deb9e2](https://github.com/pedaling/opensource/commit/9deb9e27479a4f828f98ecee38c02eabf921bcbf))
+* support localization to Calendar ([#180](https://github.com/pedaling/opensource/issues/180)) ([b3a1ec2](https://github.com/pedaling/opensource/commit/b3a1ec266ed5fa4aaaac9b5b41868529bbbfc54c))
+* **vibrant-components:** add autoFocus, onSubmit prop to UnstyledTextInput component ([#159](https://github.com/pedaling/opensource/issues/159)) ([54a54ec](https://github.com/pedaling/opensource/commit/54a54ec4232ef3aadc40afafade68c5a6fb73942))
+* **vibrant-components:** add SearchInput component ([#163](https://github.com/pedaling/opensource/issues/163)) ([af62b81](https://github.com/pedaling/opensource/commit/af62b81d7a57689e59aa85b313c64c72f5e55ec0))
+* **vibrant-components:** visible Calendar on remain area ([#181](https://github.com/pedaling/opensource/issues/181)) ([9f15ab8](https://github.com/pedaling/opensource/commit/9f15ab82ac1709ed2b1ec022684aae9715d83a2c))
+* **vibrant-core:** add overflow systemProp ([#167](https://github.com/pedaling/opensource/issues/167)) ([17b3ad5](https://github.com/pedaling/opensource/commit/17b3ad5fea5ce8ca9459f14960a8ac11cbd317ac))
+* **vibrant-core:** add Text component to core library ([#173](https://github.com/pedaling/opensource/issues/173)) ([6d22716](https://github.com/pedaling/opensource/commit/6d22716e0fc3d986a993cd593553e058abd76450))
+* **vibrant-core:** add text systemProp ([#166](https://github.com/pedaling/opensource/issues/166)) ([b05a0c8](https://github.com/pedaling/opensource/commit/b05a0c88db47744de8ca6f7f1d5bfef836d49586))
+
+
+### Bug Fixes
+
+* add z-index to SelectOptionGroup ([#165](https://github.com/pedaling/opensource/issues/165)) ([14b2c66](https://github.com/pedaling/opensource/commit/14b2c660524977295669f5e7534133949ac4fdb5))
+* DatePicker 디자인 QA를 반영한다 ([#185](https://github.com/pedaling/opensource/issues/185)) ([17b9cfb](https://github.com/pedaling/opensource/commit/17b9cfb9cd59879b8abe10297f73cecaa4582a75))
+* require backgroundColor when elevationLevel passed on Paper ([#168](https://github.com/pedaling/opensource/issues/168)) ([7d307bd](https://github.com/pedaling/opensource/commit/7d307bdb28f812a9b3d4780278e2c1eb75da86dd))
+
 ## [0.6.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.5.3...vibrant-components-0.6.0) (2022-08-04)
 
 ### Dependency Updates

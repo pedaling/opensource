@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.3.0...vibrant-icons-0.4.0) (2022-08-11)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.9.0`
+* `vibrant-utils` updated to version `0.5.0`
+
+### Features
+
+* 스토리북에서 네이티브를 지원한다 ([#162](https://github.com/pedaling/opensource/issues/162)) ([96b6d3f](https://github.com/pedaling/opensource/commit/96b6d3f5b17ea9a7983947f0b50ae2fa3ca1d99a))
+* add box-sizing default prop to Box, Input ([#183](https://github.com/pedaling/opensource/issues/183)) ([4b5914c](https://github.com/pedaling/opensource/commit/4b5914c4dd2e39858aea28eb730325313355e902))
+
 ## [0.3.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.2.7...vibrant-icons-0.3.0) (2022-08-04)
 
 ### Dependency Updates

@@ -2,6 +2,32 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.8.0...vibrant-core-0.9.0) (2022-08-11)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.5.0`
+* `vibrant-theme` updated to version `0.5.1`
+
+### Features
+
+* 글로벌 이벤트를 관리하는 GlobalEventProvider와 Dismissible 컴포넌트를 추가한다. [WP-2666] ([#174](https://github.com/pedaling/opensource/issues/174)) ([993bdbd](https://github.com/pedaling/opensource/commit/993bdbdc2161381ec57faa31fadf5405ae7670df))
+* add box-sizing default prop to Box, Input ([#183](https://github.com/pedaling/opensource/issues/183)) ([4b5914c](https://github.com/pedaling/opensource/commit/4b5914c4dd2e39858aea28eb730325313355e902))
+* add textAlign left prop to Text component ([#184](https://github.com/pedaling/opensource/issues/184)) ([9deb9e2](https://github.com/pedaling/opensource/commit/9deb9e27479a4f828f98ecee38c02eabf921bcbf))
+* support localization to Calendar ([#180](https://github.com/pedaling/opensource/issues/180)) ([b3a1ec2](https://github.com/pedaling/opensource/commit/b3a1ec266ed5fa4aaaac9b5b41868529bbbfc54c))
+* **vibrant-components:** add SearchInput component ([#163](https://github.com/pedaling/opensource/issues/163)) ([af62b81](https://github.com/pedaling/opensource/commit/af62b81d7a57689e59aa85b313c64c72f5e55ec0))
+* **vibrant-components:** visible Calendar on remain area ([#181](https://github.com/pedaling/opensource/issues/181)) ([9f15ab8](https://github.com/pedaling/opensource/commit/9f15ab82ac1709ed2b1ec022684aae9715d83a2c))
+* **vibrant-core:** add overflow systemProp ([#167](https://github.com/pedaling/opensource/issues/167)) ([17b3ad5](https://github.com/pedaling/opensource/commit/17b3ad5fea5ce8ca9459f14960a8ac11cbd317ac))
+* **vibrant-core:** add Text component to core library ([#173](https://github.com/pedaling/opensource/issues/173)) ([6d22716](https://github.com/pedaling/opensource/commit/6d22716e0fc3d986a993cd593553e058abd76450))
+* **vibrant-core:** add text systemProp ([#166](https://github.com/pedaling/opensource/issues/166)) ([b05a0c8](https://github.com/pedaling/opensource/commit/b05a0c88db47744de8ca6f7f1d5bfef836d49586))
+* **vibrant-core:** add TextInput component to core library ([#175](https://github.com/pedaling/opensource/issues/175)) ([2003510](https://github.com/pedaling/opensource/commit/200351038c607b59ce44974e7cd9951fb469ce70))
+
+
+### Bug Fixes
+
+* add z-index to SelectOptionGroup ([#165](https://github.com/pedaling/opensource/issues/165)) ([14b2c66](https://github.com/pedaling/opensource/commit/14b2c660524977295669f5e7534133949ac4fdb5))
+* react-spring을 ExternalDependency에서 주입받도록 한다 ([#178](https://github.com/pedaling/opensource/issues/178)) ([5de8a2c](https://github.com/pedaling/opensource/commit/5de8a2c841edb29805e81820aae2fe3127f6a405))
+
 ## [0.8.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.7.2...vibrant-core-0.8.0) (2022-08-04)
 
 ### Dependency Updates

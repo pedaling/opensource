@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.4...utils-eslint-config-0.3.0) (2022-08-11)
+
+
+### Features
+
+* **vibrant-core:** add TextInput component to core library ([#175](https://github.com/pedaling/opensource/issues/175)) ([2003510](https://github.com/pedaling/opensource/commit/200351038c607b59ce44974e7cd9951fb469ce70))
+
 ### [0.2.4](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.3...utils-eslint-config-0.2.4) (2022-08-04)
 
 ### [0.2.3](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.2.2...utils-eslint-config-0.2.3) (2022-07-29)
