@@ -8,6 +8,7 @@ export type PressableProps = {
   as?: 'button' | 'div' | 'li';
   disabled?: boolean;
   children?: ReactElement;
+  cursor?: 'default' | 'pointer';
   onClick?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;

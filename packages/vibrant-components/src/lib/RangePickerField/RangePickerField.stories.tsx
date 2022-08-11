@@ -5,7 +5,8 @@ export default {
   title: 'RangePickerField',
   component: RangePickerField,
   args: {
-    placeholder: '날짜 선택',
+    label: '범위 선택',
+    placeholder: '0000/00/00 ~ 0000/00/00',
   },
 } as ComponentMeta<typeof RangePickerField>;
 

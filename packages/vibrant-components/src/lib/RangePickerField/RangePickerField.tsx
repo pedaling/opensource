@@ -6,17 +6,23 @@ import { DateInput } from '../DateInput';
 import { Dismissible } from '../Dismissible';
 import { withRangePickerFieldVariation } from './RangePickerFieldProps';
 
-const getRangeString = (start: Date, end?: Date) =>
-  `${getDateString(start, '/')} - ${end ? getDateString(end, '/') : ''}`;
+const getRangeString = (start: Date, end?: Date) => `${getDateString(start)} - ${end ? getDateString(end) : ''}`;
 
 export const RangePickerField = withRangePickerFieldVariation(
-  ({ defaultValue, onValueChange, disabled, placeholder }) => {
+  ({ defaultValue, onValueChange, label, disabled, placeholder, helperText, state }) => {
     const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
     const [inputValue, setInputValue] = useState(() =>
       defaultValue ? getRangeString(defaultValue.start, defaultValue.end) : ''
     );
     const onValueChangeRef = useSafeDeps(onValueChange);
+
+    const handleDismiss = () => {
+      setIsCalendarOpened(false);
+      if (!value?.end) {
+        setValue(undefined);
+      }
+    };
 
     useEffect(() => {
       if (!defaultValue) {
@@ -53,9 +59,12 @@ export const RangePickerField = withRangePickerFieldVariation(
           disabled={disabled}
           onClear={() => setValue(undefined)}
           placeholder={placeholder}
+          label={label}
           calendarOpened={isCalendarOpened}
+          helperText={helperText}
+          state={state}
         />
-        <Dismissible active={isCalendarOpened} onDismiss={() => setIsCalendarOpened(false)}>
+        <Dismissible active={isCalendarOpened} onDismiss={handleDismiss}>
           <Box position="absolute" top={56} left={0} hidden={!isCalendarOpened}>
             <Calendar
               range={true}
