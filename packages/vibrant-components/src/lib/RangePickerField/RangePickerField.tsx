@@ -17,6 +17,13 @@ export const RangePickerField = withRangePickerFieldVariation(
     );
     const onValueChangeRef = useSafeDeps(onValueChange);
 
+    const handleDismiss = () => {
+      setIsCalendarOpened(false);
+      if (!value?.start) {
+        setValue(undefined);
+      }
+    };
+
     useEffect(() => {
       if (!defaultValue) {
         return;
@@ -57,7 +64,7 @@ export const RangePickerField = withRangePickerFieldVariation(
           helperText={helperText}
           state={state}
         />
-        <Dismissible active={isCalendarOpened} onDismiss={() => setIsCalendarOpened(false)}>
+        <Dismissible active={isCalendarOpened} onDismiss={handleDismiss}>
           <Box position="absolute" top={56} left={0} hidden={!isCalendarOpened}>
             <Calendar
               range={true}
