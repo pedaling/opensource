@@ -5,6 +5,7 @@ exports[`Native <Box /> as prop when empty box created match snapshot 1`] = `
   style={
     Object {
       "alignContent": "stretch",
+      "boxSizing": "border-box",
       "display": "flex",
       "flexDirection": "column",
       "flexShrink": 1,
@@ -31,6 +32,7 @@ exports[`Native <Box /> base prop when Pressable box created match snapshot 1`] 
   style={
     Object {
       "alignContent": "stretch",
+      "boxSizing": "border-box",
       "display": "flex",
       "flexDirection": "column",
       "flexShrink": 1,
@@ -44,6 +46,7 @@ exports[`Native <Box /> default style when styled box created match snapshot 1`]
   style={
     Object {
       "alignContent": "stretch",
+      "boxSizing": "border-box",
       "display": "flex",
       "flexDirection": "column",
       "flexShrink": 1,

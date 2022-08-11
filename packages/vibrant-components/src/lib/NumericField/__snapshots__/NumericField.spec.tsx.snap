@@ -15,6 +15,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   position: relative;
   width: 128px;
   height: 38px;
@@ -34,6 +35,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   font-family: Pretendard;
   font-size: 0.875rem;
   font-weight: 400;
@@ -56,6 +58,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   padding-left: 38px;
   padding-right: 38px;
   width: 100%;
@@ -116,6 +119,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   position: absolute;
   top: 4px;
   left: 4px;
@@ -136,6 +140,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -161,6 +166,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   padding: 7px;
   border-width: 0;
   border-radius: 2px;
@@ -181,6 +187,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   position: absolute;
   z-index: -1;
   left: 0;
@@ -204,6 +211,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   width: 16px;
   height: 16px;
   fill: #0C0C0C;
@@ -223,6 +231,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
 }
 
 .emotion-7 {
@@ -239,6 +248,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   position: absolute;
   top: 4px;
   right: 4px;

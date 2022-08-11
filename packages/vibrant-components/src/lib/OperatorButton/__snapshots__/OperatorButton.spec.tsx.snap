@@ -15,6 +15,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -40,6 +41,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   padding: 7px;
   border-width: 0;
   border-radius: 2px;
@@ -60,6 +62,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   position: absolute;
   z-index: -1;
   left: 0;
@@ -83,6 +86,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
   width: 16px;
   height: 16px;
   fill: #0C0C0C;
@@ -102,6 +106,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  box-sizing: border-box;
 }
 
 <div>
