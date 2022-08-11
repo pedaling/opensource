@@ -24,7 +24,7 @@ export const DateInput = withDateInputVariation(
     ...restProps
   }) => {
     const [isFocused, setIsFocused] = useState(false);
-    const isContentExists = Boolean(value || placeholder);
+    const isContentExists = Boolean(value);
 
     return (
       <VStack width="100%" spacing={6}>
@@ -37,7 +37,7 @@ export const DateInput = withDateInputVariation(
           borderColor={(isFocused || calendarOpened) && state !== 'error' ? 'outlineNeutral' : borderColor}
           typography="body2"
           p={15}
-          py={isContentExists && label ? 7 : 15}
+          py={isContentExists && label ? 7 : 14}
           onClick={onClick}
           disabled={disabled}
           onFocus={() => setIsFocused(true)}
@@ -47,22 +47,16 @@ export const DateInput = withDateInputVariation(
         >
           <HStack alignItems="center" spacing={12}>
             <Box flexGrow={1}>
-              {isContentExists ? (
-                <VStack spacing={4}>
-                  {label ? (
-                    <Body level={6} color={color} textAlign="left">
-                      {label}
-                    </Body>
-                  ) : null}
-                  <Body level={2} color={color} textAlign="left">
-                    {value || placeholder}
+              <VStack spacing={4}>
+                {isContentExists && label ? (
+                  <Body level={6} color={color} textAlign="left">
+                    {label}
                   </Body>
-                </VStack>
-              ) : (
+                ) : null}
                 <Body level={2} color={color} textAlign="left">
-                  {label}
+                  {value || label || placeholder}
                 </Body>
-              )}
+              </VStack>
             </Box>
             {!disabled && (
               <Pressable as="button" onClick={onClear}>
