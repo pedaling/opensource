@@ -7,7 +7,7 @@ import { Dismissible } from '../Dismissible';
 import { withDatePickerFieldVariation } from './DatePickerFieldProps';
 
 export const DatePickerField = withDatePickerFieldVariation(
-  ({ defaultValue, disabled, onValueChange, placeholder }) => {
+  ({ defaultValue, disabled, label, state, onValueChange, placeholder }) => {
     const [value, setValue] = useState(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
     const [inputValue, setInputValue] = useState(defaultValue ? getDateString(defaultValue) : '');
@@ -42,6 +42,8 @@ export const DatePickerField = withDatePickerFieldVariation(
           onClear={() => setValue(undefined)}
           placeholder={placeholder}
           calendarOpened={isCalendarOpened}
+          label={label}
+          state={state}
         />
         <Dismissible active={isCalendarOpened} onDismiss={() => setIsCalendarOpened(false)}>
           <Box position="absolute" top={56} left={0} hidden={!isCalendarOpened}>

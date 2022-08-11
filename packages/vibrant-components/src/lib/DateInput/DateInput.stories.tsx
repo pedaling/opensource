@@ -6,6 +6,8 @@ export default {
   component: DateInput,
   args: {
     value: '2022-08-01',
+    state: 'default',
+    label: '날짜를 입력해주세요',
   },
 } as ComponentMeta<typeof DateInput>;
 

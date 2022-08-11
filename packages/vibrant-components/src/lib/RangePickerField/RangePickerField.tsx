@@ -10,7 +10,7 @@ const getRangeString = (start: Date, end?: Date) =>
   `${getDateString(start, '/')} - ${end ? getDateString(end, '/') : ''}`;
 
 export const RangePickerField = withRangePickerFieldVariation(
-  ({ defaultValue, onValueChange, disabled, placeholder }) => {
+  ({ defaultValue, onValueChange, label, disabled, placeholder }) => {
     const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
     const [inputValue, setInputValue] = useState(() =>
@@ -53,6 +53,7 @@ export const RangePickerField = withRangePickerFieldVariation(
           disabled={disabled}
           onClear={() => setValue(undefined)}
           placeholder={placeholder}
+          label={label}
           calendarOpened={isCalendarOpened}
         />
         <Dismissible active={isCalendarOpened} onDismiss={() => setIsCalendarOpened(false)}>
