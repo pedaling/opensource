@@ -36,3 +36,4 @@ export { useResponsiveValue } from './lib/useResponsiveValue';
 export { VibrantProvider } from './lib/VibrantProvider';
 export { useGlobalEvent, GlobalEventProvider } from './lib/GlobalEventProvider';
 export type { ClickEvent } from './lib/GlobalEventProvider';
+export { getElementPosition } from './lib/getElementPosition';

@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { useEffect, useRef, useState } from 'react';
+import { Box, getElementPosition } from '@vibrant-ui/core';
+import type { TargetElement } from '@vibrant-ui/utils';
 import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
 import { Calendar } from '../Calendar';
 import { DateInput } from '../DateInput';
@@ -16,6 +17,20 @@ export const RangePickerField = withRangePickerFieldVariation(
       defaultValue ? getRangeString(defaultValue.start, defaultValue.end) : ''
     );
     const onValueChangeRef = useSafeDeps(onValueChange);
+    const inputRef = useRef<TargetElement>(null);
+    const [calendarPosition, setCalendarPosition] = useState('bottom');
+
+    const openCalendar = async () => {
+      if (!inputRef.current) {
+        return;
+      }
+
+      const { top, bottom } = await getElementPosition(inputRef.current);
+
+      setCalendarPosition(top > bottom ? 'top' : 'bottom');
+
+      setIsCalendarOpened(true);
+    };
 
     const handleDismiss = () => {
       setIsCalendarOpened(false);
@@ -55,7 +70,7 @@ export const RangePickerField = withRangePickerFieldVariation(
       <Box position="relative" width="100%" height={50}>
         <DateInput
           value={inputValue}
-          onClick={() => setIsCalendarOpened(true)}
+          onClick={openCalendar}
           disabled={disabled}
           onClear={() => setValue(undefined)}
           placeholder={placeholder}
@@ -65,7 +80,13 @@ export const RangePickerField = withRangePickerFieldVariation(
           state={state}
         />
         <Dismissible active={isCalendarOpened} onDismiss={handleDismiss}>
-          <Box position="absolute" top={56} left={0} hidden={!isCalendarOpened}>
+          <Box
+            position="absolute"
+            top={56}
+            left={0}
+            hidden={!isCalendarOpened}
+            {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
+          >
             <Calendar
               range={true}
               startDate={value?.start}
