@@ -1,10 +1,10 @@
 import type * as ReactSpringModule from 'react-spring';
-import { useDependency } from '@vibrant-ui/core';
+import { useConfig } from '@vibrant-ui/core';
 
 export const useReactSpring = (): typeof ReactSpringModule => {
   const {
     dependencies: { reactSpringModule },
-  } = useDependency();
+  } = useConfig();
   const module = reactSpringModule;
 
   if (!module) {

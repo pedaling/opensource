@@ -1,15 +1,15 @@
 import type { ComponentType, FC, ReactNode } from 'react';
 import { forwardRef } from 'react';
-import type { ExternalComponentName } from '../DependencyProvider';
-import { useDependency } from '../DependencyProvider';
+import type { DependencyName } from '../ConfigProvider';
+import { useConfig } from '../ConfigProvider';
 
 type ExternalComponentProps = {
-  name: ExternalComponentName;
+  name: DependencyName;
   children?: ReactNode;
 };
 
 export const ExternalComponent: FC<ExternalComponentProps> = forwardRef(({ name, ...restProps }, ref) => {
-  const { dependencies } = useDependency();
+  const { dependencies } = useConfig();
 
   const Component = dependencies[name] as ComponentType<any>;
 

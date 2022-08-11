@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { CalenderDateItem } from '../CalendarDateItem';
@@ -10,10 +10,12 @@ import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { withCalendarVariation } from './CalendarProps';
 
-const DAY_NAMES = ['일', '월', '화', '수', '목', '금', '토'];
-
 export const Calendar = withCalendarVariation(
   ({ date, startDate, endDate, onDateRangeSelect, range, onDateSelect, ...restProps }) => {
+    const {
+      translation: { calendar: calendarTranslation },
+    } = useConfig();
+
     const [displayMonth, setDisplayMonth] = useState(() => {
       const initialDate = date ?? startDate ?? new Date();
 
@@ -124,7 +126,9 @@ export const Calendar = withCalendarVariation(
             </Pressable>
             <VStack flex={1}>
               <Title level={5} textAlign="center">
-                {displayMonth.getFullYear()}년 {displayMonth.getMonth() + 1}월
+                {calendarTranslation.title
+                  .replace('{year}', displayMonth.getFullYear().toString())
+                  .replace('{month}', calendarTranslation.months[displayMonth.getMonth()].toString())}
               </Title>
             </VStack>
             <Pressable as="button" onClick={moveNextMonth}>
@@ -133,7 +137,7 @@ export const Calendar = withCalendarVariation(
           </HStack>
           <VStack spacing={8}>
             <HStack spacing={4}>
-              {DAY_NAMES.map(name => (
+              {calendarTranslation.days.map(name => (
                 <Box flex={1} key={name} justifyContent="center" height={40}>
                   <Body level={3} textAlign="center">
                     {name}
