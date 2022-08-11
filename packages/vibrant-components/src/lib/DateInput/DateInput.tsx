@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { VStack } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
+import { Space } from '../Space';
+import { VStack } from '../VStack';
 import { withDateInputVariation } from './DateInputProps';
 
 export const DateInput = withDateInputVariation(
@@ -27,7 +28,7 @@ export const DateInput = withDateInputVariation(
     const isContentExists = Boolean(value);
 
     return (
-      <VStack width="100%" spacing={6}>
+      <Box width="100%" position="relative">
         <Box<typeof Pressable>
           ref={innerRef}
           base={Pressable}
@@ -38,6 +39,7 @@ export const DateInput = withDateInputVariation(
           typography="body2"
           p={15}
           py={isContentExists && label ? 7 : 14}
+          pr={disabled ? 48 : 80}
           onClick={onClick}
           disabled={disabled}
           onFocus={() => setIsFocused(true)}
@@ -45,33 +47,35 @@ export const DateInput = withDateInputVariation(
           borderRadius={2}
           {...restProps}
         >
-          <HStack alignItems="center" spacing={12}>
-            <Box flexGrow={1}>
-              <VStack spacing={4}>
-                {isContentExists && label ? (
-                  <Body level={6} color={color} textAlign="left">
-                    {label}
-                  </Body>
-                ) : null}
-                <Body level={2} color={color} textAlign="left">
-                  {value || label || placeholder}
-                </Body>
-              </VStack>
-            </Box>
+          <VStack spacing={4}>
+            {isContentExists && label ? (
+              <Body level={6} color={color} textAlign="left">
+                {label}
+              </Body>
+            ) : null}
+            <Body level={2} lineLimit={1} color={color} textAlign="left">
+              {value || label || placeholder}
+            </Body>
+          </VStack>
+        </Box>
+
+        <Box position="absolute" top={15} right={15}>
+          <HStack spacing={12}>
             {!disabled && (
-              <Pressable as="button" onClick={onClear}>
+              <Pressable onClick={onClear} as="button">
                 <Icon.CloseCircle.Fill size={20} fill="onView2" />
               </Pressable>
             )}
             <Icon.Calendar.Regular size={20} fill="onView2" />
           </HStack>
         </Box>
+        <Space height={8} />
         {helperText ? (
           <Body level={4} textAlign="left" color={color}>
             {helperText}
           </Body>
         ) : null}
-      </VStack>
+      </Box>
     );
   }
 );
