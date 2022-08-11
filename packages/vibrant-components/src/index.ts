@@ -5,6 +5,7 @@ export { GlobalStyle } from './lib/GlobalStyle';
 export { HStack } from './lib/HStack';
 export { Paper } from './lib/Paper';
 export { Paragraph } from './lib/Paragraph';
+export { SearchInput } from './lib/SearchInput';
 export { SelectField } from './lib/SelectField';
 export { Space } from './lib/Space';
 export { Switch } from './lib/Switch';
