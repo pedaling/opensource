@@ -19,7 +19,7 @@ export const RangePickerField = withRangePickerFieldVariation(
 
     const handleDismiss = () => {
       setIsCalendarOpened(false);
-      if (!value?.start) {
+      if (!value?.end) {
         setValue(undefined);
       }
     };
