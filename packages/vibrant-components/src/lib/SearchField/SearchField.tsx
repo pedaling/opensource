@@ -3,9 +3,9 @@ import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, TextInput } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Pressable } from '../Pressable';
-import { withSearchInputVariation } from './SearchInputProps';
+import { withSearchFieldVariation } from './SearchFieldProps';
 
-export const SearchInput = withSearchInputVariation(({ defaultValue, onValueChange, ...restProps }) => {
+export const SearchField = withSearchFieldVariation(({ defaultValue, onValueChange, ...restProps }) => {
   const [value, setValue] = useState(defaultValue ?? '');
   const inputRef = useRef<TextInputRef>(null);
 
