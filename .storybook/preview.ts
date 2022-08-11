@@ -6,6 +6,7 @@ import { withAppetize } from './decorators/withAppetize';
 import { withGlobalEvent } from './decorators/withGlobalEvent';
 import { withGlobalStyle } from './decorators/withGlobalStyle';
 import { withTheme } from './decorators/withTheme';
+import { withVibrantProvider } from './decorators/withVibrantProvider';
 
 export const parameters: Parameters = {
   layout: 'fullscreen',
@@ -46,4 +47,11 @@ export const globalTypes: GlobalTypes = {
   },
 };
 
-export const decorators: DecoratorFn[] = [withGlobalStyle, withTheme, withGlobalEvent, withAppetize, DeviceDecorator];
+export const decorators: DecoratorFn[] = [
+  withVibrantProvider,
+  withGlobalStyle,
+  withTheme,
+  withGlobalEvent,
+  withAppetize,
+  DeviceDecorator,
+];

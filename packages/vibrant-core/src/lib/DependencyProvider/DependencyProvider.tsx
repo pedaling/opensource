@@ -2,7 +2,7 @@ import type { ComponentType, FC } from 'react';
 import { createContext, useContext } from 'react';
 import type { ReactElementChild } from '../../types';
 
-type Dependencies = {
+export type Dependencies = {
   nativeLinearGradient?: ComponentType<{
     colors: any;
     locations?: any;
@@ -16,6 +16,7 @@ type Dependencies = {
       offset?: any;
     }[];
   }>;
+  reactSpringModule?: any;
 };
 
 export type ExternalComponentName = keyof Dependencies;

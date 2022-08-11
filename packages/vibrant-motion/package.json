@@ -1,4 +1,18 @@
 {
   "name": "@vibrant-ui/motion",
-  "version": "0.3.7"
+  "version": "0.3.7",
+  "private": false,
+  "sideEffects": false,
+  "peerDependencies": {
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-spring": "^9.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  }
 }

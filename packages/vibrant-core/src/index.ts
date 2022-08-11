@@ -29,6 +29,8 @@ export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
 export { ThemeProvider, useCurrentTheme } from './lib/ThemeProvider';
 export { OnColorContainer } from './lib/OnColorContainer';
+export type { Dependencies } from './lib/DependencyProvider';
+export { DependencyProvider, useDependency } from './lib/DependencyProvider';
 export type { SystemPropThemeScale } from './lib/createSystemProp';
 export { useResponsiveValue } from './lib/useResponsiveValue';
 export { VibrantProvider } from './lib/VibrantProvider';

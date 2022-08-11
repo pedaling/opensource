@@ -22,10 +22,12 @@ export const createReactRenderer = () => {
     });
   });
 
+  const wrap = (global as any).wrap ?? ((component: any) => component);
+
   return {
     render: (element: ReactElement): ReactRenderer =>
-      render(<EmotionCacheProvider value={emotionCache}>{element}</EmotionCacheProvider>),
+      render(<EmotionCacheProvider value={emotionCache}>{wrap(element)}</EmotionCacheProvider>),
     rerender: (renderer: ReactRenderer, element: ReactElement) =>
-      renderer.rerender(<EmotionCacheProvider value={emotionCache}>{element}</EmotionCacheProvider>),
+      renderer.rerender(<EmotionCacheProvider value={emotionCache}>{wrap(element)}</EmotionCacheProvider>),
   };
 };

@@ -1,14 +1,17 @@
 import { useFonts } from 'expo-font';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Shadow } from 'react-native-shadow-2';
+import * as ReactSpring from '@react-spring/native';
 import { VStack, createShadowsComponent } from '@vibrant-ui/components';
+import type { Dependencies } from '@vibrant-ui/core';
 import { VibrantProvider } from '@vibrant-ui/core';
 import { StoryView } from './StoryView';
 import { useStorybookInformation } from './useStorybookInformation';
 
-const dependencies = {
+const dependencies: Dependencies = {
   nativeLinearGradient: LinearGradient,
   nativeShadows: createShadowsComponent(Shadow),
+  reactSpringModule: ReactSpring,
 };
 
 const App = () => {

@@ -1,13 +1,15 @@
 import { useEffect, useImperativeHandle, useMemo } from 'react';
 import { useResponsiveValue } from '@vibrant-ui/core';
-import { animated, useSpring } from '../external/ReactSpring';
+import { useReactSpring } from '../useReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(({ innerRef, children, duration, loop, from, to }) => {
+  const { animated, useSpring } = useReactSpring();
+
   const AnimatedComponent = useMemo(
     () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
-    [children.type]
+    [animated, children.type]
   );
   const { getResponsiveValue } = useResponsiveValue();
 
