@@ -1,5 +1,6 @@
 import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
+import * as ReactSpring from 'react-spring';
 import type { ReactElementChild } from '../../types';
 
 export type Dependencies = {
@@ -35,7 +36,9 @@ type ConfigContextValue = {
 };
 
 const ConfigContext = createContext<ConfigContextValue>({
-  dependencies: {},
+  dependencies: {
+    reactSpringModule: ReactSpring,
+  },
   translations: {
     calendar: {
       title: '{year}년 {month}',
