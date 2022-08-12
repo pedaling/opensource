@@ -16,6 +16,7 @@ const javascriptRules = {
   'no-param-reassign': ['error', { props: false }],
   'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
   'no-underscore-dangle': ['off'],
+  'object-shorthand': ['error'],
   'prefer-destructuring': [
     'error',
     { AssignmentExpression: { array: false, object: false }, VariableDeclarator: { array: false, object: true } },
