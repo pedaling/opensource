@@ -91,6 +91,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
+        "push": true,
         "postTargets": [
           "vibrant-components:github",
           "vibrant-components:deploy",

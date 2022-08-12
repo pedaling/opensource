@@ -2,6 +2,45 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.5.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.4.0...vibrant-motion-0.5.0) (2022-08-12)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.9.1`
+* `vibrant-utils` updated to version `0.5.1`
+* `vibrant-theme` updated to version `0.5.2`
+
+### Features
+
+* Transition 컴포넌트에서 easing, onStart, onEnd 속성을 받게 한다. ([#179](https://github.com/pedaling/opensource/issues/179)) ([f0e8a7d](https://github.com/pedaling/opensource/commit/f0e8a7d2b5e8824858fcaf5f35cd0cf2f52c8cad))
+
+
+### Bug Fixes
+
+* set babel useBuiltIns option as false ([#189](https://github.com/pedaling/opensource/issues/189)) ([513268f](https://github.com/pedaling/opensource/commit/513268fc81da30bb95ba005554d5425139420b26))
+
+
+### Reverts
+
+* Revert "feat: Transition 컴포넌트에서 easing, onStart, onEnd 속성을 받게 한다." (#188) ([484e139](https://github.com/pedaling/opensource/commit/484e1397f29974471a730956c51d433af7b6837c)), closes [#188](https://github.com/pedaling/opensource/issues/188) [#179](https://github.com/pedaling/opensource/issues/179)
+
+## [0.5.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.4.0...vibrant-motion-0.5.0) (2022-08-12)
+
+
+### Features
+
+* Transition 컴포넌트에서 easing, onStart, onEnd 속성을 받게 한다. ([#179](https://github.com/pedaling/opensource/issues/179)) ([f0e8a7d](https://github.com/pedaling/opensource/commit/f0e8a7d2b5e8824858fcaf5f35cd0cf2f52c8cad))
+
+
+### Bug Fixes
+
+* set babel useBuiltIns option as false ([#189](https://github.com/pedaling/opensource/issues/189)) ([513268f](https://github.com/pedaling/opensource/commit/513268fc81da30bb95ba005554d5425139420b26))
+
+
+### Reverts
+
+* Revert "feat: Transition 컴포넌트에서 easing, onStart, onEnd 속성을 받게 한다." (#188) ([484e139](https://github.com/pedaling/opensource/commit/484e1397f29974471a730956c51d433af7b6837c)), closes [#188](https://github.com/pedaling/opensource/issues/188) [#179](https://github.com/pedaling/opensource/issues/179)
+
 ## [0.4.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.3.7...vibrant-motion-0.4.0) (2022-08-11)
 
 ### Dependency Updates

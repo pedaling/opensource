@@ -84,6 +84,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
+        "push": true,
         "postTargets": ["vibrant-motion:github", "vibrant-motion:deploy"]
       }
     },

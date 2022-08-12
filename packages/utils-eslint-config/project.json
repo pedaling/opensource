@@ -42,6 +42,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
+        "push": true,
         "postTargets": ["utils-eslint-config:github", "utils-eslint-config:deploy"]
       }
     },
