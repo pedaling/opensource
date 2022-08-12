@@ -1,5 +1,4 @@
 import type { ReactElement, Ref } from 'react';
-import type { AnimationResult, easings } from 'react-spring';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { motionVariant } from '../motionVariant';
 import type { Animation, AnimationStyle } from '../types';
@@ -20,9 +19,6 @@ type MotionProps = {
   duration?: number;
   loop?: boolean | 'reverse';
   animation: WithMotion<AnimationStyle>;
-  easing?: keyof typeof easings;
-  onStart?: (e: AnimationResult) => void;
-  onEnd?: (e: AnimationResult) => void;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(
