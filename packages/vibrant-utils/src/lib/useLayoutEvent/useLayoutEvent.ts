@@ -2,16 +2,30 @@ import type { RefCallback } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
-export type UseResizeObserverResult = {
+export type LayoutEvent = { layout: { width: number; height: number; x: number; y: number }; target?: Element };
+
+export type UseLayoutEventResult = {
   ref: RefCallback<Element | null>;
 };
 
-export const useResizeObserver = (callback?: (entry: ResizeObserverEntry) => void): UseResizeObserverResult => {
+export const useLayoutEvent = (callback?: (event: LayoutEvent) => void): UseLayoutEventResult => {
   const observerRef = useRef<ResizeObserver>();
 
   const handleResize = useCallback(
     ([entry]: ResizeObserverEntry[]) => {
-      callback?.(entry);
+      const [width, height] =
+        entry.borderBoxSize?.length > 0
+          ? [entry.borderBoxSize[0].inlineSize, entry.borderBoxSize[0].blockSize]
+          : [entry.contentRect.width, entry.contentRect.height];
+
+      callback?.({
+        layout: {
+          ...entry.contentRect,
+          width,
+          height,
+        },
+        target: entry.target,
+      });
     },
     [callback]
   );

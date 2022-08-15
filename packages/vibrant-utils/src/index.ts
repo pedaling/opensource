@@ -12,4 +12,5 @@ export { useSafeDeps } from './lib/useSafeDeps';
 export { getElementRect } from './lib/getElementRect';
 export { toZeroPadded } from './lib/toZeroPadded';
 export { getDateString } from './lib/getDateString';
-export { useResizeObserver } from './lib/useResizeObserver';
+export { useLayoutEvent } from './lib/useLayoutEvent';
+export type { LayoutEvent } from './lib/useLayoutEvent';
