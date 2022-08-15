@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
+import type { LayoutChangeEvent } from 'react-native';
 import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
 import type { BoxProps } from './BoxProps';
@@ -17,12 +18,27 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
 };
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps & { style: any }>(({ as, base, style, ...restProps }, ref) => {
+  forwardRef<HTMLDivElement, BoxProps & { style: any }>(({ as, base, style, onLayout, ...restProps }, ref) => {
     const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
 
     const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
 
-    return <Component ref={ref} style={restStyle} {...(base ? { as } : {})} {...restProps} {...props} />;
+    const handleLayout = onLayout
+      ? (event: LayoutChangeEvent) => {
+          onLayout(event.nativeEvent);
+        }
+      : undefined;
+
+    return (
+      <Component
+        ref={ref}
+        style={restStyle}
+        onLayout={handleLayout}
+        {...(base ? { as } : {})}
+        {...restProps}
+        {...props}
+      />
+    );
   }),
   {
     shouldForwardProp,

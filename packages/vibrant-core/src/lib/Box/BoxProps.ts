@@ -1,5 +1,5 @@
 import type { ComponentType, Ref } from 'react';
-import type { DistributiveOmit } from '@vibrant-ui/utils';
+import type { DistributiveOmit, LayoutEvent } from '@vibrant-ui/utils';
 import type { ReactElementChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
@@ -122,6 +122,7 @@ export type BoxProps<
     id?: string;
     ref?: Ref<BaseComponent extends abstract new (...args: any) => any ? InstanceType<BaseComponent> : HTMLElement>;
     children?: ReactElementChild | ReactElementChild[];
+    onLayout?: (layoutEvent: LayoutEvent) => void;
   };
 
 export const interpolation = createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box' });
