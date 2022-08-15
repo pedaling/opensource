@@ -1,23 +1,24 @@
 import type { RefCallback } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
 
 export type UseResizeObserverResult = {
   ref: RefCallback<Element | null>;
 };
 
-export const useResizeObserver = (callback: (entry: ResizeObserverEntry) => void): UseResizeObserverResult => {
+export const useResizeObserver = (callback?: (entry: ResizeObserverEntry) => void): UseResizeObserverResult => {
   const observerRef = useRef<ResizeObserver>();
 
   const handleResize = useCallback(
     ([entry]: ResizeObserverEntry[]) => {
-      callback(entry);
+      callback?.(entry);
     },
     [callback]
   );
 
   const observe = useCallback(
     (node: Element | null) => {
-      if (!node) {
+      if (!node || !callback) {
         return;
       }
 
@@ -25,7 +26,7 @@ export const useResizeObserver = (callback: (entry: ResizeObserverEntry) => void
 
       observerRef.current.observe(node);
     },
-    [handleResize]
+    [callback, handleResize]
   );
 
   const unobserve = useCallback(() => {
