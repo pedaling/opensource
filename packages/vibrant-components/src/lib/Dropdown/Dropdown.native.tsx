@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { FC, ReactElement } from 'react';
-import { ScrollView } from 'react-native';
+import { Dimensions, ScrollView } from 'react-native';
 import { Box } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
@@ -31,8 +31,8 @@ const getOffsetWithoutOverflowByPosition = (
   });
 
   const viewport = {
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   };
   const isOverflowing = detectOverflow({
     viewport,
