@@ -12,23 +12,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 * set babel useBuiltIns option as false ([#189](https://github.com/pedaling/opensource/issues/189)) ([513268f](https://github.com/pedaling/opensource/commit/513268fc81da30bb95ba005554d5425139420b26))
 
-### [0.5.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.5.1...vibrant-theme-0.5.2) (2022-08-12)
-
-### Dependency Updates
-
-* `vibrant-utils` updated to version `0.5.1`
-
-### Bug Fixes
-
-* set babel useBuiltIns option as false ([#189](https://github.com/pedaling/opensource/issues/189)) ([513268f](https://github.com/pedaling/opensource/commit/513268fc81da30bb95ba005554d5425139420b26))
-
-### [0.5.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.5.1...vibrant-theme-0.5.2) (2022-08-12)
-
-
-### Bug Fixes
-
-* set babel useBuiltIns option as false ([#189](https://github.com/pedaling/opensource/issues/189)) ([513268f](https://github.com/pedaling/opensource/commit/513268fc81da30bb95ba005554d5425139420b26))
-
 ### [0.5.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.5.0...vibrant-theme-0.5.1) (2022-08-11)
 
 ### Dependency Updates
