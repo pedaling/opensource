@@ -14,14 +14,6 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 * react-spring 라이브러리가 Dependency에 기본 값으로 사용되도록 한다 ([#186](https://github.com/pedaling/opensource/issues/186)) ([58da2da](https://github.com/pedaling/opensource/commit/58da2da51a1d43e98c56a5ecac2b88f189215a29))
 * set babel useBuiltIns option as false ([#189](https://github.com/pedaling/opensource/issues/189)) ([513268f](https://github.com/pedaling/opensource/commit/513268fc81da30bb95ba005554d5425139420b26))
 
-### [0.9.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.9.0...vibrant-core-0.9.1) (2022-08-12)
-
-
-### Bug Fixes
-
-* react-spring 라이브러리가 Dependency에 기본 값으로 사용되도록 한다 ([#186](https://github.com/pedaling/opensource/issues/186)) ([58da2da](https://github.com/pedaling/opensource/commit/58da2da51a1d43e98c56a5ecac2b88f189215a29))
-* set babel useBuiltIns option as false ([#189](https://github.com/pedaling/opensource/issues/189)) ([513268f](https://github.com/pedaling/opensource/commit/513268fc81da30bb95ba005554d5425139420b26))
-
 ## [0.9.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.8.0...vibrant-core-0.9.0) (2022-08-11)
 
 ### Dependency Updates

@@ -53,7 +53,6 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "push": true,
         "postTargets": ["vibrant-theme:github", "vibrant-theme:deploy"]
       }
     },
