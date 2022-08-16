@@ -1,17 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { FC, ReactElement } from "react";
-import { Box } from "@vibrant-ui/core";
-import { Transition } from "@vibrant-ui/motion";
-import {
-  getElementRect,
-  LayoutEvent,
-  detectOverflow,
-  flipPosition,
-  getOffsetByPosition,
-} from "@vibrant-ui/utils";
-import { Dismissible } from "../Dismissible";
-import { Dimensions, ScrollView } from "react-native";
-import type { Position } from "@vibrant-ui/utils";
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { FC, ReactElement } from 'react';
+import { Dimensions, ScrollView } from 'react-native';
+import { Box } from '@vibrant-ui/core';
+import { Transition } from '@vibrant-ui/motion';
+import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
+import type { LayoutEvent, Position } from '@vibrant-ui/utils';
+import { Dismissible } from '../Dismissible';
 
 export type DropdownProps = {
   position: Position;
@@ -21,20 +15,13 @@ export type DropdownProps = {
   open: boolean;
 };
 
-export const Dropdown: FC<DropdownProps> = ({
-  open,
-  renderOpener,
-  renderContents,
-  position,
-  spacing,
-}) => {
+export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents, position, spacing }) => {
   const openerRef = useRef<HTMLElement>(null);
   const targetRef = useRef<HTMLElement>(null);
   const [isOpen, setIsOpen] = useState(open);
   const [visible, setVisible] = useState(false);
   const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
   const [contentHeight, setContentHeight] = useState<number>();
-  const [contentWidth, setContentWidth] = useState<number>();
 
   const openPopup = useCallback(async () => {
     if (!openerRef.current || !targetRef.current) {
@@ -54,8 +41,8 @@ export const Dropdown: FC<DropdownProps> = ({
     });
 
     const viewport = {
-      width: Dimensions.get("window").width,
-      height: Dimensions.get("window").height,
+      width: Dimensions.get('window').width,
+      height: Dimensions.get('window').height,
     };
     const isOverflowing = detectOverflow({
       viewport,
@@ -106,11 +93,10 @@ export const Dropdown: FC<DropdownProps> = ({
           height: height + 40,
         },
         position,
-        spacing: spacing,
+        spacing,
       });
 
       setContentHeight(height);
-      setContentWidth(width);
 
       setOffset({ x: offsetX, y: offsetY });
     },
@@ -122,7 +108,7 @@ export const Dropdown: FC<DropdownProps> = ({
       renderOpener(() => {
         setIsOpen(!isOpen);
       }),
-    [renderOpener]
+    [isOpen, renderOpener]
   );
 
   useEffect(() => {
@@ -134,8 +120,6 @@ export const Dropdown: FC<DropdownProps> = ({
       setContentHeight(undefined);
     }
   }, [isOpen, openPopup]);
-
-  console.log(contentWidth);
 
   return (
     <Box position="relative">

@@ -1,13 +1,13 @@
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Box } from "@vibrant-ui/core";
-import { useState } from "react";
-import { Body } from "../Body";
-import { Pressable } from "../Pressable";
-import { VStack } from "../VStack";
-import { Dropdown } from "./Dropdown";
+import { useState } from 'react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Box } from '@vibrant-ui/core';
+import { Body } from '../Body';
+import { Pressable } from '../Pressable';
+import { VStack } from '../VStack';
+import { Dropdown } from './Dropdown';
 
 export default {
-  title: "Dropdown",
+  title: 'Dropdown',
   component: Dropdown,
   args: {
     renderContents: () => (
@@ -15,23 +15,23 @@ export default {
         <Body level={2}>Sample Text</Body>
       </Box>
     ),
-    renderOpener: (open) => (
+    renderOpener: open => (
       <Box base={Pressable} backgroundColor="primary" onClick={open} p={20}>
         <Body level={1}>Click Me</Body>
       </Box>
     ),
-    position: "bottom-start",
+    position: 'bottom-start',
     spacing: 10,
   },
 } as ComponentMeta<typeof Dropdown>;
 
-export const Basic: ComponentStory<typeof Dropdown> = (props) => (
+export const Basic: ComponentStory<typeof Dropdown> = props => (
   <VStack mt={200} mx="auto">
     <Dropdown {...props} />
   </VStack>
 );
 
-export const WithHeightAnimation: ComponentStory<typeof Dropdown> = (props) => {
+export const WithHeightAnimation: ComponentStory<typeof Dropdown> = props => {
   const [itemSize, setItemSize] = useState(1);
 
   const renderContents = () => (

@@ -1,16 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { FC, ReactElement } from "react";
-import { Box } from "@vibrant-ui/core";
-import { Transition } from "@vibrant-ui/motion";
-import {
-  getElementRect,
-  LayoutEvent,
-  detectOverflow,
-  flipPosition,
-  getOffsetByPosition,
-} from "@vibrant-ui/utils";
-import type { Position } from "@vibrant-ui/utils";
-import { Dismissible } from "../Dismissible";
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { FC, ReactElement } from 'react';
+import { Box } from '@vibrant-ui/core';
+import { Transition } from '@vibrant-ui/motion';
+import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
+import type { LayoutEvent, Position } from '@vibrant-ui/utils';
+import { Dismissible } from '../Dismissible';
 
 export type DropdownProps = {
   position: Position;
@@ -22,13 +16,7 @@ export type DropdownProps = {
 
 const CONTENT_PADDING = 20;
 
-export const Dropdown: FC<DropdownProps> = ({
-  open,
-  renderOpener,
-  renderContents,
-  position,
-  spacing,
-}) => {
+export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents, position, spacing }) => {
   const openerRef = useRef<HTMLElement>(null);
   const targetRef = useRef<HTMLElement>(null);
   const [isOpen, setIsOpen] = useState(open);
@@ -106,7 +94,7 @@ export const Dropdown: FC<DropdownProps> = ({
           height: height + CONTENT_PADDING * 2,
         },
         position,
-        spacing: spacing,
+        spacing,
       });
 
       setContentHeight(height);
@@ -116,10 +104,7 @@ export const Dropdown: FC<DropdownProps> = ({
     [position, spacing]
   );
 
-  const opener = useMemo(
-    () => renderOpener(() => setIsOpen(!isOpen)),
-    [renderOpener]
-  );
+  const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
 
   useEffect(() => {
     if (isOpen) {
@@ -136,11 +121,7 @@ export const Dropdown: FC<DropdownProps> = ({
       <Box ref={openerRef}>{opener}</Box>
       {isOpen && (
         <Dismissible active={visible} onDismiss={() => setIsOpen(false)}>
-          <Transition
-            ref={targetRef}
-            animation={{ opacity: visible ? 1 : 0 }}
-            duration={150}
-          >
+          <Transition ref={targetRef} animation={{ opacity: visible ? 1 : 0 }} duration={150}>
             <Box
               backgroundColor="background"
               position="absolute"
