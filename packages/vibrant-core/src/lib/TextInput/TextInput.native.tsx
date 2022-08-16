@@ -67,7 +67,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
           let isPrevented = false;
 
           onChange?.({
-            value: value,
+            value,
             prevent: () => {
               isPrevented = true;
             },
