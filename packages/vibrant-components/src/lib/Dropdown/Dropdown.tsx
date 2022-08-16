@@ -16,7 +16,12 @@ export type DropdownProps = {
 
 const CONTENT_PADDING = 20;
 
-const getTargetOffset = (openerRect: Rect, targetRect: Rect, position: Position, spacing?: number) => {
+const getOffsetWithoutOverflowByPosition = (
+  openerRect: Rect,
+  targetRect: Rect,
+  position: Position,
+  spacing?: number
+) => {
   const { x, y } = getOffsetByPosition({
     referenceRect: openerRect,
     targetRect,
@@ -78,18 +83,18 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
       getElementRect(targetRef.current),
     ]);
 
-    const { x, y } = getTargetOffset(openerRect, targetRect, position, spacing);
+    const { x, y } = getOffsetWithoutOverflowByPosition(openerRect, targetRect, position, spacing);
 
     setOffset({ x, y });
 
     setVisible(true);
   }, [position, spacing]);
 
-  const handleResize = useCallback(
+  const handleContentResize = useCallback(
     async ({ layout: { width, height, x, y } }: LayoutEvent) => {
       const openerRect = await getElementRect(openerRef.current);
 
-      const { x: offsetX, y: offsetY } = getTargetOffset(
+      const { x: offsetX, y: offsetY } = getOffsetWithoutOverflowByPosition(
         openerRect,
         {
           x,
@@ -149,7 +154,7 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
                 duration={150}
               >
                 <Box overflowY="hidden">
-                  <Box onLayout={handleResize}>{renderContents()}</Box>
+                  <Box onLayout={handleContentResize}>{renderContents()}</Box>
                 </Box>
               </Transition>
             </Box>
