@@ -22,8 +22,12 @@ export const useStorybookInformation = () => {
   const [story, setStory] = useState<Story | null>(null);
 
   useEffect(() => {
+    if (story) {
+      return;
+    }
+
     Linking.getInitialURL().then(getStoryFromUrl).then(setStory);
-  }, []);
+  }, [story]);
 
   useEffect(() => {
     const listener = Linking.addEventListener('url', event => setStory(getStoryFromUrl(event.url)));
