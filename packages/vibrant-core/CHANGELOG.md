@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.9.1...vibrant-core-0.10.0) (2022-08-16)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.6.0`
+* `vibrant-theme` updated to version `0.5.3`
+
+### Features
+
+* **vibrant-core:** Box에 onLayout 속성을 추가한다.  [WP-2742] ([#190](https://github.com/pedaling/opensource/issues/190)) ([e734423](https://github.com/pedaling/opensource/commit/e73442304cbf71ca3b6366185aa102e51277c0d7))
+
+
+### Bug Fixes
+
+* **vibrant-core:** remove View component from GlobalEventProvider ([#193](https://github.com/pedaling/opensource/issues/193)) ([41218e3](https://github.com/pedaling/opensource/commit/41218e3b7f3c2907889567eee5f48293e2e28ecd))
+
 ### [0.9.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.9.0...vibrant-core-0.9.1) (2022-08-12)
 
 ### Dependency Updates

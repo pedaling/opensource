@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.5.1...vibrant-utils-0.6.0) (2022-08-16)
+
+
+### Features
+
+* **vibrant-core:** Box에 onLayout 속성을 추가한다.  [WP-2742] ([#190](https://github.com/pedaling/opensource/issues/190)) ([e734423](https://github.com/pedaling/opensource/commit/e73442304cbf71ca3b6366185aa102e51277c0d7))
+
 ### [0.5.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.5.0...vibrant-utils-0.5.1) (2022-08-12)
 
 ## [0.5.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.4.0...vibrant-utils-0.5.0) (2022-08-11)
