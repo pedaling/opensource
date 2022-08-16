@@ -1,0 +1,1 @@
+export { getOffsetByPosition } from './getOffsetByPosition';
