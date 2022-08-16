@@ -20,7 +20,7 @@ export default {
         <Body level={1}>Click Me</Body>
       </Box>
     ),
-    position: 'bottom-start',
+    position: 'top',
     spacing: 10,
   },
 } as ComponentMeta<typeof Dropdown>;
@@ -61,3 +61,9 @@ export const WithHeightAnimation: ComponentStory<typeof Dropdown> = props => {
     </VStack>
   );
 };
+
+export const WithFlippedPositionWhenOverflow: ComponentStory<typeof Dropdown> = props => (
+  <VStack mx="auto">
+    <Dropdown {...props} />
+  </VStack>
+);

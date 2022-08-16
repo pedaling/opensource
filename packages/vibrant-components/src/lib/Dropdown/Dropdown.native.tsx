@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { FC, ReactElement } from 'react';
-import { Dimensions, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import { Box } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
-import type { LayoutEvent, Position } from '@vibrant-ui/utils';
+import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { Dismissible } from '../Dismissible';
 
 export type DropdownProps = {
@@ -13,6 +13,52 @@ export type DropdownProps = {
   renderOpener: (open: () => void) => ReactElement;
   spacing?: number;
   open: boolean;
+};
+
+const CONTENT_PADDING = 20;
+
+const getTargetOffset = (openerRect: Rect, targetRect: Rect, position: Position, spacing?: number) => {
+  const { x, y } = getOffsetByPosition({
+    referenceRect: openerRect,
+    targetRect,
+    position,
+    spacing,
+  });
+
+  const viewport = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+  const isOverflowing = detectOverflow({
+    viewport,
+    targetRect: { ...targetRect, x: openerRect.x + x, y: openerRect.y + y },
+  });
+
+  if (!isOverflowing) {
+    return { x, y };
+  }
+
+  const { x: flippedX, y: flippedY } = getOffsetByPosition({
+    referenceRect: openerRect,
+    targetRect,
+    position: flipPosition(position),
+    spacing,
+  });
+
+  if (
+    !detectOverflow({
+      viewport,
+      targetRect: {
+        ...targetRect,
+        x: openerRect.x + flippedX,
+        y: openerRect.y + flippedY,
+      },
+    })
+  ) {
+    return { x: flippedX, y: flippedY };
+  }
+
+  return { x, y };
 };
 
 export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents, position, spacing }) => {
@@ -33,68 +79,28 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
       getElementRect(targetRef.current),
     ]);
 
-    const { x, y } = getOffsetByPosition({
-      referenceRect: openerRect,
-      targetRect,
-      position,
-      spacing,
-    });
+    const { x, y } = getTargetOffset(openerRect, targetRect, position, spacing);
 
-    const viewport = {
-      width: Dimensions.get('window').width,
-      height: Dimensions.get('window').height,
-    };
-    const isOverflowing = detectOverflow({
-      viewport,
-      targetRect: { ...targetRect, x: openerRect.x + x, y: openerRect.y + y },
-    });
+    setOffset({ x, y });
 
-    if (!isOverflowing) {
-      setOffset({ x, y });
-
-      setVisible(true);
-
-      return;
-    }
-
-    const { x: flippedX, y: flippedY } = getOffsetByPosition({
-      referenceRect: openerRect,
-      targetRect,
-      position: flipPosition(position),
-      spacing,
-    });
-
-    if (
-      !detectOverflow({
-        viewport,
-        targetRect: {
-          ...targetRect,
-          x: openerRect.x + flippedX,
-          y: openerRect.y + flippedY,
-        },
-      })
-    ) {
-      setOffset({ x: flippedX, y: flippedY });
-
-      setVisible(true);
-    }
+    setVisible(true);
   }, [position, spacing]);
 
   const handleResize = useCallback(
     async ({ layout: { width, height, x, y } }: LayoutEvent) => {
       const openerRect = await getElementRect(openerRef.current);
 
-      const { x: offsetX, y: offsetY } = getOffsetByPosition({
-        referenceRect: openerRect,
-        targetRect: {
+      const { x: offsetX, y: offsetY } = getTargetOffset(
+        openerRect,
+        {
           x,
           y,
           width,
-          height: height + 40,
+          height: height + CONTENT_PADDING * 2,
         },
         position,
-        spacing,
-      });
+        spacing
+      );
 
       setContentHeight(height);
 
@@ -102,7 +108,6 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
     },
     [position, spacing]
   );
-
   const opener = useMemo(
     () =>
       renderOpener(() => {
@@ -126,9 +131,9 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
       <Box ref={openerRef}>{opener}</Box>
       {isOpen && (
         <Dismissible active={visible} onDismiss={() => setIsOpen(false)}>
-          <Transition ref={targetRef} animation={{ opacity: visible ? 1 : 0 }}>
+          <Transition ref={targetRef} animation={{ opacity: visible ? 1 : 0 }} duration={150}>
             <Box position="absolute" zIndex={1} top={offset.y} left={offset.x}>
-              <Box backgroundColor="background" py={20} borderWidth={1}>
+              <Box backgroundColor="background" py={CONTENT_PADDING} elevationLevel={4} borderRadiusLevel={1}>
                 <Transition
                   animation={
                     visible
@@ -137,6 +142,7 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
                         }
                       : {}
                   }
+                  duration={150}
                 >
                   <Box base={ScrollView}>
                     <Box onLayout={handleResize}>{renderContents()}</Box>
