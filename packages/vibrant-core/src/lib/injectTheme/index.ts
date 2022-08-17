@@ -1,0 +1,1 @@
+export { injectTheme } from './injectTheme';

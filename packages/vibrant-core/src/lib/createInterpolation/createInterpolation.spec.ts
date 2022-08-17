@@ -2,6 +2,7 @@ import type { CurrentTheme } from '@vibrant-ui/theme';
 import type { DeepPartial } from '@vibrant-ui/utils';
 import { createSystemProp } from '../createSystemProp';
 import * as ThemeModule from '../ThemeProvider';
+import { useCurrentTheme } from '../ThemeProvider';
 import { createInterpolation } from './createInterpolation';
 
 (
@@ -38,7 +39,10 @@ const pseudoHoverProp = createSystemProp({
 });
 
 describe('createInterpolation', () => {
-  const interpolation = createInterpolation([widthProp, heightProp, marginProp, pseudoHoverProp]);
+  const { theme } = useCurrentTheme();
+
+  const interpolation = createInterpolation([widthProp, heightProp, marginProp, pseudoHoverProp])(theme);
+
   let props: Record<string, any>;
 
   describe('when prop is 1 depth object', () => {

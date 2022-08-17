@@ -1,7 +1,6 @@
 import type { CurrentTheme } from '@vibrant-ui/theme';
 import { isDefined, isRecord } from '@vibrant-ui/utils';
 import type { SystemProp } from '../createSystemProp';
-import { useCurrentTheme } from '../ThemeProvider';
 import { useBuildStyle } from '../useBuildStyle';
 
 export const createInterpolation = (systemProps: SystemProp[], defaultProps: any = {}) => {
@@ -48,12 +47,10 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
     return result;
   };
 
-  return (props: Record<string, any>) => {
-    const { theme } = useCurrentTheme();
-
+  return (theme: CurrentTheme) => (props: Record<string, any>) => {
     const interpolationResult = childInterpolation({ ...defaultProps, ...props }, theme);
 
-    return useBuildStyle(interpolationResult);
+    return useBuildStyle(interpolationResult, theme);
   };
 };
 

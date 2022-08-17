@@ -3,6 +3,7 @@ import type { DistributiveOmit } from '@vibrant-ui/utils';
 import type { ReactElementChild, ReactTextChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
+import { injectTheme } from '../injectTheme';
 import type { ColorSystemProps, DisplaySystemProps, TextSystemProps, TypographySystemProps } from '../props';
 import { colorSystemProps, displaySystemProps, textSystemProps, typographySystemProps } from '../props';
 
@@ -28,9 +29,11 @@ export type TextProps<ElementName extends TextElements | undefined = undefined> 
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
 
-export const interpolation = createInterpolation(systemProps, {
-  display: 'flex',
-  fontFamily: 'Pretendard',
-  textAlign: 'left',
-  color: 'onColor',
-});
+export const interpolation = injectTheme(
+  createInterpolation(systemProps, {
+    display: 'flex',
+    fontFamily: 'Pretendard',
+    textAlign: 'left',
+    color: 'onColor',
+  })
+);

@@ -3,6 +3,7 @@ import type { DistributiveOmit, LayoutEvent } from '@vibrant-ui/utils';
 import type { ReactElementChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
+import { injectTheme } from '../injectTheme';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -127,6 +128,8 @@ export type BoxProps<
 
 export type { LayoutEvent };
 
-export const interpolation = createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box' });
+export const interpolation = injectTheme(
+  createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box' })
+);
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
