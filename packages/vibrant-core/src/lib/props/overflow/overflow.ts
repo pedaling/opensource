@@ -1,5 +1,9 @@
 import { createSystemProp } from '../../createSystemProp';
 
+const overflowProp = createSystemProp({
+  property: 'overflow',
+});
+
 const overflowXProp = createSystemProp({
   property: 'overflowX',
 });
@@ -22,4 +26,4 @@ const hideScrollProp = createSystemProp({
       : {},
 });
 
-export const overflowSystemProps = [overflowXProp, overflowYProp, hideScrollProp];
+export const overflowSystemProps = [overflowProp, overflowXProp, overflowYProp, hideScrollProp];
