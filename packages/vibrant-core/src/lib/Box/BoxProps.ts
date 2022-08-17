@@ -125,6 +125,8 @@ export type BoxProps<
     onLayout?: (layoutEvent: LayoutEvent) => void;
   };
 
+export type { LayoutEvent };
+
 export const interpolation = createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box' });
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);

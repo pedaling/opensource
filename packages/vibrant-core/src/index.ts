@@ -1,5 +1,5 @@
 export { Box } from './lib/Box';
-export type { BoxProps } from './lib/Box';
+export type { BoxProps, LayoutEvent } from './lib/Box';
 export { Svg } from './lib/Svg';
 export type { SvgProps } from './lib/Svg';
 export { Text } from './lib/Text';
