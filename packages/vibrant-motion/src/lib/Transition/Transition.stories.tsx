@@ -7,7 +7,9 @@ export default {
   component: Transition,
   args: {
     animation: {
-      x: 50,
+      transform: {
+        translateX: 50,
+      },
       opacity: 1,
     },
   },
