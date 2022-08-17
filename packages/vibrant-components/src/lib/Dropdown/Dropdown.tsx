@@ -130,33 +130,47 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
       <Box ref={openerRef}>{opener}</Box>
       {isOpen && (
         <Dismissible active={visible} onDismiss={() => setIsOpen(false)}>
-          <Transition ref={targetRef} animation={{ opacity: visible ? 1 : 0 }} duration={150}>
+          <Transition
+            ref={targetRef}
+            animation={{
+              opacity: visible ? 1 : 0,
+              y: offset.y,
+              x: offset.x,
+            }}
+            duration={150}
+          >
             <Box
-              backgroundColor="background"
               position="absolute"
               zIndex={1}
-              py={CONTENT_PADDING}
-              elevationLevel={4}
-              borderRadiusLevel={1}
               transform={{
-                translateX: offset.x,
                 translateY: offset.y,
+                translateX: offset.x,
               }}
             >
-              <Transition
-                animation={
-                  visible
-                    ? {
-                        ...(contentHeight ? { height: contentHeight } : {}),
-                      }
-                    : {}
-                }
-                duration={150}
+              <Box
+                overflow="hidden"
+                backgroundColor="background"
+                py={CONTENT_PADDING}
+                elevationLevel={4}
+                borderRadiusLevel={1}
               >
-                <Box overflowY="hidden">
-                  <Box onLayout={handleContentResize}>{renderContents()}</Box>
-                </Box>
-              </Transition>
+                <Transition
+                  animation={
+                    visible
+                      ? {
+                          ...(contentHeight ? { height: contentHeight } : {}),
+                        }
+                      : {}
+                  }
+                  duration={150}
+                >
+                  <Box>
+                    <Box onLayout={handleContentResize} flexShrink={0}>
+                      {renderContents()}
+                    </Box>
+                  </Box>
+                </Transition>
+              </Box>
             </Box>
           </Transition>
         </Dismissible>

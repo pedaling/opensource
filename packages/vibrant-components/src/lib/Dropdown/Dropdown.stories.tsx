@@ -26,7 +26,7 @@ export default {
 } as ComponentMeta<typeof Dropdown>;
 
 export const Basic: ComponentStory<typeof Dropdown> = props => (
-  <VStack mt={200} mx="auto">
+  <VStack mt={200}>
     <Dropdown {...props} />
   </VStack>
 );
@@ -40,7 +40,7 @@ export const WithHeightAnimation: ComponentStory<typeof Dropdown> = props => {
         base={Pressable}
         py={8}
         onClick={() => {
-          setItemSize(5);
+          setItemSize(itemSize === 1 ? 3 : 1);
         }}
       >
         <Body level={2}>Change Height</Body>
@@ -56,8 +56,10 @@ export const WithHeightAnimation: ComponentStory<typeof Dropdown> = props => {
   );
 
   return (
-    <VStack mt={200} mx="auto">
-      <Dropdown {...props} renderContents={renderContents} />
+    <VStack mt={200}>
+      <Box mx="auto">
+        <Dropdown {...props} renderContents={renderContents} />
+      </Box>
     </VStack>
   );
 };
