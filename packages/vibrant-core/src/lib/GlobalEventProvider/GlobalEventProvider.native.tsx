@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { createContext, useCallback, useContext, useMemo, useRef } from 'react';
+import { View } from 'react-native';
 import type { Event, EventListener, EventType, GlobalEventContextValue, GlobalEventProviderProps } from './types';
 
 const GlobalEventContext = createContext<GlobalEventContextValue>({
@@ -32,7 +33,21 @@ export const GlobalEventProvider: FC<GlobalEventProviderProps> = ({ children }) 
     [addEventListener, removeEventListener]
   );
 
-  return <GlobalEventContext.Provider value={contextValue}>{children}</GlobalEventContext.Provider>;
+  return (
+    <GlobalEventContext.Provider value={contextValue}>
+      <View
+        style={{ flex: 1 }}
+        onStartShouldSetResponder={() => clickEventListenersRef.current.length > 0}
+        onResponderGrant={event => {
+          clickEventListenersRef.current.forEach(listener => {
+            listener(event.nativeEvent);
+          });
+        }}
+      >
+        {children}
+      </View>
+    </GlobalEventContext.Provider>
+  );
 };
 
 export const useGlobalEvent = (): GlobalEventContextValue => useContext(GlobalEventContext);
