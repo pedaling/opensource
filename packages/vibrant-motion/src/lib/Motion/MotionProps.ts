@@ -1,7 +1,7 @@
 import type { ReactElement, Ref } from 'react';
+import type { AllSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import { motionVariant } from '../motionVariant';
-import type { Animation, AnimationStyle } from '../types';
+import type { Animation } from '../types';
 
 export type MotionRefValue = {
   start: (options?: { reverse?: boolean; reset?: boolean }) => void;
@@ -18,22 +18,10 @@ type MotionProps = {
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
-  animation: WithMotion<AnimationStyle>;
+  animation: WithMotion<AllSystemProps>;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(
-  motionVariant({
-    name: 'backgroundColor',
-    scale: 'colors',
-  }),
-  motionVariant({
-    name: 'borderColor',
-    scale: 'colors',
-  }),
-  motionVariant({
-    name: 'opacity',
-    scale: 'opacity',
-  }),
   ({ animation, ...restProps }) => {
     const { from, to } = Object.entries(animation).reduce(
       (acc, [key, value]) => ({

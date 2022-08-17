@@ -10,9 +10,9 @@ export default {
   args: {
     duration: 1000,
     animation: {
-      x: {
-        from: 0,
-        to: 250,
+      transform: {
+        from: { translateX: 0 },
+        to: { translateX: 250 },
       },
       backgroundColor: {
         from: 'primary',
