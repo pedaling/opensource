@@ -1,10 +1,11 @@
 import { useEffect, useImperativeHandle, useMemo } from 'react';
-import { useResponsiveValue } from '@vibrant-ui/core';
+import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { useReactSpring } from '../useReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(({ innerRef, children, duration, loop, from, to }) => {
+  const { interpolation } = useInterpolation();
   const { animated, useSpring } = useReactSpring();
 
   const AnimatedComponent = useMemo(
@@ -24,14 +25,14 @@ export const Motion = withMotionVariation(({ innerRef, children, duration, loop,
 
   const option = useMemo(
     () => ({
-      from: fromStyle,
-      to: toStyle,
+      from: interpolation(fromStyle),
+      to: interpolation(toStyle),
       config: {
         duration,
       },
       loop,
     }),
-    [duration, fromStyle, loop, toStyle]
+    [duration, fromStyle, interpolation, loop, toStyle]
   );
 
   const [styles, springApi] = useSpring(() => ({
