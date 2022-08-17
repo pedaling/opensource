@@ -1,2 +1,2 @@
-export type { BoxProps } from './BoxProps';
+export type { BoxProps, LayoutEvent } from './BoxProps';
 export { Box } from './Box';
