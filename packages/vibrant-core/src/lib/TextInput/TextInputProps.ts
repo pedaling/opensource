@@ -1,4 +1,5 @@
 import { createInterpolation } from '../createInterpolation';
+import { injectTheme } from '../injectTheme';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -65,13 +66,15 @@ export type TextInputProps = SystemProps & {
   onSubmit?: (value: string) => void;
 };
 
-export const interpolation = createInterpolation(systemProps, {
-  display: 'flex',
-  boxSizing: 'border-box',
-  backgroundColor: 'transparent',
-  borderWidth: 0,
-  color: 'onColor',
-  typography: 'body2',
-  width: '100%',
-  p: 0,
-});
+export const interpolation = injectTheme(
+  createInterpolation(systemProps, {
+    display: 'flex',
+    boxSizing: 'border-box',
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+    color: 'onColor',
+    typography: 'body2',
+    width: '100%',
+    p: 0,
+  })
+);
