@@ -24,6 +24,7 @@ export type {
   TextSystemProps,
   TransformSystemProps,
   TypographySystemProps,
+  AllSystemProps,
 } from './lib/props';
 export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
@@ -38,3 +39,4 @@ export { useGlobalEvent, GlobalEventProvider } from './lib/GlobalEventProvider';
 export type { ClickEvent } from './lib/GlobalEventProvider';
 export { getElementPosition } from './lib/getElementPosition';
 export { transformResponsiveValue } from './lib/transformResponsiveValue';
+export { useInterpolation } from './lib/useInterpolation';
