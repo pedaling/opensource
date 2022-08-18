@@ -40,3 +40,5 @@ export type { ClickEvent } from './lib/GlobalEventProvider';
 export { getElementPosition } from './lib/getElementPosition';
 export { transformResponsiveValue } from './lib/transformResponsiveValue';
 export { useInterpolation } from './lib/useInterpolation';
+export { getWindowDimensions } from './lib/getWindowDimensions';
+export type { WindowDimensions } from './lib/getWindowDimensions';
