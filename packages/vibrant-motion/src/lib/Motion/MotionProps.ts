@@ -1,6 +1,7 @@
 import type { ReactElement, Ref } from 'react';
 import type { AllSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { TransformMotionProps } from '../props/transform';
 import type { Animation } from '../types';
 
 export type MotionRefValue = {
@@ -18,7 +19,7 @@ type MotionProps = {
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
-  animation: WithMotion<AllSystemProps>;
+  animation: WithMotion<AllSystemProps & TransformMotionProps>;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(
