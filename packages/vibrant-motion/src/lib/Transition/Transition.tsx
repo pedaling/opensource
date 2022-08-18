@@ -1,12 +1,13 @@
 import { useEffect, useMemo } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
+import { transformMotionProps } from '../props/transform';
 import { useReactSpring } from '../useReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withTransitionVariation } from './TransitionProp';
 
 export const Transition = withTransitionVariation(
   ({ innerRef, children, style, animation, duration, ...restProps }) => {
-    const { interpolation } = useInterpolation();
+    const { interpolation } = useInterpolation(transformMotionProps);
     const { animated, useSpring } = useReactSpring();
 
     const AnimatedComponent = useMemo(
@@ -28,7 +29,7 @@ export const Transition = withTransitionVariation(
           duration,
         },
       }),
-      [interpolation, currentStyle, duration]
+      [currentStyle, duration, interpolation]
     );
 
     const [styles, springApi] = useSpring(() => ({ from: animation }));
