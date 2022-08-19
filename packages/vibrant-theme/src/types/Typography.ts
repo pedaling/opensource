@@ -23,7 +23,6 @@ export type TypographyKind =
   | 'title7';
 
 type TypographyStyle = {
-  fontFamily: string;
   fontSize: number | string;
   fontWeight: TypographyWeight;
   lineHeight: number | string;
@@ -34,5 +33,8 @@ export type ThemeTypography = {
 };
 
 export type ThemeTypographyWeight = {
-  [key in TypographyWeight]: string;
+  [key in TypographyWeight]: {
+    fontWeight: string;
+    fontFamily?: string;
+  };
 };

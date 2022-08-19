@@ -29,6 +29,9 @@ const fontSizeProp = createSystemProp({
 const fontWeightProp = createSystemProp({
   property: 'fontWeight',
   scale: 'typographyWeight',
+  transform: value => ({
+    ...value,
+  }),
 });
 
 const fontStyleProp = createSystemProp({

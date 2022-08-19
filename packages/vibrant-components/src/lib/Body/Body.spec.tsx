@@ -29,7 +29,7 @@ describe('<Body />', () => {
 
       expect(element).toHaveStyleRule(
         'font-weight',
-        themeTypographyWeight[themeTypography.body3.fontWeight].toString()
+        themeTypographyWeight[themeTypography.body3.fontWeight].fontWeight.toString()
       );
 
       expect(element).toHaveStyleRule('line-height', themeTypography.body3.lineHeight);

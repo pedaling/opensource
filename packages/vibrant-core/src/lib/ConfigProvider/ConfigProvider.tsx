@@ -48,13 +48,13 @@ const ConfigContext = createContext<ConfigContextValue>({
   },
 });
 
-export type DependencyProviderProps = {
+export type ConfigProviderProps = {
   children: ReactElementChild;
   dependencies?: Dependencies;
   translations?: Partial<Translation>;
 };
 
-export const ConfigProvider: FC<DependencyProviderProps> = ({ children, dependencies, translations }) => {
+export const ConfigProvider: FC<ConfigProviderProps> = ({ children, dependencies, translations }) => {
   const config = useConfig();
 
   const mergedConfig = useMemo<ConfigContextValue>(

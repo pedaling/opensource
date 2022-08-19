@@ -29,7 +29,7 @@ describe('<Paragraph />', () => {
 
       expect(element).toHaveStyleRule(
         'font-weight',
-        themeTypographyWeight[themeTypography.paragraph3.fontWeight].toString()
+        themeTypographyWeight[themeTypography.paragraph3.fontWeight].fontWeight.toString()
       );
 
       expect(element).toHaveStyleRule('line-height', themeTypography.paragraph3.lineHeight);

@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import type { ReactElementChild } from '../../types';
 import { ConfigProvider } from '../ConfigProvider';
-import type { DependencyProviderProps } from '../ConfigProvider';
+import type { ConfigProviderProps } from '../ConfigProvider/ConfigProvider';
 import { GlobalEventProvider } from '../GlobalEventProvider';
 import { ThemeProvider } from '../ThemeProvider';
 import type { ThemeProviderProps } from '../ThemeProvider';
 
-export type VibrantProviderProps = Partial<DependencyProviderProps & ThemeProviderProps> & {
+export type VibrantProviderProps = Partial<ConfigProviderProps & ThemeProviderProps> & {
   children: ReactElementChild;
 };
 

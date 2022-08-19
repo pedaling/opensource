@@ -32,7 +32,6 @@ export const shouldForwardProp = createShouldForwardProp(systemPropNames);
 export const interpolation = injectTheme(
   createInterpolation(systemProps, {
     display: 'flex',
-    fontFamily: 'Pretendard',
     textAlign: 'left',
     color: 'onColor',
   })
