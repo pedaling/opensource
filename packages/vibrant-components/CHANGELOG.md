@@ -2,6 +2,12 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.8.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.8.1...vibrant-components-0.8.2) (2022-08-19)
+
+### Dependency Updates
+
+* `vibrant-icons` updated to version `0.4.5`
+* `vibrant-motion` updated to version `0.6.2`
 ### [0.8.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.8.0...vibrant-components-0.8.1) (2022-08-19)
 
 ### Dependency Updates
