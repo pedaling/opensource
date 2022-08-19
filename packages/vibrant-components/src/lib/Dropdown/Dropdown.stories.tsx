@@ -16,7 +16,7 @@ export default {
       </Box>
     ),
     renderOpener: open => (
-      <Box base={Pressable} backgroundColor="primary" onClick={open} p={20}>
+      <Box base={Pressable} backgroundColor="primary" onClick={open} p={20} height={100}>
         <Body level={1}>Click Me</Body>
       </Box>
     ),
@@ -26,8 +26,10 @@ export default {
 } as ComponentMeta<typeof Dropdown>;
 
 export const Basic: ComponentStory<typeof Dropdown> = props => (
-  <VStack mt={200}>
-    <Dropdown {...props} />
+  <VStack mt={200} width="100%">
+    <Box mx="auto">
+      <Dropdown {...props} />
+    </Box>
   </VStack>
 );
 
@@ -56,7 +58,7 @@ export const WithHeightAnimation: ComponentStory<typeof Dropdown> = props => {
   );
 
   return (
-    <VStack mt={200}>
+    <VStack mt={200} width="100%">
       <Box mx="auto">
         <Dropdown {...props} renderContents={renderContents} />
       </Box>
@@ -65,7 +67,9 @@ export const WithHeightAnimation: ComponentStory<typeof Dropdown> = props => {
 };
 
 export const WithFlippedPositionWhenOverflow: ComponentStory<typeof Dropdown> = props => (
-  <VStack mx="auto">
-    <Dropdown {...props} />
+  <VStack width="100%">
+    <Box mx="auto">
+      <Dropdown {...props} />
+    </Box>
   </VStack>
 );
