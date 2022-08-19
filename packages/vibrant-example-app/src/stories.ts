@@ -13,6 +13,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/OperatorButton/OperatorButton.stories.tsx'),
   require('../../vibrant-components/src/lib/Paper/Paper.stories.tsx'),
   require('../../vibrant-components/src/lib/Paragraph/Paragraph.stories.tsx'),
+  require('../../vibrant-components/src/lib/Portal/Portal.stories.tsx'),
   require('../../vibrant-components/src/lib/Pressable/Pressable.stories.tsx'),
   require('../../vibrant-components/src/lib/RangePickerField/RangePickerField.stories.tsx'),
   require('../../vibrant-components/src/lib/SearchField/SearchField.stories.tsx'),
