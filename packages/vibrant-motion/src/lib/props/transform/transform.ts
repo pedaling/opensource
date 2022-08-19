@@ -1,4 +1,4 @@
-import { createSystemProp } from 'packages/vibrant-core/src/lib/createSystemProp';
+import { createSystemProp } from '@vibrant-ui/core';
 
 const xProp = createSystemProp({
   property: 'x',
