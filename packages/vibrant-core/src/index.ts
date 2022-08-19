@@ -42,3 +42,4 @@ export { transformResponsiveValue } from './lib/transformResponsiveValue';
 export { useInterpolation } from './lib/useInterpolation';
 export { getWindowDimensions } from './lib/getWindowDimensions';
 export type { WindowDimensions } from './lib/getWindowDimensions';
+export { createSystemProp } from './lib/createSystemProp';

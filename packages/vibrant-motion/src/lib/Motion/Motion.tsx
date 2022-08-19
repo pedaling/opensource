@@ -1,11 +1,12 @@
 import { useEffect, useImperativeHandle, useMemo } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
+import { transformMotionProps } from '../props/transform';
 import { useReactSpring } from '../useReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(({ innerRef, children, duration, loop, from, to }) => {
-  const { interpolation } = useInterpolation();
+  const { interpolation } = useInterpolation(transformMotionProps);
   const { animated, useSpring } = useReactSpring();
 
   const AnimatedComponent = useMemo(
