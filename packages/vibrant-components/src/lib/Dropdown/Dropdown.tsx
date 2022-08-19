@@ -134,26 +134,17 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
             ref={targetRef}
             animation={{
               opacity: visible ? 1 : 0,
-              y: offset.y,
               x: offset.x,
+              y: offset.y,
             }}
             duration={150}
+            style={{
+              x: offset.x,
+              y: offset.y,
+            }}
           >
-            <Box
-              position="absolute"
-              zIndex={1}
-              transform={{
-                translateY: offset.y,
-                translateX: offset.x,
-              }}
-            >
-              <Box
-                overflow="hidden"
-                backgroundColor="background"
-                py={CONTENT_PADDING}
-                elevationLevel={4}
-                borderRadiusLevel={1}
-              >
+            <Box position="absolute" zIndex={1}>
+              <Box backgroundColor="background" py={CONTENT_PADDING} elevationLevel={4} borderRadiusLevel={1}>
                 <Transition
                   animation={
                     visible
@@ -164,7 +155,7 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
                   }
                   duration={150}
                 >
-                  <Box>
+                  <Box overflow="hidden">
                     <Box onLayout={handleContentResize} flexShrink={0}>
                       {renderContents()}
                     </Box>
