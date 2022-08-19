@@ -138,7 +138,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
                   animation={
                     visible
                       ? {
-                          ...(contentHeight ? { height: contentHeight } : {}),
+                          height: contentHeight,
                         }
                       : {}
                   }
