@@ -29,7 +29,7 @@ describe('<Display />', () => {
 
       expect(element).toHaveStyleRule(
         'font-weight',
-        themeTypographyWeight[themeTypography.display3.fontWeight].toString()
+        themeTypographyWeight[themeTypography.display3.fontWeight].fontWeight.toString()
       );
 
       expect(element).toHaveStyleRule('line-height', themeTypography.display3.lineHeight);

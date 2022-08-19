@@ -18,7 +18,10 @@ const dependencies: Dependencies = {
 
 const App = () => {
   const [loaded] = useFonts({
-    Pretendard: 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.ttf',
+    'Pretendard-Regular': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.ttf',
+    'Pretendard-Medium': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.ttf',
+    'Pretendard-Bold': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.ttf',
+    'Pretendard-ExtraBold': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.ttf',
   });
 
   const { story } = useStorybookInformation();
@@ -28,7 +31,29 @@ const App = () => {
   }
 
   return (
-    <VibrantProvider dependencies={dependencies}>
+    <VibrantProvider
+      theme={{
+        typographyWeight: {
+          regular: {
+            fontFamily: 'Pretendard-Regular',
+            fontWeight: '400',
+          },
+          medium: {
+            fontFamily: 'Pretendard-Medium',
+            fontWeight: '500',
+          },
+          bold: {
+            fontFamily: 'Pretendard-Bold',
+            fontWeight: '700',
+          },
+          extraBold: {
+            fontFamily: 'Pretendard-ExtraBold',
+            fontWeight: '800',
+          },
+        },
+      }}
+      dependencies={dependencies}
+    >
       <Box base={ScrollView} height="100%">
         <Box base={SafeAreaView}>
           <StoryView {...story} />

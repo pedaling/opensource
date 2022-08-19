@@ -36,7 +36,6 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
-  font-family: Pretendard;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.125rem;
