@@ -1,22 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { FC, ReactElement } from 'react';
 import { Box, getWindowDimensions } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { Dismissible } from '../Dismissible';
-
-export type DropdownProps = {
-  position: Position;
-  renderContents: () => ReactElement;
-  renderOpener: (open: () => void) => ReactElement;
-  spacing?: number;
-  open: boolean;
-};
+import { withDropdownVariation } from './DropdownProps';
 
 const CONTENT_PADDING = 20;
 
-const getOffsetWithoutOverflowByPosition = (
+const getOffsetAvoidingOverflowByPosition = (
   openerRect: Rect,
   targetRect: Rect,
   position: Position,
@@ -62,7 +54,7 @@ const getOffsetWithoutOverflowByPosition = (
   return { x, y };
 };
 
-export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents, position, spacing }) => {
+export const Dropdown = withDropdownVariation(({ open, renderOpener, renderContents, position, spacing }) => {
   const openerRef = useRef<HTMLElement>(null);
   const targetRef = useRef<HTMLElement>(null);
   const [isOpen, setIsOpen] = useState(open);
@@ -80,7 +72,7 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
       getElementRect(targetRef.current),
     ]);
 
-    const { x, y } = getOffsetWithoutOverflowByPosition(openerRect, targetRect, position, spacing);
+    const { x, y } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
 
     setOffset({ x, y });
 
@@ -91,7 +83,7 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
     async ({ layout: { width, height, x, y } }: LayoutEvent) => {
       const openerRect = await getElementRect(openerRef.current);
 
-      const { x: offsetX, y: offsetY } = getOffsetWithoutOverflowByPosition(
+      const { x: offsetX, y: offsetY } = getOffsetAvoidingOverflowByPosition(
         openerRect,
         {
           x,
@@ -165,4 +157,4 @@ export const Dropdown: FC<DropdownProps> = ({ open, renderOpener, renderContents
       )}
     </Box>
   );
-};
+});
