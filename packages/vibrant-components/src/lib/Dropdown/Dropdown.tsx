@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { FC, ReactElement } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box, getWindowDimensions } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
@@ -29,10 +29,7 @@ const getOffsetWithoutOverflowByPosition = (
     spacing,
   });
 
-  const viewport = {
-    width: window.innerWidth,
-    height: window.innerHeight,
-  };
+  const viewport = getWindowDimensions();
   const isOverflowing = detectOverflow({
     viewport,
     targetRect: { ...targetRect, x: openerRect.x + x, y: openerRect.y + y },
