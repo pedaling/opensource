@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.5.1...vibrant-motion-0.6.0) (2022-08-19)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.11.0`
+
+### Features
+
+* Motion, Transition의 animation으로 x, y 속성을 받을 수 있게 한다. ([#202](https://github.com/pedaling/opensource/issues/202)) ([a67dded](https://github.com/pedaling/opensource/commit/a67ddedcd4460844c5456857c857969464a2fd55))
+
+
+### Bug Fixes
+
+* **vibrant-components:** fix Switch component type error ([#200](https://github.com/pedaling/opensource/issues/200)) ([e7be530](https://github.com/pedaling/opensource/commit/e7be5300e8ce241df91a388495c1d3d13e540e3d))
+
 ### [0.5.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.5.0...vibrant-motion-0.5.1) (2022-08-16)
 
 ### Dependency Updates

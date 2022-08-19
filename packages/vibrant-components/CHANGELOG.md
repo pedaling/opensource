@@ -2,6 +2,26 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.7.2...vibrant-components-0.8.0) (2022-08-19)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.6.0`
+* `vibrant-utils` updated to version `0.6.1`
+* `vibrant-core` updated to version `0.11.0`
+* `vibrant-icons` updated to version `0.4.3`
+* `vibrant-motion` updated to version `0.6.0`
+
+### Features
+
+* add fontFamily to typographyWeight ([#203](https://github.com/pedaling/opensource/issues/203)) ([32ac558](https://github.com/pedaling/opensource/commit/32ac558da045a2436f3b97c4e568e2f0f1ad9a75))
+* Motion, Transition의 animation으로 x, y 속성을 받을 수 있게 한다. ([#202](https://github.com/pedaling/opensource/issues/202)) ([a67dded](https://github.com/pedaling/opensource/commit/a67ddedcd4460844c5456857c857969464a2fd55))
+
+
+### Bug Fixes
+
+* **vibrant-components:** fix Switch component type error ([#200](https://github.com/pedaling/opensource/issues/200)) ([e7be530](https://github.com/pedaling/opensource/commit/e7be5300e8ce241df91a388495c1d3d13e540e3d))
+
 ### [0.7.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.7.1...vibrant-components-0.7.2) (2022-08-16)
 
 ### Dependency Updates
