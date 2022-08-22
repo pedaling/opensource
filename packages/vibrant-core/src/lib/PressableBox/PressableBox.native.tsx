@@ -7,6 +7,7 @@ export const PressableBox = withPressableBoxVariation(
     <Box
       ref={innerRef}
       base={Pressable}
+      disabled={disabled}
       onPress={() => onClick?.()}
       onPressIn={() => onActive?.()}
       onPressOut={() => onInactive?.()}
