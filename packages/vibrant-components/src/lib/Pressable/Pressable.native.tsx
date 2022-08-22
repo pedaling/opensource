@@ -23,8 +23,7 @@ export const Pressable = withPressableVariation(
         <Box
           base={NativePressable}
           position="relative"
-          overflowX="hidden"
-          overflowY="hidden"
+          overflow="hidden"
           alignItems="stretch"
           disabled={disabled}
           onPress={() => onClick?.()}

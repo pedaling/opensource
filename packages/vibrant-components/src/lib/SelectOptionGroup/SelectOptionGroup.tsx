@@ -43,7 +43,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         borderWidth={1}
         borderStyle="solid"
         borderRadius={2}
-        overflowY="scroll"
+        overflow="scroll"
         hideScroll={true}
         {...restProps}
       >
