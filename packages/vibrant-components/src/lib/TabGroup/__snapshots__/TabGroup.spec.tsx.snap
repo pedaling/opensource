@@ -34,7 +34,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
-  overflow-x: hidden;
+  overflow: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
   margin-bottom: -1px;

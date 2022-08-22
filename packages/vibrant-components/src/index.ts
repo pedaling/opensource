@@ -20,3 +20,4 @@ export { createShadowsComponent } from './lib/createShadowsComponent';
 export { DatePickerField } from './lib/DatePickerField';
 export { RangePickerField } from './lib/RangePickerField';
 export { calendarTranslation } from './lib/Calendar';
+export { Dropdown } from './lib/Dropdown';

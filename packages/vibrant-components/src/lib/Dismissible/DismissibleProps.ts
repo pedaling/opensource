@@ -1,7 +1,7 @@
-import type { ReactElement } from 'react';
+import type { ForwardedRef, FunctionComponentElement } from 'react';
 
 export type DismissibleProps = {
   active?: boolean;
   onDismiss: () => void;
-  children: ReactElement;
+  children: FunctionComponentElement<{ ref?: ForwardedRef<any> }>;
 };
