@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box } from '@vibrant-ui/core';
-import { Title } from '../Title';
+import { Box } from '../Box';
+import { Text } from '../Text';
 import { Portal } from './Portal';
 
 export default {
@@ -24,9 +24,9 @@ export const Basic: ComponentStory<typeof Portal> = props => (
         justifyContent="center"
         backgroundColor="dim"
       >
-        <Title level={1} textAlign="center" color="white">
+        <Text typography="title1" textAlign="center" color="white">
           Portal
-        </Title>
+        </Text>
       </Box>
     </Portal>
   </>
