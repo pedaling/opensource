@@ -93,6 +93,7 @@ export type BoxElements =
   | 'footer'
   | 'g'
   | 'header'
+  | 'img'
   | 'input'
   | 'label'
   | 'li'

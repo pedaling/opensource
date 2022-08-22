@@ -41,23 +41,20 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Vibrant',
-        logo: {
-          alt: 'Vibrant Design System Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'Vibrant Design System',
         items: [
           {
             type: 'doc',
             docId: 'getting-started/introduction',
             position: 'left',
-            label: 'Guide',
+            label: 'Design',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/blog', label: 'Component', position: 'left' },
           {
-            href: 'https://github.com/pedaling/opensource',
-            label: 'GitHub',
+            type: 'html',
             position: 'right',
+            value:
+              '<a href="https://github.com/pedaling/opensource" target="_blank"><object type="image/svg+xml" data="/icons/github.svg" style="display: block" /></a>',
           },
         ],
       },
