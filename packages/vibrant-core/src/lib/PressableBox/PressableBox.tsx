@@ -12,8 +12,8 @@ export const PressableBox = withPressableBoxVariation(
     disabled,
     onHoverIn,
     onHoverOut,
-    onActive,
-    onInactive,
+    onPressIn,
+    onPressOut,
     children,
     ...restProps
   }) => (
@@ -33,8 +33,8 @@ export const PressableBox = withPressableBoxVariation(
       onMouseLeave={() => onHoverOut?.()}
       onFocus={() => onFocusIn?.()}
       onBlur={() => onFocusOut?.()}
-      onMouseDown={() => onActive?.()}
-      onMouseUp={() => onInactive?.()}
+      onMouseDown={() => onPressIn?.()}
+      onMouseUp={() => onPressOut?.()}
       {...(as === 'button'
         ? {
             disabled,

@@ -52,8 +52,8 @@ export const Pressable = withPressableVariation(
 
             onBlur?.();
           }}
-          onActive={() => setIsActivated(true)}
-          onInactive={() => setIsActivated(false)}
+          onPressIn={() => setIsActivated(true)}
+          onPressOut={() => setIsActivated(false)}
         >
           {overlayColor && (
             <Transition animation={{ opacity: overlayOpacity }} duration={200}>

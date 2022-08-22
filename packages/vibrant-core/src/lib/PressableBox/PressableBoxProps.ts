@@ -34,8 +34,8 @@ export type PressableBoxProps = {
   onClick?: () => void;
   onFocusIn?: () => void;
   onFocusOut?: () => void;
-  onActive?: () => void;
-  onInactive?: () => void;
+  onPressIn?: () => void;
+  onPressOut?: () => void;
   onHoverIn?: () => void;
   onHoverOut?: () => void;
   children: ReactElementChild | ReactElementChild[];
