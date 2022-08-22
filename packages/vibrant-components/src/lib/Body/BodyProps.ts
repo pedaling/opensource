@@ -2,7 +2,7 @@ import type { ResponsiveValue, TextProps, TypographySystemProps } from '@vibrant
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { TypographyWeight } from '@vibrant-ui/theme';
 
-export type BodyProps = Omit<TextProps, Exclude<keyof TypographySystemProps, 'fontStyle' | 'lineHeight'>> & {
+export type BodyProps = Omit<TextProps, keyof TypographySystemProps> & {
   level: ResponsiveValue<1 | 2 | 3 | 4 | 5 | 6>;
   weight?: ResponsiveValue<TypographyWeight>;
 };

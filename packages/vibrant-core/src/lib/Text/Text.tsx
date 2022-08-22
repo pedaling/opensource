@@ -1,21 +1,10 @@
-import type { FC, ReactElement } from 'react';
-import { createElement, forwardRef } from 'react';
+import type { FC } from 'react';
+import { createElement } from 'react';
 import styled from '@emotion/styled';
-import type { TextElements, TextProps } from './TextProps';
 import { interpolation, shouldForwardProp } from './TextProps';
 
-export const Text = styled(
-  forwardRef<HTMLSpanElement, TextProps>(({ as = 'span', ...restProps }, ref) =>
-    createElement(as, {
-      ref,
-      ...restProps,
-    })
-  ),
-  {
-    shouldForwardProp,
-  }
-)(interpolation) as <ElementName extends TextElements | undefined = undefined>(
-  props: TextProps<ElementName>
-) => ReactElement;
+export const Text = styled(({ as = 'span', ...restProps }) => createElement(as, restProps), {
+  shouldForwardProp,
+})(interpolation);
 
 (Text as FC).displayName = 'Text';
