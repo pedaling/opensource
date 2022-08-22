@@ -1,6 +1,7 @@
 import type { ReactElement, Ref } from 'react';
 import type { AllSystemProps } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
+import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
 
 type TransitionProps = {
@@ -9,6 +10,7 @@ type TransitionProps = {
   animation: AllSystemProps & TransformMotionProps;
   style?: any;
   ref?: Ref<any>;
+  easing?: keyof EasingDictionary;
 };
 
 export const withTransitionVariation = withVariation<TransitionProps>('Transition')();
