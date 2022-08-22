@@ -10528,6 +10528,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-plugin-tsconfig-paths@npm:1.0.3":
+  version: 1.0.3
+  resolution: "babel-plugin-tsconfig-paths@npm:1.0.3"
+  peerDependencies:
+    "@babel/core": ^7.9.0
+  checksum: 857a106ccf9fbc782108b2e08225e0e1af029e24193ba550af501a4e8f8e1bc5e8f2a48ecd1ffd2cb2e5eec2e3c2eeb4dcb44e658e2b28066397064cefc3318c
+  languageName: node
+  linkType: hard
+
 "babel-preset-current-node-syntax@npm:^1.0.0":
   version: 1.0.1
   resolution: "babel-preset-current-node-syntax@npm:1.0.1"
@@ -11921,6 +11930,7 @@ __metadata:
     "@typescript-eslint/parser": 5.28.0
     babel-jest: 27.5.1
     babel-plugin-react-native-web: 0.18.1
+    babel-plugin-tsconfig-paths: 1.0.3
     babel-preset-expo: 9.1.0
     chromatic: 6.7.0
     clsx: 1.1.1
