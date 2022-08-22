@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
-import { Box, TextInput, getElementPosition } from '@vibrant-ui/core';
+import { Box, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { useSafeDeps } from '@vibrant-ui/utils';
 import { Body } from '../Body';
+import { Dismissible } from '../Dismissible';
 import { SelectOptionGroup } from '../SelectOptionGroup';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
@@ -28,7 +29,7 @@ export const SelectField = withSelectFieldVariation(
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
     const onValueChangeRef = useSafeDeps(onValueChange);
 
-    const ref = useRef<HTMLLabelElement>(null);
+    const ref = useRef<HTMLElement>(null);
     const inputRef = useRef<TextInputRef>(null);
 
     const labelColor = useMemo(() => {
@@ -110,7 +111,7 @@ export const SelectField = withSelectFieldVariation(
     };
 
     return (
-      <Box<undefined, 'div'> as="div" onMouseDown={event => event.preventDefault()}>
+      <Box zIndex={1}>
         <TextInput
           ref={inputRef}
           type="text"
@@ -134,64 +135,46 @@ export const SelectField = withSelectFieldVariation(
           onKeyPress={({ key, prevent }) => {
             if (key === (direction === 'up' ? 'ArrowDown' : 'ArrowUp')) {
               setFocusIndex(Math.max(0, focusIndex - 1));
-
-              prevent();
             }
 
             if (key === (direction === 'up' ? 'ArrowUp' : 'ArrowDown')) {
               setFocusIndex(Math.min(options.length - 1, focusIndex + 1));
-
-              prevent();
             }
-          }}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => {
-            setIsFocused(false);
 
-            close();
+            prevent();
           }}
         />
         <Box position="relative">
-          <Box<undefined, 'label'>
-            ref={ref}
-            as="label"
-            alignItems="center"
-            flexDirection="row"
-            height={50}
-            px={16}
-            borderWidth={1}
-            borderStyle="solid"
-            borderColor={borderColor}
-            borderRadius={2}
-            cursor="pointer"
-            onMouseDown={event => {
-              event.preventDefault();
-
-              return isOpened ? close() : open(-1);
-            }}
-            {...restProps}
-          >
-            <Box width="100%" overflow="hidden">
-              {selectedOption ? (
-                <Box flexDirection={inlineLabel ? 'row' : 'column'}>
-                  {label ? (
-                    <>
-                      <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
-                        {label}
-                      </Body>
-                      {inlineLabel && (
-                        <Body
-                          level={2}
-                          color={disabled ? 'onView3' : 'onView2'}
-                          wordBreak="break-all"
-                          wordWrap="break-word"
-                        >
-                          &nbsp;/&nbsp;
+          <Dismissible active={isFocused} onDismiss={() => setIsFocused(false)}>
+            <PressableBox
+              ref={ref}
+              alignItems="center"
+              flexDirection="row"
+              height={50}
+              px={16}
+              borderWidth={1}
+              borderStyle="solid"
+              borderColor={borderColor}
+              borderRadius={2}
+              cursor="pointer"
+              onClick={() => (isOpened ? close() : open(-1))}
+              {...restProps}
+            >
+              <Box width="100%" overflow="hidden">
+                {selectedOption ? (
+                  <Box flexDirection={inlineLabel ? 'row' : 'column'}>
+                    {Boolean(label) && (
+                      <>
+                        <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                          {label}
                         </Body>
-                      )}
-                    </>
-                  ) : null}
-                  <Box flex={1}>
+                        <Box as="span" flexShrink={0} hidden={!inlineLabel}>
+                          <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
+                            &nbsp;/&nbsp;
+                          </Body>
+                        </Box>
+                      </>
+                    )}
                     <Body
                       level={2}
                       color={disabled ? 'onView3' : 'onView1'}
@@ -202,40 +185,45 @@ export const SelectField = withSelectFieldVariation(
                       {selectedOption.label}
                     </Body>
                   </Box>
-                </Box>
-              ) : (
-                <Body level={2} color={labelColor} lineLimit={1}>
-                  {label || placeholder}
-                </Body>
-              )}
+                ) : (
+                  <Body level={2} color={labelColor} lineLimit={1}>
+                    {label || placeholder}
+                  </Body>
+                )}
+              </Box>
+            </PressableBox>
+          </Dismissible>
+          <Dismissible active={isOpened} onDismiss={close}>
+            <Box
+              position="absolute"
+              zIndex={1}
+              width="100%"
+              maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
+              hidden={!isOpened}
+              {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
+            >
+              <SelectOptionGroup
+                onOptionClick={index => {
+                  setSelectedOptionIndex(index);
+
+                  close();
+
+                  inputRef.current?.focus();
+                }}
+                state={state}
+                renderOption={renderOption}
+                reverse={direction === 'up'}
+                options={options}
+                focusIndex={focusIndex}
+              />
             </Box>
-          </Box>
-
-          <Box<typeof SelectOptionGroup>
-            base={SelectOptionGroup}
-            position="absolute"
-            hidden={!isOpened}
-            zIndex={1}
-            width="100%"
-            maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
-            onOptionClick={index => {
-              setSelectedOptionIndex(index);
-
-              close();
-            }}
-            state={state}
-            renderOption={renderOption}
-            reverse={direction === 'up'}
-            options={options}
-            focusIndex={focusIndex}
-            {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
-          />
+          </Dismissible>
         </Box>
-        {helperText ? (
+        {Boolean(helperText) && (
           <Body level={4} color={state === 'error' ? 'error' : 'onView2'} wordBreak="keep-all" wordWrap="break-word">
             {helperText}
           </Body>
-        ) : null}
+        )}
       </Box>
     );
   }

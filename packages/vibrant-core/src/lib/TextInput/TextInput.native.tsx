@@ -25,8 +25,9 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       type,
       defaultValue,
       pattern,
-      focusStyle,
+      readOnly = false,
       hidden,
+      focusStyle,
       onFocus,
       onBlur,
       onKeyPress,
@@ -68,6 +69,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         ref={innerRef}
         keyboardType={keyboardType}
         value={value}
+        editable={!readOnly}
         onFocus={() => {
           setIsFocused(true);
 
@@ -98,7 +100,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         onSubmitEditing={() => onSubmit?.(value)}
         {...restProps}
         {...(isFocused ? focusStyle : {})}
-        {...(hidden ? { position: 'absolute', height: 0 } : {})}
+        {...(hidden ? { position: 'absolute', height: 0, opacity: 0 } : {})}
       />
     );
   }
