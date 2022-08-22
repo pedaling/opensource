@@ -76,7 +76,7 @@ const typescriptRules = {
       selector: ['default', 'variable', 'typeLike'],
       format: null,
       filter: {
-        regex: '(VStack|HStack|ZStack|CSS|overflowX|overflowY|Pretendard|HTML)',
+        regex: '(VStack|HStack|ZStack|CSS|Pretendard|HTML)',
         match: true,
       },
     },

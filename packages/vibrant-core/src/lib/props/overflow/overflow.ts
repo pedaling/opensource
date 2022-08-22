@@ -4,14 +4,6 @@ const overflowProp = createSystemProp({
   property: 'overflow',
 });
 
-const overflowXProp = createSystemProp({
-  property: 'overflowX',
-});
-
-const overflowYProp = createSystemProp({
-  property: 'overflowY',
-});
-
 const hideScrollProp = createSystemProp({
   property: 'hideScroll',
   transform: (value: boolean) =>
@@ -26,4 +18,4 @@ const hideScrollProp = createSystemProp({
       : {},
 });
 
-export const overflowSystemProps = [overflowProp, overflowXProp, overflowYProp, hideScrollProp];
+export const overflowSystemProps = [overflowProp, hideScrollProp];

@@ -35,8 +35,7 @@ export const Pressable = withPressableVariation(
         <Box
           as={as}
           position="relative"
-          overflowX="hidden"
-          overflowY="hidden"
+          overflow="hidden"
           cursor={disabled ? 'default' : 'pointer'}
           alignItems="stretch"
           zIndex={0}

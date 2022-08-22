@@ -178,7 +178,7 @@ export const SelectField = withSelectFieldVariation(
             }}
             {...restProps}
           >
-            <Box width="100%" overflowX="hidden">
+            <Box width="100%" overflow="hidden">
               {selectedOption ? (
                 <Box flexDirection={inlineLabel ? 'row' : 'column'}>
                   {label ? (

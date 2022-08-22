@@ -5,15 +5,7 @@ import { withCalendarDateItemVariation } from './CalendarDateItemProps';
 
 export const CalenderDateItem = withCalendarDateItemVariation(
   ({ date, onClick, color, today, range, ...restProps }) => (
-    <Box
-      base={Pressable}
-      onClick={() => onClick(date)}
-      position="relative"
-      overflowX="visible"
-      overflowY="visible"
-      width={40}
-      height={40}
-    >
+    <Box base={Pressable} onClick={() => onClick(date)} position="relative" overflow="visible" width={40} height={40}>
       <>
         <Box
           position="absolute"
