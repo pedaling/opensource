@@ -4,7 +4,7 @@ import { TextInput as RNTextInput, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { TextInputProps, TextInputRef } from './TextInputProps';
-import { interpolation, systemPropNames } from './TextInputProps';
+import { interpolation, replaceValue, systemPropNames } from './TextInputProps';
 
 const shouldForwardProp = createShouldForwardProp(systemPropNames);
 
@@ -20,10 +20,14 @@ const SystemTextInput = styled(
 )(interpolation);
 
 export const TextInput = forwardRef<TextInputRef, TextInputProps>(
-  ({ type, defaultValue, focusStyle, onFocus, onBlur, onKeyPress, onChange, onSubmit, ...restProps }, ref) => {
+  (
+    { type, defaultValue, pattern, focusStyle, hidden, onFocus, onBlur, onKeyPress, onChange, onSubmit, ...restProps },
+    ref
+  ) => {
     const [value, setValue] = useState(defaultValue ?? '');
     const [isFocused, setIsFocused] = useState(false);
-    const inputRef = useRef<RNTextInput>(null);
+
+    const innerRef = useRef<RNTextInput>(null);
 
     const keyboardType = useMemo<KeyboardType>(() => {
       if (type === 'number') {
@@ -38,8 +42,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
     }, [defaultValue]);
 
     useImperativeHandle(ref, () => ({
-      focus: () => inputRef.current?.focus(),
-      blur: () => inputRef.current?.blur(),
+      focus: () => innerRef.current?.focus(),
+      blur: () => innerRef.current?.blur(),
       clear: () => {
         setValue('');
 
@@ -49,7 +53,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
     return (
       <SystemTextInput
-        ref={inputRef}
+        ref={innerRef}
         keyboardType={keyboardType}
         value={value}
         onFocus={() => {
@@ -64,22 +68,25 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         }}
         onKeyPress={event => onKeyPress?.({ key: event.nativeEvent.key, prevent: () => event.preventDefault() })}
         onChangeText={value => {
+          const replacedValue = replaceValue({ pattern, value });
+
           let isPrevented = false;
 
           onChange?.({
-            value,
+            value: replacedValue,
             prevent: () => {
               isPrevented = true;
             },
           });
 
           if (!isPrevented) {
-            setValue(value);
+            setValue(replacedValue);
           }
         }}
         onSubmitEditing={() => onSubmit?.(value)}
         {...restProps}
         {...(isFocused ? focusStyle : {})}
+        {...(hidden ? { position: 'absolute', height: 0 } : {})}
       />
     );
   }
