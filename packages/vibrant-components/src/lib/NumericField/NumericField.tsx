@@ -83,7 +83,7 @@ export const NumericField = withNumericFieldVariation(
           color={color}
           min={min}
           max={max}
-          onChange={({ value }) => setInputValue(value ? parseInt(value, 10) : undefined)}
+          onValueChange={({ value }) => setInputValue(value ? parseInt(value, 10) : undefined)}
           onBlur={() => updateInputValue(inputValue ?? min ?? 0)}
           tabIndex={tabIndex}
         />

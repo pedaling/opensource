@@ -81,7 +81,7 @@ export type TextInputProps = SystemProps &
     onFocus?: () => void;
     onBlur?: () => void;
     onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;
-    onChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
+    onValueChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
     onSubmit?: (value: string) => void;
   };
 
