@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
-import { useSafeDeps } from '@vibrant-ui/utils';
+import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { Dismissible } from '../Dismissible';
+import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
+import { Space } from '../Space';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
@@ -27,7 +29,6 @@ export const SelectField = withSelectFieldVariation(
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
-    const onValueChangeRef = useSafeDeps(onValueChange);
 
     const ref = useRef<HTMLElement>(null);
     const inputRef = useRef<TextInputRef>(null);
@@ -64,8 +65,9 @@ export const SelectField = withSelectFieldVariation(
 
       setState('default');
 
-      onValueChangeRef.current?.(selectedOption.value);
-    }, [onValueChangeRef, selectedOption]);
+      onValueChange?.(selectedOption.value);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectedOption]);
 
     useEffect(() => {
       setState(stateProp);
@@ -156,41 +158,48 @@ export const SelectField = withSelectFieldVariation(
               borderStyle="solid"
               borderColor={borderColor}
               borderRadius={2}
-              cursor="pointer"
+              cursor={disabled ? 'default' : 'pointer'}
               onClick={() => (isOpened ? close() : open(-1))}
               {...restProps}
             >
-              <Box width="100%" overflow="hidden">
-                {selectedOption ? (
-                  <Box flexDirection={inlineLabel ? 'row' : 'column'}>
-                    {Boolean(label) && (
-                      <>
-                        <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
-                          {label}
-                        </Body>
-                        <Box as="span" flexShrink={0} hidden={!inlineLabel}>
-                          <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
-                            &nbsp;/&nbsp;
+              <HStack width="100%">
+                <Box as="span" flex={1}>
+                  {selectedOption ? (
+                    <Box flexDirection={inlineLabel ? 'row' : 'column'}>
+                      {Boolean(label) && (
+                        <>
+                          <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                            {label}
                           </Body>
-                        </Box>
-                      </>
-                    )}
-                    <Body
-                      level={2}
-                      color={disabled ? 'onView3' : 'onView1'}
-                      wordBreak="break-all"
-                      wordWrap="break-word"
-                      lineLimit={1}
-                    >
-                      {selectedOption.label}
+                          <Box as="span" flexShrink={0} hidden={!inlineLabel}>
+                            <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
+                              &nbsp;/&nbsp;
+                            </Body>
+                          </Box>
+                        </>
+                      )}
+                      <Body
+                        level={2}
+                        color={disabled ? 'onView3' : 'onView1'}
+                        wordBreak="break-all"
+                        wordWrap="break-word"
+                        lineLimit={1}
+                      >
+                        {selectedOption.label}
+                      </Body>
+                    </Box>
+                  ) : (
+                    <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                      {label || placeholder}
                     </Body>
-                  </Box>
-                ) : (
-                  <Body level={2} color={labelColor} lineLimit={1}>
-                    {label || placeholder}
-                  </Body>
-                )}
-              </Box>
+                  )}
+                </Box>
+                <Space width={12} />
+                <Icon.ArrowTriangleDown.Regular
+                  size={20}
+                  fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
+                />
+              </HStack>
             </PressableBox>
           </Dismissible>
           <Dismissible active={isOpened} onDismiss={close}>
