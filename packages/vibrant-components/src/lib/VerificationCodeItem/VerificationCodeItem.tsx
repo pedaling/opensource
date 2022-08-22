@@ -1,9 +1,10 @@
-import { Box, Text } from '@vibrant-ui/core';
+import { PressableBox, Text } from '@vibrant-ui/core';
 import { withVerificationCodeItemVariation } from './VerificationCodeItemProps';
 
-export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId, value, ...restProps }) => (
-  <Box<undefined, 'label'>
-    as="label"
+export const VerificationCodeItem = withVerificationCodeItemVariation(({ value, ...restProps }) => (
+  <PressableBox
+    data-testid="VerificationCodeItem"
+    as="div"
     display="flex"
     alignItems="center"
     justifyContent="center"
@@ -13,16 +14,10 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(({ inputId
     borderStyle="solid"
     borderRadius={2}
     cursor="text"
-    htmlFor={inputId}
-    onMouseDown={event => {
-      if (document.activeElement?.id === inputId) {
-        event.preventDefault();
-      }
-    }}
     {...restProps}
   >
     <Text typography="title1" fontWeight="extraBold" textAlign="center">
       {value}
     </Text>
-  </Box>
+  </PressableBox>
 ));

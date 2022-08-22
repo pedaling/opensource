@@ -1,4 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { VStack } from '../VStack';
 import { VerificationCodeField } from './VerificationCodeField';
 
 export default {
@@ -11,4 +12,8 @@ export default {
   },
 } as ComponentMeta<typeof VerificationCodeField>;
 
-export const Basic: ComponentStory<typeof VerificationCodeField> = props => <VerificationCodeField {...props} />;
+export const Basic: ComponentStory<typeof VerificationCodeField> = props => (
+  <VStack alignment="center" width="100%" py={20}>
+    <VerificationCodeField {...props} />
+  </VStack>
+);

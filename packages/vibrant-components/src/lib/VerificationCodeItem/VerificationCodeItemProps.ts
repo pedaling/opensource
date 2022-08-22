@@ -1,10 +1,10 @@
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 type VerificationCodeItemProps = {
-  inputId: string;
   value: string;
   state?: 'default' | 'error';
   active?: boolean;
+  onClick?: () => void;
 };
 
 export const withVerificationCodeItemVariation = withVariation<VerificationCodeItemProps>('VerificationCodeItem')(

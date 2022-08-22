@@ -16,6 +16,7 @@ import {
   colorSystemProps,
   displaySystemProps,
   inputSystemProps,
+  positionSystemProps,
   sizingSystemProps,
   spacingSystemProps,
   typographySystemProps,
@@ -36,6 +37,7 @@ const systemProps = [
   ...colorSystemProps,
   ...displaySystemProps,
   ...inputSystemProps,
+  ...positionSystemProps,
   ...spacingSystemProps,
   ...sizingSystemProps,
   ...typographySystemProps,
@@ -57,8 +59,11 @@ export type TextInputProps = SystemProps & {
   type: TextInputType;
   defaultValue?: string;
   placeholder?: string;
+  pattern?: RegExp;
+  maxLength?: number;
   autoFocus?: boolean;
   focusStyle?: SystemProps;
+  hidden?: boolean;
   onFocus?: () => void;
   onBlur?: () => void;
   onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;
@@ -69,7 +74,6 @@ export type TextInputProps = SystemProps & {
 export const interpolation = injectTheme(
   createInterpolation(systemProps, {
     display: 'flex',
-    boxSizing: 'border-box',
     backgroundColor: 'transparent',
     borderWidth: 0,
     color: 'onColor',
@@ -78,3 +82,6 @@ export const interpolation = injectTheme(
     p: 0,
   })
 );
+
+export const replaceValue = ({ pattern, value }: { pattern?: RegExp; value: string }) =>
+  pattern ? value.replace(new RegExp(`(?!(${pattern.source})).`, 'g'), '') : value;

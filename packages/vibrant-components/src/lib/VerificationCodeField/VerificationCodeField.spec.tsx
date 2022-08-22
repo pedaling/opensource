@@ -1,3 +1,4 @@
+import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing';
 import { createReactRenderer } from '@vibrant-ui/utils/testing';
@@ -9,21 +10,19 @@ describe('<VerificationCodeField />', () => {
   let renderer: ReactRenderer;
   let element: HTMLElement;
   let inputElement: HTMLInputElement;
-  let labelElements: HTMLLabelElement[];
+  let itemElements: HTMLElement[];
 
   const mockHandleComplete = jest.fn();
 
   describe('when VerificationCodeField rendered', () => {
     beforeEach(() => {
-      renderer = render(
-        <VerificationCodeField data-testid="verification-code-field" length={6} onComplete={mockHandleComplete} />
-      );
+      renderer = render(<VerificationCodeField length={6} onComplete={mockHandleComplete} />);
 
-      element = renderer.getByTestId('verification-code-field');
+      element = renderer.getByTestId('VerificationCodeField');
 
       inputElement = element.getElementsByTagName('input')[0];
 
-      labelElements = Array.from(element.getElementsByTagName('label'));
+      itemElements = renderer.getAllByTestId('VerificationCodeItem');
     });
 
     afterEach(() => {
@@ -38,9 +37,9 @@ describe('<VerificationCodeField />', () => {
       });
 
       it.each(value.split('').map((expected, index) => ({ index, expected })))(
-        "'$expected' should be content of labelElements[$index]",
+        "'$expected' should be content of itemElements[$index]",
         ({ index, expected }) => {
-          expect(labelElements[index].textContent).toStrictEqual(expected);
+          expect(itemElements[index].textContent).toStrictEqual(expected);
         }
       );
 
@@ -53,8 +52,8 @@ describe('<VerificationCodeField />', () => {
           await userEvent.type(inputElement, '6');
         });
 
-        it("'6' should be content of labelElements[5]", () => {
-          expect(labelElements[5].textContent).toStrictEqual('6');
+        it("'6' should be content of itemElements[5]", () => {
+          expect(itemElements[5].textContent).toStrictEqual('6');
         });
 
         it('onComplete called with value', () => {
@@ -68,23 +67,15 @@ describe('<VerificationCodeField />', () => {
 
       describe('if state prop is changed to error', () => {
         beforeEach(() => {
-          rerender(
-            renderer,
-            <VerificationCodeField
-              data-testid="verification-code-field"
-              length={6}
-              onComplete={mockHandleComplete}
-              state="error"
-            />
-          );
+          rerender(renderer, <VerificationCodeField length={6} onComplete={mockHandleComplete} state="error" />);
         });
 
         it('activeElement is not input', () => {
           expect(document.activeElement).not.toStrictEqual(inputElement);
         });
 
-        it('input value will be clear', () => {
-          expect(inputElement.value).toStrictEqual('');
+        it('input value will be clear', async () => {
+          await waitFor(() => expect(inputElement.value).toStrictEqual(''));
         });
       });
     });
@@ -92,20 +83,13 @@ describe('<VerificationCodeField />', () => {
 
   describe('when blurOnComplete is true', () => {
     beforeEach(() => {
-      renderer = render(
-        <VerificationCodeField
-          data-testid="verification-code-field"
-          length={6}
-          onComplete={mockHandleComplete}
-          blurOnComplete={true}
-        />
-      );
+      renderer = render(<VerificationCodeField length={6} onComplete={mockHandleComplete} blurOnComplete={true} />);
 
-      element = renderer.getByTestId('verification-code-field');
+      element = renderer.getByTestId('VerificationCodeField');
 
       inputElement = element.getElementsByTagName('input')[0];
 
-      labelElements = Array.from(element.getElementsByTagName('label'));
+      itemElements = renderer.getAllByTestId('VerificationCodeItem');
     });
 
     describe('enter 123456', () => {

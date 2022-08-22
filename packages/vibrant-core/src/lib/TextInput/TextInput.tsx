@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 're
 import styled from '@emotion/styled';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
-import { interpolation, systemPropNames } from './TextInputProps';
+import { interpolation, replaceValue, systemPropNames } from './TextInputProps';
 
 type HTMLInputProps = Exclude<keyof JSX.IntrinsicElements['input'], keyof SystemProps>;
 
@@ -13,18 +13,35 @@ const SystemTextInput = styled<'input', HTMLInputProps>('input', {
 })(interpolation);
 
 export const TextInput = forwardRef<TextInputRef, TextInputProps>(
-  ({ type, defaultValue, focusStyle, onFocus, onBlur, onKeyPress, onChange, onSubmit, ...restProps }, ref) => {
+  (
+    {
+      type,
+      defaultValue,
+      pattern,
+      maxLength,
+      focusStyle,
+      hidden,
+      onFocus,
+      onBlur,
+      onKeyPress,
+      onChange,
+      onSubmit,
+      ...restProps
+    },
+    ref
+  ) => {
     const [value, setValue] = useState(defaultValue ?? '');
     const [isFocused, setIsFocused] = useState(false);
-    const inputRef = useRef<HTMLInputElement>(null);
+
+    const innerRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
       setValue(defaultValue ?? '');
     }, [defaultValue]);
 
     useImperativeHandle(ref, () => ({
-      focus: () => inputRef.current?.focus(),
-      blur: () => inputRef.current?.blur(),
+      focus: () => innerRef.current?.focus(),
+      blur: () => innerRef.current?.blur(),
       clear: () => {
         setValue('');
 
@@ -34,7 +51,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
     return (
       <SystemTextInput
-        ref={inputRef}
+        ref={innerRef}
         type={type}
         value={value}
         onFocus={() => {
@@ -59,10 +76,18 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
           onKeyPress?.({ key, prevent: () => event.preventDefault() });
         }}
         onInput={event => {
+          const replacedValue = replaceValue({ pattern, value: event.currentTarget.value }).substring(0, maxLength);
+
           let isPrevented = false;
 
+          if (value === replacedValue) {
+            event.preventDefault();
+
+            return;
+          }
+
           onChange?.({
-            value: event.currentTarget.value,
+            value: replacedValue,
             prevent: () => {
               isPrevented = true;
 
@@ -71,11 +96,12 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
           });
 
           if (!isPrevented) {
-            setValue(event.currentTarget.value);
+            setValue(replacedValue);
           }
         }}
         {...restProps}
         {...(isFocused ? focusStyle : {})}
+        {...(hidden ? { position: 'absolute', height: 0 } : {})}
       />
     );
   }

@@ -5,7 +5,7 @@ import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { VerificationCodeItem } from './VerificationCodeItem';
 
 describe('<VerificationCodeItem />', () => {
-  const mockHandleFocus = jest.fn();
+  const mockHandleClick = jest.fn();
 
   const { render } = createReactRenderer();
   let renderer: ReactRenderer;
@@ -13,24 +13,13 @@ describe('<VerificationCodeItem />', () => {
 
   describe('when VerificationCodeItem rendered', () => {
     beforeEach(async () => {
-      const inputId = 'input';
+      renderer = render(<VerificationCodeItem value="1" onClick={mockHandleClick} />);
 
-      renderer = render(
-        <>
-          <input data-testid="input" id={inputId} onFocus={mockHandleFocus} />
-          <VerificationCodeItem data-testid="verification-code-item" inputId={inputId} value="1" />
-        </>
-      );
-
-      element = await renderer.findByTestId('verification-code-item');
+      element = await renderer.findByTestId('VerificationCodeItem');
     });
 
     afterEach(() => {
-      mockHandleFocus.mockClear();
-    });
-
-    it('label element created', () => {
-      expect(element.tagName).toStrictEqual('LABEL');
+      mockHandleClick.mockClear();
     });
 
     describe('if element clicked', () => {
@@ -38,20 +27,8 @@ describe('<VerificationCodeItem />', () => {
         await waitFor(() => userEvent.click(element));
       });
 
-      it('input element should be focused', () => {
-        expect(mockHandleFocus).toBeCalled();
-      });
-    });
-
-    describe('even if element clicked twice', () => {
-      beforeEach(async () => {
-        await waitFor(() => userEvent.click(element));
-
-        await waitFor(() => userEvent.click(element));
-      });
-
-      it('onFocus should be called only once', () => {
-        expect(mockHandleFocus).toBeCalledTimes(1);
+      it('onClick should be called', () => {
+        expect(mockHandleClick).toBeCalled();
       });
     });
   });

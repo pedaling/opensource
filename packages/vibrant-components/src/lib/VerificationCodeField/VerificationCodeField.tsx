@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { v4 as uuid } from 'uuid';
-import { Box } from '@vibrant-ui/core';
+import { useEffect, useRef, useState } from 'react';
+import type { TextInputRef } from '@vibrant-ui/core';
+import { Box, TextInput } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
-import { UnstyledTextInput } from '../UnstyledTextInput';
 import { VerificationCodeItem } from '../VerificationCodeItem';
 import { VStack } from '../VStack';
 import { withVerificationCodeFieldVariation } from './VerificationCodeFieldProps';
@@ -14,9 +13,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
     const [code, setCode] = useState<string[]>([]);
     const [focusIndex, setFocusIndex] = useState(-1);
 
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    const inputId = useMemo(() => uuid(), []);
+    const inputRef = useRef<TextInputRef>(null);
 
     const splitIndex = Math.ceil(length / 2);
 
@@ -31,24 +28,20 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
     }, [stateProp]);
 
     return (
-      <Box {...restProps}>
-        <Box<typeof UnstyledTextInput>
-          base={UnstyledTextInput}
+      <Box data-testid="VerificationCodeField" {...restProps}>
+        <TextInput
           ref={inputRef}
-          id={inputId}
-          position="absolute"
-          width={0}
-          height={0}
-          allowPattern={/\d/}
+          type="number"
+          pattern={/\d/}
           maxLength={length}
-          value={code.join('')}
+          defaultValue={code.join('')}
           onFocus={() => {
             setState('default');
 
             setFocusIndex(Math.min(length - 1, code.length));
           }}
           onBlur={() => setFocusIndex(-1)}
-          onValueChange={(value: string) => {
+          onChange={({ value }) => {
             if (code.length !== length && value.length === length) {
               onComplete?.(value);
 
@@ -61,34 +54,41 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
 
             setFocusIndex(Math.min(length - 1, value.length));
           }}
-          onKeyDown={({ key, prevent }: { key: string; prevent: () => void }) => {
+          onKeyPress={({ key, prevent }) => {
             if (/Arrow/.test(key)) {
               prevent();
             }
           }}
+          hidden={true}
         />
         <VStack alignment="center" spacing={8}>
-          <HStack justifyItems="center" flexWrap="wrap" rowGap={12} columnGap={8}>
-            <HStack flex={1} alignment="center" spacing={8}>
+          <HStack justifyItems="center" flexWrap="wrap" mx={-4} my={-4}>
+            <HStack alignment="center" my={4}>
               {Array.from({ length: splitIndex }).map((_, index) => (
-                <VerificationCodeItem
-                  key={index}
-                  inputId={inputId}
-                  value={code[index]}
-                  state={state}
-                  active={focusIndex === index}
-                />
+                <VStack key={index} mx={4}>
+                  <VerificationCodeItem
+                    key={index}
+                    value={code[index]}
+                    state={state}
+                    active={focusIndex === index}
+                    onClick={() => {
+                      inputRef.current?.focus();
+                    }}
+                  />
+                </VStack>
               ))}
             </HStack>
-            <HStack flex={1} alignment="center" spacing={8}>
+            <HStack alignment="center" my={4}>
               {Array.from({ length: length - splitIndex }).map((_, index) => (
-                <VerificationCodeItem
-                  key={index + splitIndex}
-                  inputId={inputId}
-                  value={code[index + splitIndex]}
-                  state={state}
-                  active={focusIndex === index + splitIndex}
-                />
+                <VStack key={index + splitIndex} mx={4}>
+                  <VerificationCodeItem
+                    key={index + splitIndex}
+                    value={code[index + splitIndex]}
+                    state={state}
+                    active={focusIndex === index + splitIndex}
+                    onClick={inputRef.current?.focus}
+                  />
+                </VStack>
               ))}
             </HStack>
           </HStack>
