@@ -1,8 +1,9 @@
 import type { ReactElement, Ref } from 'react';
 import type { AllSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
-import type { Animation } from '../types';
+import type { Animation, AnimationResult } from '../types';
 
 export type MotionRefValue = {
   start: (options?: { reverse?: boolean; reset?: boolean }) => void;
@@ -20,6 +21,9 @@ type MotionProps = {
   duration?: number;
   loop?: boolean | 'reverse';
   animation: WithMotion<AllSystemProps & TransformMotionProps>;
+  easing?: keyof EasingDictionary;
+  onStart?: (e: AnimationResult) => void;
+  onEnd?: (e: AnimationResult) => void;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(
