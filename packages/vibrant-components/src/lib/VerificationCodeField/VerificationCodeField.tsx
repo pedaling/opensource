@@ -41,7 +41,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
             setFocusIndex(Math.min(length - 1, code.length));
           }}
           onBlur={() => setFocusIndex(-1)}
-          onChange={({ value }) => {
+          onValueChange={({ value }) => {
             if (code.length !== length && value.length === length) {
               onComplete?.(value);
 

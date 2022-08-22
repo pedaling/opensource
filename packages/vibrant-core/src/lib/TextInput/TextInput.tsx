@@ -24,7 +24,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       onFocus,
       onBlur,
       onKeyPress,
-      onChange,
+      onValueChange,
       onSubmit,
       ...restProps
     },
@@ -45,7 +45,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       clear: () => {
         setValue('');
 
-        onChange?.({ value: '', prevent: () => {} });
+        onValueChange?.({ value: '', prevent: () => {} });
       },
     }));
 
@@ -86,7 +86,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
             return;
           }
 
-          onChange?.({
+          onValueChange?.({
             value: replacedValue,
             prevent: () => {
               isPrevented = true;

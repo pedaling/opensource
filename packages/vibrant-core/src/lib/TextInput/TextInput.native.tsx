@@ -21,7 +21,19 @@ const SystemTextInput = styled(
 
 export const TextInput = forwardRef<TextInputRef, TextInputProps>(
   (
-    { type, defaultValue, pattern, focusStyle, hidden, onFocus, onBlur, onKeyPress, onChange, onSubmit, ...restProps },
+    {
+      type,
+      defaultValue,
+      pattern,
+      focusStyle,
+      hidden,
+      onFocus,
+      onBlur,
+      onKeyPress,
+      onValueChange,
+      onSubmit,
+      ...restProps
+    },
     ref
   ) => {
     const [value, setValue] = useState(defaultValue ?? '');
@@ -47,7 +59,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       clear: () => {
         setValue('');
 
-        onChange?.({ value: '', prevent: () => {} });
+        onValueChange?.({ value: '', prevent: () => {} });
       },
     }));
 
@@ -72,7 +84,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
           let isPrevented = false;
 
-          onChange?.({
+          onValueChange?.({
             value: replacedValue,
             prevent: () => {
               isPrevented = true;
