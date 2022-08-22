@@ -1,6 +1,5 @@
-import type { KeyboardEventHandler } from 'react';
 import { useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { getOpacity } from './getOpacity';
 import { withPressableVariation } from './PressableProp';
@@ -32,48 +31,29 @@ export const Pressable = withPressableVariation(
 
     return (
       <Transition animation={{ opacity: textOpacity }} duration={200} {...restProps}>
-        <Box
+        <PressableBox
           as={as}
           position="relative"
           overflow="hidden"
           cursor={disabled ? 'default' : 'pointer'}
           alignItems="stretch"
           zIndex={0}
-          onClick={(event: { stopPropagation: () => void }) => {
-            if (disabled) {
-              return;
-            }
-
-            event.stopPropagation();
-
-            onClick?.();
-          }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onFocus={() => {
+          disabled={disabled}
+          onClick={onClick}
+          onHoverIn={() => setIsHovered(true)}
+          onHoverOut={() => setIsHovered(false)}
+          onFocusIn={() => {
             setIsFocused(true);
 
             onFocus?.();
           }}
-          onBlur={() => {
+          onFocusOut={() => {
             setIsFocused(false);
 
             onBlur?.();
           }}
-          onMouseDown={() => setIsActivated(true)}
-          onMouseUp={() => setIsActivated(false)}
-          {...(as === 'button'
-            ? {
-                disabled,
-                backgroundColor: 'inherit',
-                borderWidth: 0,
-                p: 0,
-              }
-            : {
-                tabIndex: disabled ? undefined : 0,
-                onKeyPress: (event =>
-                  !disabled && event.key === 'Enter' ? onClick?.() : null) as KeyboardEventHandler,
-              })}
+          onPressIn={() => setIsActivated(true)}
+          onPressOut={() => setIsActivated(false)}
         >
           {overlayColor && (
             <Transition animation={{ opacity: overlayOpacity }} duration={200}>
@@ -89,7 +69,7 @@ export const Pressable = withPressableVariation(
             </Transition>
           )}
           {children}
-        </Box>
+        </PressableBox>
       </Transition>
     );
   }
