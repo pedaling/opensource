@@ -1,3 +1,10 @@
 export default {
-  projects: ['packages/vibrant-components/jest.config.web.ts', 'packages/vibrant-components/jest.config.native.ts'],
+  displayName: 'vibrant-components-web',
+  preset: '../../jest.preset.js',
+  transform: {
+    '^.+\\.[tj]sx?$': 'babel-jest',
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  coverageDirectory: '../../coverage/packages/vibrant-components',
+  snapshotSerializers: ['@emotion/jest/serializer'],
 };

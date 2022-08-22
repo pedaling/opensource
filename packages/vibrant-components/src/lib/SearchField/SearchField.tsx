@@ -26,7 +26,7 @@ export const SearchField = withSearchFieldVariation(({ defaultValue, onValueChan
         color="onView1"
         placeholderColor="onView3"
         defaultValue={value}
-        onChange={event => {
+        onValueChange={event => {
           setValue(event.value);
 
           onValueChange?.(event.value);
