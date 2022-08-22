@@ -1,11 +1,11 @@
-import type { ReactElement } from 'react';
+import type { ReactElementChild } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { Position } from '@vibrant-ui/utils';
 
 export type DropdownProps = {
   position: Position;
-  renderContents: () => ReactElement;
-  renderOpener: (open: () => void) => ReactElement;
+  renderContents: () => ReactElementChild;
+  renderOpener: (open: () => void) => ReactElementChild;
   spacing?: number;
   open: boolean;
 };
