@@ -1,4 +1,5 @@
 export const stories = [
+  require('../../vibrant-components/src/lib/Backdrop/Backdrop.stories.tsx'),
   require('../../vibrant-components/src/lib/Body/Body.stories.tsx'),
   require('../../vibrant-components/src/lib/Calendar/Calendar.stories.tsx'),
   require('../../vibrant-components/src/lib/CalendarDateItem/CalendarDateItem.stories.tsx'),
