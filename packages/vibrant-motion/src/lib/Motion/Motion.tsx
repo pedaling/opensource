@@ -1,8 +1,8 @@
 import { useEffect, useImperativeHandle, useMemo } from 'react';
-import type { AnimationResult } from 'react-spring';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { easings } from '../constants/EasingDictionary';
+import { easings } from '../constants';
 import { transformMotionProps } from '../props/transform';
+import type { AnimationResult } from '../types';
 import { useReactSpring } from '../useReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';

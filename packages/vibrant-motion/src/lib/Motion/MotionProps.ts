@@ -1,10 +1,9 @@
 import type { ReactElement, Ref } from 'react';
-import type { AnimationResult } from 'react-spring';
 import type { AllSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
-import type { Animation } from '../types';
+import type { Animation, AnimationResult } from '../types';
 
 export type MotionRefValue = {
   start: (options?: { reverse?: boolean; reset?: boolean }) => void;

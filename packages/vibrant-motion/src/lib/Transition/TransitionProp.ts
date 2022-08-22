@@ -1,9 +1,9 @@
 import type { ReactElement, Ref } from 'react';
-import type { AnimationResult } from 'react-spring';
 import type { AllSystemProps } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
+import type { AnimationResult } from '../types';
 
 type TransitionProps = {
   children: ReactElement;
