@@ -11,7 +11,7 @@ export const Dismissible: FC<DismissibleProps> = ({ active = false, onDismiss, c
   const targetRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (!active) {
+    if (!active || !onDismiss) {
       return;
     }
 
@@ -28,7 +28,7 @@ export const Dismissible: FC<DismissibleProps> = ({ active = false, onDismiss, c
         pageY <= targetRect.y + targetRect.height;
 
       if (!isEventTargetInTargetRect) {
-        onDismiss();
+        onDismiss?.();
       }
     };
 
