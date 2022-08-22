@@ -15,4 +15,8 @@ const hideInputSpinButtonProp = createSystemProp({
   disabled: true,
 });
 
-export const inputSystemProps = [placeholderColorProp, hideInputSpinButtonProp];
+const textAlignProp = createSystemProp({
+  property: 'textAlign',
+});
+
+export const inputSystemProps = [placeholderColorProp, hideInputSpinButtonProp, textAlignProp];

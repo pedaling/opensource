@@ -35,41 +35,22 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border-width: 1px;
+  color: #0C0C0C;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.125rem;
-  background-color: rgba(0, 0, 0, 0);
-  color: #0C0C0C;
-  border-width: 0;
-  border-radius: 0;
+  width: 100%;
   padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  box-sizing: border-box;
   padding-left: 38px;
   padding-right: 38px;
-  width: 100%;
-  background-color: #FFFFFF;
   height: 100%;
   text-align: center;
-  border-width: 1px;
   border-color: rgba(0, 0, 0, 0.15);
   border-style: solid;
   border-radius: 2px;
   -moz-appearance: textfield;
-  color: #0C0C0C;
 }
 
 .emotion-1::-webkit-outer-spin-button {
@@ -80,12 +61,6 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
 .emotion-1::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.emotion-1:focus {
-  border-color: #0C0C0C;
-  border-width: 1px;
-  outline-width: 0;
 }
 
 .emotion-1::-webkit-input-placeholder {
