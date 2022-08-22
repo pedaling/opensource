@@ -22,6 +22,10 @@ const parseProps = (props: any): any =>
         return [key, new Date(value)];
       }
 
+      if (typeof value === 'object' && Array.isArray(value)) {
+        return [key, value.map(v => (typeof v === 'object' && v !== null ? parseProps(v) : v))];
+      }
+
       if (typeof value === 'object' && value !== null) {
         return [key, parseProps(value)];
       }
