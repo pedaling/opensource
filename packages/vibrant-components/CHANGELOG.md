@@ -2,6 +2,27 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.8.2...vibrant-components-0.9.0) (2022-08-22)
+
+### Dependency Updates
+
+* `vibrant-theme` updated to version `0.6.2`
+* `vibrant-utils` updated to version `0.7.0`
+* `vibrant-core` updated to version `0.12.0`
+* `vibrant-icons` updated to version `0.4.6`
+* `vibrant-motion` updated to version `0.7.0`
+
+### Features
+
+* **vibrant-components:** PC 뷰의 Dropdown 컴포넌트를 추가한다 [WP-2478] ([#192](https://github.com/pedaling/opensource/issues/192)) ([2e5ebb1](https://github.com/pedaling/opensource/commit/2e5ebb197978452aaad774b053b8ad7a77247027))
+
+
+### Bug Fixes
+
+* remove native GlobalStyle ([#210](https://github.com/pedaling/opensource/issues/210)) ([8110cea](https://github.com/pedaling/opensource/commit/8110cea32b96a6d1f89e538ce2b3a920024c2ea0))
+* remove Pressable native and implement PressableBox to core library ([#209](https://github.com/pedaling/opensource/issues/209)) ([0220980](https://github.com/pedaling/opensource/commit/0220980cc49a783703a68f7d442c73f4a02194d7))
+* vibrant-components 네이티브 분기를 제거한다 ([#211](https://github.com/pedaling/opensource/issues/211)) ([6476826](https://github.com/pedaling/opensource/commit/6476826e74c5ca04ea1dd54f3abb660435aeec94))
+
 ### [0.8.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.8.1...vibrant-components-0.8.2) (2022-08-19)
 
 ### Dependency Updates

@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.7.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.6.2...vibrant-motion-0.7.0) (2022-08-22)
+
+### Dependency Updates
+
+* `vibrant-core` updated to version `0.12.0`
+
+### Features
+
+* Transition 컴포넌트에서 easing, onStart, onEnd 속성을 받게 한다. [WP-2830] ([#208](https://github.com/pedaling/opensource/issues/208)) ([a9c3790](https://github.com/pedaling/opensource/commit/a9c37901a67282d6e3f8c1eadb50bd9a3cbac620))
+
+
+### Bug Fixes
+
+* withTransformStyle 네이티브 파일 분기를 제거한다 ([#206](https://github.com/pedaling/opensource/issues/206)) ([3476499](https://github.com/pedaling/opensource/commit/3476499b9a628dc666cf77f3f660266a98dcd401))
+
 ### [0.6.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.6.1...vibrant-motion-0.6.2) (2022-08-19)
 
 ### [0.6.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.6.0...vibrant-motion-0.6.1) (2022-08-19)

@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.12.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.11.1...vibrant-core-0.12.0) (2022-08-22)
+
+### Dependency Updates
+
+* `vibrant-utils` updated to version `0.7.0`
+* `vibrant-theme` updated to version `0.6.2`
+
+### Features
+
+* **vibrant-components:** add Portal component [WP-2819] ([#204](https://github.com/pedaling/opensource/issues/204)) ([3e0820e](https://github.com/pedaling/opensource/commit/3e0820e13c48497ed29a11f4ad4714088bbc4a68))
+* **vibrant-components:** PC 뷰의 Dropdown 컴포넌트를 추가한다 [WP-2478] ([#192](https://github.com/pedaling/opensource/issues/192)) ([2e5ebb1](https://github.com/pedaling/opensource/commit/2e5ebb197978452aaad774b053b8ad7a77247027))
+* **vibrant-website:** vibrant website 랜딩페이지를 구현한다 ([#205](https://github.com/pedaling/opensource/issues/205)) ([177b8ef](https://github.com/pedaling/opensource/commit/177b8ef31cb75a1221222ec2cfaf865ebdb61530))
+
+
+### Bug Fixes
+
+* remove Pressable native and implement PressableBox to core library ([#209](https://github.com/pedaling/opensource/issues/209)) ([0220980](https://github.com/pedaling/opensource/commit/0220980cc49a783703a68f7d442c73f4a02194d7))
+
 ### [0.11.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.11.0...vibrant-core-0.11.1) (2022-08-19)
 
 ## [0.10.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.9.1...vibrant-core-0.10.0) (2022-08-16)

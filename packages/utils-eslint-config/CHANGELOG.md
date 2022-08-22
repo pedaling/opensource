@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.4.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.3.4...utils-eslint-config-0.4.0) (2022-08-22)
+
+
+### Features
+
+* **vibrant-components:** PC 뷰의 Dropdown 컴포넌트를 추가한다 [WP-2478] ([#192](https://github.com/pedaling/opensource/issues/192)) ([2e5ebb1](https://github.com/pedaling/opensource/commit/2e5ebb197978452aaad774b053b8ad7a77247027))
+
 ### [0.3.4](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.3.3...utils-eslint-config-0.3.4) (2022-08-19)
 
 ### [0.3.2](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.3.1...utils-eslint-config-0.3.2) (2022-08-16)
