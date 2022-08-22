@@ -38,6 +38,7 @@ export const Pressable = withPressableVariation(
           cursor={disabled ? 'default' : 'pointer'}
           alignItems="stretch"
           zIndex={0}
+          disabled={disabled}
           onClick={onClick}
           onHoverIn={() => setIsHovered(true)}
           onHoverOut={() => setIsHovered(false)}

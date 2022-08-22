@@ -14,11 +14,7 @@ export default {
 } as ComponentMeta<typeof Pressable>;
 
 export const Basic: ComponentStory<typeof Pressable> = props => (
-  <>
-    <Box height={300} />
-    <Pressable {...props}>
-      <Box width={200} height={200} borderWidth={1} borderStyle="solid" borderColor="primary" />
-    </Pressable>
-    <Box height={300} />
-  </>
+  <Pressable {...props}>
+    <Box width={200} height={200} borderWidth={1} borderStyle="solid" borderColor="primary" />
+  </Pressable>
 );
