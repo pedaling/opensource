@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import type { TextInputRef } from '@vibrant-ui/core';
+import { Box, TextInput } from '@vibrant-ui/core';
 import { OperatorButton } from '../OperatorButton';
-import { UnstyledTextInput } from '../UnstyledTextInput';
 import { withNumericFieldVariation } from './NumericFieldProps';
 
 export const NumericField = withNumericFieldVariation(
@@ -9,7 +9,6 @@ export const NumericField = withNumericFieldVariation(
     disabled,
     color,
     defaultValue,
-    id,
     max,
     placeholderColor,
     placeholder,
@@ -19,7 +18,7 @@ export const NumericField = withNumericFieldVariation(
     tabIndex,
     ...restProps
   }) => {
-    const inputRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<TextInputRef>(null);
     const [inputValue, setInputValue] = useState<number | undefined>(defaultValue);
 
     useEffect(() => {
@@ -59,12 +58,11 @@ export const NumericField = withNumericFieldVariation(
 
     return (
       <Box position="relative" width={128} height={38} {...restProps}>
-        <Box<typeof UnstyledTextInput>
-          base={UnstyledTextInput}
+        <TextInput
           ref={inputRef}
           type="number"
           px={38}
-          value={inputValue?.toString() ?? ''}
+          defaultValue={inputValue?.toString() ?? ''}
           width="100%"
           backgroundColor={backgroundColor}
           height="100%"
@@ -76,18 +74,17 @@ export const NumericField = withNumericFieldVariation(
           placeholder={placeholder?.toString()}
           disabled={disabled}
           hideInputSpinButton={true}
-          pseudoFocus={{
+          focusStyle={{
             borderColor: 'outlineNeutral',
             borderWidth: 1,
             outlineWidth: 0,
           }}
           placeholderColor={placeholderColor}
           color={color}
-          id={id}
-          max={max}
-          onValueChange={value => setInputValue(value ? parseInt(value, 10) : undefined)}
-          onBlur={() => updateInputValue(inputValue ?? min ?? 0)}
           min={min}
+          max={max}
+          onChange={({ value }) => setInputValue(value ? parseInt(value, 10) : undefined)}
+          onBlur={() => updateInputValue(inputValue ?? min ?? 0)}
           tabIndex={tabIndex}
         />
         <Box position="absolute" top={4} left={4} bottom={4}>

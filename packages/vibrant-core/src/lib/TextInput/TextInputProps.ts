@@ -55,21 +55,35 @@ export type TextInputRef = {
   clear: () => void;
 };
 
-export type TextInputProps = SystemProps & {
-  type: TextInputType;
-  defaultValue?: string;
-  placeholder?: string;
-  pattern?: RegExp;
-  maxLength?: number;
-  autoFocus?: boolean;
-  focusStyle?: SystemProps;
-  hidden?: boolean;
-  onFocus?: () => void;
-  onBlur?: () => void;
-  onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;
-  onChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
-  onSubmit?: (value: string) => void;
-};
+export type TextInputProps = SystemProps &
+  (
+    | {
+        type: Exclude<TextInputType, 'number'>;
+        min?: never;
+        max?: never;
+      }
+    | {
+        type: Extract<TextInputType, 'number'>;
+        min?: number;
+        max?: number;
+      }
+  ) & {
+    defaultValue?: string;
+    placeholder?: string;
+    pattern?: RegExp;
+    maxLength?: number;
+    autoFocus?: boolean;
+    tabIndex?: number;
+    readOnly?: boolean;
+    disabled?: boolean;
+    hidden?: boolean;
+    focusStyle?: SystemProps;
+    onFocus?: () => void;
+    onBlur?: () => void;
+    onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;
+    onChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
+    onSubmit?: (value: string) => void;
+  };
 
 export const interpolation = injectTheme(
   createInterpolation(systemProps, {

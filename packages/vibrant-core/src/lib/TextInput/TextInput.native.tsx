@@ -3,13 +3,13 @@ import type { KeyboardType, TextInputProps as RNTextInputProps } from 'react-nat
 import { TextInput as RNTextInput, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 import { createShouldForwardProp } from '../createShouldForwardProp';
-import type { TextInputProps, TextInputRef } from './TextInputProps';
+import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
 import { interpolation, replaceValue, systemPropNames } from './TextInputProps';
 
 const shouldForwardProp = createShouldForwardProp(systemPropNames);
 
 const SystemTextInput = styled(
-  forwardRef<RNTextInput, RNTextInputProps>(({ style, ...restProps }, ref) => {
+  forwardRef<RNTextInput, Omit<RNTextInputProps, keyof SystemProps>>(({ style, ...restProps }, ref) => {
     const { props, ...restStyle } = StyleSheet.flatten(style) as any;
 
     return <RNTextInput ref={ref} style={restStyle} {...restProps} {...props} />;

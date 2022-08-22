@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
-import { useSafeDeps, uuidV4 } from '@vibrant-ui/utils';
+import type { TextInputRef } from '@vibrant-ui/core';
+import { Box, TextInput, getElementPosition } from '@vibrant-ui/core';
+import { useSafeDeps } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { SelectOptionGroup } from '../SelectOptionGroup';
-import { UnstyledTextInput } from '../UnstyledTextInput';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
@@ -29,9 +29,7 @@ export const SelectField = withSelectFieldVariation(
     const onValueChangeRef = useSafeDeps(onValueChange);
 
     const ref = useRef<HTMLLabelElement>(null);
-    const inputRef = useRef<HTMLInputElement>(null);
-
-    const inputId = useMemo(() => uuidV4(), []);
+    const inputRef = useRef<TextInputRef>(null);
 
     const labelColor = useMemo(() => {
       if (disabled) {
@@ -72,17 +70,17 @@ export const SelectField = withSelectFieldVariation(
       setState(stateProp);
     }, [stateProp]);
 
-    const open = (index: number) => {
+    const open = async (index: number) => {
       if (!ref.current || disabled) {
         return;
       }
 
       inputRef.current?.focus();
 
-      const { top, bottom } = ref.current.getBoundingClientRect();
+      const { top, bottom } = await getElementPosition(ref.current);
 
       const spaceAbove = top;
-      const spaceBelow = window.innerHeight - bottom;
+      const spaceBelow = bottom;
 
       if (selectedOptionIndex !== -1) {
         setFocusIndex(selectedOptionIndex);
@@ -113,31 +111,27 @@ export const SelectField = withSelectFieldVariation(
 
     return (
       <Box<undefined, 'div'> as="div" onMouseDown={event => event.preventDefault()}>
-        <Box<typeof UnstyledTextInput>
-          base={UnstyledTextInput}
+        <TextInput
           ref={inputRef}
-          id={inputId}
-          position="absolute"
-          width={0}
-          height={0}
-          value={selectedOption?.value ?? ''}
+          type="text"
+          defaultValue={selectedOption?.value ?? ''}
           readOnly={true}
           disabled={disabled}
-          onKeyDown={({ key, prevent }) => {
-            if (key === 'Enter') {
-              if (!isOpened) {
-                open(0);
+          hidden={true}
+          onSubmit={() => {
+            if (!isOpened) {
+              open(0);
 
-                return;
-              }
-
-              if (focusIndex !== -1) {
-                setSelectedOptionIndex(focusIndex);
-
-                close();
-              }
+              return;
             }
 
+            if (focusIndex !== -1) {
+              setSelectedOptionIndex(focusIndex);
+
+              close();
+            }
+          }}
+          onKeyPress={({ key, prevent }) => {
             if (key === (direction === 'up' ? 'ArrowDown' : 'ArrowUp')) {
               setFocusIndex(Math.max(0, focusIndex - 1));
 
@@ -161,7 +155,6 @@ export const SelectField = withSelectFieldVariation(
           <Box<undefined, 'label'>
             ref={ref}
             as="label"
-            htmlFor={inputId}
             alignItems="center"
             flexDirection="row"
             height={50}
