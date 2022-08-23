@@ -47,11 +47,12 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
     return result;
   };
 
-  return (theme: CurrentTheme) => (props: Record<string, any>) => {
-    const interpolationResult = childInterpolation({ ...defaultProps, ...props }, theme);
+  return ({ theme, breakpointIndex }: { theme: CurrentTheme; breakpointIndex: number }) =>
+    (props: Record<string, any>) => {
+      const interpolationResult = childInterpolation({ ...defaultProps, ...props }, theme);
 
-    return useBuildStyle(interpolationResult, theme);
-  };
+      return useBuildStyle({ styleObjects: interpolationResult, theme, breakpointIndex });
+    };
 };
 
 const mergeResponsiveValue = (original: Record<string, any>[], next: Record<string, any>[]) => {

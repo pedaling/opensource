@@ -1,5 +1,7 @@
+import { isNative } from '@vibrant-ui/core';
+
 export const withTransformStyle = (style: any) => {
-  if (typeof window === 'undefined') {
+  if (isNative) {
     const transform = [];
     const { x, y, ...restStyle } = style;
 

@@ -41,7 +41,10 @@ const pseudoHoverProp = createSystemProp({
 describe('createInterpolation', () => {
   const { theme } = useCurrentTheme();
 
-  const interpolation = createInterpolation([widthProp, heightProp, marginProp, pseudoHoverProp])(theme);
+  const interpolation = createInterpolation([widthProp, heightProp, marginProp, pseudoHoverProp])({
+    theme,
+    breakpointIndex: 0,
+  });
 
   let props: Record<string, any>;
 
