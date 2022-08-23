@@ -19,8 +19,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       defaultValue,
       pattern,
       maxLength,
-      focusStyle,
       hidden,
+      focusStyle,
       onFocus,
       onBlur,
       onKeyPress,
@@ -101,7 +101,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         }}
         {...restProps}
         {...(isFocused ? focusStyle : {})}
-        {...(hidden ? { position: 'absolute', height: 0 } : {})}
+        {...(hidden ? { position: 'absolute', height: 0, opacity: 0 } : {})}
       />
     );
   }

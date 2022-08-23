@@ -1,33 +1,11 @@
-import type { ReactElement } from 'react';
-import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { ReactElement, Ref } from 'react';
+import { withVariation } from '@vibrant-ui/core';
 
 type SelectOptionItemProps = {
   children: ReactElement | string;
   onClick: () => void;
   active?: boolean;
+  ref?: Ref<HTMLElement>;
 };
 
-export const withSelectOptionItemVariation = withVariation<SelectOptionItemProps>('SelectOptionItem')(
-  propVariant({
-    props: [
-      {
-        name: 'active',
-        default: false,
-      },
-    ],
-    variants: {
-      true: {
-        pseudoBefore: {
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0,
-          backgroundColor: 'onView1',
-          opacity: 0.1,
-        },
-      },
-      false: {},
-    } as const,
-  })
-);
+export const withSelectOptionItemVariation = withVariation<SelectOptionItemProps>('SelectOptionItem')();

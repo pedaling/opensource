@@ -1,12 +1,12 @@
-import type { ComponentType } from 'react';
-import type { TextProps as RNTextProps } from 'react-native';
+import type { FC } from 'react';
 import { Text as RNText, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
+import type { TextProps } from './TextProps';
 import { interpolation, shouldForwardProp } from './TextProps';
 
-export const Text = styled<ComponentType<RNTextProps>>(
-  ({ style, ...restProps }) => {
-    const { props, ...restStyle } = StyleSheet.flatten(style) as any;
+export const Text: FC<TextProps> = styled(
+  ({ style, ...restProps }: { style?: any }) => {
+    const { props, ...restStyle } = StyleSheet.flatten(style);
 
     return <RNText style={restStyle} {...restProps} {...props} />;
   },
