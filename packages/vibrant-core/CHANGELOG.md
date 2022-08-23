@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.13.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.12.1...vibrant-core-0.13.0) (2022-08-23)
+
+
+### Features
+
+* **vibrant-components:** Backdrop 컴포넌트를 추가한다  [WP-2841] ([#213](https://github.com/pedaling/opensource/issues/213)) ([f8ac794](https://github.com/pedaling/opensource/commit/f8ac794a642ca88409a969b9021e715e2ed2fb6a))
+
 ## [0.12.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.11.1...vibrant-core-0.12.0) (2022-08-22)
 
 ### Dependency Updates
