@@ -93,25 +93,25 @@ const borderRadiusLevelProp = createSystemProp({
 
 const borderTopLeftRadiusLevelProp = createSystemProp({
   property: 'borderTopLeftRadiusLevel',
-  styleProperty: 'borderRadius',
+  styleProperty: 'borderTopLeftRadius',
   scale: 'borderRadius',
 });
 
 const borderTopRightRadiusLevelProp = createSystemProp({
   property: 'borderTopRightRadiusLevel',
-  styleProperty: 'borderRadius',
+  styleProperty: 'borderTopRightRadius',
   scale: 'borderRadius',
 });
 
 const borderBottomLeftRadiusLevelProp = createSystemProp({
   property: 'borderBottomLeftRadiusLevel',
-  styleProperty: 'borderRadius',
+  styleProperty: 'borderBottomLeftRadius',
   scale: 'borderRadius',
 });
 
 const borderBottomRightRadiusLevelProp = createSystemProp({
   property: 'borderBottomRightRadiusLevel',
-  styleProperty: 'borderRadius',
+  styleProperty: 'borderBottomRightRadius',
   scale: 'borderRadius',
 });
 
