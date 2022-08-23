@@ -1,6 +1,6 @@
 import type { BuildStyleFn } from './type';
 
-export const useBuildStyle: BuildStyleFn = (styleObjects, theme) =>
+export const useBuildStyle: BuildStyleFn = ({ styleObjects, theme }) =>
   styleObjects.reduce((result, styleObject, index) => {
     const prevStyleObject = styleObjects[index - 1] ?? {};
     const style = Object.fromEntries(

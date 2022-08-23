@@ -1,5 +1,5 @@
 import { createInterpolation } from '../createInterpolation';
-import { injectTheme } from '../injectTheme';
+import { injectContext } from '../injectContext';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -85,7 +85,7 @@ export type TextInputProps = SystemProps &
     onSubmit?: (value: string) => void;
   };
 
-export const interpolation = injectTheme(
+export const interpolation = injectContext(
   createInterpolation(systemProps, {
     display: 'flex',
     backgroundColor: 'transparent',

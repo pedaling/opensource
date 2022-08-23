@@ -1,7 +1,7 @@
 import type { ReactElementChild, ReactTextChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
-import { injectTheme } from '../injectTheme';
+import { injectContext } from '../injectContext';
 import type { ColorSystemProps, DisplaySystemProps, TextSystemProps, TypographySystemProps } from '../props';
 import { colorSystemProps, displaySystemProps, textSystemProps, typographySystemProps } from '../props';
 
@@ -24,7 +24,7 @@ export type TextProps = SystemProps & {
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
 
-export const interpolation = injectTheme(
+export const interpolation = injectContext(
   createInterpolation(systemProps, {
     display: 'flex',
     textAlign: 'left',

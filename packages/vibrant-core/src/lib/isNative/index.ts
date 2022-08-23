@@ -1,0 +1,1 @@
+export { isNative } from './isNative';
