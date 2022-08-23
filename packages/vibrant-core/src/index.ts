@@ -44,3 +44,4 @@ export { getWindowDimensions } from './lib/getWindowDimensions';
 export type { WindowDimensions } from './lib/getWindowDimensions';
 export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
+export { Portal } from './lib/Portal';
