@@ -50,6 +50,8 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }}
           branch: main
           unprotect_reviews: false
+        env:
+          HUSKY: 0
       - name: Tag last-release
         shell: bash
         run: |
