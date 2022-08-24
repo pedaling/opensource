@@ -43,7 +43,7 @@ export const Transition = withTransitionVariation(
       [currentStyle, duration, easing, interpolation, onEnd, onStart]
     );
 
-    const [styles, springApi] = useSpring(() => ({ from: animation }));
+    const [styles, springApi] = useSpring(() => ({ from: interpolation(animation) }));
 
     useEffect(() => {
       springApi.start(option);
