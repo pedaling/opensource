@@ -10,10 +10,15 @@ export default {
   title: 'Dropdown',
   component: Dropdown,
   args: {
-    renderContents: () => (
-      <Box px={20} width={150}>
-        <Body level={2}>Sample Text</Body>
-      </Box>
+    renderContents: close => (
+      <>
+        <Box p={10} width={150}>
+          <Body level={2}>Sample Text</Body>
+        </Box>
+        <Box base={Pressable} p={10} onClick={close}>
+          <Body level={2}>Close</Body>
+        </Box>
+      </>
     ),
     renderOpener: open => (
       <Box base={Pressable} backgroundColor="primary" onClick={open} p={20} height={100}>
