@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
-import type { KeyboardType, TextInputProps as RNTextInputProps } from 'react-native';
+import type { KeyboardTypeOptions, TextInputProps as RNTextInputProps } from 'react-native';
 import { TextInput as RNTextInput, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 import { createShouldForwardProp } from '../createShouldForwardProp';
@@ -43,9 +43,17 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
     const innerRef = useRef<RNTextInput>(null);
 
-    const keyboardType = useMemo<KeyboardType>(() => {
+    const keyboardType = useMemo<KeyboardTypeOptions>(() => {
       if (type === 'number') {
         return 'number-pad';
+      }
+
+      if (type === 'email') {
+        return 'email-address';
+      }
+
+      if (type === 'url') {
+        return 'url';
       }
 
       return 'default';

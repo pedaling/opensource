@@ -145,6 +145,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-shrink: 1;
   text-align: left;
   color: #0C0C0C;
+  -webkit-text-fill-color: #0C0C0C;
+  text-fill-color: #0C0C0C;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
@@ -217,6 +219,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-shrink: 1;
   text-align: left;
   color: #7C7C7C;
+  -webkit-text-fill-color: #7C7C7C;
+  text-fill-color: #7C7C7C;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;

@@ -17,6 +17,8 @@ exports[`<Display /> when Display with level 3 rendered match snapshot 1`] = `
   flex-shrink: 1;
   text-align: left;
   color: #0C0C0C;
+  -webkit-text-fill-color: #0C0C0C;
+  text-fill-color: #0C0C0C;
   font-size: 3rem;
   font-weight: 800;
   line-height: 3.75rem;

@@ -5,7 +5,7 @@ import { FieldLayout } from '../FieldLayout';
 import { withTextFieldVariation } from './TextFieldProps';
 
 export const TextField = withTextFieldVariation(
-  ({ state, label, helperText, disabled, defaultValue, onValueChange, ...restProps }) => {
+  ({ type = 'text', state, label, placeholder, helperText, disabled, defaultValue, onValueChange, ...restProps }) => {
     const inputRef = useRef<TextInputRef>(null);
 
     const [isFocused, setIsFocused] = useState(false);
@@ -27,9 +27,9 @@ export const TextField = withTextFieldVariation(
         renderField={style => (
           <TextInput
             ref={inputRef}
-            type="text"
+            type={type}
             defaultValue={value}
-            placeholder={isFocused || value ? '입력헤주세여' : ''}
+            placeholder={!label || isFocused || value ? placeholder : ''}
             placeholderColor="onView3"
             disabled={disabled}
             onFocus={() => setIsFocused(true)}

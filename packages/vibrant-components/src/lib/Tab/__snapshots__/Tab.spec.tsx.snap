@@ -61,6 +61,8 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   flex-shrink: 1;
   text-align: left;
   color: #7C7C7C;
+  -webkit-text-fill-color: #7C7C7C;
+  text-fill-color: #7C7C7C;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;

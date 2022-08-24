@@ -47,7 +47,7 @@ export const systemPropNames = systemProps
   .filter(systemProp => !systemProp.disabled)
   .map(systemProp => systemProp.propName);
 
-type TextInputType = 'number' | 'text';
+export type TextInputType = 'email' | 'number' | 'password' | 'text' | 'url';
 
 export type TextInputRef = {
   focus: () => void;
