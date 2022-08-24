@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
@@ -35,6 +35,22 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
     const innerRef = useRef<HTMLInputElement>(null);
 
+    const inputMode = useMemo(() => {
+      if (type === 'number') {
+        return 'numeric';
+      }
+
+      if (type === 'email') {
+        return 'email';
+      }
+
+      if (type === 'url') {
+        return 'url';
+      }
+
+      return 'text';
+    }, [type]);
+
     useEffect(() => {
       setValue(defaultValue ?? '');
     }, [defaultValue]);
@@ -54,6 +70,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         ref={innerRef}
         type={type}
         value={value}
+        inputMode={inputMode}
         onFocus={() => {
           setIsFocused(true);
 
