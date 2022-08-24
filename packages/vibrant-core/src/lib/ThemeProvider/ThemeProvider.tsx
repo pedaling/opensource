@@ -79,13 +79,16 @@ export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentThe
 
   const currentTheme = root ? rootTheme : theme;
 
-  const currentThemeValues = {
-    ...currentTheme,
-    colors: currentTheme.colors[currentTheme.mode],
-    elevation: currentTheme.elevation[currentTheme.mode],
-    gradient: currentTheme.gradient[currentTheme.mode],
-    opacity: currentTheme.opacity[currentTheme.mode],
-  };
+  const currentThemeValues = useMemo(
+    () => ({
+      ...currentTheme,
+      colors: currentTheme.colors[currentTheme.mode],
+      elevation: currentTheme.elevation[currentTheme.mode],
+      gradient: currentTheme.gradient[currentTheme.mode],
+      opacity: currentTheme.opacity[currentTheme.mode],
+    }),
+    [currentTheme]
+  );
 
   return {
     theme: currentThemeValues,
