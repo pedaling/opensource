@@ -24,7 +24,6 @@ type MotionProps = {
   easing?: keyof EasingDictionary;
   onStart?: (e: AnimationResult) => void;
   onEnd?: (e: AnimationResult) => void;
-  disabled?: boolean;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(

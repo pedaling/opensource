@@ -8,7 +8,7 @@ import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, loop, from, to, easing, onStart, onEnd, disabled = false }) => {
+  ({ innerRef, children, duration, loop, from, to, easing, onStart, onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const { animated, useSpring } = useReactSpring();
 
@@ -64,12 +64,12 @@ export const Motion = withMotionVariation(
     );
 
     useEffect(() => {
-      if (innerRef || disabled) {
+      if (innerRef) {
         return;
       }
 
       springApi.start(option);
-    }, [innerRef, option, springApi, disabled]);
+    }, [innerRef, option, springApi]);
 
     return <AnimatedComponent style={withTransformStyle(styles)} {...children.props} />;
   }
