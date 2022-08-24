@@ -70,8 +70,6 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
 
   const openDropdown = useCallback(async () => {
     if (isMobile || !openerRef.current || !targetRef.current) {
-      setVisible(true);
-
       return;
     }
 
@@ -185,7 +183,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
   ) : (
     <>
       {opener}
-      <Backdrop open={visible} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
+      <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
         <Motion
           animation={{
             y: {
