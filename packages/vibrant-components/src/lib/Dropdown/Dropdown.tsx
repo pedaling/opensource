@@ -87,8 +87,10 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
     setVisible(true);
   }, [isMobile, position, spacing]);
 
-  const closeModal = useCallback(() => {
+  const closeDropdown = useCallback(() => {
     setIsOpen(false);
+
+    setContentHeight(undefined);
   }, []);
 
   const handleContentResize = useCallback(
@@ -134,14 +136,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
     <Box position="relative">
       <Box ref={openerRef}>{opener}</Box>
       {isOpen && (
-        <Dismissible
-          active={visible}
-          onDismiss={() => {
-            setIsOpen(false);
-
-            setContentHeight(undefined);
-          }}
-        >
+        <Dismissible active={visible} onDismiss={closeDropdown}>
           <Transition
             ref={targetRef}
             animation={{
@@ -177,7 +172,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
                 >
                   <Box overflow="hidden">
                     <Box onLayout={handleContentResize} flexShrink={0}>
-                      {renderContents()}
+                      {renderContents(closeDropdown)}
                     </Box>
                   </Box>
                 </Transition>
@@ -190,7 +185,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
   ) : (
     <>
       {opener}
-      <Backdrop open={visible} zIndex={Z_INDEX} onClick={closeModal} transitionDuration={visible ? 150 : 100}>
+      <Backdrop open={visible} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
         <Motion
           animation={{
             y: {
@@ -223,7 +218,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
             >
               <Box overflow="hidden">
                 <Box onLayout={handleContentResize} flexShrink={0}>
-                  {renderContents()}
+                  {renderContents(closeDropdown)}
                 </Box>
               </Box>
             </Transition>
