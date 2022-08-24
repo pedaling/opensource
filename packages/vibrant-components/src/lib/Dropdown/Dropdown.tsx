@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, getWindowDimensions, useResponsiveValue } from '@vibrant-ui/core';
-import { Motion, Transition } from '@vibrant-ui/motion';
+import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
@@ -66,7 +66,6 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
   const [contentHeight, setContentHeight] = useState<number>();
   const { breakpointIndex } = useResponsiveValue();
   const isMobile = breakpointIndex === 0;
-  const isInitialBottomSheetAnimation = useRef(true);
 
   const openDropdown = useCallback(async () => {
     if (isMobile || !openerRef.current || !targetRef.current) {
@@ -125,8 +124,6 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
       openDropdown();
     } else {
       setVisible(false);
-
-      isInitialBottomSheetAnimation.current = true;
     }
   }, [isOpen, openDropdown]);
 
@@ -184,20 +181,11 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
     <>
       {opener}
       <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
-        <Motion
+        <Transition
           animation={{
-            y: {
-              from: visible ? (contentHeight ?? 0) + 2 * BOTTOM_SHEET_CONTENT_PADDING : 0,
-              to: visible ? 0 : (contentHeight ?? 0) + 2 * BOTTOM_SHEET_CONTENT_PADDING,
-            },
+            y: visible ? 0 : (contentHeight ?? 0) + 2 * BOTTOM_SHEET_CONTENT_PADDING,
           }}
           duration={visible ? 150 : 100}
-          disabled={visible && !isInitialBottomSheetAnimation.current}
-          onEnd={() => {
-            if (visible) {
-              isInitialBottomSheetAnimation.current = false;
-            }
-          }}
         >
           <Box
             mt="auto"
@@ -221,7 +209,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
               </Box>
             </Transition>
           </Box>
-        </Motion>
+        </Transition>
       </Backdrop>
     </>
   );
