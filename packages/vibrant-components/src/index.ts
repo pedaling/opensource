@@ -12,6 +12,7 @@ export { Switch } from './lib/Switch';
 export { NumericField } from './lib/NumericField';
 export { Tab } from './lib/Tab';
 export { TabGroup } from './lib/TabGroup';
+export { TextField } from './lib/TextField';
 export { Title } from './lib/Title';
 export { VerificationCodeField } from './lib/VerificationCodeField';
 export { VStack } from './lib/VStack';
