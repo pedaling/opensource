@@ -28,6 +28,7 @@ export const FieldLayout = withFieldLayoutVariation(
         borderWidth={1}
         borderStyle="solid"
         borderColor={borderColor}
+        borderRadiusLevel={1}
         {...restProps}
       >
         <PressableBox onClick={onLabelClick}>
