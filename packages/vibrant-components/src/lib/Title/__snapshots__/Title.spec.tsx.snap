@@ -17,6 +17,8 @@ exports[`<Title /> when Title with level 3 rendered match snapshot 1`] = `
   flex-shrink: 1;
   text-align: left;
   color: #0C0C0C;
+  -webkit-text-fill-color: #0C0C0C;
+  text-fill-color: #0C0C0C;
   font-size: 1.625rem;
   font-weight: 700;
   line-height: 2.25rem;

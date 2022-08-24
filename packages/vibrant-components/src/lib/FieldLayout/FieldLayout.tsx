@@ -33,7 +33,15 @@ export const FieldLayout = withFieldLayoutVariation(
       >
         <PressableBox onClick={onLabelClick}>
           <Transition animation={animation} duration={100}>
-            <Text position="absolute" zIndex={1} left={15} color={textColor} lineLimit={1}>
+            <Text
+              position="absolute"
+              zIndex={1}
+              left={15}
+              right={15}
+              color={textColor}
+              lineLimit={1}
+              wordBreak="break-all"
+            >
               {label}
             </Text>
           </Transition>

@@ -29,7 +29,7 @@ export const TextField = withTextFieldVariation(
             ref={inputRef}
             type="text"
             defaultValue={value}
-            placeholder={isFocused || value ? placeholder : ''}
+            placeholder={!label || isFocused || value ? placeholder : ''}
             placeholderColor="onView3"
             disabled={disabled}
             onFocus={() => setIsFocused(true)}
