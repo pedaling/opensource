@@ -1,4 +1,4 @@
-import type { WindowDimensions } from './types';
+import type { WindowDimensions } from '../../types';
 
 export function getWindowDimensions(): WindowDimensions {
   if (typeof window !== 'undefined') {

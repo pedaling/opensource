@@ -6,7 +6,7 @@ export { Text } from './lib/Text';
 export type { TextProps, TextElements, TextChildren } from './lib/Text';
 export { TextInput } from './lib/TextInput';
 export type { TextInputType, TextInputRef, TextInputProps } from './lib/TextInput';
-export type { ReactElementChild, ReactTextChild, ResponsiveValue } from './types';
+export type { ReactElementChild, ReactTextChild, ResponsiveValue, WindowDimensions } from './types';
 export type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -41,9 +41,9 @@ export { getElementPosition } from './lib/getElementPosition';
 export { transformResponsiveValue } from './lib/transformResponsiveValue';
 export { useInterpolation } from './lib/useInterpolation';
 export { getWindowDimensions } from './lib/getWindowDimensions';
-export type { WindowDimensions } from './lib/getWindowDimensions';
 export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
 export { Portal } from './lib/Portal';
 export { isNative } from './lib/isNative';
 export { ScrollBox } from './lib/ScrollBox';
+export { useWindowDimensions } from './lib/useWindowDimensions';
