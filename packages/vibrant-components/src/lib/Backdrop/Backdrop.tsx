@@ -26,31 +26,34 @@ export const Backdrop = withBackdropVariation(
 
     return (
       <Portal>
-        <Motion
-          animation={{
-            opacity: {
-              from: open ? 0 : 1,
-              to: open ? 1 : 0,
-            },
-          }}
-          duration={transitionDuration}
-          onEnd={unmount}
-        >
-          <Box
-            as="div"
-            base={Pressable}
-            position="absolute"
-            zIndex={zIndex}
-            top={0}
-            right={0}
-            bottom={0}
-            left={0}
-            backgroundColor={color}
-            onClick={onClick}
+        <Box position="absolute" zIndex={zIndex} top={0} right={0} bottom={0} left={0} overflow="hidden">
+          <Motion
+            animation={{
+              opacity: {
+                from: open ? 0 : 1,
+                to: open ? 1 : 0,
+              },
+            }}
+            duration={transitionDuration}
+            onEnd={unmount}
+            easing="easeOutQuad"
           >
-            {children}
-          </Box>
-        </Motion>
+            <Box
+              as="div"
+              base={Pressable}
+              position="absolute"
+              zIndex={-1}
+              cursor="default"
+              top={0}
+              right={0}
+              bottom={0}
+              left={0}
+              backgroundColor={color}
+              onClick={onClick}
+            />
+          </Motion>
+          {children}
+        </Box>
       </Portal>
     );
   }
