@@ -2,12 +2,34 @@ import type { ReactElementChild, ReactTextChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
-import type { ColorSystemProps, DisplaySystemProps, TextSystemProps, TypographySystemProps } from '../props';
-import { colorSystemProps, displaySystemProps, textSystemProps, typographySystemProps } from '../props';
+import type {
+  ColorSystemProps,
+  DisplaySystemProps,
+  PositionSystemProps,
+  TextSystemProps,
+  TypographySystemProps,
+} from '../props';
+import {
+  colorSystemProps,
+  displaySystemProps,
+  positionSystemProps,
+  textSystemProps,
+  typographySystemProps,
+} from '../props';
 
-type SystemProps = ColorSystemProps & DisplaySystemProps & TextSystemProps & TypographySystemProps;
+type SystemProps = ColorSystemProps &
+  DisplaySystemProps &
+  PositionSystemProps &
+  TextSystemProps &
+  TypographySystemProps;
 
-export const systemProps = [...colorSystemProps, ...displaySystemProps, ...textSystemProps, ...typographySystemProps];
+export const systemProps = [
+  ...colorSystemProps,
+  ...displaySystemProps,
+  ...positionSystemProps,
+  ...textSystemProps,
+  ...typographySystemProps,
+];
 
 export const systemPropNames = systemProps
   .filter(systemProp => !systemProp.disabled)

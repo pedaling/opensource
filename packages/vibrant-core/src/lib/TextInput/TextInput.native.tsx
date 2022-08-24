@@ -26,6 +26,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       defaultValue,
       pattern,
       readOnly = false,
+      disabled,
       hidden,
       focusStyle,
       onFocus,
@@ -69,7 +70,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         ref={innerRef}
         keyboardType={keyboardType}
         value={value}
-        editable={!readOnly}
+        editable={!readOnly && !disabled}
         onFocus={() => {
           setIsFocused(true);
 

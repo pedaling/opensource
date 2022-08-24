@@ -1,8 +1,8 @@
-import type { ResponsiveValue, TextProps, TypographySystemProps } from '@vibrant-ui/core';
+import type { PositionSystemProps, ResponsiveValue, TextProps, TypographySystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { TypographyWeight } from '@vibrant-ui/theme';
 
-export type ParagraphProps = Omit<TextProps, keyof TypographySystemProps> & {
+export type ParagraphProps = Omit<TextProps, keyof PositionSystemProps | keyof TypographySystemProps> & {
   level: ResponsiveValue<1 | 2 | 3>;
   weight?: ResponsiveValue<TypographyWeight>;
 };
