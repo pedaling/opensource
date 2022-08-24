@@ -1,12 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Box, getWindowDimensions } from '@vibrant-ui/core';
-import { Transition } from '@vibrant-ui/motion';
+import { Box, getWindowDimensions, useResponsiveValue } from '@vibrant-ui/core';
+import { Motion, Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
+import { Backdrop } from '../Backdrop';
 import { Dismissible } from '../Dismissible';
 import { withDropdownVariation } from './DropdownProps';
 
 const CONTENT_PADDING = 20;
+const BOTTOM_SHEET_CONTENT_PADDING = 24;
+const Z_INDEX = 100;
 
 const getOffsetAvoidingOverflowByPosition = (
   openerRect: Rect,
@@ -54,16 +57,21 @@ const getOffsetAvoidingOverflowByPosition = (
   return { x, y };
 };
 
-export const Dropdown = withDropdownVariation(({ open, renderOpener, renderContents, position, spacing }) => {
+export const Dropdown = withDropdownVariation(({ open, renderOpener, renderContents, position, spacing = 8 }) => {
   const openerRef = useRef<HTMLElement>(null);
   const targetRef = useRef<HTMLElement>(null);
   const [isOpen, setIsOpen] = useState(open);
   const [visible, setVisible] = useState(false);
   const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
   const [contentHeight, setContentHeight] = useState<number>();
+  const { breakpointIndex } = useResponsiveValue();
+  const isMobile = breakpointIndex === 0;
+  const isInitialBottomSheetAnimation = useRef(true);
 
-  const openPopup = useCallback(async () => {
-    if (!openerRef.current || !targetRef.current) {
+  const openDropdown = useCallback(async () => {
+    if (isMobile || !openerRef.current || !targetRef.current) {
+      setVisible(true);
+
       return;
     }
 
@@ -77,48 +85,63 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
     setOffset({ x, y });
 
     setVisible(true);
-  }, [position, spacing]);
+  }, [isMobile, position, spacing]);
+
+  const closeModal = useCallback(() => {
+    setIsOpen(false);
+  }, []);
 
   const handleContentResize = useCallback(
     async ({ layout: { width, height, x, y } }: LayoutEvent) => {
-      const openerRect = await getElementRect(openerRef.current);
+      if (!isMobile) {
+        const openerRect = await getElementRect(openerRef.current);
 
-      const { x: offsetX, y: offsetY } = getOffsetAvoidingOverflowByPosition(
-        openerRect,
-        {
-          x,
-          y,
-          width,
-          height: height + CONTENT_PADDING * 2,
-        },
-        position,
-        spacing
-      );
+        const { x: offsetX, y: offsetY } = getOffsetAvoidingOverflowByPosition(
+          openerRect,
+          {
+            x,
+            y,
+            width,
+            height: height + CONTENT_PADDING * 2,
+          },
+          position,
+          spacing
+        );
+
+        setOffset({ x: offsetX, y: offsetY });
+      }
 
       setContentHeight(height);
 
-      setOffset({ x: offsetX, y: offsetY });
+      setVisible(true);
     },
-    [position, spacing]
+    [isMobile, position, spacing]
   );
 
   const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
 
   useEffect(() => {
     if (isOpen) {
-      openPopup();
+      openDropdown();
     } else {
       setVisible(false);
 
-      setContentHeight(undefined);
+      isInitialBottomSheetAnimation.current = true;
     }
-  }, [isOpen, openPopup]);
+  }, [isOpen, openDropdown]);
 
-  return (
+  return !isMobile ? (
     <Box position="relative">
       <Box ref={openerRef}>{opener}</Box>
       {isOpen && (
-        <Dismissible active={visible} onDismiss={() => setIsOpen(false)}>
+        <Dismissible
+          active={visible}
+          onDismiss={() => {
+            setIsOpen(false);
+
+            setContentHeight(undefined);
+          }}
+        >
           <Transition
             ref={targetRef}
             animation={{
@@ -126,14 +149,21 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
               x: offset.x,
               y: offset.y,
             }}
-            duration={150}
             style={{
               x: offset.x,
               y: offset.y,
             }}
+            duration={150}
+            easing="easeOutQuad"
           >
-            <Box position="absolute" zIndex={1}>
-              <Box backgroundColor="background" py={CONTENT_PADDING} elevationLevel={4} borderRadiusLevel={1}>
+            <Box position="absolute" zIndex={Z_INDEX}>
+              <Box
+                backgroundColor="background"
+                py={CONTENT_PADDING}
+                elevationLevel={4}
+                borderRadiusLevel={1}
+                width={[280, 280, 240]}
+              >
                 <Transition
                   animation={
                     visible
@@ -143,6 +173,7 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
                       : {}
                   }
                   duration={150}
+                  easing="easeOutQuad"
                 >
                   <Box overflow="hidden">
                     <Box onLayout={handleContentResize} flexShrink={0}>
@@ -156,5 +187,49 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
         </Dismissible>
       )}
     </Box>
+  ) : (
+    <>
+      {opener}
+      <Backdrop open={visible} zIndex={Z_INDEX} onClick={closeModal} transitionDuration={visible ? 150 : 100}>
+        <Motion
+          animation={{
+            y: {
+              from: visible ? (contentHeight ?? 0) + 2 * BOTTOM_SHEET_CONTENT_PADDING : 0,
+              to: visible ? 0 : (contentHeight ?? 0) + 2 * BOTTOM_SHEET_CONTENT_PADDING,
+            },
+          }}
+          duration={visible ? 150 : 100}
+          disabled={visible && !isInitialBottomSheetAnimation.current}
+          onEnd={() => {
+            if (visible) {
+              isInitialBottomSheetAnimation.current = false;
+            }
+          }}
+        >
+          <Box
+            mt="auto"
+            p={BOTTOM_SHEET_CONTENT_PADDING}
+            width="100%"
+            backgroundColor="background"
+            borderTopLeftRadiusLevel={4}
+            borderTopRightRadiusLevel={4}
+          >
+            <Transition
+              animation={{
+                height: contentHeight,
+              }}
+              duration={150}
+              easing="easeOutQuad"
+            >
+              <Box overflow="hidden">
+                <Box onLayout={handleContentResize} flexShrink={0}>
+                  {renderContents()}
+                </Box>
+              </Box>
+            </Transition>
+          </Box>
+        </Motion>
+      </Backdrop>
+    </>
   );
 });
