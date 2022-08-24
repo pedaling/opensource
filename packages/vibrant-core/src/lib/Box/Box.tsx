@@ -39,7 +39,7 @@ export const Box = styled(
     shouldForwardProp,
   }
 )(interpolation) as <
-  BaseComponent extends ComponentType<any> | undefined = undefined,
+  BaseComponent extends ComponentType | undefined = undefined,
   ElementName extends BoxElements | undefined = undefined
 >(
   props: BoxProps<BaseComponent, ElementName>

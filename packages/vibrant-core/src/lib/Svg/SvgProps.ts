@@ -1,33 +1,49 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { FC } from 'react';
-import type {
-  ClipPath as RNClipPath,
-  Defs as RNDefs,
-  G as RNG,
-  LinearGradient as RNLinearGradient,
-  Mask as RNMask,
-  Path as RNPath,
-  Stop as RNStop,
-  Svg as RNSvg,
-} from 'react-native-svg';
-import type { BoxProps } from '../Box';
-import type { SystemProps } from '../Box/BoxProps';
+import type { ReactElementChild } from '../../types';
+import type { SizingSystemProps, SvgSystemProps } from '../props';
 
-export type ClipPathProps = Omit<BoxProps<typeof RNClipPath>, 'ref'>;
+export type ClipPathProps = {
+  id?: string;
+  children?: ReactElementChild | ReactElementChild[];
+};
 
-export type DefsProps = Omit<BoxProps<typeof RNDefs>, 'ref'>;
+export type DefsProps = {
+  id?: string;
+  children?: ReactElementChild | ReactElementChild[];
+};
 
-export type GProps = Omit<BoxProps<typeof RNG>, 'ref'>;
+export type GProps = {
+  clipPath?: string;
+  children?: ReactElementChild | ReactElementChild[];
+};
 
-export type LinearGradientProps = Omit<BoxProps<typeof RNLinearGradient>, 'ref'>;
+export type LinearGradientProps = {
+  gradientTransform?: string;
+};
 
-export type MaskProps = Omit<BoxProps<typeof RNMask>, 'ref'>;
+export type MaskProps = {
+  id?: string;
+  children?: ReactElementChild | ReactElementChild[];
+};
 
-export type PathProps = Omit<BoxProps<typeof RNPath>, 'ref'>;
+export type PathProps = {
+  d?: string;
+  fillRule?: 'evenodd' | 'nonzero';
+  clipRule?: 'evenodd' | 'nonzero';
+  children?: ReactElementChild | ReactElementChild[];
+};
 
-export type StopProps = Omit<BoxProps<typeof RNStop>, 'ref'>;
+export type StopProps = {
+  offset?: number;
+  stopColor?: string;
+};
 
-export type SvgProps = Omit<BoxProps<typeof RNSvg>, Exclude<keyof SystemProps, 'fill' | 'height' | 'width'> | 'ref'>;
+export type SvgProps = Pick<SizingSystemProps, 'height' | 'width'> &
+  SvgSystemProps & {
+    viewBox?: string;
+    children?: ReactElementChild | ReactElementChild[];
+  };
 
 export type SvgComponentType = FC<SvgProps> & {
   ClipPath: FC<ClipPathProps>;

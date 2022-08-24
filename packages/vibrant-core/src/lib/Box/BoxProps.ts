@@ -110,22 +110,22 @@ export type BoxElements =
 export type BoxProps<
   BaseComponent extends ComponentType | undefined = undefined,
   ElementName extends BoxElements | undefined = undefined
-> = DistributiveOmit<
-  BaseComponent extends ComponentType<infer BaseComponentProps>
-    ? BaseComponentProps
-    : ElementName extends keyof JSX.IntrinsicElements
-    ? JSX.IntrinsicElements[ElementName]
-    : Record<never, never>,
-  keyof SystemProps
-> &
-  SystemProps & {
-    as?: ElementName;
-    base?: BaseComponent;
-    id?: string;
-    ref?: Ref<BaseComponent extends abstract new (...args: any) => any ? InstanceType<BaseComponent> : HTMLElement>;
-    children?: ReactElementChild | ReactElementChild[];
-    onLayout?: (layoutEvent: LayoutEvent) => void;
-  };
+> = SystemProps & {
+  as?: ElementName;
+  base?: BaseComponent;
+  id?: string;
+  onLayout?: (layoutEvent: LayoutEvent) => void;
+} & DistributiveOmit<
+    BaseComponent extends ComponentType<infer BaseComponentProps>
+      ? BaseComponentProps
+      : (ElementName extends keyof JSX.IntrinsicElements
+          ? JSX.IntrinsicElements[ElementName]
+          : Record<never, never>) & {
+          ref?: Ref<HTMLElement>;
+          children?: ReactElementChild | ReactElementChild[];
+        },
+    keyof SystemProps
+  >;
 
 export type { LayoutEvent };
 
