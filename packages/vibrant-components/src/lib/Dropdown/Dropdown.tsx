@@ -164,6 +164,9 @@ export const Dropdown = withDropdownVariation(
                           }
                         : {}
                     }
+                    style={{
+                      height: contentHeight,
+                    }}
                     duration={150}
                   >
                     <Box overflow="hidden">
