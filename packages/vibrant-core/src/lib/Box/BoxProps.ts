@@ -81,9 +81,7 @@ const systemProps = [
   ...transformSystemProps,
 ];
 
-const systemPropNames = [
-  ...systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName),
-];
+const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
 
 export type BoxElements =
   | 'article'
