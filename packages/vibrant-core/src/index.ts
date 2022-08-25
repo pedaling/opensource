@@ -46,3 +46,4 @@ export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
 export { Portal } from './lib/Portal';
 export { isNative } from './lib/isNative';
+export { ScrollBox } from './lib/ScrollBox';

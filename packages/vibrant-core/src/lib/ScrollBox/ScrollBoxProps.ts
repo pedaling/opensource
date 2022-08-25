@@ -1,5 +1,6 @@
 import type { Ref } from 'react';
 import type { ReactElementChild } from '../../types';
+import { isNative } from '../isNative';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -7,11 +8,13 @@ import type {
   DisplaySystemProps,
   FlexboxSystemProps,
   InteractionSystemProps,
+  OverflowSystemProps,
   PositionSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
   TransformSystemProps,
 } from '../props';
+import { propVariant } from '../propVariant';
 import { withVariation } from '../withVariation';
 
 type SystemProps = BackgroundSystemProps &
@@ -46,4 +49,22 @@ export type ScrollBoxProps = {
   children: ReactElementChild | ReactElementChild[];
 } & SystemProps;
 
-export const withScrollBoxVariation = withVariation<ScrollBoxProps>('ScrollBox')();
+export const withScrollBoxVariation = withVariation<ScrollBoxProps>('ScrollBox')(
+  propVariant({
+    props: [
+      {
+        name: 'alwaysShowScroll',
+        default: false,
+        keep: true,
+      },
+    ],
+    variants: {
+      true: {
+        overflow: isNative ? undefined : ('scroll' as OverflowSystemProps['overflow']),
+      },
+      false: {
+        overflow: isNative ? undefined : ('auto' as OverflowSystemProps['overflow']),
+      },
+    },
+  })
+);
