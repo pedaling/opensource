@@ -1,5 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Box, getWindowDimensions, useResponsiveValue, useWindowDimensions } from '@vibrant-ui/core';
+import {
+  Box,
+  ThemeProvider,
+  getWindowDimensions,
+  useCurrentThemeMode,
+  useResponsiveValue,
+  useWindowDimensions,
+} from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
@@ -66,9 +73,19 @@ export const Dropdown = withDropdownVariation(
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
     const [contentHeight, setContentHeight] = useState<number>();
-    const { breakpointIndex } = useResponsiveValue();
-    const isMobile = breakpointIndex === 0;
     const { height: viewportHeight } = useWindowDimensions();
+
+    const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
+    const isMobile = breakpointIndex === 0;
+    const { mode: rootMode } = useCurrentThemeMode({ root: true });
+    const rootThemeMode = useMemo(
+      () => ({
+        mode: rootMode,
+      }),
+      [rootMode]
+    );
+
+    console.log(rootThemeMode);
 
     const openDropdown = useCallback(async () => {
       if (isMobile || !openerRef.current || !targetRef.current) {
@@ -134,90 +151,94 @@ export const Dropdown = withDropdownVariation(
       <Box position="relative">
         <Box ref={openerRef}>{opener}</Box>
         {isOpen && (
-          <Dismissible active={visible} onDismiss={closeDropdown}>
-            <Transition
-              ref={targetRef}
-              animation={{
-                opacity: visible ? 1 : 0,
-                x: offset.x,
-                y: offset.y,
-              }}
-              style={{
-                x: offset.x,
-                y: offset.y,
-              }}
-              duration={150}
-            >
-              <Box position="absolute" zIndex={Z_INDEX}>
-                <Box
-                  backgroundColor="background"
-                  py={CONTENT_PADDING}
-                  elevationLevel={4}
-                  borderRadiusLevel={1}
-                  width={[280, 280, 240]}
-                >
-                  <Transition
-                    animation={
-                      visible
-                        ? {
-                            height: contentHeight,
-                          }
-                        : {}
-                    }
-                    style={{
-                      height: contentHeight,
-                    }}
-                    duration={150}
+          <ThemeProvider theme={rootThemeMode}>
+            <Dismissible active={visible} onDismiss={closeDropdown}>
+              <Transition
+                ref={targetRef}
+                animation={{
+                  opacity: visible ? 1 : 0,
+                  x: offset.x,
+                  y: offset.y,
+                }}
+                style={{
+                  x: offset.x,
+                  y: offset.y,
+                }}
+                duration={150}
+              >
+                <Box position="absolute" zIndex={Z_INDEX}>
+                  <Box
+                    backgroundColor="background"
+                    py={CONTENT_PADDING}
+                    elevationLevel={4}
+                    borderRadiusLevel={1}
+                    width={[280, 280, 240]}
                   >
-                    <Box overflow="hidden">
-                      <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents(closeDropdown)}
+                    <Transition
+                      animation={
+                        visible
+                          ? {
+                              height: contentHeight,
+                            }
+                          : {}
+                      }
+                      style={{
+                        height: contentHeight,
+                      }}
+                      duration={150}
+                    >
+                      <Box overflow="hidden">
+                        <Box onLayout={handleContentResize} flexShrink={0}>
+                          {renderContents(closeDropdown)}
+                        </Box>
                       </Box>
-                    </Box>
-                  </Transition>
+                    </Transition>
+                  </Box>
                 </Box>
-              </Box>
-            </Transition>
-          </Dismissible>
+              </Transition>
+            </Dismissible>
+          </ThemeProvider>
         )}
       </Box>
     ) : (
       <>
         {opener}
-        <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
-          <Transition
-            animation={{
-              y: visible
-                ? 0
-                : (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING),
-            }}
-            duration={visible ? 150 : 100}
-          >
-            <Box
-              mt="auto"
-              pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
-              pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
-              width="100%"
-              maxHeight={viewportHeight - 120}
-              backgroundColor="background"
-              borderTopLeftRadiusLevel={4}
-              borderTopRightRadiusLevel={4}
+        <ThemeProvider theme={rootThemeMode}>
+          <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
+            <Transition
+              animation={{
+                y: visible
+                  ? 0
+                  : (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING),
+              }}
+              duration={visible ? 150 : 100}
             >
-              <Transition
-                animation={{
-                  height: contentHeight,
-                }}
-                duration={150}
+              <Box
+                mt="auto"
+                pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
+                pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
+                width="100%"
+                maxHeight={viewportHeight - 120}
+                backgroundColor="background"
+                borderTopLeftRadiusLevel={4}
+                borderTopRightRadiusLevel={4}
               >
-                <Box overflow="hidden">
-                  <Box onLayout={handleContentResize} flexShrink={0}>
-                    {renderContents(closeDropdown)}
+                <Transition
+                  animation={{
+                    height: contentHeight,
+                  }}
+                  duration={150}
+                >
+                  <Box overflow="hidden">
+                    <Box onLayout={handleContentResize} flexShrink={0}>
+                      {renderContents(closeDropdown)}
+                    </Box>
                   </Box>
-                </Box>
-              </Transition>
-            </Box>
-          </Transition>
-        </Backdrop>
+                </Transition>
+              </Box>
+            </Transition>
+          </Backdrop>
+        </ThemeProvider>
       </>
     );
   }
