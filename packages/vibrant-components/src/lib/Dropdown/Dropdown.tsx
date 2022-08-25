@@ -85,8 +85,6 @@ export const Dropdown = withDropdownVariation(
       [rootMode]
     );
 
-    console.log(rootThemeMode);
-
     const openDropdown = useCallback(async () => {
       if (isMobile || !openerRef.current || !targetRef.current) {
         return;
