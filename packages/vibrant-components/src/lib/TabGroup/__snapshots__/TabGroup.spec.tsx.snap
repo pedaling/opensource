@@ -24,6 +24,23 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -34,27 +51,20 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
-  overflow: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
   margin-bottom: -1px;
   padding-left: 20px;
   padding-right: 20px;
   width: 100%;
 }
 
-.emotion-1::-webkit-scrollbar {
-  display: none;
-}
-
 @media screen and (min-width: 1024px) {
-  .emotion-1 {
+  .emotion-2 {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
-.emotion-2 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -80,12 +90,12 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
 }
 
 @media screen and (min-width: 1024px) {
-  .emotion-2 {
+  .emotion-3 {
     margin-right: 28px;
   }
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -129,7 +139,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   background-color: inherit;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -153,13 +163,13 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
 }
 
 @media screen and (min-width: 1024px) {
-  .emotion-4 {
+  .emotion-5 {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -203,7 +213,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   background-color: inherit;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -227,13 +237,13 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
 }
 
 @media screen and (min-width: 1024px) {
-  .emotion-7 {
+  .emotion-8 {
     font-size: 1.125rem;
     line-height: 1.375rem;
   }
 }
 
-.emotion-8 {
+.emotion-9 {
   display: none;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -256,12 +266,12 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
 }
 
 @media screen and (min-width: 1024px) {
-  .emotion-8 {
+  .emotion-9 {
     margin-right: 28px;
   }
 }
 
-.emotion-9 {
+.emotion-10 {
   display: none;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
@@ -302,7 +312,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   background-color: inherit;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -327,7 +337,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-basis: auto;
 }
 
-.emotion-14 {
+.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -361,67 +371,72 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   >
     <div
       class="emotion-1"
-      data-testid="tabGroup"
+      overflowx="auto"
     >
       <div
         class="emotion-2"
+        data-testid="tabGroup"
       >
-        <button
+        <div
           class="emotion-3"
-          data-testid="tab1"
         >
-          <span
+          <button
             class="emotion-4"
+            data-testid="tab1"
           >
-            tab1
-          </span>
-        </button>
-      </div>
-      <div
-        class="emotion-2"
-      >
-        <button
-          class="emotion-6"
-          data-testid="tab2"
+            <span
+              class="emotion-5"
+            >
+              tab1
+            </span>
+          </button>
+        </div>
+        <div
+          class="emotion-3"
         >
-          <span
+          <button
             class="emotion-7"
+            data-testid="tab2"
           >
-            tab2
-          </span>
-        </button>
-      </div>
-      <div
-        class="emotion-8"
-      >
-        <button
+            <span
+              class="emotion-8"
+            >
+              tab2
+            </span>
+          </button>
+        </div>
+        <div
           class="emotion-9"
-          data-testid="hidden-tab"
         >
-          <span
-            class="emotion-7"
+          <button
+            class="emotion-10"
+            data-testid="hidden-tab"
           >
-            hiddenTab
-          </span>
-        </button>
-      </div>
-      <div
-        class="emotion-11"
-      >
-        <button
-          class="emotion-6"
-          data-testid="tab3"
+            <span
+              class="emotion-8"
+            >
+              hiddenTab
+            </span>
+          </button>
+        </div>
+        <div
+          class="emotion-12"
         >
-          <span
+          <button
             class="emotion-7"
+            data-testid="tab3"
           >
-            tab3
-          </span>
-        </button>
+            <span
+              class="emotion-8"
+            >
+              tab3
+            </span>
+          </button>
+        </div>
       </div>
     </div>
     <div
-      class="emotion-14"
+      class="emotion-15"
     />
   </div>
 </div>
