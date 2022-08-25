@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
-import type { CurrentTheme, Theme } from '@vibrant-ui/theme';
+import type { CurrentTheme, Theme, ThemeMode } from '@vibrant-ui/theme';
 import { baseTheme } from '@vibrant-ui/theme';
 import type { DeepPartial } from '@vibrant-ui/utils';
 import type { ReactElementChild } from '../../types';
@@ -93,4 +93,11 @@ export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentThe
   return {
     theme: currentThemeValues,
   };
+};
+
+export const useCurrentThemeMode = ({ root } = { root: false }): { mode: ThemeMode } => {
+  const { rootTheme, theme } = useContext(ThemeContext);
+  const currentThemeMode = root ? rootTheme.mode : theme.mode;
+
+  return { mode: currentThemeMode };
 };
