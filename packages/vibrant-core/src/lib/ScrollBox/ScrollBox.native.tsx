@@ -1,18 +1,18 @@
-import { ScrollView } from 'react-native';
-import { Box } from '../Box';
-import { withScrollBoxVariation } from './ScrollBoxProps';
+import { forwardRef } from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import styled from '@emotion/native';
+import type { ScrollBoxProps } from './ScrollBoxProps';
+import { interpolation, shouldForwardProp } from './ScrollBoxProps';
 
-export const ScrollBox = withScrollBoxVariation(
-  ({ innerRef, children, alwaysShowScroll = false, hideScroll = false, ...restProps }) => (
-    <Box
-      ref={innerRef}
-      base={ScrollView}
-      persistentScrollbar={alwaysShowScroll}
-      showsHorizontalScrollIndicator={!hideScroll}
-      showsVerticalScrollIndicator={!hideScroll}
-      {...restProps}
-    >
-      {children}
-    </Box>
-  )
-);
+export const ScrollBox = styled(
+  forwardRef<any, ScrollBoxProps & { style: any }>(({ style, ...restProps }, ref) => {
+    const { props, ...restStyle } = StyleSheet.flatten(style);
+
+    return <ScrollView ref={ref} style={restStyle} {...restProps} {...props} />;
+  }),
+  {
+    shouldForwardProp,
+  }
+)(interpolation);
+
+ScrollBox.displayName = 'ScrollBox';

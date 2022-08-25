@@ -1,5 +1,8 @@
 import type { Ref } from 'react';
-import type { ReactElementChild } from '../../types';
+import type { ReactElementChild, ResponsiveValue } from '../../types';
+import { createInterpolation } from '../createInterpolation';
+import { createShouldForwardProp } from '../createShouldForwardProp';
+import { injectContext } from '../injectContext';
 import { isNative } from '../isNative';
 import type {
   BackgroundSystemProps,
@@ -7,26 +10,48 @@ import type {
   ColorSystemProps,
   DisplaySystemProps,
   FlexboxSystemProps,
-  InteractionSystemProps,
-  OverflowSystemProps,
   PositionSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
   TransformSystemProps,
 } from '../props';
-import { propVariant } from '../propVariant';
-import { withVariation } from '../withVariation';
+import {
+  backgroundSystemProps,
+  borderSystemProps,
+  colorSystemProps,
+  displaySystemProps,
+  flexboxSystemProps,
+  overflowSystemProps,
+  positionSystemProps,
+  sizingSystemProps,
+  spacingSystemProps,
+  transformSystemProps,
+} from '../props';
 
 type SystemProps = BackgroundSystemProps &
   BorderSystemProps &
   ColorSystemProps &
   DisplaySystemProps &
   FlexboxSystemProps &
-  InteractionSystemProps &
   PositionSystemProps &
   SizingSystemProps &
   SpacingSystemProps &
   TransformSystemProps;
+
+const systemProps = [
+  ...backgroundSystemProps,
+  ...borderSystemProps,
+  ...colorSystemProps,
+  ...displaySystemProps,
+  ...overflowSystemProps,
+  ...flexboxSystemProps,
+  ...positionSystemProps,
+  ...spacingSystemProps,
+  ...sizingSystemProps,
+  ...transformSystemProps,
+];
+
+const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
 
 export type ScrollBoxElements =
   | 'article'
@@ -44,27 +69,17 @@ export type ScrollBoxElements =
 export type ScrollBoxProps = {
   ref?: Ref<any>;
   as?: ScrollBoxElements;
-  alwaysShowScroll?: boolean;
-  hideScroll?: boolean;
+  alwaysShowScroll?: ResponsiveValue<boolean>;
+  hideScroll?: ResponsiveValue<boolean>;
   children: ReactElementChild | ReactElementChild[];
 } & SystemProps;
 
-export const withScrollBoxVariation = withVariation<ScrollBoxProps>('ScrollBox')(
-  propVariant({
-    props: [
-      {
-        name: 'alwaysShowScroll',
-        default: false,
-        keep: true,
-      },
-    ],
-    variants: {
-      true: {
-        overflow: isNative ? undefined : ('scroll' as OverflowSystemProps['overflow']),
-      },
-      false: {
-        overflow: isNative ? undefined : ('auto' as OverflowSystemProps['overflow']),
-      },
-    },
+export const interpolation = injectContext(
+  createInterpolation(systemProps, {
+    display: 'flex',
+    boxSizing: 'border-box',
+    overflow: isNative ? undefined : 'auto',
   })
 );
+
+export const shouldForwardProp = createShouldForwardProp(systemPropNames);

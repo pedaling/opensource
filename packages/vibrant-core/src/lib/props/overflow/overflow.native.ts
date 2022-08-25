@@ -9,10 +9,9 @@ const hideScrollProp = createSystemProp({
   transform: (value: boolean) =>
     value
       ? {
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-          '&::-webkit-scrollbar': {
-            display: 'none',
+          props: {
+            showsHorizontalScrollIndicator: false,
+            showsVerticalScrollIndicator: false,
           },
         }
       : {},
@@ -23,7 +22,9 @@ const alwaysShowScrollProps = createSystemProp({
   transform: (value: boolean) =>
     value
       ? {
-          overflow: 'scroll',
+          props: {
+            persistentScrollbar: true,
+          },
         }
       : {},
 });
