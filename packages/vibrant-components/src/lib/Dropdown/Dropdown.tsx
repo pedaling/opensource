@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Box, getWindowDimensions, useResponsiveValue } from '@vibrant-ui/core';
+import { Box, getWindowDimensions, useResponsiveValue, useWindowDimensions } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
@@ -8,7 +8,8 @@ import { Dismissible } from '../Dismissible';
 import { withDropdownVariation } from './DropdownProps';
 
 const CONTENT_PADDING = 20;
-const BOTTOM_SHEET_CONTENT_PADDING = 24;
+const BOTTOM_SHEET_CONTENT_TOP_PADDING = 24;
+const BOTTOM_SHEET_CONTENT_BOTTOM_PADDING = 20;
 const Z_INDEX = 100;
 
 const getOffsetAvoidingOverflowByPosition = (
@@ -57,157 +58,164 @@ const getOffsetAvoidingOverflowByPosition = (
   return { x, y };
 };
 
-export const Dropdown = withDropdownVariation(({ open, renderOpener, renderContents, position, spacing = 8 }) => {
-  const openerRef = useRef<HTMLElement>(null);
-  const targetRef = useRef<HTMLElement>(null);
-  const [isOpen, setIsOpen] = useState(open);
-  const [visible, setVisible] = useState(false);
-  const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
-  const [contentHeight, setContentHeight] = useState<number>();
-  const { breakpointIndex } = useResponsiveValue();
-  const isMobile = breakpointIndex === 0;
+export const Dropdown = withDropdownVariation(
+  ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8 }) => {
+    const openerRef = useRef<HTMLElement>(null);
+    const targetRef = useRef<HTMLElement>(null);
+    const [isOpen, setIsOpen] = useState(open);
+    const [visible, setVisible] = useState(false);
+    const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
+    const [contentHeight, setContentHeight] = useState<number>();
+    const { breakpointIndex } = useResponsiveValue();
+    const isMobile = breakpointIndex === 0;
+    const { height: viewportHeight } = useWindowDimensions();
 
-  const openDropdown = useCallback(async () => {
-    if (isMobile || !openerRef.current || !targetRef.current) {
-      return;
-    }
-
-    const [openerRect, targetRect] = await Promise.all([
-      getElementRect(openerRef.current),
-      getElementRect(targetRef.current),
-    ]);
-
-    const { x, y } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
-
-    setOffset({ x, y });
-
-    setVisible(true);
-  }, [isMobile, position, spacing]);
-
-  const closeDropdown = useCallback(() => {
-    setIsOpen(false);
-
-    setContentHeight(undefined);
-  }, []);
-
-  const handleContentResize = useCallback(
-    async ({ layout: { width, height, x, y } }: LayoutEvent) => {
-      if (!isMobile) {
-        const openerRect = await getElementRect(openerRef.current);
-
-        const { x: offsetX, y: offsetY } = getOffsetAvoidingOverflowByPosition(
-          openerRect,
-          {
-            x,
-            y,
-            width,
-            height: height + CONTENT_PADDING * 2,
-          },
-          position,
-          spacing
-        );
-
-        setOffset({ x: offsetX, y: offsetY });
+    const openDropdown = useCallback(async () => {
+      if (isMobile || !openerRef.current || !targetRef.current) {
+        return;
       }
 
-      setContentHeight(height);
+      const [openerRect, targetRect] = await Promise.all([
+        getElementRect(openerRef.current),
+        getElementRect(targetRef.current),
+      ]);
+
+      const { x, y } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
+
+      setOffset({ x, y });
 
       setVisible(true);
-    },
-    [isMobile, position, spacing]
-  );
+    }, [isMobile, position, spacing]);
 
-  const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
+    const closeDropdown = useCallback(() => {
+      setIsOpen(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      openDropdown();
-    } else {
-      setVisible(false);
-    }
-  }, [isOpen, openDropdown]);
+      setContentHeight(undefined);
+    }, []);
 
-  return !isMobile ? (
-    <Box position="relative">
-      <Box ref={openerRef}>{opener}</Box>
-      {isOpen && (
-        <Dismissible active={visible} onDismiss={closeDropdown}>
-          <Transition
-            ref={targetRef}
-            animation={{
-              opacity: visible ? 1 : 0,
-              x: offset.x,
-              y: offset.y,
-            }}
-            style={{
-              x: offset.x,
-              y: offset.y,
-            }}
-            duration={150}
-          >
-            <Box position="absolute" zIndex={Z_INDEX}>
-              <Box
-                backgroundColor="background"
-                py={CONTENT_PADDING}
-                elevationLevel={4}
-                borderRadiusLevel={1}
-                width={[280, 280, 240]}
-              >
-                <Transition
-                  animation={
-                    visible
-                      ? {
-                          height: contentHeight,
-                        }
-                      : {}
-                  }
-                  duration={150}
-                >
-                  <Box overflow="hidden">
-                    <Box onLayout={handleContentResize} flexShrink={0}>
-                      {renderContents(closeDropdown)}
-                    </Box>
-                  </Box>
-                </Transition>
-              </Box>
-            </Box>
-          </Transition>
-        </Dismissible>
-      )}
-    </Box>
-  ) : (
-    <>
-      {opener}
-      <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
-        <Transition
-          animation={{
-            y: visible ? 0 : (contentHeight ?? 0) + 2 * BOTTOM_SHEET_CONTENT_PADDING,
-          }}
-          duration={visible ? 150 : 100}
-        >
-          <Box
-            mt="auto"
-            p={BOTTOM_SHEET_CONTENT_PADDING}
-            width="100%"
-            backgroundColor="background"
-            borderTopLeftRadiusLevel={4}
-            borderTopRightRadiusLevel={4}
-          >
+    const handleContentResize = useCallback(
+      async ({ layout: { width, height, x, y } }: LayoutEvent) => {
+        if (!isMobile) {
+          const openerRect = await getElementRect(openerRef.current);
+
+          const { x: offsetX, y: offsetY } = getOffsetAvoidingOverflowByPosition(
+            openerRect,
+            {
+              x,
+              y,
+              width,
+              height: height + CONTENT_PADDING * 2,
+            },
+            position,
+            spacing
+          );
+
+          setOffset({ x: offsetX, y: offsetY });
+        }
+
+        setContentHeight(height);
+
+        setVisible(true);
+      },
+      [isMobile, position, spacing]
+    );
+
+    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
+
+    useEffect(() => {
+      if (isOpen) {
+        openDropdown();
+      } else {
+        setVisible(false);
+      }
+    }, [isOpen, openDropdown]);
+
+    return !isMobile ? (
+      <Box position="relative">
+        <Box ref={openerRef}>{opener}</Box>
+        {isOpen && (
+          <Dismissible active={visible} onDismiss={closeDropdown}>
             <Transition
+              ref={targetRef}
               animation={{
-                height: contentHeight,
+                opacity: visible ? 1 : 0,
+                x: offset.x,
+                y: offset.y,
+              }}
+              style={{
+                x: offset.x,
+                y: offset.y,
               }}
               duration={150}
             >
-              <Box overflow="hidden">
-                <Box onLayout={handleContentResize} flexShrink={0}>
-                  {renderContents(closeDropdown)}
+              <Box position="absolute" zIndex={Z_INDEX}>
+                <Box
+                  backgroundColor="background"
+                  py={CONTENT_PADDING}
+                  elevationLevel={4}
+                  borderRadiusLevel={1}
+                  width={[280, 280, 240]}
+                >
+                  <Transition
+                    animation={
+                      visible
+                        ? {
+                            height: contentHeight,
+                          }
+                        : {}
+                    }
+                    duration={150}
+                  >
+                    <Box overflow="hidden">
+                      <Box onLayout={handleContentResize} flexShrink={0}>
+                        {renderContents(closeDropdown)}
+                      </Box>
+                    </Box>
+                  </Transition>
                 </Box>
               </Box>
             </Transition>
-          </Box>
-        </Transition>
-      </Backdrop>
-    </>
-  );
-});
+          </Dismissible>
+        )}
+      </Box>
+    ) : (
+      <>
+        {opener}
+        <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
+          <Transition
+            animation={{
+              y: visible
+                ? 0
+                : (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING),
+            }}
+            duration={visible ? 150 : 100}
+          >
+            <Box
+              mt="auto"
+              pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
+              pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
+              width="100%"
+              maxHeight={viewportHeight - 120}
+              backgroundColor="background"
+              borderTopLeftRadiusLevel={4}
+              borderTopRightRadiusLevel={4}
+            >
+              <Transition
+                animation={{
+                  height: contentHeight,
+                }}
+                duration={150}
+              >
+                <Box overflow="hidden">
+                  <Box onLayout={handleContentResize} flexShrink={0}>
+                    {renderContents(closeDropdown)}
+                  </Box>
+                </Box>
+              </Transition>
+            </Box>
+          </Transition>
+        </Backdrop>
+      </>
+    );
+  }
+);
