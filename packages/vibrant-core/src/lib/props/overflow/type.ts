@@ -1,6 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
 export type OverflowSystemProps = {
-  overflow?: ResponsiveValue<'hidden' | 'scroll' | 'visible'>;
+  overflow?: ResponsiveValue<'auto' | 'hidden' | 'scroll' | 'visible'>;
   hideScroll?: ResponsiveValue<boolean>;
 };
