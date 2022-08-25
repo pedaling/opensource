@@ -5,7 +5,17 @@ import { VStack } from '../VStack';
 import { withTabGroupVariation } from './TabGroupProps';
 
 export const TabGroup = withTabGroupVariation(
-  ({ BoxComponent, tabFlexGrow, tabFlexShrink, tabFlexBasis, tabId, onTabChange, children, ...restProps }) => {
+  ({
+    BoxComponent,
+    scrollable,
+    tabFlexGrow,
+    tabFlexShrink,
+    tabFlexBasis,
+    tabId,
+    onTabChange,
+    children,
+    ...restProps
+  }) => {
     const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
     const tabRefs = useRef<Record<string, HTMLElement>>({});
     const tabGroupRef = useRef<HTMLElement>(null);
@@ -34,7 +44,7 @@ export const TabGroup = withTabGroupVariation(
           ref={tabGroupRef}
           flexDirection="row"
           hideScroll={true}
-          overflowX="auto"
+          overflowX={scrollable ? 'auto' : undefined}
           mb={-1}
           px={[20, 20, 0]}
           {...restProps}

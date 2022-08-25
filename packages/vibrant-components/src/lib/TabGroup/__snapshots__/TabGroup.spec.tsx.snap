@@ -37,6 +37,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   margin-bottom: -1px;
   padding-left: 20px;
   padding-right: 20px;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -355,7 +356,6 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
     <div
       class="emotion-1"
       data-testid="tabGroup"
-      overflowx="auto"
     >
       <div
         class="emotion-2"
