@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { propVariant, withVariation } from '@vibrant-ui/core';
+import { Box, ScrollBox, propVariant, withVariation } from '@vibrant-ui/core';
 import type { TabProps } from '../Tab';
 
 export type TabGroupProps = {
@@ -21,14 +21,14 @@ export const withTabGroupVariation = withVariation<TabGroupProps>('TabGroup')(
         tabFlexGrow: 0,
         tabFlexShrink: 0,
         tabFlexBasis: 'auto',
-        overflow: 'scroll',
+        ContainerComponent: ScrollBox,
         width: 'auto',
       },
       fullWidth: {
         tabFlexGrow: 1,
         tabFlexShrink: 0,
         tabFlexBasis: 'auto',
-        overflow: 'hidden',
+        ContainerComponent: Box,
         width: '100%',
       },
     } as const,

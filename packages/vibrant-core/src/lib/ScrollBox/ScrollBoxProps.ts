@@ -1,5 +1,5 @@
 import type { Ref } from 'react';
-import type { ReactElementChild, ResponsiveValue } from '../../types';
+import type { ReactElementChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
@@ -27,6 +27,8 @@ import {
   spacingSystemProps,
   transformSystemProps,
 } from '../props';
+import { scrollSystemProps } from './props';
+import type { ScrollSystemProps } from './props/type';
 
 type SystemProps = BackgroundSystemProps &
   BorderSystemProps &
@@ -36,14 +38,16 @@ type SystemProps = BackgroundSystemProps &
   PositionSystemProps &
   SizingSystemProps &
   SpacingSystemProps &
-  TransformSystemProps;
+  TransformSystemProps &
+  ScrollSystemProps;
 
 const systemProps = [
+  ...scrollSystemProps,
   ...backgroundSystemProps,
   ...borderSystemProps,
   ...colorSystemProps,
-  ...displaySystemProps,
   ...overflowSystemProps,
+  ...displaySystemProps,
   ...flexboxSystemProps,
   ...positionSystemProps,
   ...spacingSystemProps,
@@ -69,8 +73,6 @@ export type ScrollBoxElements =
 export type ScrollBoxProps = {
   ref?: Ref<any>;
   as?: ScrollBoxElements;
-  alwaysShowScroll?: ResponsiveValue<boolean>;
-  hideScroll?: ResponsiveValue<boolean>;
   children: ReactElementChild | ReactElementChild[];
 } & SystemProps;
 
@@ -78,7 +80,7 @@ export const interpolation = injectContext(
   createInterpolation(systemProps, {
     display: 'flex',
     boxSizing: 'border-box',
-    overflow: isNative ? undefined : 'auto',
+    overflowY: isNative ? undefined : 'auto',
   })
 );
 

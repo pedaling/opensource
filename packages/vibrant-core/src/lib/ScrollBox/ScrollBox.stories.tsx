@@ -5,13 +5,7 @@ import { ScrollBox } from './ScrollBox';
 export default {
   title: 'ScrollBox',
   component: ScrollBox,
-  args: {
-    width: 200,
-    height: 200,
-    borderWidth: 1,
-    hideScroll: false,
-    alwaysShowScroll: false,
-  },
+  args: {},
 } as ComponentMeta<typeof ScrollBox>;
 
 export const Basic: ComponentStory<typeof ScrollBox> = props => (

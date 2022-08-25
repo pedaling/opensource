@@ -5,10 +5,10 @@ import type { ScrollBoxProps } from './ScrollBoxProps';
 import { interpolation, shouldForwardProp } from './ScrollBoxProps';
 
 export const ScrollBox = styled(
-  forwardRef<any, ScrollBoxProps & { style: any }>(({ style, ...restProps }, ref) => {
+  forwardRef<any, ScrollBoxProps & { style: any }>(({ style, overflowX, ...restProps }, ref) => {
     const { props, ...restStyle } = StyleSheet.flatten(style);
 
-    return <ScrollView ref={ref} style={restStyle} {...restProps} {...props} />;
+    return <ScrollView ref={ref} style={restStyle} horizontal={overflowX === 'auto'} {...restProps} {...props} />;
   }),
   {
     shouldForwardProp,

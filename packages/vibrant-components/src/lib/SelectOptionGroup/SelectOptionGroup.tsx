@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { ScrollBox } from '@vibrant-ui/core';
 import { range } from '@vibrant-ui/utils';
 import { Divider } from '../Divider';
 import { SelectOptionItem } from '../SelectOptionItem';
@@ -36,7 +36,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
     }, [focusIndex, reverse, renderIndices]);
 
     return (
-      <Box
+      <ScrollBox
         ref={ref}
         as="ul"
         width="100%"
@@ -44,7 +44,6 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         borderWidth={1}
         borderStyle="solid"
         borderRadius={2}
-        overflow="scroll"
         hideScroll={true}
         {...restProps}
       >
@@ -60,7 +59,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
             </SelectOptionItem>
           </Fragment>
         ))}
-      </Box>
+      </ScrollBox>
     );
   }
 );
