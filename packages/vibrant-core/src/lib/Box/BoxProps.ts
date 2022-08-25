@@ -98,6 +98,7 @@ export type BoxElements =
   | 'label'
   | 'li'
   | 'linearGradient'
+  | 'main'
   | 'mask'
   | 'nav'
   | 'path'
@@ -117,7 +118,7 @@ export type BoxProps<
   onLayout?: (layoutEvent: LayoutEvent) => void;
 } & DistributiveOmit<
     BaseComponent extends ComponentType<infer BaseComponentProps>
-      ? BaseComponentProps
+      ? BaseComponentProps & React.RefAttributes<BaseComponent>
       : (ElementName extends keyof JSX.IntrinsicElements
           ? JSX.IntrinsicElements[ElementName]
           : Record<never, never>) & {
