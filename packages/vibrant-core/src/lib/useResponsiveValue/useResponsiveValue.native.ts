@@ -3,11 +3,11 @@ import { useWindowDimensions } from 'react-native';
 import type { ResponsiveValue } from '../../types';
 import { useCurrentTheme } from '../ThemeProvider';
 
-export const useResponsiveValue = () => {
+export const useResponsiveValue = ({ rootBreakPoints } = { rootBreakPoints: false }) => {
   const { width } = useWindowDimensions();
   const {
     theme: { breakpoints },
-  } = useCurrentTheme();
+  } = useCurrentTheme({ root: rootBreakPoints });
 
   const currentIndex = useMemo(() => {
     const index = breakpoints.findIndex(breakpoint => breakpoint >= width);
