@@ -5,7 +5,7 @@ import { VStack } from '../VStack';
 import { withTabGroupVariation } from './TabGroupProps';
 
 export const TabGroup = withTabGroupVariation(
-  ({ ContainerComponent, tabFlexGrow, tabFlexShrink, tabFlexBasis, tabId, onTabChange, children, ...restProps }) => {
+  ({ BoxComponent, tabFlexGrow, tabFlexShrink, tabFlexBasis, tabId, onTabChange, children, ...restProps }) => {
     const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
     const tabRefs = useRef<Record<string, HTMLElement>>({});
     const tabGroupRef = useRef<HTMLElement>(null);
@@ -30,32 +30,38 @@ export const TabGroup = withTabGroupVariation(
 
     return (
       <VStack width="100%">
-        <ContainerComponent hideScroll={true} overflowX="auto">
-          <HStack ref={tabGroupRef} mb={-1} px={[20, 20, 0]} {...restProps}>
-            {tabElements.map((element, index) => (
-              <HStack
-                mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
-                flexGrow={tabFlexGrow}
-                flexShrink={tabFlexShrink}
-                flexBasis={tabFlexBasis}
-                hidden={element.props.hidden}
-                key={element.props.id}
-              >
-                {cloneElement(element, {
-                  active: element.props.id === tabId,
-                  onClick: onTabChange,
-                  ref: (domRef: HTMLElement | null) => {
-                    if (!domRef) {
-                      return;
-                    }
+        <BoxComponent
+          ref={tabGroupRef}
+          flexDirection="row"
+          hideScroll={true}
+          overflowX="auto"
+          mb={-1}
+          px={[20, 20, 0]}
+          {...restProps}
+        >
+          {tabElements.map((element, index) => (
+            <HStack
+              mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
+              flexGrow={tabFlexGrow}
+              flexShrink={tabFlexShrink}
+              flexBasis={tabFlexBasis}
+              hidden={element.props.hidden}
+              key={element.props.id}
+            >
+              {cloneElement(element, {
+                active: element.props.id === tabId,
+                onClick: onTabChange,
+                ref: (domRef: HTMLElement | null) => {
+                  if (!domRef) {
+                    return;
+                  }
 
-                    tabRefs.current[element.props.id] = domRef;
-                  },
-                })}
-              </HStack>
-            ))}
-          </HStack>
-        </ContainerComponent>
+                  tabRefs.current[element.props.id] = domRef;
+                },
+              })}
+            </HStack>
+          ))}
+        </BoxComponent>
         <Divider direction="horizontal" />
       </VStack>
     );
