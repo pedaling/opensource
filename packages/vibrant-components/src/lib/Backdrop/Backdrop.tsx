@@ -36,7 +36,6 @@ export const Backdrop = withBackdropVariation(
             }}
             duration={transitionDuration}
             onEnd={unmount}
-            easing="easeOutQuad"
           >
             <Box
               as="div"
