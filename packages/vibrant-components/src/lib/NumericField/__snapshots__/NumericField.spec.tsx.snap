@@ -67,18 +67,26 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
 
 .emotion-1::-webkit-input-placeholder {
   color: #7C7C7C;
+  -webkit-text-fill-color: #7C7C7C;
+  text-fill-color: #7C7C7C;
 }
 
 .emotion-1::-moz-placeholder {
   color: #7C7C7C;
+  -webkit-text-fill-color: #7C7C7C;
+  text-fill-color: #7C7C7C;
 }
 
 .emotion-1:-ms-input-placeholder {
   color: #7C7C7C;
+  -webkit-text-fill-color: #7C7C7C;
+  text-fill-color: #7C7C7C;
 }
 
 .emotion-1::placeholder {
   color: #7C7C7C;
+  -webkit-text-fill-color: #7C7C7C;
+  text-fill-color: #7C7C7C;
 }
 
 .emotion-2 {

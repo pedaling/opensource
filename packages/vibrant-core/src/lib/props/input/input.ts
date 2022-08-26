@@ -6,6 +6,7 @@ const placeholderColorProp = createSystemProp({
   transform: value => ({
     '&::placeholder': {
       color: value,
+      textFillColor: value,
     },
   }),
 });
