@@ -11,7 +11,26 @@ type FieldLayoutProps = {
   filled?: boolean;
   onLabelClick: () => void;
   renderField: (_: { color: OnColorToken; pt: number; pl: number; pr: number; pb: number }) => ReactElementChild;
-};
+} & (
+  | {
+      prefixText?: never;
+      renderPrefix?: () => ReactElementChild;
+    }
+  | {
+      prefixText?: string;
+      renderPrefix?: never;
+    }
+) &
+  (
+    | {
+        suffixText?: never;
+        renderSuffix?: () => ReactElementChild;
+      }
+    | {
+        suffixText?: string;
+        renderSuffix?: never;
+      }
+  );
 
 export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLayout')(
   propVariant({
@@ -72,27 +91,31 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         default: false,
       },
     ],
-    variants: ({ focused, filled }) =>
-      ({
-        animation: {
-          top: focused || filled ? 7 : 15,
-          typography: focused || filled ? 'body6' : 'body2',
-        },
-      } as const),
+    variants: ({ focused, filled }) => ({
+      shrink: focused || filled,
+    }),
   }),
   propVariant({
     props: [
       {
-        name: 'label',
+        name: 'shrink',
         keep: true,
       },
     ],
-    variants: ({ label }) => ({
-      pt: label ? 23 : 15,
-      pl: 15,
-      pr: 15,
-      pb: label ? 7 : 15,
-    }),
+    variants: {
+      true: {
+        animation: {
+          top: 7,
+          typography: 'body6',
+        },
+      },
+      false: {
+        animation: {
+          top: 15,
+          typography: 'body2',
+        },
+      },
+    } as const,
   }),
   propVariant({
     props: [
@@ -116,5 +139,57 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         valueColor: 'onView1',
       },
     } as const,
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'prefixText',
+        keep: true,
+      },
+      {
+        name: 'renderPrefix',
+        keep: true,
+      },
+    ],
+    variants: ({ prefixText, renderPrefix }) => ({
+      hasPrefix: prefixText || renderPrefix,
+      labelLeft: prefixText ? 15 : 12,
+    }),
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'suffixText',
+        keep: true,
+      },
+      {
+        name: 'renderSuffix',
+        keep: true,
+      },
+    ],
+    variants: ({ suffixText, renderSuffix }) => ({
+      hasSuffix: suffixText || renderSuffix,
+      labelRight: suffixText ? 15 : 12,
+    }),
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'label',
+        keep: true,
+      },
+      {
+        name: 'hasPrefix',
+      },
+      {
+        name: 'hasSuffix',
+      },
+    ],
+    variants: ({ label, hasPrefix, hasSuffix }) => ({
+      pt: label ? 23 : 15,
+      pl: hasPrefix ? 12 : 15,
+      pr: hasSuffix ? 12 : 15,
+      pb: label ? 7 : 15,
+    }),
   })
 );

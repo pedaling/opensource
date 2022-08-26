@@ -5,28 +5,36 @@ import { injectContext } from '../injectContext';
 import type {
   ColorSystemProps,
   DisplaySystemProps,
+  FlexboxSystemProps,
   PositionSystemProps,
+  SpacingSystemProps,
   TextSystemProps,
   TypographySystemProps,
 } from '../props';
 import {
   colorSystemProps,
   displaySystemProps,
+  flexboxSystemProps,
   positionSystemProps,
+  spacingSystemProps,
   textSystemProps,
   typographySystemProps,
 } from '../props';
 
 type SystemProps = ColorSystemProps &
   DisplaySystemProps &
+  Pick<FlexboxSystemProps, 'flex' | 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   PositionSystemProps &
+  SpacingSystemProps &
   TextSystemProps &
   TypographySystemProps;
 
 export const systemProps = [
   ...colorSystemProps,
   ...displaySystemProps,
+  ...flexboxSystemProps,
   ...positionSystemProps,
+  ...spacingSystemProps,
   ...textSystemProps,
   ...typographySystemProps,
 ];
