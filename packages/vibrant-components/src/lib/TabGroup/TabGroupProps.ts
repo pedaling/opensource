@@ -22,7 +22,8 @@ export const withTabGroupVariation = withVariation<TabGroupProps>('TabGroup')(
         tabFlexShrink: 0,
         tabFlexBasis: 'auto',
         BoxComponent: ScrollBox,
-        scrollable: true,
+        hideScroll: true,
+        overflowX: 'auto',
         width: 'auto',
       },
       fullWidth: {
@@ -31,7 +32,6 @@ export const withTabGroupVariation = withVariation<TabGroupProps>('TabGroup')(
         tabFlexBasis: 'auto',
         overflow: 'hidden',
         BoxComponent: Box,
-        scrollable: false,
         width: '100%',
       },
     } as const,
