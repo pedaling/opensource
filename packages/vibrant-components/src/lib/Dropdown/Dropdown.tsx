@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
+  ScrollBox,
   ThemeProvider,
   getWindowDimensions,
   useCurrentThemeMode,
@@ -227,11 +228,16 @@ export const Dropdown = withDropdownVariation(
                   }}
                   duration={150}
                 >
-                  <Box overflow="hidden">
+                  <ScrollBox
+                    hideScroll={
+                      (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
+                      viewportHeight - 120
+                    }
+                  >
                     <Box onLayout={handleContentResize} flexShrink={0}>
                       {renderContents(closeDropdown)}
                     </Box>
-                  </Box>
+                  </ScrollBox>
                 </Transition>
               </Box>
             </Transition>
