@@ -144,7 +144,6 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
               y: offset.y,
             }}
             duration={150}
-            easing="easeOutQuad"
           >
             <Box position="absolute" zIndex={Z_INDEX}>
               <Box
@@ -163,7 +162,6 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
                       : {}
                   }
                   duration={150}
-                  easing="easeOutQuad"
                 >
                   <Box overflow="hidden">
                     <Box onLayout={handleContentResize} flexShrink={0}>
@@ -200,7 +198,6 @@ export const Dropdown = withDropdownVariation(({ open, renderOpener, renderConte
                 height: contentHeight,
               }}
               duration={150}
-              easing="easeOutQuad"
             >
               <Box overflow="hidden">
                 <Box onLayout={handleContentResize} flexShrink={0}>

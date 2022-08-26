@@ -8,7 +8,7 @@ import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, loop, from, to, easing, onStart, onEnd }) => {
+  ({ innerRef, children, duration, loop, from, to, easing = 'easeOutQuad', onStart, onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const { animated, useSpring } = useReactSpring();
 
