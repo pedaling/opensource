@@ -1,5 +1,6 @@
 {
   "expo": {
+    "runtimeVersion": "2.718",
     "owner": "vibrant-ui",
     "name": "VibrantExampleApp",
     "slug": "vibrant-example-app",
@@ -13,7 +14,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/a5399633-ea13-4afd-939e-4fb38ca4ae6d"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
