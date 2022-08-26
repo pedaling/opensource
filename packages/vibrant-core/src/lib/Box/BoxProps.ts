@@ -1,4 +1,4 @@
-import type { ComponentType, Ref, RefAttributes } from 'react';
+import type { ComponentType, Ref } from 'react';
 import type { DistributiveOmit, LayoutEvent } from '@vibrant-ui/utils';
 import type { ReactElementChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
@@ -118,9 +118,7 @@ export type BoxProps<
   onLayout?: (layoutEvent: LayoutEvent) => void;
 } & DistributiveOmit<
     BaseComponent extends ComponentType<infer BaseComponentProps>
-      ? BaseComponentProps extends RefAttributes<any>
-        ? BaseComponentProps
-        : BaseComponentProps & RefAttributes<BaseComponent>
+      ? BaseComponentProps
       : (ElementName extends keyof JSX.IntrinsicElements
           ? JSX.IntrinsicElements[ElementName]
           : Record<never, never>) & {
