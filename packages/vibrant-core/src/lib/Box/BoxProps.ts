@@ -98,6 +98,7 @@ export type BoxElements =
   | 'label'
   | 'li'
   | 'linearGradient'
+  | 'main'
   | 'mask'
   | 'nav'
   | 'path'
