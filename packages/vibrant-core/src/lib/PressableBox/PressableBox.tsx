@@ -6,6 +6,7 @@ export const PressableBox = withPressableBoxVariation(
   ({
     innerRef,
     as,
+    cursor = 'pointer',
     onClick,
     onFocusIn,
     onFocusOut,
@@ -20,6 +21,7 @@ export const PressableBox = withPressableBoxVariation(
     <Box
       ref={innerRef}
       as={as}
+      cursor={cursor}
       onClick={(event: { stopPropagation: () => void }) => {
         if (disabled) {
           return;

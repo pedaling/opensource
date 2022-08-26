@@ -43,7 +43,7 @@ export const FieldLayout = withFieldLayoutVariation(
       >
         {renderPrefix?.()}
         <Box position="relative" width="100%" height="100%" cursor={cursor}>
-          <PressableBox onClick={onLabelClick}>
+          <PressableBox cursor={cursor} onClick={onLabelClick}>
             <Transition animation={animation} duration={100}>
               <Text
                 position="absolute"

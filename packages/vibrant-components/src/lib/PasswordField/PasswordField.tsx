@@ -9,9 +9,9 @@ export const PasswordField = withPasswordFieldVariation(
   ({ state, label, placeholder, helperText, defaultValue, onValueChange, ...restProps }) => {
     const inputRef = useRef<TextInputRef>(null);
 
+    const [value, setValue] = useState(defaultValue ?? '');
     const [showValue, setShowValue] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
-    const [value, setValue] = useState(defaultValue ?? '');
 
     useEffect(() => {
       setValue(defaultValue ?? '');
@@ -26,7 +26,7 @@ export const PasswordField = withPasswordFieldVariation(
         filled={value.length > 0}
         onLabelClick={() => inputRef.current?.focus()}
         renderSuffix={() => (
-          <PressableBox cursor="pointer" onClick={() => setShowValue(!showValue)}>
+          <PressableBox onClick={() => setShowValue(!showValue)}>
             {showValue ? (
               <Icon.EyeOn.Regular size={20} fill="onView2" />
             ) : (

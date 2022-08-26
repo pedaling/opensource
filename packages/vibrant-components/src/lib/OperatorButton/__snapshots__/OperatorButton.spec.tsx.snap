@@ -16,12 +16,12 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  cursor: pointer;
   background-color: inherit;
   border-width: 0;
   padding: 0;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
