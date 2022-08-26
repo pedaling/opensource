@@ -7,6 +7,7 @@ const reactHooksRules = require('./rules/react-hooks');
 const typescriptRules = require('./rules/typescript');
 const unusedImportsRules = require('./rules/unused-imports');
 
+/** @type {import('eslint').ESLint.ConfigData} */
 const eslintConfig = {
   extends: ['plugin:@nrwl/nx/javascript', 'prettier'],
   plugins: ['@nrwl/nx', 'prettier', 'react', 'react-hooks', 'import', 'unused-imports'],
@@ -58,6 +59,12 @@ const eslintConfig = {
             skipComments: false,
           },
         ],
+      },
+    },
+    {
+      files: ['*.spec.ts', '*.spec.tsx'],
+      rules: {
+        'react-hooks/rules-of-hooks': ['off'],
       },
     },
   ],
