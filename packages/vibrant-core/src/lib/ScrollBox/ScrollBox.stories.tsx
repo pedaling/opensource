@@ -9,7 +9,7 @@ export default {
 } as ComponentMeta<typeof ScrollBox>;
 
 export const Basic: ComponentStory<typeof ScrollBox> = props => (
-  <ScrollBox width={200} height={200} borderWidth={1} {...props}>
+  <ScrollBox width={200} height={200} borderWidth={1} borderStyle="solid" {...props}>
     <Text typography="body3">
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum natus tempora maiores laudantium neque vel
       commodi architecto, a et laboriosam. Facilis eaque fugit laborum. Atque qui magni sunt. Suscipit, hic. Lorem ipsum
