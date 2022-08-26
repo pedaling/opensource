@@ -79,6 +79,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         keyboardType={keyboardType}
         value={value}
         editable={!readOnly && !disabled}
+        secureTextEntry={type === 'password'}
         onFocus={() => {
           setIsFocused(true);
 

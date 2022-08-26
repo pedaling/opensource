@@ -9,6 +9,8 @@ export const FieldLayout = withFieldLayoutVariation(
   ({
     label,
     helperText,
+    cursor,
+    backgroundColor,
     textColor,
     borderColor,
     animation,
@@ -24,7 +26,6 @@ export const FieldLayout = withFieldLayoutVariation(
     shrink,
     prefixText,
     suffixText,
-    ...restProps
   }) => (
     <VStack width="100%" spacing={6}>
       <Box
@@ -37,10 +38,11 @@ export const FieldLayout = withFieldLayoutVariation(
         borderWidth={1}
         borderStyle="solid"
         borderColor={borderColor}
+        backgroundColor={backgroundColor}
         borderRadiusLevel={1}
       >
         {renderPrefix?.()}
-        <Box position="relative" width="100%" height="100%" {...restProps}>
+        <Box position="relative" width="100%" height="100%" cursor={cursor}>
           <PressableBox onClick={onLabelClick}>
             <Transition animation={animation} duration={100}>
               <Text
