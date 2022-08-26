@@ -62,6 +62,18 @@
         }
       ]
     },
+    "update": {
+      "executor": "@nrwl/expo:update",
+      "options": {
+        "auto": true
+      },
+      "dependsOn": [
+        {
+          "target": "load-story",
+          "projects": "self"
+        }
+      ]
+    },
     "build-list": {
       "executor": "@nrwl/expo:build-list",
       "options": {}
@@ -71,18 +83,6 @@
       "options": {
         "output": "packages/vibrant-example-app/dist"
       }
-    },
-    "build-ios": {
-      "executor": "@nrwl/expo:build-ios",
-      "options": {}
-    },
-    "build-android": {
-      "executor": "@nrwl/expo:build-android",
-      "options": {}
-    },
-    "build-web": {
-      "executor": "@nrwl/expo:build-web",
-      "options": {}
     },
     "build-status": {
       "executor": "@nrwl/expo:build-web",

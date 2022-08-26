@@ -18,7 +18,9 @@
     "typecheck": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/utils-eslint-config/tsconfig.lib.json"]
+        "commands": [
+          "yarn tsc --project ./packages/utils-eslint-config/tsconfig.lib.json"
+        ]
       }
     },
     "lint": {
@@ -42,7 +44,10 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["utils-eslint-config:github", "utils-eslint-config:deploy"]
+        "postTargets": [
+          "utils-eslint-config:github",
+          "utils-eslint-config:deploy"
+        ]
       }
     },
     "github": {

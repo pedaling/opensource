@@ -29,7 +29,9 @@
     "typecheck": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/vibrant-components/tsconfig.lib.json"]
+        "commands": [
+          "yarn tsc --project ./packages/vibrant-components/tsconfig.lib.json"
+        ]
       }
     },
     "lint": {
@@ -84,7 +86,10 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-components:github", "vibrant-components:deploy"]
+        "postTargets": [
+          "vibrant-components:github",
+          "vibrant-components:deploy"
+        ]
       }
     },
     "github": {
