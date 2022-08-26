@@ -1,0 +1,1 @@
+export { scrollSystemProps } from './scroll';
