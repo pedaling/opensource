@@ -1,7 +1,3 @@
-/* eslint-disable */
 export default {
-  projects: [
-    "packages/vibrant-icons/jest.config.web.ts",
-    "packages/vibrant-icons/jest.config.native.ts",
-  ],
+  projects: ['packages/vibrant-icons/jest.config.web.ts', 'packages/vibrant-icons/jest.config.native.ts'],
 };
