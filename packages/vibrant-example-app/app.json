@@ -1,6 +1,5 @@
 {
   "expo": {
-    "runtimeVersion": "2.718",
     "owner": "vibrant-ui",
     "name": "VibrantExampleApp",
     "slug": "vibrant-example-app",
@@ -17,7 +16,9 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/a5399633-ea13-4afd-939e-4fb38ca4ae6d"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "net.pedaling.vibrant-example"
@@ -31,6 +32,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a5399633-ea13-4afd-939e-4fb38ca4ae6d"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
