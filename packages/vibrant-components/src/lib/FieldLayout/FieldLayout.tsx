@@ -86,9 +86,11 @@ export const FieldLayout = withFieldLayoutVariation(
         </Box>
         {renderSuffix?.()}
       </Box>
-      <Body level={4} color={textColor}>
-        {helperText}
-      </Body>
+      {Boolean(helperText) && (
+        <Body level={4} color={textColor}>
+          {helperText}
+        </Body>
+      )}
     </VStack>
   )
 );
