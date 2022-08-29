@@ -1,21 +1,14 @@
-import type { Context } from 'react';
-import { useContext } from 'react';
-import { RootTagContext } from 'react-native';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { createPortal } from 'react-native/Libraries/Renderer/shims/ReactNative';
+import { usePortalRoot } from '../PortalRoot';
 import { withPortalVariation } from './PortalProps';
 
-declare module 'react-native' {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  export const RootTagContext: Context<number>;
-}
-
 export const Portal = withPortalVariation(({ children }) => {
-  const rootTag = useContext(RootTagContext);
+  const { containerRef } = usePortalRoot();
 
-  if (rootTag) {
-    return createPortal(children, rootTag);
+  if (containerRef.current) {
+    return createPortal(children, containerRef.current);
   }
 
   return null;

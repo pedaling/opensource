@@ -1,12 +1,13 @@
 import ReactDOM from 'react-dom';
+import { usePortalRoot } from '../PortalRoot';
 import { withPortalVariation } from './PortalProps';
 
 export const Portal = withPortalVariation(({ children }) => {
-  if (typeof window === 'undefined') {
+  const { containerRef } = usePortalRoot();
+
+  if (!containerRef.current) {
     return null;
   }
 
-  const container = document.fullscreenElement ? document.fullscreenElement : document.body;
-
-  return ReactDOM.createPortal(children, container);
+  return ReactDOM.createPortal(children, containerRef.current as Element);
 });
