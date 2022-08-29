@@ -10,6 +10,10 @@ import { lightModeOpacity } from './lightModeOpacity';
 
 export const baseTheme: Theme = {
   breakpoints: [640, 1024, 1312],
+  contentArea: {
+    maxWidth: 1344,
+    padding: 20,
+  },
   colors: {
     light: lightModeColors,
     dark: darkModeColors,

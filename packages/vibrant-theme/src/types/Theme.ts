@@ -8,6 +8,10 @@ import type { ThemeTypography, ThemeTypographyWeight } from './Typography';
 
 export type Theme = {
   breakpoints: number[];
+  contentArea: {
+    maxWidth: number;
+    padding: number;
+  };
   colors: ThemeColors;
   elevation: ThemeElevation;
   gradient: ThemeGradient;
@@ -20,6 +24,10 @@ export type Theme = {
 
 export type CurrentTheme = {
   breakpoints: number[];
+  contentArea: {
+    maxWidth: number;
+    padding: number;
+  };
   colors: Colors;
   elevation: Elevation;
   gradient: Gradient;
