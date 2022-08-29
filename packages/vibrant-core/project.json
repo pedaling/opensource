@@ -91,6 +91,7 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
+        "skipCommit": true,
         "trackDeps": true,
         "postTargets": [
           "vibrant-core:github",
