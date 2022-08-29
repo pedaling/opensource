@@ -67,43 +67,21 @@ export const Basic: ComponentStory<typeof Dropdown> = props => (
   </VStack>
 );
 
-export const WithHeightAnimation: ComponentStory<typeof Dropdown> = props => {
-  const [itemSize, setItemSize] = useState(1);
-
-  const renderContents = () => (
-    <Box px={20} width={150}>
-      <Box
-        base={Pressable}
-        py={8}
-        onClick={() => {
-          setItemSize(itemSize === 1 ? 3 : 1);
-        }}
-      >
-        <Body level={2}>Change Height</Body>
-      </Box>
-      <Box as="ul">
-        {Array.from({ length: itemSize }, (_, index) => (
-          <Box as="li" key={index} py={8}>
-            <Body level={2}>Item {index + 1}</Body>
-          </Box>
-        ))}
-      </Box>
-    </Box>
-  );
-
-  return (
-    <VStack mt={200} width="100%">
-      <Box mx="auto">
-        <Dropdown {...props} renderContents={renderContents} />
-      </Box>
-    </VStack>
-  );
-};
-
-export const WithFlippedPositionWhenOverflow: ComponentStory<typeof Dropdown> = props => (
+export const WithLongContent: ComponentStory<typeof Dropdown> = props => (
   <VStack width="100%">
     <Box mx="auto">
-      <Dropdown {...props} />
+      <Dropdown
+        {...props}
+        renderContents={() => (
+          <>
+            {Array.from({ length: 20 }, (_, index) => (
+              <Body key={index} p={10} level={2}>
+                자동 재생
+              </Body>
+            ))}
+          </>
+        )}
+      />
     </Box>
   </VStack>
 );
