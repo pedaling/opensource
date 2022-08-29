@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.15.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.14.3...vibrant-components-0.15.0) (2022-08-29)
+
+
+### Reverts
+
+* Revert "chore: 버전을 따로 올리도록 한다" ([6e3170d](https://github.com/pedaling/opensource/commit/6e3170d12b2fd5333e432898f459006f1ce16f3b))
+
 ### [0.14.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.14.2...vibrant-components-0.14.3) (2022-08-29)
 
 ### [0.14.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.14.1...vibrant-components-0.14.2) (2022-08-29)
