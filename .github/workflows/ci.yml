@@ -69,3 +69,5 @@ jobs:
       - run: yarn
       - name: Update Vibrant Example App
         run: yarn nx update vibrant-example-app --branch preview
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
