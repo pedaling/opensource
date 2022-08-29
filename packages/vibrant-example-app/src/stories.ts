@@ -35,7 +35,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/VStack/VStack.stories.tsx'),
   require('../../vibrant-core/src/lib/Box/Box.stories.tsx'),
   require('../../vibrant-core/src/lib/OnColorContainer/OnColorContainer.stories.tsx'),
-  require('../../vibrant-core/src/lib/Portal/Portal.stories.tsx'),
+  require('../../vibrant-core/src/lib/PortalBox/PortalBox.stories.tsx'),
   require('../../vibrant-core/src/lib/PressableBox/PressableBox.stories.tsx'),
   require('../../vibrant-core/src/lib/ScrollBox/ScrollBox.stories.tsx'),
   require('../../vibrant-core/src/lib/Text/Text.stories.tsx'),

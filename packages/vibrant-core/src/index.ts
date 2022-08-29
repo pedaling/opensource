@@ -43,7 +43,7 @@ export { useInterpolation } from './lib/useInterpolation';
 export { getWindowDimensions } from './lib/getWindowDimensions';
 export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
-export { Portal } from './lib/Portal';
+export { PortalBox } from './lib/PortalBox';
 export { isNative } from './lib/isNative';
 export { ScrollBox } from './lib/ScrollBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
