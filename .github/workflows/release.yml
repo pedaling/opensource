@@ -49,7 +49,7 @@ jobs:
       - run: yarn install --immutable
       - name: Version
         shell: bash
-        run: yarn nx affected --base=last-release --target=version --parallel=1 --push --allowEmptyRelease --releaseAs=$RELEASE_AS
+        run: yarn nx run-many --all --parallel=1 --push --allowEmptyRelease --releaseAs=$RELEASE_AS
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -67,10 +67,3 @@ jobs:
           unprotect_reviews: false
         env:
           HUSKY: 0
-      - name: Tag last-release
-        shell: bash
-        run: |
-          git tag -f last-release
-          git push origin last-release --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
