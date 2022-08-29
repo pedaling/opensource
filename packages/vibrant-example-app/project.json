@@ -65,7 +65,8 @@
     "update": {
       "executor": "@nrwl/expo:update",
       "options": {
-        "channel": "preview"
+        "branch": "preview",
+        "auto": true
       },
       "dependsOn": [
         {
