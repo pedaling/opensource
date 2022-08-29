@@ -7,9 +7,9 @@ on:
         type: choice
         description: Release Version Type
         options:
-          - major
-          - minor
           - patch
+          - minor
+          - major
           - premajor
           - preminor
           - prepatch
