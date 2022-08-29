@@ -5,6 +5,7 @@ import type { IconProps } from '@vibrant-ui/icons';
 type FloatingActionButtonProps = {
   position?: 'left' | 'right';
   offset?: number;
+  onClick: () => void;
   IconComponent: ComponentType<IconProps>;
 };
 
