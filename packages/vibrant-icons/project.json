@@ -103,7 +103,6 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "skipCommit": true,
         "trackDeps": true,
         "postTargets": ["vibrant-icons:github", "vibrant-icons:deploy"]
       }

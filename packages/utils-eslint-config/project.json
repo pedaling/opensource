@@ -42,7 +42,6 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "conventional",
-        "skipCommit": true,
         "trackDeps": true,
         "postTargets": [
           "utils-eslint-config:github",
