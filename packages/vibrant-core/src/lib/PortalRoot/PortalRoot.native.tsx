@@ -30,6 +30,7 @@ export const PortalRoot = withPortalRootVariation(({ children }) => {
           bottom: 0,
         }}
         pointerEvents="box-none"
+        collapsable={false}
       />
     </>
   );
