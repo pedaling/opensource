@@ -2,10 +2,10 @@ import { createSystemProp } from '../../createSystemProp';
 
 const hideScrollProp = createSystemProp({
   property: 'hideScroll',
-  transform: () => ({
+  transform: value => ({
     props: {
-      showsHorizontalScrollIndicator: false,
-      showsVerticalScrollIndicator: false,
+      showsHorizontalScrollIndicator: !value,
+      showsVerticalScrollIndicator: !value,
     },
   }),
 });

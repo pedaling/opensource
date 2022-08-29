@@ -3,7 +3,7 @@ import { withVariation } from '@vibrant-ui/core';
 import type { Position } from '@vibrant-ui/utils';
 
 export type DropdownProps = {
-  position: Position;
+  position?: Position;
   renderContents: (close: () => void) => ReactElementChild;
   renderOpener: (open: () => void) => ReactElementChild;
   spacing?: number;

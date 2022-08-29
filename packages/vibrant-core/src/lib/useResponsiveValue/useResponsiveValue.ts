@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 import type { ResponsiveValue } from '../../types';
 import { useCurrentTheme } from '../ThemeProvider';
 
-export const useResponsiveValue = () => {
+export const useResponsiveValue = ({ rootBreakPoints } = { rootBreakPoints: false }) => {
   const {
     theme: { breakpoints },
-  } = useCurrentTheme();
+  } = useCurrentTheme({ root: rootBreakPoints });
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
