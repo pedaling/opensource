@@ -8,6 +8,7 @@ import { createShadowsComponent } from '@vibrant-ui/components';
 import type { Dependencies } from '@vibrant-ui/core';
 import { Box, VibrantProvider } from '@vibrant-ui/core';
 import { StoryView } from './StoryView';
+import { useAppUpdate } from './useAppUpdate';
 import { useStorybookInformation } from './useStorybookInformation';
 
 const dependencies: Dependencies = {
@@ -25,8 +26,9 @@ const App = () => {
   });
 
   const { story } = useStorybookInformation();
+  const { isLastVersion } = useAppUpdate();
 
-  if (!loaded || !story) {
+  if (!loaded || !story || !isLastVersion) {
     return null;
   }
 
