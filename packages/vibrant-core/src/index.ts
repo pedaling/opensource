@@ -47,3 +47,4 @@ export { Portal } from './lib/Portal';
 export { isNative } from './lib/isNative';
 export { ScrollBox } from './lib/ScrollBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
+export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';

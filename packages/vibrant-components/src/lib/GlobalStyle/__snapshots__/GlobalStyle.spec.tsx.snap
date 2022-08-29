@@ -7,6 +7,27 @@ NodeList [
     data-s=""
   >
     
+    :root{--safe-area-inset-top:0px;--safe-area-inset-right:0px;--safe-area-inset-bottom:0px;--safe-area-inset-left:0px;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    @supports (top: constant(safe-area-inset-top)){:root{--safe-area-inset-top:constant(safe-area-inset-top);--safe-area-inset-right:constant(safe-area-inset-right);--safe-area-inset-bottom:constant(safe-area-inset-bottom);--safe-area-inset-left:constant(safe-area-inset-left);}}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    @supports (top: env(safe-area-inset-top)){:root{--safe-area-inset-top:env(safe-area-inset-top);--safe-area-inset-right:env(safe-area-inset-right);--safe-area-inset-bottom:env(safe-area-inset-bottom);--safe-area-inset-left:env(safe-area-inset-left);}}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
     html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
   </style>,
   <style
