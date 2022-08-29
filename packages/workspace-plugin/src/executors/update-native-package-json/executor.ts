@@ -6,7 +6,7 @@ import { addToStage } from '@jscutlery/semver/src/executors/version/utils/git';
 import type { UpdateNativePackageJsonExecutorSchema } from './schema';
 
 export default async function runExecutor(options: UpdateNativePackageJsonExecutorSchema, context: ExecutorContext) {
-  const [projectRoot] = getProjectRoots([context.projectName]);
+  const [projectRoot] = getProjectRoots([context.projectName], context.projectGraph);
   const packageJsonPath = joinPathFragments(context.root, projectRoot, options.packageJsonName);
   const nativePackageJsonPath = joinPathFragments(context.root, projectRoot, options.nativePackageJsonName);
 
