@@ -146,10 +146,10 @@ export const Dropdown = withDropdownVariation(
       }
     }, [isOpen, openDropdown]);
 
-    return !isMobile ? (
+    return (
       <Box position="relative">
         <Box ref={openerRef}>{opener}</Box>
-        {isOpen && (
+        {isOpen && !isMobile && (
           <ThemeProvider theme={rootThemeMode}>
             <Dismissible active={visible} onDismiss={closeDropdown}>
               <Transition
@@ -198,52 +198,51 @@ export const Dropdown = withDropdownVariation(
             </Dismissible>
           </ThemeProvider>
         )}
-      </Box>
-    ) : (
-      <>
-        {opener}
-        <ThemeProvider theme={rootThemeMode}>
-          <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
-            <Transition
-              animation={{
-                y: visible
-                  ? 0
-                  : (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING),
-              }}
-              duration={visible ? 150 : 100}
-            >
-              <Box
-                mt="auto"
-                pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
-                pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
-                width="100%"
-                maxHeight={viewportHeight - 120}
-                backgroundColor="background"
-                borderTopLeftRadiusLevel={4}
-                borderTopRightRadiusLevel={4}
+        {isOpen && isMobile && (
+          <ThemeProvider theme={rootThemeMode}>
+            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
+              <Transition
+                animation={{
+                  y: visible
+                    ? 0
+                    : (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING),
+                }}
+                duration={visible ? 150 : 100}
               >
-                <Transition
-                  animation={{
-                    height: contentHeight,
-                  }}
-                  duration={150}
+                <Box
+                  mt="auto"
+                  pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
+                  pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
+                  width="100%"
+                  maxHeight={viewportHeight - 120}
+                  backgroundColor="background"
+                  borderTopLeftRadiusLevel={4}
+                  borderTopRightRadiusLevel={4}
                 >
-                  <ScrollBox
-                    hideScroll={
-                      (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
-                      viewportHeight - 120
-                    }
+                  <Transition
+                    animation={{
+                      height: contentHeight,
+                    }}
+                    duration={150}
                   >
-                    <Box onLayout={handleContentResize} flexShrink={0}>
-                      {renderContents(closeDropdown)}
-                    </Box>
-                  </ScrollBox>
-                </Transition>
-              </Box>
-            </Transition>
-          </Backdrop>
-        </ThemeProvider>
-      </>
+                    <ScrollBox
+                      hideScroll={
+                        (contentHeight ?? 0) +
+                          (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
+                        viewportHeight - 120
+                      }
+                    >
+                      <Box onLayout={handleContentResize} flexShrink={0}>
+                        {renderContents(closeDropdown)}
+                      </Box>
+                    </ScrollBox>
+                  </Transition>
+                </Box>
+              </Transition>
+            </Backdrop>
+          </ThemeProvider>
+        )}
+      </Box>
     );
   }
 );
