@@ -1,7 +1,19 @@
 name: release
 
 on:
-  - workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      releaseAs:
+        type: choice
+        description: Release Version Type
+        options:
+          - major
+          - minor
+          - patch
+          - premajor
+          - preminor
+          - prepatch
+        required: true
 
 jobs:
   release:
@@ -10,6 +22,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          token: ${{ secrets.DEPLOY_TOKEN }}
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
@@ -36,7 +49,7 @@ jobs:
       - run: yarn install --immutable
       - name: Version
         shell: bash
-        run: yarn nx affected --base=last-release --target=version --parallel=1 --push --allowEmptyRelease
+        run: yarn nx affected --base=last-release --target=version --parallel=1 --push --allowEmptyRelease --releaseAs=${{ github.event.inputs.message }}
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
