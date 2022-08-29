@@ -1,6 +1,6 @@
 import type { DecoratorFn } from '@storybook/react';
 import { HStack } from '@vibrant-ui/components';
-import { Box, ThemeProvider } from '@vibrant-ui/core';
+import { Box, PortalRoot, ThemeProvider } from '@vibrant-ui/core';
 import type { ThemeMode } from '@vibrant-ui/theme';
 import { useMemo } from 'react';
 
@@ -16,13 +16,17 @@ export const withTheme: DecoratorFn = (storyFn, context) => {
     return (
       <HStack>
         <ThemeProvider theme={lightTheme} root={true}>
-          <Box alignItems="start" width="50%" minHeight="100vh" backgroundColor="background">
-            {storyFn()}
+          <Box position="relative" alignItems="start" width="50%" minHeight="100vh" backgroundColor="background">
+            <PortalRoot>
+              {storyFn()}
+            </PortalRoot>
           </Box>
         </ThemeProvider>
         <ThemeProvider theme={darkTheme} root={true}>
-          <Box alignItems="start" width="50%" minHeight="100vh" backgroundColor="background">
-            {storyFn()}
+          <Box position="relative" alignItems="start" width="50%" minHeight="100vh" backgroundColor="background">
+            <PortalRoot>
+              {storyFn()}
+            </PortalRoot>
           </Box>
         </ThemeProvider>
       </HStack>
@@ -31,8 +35,10 @@ export const withTheme: DecoratorFn = (storyFn, context) => {
 
   return (
     <ThemeProvider theme={currentTheme} root={true}>
-      <Box alignItems="start" width="100%" minHeight="100vh" backgroundColor="background">
-        {storyFn()}
+      <Box position="relative" alignItems="start" width="100%" minHeight="100vh" backgroundColor="background">
+        <PortalRoot>
+          {storyFn()}
+        </PortalRoot>
       </Box>
     </ThemeProvider>
   );
