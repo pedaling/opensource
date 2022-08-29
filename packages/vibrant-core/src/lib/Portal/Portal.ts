@@ -3,11 +3,11 @@ import { usePortalRoot } from '../PortalRoot';
 import { withPortalVariation } from './PortalProps';
 
 export const Portal = withPortalVariation(({ children }) => {
-  const { containerRef } = usePortalRoot();
+  const { container } = usePortalRoot();
 
-  if (!containerRef.current) {
+  if (!container) {
     return null;
   }
 
-  return ReactDOM.createPortal(children, containerRef.current as Element);
+  return ReactDOM.createPortal(children, container as Element);
 });

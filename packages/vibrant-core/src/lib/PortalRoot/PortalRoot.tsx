@@ -1,19 +1,21 @@
-import { createContext, createRef, useContext, useEffect, useMemo, useRef } from 'react';
-import type { PortalRootContextValue } from './types';
-import { withPortalRootVariation } from './types';
+import { createContext, createRef, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { Box } from '../Box';
+import type { PortalRootContextValue } from './withPortalRootProps';
+import { withPortalRootVariation } from './withPortalRootProps';
 
 const PortalRootContext = createContext<PortalRootContextValue>({
-  containerRef: createRef(),
+  container: null,
 });
 
 export const PortalRoot = withPortalRootVariation(({ children }) => {
-  const containerRef = useRef<Element | null>(null);
+  const [container, setContainer] = useState<Element | null>(null);
+  const rootBoxRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    containerRef.current = document.body;
+    setContainer(rootBoxRef.current ?? document.body);
 
     const handleFullscreenChange = () => {
-      containerRef.current = document.fullscreenElement ? document.fullscreenElement : document.body;
+      setContainer(document.fullscreenElement ? document.fullscreenElement : (rootBoxRef.current ?? document.body));
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -21,9 +23,11 @@ export const PortalRoot = withPortalRootVariation(({ children }) => {
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
-  const contextValue = useMemo(() => ({ containerRef }), []);
+  const contextValue = useMemo(() => ({ container }), [container]);
 
-  return <PortalRootContext.Provider value={contextValue}>{children}</PortalRootContext.Provider>;
+  return <PortalRootContext.Provider value={contextValue}>{children}
+    <Box id="portal-root" ref={rootBoxRef} />
+  </PortalRootContext.Provider>;
 });
 
 export const usePortalRoot = (): PortalRootContextValue => useContext(PortalRootContext);

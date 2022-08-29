@@ -1,20 +1,20 @@
-import { createContext, createRef, useContext, useEffect, useMemo, useRef } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { View, findNodeHandle } from 'react-native';
-import type { PortalRootContextValue } from './types';
-import { withPortalRootVariation } from './types';
+import type { PortalRootContextValue } from './PortalRootProps';
+import { withPortalRootVariation } from './PortalRootProps';
 
 const PortalRootContext = createContext<PortalRootContextValue>({
-  containerRef: createRef(),
+  container: null,
 });
 
 export const PortalRoot = withPortalRootVariation(({ children }) => {
   const viewRef = useRef<View>(null);
-  const containerRef = useRef<number | null>(null);
+  const [container, setContainer] = useState<number | null>(null);
 
-  const contextValue = useMemo(() => ({ containerRef }), []);
+  const contextValue = useMemo(() => ({ container }), [container]);
 
   useEffect(() => {
-    containerRef.current = findNodeHandle(viewRef.current);
+    setContainer(findNodeHandle(viewRef.current));
   }, []);
 
   return (

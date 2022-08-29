@@ -5,10 +5,10 @@ import { usePortalRoot } from '../PortalRoot';
 import { withPortalVariation } from './PortalProps';
 
 export const Portal = withPortalVariation(({ children }) => {
-  const { containerRef } = usePortalRoot();
+  const { container } = usePortalRoot();
 
-  if (containerRef.current) {
-    return createPortal(children, containerRef.current);
+  if (container) {
+    return createPortal(children, container);
   }
 
   return null;

@@ -1,4 +1,3 @@
-import type { RefObject } from 'react';
 import type { ReactElementChild } from '../../types';
 import { withVariation } from '../withVariation';
 
@@ -7,7 +6,7 @@ export type PortalRootProps = {
 };
 
 export type PortalRootContextValue = {
-  containerRef: RefObject<Element | number | null>;
+  container: Element | number | null;
 };
 
 export const withPortalRootVariation = withVariation<PortalRootProps>('PortalRoot')();
