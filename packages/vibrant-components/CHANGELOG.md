@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.14.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.14.0...vibrant-components-0.14.1) (2022-08-29)
+
+
+### Features
+
+* Dropdown QA 사항 반영 [WP-2899] ([#226](https://github.com/pedaling/opensource/issues/226)) ([3053260](https://github.com/pedaling/opensource/commit/3053260b2fa8e65882e17c4afdc429014ca21a41))
+* **vibrant-components:** add FloatingActionButton component ([#239](https://github.com/pedaling/opensource/issues/239)) ([c1512ef](https://github.com/pedaling/opensource/commit/c1512efa6233c5cfbffea31d9dbee7eb029eb73a))
+* **vibrant-core:** add SafeAreaProvider ([#237](https://github.com/pedaling/opensource/issues/237)) ([d09fd23](https://github.com/pedaling/opensource/commit/d09fd238b1f7b5866bd50ff95c997a5cc93bd9c6))
+
 ### [0.10.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.10.0...vibrant-components-0.10.1) (2022-08-23)
 
 ### Dependency Updates
