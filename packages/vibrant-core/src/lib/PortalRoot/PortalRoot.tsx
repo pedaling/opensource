@@ -9,13 +9,13 @@ const PortalRootContext = createContext<PortalRootContextValue>({
 
 export const PortalRoot = withPortalRootVariation(({ children }) => {
   const [container, setContainer] = useState<Element | null>(null);
-  const rootBoxRef = useRef<HTMLElement>(null);
+  const viewRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    setContainer(rootBoxRef.current ?? document.body);
+    setContainer(viewRef.current ?? document.body);
 
     const handleFullscreenChange = () => {
-      setContainer(document.fullscreenElement ? document.fullscreenElement : rootBoxRef.current ?? document.body);
+      setContainer(document.fullscreenElement ? document.fullscreenElement : viewRef.current ?? document.body);
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -28,7 +28,7 @@ export const PortalRoot = withPortalRootVariation(({ children }) => {
   return (
     <PortalRootContext.Provider value={contextValue}>
       {children}
-      <Box id="portal-root" ref={rootBoxRef} />
+      <Box id="portal-root" ref={viewRef} />
     </PortalRootContext.Provider>
   );
 });

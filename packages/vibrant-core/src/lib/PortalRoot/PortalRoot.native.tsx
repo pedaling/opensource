@@ -18,8 +18,8 @@ export const PortalRoot = withPortalRootVariation(({ children }) => {
   }, []);
 
   return (
-    <>
-      <PortalRootContext.Provider value={contextValue}>{children}</PortalRootContext.Provider>
+    <PortalRootContext.Provider value={contextValue}>
+      {children}
       <View
         ref={viewRef}
         style={{
@@ -32,7 +32,7 @@ export const PortalRoot = withPortalRootVariation(({ children }) => {
         pointerEvents="box-none"
         collapsable={false}
       />
-    </>
+    </PortalRootContext.Provider>
   );
 });
 
