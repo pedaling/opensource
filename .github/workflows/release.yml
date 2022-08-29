@@ -49,7 +49,7 @@ jobs:
       - run: yarn install --immutable
       - name: Version
         shell: bash
-        run: yarn nx run-many --all --parallel=1 --push --allowEmptyRelease --releaseAs=$RELEASE_AS
+        run: yarn nx run-many --target=version --all --parallel=1 --push --allowEmptyRelease --releaseAs=$RELEASE_AS
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
