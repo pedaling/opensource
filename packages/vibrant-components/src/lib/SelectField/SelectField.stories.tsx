@@ -22,6 +22,7 @@ export default {
       {
         label: 'option 3',
         value: '3',
+        disabled: true,
       },
       {
         label: 'option 4',
@@ -98,3 +99,13 @@ export const WithRenderOption: ComponentStory<typeof SelectField> = props => {
     </VStack>
   );
 };
+
+export const MultipleSelectField: ComponentStory<typeof SelectField> = props => (
+  <Box width="100%" position="relative">
+    <Box zIndex={-1} height={500} />
+    <SelectField {...props} />
+    <Box zIndex={-1} height={20} />
+    <SelectField {...props} />
+    <Box zIndex={-1} height={500} />
+  </Box>
+);

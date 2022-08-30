@@ -8,9 +8,7 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, activ
     ref={innerRef}
     as="li"
     p={16}
-    color="onView1"
     width="100%"
-    cursor="pointer"
     overlayColor="onView1"
     interactions={['hover', 'active']}
     flexShrink={0}
@@ -29,7 +27,9 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, activ
           opacity="overlay.active"
         />
       )}
-      <Body level={2}>{children}</Body>
+      <Body level={2} color={color}>
+        {children}
+      </Body>
     </>
   </Pressable>
 ));
