@@ -49,3 +49,4 @@ export { ScrollBox } from './lib/ScrollBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
 export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
 export { PortalRoot } from './lib/PortalRoot';
+export { platform } from './lib/platform';
