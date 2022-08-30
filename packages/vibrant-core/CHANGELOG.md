@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.1...vibrant-core-0.15.2) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-core:** add zIndex to PortalRoot ([#247](https://github.com/pedaling/opensource/issues/247)) ([fac991c](https://github.com/pedaling/opensource/commit/fac991cd99b82ebc64e8e3ffee7cfdacab9c0f03))
+
 ### [0.15.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.0...vibrant-core-0.15.1) (2022-08-30)
 
 

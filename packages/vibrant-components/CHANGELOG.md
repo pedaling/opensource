@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.1...vibrant-components-0.15.2) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-components:** set FloatingActionButton zIndex to 1 ([#248](https://github.com/pedaling/opensource/issues/248)) ([59becc2](https://github.com/pedaling/opensource/commit/59becc2417b6286117a0894c3a2a0b6c5fc6b652))
+
 ### [0.15.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.0...vibrant-components-0.15.1) (2022-08-30)
 
 
