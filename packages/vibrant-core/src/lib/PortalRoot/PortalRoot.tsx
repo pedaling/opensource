@@ -7,7 +7,7 @@ const PortalRootContext = createContext<PortalRootContextValue>({
   container: null,
 });
 
-export const PortalRoot = withPortalRootVariation(({ children }) => {
+export const PortalRoot = withPortalRootVariation(({ children, zIndex }) => {
   const [container, setContainer] = useState<Element | null>(null);
   const viewRef = useRef<HTMLElement>(null);
 
@@ -28,7 +28,7 @@ export const PortalRoot = withPortalRootVariation(({ children }) => {
   return (
     <PortalRootContext.Provider value={contextValue}>
       {children}
-      <Box id="portal-root" ref={viewRef} />
+      <Box id="portal-root" ref={viewRef} zIndex={zIndex} />
     </PortalRootContext.Provider>
   );
 });

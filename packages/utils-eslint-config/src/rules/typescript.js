@@ -73,10 +73,10 @@ const typescriptRules = {
 
     // 일부 단어들을 허용한다
     {
-      selector: ['default', 'variable', 'typeLike'],
+      selector: ['default', 'variable', 'typeLike', 'typeProperty'],
       format: null,
       filter: {
-        regex: '(VStack|HStack|ZStack|CSS|Pretendard|HTML)',
+        regex: '(VStack|HStack|ZStack|CSS|Pretendard|HTML|ZIndex)',
         match: true,
       },
     },

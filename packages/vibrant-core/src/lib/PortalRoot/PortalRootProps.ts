@@ -3,6 +3,7 @@ import { withVariation } from '../withVariation';
 
 export type PortalRootProps = {
   children: ReactElementChild;
+  zIndex: number;
 };
 
 export type PortalRootContextValue = {

@@ -7,7 +7,7 @@ const PortalRootContext = createContext<PortalRootContextValue>({
   container: null,
 });
 
-export const PortalRoot = withPortalRootVariation(({ children }) => {
+export const PortalRoot = withPortalRootVariation(({ children, zIndex }) => {
   const viewRef = useRef<View>(null);
   const [container, setContainer] = useState<number | null>(null);
 
@@ -28,6 +28,7 @@ export const PortalRoot = withPortalRootVariation(({ children }) => {
           left: 0,
           right: 0,
           bottom: 0,
+          zIndex,
         }}
         pointerEvents="box-none"
         collapsable={false}
