@@ -73,9 +73,9 @@ export const SelectField = withSelectFieldVariation(
             continue;
           }
 
+          setFocusIndex(nextIndex);
           break;
         }
-        setFocusIndex(nextIndex);
       },
       [focusIndex, options]
     );
