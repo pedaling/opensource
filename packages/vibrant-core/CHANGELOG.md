@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.3...vibrant-core-0.15.4) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-core:** trigger focusOut when mouseUp ([#250](https://github.com/pedaling/opensource/issues/250)) ([7dfd676](https://github.com/pedaling/opensource/commit/7dfd6765137a30d7c1bd1c1b65ea392f3dbc4cb5))
+
 ### [0.15.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.2...vibrant-core-0.15.3) (2022-08-30)
 
 ### [0.15.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.1...vibrant-core-0.15.2) (2022-08-30)

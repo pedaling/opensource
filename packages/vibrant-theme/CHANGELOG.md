@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.4](https://github.com/pedaling/opensource/compare/vibrant-theme-0.15.3...vibrant-theme-0.15.4) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-theme:** update overlay opacity value ([#249](https://github.com/pedaling/opensource/issues/249)) ([8088554](https://github.com/pedaling/opensource/commit/80885544282cfdaef5f59e4c689e6b79859a55b8))
+
 ### [0.15.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.15.2...vibrant-theme-0.15.3) (2022-08-30)
 
 ### [0.15.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.15.1...vibrant-theme-0.15.2) (2022-08-30)

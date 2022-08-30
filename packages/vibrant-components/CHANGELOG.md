@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.3...vibrant-components-0.15.4) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-components:** apply interaction style to FloatingActionButton ([#251](https://github.com/pedaling/opensource/issues/251)) ([661ccb7](https://github.com/pedaling/opensource/commit/661ccb74cf18bb8a450a7f87fbfe0b6be8c6efee))
+
 ### [0.15.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.2...vibrant-components-0.15.3) (2022-08-30)
 
 ### [0.15.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.1...vibrant-components-0.15.2) (2022-08-30)
