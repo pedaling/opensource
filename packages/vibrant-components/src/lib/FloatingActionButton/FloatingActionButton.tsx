@@ -1,5 +1,12 @@
 import { useMemo } from 'react';
-import { PortalBox, PressableBox, useCurrentTheme, useSafeArea, useWindowDimensions } from '@vibrant-ui/core';
+import {
+  PortalBox,
+  PressableBox,
+  transformResponsiveValue,
+  useCurrentTheme,
+  useSafeArea,
+  useWindowDimensions,
+} from '@vibrant-ui/core';
 import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
 
 export const FloatingActionButton = withFloatingActionButtonVariation(
@@ -12,7 +19,10 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
 
     const offsetProps = useMemo(
       () => ({
-        [position]: Math.max(viewportWidth - contentArea.maxWidth, 0) / 2 + contentArea.padding,
+        [position]: transformResponsiveValue(
+          contentArea.padding,
+          value => Math.max(viewportWidth - contentArea.maxWidth, 0) / 2 + value
+        ),
         bottom:
           typeof insets.bottom === 'string' ? `max(${insets.bottom}, ${offset}px)` : Math.max(insets.bottom, offset),
       }),

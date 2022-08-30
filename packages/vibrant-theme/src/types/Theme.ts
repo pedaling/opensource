@@ -10,7 +10,7 @@ export type Theme = {
   breakpoints: number[];
   contentArea: {
     maxWidth: number;
-    padding: number;
+    padding: number[] | number;
   };
   colors: ThemeColors;
   elevation: ThemeElevation;
@@ -26,7 +26,7 @@ export type CurrentTheme = {
   breakpoints: number[];
   contentArea: {
     maxWidth: number;
-    padding: number;
+    padding: number[] | number;
   };
   colors: Colors;
   elevation: Elevation;
