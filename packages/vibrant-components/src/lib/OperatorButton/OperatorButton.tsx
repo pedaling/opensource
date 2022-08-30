@@ -1,11 +1,9 @@
-import { Box } from '@vibrant-ui/core';
 import { Pressable } from '../Pressable';
 import { withOperationButtonVariation } from './OperatorButtonProps';
 
 export const OperatorButton = withOperationButtonVariation(
   ({ IconComponent, backgroundColor, iconFill, ...restProps }) => (
-    <Box
-      base={Pressable}
+    <Pressable
       p={7}
       borderWidth={0}
       borderRadius={2}
@@ -15,6 +13,6 @@ export const OperatorButton = withOperationButtonVariation(
       {...restProps}
     >
       <IconComponent size={16} fill={iconFill} />
-    </Box>
+    </Pressable>
   )
 );

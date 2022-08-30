@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Box, PortalBox } from '@vibrant-ui/core';
+import { PortalBox } from '@vibrant-ui/core';
 import { Motion } from '@vibrant-ui/motion';
 import { Pressable } from '../Pressable';
 import { withBackdropVariation } from './BackdropProps';
@@ -36,9 +36,8 @@ export const Backdrop = withBackdropVariation(
           duration={transitionDuration}
           onEnd={unmount}
         >
-          <Box
+          <Pressable
             as="div"
-            base={Pressable}
             position="absolute"
             zIndex={-1}
             cursor="default"

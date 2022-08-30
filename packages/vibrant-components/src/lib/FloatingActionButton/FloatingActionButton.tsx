@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import {
-  Box,
   PortalBox,
   transformResponsiveValue,
   useCurrentTheme,
@@ -11,7 +10,7 @@ import { Pressable } from '../Pressable';
 import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
 
 export const FloatingActionButton = withFloatingActionButtonVariation(
-  ({ position = 'right', offset = 20, IconComponent, ...restProps }) => {
+  ({ position = 'right', offset = 20, IconComponent, innerRef, ...restProps }) => {
     const { insets } = useSafeArea();
     const { width: viewportWidth } = useWindowDimensions();
     const {
@@ -32,8 +31,8 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
 
     return (
       <PortalBox {...offsetProps} zIndex={1}>
-        <Box
-          base={Pressable}
+        <Pressable
+          ref={innerRef}
           width={50}
           height={50}
           borderRadius={25}
@@ -46,7 +45,7 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
           {...restProps}
         >
           <IconComponent size={20} />
-        </Box>
+        </Pressable>
       </PortalBox>
     );
   }
