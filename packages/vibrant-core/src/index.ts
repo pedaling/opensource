@@ -50,3 +50,4 @@ export { useWindowDimensions } from './lib/useWindowDimensions';
 export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
 export { PortalRoot } from './lib/PortalRoot';
 export { platform } from './lib/platform';
+export type { Platform } from './lib/platform';
