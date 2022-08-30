@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.0...vibrant-components-0.15.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-component:** add onClick prop to FloatingActionButton ([#244](https://github.com/pedaling/opensource/issues/244)) ([57fad0d](https://github.com/pedaling/opensource/commit/57fad0d9e0dcd0bef28c9999069b949a78eef343))
+* **vibrant-components:** change Icon weight regular to thin ([#242](https://github.com/pedaling/opensource/issues/242)) ([79d3886](https://github.com/pedaling/opensource/commit/79d3886a1a4913c93ea05f53966fcd27a2333acb))
+* **vibrant-components:** fix contentArea padding type to responsiveValue type ([#245](https://github.com/pedaling/opensource/issues/245)) ([7cddb88](https://github.com/pedaling/opensource/commit/7cddb889dc2f1ab305c596e468ae139e75d6a877))
+* **vibrant-components:** helperText only render when value is exists ([#243](https://github.com/pedaling/opensource/issues/243)) ([c1eb8f4](https://github.com/pedaling/opensource/commit/c1eb8f40766a3c01101000102cacdb5c3e15e2c8))
+
 ## [0.15.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.14.3...vibrant-components-0.15.0) (2022-08-29)
 
 

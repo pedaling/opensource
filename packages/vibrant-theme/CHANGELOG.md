@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.14.4...vibrant-theme-0.15.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-components:** fix contentArea padding type to responsiveValue type ([#245](https://github.com/pedaling/opensource/issues/245)) ([7cddb88](https://github.com/pedaling/opensource/commit/7cddb889dc2f1ab305c596e468ae139e75d6a877))
+
 ## [0.15.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.14.4...vibrant-theme-0.15.0) (2022-08-29)
 
 ### [0.14.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.14.2...vibrant-theme-0.14.3) (2022-08-29)

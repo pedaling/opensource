@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.0...vibrant-core-0.15.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **vibrant-core:** add default value to safe area variable ([#246](https://github.com/pedaling/opensource/issues/246)) ([bc56fdd](https://github.com/pedaling/opensource/commit/bc56fdde15f2c8137f948f4b3d60e0af8c174f38))
+
 ## [0.15.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.14.3...vibrant-core-0.15.0) (2022-08-29)
 
 
