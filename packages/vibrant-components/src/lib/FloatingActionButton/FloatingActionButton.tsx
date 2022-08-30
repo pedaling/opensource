@@ -1,12 +1,13 @@
 import { useMemo } from 'react';
 import {
+  Box,
   PortalBox,
-  PressableBox,
   transformResponsiveValue,
   useCurrentTheme,
   useSafeArea,
   useWindowDimensions,
 } from '@vibrant-ui/core';
+import { Pressable } from '../Pressable';
 import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
 
 export const FloatingActionButton = withFloatingActionButtonVariation(
@@ -31,7 +32,8 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
 
     return (
       <PortalBox {...offsetProps} zIndex={1}>
-        <PressableBox
+        <Box
+          base={Pressable}
           width={50}
           height={50}
           borderRadius={25}
@@ -39,10 +41,12 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
           elevationLevel={1}
           alignItems="center"
           justifyContent="center"
+          overlayColor="onView1"
+          interactions={['hover', 'focus', 'active']}
           {...restProps}
         >
           <IconComponent size={20} />
-        </PressableBox>
+        </Box>
       </PortalBox>
     );
   }
