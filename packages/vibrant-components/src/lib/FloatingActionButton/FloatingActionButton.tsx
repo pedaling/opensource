@@ -30,7 +30,7 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
     );
 
     return (
-      <PortalBox {...offsetProps}>
+      <PortalBox {...offsetProps} zIndex={1}>
         <PressableBox
           width={50}
           height={50}
