@@ -19,6 +19,7 @@ export const SelectField = withSelectFieldVariation(
     helperText,
     renderOption,
     disabled,
+    defaultValue,
     onValueChange,
     ...restProps
   }) => {
@@ -26,9 +27,9 @@ export const SelectField = withSelectFieldVariation(
     const [isFocused, setIsFocused] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
     const [direction, setDirection] = useState<'down' | 'up'>('down');
+    const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
 
     const ref = useRef<HTMLElement>(null);
     const inputRef = useRef<TextInputRef>(null);
@@ -44,6 +45,7 @@ export const SelectField = withSelectFieldVariation(
 
       return 'onView2';
     }, [disabled, state]);
+
     const borderColor = useMemo(() => {
       if (disabled) {
         return 'outline1';
@@ -79,6 +81,14 @@ export const SelectField = withSelectFieldVariation(
       },
       [focusIndex, options]
     );
+
+    useEffect(() => {
+      if (!defaultValue) {
+        return;
+      }
+
+      setSelectedOptionIndex(options.findIndex(option => !option.disabled && option.value === defaultValue));
+    }, [defaultValue, options]);
 
     useEffect(() => {
       if (!selectedOption) {
