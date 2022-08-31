@@ -30,7 +30,7 @@ export * as Caption from './Caption';
 export * as Cart from './Cart';
 export * as Check from './Check';
 export * as CheckCircle from './CheckCircle';
-export * as CheckboxIndeterminated from './CheckboxIndeterminated';
+export * as CheckboxIndeterminate from './CheckboxIndeterminate';
 export * as CheckboxOff from './CheckboxOff';
 export * as CheckboxOn from './CheckboxOn';
 export * as ChevronDown from './ChevronDown';
