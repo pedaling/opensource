@@ -5018,7 +5018,7 @@ exports[`<Icon /> when CheckCircle.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
-exports[`<Icon /> when CheckboxIndeterminated.Fill Icon rendered match snapshot 1`] = `
+exports[`<Icon /> when CheckboxIndeterminate.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5069,7 +5069,7 @@ exports[`<Icon /> when CheckboxIndeterminated.Fill Icon rendered match snapshot 
 </div>
 `;
 
-exports[`<Icon /> when CheckboxIndeterminated.Regular Icon rendered match snapshot 1`] = `
+exports[`<Icon /> when CheckboxIndeterminate.Regular Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5120,7 +5120,7 @@ exports[`<Icon /> when CheckboxIndeterminated.Regular Icon rendered match snapsh
 </div>
 `;
 
-exports[`<Icon /> when CheckboxIndeterminated.Thin Icon rendered match snapshot 1`] = `
+exports[`<Icon /> when CheckboxIndeterminate.Thin Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
