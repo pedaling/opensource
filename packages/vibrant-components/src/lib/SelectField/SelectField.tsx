@@ -84,6 +84,8 @@ export const SelectField = withSelectFieldVariation(
 
     useEffect(() => {
       if (!defaultValue) {
+        setSelectedOptionIndex(-1);
+
         return;
       }
 
