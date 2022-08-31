@@ -17,6 +17,15 @@ export default {
         label: '데일리 원피스 제작 패턴 도안 패키지',
         value: '2',
       },
+      {
+        label: '데일리 원피스 제작 슈퍼 패키지',
+        value: '3',
+        disabled: true,
+      },
+      {
+        label: '데일리 원피스 제작 레굴려 패키지',
+        value: '4',
+      },
     ],
   },
 } as ComponentMeta<typeof SelectOptionGroup>;

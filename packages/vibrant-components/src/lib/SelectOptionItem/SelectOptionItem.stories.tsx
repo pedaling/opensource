@@ -4,6 +4,10 @@ import { SelectOptionItem } from './SelectOptionItem';
 export default {
   title: 'SelectOptionItem',
   component: SelectOptionItem,
+  args: {
+    disabled: false,
+    active: false,
+  },
 } as ComponentMeta<typeof SelectOptionItem>;
 
 export const Basic: ComponentStory<typeof SelectOptionItem> = props => (

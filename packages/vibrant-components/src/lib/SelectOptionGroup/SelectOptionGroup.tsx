@@ -54,6 +54,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
               ref={el => el && (itemRefs.current[index] = el)}
               onClick={() => onOptionClick(renderIndex)}
               active={focusIndex === renderIndex}
+              disabled={options[renderIndex].disabled}
             >
               {renderOption?.(renderIndex) || options[renderIndex].label}
             </SelectOptionItem>

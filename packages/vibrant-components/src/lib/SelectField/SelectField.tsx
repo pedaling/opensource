@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
@@ -58,6 +58,28 @@ export const SelectField = withSelectFieldVariation(
 
     const selectedOption = options[selectedOptionIndex];
 
+    const updateFocusIndex = useCallback(
+      (index: number) => {
+        let nextIndex = index;
+
+        while (nextIndex >= 0 && nextIndex < options.length) {
+          if (options[nextIndex].disabled) {
+            if (index > focusIndex) {
+              nextIndex++;
+            } else {
+              nextIndex--;
+            }
+
+            continue;
+          }
+
+          setFocusIndex(nextIndex);
+          break;
+        }
+      },
+      [focusIndex, options]
+    );
+
     useEffect(() => {
       if (!selectedOption) {
         return;
@@ -86,9 +108,9 @@ export const SelectField = withSelectFieldVariation(
       const spaceBelow = bottom;
 
       if (selectedOptionIndex !== -1) {
-        setFocusIndex(selectedOptionIndex);
+        updateFocusIndex(selectedOptionIndex);
       } else {
-        setFocusIndex(index);
+        updateFocusIndex(index);
       }
 
       if (spaceAbove > spaceBelow) {
@@ -107,13 +129,13 @@ export const SelectField = withSelectFieldVariation(
     };
 
     const close = () => {
-      setFocusIndex(-1);
+      updateFocusIndex(-1);
 
       setIsOpened(false);
     };
 
     return (
-      <Box zIndex={1}>
+      <Box>
         <TextInput
           ref={inputRef}
           type="text"
@@ -136,11 +158,11 @@ export const SelectField = withSelectFieldVariation(
           }}
           onKeyPress={({ key, prevent }) => {
             if (key === (direction === 'up' ? 'ArrowDown' : 'ArrowUp')) {
-              setFocusIndex(Math.max(0, focusIndex - 1));
+              updateFocusIndex(Math.max(0, focusIndex - 1));
             }
 
             if (key === (direction === 'up' ? 'ArrowUp' : 'ArrowDown')) {
-              setFocusIndex(Math.min(options.length - 1, focusIndex + 1));
+              updateFocusIndex(Math.min(options.length - 1, focusIndex + 1));
             }
 
             prevent();
