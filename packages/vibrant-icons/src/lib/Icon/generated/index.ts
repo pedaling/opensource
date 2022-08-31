@@ -56,6 +56,7 @@ export * as CrownCircle from './CrownCircle';
 export * as DepositPassbook from './DepositPassbook';
 export * as Dislike from './Dislike';
 export * as Divider from './Divider';
+export * as DollarCircle from './DollarCircle';
 export * as Download from './Download';
 export * as Edit from './Edit';
 export * as EyeOff from './EyeOff';
