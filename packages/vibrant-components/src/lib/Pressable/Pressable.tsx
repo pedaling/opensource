@@ -17,6 +17,8 @@ export const Pressable = withPressableVariation(
     disabled = false,
     width,
     height,
+    alignItems,
+    justifyContent,
     ...restProps
   }) => {
     const [isFocused, setIsFocused] = useState(false);
@@ -67,7 +69,12 @@ export const Pressable = withPressableVariation(
           </Transition>
         )}
         <Transition animation={{ opacity: textOpacity }} duration={200}>
-          <Box width={width ? '100%' : 'auto'} height={height ? '100%' : 'auto'}>
+          <Box
+            width={width ? '100%' : 'auto'}
+            height={height ? '100%' : 'auto'}
+            alignItems={alignItems}
+            justifyContent={justifyContent}
+          >
             {children}
           </Box>
         </Transition>
