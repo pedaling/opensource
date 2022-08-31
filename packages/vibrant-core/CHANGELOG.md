@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.4...vibrant-core-0.15.5) (2022-08-31)
+
+
+### Features
+
+* **vibrant-core:** platform 변수를 추가한다 ([#252](https://github.com/pedaling/opensource/issues/252)) ([60b6cb4](https://github.com/pedaling/opensource/commit/60b6cb401adfc095827fc649d4b8d43b57b4d132))
+
 ### [0.15.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.3...vibrant-core-0.15.4) (2022-08-30)
 
 

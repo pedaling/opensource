@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.4...vibrant-components-0.15.5) (2022-08-31)
+
+
+### Bug Fixes
+
+* **vibrant-components:** change text opacity animation to apply to children ([#254](https://github.com/pedaling/opensource/issues/254)) ([b3fa8ec](https://github.com/pedaling/opensource/commit/b3fa8ec0efb591220ebb01bcfbba09b6c4f85b8c))
+
 ### [0.15.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.3...vibrant-components-0.15.4) (2022-08-30)
 
 
