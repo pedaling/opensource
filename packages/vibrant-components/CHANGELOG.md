@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.5...vibrant-components-0.15.6) (2022-08-31)
+
+
+### Features
+
+* add disabled prop to SelectField options ([#253](https://github.com/pedaling/opensource/issues/253)) ([340f64a](https://github.com/pedaling/opensource/commit/340f64ad08bef23cb9eb3c6ec21ffc783ec8ffed))
+
+
+### Bug Fixes
+
+* **vibrant-components:** remove unnecessary systemProps ([#256](https://github.com/pedaling/opensource/issues/256)) ([bc49737](https://github.com/pedaling/opensource/commit/bc497372d9266bb00eebdfc4aec599ded916b4b2))
+
 ### [0.15.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.4...vibrant-components-0.15.5) (2022-08-31)
 
 
