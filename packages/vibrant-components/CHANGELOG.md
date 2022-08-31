@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.6...vibrant-components-0.15.7) (2022-08-31)
+
+
+### Features
+
+* add defaultValue to SelectField ([#257](https://github.com/pedaling/opensource/issues/257)) ([0d32f84](https://github.com/pedaling/opensource/commit/0d32f84462e13c21b7cfef45b71fdc3cfa76e629))
+* createSHadowsComponent에서 offset이 0인 경우 paintInside 옵션을 false로 준다 ([#255](https://github.com/pedaling/opensource/issues/255)) ([3bf2a71](https://github.com/pedaling/opensource/commit/3bf2a71052a392c77ba8a4a91ba4cf1cfb07e309))
+
 ### [0.15.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.5...vibrant-components-0.15.6) (2022-08-31)
 
 

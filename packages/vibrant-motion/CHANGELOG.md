@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.15.7](https://github.com/pedaling/opensource/compare/vibrant-motion-0.15.6...vibrant-motion-0.15.7) (2022-08-31)
+
+
+### Bug Fixes
+
+* useSpring을 @react-spring/core 에서 import 해오게 수정한다 ([d6a2d26](https://github.com/pedaling/opensource/commit/d6a2d26c6f365ebca49bfd695fc1f1c6b674ce42))
+
 ### [0.15.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.15.5...vibrant-motion-0.15.6) (2022-08-31)
 
 ### [0.15.5](https://github.com/pedaling/opensource/compare/vibrant-motion-0.15.4...vibrant-motion-0.15.5) (2022-08-31)
