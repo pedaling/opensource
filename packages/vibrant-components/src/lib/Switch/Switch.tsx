@@ -26,8 +26,7 @@ export const Switch = withSwitchVariation(
         }}
         duration={200}
       >
-        <Box
-          base={Pressable}
+        <Pressable
           width={width}
           height={height}
           borderRadius={borderRadius}
@@ -38,7 +37,7 @@ export const Switch = withSwitchVariation(
           <Transition animation={{ x: isChecked ? roundSize : 0 }} duration={200}>
             <Box width={roundSize} height={roundSize} borderRadius={roundRadius} backgroundColor="white" />
           </Transition>
-        </Box>
+        </Pressable>
       </Transition>
     );
   }

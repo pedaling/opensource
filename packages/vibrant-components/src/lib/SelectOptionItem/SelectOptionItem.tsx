@@ -4,10 +4,9 @@ import { Pressable } from '../Pressable';
 import { withSelectOptionItemVariation } from './SelectOptionItemProps';
 
 export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, active, children, ...restProps }) => (
-  <Box
+  <Pressable
     ref={innerRef}
     as="li"
-    base={Pressable}
     p={16}
     color="onView1"
     width="100%"
@@ -32,5 +31,5 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, activ
       )}
       <Body level={2}>{children}</Body>
     </>
-  </Box>
+  </Pressable>
 ));

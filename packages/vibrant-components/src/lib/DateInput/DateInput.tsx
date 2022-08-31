@@ -32,14 +32,12 @@ export const DateInput = withDateInputVariation(
 
     return (
       <Box width="100%" position="relative">
-        <Box<typeof Pressable>
+        <Pressable
           ref={innerRef}
-          base={Pressable}
           width="100%"
           borderWidth={1}
           borderStyle="solid"
           borderColor={(isFocused || calendarOpened) && state !== 'error' ? 'outlineNeutral' : borderColor}
-          typography="body2"
           p={15}
           py={isContentExists && label ? 7 : 14}
           pr={disabled ? 48 : 80}
@@ -61,7 +59,7 @@ export const DateInput = withDateInputVariation(
               {value || label || placeholder}
             </Body>
           </VStack>
-        </Box>
+        </Pressable>
 
         <Box position="absolute" top={15} right={15}>
           <HStack spacing={12}>

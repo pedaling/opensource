@@ -126,9 +126,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   flex-shrink: 1;
   box-sizing: border-box;
   cursor: pointer;
-  background-color: inherit;
+  background-color: rgba(0, 0, 0, 0.05);
   border-width: 0;
-  padding: 0;
+  padding: 7px;
   position: relative;
   overflow: hidden;
   -webkit-align-items: stretch;
@@ -136,24 +136,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  box-sizing: border-box;
-  padding: 7px;
-  border-width: 0;
   border-radius: 2px;
-  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .emotion-4 {
@@ -195,9 +178,8 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
-  width: 16px;
-  height: 16px;
-  fill: #0C0C0C;
+  width: auto;
+  height: auto;
 }
 
 .emotion-6 {
@@ -215,9 +197,29 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  fill: #0C0C0C;
 }
 
 .emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -254,43 +256,51 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
     >
       <button
         class="emotion-3"
-        style="opacity: 1;"
       >
         <div
           class="emotion-4"
           style="opacity: 0;"
         />
-        <svg
+        <div
           class="emotion-5"
-          viewBox="0 0 24 24"
+          style="opacity: 1;"
         >
-          <path
+          <svg
             class="emotion-6"
-            d="M21.25 13.25H2.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h18.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25Z"
-          />
-        </svg>
+            viewBox="0 0 24 24"
+          >
+            <path
+              class="emotion-7"
+              d="M21.25 13.25H2.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h18.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25Z"
+            />
+          </svg>
+        </div>
       </button>
     </div>
     <div
-      class="emotion-7"
+      class="emotion-8"
     >
       <button
         class="emotion-3"
-        style="opacity: 1;"
       >
         <div
           class="emotion-4"
           style="opacity: 0;"
         />
-        <svg
+        <div
           class="emotion-5"
-          viewBox="0 0 24 24"
+          style="opacity: 1;"
         >
-          <path
+          <svg
             class="emotion-6"
-            d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
-          />
-        </svg>
+            viewBox="0 0 24 24"
+          >
+            <path
+              class="emotion-7"
+              d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
+            />
+          </svg>
+        </div>
       </button>
     </div>
   </div>

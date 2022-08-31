@@ -14,26 +14,26 @@ const DropdownContent = () => {
 
   return opened ? (
     <VStack spacing={20} px={20}>
-      <Box base={Pressable} onClick={() => setOpened(false)}>
+      <Pressable onClick={() => setOpened(false)}>
         <HStack alignItems="center" spacing={4}>
           <Icon.ChevronLeft.Regular size={16} />
           <Title level={6}>화질</Title>
         </HStack>
-      </Box>
+      </Pressable>
       <Body level={2}>1080p</Body>
       <Body level={2}>720p</Body>
       <Body level={2}>540p</Body>
     </VStack>
   ) : (
     <VStack spacing={20}>
-      <Box base={Pressable} onClick={() => setOpened(true)}>
+      <Pressable onClick={() => setOpened(true)}>
         <HStack px={20} alignment="space-between" alignItems="flex-end">
           <Body level={2}>화질</Body>
           <Body level={3} color="onView2">
             1080p
           </Body>
         </HStack>
-      </Box>
+      </Pressable>
       <HStack px={20} alignment="space-between" alignItems="flex-end">
         <Body level={2}>자동 재생</Body>
         <Body level={3} color="onView2">
@@ -50,9 +50,9 @@ export default {
   args: {
     renderContents: () => <DropdownContent />,
     renderOpener: open => (
-      <Box base={Pressable} backgroundColor="primary" onClick={open} p={20} height={100}>
+      <Pressable backgroundColor="primary" onClick={open} p={20} height={100}>
         <Body level={1}>Click Me</Body>
-      </Box>
+      </Pressable>
     ),
     position: 'bottom',
     spacing: 8,
