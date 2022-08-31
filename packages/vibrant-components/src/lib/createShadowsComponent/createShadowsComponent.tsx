@@ -7,7 +7,6 @@ type ShadowComponentType = ComponentType<{
   distance?: any;
   offset?: any;
   viewStyle?: any;
-  paintInside?: boolean;
   children?: ReactNode;
 }>;
 
@@ -23,11 +22,7 @@ type ShadowsProps = {
 
 export const createShadowsComponent = (ShadowComponent: ShadowComponentType) => {
   const ShadowsComponent = forwardRef<any, ShadowsProps>(({ shadows, style, children }, ref) => (
-    <ShadowComponent
-      paintInside={!(shadows?.[0].offset?.[0] === 0 && shadows?.[0].offset?.[1] === 0)}
-      viewStyle={shadows.length <= 1 ? style : undefined}
-      {...(shadows[0] ?? { distance: 0 })}
-    >
+    <ShadowComponent viewStyle={shadows.length <= 1 ? style : undefined} {...(shadows[0] ?? { distance: 0 })}>
       {shadows.length <= 1 ? (
         <Box ref={ref}>{children}</Box>
       ) : (
