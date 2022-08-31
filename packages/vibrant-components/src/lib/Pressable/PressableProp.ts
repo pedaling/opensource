@@ -2,7 +2,6 @@ import type { ReactElement, Ref } from 'react';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
-  ColorSystemProps,
   ElevationSystemProps,
   FlexboxSystemProps,
   OverflowSystemProps,
@@ -16,9 +15,8 @@ import type { ColorToken } from '@vibrant-ui/theme';
 
 export type PressableProps = BackgroundSystemProps &
   BorderSystemProps &
-  ColorSystemProps &
   ElevationSystemProps &
-  FlexboxSystemProps &
+  Pick<FlexboxSystemProps, 'alignItems' | 'flexGrow' | 'flexShrink' | 'justifyContent'> &
   OverflowSystemProps &
   PositionSystemProps &
   SpacingSystemProps &
