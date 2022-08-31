@@ -3,7 +3,7 @@ import { Body } from '../Body';
 import { Pressable } from '../Pressable';
 import { withSelectOptionItemVariation } from './SelectOptionItemProps';
 
-export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, active, children, ...restProps }) => (
+export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, active, children, color, ...restProps }) => (
   <Pressable
     ref={innerRef}
     as="li"
