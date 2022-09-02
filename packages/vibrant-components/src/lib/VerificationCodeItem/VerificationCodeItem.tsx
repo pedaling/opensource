@@ -14,6 +14,7 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(({ value, 
     borderStyle="solid"
     borderRadius={2}
     cursor="text"
+    backgroundColor="surface2"
     {...restProps}
   >
     <Text typography="title1" fontWeight="extraBold" textAlign="center">
