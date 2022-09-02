@@ -5,7 +5,6 @@ import type {
   BorderSystemProps,
   ColorSystemProps,
   DisplaySystemProps,
-  ElevationSystemProps,
   FlexboxSystemProps,
   InteractionSystemProps,
   OverflowSystemProps,
@@ -20,7 +19,6 @@ type SystemProps = BackgroundSystemProps &
   BorderSystemProps &
   ColorSystemProps &
   DisplaySystemProps &
-  ElevationSystemProps &
   FlexboxSystemProps &
   InteractionSystemProps &
   OverflowSystemProps &
