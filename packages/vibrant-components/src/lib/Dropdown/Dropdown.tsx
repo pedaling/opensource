@@ -167,7 +167,7 @@ export const Dropdown = withDropdownVariation(
               >
                 <Box position="absolute" zIndex={Z_INDEX}>
                   <Box
-                    backgroundColor="background"
+                    backgroundColor="surface2"
                     py={CONTENT_PADDING}
                     elevationLevel={4}
                     borderRadiusLevel={1}
