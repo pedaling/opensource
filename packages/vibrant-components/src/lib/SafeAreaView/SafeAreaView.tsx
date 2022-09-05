@@ -70,21 +70,8 @@ export const SafeAreaView = withSafeAreaViewVariation(({ mode, edges, width = '1
 
   return (
     <Box width={width} height={height}>
-      <Box
-        mb={m.b}
-        ml={m.l}
-        mr={m.r}
-        mt={m.t}
-        pb={p.b}
-        pl={p.l}
-        pr={p.r}
-        pt={p.t}
-        backgroundColor="black"
-        width="100%"
-        height="100%"
-      >
+      <Box mb={m.b} ml={m.l} mr={m.r} mt={m.t} pb={p.b} pl={p.l} pr={p.r} pt={p.t} width="100%" height="100%">
         {children}
-        <Box height={500} width={100} backgroundColor="primary" />
       </Box>
     </Box>
   );
