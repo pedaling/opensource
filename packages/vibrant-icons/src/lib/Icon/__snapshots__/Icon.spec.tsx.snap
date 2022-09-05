@@ -5018,7 +5018,7 @@ exports[`<Icon /> when CheckCircle.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
-exports[`<Icon /> when CheckboxIndeterminated.Fill Icon rendered match snapshot 1`] = `
+exports[`<Icon /> when CheckboxIndeterminate.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5069,7 +5069,7 @@ exports[`<Icon /> when CheckboxIndeterminated.Fill Icon rendered match snapshot 
 </div>
 `;
 
-exports[`<Icon /> when CheckboxIndeterminated.Regular Icon rendered match snapshot 1`] = `
+exports[`<Icon /> when CheckboxIndeterminate.Regular Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -5120,7 +5120,7 @@ exports[`<Icon /> when CheckboxIndeterminated.Regular Icon rendered match snapsh
 </div>
 `;
 
-exports[`<Icon /> when CheckboxIndeterminated.Thin Icon rendered match snapshot 1`] = `
+exports[`<Icon /> when CheckboxIndeterminate.Thin Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -9089,6 +9089,199 @@ exports[`<Icon /> when Divider.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="M20.75 2.5H19.5c-.15 0-.25.1-.25.25v4H4.75v-4c0-.15-.1-.25-.25-.25H3.25c-.15 0-.25.1-.25.25V8.2c0 .15.15.3.3.3h17.45c.15 0 .3-.15.3-.3V2.75c-.05-.15-.15-.25-.3-.25Zm-17.5 19H4.5c.15 0 .25-.1.25-.25v-4h14.5v4c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V15.8c0-.15-.15-.3-.3-.3H3.3c-.15 0-.3.15-.3.3v5.45c0 .15.1.25.25.25Zm19.5-8.6H1.25c-.15 0-.25-.1-.25-.25V11.4c0-.15.1-.25.25-.25h21.5c.15 0 .25.1.25.25v1.25c0 .1-.1.25-.25.25Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when DollarCircle.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  fill: #0C0C0C;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    viewBox="0 0 24 24"
+  >
+    <g
+      class="emotion-1"
+      clip-path="url(#clip0_19624_8093)"
+    >
+      <path
+        class="emotion-1"
+        d="M11.9999 0.900024C5.8799 0.900024 0.899902 5.88002 0.899902 12C0.899902 18.12 5.8799 23.1 11.9999 23.1C18.1199 23.1 23.0999 18.12 23.0999 12C23.0999 5.88002 18.1199 0.900024 11.9999 0.900024ZM13.0199 17.18V18.93H10.9849V17.185C9.0099 16.915 7.8199 15.815 7.7249 14.16L7.7149 13.975H10.1999L10.2249 14.095C10.3449 14.71 11.0699 15.125 12.0349 15.125C12.9999 15.125 13.6299 14.73 13.6299 14.12C13.6299 13.585 13.2299 13.33 12.0449 13.1L11.0099 12.905C8.9849 12.53 7.9149 11.51 7.9149 9.95502C7.9149 8.31002 9.0899 7.10002 10.9849 6.78502V5.07002H13.0199V6.78002C14.8799 7.07002 15.9899 8.15503 16.0699 9.77003L16.0799 9.97503H13.5899L13.5799 9.85003C13.5099 9.22503 12.8799 8.82502 11.9849 8.82502C11.0899 8.82502 10.5649 9.20002 10.5649 9.77502C10.5649 10.285 10.9899 10.56 12.0799 10.76L13.1149 10.955C15.3099 11.38 16.2899 12.285 16.2899 13.9C16.2899 15.665 15.0699 16.885 13.0249 17.18H13.0199Z"
+      />
+    </g>
+    <defs
+      class="emotion-1"
+    >
+      <clippath
+        class="emotion-1"
+        id="clip0_19624_8093"
+      >
+        <rect
+          height="24"
+          width="24"
+        />
+      </clippath>
+    </defs>
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when DollarCircle.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  fill: #0C0C0C;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    viewBox="0 0 24 24"
+  >
+    <g
+      class="emotion-1"
+      clip-path="url(#clip0_19624_8091)"
+    >
+      <path
+        class="emotion-1"
+        clip-rule="evenodd"
+        d="M0.899902 12C0.899902 18.12 5.8799 23.1 11.9999 23.1C18.1199 23.1 23.0999 18.12 23.0999 12C23.0999 5.88002 18.1199 0.900024 11.9999 0.900024C5.8799 0.900024 0.899902 5.88002 0.899902 12ZM3.0999 12C3.0999 7.09502 7.0899 3.10002 11.9999 3.10002C16.9099 3.10002 20.8999 7.09002 20.8999 12C20.8999 16.91 16.9099 20.9 11.9999 20.9C7.0899 20.9 3.0999 16.905 3.0999 12ZM11.0749 18.295V18.3L11.0699 18.295H11.0749ZM11.0749 18.295H12.9199V16.7C14.7749 16.435 15.8849 15.325 15.8849 13.72C15.8849 12.255 14.9949 11.43 12.9999 11.045L12.0599 10.865C11.0699 10.68 10.6849 10.43 10.6849 9.97001C10.6849 9.44501 11.1599 9.10501 11.9749 9.10501C12.7899 9.10501 13.3599 9.47001 13.4249 10.035L13.4349 10.15H15.6999L15.6899 9.96501C15.6199 8.50001 14.6099 7.51001 12.9199 7.25001V5.69501H11.0699V7.25001C9.34985 7.54001 8.27985 8.64001 8.27985 10.135C8.27985 11.55 9.25485 12.48 11.0949 12.82L12.0349 13C13.1099 13.21 13.4749 13.445 13.4749 13.93C13.4749 14.485 12.8999 14.845 12.0249 14.845C11.1499 14.845 10.4899 14.47 10.3799 13.91L10.3599 13.8H8.09985L8.10985 13.965C8.19985 15.47 9.27985 16.47 11.0749 16.715V18.295Z"
+        fill-rule="evenodd"
+      />
+    </g>
+    <defs
+      class="emotion-1"
+    >
+      <clippath
+        class="emotion-1"
+        id="clip0_19624_8091"
+      >
+        <rect
+          height="24"
+          width="24"
+        />
+      </clippath>
+    </defs>
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when DollarCircle.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  fill: #0C0C0C;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  box-sizing: border-box;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M1.1499 12C1.1499 17.985 6.0149 22.85 11.9999 22.85C17.9849 22.85 22.8499 17.985 22.8499 12C22.8499 6.01502 17.9849 1.15002 11.9999 1.15002C6.0149 1.15002 1.1499 6.01502 1.1499 12ZM2.8499 12C2.8499 6.95502 6.9549 2.85002 11.9999 2.85002C17.0449 2.85002 21.1499 6.95502 21.1499 12C21.1499 17.045 17.0449 21.15 11.9999 21.15C6.9549 21.15 2.8499 17.045 2.8499 12ZM11.2249 16.58V18.15H11.2349H12.7849V16.575L12.8699 16.565C14.6999 16.315 15.7499 15.285 15.7499 13.725C15.7499 12.325 14.9249 11.57 12.9899 11.195L12.0499 11.02C11.2749 10.875 10.5549 10.645 10.5549 9.97503C10.5549 9.36003 11.1099 8.96003 11.9949 8.96003C12.8799 8.96003 13.5049 9.36503 13.5899 10.005H15.5549V9.97503C15.4849 8.57003 14.5049 7.63003 12.8699 7.39003L12.7849 7.38003V5.84503H11.2349V7.38003L11.1499 7.39503C9.47989 7.66003 8.43989 8.70503 8.43989 10.135C8.43989 11.485 9.34489 12.34 11.1299 12.67L12.0699 12.85C13.0599 13.04 13.6299 13.28 13.6299 13.925C13.6299 14.57 12.9749 14.99 12.0299 14.99C11.0849 14.99 10.3699 14.57 10.2399 13.945H8.26489V13.955C8.34989 15.395 9.39489 16.345 11.1399 16.57L11.2249 16.58Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>

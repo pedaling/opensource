@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import {
+  Box,
   PortalBox,
   transformResponsiveValue,
   useCurrentTheme,
@@ -31,21 +32,22 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
 
     return (
       <PortalBox {...offsetProps} zIndex={1}>
-        <Pressable
-          ref={innerRef}
-          width={50}
-          height={50}
-          borderRadius={25}
-          backgroundColor="surface2"
-          elevationLevel={1}
-          alignItems="center"
-          justifyContent="center"
-          overlayColor="onView1"
-          interactions={['hover', 'focus', 'active']}
-          {...restProps}
-        >
-          <IconComponent size={20} />
-        </Pressable>
+        <Box borderRadius={25} elevationLevel={1}>
+          <Pressable
+            ref={innerRef}
+            width={50}
+            height={50}
+            borderRadius={25}
+            backgroundColor="surface2"
+            alignItems="center"
+            justifyContent="center"
+            overlayColor="onView1"
+            interactions={['hover', 'focus', 'active']}
+            {...restProps}
+          >
+            <IconComponent size={20} />
+          </Pressable>
+        </Box>
       </PortalBox>
     );
   }

@@ -57,6 +57,12 @@ export const Basic: ComponentStory<typeof SelectField> = props => (
   </Box>
 );
 
+export const WithDefaultValue: ComponentStory<typeof SelectField> = props => <SelectField {...props} />;
+
+WithDefaultValue.args = {
+  defaultValue: '1',
+};
+
 export const WithRenderOption: ComponentStory<typeof SelectField> = props => {
   const data = [
     {
