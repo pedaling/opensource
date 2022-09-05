@@ -4,7 +4,7 @@ import { withCheckboxVariation } from './CheckboxProps';
 
 export const Checkbox = withCheckboxVariation(
   ({
-    checked = false,
+    defaultChecked = false,
     disabled = false,
     onChange,
     iconSize,
@@ -13,11 +13,11 @@ export const Checkbox = withCheckboxVariation(
     iconFillColor,
     iconOutlineColor,
   }) => {
-    const [isChecked, setIsChecked] = useState(checked);
+    const [isChecked, setIsChecked] = useState(defaultChecked);
 
     useEffect(() => {
-      setIsChecked(checked);
-    }, [checked]);
+      setIsChecked(defaultChecked);
+    }, [defaultChecked]);
 
     const handleChange = () => {
       setIsChecked(prevIsChecked => {

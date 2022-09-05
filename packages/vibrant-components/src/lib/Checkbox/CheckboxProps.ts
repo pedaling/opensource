@@ -4,7 +4,7 @@ import { Icon } from '@vibrant-ui/icons';
 
 export type CheckboxProps = {
   size: ResponsiveValue<'md' | 'sm'>;
-  checked?: boolean;
+  defaultChecked?: boolean;
   indeterminate?: boolean;
   disabled?: boolean;
   onChange?: (isChecked: boolean) => void;
