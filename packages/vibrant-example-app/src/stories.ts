@@ -20,6 +20,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/PasswordField/PasswordField.stories.tsx'),
   require('../../vibrant-components/src/lib/Pressable/Pressable.stories.tsx'),
   require('../../vibrant-components/src/lib/RangePickerField/RangePickerField.stories.tsx'),
+  require('../../vibrant-components/src/lib/SafeAreaView/SafeAreaView.stories.tsx'),
   require('../../vibrant-components/src/lib/SearchField/SearchField.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectField/SelectField.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectOptionGroup/SelectOptionGroup.stories.tsx'),
