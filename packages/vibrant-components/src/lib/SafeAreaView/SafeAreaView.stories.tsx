@@ -14,6 +14,7 @@ export default {
     },
     width: '100%',
     height: '100%',
+    insets: ['top', 'bottom'],
   },
 } as ComponentMeta<typeof SafeAreaView>;
 

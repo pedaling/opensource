@@ -14,6 +14,7 @@ export type SafeAreaViewProps = SafeAreaViewValue & {
   children: ReactElementChild;
   height?: number | string;
   width?: number | string;
+  insets?: ('bottom' | 'left' | 'right' | 'top')[];
 };
 
 export const withSafeAreaViewVariation = withVariation<SafeAreaViewProps>('SafeAreaView')();
