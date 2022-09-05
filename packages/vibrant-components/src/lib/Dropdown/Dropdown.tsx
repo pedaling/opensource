@@ -146,8 +146,6 @@ export const Dropdown = withDropdownVariation(
       }
     }, [isOpen, openDropdown]);
 
-    console.log('contentHeight', contentHeight);
-
     return (
       <Box position="relative">
         <Box ref={openerRef}>{opener}</Box>
