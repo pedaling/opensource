@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box, getElementPosition } from '@vibrant-ui/core';
+import { Box, getElementLayout } from '@vibrant-ui/core';
 import type { TargetElement } from '@vibrant-ui/utils';
 import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
 import { Calendar } from '../Calendar';
@@ -25,7 +25,7 @@ export const RangePickerField = withRangePickerFieldVariation(
         return;
       }
 
-      const { top, bottom } = await getElementPosition(inputRef.current);
+      const { top, bottom } = await getElementLayout(inputRef.current);
 
       setCalendarPosition(top > bottom ? 'top' : 'bottom');
 

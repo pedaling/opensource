@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
-import { Box, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
+import { Box, PressableBox, TextInput, getElementLayout } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { Dismissible } from '../Dismissible';
@@ -114,7 +114,7 @@ export const SelectField = withSelectFieldVariation(
 
       inputRef.current?.focus();
 
-      const { top, bottom } = await getElementPosition(ref.current);
+      const { top, bottom } = await getElementLayout(ref.current);
 
       const spaceAbove = top;
       const spaceBelow = bottom;

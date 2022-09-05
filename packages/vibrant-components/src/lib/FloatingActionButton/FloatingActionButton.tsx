@@ -4,8 +4,8 @@ import {
   PortalBox,
   transformResponsiveValue,
   useCurrentTheme,
+  usePortalRoot,
   useSafeArea,
-  useWindowDimensions,
 } from '@vibrant-ui/core';
 import { Pressable } from '../Pressable';
 import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
@@ -13,7 +13,9 @@ import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
 export const FloatingActionButton = withFloatingActionButtonVariation(
   ({ position = 'right', offset = 20, IconComponent, innerRef, ...restProps }) => {
     const { insets } = useSafeArea();
-    const { width: viewportWidth } = useWindowDimensions();
+    const {
+      position: { width: portalRootWidth = 0 },
+    } = usePortalRoot();
     const {
       theme: { contentArea },
     } = useCurrentTheme();
@@ -22,12 +24,12 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
       () => ({
         [position]: transformResponsiveValue(
           contentArea.padding,
-          value => Math.max(viewportWidth - contentArea.maxWidth, 0) / 2 + value
+          value => Math.max(portalRootWidth - contentArea.maxWidth, 0) / 2 + value
         ),
         bottom:
           typeof insets.bottom === 'string' ? `max(${insets.bottom}, ${offset}px)` : Math.max(insets.bottom, offset),
       }),
-      [viewportWidth, contentArea, insets, offset, position]
+      [contentArea.maxWidth, contentArea.padding, insets.bottom, offset, portalRootWidth, position]
     );
 
     return (

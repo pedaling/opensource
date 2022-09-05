@@ -3,6 +3,7 @@ export type { DeepWritable } from './lib/type/DeepWritable';
 export type { DistributiveOmit } from './lib/type/DistributiveOmit';
 export type { TargetElement, Rect } from './lib/getElementRect';
 export type { Path } from './lib/type/Path';
+export { addPositionValue } from './lib/addPositionValue';
 export { isDefined } from './lib/isDefined';
 export { get } from './lib/get';
 export { range } from './lib/range';

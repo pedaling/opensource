@@ -1,7 +1,7 @@
 import type { TargetElement } from '@vibrant-ui/utils';
 import { getElementRect } from '@vibrant-ui/utils';
 
-export const getElementPosition = async (ref: TargetElement) => {
+export const getElementLayout = async (ref: TargetElement) => {
   const { x, y, width, height } = await getElementRect(ref);
 
   const top = y;
