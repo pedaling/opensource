@@ -3,7 +3,7 @@ import { withSafeAreaViewVariation } from './SafeAreaViewProps';
 
 export const SafeAreaView = withSafeAreaViewVariation(
   ({
-    mode,
+    mode = 'margin',
     edges = { bottom: 0, left: 0, right: 0, top: 0 },
     width = '100%',
     height = '100%',
@@ -12,48 +12,36 @@ export const SafeAreaView = withSafeAreaViewVariation(
   }) => {
     const { insets: defaultInsets } = useSafeArea();
 
-    const m: Record<'bottom' | 'left' | 'right' | 'top', number | string> = {
-      bottom: 0,
-      left: 0,
-      right: 0,
-      top: 0,
-    };
-    const p: Record<'bottom' | 'left' | 'right' | 'top', number | string> = {
-      bottom: 0,
-      left: 0,
-      right: 0,
-      top: 0,
-    };
-
-    insets.map(inset => {
-      const defaultValue = defaultInsets[inset];
-
-      if (mode === 'margin') {
-        if (typeof defaultValue === 'string') {
-          m[inset] = `max(${defaultValue}, ${edges[inset]}px)`;
-        } else {
-          m[inset] = Math.max(defaultValue, edges[inset] ?? 0);
-        }
-      } else if (mode === 'padding') {
-        if (typeof defaultValue === 'string') {
-          p[inset] = `max(${defaultValue}, ${edges[inset]}px)`;
-        } else {
-          p[inset] = Math.max(defaultValue, edges[inset] ?? 0);
-        }
+    const calculatedInsets = insets.reduce(
+      (prev, inset) => ({
+        ...prev,
+        [inset]:
+          typeof defaultInsets[inset] === 'string'
+            ? `max(${defaultInsets[inset]}, ${edges[inset] ?? 0}px)`
+            : Math.max(defaultInsets[inset] as number, edges[inset] ?? 0),
+      }),
+      {
+        bottom: 0,
+        left: 0,
+        right: 0,
+        top: 0,
       }
-    });
+    );
+
+    const isMarginMode = mode === 'margin';
+    const isPaddingMode = mode === 'padding';
 
     return (
       <Box width={width} height={height}>
         <Box
-          mb={m.bottom}
-          ml={m.left}
-          mr={m.right}
-          mt={m.top}
-          pb={p.bottom}
-          pl={p.left}
-          pr={p.right}
-          pt={p.top}
+          mb={isMarginMode ? calculatedInsets['bottom'] : undefined}
+          ml={isMarginMode ? calculatedInsets['left'] : undefined}
+          mr={isMarginMode ? calculatedInsets['right'] : undefined}
+          mt={isMarginMode ? calculatedInsets['top'] : undefined}
+          pb={isPaddingMode ? calculatedInsets['bottom'] : undefined}
+          pl={isPaddingMode ? calculatedInsets['left'] : undefined}
+          pr={isPaddingMode ? calculatedInsets['right'] : undefined}
+          pt={isPaddingMode ? calculatedInsets['top'] : undefined}
           width="100%"
           height="100%"
         >

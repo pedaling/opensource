@@ -8,10 +8,10 @@ export type Edge = {
   top?: number;
 };
 
-export type SafeAreaViewValue = { mode: 'margin'; edges: Edge } | { mode: 'padding'; edges: Edge } | undefined;
-
-export type SafeAreaViewProps = SafeAreaViewValue & {
+export type SafeAreaViewProps = {
   children: ReactElementChild;
+  mode?: 'margin' | 'padding';
+  edges?: Edge;
   height?: number | string;
   width?: number | string;
   insets?: ('bottom' | 'left' | 'right' | 'top')[];
