@@ -8,6 +8,8 @@ type TextFieldProps = BaseInputProps<string> & {
   label?: string;
   placeholder?: string;
   helperText?: string;
+  prefix?: string;
+  suffix?: string;
 };
 
 export const withTextFieldVariation = withVariation<TextFieldProps>('TextField')();
