@@ -8,9 +8,9 @@ import { withCheckboxFieldVariation } from './CheckboxFieldProps';
 
 export const CheckboxField = withCheckboxFieldVariation(
   ({
-    defaultChecked = false,
+    defaultValue = false,
     disabled = false,
-    onChange,
+    onValueChange,
     label,
     helperText,
     labelLevel,
@@ -19,15 +19,15 @@ export const CheckboxField = withCheckboxFieldVariation(
     helperTextColor,
     ...restProps
   }) => {
-    const [isChecked, setIsChecked] = useState(defaultChecked);
+    const [isChecked, setIsChecked] = useState(defaultValue);
 
     useEffect(() => {
-      setIsChecked(defaultChecked);
-    }, [defaultChecked]);
+      setIsChecked(defaultValue);
+    }, [defaultValue]);
 
     const handleChange = () => {
       setIsChecked(prevIsChecked => {
-        onChange?.(!prevIsChecked);
+        onValueChange?.(!prevIsChecked);
 
         return !prevIsChecked;
       });
@@ -36,7 +36,7 @@ export const CheckboxField = withCheckboxFieldVariation(
     return (
       <Pressable disabled={disabled} onClick={handleChange}>
         <HStack spacing={8}>
-          <Checkbox defaultChecked={isChecked} disabled={disabled} {...restProps} />
+          <Checkbox defaultValue={isChecked} disabled={disabled} {...restProps} />
           <VStack spacing={4} mt={3}>
             <Body level={labelLevel} color={labelColor}>
               {label}

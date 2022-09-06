@@ -1,13 +1,11 @@
 import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import type { BaseInputProps } from '../../types';
 
-export type CheckboxProps = {
+export type CheckboxProps = BaseInputProps<boolean> & {
   size: ResponsiveValue<'md' | 'sm'>;
-  defaultChecked?: boolean;
   indeterminate?: boolean;
-  disabled?: boolean;
-  onChange?: (isChecked: boolean) => void;
 };
 
 export const withCheckboxVariation = withVariation<CheckboxProps>('Checkbox')(
