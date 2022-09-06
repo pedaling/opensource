@@ -4,47 +4,37 @@ import { withSafeAreaViewVariation } from './SafeAreaViewProps';
 export const SafeAreaView = withSafeAreaViewVariation(
   ({
     mode = 'margin',
-    edges = { bottom: 0, left: 0, right: 0, top: 0 },
+    edges = [],
     width = '100%',
     height = '100%',
-    insets = [],
+    minInsets = { bottom: 0, left: 0, right: 0, top: 0 },
     children,
   }) => {
     const { insets: defaultInsets } = useSafeArea();
 
-    const calculatedInsets = insets.reduce(
-      (prev, inset) => ({
+    const calculatedInsets = edges.reduce(
+      (prev, edge) => ({
         ...prev,
-        [inset]:
-          typeof defaultInsets[inset] === 'string'
-            ? `max(${defaultInsets[inset]}, ${edges[inset] ?? 0}px)`
-            : Math.max(defaultInsets[inset] as number, edges[inset] ?? 0),
+        [`${mode[0]}${edge[0]}`]:
+          typeof defaultInsets[edge] === 'string'
+            ? `max(${defaultInsets[edge]}, ${minInsets[edge] ?? 0}px)`
+            : Math.max(defaultInsets[edge] as number, minInsets[edge] ?? 0),
       }),
       {
-        bottom: 0,
-        left: 0,
-        right: 0,
-        top: 0,
+        mb: 0,
+        ml: 0,
+        mr: 0,
+        mt: 0,
+        pb: 0,
+        pl: 0,
+        pr: 0,
+        pt: 0,
       }
     );
 
-    const isMarginMode = mode === 'margin';
-    const isPaddingMode = mode === 'padding';
-
     return (
       <Box width={width} height={height}>
-        <Box
-          mb={isMarginMode ? calculatedInsets['bottom'] : undefined}
-          ml={isMarginMode ? calculatedInsets['left'] : undefined}
-          mr={isMarginMode ? calculatedInsets['right'] : undefined}
-          mt={isMarginMode ? calculatedInsets['top'] : undefined}
-          pb={isPaddingMode ? calculatedInsets['bottom'] : undefined}
-          pl={isPaddingMode ? calculatedInsets['left'] : undefined}
-          pr={isPaddingMode ? calculatedInsets['right'] : undefined}
-          pt={isPaddingMode ? calculatedInsets['top'] : undefined}
-          width="100%"
-          height="100%"
-        >
+        <Box {...calculatedInsets} width="100%" height="100%">
           {children}
         </Box>
       </Box>

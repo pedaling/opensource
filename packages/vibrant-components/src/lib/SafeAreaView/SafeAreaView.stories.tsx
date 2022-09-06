@@ -7,15 +7,15 @@ export default {
   component: SafeAreaView,
   args: {
     mode: 'margin',
-    edges: {
+    edges: ['top', 'bottom', 'left', 'right'],
+    width: '100%',
+    height: '100%',
+    minInsets: {
       top: 50,
       left: 50,
       right: 50,
       bottom: 50,
     },
-    width: '100%',
-    height: '100%',
-    insets: ['top', 'bottom', 'left', 'right'],
   },
 } as ComponentMeta<typeof SafeAreaView>;
 

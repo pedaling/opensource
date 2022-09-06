@@ -1,7 +1,7 @@
-import type { ReactElementChild } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
+import type { ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
 
-export type Edge = {
+export type MinInsets = {
   bottom?: number;
   left?: number;
   right?: number;
@@ -11,10 +11,10 @@ export type Edge = {
 export type SafeAreaViewProps = {
   children: ReactElementChild;
   mode?: 'margin' | 'padding';
-  edges?: Edge;
-  height?: number | string;
-  width?: number | string;
-  insets?: ('bottom' | 'left' | 'right' | 'top')[];
+  edges?: ('bottom' | 'left' | 'right' | 'top')[];
+  height?: ResponsiveValue<number | string>;
+  width?: ResponsiveValue<number | string>;
+  minInsets?: MinInsets;
 };
 
 export const withSafeAreaViewVariation = withVariation<SafeAreaViewProps>('SafeAreaView')();
