@@ -196,7 +196,7 @@ export const SelectField = withSelectFieldVariation(
               onClick={() => (isOpened ? close() : open(-1))}
               {...restProps}
             >
-              <HStack width="100%">
+              <HStack alignItems="center" width="100%">
                 <Box as="span" flex={1}>
                   {selectedOption ? (
                     <Box flexDirection={inlineLabel ? 'row' : 'column'}>
