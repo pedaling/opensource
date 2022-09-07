@@ -24,3 +24,4 @@ export { calendarTranslation } from './lib/Calendar';
 export { Dropdown } from './lib/Dropdown';
 export { FloatingActionButton } from './lib/FloatingActionButton';
 export { Checkbox } from './lib/Checkbox';
+export { CheckboxField } from './lib/CheckboxField';
