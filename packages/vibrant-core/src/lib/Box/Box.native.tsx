@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import type { LayoutChangeEvent } from 'react-native';
 import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
+import { getElementPosition } from '@vibrant-ui/core';
 import type { BoxProps } from './BoxProps';
 import { interpolation, shouldForwardProp } from './BoxProps';
 
@@ -24,8 +25,10 @@ export const Box = styled(
     const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
 
     const handleLayout = onLayout
-      ? (event: LayoutChangeEvent) => {
-          onLayout(event.nativeEvent);
+      ? async (event: LayoutChangeEvent) => {
+          const layout = await getElementPosition(event.currentTarget);
+
+          onLayout(layout);
         }
       : undefined;
 
