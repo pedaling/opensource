@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { CheckboxField } from '../CheckboxField';
 import { VStack } from '../VStack';
 import { withCheckboxGroupFieldVariation } from './CheckboxGroupFieldProps';
@@ -14,6 +14,10 @@ export const CheckboxGroupField = withCheckboxGroupFieldVariation(
     onValueChange,
   }) => {
     const [checkedValueSet, setCheckedValueSet] = useState(new Set(defaultValue));
+
+    useEffect(() => {
+      setCheckedValueSet(new Set(defaultValue));
+    }, [defaultValue]);
 
     const handleChange = (targetValue: string) => {
       setCheckedValueSet(prevCheckedValueSet => {
