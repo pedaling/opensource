@@ -41,9 +41,11 @@ export const CheckboxField = withCheckboxFieldVariation(
             <Body level={labelLevel} color={labelColor}>
               {label}
             </Body>
-            <Body level={helperTextLevel} color={helperTextColor}>
-              {helperText}
-            </Body>
+            {Boolean(helperText) && (
+              <Body level={helperTextLevel} color={helperTextColor}>
+                {helperText}
+              </Body>
+            )}
           </VStack>
         </HStack>
       </Pressable>
