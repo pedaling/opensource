@@ -31,8 +31,8 @@ export const FieldLayout = withFieldLayoutVariation(
       <Box
         flexDirection="row"
         alignItems="center"
-        pl={renderPrefix ? 15 : 0}
-        pr={renderSuffix ? 15 : 0}
+        pl={renderPrefix ? 16 : 0}
+        pr={renderSuffix ? 16 : 0}
         width="100%"
         height={50}
         borderWidth={1}
@@ -48,8 +48,8 @@ export const FieldLayout = withFieldLayoutVariation(
               <Text
                 position="absolute"
                 zIndex={1}
-                left={renderPrefix ? 12 : 15}
-                right={renderSuffix ? 12 : 15}
+                left={renderPrefix ? 12 : 16}
+                right={renderSuffix ? 12 : 16}
                 color={textColor}
                 lineLimit={1}
                 wordBreak="break-all"

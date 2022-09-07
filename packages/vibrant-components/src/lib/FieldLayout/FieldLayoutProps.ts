@@ -9,28 +9,13 @@ type FieldLayoutProps = {
   disabled?: boolean;
   focused?: boolean;
   filled?: boolean;
+  prefixText?: string;
+  suffixText?: string;
+  renderPrefix?: () => ReactElementChild;
+  renderSuffix?: () => ReactElementChild;
   onLabelClick: () => void;
   renderField: (_: { color: OnColorToken; pt: number; pl: number; pr: number; pb: number }) => ReactElementChild;
-} & (
-  | {
-      prefixText?: never;
-      renderPrefix?: () => ReactElementChild;
-    }
-  | {
-      prefixText?: string;
-      renderPrefix?: never;
-    }
-) &
-  (
-    | {
-        suffixText?: never;
-        renderSuffix?: () => ReactElementChild;
-      }
-    | {
-        suffixText?: string;
-        renderSuffix?: never;
-      }
-  );
+};
 
 export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLayout')(
   propVariant({
