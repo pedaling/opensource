@@ -6,6 +6,7 @@ import {
   getWindowDimensions,
   useCurrentThemeMode,
   useResponsiveValue,
+  useSafeArea,
   useWindowDimensions,
 } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
@@ -75,6 +76,7 @@ export const Dropdown = withDropdownVariation(
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
     const [contentHeight, setContentHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
+    const { insets } = useSafeArea();
 
     const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
@@ -231,7 +233,7 @@ export const Dropdown = withDropdownVariation(
                       }
                     >
                       <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents(closeDropdown)}
+                        <Box pb={insets.bottom}>{renderContents(closeDropdown)}</Box>
                       </Box>
                     </ScrollBox>
                   </Transition>
