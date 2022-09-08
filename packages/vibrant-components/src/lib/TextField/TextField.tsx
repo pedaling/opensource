@@ -5,7 +5,19 @@ import { FieldLayout } from '../FieldLayout';
 import { withTextFieldVariation } from './TextFieldProps';
 
 export const TextField = withTextFieldVariation(
-  ({ type = 'text', state, label, placeholder, helperText, disabled, defaultValue, onValueChange, ...restProps }) => {
+  ({
+    type = 'text',
+    state,
+    label,
+    placeholder,
+    helperText,
+    disabled,
+    defaultValue,
+    autoCapitalize = 'none',
+    autoComplete = 'none',
+    onValueChange,
+    ...restProps
+  }) => {
     const inputRef = useRef<TextInputRef>(null);
 
     const [isFocused, setIsFocused] = useState(false);
@@ -32,6 +44,8 @@ export const TextField = withTextFieldVariation(
             placeholder={!label || isFocused || value ? placeholder : ''}
             placeholderColor="onView3"
             disabled={disabled}
+            autoCapitalize={autoCapitalize}
+            autoComplete={autoComplete}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             onValueChange={({ value }) => {

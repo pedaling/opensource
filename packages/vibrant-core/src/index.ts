@@ -5,7 +5,13 @@ export type { SvgProps } from './lib/Svg';
 export { Text } from './lib/Text';
 export type { TextProps, TextElements, TextChildren } from './lib/Text';
 export { TextInput } from './lib/TextInput';
-export type { TextInputType, TextInputRef, TextInputProps } from './lib/TextInput';
+export type {
+  TextInputType,
+  TextInputRef,
+  TextInputProps,
+  AutoCapitalizeOption,
+  AutoCompleteOption,
+} from './lib/TextInput';
 export type { ReactElementChild, ReactTextChild, ResponsiveValue, WindowDimensions } from './types';
 export type {
   BackgroundSystemProps,

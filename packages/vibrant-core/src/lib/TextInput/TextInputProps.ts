@@ -55,6 +55,38 @@ export type TextInputRef = {
   clear: () => void;
 };
 
+export type AutoCapitalizeOption = 'characters' | 'none' | 'sentences' | 'words';
+
+export type AutoCompleteOption =
+  | 'addressCity'
+  | 'addressCountry'
+  | 'addressExtended'
+  | 'addressRegion'
+  | 'addressStreet'
+  | 'birthDayDay'
+  | 'birthDayFull'
+  | 'birthDayMonth'
+  | 'birthDayYear'
+  | 'ccCsc'
+  | 'ccExp'
+  | 'ccExpMonth'
+  | 'ccExpYear'
+  | 'ccNumber'
+  | 'email'
+  | 'familyName'
+  | 'givenName'
+  | 'middleName'
+  | 'name'
+  | 'namePrefix'
+  | 'nameSuffix'
+  | 'newPassword'
+  | 'none'
+  | 'otp'
+  | 'password'
+  | 'postalCode'
+  | 'tel'
+  | 'username';
+
 export type TextInputProps = SystemProps &
   (
     | {
@@ -78,6 +110,8 @@ export type TextInputProps = SystemProps &
     disabled?: boolean;
     hidden?: boolean;
     focusStyle?: SystemProps;
+    autoCapitalize?: AutoCapitalizeOption;
+    autoComplete?: AutoCompleteOption;
     onFocus?: () => void;
     onBlur?: () => void;
     onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;

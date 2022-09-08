@@ -21,6 +21,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       maxLength,
       hidden,
       focusStyle,
+      autoCapitalize,
+      autoComplete,
       onFocus,
       onBlur,
       onKeyPress,
@@ -71,6 +73,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         type={type}
         value={value}
         inputMode={inputMode}
+        autoCapitalize={autoCapitalize}
+        autoComplete={autoComplete}
         onFocus={() => {
           setIsFocused(true);
 
