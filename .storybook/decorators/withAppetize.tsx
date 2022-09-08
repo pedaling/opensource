@@ -30,7 +30,7 @@ export const withAppetize: DecoratorFn = (storyFn, context) => {
             storyParams={{
               component: context.title.split('/').pop(),
               story: context.story,
-              props: JSON.stringify(context.args),
+              props: JSON.stringify(context.args).replace(/%/g, '%25'),
             }}
             context={platform}
           />
