@@ -6,6 +6,7 @@ import {
   getWindowDimensions,
   useCurrentThemeMode,
   useResponsiveValue,
+  useSafeArea,
   useWindowDimensions,
 } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
@@ -75,6 +76,7 @@ export const Dropdown = withDropdownVariation(
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
     const [contentHeight, setContentHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
+    const { insets } = useSafeArea();
 
     const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
@@ -167,7 +169,7 @@ export const Dropdown = withDropdownVariation(
               >
                 <Box position="absolute" zIndex={Z_INDEX}>
                   <Box
-                    backgroundColor="background"
+                    backgroundColor="surface2"
                     py={CONTENT_PADDING}
                     elevationLevel={4}
                     borderRadiusLevel={1}
@@ -181,12 +183,9 @@ export const Dropdown = withDropdownVariation(
                             }
                           : {}
                       }
-                      style={{
-                        height: contentHeight,
-                      }}
                       duration={150}
                     >
-                      <Box overflow="hidden">
+                      <Box overflow="hidden" height={contentHeight}>
                         <Box onLayout={handleContentResize} flexShrink={0}>
                           {renderContents(closeDropdown)}
                         </Box>
@@ -198,7 +197,7 @@ export const Dropdown = withDropdownVariation(
             </Dismissible>
           </ThemeProvider>
         )}
-        {isOpen && isMobile && (
+        {isMobile && (
           <ThemeProvider theme={rootThemeMode}>
             <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
               <Transition
@@ -215,7 +214,7 @@ export const Dropdown = withDropdownVariation(
                   pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
                   width="100%"
                   maxHeight={viewportHeight - 120}
-                  backgroundColor="background"
+                  backgroundColor="surface2"
                   borderTopLeftRadiusLevel={4}
                   borderTopRightRadiusLevel={4}
                 >
@@ -226,6 +225,7 @@ export const Dropdown = withDropdownVariation(
                     duration={150}
                   >
                     <ScrollBox
+                      height={contentHeight}
                       hideScroll={
                         (contentHeight ?? 0) +
                           (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
@@ -233,7 +233,7 @@ export const Dropdown = withDropdownVariation(
                       }
                     >
                       <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents(closeDropdown)}
+                        <Box pb={insets.bottom}>{renderContents(closeDropdown)}</Box>
                       </Box>
                     </ScrollBox>
                   </Transition>
