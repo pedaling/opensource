@@ -198,7 +198,7 @@ export const Dropdown = withDropdownVariation(
             </Dismissible>
           </ThemeProvider>
         )}
-        {isOpen && isMobile && (
+        {isMobile && (
           <ThemeProvider theme={rootThemeMode}>
             <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
               <Transition
@@ -215,7 +215,7 @@ export const Dropdown = withDropdownVariation(
                   pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
                   width="100%"
                   maxHeight={viewportHeight - 120}
-                  backgroundColor="background"
+                  backgroundColor="surface2"
                   borderTopLeftRadiusLevel={4}
                   borderTopRightRadiusLevel={4}
                 >
