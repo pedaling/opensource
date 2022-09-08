@@ -181,12 +181,9 @@ export const Dropdown = withDropdownVariation(
                             }
                           : {}
                       }
-                      style={{
-                        height: contentHeight,
-                      }}
                       duration={150}
                     >
-                      <Box overflow="hidden">
+                      <Box overflow="hidden" height={contentHeight}>
                         <Box onLayout={handleContentResize} flexShrink={0}>
                           {renderContents(closeDropdown)}
                         </Box>
@@ -223,12 +220,10 @@ export const Dropdown = withDropdownVariation(
                     animation={{
                       height: contentHeight,
                     }}
-                    style={{
-                      height: contentHeight,
-                    }}
                     duration={150}
                   >
                     <ScrollBox
+                      height={contentHeight}
                       hideScroll={
                         (contentHeight ?? 0) +
                           (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
