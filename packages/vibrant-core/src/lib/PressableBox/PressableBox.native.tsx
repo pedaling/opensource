@@ -3,7 +3,7 @@ import { Box } from '../Box';
 import { withPressableBoxVariation } from './PressableBoxProps';
 
 export const PressableBox = withPressableBoxVariation(
-  ({ innerRef, onClick, onFocusIn, onFocusOut, disabled, onPressIn, children, onPressOut, ...restProps }) => (
+  ({ innerRef, onBlur, onClick, onFocusIn, onFocusOut, disabled, onPressIn, children, onPressOut, ...restProps }) => (
     <Box
       ref={innerRef}
       base={Pressable}
@@ -12,7 +12,11 @@ export const PressableBox = withPressableBoxVariation(
       onPressIn={() => onPressIn?.()}
       onPressOut={() => onPressOut?.()}
       onFocus={() => onFocusIn?.()}
-      onBlur={() => onFocusOut?.()}
+      onBlur={() => {
+        onBlur?.();
+
+        onFocusOut?.();
+      }}
       {...restProps}
     >
       {children}

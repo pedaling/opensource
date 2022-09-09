@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
+  OverlayBox,
   ScrollBox,
   ThemeProvider,
   getWindowDimensions,
@@ -13,7 +14,6 @@ import { Transition } from '@vibrant-ui/motion';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
-import { Dismissible } from '../Dismissible';
 import { withDropdownVariation } from './DropdownProps';
 
 const CONTENT_PADDING = 20;
@@ -153,48 +153,45 @@ export const Dropdown = withDropdownVariation(
         <Box ref={openerRef}>{opener}</Box>
         {isOpen && !isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Dismissible active={visible} onDismiss={closeDropdown}>
-              <Transition
-                ref={targetRef}
-                animation={{
-                  opacity: visible ? 1 : 0,
-                  x: offset.x,
-                  y: offset.y,
-                }}
-                style={{
-                  x: offset.x,
-                  y: offset.y,
-                }}
-                duration={150}
-              >
-                <Box position="absolute" zIndex={Z_INDEX}>
-                  <Box
-                    backgroundColor="surface2"
-                    py={CONTENT_PADDING}
-                    elevationLevel={4}
-                    borderRadiusLevel={1}
-                    width={[280, 280, 240]}
+            <Transition
+              animation={{
+                opacity: visible ? 1 : 0,
+                x: offset.x,
+                y: offset.y,
+              }}
+              style={{
+                x: offset.x,
+                y: offset.y,
+              }}
+              duration={150}
+            >
+              <OverlayBox open={true} ref={targetRef} onDismiss={closeDropdown} targetRef={openerRef} zIndex={Z_INDEX}>
+                <Box
+                  backgroundColor="surface2"
+                  py={CONTENT_PADDING}
+                  elevationLevel={4}
+                  borderRadiusLevel={1}
+                  width={[280, 280, 240]}
+                >
+                  <Transition
+                    animation={
+                      visible
+                        ? {
+                            height: contentHeight,
+                          }
+                        : {}
+                    }
+                    duration={150}
                   >
-                    <Transition
-                      animation={
-                        visible
-                          ? {
-                              height: contentHeight,
-                            }
-                          : {}
-                      }
-                      duration={150}
-                    >
-                      <Box overflow="hidden" height={contentHeight}>
-                        <Box onLayout={handleContentResize} flexShrink={0}>
-                          {renderContents(closeDropdown)}
-                        </Box>
+                    <Box overflow="hidden" height={contentHeight}>
+                      <Box onLayout={handleContentResize} flexShrink={0}>
+                        {renderContents(closeDropdown)}
                       </Box>
-                    </Transition>
-                  </Box>
+                    </Box>
+                  </Transition>
                 </Box>
-              </Transition>
-            </Dismissible>
+              </OverlayBox>
+            </Transition>
           </ThemeProvider>
         )}
         {isMobile && (

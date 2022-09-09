@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box, getElementPosition } from '@vibrant-ui/core';
+import { Box, OverlayBox, getElementPosition } from '@vibrant-ui/core';
 import type { TargetElement } from '@vibrant-ui/utils';
 import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
 import { Calendar } from '../Calendar';
 import { DateInput } from '../DateInput';
-import { Dismissible } from '../Dismissible';
 import { withRangePickerFieldVariation } from './RangePickerFieldProps';
 
 const getRangeString = (start: Date, end?: Date) => `${getDateString(start)} - ${end ? getDateString(end) : ''}`;
@@ -80,29 +79,28 @@ export const RangePickerField = withRangePickerFieldVariation(
           helperText={helperText}
           state={state}
         />
-        <Dismissible active={isCalendarOpened} onDismiss={handleDismiss}>
-          <Box
-            position="absolute"
-            left={0}
-            hidden={!isCalendarOpened}
-            {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
-          >
-            <Calendar
-              range={true}
-              startDate={value?.start}
-              endDate={value?.end}
-              onDateRangeSelect={(startDate, endDate) => {
-                setValue({ start: startDate, end: endDate });
+        <OverlayBox
+          open={isCalendarOpened}
+          targetRef={inputRef}
+          onDismiss={handleDismiss}
+          left={0}
+          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
+        >
+          <Calendar
+            range={true}
+            startDate={value?.start}
+            endDate={value?.end}
+            onDateRangeSelect={(startDate, endDate) => {
+              setValue({ start: startDate, end: endDate });
 
-                if (!endDate) {
-                  return;
-                }
+              if (!endDate) {
+                return;
+              }
 
-                setIsCalendarOpened(false);
-              }}
-            />
-          </Box>
-        </Dismissible>
+              setIsCalendarOpened(false);
+            }}
+          />
+        </OverlayBox>
       </Box>
     );
   }
