@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
-import { Box, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
+import { Box, OverlayBox, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
-import { Dismissible } from '../Dismissible';
 import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
 import { Space } from '../Space';
@@ -24,7 +23,6 @@ export const SelectField = withSelectFieldVariation(
     ...restProps
   }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
-    const [isFocused, setIsFocused] = useState(false);
     const [isOpened, setIsOpened] = useState(false);
     const [direction, setDirection] = useState<'down' | 'up'>('down');
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
@@ -55,8 +53,8 @@ export const SelectField = withSelectFieldVariation(
         return 'error';
       }
 
-      return isFocused ? 'outlineNeutral' : 'outline1';
-    }, [disabled, state, isFocused]);
+      return isOpened ? 'outlineNeutral' : 'outline1';
+    }, [disabled, state, isOpened]);
 
     const selectedOption = options[selectedOptionIndex];
 
@@ -135,8 +133,6 @@ export const SelectField = withSelectFieldVariation(
         setDirection('down');
       }
 
-      setIsFocused(true);
-
       setIsOpened(true);
     };
 
@@ -181,86 +177,82 @@ export const SelectField = withSelectFieldVariation(
           }}
         />
         <Box position="relative">
-          <Dismissible active={isFocused} onDismiss={() => setIsFocused(false)}>
-            <PressableBox
-              ref={ref}
-              alignItems="center"
-              flexDirection="row"
-              height={50}
-              px={16}
-              borderWidth={1}
-              borderStyle="solid"
-              borderColor={borderColor}
-              borderRadius={2}
-              cursor={disabled ? 'default' : 'pointer'}
-              onClick={() => (isOpened ? close() : open(-1))}
-              {...restProps}
-            >
-              <HStack alignItems="center" width="100%">
-                <Box as="span" flex={1}>
-                  {selectedOption ? (
-                    <Box flexDirection={inlineLabel ? 'row' : 'column'}>
-                      {Boolean(label) && (
-                        <>
-                          <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
-                            {label}
+          <PressableBox
+            ref={ref}
+            alignItems="center"
+            flexDirection="row"
+            height={50}
+            px={16}
+            borderWidth={1}
+            borderStyle="solid"
+            borderColor={borderColor}
+            borderRadius={2}
+            cursor={disabled ? 'default' : 'pointer'}
+            onClick={() => (isOpened ? close() : open(-1))}
+            {...restProps}
+          >
+            <HStack alignItems="center" width="100%">
+              <Box as="span" flex={1}>
+                {selectedOption ? (
+                  <Box flexDirection={inlineLabel ? 'row' : 'column'}>
+                    {Boolean(label) && (
+                      <>
+                        <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                          {label}
+                        </Body>
+                        <Box as="span" flexShrink={0} hidden={!inlineLabel}>
+                          <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
+                            &nbsp;/&nbsp;
                           </Body>
-                          <Box as="span" flexShrink={0} hidden={!inlineLabel}>
-                            <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
-                              &nbsp;/&nbsp;
-                            </Body>
-                          </Box>
-                        </>
-                      )}
-                      <Body
-                        level={2}
-                        color={disabled ? 'onView3' : 'onView1'}
-                        wordBreak="break-all"
-                        wordWrap="break-word"
-                        lineLimit={1}
-                      >
-                        {selectedOption.label}
-                      </Body>
-                    </Box>
-                  ) : (
-                    <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
-                      {label || placeholder}
+                        </Box>
+                      </>
+                    )}
+                    <Body
+                      level={2}
+                      color={disabled ? 'onView3' : 'onView1'}
+                      wordBreak="break-all"
+                      wordWrap="break-word"
+                      lineLimit={1}
+                    >
+                      {selectedOption.label}
                     </Body>
-                  )}
-                </Box>
-                <Space width={12} />
-                <Icon.ArrowTriangleDown.Regular
-                  size={20}
-                  fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
-                />
-              </HStack>
-            </PressableBox>
-          </Dismissible>
-          <Dismissible active={isOpened} onDismiss={close}>
-            <Box
-              position="absolute"
-              zIndex={1}
-              width="100%"
-              maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
-              hidden={!isOpened}
-              {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
-            >
-              <SelectOptionGroup
-                onOptionClick={index => {
-                  setSelectedOptionIndex(index);
-
-                  close();
-
-                  inputRef.current?.focus();
-                }}
-                state={state}
-                renderOption={renderOption}
-                reverse={direction === 'up'}
-                options={options}
-                focusIndex={focusIndex}
+                  </Box>
+                ) : (
+                  <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                    {label || placeholder}
+                  </Body>
+                )}
+              </Box>
+              <Space width={12} />
+              <Icon.ArrowTriangleDown.Regular
+                size={20}
+                fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
               />
-            </Box>
-          </Dismissible>
+            </HStack>
+          </PressableBox>
+          <OverlayBox
+            open={isOpened}
+            targetRef={ref}
+            onDismiss={close}
+            width="100%"
+            maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
+            {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
+          >
+            <SelectOptionGroup
+              onOptionClick={index => {
+                setSelectedOptionIndex(index);
+
+                close();
+
+                inputRef.current?.focus();
+              }}
+              state={state}
+              renderOption={renderOption}
+              reverse={direction === 'up'}
+              options={options}
+              focusIndex={focusIndex}
+            />
+          </OverlayBox>
         </Box>
         {Boolean(helperText) && (
           <Body level={4} color={state === 'error' ? 'error' : 'onView2'} wordBreak="keep-all" wordWrap="break-word">

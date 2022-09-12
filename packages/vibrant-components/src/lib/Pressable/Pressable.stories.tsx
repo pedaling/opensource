@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box } from '@vibrant-ui/core';
+import { VStack } from '../VStack';
 import { Pressable } from './Pressable';
 
 export default {
@@ -14,7 +14,12 @@ export default {
 } as ComponentMeta<typeof Pressable>;
 
 export const Basic: ComponentStory<typeof Pressable> = props => (
-  <Pressable {...props}>
-    <Box width={200} height={200} borderWidth={1} borderStyle="solid" borderColor="primary" />
-  </Pressable>
+  <Pressable width={200} height={200} borderWidth={1} borderStyle="solid" borderColor="primary" {...props}></Pressable>
+);
+
+export const MultiplePressable: ComponentStory<typeof Pressable> = props => (
+  <VStack spacing={20}>
+    <Pressable width={200} height={200} borderWidth={1} borderStyle="solid" borderColor="primary" {...props} />
+    <Pressable width={200} height={200} borderWidth={1} borderStyle="solid" borderColor="primary" {...props} />
+  </VStack>
 );

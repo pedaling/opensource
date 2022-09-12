@@ -1,8 +1,7 @@
 import type { FC } from 'react';
 import type { ReactElementChild } from '../../types';
 import { ConfigProvider } from '../ConfigProvider';
-import type { ConfigProviderProps } from '../ConfigProvider/ConfigProvider';
-import { GlobalEventProvider } from '../GlobalEventProvider';
+import type { ConfigProviderProps } from '../ConfigProvider';
 import { PortalRoot } from '../PortalRoot';
 import { SafeAreaProvider } from '../SafeAreaProvider';
 import { ThemeProvider } from '../ThemeProvider';
@@ -23,9 +22,7 @@ export const VibrantProvider: FC<VibrantProviderProps> = ({
   <ConfigProvider dependencies={dependencies ?? {}}>
     <SafeAreaProvider>
       <ThemeProvider theme={theme ?? {}} root={root}>
-        <GlobalEventProvider>
-          <PortalRoot zIndex={portalRootZIndex}>{children}</PortalRoot>
-        </GlobalEventProvider>
+        <PortalRoot zIndex={portalRootZIndex}>{children}</PortalRoot>
       </ThemeProvider>
     </SafeAreaProvider>
   </ConfigProvider>
