@@ -38,7 +38,6 @@ export type PressableBoxProps = {
   onPressOut?: () => void;
   onHoverIn?: () => void;
   onHoverOut?: () => void;
-  onBlur?: () => void;
   children: ReactElementChild | ReactElementChild[];
 } & SystemProps;
 
