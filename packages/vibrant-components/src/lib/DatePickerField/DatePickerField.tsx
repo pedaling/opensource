@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box, getElementPosition } from '@vibrant-ui/core';
+import { Box, OverlayBox, getElementPosition } from '@vibrant-ui/core';
 import type { TargetElement } from '@vibrant-ui/utils';
 import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
 import { Calendar } from '../Calendar';
 import { DateInput } from '../DateInput';
-import { Dismissible } from '../Dismissible';
 import { withDatePickerFieldVariation } from './DatePickerFieldProps';
 
 export const DatePickerField = withDatePickerFieldVariation(
@@ -62,24 +61,23 @@ export const DatePickerField = withDatePickerFieldVariation(
           state={state}
           helperText={helperText}
         />
-        <Dismissible active={isCalendarOpened} onDismiss={() => setIsCalendarOpened(false)}>
-          <Box
-            position="absolute"
-            left={0}
-            hidden={!isCalendarOpened}
-            {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
-          >
-            <Calendar
-              range={false}
-              date={value}
-              onDateSelect={selectedDate => {
-                setValue(selectedDate);
+        <OverlayBox
+          open={isCalendarOpened}
+          targetRef={inputRef}
+          onDismiss={() => setIsCalendarOpened(false)}
+          left={0}
+          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
+        >
+          <Calendar
+            range={false}
+            date={value}
+            onDateSelect={selectedDate => {
+              setValue(selectedDate);
 
-                setIsCalendarOpened(false);
-              }}
-            />
-          </Box>
-        </Dismissible>
+              setIsCalendarOpened(false);
+            }}
+          />
+        </OverlayBox>
       </Box>
     );
   }
