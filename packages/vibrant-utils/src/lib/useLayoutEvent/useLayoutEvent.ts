@@ -2,10 +2,17 @@ import type { RefCallback } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 
-export type LayoutEvent = { layout: { width: number; height: number; x: number; y: number }; target?: Element };
+export type LayoutEvent = {
+  width: number;
+  height: number;
+  top: number;
+  left: number;
+  right: number;
+  bottom: number;
+};
 
 export type UseLayoutEventResult = {
-  ref: RefCallback<Element | null>;
+  ref: RefCallback<any | null>;
 };
 
 export const useLayoutEvent = (callback?: (event: LayoutEvent) => void): UseLayoutEventResult => {
@@ -13,18 +20,20 @@ export const useLayoutEvent = (callback?: (event: LayoutEvent) => void): UseLayo
 
   const handleResize = useCallback(
     ([entry]: ResizeObserverEntry[]) => {
+      const { top, left, right, bottom } = entry.contentRect;
+
       const [width, height] =
         entry.borderBoxSize?.length > 0
           ? [entry.borderBoxSize[0].inlineSize, entry.borderBoxSize[0].blockSize]
           : [entry.contentRect.width, entry.contentRect.height];
 
       callback?.({
-        layout: {
-          ...entry.contentRect,
-          width,
-          height,
-        },
-        target: entry.target,
+        width,
+        height,
+        top,
+        left,
+        right: width - right,
+        bottom: height - bottom,
       });
     },
     [callback]

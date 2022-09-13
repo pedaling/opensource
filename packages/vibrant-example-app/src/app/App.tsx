@@ -55,6 +55,7 @@ const App = () => {
         },
       }}
       dependencies={dependencies}
+      portalBottomPriorityOrder={['bottom-bar', 'floating-action-button']}
     >
       <Box base={ScrollView} height="100%">
         <Box base={SafeAreaView}>

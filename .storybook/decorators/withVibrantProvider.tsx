@@ -29,6 +29,7 @@ export const withVibrantProvider: DecoratorFn = storyFn => (
     dependencies={{
       reactSpringModule: ReactSpring,
     }}
+    portalBottomPriorityOrder={['bottom-bar', 'floating-action-button']}
   >
     {storyFn()}
   </VibrantProvider>

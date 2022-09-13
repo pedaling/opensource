@@ -112,15 +112,15 @@ export const Dropdown = withDropdownVariation(
     }, []);
 
     const handleContentResize = useCallback(
-      async ({ layout: { width, height, x, y } }: LayoutEvent) => {
+      async ({ width, height, top, left }: LayoutEvent) => {
         if (!isMobile) {
           const openerRect = await getElementRect(openerRef.current);
 
           const { x: offsetX, y: offsetY } = getOffsetAvoidingOverflowByPosition(
             openerRect,
             {
-              x,
-              y,
+              x: left,
+              y: top,
               width,
               height: height + CONTENT_PADDING * 2,
             },
