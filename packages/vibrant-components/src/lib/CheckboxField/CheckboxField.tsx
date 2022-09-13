@@ -13,6 +13,7 @@ export const CheckboxField = withCheckboxFieldVariation(
     onValueChange,
     label,
     helperText,
+    renderFooter,
     labelLevel,
     helperTextLevel,
     labelColor,
@@ -34,21 +35,30 @@ export const CheckboxField = withCheckboxFieldVariation(
     };
 
     return (
-      <Pressable disabled={disabled} onClick={handleChange}>
-        <HStack spacing={8}>
-          <Checkbox defaultValue={isChecked} disabled={disabled} {...restProps} />
-          <VStack spacing={4} mt={3}>
-            <Body level={labelLevel} color={labelColor}>
-              {label}
-            </Body>
-            {Boolean(helperText) && (
-              <Body level={helperTextLevel} color={helperTextColor}>
-                {helperText}
+      <VStack>
+        <Pressable disabled={disabled} onClick={handleChange}>
+          <HStack spacing={8}>
+            <Checkbox defaultValue={isChecked} disabled={disabled} {...restProps} />
+            <VStack spacing={4} mt={3}>
+              <Body level={labelLevel} color={labelColor}>
+                {label}
               </Body>
-            )}
-          </VStack>
-        </HStack>
-      </Pressable>
+              {Boolean(helperText) && (
+                <Body level={helperTextLevel} color={helperTextColor}>
+                  {helperText}
+                </Body>
+              )}
+            </VStack>
+          </HStack>
+        </Pressable>
+        {renderFooter?.({
+          checked: isChecked,
+          label,
+          disabled,
+          helperText,
+          indeterminate: restProps.indeterminate,
+        })}
+      </VStack>
     );
   }
 );

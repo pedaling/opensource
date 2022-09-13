@@ -1,29 +1,22 @@
-import type { ReactElement, ReactNode } from 'react';
 import type { ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
+import type { DistributivePick } from '@vibrant-ui/utils';
 import type { CheckboxFieldProps } from '../CheckboxField';
 
-type CheckboxFieldOption = {
-  label: CheckboxFieldProps['label'];
+export type CheckboxFieldOption<Value extends string> = DistributivePick<
+  CheckboxFieldProps,
+  'helperText' | 'label' | 'renderFooter'
+> & {
   /**
    * A string representing the unique value of the `CheckboxField`.
    * This is not displayed on the client-side.
    */
-  value: string;
-  helperText?: CheckboxFieldProps['helperText'];
+  value: Value;
 };
 
-type RenderItemOption = CheckboxFieldOption & {
-  checkboxFieldElement: ReactElement<CheckboxFieldProps>;
-  isChecked: boolean;
-};
-
-type CheckboxGroupFieldProps = {
-  options: CheckboxFieldOption[];
-  /**
-   * @default []
-   */
-  defaultValue?: string[];
+export type CheckboxGroupFieldProps<Value extends string, Options extends readonly CheckboxFieldOption<Value>[]> = {
+  options: Options;
+  defaultValue?: Record<Options[number]['value'], boolean>;
   /**
    * @default false
    */
@@ -35,12 +28,9 @@ type CheckboxGroupFieldProps = {
   /**
    * @default 16
    */
-  spacing?: ResponsiveValue<number>;
-  /**
-   * @default ({ checkboxFieldElement }) => checkboxFieldElement
-   */
-  renderItem?: (option: RenderItemOption) => ReactNode;
-  onValueChange?: (value: string[]) => void;
+  spacing?: ResponsiveValue<8 | 16 | 24>;
+  onValueChange?: (value: Record<Options[number]['value'], boolean>, info: { allChecked: boolean }) => void;
 };
 
-export const withCheckboxGroupFieldVariation = withVariation<CheckboxGroupFieldProps>('CheckboxGroupField')();
+export const withCheckboxGroupFieldVariation =
+  withVariation<CheckboxGroupFieldProps<string, CheckboxFieldOption<string>[]>>('CheckboxGroupField')();

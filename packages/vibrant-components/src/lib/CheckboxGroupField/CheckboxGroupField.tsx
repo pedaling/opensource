@@ -1,62 +1,50 @@
-import { Fragment, useEffect, useState } from 'react';
+import type { ReactElement } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckboxField } from '../CheckboxField';
 import { VStack } from '../VStack';
+import type { CheckboxFieldOption, CheckboxGroupFieldProps } from './CheckboxGroupFieldProps';
 import { withCheckboxGroupFieldVariation } from './CheckboxGroupFieldProps';
 
 export const CheckboxGroupField = withCheckboxGroupFieldVariation(
-  ({
-    options,
-    defaultValue = [],
-    disabled = false,
-    size = 'md',
-    spacing = 16,
-    renderItem = ({ checkboxFieldElement }) => checkboxFieldElement,
-    onValueChange,
-  }) => {
-    const [checkedValueSet, setCheckedValueSet] = useState(new Set(defaultValue));
+  ({ options, defaultValue, disabled = false, size = 'md', spacing = 16, onValueChange }) => {
+    const [checkboxValue, setCheckboxValue] = useState(
+      () =>
+        defaultValue ?? options.reduce((prevValue, currentValue) => ({ ...prevValue, [currentValue.value]: false }), {})
+    );
 
     useEffect(() => {
-      setCheckedValueSet(new Set(defaultValue));
+      if (defaultValue) {
+        setCheckboxValue(defaultValue);
+      }
     }, [defaultValue]);
 
     const handleChange = (targetValue: string) => {
-      setCheckedValueSet(prevCheckedValueSet => {
-        const nextCheckedValueSet = new Set(prevCheckedValueSet);
+      setCheckboxValue(prevCheckboxValue => {
+        const nextCheckboxValue = { ...prevCheckboxValue, [targetValue]: !prevCheckboxValue[targetValue] };
 
-        if (nextCheckedValueSet.has(targetValue)) {
-          nextCheckedValueSet.delete(targetValue);
-        } else {
-          nextCheckedValueSet.add(targetValue);
-        }
+        onValueChange?.(nextCheckboxValue, {
+          allChecked: Object.keys(nextCheckboxValue).every(key => nextCheckboxValue[key]),
+        });
 
-        onValueChange?.([...nextCheckedValueSet]);
-
-        return nextCheckedValueSet;
+        return nextCheckboxValue;
       });
     };
 
     return (
       <VStack spacing={spacing}>
         {options.map(({ value, ...checkboxFieldProps }) => (
-          <Fragment key={value}>
-            {renderItem({
-              checkboxFieldElement: (
-                <CheckboxField
-                  key={value}
-                  defaultValue={checkedValueSet.has(value)}
-                  disabled={disabled}
-                  size={size}
-                  onValueChange={() => handleChange(value)}
-                  {...checkboxFieldProps}
-                />
-              ),
-              isChecked: checkedValueSet.has(value),
-              value,
-              ...checkboxFieldProps,
-            })}
-          </Fragment>
+          <CheckboxField
+            key={value}
+            defaultValue={checkboxValue[value]}
+            disabled={disabled}
+            size={size}
+            onValueChange={() => handleChange(value)}
+            {...checkboxFieldProps}
+          />
         ))}
       </VStack>
     );
   }
-);
+) as unknown as <Value extends string, Options extends readonly CheckboxFieldOption<Value>[]>(
+  props: CheckboxGroupFieldProps<Value, Options>
+) => ReactElement;

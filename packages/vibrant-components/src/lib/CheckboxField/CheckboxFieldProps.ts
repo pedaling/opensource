@@ -1,10 +1,23 @@
+import type { ReactElementChild } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { CheckboxProps } from '../Checkbox';
 
 export type CheckboxFieldProps = CheckboxProps & {
   label: string;
-  helperText?: string;
-};
+} & (
+    | {
+        helperText?: never;
+        renderFooter?: (
+          options: Pick<CheckboxFieldProps, 'disabled' | 'helperText' | 'indeterminate' | 'label'> & {
+            checked: boolean;
+          }
+        ) => ReactElementChild;
+      }
+    | {
+        helperText?: string;
+        renderFooter?: never;
+      }
+  );
 
 export const withCheckboxFieldVariation = withVariation<CheckboxFieldProps>('CheckboxField')(
   propVariant({
