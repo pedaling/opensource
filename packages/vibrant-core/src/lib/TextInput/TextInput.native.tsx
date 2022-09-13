@@ -3,10 +3,20 @@ import type { KeyboardTypeOptions, TextInputProps as RNTextInputProps } from 're
 import { TextInput as RNTextInput, StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 import { createShouldForwardProp } from '../createShouldForwardProp';
+import { platform } from '../platform';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
-import { interpolation, replaceValue, systemPropNames } from './TextInputProps';
+import {
+  AndroidAutoCompleteOptions,
+  IosAutoCompleteOptions,
+  interpolation,
+  replaceValue,
+  systemPropNames,
+} from './TextInputProps';
 
 const shouldForwardProp = createShouldForwardProp(systemPropNames);
+
+const IS_IOS = platform === 'ios';
+const IS_ANDROID = platform === 'android';
 
 const SystemTextInput = styled(
   forwardRef<RNTextInput, Omit<RNTextInputProps, keyof SystemProps>>(({ style, ...restProps }, ref) => {
@@ -29,6 +39,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       disabled,
       hidden,
       focusStyle,
+      autoCapitalize = 'none',
+      autoComplete = 'none',
       onFocus,
       onBlur,
       onKeyPress,
@@ -76,6 +88,9 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
     return (
       <SystemTextInput
         ref={innerRef}
+        textContentType={IS_IOS ? IosAutoCompleteOptions[autoComplete] : undefined}
+        autoComplete={IS_ANDROID ? AndroidAutoCompleteOptions[autoComplete] : undefined}
+        autoCapitalize={autoCapitalize}
         keyboardType={keyboardType}
         value={value}
         editable={!readOnly && !disabled}
