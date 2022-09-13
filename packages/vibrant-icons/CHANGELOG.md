@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.16.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.15.7...vibrant-icons-0.16.0) (2022-09-13)
+
+
+### Features
+
+* DollarCircle 아이콘을 추가한다. ([#259](https://github.com/pedaling/opensource/issues/259)) ([826ae8d](https://github.com/pedaling/opensource/commit/826ae8d8d7441beea5dbd30a2b8e1ff8ca405078))
+
+
+### Bug Fixes
+
+* **vibrant-icons:** rename from CheckboxIndeterminated to CheckboxIndeterminate ([#258](https://github.com/pedaling/opensource/issues/258)) ([4bd22df](https://github.com/pedaling/opensource/commit/4bd22df50c90a946cfbcc3523175f29868bd3636))
+
 ### [0.15.7](https://github.com/pedaling/opensource/compare/vibrant-icons-0.15.6...vibrant-icons-0.15.7) (2022-08-31)
 
 ### [0.15.6](https://github.com/pedaling/opensource/compare/vibrant-icons-0.15.5...vibrant-icons-0.15.6) (2022-08-31)
