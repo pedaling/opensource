@@ -1,19 +1,12 @@
 import { withVariation } from '@vibrant-ui/core';
-import type { BackgroundSystemProps, ReactElementChild, SizingSystemProps } from '@vibrant-ui/core';
-
-export type MinInsets = {
-  bottom?: number;
-  left?: number;
-  right?: number;
-  top?: number;
-};
+import type { BackgroundSystemProps, Edge, Insets, ReactElementChild, SizingSystemProps } from '@vibrant-ui/core';
 
 export type SafeAreaViewProps = BackgroundSystemProps &
   SizingSystemProps & {
     children: ReactElementChild;
     mode?: 'margin' | 'padding';
-    edges?: ('bottom' | 'left' | 'right' | 'top')[];
-    minInsets?: MinInsets;
+    edges?: Edge[];
+    minInsets?: Partial<Insets>;
   };
 
 export const withSafeAreaViewVariation = withVariation<SafeAreaViewProps>('SafeAreaView')();

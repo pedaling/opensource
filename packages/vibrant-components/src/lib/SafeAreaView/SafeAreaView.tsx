@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Box, useSafeArea } from '@vibrant-ui/core';
 import { withSafeAreaViewVariation } from './SafeAreaViewProps';
 
@@ -11,31 +12,20 @@ export const SafeAreaView = withSafeAreaViewVariation(
     children,
     ...restProps
   }) => {
-    const { insets: defaultInsets } = useSafeArea();
+    const { generateStyle } = useSafeArea();
 
-    const calculatedInsets = edges.reduce(
-      (prev, edge) => ({
-        ...prev,
-        [`p${edge[0]}`]:
-          typeof defaultInsets[edge] === 'string'
-            ? `max(${defaultInsets[edge]}, ${minInsets[edge] ?? 0}px)`
-            : Math.max(defaultInsets[edge] as number, minInsets[edge] ?? 0),
-      }),
-      {
-        mb: 0,
-        ml: 0,
-        mr: 0,
-        mt: 0,
-        pb: 0,
-        pl: 0,
-        pr: 0,
-        pt: 0,
-      }
+    const style = useMemo(
+      () =>
+        generateStyle({
+          edges,
+          minInsets,
+        }),
+      [edges, generateStyle, minInsets]
     );
 
     return (
-      <Box width={width} height={height} {...(mode === 'margin' && calculatedInsets)}>
-        <Box width="100%" height="100%" {...(mode === 'padding' && calculatedInsets)} {...restProps}>
+      <Box width={width} height={height} {...(mode === 'margin' && style)}>
+        <Box width="100%" height="100%" {...(mode === 'padding' && style)} {...restProps}>
           {children}
         </Box>
       </Box>
