@@ -41,8 +41,8 @@ export const TextField = withTextFieldVariation(
         disabled={disabled}
         prefixText={prefix}
         suffixText={suffix}
-        renderPrefix={renderStart}
-        renderSuffix={renderEnd}
+        renderStart={renderStart}
+        renderEnd={renderEnd}
         onLabelClick={() => inputRef.current?.focus()}
         renderField={style => (
           <TextInput

@@ -11,8 +11,8 @@ type FieldLayoutProps = {
   filled?: boolean;
   prefixText?: string;
   suffixText?: string;
-  renderPrefix?: () => ReactElementChild;
-  renderSuffix?: () => ReactElementChild;
+  renderStart?: () => ReactElementChild;
+  renderEnd?: () => ReactElementChild;
   onLabelClick: () => void;
   renderField: (_: { color: OnColorToken; pt: number; pl: number; pr: number; pb: number }) => ReactElementChild;
 };
