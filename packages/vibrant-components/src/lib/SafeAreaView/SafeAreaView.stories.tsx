@@ -20,9 +20,7 @@ export default {
 } as ComponentMeta<typeof SafeAreaView>;
 
 export const Basic: ComponentStory<typeof SafeAreaView> = props => (
-  <Box width="100%" height="100%" backgroundColor="black">
-    <SafeAreaView {...props}>
-      <Box width={200} height={200} backgroundColor="primary" />
-    </SafeAreaView>
-  </Box>
+  <SafeAreaView {...props} backgroundColor="black">
+    <Box width={200} height={200} backgroundColor="primary" />
+  </SafeAreaView>
 );
