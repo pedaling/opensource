@@ -25,7 +25,7 @@ export const PasswordField = withPasswordFieldVariation(
         focused={isFocused}
         filled={value.length > 0}
         onLabelClick={() => inputRef.current?.focus()}
-        renderSuffix={() => (
+        renderStart={() => (
           <PressableBox onClick={() => setShowValue(!showValue)}>
             {showValue ? <Icon.EyeOn.Thin size={20} fill="onView2" /> : <Icon.EyeOff.Thin size={20} fill="onView2" />}
           </PressableBox>
