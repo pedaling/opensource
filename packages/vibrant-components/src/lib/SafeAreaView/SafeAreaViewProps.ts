@@ -1,5 +1,5 @@
 import { withVariation } from '@vibrant-ui/core';
-import type { BackgroundSystemProps, ReactElementChild, ResponsiveValue, SizingSystemProps } from '@vibrant-ui/core';
+import type { BackgroundSystemProps, ReactElementChild, SizingSystemProps } from '@vibrant-ui/core';
 
 export type MinInsets = {
   bottom?: number;
@@ -13,8 +13,6 @@ export type SafeAreaViewProps = BackgroundSystemProps &
     children: ReactElementChild;
     mode?: 'margin' | 'padding';
     edges?: ('bottom' | 'left' | 'right' | 'top')[];
-    height?: ResponsiveValue<number | string>;
-    width?: ResponsiveValue<number | string>;
     minInsets?: MinInsets;
   };
 
