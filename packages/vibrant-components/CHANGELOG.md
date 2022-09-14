@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.16.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.1...vibrant-components-0.16.2) (2022-09-14)
+
+
+### Features
+
+* add ref to StackedPortal ([#280](https://github.com/pedaling/opensource/issues/280)) ([af3b4a5](https://github.com/pedaling/opensource/commit/af3b4a5da3054eb643f23eccaec6913e9d9c9c91))
+
 ### [0.16.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.0...vibrant-components-0.16.1) (2022-09-14)
 
 
