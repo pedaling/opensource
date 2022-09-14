@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.16.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.16.0...vibrant-core-0.16.1) (2022-09-14)
+
+
+### Features
+
+* add autoCaplitalize and autoComplete in TextField ([#274](https://github.com/pedaling/opensource/issues/274)) ([e60524e](https://github.com/pedaling/opensource/commit/e60524e29f21fd108670d8861a44605525f43d37))
+* add StackedPortal ([#271](https://github.com/pedaling/opensource/issues/271)) ([0e823b4](https://github.com/pedaling/opensource/commit/0e823b420f2ab0af8a35c1005e7fec21dbed01fe))
+
 ## [0.16.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.7...vibrant-core-0.16.0) (2022-09-13)
 
 

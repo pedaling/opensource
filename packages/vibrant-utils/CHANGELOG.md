@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.16.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.16.0...vibrant-utils-0.16.1) (2022-09-14)
+
+
+### Features
+
+* add StackedPortal ([#271](https://github.com/pedaling/opensource/issues/271)) ([0e823b4](https://github.com/pedaling/opensource/commit/0e823b420f2ab0af8a35c1005e7fec21dbed01fe))
+* create CheckboxGroupField component ([#269](https://github.com/pedaling/opensource/issues/269)) ([206cd77](https://github.com/pedaling/opensource/commit/206cd771e5b6a716eb72b6e89873360ce290f92b))
+
 ## [0.16.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.15.7...vibrant-utils-0.16.0) (2022-09-13)
 
 ### [0.15.7](https://github.com/pedaling/opensource/compare/vibrant-utils-0.15.6...vibrant-utils-0.15.7) (2022-08-31)

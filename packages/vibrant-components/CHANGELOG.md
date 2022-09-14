@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.16.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.0...vibrant-components-0.16.1) (2022-09-14)
+
+
+### Features
+
+* add autoCaplitalize and autoComplete in TextField ([#274](https://github.com/pedaling/opensource/issues/274)) ([e60524e](https://github.com/pedaling/opensource/commit/e60524e29f21fd108670d8861a44605525f43d37))
+* add rendering add-ons and text at prefix and suffix in TextField ([#270](https://github.com/pedaling/opensource/issues/270)) ([ea816a3](https://github.com/pedaling/opensource/commit/ea816a3d32ddcc1bc60456da5ff52ce157f13103))
+* add safeArea prop to StackedPortal ([#279](https://github.com/pedaling/opensource/issues/279)) ([13ceead](https://github.com/pedaling/opensource/commit/13ceead1bc9aec071aa3353900e956a80a5d6e5b))
+* add StackedPortal ([#271](https://github.com/pedaling/opensource/issues/271)) ([0e823b4](https://github.com/pedaling/opensource/commit/0e823b420f2ab0af8a35c1005e7fec21dbed01fe))
+* create CheckboxGroupField component ([#269](https://github.com/pedaling/opensource/issues/269)) ([206cd77](https://github.com/pedaling/opensource/commit/206cd771e5b6a716eb72b6e89873360ce290f92b))
+
+
+### Bug Fixes
+
+* Dropdown 컴포넌트에서 safe-area padding 추가하는 박스를 수정한다. ([#275](https://github.com/pedaling/opensource/issues/275)) ([e463b17](https://github.com/pedaling/opensource/commit/e463b179c2cf63266d1a0df474c0f8a8f0b1a821))
+* **vibrant-components:** safe area insets is always applied to padding style ([#277](https://github.com/pedaling/opensource/issues/277)) ([9c650eb](https://github.com/pedaling/opensource/commit/9c650ebad4a3c605fa4212278a034f34f5105b3c))
+
 ## [0.16.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.7...vibrant-components-0.16.0) (2022-09-13)
 
 
