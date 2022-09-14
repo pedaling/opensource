@@ -150,35 +150,7 @@ export const AndroidAutoCompleteOptions = {
 
 export type AutoCapitalizeOption = 'characters' | 'none' | 'sentences' | 'words';
 
-export type AutoCompleteOption =
-  | 'addressCity'
-  | 'addressCountry'
-  | 'addressExtended'
-  | 'addressRegion'
-  | 'addressStreet'
-  | 'birthDayDay'
-  | 'birthDayFull'
-  | 'birthDayMonth'
-  | 'birthDayYear'
-  | 'ccCsc'
-  | 'ccExp'
-  | 'ccExpMonth'
-  | 'ccExpYear'
-  | 'ccNumber'
-  | 'email'
-  | 'familyName'
-  | 'givenName'
-  | 'middleName'
-  | 'name'
-  | 'namePrefix'
-  | 'nameSuffix'
-  | 'newPassword'
-  | 'none'
-  | 'otp'
-  | 'password'
-  | 'postalCode'
-  | 'tel'
-  | 'username';
+export type AutoCompleteOption = keyof typeof HTMLAutoCompleteOptions;
 
 export type TextInputProps = SystemProps &
   (
