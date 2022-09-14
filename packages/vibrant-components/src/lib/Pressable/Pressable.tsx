@@ -19,6 +19,13 @@ export const Pressable = withPressableVariation(
     height,
     alignItems,
     justifyContent,
+    p,
+    pl,
+    pr,
+    pt,
+    pb,
+    px,
+    py,
     ...restProps
   }) => {
     const [isFocused, setIsFocused] = useState(false);
@@ -74,6 +81,13 @@ export const Pressable = withPressableVariation(
             height={height ? '100%' : 'auto'}
             alignItems={alignItems}
             justifyContent={justifyContent}
+            p={p}
+            px={px}
+            py={py}
+            pt={pt}
+            pr={pr}
+            pb={pb}
+            pl={pl}
           >
             {children}
           </Box>

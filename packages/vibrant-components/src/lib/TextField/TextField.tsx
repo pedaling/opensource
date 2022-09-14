@@ -17,6 +17,8 @@ export const TextField = withTextFieldVariation(
     suffix,
     renderStart,
     renderEnd,
+    autoCapitalize = 'none',
+    autoComplete = 'none',
     onValueChange,
     ...restProps
   }) => {
@@ -50,6 +52,8 @@ export const TextField = withTextFieldVariation(
             placeholder={!label || isFocused || value ? placeholder : ''}
             placeholderColor="onView3"
             disabled={disabled}
+            autoCapitalize={autoCapitalize}
+            autoComplete={autoComplete}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             onValueChange={({ value }) => {

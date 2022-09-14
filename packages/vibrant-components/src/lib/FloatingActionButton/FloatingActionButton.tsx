@@ -1,18 +1,11 @@
 import { useMemo } from 'react';
-import {
-  Box,
-  PortalBox,
-  transformResponsiveValue,
-  useCurrentTheme,
-  useSafeArea,
-  useWindowDimensions,
-} from '@vibrant-ui/core';
+import { Box, transformResponsiveValue, useCurrentTheme, useWindowDimensions } from '@vibrant-ui/core';
 import { Pressable } from '../Pressable';
+import { StackedPortal } from '../StackedPortal';
 import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
 
 export const FloatingActionButton = withFloatingActionButtonVariation(
-  ({ position = 'right', offset = 20, IconComponent, innerRef, ...restProps }) => {
-    const { insets } = useSafeArea();
+  ({ order = 1, position = 'right', offset = 20, IconComponent, innerRef, ...restProps }) => {
     const { width: viewportWidth } = useWindowDimensions();
     const {
       theme: { contentArea },
@@ -24,14 +17,13 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
           contentArea.padding,
           value => Math.max(viewportWidth - contentArea.maxWidth, 0) / 2 + value
         ),
-        bottom:
-          typeof insets.bottom === 'string' ? `max(${insets.bottom}, ${offset}px)` : Math.max(insets.bottom, offset),
+        bottom: offset,
       }),
-      [viewportWidth, contentArea, insets, offset, position]
+      [viewportWidth, contentArea, offset, position]
     );
 
     return (
-      <PortalBox {...offsetProps} zIndex={1}>
+      <StackedPortal id="floating-action-button" order={order} zIndex={1} {...offsetProps}>
         <Box borderRadius={25} elevationLevel={1}>
           <Pressable
             ref={innerRef}
@@ -48,7 +40,7 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
             <IconComponent size={20} />
           </Pressable>
         </Box>
-      </PortalBox>
+      </StackedPortal>
     );
   }
 );

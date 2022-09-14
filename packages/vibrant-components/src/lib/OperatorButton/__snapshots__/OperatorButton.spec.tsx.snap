@@ -19,7 +19,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.05);
   border-width: 0;
-  padding: 7px;
+  padding: 0;
   position: relative;
   overflow: hidden;
   -webkit-align-items: stretch;
@@ -71,6 +71,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   box-sizing: border-box;
   width: auto;
   height: auto;
+  padding: 7px;
 }
 
 .emotion-3 {

@@ -1,5 +1,5 @@
-import type { ReactElementChild, TextInputType } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
+import type { AutoCapitalizeOption, AutoCompleteOption, ReactElementChild, TextInputType } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
 type TextFieldProps = BaseInputProps<string> & {
@@ -8,6 +8,8 @@ type TextFieldProps = BaseInputProps<string> & {
   label?: string;
   placeholder?: string;
   helperText?: string;
+  autoComplete?: AutoCompleteOption;
+  autoCapitalize?: AutoCapitalizeOption;
   prefix?: string;
   suffix?: string;
   renderStart?: () => ReactElementChild;

@@ -2,7 +2,7 @@ import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState }
 import styled from '@emotion/styled';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
-import { interpolation, replaceValue, systemPropNames } from './TextInputProps';
+import { HTMLAutoCompleteOptions, interpolation, replaceValue, systemPropNames } from './TextInputProps';
 
 type HTMLInputProps = Exclude<keyof JSX.IntrinsicElements['input'], keyof SystemProps>;
 
@@ -21,6 +21,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       maxLength,
       hidden,
       focusStyle,
+      autoCapitalize,
+      autoComplete = 'none',
       onFocus,
       onBlur,
       onKeyPress,
@@ -71,6 +73,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         type={type}
         value={value}
         inputMode={inputMode}
+        autoCapitalize={autoCapitalize}
+        autoComplete={HTMLAutoCompleteOptions[autoComplete]}
         onFocus={() => {
           setIsFocused(true);
 

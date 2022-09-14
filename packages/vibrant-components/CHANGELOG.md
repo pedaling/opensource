@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.16.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.7...vibrant-components-0.16.0) (2022-09-13)
+
+
+### Features
+
+* Add SafeAreaView component and storybook ([#266](https://github.com/pedaling/opensource/issues/266)) ([8828e2a](https://github.com/pedaling/opensource/commit/8828e2a8a153f464970e8cf6a02a3390a4be41a4))
+* create Checkbox component to vibrant-components ([#262](https://github.com/pedaling/opensource/issues/262)) ([c40584c](https://github.com/pedaling/opensource/commit/c40584ccf77afa05e6a465497f7fa9d6f6e405ee))
+* create CheckboxField component to vibrant-components ([#265](https://github.com/pedaling/opensource/issues/265)) ([b8e2ce2](https://github.com/pedaling/opensource/commit/b8e2ce2a70a84af7c55f2e92aa4f5a5a6a8a0a83))
+* Dismissable을 제거하고 OverlayBox를 구현한다 ([#272](https://github.com/pedaling/opensource/issues/272)) ([1219a72](https://github.com/pedaling/opensource/commit/1219a72043a033029f4666ec243cb55b10a56fb1))
+
+
+### Bug Fixes
+
+* change background color of Dropdown to surface2 ([#264](https://github.com/pedaling/opensource/issues/264)) ([200dd69](https://github.com/pedaling/opensource/commit/200dd69c980ec073832ce8c210b55b6fc4ed7798))
+* **vibrant-components:** fix disclosure icon align ([#267](https://github.com/pedaling/opensource/issues/267)) ([f16739f](https://github.com/pedaling/opensource/commit/f16739fe9dfb9df519b192bcf6275e71eb577b06))
+* **vibrant-components:** fix VerificationCodeField ui issue ([#261](https://github.com/pedaling/opensource/issues/261)) ([09b7304](https://github.com/pedaling/opensource/commit/09b7304bd98507969f2e5b80603a8b9d6c068a3a))
+* **vibrant-components:** fix VerificationCodeField vertical spacing to 12px ([#268](https://github.com/pedaling/opensource/issues/268)) ([67b1594](https://github.com/pedaling/opensource/commit/67b1594dcf325c21f9d047d2bfe378db1ff5b347))
+* **vibrant-components:** remove elevationLevel prop from Pressable ([#260](https://github.com/pedaling/opensource/issues/260)) ([9e02e4d](https://github.com/pedaling/opensource/commit/9e02e4ddf3eeaaa84e6b3c18367b20469f87993d))
+
 ### [0.15.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.15.6...vibrant-components-0.15.7) (2022-08-31)
 
 

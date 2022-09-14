@@ -2,7 +2,6 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Icon } from '@vibrant-ui/icons';
 import { VStack } from '../VStack';
 import { TextField } from './TextField';
-
 export default {
   title: 'TextField',
   component: TextField,

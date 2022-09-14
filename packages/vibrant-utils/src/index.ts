@@ -1,6 +1,7 @@
 export type { DeepPartial } from './lib/type/DeepPartial';
 export type { DeepWritable } from './lib/type/DeepWritable';
 export type { DistributiveOmit } from './lib/type/DistributiveOmit';
+export type { DistributivePick } from './lib/type/DistributivePick';
 export type { TargetElement, Rect } from './lib/getElementRect';
 export type { Path } from './lib/type/Path';
 export { isDefined } from './lib/isDefined';

@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.16.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.7...vibrant-core-0.16.0) (2022-09-13)
+
+
+### Features
+
+* Dismissable을 제거하고 OverlayBox를 구현한다 ([#272](https://github.com/pedaling/opensource/issues/272)) ([1219a72](https://github.com/pedaling/opensource/commit/1219a72043a033029f4666ec243cb55b10a56fb1))
+
+
+### Bug Fixes
+
+* MediaQueryList chane 이벤트 대신 지원 범위가 더 넓은 addListener를 사용한다 ([#273](https://github.com/pedaling/opensource/issues/273)) ([01b9933](https://github.com/pedaling/opensource/commit/01b993363be0e82ac5a7ea3853fc190b2fc9e202))
+* **vibrant-components:** remove elevationLevel prop from Pressable ([#260](https://github.com/pedaling/opensource/issues/260)) ([9e02e4d](https://github.com/pedaling/opensource/commit/9e02e4ddf3eeaaa84e6b3c18367b20469f87993d))
+
 ### [0.15.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.6...vibrant-core-0.15.7) (2022-08-31)
 
 ### [0.15.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.15.5...vibrant-core-0.15.6) (2022-08-31)

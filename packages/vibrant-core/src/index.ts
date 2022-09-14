@@ -5,7 +5,13 @@ export type { SvgProps } from './lib/Svg';
 export { Text } from './lib/Text';
 export type { TextProps, TextElements, TextChildren } from './lib/Text';
 export { TextInput } from './lib/TextInput';
-export type { TextInputType, TextInputRef, TextInputProps } from './lib/TextInput';
+export type {
+  TextInputType,
+  TextInputRef,
+  TextInputProps,
+  AutoCapitalizeOption,
+  AutoCompleteOption,
+} from './lib/TextInput';
 export type { ReactElementChild, ReactTextChild, ResponsiveValue, WindowDimensions } from './types';
 export type {
   BackgroundSystemProps,
@@ -35,8 +41,6 @@ export { ConfigProvider, useConfig } from './lib/ConfigProvider';
 export type { SystemPropThemeScale } from './lib/createSystemProp';
 export { useResponsiveValue } from './lib/useResponsiveValue';
 export { VibrantProvider } from './lib/VibrantProvider';
-export { useGlobalEvent, GlobalEventProvider } from './lib/GlobalEventProvider';
-export type { ClickEvent } from './lib/GlobalEventProvider';
 export { getElementPosition } from './lib/getElementPosition';
 export { transformResponsiveValue } from './lib/transformResponsiveValue';
 export { useInterpolation } from './lib/useInterpolation';
@@ -48,6 +52,8 @@ export { isNative } from './lib/isNative';
 export { ScrollBox } from './lib/ScrollBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
 export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
-export { PortalRoot } from './lib/PortalRoot';
+export { PortalRootProvider, usePortalRoot } from './lib/PortalRoot';
 export { platform } from './lib/platform';
+export { OverlayBox } from './lib/OverlayBox';
 export type { Platform } from './lib/platform';
+export { useStackedPortal } from './lib/StackedPortalContext';
