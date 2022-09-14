@@ -9,28 +9,13 @@ type FieldLayoutProps = {
   disabled?: boolean;
   focused?: boolean;
   filled?: boolean;
+  prefixText?: string;
+  suffixText?: string;
+  renderStart?: () => ReactElementChild;
+  renderEnd?: () => ReactElementChild;
   onLabelClick: () => void;
   renderField: (_: { color: OnColorToken; pt: number; pl: number; pr: number; pb: number }) => ReactElementChild;
-} & (
-  | {
-      prefixText?: never;
-      renderPrefix?: () => ReactElementChild;
-    }
-  | {
-      prefixText?: string;
-      renderPrefix?: never;
-    }
-) &
-  (
-    | {
-        suffixText?: never;
-        renderSuffix?: () => ReactElementChild;
-      }
-    | {
-        suffixText?: string;
-        renderSuffix?: never;
-      }
-  );
+};
 
 export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLayout')(
   propVariant({
@@ -146,12 +131,12 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         keep: true,
       },
       {
-        name: 'renderPrefix',
+        name: 'renderStart',
         keep: true,
       },
     ],
-    variants: ({ prefixText, renderPrefix }) => ({
-      hasPrefix: prefixText || renderPrefix,
+    variants: ({ prefixText, renderStart }) => ({
+      hasPrefix: prefixText || renderStart,
     }),
   }),
   propVariant({
@@ -161,12 +146,12 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         keep: true,
       },
       {
-        name: 'renderSuffix',
+        name: 'renderEnd',
         keep: true,
       },
     ],
-    variants: ({ suffixText, renderSuffix }) => ({
-      hasSuffix: suffixText || renderSuffix,
+    variants: ({ suffixText, renderEnd }) => ({
+      hasSuffix: suffixText || renderEnd,
     }),
   }),
   propVariant({

@@ -21,8 +21,8 @@ export const FieldLayout = withFieldLayoutVariation(
     valueColor,
     onLabelClick,
     renderField,
-    renderPrefix,
-    renderSuffix,
+    renderStart,
+    renderEnd,
     shrink,
     prefixText,
     suffixText,
@@ -31,8 +31,8 @@ export const FieldLayout = withFieldLayoutVariation(
       <Box
         flexDirection="row"
         alignItems="center"
-        pl={renderPrefix ? 15 : 0}
-        pr={renderSuffix ? 15 : 0}
+        pl={renderStart ? 15 : 0}
+        pr={renderEnd ? 15 : 0}
         width="100%"
         height={50}
         borderWidth={1}
@@ -41,15 +41,15 @@ export const FieldLayout = withFieldLayoutVariation(
         backgroundColor={backgroundColor}
         borderRadiusLevel={1}
       >
-        {renderPrefix?.()}
+        {renderStart?.()}
         <Box position="relative" width="100%" height="100%" cursor={cursor}>
           <PressableBox cursor={cursor} onClick={onLabelClick}>
             <Transition animation={animation} duration={100}>
               <Text
                 position="absolute"
                 zIndex={1}
-                left={renderPrefix ? 12 : 15}
-                right={renderSuffix ? 12 : 15}
+                left={renderStart ? 12 : 15}
+                right={renderEnd ? 12 : 15}
                 color={textColor}
                 lineLimit={1}
                 wordBreak="break-all"
@@ -84,7 +84,7 @@ export const FieldLayout = withFieldLayoutVariation(
             </Text>
           </HStack>
         </Box>
-        {renderSuffix?.()}
+        {renderEnd?.()}
       </Box>
       {Boolean(helperText) && (
         <Body level={4} color={textColor}>
