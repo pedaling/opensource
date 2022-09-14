@@ -3,6 +3,7 @@ import { withVariation } from '@vibrant-ui/core';
 import type { IconProps } from '@vibrant-ui/icons';
 
 type FloatingActionButtonProps = {
+  order?: number;
   ref?: Ref<any>;
   position?: 'left' | 'right';
   offset?: number;

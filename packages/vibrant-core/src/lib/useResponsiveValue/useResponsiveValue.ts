@@ -31,15 +31,13 @@ export const useResponsiveValue = ({ rootBreakPoints } = { rootBreakPoints: fals
         setCurrentIndex(index);
       }
 
-      mediaQuery.addEventListener('change', handler);
+      mediaQuery.addListener(handler);
 
       return handler;
     });
 
     return () => {
-      mediaQueryList.forEach((mediaQuery, index) =>
-        mediaQuery.removeEventListener('change', mediaQueryHandlers[index])
-      );
+      mediaQueryList.forEach((mediaQuery, index) => mediaQuery.removeListener(mediaQueryHandlers[index]));
     };
   }, [breakpoints]);
 

@@ -25,3 +25,5 @@ export { Dropdown } from './lib/Dropdown';
 export { FloatingActionButton } from './lib/FloatingActionButton';
 export { Checkbox } from './lib/Checkbox';
 export { CheckboxField } from './lib/CheckboxField';
+export { CheckboxGroupField } from './lib/CheckboxGroupField';
+export { StackedPortal } from './lib/StackedPortal';

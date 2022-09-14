@@ -1,1 +1,1 @@
-export { PortalRoot, usePortalRoot } from './PortalRoot';
+export { PortalRootProvider, usePortalRoot } from './PortalRoot';
