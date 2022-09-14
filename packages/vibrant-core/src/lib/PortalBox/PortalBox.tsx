@@ -3,7 +3,7 @@ import { Box } from '../Box';
 import { usePortalRoot } from '../PortalRoot';
 import { withPortalBoxVariation } from './PortalBoxProps';
 
-export const PortalBox = withPortalBoxVariation(({ children, ...restProps }) => {
+export const PortalBox = withPortalBoxVariation(({ innerRef, children, ...restProps }) => {
   const { container } = usePortalRoot();
 
   if (!container) {
@@ -11,7 +11,7 @@ export const PortalBox = withPortalBoxVariation(({ children, ...restProps }) => 
   }
 
   return ReactDOM.createPortal(
-    <Box position="fixed" {...restProps}>
+    <Box ref={innerRef} position="fixed" {...restProps}>
       {children}
     </Box>,
     container as Element

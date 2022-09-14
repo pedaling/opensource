@@ -5,7 +5,7 @@ import { isDefined } from '@vibrant-ui/utils';
 import { withStackedPortalVariation } from './StackedPortalProps';
 
 export const StackedPortal = withStackedPortalVariation(
-  ({ id, order, children, position, positionOffset, safeAreaMode = 'none', ...restProps }) => {
+  ({ id, order, innerRef, children, position, positionOffset, safeAreaMode = 'none', ...restProps }) => {
     const { insets } = useSafeArea();
     const { addEventListener, registerPortal, unregisterPortal, setPortalHeight } = useStackedPortal();
 
@@ -86,7 +86,7 @@ export const StackedPortal = withStackedPortalVariation(
     }, [calculatedOffset, height, id, insets, order, position, positionOffset, setPortalHeight]);
 
     return (
-      <PortalBox hidden={calculatedOffset === null} {...positionStyle} {...restProps}>
+      <PortalBox ref={innerRef} hidden={calculatedOffset === null} {...positionStyle} {...restProps}>
         <Box onLayout={handleLayout}>{children}</Box>
       </PortalBox>
     );
