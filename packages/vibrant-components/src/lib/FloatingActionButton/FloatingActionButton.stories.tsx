@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Paragraph } from '@vibrant-ui/components';
 import { Icon } from '@vibrant-ui/icons';
+import { Paragraph } from '../Paragraph';
 import { VStack } from '../VStack';
 import { FloatingActionButton } from './FloatingActionButton';
 

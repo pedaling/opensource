@@ -23,7 +23,7 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
     );
 
     return (
-      <StackedPortal id="floating-action-button" order={order} zIndex={1} {...offsetProps}>
+      <StackedPortal id="floating-action-button" order={order} zIndex={1} safeAreaMode="margin" {...offsetProps}>
         <Box borderRadius={25} elevationLevel={1}>
           <Pressable
             ref={innerRef}
