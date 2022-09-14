@@ -12,6 +12,7 @@ type TextFieldProps = BaseInputProps<string> & {
   autoCapitalize?: AutoCapitalizeOption;
   prefix?: string;
   suffix?: string;
+  clearable?: boolean;
   renderStart?: () => ReactElementChild;
   renderEnd?: () => ReactElementChild;
 };

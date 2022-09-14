@@ -20,12 +20,19 @@ export const TextField = withTextFieldVariation(
     autoCapitalize = 'none',
     autoComplete = 'none',
     onValueChange,
+    clearable = false,
     ...restProps
   }) => {
     const inputRef = useRef<TextInputRef>(null);
 
     const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState(defaultValue ?? '');
+
+    const onClearButtonClick = () => {
+      setValue('');
+
+      setIsFocused(false);
+    };
 
     useEffect(() => {
       setValue(defaultValue ?? '');
@@ -43,6 +50,8 @@ export const TextField = withTextFieldVariation(
         suffixText={suffix}
         renderStart={renderStart}
         renderEnd={renderEnd}
+        clearable={clearable}
+        onClearButtonClick={onClearButtonClick}
         onLabelClick={() => inputRef.current?.focus()}
         renderField={style => (
           <TextInput
