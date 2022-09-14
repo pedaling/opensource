@@ -208,7 +208,11 @@ export const Dropdown = withDropdownVariation(
                 <Box
                   mt="auto"
                   pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
-                  pb={BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}
+                  pb={
+                    typeof insets.bottom === 'string'
+                      ? `calc(${BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}px + ${insets.bottom})`
+                      : BOTTOM_SHEET_CONTENT_BOTTOM_PADDING + insets.bottom
+                  }
                   width="100%"
                   maxHeight={viewportHeight - 120}
                   backgroundColor="surface2"
@@ -221,16 +225,9 @@ export const Dropdown = withDropdownVariation(
                     }}
                     duration={150}
                   >
-                    <ScrollBox
-                      height={contentHeight}
-                      hideScroll={
-                        (contentHeight ?? 0) +
-                          (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
-                        viewportHeight - 120
-                      }
-                    >
+                    <ScrollBox height={contentHeight}>
                       <Box onLayout={handleContentResize} flexShrink={0}>
-                        <Box pb={insets.bottom}>{renderContents(closeDropdown)}</Box>
+                        {renderContents(closeDropdown)}
                       </Box>
                     </ScrollBox>
                   </Transition>
