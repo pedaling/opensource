@@ -1,7 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { VStack } from '../VStack';
 import { TextField } from './TextField';
-
 export default {
   title: 'TextField',
   component: TextField,
