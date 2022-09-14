@@ -131,12 +131,12 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         keep: true,
       },
       {
-        name: 'renderPrefix',
+        name: 'renderStart',
         keep: true,
       },
     ],
-    variants: ({ prefixText, renderPrefix }) => ({
-      hasPrefix: prefixText || renderPrefix,
+    variants: ({ prefixText, renderStart }) => ({
+      hasPrefix: prefixText || renderStart,
     }),
   }),
   propVariant({
@@ -146,12 +146,12 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         keep: true,
       },
       {
-        name: 'renderSuffix',
+        name: 'renderEnd',
         keep: true,
       },
     ],
-    variants: ({ suffixText, renderSuffix }) => ({
-      hasSuffix: suffixText || renderSuffix,
+    variants: ({ suffixText, renderEnd }) => ({
+      hasSuffix: suffixText || renderEnd,
     }),
   }),
   propVariant({
