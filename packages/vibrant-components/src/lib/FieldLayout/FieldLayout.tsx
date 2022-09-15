@@ -1,4 +1,5 @@
 import { Box, PressableBox, Text } from '@vibrant-ui/core';
+import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
@@ -23,6 +24,8 @@ export const FieldLayout = withFieldLayoutVariation(
     renderField,
     renderStart,
     renderEnd,
+    showClearButton,
+    onClearButtonClick,
     shrink,
     prefixText,
     suffixText,
@@ -85,6 +88,11 @@ export const FieldLayout = withFieldLayoutVariation(
           </HStack>
         </Box>
         {renderEnd?.()}
+        {showClearButton && (
+          <PressableBox pl={renderEnd ? 12 : 0} pr={12} onClick={onClearButtonClick}>
+            <Icon.CloseCircle.Fill size={20} fill="onView2" />
+          </PressableBox>
+        )}
       </Box>
       {Boolean(helperText) && (
         <Body level={4} color={textColor}>

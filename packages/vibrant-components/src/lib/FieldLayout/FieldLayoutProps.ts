@@ -11,6 +11,8 @@ type FieldLayoutProps = {
   filled?: boolean;
   prefixText?: string;
   suffixText?: string;
+  showClearButton?: boolean;
+  onClearButtonClick?: () => void;
   renderStart?: () => ReactElementChild;
   renderEnd?: () => ReactElementChild;
   onLabelClick: () => void;
