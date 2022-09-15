@@ -28,6 +28,7 @@ export const TextField = withTextFieldVariation(
     const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState(defaultValue ?? '');
 
+    const hasValue = value.length > 0;
     const onClearButtonClick = () => {
       setValue('');
 
@@ -50,7 +51,7 @@ export const TextField = withTextFieldVariation(
         suffixText={suffix}
         renderStart={renderStart}
         renderEnd={renderEnd}
-        clearable={clearable}
+        showClearButton={clearable && hasValue}
         onClearButtonClick={onClearButtonClick}
         onLabelClick={() => inputRef.current?.focus()}
         renderField={style => (
