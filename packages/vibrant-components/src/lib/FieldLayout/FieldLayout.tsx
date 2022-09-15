@@ -24,7 +24,7 @@ export const FieldLayout = withFieldLayoutVariation(
     renderField,
     renderStart,
     renderEnd,
-    clearable,
+    showClearButton,
     onClearButtonClick,
     shrink,
     prefixText,
@@ -88,7 +88,7 @@ export const FieldLayout = withFieldLayoutVariation(
           </HStack>
         </Box>
         {renderEnd?.()}
-        {clearable && (
+        {showClearButton && (
           <PressableBox pl={renderEnd ? 12 : 0} pr={12} onClick={onClearButtonClick}>
             <Icon.CloseCircle.Fill size={20} fill="onView2" />
           </PressableBox>
