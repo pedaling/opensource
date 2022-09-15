@@ -7,7 +7,7 @@ export type CheckboxFieldProps = CheckboxProps & {
 } & (
     | {
         helperText?: never;
-        renderFooter?: (
+        renderContent?: (
           options: Pick<CheckboxFieldProps, 'disabled' | 'helperText' | 'indeterminate' | 'label'> & {
             checked: boolean;
           }
@@ -15,7 +15,7 @@ export type CheckboxFieldProps = CheckboxProps & {
       }
     | {
         helperText?: string;
-        renderFooter?: never;
+        renderContent?: never;
       }
   );
 

@@ -5,7 +5,7 @@ import type { CheckboxFieldProps } from '../CheckboxField';
 
 export type CheckboxFieldOption<Value extends string> = DistributivePick<
   CheckboxFieldProps,
-  'helperText' | 'label' | 'renderFooter'
+  'helperText' | 'label' | 'renderContent'
 > & {
   /**
    * A string representing the unique value of the `CheckboxField`.
