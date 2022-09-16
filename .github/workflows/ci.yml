@@ -43,11 +43,10 @@ jobs:
         run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
       - name: Typecheck Affected Project
         run: yarn nx affected --target=typecheck --parallel=1
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          verbose: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   chromatic:
     runs-on: ubuntu-latest
