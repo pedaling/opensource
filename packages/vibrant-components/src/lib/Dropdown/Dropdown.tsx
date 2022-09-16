@@ -6,6 +6,7 @@ import {
   ThemeProvider,
   getWindowDimensions,
   useCurrentThemeMode,
+  useLockBodyScroll,
   useResponsiveValue,
   useSafeArea,
   useWindowDimensions,
@@ -88,6 +89,8 @@ export const Dropdown = withDropdownVariation(
       [rootMode]
     );
 
+    useLockBodyScroll(isMobile && (isOpen || visible));
+
     const openDropdown = useCallback(async () => {
       if (isMobile || !openerRef.current || !targetRef.current) {
         return;
@@ -133,9 +136,11 @@ export const Dropdown = withDropdownVariation(
 
         setContentHeight(height);
 
-        setVisible(true);
+        if (isOpen) {
+          setVisible(true);
+        }
       },
-      [isMobile, position, spacing]
+      [isMobile, isOpen, position, spacing]
     );
 
     const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
