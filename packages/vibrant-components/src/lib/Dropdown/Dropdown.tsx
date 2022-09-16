@@ -76,6 +76,7 @@ export const Dropdown = withDropdownVariation(
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
     const [contentHeight, setContentHeight] = useState<number>();
+    const [isInitialContentHeightSet, setIsInitialContentHeightSet] = useState(false);
     const { height: viewportHeight } = useWindowDimensions();
     const { insets } = useSafeArea();
 
@@ -91,27 +92,10 @@ export const Dropdown = withDropdownVariation(
 
     useLockBodyScroll(isMobile && (isOpen || visible));
 
-    const openDropdown = useCallback(async () => {
-      if (isMobile || !openerRef.current || !targetRef.current) {
-        return;
-      }
-
-      const [openerRect, targetRect] = await Promise.all([
-        getElementRect(openerRef.current),
-        getElementRect(targetRef.current),
-      ]);
-
-      const { x, y } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
-
-      setOffset({ x, y });
-
-      setVisible(true);
-    }, [isMobile, position, spacing]);
+    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
-
-      setContentHeight(undefined);
     }, []);
 
     const handleContentResize = useCallback(
@@ -134,24 +118,36 @@ export const Dropdown = withDropdownVariation(
           setOffset({ x: offsetX, y: offsetY });
         }
 
-        setContentHeight(height);
-
         if (isOpen) {
           setVisible(true);
         }
+
+        setContentHeight(height);
       },
       [isMobile, isOpen, position, spacing]
     );
 
-    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
+    useEffect(() => {
+      if (!isOpen) {
+        setVisible(false);
+
+        setOffset({});
+
+        setIsInitialContentHeightSet(false);
+      }
+    }, [isOpen]);
 
     useEffect(() => {
-      if (isOpen) {
-        openDropdown();
-      } else {
-        setVisible(false);
+      if (contentHeight !== undefined) {
+        setIsInitialContentHeightSet(true);
       }
-    }, [isOpen, openDropdown]);
+    }, [contentHeight]);
+
+    useEffect(() => {
+      if (!visible) {
+        setContentHeight(undefined);
+      }
+    }, [visible]);
 
     return (
       <Box position="relative">
@@ -168,7 +164,7 @@ export const Dropdown = withDropdownVariation(
                 x: offset.x,
                 y: offset.y,
               }}
-              duration={150}
+              duration={200}
             >
               <OverlayBox open={true} ref={targetRef} onDismiss={closeDropdown} targetRef={openerRef} zIndex={Z_INDEX}>
                 <Box
@@ -201,14 +197,18 @@ export const Dropdown = withDropdownVariation(
         )}
         {isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
+            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={200}>
               <Transition
                 animation={{
-                  y: visible
-                    ? 0
-                    : (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING),
+                  y:
+                    visible && isInitialContentHeightSet
+                      ? 0
+                      : contentHeight
+                      ? contentHeight + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING)
+                      : undefined,
                 }}
-                duration={visible ? 150 : 100}
+                duration={200}
+                style={{ y: viewportHeight }}
               >
                 <Box
                   mt="auto"
