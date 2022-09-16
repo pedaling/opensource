@@ -58,3 +58,4 @@ export { platform } from './lib/platform';
 export { OverlayBox } from './lib/OverlayBox';
 export type { Platform } from './lib/platform';
 export { useStackedPortal } from './lib/StackedPortalContext';
+export { useLockBodyScroll } from './lib/useLockBodyScroll';
