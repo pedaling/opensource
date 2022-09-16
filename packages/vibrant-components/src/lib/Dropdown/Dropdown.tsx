@@ -134,7 +134,7 @@ export const Dropdown = withDropdownVariation(
     }, [isOpen]);
 
     useEffect(() => {
-      if (isMobile && contentHeight !== undefined) {
+      if (contentHeight !== undefined) {
         setVisible(true);
       }
     }, [contentHeight, isMobile]);
@@ -178,7 +178,7 @@ export const Dropdown = withDropdownVariation(
                           }
                         : {}
                     }
-                    duration={150}
+                    duration={200}
                   >
                     <Box overflow="hidden" height={contentHeight}>
                       <Box onLayout={handleContentResize} flexShrink={0}>
@@ -223,7 +223,7 @@ export const Dropdown = withDropdownVariation(
                     animation={{
                       height: contentHeight,
                     }}
-                    duration={150}
+                    duration={200}
                   >
                     <ScrollBox
                       height={contentHeight}
