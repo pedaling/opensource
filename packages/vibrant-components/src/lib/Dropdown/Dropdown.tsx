@@ -137,7 +137,7 @@ export const Dropdown = withDropdownVariation(
       if (contentHeight !== undefined) {
         setVisible(true);
       }
-    }, [contentHeight, isMobile]);
+    }, [contentHeight]);
 
     useEffect(() => {
       if (!visible) {
