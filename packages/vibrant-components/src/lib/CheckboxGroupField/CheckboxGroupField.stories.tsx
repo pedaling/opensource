@@ -12,7 +12,7 @@ export default {
       {
         value: 'orange',
         label: 'Orange',
-        renderFooter: ({ checked }) =>
+        renderContent: ({ checked }) =>
           checked && (
             <Body level={2} color="primary">
               It's footer!

@@ -29,6 +29,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/SelectOptionItem/SelectOptionItem.stories.tsx'),
   require('../../vibrant-components/src/lib/Space/Space.stories.tsx'),
   require('../../vibrant-components/src/lib/Stack/Stack.stories.tsx'),
+  require('../../vibrant-components/src/lib/StackedPortal/StackedPortal.stories.tsx'),
   require('../../vibrant-components/src/lib/Switch/Switch.stories.tsx'),
   require('../../vibrant-components/src/lib/Tab/Tab.stories.tsx'),
   require('../../vibrant-components/src/lib/TabGroup/TabGroup.stories.tsx'),

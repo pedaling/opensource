@@ -13,7 +13,7 @@ export const CheckboxField = withCheckboxFieldVariation(
     onValueChange,
     label,
     helperText,
-    renderFooter,
+    renderContent,
     labelLevel,
     helperTextLevel,
     labelColor,
@@ -38,7 +38,7 @@ export const CheckboxField = withCheckboxFieldVariation(
       <VStack>
         <Pressable disabled={disabled} onClick={handleChange}>
           <HStack spacing={8}>
-            <Checkbox defaultValue={isChecked} disabled={disabled} {...restProps} />
+            <Checkbox defaultValue={isChecked} disabled={disabled} onValueChange={handleChange} {...restProps} />
             <VStack spacing={4} mt={3}>
               <Body level={labelLevel} color={labelColor}>
                 {label}
@@ -51,7 +51,7 @@ export const CheckboxField = withCheckboxFieldVariation(
             </VStack>
           </HStack>
         </Pressable>
-        {renderFooter?.({
+        {renderContent?.({
           checked: isChecked,
           label,
           disabled,
