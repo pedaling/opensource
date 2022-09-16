@@ -15,7 +15,7 @@ export const withTransformStyle = (style: any) => {
 
     return {
       ...restStyle,
-      transform,
+      ...(transform.length > 0 ? { transform } : {}),
     };
   }
 
