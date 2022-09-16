@@ -27,4 +27,5 @@ export { Checkbox } from './lib/Checkbox';
 export { CheckboxField } from './lib/CheckboxField';
 export { CheckboxGroupField } from './lib/CheckboxGroupField';
 export { StackedPortal } from './lib/StackedPortal';
+export { PasswordField } from './lib/PasswordField';
 export { SafeAreaView } from './lib/SafeAreaView';
