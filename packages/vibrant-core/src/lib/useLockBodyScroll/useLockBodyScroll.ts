@@ -52,11 +52,11 @@ export const useLockBodyScroll = (active = false) => {
   };
 
   useEffect(() => {
-    if (active) {
-      lockBodyScroll();
-    } else {
-      unlockBodyScroll();
+    if (!active) {
+      return;
     }
+
+    lockBodyScroll();
 
     return () => {
       unlockBodyScroll();
