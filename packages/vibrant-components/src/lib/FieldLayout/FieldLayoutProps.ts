@@ -16,7 +16,14 @@ type FieldLayoutProps = {
   renderStart?: () => ReactElementChild;
   renderEnd?: () => ReactElementChild;
   onLabelClick: () => void;
-  renderField: (_: { color: OnColorToken; pt: number; pl: number; pr: number; pb: number }) => ReactElementChild;
+  renderField: (style: {
+    height: number;
+    color: OnColorToken;
+    pt: number;
+    pl: number;
+    pr: number;
+    pb: number;
+  }) => ReactElementChild;
 };
 
 export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLayout')(
