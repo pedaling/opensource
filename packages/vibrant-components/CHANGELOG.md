@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.16.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.2...vibrant-components-0.16.3) (2022-09-16)
+
+
+### Features
+
+* add clearable props in TextField component ([#276](https://github.com/pedaling/opensource/issues/276)) ([de9371f](https://github.com/pedaling/opensource/commit/de9371f80842e3d8336ddbce1c5295fb5a129b2e))
+* Dropdown에서 바텀싯으로 열렸을 때 바디 스크롤을 막는다.  ([#284](https://github.com/pedaling/opensource/issues/284)) ([1bd9cba](https://github.com/pedaling/opensource/commit/1bd9cba2c985628f350af8270a89517b77f4640a))
+
+
+### Bug Fixes
+
+* Drodpown 바텀싯 열릴 때 슬라이드 애니메이션이 처음부터 시작되지 않는 오류를 수정한다. ([#286](https://github.com/pedaling/opensource/issues/286)) ([4604a30](https://github.com/pedaling/opensource/commit/4604a305af61b69f7aa11a7595482a0c2e4de801))
+* fix android TextInput placeholder vertical scroll ([#283](https://github.com/pedaling/opensource/issues/283)) ([2cf042e](https://github.com/pedaling/opensource/commit/2cf042e145100c31a01e787e63188d956270e29d))
+* fix bugs and change name for checkbox ([#282](https://github.com/pedaling/opensource/issues/282)) ([2b4ca26](https://github.com/pedaling/opensource/commit/2b4ca26cecfbda787333ca0698caa49db9b0840e))
+
 ### [0.16.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.1...vibrant-components-0.16.2) (2022-09-14)
 
 

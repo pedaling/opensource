@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.16.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.16.2...vibrant-core-0.16.3) (2022-09-16)
+
+
+### Features
+
+* Dropdown에서 바텀싯으로 열렸을 때 바디 스크롤을 막는다.  ([#284](https://github.com/pedaling/opensource/issues/284)) ([1bd9cba](https://github.com/pedaling/opensource/commit/1bd9cba2c985628f350af8270a89517b77f4640a))
+
 ### [0.16.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.16.1...vibrant-core-0.16.2) (2022-09-14)
 
 

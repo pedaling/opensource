@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.16.3](https://github.com/pedaling/opensource/compare/vibrant-motion-0.16.2...vibrant-motion-0.16.3) (2022-09-16)
+
+
+### Bug Fixes
+
+* Drodpown 바텀싯 열릴 때 슬라이드 애니메이션이 처음부터 시작되지 않는 오류를 수정한다. ([#286](https://github.com/pedaling/opensource/issues/286)) ([4604a30](https://github.com/pedaling/opensource/commit/4604a305af61b69f7aa11a7595482a0c2e4de801))
+
 ### [0.16.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.16.1...vibrant-motion-0.16.2) (2022-09-14)
 
 ### [0.16.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.16.0...vibrant-motion-0.16.1) (2022-09-14)
