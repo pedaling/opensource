@@ -38,6 +38,12 @@
             "command": "exit 0"
           }
         },
+        "typecheck": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "exit 0"
+          }
+        },
         "merge-coverage": {
           "executor": "@class101/workspace-plugin:merge-coverage",
           "dependsOn": [
