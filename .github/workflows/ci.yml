@@ -23,6 +23,7 @@ jobs:
           fetch-depth: 0
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
+        id: setSHAs
         with:
          main-branch-name: main
       - name: Get yarn cache directory path
@@ -49,6 +50,7 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          git-commit: ${{ steps.setSHAs.outputs.head }}
 
   chromatic:
     runs-on: ubuntu-latest
