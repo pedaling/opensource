@@ -189,8 +189,6 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       pt: label ? 23 : 15,
       pl: hasPrefixText ? 4 : hasPrefixComponent ? 12 : 15,
       pr: hasSuffixText ? 4 : hasSuffixComponent ? 12 : 15,
-      // pl: hasPrefixComponent ? 4 : hasPrefixText ? 12 : 15,
-      // pr: hasSuffixComponent ? 4 : hasSuffixText ? 12 : 15,
       pb: label ? 8 : 15,
     }),
   })

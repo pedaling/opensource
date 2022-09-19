@@ -80,7 +80,7 @@ export const FieldLayout = withFieldLayoutVariation(
               hidden={!suffixText || !shrink}
               flexShrink={0}
               pt={pt}
-              pr={renderEnd ? 12 : 16}
+              pr={renderEnd || showClearButton ? 12 : 16}
               pb={pb}
             >
               {suffixText}
@@ -88,7 +88,7 @@ export const FieldLayout = withFieldLayoutVariation(
           </HStack>
         </Box>
         {showClearButton && (
-          <PressableBox px={12} onClick={onClearButtonClick}>
+          <PressableBox flexShrink={0} hitSlop={8} mr={12} onClick={onClearButtonClick}>
             <Icon.CloseCircle.Fill size={20} fill="onView2" />
           </PressableBox>
         )}
