@@ -79,6 +79,23 @@ describe('<VerificationCodeField />', () => {
         });
       });
     });
+
+    describe('enter +-.e123', () => {
+      const value = '+-.e123';
+
+      beforeEach(async () => {
+        await userEvent.type(inputElement, value);
+      });
+
+      it.each(
+        value
+          .replace(/[^0-9]/g, '')
+          .split('')
+          .map((expected, index) => ({ index, expected }))
+      )("'$expected' should be content of itemElements[$index]", ({ index, expected }) => {
+        expect(itemElements[index].textContent).toStrictEqual(expected);
+      });
+    });
   });
 
   describe('when blurOnComplete is true', () => {

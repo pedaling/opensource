@@ -53,7 +53,7 @@ export const Transition = withTransitionVariation(
     return (
       <AnimatedComponent
         ref={innerRef}
-        style={{ ...style, ...withTransformStyle(styles) }}
+        style={{ ...withTransformStyle(style ?? {}), ...withTransformStyle(styles) }}
         {...restProps}
         {...children.props}
       />

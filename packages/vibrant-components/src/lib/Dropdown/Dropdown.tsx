@@ -20,6 +20,7 @@ import { withDropdownVariation } from './DropdownProps';
 const CONTENT_PADDING = 20;
 const BOTTOM_SHEET_CONTENT_TOP_PADDING = 24;
 const BOTTOM_SHEET_CONTENT_BOTTOM_PADDING = 20;
+const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
 const Z_INDEX = 100;
 
 const getOffsetAvoidingOverflowByPosition = (
@@ -91,27 +92,10 @@ export const Dropdown = withDropdownVariation(
 
     useLockBodyScroll(isMobile && (isOpen || visible));
 
-    const openDropdown = useCallback(async () => {
-      if (isMobile || !openerRef.current || !targetRef.current) {
-        return;
-      }
-
-      const [openerRect, targetRect] = await Promise.all([
-        getElementRect(openerRef.current),
-        getElementRect(targetRef.current),
-      ]);
-
-      const { x, y } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
-
-      setOffset({ x, y });
-
-      setVisible(true);
-    }, [isMobile, position, spacing]);
+    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
-
-      setContentHeight(undefined);
     }, []);
 
     const handleContentResize = useCallback(
@@ -132,26 +116,34 @@ export const Dropdown = withDropdownVariation(
           );
 
           setOffset({ x: offsetX, y: offsetY });
+
+          setVisible(true);
         }
 
         setContentHeight(height);
-
-        if (isOpen) {
-          setVisible(true);
-        }
       },
-      [isMobile, isOpen, position, spacing]
+      [isMobile, position, spacing]
     );
 
-    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
+    useEffect(() => {
+      if (!isOpen) {
+        setVisible(false);
+
+        setOffset({});
+      }
+    }, [isOpen]);
 
     useEffect(() => {
-      if (isOpen) {
-        openDropdown();
-      } else {
-        setVisible(false);
+      if (contentHeight !== undefined) {
+        setVisible(true);
       }
-    }, [isOpen, openDropdown]);
+    }, [contentHeight]);
+
+    useEffect(() => {
+      if (!visible) {
+        setContentHeight(undefined);
+      }
+    }, [visible]);
 
     return (
       <Box position="relative">
@@ -168,7 +160,7 @@ export const Dropdown = withDropdownVariation(
                 x: offset.x,
                 y: offset.y,
               }}
-              duration={150}
+              duration={200}
             >
               <OverlayBox open={true} ref={targetRef} onDismiss={closeDropdown} targetRef={openerRef} zIndex={Z_INDEX}>
                 <Box
@@ -186,7 +178,7 @@ export const Dropdown = withDropdownVariation(
                           }
                         : {}
                     }
-                    duration={150}
+                    duration={200}
                   >
                     <Box overflow="hidden" height={contentHeight}>
                       <Box onLayout={handleContentResize} flexShrink={0}>
@@ -201,14 +193,17 @@ export const Dropdown = withDropdownVariation(
         )}
         {isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={visible ? 150 : 100}>
+            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={200}>
               <Transition
                 animation={{
                   y: visible
                     ? 0
-                    : (contentHeight ?? 0) + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING),
+                    : contentHeight
+                    ? contentHeight + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING)
+                    : undefined,
                 }}
-                duration={visible ? 150 : 100}
+                duration={200}
+                style={{ y: viewportHeight }}
               >
                 <Box
                   mt="auto"
@@ -219,7 +214,7 @@ export const Dropdown = withDropdownVariation(
                       : BOTTOM_SHEET_CONTENT_BOTTOM_PADDING + insets.bottom
                   }
                   width="100%"
-                  maxHeight={viewportHeight - 120}
+                  maxHeight={viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
                   backgroundColor="surface2"
                   borderTopLeftRadiusLevel={4}
                   borderTopRightRadiusLevel={4}
@@ -228,9 +223,16 @@ export const Dropdown = withDropdownVariation(
                     animation={{
                       height: contentHeight,
                     }}
-                    duration={150}
+                    duration={200}
                   >
-                    <ScrollBox height={contentHeight}>
+                    <ScrollBox
+                      height={contentHeight}
+                      hideScroll={
+                        (contentHeight ?? 0) +
+                          (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
+                        viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN
+                      }
+                    >
                       <Box onLayout={handleContentResize} flexShrink={0}>
                         {renderContents(closeDropdown)}
                       </Box>
