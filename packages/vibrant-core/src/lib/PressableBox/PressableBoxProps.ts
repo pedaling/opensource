@@ -31,6 +31,7 @@ export type PressableBoxProps = {
   ref?: Ref<any>;
   as?: 'button' | 'div' | 'li';
   disabled?: boolean;
+  hitSlop?: number;
   onClick?: () => void;
   onFocusIn?: () => void;
   onFocusOut?: () => void;

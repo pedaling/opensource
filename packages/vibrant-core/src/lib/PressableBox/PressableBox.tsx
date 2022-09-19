@@ -16,6 +16,7 @@ export const PressableBox = withPressableBoxVariation(
     onPressIn,
     onPressOut,
     children,
+    hitSlop: _hitSlop,
     ...restProps
   }) => (
     <Box
