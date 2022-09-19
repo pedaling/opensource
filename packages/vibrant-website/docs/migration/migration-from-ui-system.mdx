@@ -18,10 +18,18 @@ sidebar_position: 1
 
 ```jsx
 // Before
-import { Paper, VStack, Body } from '@class101/ui-system';
+import {
+  Paper,
+  VStack,
+  Body,
+} from "@class101/ui-system";
 
 // After
-import { Paper, VStack, Body } from '@vibrant-ui/components';
+import {
+  Paper,
+  VStack,
+  Body,
+} from "@vibrant-ui/components";
 ```
 
 :::note
@@ -40,7 +48,7 @@ import { Paper, VStack, Body } from '@vibrant-ui/components';
 
 ```typescript
 type BoxProps = {
-  display: 'flex' | 'none';
+  display: "flex" | "none";
   // ...other
 };
 ```
@@ -124,7 +132,9 @@ import { Box } from '@vibrant-ui/core';
 ```jsx
 // import { ResponsiveStack } from '@class101/ui-system';
 
-<ResponsiveStack direction={['vertical', 'horizontal']} />
+<ResponsiveStack
+  direction={["vertical", "horizontal"]}
+/>
 ```
 
 **After**
@@ -132,7 +142,7 @@ import { Box } from '@vibrant-ui/core';
 ```jsx
 // import { Stack } from '@vibrant-ui/components';
 
-<Stack direction={['vertical', 'horizontal']} />
+<Stack direction={["vertical", "horizontal"]} />
 ```
 
 ## `<Paper />`
@@ -176,7 +186,7 @@ import { Box } from '@vibrant-ui/core';
 ```jsx
 // import { Action, Body } from '@class101/ui-system';
 
-<Action onClick={() => alert('click')}>
+<Action onClick={() => alert("click")}>
   <Body level={3}>Pressable Text</Body>
 </Action>
 ```
@@ -186,11 +196,98 @@ import { Box } from '@vibrant-ui/core';
 ```jsx live
 // import { Pressable, Body } from '@vibrant-ui/components';
 
-<Pressable onClick={() => alert('click')}>
+<Pressable onClick={() => alert("click")}>
   <Body level={3}>Pressable Text</Body>
 </Pressable>
 ```
 
-## `<SafeAreaContent />`
+## Migrate `<SafeAreaContent />` to `<SafeAreaView />`
+
+`<SafeAreaContent />` 컴포넌트가 제거되고 `<SafeAreaView />` 컴포넌트가 추가되었습니다.
+
+기존 API의 변화는 없지만, `minInsets`를 통해 디바이스 safeArea 값이 minInsets보다 작을 때 minInsets에 적용된 값이 나오도록 수정되었습니다.
+
+**Before**
+
+```jsx
+// import { SafeAreaContent } from '@class101/ui-system';
+
+<SafeAreaContent
+  mode="margin"
+  insets={["bottom", "top"]}
+/>
+```
+
+**After**
+
+```jsx
+// import { SafeAreaView } from '@vibrant-ui/components';
+
+<SafeAreaView
+  mode="margin"
+  insets={["bottom", "top"]}
+  minInsets={{ bottom: 32, top: 32 }}
+/>
+```
 
 ## `<TextField />`
+
+### Support Dynamic Label
+
+<img src="/img/docs/textfield-dynamic-label.gif" />
+
+입력창이 포커스 되었을 때 label이 애니메이션으로 동작됩니다.
+
+### prefix, suffix, renderStart, renderEnd
+
+기존에 있던 `renderRightIcon` prop이 제거되고 `prefix`, `suffix`, `renderStart`, `renderEnd`가 추가되었습니다
+
+**Before**
+
+```jsx
+// import { TextField } from '@class101/ui-system';
+
+<TextField
+  state="normal"
+  size="md"
+  renderRightIcon={() => (
+    <Icon.EyeOn size={20} kind="regular" />
+  )}
+/>
+```
+
+**After**
+
+```jsx live
+// import { TextField } from '@vibrant-ui/components';
+
+<TextField
+  state="default"
+  prefix="입력"
+  renderEnd={() => (
+    <Icon.EyeOn.Regular size={20} />
+  )}
+/>
+```
+
+## `<Icon />`
+
+### Remove `type` prop
+
+Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 같이 별도의 컴포넌트로 관리합니다.
+
+**Before**
+
+```jsx
+// import { Icon } from '@class101/ui-system';
+
+<Icon.Play type="regular" size={20} />
+```
+
+**After**
+
+```jsx live
+// import { Icon } from '@vibrant-ui/icons';
+
+<Icon.Play.Regular size={20} />
+```
