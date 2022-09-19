@@ -1,0 +1,196 @@
+---
+sidebar_position: 1
+---
+
+# Migrate From @class101/ui-system
+
+:::info
+
+아직 ui-system에 있는 모든 컴포넌트가 vibrant-ui로 옮겨지지 않았습니다.
+
+새로운 컴포넌트는 계속 추가되고 있으며 해당 문서도 업데이트될 예정입니다. 자세한 변경사항은 [여기](#)를 참고해주세요.
+
+:::
+
+## Use `@vibrant-ui/components`
+
+이제 `@class101/ui-system` 대신 `@vibrant-ui/components` 에서 컴포넌트를 불러와서 새로운 Vibrant 컴포넌트를 사용해주세요!
+
+```jsx
+// Before
+import { Paper, VStack, Body } from '@class101/ui-system';
+
+// After
+import { Paper, VStack, Body } from '@vibrant-ui/components';
+```
+
+:::note
+
+현재 `@vibrant-ui/components`에 추가된 컴포넌트는 [Vibrant Storybook](https://vibrant-storybook.class101.net/)에서 확인할 수 있습니다.
+
+:::
+
+# Breaking Changes
+
+## `<Box />`
+
+### All Box is default flex layout
+
+이제 모든 Box 컴포넌트는 flex 레이아웃으로 동작됩니다.
+
+```typescript
+type BoxProps = {
+  display: 'flex' | 'none';
+  // ...other
+};
+```
+
+기존 ui-system의 Box 컴포넌트는 플랫폼에 따라 스타일이 다르게 적용되었습니다
+
+```jsx
+import { Box } from '@class101/ui-system';
+
+<Box display="flex" />;
+
+// Web
+<div
+  style={{
+    display: 'flex',
+    flexGrow: 0,
+    // highlight-next-line
+    flexShrink: 1,
+    flexBasis: 'auto',
+    // highlight-next-line
+    alignContent: 'stretch',
+    // highlight-next-line
+    flexDirection: 'row',
+  }}
+/>
+
+// Native
+<View
+  style={{
+    display: 'flex',
+    flexGrow: 0,
+    // highlight-next-line
+    flexShrink: 0,
+    flexBasis: 'auto',
+    // highlight-next-line
+    alignContent: 'flex-start',
+    // highlight-next-line
+    flexDirection: 'column',
+  }}
+/>;
+```
+
+이제 모든 Box 컴포넌트는 `flex-direction: column`, `align-content: stretch`, `flex-shrink: 1`로 동작됩니다.
+
+```jsx
+import { Box } from '@vibrant-ui/core';
+
+<Box />
+
+// Web
+<div
+  style={{
+    display: 'flex',
+    flexGrow: 0,
+    flexShrink: 1,
+    flexBasis: 'auto',
+    alignContent: 'stretch',
+    flexDirection: 'column'
+  }}
+/>
+
+// Native
+<View
+  style={{
+    display: 'flex',
+    flexGrow: 0,
+    flexShrink: 1,
+    flexBasis: 'auto',
+    alignContent: 'stretch',
+    flexDirection: 'column'
+  }}
+/>
+```
+
+## Migrate `<ResponsiveStack />` to `<Stack />`
+
+`<ResponsiveStack />` 컴포넌트가 제거되고 `<Stack />` 컴포넌트가 추가되었습니다.
+
+**Before**
+
+```jsx
+// import { ResponsiveStack } from '@class101/ui-system';
+
+<ResponsiveStack direction={['vertical', 'horizontal']} />
+```
+
+**After**
+
+```jsx
+// import { Stack } from '@vibrant-ui/components';
+
+<Stack direction={['vertical', 'horizontal']} />
+```
+
+## `<Paper />`
+
+### Remove kind prop
+
+`kind` 속성이 제거되고 borderColor 속성과 backgroundColor 속성을 동시에 사용할 수 있습니다.
+
+**Before**
+
+```jsx
+// import { Paper } from '@class101/ui-system';
+
+<Paper kind="background" backgroundColor="primary" />
+<Paper kind="border" borderColor="outlinePrimary" borderWidth={1} />
+```
+
+**After**
+
+```jsx live
+// import { Paper } from '@vibrant-ui/components';
+
+<Paper
+  backgroundColor="primaryContainer"
+  width={100}
+  height={100}
+  borderColor="outlinePrimary"
+  borderWidth={1}
+  borderStyle="solid"
+/>
+```
+
+## Migrate `<Action />` to `<Pressable />`
+
+`<Action />` 컴포넌트가 제거되고 `<Pressable />` 컴포넌트가 추가되었습니다.
+
+기존 Action 컴포넌트는 자체적으로 UI를 가지지 않고 자식 컴포넌트를 클릭가능하게 수정했지만, Pressable 컴포넌트는 자체적으로 UI를 갖고 클릭이벤트를 가집니다.
+
+**Before**
+
+```jsx
+// import { Action, Body } from '@class101/ui-system';
+
+<Action onClick={() => alert('click')}>
+  <Body level={3}>Pressable Text</Body>
+</Action>
+```
+
+**After**
+
+```jsx live
+// import { Pressable, Body } from '@vibrant-ui/components';
+
+<Pressable onClick={() => alert('click')}>
+  <Body level={3}>Pressable Text</Body>
+</Pressable>
+```
+
+## `<SafeAreaContent />`
+
+## `<TextField />`
