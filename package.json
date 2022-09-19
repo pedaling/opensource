@@ -13,7 +13,9 @@
     "generate-icons": "nx generate-icons",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic",
-    "typecheck": "nx typecheck"
+    "typecheck": "nx typecheck",
+    "vibrant-app": "nx start vibrant-example-app",
+    "vibrant-docs": "nx serve vibrant-website"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-namespace-from": "7.18.9",
@@ -112,8 +114,8 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.21",
-    "@docusaurus/preset-classic": "2.0.0-beta.21",
+    "@docusaurus/core": "2.1.0",
+    "@docusaurus/preset-classic": "2.1.0",
     "@emotion/native": "11.9.3",
     "@emotion/react": "11.10.0",
     "@emotion/styled": "11.10.0",
