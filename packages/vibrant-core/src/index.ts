@@ -59,4 +59,4 @@ export { OverlayBox } from './lib/OverlayBox';
 export type { Platform } from './lib/platform';
 export { useStackedPortal } from './lib/StackedPortalContext';
 export { useLockBodyScroll } from './lib/useLockBodyScroll';
-export { HipSlopRect } from './lib/PressableBox';
+export type { HipSlopRect } from './lib/PressableBox';
