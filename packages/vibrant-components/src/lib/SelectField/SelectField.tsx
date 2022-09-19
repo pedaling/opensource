@@ -44,6 +44,14 @@ export const SelectField = withSelectFieldVariation(
       return 'onView2';
     }, [disabled, state]);
 
+    const placeholderColor = useMemo(() => {
+      if (disabled || state === 'error') {
+        return 'onView3';
+      }
+
+      return 'onView2';
+    }, [disabled, state]);
+
     const borderColor = useMemo(() => {
       if (disabled) {
         return 'outline1';
@@ -224,7 +232,13 @@ export const SelectField = withSelectFieldVariation(
                     </Body>
                   </Box>
                 ) : (
-                  <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                  <Body
+                    level={2}
+                    color={label ? labelColor : placeholderColor}
+                    lineLimit={1}
+                    wordBreak="break-all"
+                    wordWrap="break-word"
+                  >
                     {label || placeholder}
                   </Body>
                 )}
