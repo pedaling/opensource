@@ -55,7 +55,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
             setFocusIndex(Math.min(length - 1, value.length));
           }}
           onKeyPress={({ key, prevent }) => {
-            if (/Arrow/.test(key)) {
+            if (/Arrow/.test(key) || ['+', '-', '.', 'e'].includes(key.toLowerCase())) {
               prevent();
             }
           }}
