@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn nx affected --target=lint --base=main
-yarn nx affected --target=test --base=main
-yarn nx affected --target=typecheck --base=main
+yarn nx affected --target=lint --exclude=testing --base=main
+yarn nx affected --target=test --exclude=testing --base=main
+yarn nx affected --target=typecheck --exclude=testing --base=main
