@@ -14,4 +14,5 @@ module.exports = {
     '\\.(js|ts|tsx)$': require.resolve('react-native/jest/preprocessor.js'),
     '^.+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp|ttf)$': require.resolve('react-native/jest/assetFileTransformer.js'),
   },
+  coverageDirectory: '../../coverage/packages/vibrant-example-app',
 };

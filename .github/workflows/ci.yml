@@ -40,10 +40,12 @@ jobs:
       - name: Lint Affected Project
         run: yarn nx affected --target=lint --parallel=3
       - name: Test Affected Project
-        run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
+        run: | 
+          yarn nx affected --target=test --parallel=3 --ci --code-coverage --coverage-reporters=lcov
+          yarn ts-node lcov-result-merger.ts
       - name: Typecheck Affected Project
         run: yarn nx affected --target=typecheck --parallel=1
-      - name: Coveralls
+      - name: Upload coverage to Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
