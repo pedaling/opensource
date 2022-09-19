@@ -5,19 +5,19 @@ import { VibrantProvider } from '@vibrant-ui/core';
 const theme = {
   typographyWeight: {
     regular: {
-      fontFamily: 'Pretendard',
+      fontFamily: 'Pretendard, "Pretendard JP"',
       fontWeight: '400',
     },
     medium: {
-      fontFamily: 'Pretendard',
+      fontFamily: 'Pretendard, "Pretendard JP"',
       fontWeight: '500',
     },
     bold: {
-      fontFamily: 'Pretendard',
+      fontFamily: 'Pretendard, "Pretendard JP"',
       fontWeight: '700',
     },
     extraBold: {
-      fontFamily: 'Pretendard',
+      fontFamily: 'Pretendard, "Pretendard JP"',
       fontWeight: '800',
     },
   },
