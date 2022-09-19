@@ -11,6 +11,31 @@
     "vibrant-theme": "packages/vibrant-theme",
     "vibrant-utils": "packages/vibrant-utils",
     "vibrant-website": "packages/vibrant-website",
-    "workspace-plugin": "packages/workspace-plugin"
+    "workspace-plugin": "packages/workspace-plugin",
+    "testing": {
+      "root": ".",
+      "implicitDependencies": [
+        "utils-eslint-config",
+        "vibrant-components",
+        "vibrant-core",
+        "vibrant-example-app",
+        "vibrant-icons",
+        "vibrant-motion",
+        "vibrant-theme",
+        "vibrant-utils",
+        "workspace-plugin"
+      ],
+      "targets": {
+        "merge-coverage": {
+          "executor": "@class101/workspace-plugin:merge-coverage",
+          "dependsOn": [
+            {
+              "projects": "dependencies",
+              "target": "test"
+            }
+          ]
+        }
+      }
+    }
   }
 }

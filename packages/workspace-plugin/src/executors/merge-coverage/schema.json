@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "type": "object",
+  "properties": {
+    "coverageReporter": {
+      "type": "string",
+      "enum": ["lcov"]
+    },
+    "outputPath": {
+      "type": "string"
+    }
+  },
+  "required": ["coverageReporter", "outputPath"]
+}
