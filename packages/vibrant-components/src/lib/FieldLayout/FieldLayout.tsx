@@ -44,7 +44,7 @@ export const FieldLayout = withFieldLayoutVariation(
         backgroundColor={backgroundColor}
         borderRadiusLevel={1}
       >
-        {renderStart?.()}
+        <VStack flexShrink={0}>{renderStart?.()}</VStack>
         <Box position="relative" width="100%" height="100%" cursor={cursor}>
           <PressableBox cursor={cursor} onClick={onLabelClick}>
             <Transition animation={animation} duration={100}>
@@ -61,14 +61,14 @@ export const FieldLayout = withFieldLayoutVariation(
               </Text>
             </Transition>
           </PressableBox>
-          <HStack>
+          <HStack alignItems="center">
             <Text
               typography="body2"
-              color={textColor}
+              color="onView2"
               hidden={!prefixText || !shrink}
               flexShrink={0}
               pt={pt}
-              pl={12}
+              pl={renderStart ? 12 : 16}
               pb={pb}
             >
               {prefixText}
@@ -76,11 +76,11 @@ export const FieldLayout = withFieldLayoutVariation(
             {renderField({ height: 50, color: valueColor, pt, pl, pr, pb })}
             <Text
               typography="body2"
-              color={textColor}
+              color="onView2"
               hidden={!suffixText || !shrink}
               flexShrink={0}
               pt={pt}
-              pr={12}
+              pr={renderEnd ? 12 : 16}
               pb={pb}
             >
               {suffixText}
@@ -88,11 +88,11 @@ export const FieldLayout = withFieldLayoutVariation(
           </HStack>
         </Box>
         {showClearButton && (
-          <PressableBox pl={12} pr={renderEnd ? 12 : 0} onClick={onClearButtonClick}>
+          <PressableBox px={12} onClick={onClearButtonClick}>
             <Icon.CloseCircle.Fill size={20} fill="onView2" />
           </PressableBox>
         )}
-        {renderEnd?.()}
+        <VStack flexShrink={0}>{renderEnd?.()}</VStack>
       </Box>
       {Boolean(helperText) && (
         <Body level={4} color={textColor}>
