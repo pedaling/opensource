@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
   displayName: 'vibrant-example-app',
   resolver: '@nrwl/jest/plugins/resolver',
   preset: 'jest-expo',
@@ -14,5 +16,9 @@ module.exports = {
     '\\.(js|ts|tsx)$': require.resolve('react-native/jest/preprocessor.js'),
     '^.+\\.(bmp|gif|jpg|jpeg|mp4|png|psd|svg|webp|ttf)$': require.resolve('react-native/jest/assetFileTransformer.js'),
   },
+  collectCoverage: true,
   coverageDirectory: '../../coverage/packages/vibrant-example-app',
+  coverageReporters: ['lcov'],
 };
+
+export default config;

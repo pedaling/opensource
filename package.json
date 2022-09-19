@@ -23,6 +23,7 @@
     "@docusaurus/module-type-aliases": "2.0.0-beta.21",
     "@emotion/cache": "11.9.3",
     "@emotion/jest": "11.9.3",
+    "@jest/types": "27.5.1",
     "@jscutlery/semver": "2.26.0",
     "@nrwl/cli": "14.5.10",
     "@nrwl/devkit": "14.5.10",
