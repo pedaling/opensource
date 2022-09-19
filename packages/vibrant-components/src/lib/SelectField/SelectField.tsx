@@ -197,7 +197,13 @@ export const SelectField = withSelectFieldVariation(
                   <Box flexDirection={inlineLabel ? 'row' : 'column'}>
                     {Boolean(label) && (
                       <>
-                        <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                        <Body
+                          level={inlineLabel ? 2 : 6}
+                          color={labelColor}
+                          lineLimit={1}
+                          wordBreak="break-all"
+                          wordWrap="break-word"
+                        >
                           {label}
                         </Body>
                         <Box as="span" flexShrink={0} hidden={!inlineLabel}>
