@@ -13,7 +13,10 @@
         "@typescript-eslint/return-await": "off",
         "react/jsx-filename-extension": "off",
         "import/no-extraneous-dependencies": "off",
-        "no-undef": "warn"
+        "no-undef": "warn",
+        "prettier/prettier": ["error", {
+          "printWidth": 50
+        }]
       }
     },
     {
