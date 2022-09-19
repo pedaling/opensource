@@ -27,10 +27,18 @@ type SystemProps = BackgroundSystemProps &
   SpacingSystemProps &
   TransformSystemProps;
 
+export type HipSlopRect = {
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
 export type PressableBoxProps = {
   ref?: Ref<any>;
   as?: 'button' | 'div' | 'li';
   disabled?: boolean;
+  hitSlop?: HipSlopRect | number;
   onClick?: () => void;
   onFocusIn?: () => void;
   onFocusOut?: () => void;
