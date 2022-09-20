@@ -57,6 +57,6 @@ export { PortalRootProvider, usePortalRoot } from './lib/PortalRoot';
 export { platform } from './lib/platform';
 export { OverlayBox } from './lib/OverlayBox';
 export type { Platform } from './lib/platform';
-export { useStackedPortal } from './lib/StackedPortalContext';
+export { useStackedPortal } from './lib/StackedPortalProvider';
 export { useLockBodyScroll } from './lib/useLockBodyScroll';
 export type { HipSlopRect } from './lib/PressableBox';

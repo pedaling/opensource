@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { SafeAreaProvider as RNSafeAreaProvider, useSafeAreaInsets } from 'react-native-safe-area-context';
+import { transformResponsiveValue } from '../transformResponsiveValue';
 import type { GenerateStyle, SafeAreaContextValue, SafeAreaProviderProps } from './SafeAreaProviderProps';
 
 export const SafeAreaProvider: FC<SafeAreaProviderProps> = ({ children }) => (
@@ -16,7 +17,7 @@ export const useSafeArea = (): SafeAreaContextValue => {
     edges.reduce(
       (prev, edge) => ({
         ...prev,
-        [`p${edge[0]}`]: Math.max(insets[edge], minInsets[edge] ?? 0),
+        [`p${edge[0]}`]: transformResponsiveValue(minInsets[edge], value => Math.max(insets[edge], value ?? 0)),
       }),
       {}
     );

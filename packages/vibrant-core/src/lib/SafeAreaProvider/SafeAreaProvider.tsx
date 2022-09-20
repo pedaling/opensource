@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { transformResponsiveValue } from '../transformResponsiveValue';
 import type { Edge, GenerateStyle, SafeAreaContextValue, SafeAreaProviderProps } from './SafeAreaProviderProps';
 
 const SafeAreaContext = createContext<SafeAreaContextValue>({
@@ -27,7 +28,10 @@ export const SafeAreaProvider: FC<SafeAreaProviderProps> = ({ children }) => {
     edges.reduce(
       (prev, edge) => ({
         ...prev,
-        [`p${edge[0]}`]: `max(var(--safe-area-inset-${edge}, 0px), ${minInsets[edge] ?? 0}px)`,
+        [edge]: transformResponsiveValue(
+          minInsets[edge],
+          value => `max(var(--safe-area-inset-${edge}, 0px), ${value ?? 0}px)`
+        ),
       }),
       {}
     );
