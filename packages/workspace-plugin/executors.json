@@ -5,6 +5,10 @@
       "implementation": "./src/executors/update-native-package-json/executor",
       "schema": "./src/executors/update-native-package-json/schema.json",
       "description": "updateNativePackageJson executor"
+    },
+    "merge-coverage": {
+      "implementation": "./src/executors/merge-coverage/executor",
+      "schema": "./src/executors/merge-coverage/schema.json"
     }
   }
 }
