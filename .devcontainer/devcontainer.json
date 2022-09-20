@@ -19,19 +19,13 @@
 			"extensions": [
 				"nrwl.angular-console",
 				"firsttris.vscode-jest-runner",
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"unifiedjs.vscode-mdx"
 			],
 			"settings": {
-				"eslint.validate": [
-					"javascript",
-					"javascriptreact",
-					"typescript",
-					"typescriptreact",
-					"json"
-				  ],
-				  "editor.codeActionsOnSave": {
-					"source.fixAll.eslint": true
-				  }
+				"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": true
+				}
 			}
 		}
 	},
