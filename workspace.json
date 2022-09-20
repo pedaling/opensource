@@ -44,7 +44,7 @@
             "command": "exit 0"
           }
         },
-        "merge-coverage": {
+        "collect-coverage": {
           "executor": "@class101/workspace-plugin:merge-coverage",
           "dependsOn": [
             {
