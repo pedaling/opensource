@@ -23,12 +23,12 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+          editUrl: 'https://github.com/pedaling/opensource/edit/main/packages/vibrant-website/docs/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/blog/',
+          editUrl: 'https://github.com/pedaling/opensource/edit/main/packages/vibrant-website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -47,14 +47,13 @@ const config = {
             type: 'doc',
             docId: 'getting-started/introduction',
             position: 'left',
-            label: 'Design',
+            label: 'Docs',
           },
-          { to: '/blog', label: 'Component', position: 'left' },
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             type: 'html',
             position: 'right',
-            value:
-              '<a href="https://github.com/pedaling/opensource" target="_blank"><object type="image/svg+xml" data="/icons/github.svg" style="display: block" /></a>',
+            value: '<a href="https://github.com/pedaling/opensource" target="_blank" class="header-github-link"></a>',
           },
         ],
       },
