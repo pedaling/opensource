@@ -55,7 +55,6 @@ export const FieldLayout = withFieldLayoutVariation(
                 right={renderEnd ? 12 : 15}
                 color={textColor}
                 lineLimit={1}
-                wordBreak="break-all"
               >
                 {label}
               </Text>
