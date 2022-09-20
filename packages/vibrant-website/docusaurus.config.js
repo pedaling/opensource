@@ -37,31 +37,32 @@ const config = {
     ],
   ],
   themes: ['@docusaurus/theme-live-codeblock'],
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: 'Vibrant Design System',
-        items: [
-          {
-            type: 'doc',
-            docId: 'getting-started/introduction',
-            position: 'left',
-            label: 'Docs',
-          },
-          { to: '/blog', label: 'Blog', position: 'left' },
-          {
-            type: 'html',
-            position: 'right',
-            value: '<a href="https://github.com/pedaling/opensource" target="_blank" class="header-github-link"></a>',
-          },
-        ],
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-      },
-    }),
+  themeConfig: {
+    navbar: {
+      title: 'Vibrant Design System',
+      items: [
+        {
+          type: 'doc',
+          docId: 'getting-started/introduction',
+          position: 'left',
+          label: 'Docs',
+        },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        {
+          type: 'html',
+          position: 'right',
+          value: '<a href="https://github.com/pedaling/opensource" target="_blank" class="header-github-link"></a>',
+        },
+      ],
+    },
+    liveCodeBlock: {
+      playgroundPosition: 'bottom',
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+    },
+  },
 };
 
 module.exports = config;

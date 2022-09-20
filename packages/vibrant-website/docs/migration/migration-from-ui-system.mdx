@@ -234,7 +234,9 @@ import { Box } from '@vibrant-ui/core';
 
 ### Support Dynamic Label
 
-<img src="/img/docs/textfield-dynamic-label.gif" />
+```jsx live
+<TextField state="normal" label="Focus Here!" />
+```
 
 입력창이 포커스 되었을 때 label이 애니메이션으로 동작됩니다.
 
@@ -264,6 +266,7 @@ import { Box } from '@vibrant-ui/core';
 <TextField
   state="default"
   prefix="입력"
+  suffix="원"
   renderEnd={() => (
     <Icon.EyeOn.Regular size={20} />
   )}
@@ -274,7 +277,7 @@ import { Box } from '@vibrant-ui/core';
 
 ### Remove `type` prop
 
-Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 같이 별도의 컴포넌트로 관리합니다.
+Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 같이 별도의 컴포넌트로 사용해주세요.
 
 **Before**
 
