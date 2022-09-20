@@ -199,7 +199,7 @@ export const SelectField = withSelectFieldVariation(
             {...restProps}
           >
             <HStack alignItems="center" width="100%">
-              <Box as="span" flex={1} pr={12}>
+              <Box as="span" flex={1} pr={12} minWidth={0}>
                 {selectedOption ? (
                   <Box as="span" flexDirection={inlineLabel ? 'row' : 'column'}>
                     {Boolean(label) && (
@@ -208,8 +208,6 @@ export const SelectField = withSelectFieldVariation(
                           level={inlineLabel ? 2 : 6}
                           color={labelColor}
                           lineLimit={1}
-                          wordBreak="break-all"
-                          wordWrap="break-word"
                           flexGrow={0}
                           flexShrink={0}
                           flexBasis="auto"
@@ -224,13 +222,7 @@ export const SelectField = withSelectFieldVariation(
                         </Box>
                       </>
                     )}
-                    <Body
-                      level={2}
-                      color={disabled ? 'onView3' : 'onView1'}
-                      wordBreak="break-all"
-                      wordWrap="break-word"
-                      lineLimit={1}
-                    >
+                    <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={1}>
                       {selectedOption.label}
                     </Body>
                   </Box>
