@@ -5,7 +5,6 @@ import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
-import { Space } from '../Space';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
@@ -200,9 +199,9 @@ export const SelectField = withSelectFieldVariation(
             {...restProps}
           >
             <HStack alignItems="center" width="100%">
-              <Box as="span" flex={1}>
+              <Box as="span" flex={1} pr={12}>
                 {selectedOption ? (
-                  <Box flexDirection={inlineLabel ? 'row' : 'column'}>
+                  <Box as="span" flexDirection={inlineLabel ? 'row' : 'column'}>
                     {Boolean(label) && (
                       <>
                         <Body
@@ -211,6 +210,10 @@ export const SelectField = withSelectFieldVariation(
                           lineLimit={1}
                           wordBreak="break-all"
                           wordWrap="break-word"
+                          flexGrow={0}
+                          flexShrink={0}
+                          flexBasis="auto"
+                          maxWidth="90%"
                         >
                           {label}
                         </Body>
@@ -243,7 +246,6 @@ export const SelectField = withSelectFieldVariation(
                   </Body>
                 )}
               </Box>
-              <Space width={12} />
               <Icon.ArrowTriangleDown.Regular
                 size={20}
                 fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}

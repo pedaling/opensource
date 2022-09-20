@@ -7,6 +7,7 @@ import type {
   DisplaySystemProps,
   FlexboxSystemProps,
   PositionSystemProps,
+  SizingSystemProps,
   SpacingSystemProps,
   TextSystemProps,
   TypographySystemProps,
@@ -16,6 +17,7 @@ import {
   displaySystemProps,
   flexboxSystemProps,
   positionSystemProps,
+  sizingSystemProps,
   spacingSystemProps,
   textSystemProps,
   typographySystemProps,
@@ -27,7 +29,8 @@ type SystemProps = ColorSystemProps &
   PositionSystemProps &
   SpacingSystemProps &
   TextSystemProps &
-  TypographySystemProps;
+  TypographySystemProps &
+  SizingSystemProps;
 
 export const systemProps = [
   ...colorSystemProps,
@@ -37,6 +40,7 @@ export const systemProps = [
   ...spacingSystemProps,
   ...textSystemProps,
   ...typographySystemProps,
+  ...sizingSystemProps,
 ];
 
 export const systemPropNames = systemProps
