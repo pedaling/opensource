@@ -5,7 +5,6 @@ import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
-import { Space } from '../Space';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
@@ -39,6 +38,14 @@ export const SelectField = withSelectFieldVariation(
 
       if (state === 'error') {
         return 'error';
+      }
+
+      return 'onView2';
+    }, [disabled, state]);
+
+    const placeholderColor = useMemo(() => {
+      if (disabled || state === 'error') {
+        return 'onView3';
       }
 
       return 'onView2';
@@ -192,12 +199,22 @@ export const SelectField = withSelectFieldVariation(
             {...restProps}
           >
             <HStack alignItems="center" width="100%">
-              <Box as="span" flex={1}>
+              <Box as="span" flex={1} pr={12}>
                 {selectedOption ? (
-                  <Box flexDirection={inlineLabel ? 'row' : 'column'}>
+                  <Box as="span" flexDirection={inlineLabel ? 'row' : 'column'}>
                     {Boolean(label) && (
                       <>
-                        <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                        <Body
+                          level={inlineLabel ? 2 : 6}
+                          color={labelColor}
+                          lineLimit={1}
+                          wordBreak="break-all"
+                          wordWrap="break-word"
+                          flexGrow={0}
+                          flexShrink={0}
+                          flexBasis="auto"
+                          maxWidth="90%"
+                        >
                           {label}
                         </Body>
                         <Box as="span" flexShrink={0} hidden={!inlineLabel}>
@@ -218,12 +235,17 @@ export const SelectField = withSelectFieldVariation(
                     </Body>
                   </Box>
                 ) : (
-                  <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                  <Body
+                    level={2}
+                    color={label ? labelColor : placeholderColor}
+                    lineLimit={1}
+                    wordBreak="break-all"
+                    wordWrap="break-word"
+                  >
                     {label || placeholder}
                   </Body>
                 )}
               </Box>
-              <Space width={12} />
               <Icon.ArrowTriangleDown.Regular
                 size={20}
                 fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
