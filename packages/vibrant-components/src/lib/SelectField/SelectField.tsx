@@ -113,36 +113,39 @@ export const SelectField = withSelectFieldVariation(
       setState(stateProp);
     }, [stateProp]);
 
-    const open = useCallback(async (index: number) => {
-      if (!ref.current || disabled) {
-        return;
-      }
+    const open = useCallback(
+      async (index: number) => {
+        if (!ref.current || disabled) {
+          return;
+        }
 
-      inputRef.current?.focus();
+        inputRef.current?.focus();
 
-      const { top, bottom } = await getElementPosition(ref.current);
+        const { top, bottom } = await getElementPosition(ref.current);
 
-      const spaceAbove = top;
-      const spaceBelow = bottom;
+        const spaceAbove = top;
+        const spaceBelow = bottom;
 
-      if (selectedOptionIndex !== -1) {
-        updateFocusIndex(selectedOptionIndex);
-      } else {
-        updateFocusIndex(index);
-      }
+        if (selectedOptionIndex !== -1) {
+          updateFocusIndex(selectedOptionIndex);
+        } else {
+          updateFocusIndex(index);
+        }
 
-      if (spaceAbove > spaceBelow) {
-        setOptionGroupMaxHeight(spaceAbove - 44);
+        if (spaceAbove > spaceBelow) {
+          setOptionGroupMaxHeight(spaceAbove - 44);
 
-        setDirection('up');
-      } else {
-        setOptionGroupMaxHeight(spaceBelow - 84);
+          setDirection('up');
+        } else {
+          setOptionGroupMaxHeight(spaceBelow - 84);
 
-        setDirection('down');
-      }
+          setDirection('down');
+        }
 
-      setIsOpened(true);
-    });
+        setIsOpened(true);
+      },
+      [disabled, selectedOptionIndex, updateFocusIndex]
+    );
 
     const close = () => {
       updateFocusIndex(-1);
