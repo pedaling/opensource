@@ -166,6 +166,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       hasSuffixComponent: renderEnd !== undefined,
     }),
   }),
+
   propVariant({
     props: [
       {
@@ -184,11 +185,15 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       {
         name: 'hasSuffixComponent',
       },
+      {
+        name: 'showClearButton',
+        keep: true,
+      },
     ],
-    variants: ({ label, hasPrefixText, hasPrefixComponent, hasSuffixComponent, hasSuffixText }) => ({
+    variants: ({ label, hasPrefixText, hasPrefixComponent, hasSuffixComponent, hasSuffixText, showClearButton }) => ({
       pt: label ? 23 : 15,
       pl: hasPrefixText ? 4 : hasPrefixComponent ? 12 : 15,
-      pr: hasSuffixText ? 4 : hasSuffixComponent ? 12 : 15,
+      pr: hasSuffixText ? 4 : hasSuffixComponent || showClearButton ? 12 : 15,
       pb: label ? 7 : 15,
     }),
   })

@@ -8,6 +8,8 @@ export default {
   args: {
     label: '이메일',
     helperText: '이메일을 입력해주세요',
+    autoCapitalize: 'none',
+    autoComplete: 'none',
   },
   argTypes: {
     renderStart: { controls: false },
