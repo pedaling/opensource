@@ -53,6 +53,7 @@ export type TextInputRef = {
   focus: () => void;
   blur: () => void;
   clear: () => void;
+  isFocused: () => boolean;
 };
 
 export const HTMLAutoCompleteOptions = {

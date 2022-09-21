@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, OverlayBox, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
@@ -9,6 +9,7 @@ import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
   ({
+    innerRef,
     label,
     placeholder,
     inlineLabel,
@@ -112,42 +113,60 @@ export const SelectField = withSelectFieldVariation(
       setState(stateProp);
     }, [stateProp]);
 
-    const open = async (index: number) => {
-      if (!ref.current || disabled) {
-        return;
-      }
+    const open = useCallback(
+      async (index: number) => {
+        if (!ref.current || disabled) {
+          return;
+        }
 
-      inputRef.current?.focus();
+        inputRef.current?.focus();
 
-      const { top, bottom } = await getElementPosition(ref.current);
+        const { top, bottom } = await getElementPosition(ref.current);
 
-      const spaceAbove = top;
-      const spaceBelow = bottom;
+        const spaceAbove = top;
+        const spaceBelow = bottom;
 
-      if (selectedOptionIndex !== -1) {
-        updateFocusIndex(selectedOptionIndex);
-      } else {
-        updateFocusIndex(index);
-      }
+        if (selectedOptionIndex !== -1) {
+          updateFocusIndex(selectedOptionIndex);
+        } else {
+          updateFocusIndex(index);
+        }
 
-      if (spaceAbove > spaceBelow) {
-        setOptionGroupMaxHeight(spaceAbove - 44);
+        if (spaceAbove > spaceBelow) {
+          setOptionGroupMaxHeight(spaceAbove - 44);
 
-        setDirection('up');
-      } else {
-        setOptionGroupMaxHeight(spaceBelow - 84);
+          setDirection('up');
+        } else {
+          setOptionGroupMaxHeight(spaceBelow - 84);
 
-        setDirection('down');
-      }
+          setDirection('down');
+        }
 
-      setIsOpened(true);
-    };
+        setIsOpened(true);
+      },
+      [disabled, selectedOptionIndex, updateFocusIndex]
+    );
 
     const close = () => {
       updateFocusIndex(-1);
 
       setIsOpened(false);
     };
+
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        focus: () => {
+          inputRef.current?.focus();
+
+          open(0);
+        },
+        blur: () => inputRef.current?.blur(),
+        clear: () => setSelectedOptionIndex(-1),
+        isFocused: () => inputRef.current?.isFocused(),
+      }),
+      [open]
+    );
 
     return (
       <Box>

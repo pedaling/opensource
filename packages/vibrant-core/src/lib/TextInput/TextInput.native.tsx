@@ -83,6 +83,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
         onValueChange?.({ value: '', prevent: () => {} });
       },
+      isFocused: () => innerRef.current?.isFocused() ?? false,
     }));
 
     return (

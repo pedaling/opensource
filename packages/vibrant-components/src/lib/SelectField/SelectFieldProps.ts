@@ -1,7 +1,16 @@
+import type { RefObject } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { SelectOptionGroupProps } from '../SelectOptionGroup';
 
+export type SelectFieldRefValue = {
+  focus: () => void;
+  blur: () => void;
+  clear: () => void;
+  isFocused: () => void;
+};
+
 export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderOption'> & {
+  ref?: RefObject<SelectFieldRefValue>;
   state?: 'default' | 'error';
   helperText?: string;
   disabled?: boolean;
