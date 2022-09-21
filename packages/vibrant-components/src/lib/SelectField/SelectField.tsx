@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, OverlayBox, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
@@ -9,6 +9,7 @@ import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
   ({
+    innerRef,
     label,
     placeholder,
     inlineLabel,
@@ -112,7 +113,7 @@ export const SelectField = withSelectFieldVariation(
       setState(stateProp);
     }, [stateProp]);
 
-    const open = async (index: number) => {
+    const open = useCallback(async (index: number) => {
       if (!ref.current || disabled) {
         return;
       }
@@ -141,13 +142,28 @@ export const SelectField = withSelectFieldVariation(
       }
 
       setIsOpened(true);
-    };
+    });
 
     const close = () => {
       updateFocusIndex(-1);
 
       setIsOpened(false);
     };
+
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        focus: () => {
+          inputRef.current?.focus();
+
+          open(0);
+        },
+        blur: () => inputRef.current?.blur(),
+        clear: () => setSelectedOptionIndex(-1),
+        isFocused: () => inputRef.current?.isFocused(),
+      }),
+      [open]
+    );
 
     return (
       <Box>
