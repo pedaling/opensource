@@ -8,6 +8,7 @@ type TextFieldProps = BaseInputProps<string> & {
   label?: string;
   placeholder?: string;
   helperText?: string;
+  maxLength?: number;
   autoComplete?: AutoCompleteOption;
   autoCapitalize?: AutoCapitalizeOption;
   prefix?: string;
