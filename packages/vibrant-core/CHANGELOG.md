@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.17.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.16.3...vibrant-core-0.17.0) (2022-09-22)
+
+
+### Features
+
+* add hitSlop props into Pressable box  ([#289](https://github.com/pedaling/opensource/issues/289)) ([c272298](https://github.com/pedaling/opensource/commit/c27229892ce1da0c505782a9fc7cfcdad4fbc76e))
+* add ref values to SelectField ([#300](https://github.com/pedaling/opensource/issues/300)) ([220fba3](https://github.com/pedaling/opensource/commit/220fba3100ecfac27aa7778cdedb3a415e46fb8c))
+
+
+### Bug Fixes
+
+* lineLimit이 1일 때 webKitLineClamp 속성을 사용하지 않는다 ([#298](https://github.com/pedaling/opensource/issues/298)) ([c278934](https://github.com/pedaling/opensource/commit/c27893493a3261252fd74aae20828fdd770558fb))
+* SelectField QA 사항을 반영한다 ([#293](https://github.com/pedaling/opensource/issues/293)) ([35be1a8](https://github.com/pedaling/opensource/commit/35be1a8bb119c84c09f7afb7f1d5aa740646618d))
+
 ### [0.16.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.16.2...vibrant-core-0.16.3) (2022-09-16)
 
 

@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.17.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.3...vibrant-components-0.17.0) (2022-09-22)
+
+
+### Features
+
+* add maxLength prop to TextField ([#302](https://github.com/pedaling/opensource/issues/302)) ([2194ff9](https://github.com/pedaling/opensource/commit/2194ff97ed5c8344b4d5f883c888ecc131fe4160))
+* add ref values to SelectField ([#300](https://github.com/pedaling/opensource/issues/300)) ([220fba3](https://github.com/pedaling/opensource/commit/220fba3100ecfac27aa7778cdedb3a415e46fb8c))
+
+
+### Bug Fixes
+
+* add show clear button into FieldLayout prop variants ([#301](https://github.com/pedaling/opensource/issues/301)) ([400d2b7](https://github.com/pedaling/opensource/commit/400d2b7609aab2b609cb0746be498a62f912c964))
+* lineLimit이 1일 때 webKitLineClamp 속성을 사용하지 않는다 ([#298](https://github.com/pedaling/opensource/issues/298)) ([c278934](https://github.com/pedaling/opensource/commit/c27893493a3261252fd74aae20828fdd770558fb))
+* only number can be typed on VerificationCodeField ([#281](https://github.com/pedaling/opensource/issues/281)) ([9bf1eca](https://github.com/pedaling/opensource/commit/9bf1eca1d51e5314cbd624ad89821a7d24edf39d))
+* SelectField QA 사항을 반영한다 ([#293](https://github.com/pedaling/opensource/issues/293)) ([35be1a8](https://github.com/pedaling/opensource/commit/35be1a8bb119c84c09f7afb7f1d5aa740646618d))
+
 ### [0.16.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.2...vibrant-components-0.16.3) (2022-09-16)
 
 
