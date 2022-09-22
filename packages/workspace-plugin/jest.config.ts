@@ -1,4 +1,6 @@
-export default {
+import type { Config } from '@jest/types';
+
+const config: Config.InitialOptions = {
   displayName: 'workspace-plugin',
   preset: '../../jest.preset.js',
   globals: {
@@ -10,5 +12,9 @@ export default {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
+  collectCoverage: true,
   coverageDirectory: '../../coverage/packages/workspace-plugin',
+  coverageReporters: ['lcov'],
 };
+
+export default config;

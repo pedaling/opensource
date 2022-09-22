@@ -8,11 +8,14 @@ type TextFieldProps = BaseInputProps<string> & {
   label?: string;
   placeholder?: string;
   helperText?: string;
+  maxLength?: number;
   autoComplete?: AutoCompleteOption;
   autoCapitalize?: AutoCapitalizeOption;
   prefix?: string;
   suffix?: string;
   clearable?: boolean;
+  onFocus?: () => void;
+  onBlur?: () => void;
   renderStart?: () => ReactElementChild;
   renderEnd?: () => ReactElementChild;
 };

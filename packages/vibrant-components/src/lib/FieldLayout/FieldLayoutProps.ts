@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElementChild } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { OnColorToken } from '@vibrant-ui/theme';
@@ -145,7 +146,8 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       },
     ],
     variants: ({ prefixText, renderStart }) => ({
-      hasPrefix: prefixText || renderStart,
+      hasPrefixText: prefixText,
+      hasPrefixComponent: renderStart !== undefined,
     }),
   }),
   propVariant({
@@ -160,9 +162,11 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       },
     ],
     variants: ({ suffixText, renderEnd }) => ({
-      hasSuffix: suffixText || renderEnd,
+      hasSuffixText: suffixText,
+      hasSuffixComponent: renderEnd !== undefined,
     }),
   }),
+
   propVariant({
     props: [
       {
@@ -170,16 +174,26 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         keep: true,
       },
       {
-        name: 'hasPrefix',
+        name: 'hasPrefixText',
       },
       {
-        name: 'hasSuffix',
+        name: 'hasSuffixText',
+      },
+      {
+        name: 'hasPrefixComponent',
+      },
+      {
+        name: 'hasSuffixComponent',
+      },
+      {
+        name: 'showClearButton',
+        keep: true,
       },
     ],
-    variants: ({ label, hasPrefix, hasSuffix }) => ({
+    variants: ({ label, hasPrefixText, hasPrefixComponent, hasSuffixComponent, hasSuffixText, showClearButton }) => ({
       pt: label ? 23 : 15,
-      pl: hasPrefix ? 12 : 15,
-      pr: hasSuffix ? 12 : 15,
+      pl: hasPrefixText ? 4 : hasPrefixComponent ? 12 : 15,
+      pr: hasSuffixText ? 4 : hasSuffixComponent || showClearButton ? 12 : 15,
       pb: label ? 7 : 15,
     }),
   })

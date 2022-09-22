@@ -23,6 +23,7 @@ jobs:
           fetch-depth: 0
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
+        id: setSHAs
         with:
          main-branch-name: main
       - name: Get yarn cache directory path
@@ -38,11 +39,16 @@ jobs:
       - name: Install Packages
         run: yarn install --immutable
       - name: Lint Affected Project
-        run: yarn nx affected --target=lint --parallel=3
+        run: yarn nx affected --target=lint
       - name: Test Affected Project
-        run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
+        run: yarn nx collect-coverage testing --ci --coverage-reporter=lcov --output-path=coverage/lcov.info
       - name: Typecheck Affected Project
         run: yarn nx affected --target=typecheck --parallel=1
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          git-commit: ${{ steps.setSHAs.outputs.head }}
 
   chromatic:
     runs-on: ubuntu-latest

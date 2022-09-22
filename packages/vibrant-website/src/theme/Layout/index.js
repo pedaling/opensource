@@ -1,16 +1,12 @@
 import React from 'react';
-import * as ReactSpring from '@react-spring/web';
 import Layout from '@theme-original/Layout';
-import { VibrantProvider } from '@vibrant-ui/core';
+import { VibrantProviderWrapper } from '../../components/VibrantProviderWrapper';
 
 export default function LayoutWrapper(props) {
+  const { children } = props;
   return (
-    <VibrantProvider
-      dependencies={{
-        reactSpringModule: ReactSpring,
-      }}
-    >
-      <Layout {...props} />
-    </VibrantProvider>
+    <Layout>
+      <VibrantProviderWrapper>{children}</VibrantProviderWrapper>
+    </Layout>
   );
 }

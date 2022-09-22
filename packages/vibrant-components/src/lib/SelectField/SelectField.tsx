@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, OverlayBox, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
-import { Space } from '../Space';
 import { withSelectFieldVariation } from './SelectFieldProps';
 
 export const SelectField = withSelectFieldVariation(
   ({
+    innerRef,
     label,
     placeholder,
     inlineLabel,
@@ -39,6 +39,14 @@ export const SelectField = withSelectFieldVariation(
 
       if (state === 'error') {
         return 'error';
+      }
+
+      return 'onView2';
+    }, [disabled, state]);
+
+    const placeholderColor = useMemo(() => {
+      if (disabled || state === 'error') {
+        return 'onView3';
       }
 
       return 'onView2';
@@ -105,42 +113,60 @@ export const SelectField = withSelectFieldVariation(
       setState(stateProp);
     }, [stateProp]);
 
-    const open = async (index: number) => {
-      if (!ref.current || disabled) {
-        return;
-      }
+    const open = useCallback(
+      async (index: number) => {
+        if (!ref.current || disabled) {
+          return;
+        }
 
-      inputRef.current?.focus();
+        inputRef.current?.focus();
 
-      const { top, bottom } = await getElementPosition(ref.current);
+        const { top, bottom } = await getElementPosition(ref.current);
 
-      const spaceAbove = top;
-      const spaceBelow = bottom;
+        const spaceAbove = top;
+        const spaceBelow = bottom;
 
-      if (selectedOptionIndex !== -1) {
-        updateFocusIndex(selectedOptionIndex);
-      } else {
-        updateFocusIndex(index);
-      }
+        if (selectedOptionIndex !== -1) {
+          updateFocusIndex(selectedOptionIndex);
+        } else {
+          updateFocusIndex(index);
+        }
 
-      if (spaceAbove > spaceBelow) {
-        setOptionGroupMaxHeight(spaceAbove - 44);
+        if (spaceAbove > spaceBelow) {
+          setOptionGroupMaxHeight(spaceAbove - 44);
 
-        setDirection('up');
-      } else {
-        setOptionGroupMaxHeight(spaceBelow - 84);
+          setDirection('up');
+        } else {
+          setOptionGroupMaxHeight(spaceBelow - 84);
 
-        setDirection('down');
-      }
+          setDirection('down');
+        }
 
-      setIsOpened(true);
-    };
+        setIsOpened(true);
+      },
+      [disabled, selectedOptionIndex, updateFocusIndex]
+    );
 
     const close = () => {
       updateFocusIndex(-1);
 
       setIsOpened(false);
     };
+
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        focus: () => {
+          inputRef.current?.focus();
+
+          open(0);
+        },
+        blur: () => inputRef.current?.blur(),
+        clear: () => setSelectedOptionIndex(-1),
+        isFocused: () => inputRef.current?.isFocused(),
+      }),
+      [open]
+    );
 
     return (
       <Box>
@@ -192,12 +218,20 @@ export const SelectField = withSelectFieldVariation(
             {...restProps}
           >
             <HStack alignItems="center" width="100%">
-              <Box as="span" flex={1}>
+              <Box as="span" flex={1} pr={12} minWidth={0}>
                 {selectedOption ? (
-                  <Box flexDirection={inlineLabel ? 'row' : 'column'}>
+                  <Box as="span" flexDirection={inlineLabel ? 'row' : 'column'}>
                     {Boolean(label) && (
                       <>
-                        <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                        <Body
+                          level={inlineLabel ? 2 : 6}
+                          color={labelColor}
+                          lineLimit={1}
+                          flexGrow={0}
+                          flexShrink={0}
+                          flexBasis="auto"
+                          maxWidth="90%"
+                        >
                           {label}
                         </Body>
                         <Box as="span" flexShrink={0} hidden={!inlineLabel}>
@@ -207,23 +241,22 @@ export const SelectField = withSelectFieldVariation(
                         </Box>
                       </>
                     )}
-                    <Body
-                      level={2}
-                      color={disabled ? 'onView3' : 'onView1'}
-                      wordBreak="break-all"
-                      wordWrap="break-word"
-                      lineLimit={1}
-                    >
+                    <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={1}>
                       {selectedOption.label}
                     </Body>
                   </Box>
                 ) : (
-                  <Body level={2} color={labelColor} lineLimit={1} wordBreak="break-all" wordWrap="break-word">
+                  <Body
+                    level={2}
+                    color={label ? labelColor : placeholderColor}
+                    lineLimit={1}
+                    wordBreak="break-all"
+                    wordWrap="break-word"
+                  >
                     {label || placeholder}
                   </Body>
                 )}
               </Box>
-              <Space width={12} />
               <Icon.ArrowTriangleDown.Regular
                 size={20}
                 fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}

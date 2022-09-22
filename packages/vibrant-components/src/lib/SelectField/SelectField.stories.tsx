@@ -1,9 +1,12 @@
+import { useRef } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
+import { Pressable } from '../Pressable';
 import { VStack } from '../VStack';
 import { SelectField } from './SelectField';
+import type { SelectFieldRefValue } from './SelectFieldProps';
 
 export default {
   title: 'SelectField',
@@ -115,3 +118,21 @@ export const MultipleSelectField: ComponentStory<typeof SelectField> = props => 
     <Box zIndex={-1} height={500} />
   </Box>
 );
+
+export const UsageWithRef: ComponentStory<typeof SelectField> = props => {
+  const selectFieldRef = useRef<SelectFieldRefValue>(null);
+
+  return (
+    <VStack spacing={10}>
+      <HStack spacing={8}>
+        <Pressable onClick={() => selectFieldRef.current?.clear()}>
+          <Body level={2}>Clear</Body>
+        </Pressable>
+        <Pressable onClick={() => selectFieldRef.current?.focus()}>
+          <Body level={2}>Focus</Body>
+        </Pressable>
+      </HStack>
+      <SelectField {...props} ref={selectFieldRef} />
+    </VStack>
+  );
+};
