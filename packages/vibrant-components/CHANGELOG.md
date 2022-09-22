@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.0...vibrant-components-0.17.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* set safe-area-inset context value to padding style ([#306](https://github.com/pedaling/opensource/issues/306)) ([b7658ec](https://github.com/pedaling/opensource/commit/b7658ec66cfb06377cdd1b1ca5d2955cf64ff79c))
+
 ## [0.17.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.16.3...vibrant-components-0.17.0) (2022-09-22)
 
 
