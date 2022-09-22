@@ -2,16 +2,6 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "utils-eslint-config": "packages/utils-eslint-config",
-    "vibrant-components": "packages/vibrant-components",
-    "vibrant-core": "packages/vibrant-core",
-    "vibrant-example-app": "packages/vibrant-example-app",
-    "vibrant-icons": "packages/vibrant-icons",
-    "vibrant-motion": "packages/vibrant-motion",
-    "vibrant-theme": "packages/vibrant-theme",
-    "vibrant-utils": "packages/vibrant-utils",
-    "vibrant-website": "packages/vibrant-website",
-    "workspace-plugin": "packages/workspace-plugin",
     "testing": {
       "root": ".",
       "implicitDependencies": [
@@ -55,6 +45,16 @@
           ]
         }
       }
-    }
+    },
+    "utils-eslint-config": "packages/utils-eslint-config",
+    "vibrant-components": "packages/vibrant-components",
+    "vibrant-core": "packages/vibrant-core",
+    "vibrant-example-app": "packages/vibrant-example-app",
+    "vibrant-icons": "packages/vibrant-icons",
+    "vibrant-motion": "packages/vibrant-motion",
+    "vibrant-theme": "packages/vibrant-theme",
+    "vibrant-utils": "packages/vibrant-utils",
+    "vibrant-website": "packages/vibrant-website",
+    "workspace-plugin": "packages/workspace-plugin"
   }
 }

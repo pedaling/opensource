@@ -17,7 +17,7 @@ export const useSafeArea = (): SafeAreaContextValue => {
     edges.reduce(
       (prev, edge) => ({
         ...prev,
-        [`p${edge[0]}`]: transformResponsiveValue(minInsets[edge], value => Math.max(insets[edge], value ?? 0)),
+        [edge]: transformResponsiveValue(minInsets[edge], value => Math.max(insets[edge], value ?? 0)),
       }),
       {}
     );
