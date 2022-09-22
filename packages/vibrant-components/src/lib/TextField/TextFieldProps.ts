@@ -14,6 +14,8 @@ type TextFieldProps = BaseInputProps<string> & {
   prefix?: string;
   suffix?: string;
   clearable?: boolean;
+  onFocus?: () => void;
+  onBlur?: () => void;
   renderStart?: () => ReactElementChild;
   renderEnd?: () => ReactElementChild;
 };
