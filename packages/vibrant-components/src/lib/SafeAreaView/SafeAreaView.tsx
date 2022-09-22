@@ -14,14 +14,19 @@ export const SafeAreaView = withSafeAreaViewVariation(
   }) => {
     const { generateStyle } = useSafeArea();
 
-    const style = useMemo(
-      () =>
-        generateStyle({
-          edges,
-          minInsets,
-        }),
-      [edges, generateStyle, minInsets]
-    );
+    const style = useMemo(() => {
+      const generatedStyle = generateStyle({
+        edges,
+        minInsets,
+      });
+
+      return {
+        pt: generatedStyle.top,
+        pl: generatedStyle.left,
+        pr: generatedStyle.right,
+        pb: generatedStyle.bottom,
+      };
+    }, [edges, generateStyle, minInsets]);
 
     return (
       <Box width={width} height={height} {...(mode === 'margin' && style)}>
