@@ -131,7 +131,7 @@ export type BoxProps<
 export type { LayoutEvent };
 
 export const interpolation = injectContext(
-  createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box' })
+  createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box', position: 'relative' })
 );
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
