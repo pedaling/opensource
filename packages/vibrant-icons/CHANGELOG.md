@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.3](https://github.com/pedaling/opensource/compare/vibrant-icons-0.17.2...vibrant-icons-0.17.3) (2022-09-23)
+
+
+### Features
+
+* Color token 값을 업데이트하고 스토리북에 확인할 수 있는 뷰를 추가한다 ([#311](https://github.com/pedaling/opensource/issues/311)) ([9e12da3](https://github.com/pedaling/opensource/commit/9e12da3f7ab1adeda3b72cf09b3e6436060b373f))
+
 ### [0.17.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.17.1...vibrant-icons-0.17.2) (2022-09-23)
 
 
