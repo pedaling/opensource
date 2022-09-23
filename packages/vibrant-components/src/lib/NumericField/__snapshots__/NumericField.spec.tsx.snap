@@ -253,7 +253,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
       autocomplete="off"
       class="emotion-1"
       inputmode="numeric"
-      type="number"
+      type="text"
       value=""
     />
     <div

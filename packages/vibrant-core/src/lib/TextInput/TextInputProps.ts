@@ -159,16 +159,17 @@ export type TextInputProps = SystemProps &
         type: Exclude<TextInputType, 'number'>;
         min?: never;
         max?: never;
+        pattern?: RegExp;
       }
     | {
         type: Extract<TextInputType, 'number'>;
         min?: number;
         max?: number;
+        pattern?: never;
       }
   ) & {
     defaultValue?: string;
     placeholder?: string;
-    pattern?: RegExp;
     maxLength?: number;
     autoFocus?: boolean;
     tabIndex?: number;
