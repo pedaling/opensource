@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.17.1...vibrant-icons-0.17.2) (2022-09-23)
+
+
+### Bug Fixes
+
+* add position relative to Box default style ([#307](https://github.com/pedaling/opensource/issues/307)) ([1136814](https://github.com/pedaling/opensource/commit/11368144bfbe6f3de9b23f8f759d5e3a34ad8da5))
+
 ### [0.17.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.17.0...vibrant-icons-0.17.1) (2022-09-22)
 
 ## [0.17.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.16.3...vibrant-icons-0.17.0) (2022-09-22)

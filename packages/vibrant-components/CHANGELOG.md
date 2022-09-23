@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.1...vibrant-components-0.17.2) (2022-09-23)
+
+
+### Bug Fixes
+
+* add position relative to Box default style ([#307](https://github.com/pedaling/opensource/issues/307)) ([1136814](https://github.com/pedaling/opensource/commit/11368144bfbe6f3de9b23f8f759d5e3a34ad8da5))
+* 사파리 브라우저에서 VerificationCodeField가 작동할 수 있도록 한다 ([#308](https://github.com/pedaling/opensource/issues/308)) ([24bb5c2](https://github.com/pedaling/opensource/commit/24bb5c21354ab736909c80230e4dba6f4534ec62))
+
 ### [0.17.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.0...vibrant-components-0.17.1) (2022-09-22)
 
 
