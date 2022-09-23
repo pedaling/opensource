@@ -111,7 +111,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-basis: auto;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: #0C0C0C;
+  border-bottom-color: #0c0c0c;
   cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -141,9 +141,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   text-align: left;
-  color: #0C0C0C;
-  -webkit-text-fill-color: #0C0C0C;
-  text-fill-color: #0C0C0C;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
@@ -215,9 +215,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   text-align: left;
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
