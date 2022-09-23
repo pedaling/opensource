@@ -49,5 +49,5 @@ export const stories = [
   require('../../vibrant-icons/src/lib/Icon/Icon.stories.tsx'),
   require('../../vibrant-motion/src/lib/Motion/Motion.stories.tsx'),
   require('../../vibrant-motion/src/lib/Transition/Transition.stories.tsx'),
-  require('../../vibrant-theme/src/lib/palettes/Palettes.stories.tsx'),
+  require('../../vibrant-components/src/docs/Palettes.stories.tsx'),
 ];

@@ -1,8 +1,10 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { HStack, Paper, VStack } from '@vibrant-ui/components';
 import { PressableBox, Text, useCurrentTheme } from '@vibrant-ui/core';
-import type { ColorToken } from '../../types';
-import { palettes } from '../palettes';
+import type { ColorToken } from '@vibrant-ui/theme';
+import { palettes } from '@vibrant-ui/theme';
+import { HStack } from '../lib/HStack';
+import { Paper } from '../lib/Paper';
+import { VStack } from '../lib/VStack';
 
 export default {
   title: 'Palettes',
