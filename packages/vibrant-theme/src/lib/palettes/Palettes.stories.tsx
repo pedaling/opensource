@@ -90,7 +90,7 @@ export const ColorTokenChips: ComponentStory<typeof HStack> = () => {
   );
 };
 
-export const ColorBasicChips: ComponentStory<typeof HStack> = props => (
+export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
   <HStack p={10} flexWrap="wrap" columnGap={25} rowGap={20}>
     {Object.entries(palettes).map(([key, value]) => {
       if (typeof value === 'object') {
