@@ -98,7 +98,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         }}
         onInput={event => {
           const replacedValue = replaceValue({
-            pattern: type === 'number' && !pattern ? /\d/ : pattern,
+            pattern: type === 'number' ? /\d/ : pattern,
             value: event.currentTarget.value,
           }).substring(0, maxLength);
 
