@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { HStack, Paper, VStack } from '@vibrant-ui/components';
-import { Box, Text, useCurrentTheme } from '@vibrant-ui/core';
+import { PressableBox, Text, useCurrentTheme } from '@vibrant-ui/core';
 import type { ColorToken } from '../../types';
 import { palettes } from '../palettes';
 
@@ -74,7 +74,17 @@ export const ColorTokenChips: ComponentStory<typeof HStack> = () => {
       <Paper backgroundColor="background">
         <HStack rowGap={20} flexWrap="wrap">
           {Object.entries(colors).map(([key, value]) => (
-            <Box alignItems="center" justifyContent="center" key={value} width="33%" height={70} backgroundColor={key}>
+            <PressableBox
+              key={value}
+              onClick={() => {
+                window.navigator.clipboard.writeText(value);
+              }}
+              alignItems="center"
+              justifyContent="center"
+              width="33%"
+              height={70}
+              backgroundColor={key}
+            >
               <Text
                 fontWeight="bold"
                 wordBreak="break-all"
@@ -82,7 +92,7 @@ export const ColorTokenChips: ComponentStory<typeof HStack> = () => {
                 fontSize={4}
               >{`${key}`}</Text>
               <Text color={onColorToken[key as ColorToken]} fontSize={4}>{`${value}`}</Text>
-            </Box>
+            </PressableBox>
           ))}
         </HStack>
       </Paper>
@@ -99,7 +109,15 @@ export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
             {Object.entries(value).map(([numberKey, numberValue]) => (
               <VStack key={`${numberValue}_stack`} alignment="center" spacing={2}>
                 <Text fontWeight="bold" fontSize={4}>{`${numberKey}`}</Text>
-                <Box width={50} height={50} backgroundColor={numberValue} />
+                <PressableBox
+                  onClick={() => {
+                    window.navigator.clipboard.writeText(numberValue);
+                  }}
+                  width={50}
+                  height={50}
+                  backgroundColor={numberValue}
+                  children={null}
+                />
                 <Text fontSize={4}>{`${numberValue.replace('rgba', '')}`}</Text>
               </VStack>
             ))}
@@ -109,7 +127,15 @@ export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
         return (
           <VStack key={`${value}_stack`} alignment="center" spacing={2}>
             <Text fontWeight="bold" fontSize={4}>{`${key}`}</Text>
-            <Box width={50} height={50} backgroundColor={value} />
+            <PressableBox
+              onClick={() => {
+                window.navigator.clipboard.writeText(value);
+              }}
+              width={50}
+              height={50}
+              backgroundColor={value}
+              children={null}
+            />
             <HStack flexWrap="wrap" flexShrink={1}>
               <Text fontSize={4}>{`${value}`}</Text>
             </HStack>
