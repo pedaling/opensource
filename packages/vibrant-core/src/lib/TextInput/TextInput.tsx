@@ -70,7 +70,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
     return (
       <SystemTextInput
         ref={innerRef}
-        type={type}
+        type={type === 'number' ? 'text' : type}
         value={value}
         inputMode={inputMode}
         autoCapitalize={autoCapitalize}
@@ -97,7 +97,10 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
           onKeyPress?.({ key, prevent: () => event.preventDefault() });
         }}
         onInput={event => {
-          const replacedValue = replaceValue({ pattern, value: event.currentTarget.value }).substring(0, maxLength);
+          const replacedValue = replaceValue({
+            pattern: type === 'number' && !pattern ? /\d/ : pattern,
+            value: event.currentTarget.value,
+          }).substring(0, maxLength);
 
           let isPrevented = false;
 
