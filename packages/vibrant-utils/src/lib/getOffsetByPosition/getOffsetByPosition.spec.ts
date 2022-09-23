@@ -45,16 +45,6 @@ describe('getOffsetByPosition', () => {
     });
   });
 
-  describe('position is bottom-end', () => {
-    beforeEach(() => {
-      position = 'bottom-end';
-    });
-
-    it('return the offset of bottom position aligned to the right for referenceRect', () => {
-      expect(call()).toEqual({ x: -50, y: 50 });
-    });
-  });
-
   describe('position is left', () => {
     beforeEach(() => {
       position = 'left';
