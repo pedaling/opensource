@@ -1,6 +1,6 @@
 export const palettes = {
-  black: '#000000',
-  white: '#FFFFFF',
+  globalBlack: '#000000',
+  globalWhite: '#FFFFFF',
 
   orange: {
     5: '#130802',

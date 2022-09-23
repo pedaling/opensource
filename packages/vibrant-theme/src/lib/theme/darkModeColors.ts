@@ -2,11 +2,11 @@ import type { Colors } from '../../types';
 import { palettes } from '../palettes';
 
 export const darkModeColors: Colors = {
-  white: palettes.white,
-  black: palettes.black,
+  white: palettes.globalWhite,
+  black: palettes.globalBlack,
   transparent: palettes.transparent,
   primary: palettes.orange['60'],
-  onPrimary: palettes.white,
+  onPrimary: palettes.globalWhite,
   primaryContainer: palettes.orange['10'],
   onPrimaryContainer: palettes.orange['65'],
   informative: palettes.blue['50'],
@@ -27,7 +27,7 @@ export const darkModeColors: Colors = {
   onWarningContainer: palettes.yellow['60'],
   surface1: palettes.whiteAlpha['10'],
   surface2: palettes.neutral['10'],
-  surface3: palettes.black,
+  surface3: palettes.globalBlack,
   surface4: palettes.neutral['40'],
   disable: palettes.whiteAlpha['15'],
   outline1: palettes.whiteAlpha['15'],
@@ -35,7 +35,7 @@ export const darkModeColors: Colors = {
   outlineNeutral: palettes.neutral['95'],
   disableOutline: palettes.whiteAlpha['10'],
   outlinePrimary: palettes.orange['50'],
-  outlineInformative: palettes.black['50'],
+  outlineInformative: palettes.blue['50'],
   outlineError: palettes.red['40'],
   outlineSuccess: palettes.green['50'],
   outlineWarning: palettes.yellow['75'],
