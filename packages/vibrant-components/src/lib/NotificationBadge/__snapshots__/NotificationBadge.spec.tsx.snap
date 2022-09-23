@@ -19,6 +19,7 @@ exports[`<NotificationBadge /> when NotificationBadge with dot rendered match sn
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   background-color: #E10923;
   white-space: nowrap;
   -webkit-align-items: center;
@@ -63,6 +64,7 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   background-color: #E10923;
   white-space: nowrap;
   -webkit-align-items: center;

@@ -45,7 +45,7 @@ export const FieldLayout = withFieldLayoutVariation(
         borderRadiusLevel={1}
       >
         <VStack flexShrink={0}>{renderStart?.()}</VStack>
-        <Box position="relative" width="100%" height="100%" cursor={cursor}>
+        <Box width="100%" height="100%" cursor={cursor}>
           <PressableBox cursor={cursor} onClick={onLabelClick}>
             <Transition animation={animation} duration={100}>
               <Text

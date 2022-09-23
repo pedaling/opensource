@@ -9,6 +9,7 @@ exports[`Native <Box /> as prop when empty box created match snapshot 1`] = `
       "display": "flex",
       "flexDirection": "column",
       "flexShrink": 1,
+      "position": "relative",
     }
   }
 />
@@ -36,6 +37,7 @@ exports[`Native <Box /> base prop when Pressable box created match snapshot 1`] 
       "display": "flex",
       "flexDirection": "column",
       "flexShrink": 1,
+      "position": "relative",
     }
   }
 />
@@ -51,6 +53,7 @@ exports[`Native <Box /> default style when styled box created match snapshot 1`]
       "flexDirection": "column",
       "flexShrink": 1,
       "height": 300,
+      "position": "relative",
       "width": 300,
     }
   }
