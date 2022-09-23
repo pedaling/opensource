@@ -91,7 +91,7 @@ export const ColorTokenChips: ComponentStory<typeof HStack> = () => {
 };
 
 export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
-  <HStack p={10} flexWrap="wrap" columnGap={25} rowGap={20}>
+  <HStack p={10} flexWrap="wrap" rowGap={20} columnGap={20}>
     {Object.entries(palettes).map(([key, value]) => {
       if (typeof value === 'object') {
         return (
@@ -100,17 +100,19 @@ export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
               <VStack key={`${numberValue}_stack`} alignment="center" spacing={2}>
                 <Text fontWeight="bold" fontSize={4}>{`${numberKey}`}</Text>
                 <Box width={50} height={50} backgroundColor={numberValue} />
-                <Text fontSize={4}>{`${numberValue}`}</Text>
+                <Text fontSize={4}>{`${numberValue.replace('rgba', '')}`}</Text>
               </VStack>
             ))}
           </HStack>
         );
       } else {
         return (
-          <VStack key={value} alignment="center" spacing={2}>
-            <Text color="onView1" fontSize={4}>{`${key}`}</Text>
-            <Box width={50} height={50} backgroundColor={key} />
-            <Text color="onView1" fontSize={3}>{`${value}`}</Text>
+          <VStack key={`${value}_stack`} alignment="center" spacing={2}>
+            <Text fontWeight="bold" fontSize={4}>{`${key}`}</Text>
+            <Box width={50} height={50} backgroundColor={value} />
+            <HStack flexWrap="wrap" flexShrink={1}>
+              <Text fontSize={4}>{`${value}`}</Text>
+            </HStack>
           </VStack>
         );
       }

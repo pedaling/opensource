@@ -51,7 +51,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #0C0C0C;
+  background-color: #0c0c0c;
 }
 
 .emotion-2 {
@@ -93,7 +93,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   position: relative;
   width: 16px;
   height: 16px;
-  fill: #0C0C0C;
+  fill: #0c0c0c;
 }
 
 .emotion-4 {
