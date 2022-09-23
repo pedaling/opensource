@@ -10,7 +10,7 @@ export default {
   args: {},
 } as ComponentMeta<typeof HStack>;
 
-export const ColorTokenChips: ComponentStory<typeof HStack> = props => {
+export const ColorTokenChips: ComponentStory<typeof HStack> = () => {
   const {
     theme: { colors },
   } = useCurrentTheme();
@@ -66,7 +66,7 @@ export const ColorTokenChips: ComponentStory<typeof HStack> = props => {
     onInverseSurface: 'inverseSurface',
     dim: 'onView1',
     overlay: 'onView1',
-    onColor: 'onView1',
+    onColor: 'onView2',
   };
 
   return (
