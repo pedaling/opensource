@@ -19,8 +19,8 @@ exports[`<NotificationBadge /> when NotificationBadge with dot rendered match sn
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
-  background-color: #e30f32;
   position: relative;
+  background-color: #e30f32;
   white-space: nowrap;
   -webkit-align-items: center;
   -webkit-box-align: center;
