@@ -57,6 +57,11 @@ const linearGradientProp = createSystemProp({
   }),
 });
 
+const backdropBlurRadiusProp = createSystemProp({
+  property: 'backdropBlurRadius',
+  disabled: true,
+});
+
 export const backgroundSystemProps = [
   backgroundProp,
   backgroundColorProp,
@@ -66,4 +71,5 @@ export const backgroundSystemProps = [
   backgroundRepeatProp,
   gradientProp,
   linearGradientProp,
+  backdropBlurRadiusProp,
 ];
