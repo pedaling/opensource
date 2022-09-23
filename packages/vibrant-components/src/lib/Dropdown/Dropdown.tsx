@@ -70,7 +70,7 @@ const getOffsetAvoidingOverflowByPosition = (
 };
 
 export const Dropdown = withDropdownVariation(
-  ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8 }) => {
+  ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
     const openerRef = useRef<HTMLElement>(null);
     const targetRef = useRef<HTMLElement>(null);
     const [isOpen, setIsOpen] = useState(open);
@@ -96,7 +96,9 @@ export const Dropdown = withDropdownVariation(
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
-    }, []);
+
+      onClose?.();
+    }, [onClose]);
 
     const handleContentResize = useCallback(
       async ({ width, height, top, left }: LayoutEvent) => {

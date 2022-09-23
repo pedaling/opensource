@@ -8,6 +8,7 @@ export type DropdownProps = {
   renderOpener: (open: () => void) => ReactElementChild;
   spacing?: number;
   open: boolean;
+  onClose?: () => void;
 };
 
 export const withDropdownVariation = withVariation<DropdownProps>('Dropdown')();
