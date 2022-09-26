@@ -236,7 +236,7 @@ export const Dropdown = withDropdownVariation(
                       }
                     >
                       <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents(closeDropdown)}
+                        {renderContents({ close: closeDropdown })}
                       </Box>
                     </ScrollBox>
                   </Transition>
