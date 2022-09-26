@@ -35,7 +35,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-width: 1px;
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
@@ -49,7 +49,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   padding-right: 38px;
   height: 100%;
   text-align: center;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #00000026;
   border-style: solid;
   border-radius: 2px;
   -moz-appearance: textfield;
@@ -127,7 +127,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #0000000d;
   border-width: 0;
   padding: 0;
   overflow: hidden;
