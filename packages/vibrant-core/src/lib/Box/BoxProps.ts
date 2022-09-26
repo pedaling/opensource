@@ -108,6 +108,12 @@ export type BoxElements =
   | 'svg'
   | 'ul';
 
+type ComponentProps<Component extends ComponentType | undefined> = Component extends undefined
+  ? undefined
+  : Component extends ComponentType<infer ComponentProps>
+  ? ComponentProps
+  : undefined;
+
 export type BoxProps<
   BaseComponent extends ComponentType | undefined = undefined,
   ElementName extends BoxElements | undefined = undefined
@@ -117,14 +123,14 @@ export type BoxProps<
   id?: string;
   onLayout?: (layoutEvent: LayoutEvent) => void;
 } & DistributiveOmit<
-    BaseComponent extends ComponentType<infer BaseComponentProps>
-      ? BaseComponentProps
-      : (ElementName extends keyof JSX.IntrinsicElements
+    ComponentProps<BaseComponent> extends undefined
+      ? (ElementName extends keyof JSX.IntrinsicElements
           ? JSX.IntrinsicElements[ElementName]
           : Record<never, never>) & {
           ref?: Ref<HTMLElement>;
           children?: ReactElementChild | ReactElementChild[];
-        },
+        }
+      : ComponentProps<BaseComponent>,
     keyof SystemProps
   >;
 
