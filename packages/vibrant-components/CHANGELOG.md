@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.4...vibrant-components-0.17.5) (2022-09-26)
+
+
+### Features
+
+* pass isOpen state to renderOpener ([#316](https://github.com/pedaling/opensource/issues/316)) ([93171bd](https://github.com/pedaling/opensource/commit/93171bd8aa8f4bd34e5b5ad12a1ac654a7f943a1))
+
 ### [0.17.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.3...vibrant-components-0.17.4) (2022-09-26)
 
 ### [0.17.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.2...vibrant-components-0.17.3) (2022-09-23)

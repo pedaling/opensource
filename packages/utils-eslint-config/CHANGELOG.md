@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.5](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.17.4...utils-eslint-config-0.17.5) (2022-09-26)
+
 ### [0.17.4](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.17.3...utils-eslint-config-0.17.4) (2022-09-26)
 
 ### [0.17.3](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.17.2...utils-eslint-config-0.17.3) (2022-09-23)
