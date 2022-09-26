@@ -48,8 +48,9 @@ export default {
   title: 'Dropdown',
   component: Dropdown,
   args: {
+    open: false,
     renderContents: () => <DropdownContent />,
-    renderOpener: open => (
+    renderOpener: ({ open }) => (
       <Pressable backgroundColor="primary" onClick={open} p={20} height={100}>
         <Body level={1}>Click Me</Body>
       </Pressable>

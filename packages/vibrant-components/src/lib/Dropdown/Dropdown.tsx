@@ -92,7 +92,7 @@ export const Dropdown = withDropdownVariation(
 
     useLockBodyScroll(isMobile && (isOpen || visible));
 
-    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
+    const opener = useMemo(() => renderOpener({ open: () => setIsOpen(!isOpen), isOpen }), [isOpen, renderOpener]);
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
@@ -184,7 +184,7 @@ export const Dropdown = withDropdownVariation(
                   >
                     <Box overflow="hidden" height={contentHeight}>
                       <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents(closeDropdown)}
+                        {renderContents({ close: closeDropdown })}
                       </Box>
                     </Box>
                   </Transition>
