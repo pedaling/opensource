@@ -1,6 +1,6 @@
 import { withVariation } from '@vibrant-ui/core';
 
-type PasswordFieldProps = {
+export type PasswordFieldProps = {
   state?: 'default' | 'error';
   label?: string;
   placeholder?: string;

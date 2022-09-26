@@ -2,7 +2,7 @@ import { withVariation } from '@vibrant-ui/core';
 import type { AutoCapitalizeOption, AutoCompleteOption, ReactElementChild, TextInputType } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
-type TextFieldProps = BaseInputProps<string> & {
+export type TextFieldProps = BaseInputProps<string> & {
   type?: Exclude<TextInputType, 'password'>;
   state?: 'default' | 'error';
   label?: string;

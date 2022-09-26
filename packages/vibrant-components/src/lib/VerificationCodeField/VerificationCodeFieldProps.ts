@@ -1,6 +1,6 @@
 import { withVariation } from '@vibrant-ui/core';
 
-type VerificationCodeFieldProps = {
+export type VerificationCodeFieldProps = {
   length: number;
   state?: 'default' | 'error';
   errorMessage?: string;
