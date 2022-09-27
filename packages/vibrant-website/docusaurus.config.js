@@ -48,6 +48,11 @@ const config = {
           label: 'Docs',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
+
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           type: 'html',
           position: 'right',
@@ -73,6 +78,18 @@ const config = {
           block: { start: 'error-start', end: 'error-end' },
         },
       ],
+    },
+  },
+  i18n: {
+    defaultLocale: 'ko',
+    locales: ['ko', 'en'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      ko: {
+        htmlLang: 'ko',
+      },
     },
   },
 };
