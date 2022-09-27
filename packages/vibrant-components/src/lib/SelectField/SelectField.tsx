@@ -268,7 +268,7 @@ export const SelectField = withSelectFieldVariation(
             targetRef={ref}
             onDismiss={close}
             width="100%"
-            maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 320]}
+            maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 336]}
             {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
           >
             <SelectOptionGroup
