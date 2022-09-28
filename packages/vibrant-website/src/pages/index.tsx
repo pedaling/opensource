@@ -1,4 +1,5 @@
 import React from 'react';
+import Translate, { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import { Body, Display, Divider, HStack, Paper, Title, VStack } from '@vibrant-ui/components';
@@ -9,7 +10,11 @@ const Home = (): JSX.Element => {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Open source design system for building modern, cross-platform web and mobile applications."
+      description={translate({
+        id: 'homepage.vibrant.title-message',
+        message: 'Open source design system for building modern, cross-platform web and mobile applications.',
+        description: 'Title of',
+      })}
     >
       <VStack maxWidth={1024} width="100%" mx="auto" px={40}>
         <HStack py={48}>
@@ -18,8 +23,10 @@ const Home = (): JSX.Element => {
               Vibrant Design System
             </Display>
             <Body as="p" level={1}>
-              Class101의 사용자들이 보다 일관적인 서비스를 경험하기 위하여 효율적이고 우수한 성능의 프로덕트를 제작할 수
-              있도록 고안된 시스템입니다.
+              <Translate id="homePage.visitVibrant">
+                Class101의 사용자들이 보다 일관적인 서비스를 경험하기 위하여 효율적이고 우수한 성능의 프로덕트를 제작할
+                수 있도록 고안된 시스템입니다.
+              </Translate>
             </Body>
           </VStack>
           <Paper width="50%" backgroundColor="surface1">
@@ -41,8 +48,10 @@ const Home = (): JSX.Element => {
                 Performant
               </Title>
               <Body as="p" level={1} color="onView2">
-                효과적으로 제작된 Class101의 프로덕트는 최고의 성능으로 기능하여 유저에게 긍정적인 사용자 경험을 줄 수
-                있습니다.
+                <Translate id="homepage.vibrant.introduction">
+                  효과적으로 제작된 Class101의 프로덕트는 최고의 성능으로 기능하여 유저에게 긍정적인 사용자 경험을 줄 수
+                  있습니다.
+                </Translate>
               </Body>
             </VStack>
             <VStack spacing={12}>
