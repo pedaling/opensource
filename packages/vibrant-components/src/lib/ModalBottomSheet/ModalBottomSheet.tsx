@@ -129,7 +129,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       {title}
                     </Title>
                   ) : null}
-                  <PressableBox ml="auto" onClick={closeModal}>
+                  <PressableBox as="button" ml="auto" onClick={closeModal}>
                     <Icon.Close.Regular size={24} />
                   </PressableBox>
                 </HStack>
