@@ -69,6 +69,12 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       setContainerHeight(height);
     }, []);
 
+    const resetContainerHeight = useCallback(() => {
+      if (!visible) {
+        setContainerHeight(undefined);
+      }
+    }, [visible]);
+
     useEffect(() => {
       if (!isOpen) {
         setVisible(false);
@@ -80,12 +86,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
         setVisible(true);
       }
     }, [containerHeight]);
-
-    useEffect(() => {
-      if (!visible) {
-        setContainerHeight(undefined);
-      }
-    }, [visible]);
 
     return (
       <>
@@ -104,6 +104,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               }}
               duration={200}
               style={{ y: isMobile ? viewportHeight : undefined }}
+              onEnd={resetContainerHeight}
             >
               <Box
                 mt={[
