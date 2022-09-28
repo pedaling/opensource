@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Box,
   PressableBox,
-  ScrollBox,
   ThemeProvider,
   useCurrentThemeMode,
   useLockBodyScroll,
@@ -23,9 +22,6 @@ import { VStack } from '../VStack';
 import { withModalBottomSheetVariation } from './ModalBottomSheetProps';
 
 const Z_INDEX = 100;
-const BOTTOM_SHEET_CONTENT_TOP_PADDING = 24;
-const BOTTOM_SHEET_CONTENT_BOTTOM_PADDING = 20;
-const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
 
 export const ModalBottomSheet = withModalBottomSheetVariation(
   ({
@@ -41,10 +37,11 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     onPrimaryCtaOnClick,
     onSecondaryCtaOnClick,
     onSubCtaOnClick,
+    ContentBoxComponent,
+    overflow,
   }) => {
     const [isOpen, setIsOpen] = useState(open);
     const [visible, setVisible] = useState(false);
-    const [contentHeight, setContentHeight] = useState<number>();
     const [containerHeight, setContainerHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
     const { insets } = useSafeArea();
@@ -68,10 +65,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       setIsOpen(false);
     }, []);
 
-    const handleContentResize = useCallback(async ({ height }: LayoutEvent) => {
-      setContentHeight(height);
-    }, []);
-
     const handleContainerResize = useCallback(async ({ height }: LayoutEvent) => {
       setContainerHeight(height);
     }, []);
@@ -83,14 +76,14 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     }, [isOpen]);
 
     useEffect(() => {
-      if (contentHeight !== undefined) {
+      if (containerHeight !== undefined) {
         setVisible(true);
       }
-    }, [contentHeight]);
+    }, [containerHeight]);
 
     useEffect(() => {
       if (!visible) {
-        setContentHeight(undefined);
+        setContainerHeight(undefined);
       }
     }, [visible]);
 
@@ -113,17 +106,16 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               style={{ y: isMobile ? viewportHeight : undefined }}
             >
               <Box
-                mt="auto"
+                mt={[
+                  (containerHeight ?? 0) >= viewportHeight - 120 ? 120 : 'auto',
+                  (containerHeight ?? 0) >= viewportHeight - 80 ? 40 : 'auto',
+                ]}
                 mx="auto"
                 mb={[0, 'auto']}
-                pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
-                pb={
-                  typeof insets.bottom === 'string'
-                    ? `calc(${BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}px + ${insets.bottom})`
-                    : BOTTOM_SHEET_CONTENT_BOTTOM_PADDING + insets.bottom
-                }
+                pt={[24, 36]}
+                pb={[typeof insets.bottom === 'string' ? `calc(20px + ${insets.bottom})` : 20 + insets.bottom, 36]}
                 width={['100%', 480, modalWidth]}
-                maxHeight={viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
+                maxHeight={overflow === 'scroll' ? [viewportHeight - 120, viewportHeight - 80] : undefined}
                 backgroundColor="surface2"
                 borderTopLeftRadiusLevel={4}
                 borderTopRightRadiusLevel={4}
@@ -131,7 +123,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 borderBottomRightRadiusLevel={[0, 4]}
                 onLayout={handleContainerResize}
               >
-                <HStack px={[20, 32]} mb={[subtitle ? 14 : 16]} alignItems="center">
+                <HStack px={[20, 32]} mb={[subtitle ? 14 : 16]} alignItems="center" flexShrink={0}>
                   {title ? (
                     <Title as="h2" level={[4, 3]}>
                       {title}
@@ -142,23 +134,16 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   </PressableBox>
                 </HStack>
                 {subtitle ? (
-                  <Body as="p" level={1} mb={16} px={[20, 32]}>
+                  <Body as="p" level={1} mb={16} px={[20, 32]} flexShrink={0}>
                     {subtitle}
                   </Body>
                 ) : null}
-                <Transition
-                  animation={{
-                    height: contentHeight,
-                  }}
-                  duration={200}
-                >
-                  <ScrollBox height={contentHeight}>
-                    <Box onLayout={handleContentResize} flexShrink={0}>
-                      {renderContents(closeModal)}
-                    </Box>
-                  </ScrollBox>
-                </Transition>
-                <VStack px={[20, 32]} mt={[16, 24]}>
+
+                <ContentBoxComponent flexShrink={overflow === 'scroll' ? 1 : 0}>
+                  {renderContents(closeModal)}
+                </ContentBoxComponent>
+
+                <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
                   {isDefined(primaryCta) && !isDefined(secondaryCta) && !isDefined(subCta) && (
                     <Pressable
                       backgroundColor="primary"
@@ -204,7 +189,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     </HStack>
                   )}
                   {isDefined(primaryCta) && !isDefined(secondaryCta) && isDefined(subCta) && (
-                    <VStack width="100%" spacing={1}>
+                    <VStack width="100%" spacing={16}>
                       <Pressable
                         backgroundColor="primary"
                         py={15}
@@ -218,7 +203,13 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                           {primaryCta}
                         </Body>
                       </Pressable>
-                      <Pressable pt={15} borderRadiusLevel={1} flexGrow={1} onClick={onSubCtaOnClick}>
+                      <Pressable
+                        my={-8}
+                        p={8}
+                        borderRadiusLevel={1}
+                        onClick={onSubCtaOnClick}
+                        interactions={['focus', 'active']}
+                      >
                         <Body color="onView1" textAlign="center" level={1} weight="medium">
                           {subCta}
                         </Body>

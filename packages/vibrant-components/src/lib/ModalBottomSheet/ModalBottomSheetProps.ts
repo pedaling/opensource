@@ -1,8 +1,8 @@
 import type { ReactElementChild } from '@vibrant-ui/core';
-import { propVariant, withVariation } from '@vibrant-ui/core';
+import { Box, ScrollBox, propVariant, withVariation } from '@vibrant-ui/core';
 
 export type ModalBottomSheetProps = {
-  open?: boolean;
+  open: boolean;
   title?: string;
   subtitle?: string;
   overflow?: 'scroll' | 'visible';
@@ -41,7 +41,7 @@ export const withModalBottomSheetVariation = withVariation<ModalBottomSheetProps
     props: [
       {
         name: 'size',
-        default: 'lg' as const,
+        default: 'lg',
       },
     ],
     variants: {
@@ -50,6 +50,23 @@ export const withModalBottomSheetVariation = withVariation<ModalBottomSheetProps
       },
       lg: {
         modalWidth: 760,
+      },
+    },
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'overflow',
+        default: 'visible',
+        keep: true,
+      },
+    ],
+    variants: {
+      visible: {
+        ContentBoxComponent: Box,
+      },
+      scroll: {
+        ContentBoxComponent: ScrollBox,
       },
     },
   })

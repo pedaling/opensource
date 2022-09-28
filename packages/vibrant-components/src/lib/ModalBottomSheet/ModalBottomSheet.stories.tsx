@@ -4,6 +4,7 @@ import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
+import { Paragraph } from '../Paragraph';
 import { Pressable } from '../Pressable';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
@@ -48,9 +49,14 @@ export default {
   title: 'ModalBottomSheet',
   component: ModalBottomSheet,
   args: {
-    renderContents: () => <DropdownContent />,
+    open: false,
+    renderContents: () => (
+      <Paragraph level={3} px={[20, 32]}>
+        Sample Text
+      </Paragraph>
+    ),
     renderOpener: open => (
-      <Pressable backgroundColor="primary" onClick={open} p={20} height={100}>
+      <Pressable backgroundColor="primary" onClick={open} p={20}>
         <Body level={1}>Click Me</Body>
       </Pressable>
     ),
@@ -65,7 +71,7 @@ export default {
 export const Basic: ComponentStory<typeof ModalBottomSheet> = props => (
   <VStack mt={200} width="100%">
     <Box mx="auto">
-      <ModalBottomSheet open={false} title="" {...props} />
+      <ModalBottomSheet title="" {...props} />
     </Box>
   </VStack>
 );
@@ -76,13 +82,27 @@ export const WithLongContent: ComponentStory<typeof ModalBottomSheet> = props =>
       <ModalBottomSheet
         {...props}
         renderContents={() => (
-          <>
-            {Array.from({ length: 20 }, (_, index) => (
-              <Body key={index} p={10} level={2}>
-                자동 재생
-              </Body>
-            ))}
-          </>
+          <VStack spacing={20} px={[20, 32]}>
+            <Paragraph level={1}>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
+              of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
+              like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing
+              and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+              when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+              unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+              passages, and more recently with desktop publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+              been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+              leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+              the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+              software like Aldus PageMaker including versions of Lorem Ipsum.
+            </Paragraph>
+          </VStack>
         )}
       />
     </Box>
