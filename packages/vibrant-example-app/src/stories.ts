@@ -15,6 +15,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/FieldLayout/FieldLayout.stories.tsx'),
   require('../../vibrant-components/src/lib/FloatingActionButton/FloatingActionButton.stories.tsx'),
   require('../../vibrant-components/src/lib/HStack/HStack.stories.tsx'),
+  require('../../vibrant-components/src/lib/ModalBottomSheet/ModalBottomSheet.stories.tsx'),
   require('../../vibrant-components/src/lib/NotificationBadge/NotificationBadge.stories.tsx'),
   require('../../vibrant-components/src/lib/NumericField/NumericField.stories.tsx'),
   require('../../vibrant-components/src/lib/OperatorButton/OperatorButton.stories.tsx'),
