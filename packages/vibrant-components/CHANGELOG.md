@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.5...vibrant-components-0.17.6) (2022-09-28)
+
+
+### Features
+
+* add color system docs ([#314](https://github.com/pedaling/opensource/issues/314)) ([64e95c2](https://github.com/pedaling/opensource/commit/64e95c2e2afbac471b291fae538f41504d5ba4bd))
+
+
+### Bug Fixes
+
+* set SelectField OptionGroup maxHeight to 336px ([#317](https://github.com/pedaling/opensource/issues/317)) ([e071d1c](https://github.com/pedaling/opensource/commit/e071d1cda532883f6bb161288b5d29a7dda1abe1))
+
 ### [0.17.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.17.4...vibrant-components-0.17.5) (2022-09-26)
 
 

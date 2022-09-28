@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.5...vibrant-core-0.17.6) (2022-09-28)
+
+
+### Features
+
+* add color system docs ([#314](https://github.com/pedaling/opensource/issues/314)) ([64e95c2](https://github.com/pedaling/opensource/commit/64e95c2e2afbac471b291fae538f41504d5ba4bd))
+
 ### [0.17.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.4...vibrant-core-0.17.5) (2022-09-26)
 
 ### [0.17.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.3...vibrant-core-0.17.4) (2022-09-26)
