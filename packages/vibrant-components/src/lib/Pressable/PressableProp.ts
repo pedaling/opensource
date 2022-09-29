@@ -28,6 +28,7 @@ export type PressableProps = BackgroundSystemProps &
     onClick?: () => void;
     onFocus?: () => void;
     onBlur?: () => void;
+    hitSlop?: number;
   } & (
     | {
         overlayColor: ResponsiveValue<ColorToken>;
