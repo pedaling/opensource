@@ -266,10 +266,16 @@
     "message": "Open source design system for building modern, cross-platform web and mobile applications.",
     "description": "Title of"
   },
-  "homePage.visitVibrant": {
-    "message": "Vibrant system is designed for users to experience more aligned and intuitive service. It helps to build effective and higher performance product."
+  "homePage.visit-vibrant": {
+    "message": "VDS is designed to build effective and high-performance products for CLASS101 users' consistent and smooth user experience. " 
   },
-  "homepage.vibrant.introduction": {
-    "message": "효과적으로 제작된 Class101의 프로덕트는 최고의 성능으로 기능하여 유저에게 긍정적인 사용자 경험을 줄 수 있습니다."
+  "homepage.core-value.performant": {
+    "message": "VDS offers fast rendering speed for for delightful UX"
+  },
+  "homepage.core-value.productive": {
+    "message": "Builder can produce qualified and stunning results even with the less code lines." 
+  },
+  "homepage.core-value.consistent": {
+    "message": "VDS ensures flexible and consistent UX for all platform"
   }
 }

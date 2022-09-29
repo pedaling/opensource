@@ -1,22 +1,22 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "다음",
     "description": "The label for version current"
   },
   "sidebar.mainSidebar.category.Getting Started": {
-    "message": "Getting Started",
+    "message": "시작하기",
     "description": "The label for category Getting Started in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.Core Concepts": {
-    "message": "Core Concepts",
+    "message": "코어 컨셉",
     "description": "The label for category Core Concepts in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.Colors": {
-    "message": "Colors",
+    "message": "색상",
     "description": "The label for category Colors in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.Components": {
-    "message": "Components",
+    "message": "컴포넌트",
     "description": "The label for category Components in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.@vibrant-ui/components": {
@@ -28,7 +28,7 @@
     "description": "The label for category @vibrant-ui/motion in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.Migration Guide": {
-    "message": "Migration Guide",
+    "message": "마이그레이션 가이드",
     "description": "The label for category Migration Guide in sidebar mainSidebar"
   }
 }
