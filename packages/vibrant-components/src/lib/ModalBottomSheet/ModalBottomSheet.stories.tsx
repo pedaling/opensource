@@ -10,7 +10,8 @@ export default {
   title: 'ModalBottomSheet',
   component: ModalBottomSheet,
   args: {
-    open: false,
+    defaultOpen: false,
+    title: 'Title',
     renderContents: () => (
       <Paragraph level={3} px={[20, 32]}>
         Sample Text
@@ -21,8 +22,6 @@ export default {
         <Body level={1}>Click Me</Body>
       </Pressable>
     ),
-    position: 'bottom',
-    spacing: 8,
   },
   argTypes: {
     onPrimaryCtaOnClick: { action: 'onPrimaryCtaOnClick' },

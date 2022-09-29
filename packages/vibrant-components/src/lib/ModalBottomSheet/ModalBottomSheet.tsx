@@ -25,7 +25,7 @@ const Z_INDEX = 100;
 
 export const ModalBottomSheet = withModalBottomSheetVariation(
   ({
-    open,
+    defaultOpen,
     renderOpener,
     renderContents,
     title,
@@ -37,10 +37,11 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     onPrimaryCtaOnClick,
     onSecondaryCtaOnClick,
     onSubCtaOnClick,
+    onClose,
     ContentBoxComponent,
     overflow,
   }) => {
-    const [isOpen, setIsOpen] = useState(open);
+    const [isOpen, setIsOpen] = useState(defaultOpen);
     const [visible, setVisible] = useState(false);
     const [containerHeight, setContainerHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
@@ -63,7 +64,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
 
     const closeModal = useCallback(() => {
       setIsOpen(false);
-    }, []);
+
+      onClose?.();
+    }, [onClose]);
 
     const handleContainerResize = useCallback(async ({ height }: LayoutEvent) => {
       setContainerHeight(height);
