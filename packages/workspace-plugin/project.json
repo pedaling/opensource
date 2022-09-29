@@ -54,6 +54,28 @@
         "jestConfig": "packages/workspace-plugin/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "skipCommit": true,
+        "trackDeps": true,
+        "postTargets": ["workspace-plugin:github", "workspace-plugin:deploy"]
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
     }
   },
   "tags": []
