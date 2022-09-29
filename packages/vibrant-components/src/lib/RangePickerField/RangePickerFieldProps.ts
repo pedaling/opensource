@@ -1,7 +1,7 @@
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
-export type RangePickerFieldProps = BaseInputProps<{ start: Date; end: Date }> & {
+export type RangePickerFieldProps = BaseInputProps<{ start: Date; end: Date } | undefined> & {
   helperText?: string;
   state?: 'default' | 'error';
 } & (
