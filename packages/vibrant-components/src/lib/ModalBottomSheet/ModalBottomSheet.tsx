@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Box,
-  PressableBox,
   ThemeProvider,
   useCurrentThemeMode,
   useLockBodyScroll,
@@ -94,7 +93,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       <>
         {opener}
         <ThemeProvider theme={rootThemeMode}>
-          <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeModal} transitionDuration={200}>
+          <Backdrop open={isOpen} zIndex={Z_INDEX} transitionDuration={200} onClick={closeModal}>
             <Transition
               animation={{
                 ...(isMobile
@@ -126,15 +125,21 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 borderBottomRightRadiusLevel={[0, 4]}
                 onLayout={handleContainerResize}
               >
-                <HStack px={[20, 32]} mb={[subtitle ? 14 : 16]} alignItems="center" flexShrink={0}>
+                <HStack px={[20, 32]} mb={[subtitle ? 14 : 16]} flexShrink={0}>
                   {title ? (
                     <Title as="h2" level={[4, 3]}>
                       {title}
                     </Title>
                   ) : null}
-                  <PressableBox as="button" ml="auto" onClick={closeModal}>
+                  <Pressable
+                    as="button"
+                    ml="auto"
+                    onClick={closeModal}
+                    interactions={['active', 'focus']}
+                    mt={[0, title ? 6 : 0]}
+                  >
                     <Icon.Close.Regular size={24} />
-                  </PressableBox>
+                  </Pressable>
                 </HStack>
                 {subtitle ? (
                   <Body as="p" level={1} mb={16} px={[20, 32]} flexShrink={0}>
