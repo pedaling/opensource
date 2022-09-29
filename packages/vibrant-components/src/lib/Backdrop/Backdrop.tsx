@@ -5,7 +5,7 @@ import { Pressable } from '../Pressable';
 import { withBackdropVariation } from './BackdropProps';
 
 export const Backdrop = withBackdropVariation(
-  ({ open, children, zIndex, color = 'dim', transitionDuration = 0, onClick }) => {
+  ({ open, children, zIndex, color = 'dim', transitionDuration = 0, scrollable, onClick, ...restProps }) => {
     const [isMount, setIsMount] = useState(open);
 
     useEffect(() => {
@@ -25,7 +25,16 @@ export const Backdrop = withBackdropVariation(
     }
 
     return (
-      <PortalBox zIndex={zIndex} top={0} right={0} bottom={0} left={0} overflow="hidden">
+      <PortalBox
+        zIndex={zIndex}
+        top={0}
+        right={0}
+        bottom={0}
+        left={0}
+        scrollable={scrollable}
+        backgroundColor={color}
+        {...restProps}
+      >
         <Motion
           animation={{
             opacity: {
@@ -45,7 +54,6 @@ export const Backdrop = withBackdropVariation(
             right={0}
             bottom={0}
             left={0}
-            backgroundColor={color}
             onClick={onClick}
           />
         </Motion>
