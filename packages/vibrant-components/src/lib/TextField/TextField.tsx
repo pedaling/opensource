@@ -78,10 +78,21 @@ export const TextField = withTextFieldVariation(
 
               setIsFocused(false);
             }}
-            onValueChange={({ value }) => {
-              setValue(value);
+            onValueChange={({ value, prevent }) => {
+              let isPrevented = false;
 
-              onValueChange?.(value);
+              onValueChange?.({
+                value,
+                prevent: () => {
+                  isPrevented = true;
+
+                  prevent();
+                },
+              });
+
+              if (!isPrevented) {
+                setValue(value);
+              }
             }}
             {...style}
             {...restProps}

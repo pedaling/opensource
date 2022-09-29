@@ -26,10 +26,21 @@ export const SearchField = withSearchFieldVariation(({ defaultValue, onValueChan
         color="onView1"
         placeholderColor="onView3"
         defaultValue={value}
-        onValueChange={event => {
-          setValue(event.value);
+        onValueChange={({ value, prevent }) => {
+          let isPrevented = false;
 
-          onValueChange?.(event.value);
+          onValueChange?.({
+            value,
+            prevent: () => {
+              isPrevented = true;
+
+              prevent();
+            },
+          });
+
+          if (!isPrevented) {
+            setValue(value);
+          }
         }}
         {...restProps}
       />
