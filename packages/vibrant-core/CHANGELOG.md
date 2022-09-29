@@ -2,6 +2,53 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.17.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.5...vibrant-core-0.17.6) (2022-09-28)
+
+
+### Features
+
+* add color system docs ([#314](https://github.com/pedaling/opensource/issues/314)) ([64e95c2](https://github.com/pedaling/opensource/commit/64e95c2e2afbac471b291fae538f41504d5ba4bd))
+
+### [0.17.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.4...vibrant-core-0.17.5) (2022-09-26)
+
+### [0.17.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.3...vibrant-core-0.17.4) (2022-09-26)
+
+### [0.17.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.2...vibrant-core-0.17.3) (2022-09-23)
+
+### [0.17.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.1...vibrant-core-0.17.2) (2022-09-23)
+
+
+### Features
+
+* add backdropBlurRadius prop ([#309](https://github.com/pedaling/opensource/issues/309)) ([ad7dfb4](https://github.com/pedaling/opensource/commit/ad7dfb48af1830e754a17ced0a5b3cfe3fa017cd))
+
+
+### Bug Fixes
+
+* add position relative to Box default style ([#307](https://github.com/pedaling/opensource/issues/307)) ([1136814](https://github.com/pedaling/opensource/commit/11368144bfbe6f3de9b23f8f759d5e3a34ad8da5))
+* 사파리 브라우저에서 VerificationCodeField가 작동할 수 있도록 한다 ([#308](https://github.com/pedaling/opensource/issues/308)) ([24bb5c2](https://github.com/pedaling/opensource/commit/24bb5c21354ab736909c80230e4dba6f4534ec62))
+
+### [0.17.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.0...vibrant-core-0.17.1) (2022-09-22)
+
+
+### Bug Fixes
+
+* set safe-area-inset context value to padding style ([#306](https://github.com/pedaling/opensource/issues/306)) ([b7658ec](https://github.com/pedaling/opensource/commit/b7658ec66cfb06377cdd1b1ca5d2955cf64ff79c))
+
+## [0.17.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.16.3...vibrant-core-0.17.0) (2022-09-22)
+
+
+### Features
+
+* add hitSlop props into Pressable box  ([#289](https://github.com/pedaling/opensource/issues/289)) ([c272298](https://github.com/pedaling/opensource/commit/c27229892ce1da0c505782a9fc7cfcdad4fbc76e))
+* add ref values to SelectField ([#300](https://github.com/pedaling/opensource/issues/300)) ([220fba3](https://github.com/pedaling/opensource/commit/220fba3100ecfac27aa7778cdedb3a415e46fb8c))
+
+
+### Bug Fixes
+
+* lineLimit이 1일 때 webKitLineClamp 속성을 사용하지 않는다 ([#298](https://github.com/pedaling/opensource/issues/298)) ([c278934](https://github.com/pedaling/opensource/commit/c27893493a3261252fd74aae20828fdd770558fb))
+* SelectField QA 사항을 반영한다 ([#293](https://github.com/pedaling/opensource/issues/293)) ([35be1a8](https://github.com/pedaling/opensource/commit/35be1a8bb119c84c09f7afb7f1d5aa740646618d))
+
 ### [0.16.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.16.2...vibrant-core-0.16.3) (2022-09-16)
 
 

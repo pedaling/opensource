@@ -1,10 +1,11 @@
 import type { Ref } from 'react';
-import type { BackgroundSystemProps, ReactElementChild, SizingSystemProps } from '@vibrant-ui/core';
+import type { BackgroundSystemProps, ReactElementChild, SizingSystemProps, SpacingSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 
 type StackedPortalProps = BackgroundSystemProps &
-  SizingSystemProps & {
+  SizingSystemProps &
+  Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'> & {
     id: string;
     order: number;
     ref?: Ref<any>;

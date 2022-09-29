@@ -70,7 +70,7 @@ const getOffsetAvoidingOverflowByPosition = (
 };
 
 export const Dropdown = withDropdownVariation(
-  ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8 }) => {
+  ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
     const openerRef = useRef<HTMLElement>(null);
     const targetRef = useRef<HTMLElement>(null);
     const [isOpen, setIsOpen] = useState(open);
@@ -92,11 +92,13 @@ export const Dropdown = withDropdownVariation(
 
     useLockBodyScroll(isMobile && (isOpen || visible));
 
-    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
+    const opener = useMemo(() => renderOpener({ open: () => setIsOpen(!isOpen), isOpen }), [isOpen, renderOpener]);
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
-    }, []);
+
+      onClose?.();
+    }, [onClose]);
 
     const handleContentResize = useCallback(
       async ({ width, height, top, left }: LayoutEvent) => {
@@ -182,7 +184,7 @@ export const Dropdown = withDropdownVariation(
                   >
                     <Box overflow="hidden" height={contentHeight}>
                       <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents(closeDropdown)}
+                        {renderContents({ close: closeDropdown })}
                       </Box>
                     </Box>
                   </Transition>
@@ -234,7 +236,7 @@ export const Dropdown = withDropdownVariation(
                       }
                     >
                       <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents(closeDropdown)}
+                        {renderContents({ close: closeDropdown })}
                       </Box>
                     </ScrollBox>
                   </Transition>

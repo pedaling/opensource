@@ -22,14 +22,14 @@ import {
   Paper,
   VStack,
   Body,
-} from "@class101/ui-system";
+} from '@class101/ui-system';
 
 // After
 import {
   Paper,
   VStack,
   Body,
-} from "@vibrant-ui/components";
+} from '@vibrant-ui/components';
 ```
 
 :::note
@@ -48,7 +48,7 @@ import {
 
 ```typescript
 type BoxProps = {
-  display: "flex" | "none";
+  display: 'flex' | 'none';
   // ...other
 };
 ```
@@ -133,7 +133,7 @@ import { Box } from '@vibrant-ui/core';
 // import { ResponsiveStack } from '@class101/ui-system';
 
 <ResponsiveStack
-  direction={["vertical", "horizontal"]}
+  direction={['vertical', 'horizontal']}
 />
 ```
 
@@ -142,7 +142,7 @@ import { Box } from '@vibrant-ui/core';
 ```jsx
 // import { Stack } from '@vibrant-ui/components';
 
-<Stack direction={["vertical", "horizontal"]} />
+<Stack direction={['vertical', 'horizontal']} />
 ```
 
 ## `<Paper />`
@@ -186,7 +186,7 @@ import { Box } from '@vibrant-ui/core';
 ```jsx
 // import { Action, Body } from '@class101/ui-system';
 
-<Action onClick={() => alert("click")}>
+<Action onClick={() => alert('click')}>
   <Body level={3}>Pressable Text</Body>
 </Action>
 ```
@@ -196,7 +196,7 @@ import { Box } from '@vibrant-ui/core';
 ```jsx live
 // import { Pressable, Body } from '@vibrant-ui/components';
 
-<Pressable onClick={() => alert("click")}>
+<Pressable onClick={() => alert('click')}>
   <Body level={3}>Pressable Text</Body>
 </Pressable>
 ```
@@ -214,7 +214,7 @@ import { Box } from '@vibrant-ui/core';
 
 <SafeAreaContent
   mode="margin"
-  insets={["bottom", "top"]}
+  insets={['bottom', 'top']}
 />
 ```
 
@@ -225,7 +225,7 @@ import { Box } from '@vibrant-ui/core';
 
 <SafeAreaView
   mode="margin"
-  insets={["bottom", "top"]}
+  insets={['bottom', 'top']}
   minInsets={{ bottom: 32, top: 32 }}
 />
 ```

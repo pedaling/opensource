@@ -10,4 +10,5 @@ export type BackgroundSystemProps = {
   backgroundRepeat?: ResponsiveValue<'no-repeat' | 'repeat-x' | 'repeat-y' | 'repeat' | 'round' | 'space'>;
   gradient?: ResponsiveValue<GradientKind>;
   linearGradient?: ResponsiveValue<Omit<LinearGradient, 'type'>>;
+  backdropBlurRadius?: ResponsiveValue<number>;
 };

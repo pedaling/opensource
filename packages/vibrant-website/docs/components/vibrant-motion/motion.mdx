@@ -1,0 +1,172 @@
+---
+title: Motion
+sidebar_position: 1
+---
+
+# Motion
+
+export const MotionPaper = ({
+  children,
+  ...motionProps
+}) => (
+  <Motion {...motionProps}>
+    <Paper
+      width={100}
+      height={100}
+      backgroundColor="primary"
+      p={10}
+    >
+      <Body level={1} color="onPrimary">
+        {children}
+      </Body>
+    </Paper>
+  </Motion>
+);
+
+`<Motion />` 은 주로 사용자의 인터렉션 없이 애니메이션을 실행하는 컴포넌트입니다.
+
+```jsx live
+// import { Motion } from '@vibrant-ui/motion';
+
+<Motion
+  animation={{ x: { from: 0, to: 200 } }}
+  duration={1000}
+  loop="reverse"
+>
+  <Paper
+    width={100}
+    height={100}
+    backgroundColor="primary"
+  />
+</Motion>
+```
+
+## Properties
+
+### children (required)
+
+children에는 ref를 받을 수 있는 컴포넌트가 들어가야 애니메이션이 정상적으로 작동됩니다.
+
+```jsx
+// animation will not working
+<Motion animation={{ x: { from: 0, to: 100 } }}>
+  {/* error-next-line */}
+  hello
+</Motion>
+
+// animation working
+<Motion animation={{ x: { from: 0, to: 100 } }}>
+  <Box />
+</Motion>
+
+```
+
+### animation (required)
+
+`animation` prop은 모든 System Prop을 받습니다. 다만 애니메이션이 가능한 스타일 속성들만 정상적으로 작동됩니다.
+
+각 속성별로 `from`과 `to`를 통해 각자 애니메이션의 시작과 끝을 지정할 수 있습니다.
+
+```jsx
+<Motion
+  animation={{
+    // O
+    fontSize: { from: 8, to: 20 },
+    // O
+    p: { from: 0, to: 10 },
+    // O (color token support)
+    color: { from: 'primary', to: 'informative' },
+    // X (must add an additional % to the `from` value.)
+    width: { from: '0', to: '100%' },
+    // X (cannot define value between from and to)
+    overflow: { from: 'hidden', to: 'visible' },
+  }}
+>
+  <Box />
+</Motion>
+```
+
+### loop
+
+`loop` prop으로 애니메이션을 반복시킬 수 있습니다.
+
+현재 `true`와 `reverse`를 옵션으로 받고 있습니다.
+
+- `true`: 애니메이션을 from에서 to로만 반복합니다
+- `reverse`: 애니메이션을 from에서 to, to에서 from으로 각각 반복합니다.
+
+<VStack spacing={20}>
+  <MotionPaper
+    animation={{ x: { from: 0, to: 200 } }}
+    loop={true}
+  >
+    true
+  </MotionPaper>
+  <MotionPaper
+    animation={{ x: { from: 0, to: 200 } }}
+    loop="reverse"
+  >
+    reverse
+  </MotionPaper>
+</VStack>
+
+### duration
+
+애니메이션을 실행할 시간(ms)를 설정합니다.
+
+duration 값이 0인 경우 [스프링 기반 애니메이션](https://developer.android.com/develop/ui/views/animations/spring-animation)으로 작동됩니다.
+
+기본값은 0 (스프링 기반 애니메이션)입니다
+
+<VStack spacing={20}>
+  <MotionPaper
+    animation={{ x: { from: 0, to: 200 } }}
+    loop="reverse"
+  >
+    0
+  </MotionPaper>
+  <MotionPaper
+    animation={{ x: { from: 0, to: 200 } }}
+    duration={1000}
+    loop="reverse"
+  >
+    1000
+  </MotionPaper>
+</VStack>
+
+### easing
+
+:::note
+
+duration이 1 이상(시간 기반 애니메이션)인 경우 사용할 수 있습니다
+
+:::
+
+현재 `linear`, `easeInQuad`, `easeOutQuad` 애니메이션을 지원합니다.
+
+<VStack spacing={20}>
+  <MotionPaper
+    animation={{ x: { from: 0, to: 200 } }}
+    duration={1000}
+    easing="linear"
+    loop="reverse"
+  >
+    linear
+  </MotionPaper>
+  <MotionPaper
+    animation={{ x: { from: 0, to: 200 } }}
+    duration={1000}
+    easing="easeInQuad"
+    loop="reverse"
+  >
+    easeInQuad
+  </MotionPaper>
+  <MotionPaper
+    animation={{ x: { from: 0, to: 200 } }}
+    duration={1000}
+    easing="easeOutQuad"
+    loop="reverse"
+  >
+    easeOutQuad
+  </MotionPaper>
+</VStack>

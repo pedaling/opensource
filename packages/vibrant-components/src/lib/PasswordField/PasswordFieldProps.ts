@@ -1,6 +1,6 @@
 import { withVariation } from '@vibrant-ui/core';
 
-type PasswordFieldProps = {
+export type PasswordFieldProps = {
   state?: 'default' | 'error';
   label?: string;
   placeholder?: string;
@@ -8,6 +8,8 @@ type PasswordFieldProps = {
   tabIndex?: number;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
+  onFocus?: () => void;
+  onBlur?: () => void;
 };
 
 export const withPasswordFieldVariation = withVariation<PasswordFieldProps>('PasswordField')();

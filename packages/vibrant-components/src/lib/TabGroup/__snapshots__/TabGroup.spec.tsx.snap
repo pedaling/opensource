@@ -16,6 +16,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   width: 100%;
 }
 
@@ -34,6 +35,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   margin-bottom: -1px;
   padding-left: 20px;
   padding-right: 20px;
@@ -63,6 +65,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   margin-right: 20px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -97,6 +100,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -107,8 +111,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-basis: auto;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: #0C0C0C;
-  position: relative;
+  border-bottom-color: #0c0c0c;
   cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -138,9 +141,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   text-align: left;
-  color: #0C0C0C;
-  -webkit-text-fill-color: #0C0C0C;
-  text-fill-color: #0C0C0C;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
@@ -171,6 +174,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -182,7 +186,6 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0);
-  position: relative;
   cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -212,9 +215,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   text-align: left;
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
@@ -239,6 +242,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   margin-right: 20px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -270,6 +274,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -281,7 +286,6 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0);
-  position: relative;
   cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -311,6 +315,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   margin-right: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -336,11 +341,12 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
   border-width: 0;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #00000026;
   border-style: solid;
   width: 100%;
   height: 0;

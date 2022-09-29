@@ -4,6 +4,7 @@ export type { DistributiveOmit } from './lib/type/DistributiveOmit';
 export type { DistributivePick } from './lib/type/DistributivePick';
 export type { TargetElement, Rect } from './lib/getElementRect';
 export type { Path } from './lib/type/Path';
+export { addStyleValues } from './lib/addStyleValues';
 export { isDefined } from './lib/isDefined';
 export { get } from './lib/get';
 export { range } from './lib/range';

@@ -35,11 +35,11 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-width: 1px;
-  color: #0C0C0C;
-  -webkit-text-fill-color: #0C0C0C;
-  text-fill-color: #0C0C0C;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.125rem;
@@ -49,7 +49,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   padding-right: 38px;
   height: 100%;
   text-align: center;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #00000026;
   border-style: solid;
   border-radius: 2px;
   -moz-appearance: textfield;
@@ -66,27 +66,27 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
 }
 
 .emotion-1::-webkit-input-placeholder {
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
 }
 
 .emotion-1::-moz-placeholder {
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
 }
 
 .emotion-1:-ms-input-placeholder {
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
 }
 
 .emotion-1::placeholder {
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
 }
 
 .emotion-2 {
@@ -125,11 +125,11 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #0000000d;
   border-width: 0;
   padding: 0;
-  position: relative;
   overflow: hidden;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -160,7 +160,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: #0C0C0C;
+  background-color: #0c0c0c;
 }
 
 .emotion-5 {
@@ -178,6 +178,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   width: auto;
   height: auto;
   padding: 7px;
@@ -198,9 +199,10 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   width: 16px;
   height: 16px;
-  fill: #0C0C0C;
+  fill: #0c0c0c;
 }
 
 .emotion-7 {
@@ -218,6 +220,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
 }
 
 .emotion-8 {
@@ -250,7 +253,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
       autocomplete="off"
       class="emotion-1"
       inputmode="numeric"
-      type="number"
+      type="text"
       value=""
     />
     <div

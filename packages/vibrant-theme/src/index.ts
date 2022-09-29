@@ -1,4 +1,5 @@
 export { baseTheme } from './lib/theme';
+export { palettes } from './lib/palettes';
 export type {
   Colors,
   ThemeMode,
