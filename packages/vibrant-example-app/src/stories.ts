@@ -35,6 +35,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/TabGroup/TabGroup.stories.tsx'),
   require('../../vibrant-components/src/lib/TextField/TextField.stories.tsx'),
   require('../../vibrant-components/src/lib/Title/Title.stories.tsx'),
+  require('../../vibrant-components/src/lib/Toast/Toast.stories.tsx'),
   require('../../vibrant-components/src/lib/VerificationCodeField/VerificationCodeField.stories.tsx'),
   require('../../vibrant-components/src/lib/VerificationCodeItem/VerificationCodeItem.stories.tsx'),
   require('../../vibrant-components/src/lib/VStack/VStack.stories.tsx'),
