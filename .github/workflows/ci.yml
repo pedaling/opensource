@@ -67,13 +67,13 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_TOKEN }}
           autoAcceptChanges: true
 
-  expo:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v1
-      - run: yarn
-      - name: Update Vibrant Example App
-        run: yarn nx update vibrant-example-app --branch preview
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+  # expo:
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - run: yarn
+  #     - name: Update Vibrant Example App
+  #       run: yarn nx update vibrant-example-app --branch preview
+  #       env:
+  #         EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
