@@ -1,11 +1,18 @@
 import type { Ref } from 'react';
 import type { ReactElementChild } from '../../types';
 import type { LayoutEvent } from '../Box';
-import type { DisplaySystemProps, OverflowSystemProps, PositionSystemProps, SizingSystemProps } from '../props';
+import type {
+  BorderSystemProps,
+  DisplaySystemProps,
+  OverflowSystemProps,
+  PositionSystemProps,
+  SizingSystemProps,
+} from '../props';
 import { withVariation } from '../withVariation';
 
 type PortalBoxProps = DisplaySystemProps &
   OverflowSystemProps &
+  BorderSystemProps &
   Omit<PositionSystemProps, 'position'> &
   SizingSystemProps & {
     ref?: Ref<any>;
