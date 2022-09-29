@@ -41,6 +41,7 @@
     "uuid": "*"
   },
   "scripts": {
-    "eas-build-pre-install": "cd ../../ && cp yarn.lock ./packages/vibrant-example-app/"
+    "eas-build-pre-install": "cd ../../ && cp yarn.lock ./packages/vibrant-example-app/",
+    "expo": "npx expo"
   }
 }
