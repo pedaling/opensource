@@ -10,12 +10,12 @@ type ToastProps = {
   duration?: number;
 } & (
   | {
-      buttonTitle: string;
-      buttonOnClick?: never;
+      buttonText: string;
+      onButtonClick?: never;
     }
   | {
-      buttonTitle?: never;
-      buttonOnClick: () => void;
+      buttonText?: never;
+      onButtonClick: () => void;
     }
 );
 
@@ -25,11 +25,11 @@ export const withToastVariation = withVariation<ToastProps>('Toast')(
     variants: {
       error: {
         IconComponent: Icon.AlertCircle.Fill,
-        color: 'error' as const,
+        color: 'onViewError' as const,
       },
       success: {
         IconComponent: Icon.CheckCircle.Fill,
-        color: 'success' as const,
+        color: 'onViewSuccess' as const,
       },
     },
   })
