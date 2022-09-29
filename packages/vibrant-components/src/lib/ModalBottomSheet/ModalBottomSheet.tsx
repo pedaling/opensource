@@ -30,12 +30,12 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     title,
     subtitle,
     modalWidth,
-    primaryCta,
-    secondaryCta,
-    subCta,
-    onPrimaryCtaOnClick,
-    onSecondaryCtaOnClick,
-    onSubCtaOnClick,
+    primaryButtonText,
+    secondaryButtonText,
+    subButtonText,
+    onPrimaryButtonClick,
+    onSecondaryButtonClick,
+    onSubButtonClick,
     onClose,
     ContentBoxComponent,
     overflow,
@@ -152,33 +152,33 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 </ContentBoxComponent>
 
                 <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
-                  {isDefined(primaryCta) && !isDefined(secondaryCta) && !isDefined(subCta) && (
+                  {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
                     <Pressable
                       backgroundColor="primary"
                       py={15}
                       borderRadiusLevel={1}
-                      onClick={onPrimaryCtaOnClick}
+                      onClick={onPrimaryButtonClick}
                       overlayColor="onPrimary"
                       interactions={['hover', 'focus', 'active']}
                     >
                       <Body color="onPrimary" textAlign="center" level={1}>
-                        {primaryCta}
+                        {primaryButtonText}
                       </Body>
                     </Pressable>
                   )}
-                  {isDefined(primaryCta) && isDefined(secondaryCta) && !isDefined(subCta) && (
+                  {isDefined(primaryButtonText) && isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
                     <HStack width="100%" spacing={[8, 16]}>
                       <Pressable
                         backgroundColor="surface1"
                         py={15}
                         borderRadiusLevel={1}
                         flexGrow={1}
-                        onClick={onSecondaryCtaOnClick}
+                        onClick={onSecondaryButtonClick}
                         overlayColor="onView1"
                         interactions={['hover', 'focus', 'active']}
                       >
                         <Body color="onView1" textAlign="center" level={1} weight="bold">
-                          {secondaryCta}
+                          {secondaryButtonText}
                         </Body>
                       </Pressable>
                       <Pressable
@@ -186,42 +186,42 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         py={15}
                         borderRadiusLevel={1}
                         flexGrow={1}
-                        onClick={onPrimaryCtaOnClick}
+                        onClick={onPrimaryButtonClick}
                         overlayColor="onPrimary"
                         interactions={['hover', 'focus', 'active']}
                       >
                         <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                          {primaryCta}
+                          {primaryButtonText}
                         </Body>
                       </Pressable>
                     </HStack>
                   )}
-                  {isDefined(primaryCta) && !isDefined(secondaryCta) && isDefined(subCta) && (
+                  {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && isDefined(subButtonText) && (
                     <VStack width="100%" spacing={16}>
                       <Pressable
                         backgroundColor="primary"
                         py={15}
                         borderRadiusLevel={1}
-                        flexGrow={1}
-                        onClick={onPrimaryCtaOnClick}
+                        onClick={onPrimaryButtonClick}
                         overlayColor="onPrimary"
                         interactions={['hover', 'focus', 'active']}
                       >
                         <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                          {primaryCta}
+                          {primaryButtonText}
                         </Body>
                       </Pressable>
-                      <Pressable
-                        my={-8}
-                        p={8}
-                        borderRadiusLevel={1}
-                        onClick={onSubCtaOnClick}
-                        interactions={['focus', 'active']}
-                      >
-                        <Body color="onView1" textAlign="center" level={1} weight="medium">
-                          {subCta}
-                        </Body>
-                      </Pressable>
+                      <Box alignSelf="center">
+                        <Pressable
+                          hitSlop={8}
+                          borderRadiusLevel={1}
+                          onClick={onSubButtonClick}
+                          interactions={['focus', 'active']}
+                        >
+                          <Body color="onView1" textAlign="center" level={1} weight="medium">
+                            {subButtonText}
+                          </Body>
+                        </Pressable>
+                      </Box>
                     </VStack>
                   )}
                 </VStack>

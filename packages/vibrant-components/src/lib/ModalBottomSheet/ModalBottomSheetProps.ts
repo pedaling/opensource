@@ -12,28 +12,28 @@ export type ModalBottomSheetProps = {
   onClose?: () => void;
 } & (
   | {
-      primaryCta: string;
-      onPrimaryCtaOnClick: () => void;
-      secondaryCta?: never;
-      onSecondaryCtaOnClick?: never;
-      subCta?: string;
-      onSubCtaOnClick?: () => void;
+      primaryButtonText: string;
+      onPrimaryButtonClick: () => void;
+      secondaryButtonText?: never;
+      onSecondaryButtonClick?: never;
+      subButtonText?: string;
+      onSubButtonClick?: () => void;
     }
   | {
-      primaryCta: string;
-      onPrimaryCtaOnClick: () => void;
-      secondaryCta?: string;
-      onSecondaryCtaOnClick?: () => void;
-      subCta?: never;
-      onSubCtaOnClick?: never;
+      primaryButtonText: string;
+      onPrimaryButtonClick: () => void;
+      secondaryButtonText?: string;
+      onSecondaryButtonClick?: () => void;
+      subButtonText?: never;
+      onSubButtonClick?: never;
     }
   | {
-      primaryCta?: never;
-      onPrimaryCtaOnClick?: never;
-      secondaryCta?: never;
-      onSecondaryCtaOnClick?: never;
-      subCta?: never;
-      onSubCtaOnClick?: never;
+      primaryButtonText?: never;
+      onPrimaryButtonClick?: never;
+      secondaryButtonText?: never;
+      onSecondaryButtonClick?: never;
+      subButtonText?: never;
+      onSubButtonClick?: never;
     }
 );
 

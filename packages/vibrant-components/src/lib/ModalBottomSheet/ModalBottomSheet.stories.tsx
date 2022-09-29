@@ -24,7 +24,7 @@ export default {
     ),
   },
   argTypes: {
-    onPrimaryCtaOnClick: { action: 'onPrimaryCtaOnClick' },
+    onPrimaryButtonClick: { action: 'onPrimaryButtonClick' },
   },
 } as ComponentMeta<typeof ModalBottomSheet>;
 
