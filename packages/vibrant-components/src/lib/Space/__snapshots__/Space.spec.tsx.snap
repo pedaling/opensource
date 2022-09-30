@@ -12,9 +12,9 @@ exports[`<Space /> when Space rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   box-sizing: border-box;
   position: relative;
   width: 20px;
@@ -37,9 +37,9 @@ exports[`<Space /> when hidden Space rendered match snapshot 1`] = `
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   box-sizing: border-box;
   position: relative;
 }

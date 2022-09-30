@@ -59,7 +59,7 @@ describe('<TabGroup />', () => {
     });
 
     it('hidden tab spacing is hidden', () => {
-      expect(element.children[2]).toHaveStyleRule('display', 'none');
+      expect(element.children[3]).toHaveStyleRule('display', 'none');
     });
 
     it('match snapshot', () => {
