@@ -147,7 +147,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     onClick={closeModal}
                     interactions={['active', 'focus']}
                     mt={[0, title ? 6 : 0]}
-                    overflow="visible"
+                    flexShrink={0}
                   >
                     <Icon.Close.Regular size={24} />
                   </Pressable>
