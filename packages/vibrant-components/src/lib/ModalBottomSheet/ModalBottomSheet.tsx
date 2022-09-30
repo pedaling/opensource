@@ -63,7 +63,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
 
     useLockBodyScroll(isOpen || visible);
 
-    const opener = useMemo(() => renderOpener(() => setIsOpen(!isOpen)), [isOpen, renderOpener]);
+    const opener = useMemo(() => renderOpener({ open: () => setIsOpen(!isOpen), isOpen }), [isOpen, renderOpener]);
 
     const closeModal = useCallback(() => {
       setIsOpen(false);
@@ -157,7 +157,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 ) : null}
 
                 <ContentBoxComponent flexShrink={overflow === 'scroll' ? 1 : 0}>
-                  {renderContents(closeModal)}
+                  {renderContents({ close: closeModal })}
                 </ContentBoxComponent>
 
                 <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>

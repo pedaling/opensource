@@ -7,8 +7,8 @@ export type ModalBottomSheetProps = {
   subtitle?: string;
   overflow?: 'scroll' | 'visible';
   size?: 'lg' | 'md';
-  renderContents: (close: () => void) => ReactElementChild;
-  renderOpener: (open: () => void) => ReactElementChild;
+  renderContents: (_: { close: () => void }) => ReactElementChild;
+  renderOpener: (_: { open: () => void; isOpen: boolean }) => ReactElementChild;
   onClose?: () => void;
 } & (
   | {
