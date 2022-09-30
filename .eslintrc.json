@@ -17,7 +17,7 @@
         "prettier/prettier": [
           "error",
           {
-            "printWidth": 50,
+            "printWidth": 60,
             "singleQuote": true
           }
         ],

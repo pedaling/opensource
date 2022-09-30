@@ -41,7 +41,7 @@ describe('<NumericField />', () => {
       });
 
       it('onChangeValue called with 1', () => {
-        expect(mockOnValueChange).toBeCalledWith(1);
+        expect(mockOnValueChange).toBeCalledWith(expect.objectContaining({ value: 1 }));
       });
     });
 
@@ -51,7 +51,7 @@ describe('<NumericField />', () => {
       });
 
       it('onChangeValue called with -1', () => {
-        expect(mockOnValueChange).toBeCalledWith(-1);
+        expect(mockOnValueChange).toBeCalledWith(expect.objectContaining({ value: -1 }));
       });
     });
 
@@ -86,7 +86,7 @@ describe('<NumericField />', () => {
       });
 
       it('onValueChange called with 4', () => {
-        expect(mockOnValueChange).toBeCalledWith(4);
+        expect(mockOnValueChange).toBeCalledWith(expect.objectContaining({ value: 4 }));
       });
 
       it('minus button is enabled', () => {
@@ -117,7 +117,7 @@ describe('<NumericField />', () => {
         });
 
         it('onValueChange called with min value', () => {
-          expect(mockOnValueChange).toBeCalledWith(3);
+          expect(mockOnValueChange).toBeCalledWith(expect.objectContaining({ value: 3 }));
         });
       });
     });

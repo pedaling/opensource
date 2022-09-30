@@ -18,11 +18,7 @@ sidebar_position: 1
 
 ```jsx
 // Before
-import {
-  Paper,
-  VStack,
-  Body,
-} from '@class101/ui-system';
+import { Paper, VStack, Body } from '@class101/ui-system';
 
 // After
 import {
@@ -132,9 +128,7 @@ import { Box } from '@vibrant-ui/core';
 ```jsx
 // import { ResponsiveStack } from '@class101/ui-system';
 
-<ResponsiveStack
-  direction={['vertical', 'horizontal']}
-/>
+<ResponsiveStack direction={['vertical', 'horizontal']} />
 ```
 
 **After**
@@ -212,10 +206,7 @@ import { Box } from '@vibrant-ui/core';
 ```jsx
 // import { SafeAreaContent } from '@class101/ui-system';
 
-<SafeAreaContent
-  mode="margin"
-  insets={['bottom', 'top']}
-/>
+<SafeAreaContent mode="margin" insets={['bottom', 'top']} />
 ```
 
 **After**
@@ -267,9 +258,7 @@ import { Box } from '@vibrant-ui/core';
   state="default"
   prefix="입력"
   suffix="원"
-  renderEnd={() => (
-    <Icon.EyeOn.Regular size={20} />
-  )}
+  renderEnd={() => <Icon.EyeOn.Regular size={20} />}
 />
 ```
 
