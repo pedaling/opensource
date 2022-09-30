@@ -93,7 +93,15 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       <>
         {opener}
         <ThemeProvider theme={rootThemeMode}>
-          <Backdrop open={isOpen} zIndex={Z_INDEX} transitionDuration={200} onClick={closeModal}>
+          <Backdrop
+            open={isOpen}
+            zIndex={Z_INDEX}
+            transitionDuration={200}
+            onClick={closeModal}
+            scrollable={!isMobile && overflow === 'visible'}
+            pt={[120, 40]}
+            pb={[0, 40]}
+          >
             <Transition
               animation={{
                 ...(isMobile
@@ -108,11 +116,8 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               style={{ y: isMobile ? viewportHeight : undefined }}
             >
               <Box
-                mt={[
-                  (containerHeight ?? 0) >= viewportHeight - 120 ? 120 : 'auto',
-                  (containerHeight ?? 0) >= viewportHeight - 80 ? 40 : 'auto',
-                ]}
                 mx="auto"
+                mt="auto"
                 mb={[0, 'auto']}
                 pt={[24, 36]}
                 pb={[typeof insets.bottom === 'string' ? `calc(20px + ${insets.bottom})` : 20 + insets.bottom, 36]}
