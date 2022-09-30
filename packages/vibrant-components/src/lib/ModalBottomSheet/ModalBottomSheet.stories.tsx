@@ -17,7 +17,7 @@ export default {
         Sample Text
       </Paragraph>
     ),
-    renderOpener: open => (
+    renderOpener: ({ open }) => (
       <Pressable backgroundColor="primary" onClick={open} p={20}>
         <Body level={1}>Click Me</Body>
       </Pressable>
