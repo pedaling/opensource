@@ -229,7 +229,7 @@ export const Dropdown = withDropdownVariation(
                   >
                     <ScrollBox
                       height={contentHeight}
-                      hideScroll={(containerHeight ?? 0) <= viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
+                      hideScroll={(containerHeight ?? 0) < viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
                     >
                       <Box onLayout={handleContentResize} flexShrink={0}>
                         {renderContents({ close: closeDropdown })}
