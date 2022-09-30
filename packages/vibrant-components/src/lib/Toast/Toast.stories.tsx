@@ -31,7 +31,9 @@ export const Basic: ComponentStory<typeof Toast> = props => {
             justifyContent="center"
             backgroundColor="primary"
             mx="auto"
-            onClick={() => setOpen(!open)}
+            onClick={() => {
+              setOpen(true);
+            }}
           >
             <Text>Click me</Text>
           </PressableBox>
@@ -40,8 +42,6 @@ export const Basic: ComponentStory<typeof Toast> = props => {
             {...props}
             open={open}
             onClose={() => {
-              props.onClose?.();
-
               setOpen(false);
             }}
           />
