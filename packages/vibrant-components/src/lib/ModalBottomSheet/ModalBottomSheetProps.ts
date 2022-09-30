@@ -47,10 +47,10 @@ export const withModalBottomSheetVariation = withVariation<ModalBottomSheetProps
     ],
     variants: {
       md: {
-        modalWidth: 480,
+        desktopModalWidth: 480,
       },
       lg: {
-        modalWidth: 760,
+        desktopModalWidth: 760,
       },
     },
   })
