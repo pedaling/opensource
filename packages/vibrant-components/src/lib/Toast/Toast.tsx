@@ -56,35 +56,32 @@ export const Toast = withToastVariation(
           bottom={0}
           zIndex={100}
           safeAreaMode="margin"
-          maxWidth={724}
         >
-          <VStack mx={20} mb={[20, 0]} mt={[0, 16]}>
-            <Paper backgroundColor="inverseSurface">
-              <HStack px={16} py={12} alignItems="center">
+          <HStack mx={20} mb={[20, 0]} mt={[0, 16]} flexGrow={[1, 0]} alignment="center">
+            <Paper backgroundColor="inverseSurface" width={['100%', 'auto']}>
+              <HStack px={16} py={12} alignItems="center" flexGrow={[1, 0]}>
                 {IconComponent && (
-                  <VStack mr={8}>
+                  <VStack mr={8} flexShrink={0}>
                     <IconComponent size={18} fill={color} />
                   </VStack>
                 )}
-                {typeof title === 'string' ? (
-                  <HStack flex={1}>
-                    <Text wordBreak="break-all" fontSize={14} color="onInverseSurface">
-                      {title}
-                    </Text>
-                  </HStack>
-                ) : (
-                  title()
-                )}
-                {onButtonClick && (
-                  <PressableBox ml={12} flexShrink={0} onClick={onButtonClick}>
-                    <Text fontSize={14} color="onViewInformative" fontWeight="medium">
-                      {buttonText}
-                    </Text>
-                  </PressableBox>
+                <HStack flexGrow={[1, 0]}>
+                  <Text wordBreak="break-all" fontSize={14} color="onInverseSurface">
+                    {title}
+                  </Text>
+                </HStack>
+                {buttonText !== undefined && onButtonClick && (
+                  <VStack flexShrink={0}>
+                    <PressableBox ml={12} onClick={onButtonClick}>
+                      <Text fontSize={14} color="onViewInformative" fontWeight="medium">
+                        {buttonText}
+                      </Text>
+                    </PressableBox>
+                  </VStack>
                 )}
               </HStack>
             </Paper>
-          </VStack>
+          </HStack>
         </StackedPortal>
       </Transition>
     );
