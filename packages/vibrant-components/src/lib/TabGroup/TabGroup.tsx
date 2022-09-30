@@ -1,6 +1,7 @@
 import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { Divider } from '../Divider';
 import { HStack } from '../HStack';
+import { Space } from '../Space';
 import { VStack } from '../VStack';
 import { withTabGroupVariation } from './TabGroupProps';
 
@@ -30,7 +31,8 @@ export const TabGroup = withTabGroupVariation(
 
     return (
       <VStack width="100%">
-        <BoxComponent ref={tabGroupRef} flexDirection="row" mb={-1} px={[20, 20, 0]} {...restProps}>
+        <BoxComponent ref={tabGroupRef} flexDirection="row" mb={-1} {...restProps}>
+          <Space width={[20, 20, 0]} />
           {tabElements.map((element, index) => (
             <HStack
               mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
@@ -53,6 +55,7 @@ export const TabGroup = withTabGroupVariation(
               })}
             </HStack>
           ))}
+          <Space width={[20, 20, 0]} />
         </BoxComponent>
         <Divider direction="horizontal" />
       </VStack>

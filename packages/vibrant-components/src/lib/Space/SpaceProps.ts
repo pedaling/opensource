@@ -3,18 +3,27 @@ import { withVariation } from '@vibrant-ui/core';
 
 export type SpaceProps = Pick<DisplaySystemProps, 'hidden'> &
   (
-    | (Pick<FlexboxSystemProps, 'flex'> & {
+    | {
+        flexGrow?: FlexboxSystemProps['flexGrow'];
+        flexShrink?: FlexboxSystemProps['flexShrink'];
+        flexBasis?: FlexboxSystemProps['flexBasis'];
         width?: never;
         height?: never;
-      })
-    | (Pick<SizingSystemProps, 'height'> & {
-        flex?: never;
+      }
+    | {
+        flexGrow?: never;
+        flexShrink?: never;
+        flexBasis?: never;
         width?: never;
-      })
-    | (Pick<SizingSystemProps, 'width'> & {
-        flex?: never;
+        height?: SizingSystemProps['height'];
+      }
+    | {
+        flexGrow?: never;
+        flexShrink?: never;
+        flexBasis?: never;
+        width?: SizingSystemProps['width'];
         height?: never;
-      })
+      }
   );
 
 export const withSpaceVariation = withVariation<SpaceProps>('Space')();
