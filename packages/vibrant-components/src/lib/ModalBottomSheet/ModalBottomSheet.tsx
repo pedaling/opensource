@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Box,
-  ScrollBox,
   ThemeProvider,
   useCurrentThemeMode,
   useLockBodyScroll,
@@ -38,6 +37,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     onSecondaryButtonClick,
     onSubButtonClick,
     onClose,
+    ContentBoxComponent,
     overflow = 'scroll',
   }) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -160,9 +160,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 ) : null}
 
                 {renderContents && (
-                  <ScrollBox mt={[16, 24]} flexShrink={overflow === 'scroll' ? 1 : 0}>
+                  <ContentBoxComponent mt={[16, 24]} flexShrink={overflow === 'scroll' ? 1 : 0}>
                     {renderContents({ close: closeModal })}
-                  </ScrollBox>
+                  </ContentBoxComponent>
                 )}
 
                 {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
