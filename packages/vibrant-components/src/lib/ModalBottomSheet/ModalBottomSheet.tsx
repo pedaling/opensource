@@ -67,7 +67,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       onClose?.();
     }, [onClose]);
 
-    const handleContainerResize = useCallback(async ({ height }: LayoutEvent) => {
+    const handleContainerResize = useCallback(({ height }: LayoutEvent) => {
       setContainerHeight(height);
     }, []);
 
