@@ -13,17 +13,17 @@ export type ModalBottomSheetProps = {
 } & (
   | {
       primaryButtonText: string;
-      onPrimaryButtonClick: () => void;
+      onPrimaryButtonClick: (_: { close: () => void }) => void;
       secondaryButtonText?: never;
       onSecondaryButtonClick?: never;
       subButtonText?: string;
-      onSubButtonClick?: () => void;
+      onSubButtonClick?: (_: { close: () => void }) => void;
     }
   | {
       primaryButtonText: string;
-      onPrimaryButtonClick: () => void;
+      onPrimaryButtonClick: (_: { close: () => void }) => void;
       secondaryButtonText?: string;
-      onSecondaryButtonClick?: () => void;
+      onSecondaryButtonClick?: (_: { close: () => void }) => void;
       subButtonText?: never;
       onSubButtonClick?: never;
     }

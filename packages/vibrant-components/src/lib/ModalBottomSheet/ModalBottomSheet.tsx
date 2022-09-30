@@ -166,7 +166,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       backgroundColor="primary"
                       py={15}
                       borderRadiusLevel={1}
-                      onClick={onPrimaryButtonClick}
+                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
                       overlayColor="onPrimary"
                       interactions={['hover', 'focus', 'active']}
                     >
@@ -182,7 +182,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         py={15}
                         borderRadiusLevel={1}
                         flexGrow={1}
-                        onClick={onSecondaryButtonClick}
+                        onClick={() => onSecondaryButtonClick?.({ close: closeModal })}
                         overlayColor="onView1"
                         interactions={['hover', 'focus', 'active']}
                       >
@@ -195,7 +195,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         py={15}
                         borderRadiusLevel={1}
                         flexGrow={1}
-                        onClick={onPrimaryButtonClick}
+                        onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
                         overlayColor="onPrimary"
                         interactions={['hover', 'focus', 'active']}
                       >
@@ -211,7 +211,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         backgroundColor="primary"
                         py={15}
                         borderRadiusLevel={1}
-                        onClick={onPrimaryButtonClick}
+                        onClick={() => onSecondaryButtonClick?.({ close: closeModal })}
                         overlayColor="onPrimary"
                         interactions={['hover', 'focus', 'active']}
                       >
@@ -223,7 +223,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         <Pressable
                           hitSlop={8}
                           borderRadiusLevel={1}
-                          onClick={onSubButtonClick}
+                          onClick={() => onSubButtonClick?.({ close: closeModal })}
                           interactions={['focus', 'active']}
                         >
                           <Body color="onView1" textAlign="center" level={1} weight="medium">
