@@ -188,6 +188,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       py={15}
                       borderRadiusLevel={1}
                       flexGrow={1}
+                      flexBasis={0}
                       onClick={() => onSecondaryButtonClick?.({ close: closeModal })}
                       overlayColor="onView1"
                       interactions={['hover', 'focus', 'active']}
@@ -201,6 +202,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       py={15}
                       borderRadiusLevel={1}
                       flexGrow={1}
+                      flexBasis={0}
                       onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
                       overlayColor="onPrimary"
                       interactions={['hover', 'focus', 'active']}
