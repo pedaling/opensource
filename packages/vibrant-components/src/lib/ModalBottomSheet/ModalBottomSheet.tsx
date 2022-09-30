@@ -142,10 +142,12 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   ) : null}
                   <Pressable
                     as="button"
+                    pl={12}
                     ml="auto"
                     onClick={closeModal}
                     interactions={['active', 'focus']}
                     mt={[0, title ? 6 : 0]}
+                    overflow="visible"
                   >
                     <Icon.Close.Regular size={24} />
                   </Pressable>
