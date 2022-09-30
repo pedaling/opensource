@@ -26,7 +26,7 @@ export const Backdrop = withBackdropVariation(
 
     return (
       <PortalBox zIndex={zIndex} top={0} right={0} bottom={0} left={0} scrollable={scrollable}>
-        <Box {...restProps}>
+        <Box flex={1} {...restProps}>
           <Motion
             animation={{
               opacity: {
