@@ -1,8 +1,6 @@
 import type { Ref } from 'react';
 import type { ReactElementChild } from '../../types';
 import type { LayoutEvent } from '../Box';
-import type {
-  BorderSystemProps,
 import { Box } from '../Box';
 import type {
   BackgroundSystemProps,
