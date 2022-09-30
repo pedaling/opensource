@@ -25,7 +25,7 @@ export const Basic: ComponentStory<typeof Backdrop> = props => (
 );
 
 export const Scrollable: ComponentStory<typeof Backdrop> = props => (
-  <Backdrop {...props} scrollable={true} pt={40} px={20}>
+  <Backdrop {...props} scrollable={true} py={40} px={20}>
     <Box width="100%" p={20} backgroundColor="white">
       <Paragraph level={1}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
