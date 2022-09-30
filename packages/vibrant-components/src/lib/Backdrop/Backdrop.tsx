@@ -40,7 +40,6 @@ export const Backdrop = withBackdropVariation(
             <Pressable
               as="div"
               position="absolute"
-              zIndex={-1}
               cursor="default"
               top={0}
               right={0}
