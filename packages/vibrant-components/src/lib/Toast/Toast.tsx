@@ -10,9 +10,9 @@ export const Toast = withToastVariation(
     const [show, setShow] = useState(isMount);
 
     const unmount = useCallback(() => {
-      setIsMount(false);
-
       onClose?.();
+
+      setIsMount(false);
     }, [onClose]);
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export const Toast = withToastVariation(
     return (
       <Transition
         animation={{ opacity: show ? 1 : 0 }}
-        duration={500}
+        duration={200}
         easing="easeOutQuad"
         onEnd={() => {
           if (!show) {
@@ -48,15 +48,7 @@ export const Toast = withToastVariation(
           }
         }}
       >
-        <StackedPortal
-          id="toast"
-          order={0} //TODO: check order
-          left={0}
-          right={0}
-          bottom={0}
-          zIndex={100}
-          safeAreaMode="margin"
-        >
+        <StackedPortal id="toast" order={100} left={0} right={0} bottom={0} zIndex={100} safeAreaMode="margin">
           <HStack mx={20} mb={[20, 0]} mt={[0, 16]} flexGrow={[1, 0]} alignment="center">
             <Paper backgroundColor="inverseSurface" width={['100%', 'auto']}>
               <HStack px={16} py={12} alignItems="center" flexGrow={[1, 0]}>

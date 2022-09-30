@@ -12,9 +12,7 @@ export default {
     kind: 'success',
     title: '커스텀 문구가 적용되었습니다',
     duration: 2500,
-    onButtonClick: () => {
-      console.log('button clicked!');
-    },
+    onButtonClick: () => {},
     buttonText: '미리보기',
   },
 };
