@@ -44,7 +44,11 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     const [visible, setVisible] = useState(false);
     const [containerHeight, setContainerHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
-    const { insets } = useSafeArea();
+    const { generateStyle } = useSafeArea();
+    const { bottom: bottomSheetPaddingBottom } = generateStyle({
+      edges: ['bottom'],
+      minInsets: { bottom: 20 },
+    });
 
     const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
@@ -120,7 +124,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 mt="auto"
                 mb={[0, 'auto']}
                 pt={[24, 36]}
-                pb={[typeof insets.bottom === 'string' ? `calc(20px + ${insets.bottom})` : 20 + insets.bottom, 36]}
+                pb={[bottomSheetPaddingBottom ?? 20, 36]}
                 width={['100%', 480, modalWidth]}
                 maxHeight={overflow === 'scroll' ? [viewportHeight - 120, viewportHeight - 80] : undefined}
                 backgroundColor="surface2"
