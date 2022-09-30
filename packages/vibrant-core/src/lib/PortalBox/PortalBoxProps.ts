@@ -4,6 +4,7 @@ import type { LayoutEvent } from '../Box';
 import { Box } from '../Box';
 import type {
   BackgroundSystemProps,
+  BorderSystemProps,
   DisplaySystemProps,
   OverflowSystemProps,
   PositionSystemProps,
@@ -15,6 +16,7 @@ import { withVariation } from '../withVariation';
 
 type PortalBoxProps = DisplaySystemProps &
   OverflowSystemProps &
+  BorderSystemProps &
   Omit<PositionSystemProps, 'position'> &
   BackgroundSystemProps &
   SizingSystemProps & {
