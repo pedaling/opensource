@@ -16,6 +16,7 @@ import { Backdrop } from '../Backdrop';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
+import { Space } from '../Space';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { withModalBottomSheetVariation } from './ModalBottomSheetProps';
@@ -127,7 +128,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 pb={[bottomSheetPaddingBottom ?? 20, 36]}
                 width={['100%', 480, desktopModalWidth]}
                 maxHeight={overflow === 'scroll' ? [viewportHeight - 120, viewportHeight - 80] : undefined}
-                minHeight={overflow === 'scroll' ? 480 : undefined}
+                minHeight={overflow === 'scroll' ? [0, 480] : undefined}
                 backgroundColor="surface2"
                 borderTopLeftRadiusLevel={4}
                 borderTopRightRadiusLevel={4}
@@ -159,10 +160,12 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   </Body>
                 ) : null}
 
-                {renderContents && (
+                {renderContents ? (
                   <ContentBoxComponent mt={[16, 24]} flexShrink={overflow === 'scroll' ? 1 : 0}>
                     {renderContents({ close: closeModal })}
                   </ContentBoxComponent>
+                ) : (
+                  <Space height={8} />
                 )}
 
                 {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
