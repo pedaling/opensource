@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.mainSidebar.category.Getting Started": {
+    "message": "Getting Started",
+    "description": "The label for category Getting Started in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Core Concepts": {
+    "message": "Core Concepts",
+    "description": "The label for category Core Concepts in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Colors": {
+    "message": "Colors",
+    "description": "The label for category Colors in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Components": {
+    "message": "Components",
+    "description": "The label for category Components in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.@vibrant-ui/components": {
+    "message": "@vibrant-ui/components",
+    "description": "The label for category @vibrant-ui/components in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.@vibrant-ui/motion": {
+    "message": "@vibrant-ui/motion",
+    "description": "The label for category @vibrant-ui/motion in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Migration Guide": {
+    "message": "Migration Guide",
+    "description": "The label for category Migration Guide in sidebar mainSidebar"
+  }
+}

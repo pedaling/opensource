@@ -1,0 +1,64 @@
+---
+title: Transition
+sidebar_position: 2
+---
+
+# Transition
+
+`<Transition />` 은 주로 사용자의 인터렉션과 함께 실행되는 애니메이션입니다.
+
+```jsx live noInline
+// import { Transition } from '@vibrant-ui/motion';
+
+const Example = () => {
+  const [active, setActive] = useState(false);
+
+  const updateOffsetX = () => {
+    setActive(!active);
+  };
+
+  return (
+    <VStack spacing={20}>
+      <Pressable onClick={updateOffsetX}>
+        <Body level={1}>Click Here!</Body>
+      </Pressable>
+      <Transition
+        animation={{ x: active ? 200 : 0 }}
+        duration={500}
+      >
+        <Paper
+          width={100}
+          height={100}
+          backgroundColor="primary"
+        />
+      </Transition>
+    </VStack>
+  );
+};
+
+render(<Example />);
+```
+
+## Properties
+
+**animation, loop 속성을 제외한 다른 속성은 [Motion Properties](motion#properties)와 동일합니다.**
+
+### animation (required)
+
+animation 값에 주로 react state를 넣어 값의 변경과 함께 애니메이션이 동작되도록 할 수 있습니다.
+
+```jsx
+const [fontSize, setFontSize] = useState(8);
+const [x, setX] = useState(0);
+
+return (
+  <Transition
+    animation={{
+      fontSize: fontSize,
+      x: x,
+    }}
+  >
+    <Box />
+  </Transition>
+);
+```
