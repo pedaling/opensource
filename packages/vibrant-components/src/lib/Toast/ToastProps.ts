@@ -1,9 +1,8 @@
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 
-type ToastProps = {
+export type ToastProps = {
   title: string;
-  open: boolean;
   kind?: 'default' | 'error' | 'success';
   onClose?: () => void;
   duration?: number;

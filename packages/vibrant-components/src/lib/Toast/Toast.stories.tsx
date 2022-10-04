@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import type { ComponentStory } from '@storybook/react';
-import { PressableBox, Text } from '@vibrant-ui/core';
 import { Paper } from '../Paper';
 import { VStack } from '../VStack';
 import { Toast } from './Toast';
@@ -17,36 +15,10 @@ export default {
   },
 };
 
-export const Basic: ComponentStory<typeof Toast> = props => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <VStack mt={200} height="100%" width="100%">
-      <Paper height="100%" width="100%" backgroundColor="background">
-        <VStack flex={1}>
-          <PressableBox
-            width={100}
-            height={50}
-            alignItems="center"
-            justifyContent="center"
-            backgroundColor="primary"
-            mx="auto"
-            onClick={() => {
-              setOpen(true);
-            }}
-          >
-            <Text>Click me</Text>
-          </PressableBox>
-
-          <Toast
-            {...props}
-            open={open}
-            onClose={() => {
-              setOpen(false);
-            }}
-          />
-        </VStack>
-      </Paper>
-    </VStack>
-  );
-};
+export const Basic: ComponentStory<typeof Toast> = props => (
+  <VStack mt={200} height="100%" width="100%" alignment="start">
+    <Paper height="100%" width="100%" backgroundColor="background">
+      <Toast {...props} />
+    </Paper>
+  </VStack>
+);
