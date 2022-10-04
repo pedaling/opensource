@@ -19,9 +19,7 @@ import { InjectColors } from '../../../src/components/InjectColors';
                 flex={1}
                 py={4}
                 backgroundColor={
-                  colors.neutral[
-                    index % 2 === 0 ? 15 : 10
-                  ]
+                  colors.neutral[index % 2 === 0 ? 15 : 10]
                 }
                 justifyContent="center"
               >
@@ -42,9 +40,7 @@ import { InjectColors } from '../../../src/components/InjectColors';
               <HStack
                 key={key}
                 backgroundColor={
-                  key === 'whiteAlpha'
-                    ? 'black'
-                    : 'white'
+                  key === 'whiteAlpha' ? 'black' : 'white'
                 }
               >
                 {Object.entries(value).map(

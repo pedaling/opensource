@@ -21,9 +21,16 @@ export const Checkbox = withCheckboxVariation(
 
     const handleChange = () => {
       setIsChecked(prevIsChecked => {
-        onValueChange?.(!prevIsChecked);
+        let isPrevented = false;
 
-        return !prevIsChecked;
+        onValueChange?.({
+          value: !prevIsChecked,
+          prevent: () => {
+            isPrevented = true;
+          },
+        });
+
+        return isPrevented ? prevIsChecked : !prevIsChecked;
       });
     };
 

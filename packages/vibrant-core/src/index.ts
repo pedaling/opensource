@@ -12,7 +12,13 @@ export type {
   AutoCapitalizeOption,
   AutoCompleteOption,
 } from './lib/TextInput';
-export type { ReactElementChild, ReactTextChild, ResponsiveValue, WindowDimensions } from './types';
+export type {
+  ReactElementChild,
+  ReactElementChildren,
+  ReactTextChild,
+  ResponsiveValue,
+  WindowDimensions,
+} from './types';
 export type {
   BackgroundSystemProps,
   BorderSystemProps,

@@ -1,5 +1,5 @@
 import type { Ref } from 'react';
-import type { ReactElementChild } from '../../types';
+import type { ReactElementChildren } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
@@ -73,7 +73,7 @@ export type ScrollBoxElements =
 export type ScrollBoxProps = {
   ref?: Ref<any>;
   as?: ScrollBoxElements;
-  children: ReactElementChild | ReactElementChild[];
+  children: ReactElementChildren;
 } & SystemProps;
 
 export const interpolation = injectContext(

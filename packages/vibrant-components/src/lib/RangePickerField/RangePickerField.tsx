@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, OverlayBox, getElementPosition } from '@vibrant-ui/core';
 import type { TargetElement } from '@vibrant-ui/utils';
 import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
@@ -12,12 +12,11 @@ export const RangePickerField = withRangePickerFieldVariation(
   ({ defaultValue, onValueChange, label, disabled, placeholder, helperText, state }) => {
     const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
-    const [inputValue, setInputValue] = useState(() =>
-      defaultValue ? getRangeString(defaultValue.start, defaultValue.end) : ''
-    );
     const onValueChangeRef = useSafeDeps(onValueChange);
     const inputRef = useRef<TargetElement>(null);
     const [calendarPosition, setCalendarPosition] = useState('bottom');
+
+    const inputValue = useMemo(() => (value ? getRangeString(value.start, value.end) : ''), [value]);
 
     const openCalendar = async () => {
       if (!inputRef.current) {
@@ -46,24 +45,46 @@ export const RangePickerField = withRangePickerFieldVariation(
       setValue(defaultValue);
     }, [defaultValue]);
 
-    useEffect(() => {
-      if (!value) {
-        setInputValue('');
+    const handleDateRangeSelect = useCallback(
+      (startDate: Date, endDate?: Date) => {
+        if (!endDate) {
+          setValue({ start: startDate, end: endDate });
 
-        return;
+          return;
+        }
+
+        let isPrevented = false;
+
+        onValueChangeRef.current?.({
+          value: { start: startDate, end: endDate },
+          prevent: () => {
+            isPrevented = true;
+          },
+        });
+
+        if (!isPrevented) {
+          setValue({ start: startDate, end: endDate });
+        }
+
+        setIsCalendarOpened(false);
+      },
+      [onValueChangeRef]
+    );
+
+    const handleClear = useCallback(() => {
+      let isPrevented = false;
+
+      onValueChangeRef.current?.({
+        value: undefined,
+        prevent: () => {
+          isPrevented = true;
+        },
+      });
+
+      if (!isPrevented) {
+        setValue(undefined);
       }
-
-      const { start, end } = value;
-
-      setInputValue(getRangeString(start, end));
-      if (!end) {
-        return;
-      }
-
-      onValueChangeRef.current?.({ start, end });
-
-      return;
-    }, [onValueChangeRef, value]);
+    }, [onValueChangeRef]);
 
     return (
       <Box position="relative" width="100%" height={50}>
@@ -72,7 +93,7 @@ export const RangePickerField = withRangePickerFieldVariation(
           value={inputValue}
           onClick={openCalendar}
           disabled={disabled}
-          onClear={() => setValue(undefined)}
+          onClear={handleClear}
           placeholder={placeholder}
           label={label}
           calendarOpened={isCalendarOpened}
@@ -90,15 +111,7 @@ export const RangePickerField = withRangePickerFieldVariation(
             range={true}
             startDate={value?.start}
             endDate={value?.end}
-            onDateRangeSelect={(startDate, endDate) => {
-              setValue({ start: startDate, end: endDate });
-
-              if (!endDate) {
-                return;
-              }
-
-              setIsCalendarOpened(false);
-            }}
+            onDateRangeSelect={handleDateRangeSelect}
           />
         </OverlayBox>
       </Box>

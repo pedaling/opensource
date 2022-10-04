@@ -1,6 +1,6 @@
 import type { ComponentType, Ref } from 'react';
 import type { DistributiveOmit, LayoutEvent } from '@vibrant-ui/utils';
-import type { ReactElementChild } from '../../types';
+import type { ReactElementChildren } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
@@ -128,7 +128,7 @@ export type BoxProps<
           ? JSX.IntrinsicElements[ElementName]
           : Record<never, never>) & {
           ref?: Ref<HTMLElement>;
-          children?: ReactElementChild | ReactElementChild[];
+          children?: ReactElementChildren;
         }
       : ComponentProps<BaseComponent>,
     keyof SystemProps
