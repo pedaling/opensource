@@ -2,7 +2,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { PressableBox, Text } from '@vibrant-ui/core';
 import { Paper } from '../Paper';
 import { useToast } from '../ToastProvider';
-import { useToastProps } from '../ToastProvider/ToastProvider';
+import { ToastRenderer } from '../ToastRenderer';
 import { VStack } from '../VStack';
 import { Toast } from './Toast';
 
@@ -12,7 +12,7 @@ export default {
   args: {
     kind: 'success',
     title: '커스텀 문구가 적용되었습니다',
-    duration: 2500,
+    duration: 3000,
     onButtonClick: () => {},
     buttonText: '미리보기',
   },
@@ -28,9 +28,6 @@ export const Basic: ComponentStory<typeof Toast> = props => (
 
 export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
   const { showToast } = useToast();
-  const toastProps = useToastProps();
-
-  console.log(toastProps);
 
   return (
     <VStack mt={200} height="100%" width="100%">
@@ -49,6 +46,7 @@ export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
           >
             <Text>Click me</Text>
           </PressableBox>
+          <ToastRenderer />
         </VStack>
       </Paper>
     </VStack>

@@ -1,3 +1,4 @@
+import type { Ref } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 
@@ -5,6 +6,7 @@ export type ToastProps = {
   title: string;
   kind?: 'default' | 'error' | 'success';
   onClose?: () => void;
+  ref?: Ref<any>;
   duration?: number;
 } & (
   | {
