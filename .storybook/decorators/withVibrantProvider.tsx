@@ -23,7 +23,7 @@ const theme = {
   },
 };
 
-export const withVibrantProvider: DecoratorFn = storyFn => (
+export const withVibrantProvider: DecoratorFn = StoryFn => (
   <VibrantProvider
     theme={theme}
     dependencies={{
@@ -31,6 +31,6 @@ export const withVibrantProvider: DecoratorFn = storyFn => (
     }}
     portalBottomPriorityOrder={['bottom-bar', 'floating-action-button']}
   >
-    {storyFn()}
+    <StoryFn />
   </VibrantProvider>
 );
