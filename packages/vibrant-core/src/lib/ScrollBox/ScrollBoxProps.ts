@@ -74,6 +74,7 @@ export type ScrollBoxProps = {
   ref?: Ref<any>;
   as?: ScrollBoxElements;
   children: ReactElementChildren;
+  bounces?: boolean;
 } & SystemProps;
 
 export const interpolation = injectContext(
