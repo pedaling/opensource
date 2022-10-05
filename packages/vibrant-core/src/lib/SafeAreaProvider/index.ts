@@ -1,2 +1,2 @@
-export { SafeAreaProvider, useSafeArea } from './SafeAreaProvider';
+export { SafeAreaProvider, useSafeArea, SafeAreaContext } from './SafeAreaProvider';
 export type { Edge, Insets } from './SafeAreaProviderProps';

@@ -1,7 +1,8 @@
-import type { ComponentStory } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { PressableBox, Text } from '@vibrant-ui/core';
 import { Paper } from '../Paper';
 import { useToast } from '../ToastProvider';
+import { useToastProps } from '../ToastProvider/ToastProvider';
 import { VStack } from '../VStack';
 import { Toast } from './Toast';
 
@@ -15,7 +16,7 @@ export default {
     onButtonClick: () => {},
     buttonText: '미리보기',
   },
-};
+} as ComponentMeta<typeof Toast>;
 
 export const Basic: ComponentStory<typeof Toast> = props => (
   <VStack mt={200} height="100%" width="100%" alignment="start">
@@ -27,6 +28,9 @@ export const Basic: ComponentStory<typeof Toast> = props => (
 
 export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
   const { showToast } = useToast();
+  const toastProps = useToastProps();
+
+  console.log(toastProps);
 
   return (
     <VStack mt={200} height="100%" width="100%">
