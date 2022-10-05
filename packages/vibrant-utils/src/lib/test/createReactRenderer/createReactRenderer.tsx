@@ -7,7 +7,7 @@ import { render } from '@testing-library/react';
 
 export type ReactRenderer = ReturnType<typeof render>;
 
-export const createReactRenderer = () => {
+export const createReactRenderer = (wrapper: (children: ReactElement) => ReactElement = children => children) => {
   expect.extend(matchers);
 
   let emotionCache: EmotionCache;
@@ -26,8 +26,8 @@ export const createReactRenderer = () => {
 
   return {
     render: (element: ReactElement): ReactRenderer =>
-      render(<EmotionCacheProvider value={emotionCache}>{wrap(element)}</EmotionCacheProvider>),
+      render(<EmotionCacheProvider value={emotionCache}>{wrap(wrapper(element))}</EmotionCacheProvider>),
     rerender: (renderer: ReactRenderer, element: ReactElement) =>
-      renderer.rerender(<EmotionCacheProvider value={emotionCache}>{wrap(element)}</EmotionCacheProvider>),
+      renderer.rerender(<EmotionCacheProvider value={emotionCache}>{wrap(wrapper(element))}</EmotionCacheProvider>),
   };
 };
