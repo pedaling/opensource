@@ -6,7 +6,7 @@ import type { BoxElements, BoxProps } from './BoxProps';
 import { interpolation, shouldForwardProp } from './BoxProps';
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps>(({ as, base, onLayout, ...restProps }, ref) => {
+  forwardRef<HTMLDivElement, BoxProps>(({ as, base, onLayout, ariaLabel, ...restProps }, ref) => {
     const Component = base ? (base as ComponentType<any>) : undefined;
 
     const { ref: layoutEventRef } = useLayoutEvent(onLayout);
@@ -27,11 +27,12 @@ export const Box = styled(
     );
 
     if (Component) {
-      return <Component ref={composeRef} {...(as ? { as } : {})} {...restProps} />;
+      return <Component ref={composeRef} {...(as ? { as } : {})} aria-label={ariaLabel} {...restProps} />;
     }
 
     return createElement(as ?? 'div', {
       ref: composeRef,
+      'aria-label': ariaLabel,
       ...restProps,
     });
   }),

@@ -19,30 +19,34 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
 };
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps & { style: any }>(({ as, base, style, onLayout, ...restProps }, ref) => {
-    const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
+  forwardRef<HTMLDivElement, BoxProps & { style: any }>(
+    ({ as, base, style, onLayout, role, ariaLabel, ...restProps }, ref) => {
+      const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
 
-    const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
+      const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
 
-    const handleLayout = onLayout
-      ? async (event: LayoutChangeEvent) => {
-          const layout = await getElementPosition(event.currentTarget);
+      const handleLayout = onLayout
+        ? async (event: LayoutChangeEvent) => {
+            const layout = await getElementPosition(event.currentTarget);
 
-          onLayout(layout);
-        }
-      : undefined;
+            onLayout(layout);
+          }
+        : undefined;
 
-    return (
-      <Component
-        ref={ref}
-        style={restStyle}
-        onLayout={handleLayout}
-        {...(base ? { as } : {})}
-        {...restProps}
-        {...props}
-      />
-    );
-  }),
+      return (
+        <Component
+          ref={ref}
+          style={restStyle}
+          onLayout={handleLayout}
+          accessibilityRole={role}
+          accessibilityLabel={ariaLabel}
+          {...(base ? { as } : {})}
+          {...restProps}
+          {...props}
+        />
+      );
+    }
+  ),
   {
     shouldForwardProp,
   }
