@@ -14,6 +14,7 @@ const ToastActionContext = createContext<Dispatch<ToastProps | undefined>>(() =>
 
 export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
   const [toastProps, setToastProps] = useState<ToastProps | undefined>(undefined);
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   const [show, setShow] = useState(false);
   //Memo(Lou): use this show variable as swipe action closing
 
