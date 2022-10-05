@@ -127,8 +127,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 pt={[24, 36]}
                 pb={[bottomSheetPaddingBottom ?? 20, 36]}
                 width={['100%', 480, desktopModalWidth]}
-                maxHeight={overflow === 'scroll' ? [viewportHeight - 120, viewportHeight - 80] : undefined}
-                minHeight={overflow === 'scroll' ? [0, 480] : undefined}
+                maxHeight={
+                  overflow === 'scroll' ? [viewportHeight - 120, Math.max(viewportHeight - 80, 480)] : undefined
+                }
                 backgroundColor="surface2"
                 borderTopLeftRadiusLevel={4}
                 borderTopRightRadiusLevel={4}

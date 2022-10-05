@@ -34,7 +34,7 @@ export const Backdrop = withBackdropVariation(
         scrollable={scrollable}
         bounces={scrollable ? false : undefined}
       >
-        <Box height="100%" {...restProps}>
+        <Box flex={1} {...restProps}>
           <Motion
             animation={{
               opacity: {
