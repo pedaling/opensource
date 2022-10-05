@@ -24,6 +24,7 @@ export type PressableProps = BackgroundSystemProps &
     disabled?: boolean;
     children?: ReactElement;
     cursor?: 'default' | 'pointer';
+    ariaLabel?: string;
     onClick?: () => void;
     onFocus?: () => void;
     onBlur?: () => void;
