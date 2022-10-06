@@ -18,6 +18,7 @@ type StackedPortalProps = BackgroundSystemProps &
     ref?: Ref<any>;
     children?: ReactElementChild;
     safeAreaMode?: 'margin' | 'none' | 'padding';
+    onMount?: () => void;
   } & (
     | {
         top: number;

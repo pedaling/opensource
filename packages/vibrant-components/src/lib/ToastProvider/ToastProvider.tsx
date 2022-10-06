@@ -1,39 +1,32 @@
-import { createContext, useContext, useEffect, useState } from 'react';
-import type { Dispatch, FC } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
+import type { FC } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import type { ToastProps } from '../Toast/ToastProps';
-
-const DURATION = 2500;
 
 type ToastProviderProps = {
   children: ReactElementChild;
 };
 
-const ToastPropsContext = createContext<ToastProps | undefined>(undefined);
-const ToastActionContext = createContext<Dispatch<ToastProps | undefined>>(() => {});
+type ToastWithKeyProps = ToastProps & {
+  toastKey: number;
+};
+
+const ToastPropsContext = createContext<ToastWithKeyProps | undefined>(undefined);
+const ToastActionContext = createContext<(props: ToastProps) => void>(() => {});
 
 export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
-  const [toastProps, setToastProps] = useState<ToastProps | undefined>(undefined);
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  const [show, setShow] = useState(false);
-  //Memo(Lou): use this show variable as swipe action closing
+  const [toastProps, setToastProps] = useState<ToastWithKeyProps | undefined>(undefined);
 
-  useEffect(() => {
-    if (toastProps) {
-      setShow(true);
-    }
+  const lastToastKeyRef = useRef(0);
 
-    const timer = setTimeout(() => {
-      setShow(false);
+  const setToastWithKeyProps = (props: ToastProps) => {
+    lastToastKeyRef.current++;
 
-      setToastProps(undefined);
-    }, toastProps?.duration || DURATION);
-
-    return () => clearTimeout(timer);
-  }, [toastProps]);
+    setToastProps({ ...props, toastKey: lastToastKeyRef.current });
+  };
 
   return (
-    <ToastActionContext.Provider value={setToastProps}>
+    <ToastActionContext.Provider value={setToastWithKeyProps}>
       <ToastPropsContext.Provider value={toastProps}>{children}</ToastPropsContext.Provider>
     </ToastActionContext.Provider>
   );
