@@ -7,7 +7,7 @@ import { render } from '@testing-library/react-native';
 
 export type ReactNativeRenderer = ReturnType<typeof render>;
 
-export const createReactNativeRenderer = () => {
+export const createReactNativeRenderer = (wrapper: (children: ReactElement) => ReactElement = children => children) => {
   expect.extend(matchers);
 
   let emotionCache: EmotionCache;
@@ -26,8 +26,8 @@ export const createReactNativeRenderer = () => {
 
   return {
     render: (element: ReactElement): ReactNativeRenderer =>
-      render(<EmotionCacheProvider value={emotionCache}>{wrap(element)}</EmotionCacheProvider>),
+      render(<EmotionCacheProvider value={emotionCache}>{wrap(wrapper(element))}</EmotionCacheProvider>),
     rerender: (renderer: ReactNativeRenderer, element: ReactElement) =>
-      renderer.rerender(<EmotionCacheProvider value={emotionCache}>{wrap(element)}</EmotionCacheProvider>),
+      renderer.rerender(<EmotionCacheProvider value={emotionCache}>{wrap(wrapper(element))}</EmotionCacheProvider>),
   };
 };
