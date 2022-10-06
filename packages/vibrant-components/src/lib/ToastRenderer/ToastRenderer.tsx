@@ -28,34 +28,31 @@ export const ToastRenderer = () => {
     return () => clearTimeout(timer);
   }, [show, toastProps?.duration, toastProps?.toastKey]);
 
-  return (
-    toastProps &&
-    isMount && (
-      <StackedPortal
-        id="toast"
-        onMount={() => {
-          setShow(true);
+  return toastProps && isMount ? (
+    <StackedPortal
+      id="toast"
+      onMount={() => {
+        setShow(true);
+      }}
+      order={1}
+      left={0}
+      right={0}
+      bottom={0}
+      zIndex={10}
+      safeAreaMode="margin"
+    >
+      <Transition
+        onEnd={() => {
+          if (!show) {
+            setIsMount(false);
+          }
         }}
-        order={1}
-        left={0}
-        right={0}
-        bottom={0}
-        zIndex={10}
-        safeAreaMode="margin"
+        animation={{ opacity: show ? 1 : 0 }}
+        duration={200}
+        easing="easeOutQuad"
       >
-        <Transition
-          onEnd={() => {
-            if (!show) {
-              setIsMount(false);
-            }
-          }}
-          animation={{ opacity: show ? 1 : 0 }}
-          duration={200}
-          easing="easeOutQuad"
-        >
-          <Toast {...toastProps} />
-        </Transition>
-      </StackedPortal>
-    )
-  );
+        <Toast {...toastProps} />
+      </Transition>
+    </StackedPortal>
+  ) : null;
 };
