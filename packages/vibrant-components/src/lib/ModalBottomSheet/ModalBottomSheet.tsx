@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Box,
+  ScrollBox,
   ThemeProvider,
   isNative,
   useCurrentThemeMode,
@@ -39,8 +40,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     onSecondaryButtonClick,
     onSubButtonClick,
     onClose,
-    ContentBoxComponent,
-    overflow = 'scroll',
   }) => {
     const [isOpen, setIsOpen] = useState(defaultOpen);
     const [visible, setVisible] = useState(false);
@@ -129,9 +128,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 pt={[24, 36]}
                 pb={[bottomSheetPaddingBottom ?? 20, 36]}
                 width={['100%', 480, desktopModalWidth]}
-                maxHeight={
-                  overflow === 'scroll' ? [viewportHeight - 120, Math.max(viewportHeight - 80, 480)] : undefined
-                }
+                maxHeight={[viewportHeight - 120, Math.max(viewportHeight - 80, 480)]}
                 backgroundColor="surface2"
                 borderTopLeftRadiusLevel={4}
                 borderTopRightRadiusLevel={4}
@@ -165,9 +162,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 ) : null}
 
                 {renderContents ? (
-                  <ContentBoxComponent mt={[16, 24]} flexShrink={overflow === 'scroll' ? 1 : 0}>
-                    {renderContents({ close: closeModal })}
-                  </ContentBoxComponent>
+                  <ScrollBox mt={[16, 24]}>{renderContents({ close: closeModal })}</ScrollBox>
                 ) : (
                   <Space height={8} />
                 )}
