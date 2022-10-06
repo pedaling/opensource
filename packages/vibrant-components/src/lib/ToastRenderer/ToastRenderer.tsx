@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { StackedPortal, Toast } from '@vibrant-ui/components';
-// import { Motion } from '@vibrant-ui/motion';
 import { Transition } from '@vibrant-ui/motion';
 import { useToastProps } from '../ToastProvider/ToastProvider';
 
@@ -18,13 +17,15 @@ export const ToastRenderer = () => {
   }, [toastProps, toastProps?.toastKey]);
 
   useEffect(() => {
-    if (show) {
-      const timer = setTimeout(() => {
-        setShow(false);
-      }, toastProps?.duration ?? DURATION);
-
-      return () => clearTimeout(timer);
+    if (!show) {
+      return;
     }
+
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, toastProps?.duration ?? DURATION);
+
+    return () => clearTimeout(timer);
   }, [show, toastProps?.duration, toastProps?.toastKey]);
 
   return (
