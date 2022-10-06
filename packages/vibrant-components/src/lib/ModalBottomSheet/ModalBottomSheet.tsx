@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Box,
   ThemeProvider,
+  isNative,
   useCurrentThemeMode,
   useLockBodyScroll,
   useResponsiveValue,
@@ -121,6 +122,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               style={{ y: isMobile ? viewportHeight : undefined }}
             >
               <Box
+                role={isNative ? 'none' : 'dialog'}
                 mx="auto"
                 mt="auto"
                 mb={[0, 'auto']}
@@ -145,6 +147,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   ) : null}
                   <Pressable
                     as="button"
+                    ariaLabel="Close"
                     pl={12}
                     ml="auto"
                     onClick={closeModal}
@@ -223,7 +226,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       backgroundColor="primary"
                       py={15}
                       borderRadiusLevel={1}
-                      onClick={() => onSecondaryButtonClick?.({ close: closeModal })}
+                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
                       overlayColor="onPrimary"
                       interactions={['hover', 'focus', 'active']}
                     >
