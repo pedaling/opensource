@@ -69,7 +69,7 @@ describe('<ModalBottomSheet />', () => {
         expect(mockOnClose).toBeCalled();
       });
 
-      it('should not open the content', () => {
+      it('should close the content', () => {
         expect(renderer.queryByRole('dialog')).toBeFalsy();
       });
     });
