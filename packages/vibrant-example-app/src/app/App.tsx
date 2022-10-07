@@ -4,7 +4,7 @@ import React from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
 import * as ReactSpring from '@react-spring/native';
-import { createShadowsComponent } from '@vibrant-ui/components';
+import { ToastProvider, createShadowsComponent } from '@vibrant-ui/components';
 import type { Dependencies } from '@vibrant-ui/core';
 import { Box, VibrantProvider } from '@vibrant-ui/core';
 import { StoryView } from './StoryView';
@@ -57,11 +57,13 @@ const App = () => {
       dependencies={dependencies}
       portalBottomPriorityOrder={['bottom-bar', 'floating-action-button']}
     >
-      <Box base={ScrollView} height="100%">
-        <Box base={SafeAreaView}>
-          <StoryView {...story} />
+      <ToastProvider>
+        <Box base={ScrollView} height="100%">
+          <Box base={SafeAreaView}>
+            <StoryView {...story} />
+          </Box>
         </Box>
-      </Box>
+      </ToastProvider>
     </VibrantProvider>
   );
 };
