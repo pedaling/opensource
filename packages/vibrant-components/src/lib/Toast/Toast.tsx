@@ -13,11 +13,9 @@ export const Toast = withToastVariation(
               <IconComponent size={18} fill={color} />
             </VStack>
           )}
-          <HStack flexGrow={[1, 0]}>
-            <Text wordBreak="keep-all" fontSize={14} color="onInverseSurface">
-              {title}
-            </Text>
-          </HStack>
+          <Text flexGrow={[1, 0]} wordBreak="keep-all" fontSize={14} color="onInverseSurface">
+            {title}
+          </Text>
           {isDefined(buttonText) && onButtonClick && (
             <VStack flexShrink={0}>
               <Pressable interactions={['focus', 'active']} ml={12} onClick={onButtonClick}>
