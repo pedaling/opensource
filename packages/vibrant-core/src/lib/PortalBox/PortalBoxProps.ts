@@ -25,7 +25,6 @@ type PortalBoxProps = DisplaySystemProps &
     children: ReactElementChild | ReactElementChild[];
     onMount?: () => void;
     scrollable?: boolean;
-    bounces?: boolean;
   };
 
 export const withPortalBoxVariation = withVariation<PortalBoxProps>('PortalBox')(
