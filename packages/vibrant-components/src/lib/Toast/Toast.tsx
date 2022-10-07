@@ -1,5 +1,6 @@
-import { HStack, Paper, VStack } from '@vibrant-ui/components';
-import { PressableBox, Text } from '@vibrant-ui/core';
+import { HStack, Paper, Pressable, VStack } from '@vibrant-ui/components';
+import { Text } from '@vibrant-ui/core';
+import { isDefined } from '@vibrant-ui/utils';
 import { withToastVariation } from './ToastProps';
 
 export const Toast = withToastVariation(
@@ -13,17 +14,17 @@ export const Toast = withToastVariation(
             </VStack>
           )}
           <HStack flexGrow={[1, 0]}>
-            <Text wordBreak="break-all" fontSize={14} color="onInverseSurface">
+            <Text wordBreak="keep-all" fontSize={14} color="onInverseSurface">
               {title}
             </Text>
           </HStack>
-          {buttonText !== undefined && onButtonClick && (
+          {isDefined(buttonText) && onButtonClick && (
             <VStack flexShrink={0}>
-              <PressableBox ml={12} onClick={onButtonClick}>
+              <Pressable interactions={['focus', 'active']} ml={12} onClick={onButtonClick}>
                 <Text fontSize={14} color="onViewInformative" fontWeight="medium">
                   {buttonText}
                 </Text>
-              </PressableBox>
+              </Pressable>
             </VStack>
           )}
         </HStack>
