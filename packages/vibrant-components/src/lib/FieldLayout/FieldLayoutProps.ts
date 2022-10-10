@@ -4,7 +4,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { OnColorToken } from '@vibrant-ui/theme';
 
 type FieldLayoutProps = {
-  state?: 'default' | 'error';
+  state?: 'default' | 'error' | 'success';
   label?: string;
   helperText?: string;
   disabled?: boolean;
@@ -38,10 +38,16 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     ],
     variants: {
       default: {
-        textColor: 'onView2',
+        labelColor: 'onView2',
+        helperTextColor: 'onView2',
       },
       error: {
-        textColor: 'error',
+        labelColor: 'onViewError',
+        helperTextColor: 'onViewError',
+      },
+      success: {
+        labelColor: 'onView2',
+        helperTextColor: 'onViewSuccess',
       },
     } as const,
   }),
@@ -123,7 +129,8 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       true: {
         cursor: 'default',
         backgroundColor: 'disable',
-        textColor: 'onView3',
+        labelColor: 'onView3',
+        helperTextColor: 'onView3',
         borderColor: 'disableOutline',
         valueColor: 'onView3',
       },

@@ -1,10 +1,11 @@
 import { withVariation } from '@vibrant-ui/core';
 
 export type PasswordFieldProps = {
-  state?: 'default' | 'error';
+  state?: 'default' | 'error' | 'success';
   label?: string;
   placeholder?: string;
   helperText?: string;
+  autoFocus?: boolean;
   tabIndex?: number;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
