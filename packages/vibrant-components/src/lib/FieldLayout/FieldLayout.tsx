@@ -12,7 +12,8 @@ export const FieldLayout = withFieldLayoutVariation(
     helperText,
     cursor,
     backgroundColor,
-    textColor,
+    labelColor,
+    helperTextColor,
     borderColor,
     animation,
     pt,
@@ -53,7 +54,7 @@ export const FieldLayout = withFieldLayoutVariation(
                 zIndex={1}
                 left={renderStart ? 12 : 15}
                 right={renderEnd ? 12 : 15}
-                color={textColor}
+                color={labelColor}
                 lineLimit={1}
               >
                 {label}
@@ -94,7 +95,7 @@ export const FieldLayout = withFieldLayoutVariation(
         <VStack flexShrink={0}>{renderEnd?.()}</VStack>
       </Box>
       {Boolean(helperText) && (
-        <Body level={4} color={textColor}>
+        <Body level={4} color={helperTextColor}>
           {helperText}
         </Body>
       )}
