@@ -30,12 +30,12 @@ export const RangePickerField = withRangePickerFieldVariation(
       setIsCalendarOpened(true);
     };
 
-    const handleDismiss = () => {
-      setIsCalendarOpened(false);
+    useEffect(() => {
       if (!value?.end) {
         setValue(undefined);
       }
-    };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isCalendarOpened]);
 
     useEffect(() => {
       if (!defaultValue) {
@@ -103,7 +103,7 @@ export const RangePickerField = withRangePickerFieldVariation(
         <OverlayBox
           open={isCalendarOpened}
           targetRef={inputRef}
-          onDismiss={handleDismiss}
+          onDismiss={() => setIsCalendarOpened(false)}
           left={0}
           {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
         >
