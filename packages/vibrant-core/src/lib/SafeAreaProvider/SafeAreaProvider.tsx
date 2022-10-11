@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { transformResponsiveValue } from '../transformResponsiveValue';
 import type { Edge, GenerateStyle, SafeAreaContextValue, SafeAreaProviderProps } from './SafeAreaProviderProps';
 
-export const SafeAreaContext = createContext<SafeAreaContextValue>({
+const SafeAreaContext = createContext<SafeAreaContextValue>({
   insets: {
     top: 0,
     left: 0,
