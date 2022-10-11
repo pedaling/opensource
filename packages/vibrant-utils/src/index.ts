@@ -19,5 +19,6 @@ export type { LayoutEvent } from './lib/useLayoutEvent';
 export { getOffsetByPosition } from './lib/getOffsetByPosition';
 export { detectOverflow } from './lib/detectOverflow';
 export { flipPosition } from './lib/flipPosition';
+export { useCallbackRef } from './lib/useCallbackRef';
 
 export type { Position } from './types/Position';
