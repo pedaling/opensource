@@ -14,7 +14,7 @@ import type { ColorToken } from '@vibrant-ui/theme';
 
 export type PressableProps = BackgroundSystemProps &
   BorderSystemProps &
-  Pick<FlexboxSystemProps, 'alignItems' | 'flexGrow' | 'flexShrink' | 'justifyContent'> &
+  Pick<FlexboxSystemProps, 'alignItems' | 'flexBasis' | 'flexGrow' | 'flexShrink' | 'justifyContent'> &
   OverflowSystemProps &
   PositionSystemProps &
   SpacingSystemProps &
@@ -28,6 +28,7 @@ export type PressableProps = BackgroundSystemProps &
     onClick?: () => void;
     onFocus?: () => void;
     onBlur?: () => void;
+    hitSlop?: number;
   } & (
     | {
         overlayColor: ResponsiveValue<ColorToken>;

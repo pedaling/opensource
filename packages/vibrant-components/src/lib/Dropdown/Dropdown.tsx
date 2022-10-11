@@ -18,8 +18,6 @@ import { Backdrop } from '../Backdrop';
 import { withDropdownVariation } from './DropdownProps';
 
 const CONTENT_PADDING = 20;
-const BOTTOM_SHEET_CONTENT_TOP_PADDING = 24;
-const BOTTOM_SHEET_CONTENT_BOTTOM_PADDING = 20;
 const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
 const Z_INDEX = 100;
 
@@ -76,9 +74,14 @@ export const Dropdown = withDropdownVariation(
     const [isOpen, setIsOpen] = useState(open);
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
+    const [containerHeight, setContainerHeight] = useState<number>();
     const [contentHeight, setContentHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
-    const { insets } = useSafeArea();
+    const { generateStyle } = useSafeArea();
+    const { bottom: bottomSheetPaddingBottom } = generateStyle({
+      edges: ['bottom'],
+      minInsets: { bottom: 20 },
+    });
 
     const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
@@ -126,6 +129,10 @@ export const Dropdown = withDropdownVariation(
       },
       [isMobile, position, spacing]
     );
+
+    const handleContainerResize = useCallback(({ height }: LayoutEvent) => {
+      setContainerHeight(height);
+    }, []);
 
     useEffect(() => {
       if (!isOpen) {
@@ -198,28 +205,21 @@ export const Dropdown = withDropdownVariation(
             <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={200}>
               <Transition
                 animation={{
-                  y: visible
-                    ? 0
-                    : contentHeight
-                    ? contentHeight + (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING)
-                    : undefined,
+                  y: visible ? 0 : containerHeight,
                 }}
                 duration={200}
                 style={{ y: viewportHeight }}
               >
                 <Box
                   mt="auto"
-                  pt={BOTTOM_SHEET_CONTENT_TOP_PADDING}
-                  pb={
-                    typeof insets.bottom === 'string'
-                      ? `calc(${BOTTOM_SHEET_CONTENT_BOTTOM_PADDING}px + ${insets.bottom})`
-                      : BOTTOM_SHEET_CONTENT_BOTTOM_PADDING + insets.bottom
-                  }
+                  pt={24}
+                  pb={bottomSheetPaddingBottom}
                   width="100%"
                   maxHeight={viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
                   backgroundColor="surface2"
                   borderTopLeftRadiusLevel={4}
                   borderTopRightRadiusLevel={4}
+                  onLayout={handleContainerResize}
                 >
                   <Transition
                     animation={{
@@ -229,11 +229,7 @@ export const Dropdown = withDropdownVariation(
                   >
                     <ScrollBox
                       height={contentHeight}
-                      hideScroll={
-                        (contentHeight ?? 0) +
-                          (BOTTOM_SHEET_CONTENT_TOP_PADDING + BOTTOM_SHEET_CONTENT_BOTTOM_PADDING) <=
-                        viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN
-                      }
+                      hideScroll={(containerHeight ?? 0) < viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
                     >
                       <Box onLayout={handleContentResize} flexShrink={0}>
                         {renderContents({ close: closeDropdown })}

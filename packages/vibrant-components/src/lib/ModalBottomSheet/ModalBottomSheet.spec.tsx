@@ -1,0 +1,221 @@
+import { waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { PortalRootProvider } from '@vibrant-ui/core';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing';
+import { createReactRenderer } from '@vibrant-ui/utils/testing';
+import { Pressable } from '../Pressable';
+import { ModalBottomSheet } from './ModalBottomSheet';
+
+describe('<ModalBottomSheet />', () => {
+  const { render } = createReactRenderer(children => <PortalRootProvider zIndex={1}>{children}</PortalRootProvider>);
+  let renderer: ReactRenderer;
+
+  describe('when defaultOpen is false', () => {
+    beforeEach(() => {
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={false}
+          renderContents={() => null}
+          renderOpener={({ open }) => <Pressable data-testid="opener" onClick={open} />}
+        />
+      );
+    });
+
+    it('should not open the content', () => {
+      expect(renderer.queryByRole('dialog')).toBeFalsy();
+    });
+
+    describe('after clicking the opener button', () => {
+      beforeEach(done => {
+        waitFor(() => userEvent.click(renderer.getByTestId('opener'))).then(done);
+      });
+
+      it('should open the content', () => {
+        expect(renderer.queryByRole('dialog')).toBeTruthy();
+      });
+    });
+  });
+
+  describe('when defaultOpen is true', () => {
+    let mockOnClose: jest.Mock<any, any>;
+
+    beforeEach(() => {
+      mockOnClose = jest.fn();
+
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={true}
+          onClose={mockOnClose}
+          renderContents={() => null}
+          renderOpener={() => null}
+        />
+      );
+    });
+
+    it('should open the content', () => {
+      expect(renderer.queryByRole('dialog')).toBeTruthy();
+    });
+
+    describe('after clicking the close button', () => {
+      beforeEach(done => {
+        waitFor(() => {
+          userEvent.click(renderer.getByRole('button', { name: 'Close' }));
+        }).then(() => {
+          setTimeout(done, 250);
+        });
+      });
+
+      it('should call onClose function', () => {
+        expect(mockOnClose).toBeCalled();
+      });
+
+      it('should close the content', () => {
+        expect(renderer.queryByRole('dialog')).toBeFalsy();
+      });
+    });
+  });
+
+  describe('when primaryButtonText and onPrimaryButtonClick are provided', () => {
+    let mockOnPrimaryButtonClick: jest.Mock<any, any>;
+
+    beforeEach(() => {
+      mockOnPrimaryButtonClick = jest.fn();
+
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={true}
+          primaryButtonText="primaryButtonText"
+          onPrimaryButtonClick={mockOnPrimaryButtonClick}
+          secondaryButtonText={undefined}
+          subButtonText={undefined}
+          renderContents={() => null}
+          renderOpener={({ open }) => <Pressable onClick={open} />}
+        />
+      );
+    });
+
+    it('should show the primary button', () => {
+      expect(renderer.queryByRole('button', { name: 'primaryButtonText' })).toBeTruthy();
+    });
+
+    describe('after clicking the primary button', () => {
+      beforeEach(done => {
+        waitFor(() => userEvent.click(renderer.getByRole('button', { name: 'primaryButtonText' }))).then(done);
+      });
+
+      it('should call OnPrimaryButtonClick function', () => {
+        expect(mockOnPrimaryButtonClick).toBeCalled();
+      });
+    });
+  });
+
+  describe('when primaryButtonText, onPrimaryButtonClick, secondaryButtonText and onSecondaryButtonClick are provided', () => {
+    let mockOnPrimaryButtonClick: jest.Mock<any, any>;
+    let mockOnSecondaryButtonClick: jest.Mock<any, any>;
+
+    beforeEach(() => {
+      mockOnPrimaryButtonClick = jest.fn();
+
+      mockOnSecondaryButtonClick = jest.fn();
+
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={true}
+          primaryButtonText="primaryButtonText"
+          onPrimaryButtonClick={mockOnPrimaryButtonClick}
+          secondaryButtonText="secondaryButtonText"
+          onSecondaryButtonClick={mockOnSecondaryButtonClick}
+          subButtonText={undefined}
+          renderContents={() => null}
+          renderOpener={({ open }) => <Pressable onClick={open} />}
+        />
+      );
+    });
+
+    it('should show the primary button', () => {
+      expect(renderer.queryByRole('button', { name: 'primaryButtonText' })).toBeTruthy();
+    });
+
+    describe('after clicking the primary button', () => {
+      beforeEach(done => {
+        waitFor(() => userEvent.click(renderer.getByRole('button', { name: 'primaryButtonText' }))).then(done);
+      });
+
+      it('should call OnPrimaryButtonClick function', () => {
+        expect(mockOnPrimaryButtonClick).toBeCalled();
+      });
+    });
+
+    it('should show the secondary button', () => {
+      expect(renderer.queryByRole('button', { name: 'secondaryButtonText' })).toBeTruthy();
+    });
+
+    describe('after clicking the secondary button', () => {
+      beforeEach(done => {
+        waitFor(() => userEvent.click(renderer.getByRole('button', { name: 'secondaryButtonText' }))).then(done);
+      });
+
+      it('should call OnSecondaryButtonClick function', () => {
+        expect(mockOnSecondaryButtonClick).toBeCalled();
+      });
+    });
+  });
+
+  describe('when primaryButtonText, onPrimaryButtonClick, subButtonText and onSubButtonClick are provided', () => {
+    let mockOnPrimaryButtonClick: jest.Mock<any, any>;
+    let mockOnSubButtonClick: jest.Mock<any, any>;
+
+    beforeEach(() => {
+      mockOnPrimaryButtonClick = jest.fn();
+
+      mockOnSubButtonClick = jest.fn();
+
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={true}
+          primaryButtonText="primaryButtonText"
+          onPrimaryButtonClick={mockOnPrimaryButtonClick}
+          secondaryButtonText={undefined}
+          subButtonText="subButtonText"
+          onSubButtonClick={mockOnSubButtonClick}
+          renderContents={() => null}
+          renderOpener={({ open }) => <Pressable onClick={open} />}
+        />
+      );
+    });
+
+    it('should show the primary button', () => {
+      expect(renderer.queryByRole('button', { name: 'primaryButtonText' })).toBeTruthy();
+    });
+
+    describe('after clicking the primary button', () => {
+      beforeEach(done => {
+        waitFor(() => userEvent.click(renderer.getByRole('button', { name: 'primaryButtonText' }))).then(done);
+      });
+
+      it('should call OnPrimaryButtonClick function', () => {
+        expect(mockOnPrimaryButtonClick).toBeCalled();
+      });
+    });
+
+    it('should show the sub button', () => {
+      expect(renderer.queryByRole('button', { name: 'subButtonText' })).toBeTruthy();
+    });
+
+    describe('after clicking the sub button', () => {
+      beforeEach(done => {
+        waitFor(() => userEvent.click(renderer.getByRole('button', { name: 'subButtonText' }))).then(done);
+      });
+
+      it('should call onSubButtonClick function', () => {
+        expect(mockOnSubButtonClick).toBeCalled();
+      });
+    });
+  });
+
+  it('match snapshot', () => {
+    renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+
+    expect(renderer.container).toMatchSnapshot();
+  });
+});
