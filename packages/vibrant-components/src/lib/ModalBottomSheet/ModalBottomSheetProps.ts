@@ -2,12 +2,13 @@ import type { ReactElementChild } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type ModalBottomSheetProps = {
-  defaultOpen: boolean;
+  open?: boolean;
+  defaultOpen?: boolean;
   title?: string;
   subtitle?: string;
   size?: 'lg' | 'md';
   renderContents?: (_: { close: () => void }) => ReactElementChild;
-  renderOpener: (_: { open: () => void; isOpen: boolean }) => ReactElementChild;
+  renderOpener?: (_: { open: () => void; isOpen: boolean }) => ReactElementChild;
   onClose?: () => void;
 } & (
   | {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
@@ -63,3 +64,25 @@ export const WithLongContent: ComponentStory<typeof ModalBottomSheet> = props =>
     </Box>
   </VStack>
 );
+
+export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = props => {
+  const [open, setOpen] = useState(true);
+
+  return (
+    <>
+      <Pressable backgroundColor="primary" onClick={() => setOpen(true)} p={20} mx="auto">
+        <Body level={1}>완강하기</Body>
+      </Pressable>
+      <Box mx="auto">
+        <ModalBottomSheet
+          {...props}
+          title="클래스 완강을 축하합니다"
+          subtitle="클래스메이트님을 위해 축하 선물을 준비했어요!"
+          open={open}
+          onClose={() => setOpen(false)}
+          renderOpener={undefined}
+        />
+      </Box>
+    </>
+  );
+};
