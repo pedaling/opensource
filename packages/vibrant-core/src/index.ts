@@ -57,7 +57,7 @@ export { PortalBox } from './lib/PortalBox';
 export { isNative } from './lib/isNative';
 export { ScrollBox } from './lib/ScrollBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
-export { SafeAreaProvider, SafeAreaContext, useSafeArea } from './lib/SafeAreaProvider';
+export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
 export type { Edge, Insets, MinInsets } from './lib/SafeAreaProvider';
 export { PortalRootProvider, usePortalRoot } from './lib/PortalRoot';
 export { platform } from './lib/platform';
