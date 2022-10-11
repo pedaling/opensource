@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.19.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.18.0...vibrant-core-0.19.0) (2022-10-11)
+
+
+### Bug Fixes
+
+* change minInsets prop type to MinInsets ([#337](https://github.com/pedaling/opensource/issues/337)) ([5cfe23c](https://github.com/pedaling/opensource/commit/5cfe23cbeae299549c91da051e7dac5794fa6cf3))
+* native build error ([#338](https://github.com/pedaling/opensource/issues/338)) ([8ca5dae](https://github.com/pedaling/opensource/commit/8ca5dae78ae0ec29d32dc6b6b2cd4fb2bd80fea9))
+
 ### [0.17.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.17.5...vibrant-core-0.17.6) (2022-09-28)
 
 
