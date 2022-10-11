@@ -25,34 +25,40 @@ export const Backdrop = withBackdropVariation(
     }
 
     return (
-      <PortalBox zIndex={zIndex} top={0} right={0} bottom={0} left={0} scrollable={scrollable}>
-        <Box flex={1} {...restProps}>
-          <Motion
-            animation={{
-              opacity: {
-                from: open ? 0 : 1,
-                to: open ? 1 : 0,
-              },
-            }}
-            duration={transitionDuration}
-            onEnd={unmount}
-          >
+      <Motion
+        animation={{
+          opacity: {
+            from: open ? 0 : 1,
+            to: open ? 1 : 0,
+          },
+        }}
+        duration={transitionDuration}
+        onEnd={unmount}
+      >
+        <PortalBox
+          zIndex={zIndex}
+          top={0}
+          right={0}
+          bottom={0}
+          left={0}
+          scrollable={scrollable}
+          backgroundColor={color}
+        >
+          <Box flex={1} {...restProps}>
             <Pressable
               as="div"
               position="absolute"
-              zIndex={-1}
               cursor="default"
               top={0}
               right={0}
               bottom={0}
               left={0}
-              backgroundColor={color}
               onClick={onClick}
             />
-          </Motion>
-          {children}
-        </Box>
-      </PortalBox>
+            {children}
+          </Box>
+        </PortalBox>
+      </Motion>
     );
   }
 );

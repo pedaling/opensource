@@ -22,9 +22,9 @@ type PortalBoxProps = DisplaySystemProps &
   SizingSystemProps & {
     ref?: Ref<any>;
     onLayout?: (layoutEvent: LayoutEvent) => void;
-    scrollable?: boolean;
     children: ReactElementChild | ReactElementChild[];
     onMount?: () => void;
+    scrollable?: boolean;
   };
 
 export const withPortalBoxVariation = withVariation<PortalBoxProps>('PortalBox')(
