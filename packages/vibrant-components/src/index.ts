@@ -41,3 +41,4 @@ export { SafeAreaView } from './lib/SafeAreaView';
 export { Toast } from './lib/Toast';
 export { ToastProvider, useToast } from './lib/ToastProvider';
 export { ToastRenderer } from './lib/ToastRenderer';
+export { ModalBottomSheet } from './lib/ModalBottomSheet';
