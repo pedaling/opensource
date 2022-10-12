@@ -10,16 +10,12 @@ export type ToastProps = {
   duration?: number;
 } & (
   | {
-      buttonText: string;
-      onButtonClick: () => void;
-    }
-  | {
-      buttonText: string;
-      onButtonClick?: never;
-    }
-  | {
       buttonText?: never;
-      onButtonClick: () => void;
+      onButtonClick?: () => void;
+    }
+  | {
+      buttonText?: string;
+      onButtonClick?: never;
     }
 );
 

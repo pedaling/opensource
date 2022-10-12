@@ -6,20 +6,26 @@ import { withToastVariation } from './ToastProps';
 export const Toast = withToastVariation(
   ({ innerRef, IconComponent, color, title, buttonText, onButtonClick, ...restProps }) => (
     <HStack ref={innerRef} {...restProps} mx={20} mb={[20, 0]} mt={[0, 16]} flexGrow={[1, 0]} alignment="center">
-      <Paper backgroundColor="inverseSurface" width={['100%', 'auto']}>
+      <Paper
+        elevationLevel={1}
+        maxWidth={724}
+        borderRadiusLevel={1}
+        backgroundColor="inverseSurface"
+        width={['100%', 'auto']}
+      >
         <HStack px={16} py={12} alignItems="center" flexGrow={[1, 0]}>
           {IconComponent && (
             <VStack mr={8} flexShrink={0}>
               <IconComponent size={18} fill={color} />
             </VStack>
           )}
-          <Text flexGrow={[1, 0]} wordBreak="keep-all" fontSize={14} color="onInverseSurface">
+          <Text lineHeight={18} flexGrow={[1, 0]} wordBreak="keep-all" fontSize={14} color="onInverseSurface">
             {title}
           </Text>
           {isDefined(buttonText) && onButtonClick && (
             <VStack flexShrink={0}>
               <Pressable interactions={['focus', 'active']} ml={12} onClick={onButtonClick}>
-                <Text fontSize={14} color="onViewInformative" fontWeight="medium">
+                <Text lineHeight={18} fontSize={14} color="onViewInformative" fontWeight="medium">
                   {buttonText}
                 </Text>
               </Pressable>

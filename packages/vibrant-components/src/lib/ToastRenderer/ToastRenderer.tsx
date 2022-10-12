@@ -3,7 +3,7 @@ import { StackedPortal, Toast } from '@vibrant-ui/components';
 import { Transition } from '@vibrant-ui/motion';
 import { useToastProps } from '../ToastProvider/ToastProvider';
 
-const DURATION = 2500;
+const DURATION = 5000;
 
 export const ToastRenderer = () => {
   const toastProps = useToastProps();
