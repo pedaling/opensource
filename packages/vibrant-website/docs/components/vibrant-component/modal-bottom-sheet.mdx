@@ -1,0 +1,73 @@
+---
+title: ModalBottomSheet
+sidebar_position: 2
+---
+
+# ModalBottomSheet
+
+ModalBottomSheet는 일시적으로 화면을 덮으면서 CTA, 알림 또는 그외의 정보를 제공하기 위하여 사용하는 컴포넌트 입니다.
+PC에서는 Modal, 모바일에서는 BottomSheet으로 나타납니다.
+
+```jsx live
+<ModalBottomSheet
+  title="오늘도 수강 완료!"
+  subtitle="원하는 시간에 꾸준히 수강할 수 있도록 알림을 보내드릴게요!"
+  primaryButtonText="확인"
+  onPrimaryButtonClick={({ close }) => {
+    close();
+  }}
+  renderOpener={({ open }) => (
+    <Pressable onClick={open}>열기</Pressable>
+  )}
+/>
+```
+
+## Usage
+
+```jsx
+const Controlled = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Pressable onClick={() => setOpen(true)}>
+        열기
+      </Pressable>
+      <Box mx="auto">
+        <ModalBottomSheet
+          open={open}
+          onClose={() => setOpen(false)}
+        />
+      </Box>
+    </>
+  );
+};
+
+const Uncontrolled = () => (
+  <ModalBottomSheet
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <Pressable onClick={open}>열기</Pressable>
+    )}
+  />
+);
+```
+
+## Properties
+
+| Prop                   | Type                                                              | Default | Description                                                       |
+| ---------------------- | ----------------------------------------------------------------- | ------- | ----------------------------------------------------------------- |
+| open                   | boolean                                                           |         | 열림 상태를 제어합니다.                                           |
+| defaultOpen            | boolean                                                           |         | 초기 열림 상태를 설정합니다. open 속성과 함께 사용할 수 없습니다. |
+| renderOpener           | (\_: \{ open: () => void; isOpen: boolean }) => ReactElementChild |         | open 함수를 이용하여 모달을 여는 요소를 설정합니다.               |
+| title                  | string                                                            |         | 모달의 제목입니다.                                                |
+| subtitle               | string                                                            |         | 모달의 부제목입니다.                                              |
+| size                   | lg \| md                                                          | md      | PC 뷰에서 모달의 너비를 설정합니다.                               |
+| renderContents         | (\_: \{ close: () => void }) => ReactElementChild;                |         | 내부 컨텐츠를 설정합니다.                                         |
+| onClose                | () => void                                                        |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
+| primaryButtonText      | string                                                            |         | Primary 버튼 텍스트입니다.                                        |
+| onPrimaryButtonClick   | () => void                                                        |         | Primary 버튼이 클릭됐을 때 호출됩니다.                            |
+| secondaryButtonText    | string                                                            |         | Secondary 버튼 텍스트입니다.                                      |
+| onSecondaryButtonClick | () => void                                                        |         | Secondary 버튼이 클릭됐을 때 호출됩니다.                          |
+| subButtonText          | string                                                            |         | Sub 버튼 텍스트입니다.                                            |
+| onSubButtonClick       | () => void                                                        |         | Sub 버튼이 클릭됐을 때 호출됩니다.                                |
