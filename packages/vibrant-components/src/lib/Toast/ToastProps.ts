@@ -10,11 +10,11 @@ export type ToastProps = {
   duration?: number;
 } & (
   | {
-      buttonText?: never;
-      onButtonClick?: () => void;
+      buttonText: string;
+      onButtonClick: () => void;
     }
   | {
-      buttonText?: string;
+      buttonText?: never;
       onButtonClick?: never;
     }
 );
