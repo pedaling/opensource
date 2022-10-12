@@ -65,7 +65,7 @@ export const WithLongContent: ComponentStory<typeof ModalBottomSheet> = props =>
   </VStack>
 );
 
-export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = props => {
+export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = () => {
   const [open, setOpen] = useState(true);
 
   return (
@@ -75,12 +75,10 @@ export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = props => 
       </Pressable>
       <Box mx="auto">
         <ModalBottomSheet
-          {...props}
           title="클래스 완강을 축하합니다"
           subtitle="클래스메이트님을 위해 축하 선물을 준비했어요!"
           open={open}
           onClose={() => setOpen(false)}
-          renderOpener={undefined}
         />
       </Box>
     </>
