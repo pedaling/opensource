@@ -19,6 +19,7 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -30,7 +31,6 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0);
-  position: relative;
   cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -60,9 +60,9 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   text-align: left;
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;

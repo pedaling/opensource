@@ -1,0 +1,96 @@
+---
+sidebar_position: 2
+---
+
+# Installation
+
+Vibrant UI는 현재 웹(React DOM)과 네이티브(React Native)를 지원합니다.
+
+## Web
+
+### Install Library
+
+```bash npm2yarn
+npm install @vibrant-ui/components @vibrant-ui/core
+```
+
+### Configure VibrantProvider for Web
+
+```jsx title="App.tsx"
+import { VibrantProvider } from '@vibrant-ui/core';
+
+// react entrypoint
+const App = ({ children }) => {
+  return <VibrantProvider>{children}</VibrantProvider>;
+};
+```
+
+## React Native
+
+### Install Library
+
+```bash npm2yarn
+npm install @vibrant-ui/components @vibrant-ui/core-native
+```
+
+### Config Metro Config
+
+네이티브에서는 `@vibrant-ui/core`가 아닌 `@vibrant-ui/core-native`로 동작되기 때문에
+metro 설정이 필요합니다.
+
+```js title="metro.config.js"
+const metroResolver = require('metro-resolver');
+
+module.exports = () => {
+  return {
+    resolver: {
+      resolveRequest: (
+        context,
+        realModuleName,
+        platform
+      ) => {
+        if (realModuleName === '@vibrant-ui/core') {
+          return {
+            filePath: require.resolve(
+              '@vibrant-ui/core-native'
+            ),
+            type: 'sourceFile',
+          };
+        }
+
+        return metroResolver.resolve(
+          context,
+          realModuleName,
+          platform
+        );
+      },
+    },
+  };
+};
+```
+
+### Configure VibrantProvider for Native
+
+```tsx title="App.tsx"
+import { VibrantProvider } from '@vibrant-ui/core';
+import type { Dependencies } from '@vibrant-ui/core';
+import { createShadowsComponent } from '@vibrant-ui/components';
+
+import * as ReactSpringNative from '@react-spring/native';
+import { Shadow } from 'react-native-shadow-2';
+import { LinearGradient } from 'expo-linear-gradient';
+
+const dependencies: Dependencies = {
+  reactSpringModule: ReactSpringNative,
+  nativeShadows: createShadowsComponent(Shadow),
+  nativeLinearGradient: LinearGradient,
+};
+
+const App = ({ children }) => {
+  return (
+    <VibrantProvider dependencies={dependencies}>
+      {children}
+    </VibrantProvider>
+  );
+};
+```

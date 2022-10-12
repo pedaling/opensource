@@ -1,19 +1,26 @@
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Box } from '../Box';
+import { useSafeDeps } from '@vibrant-ui/utils';
 import { usePortalRoot } from '../PortalRoot';
 import { withPortalBoxVariation } from './PortalBoxProps';
 
-export const PortalBox = withPortalBoxVariation(({ innerRef, children, ...restProps }) => {
+export const PortalBox = withPortalBoxVariation(({ innerRef, children, BoxComponent, onMount, ...restProps }) => {
   const { container } = usePortalRoot();
+
+  const onMountDeps = useSafeDeps(onMount);
+
+  useEffect(() => {
+    onMountDeps.current?.();
+  }, [onMountDeps]);
 
   if (!container) {
     return null;
   }
 
   return ReactDOM.createPortal(
-    <Box ref={innerRef} position="fixed" {...restProps}>
+    <BoxComponent ref={innerRef} position="fixed" {...restProps}>
       {children}
-    </Box>,
+    </BoxComponent>,
     container as Element
   );
 });

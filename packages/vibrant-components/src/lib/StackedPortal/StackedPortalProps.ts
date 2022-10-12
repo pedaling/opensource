@@ -1,15 +1,24 @@
 import type { Ref } from 'react';
-import type { BackgroundSystemProps, ReactElementChild, SizingSystemProps } from '@vibrant-ui/core';
+import type {
+  BackgroundSystemProps,
+  BorderSystemProps,
+  ReactElementChild,
+  SizingSystemProps,
+  SpacingSystemProps,
+} from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 
 type StackedPortalProps = BackgroundSystemProps &
-  SizingSystemProps & {
+  SizingSystemProps &
+  Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'> &
+  Pick<BorderSystemProps, 'borderRadius'> & {
     id: string;
     order: number;
     ref?: Ref<any>;
     children?: ReactElementChild;
     safeAreaMode?: 'margin' | 'none' | 'padding';
+    onMount?: () => void;
   } & (
     | {
         top: number;

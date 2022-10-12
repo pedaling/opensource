@@ -18,22 +18,23 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/pedaling/opensource/edit/main/packages/vibrant-website/docs/',
+          remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: 'https://github.com/pedaling/opensource/edit/main/packages/vibrant-website/blog/',
+          remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -48,6 +49,11 @@ const config = {
           label: 'Docs',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
+
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           type: 'html',
           position: 'right',
@@ -61,6 +67,30 @@ const config = {
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
+      magicComments: [
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: { start: 'highlight-start', end: 'highlight-end' },
+        },
+        {
+          className: 'code-block-error-line',
+          line: 'error-next-line',
+          block: { start: 'error-start', end: 'error-end' },
+        },
+      ],
+    },
+  },
+  i18n: {
+    defaultLocale: 'ko',
+    locales: ['ko', 'en'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      ko: {
+        htmlLang: 'ko',
+      },
     },
   },
 };

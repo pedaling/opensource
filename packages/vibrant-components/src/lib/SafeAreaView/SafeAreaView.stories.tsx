@@ -11,7 +11,7 @@ export default {
     width: '100%',
     height: '100%',
     minInsets: {
-      top: 50,
+      top: [10, 50],
       left: 50,
       right: 50,
       bottom: 50,

@@ -2,6 +2,41 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.19.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.19.1...vibrant-theme-0.19.2) (2022-10-11)
+
+### [0.19.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.19.0...vibrant-theme-0.19.1) (2022-10-11)
+
+## [0.19.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.18.0...vibrant-theme-0.19.0) (2022-10-11)
+
+### [0.17.6](https://github.com/pedaling/opensource/compare/vibrant-theme-0.17.5...vibrant-theme-0.17.6) (2022-09-28)
+
+
+### Features
+
+* add color system docs ([#314](https://github.com/pedaling/opensource/issues/314)) ([64e95c2](https://github.com/pedaling/opensource/commit/64e95c2e2afbac471b291fae538f41504d5ba4bd))
+
+### [0.17.5](https://github.com/pedaling/opensource/compare/vibrant-theme-0.17.4...vibrant-theme-0.17.5) (2022-09-26)
+
+### [0.17.4](https://github.com/pedaling/opensource/compare/vibrant-theme-0.17.3...vibrant-theme-0.17.4) (2022-09-26)
+
+### [0.17.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.17.2...vibrant-theme-0.17.3) (2022-09-23)
+
+
+### Features
+
+* Color token 값을 업데이트하고 스토리북에 확인할 수 있는 뷰를 추가한다 ([#311](https://github.com/pedaling/opensource/issues/311)) ([9e12da3](https://github.com/pedaling/opensource/commit/9e12da3f7ab1adeda3b72cf09b3e6436060b373f))
+
+
+### Bug Fixes
+
+* circular dependency error ([34e32e6](https://github.com/pedaling/opensource/commit/34e32e6833bb420e582e6c80e39cd47d06bdb25d))
+
+### [0.17.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.17.1...vibrant-theme-0.17.2) (2022-09-23)
+
+### [0.17.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.17.0...vibrant-theme-0.17.1) (2022-09-22)
+
+## [0.17.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.16.3...vibrant-theme-0.17.0) (2022-09-22)
+
 ### [0.16.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.16.2...vibrant-theme-0.16.3) (2022-09-16)
 
 ### [0.16.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.16.1...vibrant-theme-0.16.2) (2022-09-14)

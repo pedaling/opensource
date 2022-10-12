@@ -1,0 +1,129 @@
+---
+title: TextField
+sidebar_position: 2
+---
+
+# TextField
+
+`<TextField />`는 주로 사용자가 직접 문자, 숫자, 기호 등의 값을 입력하고 수정할 수 있는 컴포넌트입니다.
+
+```jsx live
+// import { TextField } from '@vibrant-ui/components'
+<TextField />
+```
+
+## Usage
+
+```jsx live
+// import { TextField } from '@vibrant-ui/components'
+
+<VStack spacing={20}>
+  <TextField id="default" />
+  <TextField
+    id="label"
+    label="Label with Placeholder"
+    placeHolder="Placeholder"
+  />
+  <TextField id="placeholder" placeHolder="Placeholder" />
+  <TextField id="error-state" state="error" />
+  <TextField
+    id="helper-text"
+    helperText="TextField with helper text"
+  />
+  <TextField
+    id="clearable"
+    clearable={true}
+    placeHolder="Enter something to see clear button"
+  />
+  <TextField
+    id="prefix-suffix"
+    prefix="prefix"
+    suffix="suffix"
+    placeHolder="Focus on here to see prefix and suffix"
+  />
+  <TextField
+    id="render-addons"
+    renderEnd={() => (
+      <Icon.Star.Thin size={20} fill="onView2" />
+    )}
+    renderStart={() => (
+      <Icon.Add.Thin size={20} fill="onView2" />
+    )}
+  />
+</VStack>
+```
+
+## Properties
+
+### Label
+
+|             |                                     |
+| ----------- | ----------------------------------- |
+| Description | TextField UI 에 표시할 수 있습니다. |
+| Attribute   | `label`                             |
+| Type        | `string` `undefined`                |
+| Default     | `undefined`                         |
+
+### PlaceHolder
+
+|             |                                                                  |
+| ----------- | ---------------------------------------------------------------- |
+| Description | 사용자가 값을 입력하기 전에 TextField 에 보여지는 텍스트 입니다. |
+| Attribute   | `placeHolder`                                                    |
+| Type        | `string` `undefined`                                             |
+| Default     | `undefined`                                                      |
+
+### Type
+
+|             |                                                                                                                                                                                                                                 |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Description | TextField의 input type으로 text, email, url, number을 지정할 수 있습니다. 기본 동작은 text 입니다. 동적 키패드들이 있는 몇몇 장치에서 관련된 키보드가 제공됩니다. Type 이 password 인 컴포넌트는 `PasswordField` 를 참고하세요. |
+| Attribute   | `type`                                                                                                                                                                                                                          |
+| Type        | `text` `email` `url` `number`                                                                                                                                                                                                   |
+| Default     | `text`                                                                                                                                                                                                                          |
+
+### Clearable
+
+|             |                                                                                                     |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| Description | TextField에 값이 입력되었을 경우 clearButton이 활성화됩니다. 클릭/터치 시 입력된 값이 reset 됩니다. |
+| Attribute   | `clearable`                                                                                         |
+| Type        | `boolean`                                                                                           |
+| Default     | `false`                                                                                             |
+
+### Prefix / Suffix
+
+|             |                                                                                                     |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| Description | TextField의 밸루 영역 앞 뒤로 접두사 혹은 접미사를 지정할 수 있습니다. 텍스트만 지정할 수 있습니다. |
+| Attribute   | `prefix` `suffix`                                                                                   |
+| Type        | `string` `undefined`                                                                                |
+| Default     | `undefined`                                                                                         |
+
+### Render Start / Render End
+
+|             |                                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Description | TextField의 콘텐츠 영역 앞 뒤로 요소를 지정할 수 있습니다. 일반적으로 아이콘과 같은 요소가 지정되나 다른 요소도 자유롭게 올 수 있습니다. |
+| Attribute   | `renderStart` `renderEnd`                                                                                                                |
+| Type        | `() => ReactElementChild` `undefined`                                                                                                    |
+| Default     | `undefined`                                                                                                                              |
+
+### Auto Capitalize
+
+|             |                                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------------- |
+| Description | autoCapitalize속성이 부쳐될 경우 아래 옵션에 따라 다른 조건으로 첫 글자가 자동으로 대문자로 지정됩니다. |
+| Attribute   | `autoCapitalize`                                                                                        |
+| Type        | `none` `character` `sentences` `words`                                                                  |
+| Default     | `none`                                                                                                  |
+
+### Auto Complete
+
+|                        |                                                                                                                                                                                                                                                                                                                                                     |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Description            | autocomplete 특성을 사용하면 사용자 에이전트(브라우저, 플랫폼)의 자동완성을 허용할 양식 입력 필드를 지정할 수 있으며, 사용자 에이전트에게 어떤 정보에 대한 자동완성을 원하는지 안내할 수도 있습니다.                                                                                                                                                |
+| 기본 값은 none 입니다. |
+| Attribute              | `autoComplete`                                                                                                                                                                                                                                                                                                                                      |
+| Type                   | `none` `email` `password` `newPassword` `username` `name` `familyName` `givenName` `middleName` `namePrefix` `nameSuffix` `ccNumber` `ccExp` `ccExpMonth` `ccExpYear` `ccCsc` `postalCode` `addressCountry` `addressRegion` `addressCity` `addressStreet` `addressExtended` `otp` `tel` `birthDayDay` `birthDayMonth` `birthDayYear` `birthDayFull` |
+| Default                | `none`                                                                                                                                                                                                                                                                                                                                              |

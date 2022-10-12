@@ -4,7 +4,7 @@ import { ConfigProvider } from '../ConfigProvider';
 import type { ConfigProviderProps } from '../ConfigProvider';
 import { PortalRootProvider } from '../PortalRoot';
 import { SafeAreaProvider } from '../SafeAreaProvider';
-import { StackedPortalProvider } from '../StackedPortalContext';
+import { StackedPortalProvider } from '../StackedPortalProvider';
 import { ThemeProvider } from '../ThemeProvider';
 import type { ThemeProviderProps } from '../ThemeProvider';
 

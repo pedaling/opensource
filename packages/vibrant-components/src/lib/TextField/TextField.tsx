@@ -21,6 +21,8 @@ export const TextField = withTextFieldVariation(
     autoComplete = 'none',
     onValueChange,
     clearable = false,
+    onFocus,
+    onBlur,
     ...restProps
   }) => {
     const inputRef = useRef<TextInputRef>(null);
@@ -66,12 +68,31 @@ export const TextField = withTextFieldVariation(
             disabled={disabled}
             autoCapitalize={autoCapitalize}
             autoComplete={autoComplete}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            onValueChange={({ value }) => {
-              setValue(value);
+            onFocus={() => {
+              onFocus?.();
 
-              onValueChange?.(value);
+              setIsFocused(true);
+            }}
+            onBlur={() => {
+              onBlur?.();
+
+              setIsFocused(false);
+            }}
+            onValueChange={({ value, prevent }) => {
+              let isPrevented = false;
+
+              onValueChange?.({
+                value,
+                prevent: () => {
+                  isPrevented = true;
+
+                  prevent();
+                },
+              });
+
+              if (!isPrevented) {
+                setValue(value);
+              }
             }}
             {...style}
             {...restProps}

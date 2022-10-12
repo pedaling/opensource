@@ -39,7 +39,7 @@ export const DateInput = withDateInputVariation(
           borderStyle="solid"
           borderColor={(isFocused || calendarOpened) && state !== 'error' ? 'outlineNeutral' : borderColor}
           p={15}
-          py={isContentExists && label ? 7 : 14}
+          py={isContentExists && label ? 7 : 15}
           pr={disabled ? 48 : 80}
           onClick={onClick}
           disabled={disabled}
@@ -47,6 +47,7 @@ export const DateInput = withDateInputVariation(
           onBlur={() => setIsFocused(false)}
           height={50}
           borderRadius={2}
+          flexShrink={0}
           {...restProps}
         >
           <VStack spacing={4}>

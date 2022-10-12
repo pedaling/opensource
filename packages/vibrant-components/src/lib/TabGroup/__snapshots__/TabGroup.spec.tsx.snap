@@ -16,6 +16,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   width: 100%;
 }
 
@@ -34,18 +35,10 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   margin-bottom: -1px;
-  padding-left: 20px;
-  padding-right: 20px;
   overflow: hidden;
   width: 100%;
-}
-
-@media screen and (min-width: 1024px) {
-  .emotion-1 {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 .emotion-2 {
@@ -53,9 +46,9 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
@@ -63,19 +56,13 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
-  margin-right: 20px;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  position: relative;
+  width: 20px;
 }
 
 @media screen and (min-width: 1024px) {
   .emotion-2 {
-    margin-right: 28px;
+    width: 0;
   }
 }
 
@@ -87,9 +74,6 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
@@ -97,148 +81,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
-  border-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: #0C0C0C;
   position: relative;
-  cursor: pointer;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 10px;
-  background-color: inherit;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  text-align: left;
-  color: #0C0C0C;
-  -webkit-text-fill-color: #0C0C0C;
-  text-fill-color: #0C0C0C;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.25rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .emotion-4 {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-  }
-}
-
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: border-box;
-  border-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: rgba(0, 0, 0, 0);
-  position: relative;
-  cursor: pointer;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 12px;
-  padding-bottom: 10px;
-  background-color: inherit;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  text-align: left;
-  color: #7C7C7C;
-  -webkit-text-fill-color: #7C7C7C;
-  text-fill-color: #7C7C7C;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.25rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .emotion-7 {
-    font-size: 1.125rem;
-    line-height: 1.375rem;
-  }
-}
-
-.emotion-8 {
-  display: none;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: border-box;
   margin-right: 20px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -250,13 +93,16 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
 }
 
 @media screen and (min-width: 1024px) {
-  .emotion-8 {
+  .emotion-3 {
     margin-right: 28px;
   }
 }
 
-.emotion-9 {
-  display: none;
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -270,6 +116,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   border-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -280,8 +127,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-basis: auto;
   border-bottom-width: 2px;
   border-bottom-style: solid;
-  border-bottom-color: rgba(0, 0, 0, 0);
-  position: relative;
+  border-bottom-color: #0c0c0c;
   cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -296,7 +142,181 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   background-color: inherit;
 }
 
-.emotion-11 {
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  text-align: left;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-5 {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  background-color: inherit;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-8 {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
+.emotion-9 {
+  display: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 20px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-9 {
+    margin-right: 28px;
+  }
+}
+
+.emotion-10 {
+  display: none;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  position: relative;
+  border-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  background-color: inherit;
+}
+
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -311,6 +331,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   box-sizing: border-box;
+  position: relative;
   margin-right: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -321,7 +342,7 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   flex-basis: auto;
 }
 
-.emotion-14 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -336,11 +357,12 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -ms-flex-negative: 1;
   flex-shrink: 1;
   box-sizing: border-box;
+  position: relative;
   -webkit-flex: none;
   -ms-flex: none;
   flex: none;
   border-width: 0;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: #00000026;
   border-style: solid;
   width: 100%;
   height: 0;
@@ -359,63 +381,69 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
     >
       <div
         class="emotion-2"
+      />
+      <div
+        class="emotion-3"
       >
         <button
-          class="emotion-3"
+          class="emotion-4"
           data-testid="tab1"
         >
           <span
-            class="emotion-4"
+            class="emotion-5"
           >
             tab1
           </span>
         </button>
       </div>
       <div
-        class="emotion-2"
+        class="emotion-3"
       >
         <button
-          class="emotion-6"
+          class="emotion-7"
           data-testid="tab2"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             tab2
           </span>
         </button>
       </div>
       <div
-        class="emotion-8"
+        class="emotion-9"
       >
         <button
-          class="emotion-9"
+          class="emotion-10"
           data-testid="hidden-tab"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             hiddenTab
           </span>
         </button>
       </div>
       <div
-        class="emotion-11"
+        class="emotion-12"
       >
         <button
-          class="emotion-6"
+          class="emotion-7"
           data-testid="tab3"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             tab3
           </span>
         </button>
       </div>
+      <div
+        class="emotion-2"
+      />
     </div>
     <div
-      class="emotion-14"
+      class="emotion-16"
     />
   </div>
 </div>

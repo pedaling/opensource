@@ -4,10 +4,11 @@ import type { Position } from '@vibrant-ui/utils';
 
 export type DropdownProps = {
   position?: Position;
-  renderContents: (close: () => void) => ReactElementChild;
-  renderOpener: (open: () => void) => ReactElementChild;
+  renderContents: (_: { close: () => void }) => ReactElementChild;
+  renderOpener: (_: { open: () => void; isOpen: boolean }) => ReactElementChild;
   spacing?: number;
   open: boolean;
+  onClose?: () => void;
 };
 
 export const withDropdownVariation = withVariation<DropdownProps>('Dropdown')();

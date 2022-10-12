@@ -39,6 +39,7 @@ export type PressableBoxProps = {
   as?: 'button' | 'div' | 'li';
   disabled?: boolean;
   hitSlop?: HipSlopRect | number;
+  ariaLabel?: string;
   onClick?: () => void;
   onFocusIn?: () => void;
   onFocusOut?: () => void;

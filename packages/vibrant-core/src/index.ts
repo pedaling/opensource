@@ -12,7 +12,13 @@ export type {
   AutoCapitalizeOption,
   AutoCompleteOption,
 } from './lib/TextInput';
-export type { ReactElementChild, ReactTextChild, ResponsiveValue, WindowDimensions } from './types';
+export type {
+  ReactElementChild,
+  ReactElementChildren,
+  ReactTextChild,
+  ResponsiveValue,
+  WindowDimensions,
+} from './types';
 export type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -52,11 +58,11 @@ export { isNative } from './lib/isNative';
 export { ScrollBox } from './lib/ScrollBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
 export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
-export type { Edge, Insets } from './lib/SafeAreaProvider';
+export type { Edge, Insets, MinInsets } from './lib/SafeAreaProvider';
 export { PortalRootProvider, usePortalRoot } from './lib/PortalRoot';
 export { platform } from './lib/platform';
 export { OverlayBox } from './lib/OverlayBox';
 export type { Platform } from './lib/platform';
-export { useStackedPortal } from './lib/StackedPortalContext';
+export { useStackedPortal } from './lib/StackedPortalProvider';
 export { useLockBodyScroll } from './lib/useLockBodyScroll';
 export type { HipSlopRect } from './lib/PressableBox';

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, OverlayBox, getElementPosition } from '@vibrant-ui/core';
 import type { TargetElement } from '@vibrant-ui/utils';
 import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
@@ -10,10 +10,11 @@ export const DatePickerField = withDatePickerFieldVariation(
   ({ defaultValue, disabled, label, state, helperText, onValueChange, placeholder }) => {
     const [value, setValue] = useState(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
-    const [inputValue, setInputValue] = useState(defaultValue ? getDateString(defaultValue) : '');
     const onValueChangeRef = useSafeDeps(onValueChange);
     const inputRef = useRef<TargetElement>(null);
     const [calendarPosition, setCalendarPosition] = useState('bottom');
+
+    const inputValue = useMemo(() => (value ? getDateString(value) : ''), [value]);
 
     const openCalendar = async () => {
       if (!inputRef.current) {
@@ -35,17 +36,44 @@ export const DatePickerField = withDatePickerFieldVariation(
       setValue(defaultValue);
     }, [defaultValue]);
 
-    useEffect(() => {
-      if (!value) {
-        setInputValue('');
+    const handleDateSelect = useCallback(
+      (selectedDate: Date) => {
+        if (!selectedDate) {
+          return;
+        }
 
-        return;
+        let isPrevented = false;
+
+        onValueChangeRef.current?.({
+          value: selectedDate,
+          prevent: () => {
+            isPrevented = true;
+          },
+        });
+
+        if (!isPrevented) {
+          setValue(selectedDate);
+        }
+
+        setIsCalendarOpened(false);
+      },
+      [onValueChangeRef]
+    );
+
+    const handleClear = useCallback(() => {
+      let isPrevented = false;
+
+      onValueChangeRef.current?.({
+        value: undefined,
+        prevent: () => {
+          isPrevented = true;
+        },
+      });
+
+      if (!isPrevented) {
+        setValue(undefined);
       }
-
-      onValueChangeRef.current?.(value);
-
-      setInputValue(getDateString(value));
-    }, [onValueChangeRef, value]);
+    }, [onValueChangeRef]);
 
     return (
       <Box position="relative" width="100%" height={50}>
@@ -54,7 +82,7 @@ export const DatePickerField = withDatePickerFieldVariation(
           value={inputValue}
           onClick={openCalendar}
           disabled={disabled}
-          onClear={() => setValue(undefined)}
+          onClear={handleClear}
           placeholder={placeholder}
           calendarOpened={isCalendarOpened}
           label={label}
@@ -68,15 +96,7 @@ export const DatePickerField = withDatePickerFieldVariation(
           left={0}
           {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
         >
-          <Calendar
-            range={false}
-            date={value}
-            onDateSelect={selectedDate => {
-              setValue(selectedDate);
-
-              setIsCalendarOpened(false);
-            }}
-          />
+          <Calendar range={false} date={value} onDateSelect={handleDateSelect} />
         </OverlayBox>
       </Box>
     );

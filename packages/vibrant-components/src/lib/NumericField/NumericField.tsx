@@ -26,35 +26,24 @@ export const NumericField = withNumericFieldVariation(
     }, [defaultValue]);
 
     const updateInputValue = useCallback(
-      (nextInputValue: number) => {
-        if (min !== undefined && min > nextInputValue) {
-          setInputValue(min);
+      (value: number) => {
+        const nextInputValue = min !== undefined && min > value ? min : max !== undefined && max < value ? max : value;
 
-          return;
+        let isPrevented = false;
+
+        onValueChange?.({
+          value: nextInputValue,
+          prevent: () => {
+            isPrevented = true;
+          },
+        });
+
+        if (!isPrevented) {
+          setInputValue(nextInputValue);
         }
-
-        if (max !== undefined && max < nextInputValue) {
-          setInputValue(max);
-
-          return;
-        }
-
-        setInputValue(nextInputValue);
       },
-      [max, min]
+      [max, min, onValueChange]
     );
-
-    useEffect(() => {
-      if (
-        inputValue === undefined ||
-        (min !== undefined && min > inputValue) ||
-        (max !== undefined && max < inputValue)
-      ) {
-        return;
-      }
-
-      onValueChange?.(inputValue);
-    }, [inputValue, max, min, onValueChange]);
 
     return (
       <Box position="relative" width={128} height={38} {...restProps}>
@@ -83,7 +72,34 @@ export const NumericField = withNumericFieldVariation(
           color={color}
           min={min}
           max={max}
-          onValueChange={({ value }) => setInputValue(value ? parseInt(value, 10) : undefined)}
+          onValueChange={({ value, prevent }) => {
+            const nextInputValue = value ? parseInt(value, 10) : undefined;
+
+            if (
+              nextInputValue === undefined ||
+              (min !== undefined && min > nextInputValue) ||
+              (max !== undefined && max < nextInputValue)
+            ) {
+              setInputValue(nextInputValue);
+
+              return;
+            }
+
+            let isPrevented = false;
+
+            onValueChange?.({
+              value: nextInputValue,
+              prevent: () => {
+                isPrevented = true;
+
+                prevent();
+              },
+            });
+
+            if (!isPrevented) {
+              setInputValue(nextInputValue);
+            }
+          }}
           onBlur={() => updateInputValue(inputValue ?? min ?? 0)}
           tabIndex={tabIndex}
         />
@@ -91,22 +107,46 @@ export const NumericField = withNumericFieldVariation(
           <OperatorButton
             operator="minus"
             disabled={(min !== undefined && min >= (inputValue ?? 0)) || disabled}
-            onClick={() =>
-              setInputValue((value = placeholder ?? min ?? 0) =>
-                min !== undefined ? Math.max(value - 1, min) : value - 1
-              )
-            }
+            onClick={() => {
+              const defaultInputValue = inputValue ?? placeholder ?? min ?? 0;
+              const nextInputValue = min !== undefined ? Math.max(defaultInputValue - 1, min) : defaultInputValue - 1;
+
+              let isPrevented = false;
+
+              onValueChange?.({
+                value: nextInputValue,
+                prevent: () => {
+                  isPrevented = true;
+                },
+              });
+
+              if (!isPrevented) {
+                setInputValue(nextInputValue);
+              }
+            }}
           />
         </Box>
         <Box position="absolute" top={4} right={4} bottom={4}>
           <OperatorButton
             operator="plus"
             disabled={(max !== undefined && max <= (inputValue ?? 0)) || disabled}
-            onClick={() =>
-              setInputValue((value = placeholder ?? min ?? 0) =>
-                max !== undefined ? Math.min(value + 1, max) : value + 1
-              )
-            }
+            onClick={() => {
+              const defaultInputValue = inputValue ?? placeholder ?? min ?? 0;
+              const nextInputValue = max !== undefined ? Math.min(defaultInputValue + 1, max) : defaultInputValue + 1;
+
+              let isPrevented = false;
+
+              onValueChange?.({
+                value: nextInputValue,
+                prevent: () => {
+                  isPrevented = true;
+                },
+              });
+
+              if (!isPrevented) {
+                setInputValue(nextInputValue);
+              }
+            }}
           />
         </Box>
       </Box>

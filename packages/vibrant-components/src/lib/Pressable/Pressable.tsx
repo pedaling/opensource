@@ -72,11 +72,21 @@ export const Pressable = withPressableVariation(
       >
         {overlayColor && (
           <Transition animation={{ opacity: overlayOpacity }} duration={200}>
-            <Box position="absolute" zIndex={-1} left={0} right={0} top={0} bottom={0} backgroundColor={overlayColor} />
+            <Box
+              as="span"
+              position="absolute"
+              zIndex={-1}
+              left={0}
+              right={0}
+              top={0}
+              bottom={0}
+              backgroundColor={overlayColor}
+            />
           </Transition>
         )}
         <Transition animation={{ opacity: textOpacity }} duration={200}>
           <Box
+            as="span"
             width={width ? '100%' : 'auto'}
             height={height ? '100%' : 'auto'}
             alignItems={alignItems}

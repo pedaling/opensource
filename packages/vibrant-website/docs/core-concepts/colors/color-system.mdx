@@ -1,0 +1,74 @@
+---
+sidebar_position: 1
+---
+
+import { ColorPaletteItem } from '../../../src/components/ColorPaletteItem';
+import { InjectColors } from '../../../src/components/InjectColors';
+
+# Color System
+
+<InjectColors>
+  {({ colors }) => (
+    <Paper backgroundColor="background" py={40}>
+      <VStack>
+        <HStack>
+          {Object.entries(colors.orange).map(
+            ([key], index) => (
+              <Paper
+                key={key}
+                flex={1}
+                py={4}
+                backgroundColor={
+                  colors.neutral[index % 2 === 0 ? 15 : 10]
+                }
+                justifyContent="center"
+              >
+                <Body
+                  level={5}
+                  color={colors.neutral[95]}
+                  textAlign="center"
+                >
+                  {key}
+                </Body>
+              </Paper>
+            )
+          )}
+        </HStack>
+        {Object.entries(colors).map(
+          ([key, value]) =>
+            typeof value === 'object' && (
+              <HStack
+                key={key}
+                backgroundColor={
+                  key === 'whiteAlpha' ? 'black' : 'white'
+                }
+              >
+                {Object.entries(value).map(
+                  ([level, code]) => (
+                    <ColorPaletteItem
+                      key={`${key}-${level}`}
+                      backgroundColor={code}
+                    >
+                      {level === '95' && (
+                        <Body
+                          level={5}
+                          color={
+                            key.includes('Alpha')
+                              ? colors.neutral[60]
+                              : colors[key][60]
+                          }
+                          textAlign="center"
+                        >
+                          {key}
+                        </Body>
+                      )}
+                    </ColorPaletteItem>
+                  )
+                )}
+              </HStack>
+            )
+        )}
+      </VStack>
+    </Paper>
+  )}
+</InjectColors>

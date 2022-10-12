@@ -32,7 +32,6 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
         <TextInput
           ref={inputRef}
           type="number"
-          pattern={/\d/}
           maxLength={length}
           defaultValue={code.join('')}
           onFocus={() => {

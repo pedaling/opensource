@@ -3,3 +3,7 @@ sidebar_position: 1
 ---
 
 # Introduction
+
+Vibrant UI는 Vibrant Design System을 기반으로 UI 라이브러리입니다.
+
+[Storybook 주소](https://vibrant-storybook.class101.net)

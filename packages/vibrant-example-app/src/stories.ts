@@ -1,4 +1,5 @@
 export const stories = [
+  require('../../vibrant-components/src/docs/Palettes.stories.tsx'),
   require('../../vibrant-components/src/lib/Backdrop/Backdrop.stories.tsx'),
   require('../../vibrant-components/src/lib/Body/Body.stories.tsx'),
   require('../../vibrant-components/src/lib/Calendar/Calendar.stories.tsx'),
@@ -14,6 +15,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/FieldLayout/FieldLayout.stories.tsx'),
   require('../../vibrant-components/src/lib/FloatingActionButton/FloatingActionButton.stories.tsx'),
   require('../../vibrant-components/src/lib/HStack/HStack.stories.tsx'),
+  require('../../vibrant-components/src/lib/ModalBottomSheet/ModalBottomSheet.stories.tsx'),
   require('../../vibrant-components/src/lib/NotificationBadge/NotificationBadge.stories.tsx'),
   require('../../vibrant-components/src/lib/NumericField/NumericField.stories.tsx'),
   require('../../vibrant-components/src/lib/OperatorButton/OperatorButton.stories.tsx'),
@@ -35,6 +37,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/TabGroup/TabGroup.stories.tsx'),
   require('../../vibrant-components/src/lib/TextField/TextField.stories.tsx'),
   require('../../vibrant-components/src/lib/Title/Title.stories.tsx'),
+  require('../../vibrant-components/src/lib/Toast/Toast.stories.tsx'),
   require('../../vibrant-components/src/lib/VerificationCodeField/VerificationCodeField.stories.tsx'),
   require('../../vibrant-components/src/lib/VerificationCodeItem/VerificationCodeItem.stories.tsx'),
   require('../../vibrant-components/src/lib/VStack/VStack.stories.tsx'),

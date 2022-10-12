@@ -1,93 +1,97 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { LayoutEvent, ResponsiveValue } from '@vibrant-ui/core';
-import { Box, PortalBox, transformResponsiveValue, useSafeArea, useStackedPortal } from '@vibrant-ui/core';
+import { useCallback, useEffect, useMemo } from 'react';
+import type { LayoutEvent } from '@vibrant-ui/core';
+import { PortalBox, useSafeArea, useStackedPortal } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { withStackedPortalVariation } from './StackedPortalProps';
 
 export const StackedPortal = withStackedPortalVariation(
-  ({ id, order, innerRef, children, position, positionOffset, safeAreaMode = 'none', ...restProps }) => {
-    const { insets } = useSafeArea();
-    const { addEventListener, registerPortal, unregisterPortal, setPortalHeight } = useStackedPortal();
+  ({
+    id,
+    order,
+    innerRef,
+    children,
+    position,
+    positionOffset,
+    safeAreaMode = 'none',
+    p,
+    pt,
+    pl,
+    pr,
+    pb,
+    py,
+    px,
+    ...restProps
+  }) => {
+    const { generateStyle } = useSafeArea();
 
-    const [calculatedOffset, setCalculatedOffset] = useState<number | null>(null);
-    const [height, setHeight] = useState<number | undefined>();
+    const { offset, renderedIndex, unregister, changeHeight } = useStackedPortal({
+      position,
+      id,
+      order,
+      offset: positionOffset,
+      safeAreaInset: safeAreaMode === 'margin',
+    });
 
-    const positionStyle = useMemo(() => {
-      const style: {
-        [key in string]?: ResponsiveValue<number>;
-      } = {};
+    const paddingStyle = useMemo(() => {
+      let padding = {
+        top: pt ?? py ?? p,
+        left: pl ?? px ?? p,
+        right: pr ?? px ?? p,
+        bottom: pb ?? py ?? p,
+      };
 
-      if (calculatedOffset !== null) {
-        style[position] = transformResponsiveValue(positionOffset, value => calculatedOffset + value);
+      if (safeAreaMode !== 'padding' || renderedIndex !== 1) {
+        return {
+          pt: padding.top,
+          pl: padding.left,
+          pr: padding.right,
+          pb: padding.bottom,
+        };
       }
 
-      if (safeAreaMode !== 'none' && calculatedOffset === 0) {
-        style[`${safeAreaMode[0]}${position[0]}`] = insets[position];
-      }
+      const generatedStyle = generateStyle({
+        edges: [position],
+        minInsets: { [position]: padding[position] },
+      });
 
-      return style;
-    }, [calculatedOffset, insets, position, positionOffset, safeAreaMode]);
+      padding = {
+        ...padding,
+        ...generatedStyle,
+      };
 
-    const handleOffsetChange = useCallback((offset: number | 'loading') => {
-      if (offset === 'loading') {
-        setCalculatedOffset(null);
-
-        return;
-      }
-
-      setCalculatedOffset(offset);
-    }, []);
-
-    addEventListener(
-      { position, id, order },
-      {
-        offsetChange: handleOffsetChange,
-      }
-    );
+      return {
+        pt: padding.top,
+        pl: padding.left,
+        pr: padding.right,
+        pb: padding.bottom,
+      };
+    }, [generateStyle, p, pb, pl, position, pr, pt, px, py, renderedIndex, safeAreaMode]);
 
     const handleLayout = useCallback(
-      (layout: LayoutEvent) => {
-        if (!isDefined(calculatedOffset)) {
-          return;
-        }
-
-        setHeight(layout.height);
+      ({ height }: LayoutEvent) => {
+        changeHeight(height);
       },
-      [calculatedOffset]
+      [changeHeight]
     );
 
-    useEffect(() => {
-      addEventListener(
-        { position, id, order },
-        {
-          offsetChange: handleOffsetChange,
-        }
-      );
-
-      registerPortal({ position, id, order });
-
-      return () => {
-        unregisterPortal({ position, id, order });
-      };
+    useEffect(
+      () => () => {
+        unregister();
+      },
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    useEffect(() => {
-      if (!isDefined(height)) {
-        return;
-      }
-
-      setPortalHeight({
-        id,
-        order,
-        position,
-        height: height + positionOffset + (calculatedOffset === 0 ? insets[position] : 0),
-      });
-    }, [calculatedOffset, height, id, insets, order, position, positionOffset, setPortalHeight]);
+      []
+    );
 
     return (
-      <PortalBox ref={innerRef} hidden={calculatedOffset === null} {...positionStyle} {...restProps}>
-        <Box onLayout={handleLayout}>{children}</Box>
+      <PortalBox
+        ref={innerRef}
+        hidden={!isDefined(offset)}
+        onLayout={handleLayout}
+        {...{ [position]: !isDefined(offset) ? 0 : offset }}
+        {...paddingStyle}
+        {...restProps}
+      >
+        {children}
       </PortalBox>
     );
   }

@@ -14,9 +14,14 @@
         "react/jsx-filename-extension": "off",
         "import/no-extraneous-dependencies": "off",
         "no-undef": "warn",
-        "prettier/prettier": ["error", {
-          "printWidth": 50
-        }]
+        "prettier/prettier": [
+          "error",
+          {
+            "printWidth": 60,
+            "singleQuote": true
+          }
+        ],
+        "react/jsx-no-undef": "off"
       }
     },
     {
