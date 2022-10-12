@@ -1,4 +1,5 @@
 import { cloneElement, useCallback, useEffect, useMemo, useRef } from 'react';
+import type { Rect } from '@vibrant-ui/utils';
 import { getElementRect } from '@vibrant-ui/utils';
 import { Box } from '../Box';
 import { withOverlayBoxVariation } from './OverlayBoxProps';
@@ -12,12 +13,20 @@ export const OverlayBox = withOverlayBoxVariation(
         return;
       }
 
-      const onClick = async ({ pageX, pageY }: MouseEvent) => {
+      let targetRect: Rect | undefined = undefined;
+
+      const onMousedown = async () => {
         if (!targetRef?.current) {
           return;
         }
 
-        const targetRect = await getElementRect(targetRef.current);
+        targetRect = await getElementRect(targetRef.current);
+      };
+
+      const onMouseup = async ({ pageX, pageY }: MouseEvent) => {
+        if (!targetRef?.current || !targetRect) {
+          return;
+        }
 
         const isEventTargetInTargetRect =
           pageX >= targetRect.x &&
@@ -28,15 +37,21 @@ export const OverlayBox = withOverlayBoxVariation(
         if (!isEventTargetInTargetRect) {
           onDismiss?.();
         }
+
+        targetRect = undefined;
       };
 
       requestAnimationFrame(() => {
-        document.addEventListener('mouseup', onClick, { passive: false });
+        document.addEventListener('mousedown', onMousedown, { passive: false });
+
+        document.addEventListener('mouseup', onMouseup, { passive: false });
       });
 
       return () => {
         requestAnimationFrame(() => {
-          document.removeEventListener('mouseup', onClick);
+          document.removeEventListener('mousedown', onMousedown);
+
+          document.removeEventListener('mouseup', onMouseup);
         });
       };
     }, [onDismiss, open]);
