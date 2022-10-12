@@ -76,19 +76,19 @@ Primary 버튼없이 Secondary 버튼이나 Sub 버튼을 사용할 수 없으�
 
 ## Properties
 
-| Prop                                          | Type                                                              | Default | Description                                                       |
-| --------------------------------------------- | ----------------------------------------------------------------- | ------- | ----------------------------------------------------------------- |
-| [open](#controlled--uncontrolled)             | boolean                                                           |         | 열림 상태를 제어합니다.                                           |
-| [defaultOpen](#controlled--uncontrolled)      | boolean                                                           |         | 초기 열림 상태를 설정합니다. open 속성과 함께 사용할 수 없습니다. |
-| [renderOpener](<(#controlled--uncontrolled)>) | (\_: \{ open: () => void; isOpen: boolean }) => ReactElementChild |         | open 함수를 이용하여 모달을 여는 요소를 설정합니다.               |
-| title                                         | string                                                            |         | 모달의 제목입니다.                                                |
-| subtitle                                      | string                                                            |         | 모달의 부제목입니다.                                              |
-| size                                          | lg \| md                                                          | md      | PC 뷰에서 모달의 너비를 설정합니다.                               |
-| renderContents                                | (\_: \{ close: () => void }) => ReactElementChild;                |         | 내부 컨텐츠를 설정합니다.                                         |
-| onClose                                       | () => void                                                        |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
-| [primaryButtonText](#cta-buttons)             | string                                                            |         | Primary 버튼 텍스트입니다.                                        |
-| [onPrimaryButtonClick](#cta-buttons)          | () => void                                                        |         | Primary 버튼이 클릭됐을 때 호출됩니다.                            |
-| [secondaryButtonText](#cta-buttons)           |                                                                   | string  | Secondary 버튼 텍스트입니다.                                      |
-| [onSecondaryButtonClick](#cta-buttons)        | () => void                                                        |         | Secondary 버튼이 클릭됐을 때 호출됩니다.                          |
-| [subButtonText](#cta-buttons)                 | string                                                            |         | Sub 버튼 텍스트입니다.                                            |
-| [onSubButtonClick](#cta-buttons)              | () => void                                                        |         | Sub 버튼이 클릭됐을 때 호출됩니다.                                |
+| Prop                                      | Type                                                              | Default | Description                                                       |
+| ----------------------------------------- | ----------------------------------------------------------------- | ------- | ----------------------------------------------------------------- |
+| [open](#controlled--uncontrolled)         | boolean                                                           |         | 열림 상태를 제어합니다.                                           |
+| [defaultOpen](#controlled--uncontrolled)  | boolean                                                           |         | 초기 열림 상태를 설정합니다. open 속성과 함께 사용할 수 없습니다. |
+| [renderOpener](#controlled--uncontrolled) | (\_: \{ open: () => void; isOpen: boolean }) => ReactElementChild |         | open 함수를 이용하여 모달을 여는 요소를 설정합니다.               |
+| title                                     | string                                                            |         | 모달의 제목입니다.                                                |
+| subtitle                                  | string                                                            |         | 모달의 부제목입니다.                                              |
+| size                                      | lg \| md                                                          | md      | PC 뷰에서 모달의 너비를 설정합니다.                               |
+| renderContents                            | (\_: \{ close: () => void }) => ReactElementChild;                |         | 내부 컨텐츠를 설정합니다.                                         |
+| onClose                                   | () => void                                                        |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
+| [primaryButtonText](#cta-buttons)         | string                                                            |         | Primary 버튼 텍스트입니다.                                        |
+| [onPrimaryButtonClick](#cta-buttons)      | () => void                                                        |         | Primary 버튼이 클릭됐을 때 호출됩니다.                            |
+| [secondaryButtonText](#cta-buttons)       |                                                                   | string  | Secondary 버튼 텍스트입니다.                                      |
+| [onSecondaryButtonClick](#cta-buttons)    | () => void                                                        |         | Secondary 버튼이 클릭됐을 때 호출됩니다.                          |
+| [subButtonText](#cta-buttons)             | string                                                            |         | Sub 버튼 텍스트입니다.                                            |
+| [onSubButtonClick](#cta-buttons)          | () => void                                                        |         | Sub 버튼이 클릭됐을 때 호출됩니다.                                |
