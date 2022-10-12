@@ -23,3 +23,4 @@ export { useCallbackRef } from './lib/useCallbackRef';
 export { useControllableState } from './lib/useControllableState';
 
 export type { Position } from './types/Position';
+export type { Either } from './types/Either';
