@@ -187,7 +187,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       overlayColor="onPrimary"
                       interactions={['hover', 'focus', 'active']}
                     >
-                      <Body color="onPrimary" textAlign="center" level={1}>
+                      <Body color="onPrimary" textAlign="center" level={1} weight="bold">
                         {primaryButtonText}
                       </Body>
                     </Pressable>
