@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.19.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.19.2...vibrant-core-0.19.3) (2022-10-12)
+
+
+### Bug Fixes
+
+* calculate target element rect at mousedown ([#341](https://github.com/pedaling/opensource/issues/341)) ([860b256](https://github.com/pedaling/opensource/commit/860b2560fb890be08405864b34dc5e6c5c6799d4))
+
 ### [0.19.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.19.1...vibrant-core-0.19.2) (2022-10-11)
 
 ### [0.19.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.19.0...vibrant-core-0.19.1) (2022-10-11)
