@@ -1,6 +1,9 @@
-import { HStack, Paper, Pressable, VStack } from '@vibrant-ui/components';
 import { Text } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
+import { HStack } from '../HStack';
+import { Paper } from '../Paper';
+import { Pressable } from '../Pressable';
+import { VStack } from '../VStack';
 import { withToastVariation } from './ToastProps';
 
 export const Toast = withToastVariation(
