@@ -13,7 +13,7 @@ import {
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import type { LayoutEvent } from '@vibrant-ui/utils';
-import { isDefined } from '@vibrant-ui/utils';
+import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
@@ -27,6 +27,7 @@ const Z_INDEX = 100;
 
 export const ModalBottomSheet = withModalBottomSheetVariation(
   ({
+    open,
     defaultOpen,
     renderOpener,
     renderContents,
@@ -41,7 +42,15 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     onSubButtonClick,
     onClose,
   }) => {
-    const [isOpen, setIsOpen] = useState(defaultOpen);
+    const [isOpen, setIsOpen] = useControllableState<boolean>({
+      value: open,
+      defaultValue: defaultOpen,
+      onChange: (value: boolean) => {
+        if (!value) {
+          onClose?.();
+        }
+      },
+    });
     const [visible, setVisible] = useState(false);
     const [containerHeight, setContainerHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
@@ -64,13 +73,14 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
 
     useLockBodyScroll(isOpen || visible);
 
-    const opener = useMemo(() => renderOpener({ open: () => setIsOpen(!isOpen), isOpen }), [isOpen, renderOpener]);
+    const opener = useMemo(
+      () => renderOpener?.({ open: () => setIsOpen(!isOpen), isOpen }),
+      [isOpen, renderOpener, setIsOpen]
+    );
 
     const closeModal = useCallback(() => {
       setIsOpen(false);
-
-      onClose?.();
-    }, [onClose]);
+    }, [setIsOpen]);
 
     const handleContainerResize = useCallback(({ height }: LayoutEvent) => {
       setContainerHeight(height);
