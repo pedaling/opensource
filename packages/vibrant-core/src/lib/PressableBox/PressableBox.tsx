@@ -6,6 +6,7 @@ export const PressableBox = withPressableBoxVariation(
   ({
     innerRef,
     as,
+    buttonType,
     cursor = 'pointer',
     onClick,
     onFocusIn,
@@ -44,6 +45,7 @@ export const PressableBox = withPressableBoxVariation(
       }}
       {...(as === 'button'
         ? {
+            type: buttonType ?? 'button',
             disabled,
             backgroundColor: 'inherit',
             borderWidth: 0,

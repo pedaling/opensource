@@ -121,7 +121,7 @@ export const Calendar = withCalendarVariation(
       >
         <VStack spacing={24}>
           <HStack spacing={8} alignItems="center" mx={12}>
-            <Pressable as="button" onClick={movePrevMonth}>
+            <Pressable onClick={movePrevMonth}>
               <Icon.ChevronLeft.Regular size={16} />
             </Pressable>
             <VStack flex={1}>
@@ -131,7 +131,7 @@ export const Calendar = withCalendarVariation(
                   .replace('{month}', calendarTranslation.months[displayMonth.getMonth()].toString())}
               </Title>
             </VStack>
-            <Pressable as="button" onClick={moveNextMonth}>
+            <Pressable onClick={moveNextMonth}>
               <Icon.ChevronRight.Regular size={16} />
             </Pressable>
           </HStack>

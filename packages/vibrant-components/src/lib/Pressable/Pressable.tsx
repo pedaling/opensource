@@ -8,6 +8,7 @@ export const Pressable = withPressableVariation(
   ({
     innerRef,
     as = 'button',
+    buttonType,
     children,
     overlayColor,
     onFocus,
@@ -44,7 +45,6 @@ export const Pressable = withPressableVariation(
     return (
       <PressableBox
         ref={innerRef}
-        as={as}
         position="relative"
         overflow="hidden"
         cursor={disabled ? 'default' : 'pointer'}
@@ -68,6 +68,7 @@ export const Pressable = withPressableVariation(
         }}
         onPressIn={() => setIsActivated(true)}
         onPressOut={() => setIsActivated(false)}
+        {...(as === 'button' ? { as, buttonType } : { as })}
         {...restProps}
       >
         {overlayColor && (
