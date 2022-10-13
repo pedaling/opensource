@@ -34,7 +34,7 @@ export const WithForm: ComponentStory<typeof DatePickerField> = props => (
     <DatePickerField {...props} />
     <Space height={50} />
     <Pressable
-      type="submit"
+      buttonType="submit"
       width="100%"
       backgroundColor="primary"
       py={15}
