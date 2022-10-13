@@ -13,8 +13,10 @@ export const Callout = withCalloutVariation(
       borderRadius={3}
     >
       <VStack p={16}>
-        <HStack mt={description ? 2 : 0} alignItems="center" spacing={6}>
-          <IconComponent.Fill fill={fontColor} size={16} />
+        <HStack spacing={6}>
+          <HStack mt={2}>
+            <IconComponent.Fill fill={fontColor} size={16} />
+          </HStack>
           <Title level={6} weight="bold" color={fontColor}>
             {title}
           </Title>
