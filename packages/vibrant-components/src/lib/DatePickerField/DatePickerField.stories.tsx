@@ -25,7 +25,7 @@ export const WithForm: ComponentStory<typeof DatePickerField> = props => (
   <form
     style={{ width: '100%' }}
     onSubmit={event => {
-      console.log('submit');
+      alert('submit');
 
       event.preventDefault();
     }}

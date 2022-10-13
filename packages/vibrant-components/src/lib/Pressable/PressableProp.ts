@@ -32,11 +32,11 @@ export type PressableProps = BackgroundSystemProps &
   } & Either<
     {
       as: 'div' | 'li';
-      type?: never;
+      buttonType?: never;
     },
     {
       as?: 'button';
-      type?: 'button' | 'submit';
+      buttonType?: 'button' | 'submit';
     }
   > &
   (
