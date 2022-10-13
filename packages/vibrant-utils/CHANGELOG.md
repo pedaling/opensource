@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.19.3](https://github.com/pedaling/opensource/compare/vibrant-utils-0.19.2...vibrant-utils-0.19.3) (2022-10-12)
+
+
+### Features
+
+* add open prop to make ModalBottomSheet controlled ([#339](https://github.com/pedaling/opensource/issues/339)) ([b3a281a](https://github.com/pedaling/opensource/commit/b3a281ae100ffc8cdc36d1ea333795e962967427))
+
+### [0.19.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.19.1...vibrant-utils-0.19.2) (2022-10-11)
+
+### [0.19.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.19.0...vibrant-utils-0.19.1) (2022-10-11)
+
+## [0.19.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.18.0...vibrant-utils-0.19.0) (2022-10-11)
+
 ### [0.17.6](https://github.com/pedaling/opensource/compare/vibrant-utils-0.17.5...vibrant-utils-0.17.6) (2022-09-28)
 
 ### [0.17.5](https://github.com/pedaling/opensource/compare/vibrant-utils-0.17.4...vibrant-utils-0.17.5) (2022-09-26)

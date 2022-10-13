@@ -11,6 +11,7 @@ import type {
 } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { ColorToken } from '@vibrant-ui/theme';
+import type { Either } from '@vibrant-ui/utils';
 
 export type PressableProps = BackgroundSystemProps &
   BorderSystemProps &
@@ -20,7 +21,6 @@ export type PressableProps = BackgroundSystemProps &
   SpacingSystemProps &
   SizingSystemProps & {
     ref?: Ref<any>;
-    as?: 'button' | 'div' | 'li';
     disabled?: boolean;
     children?: ReactElement;
     cursor?: 'default' | 'pointer';
@@ -29,7 +29,17 @@ export type PressableProps = BackgroundSystemProps &
     onFocus?: () => void;
     onBlur?: () => void;
     hitSlop?: number;
-  } & (
+  } & Either<
+    {
+      as: 'div' | 'li';
+      buttonType?: never;
+    },
+    {
+      as?: 'button';
+      buttonType?: 'button' | 'submit';
+    }
+  > &
+  (
     | {
         overlayColor: ResponsiveValue<ColorToken>;
         interactions?: ('active' | 'focus' | 'hover')[];

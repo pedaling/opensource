@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { StackedPortal, Toast } from '@vibrant-ui/components';
 import { Transition } from '@vibrant-ui/motion';
+import { StackedPortal } from '../StackedPortal';
+import { Toast } from '../Toast';
 import { useToastProps } from '../ToastProvider/ToastProvider';
 
 const DURATION = 5000;
