@@ -1,7 +1,7 @@
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 
-export type CalloutType = 'default' | 'information' | 'notice' | 'success' | 'warning';
+export type CalloutType = 'default' | 'informative' | 'notice' | 'success' | 'warning';
 
 export type CalloutProps = {
   title: string;
@@ -33,7 +33,7 @@ export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
         fontColor: 'onView1' as const,
         IconComponent: Icon.InfoCircle,
       },
-      information: {
+      informative: {
         backgroundColor: 'informativeContainer' as const,
         fontColor: 'onViewInformative' as const,
         IconComponent: Icon.InfoCircle,
