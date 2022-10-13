@@ -29,7 +29,7 @@ export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
     ],
     variants: {
       default: {
-        backgroundColor: 'surface1' as const,
+        backgroundColor: 'surface2' as const,
         fontColor: 'onView1' as const,
         IconComponent: Icon.InfoCircle,
       },

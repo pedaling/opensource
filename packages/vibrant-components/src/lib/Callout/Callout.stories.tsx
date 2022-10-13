@@ -1,4 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { VStack } from '../VStack';
 import { Callout } from './Callout';
 
 export default {
@@ -12,4 +13,8 @@ export default {
   },
 } as ComponentMeta<typeof Callout>;
 
-export const Basic: ComponentStory<typeof Callout> = props => <Callout {...props} />;
+export const Basic: ComponentStory<typeof Callout> = props => (
+  <VStack p={10}>
+    <Callout {...props} />
+  </VStack>
+);

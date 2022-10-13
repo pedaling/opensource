@@ -6,8 +6,8 @@ export const Callout = withCalloutVariation(
   ({ title, description, action, onActionClick, backgroundColor, fontColor, IconComponent }) => (
     <Box
       width="100%"
-      background={backgroundColor}
       borderStyle="solid"
+      backgroundColor={backgroundColor}
       borderWidth={1}
       borderColor="outline1"
       borderRadius={3}
@@ -27,7 +27,7 @@ export const Callout = withCalloutVariation(
           </VStack>
         ) : null}
         {action ? (
-          <HStack mt={12} alignSelf="end">
+          <HStack mt={12} alignSelf="flex-end">
             <Pressable
               onClick={onActionClick}
               interactions={['focus', 'active']}
