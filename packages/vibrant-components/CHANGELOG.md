@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.19.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.19.3...vibrant-components-0.19.4) (2022-10-13)
+
+
+### Bug Fixes
+
+* set default value of button type to button ([#344](https://github.com/pedaling/opensource/issues/344)) ([c1cec1e](https://github.com/pedaling/opensource/commit/c1cec1e4eb6c8cd2acc4d1d322595e507ba49d47))
+
 ### [0.19.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.19.2...vibrant-components-0.19.3) (2022-10-12)
 
 
