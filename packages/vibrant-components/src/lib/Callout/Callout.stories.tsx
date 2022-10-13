@@ -6,9 +6,9 @@ export default {
   component: Callout,
   args: {
     title: '타이틀을 입력하세요',
-    description:
-      '설명을 입력하세요. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque ipsum eget lectus maximus finibus.',
     type: 'warning',
+    action: 'Action',
+    onActionClick: () => {},
   },
 } as ComponentMeta<typeof Callout>;
 

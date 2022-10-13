@@ -1,37 +1,57 @@
-import type { ReactElementChild } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 
-export type CalloutType = 'information' | 'notice' | 'warning';
+export type CalloutType = 'default' | 'information' | 'notice' | 'success' | 'warning';
 
 export type CalloutProps = {
   title: string;
-  description: string;
-  type: CalloutType;
-  renderFooter?: () => ReactElementChild;
-};
+  description?: string;
+  type?: CalloutType;
+} & (
+  | {
+      action: string;
+      onActionClick?: () => void;
+    }
+  | {
+      action?: never;
+      onActionClick?: never;
+    }
+);
 
 export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
   propVariant({
     props: [
       {
         name: 'type',
-        keep: true,
-        default: 'information',
+        keep: false,
+        default: 'default',
       },
     ],
     variants: {
+      default: {
+        backgroundColor: 'surface1' as const,
+        fontColor: 'onView1' as const,
+        IconComponent: Icon.InfoCircle,
+      },
       information: {
-        color: 'onView1' as const,
+        backgroundColor: 'informativeContainer' as const,
+        fontColor: 'onViewInformative' as const,
         IconComponent: Icon.InfoCircle,
       },
       notice: {
-        color: 'informative' as const,
+        backgroundColor: 'errorContainer' as const,
+        fontColor: 'onViewError' as const,
         IconComponent: Icon.InfoCircle,
       },
       warning: {
-        color: 'error' as const,
+        backgroundColor: 'warningContainer' as const,
+        fontColor: 'onViewWarning' as const,
         IconComponent: Icon.Alert,
+      },
+      success: {
+        backgroundColor: 'successContainer' as const,
+        fontColor: 'onViewSuccess' as const,
+        IconComponent: Icon.CheckCircle,
       },
     },
   })
