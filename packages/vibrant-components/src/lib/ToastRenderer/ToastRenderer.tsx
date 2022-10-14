@@ -22,12 +22,18 @@ export const ToastRenderer = () => {
       return;
     }
 
-    const timer = setTimeout(() => {
-      setShow(false);
-    }, toastProps?.duration ?? DURATION);
+    if (toastProps?.duration === 0) {
+      return;
+    } else {
+      const timer = setTimeout(() => {
+        setShow(false);
 
-    return () => clearTimeout(timer);
-  }, [show, toastProps?.duration, toastProps?.toastKey]);
+        toastProps?.onClose?.();
+      }, toastProps?.duration ?? DURATION);
+
+      return () => clearTimeout(timer);
+    }
+  }, [show, toastProps, toastProps?.duration, toastProps?.toastKey]);
 
   return toastProps && isMount ? (
     <StackedPortal

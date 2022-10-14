@@ -25,7 +25,7 @@ export const Basic: ComponentStory<typeof Toast> = props => (
 );
 
 export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
-  const { showToast } = useToast();
+  const { showToast, closeToast } = useToast();
 
   return (
     <VStack mt={200} height="100%" width="100%">
@@ -55,6 +55,9 @@ export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
               showToast({
                 title: 'Error sample toast',
                 kind: 'error',
+                duration: 0,
+                buttonText: '닫기',
+                onButtonClick: closeToast,
               });
             }}
           >
