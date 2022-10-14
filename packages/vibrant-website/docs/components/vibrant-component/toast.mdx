@@ -26,7 +26,9 @@ Toast 를 사용하기 위해서는 상위 컴포넌트를 [ToastProvider](../vi
 
 Toast 는 `useToast` 훅을 통해 반환된 함수 `showToast` 를 사용해 Toast 를 마운트 시킬 수 있습니다.
 
-`showToast` 에 전달한 `props` 대로 Toast 가 생성되며, 코드 내에 `<ToastRenderer />` 컴포넌트를 삽입해야 합니다.
+`showToast` 에 전달한 `props` 속성을 반영한 Toast 가 생성되며, Toast 를 렌더링 하려는 컴포넌트, 페이지 내에 `<ToastRenderer />` 컴포넌트를 삽입해야 합니다.
+
+`<ToastRenderer />` 는 Toast 를 사용하려고 하는 컴포넌트, 페이지에 늘 추가해줘야 정상적으로 Toast 가 화면에 보여집니다.
 
 ```jsx
 import {
@@ -73,8 +75,8 @@ const ContentWithToast = (props) => {
 
 ### kind
 
-`animation` prop은 모든 System Prop을 받습니다. 다만 애니메이션이 가능한 스타일 속성들만 정상적으로 작동됩니다.
-각 속성별로 `from`과 `to`를 통해 각자 애니메이션의 시작과 끝을 지정할 수 있습니다.
+Toast 의 종류를 지정할 수 있습니다.
+`default` `success` `error` 를 사용해 변경할 수 있습니다.
 
 ```jsx live
 <VStack spacing={8}>
