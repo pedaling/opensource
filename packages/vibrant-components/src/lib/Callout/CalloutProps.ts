@@ -29,30 +29,30 @@ export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
     ],
     variants: {
       default: {
-        backgroundColor: 'surface2' as const,
-        fontColor: 'onView1' as const,
+        backgroundColor: 'surface2',
+        fontColor: 'onView1',
         IconComponent: Icon.InfoCircle,
       },
       informative: {
-        backgroundColor: 'informativeContainer' as const,
-        fontColor: 'onViewInformative' as const,
+        backgroundColor: 'informativeContainer',
+        fontColor: 'onViewInformative',
         IconComponent: Icon.InfoCircle,
       },
       notice: {
-        backgroundColor: 'errorContainer' as const,
-        fontColor: 'onViewError' as const,
+        backgroundColor: 'errorContainer',
+        fontColor: 'onViewError',
         IconComponent: Icon.InfoCircle,
       },
       warning: {
-        backgroundColor: 'warningContainer' as const,
-        fontColor: 'onViewWarning' as const,
+        backgroundColor: 'warningContainer',
+        fontColor: 'onViewWarning',
         IconComponent: Icon.Alert,
       },
       success: {
-        backgroundColor: 'successContainer' as const,
-        fontColor: 'onViewSuccess' as const,
+        backgroundColor: 'successContainer',
+        fontColor: 'onViewSuccess',
         IconComponent: Icon.CheckCircle,
       },
-    },
+    } as const,
   })
 );
