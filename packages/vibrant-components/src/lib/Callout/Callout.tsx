@@ -14,22 +14,20 @@ export const Callout = withCalloutVariation(
     >
       <VStack p={16}>
         <HStack spacing={6}>
-          <HStack mt={2}>
+          <Box mt={2}>
             <IconComponent.Fill fill={fontColor} size={16} />
-          </HStack>
+          </Box>
           <Title level={6} weight="bold" color={fontColor}>
             {title}
           </Title>
         </HStack>
         {description ? (
-          <VStack mt={8} mb={description ? 2 : 0}>
-            <Text lineHeight={18} fontSize={14} fontWeight="regular">
-              {description}
-            </Text>
-          </VStack>
+          <Text mt={8} mb={description ? 2 : 0} lineHeight={18} fontSize={14} fontWeight="regular">
+            {description}
+          </Text>
         ) : null}
         {action ? (
-          <HStack mt={12} alignSelf="flex-end">
+          <Box mt={12} alignSelf="flex-end">
             <Pressable
               onClick={onActionClick}
               interactions={['focus', 'active']}
@@ -42,7 +40,7 @@ export const Callout = withCalloutVariation(
                 {action}
               </Text>
             </Pressable>
-          </HStack>
+          </Box>
         ) : null}
       </VStack>
     </Box>
