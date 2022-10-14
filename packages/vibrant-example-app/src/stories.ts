@@ -4,6 +4,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/Body/Body.stories.tsx'),
   require('../../vibrant-components/src/lib/Calendar/Calendar.stories.tsx'),
   require('../../vibrant-components/src/lib/CalendarDateItem/CalendarDateItem.stories.tsx'),
+  require('../../vibrant-components/src/lib/Callout/Callout.stories.tsx'),
   require('../../vibrant-components/src/lib/Checkbox/Checkbox.stories.tsx'),
   require('../../vibrant-components/src/lib/CheckboxField/CheckboxField.stories.tsx'),
   require('../../vibrant-components/src/lib/CheckboxGroupField/CheckboxGroupField.stories.tsx'),
