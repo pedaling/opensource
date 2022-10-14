@@ -1,0 +1,22 @@
+---
+title: ToastProvider
+sidebar_position: 1
+---
+
+# ToastProvider
+
+ToastProvider 는 사용자가 Toast 를 사용하기 위해 상단에 주입시켜줘야 하는 provider 입니다.
+
+## How to use
+
+```jsx
+import { ToastProvider } from '@vibrant-ui/components';
+const App = () => {
+  <VibrantProvider>
+    {/* Your other providers */}
+    <ToastProvider>{/* Your app contents */}</ToastProvider>
+  </VibrantProvider>;
+};
+```
+
+ToastProvider 를 주입시킨 후에는 [Toast](../vibrant-component/toast) 에 나와있는 사용법을 참고하세요.

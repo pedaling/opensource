@@ -1,8 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ToastRenderer, useToast } from '@vibrant-ui/components';
 import { PressableBox, Text } from '@vibrant-ui/core';
 import { Paper } from '../Paper';
-import { useToast } from '../ToastProvider';
-import { ToastRenderer } from '../ToastRenderer';
 import { VStack } from '../VStack';
 import { Toast } from './Toast';
 
