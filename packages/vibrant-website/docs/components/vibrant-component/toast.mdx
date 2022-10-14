@@ -20,12 +20,11 @@ Toast는 사용자가 행동한 결과 값에 따른 정보를 전달해야 할�
 
 ## How to use
 
-Toast 를 사용하기 위해서는 [ToastProvider](../vibrant-core/toast-provider) 를 사전에 사용해야 합니다.
-ToastProvider 의 사용법을 따라한 후 아래 내용을 따라하세요.
+Toast 를 사용하기 위해서는 상위 컴포넌트를 [ToastProvider](../vibrant-core/toast-provider) 로 감싸주어야 합니다.
 
-Toast 는 `useToast` 훅을 통해 호출할 수 있습니다.
+[ToastProvider](../vibrant-core/toast-provider) 의 사용법을 따라한 후 아래 내용을 따라하세요.
 
-훅을 통해 호출한 `showToast` 에 props 가 전달되는 것이 Toast 를 발동시키는 조건입니다.
+Toast 는 `useToast` 훅을 통해 반환된 함수 `showToast` 를 사용해 Toast 를 마운트 시킬 수 있습니다.
 
 `showToast` 에 전달한 `props` 대로 Toast 가 생성되며, 코드 내에 `<ToastRenderer />` 컴포넌트를 삽입해야 합니다.
 
