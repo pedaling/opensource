@@ -132,7 +132,7 @@ export type BoxProps<
           ref?: Ref<HTMLElement>;
           children?: ReactElementChildren;
         }
-      : ComponentProps<BaseComponent>,
+      : Omit<ComponentProps<BaseComponent>, 'onLayout'>,
     keyof SystemProps
   >;
 
