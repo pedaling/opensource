@@ -1,3 +1,4 @@
+import mediaQuery from 'css-mediaquery';
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Box, PortalRootProvider } from '@vibrant-ui/core';
@@ -5,6 +6,21 @@ import type { ReactRenderer } from '@vibrant-ui/utils/testing';
 import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { Pressable } from '../Pressable';
 import { ModalBottomSheet } from './ModalBottomSheet';
+
+function createMatchMedia(width: number) {
+  return (query: string): MediaQueryList => ({
+    matches: mediaQuery.match(query, {
+      width,
+    }),
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  });
+}
 
 describe('<ModalBottomSheet />', () => {
   const { render } = createReactRenderer(children => <PortalRootProvider zIndex={1}>{children}</PortalRootProvider>);
@@ -232,9 +248,27 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
-  it('match snapshot', () => {
-    renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+  describe('given mobile viewport width', () => {
+    beforeEach(() => {
+      window.matchMedia = createMatchMedia(639);
+    });
 
-    expect(renderer.container).toMatchSnapshot();
+    it('match snapshot', () => {
+      renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+
+      expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('given viewport width larger than mobile', () => {
+    beforeEach(() => {
+      window.matchMedia = createMatchMedia(1024);
+    });
+
+    it('match snapshot', () => {
+      renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+
+      expect(renderer.container).toMatchSnapshot();
+    });
   });
 });
