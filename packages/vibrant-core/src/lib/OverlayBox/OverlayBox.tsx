@@ -14,7 +14,7 @@ export const OverlayBox = withOverlayBoxVariation(
         return;
       }
 
-      const onMousedown = async () => {
+      const onPressDown = async () => {
         if (!targetRef?.current) {
           return;
         }
@@ -22,7 +22,9 @@ export const OverlayBox = withOverlayBoxVariation(
         targetRectRef.current = await getElementRect(targetRef.current);
       };
 
-      const onMouseup = async ({ pageX, pageY }: MouseEvent) => {
+      const onPressUp = async (event: MouseEvent | TouchEvent) => {
+        const { pageX, pageY } = event instanceof MouseEvent ? event : event.changedTouches[0];
+
         if (!targetRef?.current || !targetRectRef.current) {
           return;
         }
@@ -41,16 +43,24 @@ export const OverlayBox = withOverlayBoxVariation(
       };
 
       requestAnimationFrame(() => {
-        document.addEventListener('mousedown', onMousedown, { passive: false });
+        document.addEventListener('touchstart', onPressDown, { passive: false });
 
-        document.addEventListener('mouseup', onMouseup, { passive: false });
+        document.addEventListener('mousedown', onPressDown, { passive: false });
+
+        document.addEventListener('mouseup', onPressUp, { passive: false });
+
+        document.addEventListener('touchend', onPressUp, { passive: false });
       });
 
       return () => {
         requestAnimationFrame(() => {
-          document.removeEventListener('mousedown', onMousedown);
+          document.removeEventListener('touchstart', onPressDown);
 
-          document.removeEventListener('mouseup', onMouseup);
+          document.removeEventListener('mousedown', onPressDown);
+
+          document.removeEventListener('mouseup', onPressUp);
+
+          document.removeEventListener('touchend', onPressUp);
         });
       };
     }, [onDismiss, open]);
