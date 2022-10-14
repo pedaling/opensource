@@ -4,7 +4,7 @@ import type { ScrollBoxProps } from './ScrollBoxProps';
 import { interpolation, shouldForwardProp } from './ScrollBoxProps';
 
 export const ScrollBox = styled(
-  forwardRef<any, ScrollBoxProps>(({ as = 'div', ...restProps }, ref) =>
+  forwardRef<any, ScrollBoxProps>(({ as = 'div', keyboardShouldPersistTaps: _, ...restProps }, ref) =>
     createElement(as, {
       ref,
       ...restProps,
