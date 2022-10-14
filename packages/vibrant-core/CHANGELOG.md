@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.20.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.19.5...vibrant-core-0.20.0) (2022-10-14)
+
+
+### Bug Fixes
+
+* add touchStart, touchEnd event to OverlayBox ([#350](https://github.com/pedaling/opensource/issues/350)) ([0056d8e](https://github.com/pedaling/opensource/commit/0056d8ef58d73e48e3c1379432489fdccd106917))
+
 ### [0.19.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.19.3...vibrant-core-0.19.4) (2022-10-13)
 
 
