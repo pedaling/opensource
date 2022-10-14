@@ -118,6 +118,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   <button
     class="emotion-0"
     data-testid="operatorButton"
+    type="button"
   >
     <span
       class="emotion-1"

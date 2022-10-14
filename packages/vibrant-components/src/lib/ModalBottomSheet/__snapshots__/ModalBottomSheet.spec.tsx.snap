@@ -340,6 +340,7 @@ exports[`<ModalBottomSheet /> match snapshot 1`] = `
             <button
               aria-label="Close"
               class="emotion-7"
+              type="button"
             >
               <span
                 class="emotion-8"
