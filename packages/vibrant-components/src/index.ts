@@ -38,6 +38,8 @@ export { StackedPortal } from './lib/StackedPortal';
 export { PasswordField } from './lib/PasswordField';
 export type { PasswordFieldProps } from './lib/PasswordField';
 export { SafeAreaView } from './lib/SafeAreaView';
+export { Callout } from './lib/Callout';
 export { Toast } from './lib/Toast';
 export { ToastProvider, useToast } from './lib/ToastProvider';
 export { ToastRenderer } from './lib/ToastRenderer';
+export { ModalBottomSheet } from './lib/ModalBottomSheet';

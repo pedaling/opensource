@@ -1,10 +1,26 @@
+import mediaQuery from 'css-mediaquery';
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { PortalRootProvider } from '@vibrant-ui/core';
+import { Box, PortalRootProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing';
 import { createReactRenderer } from '@vibrant-ui/utils/testing';
 import { Pressable } from '../Pressable';
 import { ModalBottomSheet } from './ModalBottomSheet';
+
+function createMatchMedia(width: number) {
+  return (query: string): MediaQueryList => ({
+    matches: mediaQuery.match(query, {
+      width,
+    }),
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+  });
+}
 
 describe('<ModalBottomSheet />', () => {
   const { render } = createReactRenderer(children => <PortalRootProvider zIndex={1}>{children}</PortalRootProvider>);
@@ -15,7 +31,6 @@ describe('<ModalBottomSheet />', () => {
       renderer = render(
         <ModalBottomSheet
           defaultOpen={false}
-          renderContents={() => null}
           renderOpener={({ open }) => <Pressable data-testid="opener" onClick={open} />}
         />
       );
@@ -42,14 +57,7 @@ describe('<ModalBottomSheet />', () => {
     beforeEach(() => {
       mockOnClose = jest.fn();
 
-      renderer = render(
-        <ModalBottomSheet
-          defaultOpen={true}
-          onClose={mockOnClose}
-          renderContents={() => null}
-          renderOpener={() => null}
-        />
-      );
+      renderer = render(<ModalBottomSheet defaultOpen={true} onClose={mockOnClose} renderOpener={() => null} />);
     });
 
     it('should open the content', () => {
@@ -75,6 +83,36 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
+  describe('when renderContents is provided', () => {
+    beforeEach(() => {
+      renderer = render(<ModalBottomSheet open={true} renderContents={() => <Box data-testid="contents" />} />);
+    });
+
+    it('should render returned element of renderContents', () => {
+      expect(renderer.queryByTestId('contents')).toBeTruthy();
+    });
+  });
+
+  describe('when title is provided', () => {
+    beforeEach(() => {
+      renderer = render(<ModalBottomSheet open={true} title="title" />);
+    });
+
+    it('should show title text', () => {
+      expect(renderer.queryByRole('heading', { name: 'title' })).toBeTruthy();
+    });
+  });
+
+  describe('when subtitle is provided', () => {
+    beforeEach(() => {
+      renderer = render(<ModalBottomSheet open={true} subtitle="subtitle" />);
+    });
+
+    it('should show subtitle text', () => {
+      expect(renderer.queryByText('subtitle')).toBeTruthy();
+    });
+  });
+
   describe('when primaryButtonText and onPrimaryButtonClick are provided', () => {
     let mockOnPrimaryButtonClick: jest.Mock<any, any>;
 
@@ -88,7 +126,6 @@ describe('<ModalBottomSheet />', () => {
           onPrimaryButtonClick={mockOnPrimaryButtonClick}
           secondaryButtonText={undefined}
           subButtonText={undefined}
-          renderContents={() => null}
           renderOpener={({ open }) => <Pressable onClick={open} />}
         />
       );
@@ -126,7 +163,6 @@ describe('<ModalBottomSheet />', () => {
           secondaryButtonText="secondaryButtonText"
           onSecondaryButtonClick={mockOnSecondaryButtonClick}
           subButtonText={undefined}
-          renderContents={() => null}
           renderOpener={({ open }) => <Pressable onClick={open} />}
         />
       );
@@ -178,7 +214,6 @@ describe('<ModalBottomSheet />', () => {
           secondaryButtonText={undefined}
           subButtonText="subButtonText"
           onSubButtonClick={mockOnSubButtonClick}
-          renderContents={() => null}
           renderOpener={({ open }) => <Pressable onClick={open} />}
         />
       );
@@ -213,9 +248,27 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
-  it('match snapshot', () => {
-    renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+  describe('given mobile viewport width', () => {
+    beforeEach(() => {
+      window.matchMedia = createMatchMedia(639);
+    });
 
-    expect(renderer.container).toMatchSnapshot();
+    it('match snapshot', () => {
+      renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+
+      expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('given viewport width larger than mobile', () => {
+    beforeEach(() => {
+      window.matchMedia = createMatchMedia(1024);
+    });
+
+    it('match snapshot', () => {
+      renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+
+      expect(renderer.container).toMatchSnapshot();
+    });
   });
 });
