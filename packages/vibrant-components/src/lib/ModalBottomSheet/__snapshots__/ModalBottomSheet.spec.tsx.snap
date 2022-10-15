@@ -709,6 +709,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
             <button
               aria-label="Close"
               class="emotion-7"
+              type="button"
             >
               <span
                 class="emotion-8"
