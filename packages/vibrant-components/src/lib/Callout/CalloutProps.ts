@@ -1,20 +1,20 @@
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 
-export type CalloutType = 'default' | 'informative' | 'notice' | 'success' | 'warning';
+export type CalloutType = 'default' | 'error' | 'informative' | 'success' | 'warning';
 
 export type CalloutProps = {
   title: string;
   description?: string;
-  type?: CalloutType;
+  kind?: CalloutType;
 } & (
   | {
-      action: string;
-      onActionClick?: () => void;
+      buttonText: string;
+      onButtonClick?: () => void;
     }
   | {
-      action?: never;
-      onActionClick?: never;
+      buttonText?: never;
+      onButtonClick?: never;
     }
 );
 
@@ -22,7 +22,7 @@ export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
   propVariant({
     props: [
       {
-        name: 'type',
+        name: 'kind',
         keep: false,
         default: 'default',
       },
@@ -38,7 +38,7 @@ export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
         fontColor: 'onViewInformative',
         IconComponent: Icon.InfoCircle,
       },
-      notice: {
+      error: {
         backgroundColor: 'errorContainer',
         fontColor: 'onViewError',
         IconComponent: Icon.InfoCircle,
