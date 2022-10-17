@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.2...vibrant-components-0.20.3) (2022-10-17)
+
+
+### Bug Fixes
+
+* TabGroup에서 탭 이동 시 첫번째 아이템으로 스크롤되는 이슈를 수정한다.  ([#356](https://github.com/pedaling/opensource/issues/356)) ([c04e5b7](https://github.com/pedaling/opensource/commit/c04e5b7350e2cb465741fd13fa019db4b7ee933f))
+
 ### [0.20.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.1...vibrant-components-0.20.2) (2022-10-17)
 
 
