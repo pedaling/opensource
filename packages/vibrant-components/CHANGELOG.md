@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.0...vibrant-components-0.20.1) (2022-10-15)
+
+
+### Features
+
+* add PositionSystemProps to Stack and Paper ([#352](https://github.com/pedaling/opensource/issues/352)) ([9181624](https://github.com/pedaling/opensource/commit/9181624526cd0bcc534d6924d458f1d9adb93ea6))
+
+## [0.20.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.19.5...vibrant-components-0.20.0) (2022-10-14)
+
+
+### Features
+
+* Callout 컴포넌트를 추가한다 ([#345](https://github.com/pedaling/opensource/issues/345)) ([56649f5](https://github.com/pedaling/opensource/commit/56649f5cde114dd57f13cb0098d6505da2ce6380))
+* ModalBottomSheet 문서를 작성한다 ([#343](https://github.com/pedaling/opensource/issues/343)) ([027edb0](https://github.com/pedaling/opensource/commit/027edb082119cdce4b7875b4b92898dd922fdb9f))
+
 ### [0.19.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.19.3...vibrant-components-0.19.4) (2022-10-13)
 
 

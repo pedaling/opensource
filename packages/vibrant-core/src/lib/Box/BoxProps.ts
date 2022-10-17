@@ -22,6 +22,7 @@ import type {
   TextSystemProps,
   TransformSystemProps,
   TypographySystemProps,
+  WebSystemProps,
 } from '../props';
 import {
   backgroundSystemProps,
@@ -41,6 +42,7 @@ import {
   textSystemProps,
   transformSystemProps,
   typographySystemProps,
+  webSystemProps,
 } from '../props';
 
 export type SystemProps = BackgroundSystemProps &
@@ -59,7 +61,8 @@ export type SystemProps = BackgroundSystemProps &
   SvgSystemProps &
   TextSystemProps &
   TypographySystemProps &
-  TransformSystemProps;
+  TransformSystemProps &
+  WebSystemProps;
 
 const systemProps = [
   ...backgroundSystemProps,
@@ -79,6 +82,7 @@ const systemProps = [
   ...textSystemProps,
   ...typographySystemProps,
   ...transformSystemProps,
+  ...webSystemProps,
 ];
 
 const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);

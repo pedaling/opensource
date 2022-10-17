@@ -1,7 +1,7 @@
 import type { ResponsiveValue } from '../../../types';
 
 export type PositionSystemProps = {
-  position?: ResponsiveValue<'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'>;
+  position?: ResponsiveValue<'absolute' | 'relative'>;
   top?: ResponsiveValue<number | string>;
   right?: ResponsiveValue<number | string>;
   bottom?: ResponsiveValue<number | string>;

@@ -3,6 +3,7 @@ import type {
   DisplaySystemProps,
   FlexboxSystemProps,
   OverflowSystemProps,
+  PositionSystemProps,
   ReactElementChild,
   ResponsiveValue,
   SizingSystemProps,
@@ -16,6 +17,7 @@ export type StackProps = DisplaySystemProps &
   FlexboxSystemProps &
   OverflowSystemProps &
   SizingSystemProps &
+  PositionSystemProps &
   SpacingSystemProps & {
     as?: SemanticTagName | 'div' | 'label';
     direction: ResponsiveValue<'horizontal' | 'vertical'>;

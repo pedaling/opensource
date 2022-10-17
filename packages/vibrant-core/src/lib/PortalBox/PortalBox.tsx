@@ -18,7 +18,7 @@ export const PortalBox = withPortalBoxVariation(({ innerRef, children, BoxCompon
   }
 
   return ReactDOM.createPortal(
-    <BoxComponent ref={innerRef} position="fixed" {...restProps}>
+    <BoxComponent ref={innerRef} web_position="fixed" {...restProps}>
       {children}
     </BoxComponent>,
     container as Element
