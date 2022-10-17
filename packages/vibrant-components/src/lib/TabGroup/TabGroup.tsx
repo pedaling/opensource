@@ -41,17 +41,17 @@ export const TabGroup = withTabGroupVariation(
               flexBasis={tabFlexBasis}
               hidden={element.props.hidden}
               key={element.props.id}
+              ref={(domRef: HTMLElement | null) => {
+                if (!domRef) {
+                  return;
+                }
+
+                tabRefs.current[element.props.id] = domRef;
+              }}
             >
               {cloneElement(element, {
                 active: element.props.id === tabId,
                 onClick: onTabChange,
-                ref: (domRef: HTMLElement | null) => {
-                  if (!domRef) {
-                    return;
-                  }
-
-                  tabRefs.current[element.props.id] = domRef;
-                },
               })}
             </HStack>
           ))}
