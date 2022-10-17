@@ -38,7 +38,7 @@ export const StackedPortalProvider: FC<StackedPortalProviderProps> = ({ children
 
       return [
         ...prevRenderedIds.flatMap(prevRenderedId => Object.values(heights.current[position][prevRenderedId])),
-        ...Object.entries(heights.current[position][id])
+        ...Object.entries(heights.current[position][id] ?? {})
           .filter(([key]) => Number(key) < order)
           .flatMap(([_, value]) => value),
       ];
@@ -83,7 +83,13 @@ export const StackedPortalProvider: FC<StackedPortalProviderProps> = ({ children
 
         const newOffset = (safeAreaInset ? generatedStyle[position] : offset) ?? 0;
 
-        heights.current[position][id][order].offset = newOffset;
+        heights.current[position][id] = {
+          ...heights.current[position][id],
+          [order]: {
+            ...heights.current[position][id]?.[order],
+            offset: newOffset,
+          },
+        };
 
         return {
           offset: newOffset,
