@@ -8,8 +8,8 @@ export default {
   args: {
     title: '타이틀을 입력하세요',
     type: 'warning',
-    action: 'Action',
-    onActionClick: () => {},
+    buttonText: 'Action',
+    onButtonClick: () => {},
   },
 } as ComponentMeta<typeof Callout>;
 
