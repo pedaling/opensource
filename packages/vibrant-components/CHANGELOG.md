@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.1...vibrant-components-0.20.2) (2022-10-17)
+
+
+### Bug Fixes
+
+* Callout 컴포넌트의 매개변수 이름을 업데이트하지 않은 걸 수정한다 ([#354](https://github.com/pedaling/opensource/issues/354)) ([2a3ea1d](https://github.com/pedaling/opensource/commit/2a3ea1da12da20962e4fc84cd92ccdb8a2fca383))
+* TextField의 버그를 수정한다 ([#353](https://github.com/pedaling/opensource/issues/353)) ([4303440](https://github.com/pedaling/opensource/commit/43034401b689fdf3eceedd1841e8f582d52cb1af))
+
 ### [0.20.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.0...vibrant-components-0.20.1) (2022-10-15)
 
 

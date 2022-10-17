@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.1...vibrant-core-0.20.2) (2022-10-17)
+
+
+### Bug Fixes
+
+* TextField의 버그를 수정한다 ([#353](https://github.com/pedaling/opensource/issues/353)) ([4303440](https://github.com/pedaling/opensource/commit/43034401b689fdf3eceedd1841e8f582d52cb1af))
+* updates TextChildren props types ([#355](https://github.com/pedaling/opensource/issues/355)) ([c47bbeb](https://github.com/pedaling/opensource/commit/c47bbebeed7333b9e715b02de20cf71875e608be))
+
 ### [0.20.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.0...vibrant-core-0.20.1) (2022-10-15)
 
 
