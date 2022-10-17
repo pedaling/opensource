@@ -24,15 +24,15 @@ export const ToastRenderer = () => {
 
     if (toastProps?.duration === 0) {
       return;
-    } else {
-      const timer = setTimeout(() => {
-        setShow(false);
-
-        toastProps?.onClose?.();
-      }, toastProps?.duration ?? DURATION);
-
-      return () => clearTimeout(timer);
     }
+
+    const timer = setTimeout(() => {
+      setShow(false);
+
+      toastProps?.onClose?.();
+    }, toastProps?.duration ?? DURATION);
+
+    return () => clearTimeout(timer);
   }, [show, toastProps, toastProps?.duration, toastProps?.toastKey]);
 
   return toastProps && isMount ? (
