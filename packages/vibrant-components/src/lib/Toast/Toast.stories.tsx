@@ -13,8 +13,6 @@ export default {
     kind: 'success',
     title: '커스텀 문구가 적용되었습니다',
     duration: 3000,
-    onButtonClick: () => {},
-    buttonText: '미리보기',
   },
 } as ComponentMeta<typeof Toast>;
 
@@ -27,12 +25,12 @@ export const Basic: ComponentStory<typeof Toast> = props => (
 );
 
 export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
-  const { showToast } = useToast();
+  const { showToast, closeToast } = useToast();
 
   return (
     <VStack mt={200} height="100%" width="100%">
       <Paper height="100%" width="100%" backgroundColor="surface2">
-        <VStack flex={1}>
+        <VStack flex={1} spacing={10}>
           <PressableBox
             width={100}
             height={50}
@@ -44,7 +42,26 @@ export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
               showToast(props);
             }}
           >
-            <Text>Click me</Text>
+            <Text color="onPrimary">Default toast</Text>
+          </PressableBox>
+          <PressableBox
+            width={100}
+            height={50}
+            alignItems="center"
+            justifyContent="center"
+            backgroundColor="error"
+            mx="auto"
+            onClick={() => {
+              showToast({
+                title: 'Error sample toast',
+                kind: 'error',
+                duration: 0,
+                buttonText: '닫기',
+                onButtonClick: closeToast,
+              });
+            }}
+          >
+            <Text color="onError">Error toast</Text>
           </PressableBox>
           <ToastRenderer />
         </VStack>

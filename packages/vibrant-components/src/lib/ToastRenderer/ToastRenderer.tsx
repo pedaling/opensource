@@ -4,7 +4,7 @@ import { StackedPortal } from '../StackedPortal';
 import { Toast } from '../Toast';
 import { useToastProps } from '../ToastProvider/ToastProvider';
 
-const DURATION = 2500;
+const DURATION = 5000;
 
 export const ToastRenderer = () => {
   const toastProps = useToastProps();
@@ -22,12 +22,18 @@ export const ToastRenderer = () => {
       return;
     }
 
+    if (toastProps?.duration === 0) {
+      return;
+    }
+
     const timer = setTimeout(() => {
       setShow(false);
+
+      toastProps?.onClose?.();
     }, toastProps?.duration ?? DURATION);
 
     return () => clearTimeout(timer);
-  }, [show, toastProps?.duration, toastProps?.toastKey]);
+  }, [show, toastProps, toastProps?.duration, toastProps?.toastKey]);
 
   return toastProps && isMount ? (
     <StackedPortal

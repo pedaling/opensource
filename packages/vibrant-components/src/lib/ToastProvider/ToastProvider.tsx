@@ -12,17 +12,21 @@ type ToastWithKeyProps = ToastProps & {
 };
 
 const ToastPropsContext = createContext<ToastWithKeyProps | undefined>(undefined);
-const ToastActionContext = createContext<(props: ToastProps) => void>(() => {});
+const ToastActionContext = createContext<(props: ToastProps | undefined) => void>(() => {});
 
 export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
   const [toastProps, setToastProps] = useState<ToastWithKeyProps | undefined>(undefined);
 
   const lastToastKeyRef = useRef(0);
 
-  const setToastWithKeyProps = (props: ToastProps) => {
+  const setToastWithKeyProps = (props: ToastProps | undefined) => {
     lastToastKeyRef.current++;
 
-    setToastProps({ ...props, toastKey: lastToastKeyRef.current });
+    if (props) {
+      setToastProps({ ...props, toastKey: lastToastKeyRef.current });
+    } else {
+      setToastProps(undefined);
+    }
   };
 
   return (
@@ -39,5 +43,6 @@ export const useToast = () => {
 
   return {
     showToast: (props: ToastProps) => setToastProps(props),
+    closeToast: () => setToastProps(undefined),
   };
 };

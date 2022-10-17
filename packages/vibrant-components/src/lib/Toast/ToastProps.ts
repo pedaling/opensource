@@ -14,12 +14,8 @@ export type ToastProps = {
       onButtonClick: () => void;
     }
   | {
-      buttonText: string;
-      onButtonClick?: never;
-    }
-  | {
       buttonText?: never;
-      onButtonClick: () => void;
+      onButtonClick?: never;
     }
 );
 
