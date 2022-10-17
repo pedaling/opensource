@@ -1,4 +1,5 @@
 import type { Ref } from 'react';
+import type { ScrollViewProps } from 'react-native';
 import type { ReactElementChildren } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
@@ -78,7 +79,8 @@ export type ScrollBoxProps = {
   ref?: Ref<any>;
   as?: ScrollBoxElements;
   children: ReactElementChildren;
-} & SystemProps;
+} & SystemProps &
+  Pick<ScrollViewProps, 'keyboardShouldPersistTaps'>;
 
 export const interpolation = injectContext(
   createInterpolation(systemProps, {

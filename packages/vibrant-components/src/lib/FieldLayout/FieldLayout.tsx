@@ -65,7 +65,7 @@ export const FieldLayout = withFieldLayoutVariation(
             <Text
               typography="body2"
               color="onView2"
-              hidden={!prefixText || !shrink}
+              hidden={!prefixText || (!shrink && Boolean(label))}
               flexShrink={0}
               pt={pt}
               pl={renderStart ? 12 : 16}
@@ -73,11 +73,13 @@ export const FieldLayout = withFieldLayoutVariation(
             >
               {prefixText}
             </Text>
+
             {renderField({ height: 50, color: valueColor, pt, pl, pr, pb })}
+
             <Text
               typography="body2"
               color="onView2"
-              hidden={!suffixText || !shrink}
+              hidden={!suffixText || (!shrink && Boolean(label))}
               flexShrink={0}
               pt={pt}
               pr={renderEnd || showClearButton ? 12 : 16}
