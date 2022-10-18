@@ -5,8 +5,8 @@ export const VStack = withVStackVariation(({ innerRef, alignHorizontal, alignVer
   <Stack
     direction="vertical"
     ref={innerRef}
-    {...stackProps}
-    justifyContent={alignVertical}
     alignItems={alignHorizontal}
+    justifyContent={alignVertical}
+    {...stackProps}
   />
 ));

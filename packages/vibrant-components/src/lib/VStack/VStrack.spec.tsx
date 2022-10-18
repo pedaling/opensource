@@ -11,7 +11,7 @@ describe('<VStack />', () => {
   describe('when VStack rendered', () => {
     beforeEach(async () => {
       renderer = render(
-        <VStack data-testid="vstack" alignment="center">
+        <VStack data-testid="vstack" alignVertical="center">
           <Box width={20} height={20} />
           <Box width={20} height={20} />
         </VStack>
@@ -21,11 +21,32 @@ describe('<VStack />', () => {
     });
 
     it('stack alignItem is center', () => {
-      expect(element).toHaveStyleRule('align-items', 'center');
+      expect(element).toHaveStyleRule('justify-content', 'center');
     });
 
     it('match snapshot', () => {
       expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('when VStack vertical and horizontal alignment varies', () => {
+    beforeEach(async () => {
+      renderer = render(
+        <VStack data-testid="hstack-alignment" alignVertical="space-around" alignHorizontal="start">
+          <Box width={20} height={20} />
+          <Box width={20} height={20} />
+        </VStack>
+      );
+
+      element = await renderer.findByTestId('hstack-alignment');
+    });
+
+    it('stack align-items is start', () => {
+      expect(element).toHaveStyleRule('align-items', 'start');
+    });
+
+    it('stack justify-content is space-between', () => {
+      expect(element).toHaveStyleRule('justify-content', 'space-around');
     });
   });
 });

@@ -5,8 +5,8 @@ export const HStack = withHStackVariation(({ innerRef, alignHorizontal, alignVer
   <Stack
     direction="horizontal"
     ref={innerRef}
-    {...stackProps}
-    justifyContent={alignHorizontal}
     alignItems={alignVertical}
+    justifyContent={alignHorizontal}
+    {...stackProps}
   />
 ));

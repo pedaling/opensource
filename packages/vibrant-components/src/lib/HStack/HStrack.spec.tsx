@@ -11,7 +11,7 @@ describe('<HStack />', () => {
   describe('when HStack rendered', () => {
     beforeEach(async () => {
       renderer = render(
-        <HStack data-testid="hstack" alignment="center">
+        <HStack data-testid="hstack" alignHorizontal="center">
           <Box width={20} height={20} />
           <Box width={20} height={20} />
         </HStack>
@@ -26,6 +26,27 @@ describe('<HStack />', () => {
 
     it('match snapshot', () => {
       expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('when HStack vertical and horizontal alignment varies', () => {
+    beforeEach(async () => {
+      renderer = render(
+        <HStack data-testid="hstack-alignment" alignVertical="end" alignHorizontal="space-between">
+          <Box width={20} height={20} />
+          <Box width={20} height={20} />
+        </HStack>
+      );
+
+      element = await renderer.findByTestId('hstack-alignment');
+    });
+
+    it('stack align-items is end', () => {
+      expect(element).toHaveStyleRule('align-items', 'end');
+    });
+
+    it('stack justify-content is space-between', () => {
+      expect(element).toHaveStyleRule('justify-content', 'space-between');
     });
   });
 });
