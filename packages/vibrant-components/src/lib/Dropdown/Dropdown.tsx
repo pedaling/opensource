@@ -91,7 +91,7 @@ export const Dropdown = withDropdownVariation(
       [rootMode]
     );
 
-    useLockBodyScroll(isMobile && (isOpen || visible));
+    useLockBodyScroll(isOpen || visible);
 
     const opener = useMemo(() => renderOpener({ open: () => setIsOpen(!isOpen), isOpen }), [isOpen, renderOpener]);
 
