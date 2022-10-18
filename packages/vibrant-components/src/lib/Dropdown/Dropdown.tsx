@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
-  OverlayBox,
   ScrollBox,
   ThemeProvider,
   getWindowDimensions,
@@ -70,7 +69,6 @@ const getOffsetAvoidingOverflowByPosition = (
 export const Dropdown = withDropdownVariation(
   ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
     const openerRef = useRef<HTMLElement>(null);
-    const targetRef = useRef<HTMLElement>(null);
     const [isOpen, setIsOpen] = useState(open);
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
@@ -120,7 +118,7 @@ export const Dropdown = withDropdownVariation(
             spacing
           );
 
-          setOffset({ x: offsetX, y: offsetY });
+          setOffset({ x: openerRect.x + offsetX, y: openerRect.y + offsetY });
 
           setVisible(true);
         }
@@ -155,49 +153,51 @@ export const Dropdown = withDropdownVariation(
     }, [visible]);
 
     return (
-      <Box position="relative">
+      <>
         <Box ref={openerRef}>{opener}</Box>
         {isOpen && !isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Transition
-              animation={{
-                opacity: visible ? 1 : 0,
-                x: offset.x,
-                y: offset.y,
-              }}
-              style={{
-                x: offset.x,
-                y: offset.y,
-              }}
-              duration={200}
-            >
-              <OverlayBox open={true} ref={targetRef} onDismiss={closeDropdown} targetRef={openerRef} zIndex={Z_INDEX}>
-                <Box
-                  backgroundColor="surface2"
-                  py={CONTENT_PADDING}
-                  elevationLevel={4}
-                  borderRadiusLevel={1}
-                  width={[280, 280, 240]}
-                >
-                  <Transition
-                    animation={
-                      visible
-                        ? {
-                            height: contentHeight,
-                          }
-                        : {}
-                    }
-                    duration={200}
+            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} color="transparent">
+              <Transition
+                animation={{
+                  opacity: visible ? 1 : 0,
+                  x: offset.x,
+                  y: offset.y,
+                }}
+                style={{
+                  x: offset.x,
+                  y: offset.y,
+                }}
+                duration={200}
+              >
+                <Box>
+                  <Box
+                    backgroundColor="surface2"
+                    py={CONTENT_PADDING}
+                    elevationLevel={4}
+                    borderRadiusLevel={1}
+                    width={[280, 280, 240]}
                   >
-                    <Box overflow="hidden" height={contentHeight}>
-                      <Box onLayout={handleContentResize} flexShrink={0}>
-                        {renderContents({ close: closeDropdown })}
+                    <Transition
+                      animation={
+                        visible
+                          ? {
+                              height: contentHeight,
+                            }
+                          : {}
+                      }
+                      duration={200}
+                    >
+                      <Box overflow="hidden" height={contentHeight}>
+                        <Box onLayout={handleContentResize} flexShrink={0}>
+                          {renderContents({ close: closeDropdown })}
+                        </Box>
                       </Box>
-                    </Box>
-                  </Transition>
+                    </Transition>
+                  </Box>
                 </Box>
-              </OverlayBox>
-            </Transition>
+              </Transition>
+            </Backdrop>
           </ThemeProvider>
         )}
         {isMobile && (
@@ -241,7 +241,7 @@ export const Dropdown = withDropdownVariation(
             </Backdrop>
           </ThemeProvider>
         )}
-      </Box>
+      </>
     );
   }
 );
