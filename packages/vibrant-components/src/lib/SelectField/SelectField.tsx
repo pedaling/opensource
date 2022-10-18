@@ -214,7 +214,7 @@ export const SelectField = withSelectFieldVariation(
             borderColor={borderColor}
             borderRadius={2}
             cursor={disabled ? 'default' : 'pointer'}
-            onClick={() => (isOpened ? close() : open(-1))}
+            onPressIn={() => (isOpened ? close() : open(-1))}
             {...restProps}
           >
             <HStack alignItems="center" width="100%">
