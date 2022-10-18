@@ -8,7 +8,7 @@ import { withToastVariation } from './ToastProps';
 
 export const Toast = withToastVariation(
   ({ innerRef, IconComponent, color, title, buttonText, onButtonClick, ...restProps }) => (
-    <HStack ref={innerRef} {...restProps} mx={20} mb={[20, 0]} mt={[0, 16]} flexGrow={[1, 0]} alignment="center">
+    <HStack ref={innerRef} {...restProps} mx={20} mb={[20, 0]} mt={[0, 16]} flexGrow={[1, 0]} alignHorizontal="center">
       <Paper
         elevationLevel={1}
         maxWidth={724}
