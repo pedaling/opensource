@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.3...vibrant-components-0.20.4) (2022-10-18)
+
+
+### Bug Fixes
+
+* fix SelectOptionGroup does not close when click SelectField again ([#358](https://github.com/pedaling/opensource/issues/358)) ([078bcd6](https://github.com/pedaling/opensource/commit/078bcd6abfab04f479ae67976dff4dbc36d1f7cb))
+
 ### [0.20.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.2...vibrant-components-0.20.3) (2022-10-17)
 
 

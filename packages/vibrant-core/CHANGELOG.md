@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.3...vibrant-core-0.20.4) (2022-10-18)
+
+
+### Bug Fixes
+
+* add optional chaining ([#357](https://github.com/pedaling/opensource/issues/357)) ([e5194f2](https://github.com/pedaling/opensource/commit/e5194f283cc4f6086f9c01929290b046b8caff2d))
+
 ### [0.20.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.2...vibrant-core-0.20.3) (2022-10-17)
 
 ### [0.20.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.1...vibrant-core-0.20.2) (2022-10-17)
