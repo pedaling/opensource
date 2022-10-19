@@ -13,8 +13,12 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'nav' | 'section';
 
+export type Alignment = 'center' | 'end' | 'space-between' | 'start';
+
+type AlignmentStyle = 'center' | 'flex-end' | 'flex-start' | 'space-between';
+
 export type StackProps = DisplaySystemProps &
-  FlexboxSystemProps &
+  Omit<FlexboxSystemProps, 'alignItems' | 'justifyContent'> &
   OverflowSystemProps &
   SizingSystemProps &
   PositionSystemProps &
@@ -22,9 +26,25 @@ export type StackProps = DisplaySystemProps &
     as?: SemanticTagName | 'div' | 'label';
     direction: ResponsiveValue<'horizontal' | 'vertical'>;
     ref?: RefObject<HTMLElement>;
-    spacing?: ResponsiveValue<number>;
+    spacing?: ResponsiveValue<number | 'between'>;
     children?: ReactElementChild | ReactElementChild[];
+    alignHorizontal?: ResponsiveValue<Alignment>;
+    alignVertical?: ResponsiveValue<Alignment>;
   };
+
+const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  'space-between': 'flex-start',
+};
+
+const MainAlignmentMap: { [key in Alignment]: AlignmentStyle } = {
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  'space-between': 'space-between',
+};
 
 export const withStackVariation = withVariation<StackProps>('Stack')(
   propVariant({
@@ -43,6 +63,38 @@ export const withStackVariation = withVariation<StackProps>('Stack')(
         flexDirection: 'column',
       },
     } as const,
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'direction',
+        keep: true,
+        responsive: true,
+      },
+      {
+        name: 'alignHorizontal',
+        responsive: true,
+        default: 'start' as const,
+      },
+      {
+        name: 'alignVertical',
+        responsive: true,
+        default: 'start' as const,
+      },
+    ],
+    variants: ({ direction, alignHorizontal, alignVertical }) => {
+      if (direction === 'horizontal') {
+        return {
+          justifyContent: MainAlignmentMap[alignHorizontal],
+          alignItems: CrossAlignmentMap[alignVertical],
+        };
+      }
+
+      return {
+        justifyContent: MainAlignmentMap[alignVertical],
+        alignItems: CrossAlignmentMap[alignHorizontal],
+      };
+    },
   }),
   propVariant({
     props: [
