@@ -7,5 +7,6 @@ export type TextSystemProps = {
   whiteSpace?: ResponsiveValue<'break-spaces' | 'normal' | 'nowrap' | 'pre-line' | 'pre-wrap' | 'pre'>;
   wordBreak?: ResponsiveValue<'break-all' | 'break-word' | 'keep-all' | 'normal'>;
   wordWrap?: ResponsiveValue<'break-word' | 'normal'>;
+  overflowWrap?: ResponsiveValue<'anywhere' | 'break-word' | 'normal'>;
   lineLimit?: number;
 };
