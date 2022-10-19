@@ -11,7 +11,7 @@
       }
     },
     "typecheck": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["yarn tsc --project ./packages/vibrant-website/tsconfig.json"]
       }
@@ -27,9 +27,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/vibrant-website/**/*.{ts,tsx,js,jsx,mdx}"
-        ]
+        "lintFilePatterns": ["packages/vibrant-website/**/*.{ts,tsx,js,jsx,mdx}"]
       }
     }
   }

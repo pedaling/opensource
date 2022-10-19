@@ -5,7 +5,7 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-icons",
@@ -13,6 +13,7 @@
         "project": "packages/vibrant-icons/package.json",
         "entryFile": "packages/vibrant-icons/src/index.ts",
         "external": ["react/jsx-runtime"],
+        "generateExportsField": true,
         "format": ["esm", "cjs"],
         "buildableProjectDepsInPackageJsonType": "dependencies",
         "rollupConfig": "tools/config/rollup-config",
@@ -27,11 +28,9 @@
       }
     },
     "typecheck": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/vibrant-icons/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/vibrant-icons/tsconfig.lib.json"]
       }
     },
     "lint": {
@@ -43,7 +42,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/vibrant-icons"],
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-icons"],
       "options": {
         "jestConfig": "packages/vibrant-icons/jest.config.ts",
         "passWithNoTests": true
@@ -81,7 +80,7 @@
       }
     },
     "generate-icons": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "npx @svgr/cli -d packages/vibrant-icons/src/lib/Icon/generated --config-file packages/vibrant-icons/.svgrrc.js --typescript packages/vibrant-icons/assets/icons",
@@ -92,7 +91,7 @@
       }
     },
     "optimize-icons": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "npx svgo@latest -r packages/vibrant-icons/assets/icons -o packages/vibrant-icons/assets/icons --config packages/vibrant-icons/svgo.config.js"

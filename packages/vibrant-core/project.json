@@ -5,12 +5,20 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        },
+        "build-native"
+      ],
       "options": {
         "outputPath": "dist/packages/vibrant-core",
         "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
         "project": "packages/vibrant-core/package.json",
+        "deleteOutputPath": false,
         "entryFile": "packages/vibrant-core/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["esm", "cjs"],
@@ -24,21 +32,30 @@
             "output": "."
           }
         ]
-      },
-      "configurations": {
-        "native": {
-          "outputPath": "dist/packages/vibrant-core-native",
-          "project": "packages/vibrant-core/package.native.json",
-          "moduleSuffixes": [".native", ""]
-        }
+      }
+    },
+    "build-native": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/vibrant-core",
+        "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
+        "moduleSuffixes": [".native", ""],
+        "project": "packages/vibrant-core/package.json",
+        "outputFileName": "index.native",
+        "entryFile": "packages/vibrant-core/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "forceOutputJsExtension": true,
+        "format": ["cjs"],
+        "rollupConfig": "tools/config/rollup-config",
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "compiler": "babel"
       }
     },
     "typecheck": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/vibrant-core/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/vibrant-core/tsconfig.lib.json"]
       }
     },
     "lint": {
@@ -50,7 +67,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/vibrant-core"],
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-core"],
       "options": {
         "jestConfig": "packages/vibrant-core/jest.config.ts",
         "passWithNoTests": true
@@ -93,12 +110,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": [
-          "vibrant-core:github",
-          "vibrant-core:deploy",
-          "vibrant-core:generate-native-package",
-          "vibrant-core:deploy-native"
-        ]
+        "postTargets": ["vibrant-core:github", "vibrant-core:deploy"]
       }
     },
     "github": {
@@ -112,20 +124,6 @@
       "executor": "ngx-deploy-npm:deploy",
       "options": {
         "access": "public"
-      }
-    },
-    "generate-native-package": {
-      "executor": "@class101/workspace-plugin:updateNativePackageJson",
-      "options": {
-        "packageJsonName": "package.json",
-        "nativePackageJsonName": "package.native.json"
-      }
-    },
-    "deploy-native": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public",
-        "buildTarget": "native"
       }
     }
   }

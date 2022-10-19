@@ -5,7 +5,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-theme",
@@ -13,6 +13,7 @@
         "project": "packages/vibrant-theme/package.json",
         "entryFile": "packages/vibrant-theme/src/index.ts",
         "external": ["react/jsx-runtime"],
+        "generateExportsField": true,
         "format": ["esm", "cjs"],
         "buildableProjectDepsInPackageJsonType": "dependencies",
         "rollupConfig": "tools/config/rollup-config",
@@ -27,11 +28,9 @@
       }
     },
     "typecheck": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/vibrant-theme/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/vibrant-theme/tsconfig.lib.json"]
       }
     },
     "lint": {
@@ -43,7 +42,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/vibrant-theme"],
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-theme"],
       "options": {
         "jestConfig": "packages/vibrant-theme/jest.config.ts",
         "passWithNoTests": true

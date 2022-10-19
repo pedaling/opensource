@@ -23,7 +23,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "nx start vibrant-example-app"
       }
@@ -41,7 +41,7 @@
       }
     },
     "load-story": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": [
           "nx g @class101/workspace-plugin:generateStoryImport --outputFile=./packages/vibrant-example-app/src/stories.ts --stories=./packages/**/*.stories.tsx",
@@ -114,7 +114,7 @@
       "options": {}
     },
     "typecheck": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["yarn tsc --project ./packages/vibrant-example-app/tsconfig.app.json"]
       }
@@ -128,7 +128,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/vibrant-example-app"],
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-example-app"],
       "options": {
         "jestConfig": "packages/vibrant-example-app/jest.config.ts",
         "passWithNoTests": true

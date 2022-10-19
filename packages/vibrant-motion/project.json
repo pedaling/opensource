@@ -5,7 +5,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-motion",
@@ -13,6 +13,7 @@
         "project": "packages/vibrant-motion/package.json",
         "entryFile": "packages/vibrant-motion/src/index.ts",
         "external": ["react/jsx-runtime"],
+        "generateExportsField": true,
         "format": ["esm", "cjs"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "buildableProjectDepsInPackageJsonType": "dependencies",
@@ -27,11 +28,9 @@
       }
     },
     "typecheck": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/vibrant-motion/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/vibrant-motion/tsconfig.lib.json"]
       }
     },
     "lint": {
@@ -43,7 +42,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/vibrant-motion"],
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-motion"],
       "options": {
         "jestConfig": "packages/vibrant-motion/jest.config.ts",
         "passWithNoTests": true
