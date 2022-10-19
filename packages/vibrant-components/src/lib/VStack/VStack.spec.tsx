@@ -32,7 +32,7 @@ describe('<VStack />', () => {
   describe('when VStack vertical and horizontal alignment varies', () => {
     beforeEach(async () => {
       renderer = render(
-        <VStack data-testid="hstack-alignment" alignVertical="space-around" alignHorizontal="start">
+        <VStack data-testid="hstack-alignment" alignVertical="space-between" alignHorizontal="start">
           <Box width={20} height={20} />
           <Box width={20} height={20} />
         </VStack>
@@ -42,11 +42,11 @@ describe('<VStack />', () => {
     });
 
     it('stack align-items is start', () => {
-      expect(element).toHaveStyleRule('align-items', 'start');
+      expect(element).toHaveStyleRule('align-items', 'flex-start');
     });
 
     it('stack justify-content is space-between', () => {
-      expect(element).toHaveStyleRule('justify-content', 'space-around');
+      expect(element).toHaveStyleRule('justify-content', 'space-between');
     });
   });
 });

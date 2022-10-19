@@ -42,7 +42,7 @@ describe('<HStack />', () => {
     });
 
     it('stack align-items is end', () => {
-      expect(element).toHaveStyleRule('align-items', 'end');
+      expect(element).toHaveStyleRule('align-items', 'flex-end');
     });
 
     it('stack justify-content is space-between', () => {
