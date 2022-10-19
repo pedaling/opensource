@@ -7,7 +7,7 @@ export default {
   component: Callout,
   args: {
     title: '타이틀을 입력하세요',
-    type: 'warning',
+    kind: 'warning',
     buttonText: 'Action',
     onButtonClick: () => {},
   },

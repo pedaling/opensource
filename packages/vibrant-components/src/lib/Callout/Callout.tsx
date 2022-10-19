@@ -17,12 +17,19 @@ export const Callout = withCalloutVariation(
           <Box mt={2}>
             <IconComponent.Fill fill={fontColor} size={16} />
           </Box>
-          <Title level={6} weight="bold" color={fontColor}>
+          <Title level={6} weight="bold" color={fontColor} overflowWrap="anywhere">
             {title}
           </Title>
         </HStack>
         {description ? (
-          <Text mt={8} mb={description ? 2 : 0} lineHeight={18} fontSize={14} fontWeight="regular">
+          <Text
+            mt={8}
+            mb={description ? 2 : 0}
+            lineHeight={18}
+            fontSize={14}
+            fontWeight="regular"
+            overflowWrap="anywhere"
+          >
             {description}
           </Text>
         ) : null}
