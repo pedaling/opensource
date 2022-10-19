@@ -107,7 +107,7 @@ export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
     {Object.entries(palettes).map(([key, value]) => {
       if (typeof value === 'object') {
         return (
-          <HStack flexWrap="wrap" flexShrink={0}>
+          <HStack flexWrap="wrap" key={key} flexShrink={0}>
             {Object.entries(value).map(([numberKey, numberValue]) => (
               <VStack key={`${numberValue}_stack`} alignVertical="center" spacing={2}>
                 <Text fontWeight="bold" fontSize={4}>{`${numberKey}`}</Text>
