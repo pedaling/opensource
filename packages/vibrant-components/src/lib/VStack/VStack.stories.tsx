@@ -11,8 +11,11 @@ export default {
 } as ComponentMeta<typeof VStack>;
 
 export const Basic: ComponentStory<typeof VStack> = props => (
-  <VStack {...props}>
-    <Box width={200} height={200} backgroundColor="primary" />
-    <Box width={200} height={200} backgroundColor="primary" />
+  <VStack {...props} flex={1} width="100%" height="100%">
+    <Box width={100} height={100} backgroundColor="primary" />
+    <Box width={100} height={100} backgroundColor="primary" />
+    <Box width={200} height={100} backgroundColor="primary" />
+    <Box width={100} height={100} backgroundColor="primary" />
+    <Box width={100} height={100} backgroundColor="primary" />
   </VStack>
 );

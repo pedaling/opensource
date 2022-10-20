@@ -109,7 +109,7 @@ export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
         return (
           <HStack flexWrap="wrap" flexShrink={0}>
             {Object.entries(value).map(([numberKey, numberValue]) => (
-              <VStack key={`${numberValue}_stack`} alignment="center" spacing={2}>
+              <VStack key={`${numberValue}_stack`} alignVertical="center" spacing={2}>
                 <Text fontWeight="bold" fontSize={4}>{`${numberKey}`}</Text>
                 <PressableBox
                   onClick={() => {
@@ -127,7 +127,7 @@ export const ColorBasicChips: ComponentStory<typeof HStack> = () => (
         );
       } else {
         return (
-          <VStack key={`${value}_stack`} alignment="center" spacing={2}>
+          <VStack key={`${value}_stack`} alignHorizontal="center" spacing={2}>
             <Text fontWeight="bold" fontSize={4}>{`${key}`}</Text>
             <PressableBox
               onClick={() => {

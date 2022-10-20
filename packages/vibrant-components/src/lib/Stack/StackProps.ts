@@ -13,8 +13,12 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'nav' | 'section';
 
+export type Alignment = 'center' | 'end' | 'space-between' | 'start' | 'stretch';
+
+type AlignmentStyle = 'center' | 'flex-end' | 'flex-start' | 'space-between' | 'stretch';
+
 export type StackProps = DisplaySystemProps &
-  FlexboxSystemProps &
+  Omit<FlexboxSystemProps, 'alignItems' | 'justifyContent'> &
   OverflowSystemProps &
   SizingSystemProps &
   PositionSystemProps &
@@ -24,7 +28,25 @@ export type StackProps = DisplaySystemProps &
     ref?: RefObject<HTMLElement>;
     spacing?: ResponsiveValue<number>;
     children?: ReactElementChild | ReactElementChild[];
+    alignHorizontal?: ResponsiveValue<Alignment>;
+    alignVertical?: ResponsiveValue<Alignment>;
   };
+
+const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  'space-between': 'flex-start',
+  stretch: 'stretch',
+};
+
+const MainAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'stretch'> } = {
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  'space-between': 'space-between',
+  stretch: 'flex-start',
+};
 
 export const withStackVariation = withVariation<StackProps>('Stack')(
   propVariant({
@@ -43,6 +65,36 @@ export const withStackVariation = withVariation<StackProps>('Stack')(
         flexDirection: 'column',
       },
     } as const,
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'direction',
+        keep: true,
+        responsive: true,
+      },
+      {
+        name: 'alignHorizontal',
+        responsive: true,
+      },
+      {
+        name: 'alignVertical',
+        responsive: true,
+      },
+    ],
+    variants: ({ direction, alignHorizontal, alignVertical }) => {
+      if (direction === 'horizontal') {
+        return {
+          justifyContent: MainAlignmentMap[alignHorizontal ?? 'start'],
+          alignItems: CrossAlignmentMap[alignVertical ?? 'stretch'],
+        };
+      }
+
+      return {
+        justifyContent: MainAlignmentMap[alignVertical ?? 'start'],
+        alignItems: CrossAlignmentMap[alignHorizontal ?? 'stretch'],
+      };
+    },
   }),
   propVariant({
     props: [

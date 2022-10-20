@@ -60,9 +60,9 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
           }}
           hidden={true}
         />
-        <VStack alignment="center" spacing={8}>
-          <HStack alignment="center" flexWrap="wrap" mx={-4} my={-6}>
-            <HStack alignment="center" my={6}>
+        <VStack alignHorizontal="center" spacing={8}>
+          <HStack alignHorizontal="center" flexWrap="wrap" mx={-4} my={-6}>
+            <HStack alignHorizontal="center" my={6}>
               {Array.from({ length: splitIndex }).map((_, index) => (
                 <VStack key={index} mx={4}>
                   <VerificationCodeItem
@@ -77,7 +77,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
                 </VStack>
               ))}
             </HStack>
-            <HStack alignment="center" my={6}>
+            <HStack alignHorizontal="center" my={6}>
               {Array.from({ length: length - splitIndex }).map((_, index) => (
                 <VStack key={index + splitIndex} mx={4}>
                   <VerificationCodeItem

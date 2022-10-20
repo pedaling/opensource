@@ -8,7 +8,7 @@ import { withToastVariation } from './ToastProps';
 
 export const Toast = withToastVariation(
   ({ innerRef, IconComponent, color, title, buttonText, onButtonClick, ...restProps }) => (
-    <HStack ref={innerRef} {...restProps} mx={20} mb={[20, 0]} mt={[0, 16]} flexGrow={[1, 0]} alignment="center">
+    <HStack ref={innerRef} {...restProps} mx={20} mb={[20, 0]} mt={[0, 16]} flexGrow={[1, 0]} alignHorizontal="center">
       <Paper
         elevationLevel={1}
         maxWidth={724}
@@ -16,7 +16,7 @@ export const Toast = withToastVariation(
         backgroundColor="inverseSurface"
         width={['100%', 'auto']}
       >
-        <HStack px={16} py={12} alignItems="center" flexGrow={[1, 0]}>
+        <HStack px={16} py={12} alignVertical="center" flexGrow={[1, 0]}>
           {IconComponent && (
             <VStack mr={8} flexShrink={0}>
               <IconComponent size={18} fill={color} />

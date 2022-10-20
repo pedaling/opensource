@@ -184,6 +184,14 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 @media screen and (min-width: 640px) {
@@ -553,6 +561,14 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 @media screen and (min-width: 640px) {

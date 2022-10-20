@@ -17,6 +17,14 @@ exports[`<Stack /> when empty stack rendered match snapshot 1`] = `
   flex-shrink: 1;
   box-sizing: border-box;
   position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 <div>
@@ -44,6 +52,14 @@ exports[`<Stack /> when horizontal stack with spacing rendered match snapshot 1`
   flex-shrink: 1;
   box-sizing: border-box;
   position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-1 {
@@ -125,6 +141,14 @@ exports[`<Stack /> when responsive direction stack rendered match snapshot 1`] =
   flex-shrink: 1;
   box-sizing: border-box;
   position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 @media screen and (min-width: 640px) {
@@ -221,6 +245,14 @@ exports[`<Stack /> when vertical stack with spacing rendered match snapshot 1`] 
   flex-shrink: 1;
   box-sizing: border-box;
   position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
 .emotion-1 {

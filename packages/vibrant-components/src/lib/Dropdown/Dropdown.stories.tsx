@@ -27,14 +27,14 @@ const DropdownContent = () => {
   ) : (
     <VStack spacing={20}>
       <Pressable onClick={() => setOpened(true)}>
-        <HStack px={20} alignment="space-between" alignItems="flex-end">
+        <HStack px={20} alignHorizontal="space-between" alignItems="flex-end">
           <Body level={2}>화질</Body>
           <Body level={3} color="onView2">
             1080p
           </Body>
         </HStack>
       </Pressable>
-      <HStack px={20} alignment="space-between" alignItems="flex-end">
+      <HStack px={20} alignHorizontal="space-between" alignItems="flex-end">
         <Body level={2}>자동 재생</Body>
         <Body level={3} color="onView2">
           켜짐

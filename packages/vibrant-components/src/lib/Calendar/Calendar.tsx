@@ -120,7 +120,7 @@ export const Calendar = withCalendarVariation(
         {...restProps}
       >
         <VStack spacing={24}>
-          <HStack spacing={8} alignItems="center" mx={12}>
+          <HStack spacing={8} alignVertical="center" mx={12}>
             <Pressable onClick={movePrevMonth}>
               <Icon.ChevronLeft.Regular size={16} />
             </Pressable>

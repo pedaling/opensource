@@ -13,7 +13,7 @@ export default {
 } as ComponentMeta<typeof VerificationCodeField>;
 
 export const Basic: ComponentStory<typeof VerificationCodeField> = props => (
-  <VStack alignment="center" width="100%" py={20}>
+  <VStack alignHorizontal="center" width="100%" py={20}>
     <VerificationCodeField {...props} />
   </VStack>
 );
