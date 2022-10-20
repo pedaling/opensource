@@ -1,0 +1,88 @@
+---
+title: Toast
+sidebar_position: 4
+---
+
+# Toast
+
+Toast는 사용자가 행동한 결과 값에 따른 정보를 전달해야 할때 사용하는 컴포넌트 입니다.  
+유저의 주의를 끌기 위해 간결하며 중요한 메세지를 담아 잠시간 보여진 후 사라집니다.
+
+```jsx live
+<Toast
+  kind="success"
+  title="커스텀 문구가 적용되었습니다"
+  duration={3000}
+  onButtonClick={() => {}}
+  buttonText="미리보기"
+/>
+```
+
+## How to use
+
+Toast 를 사용하기 위해서는 상위 컴포넌트를 [ToastProvider](../vibrant-core/toast-provider) 로 감싸주어야 합니다.
+
+[ToastProvider](../vibrant-core/toast-provider) 의 사용법을 따라한 후 아래 내용을 따라하세요.
+
+`<ToastRenderer />` 는 Toast 를 사용하려고 하는 프로젝트 상단에 `<ToastProvider />` 처럼 추가해주어야 정상적으로 Toast 가 훅을 통해 마운트 될 수 있습니다.
+
+Toast 는 `useToast` 훅을 통해 반환된 함수 `showToast` 를 사용해 Toast 를 마운트 시킬 수 있습니다.
+
+`showToast` 에 전달한 `props` 속성을 반영한 Toast 가 생성되며, Toast 를 렌더링 하려는 컴포넌트, 페이지 내에 `<ToastRenderer />` 컴포넌트를 삽입해야 합니다.
+
+```jsx
+import {
+  ToastRenderer,
+  useToast,
+} from '@vibrant-ui/components';
+
+const ContentWithToast = (props) => {
+  const { showToast } = useToast();
+
+  return (
+    <VStack mt={200} height="100%" width="100%" flex={1}>
+      <PressableBox
+        onClick={() => {
+          showToast({
+            kind: 'success',
+            title: '커스텀 문구가 적용되었습니다',
+            buttonText: '미리보기',
+            onButtonClick: () => {},
+          });
+        }}
+      >
+        <Text>Show my toast!</Text>
+      </PressableBox>
+      <ToastRenderer />
+      {/* //You should insert <ToastRenderer /> like above! */}
+    </VStack>
+  );
+};
+```
+
+## Properties
+
+| Prop          | Type                        | Default | Description                                                             |
+| ------------- | --------------------------- | ------- | ----------------------------------------------------------------------- |
+| title\*       | string\|node                | -       | Toast가 보여줄 문구를 정합니다.                                         |
+| [kind](#kind) | default \| success \| error | default | Toast 의 종류를 지정합니다                                              |
+| buttonText    | string                      | --      | Toast에 들어갈 버튼의 텍스트를 지정합니다.                              |
+| onButtonClick | fuinction                   | --      | Toast의 button이 눌렸을 경우 실행할 동작을 지정합니다.                  |
+| duration      | number                      | 5000    | Toast가 onClose 함수를 자동으로 실행하기 까지 걸리는 시간을 지정합니다. |
+| onClose       | function                    | --      | Toast가 닫히기를 요청받을 때 지정한 함수가 실행됩니다.                  |
+
+## Usage
+
+### kind
+
+Toast 의 종류를 지정할 수 있습니다.
+
+사용 가능한 옵션으로는 `default` `success` `error` 가 있습니다.
+
+```jsx live
+<VStack spacing={8}>
+  <Toast kind="default" title="Default toast" />
+  <Toast kind="success" title="Success toast" />
+  <Toast kind="error" title="Error toast" />
+</VStack>
+```
