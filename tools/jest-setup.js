@@ -1,4 +1,7 @@
 /* eslint-disable no-undef */
+import { TextDecoder, TextEncoder } from 'util';
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
