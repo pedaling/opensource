@@ -1,106 +1,68 @@
-import { cloneElement, useCallback, useEffect, useMemo, useRef } from 'react';
+import type { MouseEventHandler } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import type { Rect } from '@vibrant-ui/utils';
 import { getElementRect } from '@vibrant-ui/utils';
 import { Box } from '../Box';
+import { PortalBox } from '../PortalBox';
+import { useLockBodyScroll } from '../useLockBodyScroll';
 import { withOverlayBoxVariation } from './OverlayBoxProps';
 
-export const OverlayBox = withOverlayBoxVariation(
-  ({ open, onDismiss, targetRef: _, innerRef, children, ...boxProps }) => {
-    const targetRef = useRef<HTMLElement | null>(null);
-    const targetRectRef = useRef<Rect | null>(null);
+export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, targetRef, children, ...boxProps }) => {
+  const [targetRect, setTargetRect] = useState<Rect | null>(null);
 
-    useEffect(() => {
-      if (!open) {
+  useLockBodyScroll(open);
+
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    getElementRect(targetRef.current).then(rect => setTargetRect(rect));
+  }, [open, targetRef]);
+
+  const handleTargetTouchEnd: MouseEventHandler = useCallback(
+    ({ clientX, clientY }) => {
+      if (!targetRect) {
         return;
       }
 
-      const onPressDown = async () => {
-        if (!targetRef?.current) {
-          return;
-        }
+      const isEventTargetInTargetRect =
+        clientX >= targetRect.x &&
+        clientX <= targetRect.x + targetRect.width &&
+        clientY >= targetRect.y &&
+        clientY <= targetRect.y + targetRect.height;
 
-        targetRectRef.current = await getElementRect(targetRef.current);
-      };
+      if (!isEventTargetInTargetRect) {
+        return;
+      }
 
-      const onPressUp = async (event: MouseEvent | TouchEvent) => {
-        const { pageX, pageY } = event instanceof MouseEvent ? event : event.changedTouches[0];
+      onDismiss?.();
 
-        if (!targetRef?.current || !targetRectRef.current) {
-          return;
-        }
+      setTargetRect(null);
+    },
+    [onDismiss, targetRect]
+  );
 
-        const isEventTargetInTargetRect =
-          pageX >= targetRectRef.current.x &&
-          pageX <= targetRectRef.current.x + targetRectRef.current.width &&
-          pageY >= targetRectRef.current.y &&
-          pageY <= targetRectRef.current.y + targetRectRef.current.height;
-
-        if (!isEventTargetInTargetRect) {
-          onDismiss?.();
-        }
-
-        targetRectRef.current = null;
-      };
-
-      requestAnimationFrame(() => {
-        document.addEventListener('touchstart', onPressDown, { passive: false });
-
-        document.addEventListener('mousedown', onPressDown, { passive: false });
-
-        document.addEventListener('mouseup', onPressUp, { passive: false });
-
-        document.addEventListener('touchend', onPressUp, { passive: false });
-      });
-
-      return () => {
-        requestAnimationFrame(() => {
-          document.removeEventListener('touchstart', onPressDown);
-
-          document.removeEventListener('mousedown', onPressDown);
-
-          document.removeEventListener('mouseup', onPressUp);
-
-          document.removeEventListener('touchend', onPressUp);
-        });
-      };
-    }, [onDismiss, open]);
-
-    const forwardTargetRef = useCallback(
-      (node: HTMLElement | null) => {
-        if (children.ref) {
-          if (typeof children.ref === 'function') {
-            children.ref(node);
-          } else {
-            children.ref.current = node;
-          }
-        }
-
-        targetRef.current = node;
-
-        if (innerRef) {
-          if (typeof innerRef === 'function') {
-            innerRef(node);
-          } else {
-            innerRef.current = node;
-          }
-        }
-      },
-      [children, innerRef]
-    );
-
-    const clonedChildren = useMemo(
-      () => cloneElement(children, { ref: forwardTargetRef }),
-      [children, forwardTargetRef]
-    );
-
-    if (!open) {
-      return null;
-    }
-
-    return (
-      <Box ref={forwardTargetRef} zIndex={1} position="absolute" {...boxProps}>
-        {clonedChildren}
-      </Box>
-    );
+  if (!targetRect || !open) {
+    return null;
   }
-);
+
+  return (
+    <PortalBox top={0} right={0} bottom={0} left={0}>
+      <Box position="absolute" as="div" width="100%" height="100%" onClick={() => onDismiss?.()} />
+      <Box
+        as="div"
+        position="relative"
+        top={targetRect.y}
+        left={targetRect.x}
+        width={targetRect.width}
+        height={targetRect.height}
+        onClick={handleTargetTouchEnd}
+      >
+        <Box position="absolute" ref={innerRef} {...boxProps}>
+          {children}
+        </Box>
+      </Box>
+    </PortalBox>
+  );
+});
