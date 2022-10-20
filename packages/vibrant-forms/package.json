@@ -1,0 +1,19 @@
+{
+  "name": "@vibrant-ui/components",
+  "version": "0.20.4",
+  "private": false,
+  "sideEffects": false,
+  "peerDependencies": {
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "uuid": "^8.3.2",
+    "@emotion/react": "^11.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  }
+}
