@@ -26,7 +26,7 @@ export type StackProps = DisplaySystemProps &
     as?: SemanticTagName | 'div' | 'label';
     direction: ResponsiveValue<'horizontal' | 'vertical'>;
     ref?: RefObject<HTMLElement>;
-    spacing?: ResponsiveValue<number | 'between'>;
+    spacing?: ResponsiveValue<number>;
     children?: ReactElementChild | ReactElementChild[];
     alignHorizontal?: ResponsiveValue<Alignment>;
     alignVertical?: ResponsiveValue<Alignment>;
