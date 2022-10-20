@@ -7,14 +7,14 @@ export default {
   component: Callout,
   args: {
     title: '타이틀을 입력하세요',
-    type: 'warning',
-    action: 'Action',
-    onActionClick: () => {},
+    kind: 'warning',
+    buttonText: 'Action',
+    onButtonClick: () => {},
   },
 } as ComponentMeta<typeof Callout>;
 
 export const Basic: ComponentStory<typeof Callout> = props => (
-  <VStack p={10}>
+  <VStack width="80%" p={10}>
     <Callout {...props} />
   </VStack>
 );

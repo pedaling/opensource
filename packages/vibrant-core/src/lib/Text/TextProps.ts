@@ -49,7 +49,7 @@ export const systemPropNames = systemProps
 
 export type TextElements = 'br' | 'h1' | 'h2' | 'h3' | 'h5' | 'h6' | 'label' | 'p' | 'span';
 
-export type TextChildren = ReactElementChild | ReactElementChild[] | ReactTextChild | ReactTextChild[];
+export type TextChildren = ReactElementChild | ReactTextChild | TextChildren[];
 
 export type TextProps = SystemProps & {
   as?: TextElements;

@@ -1,0 +1,107 @@
+---
+title: ModalBottomSheet
+sidebar_position: 2
+---
+
+# ModalBottomSheet
+
+`ModalBottomSheet`은 일시적으로 화면을 덮으면서 CTA, 알림 또는 그외의 정보를 제공하기 위하여 사용하는 컴포넌트 입니다.
+모바일에서는 바텀 시트로 그 이상의 뷰포트에서는 모달로 나타납니다.
+
+```jsx live
+<ModalBottomSheet
+  title="오늘도 수강 완료!"
+  subtitle="원하는 시간에 꾸준히 수강할 수 있도록 알림을 보내드릴게요!"
+  primaryButtonText="확인"
+  onPrimaryButtonClick={({ close }) => {
+    close();
+  }}
+  renderOpener={({ open }) => (
+    <Pressable onClick={open}>열기</Pressable>
+  )}
+/>
+```
+
+## How to use
+
+```jsx
+import { ModalBottomSheet } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                                | Type                                                              | Default | Description                                                       |
+| ----------------------------------- | ----------------------------------------------------------------- | ------- | ----------------------------------------------------------------- |
+| [open](#제어)                       | boolean                                                           |         | 열림 상태를 제어합니다.                                           |
+| [defaultOpen](#비제어)              | boolean                                                           |         | 초기 열림 상태를 설정합니다. open 속성과 함께 사용할 수 없습니다. |
+| [renderOpener](#비제어)             | (\_: \{ open: () => void; isOpen: boolean }) => ReactElementChild |         | open 함수를 이용하여 모달을 여는 요소를 설정합니다.               |
+| title                               | string                                                            |         | 모달의 제목입니다.                                                |
+| subtitle                            | string                                                            |         | 모달의 부제목입니다.                                              |
+| size                                | lg \| md                                                          | md      | PC 뷰에서 모달의 너비를 설정합니다.                               |
+| renderContents                      | (\_: \{ close: () => void }) => ReactElementChild;                |         | 내부 컨텐츠를 설정합니다.                                         |
+| onClose                             | () => void                                                        |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
+| [primaryButtonText](#cta-버튼)      | string                                                            |         | Primary 버튼 텍스트입니다.                                        |
+| [onPrimaryButtonClick](#cta-버튼)   | () => void                                                        |         | Primary 버튼이 클릭됐을 때 호출됩니다.                            |
+| [secondaryButtonText](#cta-버튼)    |                                                                   | string  | Secondary 버튼 텍스트입니다.                                      |
+| [onSecondaryButtonClick](#cta-버튼) | () => void                                                        |         | Secondary 버튼이 클릭됐을 때 호출됩니다.                          |
+| [subButtonText](#cta-버튼)          | string                                                            |         | Sub 버튼 텍스트입니다.                                            |
+| [onSubButtonClick](#cta-버튼)       | () => void                                                        |         | Sub 버튼이 클릭됐을 때 호출됩니다.                                |
+
+## Usage
+
+### 제어
+
+`open` 속성을 통해 열림 상태를 제어합니다.
+
+```jsx
+const Controlled = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Pressable onClick={() => setOpen(true)}>
+        열기
+      </Pressable>
+      <Box mx="auto">
+        <ModalBottomSheet
+          open={open}
+          onClose={() => setOpen(false)}
+        />
+      </Box>
+    </>
+  );
+};
+```
+
+### 비제어
+
+`defaultOpen` 속성을 통해 초기 열림 상태만 지정하고 이후의 상태는 `ModalBottomSheet` 컴포넌트 내부에서 관리됩니다.
+[render prop](https://ko.reactjs.org/docs/render-props.html)인 `renderOpener` 속성으로 `ModalBottomSheet`을 열리게 하는 요소를 지정할 수 있으며 전달인자로 `ModalBottomSheet`을 열린 상태로 변경하는 함수 `open`와 현재 열림 상태를 나타내는 `isOpen` 프로퍼티를 가진 객체를 제공합니다.
+
+```jsx
+const Uncontrolled = () => (
+  <ModalBottomSheet
+    defaultOpen={false}
+    renderOpener={({ open, isOpen }) => (
+      <Pressable onClick={open}>열기</Pressable>
+    )}
+  />
+);
+```
+
+### CTA 버튼
+
+CTA 버튼의 텍스트(`primaryButtonText`, `secondaryButtonText`, `subButtonText`)와 CTA를 클릭됐을 때의 동작(`onPrimaryButtonClick`, `onSecondaryButtonClick`, `onSubButtonClick`)을 지정할 수 있습니다.
+Primary 버튼없이 Secondary 버튼이나 Sub 버튼을 사용할 수 없으며 Secondary 버튼이나 Sub 버튼을 동시에 사용할 수도 없습니다.
+
+```jsx live
+<ModalBottomSheet
+  title="Title"
+  primaryButtonText="Primary Button"
+  // secondaryButtonText="Secondary Button"
+  // subButtonText="Sub Button"
+  renderOpener={({ open }) => (
+    <Pressable onClick={open}>열기</Pressable>
+  )}
+/>
+```

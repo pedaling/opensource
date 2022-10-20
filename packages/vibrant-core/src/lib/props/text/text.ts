@@ -24,6 +24,10 @@ const wordWrapProp = createSystemProp({
   property: 'wordWrap',
 });
 
+const overflowWrapProp = createSystemProp({
+  property: 'overflowWrap',
+});
+
 const lineLimitProp = createSystemProp({
   property: 'lineLimit',
   transform: (value: number) =>
@@ -50,4 +54,5 @@ export const textSystemProps = [
   wordBreakProp,
   wordWrapProp,
   lineLimitProp,
+  overflowWrapProp,
 ];

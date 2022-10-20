@@ -1,4 +1,5 @@
 import type { Ref } from 'react';
+import type { ScrollViewProps } from 'react-native';
 import type { ReactElementChildren } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
@@ -14,6 +15,7 @@ import type {
   SizingSystemProps,
   SpacingSystemProps,
   TransformSystemProps,
+  WebSystemProps,
 } from '../props';
 import {
   backgroundSystemProps,
@@ -26,6 +28,7 @@ import {
   sizingSystemProps,
   spacingSystemProps,
   transformSystemProps,
+  webSystemProps,
 } from '../props';
 import { scrollSystemProps } from './props';
 import type { ScrollSystemProps } from './props/type';
@@ -39,7 +42,8 @@ type SystemProps = BackgroundSystemProps &
   SizingSystemProps &
   SpacingSystemProps &
   TransformSystemProps &
-  ScrollSystemProps;
+  ScrollSystemProps &
+  WebSystemProps;
 
 const systemProps = [
   ...scrollSystemProps,
@@ -53,6 +57,7 @@ const systemProps = [
   ...spacingSystemProps,
   ...sizingSystemProps,
   ...transformSystemProps,
+  ...webSystemProps,
 ];
 
 const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
@@ -74,7 +79,8 @@ export type ScrollBoxProps = {
   ref?: Ref<any>;
   as?: ScrollBoxElements;
   children: ReactElementChildren;
-} & SystemProps;
+} & SystemProps &
+  Pick<ScrollViewProps, 'keyboardShouldPersistTaps'>;
 
 export const interpolation = injectContext(
   createInterpolation(systemProps, {

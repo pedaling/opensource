@@ -2,6 +2,43 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.3...vibrant-components-0.20.4) (2022-10-18)
+
+
+### Bug Fixes
+
+* fix SelectOptionGroup does not close when click SelectField again ([#358](https://github.com/pedaling/opensource/issues/358)) ([078bcd6](https://github.com/pedaling/opensource/commit/078bcd6abfab04f479ae67976dff4dbc36d1f7cb))
+
+### [0.20.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.2...vibrant-components-0.20.3) (2022-10-17)
+
+
+### Bug Fixes
+
+* TabGroup에서 탭 이동 시 첫번째 아이템으로 스크롤되는 이슈를 수정한다.  ([#356](https://github.com/pedaling/opensource/issues/356)) ([c04e5b7](https://github.com/pedaling/opensource/commit/c04e5b7350e2cb465741fd13fa019db4b7ee933f))
+
+### [0.20.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.1...vibrant-components-0.20.2) (2022-10-17)
+
+
+### Bug Fixes
+
+* Callout 컴포넌트의 매개변수 이름을 업데이트하지 않은 걸 수정한다 ([#354](https://github.com/pedaling/opensource/issues/354)) ([2a3ea1d](https://github.com/pedaling/opensource/commit/2a3ea1da12da20962e4fc84cd92ccdb8a2fca383))
+* TextField의 버그를 수정한다 ([#353](https://github.com/pedaling/opensource/issues/353)) ([4303440](https://github.com/pedaling/opensource/commit/43034401b689fdf3eceedd1841e8f582d52cb1af))
+
+### [0.20.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.0...vibrant-components-0.20.1) (2022-10-15)
+
+
+### Features
+
+* add PositionSystemProps to Stack and Paper ([#352](https://github.com/pedaling/opensource/issues/352)) ([9181624](https://github.com/pedaling/opensource/commit/9181624526cd0bcc534d6924d458f1d9adb93ea6))
+
+## [0.20.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.19.5...vibrant-components-0.20.0) (2022-10-14)
+
+
+### Features
+
+* Callout 컴포넌트를 추가한다 ([#345](https://github.com/pedaling/opensource/issues/345)) ([56649f5](https://github.com/pedaling/opensource/commit/56649f5cde114dd57f13cb0098d6505da2ce6380))
+* ModalBottomSheet 문서를 작성한다 ([#343](https://github.com/pedaling/opensource/issues/343)) ([027edb0](https://github.com/pedaling/opensource/commit/027edb082119cdce4b7875b4b92898dd922fdb9f))
+
 ### [0.19.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.19.3...vibrant-components-0.19.4) (2022-10-13)
 
 

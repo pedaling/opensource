@@ -3,6 +3,7 @@ import type {
   BorderSystemProps,
   DisplaySystemProps,
   ElevationSystemProps,
+  PositionSystemProps,
   ReactElementChild,
   ResponsiveValue,
   SizingSystemProps,
@@ -10,12 +11,14 @@ import type {
 } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
+
 type PaperProps = {
   ref?: Ref<any>;
   children?: ReactElementChild;
 } & Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
   DisplaySystemProps &
   SpacingSystemProps &
+  PositionSystemProps &
   Pick<ElevationSystemProps, 'elevationLevel'> &
   SizingSystemProps &
   (

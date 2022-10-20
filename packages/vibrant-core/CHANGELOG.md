@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.20.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.3...vibrant-core-0.20.4) (2022-10-18)
+
+
+### Bug Fixes
+
+* add optional chaining ([#357](https://github.com/pedaling/opensource/issues/357)) ([e5194f2](https://github.com/pedaling/opensource/commit/e5194f283cc4f6086f9c01929290b046b8caff2d))
+
+### [0.20.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.2...vibrant-core-0.20.3) (2022-10-17)
+
+### [0.20.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.1...vibrant-core-0.20.2) (2022-10-17)
+
+
+### Bug Fixes
+
+* TextField의 버그를 수정한다 ([#353](https://github.com/pedaling/opensource/issues/353)) ([4303440](https://github.com/pedaling/opensource/commit/43034401b689fdf3eceedd1841e8f582d52cb1af))
+* updates TextChildren props types ([#355](https://github.com/pedaling/opensource/issues/355)) ([c47bbeb](https://github.com/pedaling/opensource/commit/c47bbebeed7333b9e715b02de20cf71875e608be))
+
+### [0.20.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.20.0...vibrant-core-0.20.1) (2022-10-15)
+
+
+### Features
+
+* add PositionSystemProps to Stack and Paper ([#352](https://github.com/pedaling/opensource/issues/352)) ([9181624](https://github.com/pedaling/opensource/commit/9181624526cd0bcc534d6924d458f1d9adb93ea6))
+
+## [0.20.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.19.5...vibrant-core-0.20.0) (2022-10-14)
+
+
+### Bug Fixes
+
+* add touchStart, touchEnd event to OverlayBox ([#350](https://github.com/pedaling/opensource/issues/350)) ([0056d8e](https://github.com/pedaling/opensource/commit/0056d8ef58d73e48e3c1379432489fdccd106917))
+
 ### [0.19.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.19.3...vibrant-core-0.19.4) (2022-10-13)
 
 

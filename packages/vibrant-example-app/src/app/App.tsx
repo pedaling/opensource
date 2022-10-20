@@ -1,12 +1,12 @@
 import { useFonts } from 'expo-font';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
 import * as ReactSpring from '@react-spring/native';
 import { ToastProvider, createShadowsComponent } from '@vibrant-ui/components';
 import type { Dependencies } from '@vibrant-ui/core';
-import { Box, VibrantProvider } from '@vibrant-ui/core';
+import { Box, ScrollBox, VibrantProvider } from '@vibrant-ui/core';
 import { StoryView } from './StoryView';
 import { useAppUpdate } from './useAppUpdate';
 import { useStorybookInformation } from './useStorybookInformation';
@@ -58,11 +58,11 @@ const App = () => {
       portalBottomPriorityOrder={['bottom-bar', 'floating-action-button']}
     >
       <ToastProvider>
-        <Box base={ScrollView} height="100%">
+        <ScrollBox height="100%" keyboardShouldPersistTaps="always">
           <Box base={SafeAreaView}>
             <StoryView {...story} />
           </Box>
-        </Box>
+        </ScrollBox>
       </ToastProvider>
     </VibrantProvider>
   );
