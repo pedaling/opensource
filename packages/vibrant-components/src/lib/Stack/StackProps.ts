@@ -76,25 +76,23 @@ export const withStackVariation = withVariation<StackProps>('Stack')(
       {
         name: 'alignHorizontal',
         responsive: true,
-        default: 'stretch' as const,
       },
       {
         name: 'alignVertical',
         responsive: true,
-        default: 'start' as const,
       },
     ],
     variants: ({ direction, alignHorizontal, alignVertical }) => {
       if (direction === 'horizontal') {
         return {
-          justifyContent: MainAlignmentMap[alignHorizontal],
-          alignItems: CrossAlignmentMap[alignVertical],
+          justifyContent: MainAlignmentMap[alignHorizontal ?? 'start'],
+          alignItems: CrossAlignmentMap[alignVertical ?? 'stretch'],
         };
       }
 
       return {
-        justifyContent: MainAlignmentMap[alignVertical],
-        alignItems: CrossAlignmentMap[alignHorizontal],
+        justifyContent: MainAlignmentMap[alignVertical ?? 'start'],
+        alignItems: CrossAlignmentMap[alignHorizontal ?? 'stretch'],
       };
     },
   }),
