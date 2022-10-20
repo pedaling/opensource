@@ -13,9 +13,9 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'nav' | 'section';
 
-export type Alignment = 'center' | 'end' | 'space-between' | 'start';
+export type Alignment = 'center' | 'end' | 'space-between' | 'start' | 'stretch';
 
-type AlignmentStyle = 'center' | 'flex-end' | 'flex-start' | 'space-between';
+type AlignmentStyle = 'center' | 'flex-end' | 'flex-start' | 'space-between' | 'stretch';
 
 export type StackProps = DisplaySystemProps &
   Omit<FlexboxSystemProps, 'alignItems' | 'justifyContent'> &
@@ -37,13 +37,15 @@ const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-be
   end: 'flex-end',
   center: 'center',
   'space-between': 'flex-start',
+  stretch: 'stretch',
 };
 
-const MainAlignmentMap: { [key in Alignment]: AlignmentStyle } = {
+const MainAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'stretch'> } = {
   start: 'flex-start',
   end: 'flex-end',
   center: 'center',
   'space-between': 'space-between',
+  stretch: 'flex-start',
 };
 
 export const withStackVariation = withVariation<StackProps>('Stack')(
@@ -74,7 +76,7 @@ export const withStackVariation = withVariation<StackProps>('Stack')(
       {
         name: 'alignHorizontal',
         responsive: true,
-        default: 'start' as const,
+        default: 'stretch' as const,
       },
       {
         name: 'alignVertical',
