@@ -17,8 +17,8 @@ const Home = (): JSX.Element => {
       })}
     >
       <VStack maxWidth={1024} width="100%" mx="auto" px={40}>
-        <HStack py={48}>
-          <VStack width="50%" justifyContent="center" spacing={10}>
+        <HStack py={48} alignVertical="center">
+          <VStack width="50%" spacing={10}>
             <Display as="h1" level={4}>
               Vibrant Design System
             </Display>

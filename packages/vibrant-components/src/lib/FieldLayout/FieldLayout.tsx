@@ -61,7 +61,7 @@ export const FieldLayout = withFieldLayoutVariation(
               </Text>
             </Transition>
           </PressableBox>
-          <HStack alignItems="center">
+          <HStack alignVertical="center">
             <Text
               typography="body2"
               color="onView2"
