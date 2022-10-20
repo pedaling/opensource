@@ -1,10 +1,9 @@
-import type { Config } from '@jest/types';
-
-const config: Config.InitialOptions = {
-  projects: ['packages/vibrant-utils/jest.config.web.ts', 'packages/vibrant-utils/jest.config.native.ts'],
-  collectCoverage: true,
-  coverageDirectory: '../../coverage/packages/vibrant-utils',
-  coverageReporters: ['lcov'],
+export default {
+  displayName: 'vibrant-utils-web',
+  preset: '../../jest.preset.js',
+  transform: {
+    '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/react/babel'] }],
+  },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  snapshotSerializers: ['@emotion/jest/serializer'],
 };
-
-export default config;
