@@ -47,7 +47,7 @@ export type PressableBoxProps = {
   onPressOut?: () => void;
   onHoverIn?: () => void;
   onHoverOut?: () => void;
-  children: ReactElementChild | ReactElementChild[];
+  children?: ReactElementChild | ReactElementChild[];
 } & Either<
   {
     as?: 'div' | 'li';
