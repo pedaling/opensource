@@ -6,9 +6,14 @@ module.exports = function rollupConfig(config, options) {
     process.env.NODE_ENV = 'production';
   }
 
-  const { moduleSuffixes = [''], typeCheck = true } = options;
+  const { moduleSuffixes = [''], typeCheck = true, main } = options;
 
   const tsPluginIndex = config.plugins.findIndex(plugin => plugin.name === 'rpt2');
+
+  if (options.outputFileName) {
+    config.input[options.outputFileName] = config.input[options.outputFileName.split('.')[0]];
+    delete config.input[options.outputFileName.split('.')[0]];
+  }
 
   config.plugins[tsPluginIndex] = rollupTypescript({
     check: typeCheck,
@@ -24,7 +29,14 @@ module.exports = function rollupConfig(config, options) {
     include: [options.entryRoot],
   });
 
-  config.plugins.splice(0, 0, multiInput({ relative: options.entryRoot }));
+  if (main.includes('*')) {
+    config.plugins.splice(0, 0, multiInput({ relative: options.entryRoot }));
+  }
+
+  if (options.forceOutputJsExtension) {
+    config.output.entryFileNames = '[name].js';
+    config.output.chunkFileNames = '[name].js';
+  }
 
   return config;
 };

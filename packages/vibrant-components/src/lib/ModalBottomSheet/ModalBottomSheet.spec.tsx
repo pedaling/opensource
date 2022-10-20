@@ -2,8 +2,8 @@ import mediaQuery from 'css-mediaquery';
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Box, PortalRootProvider } from '@vibrant-ui/core';
-import type { ReactRenderer } from '@vibrant-ui/utils/testing';
-import { createReactRenderer } from '@vibrant-ui/utils/testing';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Pressable } from '../Pressable';
 import { ModalBottomSheet } from './ModalBottomSheet';
 

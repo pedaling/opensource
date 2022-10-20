@@ -16,11 +16,9 @@
       }
     },
     "typecheck": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/utils-eslint-config/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/utils-eslint-config/tsconfig.lib.json"]
       }
     },
     "lint": {
@@ -32,7 +30,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/utils-eslint-config"],
+      "outputs": ["{workspaceRoot}/coverage/packages/utils-eslint-config"],
       "options": {
         "jestConfig": "packages/utils-eslint-config/jest.config.ts",
         "passWithNoTests": true
@@ -44,10 +42,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": [
-          "utils-eslint-config:github",
-          "utils-eslint-config:deploy"
-        ]
+        "postTargets": ["utils-eslint-config:github", "utils-eslint-config:deploy"]
       }
     },
     "github": {

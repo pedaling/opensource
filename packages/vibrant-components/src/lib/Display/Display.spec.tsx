@@ -1,6 +1,6 @@
 import { baseTheme } from '@vibrant-ui/theme';
-import type { ReactRenderer } from '@vibrant-ui/utils/testing';
-import { createReactRenderer } from '@vibrant-ui/utils/testing';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Display } from './Display';
 
 describe('<Display />', () => {

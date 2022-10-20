@@ -96,7 +96,7 @@ export function withVariation<Props>(componentName: string): WithVariationFn<Pro
             ...props,
           });
 
-          return <BaseComponent {...nextProps} {...((ref ? { innerRef: ref } : {}) as WithInnerRef<Props>)} />;
+          return <BaseComponent {...(nextProps as any)} {...((ref ? { innerRef: ref } : {}) as WithInnerRef<Props>)} />;
         }),
         { displayName: componentName }
       );

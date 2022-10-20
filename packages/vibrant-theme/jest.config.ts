@@ -4,7 +4,7 @@ const config: Config.InitialOptions = {
   displayName: 'vibrant-theme',
   preset: '../../jest.preset.js',
   transform: {
-    '^.+\\.[tj]sx?$': 'babel-jest',
+    '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nrwl/react/babel'] }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   collectCoverage: true,

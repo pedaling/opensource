@@ -1,5 +1,5 @@
-import type { ReactRenderer } from '@vibrant-ui/utils/testing';
-import { createReactRenderer } from '@vibrant-ui/utils/testing';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { ThemeProvider } from '../ThemeProvider';
 import { Box } from './Box';
 

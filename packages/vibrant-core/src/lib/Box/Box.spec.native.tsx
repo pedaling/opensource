@@ -1,6 +1,6 @@
 import { Pressable, View } from 'react-native';
-import type { ReactNativeRenderer } from '@vibrant-ui/utils/testing';
-import { createReactNativeRenderer } from '@vibrant-ui/utils/testing';
+import type { ReactNativeRenderer } from '@vibrant-ui/utils/testing-native';
+import { createReactNativeRenderer } from '@vibrant-ui/utils/testing-native';
 import { Box } from './Box';
 
 describe('Native <Box />', () => {
