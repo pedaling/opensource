@@ -1,7 +1,7 @@
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import type { ReactRenderer } from '@vibrant-ui/utils/testing';
-import { createReactRenderer } from '@vibrant-ui/utils/testing';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { VerificationCodeField } from './VerificationCodeField';
 
 describe('<VerificationCodeField />', () => {

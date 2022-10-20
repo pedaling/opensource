@@ -1,5 +1,5 @@
 import type { MutableRefObject } from 'react';
-import { createReactRenderer } from '@vibrant-ui/utils/testing';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { withVariation } from './withVariation';
 
 type Props = {

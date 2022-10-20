@@ -1,6 +1,6 @@
 import { Box } from '@vibrant-ui/core';
-import type { ReactRenderer } from '@vibrant-ui/utils/testing';
-import { createReactRenderer } from '@vibrant-ui/utils/testing';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { VStack } from './VStack';
 
 describe('<VStack />', () => {

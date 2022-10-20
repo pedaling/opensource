@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-import { VibrantProvider } from '../packages/vibrant-core/src';
 
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
