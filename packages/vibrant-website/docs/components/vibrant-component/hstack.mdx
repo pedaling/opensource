@@ -1,0 +1,73 @@
+---
+title: HStack
+sidebar_position: 7
+---
+
+# HStack
+
+`<HStack />` 은 하위 컴포넌트를 감쌀 수 있는 flex box 이며, `flexDirection` 이 `row` 로 고정되어 있는 컴포넌트입니다.
+
+```jsx live
+// import { HStack } from '@vibrant-ui/components'
+<HStack
+  width="100%"
+  height={200}
+  alignVertical="start"
+  alignHorizontal="start"
+>
+  <Box minHeight={50} width={50} backgroundColor="black" />
+  <Box minHeight={50} width={50} backgroundColor="blue" />
+  <Box minHeight={50} width={50} backgroundColor="red" />
+</HStack>
+```
+
+## How to use
+
+```jsx
+import { HStack } from '@vibrant-ui/components';
+```
+
+## Properties
+
+`HStack` 은 `Stack` 의 direction(flex-direction) 이 `horizontal`로 고정된 컴포넌트입니다.
+
+따라서 당연하게도 [Stack 의 기본 속성들](../vibrant-component/stack/#properties) 중 `direction`을 제외한 모든 속성을 사용할 수 있습니다.
+
+크기, 위치, 오버플로우 속성을 설정하려면 Stack 의 Properties 항목을 참고하세요.
+
+| Prop                                | Type                                            | Default   | Description                                                                                                            |
+| ----------------------------------- | ----------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [alignHorizontal](#alignHorizontal) | `space-between` \| `start` \| `end` \| `center` | `start`   | 주축(Main axis), 즉 x축을 기준으로 alignment 를 설정합니다. 플렉스 박스의 `justifyContent` 속성에 대응되어 동작합니다. |
+| [alignVertical](#alignVertical)     | `stretch` \| `start` \| `end` \| `center`       | `stretch` | 교차축(Cross axis), 즉 y축을 기준으로 alignment 를 설정합니다. 플렉스 박스의 `alignItems` 속성에 대응되어 동작합니다.  |
+
+## Usage
+
+### alignHorizontal
+
+`<HStack />` 의 교차축(Cross axis) 을 기준으로 정렬되는 속성입니다.
+
+`flowDirection` 이 `row` 인 플렉스 박스의 `justifyContent` 속성에 대응됩니다.
+
+```jsx live
+<HStack height={'auto'} alignHorizontal="space-between">
+  {/* "space-between" 값을 "start", "end", "center" 로 바꾸어보며 확인해보세요! */}
+  <Box minHeight={50} width={50} backgroundColor="black" />
+  <Box minHeight={50} width={50} backgroundColor="blue" />
+  <Box minHeight={50} width={50} backgroundColor="red" />
+</HStack>
+```
+
+### alignVertical
+
+`<HStack />` 의 주축(Main axis) 을 기준으로 정렬되는 속성입니다.
+
+`flowDirection` 이 `row` 인 플렉스 박스의 `alignItems` 속성에 대응됩니다.
+
+```jsx live
+<HStack height={200} alignVertical="stretch">
+  {/* "stretch" 값을 "start", "end", "center" 로 바꾸어보며 확인해보세요! */}
+  <Box minHeight={50} width={50} backgroundColor="black" />
+  <Box minHeight={50} width={50} backgroundColor="blue" />
+  <Box minHeight={50} width={50} backgroundColor="red" />
+</HStack>
+```

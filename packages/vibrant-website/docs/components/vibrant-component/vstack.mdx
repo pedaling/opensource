@@ -1,0 +1,74 @@
+---
+title: VStack
+sidebar_position: 6
+---
+
+# VStack
+
+`<VStack />` 은 하위 컴포넌트를 감쌀 수 있는 flex box 이며, `flexDirection` 이 `column` 으로 고정되어 있는 컴포넌트입니다.
+
+```jsx live
+// import { VStack } from '@vibrant-ui/components'
+<VStack
+  width="100%"
+  height={200}
+  alignVertical="start"
+  alignHorizontal="start"
+>
+  <Box height={50} minWidth={50} backgroundColor="black" />
+  <Box height={50} minWidth={50} backgroundColor="blue" />
+  <Box height={50} minWidth={50} backgroundColor="red" />
+</VStack>
+```
+
+## How to use
+
+```jsx
+import { VStack } from '@vibrant-ui/components';
+```
+
+## Properties
+
+`VStack` 은 `Stack` 의 direction(flex-direction) 이 `vertical`로 고정된 컴포넌트입니다.
+
+따라서 당연하게도 [Stack 의 기본 속성들](../vibrant-component/stack/#properties) 중 `direction`을 제외한 모든 속성을 사용할 수 있습니다.
+
+크기, 위치, 오버플로우 속성을 설정하려면 Stack 의 Properties 항목을 참고하세요.
+
+| Prop                                | Type                                            | Default   | Description                                                                                                            |
+| ----------------------------------- | ----------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [alignVertical](#alignVertical)     | `space-between` \| `start` \| `end` \| `center` | `start`   | 주축(Main axis), 즉 y축을 기준으로 alignment 를 설정합니다. 플렉스 박스의 `justifyContent` 속성에 대응되어 동작합니다. |
+| [alignHorizontal](#alignHorizontal) | `stretch` \| `start` \| `end` \| `center`       | `stretch` | 교차축(Cross axis), 즉 x축을 기준으로 alignment 를 설정합니다. 플렉스 박스의 `alignItems` 속성에 대응되어 동작합니다.  |
+
+## Usage
+
+### alignVertical
+
+`<VStack />` 의 주축(Main axis) 을 기준으로 정렬되는 속성입니다.
+
+`flowDirection` 이 `column` 인 플렉스 박스의 `justifyContent` 속성에 대응됩니다.
+
+```jsx live
+<VStack height={300} alignVertical="space-between">
+  {/* "space-between" 값을 "start", "end", "center" 로
+  바꾸어보며 확인해보세요! */}
+  <Box height={50} minWidth={50} backgroundColor="black" />
+  <Box height={50} minWidth={50} backgroundColor="blue" />
+  <Box height={50} minWidth={50} backgroundColor="red" />
+</VStack>
+```
+
+### alignHorizontal
+
+`<VStack />` 의 교차축(Cross axis) 을 기준으로 정렬되는 속성입니다.
+
+`flowDirection` 이 `column` 인 플렉스 박스의 `alignItems` 속성에 대응됩니다.
+
+```jsx live
+<VStack height={'auto'} alignHorizontal="stretch">
+  {/* "stretch" 값을 "start", "end", "center" 로 바꾸어보며 확인해보세요! */}
+  <Box height={20} minWidth={10} backgroundColor="black" />
+  <Box height={20} minWidth={10} backgroundColor="blue" />
+  <Box height={20} minWidth={10} backgroundColor="red" />
+</VStack>
+```
