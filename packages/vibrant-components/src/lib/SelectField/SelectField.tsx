@@ -202,91 +202,89 @@ export const SelectField = withSelectFieldVariation(
             prevent();
           }}
         />
-        <Box position="relative">
-          <PressableBox
-            ref={ref}
-            alignItems="center"
-            flexDirection="row"
-            height={50}
-            px={16}
-            borderWidth={1}
-            borderStyle="solid"
-            borderColor={borderColor}
-            borderRadius={2}
-            cursor={disabled ? 'default' : 'pointer'}
-            onPressIn={() => (isOpened ? close() : open(-1))}
-            {...restProps}
-          >
-            <HStack alignVertical="center" width="100%">
-              <Box as="span" flex={1} pr={12} minWidth={0}>
-                {selectedOption ? (
-                  <Box as="span" flexDirection={inlineLabel ? 'row' : 'column'}>
-                    {Boolean(label) && (
-                      <>
-                        <Body
-                          level={inlineLabel ? 2 : 6}
-                          color={labelColor}
-                          lineLimit={1}
-                          flexGrow={0}
-                          flexShrink={0}
-                          flexBasis="auto"
-                          maxWidth="90%"
-                        >
-                          {label}
+        <PressableBox
+          ref={ref}
+          alignItems="center"
+          flexDirection="row"
+          height={50}
+          px={16}
+          borderWidth={1}
+          borderStyle="solid"
+          borderColor={borderColor}
+          borderRadius={2}
+          cursor={disabled ? 'default' : 'pointer'}
+          onPressIn={() => (isOpened ? close() : open(-1))}
+          {...restProps}
+        >
+          <HStack alignVertical="center" width="100%">
+            <Box as="span" flex={1} pr={12} minWidth={0}>
+              {selectedOption ? (
+                <Box as="span" flexDirection={inlineLabel ? 'row' : 'column'}>
+                  {Boolean(label) && (
+                    <>
+                      <Body
+                        level={inlineLabel ? 2 : 6}
+                        color={labelColor}
+                        lineLimit={1}
+                        flexGrow={0}
+                        flexShrink={0}
+                        flexBasis="auto"
+                        maxWidth="90%"
+                      >
+                        {label}
+                      </Body>
+                      <Box as="span" flexShrink={0} hidden={!inlineLabel}>
+                        <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
+                          &nbsp;/&nbsp;
                         </Body>
-                        <Box as="span" flexShrink={0} hidden={!inlineLabel}>
-                          <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
-                            &nbsp;/&nbsp;
-                          </Body>
-                        </Box>
-                      </>
-                    )}
-                    <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={1}>
-                      {selectedOption.label}
-                    </Body>
-                  </Box>
-                ) : (
-                  <Body
-                    level={2}
-                    color={label ? labelColor : placeholderColor}
-                    lineLimit={1}
-                    wordBreak="break-all"
-                    wordWrap="break-word"
-                  >
-                    {label || placeholder}
+                      </Box>
+                    </>
+                  )}
+                  <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={1}>
+                    {selectedOption.label}
                   </Body>
-                )}
-              </Box>
-              <Icon.ArrowTriangleDown.Regular
-                size={20}
-                fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
-              />
-            </HStack>
-          </PressableBox>
-          <OverlayBox
-            open={isOpened}
-            targetRef={ref}
-            onDismiss={close}
-            width="100%"
-            maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 336]}
-            {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
-          >
-            <SelectOptionGroup
-              onOptionClick={index => {
-                setSelectedOptionIndex(index);
-
-                close();
-
-                inputRef.current?.focus();
-              }}
-              state={state}
-              renderOption={renderOption}
-              reverse={direction === 'up'}
-              options={options}
-              focusIndex={focusIndex}
+                </Box>
+              ) : (
+                <Body
+                  level={2}
+                  color={label ? labelColor : placeholderColor}
+                  lineLimit={1}
+                  wordBreak="break-all"
+                  wordWrap="break-word"
+                >
+                  {label || placeholder}
+                </Body>
+              )}
+            </Box>
+            <Icon.ArrowTriangleDown.Regular
+              size={20}
+              fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
             />
-          </OverlayBox>
-        </Box>
+          </HStack>
+        </PressableBox>
+        <OverlayBox
+          open={isOpened}
+          targetRef={ref}
+          onDismiss={close}
+          width="100%"
+          maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 336]}
+          {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
+        >
+          <SelectOptionGroup
+            onOptionClick={index => {
+              setSelectedOptionIndex(index);
+
+              close();
+
+              inputRef.current?.focus();
+            }}
+            state={state}
+            renderOption={renderOption}
+            reverse={direction === 'up'}
+            options={options}
+            focusIndex={focusIndex}
+          />
+        </OverlayBox>
         {Boolean(helperText) && (
           <Body level={4} color={state === 'error' ? 'error' : 'onView2'} wordBreak="keep-all" wordWrap="break-word">
             {helperText}
