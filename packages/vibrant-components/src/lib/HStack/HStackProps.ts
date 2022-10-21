@@ -4,7 +4,7 @@ import type { StackProps } from '../Stack';
 import type { Alignment } from '../Stack/StackProps';
 
 export type HStackProps = Omit<StackProps, 'alignHorizontal' | 'alignVertical' | 'direction'> & {
-  alignHorizontal?: ResponsiveValue<Alignment>;
+  alignHorizontal?: ResponsiveValue<Exclude<Alignment, 'stretch'>>;
   alignVertical?: ResponsiveValue<Exclude<Alignment, 'space-between'>>;
 };
 
