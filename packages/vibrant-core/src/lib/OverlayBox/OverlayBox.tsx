@@ -7,43 +7,45 @@ import { PressableBox } from '../PressableBox';
 import { useLockBodyScroll } from '../useLockBodyScroll';
 import { withOverlayBoxVariation } from './OverlayBoxProps';
 
-export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, targetRef, children, ...boxProps }) => {
-  const [targetRect, setTargetRect] = useState<Rect | null>(null);
+export const OverlayBox = withOverlayBoxVariation(
+  ({ open, innerRef, onDismiss, targetRef, children, zIndex, ...boxProps }) => {
+    const [targetRect, setTargetRect] = useState<Rect | null>(null);
 
-  useLockBodyScroll(open);
+    useLockBodyScroll(open);
 
-  useEffect(() => {
-    if (!open) {
-      return;
+    useEffect(() => {
+      if (!open) {
+        return;
+      }
+
+      getElementRect(targetRef.current).then(rect => setTargetRect(rect));
+    }, [open, targetRef]);
+
+    const handleTargetTouchEnd = useCallback(() => {
+      onDismiss?.();
+
+      setTargetRect(null);
+    }, [onDismiss]);
+
+    if (!targetRect || !open) {
+      return null;
     }
 
-    getElementRect(targetRef.current).then(rect => setTargetRect(rect));
-  }, [open, targetRef]);
-
-  const handleTargetTouchEnd = useCallback(() => {
-    onDismiss?.();
-
-    setTargetRect(null);
-  }, [onDismiss]);
-
-  if (!targetRect || !open) {
-    return null;
+    return (
+      <PortalBox zIndex={zIndex} top={0} right={0} bottom={0} left={0}>
+        <PressableBox position="absolute" width="100%" height="100%" onClick={() => onDismiss?.()} />
+        <PressableBox
+          top={targetRect.y}
+          left={targetRect.x}
+          width={targetRect.width}
+          height={targetRect.height}
+          onClick={handleTargetTouchEnd}
+        >
+          <Box position="absolute" ref={innerRef} {...boxProps}>
+            {children}
+          </Box>
+        </PressableBox>
+      </PortalBox>
+    );
   }
-
-  return (
-    <PortalBox top={0} right={0} bottom={0} left={0}>
-      <PressableBox position="absolute" width="100%" height="100%" onClick={() => onDismiss?.()} />
-      <PressableBox
-        top={targetRect.y}
-        left={targetRect.x}
-        width={targetRect.width}
-        height={targetRect.height}
-        onClick={handleTargetTouchEnd}
-      >
-        <Box position="absolute" ref={innerRef} {...boxProps}>
-          {children}
-        </Box>
-      </PressableBox>
-    </PortalBox>
-  );
-});
+);
