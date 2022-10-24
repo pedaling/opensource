@@ -19,6 +19,12 @@ export type Theme = {
   borderRadius: ThemeBorderRadius;
   typography: ThemeTypography;
   typographyWeight: ThemeTypographyWeight;
+  zIndex: {
+    dropdown: number;
+    floatingActionButton: number;
+    modalBottomSheet: number;
+    toast: number;
+  };
   mode: ThemeMode;
 };
 
@@ -35,4 +41,10 @@ export type CurrentTheme = {
   borderRadius: ThemeBorderRadius;
   typography: ThemeTypography;
   typographyWeight: ThemeTypographyWeight;
+  zIndex: {
+    dropdown: number;
+    floatingActionButton: number;
+    modalBottomSheet: number;
+    toast: number;
+  };
 };
