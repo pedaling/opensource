@@ -7,7 +7,7 @@ import { DateInput } from '../DateInput';
 import { withDatePickerFieldVariation } from './DatePickerFieldProps';
 
 export const DatePickerField = withDatePickerFieldVariation(
-  ({ defaultValue, disabled, label, state, helperText, onValueChange, placeholder }) => {
+  ({ defaultValue, disabled, label, state, helperText, onValueChange, placeholder, onOpen }) => {
     const [value, setValue] = useState(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
     const onValueChangeRef = useSafeDeps(onValueChange);
@@ -26,6 +26,8 @@ export const DatePickerField = withDatePickerFieldVariation(
       setCalendarPosition(top > bottom ? 'top' : 'bottom');
 
       setIsCalendarOpened(true);
+
+      onOpen?.();
     };
 
     useEffect(() => {

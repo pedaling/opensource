@@ -20,6 +20,7 @@ export const SelectField = withSelectFieldVariation(
     disabled,
     defaultValue,
     onValueChange,
+    onOpen,
     ...restProps
   }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
@@ -143,8 +144,10 @@ export const SelectField = withSelectFieldVariation(
         }
 
         setIsOpened(true);
+
+        onOpen?.();
       },
-      [disabled, selectedOptionIndex, updateFocusIndex]
+      [disabled, onOpen, selectedOptionIndex, updateFocusIndex]
     );
 
     const close = () => {
