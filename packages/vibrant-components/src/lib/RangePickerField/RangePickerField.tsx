@@ -9,7 +9,7 @@ import { withRangePickerFieldVariation } from './RangePickerFieldProps';
 const getRangeString = (start: Date, end?: Date) => `${getDateString(start)} - ${end ? getDateString(end) : ''}`;
 
 export const RangePickerField = withRangePickerFieldVariation(
-  ({ defaultValue, onValueChange, label, disabled, placeholder, helperText, state, onOpen }) => {
+  ({ defaultValue, onValueChange, label, disabled, placeholder, helperText, state, onOpen, zIndex }) => {
     const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
     const onValueChangeRef = useSafeDeps(onValueChange);
@@ -107,6 +107,7 @@ export const RangePickerField = withRangePickerFieldVariation(
           targetRef={inputRef}
           onDismiss={() => setIsCalendarOpened(false)}
           left={0}
+          zIndex={zIndex}
           {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
         >
           <Calendar

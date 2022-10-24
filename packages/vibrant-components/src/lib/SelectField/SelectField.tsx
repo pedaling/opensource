@@ -21,6 +21,7 @@ export const SelectField = withSelectFieldVariation(
     defaultValue,
     onValueChange,
     onOpen,
+    zIndex,
     ...restProps
   }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
@@ -271,6 +272,7 @@ export const SelectField = withSelectFieldVariation(
           onDismiss={close}
           width="100%"
           maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 336]}
+          zIndex={zIndex}
           {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
         >
           <SelectOptionGroup

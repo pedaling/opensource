@@ -154,5 +154,12 @@ export const baseTheme: Theme = {
     4: 20,
     5: 10000,
   },
+  zIndex: {
+    bottomBar: 1,
+    dropdown: 3,
+    floatingActionButton: 1,
+    modalBottomSheet: 2,
+    toast: 4,
+  },
   mode: 'light',
 };

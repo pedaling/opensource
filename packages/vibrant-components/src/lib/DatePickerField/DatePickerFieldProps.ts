@@ -5,6 +5,7 @@ export type DatePickerFieldProps = BaseInputProps<Date | undefined> & {
   helperText?: string;
   state?: 'default' | 'error';
   onOpen?: () => void;
+  zIndex?: number;
 } & (
     | {
         label?: never;

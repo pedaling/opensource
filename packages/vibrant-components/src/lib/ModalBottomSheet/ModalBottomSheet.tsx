@@ -4,6 +4,7 @@ import {
   ScrollBox,
   ThemeProvider,
   isNative,
+  useCurrentTheme,
   useCurrentThemeMode,
   useLockBodyScroll,
   useResponsiveValue,
@@ -22,8 +23,6 @@ import { Space } from '../Space';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { withModalBottomSheetVariation } from './ModalBottomSheetProps';
-
-const Z_INDEX = 100;
 
 export const ModalBottomSheet = withModalBottomSheetVariation(
   ({
@@ -63,6 +62,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
 
+    const {
+      theme: { zIndex },
+    } = useCurrentTheme();
     const { mode: rootMode } = useCurrentThemeMode({ root: true });
     const rootThemeMode = useMemo(
       () => ({
@@ -110,7 +112,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
         <ThemeProvider theme={rootThemeMode}>
           <Backdrop
             open={isOpen}
-            zIndex={Z_INDEX}
+            zIndex={zIndex.modalBottomSheet}
             transitionDuration={200}
             onClick={closeModal}
             scrollable={!isMobile}

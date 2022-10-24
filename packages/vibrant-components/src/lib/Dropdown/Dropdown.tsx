@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
+  OverlayBox,
   ScrollBox,
   ThemeProvider,
   getWindowDimensions,
+  useCurrentTheme,
   useCurrentThemeMode,
   useLockBodyScroll,
   useResponsiveValue,
@@ -18,7 +20,6 @@ import { withDropdownVariation } from './DropdownProps';
 
 const CONTENT_PADDING = 20;
 const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
-const Z_INDEX = 100;
 
 const getOffsetAvoidingOverflowByPosition = (
   openerRect: Rect,
@@ -83,6 +84,9 @@ export const Dropdown = withDropdownVariation(
 
     const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
+    const {
+      theme: { zIndex },
+    } = useCurrentTheme();
     const { mode: rootMode } = useCurrentThemeMode({ root: true });
     const rootThemeMode = useMemo(
       () => ({
@@ -118,7 +122,7 @@ export const Dropdown = withDropdownVariation(
             spacing
           );
 
-          setOffset({ x: openerRect.x + offsetX, y: openerRect.y + offsetY });
+          setOffset({ x: offsetX, y: offsetY });
 
           setVisible(true);
         }
@@ -155,54 +159,52 @@ export const Dropdown = withDropdownVariation(
     return (
       <>
         <Box ref={openerRef}>{opener}</Box>
-        {isOpen && !isMobile && (
+        {!isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} color="transparent">
-              <Transition
-                animation={{
-                  opacity: visible ? 1 : 0,
-                  x: offset.x,
-                  y: offset.y,
-                }}
-                style={{
-                  x: offset.x,
-                  y: offset.y,
-                }}
-                duration={200}
-              >
-                <Box>
-                  <Box
-                    backgroundColor="surface2"
-                    py={CONTENT_PADDING}
-                    elevationLevel={4}
-                    borderRadiusLevel={1}
-                    width={[280, 280, 240]}
+            <Transition
+              animation={{
+                opacity: visible ? 1 : 0,
+                x: offset.x,
+                y: offset.y,
+              }}
+              style={{
+                x: offset.x,
+                y: offset.y,
+              }}
+              duration={200}
+            >
+              <OverlayBox open={isOpen} onDismiss={closeDropdown} targetRef={openerRef} zIndex={zIndex.dropdown}>
+                <Box
+                  backgroundColor="surface2"
+                  py={CONTENT_PADDING}
+                  elevationLevel={4}
+                  borderRadiusLevel={1}
+                  width={[280, 280, 240]}
+                >
+                  <Transition
+                    animation={
+                      visible
+                        ? {
+                            height: contentHeight,
+                          }
+                        : {}
+                    }
+                    duration={200}
                   >
-                    <Transition
-                      animation={
-                        visible
-                          ? {
-                              height: contentHeight,
-                            }
-                          : {}
-                      }
-                      duration={200}
-                    >
-                      <Box overflow="hidden" height={contentHeight}>
-                        <Box onLayout={handleContentResize} flexShrink={0}>
-                          {renderContents({ close: closeDropdown })}
-                        </Box>
+                    <Box overflow="hidden" height={contentHeight}>
+                      <Box onLayout={handleContentResize} flexShrink={0}>
+                        {renderContents({ close: closeDropdown })}
                       </Box>
-                    </Transition>
-                  </Box>
+                    </Box>
+                  </Transition>
                 </Box>
-              </Transition>
-            </Backdrop>
+              </OverlayBox>
+            </Transition>
           </ThemeProvider>
         )}
         {isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={200}>
+            <Backdrop open={isOpen} zIndex={zIndex.dropdown} onClick={closeDropdown} transitionDuration={200}>
               <Transition
                 animation={{
                   y: visible ? 0 : containerHeight,
