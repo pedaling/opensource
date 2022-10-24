@@ -1,8 +1,9 @@
 import { useRef } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box } from '@vibrant-ui/core';
+import { Box, useCurrentTheme } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
+import { ModalBottomSheet } from '../ModalBottomSheet';
 import { Pressable } from '../Pressable';
 import { VStack } from '../VStack';
 import { SelectField } from './SelectField';
@@ -133,6 +134,30 @@ export const UsageWithRef: ComponentStory<typeof SelectField> = props => {
         </Pressable>
       </HStack>
       <SelectField {...props} ref={selectFieldRef} />
+    </VStack>
+  );
+};
+
+export const WithOnModalBottomSheet: ComponentStory<typeof SelectField> = props => {
+  const {
+    theme: { zIndex },
+  } = useCurrentTheme();
+
+  return (
+    <VStack spacing={10}>
+      <ModalBottomSheet
+        defaultOpen={true}
+        renderOpener={({ open }) => (
+          <Pressable onClick={open}>
+            <Body level={2}>open modal</Body>
+          </Pressable>
+        )}
+        renderContents={() => (
+          <Box px={20}>
+            <SelectField zIndex={zIndex.modalBottomSheet} {...props} />
+          </Box>
+        )}
+      />
     </VStack>
   );
 };
