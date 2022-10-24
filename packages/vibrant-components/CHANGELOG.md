@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.22.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.21.2...vibrant-components-0.22.0) (2022-10-24)
+
+
+### Features
+
+* add onOpen prop ([#369](https://github.com/pedaling/opensource/issues/369)) ([feeac0a](https://github.com/pedaling/opensource/commit/feeac0a713af51819c7c59cd8a83c4e244ce5dba))
+* Stack, VStack, HStack 문서를 추가한다 ([#367](https://github.com/pedaling/opensource/issues/367)) ([5287a63](https://github.com/pedaling/opensource/commit/5287a63911d3e0182a5f4ee460b508479390fcf0))
+
 ### [0.21.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.21.1...vibrant-components-0.21.2) (2022-10-20)
 
 ### [0.20.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.20.3...vibrant-components-0.20.4) (2022-10-18)
