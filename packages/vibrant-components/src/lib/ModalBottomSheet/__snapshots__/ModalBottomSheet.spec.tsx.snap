@@ -36,7 +36,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   flex-shrink: 1;
   box-sizing: border-box;
   position: fixed;
-  z-index: 100;
+  z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
@@ -413,7 +413,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   box-sizing: border-box;
   overflow-y: auto;
   position: fixed;
-  z-index: 100;
+  z-index: 1;
   top: 0;
   right: 0;
   bottom: 0;
