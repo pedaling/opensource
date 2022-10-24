@@ -12,10 +12,10 @@ export default {
 
 export const Basic: ComponentStory<typeof VStack> = props => (
   <VStack {...props} flex={1} width="100%" height="100%">
-    <Box width={100} height={100} backgroundColor="primary" />
-    <Box width={100} height={100} backgroundColor="primary" />
-    <Box width={200} height={100} backgroundColor="primary" />
-    <Box width={100} height={100} backgroundColor="primary" />
-    <Box width={100} height={100} backgroundColor="primary" />
+    <Box minWidth={100} height={100} backgroundColor="primary" />
+    <Box minWidth={100} height={100} backgroundColor="primary" />
+    <Box minWidth={200} height={100} backgroundColor="primary" />
+    <Box minWidth={100} height={100} backgroundColor="primary" />
+    <Box minWidth={100} height={100} backgroundColor="primary" />
   </VStack>
 );
