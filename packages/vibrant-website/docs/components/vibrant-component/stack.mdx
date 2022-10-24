@@ -1,0 +1,59 @@
+---
+title: Stack
+sidebar_position: 5
+---
+
+# Stack
+
+`<Stack />` 은 하위 컴포넌트를 감쌀 수 있는 flex box 입니다.
+
+```jsx live
+// import { Stack } from '@vibrant-ui/components'
+<Stack
+  direction="vertical"
+  alignHorizontal="start"
+  alignVertical="start"
+>
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView1"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView2"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView3"
+  />
+</Stack>
+```
+
+## How to use
+
+```jsx
+import { VStack } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop          | Type                                                                          | Default | Description                                              |
+| ------------- | ----------------------------------------------------------------------------- | ------- | -------------------------------------------------------- |
+| direction(\*) | `horizontal` \| `vertical`                                                    | -       | `Stack`의 `flexDirection` 을 설정합니다.                 |
+| spacing       | number                                                                        | -       | `Stack`이 감싸고 있는 children 사이의 간격을 설정합니다. |
+| overflow      | `hidden` \| `visible`                                                         | -       | 오버플로우가 되었을 때의 속성을 설정합니다.              |
+| width         | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | 가로 크기를 설정합니다.                                  |
+| minWidth      | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | 최소 가로 크기를 설정합니다.                             |
+| maxWidth      | number \| `auto` \| `fit-content` \| `max-content` \| `min-content` \| `none` | -       | 최대 가로 크기를 설정합니다.                             |
+| height        | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | 세로 크기를 설정합니다.                                  |
+| minHeight     | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | 최소 세로 크기를 설정합니다.                             |
+| maxHeight     | number \| `auto` \| `fit-content` \| `max-content` \| `min-content` \| `none` | -       | 최대 세로 크기를 설정합니다.                             |
+| position      | `absolute` \| `relative`                                                      | -       | `Stack` 의 `position` 값을 설정합니다.                   |
+| top           | number \| string                                                              | -       | `Stack`의 위쪽 공간 값을 설정합니다.                     |
+| right         | number \| string                                                              | -       | `Stack`의 우측 공간 값을 설정합니다.                     |
+| bottom        | number \| string                                                              | -       | `Stack`의 아랫쪽 공간 값을 설정합니다.                   |
+| left          | number \| string                                                              | -       | `Stack`의 좌측 공간 값을 설정합니다.                     |
+| zIndex        | number                                                                        | -       | `Stack`의 z 인덱스를 설정합니다.                         |
