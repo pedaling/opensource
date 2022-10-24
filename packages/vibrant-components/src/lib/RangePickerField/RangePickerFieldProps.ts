@@ -5,6 +5,7 @@ export type RangePickerFieldProps = BaseInputProps<{ start: Date; end: Date } | 
   helperText?: string;
   state?: 'default' | 'error';
   onOpen?: () => void;
+  zIndex?: number;
 } & (
     | {
         label?: never;
