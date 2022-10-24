@@ -20,6 +20,7 @@ export type Theme = {
   typography: ThemeTypography;
   typographyWeight: ThemeTypographyWeight;
   zIndex: {
+    bottomBar: number;
     dropdown: number;
     floatingActionButton: number;
     modalBottomSheet: number;
@@ -42,6 +43,7 @@ export type CurrentTheme = {
   typography: ThemeTypography;
   typographyWeight: ThemeTypographyWeight;
   zIndex: {
+    bottomBar: number;
     dropdown: number;
     floatingActionButton: number;
     modalBottomSheet: number;

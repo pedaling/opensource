@@ -155,10 +155,11 @@ export const baseTheme: Theme = {
     5: 10000,
   },
   zIndex: {
-    dropdown: 1,
+    bottomBar: 1,
+    dropdown: 3,
     floatingActionButton: 1,
-    modalBottomSheet: 1,
-    toast: 1,
+    modalBottomSheet: 2,
+    toast: 4,
   },
   mode: 'light',
 };
