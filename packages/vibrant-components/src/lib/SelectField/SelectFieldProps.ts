@@ -14,8 +14,9 @@ export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderO
   state?: 'default' | 'error';
   helperText?: string;
   disabled?: boolean;
-  onValueChange?: (value: string) => void;
   defaultValue?: string;
+  onValueChange?: (value: string) => void;
+  onOpen?: () => void;
 } & (
     | {
         label: string;

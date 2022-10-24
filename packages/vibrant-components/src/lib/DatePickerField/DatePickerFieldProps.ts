@@ -4,6 +4,7 @@ import type { BaseInputProps } from '../../types';
 export type DatePickerFieldProps = BaseInputProps<Date | undefined> & {
   helperText?: string;
   state?: 'default' | 'error';
+  onOpen?: () => void;
 } & (
     | {
         label?: never;
