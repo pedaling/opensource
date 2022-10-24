@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useCurrentTheme } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { StackedPortal } from '../StackedPortal';
 import { Toast } from '../Toast';
@@ -10,6 +11,10 @@ export const ToastRenderer = () => {
   const toastProps = useToastProps();
   const [show, setShow] = useState(false);
   const [isMount, setIsMount] = useState(false);
+
+  const {
+    theme: { zIndex },
+  } = useCurrentTheme();
 
   useEffect(() => {
     if (toastProps) {
@@ -45,7 +50,7 @@ export const ToastRenderer = () => {
       left={0}
       right={0}
       bottom={0}
-      zIndex={100}
+      zIndex={zIndex.toast}
       safeAreaMode="margin"
     >
       <Transition

@@ -8,6 +8,9 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
   ({ order = 1, position = 'right', offset = 20, IconComponent, innerRef, ...restProps }) => {
     const { width: viewportWidth } = useWindowDimensions();
     const {
+      theme: { zIndex },
+    } = useCurrentTheme();
+    const {
       theme: { contentArea },
     } = useCurrentTheme();
 
@@ -23,7 +26,13 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
     );
 
     return (
-      <StackedPortal id="floating-action-button" order={order} zIndex={1} safeAreaMode="margin" {...offsetProps}>
+      <StackedPortal
+        id="floating-action-button"
+        order={order}
+        zIndex={zIndex.floatingActionButton}
+        safeAreaMode="margin"
+        {...offsetProps}
+      >
         <Box borderRadius={25} elevationLevel={1}>
           <Pressable
             ref={innerRef}

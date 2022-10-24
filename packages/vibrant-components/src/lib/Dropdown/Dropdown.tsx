@@ -5,6 +5,7 @@ import {
   ScrollBox,
   ThemeProvider,
   getWindowDimensions,
+  useCurrentTheme,
   useCurrentThemeMode,
   useLockBodyScroll,
   useResponsiveValue,
@@ -19,7 +20,6 @@ import { withDropdownVariation } from './DropdownProps';
 
 const CONTENT_PADDING = 20;
 const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
-const Z_INDEX = 100;
 
 const getOffsetAvoidingOverflowByPosition = (
   openerRect: Rect,
@@ -84,6 +84,9 @@ export const Dropdown = withDropdownVariation(
 
     const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
+    const {
+      theme: { zIndex },
+    } = useCurrentTheme();
     const { mode: rootMode } = useCurrentThemeMode({ root: true });
     const rootThemeMode = useMemo(
       () => ({
@@ -156,7 +159,7 @@ export const Dropdown = withDropdownVariation(
     return (
       <>
         <Box ref={openerRef}>{opener}</Box>
-        {isOpen && !isMobile && (
+        {!isMobile && (
           <ThemeProvider theme={rootThemeMode}>
             <Transition
               animation={{
@@ -170,7 +173,7 @@ export const Dropdown = withDropdownVariation(
               }}
               duration={200}
             >
-              <OverlayBox open={true} onDismiss={closeDropdown} targetRef={openerRef} zIndex={Z_INDEX}>
+              <OverlayBox open={isOpen} onDismiss={closeDropdown} targetRef={openerRef} zIndex={zIndex.dropdown}>
                 <Box
                   backgroundColor="surface2"
                   py={CONTENT_PADDING}
@@ -201,7 +204,7 @@ export const Dropdown = withDropdownVariation(
         )}
         {isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Backdrop open={isOpen} zIndex={Z_INDEX} onClick={closeDropdown} transitionDuration={200}>
+            <Backdrop open={isOpen} zIndex={zIndex.dropdown} onClick={closeDropdown} transitionDuration={200}>
               <Transition
                 animation={{
                   y: visible ? 0 : containerHeight,
