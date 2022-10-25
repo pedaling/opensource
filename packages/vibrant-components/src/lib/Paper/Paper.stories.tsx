@@ -17,7 +17,7 @@ export const BackgroundColor: ComponentStory<typeof Paper> = () => (
 );
 
 export const BackgroundGradient: ComponentStory<typeof Paper> = () => (
-  <Paper width="100%" minHeight="100vh" backgroundColor="inverseBackground">
+  <Paper width="100%" minHeight="100vh" backgroundColor="inverseSurface">
     <Paper width={200} height={200} gradient="linearTop" />
   </Paper>
 );

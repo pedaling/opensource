@@ -1,48 +1,65 @@
-import { createContext, useContext, useRef, useState } from 'react';
+import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { FC } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
-import type { ToastProps } from '../Toast/ToastProps';
+import type { DistributiveOmit } from '@vibrant-ui/utils';
+import type { ToastProps as ToastComponentProps } from '../Toast/ToastProps';
 
 type ToastProviderProps = {
   children: ReactElementChild;
 };
 
-type ToastWithKeyProps = ToastProps & {
-  toastKey: number;
+type ToastProps = ToastComponentProps & {
+  id: number;
+  duration?: number;
 };
 
-const ToastPropsContext = createContext<ToastWithKeyProps | undefined>(undefined);
-const ToastActionContext = createContext<(props: ToastProps | undefined) => void>(() => {});
+type ToastContextValue = {
+  toastProps: ToastProps | undefined;
+  setToastProps: (props?: DistributiveOmit<ToastProps, 'id'>) => void;
+};
+
+const ToastContext = createContext<ToastContextValue>({
+  toastProps: undefined,
+  setToastProps: () => {},
+});
 
 export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
-  const [toastProps, setToastProps] = useState<ToastWithKeyProps | undefined>(undefined);
+  const [toastProps, setToastProps] = useState<ToastProps | undefined>(undefined);
 
-  const lastToastKeyRef = useRef(0);
+  const lastIdRef = useRef(0);
 
-  const setToastWithKeyProps = (props: ToastProps | undefined) => {
-    lastToastKeyRef.current++;
+  const contextValue = useMemo<ToastContextValue>(
+    () => ({
+      toastProps,
+      setToastProps: props => {
+        lastIdRef.current++;
 
-    if (props) {
-      setToastProps({ ...props, toastKey: lastToastKeyRef.current });
-    } else {
-      setToastProps(undefined);
-    }
-  };
-
-  return (
-    <ToastActionContext.Provider value={setToastWithKeyProps}>
-      <ToastPropsContext.Provider value={toastProps}>{children}</ToastPropsContext.Provider>
-    </ToastActionContext.Provider>
+        if (props) {
+          setToastProps({ ...props, id: lastIdRef.current });
+        } else {
+          setToastProps(undefined);
+        }
+      },
+    }),
+    [toastProps]
   );
+
+  return <ToastContext.Provider value={contextValue}>{children}</ToastContext.Provider>;
 };
 
-export const useToastProps = () => useContext(ToastPropsContext);
-
-export const useToast = () => {
-  const setToastProps = useContext(ToastActionContext);
+export const useToastProps = () => {
+  const { toastProps } = useContext(ToastContext);
 
   return {
-    showToast: (props: ToastProps) => setToastProps(props),
+    toastProps,
+  };
+};
+
+export const useToast = () => {
+  const { setToastProps } = useContext(ToastContext);
+
+  return {
+    showToast: (props: DistributiveOmit<ToastProps, 'id'>) => setToastProps(props),
     closeToast: () => setToastProps(undefined),
   };
 };
