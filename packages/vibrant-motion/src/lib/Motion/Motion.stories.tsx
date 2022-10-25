@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box } from '@vibrant-ui/core';
+import { Box, PressableBox, Text } from '@vibrant-ui/core';
 import { Motion } from './Motion';
 import type { MotionRefValue } from './MotionProps';
 
@@ -10,9 +10,9 @@ export default {
   args: {
     duration: 1000,
     animation: {
-      transform: {
-        from: { translateX: 0 },
-        to: { translateX: 250 },
+      x: {
+        from: 0,
+        to: 250,
       },
       backgroundColor: {
         from: 'primary',
@@ -40,22 +40,22 @@ export const WithRef: ComponentStory<typeof Motion> = props => {
 
   return (
     <Box>
-      <Box as="button" onClick={() => motionRef.current.start()}>
-        Start
-      </Box>
-      <Box as="button" onClick={() => motionRef.current.start({ reverse: true })}>
-        Start (Reverse)
-      </Box>
-      <Box as="button" onClick={() => motionRef.current.start({ reset: false })}>
-        Start (with No Reset)
-      </Box>
-      <Box as="button" onClick={() => motionRef.current.pause()}>
-        Pause
-      </Box>
-      <Box as="button" onClick={() => motionRef.current.resume()}>
-        Resume
-      </Box>
-      <Motion {...props} motionRef={motionRef}>
+      <PressableBox as="button" onClick={() => motionRef.current?.start()}>
+        <Text>Start</Text>
+      </PressableBox>
+      <PressableBox as="button" onClick={() => motionRef.current?.start({ reverse: true })}>
+        <Text>Start (Reverse)</Text>
+      </PressableBox>
+      <PressableBox as="button" onClick={() => motionRef.current?.start({ reset: false })}>
+        <Text>Start (with No Reset)</Text>
+      </PressableBox>
+      <PressableBox as="button" onClick={() => motionRef.current?.pause()}>
+        <Text>Pause</Text>
+      </PressableBox>
+      <PressableBox as="button" onClick={() => motionRef.current?.resume()}>
+        <Text>Resume</Text>
+      </PressableBox>
+      <Motion {...props} ref={motionRef}>
         <Box width={150} height={150} backgroundColor="primary" borderRadius={20} />
       </Motion>
     </Box>

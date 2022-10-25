@@ -8,4 +8,8 @@ const yProp = createSystemProp({
   property: 'y',
 });
 
-export const transformMotionProps = [xProp, yProp];
+const rotateProp = createSystemProp({
+  property: 'rotate',
+});
+
+export const transformMotionProps = [xProp, yProp, rotateProp];

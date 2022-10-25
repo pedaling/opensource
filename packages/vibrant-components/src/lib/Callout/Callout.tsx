@@ -1,5 +1,8 @@
-import { HStack, Pressable, Title, VStack } from '@vibrant-ui/components';
 import { Box, Text } from '@vibrant-ui/core';
+import { HStack } from '../HStack';
+import { Pressable } from '../Pressable';
+import { Title } from '../Title';
+import { VStack } from '../VStack';
 import { withCalloutVariation } from './CalloutProps';
 
 export const Callout = withCalloutVariation(

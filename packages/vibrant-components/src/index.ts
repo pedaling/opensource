@@ -9,6 +9,7 @@ export { SearchField } from './lib/SearchField';
 export { SelectField } from './lib/SelectField';
 export type { SelectFieldProps } from './lib/SelectField';
 export { Space } from './lib/Space';
+export { Spinner } from './lib/Spinner';
 export { Switch } from './lib/Switch';
 export { NumericField } from './lib/NumericField';
 export type { NumericFieldProps } from './lib/NumericField';
