@@ -1,0 +1,123 @@
+---
+title: Spinner
+sidebar_position: 5
+---
+
+# Spinner
+
+`Spinner` 컴포넌트는 로딩 상태를 표시하는데 사용됩니다.
+
+```jsx live
+<Spinner size="lg" />
+```
+
+`Spinner`의 컬러는 `onColor`로 배경색에 따라 자동으로 결정됩니다.
+
+<VStack spacing={10}>
+  <HStack spacing={10}>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="primary"
+      p={10}
+    >
+      <OnColorContainer color="onPrimary">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="informative"
+      p={10}
+    >
+      <OnColorContainer color="onInformative">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="error"
+      p={10}
+    >
+      <OnColorContainer color="onError">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="success"
+      p={10}
+    >
+      <OnColorContainer color="onSuccess">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="warning"
+      p={10}
+    >
+      <OnColorContainer color="onWarning">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+  </HStack>
+  <HStack spacing={10}>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="primaryContainer"
+      p={10}
+    >
+      <OnColorContainer color="onPrimaryContainer">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="informativeContainer"
+      p={10}
+    >
+      <OnColorContainer color="onInformativeContainer">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="errorContainer"
+      p={10}
+    >
+      <OnColorContainer color="onErrorContainer">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="successContainer"
+      p={10}
+    >
+      <OnColorContainer color="onSuccessContainer">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+    <Paper
+      borderRadiusLevel={3}
+      backgroundColor="warningContainer"
+      p={10}
+    >
+      <OnColorContainer color="onWarningContainer">
+        <Spinner size="lg" />
+      </OnColorContainer>
+    </Paper>
+  </HStack>
+</VStack>
+
+## How to use
+
+```jsx
+import { Spinner } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop     | Type                                 | Default | Description                    |
+| -------- | ------------------------------------ | ------- | ------------------------------ |
+| size(\*) | `xs` \| `sm` \| `md` \| `lg` \| `xl` | -       | `Spinner`의 크기를 설정합니다. |
