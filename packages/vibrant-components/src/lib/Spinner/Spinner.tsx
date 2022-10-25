@@ -28,7 +28,6 @@ export const Spinner = withSpinnerVariation(({ borderWidth, borderRadius, ...res
         borderWidth={borderWidth}
         borderColor="transparent"
         borderTopColor="onColor"
-        opacity={0.24}
         borderRadius={borderRadius}
       />
     </Motion>
