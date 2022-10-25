@@ -19,6 +19,26 @@ const config: StorybookViteConfig & {
   previewHead?: (head: string) => string;
   env?: (config: Record<string, any>, context: { configType: 'DEVELOPMENT' | 'PRODUCTION' }) => Record<string, any>;
 } = {
+  refs: {
+    '@vibrant-ui/core': {
+      disable: true,
+    },
+    '@vibrant-ui/components': {
+      disable: true,
+    },
+    '@vibrant-ui/forms': {
+      disable: true,
+    },
+    '@vibrant-ui/icons': {
+      disable: true,
+    },
+    '@vibrant-ui/motion': {
+      disable: true,
+    },
+    '@vibrant-ui/theme': {
+      disable: true,
+    },
+  },
   stories: storybookLibraries.map(name => ({
     directory: `../packages/${name}`,
     files: '**/*.stories.tsx',
