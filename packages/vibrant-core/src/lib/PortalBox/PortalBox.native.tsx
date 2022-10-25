@@ -3,10 +3,10 @@ import { FullWindowOverlay } from 'react-native-screens';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { createPortal } from 'react-native/Libraries/Renderer/shims/ReactNative';
-import { useWindowDimensions } from '@vibrant-ui/core';
 import { useSafeDeps } from '@vibrant-ui/utils';
 import { platform } from '../platform/platform.native';
 import { usePortalRoot } from '../PortalRoot';
+import { useWindowDimensions } from '../useWindowDimensions';
 import { withPortalBoxVariation } from './PortalBoxProps';
 
 export const PortalBox = withPortalBoxVariation(({ children, BoxComponent, innerRef, onMount, ...restProps }) => {

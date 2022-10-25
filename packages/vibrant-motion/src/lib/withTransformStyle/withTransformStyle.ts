@@ -3,7 +3,7 @@ import { isNative } from '@vibrant-ui/core';
 export const withTransformStyle = (style: any) => {
   if (isNative) {
     const transform = [];
-    const { x, y, ...restStyle } = style;
+    const { x, y, rotate, ...restStyle } = style;
 
     if (x !== undefined) {
       transform.push({ translateX: x });
@@ -11,6 +11,10 @@ export const withTransformStyle = (style: any) => {
 
     if (y !== undefined) {
       transform.push({ translateY: y });
+    }
+
+    if (rotate !== undefined) {
+      transform.push({ rotate });
     }
 
     return {
