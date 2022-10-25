@@ -8,6 +8,7 @@ export default {
   component: StackedPortal,
   args: {
     id: 'test',
+    position: ['bottom', 'top'],
     bottom: 0,
   },
 } as ComponentMeta<typeof StackedPortal>;
