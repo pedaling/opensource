@@ -16,13 +16,7 @@ export default {
   },
 } as ComponentMeta<typeof Toast>;
 
-export const Basic: ComponentStory<typeof Toast> = props => (
-  <VStack mt={200} height="100%" width="100%" alignHorizontal="start">
-    <Paper height="100%" width="100%" backgroundColor="background">
-      <Toast {...props} />
-    </Paper>
-  </VStack>
-);
+export const Basic: ComponentStory<typeof Toast> = props => <Toast {...props} />;
 
 export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
   const { showToast, closeToast } = useToast();

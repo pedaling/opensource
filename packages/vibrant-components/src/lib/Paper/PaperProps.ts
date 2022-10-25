@@ -3,6 +3,7 @@ import type {
   BorderSystemProps,
   DisplaySystemProps,
   ElevationSystemProps,
+  FlexboxSystemProps,
   PositionSystemProps,
   ReactElementChild,
   ResponsiveValue,
@@ -19,6 +20,7 @@ type PaperProps = {
   DisplaySystemProps &
   SpacingSystemProps &
   PositionSystemProps &
+  Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<ElevationSystemProps, 'elevationLevel'> &
   SizingSystemProps &
   (

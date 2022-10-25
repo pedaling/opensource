@@ -8,7 +8,7 @@ import { useToastProps } from '../ToastProvider/ToastProvider';
 const DURATION = 5000;
 
 export const ToastRenderer = () => {
-  const toastProps = useToastProps();
+  const { toastProps } = useToastProps();
   const [show, setShow] = useState(false);
   const [isMount, setIsMount] = useState(false);
 
@@ -20,7 +20,7 @@ export const ToastRenderer = () => {
     if (toastProps) {
       setIsMount(true);
     }
-  }, [toastProps, toastProps?.toastKey]);
+  }, [toastProps, toastProps?.id]);
 
   useEffect(() => {
     if (!show) {
@@ -38,7 +38,7 @@ export const ToastRenderer = () => {
     }, toastProps?.duration ?? DURATION);
 
     return () => clearTimeout(timer);
-  }, [show, toastProps, toastProps?.duration, toastProps?.toastKey]);
+  }, [show, toastProps, toastProps?.duration, toastProps?.id]);
 
   return toastProps && isMount ? (
     <StackedPortal
