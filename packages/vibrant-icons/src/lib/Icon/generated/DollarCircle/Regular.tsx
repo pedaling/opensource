@@ -1,8 +1,7 @@
-import type { FC } from 'react';
 import { Svg } from '@vibrant-ui/core';
-import type { IconProps } from '../../IconProp';
+import type { IconComponent, IconProps } from '../../IconProp';
 
-export const Regular: FC<IconProps> = ({ size = 24, fill = 'onColor', ...props }) => (
+export const Regular: IconComponent<IconProps, 'Regular'> = ({ size = 24, fill = 'onColor', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} {...props}>
     <Svg.G clipPath="url(#clip0_19624_8091)">
       <Svg.Path
@@ -18,3 +17,5 @@ export const Regular: FC<IconProps> = ({ size = 24, fill = 'onColor', ...props }
     </Svg.Defs>
   </Svg>
 );
+
+Regular.iconType = 'Regular';
