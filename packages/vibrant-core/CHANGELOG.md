@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.23.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.22.0...vibrant-core-0.23.0) (2022-10-27)
+
+
+### Features
+
+* add Spinner component ([#371](https://github.com/pedaling/opensource/issues/371)) ([f2f1a2a](https://github.com/pedaling/opensource/commit/f2f1a2a26e6f76c516285e79d2314ddc221c18f0))
+* enables StackedPortal to support responsive value ([#377](https://github.com/pedaling/opensource/issues/377)) ([20dc2b0](https://github.com/pedaling/opensource/commit/20dc2b07c1f12cf42615c551e2574dbde3b57460))
+
+
+### Bug Fixes
+
+* 스토리북에 버저닝을 추가한다 ([#374](https://github.com/pedaling/opensource/issues/374)) ([350e6e6](https://github.com/pedaling/opensource/commit/350e6e6e3fb6762a5bab3a6254d2e0b8abfabc10))
+
 ## [0.22.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.21.2...vibrant-core-0.22.0) (2022-10-24)
 
 ### [0.21.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.21.1...vibrant-core-0.21.2) (2022-10-20)
