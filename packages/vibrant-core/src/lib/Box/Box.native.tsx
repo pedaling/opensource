@@ -40,6 +40,7 @@ export const Box = styled(
           onLayout={handleLayout}
           accessibilityRole={role}
           accessibilityLabel={ariaLabel}
+          collapsable={!ref}
           {...(base ? { as } : {})}
           {...restProps}
           {...props}
