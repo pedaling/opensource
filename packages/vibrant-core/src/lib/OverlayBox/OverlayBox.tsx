@@ -5,6 +5,7 @@ import { Box } from '../Box';
 import { PortalBox } from '../PortalBox';
 import { PressableBox } from '../PressableBox';
 import { useLockBodyScroll } from '../useLockBodyScroll';
+import { useWindowDimensions } from '../useWindowDimensions';
 import { withOverlayBoxVariation } from './OverlayBoxProps';
 
 export const OverlayBox = withOverlayBoxVariation(
@@ -13,13 +14,17 @@ export const OverlayBox = withOverlayBoxVariation(
 
     useLockBodyScroll(open);
 
+    const { width, height } = useWindowDimensions();
+
     useEffect(() => {
       if (!open) {
         return;
       }
 
-      getElementRect(targetRef.current).then(rect => setTargetRect(rect));
-    }, [open, targetRef]);
+      getElementRect(targetRef.current).then(rect => {
+        setTargetRect(rect);
+      });
+    }, [open, targetRef, width, height]);
 
     const handleTargetTouchEnd = useCallback(() => {
       onDismiss?.();
