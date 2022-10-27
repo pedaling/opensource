@@ -21,22 +21,16 @@ type ShadowsProps = {
   children?: ReactElement;
 };
 
-export const createShadowsComponent = (ShadowComponent: ShadowComponentType) => {
-  const ShadowsComponent = forwardRef<any, ShadowsProps>(({ shadows, style, children }, ref) => (
-    <ShadowComponent
-      paintInside={!(shadows?.[0].offset?.[0] === 0 && shadows?.[0].offset?.[1] === 0)}
-      viewStyle={shadows.length <= 1 ? style : undefined}
-      {...(shadows[0] ?? { distance: 0 })}
-    >
-      {shadows.length <= 1 ? (
-        <Box ref={ref}>{children}</Box>
-      ) : (
-        <ShadowsComponent ref={ref} shadows={shadows.slice(1)} style={style}>
-          {children}
-        </ShadowsComponent>
-      )}
-    </ShadowComponent>
+export const createShadowsComponent = (ShadowComponent: ShadowComponentType) =>
+  forwardRef<any, ShadowsProps>(({ shadows, style, children }, ref) => (
+    <Box ref={ref} {...style} overflow="visible">
+      {shadows.map((shadow, index) => (
+        <Box key={index} position="absolute" top={0} bottom={0} left={0} right={0}>
+          <ShadowComponent viewStyle={{ ...style, width: '100%', height: '100%' }} {...(shadow ?? { distance: 0 })}>
+            <Box />
+          </ShadowComponent>
+        </Box>
+      ))}
+      {children}
+    </Box>
   ));
-
-  return ShadowsComponent;
-};
