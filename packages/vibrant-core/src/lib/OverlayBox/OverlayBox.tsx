@@ -14,17 +14,15 @@ export const OverlayBox = withOverlayBoxVariation(
 
     useLockBodyScroll(open);
 
-    const { width, height } = useWindowDimensions();
+    const windowDimensions = useWindowDimensions();
 
     useEffect(() => {
       if (!open) {
         return;
       }
 
-      getElementRect(targetRef.current).then(rect => {
-        setTargetRect(rect);
-      });
-    }, [open, targetRef, width, height]);
+      getElementRect(targetRef.current).then(rect => setTargetRect(rect));
+    }, [open, targetRef, windowDimensions]);
 
     const handleTargetTouchEnd = useCallback(() => {
       onDismiss?.();

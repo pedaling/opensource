@@ -11,7 +11,7 @@ import { withOverlayBoxVariation } from './OverlayBoxProps';
 export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, targetRef, children, ...boxProps }) => {
   const [targetRect, setTargetRect] = useState<Rect | null>(null);
 
-  const { width, height } = useWindowDimensions();
+  const windowDimensions = useWindowDimensions();
 
   useEffect(() => {
     if (!open) {
@@ -19,7 +19,7 @@ export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, 
     }
 
     getElementRect(targetRef.current).then(rect => setTargetRect(rect));
-  }, [open, targetRef, width, height]);
+  }, [open, targetRef, windowDimensions]);
 
   const handleTargetTouchEnd = useCallback(
     ({ nativeEvent: { pageX, pageY } }: GestureResponderEvent) => {
