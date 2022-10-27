@@ -4,7 +4,7 @@ import type {
   FlexboxSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
-  ReactElementChild,
+  ReactElementChildren,
   ResponsiveValue,
   SizingSystemProps,
   SpacingSystemProps,
@@ -27,7 +27,7 @@ export type StackProps = DisplaySystemProps &
     direction: ResponsiveValue<'horizontal' | 'vertical'>;
     ref?: RefObject<HTMLElement>;
     spacing?: ResponsiveValue<number>;
-    children?: ReactElementChild | ReactElementChild[];
+    children?: ReactElementChildren;
     alignHorizontal?: ResponsiveValue<Alignment>;
     alignVertical?: ResponsiveValue<Alignment>;
   };

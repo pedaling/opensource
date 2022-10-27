@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
-import { PortalBox, useSafeArea, useStackedPortal } from '@vibrant-ui/core';
+import { PortalBox, useResponsiveValue, useSafeArea, useStackedPortal } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { withStackedPortalVariation } from './StackedPortalProps';
 
@@ -24,11 +24,16 @@ export const StackedPortal = withStackedPortalVariation(
   }) => {
     const { generateStyle } = useSafeArea();
 
+    const { getResponsiveValue } = useResponsiveValue();
+
+    const currentPosition = getResponsiveValue(position);
+    const currentPositionOffset = getResponsiveValue(positionOffset);
+
     const { offset, renderedIndex, unregister, changeHeight } = useStackedPortal({
-      position,
+      position: currentPosition,
       id,
       order,
-      offset: positionOffset,
+      offset: currentPositionOffset,
       safeAreaInset: safeAreaMode === 'margin',
     });
 
@@ -50,8 +55,8 @@ export const StackedPortal = withStackedPortalVariation(
       }
 
       const generatedStyle = generateStyle({
-        edges: [position],
-        minInsets: { [position]: padding[position] },
+        edges: [currentPosition],
+        minInsets: { [currentPosition]: padding[currentPosition] },
       });
 
       padding = {
@@ -65,7 +70,7 @@ export const StackedPortal = withStackedPortalVariation(
         pr: padding.right,
         pb: padding.bottom,
       };
-    }, [generateStyle, p, pb, pl, position, pr, pt, px, py, renderedIndex, safeAreaMode]);
+    }, [currentPosition, generateStyle, p, pb, pl, pr, pt, px, py, renderedIndex, safeAreaMode]);
 
     const handleLayout = useCallback(
       ({ height }: LayoutEvent) => {
@@ -87,7 +92,7 @@ export const StackedPortal = withStackedPortalVariation(
         ref={innerRef}
         hidden={!isDefined(offset)}
         onLayout={handleLayout}
-        {...{ [position]: !isDefined(offset) ? 0 : offset }}
+        {...{ [currentPosition]: !isDefined(offset) ? 0 : offset }}
         {...paddingStyle}
         {...restProps}
       >

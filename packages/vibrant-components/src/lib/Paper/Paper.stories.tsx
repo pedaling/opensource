@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { HStack } from '../HStack';
+import { VStack } from '../VStack';
 import { Paper } from './Paper';
 
 export default {
@@ -27,10 +27,10 @@ export const BorderSolid: ComponentStory<typeof Paper> = () => (
 );
 
 export const Elevation: ComponentStory<typeof Paper> = () => (
-  <HStack m={20} spacing={30}>
+  <VStack m={50} spacing={50}>
     <Paper width={200} height={200} backgroundColor="background" elevationLevel={1} />
     <Paper width={200} height={200} backgroundColor="background" elevationLevel={2} />
     <Paper width={200} height={200} backgroundColor="background" elevationLevel={3} />
     <Paper width={200} height={200} backgroundColor="background" elevationLevel={4} />
-  </HStack>
+  </VStack>
 );
