@@ -51,6 +51,7 @@ export const stories = [
   require('../../vibrant-core/src/lib/ScrollBox/ScrollBox.stories.tsx'),
   require('../../vibrant-core/src/lib/Text/Text.stories.tsx'),
   require('../../vibrant-core/src/lib/TextInput/TextInput.stories.tsx'),
+  require('../../vibrant-forms/src/lib/Form/Form.stories.tsx'),
   require('../../vibrant-icons/src/lib/Icon/Icon.stories.tsx'),
   require('../../vibrant-motion/src/lib/Motion/Motion.stories.tsx'),
   require('../../vibrant-motion/src/lib/Transition/Transition.stories.tsx'),

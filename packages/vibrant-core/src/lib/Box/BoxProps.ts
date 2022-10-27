@@ -95,6 +95,7 @@ export type BoxElements =
   | 'defs'
   | 'div'
   | 'footer'
+  | 'form'
   | 'g'
   | 'header'
   | 'img'

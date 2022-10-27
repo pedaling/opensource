@@ -147,6 +147,7 @@
     "prism-react-renderer": "1.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "7.38.0",
     "react-native": "0.69.6",
     "react-native-gesture-handler": "~2.5.0",
     "react-native-linear-gradient-degree": "0.0.1",
