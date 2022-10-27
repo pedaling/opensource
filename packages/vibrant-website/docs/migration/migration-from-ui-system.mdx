@@ -145,7 +145,7 @@ import { Box } from '@vibrant-ui/core';
 
 ### Paper
 
-#### Remove kind prop
+#### 기존 `kind` 속성 삭제
 
 `kind` 속성이 제거되고 borderColor 속성과 backgroundColor 속성을 동시에 사용할 수 있습니다.
 
@@ -227,7 +227,7 @@ import { Box } from '@vibrant-ui/core';
 
 ### TextField
 
-#### Support Dynamic Label
+#### Dynamic Label 지원
 
 ```jsx live
 <TextField state="normal" label="Focus Here!" />
@@ -301,7 +301,7 @@ Stack direction 에 따라 주축 방향의 start 에 정렬되고, 교차축 �
 | justifyContent | start   |
 | alignItems     | stretch |
 
-#### Remove `alignment` prop
+#### 기존 `alignment` 속성 삭제
 
 기존에는 `alignment` 가 `VStack` 에서는 `justifyContent` 속성으로, `HStack` 에서는 `alignmentItems` 로 변환이 되고 있엇습니다.
 이를 개선하여 `alignment` 속성을 제거하고 `alignVertical` `alignHorizontal` 속성을 추가했습니다.
