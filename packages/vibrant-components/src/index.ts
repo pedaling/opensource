@@ -1,4 +1,5 @@
 export { Body } from './lib/Body';
+export { Backdrop } from './lib/Backdrop';
 export { Display } from './lib/Display';
 export { Divider } from './lib/Divider';
 export { GlobalStyle } from './lib/GlobalStyle';
