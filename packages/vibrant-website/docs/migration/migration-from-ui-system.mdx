@@ -40,7 +40,7 @@ import {
 
 ## Vibrant 컴포넌트 사용 가이드
 
-### `<Box />`
+### Box
 
 #### Box 의 기본 레이아웃 값은 flex 입니다.
 
@@ -123,7 +123,7 @@ import { Box } from '@vibrant-ui/core';
 />
 ```
 
-## `<ResponsiveStack />`
+### ResponsiveStack
 
 `<ResponsiveStack />` 컴포넌트가 제거되고 `<Stack />` 컴포넌트가 추가되었습니다.
 
@@ -143,9 +143,9 @@ import { Box } from '@vibrant-ui/core';
 <Stack direction={['vertical', 'horizontal']} />
 ```
 
-## `<Paper />`
+### Paper
 
-### Remove kind prop
+#### Remove kind prop
 
 `kind` 속성이 제거되고 borderColor 속성과 backgroundColor 속성을 동시에 사용할 수 있습니다.
 
@@ -173,7 +173,7 @@ import { Box } from '@vibrant-ui/core';
 />
 ```
 
-## `<Action />`
+### Action
 
 `<Action />` 컴포넌트가 제거되고 `<Pressable />` 컴포넌트가 추가되었습니다.
 
@@ -199,7 +199,7 @@ import { Box } from '@vibrant-ui/core';
 </Pressable>
 ```
 
-## `<SafeAreaContent />`
+### SafeAreaContent
 
 `<SafeAreaContent />` 컴포넌트가 제거되고 `<SafeAreaView />` 컴포넌트가 추가되었습니다.
 
@@ -225,9 +225,9 @@ import { Box } from '@vibrant-ui/core';
 />
 ```
 
-## `<TextField />`
+### TextField
 
-### Support Dynamic Label
+#### Support Dynamic Label
 
 ```jsx live
 <TextField state="normal" label="Focus Here!" />
@@ -235,7 +235,7 @@ import { Box } from '@vibrant-ui/core';
 
 입력창이 포커스 되었을 때 label이 애니메이션으로 동작됩니다.
 
-### prefix, suffix, renderStart, renderEnd
+#### prefix, suffix, renderStart, renderEnd
 
 기존에 있던 `renderRightIcon` prop이 제거되고 `prefix`, `suffix`, `renderStart`, `renderEnd`가 추가되었습니다
 
@@ -266,31 +266,9 @@ import { Box } from '@vibrant-ui/core';
 />
 ```
 
-## `<Icon />`
+### Icon
 
-### Remove `type` prop
-
-Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 같이 별도의 컴포넌트로 사용해주세요.
-
-**Before**
-
-```jsx
-// import { Icon } from '@class101/ui-system';
-
-<Icon.Play type="regular" size={20} />
-```
-
-**After**
-
-```jsx live
-// import { Icon } from '@vibrant-ui/icons';
-
-<Icon.Play.Regular size={20} />
-```
-
-## `<Icon />`
-
-### Remove `type` prop
+#### Remove `type` prop
 
 Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 같이 별도의 컴포넌트로 사용해주세요.
 
@@ -310,13 +288,9 @@ Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 �
 <Icon.Play.Regular size={20} />
 ```
 
-## `<Stack />`
+### Stack, VStack, HStack
 
-:::info
-`<Stack />` 뿐 아니라 `<VStack />`, `<HStack />` 을 함께 설명합니다.
-:::
-
-### Stack, VStack, HStack 의 초기값
+#### Stack, VStack, HStack 의 초기값
 
 Stack, VStack, HStack 의 초기값은 `@class101/ui-system` 과 동일하게 설정되어 있습니다.
 즉, justifyContent 의 기본값은 start 로, alignItems 의 기본값은 stretch 로 설정되어 있습니다.
@@ -327,7 +301,7 @@ Stack direction 에 따라 주축 방향의 start 에 정렬되고, 교차축 �
 | justifyContent | start   |
 | alignItems     | stretch |
 
-### Remove `alignment` prop
+#### Remove `alignment` prop
 
 기존에는 `alignment` 가 `VStack` 에서는 `justifyContent` 속성으로, `HStack` 에서는 `alignmentItems` 로 변환이 되고 있엇습니다.
 이를 개선하여 `alignment` 속성을 제거하고 `alignVertical` `alignHorizontal` 속성을 추가했습니다.
