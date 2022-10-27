@@ -14,9 +14,9 @@ export const Toast = withToastVariation(
         backgroundColor="inverseSurface"
         elevationLevel={1}
         maxWidth={816}
-        width={['100%', '100%', 'auto']}
+        width={['100%', 'auto']}
       >
-        <HStack px={16} py={12} alignVertical="center" width={['100%', '100%', 'auto']}>
+        <HStack px={16} py={12} alignVertical="center" width={['100%', 'auto']}>
           {IconComponent && (
             <VStack mr={8} flexShrink={0}>
               <IconComponent size={18} fill={color} />
