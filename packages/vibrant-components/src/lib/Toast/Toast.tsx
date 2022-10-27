@@ -26,7 +26,7 @@ export const Toast = withToastVariation(
             {title}
           </Text>
           {isDefined(buttonText) && onButtonClick && (
-            <VStack flexShrink={0}>
+            <VStack flexShrink={0} ml="auto">
               <Pressable interactions={['focus', 'active']} ml={12} onClick={onButtonClick}>
                 <Text lineHeight={18} fontSize={14} color="onViewInformative" fontWeight="medium">
                   {buttonText}
