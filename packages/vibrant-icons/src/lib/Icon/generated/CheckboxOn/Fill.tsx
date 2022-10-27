@@ -1,8 +1,7 @@
-import type { FC } from 'react';
 import { Svg } from '@vibrant-ui/core';
-import type { IconProps } from '../../IconProp';
+import type { IconComponent, IconProps } from '../../IconProp';
 
-export const Fill: FC<IconProps> = ({ size = 24, fill = 'onColor', ...props }) => (
+export const Fill: IconComponent<IconProps, 'Fill'> = ({ size = 24, fill = 'onColor', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} {...props}>
     <Svg.Path
       fillRule="evenodd"
@@ -11,3 +10,5 @@ export const Fill: FC<IconProps> = ({ size = 24, fill = 'onColor', ...props }) =
     />
   </Svg>
 );
+
+Fill.iconType = 'Fill';
