@@ -31,6 +31,7 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
         order={order}
         zIndex={zIndex.floatingActionButton}
         safeAreaMode="margin"
+        position="bottom"
         {...offsetProps}
       >
         <Box borderRadius={25} elevationLevel={1}>

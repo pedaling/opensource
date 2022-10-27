@@ -72,9 +72,11 @@ module.exports = () => {
 ### Configure VibrantProvider for Native
 
 ```tsx title="App.tsx"
-import { VibrantProvider } from '@vibrant-ui/core';
+import {
+  VibrantProvider,
+  createShadowsComponent,
+} from '@vibrant-ui/core';
 import type { Dependencies } from '@vibrant-ui/core';
-import { createShadowsComponent } from '@vibrant-ui/components';
 
 import * as ReactSpringNative from '@react-spring/native';
 import { Shadow } from 'react-native-shadow-2';
