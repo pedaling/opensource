@@ -2,9 +2,9 @@ import type { Rect, TargetElement } from './type';
 
 export function getElementRect(element: TargetElement): Promise<Rect> {
   return new Promise(resolve => {
-    if (element.measureInWindow) {
-      element.measureInWindow((x: number, y: number, width: number, height: number) => {
-        resolve({ x, y, width, height });
+    if (element.measure) {
+      element.measure((_x: number, _y: number, width: number, height: number, pageX: number, pageY: number) => {
+        resolve({ x: pageX, y: pageY, width, height });
       });
     } else {
       const observer = new IntersectionObserver(([entry], observer) => {
