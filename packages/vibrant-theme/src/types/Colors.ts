@@ -29,7 +29,7 @@ export const colorTokens = [
   'outline1',
   'outline2',
   'outlineNeutral',
-  'disableOutline',
+  'outlineDisable',
   'outlinePrimary',
   'outlineInformative',
   'outlineError',
@@ -55,8 +55,11 @@ export const colorTokens = [
 ] as const;
 
 export type ColorToken = typeof colorTokens[number];
-export type BaseColorToken = Exclude<ColorToken, `on${string}`>;
-export type OnColorToken = Extract<ColorToken, `on${string}`>;
+export type BaseColorToken = Exclude<
+  ColorToken,
+  'black' | 'dim' | 'overlay' | 'transparent' | 'white' | `on${string}` | `outline${string}`
+>;
+export type OnColorToken = Exclude<Extract<ColorToken, `on${string}`>, 'onColor'>;
 
 export type Colors = {
   [color in ColorToken]: string;
@@ -66,5 +69,32 @@ export type ThemeColors = {
   [mode in ThemeMode]: Colors;
 };
 
-export const baseColorTokens = colorTokens.filter((token): token is BaseColorToken => !token.startsWith('on'));
-export const onColorTokens = colorTokens.filter((token): token is OnColorToken => token.startsWith('on'));
+export const baseColorTokens = colorTokens.filter(
+  (token): token is BaseColorToken =>
+    !token.startsWith('on') &&
+    !token.startsWith('outline') &&
+    !['dim', 'overlay', 'transparent', 'white', 'black'].includes(token)
+);
+export const onColorTokens = colorTokens.filter(
+  (token): token is OnColorToken => token.startsWith('on') && token !== 'onColor'
+);
+
+export const BaseColorOnColorMap: { [color in BaseColorToken]: OnColorToken } = {
+  primary: 'onPrimary',
+  primaryContainer: 'onPrimaryContainer',
+  informative: 'onInformative',
+  informativeContainer: 'onInformativeContainer',
+  error: 'onError',
+  errorContainer: 'onErrorContainer',
+  success: 'onSuccess',
+  successContainer: 'onSuccessContainer',
+  warning: 'onWarning',
+  warningContainer: 'onWarningContainer',
+  surface1: 'onView1',
+  surface2: 'onView1',
+  surface3: 'onView1',
+  surface4: 'onView1',
+  disable: 'onView3',
+  background: 'onView1',
+  inverseSurface: 'onInverseSurface',
+};

@@ -1,7 +1,8 @@
+import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type SpinnerProps = {
-  size: 'lg' | 'md' | 'sm' | 'xl' | 'xs';
+  size: ResponsiveValue<'lg' | 'md' | 'sm' | 'xl' | 'xs'>;
 };
 
 export const withSpinnerVariation = withVariation<SpinnerProps>('Spinner')(
@@ -9,6 +10,7 @@ export const withSpinnerVariation = withVariation<SpinnerProps>('Spinner')(
     props: [
       {
         name: 'size',
+        responsive: true,
       },
     ],
     variants: {

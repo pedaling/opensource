@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import type { LayoutChangeEvent } from 'react-native';
 import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
+import { OnColorContainer } from '@vibrant-ui/core';
 import { getElementPosition } from '../getElementPosition';
 import type { BoxProps } from './BoxProps';
 import { interpolation, shouldForwardProp } from './BoxProps';
@@ -20,7 +21,7 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
 
 export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps & { style: any }>(
-    ({ as, base, style, onLayout, role, ariaLabel, ...restProps }, ref) => {
+    ({ as, base, style, onLayout, role, ariaLabel, backgroundColor, ...restProps }, ref) => {
       const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
 
       const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
@@ -34,17 +35,19 @@ export const Box = styled(
         : undefined;
 
       return (
-        <Component
-          ref={ref}
-          style={restStyle}
-          onLayout={handleLayout}
-          accessibilityRole={role}
-          accessibilityLabel={ariaLabel}
-          collapsable={ref ? false : undefined}
-          {...(base ? { as } : {})}
-          {...restProps}
-          {...props}
-        />
+        <OnColorContainer backgroundColor={backgroundColor}>
+          <Component
+            ref={ref}
+            style={restStyle}
+            onLayout={handleLayout}
+            accessibilityRole={role}
+            accessibilityLabel={ariaLabel}
+            collapsable={ref ? false : undefined}
+            {...(base ? { as } : {})}
+            {...restProps}
+            {...props}
+          />
+        </OnColorContainer>
       );
     }
   ),

@@ -2,12 +2,13 @@ import { useCallback, useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 import type { ResponsiveValue } from '../../types';
 import { useCurrentTheme } from '../ThemeProvider';
+import type { UseResponsiveValueProps } from './type';
 
-export const useResponsiveValue = ({ rootBreakPoints } = { rootBreakPoints: false }) => {
+export const useResponsiveValue = ({ useRootBreakPoints = false }: UseResponsiveValueProps = {}) => {
   const { width } = useWindowDimensions();
   const {
     theme: { breakpoints },
-  } = useCurrentTheme({ root: rootBreakPoints });
+  } = useCurrentTheme({ root: useRootBreakPoints });
 
   const currentIndex = useMemo(() => {
     const index = breakpoints.findIndex(breakpoint => breakpoint >= width);

@@ -82,7 +82,7 @@ export const Dropdown = withDropdownVariation(
       minInsets: { bottom: 20 },
     });
 
-    const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
+    const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
     const {
       theme: { zIndex },
