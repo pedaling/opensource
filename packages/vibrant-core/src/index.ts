@@ -51,6 +51,7 @@ export { getElementPosition } from './lib/getElementPosition';
 export { transformResponsiveValue } from './lib/transformResponsiveValue';
 export { useInterpolation } from './lib/useInterpolation';
 export { getWindowDimensions } from './lib/getWindowDimensions';
+export { createShadowsComponent } from './lib/createShadowsComponent';
 export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
 export { PortalBox } from './lib/PortalBox';

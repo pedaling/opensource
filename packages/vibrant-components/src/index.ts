@@ -22,7 +22,6 @@ export { VerificationCodeField } from './lib/VerificationCodeField';
 export type { VerificationCodeFieldProps } from './lib/VerificationCodeField';
 export { VStack } from './lib/VStack';
 export { Pressable } from './lib/Pressable';
-export { createShadowsComponent } from './lib/createShadowsComponent';
 export { DatePickerField } from './lib/DatePickerField';
 export type { DatePickerFieldProps } from './lib/DatePickerField';
 export { RangePickerField } from './lib/RangePickerField';
