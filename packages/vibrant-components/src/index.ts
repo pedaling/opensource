@@ -3,6 +3,7 @@ export { ContainedButton } from './lib/ContainedButton';
 export { Display } from './lib/Display';
 export { Divider } from './lib/Divider';
 export { GlobalStyle } from './lib/GlobalStyle';
+export { GhostButton } from './lib/GhostButton';
 export { HStack } from './lib/HStack';
 export { Paper } from './lib/Paper';
 export { Paragraph } from './lib/Paragraph';
