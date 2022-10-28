@@ -14,7 +14,7 @@ export const GhostButton = withGhostButtonVariation(
     DisclosureIconComponent,
     iconSize,
     children,
-    color,
+    color = 'onView1',
     ...restProps
   }) => (
     <Pressable
