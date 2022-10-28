@@ -38,7 +38,6 @@ function ThemedLiveEditor() {
       // otherwise dark prism theme is not applied
       key={String(isBrowser)}
       className={styles.playgroundEditor}
-      style={{ padding: '0.7rem' }}
     />
   );
 }
