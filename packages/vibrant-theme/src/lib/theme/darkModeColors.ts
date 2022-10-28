@@ -33,7 +33,7 @@ export const darkModeColors: Colors = {
   outline1: palettes.whiteAlpha['15'],
   outline2: palettes.whiteAlpha['5'],
   outlineNeutral: palettes.neutral['95'],
-  disableOutline: palettes.whiteAlpha['10'],
+  outlineDisable: palettes.whiteAlpha['10'],
   outlinePrimary: palettes.orange['50'],
   outlineInformative: palettes.blue['50'],
   outlineError: palettes.red['40'],

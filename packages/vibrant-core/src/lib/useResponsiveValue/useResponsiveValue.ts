@@ -1,15 +1,28 @@
 import { useCallback, useEffect, useState } from 'react';
 import type { ResponsiveValue } from '../../types';
 import { useCurrentTheme } from '../ThemeProvider';
+import type { UseResponsiveValueProps } from './type';
 
-export const useResponsiveValue = ({ rootBreakPoints } = { rootBreakPoints: false }) => {
+export const useResponsiveValue = ({ useRootBreakPoints = false, disabled = false }: UseResponsiveValueProps = {}) => {
   const {
     theme: { breakpoints },
-  } = useCurrentTheme({ root: rootBreakPoints });
+  } = useCurrentTheme({ root: useRootBreakPoints });
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const getResponsiveValue = useCallback(
+    (responsiveValue: ResponsiveValue<any>) =>
+      Array.isArray(responsiveValue)
+        ? responsiveValue[Math.min(currentIndex, responsiveValue.length - 1)]
+        : responsiveValue,
+    [currentIndex]
+  ) as <Value>(responsiveValue: ResponsiveValue<Value>) => Value;
+
   useEffect(() => {
+    if (disabled) {
+      return;
+    }
+
     const mediaQueryList = [window.matchMedia(`(max-width: ${breakpoints[0]}px)`)].concat(
       breakpoints.map((breakpoint, index) =>
         window.matchMedia(
@@ -39,15 +52,10 @@ export const useResponsiveValue = ({ rootBreakPoints } = { rootBreakPoints: fals
     return () => {
       mediaQueryList.forEach((mediaQuery, index) => mediaQuery.removeListener(mediaQueryHandlers[index]));
     };
-  }, [breakpoints]);
+  }, [breakpoints, disabled]);
 
-  const getResponsiveValue = useCallback(
-    (responsiveValue: ResponsiveValue<any>) =>
-      Array.isArray(responsiveValue)
-        ? responsiveValue[Math.min(currentIndex, responsiveValue.length - 1)]
-        : responsiveValue,
-    [currentIndex]
-  ) as <Value>(responsiveValue: ResponsiveValue<Value>) => Value;
-
-  return { getResponsiveValue, breakpointIndex: currentIndex };
+  return {
+    getResponsiveValue,
+    breakpointIndex: currentIndex,
+  };
 };

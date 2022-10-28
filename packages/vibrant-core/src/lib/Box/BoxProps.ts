@@ -85,7 +85,9 @@ const systemProps = [
   ...webSystemProps,
 ];
 
-const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
+const systemPropNames = systemProps
+  .filter(systemProp => !systemProp.disabled && systemProp.propName !== 'backgroundColor')
+  .map(systemProp => systemProp.propName);
 
 export type BoxElements =
   | 'article'

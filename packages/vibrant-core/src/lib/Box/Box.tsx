@@ -2,11 +2,12 @@ import type { ComponentType, FC, ReactElement } from 'react';
 import { createElement, forwardRef, useCallback } from 'react';
 import styled from '@emotion/styled';
 import { useLayoutEvent } from '@vibrant-ui/utils';
+import { OnColorContainer } from '../OnColorContainer';
 import type { BoxElements, BoxProps } from './BoxProps';
 import { interpolation, shouldForwardProp } from './BoxProps';
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps>(({ as, base, onLayout, ariaLabel, ...restProps }, ref) => {
+  forwardRef<HTMLDivElement, BoxProps>(({ as, base, onLayout, ariaLabel, backgroundColor, ...restProps }, ref) => {
     const Component = base ? (base as ComponentType<any>) : undefined;
 
     const { ref: layoutEventRef } = useLayoutEvent(onLayout);
@@ -27,14 +28,22 @@ export const Box = styled(
     );
 
     if (Component) {
-      return <Component ref={composeRef} {...(as ? { as } : {})} aria-label={ariaLabel} {...restProps} />;
+      return (
+        <OnColorContainer backgroundColor={backgroundColor}>
+          <Component ref={composeRef} {...(as ? { as } : {})} aria-label={ariaLabel} {...restProps} />
+        </OnColorContainer>
+      );
     }
 
-    return createElement(as ?? 'div', {
-      ref: composeRef,
-      'aria-label': ariaLabel,
-      ...restProps,
-    });
+    return (
+      <OnColorContainer backgroundColor={backgroundColor}>
+        {createElement(as ?? 'div', {
+          ref: composeRef,
+          'aria-label': ariaLabel,
+          ...restProps,
+        })}
+      </OnColorContainer>
+    );
   }),
   {
     shouldForwardProp,

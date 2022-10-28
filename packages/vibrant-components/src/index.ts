@@ -1,4 +1,5 @@
 export { Body } from './lib/Body';
+export { ContainedButton } from './lib/ContainedButton';
 export { Display } from './lib/Display';
 export { Divider } from './lib/Divider';
 export { GlobalStyle } from './lib/GlobalStyle';
