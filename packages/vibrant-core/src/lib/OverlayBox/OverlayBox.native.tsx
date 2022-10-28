@@ -5,10 +5,13 @@ import type { Rect } from '@vibrant-ui/utils';
 import { getElementRect } from '@vibrant-ui/utils';
 import { Box } from '../Box';
 import { PortalBox } from '../PortalBox';
+import { useWindowDimensions } from '../useWindowDimensions';
 import { withOverlayBoxVariation } from './OverlayBoxProps';
 
 export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, targetRef, children, ...boxProps }) => {
   const [targetRect, setTargetRect] = useState<Rect | null>(null);
+
+  const { width, height } = useWindowDimensions();
 
   useEffect(() => {
     if (!open) {
@@ -16,7 +19,7 @@ export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, 
     }
 
     getElementRect(targetRef.current).then(rect => setTargetRect(rect));
-  }, [open, targetRef]);
+  }, [open, targetRef, width, height]);
 
   const handleTargetTouchEnd = useCallback(
     ({ nativeEvent: { pageX, pageY } }: GestureResponderEvent) => {

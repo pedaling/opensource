@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.23.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.22.0...vibrant-components-0.23.0) (2022-10-27)
+
+
+### Features
+
+* add overflow prop to Paper component ([#378](https://github.com/pedaling/opensource/issues/378)) ([14493d0](https://github.com/pedaling/opensource/commit/14493d0ef1c374ab48e18a13d87c9dbbf5f2ec47))
+* add readOnly prop to TextField ([#383](https://github.com/pedaling/opensource/issues/383)) ([5cab5ad](https://github.com/pedaling/opensource/commit/5cab5adca9f1ebe4f526c95a7c635a08b481da1c))
+* add Spinner component ([#371](https://github.com/pedaling/opensource/issues/371)) ([f2f1a2a](https://github.com/pedaling/opensource/commit/f2f1a2a26e6f76c516285e79d2314ddc221c18f0))
+* enables StackedPortal to support responsive value ([#377](https://github.com/pedaling/opensource/issues/377)) ([20dc2b0](https://github.com/pedaling/opensource/commit/20dc2b07c1f12cf42615c551e2574dbde3b57460))
+
+
+### Bug Fixes
+
+* fix Toast mobile ui issue ([#376](https://github.com/pedaling/opensource/issues/376)) ([32cf90e](https://github.com/pedaling/opensource/commit/32cf90e3d41d41d7cb43567fd70fc3e48f364f23))
+* toast buttonText position ([#382](https://github.com/pedaling/opensource/issues/382)) ([a4bbe22](https://github.com/pedaling/opensource/commit/a4bbe22be2677e4c3949260c121fd4bd582a728d))
+* 스토리북에 버저닝을 추가한다 ([#374](https://github.com/pedaling/opensource/issues/374)) ([350e6e6](https://github.com/pedaling/opensource/commit/350e6e6e3fb6762a5bab3a6254d2e0b8abfabc10))
+
 ## [0.22.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.21.2...vibrant-components-0.22.0) (2022-10-24)
 
 
