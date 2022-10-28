@@ -23,7 +23,7 @@ export type StackProps = DisplaySystemProps &
   SizingSystemProps &
   PositionSystemProps &
   SpacingSystemProps & {
-    as?: SemanticTagName | 'div' | 'label';
+    as?: SemanticTagName | 'div' | 'label' | 'span';
     direction: ResponsiveValue<'horizontal' | 'vertical'>;
     ref?: RefObject<HTMLElement>;
     spacing?: ResponsiveValue<number>;

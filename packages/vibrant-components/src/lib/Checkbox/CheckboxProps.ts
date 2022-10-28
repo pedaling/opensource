@@ -38,7 +38,7 @@ export const withCheckboxVariation = withVariation<CheckboxProps>('Checkbox')(
     variants: {
       true: {
         iconFillColor: 'disable',
-        iconOutlineColor: 'disableOutline',
+        iconOutlineColor: 'outlineDisable',
       },
       false: {
         iconFillColor: 'primary',

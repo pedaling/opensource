@@ -8,6 +8,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/Checkbox/Checkbox.stories.tsx'),
   require('../../vibrant-components/src/lib/CheckboxField/CheckboxField.stories.tsx'),
   require('../../vibrant-components/src/lib/CheckboxGroupField/CheckboxGroupField.stories.tsx'),
+  require('../../vibrant-components/src/lib/ContainedButton/ContainedButton.stories.tsx'),
   require('../../vibrant-components/src/lib/DateInput/DateInput.stories.tsx'),
   require('../../vibrant-components/src/lib/DatePickerField/DatePickerField.stories.tsx'),
   require('../../vibrant-components/src/lib/Display/Display.stories.tsx'),
