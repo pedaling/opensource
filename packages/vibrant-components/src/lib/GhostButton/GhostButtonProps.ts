@@ -1,8 +1,8 @@
-import { ChevronDown, ChevronRight, ChevronUp } from 'packages/vibrant-icons/src/lib/Icon/generated';
 import type { Ref } from 'react';
 import type { ReactTextChild, ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
+import { Icon } from '@vibrant-ui/icons';
 import type { OnColorToken } from '@vibrant-ui/theme';
 import type { PressableProps } from '../Pressable/PressableProp';
 
@@ -67,13 +67,13 @@ export const withGhostButtonVariation = withVariation<GhostButtonProps>('GhostBu
     ],
     variants: {
       top: {
-        DisclosureIconComponent: ChevronUp.Regular,
+        DisclosureIconComponent: Icon.ChevronUp.Regular,
       },
       right: {
-        DisclosureIconComponent: ChevronRight.Regular,
+        DisclosureIconComponent: Icon.ChevronRight.Regular,
       },
       bottom: {
-        DisclosureIconComponent: ChevronDown.Regular,
+        DisclosureIconComponent: Icon.ChevronDown.Regular,
       },
       none: {
         DisclosureIconComponent: null,
