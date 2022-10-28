@@ -65,8 +65,9 @@ const config = {
       playgroundPosition: 'bottom',
     },
     prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      defaultLanguage: 'typescript',
+      theme: require('prism-react-renderer/themes/oceanicNext'),
+      darkTheme: require('prism-react-renderer/themes/oceanicNext'),
       magicComments: [
         {
           className: 'theme-code-block-highlighted-line',
