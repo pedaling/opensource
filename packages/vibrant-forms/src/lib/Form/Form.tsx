@@ -12,7 +12,7 @@ export const Form = <FieldValues extends ReactHookFormFieldValues>({
   full = false,
   ...restProps
 }: FormProps<FieldValues>) => {
-  const hookFormMethods = useForm<FieldValues>({ mode: 'onChange' });
+  const hookFormMethods = useForm<FieldValues>();
   const methods = formControlMethods ?? hookFormMethods;
 
   return (
