@@ -5,7 +5,6 @@ import { Box } from '@vibrant-ui/core';
 import type { FormProps } from './FormProps';
 
 export const Form = <FieldValues extends ReactHookFormFieldValues>({
-  className,
   children,
   formControlMethods,
   onSubmit,
@@ -25,7 +24,6 @@ export const Form = <FieldValues extends ReactHookFormFieldValues>({
 
           return onSubmit ? methods.handleSubmit(onSubmit)(e) : undefined;
         }}
-        className={className}
         noValidate={true}
         as="form"
         {...restProps}
