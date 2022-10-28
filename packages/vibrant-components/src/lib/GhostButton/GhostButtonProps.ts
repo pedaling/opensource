@@ -53,8 +53,7 @@ export const withGhostButtonVariation = withVariation<GhostButtonProps>('GhostBu
     ],
     variants: {
       true: {
-        backgroundColor: 'disable',
-        onColor: 'onView3',
+        color: 'onView3',
       },
       false: {},
     },
