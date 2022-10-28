@@ -62,6 +62,7 @@ export const withGhostButtonVariation = withVariation<GhostButtonProps>('GhostBu
     props: [
       {
         name: 'disclosure',
+        default: 'none',
       },
     ],
     variants: {
