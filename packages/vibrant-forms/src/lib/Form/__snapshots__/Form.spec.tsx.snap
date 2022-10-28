@@ -17,6 +17,8 @@ exports[`<Form /> when Form rendered match snapshot 1`] = `
   flex-shrink: 1;
   box-sizing: border-box;
   position: relative;
+  width: auto;
+  height: auto;
 }
 
 <div>
@@ -24,7 +26,6 @@ exports[`<Form /> when Form rendered match snapshot 1`] = `
     class="emotion-0"
     data-testid="form"
     novalidate=""
-    style="width: auto; height: auto;"
   />
 </div>
 `;
