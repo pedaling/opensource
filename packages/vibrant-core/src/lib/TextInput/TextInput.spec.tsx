@@ -1,13 +1,18 @@
-import { render } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { TextInput } from './TextInput';
 
 describe('<TextInput />', () => {
-  let element: HTMLInputElement;
+  let renderer: ReactRenderer;
+  const { render } = createReactRenderer();
 
   const testTyping = async (cases: { input: string; output: string }[]) => {
     for (const { input, output } of cases) {
-      await userEvent.type(element, input);
+      const element = renderer.getByTestId('input');
+
+      fireEvent.input(element, { target: { value: input } });
 
       expect(element).toHaveValue(output);
 
@@ -17,7 +22,7 @@ describe('<TextInput />', () => {
 
   describe('prop: type="text"', () => {
     beforeEach(() => {
-      element = render(<TextInput type="text" />).container.getElementsByTagName('input')[0];
+      renderer = render(<TextInput type="text" data-testid="input" />);
     });
 
     it('should accept any text', async () => {
@@ -32,7 +37,7 @@ describe('<TextInput />', () => {
 
   describe('prop: type="number"', () => {
     beforeEach(() => {
-      element = render(<TextInput type="number" />).container.getElementsByTagName('input')[0];
+      renderer = render(<TextInput type="number" data-testid="input" />);
     });
 
     it('should accept 0 to 9', async () => {

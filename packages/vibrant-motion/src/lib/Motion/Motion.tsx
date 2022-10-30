@@ -2,6 +2,7 @@ import { useEffect, useImperativeHandle, useMemo } from 'react';
 import { useSpring } from '@react-spring/core';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { easings } from '../constants';
+import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
 import type { AnimationResult } from '../types';
 import { useReactSpring } from '../useReactSpring';
@@ -72,6 +73,6 @@ export const Motion = withMotionVariation(
       springApi.start(option);
     }, [innerRef, option, springApi]);
 
-    return <AnimatedComponent style={withTransformStyle(styles)} {...children.props} />;
+    return <AnimatedComponent style={withTransformStyle(env === 'test' ? option.to : styles)} {...children.props} />;
   }
 );

@@ -1,26 +1,10 @@
-import mediaQuery from 'css-mediaquery';
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Box, PortalRootProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
-import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { BrowserTesting, createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Pressable } from '../Pressable';
 import { ModalBottomSheet } from './ModalBottomSheet';
-
-function createMatchMedia(width: number) {
-  return (query: string): MediaQueryList => ({
-    matches: mediaQuery.match(query, {
-      width,
-    }),
-    media: query,
-    onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  });
-}
 
 describe('<ModalBottomSheet />', () => {
   const { render } = createReactRenderer(children => <PortalRootProvider zIndex={1}>{children}</PortalRootProvider>);
@@ -249,24 +233,28 @@ describe('<ModalBottomSheet />', () => {
   });
 
   describe('given mobile viewport width', () => {
-    beforeEach(() => {
-      window.matchMedia = createMatchMedia(639);
+    beforeEach(async () => {
+      await BrowserTesting.resize(639, 768);
+
+      renderer = render(<ModalBottomSheet open={true} renderContents={() => null} />);
     });
 
-    it('match snapshot', () => {
-      renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+    it('match snapshot', async () => {
+      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe(''));
 
       expect(renderer.container).toMatchSnapshot();
     });
   });
 
   describe('given viewport width larger than mobile', () => {
-    beforeEach(() => {
-      window.matchMedia = createMatchMedia(1024);
+    beforeEach(async () => {
+      await BrowserTesting.resize(1024, 768);
+
+      renderer = render(<ModalBottomSheet open={true} renderContents={() => null} />);
     });
 
-    it('match snapshot', () => {
-      renderer = render(<ModalBottomSheet defaultOpen={true} renderContents={() => null} renderOpener={() => null} />);
+    it('match snapshot', async () => {
+      await waitFor(() => expect(renderer.getByRole('dialog').style.opacity).toBe('1'));
 
       expect(renderer.container).toMatchSnapshot();
     });

@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -113,10 +113,10 @@ describe('<NumericField />', () => {
 
       describe('when blur', () => {
         beforeEach(async () => {
-          await waitFor(() => userEvent.tab());
+          await waitFor(() => fireEvent.blur(element.querySelector('input')!));
         });
 
-        it('onValueChange called with min value', () => {
+        it('onValueChange called with min value', async () => {
           expect(mockOnValueChange).toBeCalledWith(expect.objectContaining({ value: 3 }));
         });
       });
