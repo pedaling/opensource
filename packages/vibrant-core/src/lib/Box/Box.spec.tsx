@@ -131,4 +131,22 @@ describe('<Box />', () => {
       });
     });
   });
+
+  describe('onLayout prop', () => {
+    describe('when onLayout prop provided', () => {
+      let onLayout: jest.Mock;
+
+      beforeEach(() => {
+        onLayout = jest.fn();
+
+        renderer = render(<Box onLayout={onLayout} width={200} height={300} />);
+      });
+
+      it('onLayout called', async () => {
+        await waitFor(() =>
+          expect(onLayout).toBeCalledWith({ width: 200, height: 300, bottom: 0, left: 0, right: 0, top: 0 })
+        );
+      });
+    });
+  });
 });
