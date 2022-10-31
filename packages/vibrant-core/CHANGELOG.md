@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.24.1...vibrant-core-0.24.2) (2022-10-31)
+
+
+### Bug Fixes
+
+* add flexDirection column to ScrollBox default style ([#396](https://github.com/pedaling/opensource/issues/396)) ([7384ef6](https://github.com/pedaling/opensource/commit/7384ef62c00c1492f5e01f713675f527d1690196))
+
 ### [0.24.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.24.0...vibrant-core-0.24.1) (2022-10-31)
 
 
