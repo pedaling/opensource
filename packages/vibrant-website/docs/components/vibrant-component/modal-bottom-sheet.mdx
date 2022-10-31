@@ -40,12 +40,9 @@ import { ModalBottomSheet } from '@vibrant-ui/components';
 | size                                | lg \| md                                                          | md      | PC 뷰에서 모달의 너비를 설정합니다.                               |
 | renderContents                      | (\_: \{ close: () => void }) => ReactElementChild;                |         | 내부 컨텐츠를 설정합니다.                                         |
 | onClose                             | () => void                                                        |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
-| [primaryButtonText](#cta-버튼)      | string                                                            |         | Primary 버튼 텍스트입니다.                                        |
-| [onPrimaryButtonClick](#cta-버튼)   | () => void                                                        |         | Primary 버튼이 클릭됐을 때 호출됩니다.                            |
-| [secondaryButtonText](#cta-버튼)    |                                                                   | string  | Secondary 버튼 텍스트입니다.                                      |
-| [onSecondaryButtonClick](#cta-버튼) | () => void                                                        |         | Secondary 버튼이 클릭됐을 때 호출됩니다.                          |
-| [subButtonText](#cta-버튼)          | string                                                            |         | Sub 버튼 텍스트입니다.                                            |
-| [onSubButtonClick](#cta-버튼)       | () => void                                                        |         | Sub 버튼이 클릭됐을 때 호출됩니다.                                |
+| [primaryButtonOptions](#cta-버튼)   | \{ title: string, disabled: boolean, onClick: () => void }        |         | 렌더할 Primary 버튼의 속성을 지정합니다.                          |
+| [secondaryButtonOptions](#cta-버튼) | \{ title: string, disabled: boolean, onClick: () => void }        |         | 렌더할 Secondary 버튼의 속성을 지정합니다.                        |
+| [subButtonOptions](#cta-버튼)       | \{ title: string, disabled: boolean, onClick: () => void }        |         | 렌더할 Sub 버튼의 속성을 지정합니다.                              |
 
 ## Usage
 
@@ -91,17 +88,69 @@ const Uncontrolled = () => (
 
 ### CTA 버튼
 
-CTA 버튼의 텍스트(`primaryButtonText`, `secondaryButtonText`, `subButtonText`)와 CTA를 클릭됐을 때의 동작(`onPrimaryButtonClick`, `onSecondaryButtonClick`, `onSubButtonClick`)을 지정할 수 있습니다.
+CTA 버튼은 `primaryButtonOptions`, `secondaryButtonOptions`, `subButtonOptions` 속성을 통해 사용할 수 있습니다.
 Primary 버튼없이 Secondary 버튼이나 Sub 버튼을 사용할 수 없으며 Secondary 버튼이나 Sub 버튼을 동시에 사용할 수도 없습니다.
 
 ```jsx live
-<ModalBottomSheet
-  title="Title"
-  primaryButtonText="Primary Button"
-  // secondaryButtonText="Secondary Button"
-  // subButtonText="Sub Button"
-  renderOpener={({ open }) => (
-    <Pressable onClick={open}>열기</Pressable>
-  )}
-/>
+<HStack alignHorizontal="center" width="100%" spacing={20}>
+  <ModalBottomSheet
+    title=""
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={open}
+      >
+        Primary
+      </ContainedButton>
+    )}
+    primaryButtonOptions={{
+      title: 'primary',
+      disabled: false,
+    }}
+  />
+  <ModalBottomSheet
+    title=""
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={open}
+      >
+        Primary + Secondary
+      </ContainedButton>
+    )}
+    primaryButtonOptions={{
+      title: 'primary',
+      disabled: false,
+    }}
+    secondaryButtonOptions={{
+      title: 'secondary',
+      disabled: false,
+    }}
+  />
+  <ModalBottomSheet
+    title=""
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={open}
+      >
+        Primary + Sub
+      </ContainedButton>
+    )}
+    primaryButtonOptions={{
+      title: 'primary',
+      disabled: false,
+    }}
+    subButtonOptions={{
+      title: 'secondary',
+      disabled: false,
+    }}
+  />
+</HStack>
 ```
