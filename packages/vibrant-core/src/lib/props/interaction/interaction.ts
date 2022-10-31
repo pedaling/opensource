@@ -8,4 +8,4 @@ const pointerEventsProp = createSystemProp({
   property: 'pointerEvents',
 });
 
-export const interactionSystemProps = [cursorProp];
+export const interactionSystemProps = [cursorProp, pointerEventsProp];

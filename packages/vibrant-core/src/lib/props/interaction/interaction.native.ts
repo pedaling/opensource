@@ -7,6 +7,9 @@ const cursorProp = createSystemProp({
 
 const pointerEventsProp = createSystemProp({
   property: 'pointerEvents',
+  transform: value => ({
+    props: { pointerEvents: value },
+  }),
 });
 
 export const interactionSystemProps = [cursorProp, pointerEventsProp];
