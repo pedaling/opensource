@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.24.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.23.0...vibrant-core-0.24.0) (2022-10-31)
+
+
+### Features
+
+* add ContainedButton component ([#388](https://github.com/pedaling/opensource/issues/388)) ([09a3489](https://github.com/pedaling/opensource/commit/09a348914afb23055d057c903a048cd3d37abbae))
+* pointerEvents 를 interaction prop 에 추가한다 ([#392](https://github.com/pedaling/opensource/issues/392)) ([35dba20](https://github.com/pedaling/opensource/commit/35dba207dbfe518377d9bea411dcc6d70f942ded))
+
+
+### Bug Fixes
+
+* recalculate OverlayBox position when window size is resized ([#385](https://github.com/pedaling/opensource/issues/385)) ([fc7741a](https://github.com/pedaling/opensource/commit/fc7741aba765b485f332588b501c2b03a11d9aff))
+* 안드로이드에서 getElementRect 함수 호출 시 에러가 나는 것을 수정한다 ([#381](https://github.com/pedaling/opensource/issues/381)) ([cb76c90](https://github.com/pedaling/opensource/commit/cb76c9097032d321322931d3597b1b46dfdbb0d0))
+
 ## [0.23.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.22.0...vibrant-core-0.23.0) (2022-10-27)
 
 
