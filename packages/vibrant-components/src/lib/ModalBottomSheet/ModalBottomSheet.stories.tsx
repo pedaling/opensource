@@ -116,7 +116,7 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => 
         </ContainedButton>
       )}
       primaryButtonOptions={{ title: 'primary', disabled: false }}
-      subButtonOptions={{ title: 'secondary', disabled: false }}
+      subButtonOptions={{ title: 'sub', disabled: false }}
     />
   </HStack>
 );
