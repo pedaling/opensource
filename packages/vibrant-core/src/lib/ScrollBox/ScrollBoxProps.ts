@@ -85,6 +85,7 @@ export type ScrollBoxProps = {
 export const interpolation = injectContext(
   createInterpolation(systemProps, {
     display: 'flex',
+    flexDirection: 'column',
     boxSizing: 'border-box',
     overflowY: isNative ? undefined : 'auto',
   })
