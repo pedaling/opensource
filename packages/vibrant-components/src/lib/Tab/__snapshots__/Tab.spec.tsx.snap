@@ -6,9 +6,6 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: flex-start;
   align-self: flex-start;
@@ -18,6 +15,9 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   box-sizing: border-box;
   position: relative;
   border-width: 0;
@@ -50,9 +50,6 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;

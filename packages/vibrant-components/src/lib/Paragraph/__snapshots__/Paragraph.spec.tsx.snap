@@ -6,9 +6,6 @@ exports[`<Paragraph /> when Paragraph with level 3 rendered match snapshot 1`] =
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
