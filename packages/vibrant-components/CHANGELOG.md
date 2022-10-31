@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.24.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.24.0...vibrant-components-0.24.1) (2022-10-31)
+
+
+### Bug Fixes
+
+* display = "flex"로 설정 시 flexDirection이 column이 되는 오류를 수정한다 ([#395](https://github.com/pedaling/opensource/issues/395)) ([98228b1](https://github.com/pedaling/opensource/commit/98228b1f82b6cd7bce1b7ade4fd6ca8fb6508581))
+
 ## [0.24.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.23.0...vibrant-components-0.24.0) (2022-10-31)
 
 
