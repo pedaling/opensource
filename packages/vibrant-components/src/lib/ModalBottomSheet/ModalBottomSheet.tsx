@@ -17,6 +17,8 @@ import type { LayoutEvent } from '@vibrant-ui/utils';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { Body } from '../Body';
+import { ContainedButton } from '../ContainedButton';
+import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { Space } from '../Space';
@@ -181,77 +183,50 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
 
                 {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
                   <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
-                    <Pressable
-                      backgroundColor="primary"
-                      py={15}
-                      borderRadiusLevel={1}
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
                       onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onPrimary"
-                      interactions={['hover', 'focus', 'active']}
+                      full={true}
                     >
-                      <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                        {primaryButtonText}
-                      </Body>
-                    </Pressable>
+                      {primaryButtonText}
+                    </ContainedButton>
                   </VStack>
                 )}
                 {isDefined(primaryButtonText) && isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
                   <HStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
-                    <Pressable
-                      backgroundColor="surface1"
-                      py={15}
-                      borderRadiusLevel={1}
-                      flexGrow={1}
-                      flexBasis={0}
+                    <ContainedButton
+                      kind="secondary"
+                      size="xl"
                       onClick={() => onSecondaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onView1"
-                      interactions={['hover', 'focus', 'active']}
+                      full={true}
                     >
-                      <Body color="onView1" textAlign="center" level={1} weight="bold">
-                        {secondaryButtonText}
-                      </Body>
-                    </Pressable>
-                    <Pressable
-                      backgroundColor="primary"
-                      py={15}
-                      borderRadiusLevel={1}
-                      flexGrow={1}
-                      flexBasis={0}
+                      {secondaryButtonText}
+                    </ContainedButton>
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
                       onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onPrimary"
-                      interactions={['hover', 'focus', 'active']}
+                      full={true}
                     >
-                      <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                        {primaryButtonText}
-                      </Body>
-                    </Pressable>
+                      {primaryButtonText}
+                    </ContainedButton>
                   </HStack>
                 )}
                 {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && isDefined(subButtonText) && (
                   <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={16}>
-                    <Pressable
-                      backgroundColor="primary"
-                      py={15}
-                      borderRadiusLevel={1}
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
                       onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onPrimary"
-                      interactions={['hover', 'focus', 'active']}
+                      full={true}
                     >
-                      <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                        {primaryButtonText}
-                      </Body>
-                    </Pressable>
+                      {primaryButtonText}
+                    </ContainedButton>
                     <Box alignSelf="center">
-                      <Pressable
-                        hitSlop={8}
-                        borderRadiusLevel={1}
-                        onClick={() => onSubButtonClick?.({ close: closeModal })}
-                        interactions={['focus', 'active']}
-                      >
-                        <Body color="onView1" textAlign="center" level={1} weight="medium">
-                          {subButtonText}
-                        </Body>
-                      </Pressable>
+                      <GhostButton size="md" onClick={() => onSubButtonClick?.({ close: closeModal })}>
+                        {subButtonText}
+                      </GhostButton>
                     </Box>
                   </VStack>
                 )}
