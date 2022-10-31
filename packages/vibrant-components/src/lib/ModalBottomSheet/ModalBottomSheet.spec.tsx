@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/react';
+import { waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Box, PortalRootProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -49,12 +49,10 @@ describe('<ModalBottomSheet />', () => {
     });
 
     describe('after clicking the close button', () => {
-      beforeEach(done => {
-        waitFor(() => {
-          userEvent.click(renderer.getByRole('button', { name: 'Close' }));
-        }).then(() => {
-          setTimeout(done, 250);
-        });
+      beforeEach(async () => {
+        await userEvent.click(renderer.getByRole('button', { name: 'Close' }));
+
+        await waitForElementToBeRemoved(() => renderer.queryByRole('dialog'));
       });
 
       it('should call onClose function', () => {
@@ -62,7 +60,7 @@ describe('<ModalBottomSheet />', () => {
       });
 
       it('should close the content', async () => {
-        await waitFor(() => expect(renderer.queryByRole('dialog')).toBeFalsy());
+        expect(renderer.queryByRole('dialog')).toBeFalsy();
       });
     });
   });
