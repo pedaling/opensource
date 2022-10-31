@@ -61,8 +61,8 @@ describe('<ModalBottomSheet />', () => {
         expect(mockOnClose).toBeCalled();
       });
 
-      it('should close the content', () => {
-        expect(renderer.queryByRole('dialog')).toBeFalsy();
+      it('should close the content', async () => {
+        await waitFor(() => expect(renderer.queryByRole('dialog')).toBeFalsy());
       });
     });
   });
