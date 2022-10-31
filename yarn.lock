@@ -8730,13 +8730,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/css-mediaquery@npm:0.1.1":
-  version: 0.1.1
-  resolution: "@types/css-mediaquery@npm:0.1.1"
-  checksum: b8beb960238fd32b44396fd0871fc8626d9e0136217f168effccd3cc33a0673f1a94e8a982e385a46c34b5ab4b19c9220be7ec628818837a3c47dcaa973954c4
-  languageName: node
-  linkType: hard
-
 "@types/debug@npm:^4.0.0":
   version: 4.1.7
   resolution: "@types/debug@npm:4.1.7"
@@ -13046,7 +13039,6 @@ __metadata:
     "@testing-library/react": 13.4.0
     "@testing-library/react-native": 11.2.0
     "@testing-library/user-event": 14.2.1
-    "@types/css-mediaquery": 0.1.1
     "@types/jest": 28.1.8
     "@types/node": 18.7.18
     "@types/react": 18.0.20
@@ -13065,7 +13057,6 @@ __metadata:
     chromatic: 6.7.0
     clsx: 1.1.1
     core-js: 3.23.4
-    css-mediaquery: 0.1.2
     docusaurus-remark-plugin-codetabs: 1.0.0-alpha.3
     eas-cli: 2.1.0
     electron: 20.1.1
@@ -14524,13 +14515,6 @@ __metadata:
   peerDependencies:
     webpack: ^5.0.0
   checksum: 170fdbc630a05a43679ef60fa97694766b568dbde37adccc0faafa964fc675f08b976bc68837bb73b61d60240e8d2cbcbf51540fe94ebc9dafc56e7c46ba5527
-  languageName: node
-  linkType: hard
-
-"css-mediaquery@npm:0.1.2":
-  version: 0.1.2
-  resolution: "css-mediaquery@npm:0.1.2"
-  checksum: 8e26ae52d8aaaa71893f82fc485363ff0fab494b7d3b3464572aaed50714b8b538d33dbdaa69f0c02cf7f80d1f4d9a77519306c0492223ce91b3987475031a69
   languageName: node
   linkType: hard
 

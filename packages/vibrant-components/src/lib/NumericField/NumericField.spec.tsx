@@ -116,7 +116,7 @@ describe('<NumericField />', () => {
           await waitFor(() => fireEvent.blur(element.querySelector('input')!));
         });
 
-        it('onValueChange called with min value', async () => {
+        it('onValueChange called with min value', () => {
           expect(mockOnValueChange).toBeCalledWith(expect.objectContaining({ value: 3 }));
         });
       });
