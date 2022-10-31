@@ -84,7 +84,7 @@ export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = () => {
   );
 };
 
-export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = props => (
+export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => (
   <HStack mt={200} width="100%" spacing={20}>
     <ModalBottomSheet
       title=""
