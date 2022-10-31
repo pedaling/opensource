@@ -113,7 +113,7 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
-  describe('when primaryButtonText and onPrimaryButtonClick are provided', () => {
+  describe('when primaryButtonOptions are provided', () => {
     let mockOnPrimaryButtonClick: jest.Mock<any, any>;
 
     beforeEach(() => {
@@ -122,10 +122,12 @@ describe('<ModalBottomSheet />', () => {
       renderer = render(
         <ModalBottomSheet
           defaultOpen={true}
-          primaryButtonText="primaryButtonText"
-          onPrimaryButtonClick={mockOnPrimaryButtonClick}
-          secondaryButtonText={undefined}
-          subButtonText={undefined}
+          primaryButtonOptions={{
+            title: 'primaryButtonText',
+            onClick: mockOnPrimaryButtonClick,
+          }}
+          secondaryButtonOptions={undefined}
+          subButtonOptions={undefined}
           renderOpener={({ open }) => <Pressable onClick={open} />}
         />
       );
@@ -146,7 +148,7 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
-  describe('when primaryButtonText, onPrimaryButtonClick, secondaryButtonText and onSecondaryButtonClick are provided', () => {
+  describe('when primaryButtonOptions, secondaryButtonOptions are provided', () => {
     let mockOnPrimaryButtonClick: jest.Mock<any, any>;
     let mockOnSecondaryButtonClick: jest.Mock<any, any>;
 
@@ -158,11 +160,15 @@ describe('<ModalBottomSheet />', () => {
       renderer = render(
         <ModalBottomSheet
           defaultOpen={true}
-          primaryButtonText="primaryButtonText"
-          onPrimaryButtonClick={mockOnPrimaryButtonClick}
-          secondaryButtonText="secondaryButtonText"
-          onSecondaryButtonClick={mockOnSecondaryButtonClick}
-          subButtonText={undefined}
+          primaryButtonOptions={{
+            title: 'primaryButtonText',
+            onClick: mockOnPrimaryButtonClick,
+          }}
+          secondaryButtonOptions={{
+            title: 'secondaryButtonText',
+            onClick: mockOnSecondaryButtonClick,
+          }}
+          subButtonOptions={undefined}
           renderOpener={({ open }) => <Pressable onClick={open} />}
         />
       );
@@ -197,7 +203,7 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
-  describe('when primaryButtonText, onPrimaryButtonClick, subButtonText and onSubButtonClick are provided', () => {
+  describe('when primaryButtonOptions, subButtonOptions are provided', () => {
     let mockOnPrimaryButtonClick: jest.Mock<any, any>;
     let mockOnSubButtonClick: jest.Mock<any, any>;
 
@@ -209,11 +215,15 @@ describe('<ModalBottomSheet />', () => {
       renderer = render(
         <ModalBottomSheet
           defaultOpen={true}
-          primaryButtonText="primaryButtonText"
-          onPrimaryButtonClick={mockOnPrimaryButtonClick}
-          secondaryButtonText={undefined}
-          subButtonText="subButtonText"
-          onSubButtonClick={mockOnSubButtonClick}
+          primaryButtonOptions={{
+            title: 'primaryButtonText',
+            onClick: mockOnPrimaryButtonClick,
+          }}
+          secondaryButtonOptions={undefined}
+          subButtonOptions={{
+            title: 'subButtonText',
+            onClick: mockOnSubButtonClick,
+          }}
           renderOpener={({ open }) => <Pressable onClick={open} />}
         />
       );

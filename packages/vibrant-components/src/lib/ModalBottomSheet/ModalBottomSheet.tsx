@@ -35,12 +35,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     title,
     subtitle,
     desktopModalWidth,
-    primaryButtonText,
-    secondaryButtonText,
-    subButtonText,
-    onPrimaryButtonClick,
-    onSecondaryButtonClick,
-    onSubButtonClick,
+    primaryButtonOptions,
+    secondaryButtonOptions,
+    subButtonOptions,
     onClose,
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
@@ -181,51 +178,51 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   <Space height={8} />
                 )}
 
-                {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
+                {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
                     <ContainedButton
                       kind="primary"
                       size="xl"
-                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                     >
-                      {primaryButtonText}
+                      {primaryButtonOptions.title}
                     </ContainedButton>
                   </VStack>
                 )}
-                {isDefined(primaryButtonText) && isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
+                {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
                   <HStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
                     <ContainedButton
                       kind="secondary"
                       size="xl"
-                      onClick={() => onSecondaryButtonClick?.({ close: closeModal })}
+                      onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                     >
-                      {secondaryButtonText}
+                      {secondaryButtonOptions.title}
                     </ContainedButton>
                     <ContainedButton
                       kind="primary"
                       size="xl"
-                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                     >
-                      {primaryButtonText}
+                      {primaryButtonOptions.title}
                     </ContainedButton>
                   </HStack>
                 )}
-                {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && isDefined(subButtonText) && (
+                {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={16}>
                     <ContainedButton
                       kind="primary"
                       size="xl"
-                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                     >
-                      {primaryButtonText}
+                      {primaryButtonOptions.title}
                     </ContainedButton>
                     <Box alignSelf="center">
-                      <GhostButton size="md" onClick={() => onSubButtonClick?.({ close: closeModal })}>
-                        {subButtonText}
+                      <GhostButton size="md" onClick={() => subButtonOptions.onClick?.({ close: closeModal })}>
+                        {subButtonOptions.title}
                       </GhostButton>
                     </Box>
                   </VStack>
