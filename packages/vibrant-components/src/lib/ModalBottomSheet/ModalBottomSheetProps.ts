@@ -36,7 +36,7 @@ export type ButtonOptions = {
   title: string;
   disabled?: boolean;
   loading?: boolean;
-  onClick: (_: { close: () => void }) => void;
+  onClick?: (_: { close: () => void }) => void;
 };
 
 export const withModalBottomSheetVariation = withVariation<ModalBottomSheetProps>('ModalBottomSheet')(

@@ -185,6 +185,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
+                      disabled={primaryButtonOptions.disabled}
                     >
                       {primaryButtonOptions.title}
                     </ContainedButton>
@@ -197,6 +198,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       size="xl"
                       onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
+                      disabled={secondaryButtonOptions.disabled}
                     >
                       {secondaryButtonOptions.title}
                     </ContainedButton>
@@ -205,6 +207,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
+                      disabled={primaryButtonOptions.disabled}
                     >
                       {primaryButtonOptions.title}
                     </ContainedButton>
@@ -217,11 +220,16 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
+                      disabled={primaryButtonOptions.disabled}
                     >
                       {primaryButtonOptions.title}
                     </ContainedButton>
                     <Box alignSelf="center">
-                      <GhostButton size="md" onClick={() => subButtonOptions.onClick?.({ close: closeModal })}>
+                      <GhostButton
+                        size="md"
+                        onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
+                        disabled={subButtonOptions.disabled}
+                      >
                         {subButtonOptions.title}
                       </GhostButton>
                     </Box>
