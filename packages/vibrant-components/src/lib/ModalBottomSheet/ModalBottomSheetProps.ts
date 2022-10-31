@@ -16,30 +16,28 @@ export type ModalBottomSheetProps = Either<
   onClose?: () => void;
 } & (
     | {
-        primaryButtonText: string;
-        onPrimaryButtonClick: (_: { close: () => void }) => void;
-        secondaryButtonText?: never;
-        onSecondaryButtonClick?: never;
-        subButtonText?: string;
-        onSubButtonClick?: (_: { close: () => void }) => void;
+        primaryButtonOptions: ButtonOptions;
+        secondaryButtonOptions?: ButtonOptions;
+        subButtonOptions?: never;
       }
     | {
-        primaryButtonText: string;
-        onPrimaryButtonClick: (_: { close: () => void }) => void;
-        secondaryButtonText?: string;
-        onSecondaryButtonClick?: (_: { close: () => void }) => void;
-        subButtonText?: never;
-        onSubButtonClick?: never;
+        primaryButtonOptions: ButtonOptions;
+        secondaryButtonOptions?: never;
+        subButtonOptions?: ButtonOptions;
       }
     | {
-        primaryButtonText?: never;
-        onPrimaryButtonClick?: never;
-        secondaryButtonText?: never;
-        onSecondaryButtonClick?: never;
-        subButtonText?: never;
-        onSubButtonClick?: never;
+        primaryButtonOptions?: never;
+        secondaryButtonOptions?: never;
+        subButtonOptions?: never;
       }
   );
+
+export type ButtonOptions = {
+  title: string;
+  disabled?: boolean;
+  loading?: boolean;
+  onClick?: (_: { close: () => void }) => void;
+};
 
 export const withModalBottomSheetVariation = withVariation<ModalBottomSheetProps>('ModalBottomSheet')(
   propVariant({

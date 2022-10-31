@@ -27,7 +27,7 @@ export const GhostButton = withGhostButtonVariation(
       borderRadiusLevel={1}
       disabled={disabled}
     >
-      <HStack as="span" alignVertical="center" alignHorizontal="center">
+      <HStack as="span" alignVertical="center">
         {IconComponent && <IconComponent size={iconSize} fill={color} />}
         <Text
           typography={typography}
