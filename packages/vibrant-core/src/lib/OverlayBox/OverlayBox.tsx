@@ -55,7 +55,7 @@ export const OverlayBox = withOverlayBoxVariation(
           height={targetRect.height}
           onClick={handleTargetClick}
         >
-          <Box position="absolute" ref={innerRef} zIndex={1} {...boxProps}>
+          <Box position="absolute" ref={innerRef} {...boxProps}>
             {children}
           </Box>
         </Box>
