@@ -13093,6 +13093,7 @@ __metadata:
     prism-react-renderer: 1.2.1
     react: 18.2.0
     react-dom: 18.2.0
+    react-hook-form: 7.38.0
     react-native: 0.69.6
     react-native-gesture-handler: ~2.5.0
     react-native-linear-gradient-degree: 0.0.1
@@ -29194,6 +29195,15 @@ __metadata:
     react: ^16.6.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.6.0 || ^17.0.0 || ^18.0.0
   checksum: 7ca7e47f8af14ea186688b512a87ab912bf6041312b297f92516341b140b3f0f8aedf5a44d226d99e69ed067b0cc106e38aeb9c9b738ffcc63d10721c844db90
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:7.38.0":
+  version: 7.38.0
+  resolution: "react-hook-form@npm:7.38.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 16d5f117e39ec09f73def706fb4e189aa11e19191231082fe7e15481701beb2b81260581012db8939799d8011a6132561659dd864b08270691353e134c4f06b0
   languageName: node
   linkType: hard
 
