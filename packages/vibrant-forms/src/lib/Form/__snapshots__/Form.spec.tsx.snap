@@ -17,8 +17,6 @@ exports[`<Form /> when Form rendered match snapshot 1`] = `
   flex-shrink: 1;
   box-sizing: border-box;
   position: relative;
-  width: auto;
-  height: auto;
 }
 
 <div>

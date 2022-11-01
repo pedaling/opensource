@@ -8,7 +8,6 @@ export const Form = <FieldValues extends ReactHookFormFieldValues>({
   children,
   formControlMethods,
   onSubmit,
-  full = false,
   ...restProps
 }: FormProps<FieldValues>) => {
   const hookFormMethods = useForm<FieldValues>();
@@ -17,8 +16,6 @@ export const Form = <FieldValues extends ReactHookFormFieldValues>({
   return (
     <FormProvider {...methods}>
       <Box
-        width={full ? '100%' : 'auto'}
-        height={full ? '100%' : 'auto'}
         onSubmit={(e: FormEvent) => {
           e.stopPropagation();
 
