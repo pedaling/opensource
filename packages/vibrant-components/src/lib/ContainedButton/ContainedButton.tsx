@@ -16,6 +16,8 @@ export const ContainedButton = withContainedButtonVariation(
     onColor,
     typography,
     spinnerSize,
+    iconSize,
+    disclosureSize,
     children,
     ...restProps
   }) => (
@@ -33,7 +35,7 @@ export const ContainedButton = withContainedButtonVariation(
         <HStack as="span" alignVertical="center" alignHorizontal="center" opacity={loading ? 0 : 1}>
           {IconComponent && (
             <Box as="span" mx={2}>
-              <IconComponent size={16} />
+              <IconComponent size={iconSize} />
             </Box>
           )}
           <Text typography={typography} fontWeight="bold" mx={4}>
@@ -41,7 +43,7 @@ export const ContainedButton = withContainedButtonVariation(
           </Text>
           {disclosure && (
             <Box as="span" ml={2}>
-              <Icon.ArrowTriangleDown.Fill size={16} />
+              <Icon.ArrowTriangleDown.Fill size={disclosureSize} />
             </Box>
           )}
         </HStack>
