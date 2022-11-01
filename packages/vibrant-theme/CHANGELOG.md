@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.24.1...vibrant-theme-0.24.2) (2022-10-31)
+
+### [0.24.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.24.0...vibrant-theme-0.24.1) (2022-10-31)
+
+## [0.24.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.23.0...vibrant-theme-0.24.0) (2022-10-31)
+
+
+### Features
+
+* add ContainedButton component ([#388](https://github.com/pedaling/opensource/issues/388)) ([09a3489](https://github.com/pedaling/opensource/commit/09a348914afb23055d057c903a048cd3d37abbae))
+
 ## [0.23.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.22.0...vibrant-theme-0.23.0) (2022-10-27)
 
 

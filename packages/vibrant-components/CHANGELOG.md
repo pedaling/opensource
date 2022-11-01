@@ -2,6 +2,34 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.24.1...vibrant-components-0.24.2) (2022-10-31)
+
+
+### Bug Fixes
+
+* add flexDirection column to ScrollBox default style ([#396](https://github.com/pedaling/opensource/issues/396)) ([7384ef6](https://github.com/pedaling/opensource/commit/7384ef62c00c1492f5e01f713675f527d1690196))
+
+### [0.24.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.24.0...vibrant-components-0.24.1) (2022-10-31)
+
+
+### Bug Fixes
+
+* display = "flex"로 설정 시 flexDirection이 column이 되는 오류를 수정한다 ([#395](https://github.com/pedaling/opensource/issues/395)) ([98228b1](https://github.com/pedaling/opensource/commit/98228b1f82b6cd7bce1b7ade4fd6ca8fb6508581))
+
+## [0.24.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.23.0...vibrant-components-0.24.0) (2022-10-31)
+
+
+### Features
+
+* add ContainedButton component ([#388](https://github.com/pedaling/opensource/issues/388)) ([09a3489](https://github.com/pedaling/opensource/commit/09a348914afb23055d057c903a048cd3d37abbae))
+* GhostButton 컴포넌트를 추가한다 ([#389](https://github.com/pedaling/opensource/issues/389)) ([6691587](https://github.com/pedaling/opensource/commit/6691587155088f95f0d1e042844ef7cef1109de0))
+* ModalBottomSheet 컴포넌트의 버튼 관련 속성을 buttonOptions로 수정한다  ([#393](https://github.com/pedaling/opensource/issues/393)) ([ec07d07](https://github.com/pedaling/opensource/commit/ec07d078a54d3b50d917b191669c93d40471a758))
+
+
+### Bug Fixes
+
+* set tablet bp Toast width to content-fit ([#384](https://github.com/pedaling/opensource/issues/384)) ([dd4a756](https://github.com/pedaling/opensource/commit/dd4a756eab7acd24dc9a6bcd9c5bb8cf6f663f8b))
+
 ## [0.23.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.22.0...vibrant-components-0.23.0) (2022-10-27)
 
 

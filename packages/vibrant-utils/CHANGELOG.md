@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.24.1...vibrant-utils-0.24.2) (2022-10-31)
+
+### [0.24.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.24.0...vibrant-utils-0.24.1) (2022-10-31)
+
+## [0.24.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.23.0...vibrant-utils-0.24.0) (2022-10-31)
+
+
+### Bug Fixes
+
+* 안드로이드에서 getElementRect 함수 호출 시 에러가 나는 것을 수정한다 ([#381](https://github.com/pedaling/opensource/issues/381)) ([cb76c90](https://github.com/pedaling/opensource/commit/cb76c9097032d321322931d3597b1b46dfdbb0d0))
+
 ## [0.23.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.22.0...vibrant-utils-0.23.0) (2022-10-27)
 
 ## [0.22.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.21.2...vibrant-utils-0.22.0) (2022-10-24)

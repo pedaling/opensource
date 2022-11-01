@@ -8,5 +8,5 @@
       }
     ]
   ],
-  "plugins": []
+  "plugins": ["transform-node-env-inline"]
 }

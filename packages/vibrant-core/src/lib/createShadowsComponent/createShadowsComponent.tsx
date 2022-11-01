@@ -1,6 +1,6 @@
 import type { ComponentType, ReactElement, ReactNode } from 'react';
 import { forwardRef } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box } from '../Box';
 
 type ShadowComponentType = ComponentType<{
   startColor?: any;

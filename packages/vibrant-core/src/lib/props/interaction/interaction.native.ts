@@ -5,4 +5,11 @@ const cursorProp = createSystemProp({
   disabled: true,
 });
 
-export const interactionSystemProps = [cursorProp];
+const pointerEventsProp = createSystemProp({
+  property: 'pointerEvents',
+  transform: value => ({
+    props: { pointerEvents: value },
+  }),
+});
+
+export const interactionSystemProps = [cursorProp, pointerEventsProp];

@@ -85,7 +85,9 @@ const systemProps = [
   ...webSystemProps,
 ];
 
-const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
+const systemPropNames = systemProps
+  .filter(systemProp => !systemProp.disabled && systemProp.propName !== 'backgroundColor')
+  .map(systemProp => systemProp.propName);
 
 export type BoxElements =
   | 'article'
@@ -95,6 +97,7 @@ export type BoxElements =
   | 'defs'
   | 'div'
   | 'footer'
+  | 'form'
   | 'g'
   | 'header'
   | 'img'
@@ -143,7 +146,12 @@ export type BoxProps<
 export type { LayoutEvent };
 
 export const interpolation = injectContext(
-  createInterpolation(systemProps, { display: 'flex', boxSizing: 'border-box', position: 'relative' })
+  createInterpolation(systemProps, {
+    display: 'flex',
+    flexDirection: 'column',
+    boxSizing: 'border-box',
+    position: 'relative',
+  })
 );
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
+import { ContainedButton } from '../ContainedButton';
+import { HStack } from '../HStack';
 import { Paragraph } from '../Paragraph';
 import { Pressable } from '../Pressable';
 import { VStack } from '../VStack';
@@ -18,9 +20,6 @@ export default {
         <Body level={1}>Click Me</Body>
       </Pressable>
     ),
-  },
-  argTypes: {
-    onPrimaryButtonClick: { action: 'onPrimaryButtonClick' },
   },
 } as ComponentMeta<typeof ModalBottomSheet>;
 
@@ -84,3 +83,40 @@ export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = () => {
     </>
   );
 };
+
+export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => (
+  <HStack mt={200} width="100%" spacing={20}>
+    <ModalBottomSheet
+      title=""
+      defaultOpen={false}
+      renderOpener={({ open }) => (
+        <ContainedButton kind="primary" size="md" onClick={open}>
+          Primary
+        </ContainedButton>
+      )}
+      primaryButtonOptions={{ title: 'primary', disabled: false }}
+    />
+    <ModalBottomSheet
+      title=""
+      defaultOpen={false}
+      renderOpener={({ open }) => (
+        <ContainedButton kind="primary" size="md" onClick={open}>
+          Primary + Secondary
+        </ContainedButton>
+      )}
+      primaryButtonOptions={{ title: 'primary', disabled: false }}
+      secondaryButtonOptions={{ title: 'secondary', disabled: false }}
+    />
+    <ModalBottomSheet
+      title=""
+      defaultOpen={false}
+      renderOpener={({ open }) => (
+        <ContainedButton kind="primary" size="md" onClick={open}>
+          Primary + Sub
+        </ContainedButton>
+      )}
+      primaryButtonOptions={{ title: 'primary', disabled: false }}
+      subButtonOptions={{ title: 'sub', disabled: false }}
+    />
+  </HStack>
+);

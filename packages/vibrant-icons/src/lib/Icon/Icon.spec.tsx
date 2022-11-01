@@ -1,6 +1,5 @@
 import { readFileSync } from 'fs';
 import * as path from 'path';
-import { JSDOM } from 'jsdom';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Icon } from './Icon';
@@ -37,10 +36,12 @@ describe('<Icon />', () => {
     });
 
     describe('match svg file', () => {
-      let svgFragment: DocumentFragment;
+      let svgFragment: HTMLElement;
 
       beforeEach(() => {
-        svgFragment = JSDOM.fragment(readSvgFile(icon, weight));
+        svgFragment = document.createElement('fragment');
+
+        svgFragment.innerHTML = readSvgFile(icon, weight);
       });
 
       it('equal svg element count', () => {

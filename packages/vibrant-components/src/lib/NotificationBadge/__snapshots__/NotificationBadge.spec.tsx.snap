@@ -6,9 +6,6 @@ exports[`<NotificationBadge /> when NotificationBadge with dot rendered match sn
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: flex-start;
   align-self: flex-start;
@@ -18,6 +15,9 @@ exports[`<NotificationBadge /> when NotificationBadge with dot rendered match sn
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   position: relative;
   background-color: #e30f32;
@@ -51,9 +51,6 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-align-self: flex-start;
   -ms-flex-item-align: flex-start;
   align-self: flex-start;
@@ -63,6 +60,9 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   position: relative;
   background-color: #e30f32;
@@ -88,9 +88,6 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
@@ -98,9 +95,9 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   -ms-flex-negative: 1;
   flex-shrink: 1;
   text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  text-fill-color: #ffffff;
   font-size: 0.625rem;
   font-weight: 500;
   line-height: 0.75rem;

@@ -59,7 +59,7 @@ const App = () => {
     >
       <ToastProvider>
         <ScrollBox height="100%" keyboardShouldPersistTaps="always">
-          <Box base={SafeAreaView}>
+          <Box base={SafeAreaView} alignItems="start">
             <StoryView {...story} />
           </Box>
         </ScrollBox>

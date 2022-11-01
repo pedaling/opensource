@@ -13,7 +13,8 @@
   --ifm-color-primary-light: rgb(70, 203, 174);
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
+  --ifm-pre-background: #f5f5f5;
+  --ifm-code-font-size: 80%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 /* If you have a different syntax highlighting theme for dark mode. */
@@ -85,10 +86,10 @@ h6 {
   margin: 0;
   padding: 0;
 }
-
 ul,
 li {
   list-style: none;
+  font-size: 0.813rem
 }
 
 button,

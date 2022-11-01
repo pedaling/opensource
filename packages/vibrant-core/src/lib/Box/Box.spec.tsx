@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+import { waitFor } from '@testing-library/react';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { ThemeProvider } from '../ThemeProvider';
@@ -26,11 +28,11 @@ describe('<Box />', () => {
   describe('base prop', () => {
     describe('when function component box created', () => {
       beforeEach(() => {
-        const Component = (props: any) => (
-          <span {...props}>
+        const Component = forwardRef((props: any, ref) => (
+          <span ref={ref} {...props}>
             <div />
           </span>
-        );
+        ));
 
         renderer = render(<Box base={Component} id="component" />);
       });
@@ -108,6 +110,24 @@ describe('<Box />', () => {
 
       it('match snapshot', () => {
         expect(renderer.container).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe('onLayout prop', () => {
+    describe('when onLayout prop provided', () => {
+      let onLayout: jest.Mock;
+
+      beforeEach(() => {
+        onLayout = jest.fn();
+
+        renderer = render(<Box onLayout={onLayout} width={200} height={300} />);
+      });
+
+      it('onLayout called', async () => {
+        await waitFor(() =>
+          expect(onLayout).toBeCalledWith({ width: 200, height: 300, bottom: 0, left: 0, right: 0, top: 0 })
+        );
       });
     });
   });

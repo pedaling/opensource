@@ -4,4 +4,8 @@ const cursorProp = createSystemProp({
   property: 'cursor',
 });
 
-export const interactionSystemProps = [cursorProp];
+const pointerEventsProp = createSystemProp({
+  property: 'pointerEvents',
+});
+
+export const interactionSystemProps = [cursorProp, pointerEventsProp];

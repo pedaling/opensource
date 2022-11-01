@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.24.1...vibrant-icons-0.24.2) (2022-10-31)
+
+### [0.24.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.24.0...vibrant-icons-0.24.1) (2022-10-31)
+
+
+### Bug Fixes
+
+* display = "flex"로 설정 시 flexDirection이 column이 되는 오류를 수정한다 ([#395](https://github.com/pedaling/opensource/issues/395)) ([98228b1](https://github.com/pedaling/opensource/commit/98228b1f82b6cd7bce1b7ade4fd6ca8fb6508581))
+
+## [0.24.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.23.0...vibrant-icons-0.24.0) (2022-10-31)
+
+
+### Features
+
+* add IconComponent type ([#387](https://github.com/pedaling/opensource/issues/387)) ([f3e71f7](https://github.com/pedaling/opensource/commit/f3e71f7f38563a034dd0daead742b10fb5458d13))
+
 ## [0.23.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.22.0...vibrant-icons-0.23.0) (2022-10-27)
 
 

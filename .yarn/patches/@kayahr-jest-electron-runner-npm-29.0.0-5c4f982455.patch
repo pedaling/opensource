@@ -1,0 +1,33 @@
+diff --git a/lib/main/electron/rpc/JestWorkerRPC.js b/lib/main/electron/rpc/JestWorkerRPC.js
+index 18e2ca3d49f79083822b963402f0a3c3ecdb9999..649727ae26b46853bc1637de132a355de058a06a 100644
+--- a/lib/main/electron/rpc/JestWorkerRPC.js
++++ b/lib/main/electron/rpc/JestWorkerRPC.js
+@@ -8,10 +8,19 @@
+ Object.defineProperty(exports, "__esModule", { value: true });
+ const tslib_1 = require("tslib");
+ const electron_1 = require("electron");
++const electronRemote = process.type === 'browser'
++  ? electron_1
++  : require('@electron/remote')
+ const utils_1 = require("../../core/utils");
+ const runTest_1 = tslib_1.__importDefault(require("../runTest"));
+ const resolver_1 = require("../utils/resolver");
+ const isMain = process.env.isMain === "true";
++
++require("@electron/remote/main").initialize();
++
++electron_1.app.on('browser-window-created', (_, window) => {
++  require("@electron/remote/main").enable(window.webContents)
++})
+ async function runInNode(testData) {
+     try {
+         return await (0, runTest_1.default)(testData.path, testData.globalConfig, testData.config, await (0, resolver_1.getResolver)(testData.config, testData.serializableModuleMap));
+@@ -24,7 +30,7 @@ async function runInNode(testData) {
+ async function runInBrowserWindow(testData) {
+     try {
+         const workerID = (0, utils_1.makeUniqWorkerId)();
+-        const win = new electron_1.BrowserWindow({
++        const win = new electronRemote.BrowserWindow({
+             show: false,
+             webPreferences: {
+                 nodeIntegration: true,

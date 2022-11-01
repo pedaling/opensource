@@ -3,7 +3,7 @@ import type { ResponsiveValue } from '../../../types';
 
 export type DisplaySystemProps = {
   display?: ResponsiveValue<'flex' | 'inline-flex' | 'none'>;
-  visibility?: ResponsiveValue<'collapse' | 'hidden' | 'visible'>;
+  visibility?: ResponsiveValue<'hidden' | 'inherit' | 'visible'>;
   opacity?: ResponsiveValue<OpacityToken | number>;
   hidden?: ResponsiveValue<boolean>;
 };

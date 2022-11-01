@@ -20,4 +20,4 @@ export type {
   Shadow,
   ElevationLevel,
 } from './types';
-export { baseColorTokens, onColorTokens, colorTokens } from './types';
+export { baseColorTokens, onColorTokens, colorTokens, BaseColorOnColorMap } from './types';

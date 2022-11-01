@@ -33,7 +33,7 @@ function replaceJsxChild(jsx) {
 function template({ componentName, jsx }, { tpl }) {
   const fileName = componentName.replace('Svg', '');
 
-  const componentNameWithPropType = `${fileName}: FC<IconProps>`;
+  const componentNameWithPropType = `${fileName}: IconComponent<IconProps, '${fileName}'>`;
 
   jsx.openingElement.attributes = jsx.openingElement.attributes.filter(
     attribute => !['width', 'height', 'fill', 'xmlns'].includes(attribute.name.name)
@@ -44,12 +44,14 @@ function template({ componentName, jsx }, { tpl }) {
 
   return tpl`
   import { FC } from 'react';
-  import type { IconProps } from '../../IconProp';
+  import type { IconProps, IconComponent } from '../../IconProp';
   import { Svg } from '@vibrant-ui/core';
   ${nl}
   export const ${componentNameWithPropType} = ({ size = 24, fill = 'onColor', ...props }) => (
     ${jsx}
   );
+  ${nl}
+  ${fileName}.iconType = '${fileName}';
     `;
 }
 

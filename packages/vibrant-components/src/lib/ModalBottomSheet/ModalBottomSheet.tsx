@@ -17,6 +17,8 @@ import type { LayoutEvent } from '@vibrant-ui/utils';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { Body } from '../Body';
+import { ContainedButton } from '../ContainedButton';
+import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { Space } from '../Space';
@@ -33,12 +35,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     title,
     subtitle,
     desktopModalWidth,
-    primaryButtonText,
-    secondaryButtonText,
-    subButtonText,
-    onPrimaryButtonClick,
-    onSecondaryButtonClick,
-    onSubButtonClick,
+    primaryButtonOptions,
+    secondaryButtonOptions,
+    subButtonOptions,
     onClose,
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
@@ -59,7 +58,8 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       minInsets: { bottom: 20 },
     });
 
-    const { breakpointIndex } = useResponsiveValue({ rootBreakPoints: true });
+    const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
+
     const isMobile = breakpointIndex === 0;
 
     const {
@@ -179,79 +179,60 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   <Space height={8} />
                 )}
 
-                {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
+                {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
-                    <Pressable
-                      backgroundColor="primary"
-                      py={15}
-                      borderRadiusLevel={1}
-                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onPrimary"
-                      interactions={['hover', 'focus', 'active']}
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={primaryButtonOptions.disabled}
                     >
-                      <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                        {primaryButtonText}
-                      </Body>
-                    </Pressable>
+                      {primaryButtonOptions.title}
+                    </ContainedButton>
                   </VStack>
                 )}
-                {isDefined(primaryButtonText) && isDefined(secondaryButtonText) && !isDefined(subButtonText) && (
+                {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
                   <HStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
-                    <Pressable
-                      backgroundColor="surface1"
-                      py={15}
-                      borderRadiusLevel={1}
-                      flexGrow={1}
-                      flexBasis={0}
-                      onClick={() => onSecondaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onView1"
-                      interactions={['hover', 'focus', 'active']}
+                    <ContainedButton
+                      kind="secondary"
+                      size="xl"
+                      onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={secondaryButtonOptions.disabled}
                     >
-                      <Body color="onView1" textAlign="center" level={1} weight="bold">
-                        {secondaryButtonText}
-                      </Body>
-                    </Pressable>
-                    <Pressable
-                      backgroundColor="primary"
-                      py={15}
-                      borderRadiusLevel={1}
-                      flexGrow={1}
-                      flexBasis={0}
-                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onPrimary"
-                      interactions={['hover', 'focus', 'active']}
+                      {secondaryButtonOptions.title}
+                    </ContainedButton>
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={primaryButtonOptions.disabled}
                     >
-                      <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                        {primaryButtonText}
-                      </Body>
-                    </Pressable>
+                      {primaryButtonOptions.title}
+                    </ContainedButton>
                   </HStack>
                 )}
-                {isDefined(primaryButtonText) && !isDefined(secondaryButtonText) && isDefined(subButtonText) && (
+                {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={16}>
-                    <Pressable
-                      backgroundColor="primary"
-                      py={15}
-                      borderRadiusLevel={1}
-                      onClick={() => onPrimaryButtonClick?.({ close: closeModal })}
-                      overlayColor="onPrimary"
-                      interactions={['hover', 'focus', 'active']}
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={primaryButtonOptions.disabled}
                     >
-                      <Body color="onPrimary" textAlign="center" level={1} weight="bold">
-                        {primaryButtonText}
-                      </Body>
-                    </Pressable>
+                      {primaryButtonOptions.title}
+                    </ContainedButton>
                     <Box alignSelf="center">
-                      <Pressable
-                        hitSlop={8}
-                        borderRadiusLevel={1}
-                        onClick={() => onSubButtonClick?.({ close: closeModal })}
-                        interactions={['focus', 'active']}
+                      <GhostButton
+                        size="md"
+                        onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
+                        disabled={subButtonOptions.disabled}
                       >
-                        <Body color="onView1" textAlign="center" level={1} weight="medium">
-                          {subButtonText}
-                        </Body>
-                      </Pressable>
+                        {subButtonOptions.title}
+                      </GhostButton>
                     </Box>
                   </VStack>
                 )}

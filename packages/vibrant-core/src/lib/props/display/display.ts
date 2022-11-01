@@ -10,7 +10,6 @@ const displayProp = createSystemProp({
     if (value === 'inline-flex') {
       return {
         display: 'flex',
-        flexDirection: 'column',
         alignSelf: 'flex-start',
         alignContent: 'stretch',
         flexShrink: 1,
@@ -19,7 +18,6 @@ const displayProp = createSystemProp({
 
     return {
       display: 'flex',
-      flexDirection: 'column',
       alignContent: 'stretch',
       flexShrink: 1,
     };
@@ -42,7 +40,9 @@ const hiddenProp = createSystemProp({
       ? {
           display: 'none',
         }
-      : {},
+      : {
+          display: 'flex',
+        },
 });
 
 export const displaySystemProps = [displayProp, visibilityProp, opacityProp, hiddenProp];
