@@ -1,0 +1,65 @@
+---
+title: GhostButton
+---
+
+# GhostButton
+
+```jsx live
+<GhostButton size="md">버튼</GhostButton>
+```
+
+## How to use
+
+```jsx
+import { GhostButton } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                     | Type                                                   | Default | Description                                                       |
+| ------------------------ | ------------------------------------------------------ | ------- | ----------------------------------------------------------------- |
+| [size](#크기)            | `lg` \| `md` \| `sm`                                   |         | 버튼의 크기를 의미합니다.                                         |
+| color                    | [OnColorToken](/docs/core-concepts/colors/color-token) |         | 버튼 텍스트, 아이콘의 색상를 의미합니다.                          |
+| type                     | `button` \| `submit `                                  |         | 버튼의 타입를 의미합니다.                                         |
+| [IconComponent](#아이콘) | `IconComponent<IconProps, Fill \| Regular>`            |         | 버튼 좌측에 표시되는 아이콘입니다.                                |
+| [disclosure](#아이콘)    | `none` \| `top` \| `right` \| `bottom `                |         | 버튼 우측에 표시되는 화살표 아이콘 사용 여부와 방향을 설정합니다. |
+| disabled                 | `boolean`                                              |         | 버튼의 비활성화 여부를 의미합니다.                                |
+| onClick                  | `() => void`                                           |         | 버튼이 클릭됐을 때 호출됩니다.                                    |
+
+## Usage
+
+### 크기
+
+```jsx live
+<VStack spacing={12}>
+  <GhostButton size="lg">버튼</GhostButton>
+  <GhostButton size="md">버튼</GhostButton>
+  <GhostButton size="sm">버튼</GhostButton>
+</VStack>
+```
+
+### 아이콘
+
+`IconComponent` 속성으로 좌측에 표시되는 아이콘을 설정할 수 있습니다. Fill과 Regular 타입의 아이콘만 사용 가능합니다.
+`disclosure` 속성으로 우측에 표시되는 화살표 아이콘의 방향이나 표시 여부를 설정합니다.
+
+```jsx live
+<VStack spacing={12}>
+  <GhostButton size="md" IconComponent={Icon.Heart.Regular}>
+    좋아요
+  </GhostButton>
+  <GhostButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure="right"
+  >
+    메뉴
+  </GhostButton>
+  <GhostButton size="md" disclosure="top">
+    메뉴
+  </GhostButton>
+  <GhostButton size="md" disclosure="bottom">
+    메뉴
+  </GhostButton>
+</VStack>
+```
