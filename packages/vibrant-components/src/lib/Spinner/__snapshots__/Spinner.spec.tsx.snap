@@ -88,7 +88,7 @@ exports[`<Spinner /> when Spinner rendered match snapshot 1`] = `
     />
     <div
       class="emotion-2"
-      style="transform: none;"
+      style="transform: rotate(360deg);"
     />
   </div>
 </div>

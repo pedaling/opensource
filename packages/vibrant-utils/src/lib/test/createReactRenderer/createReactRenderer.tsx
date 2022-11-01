@@ -7,9 +7,9 @@ import { render } from '@testing-library/react';
 
 export type ReactRenderer = ReturnType<typeof render>;
 
-export const createReactRenderer = (wrapper: (children: ReactElement) => ReactElement = children => children) => {
-  expect.extend(matchers);
+expect.extend(matchers);
 
+export const createReactRenderer = (wrapper: (children: ReactElement) => ReactElement = children => children) => {
   let emotionCache: EmotionCache;
 
   beforeEach(() => {

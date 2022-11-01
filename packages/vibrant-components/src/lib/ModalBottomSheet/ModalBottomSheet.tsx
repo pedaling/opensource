@@ -59,6 +59,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     });
 
     const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
+
     const isMobile = breakpointIndex === 0;
 
     const {

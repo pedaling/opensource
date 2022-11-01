@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react';
 import { useSpring } from '@react-spring/core';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { easings } from '../constants';
+import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
 import type { AnimationResult } from '../types';
 import { useReactSpring } from '../useReactSpring';
@@ -53,7 +54,10 @@ export const Transition = withTransitionVariation(
     return (
       <AnimatedComponent
         ref={innerRef}
-        style={{ ...withTransformStyle(style ?? {}), ...withTransformStyle(styles) }}
+        style={{
+          ...withTransformStyle(style ?? {}),
+          ...withTransformStyle(env === 'test' ? option.to : styles),
+        }}
         {...restProps}
         {...children.props}
       />
