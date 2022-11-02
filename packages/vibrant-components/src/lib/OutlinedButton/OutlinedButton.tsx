@@ -3,17 +3,18 @@ import { Icon } from '@vibrant-ui/icons';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { Spinner } from '../Spinner';
-import { withContainedButtonVariation } from './ContainedButtonProps';
+import { withOutlinedButtonVariation } from './OutlinedButtonProps';
 
-export const ContainedButton = withContainedButtonVariation(
+export const OutlinedButton = withOutlinedButtonVariation(
   ({
     innerRef,
     type = 'button',
+    backgroundColor,
+    borderColor,
     IconComponent,
     disclosure,
     loading,
     disabled,
-    onColor,
     typography,
     spinnerSize,
     iconSize,
@@ -27,7 +28,10 @@ export const ContainedButton = withContainedButtonVariation(
       as="button"
       buttonType={type}
       interactions={['hover', 'focus', 'active']}
-      overlayColor={onColor}
+      overlayColor="onView1"
+      backgroundColor={backgroundColor}
+      borderColor={borderColor}
+      borderWidth={1}
       borderRadiusLevel={1}
       disabled={loading || disabled}
     >
@@ -38,14 +42,10 @@ export const ContainedButton = withContainedButtonVariation(
               <IconComponent size={iconSize} />
             </Box>
           )}
-          <Text typography={typography} fontWeight="bold" mx={4}>
+          <Text typography={typography} fontWeight="bold" ml={4} mr={disclosure ? 6 : 4}>
             {children}
           </Text>
-          {disclosure && (
-            <Box as="span" ml={2}>
-              <Icon.ArrowTriangleDown.Fill size={disclosureSize} />
-            </Box>
-          )}
+          {disclosure && <Icon.ArrowTriangleDown.Fill size={disclosureSize} />}
         </HStack>
         {loading && (
           <HStack

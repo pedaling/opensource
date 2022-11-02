@@ -22,6 +22,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/NotificationBadge/NotificationBadge.stories.tsx'),
   require('../../vibrant-components/src/lib/NumericField/NumericField.stories.tsx'),
   require('../../vibrant-components/src/lib/OperatorButton/OperatorButton.stories.tsx'),
+  require('../../vibrant-components/src/lib/OutlinedButton/OutlinedButton.stories.tsx'),
   require('../../vibrant-components/src/lib/Paper/Paper.stories.tsx'),
   require('../../vibrant-components/src/lib/Paragraph/Paragraph.stories.tsx'),
   require('../../vibrant-components/src/lib/PasswordField/PasswordField.stories.tsx'),
