@@ -102,7 +102,7 @@ export const StackedPortalProvider: FC<StackedPortalProviderProps> = ({ children
       }
 
       return {
-        offset: addStyleValues(...prevItems.flatMap(item => [item.offset, item.height]), offset ?? 0),
+        offset: addStyleValues(...prevItems.flatMap(item => [item.offset ?? 0, item.height ?? 0]), offset ?? 0),
         renderedIndex: prevItems.length + 1,
       };
     },
