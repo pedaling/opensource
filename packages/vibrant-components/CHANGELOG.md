@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.25.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.1...vibrant-components-0.25.2) (2022-11-02)
+
+
+### Bug Fixes
+
+* fix offset bug on StackedPortal ([#403](https://github.com/pedaling/opensource/issues/403)) ([6fb4ecf](https://github.com/pedaling/opensource/commit/6fb4ecfd1354a43a0d8cdc8bf6b5c0bce3c4fe65))
+
 ### [0.25.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.0...vibrant-components-0.25.1) (2022-11-02)
 
 
