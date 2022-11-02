@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import type { FC } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import type { DistributiveOmit } from '@vibrant-ui/utils';
@@ -58,8 +58,10 @@ export const useToastProps = () => {
 export const useToast = () => {
   const { setToastProps } = useContext(ToastContext);
 
+  const closeToast = useCallback(() => setToastProps(undefined), [setToastProps]);
+
   return {
     showToast: (props: DistributiveOmit<ToastProps, 'id'>) => setToastProps(props),
-    closeToast: () => setToastProps(undefined),
+    closeToast,
   };
 };

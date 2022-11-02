@@ -4,7 +4,7 @@ import { Transition } from '@vibrant-ui/motion';
 import { StackedPortal } from '../StackedPortal';
 import type { ToastProps } from '../Toast';
 import { Toast } from '../Toast';
-import { useToastProps } from '../ToastProvider/ToastProvider';
+import { useToast, useToastProps } from '../ToastProvider/ToastProvider';
 
 const DURATION = 5000;
 
@@ -12,6 +12,7 @@ export const ToastRenderer = () => {
   const { toastProps } = useToastProps();
   const [show, setShow] = useState(false);
   const [isMount, setIsMount] = useState(false);
+  const { closeToast } = useToast();
 
   const toastComponentProps = useMemo<ToastProps | undefined>(() => {
     if (toastProps === undefined) {
@@ -51,6 +52,13 @@ export const ToastRenderer = () => {
     return () => clearTimeout(timer);
   }, [show, toastProps, toastProps?.duration, toastProps?.id]);
 
+  useEffect(
+    () => () => {
+      closeToast();
+    },
+    [closeToast]
+  );
+
   return toastComponentProps && isMount ? (
     <StackedPortal
       id="toast"
@@ -69,6 +77,8 @@ export const ToastRenderer = () => {
         onEnd={() => {
           if (!show) {
             setIsMount(false);
+
+            closeToast();
           }
         }}
         animation={{ opacity: show ? 1 : 0 }}
