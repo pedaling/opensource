@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.25.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.24.2...vibrant-core-0.25.0) (2022-11-02)
+
+
+### Features
+
+* **form:** implement form component ([#386](https://github.com/pedaling/opensource/issues/386)) ([0844baf](https://github.com/pedaling/opensource/commit/0844baf555020961df79d29adefd548f2df22809))
+
+
+### Bug Fixes
+
+* set display block when lineLimit is 1 ([#400](https://github.com/pedaling/opensource/issues/400)) ([7fa0fe4](https://github.com/pedaling/opensource/commit/7fa0fe431dd9dd23818615ecce6afe6297c1b156))
+
 ### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.24.1...vibrant-core-0.24.2) (2022-10-31)
 
 

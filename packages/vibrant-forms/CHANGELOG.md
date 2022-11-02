@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.25.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.24.2...vibrant-forms-0.25.0) (2022-11-02)
+
+
+### Features
+
+* add OutlinedButton component ([#397](https://github.com/pedaling/opensource/issues/397)) ([0359a87](https://github.com/pedaling/opensource/commit/0359a87337390d303d5100892723476682f2cad2))
+* **form:** implement form component ([#386](https://github.com/pedaling/opensource/issues/386)) ([0844baf](https://github.com/pedaling/opensource/commit/0844baf555020961df79d29adefd548f2df22809))
+
 ### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.24.1...vibrant-forms-0.24.2) (2022-10-31)
 
 ### [0.24.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.24.0...vibrant-forms-0.24.1) (2022-10-31)

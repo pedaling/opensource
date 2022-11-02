@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.25.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.24.2...vibrant-components-0.25.0) (2022-11-02)
+
+
+### Features
+
+* add OutlinedButton component ([#397](https://github.com/pedaling/opensource/issues/397)) ([0359a87](https://github.com/pedaling/opensource/commit/0359a87337390d303d5100892723476682f2cad2))
+
+
+### Bug Fixes
+
+* set display block when lineLimit is 1 ([#400](https://github.com/pedaling/opensource/issues/400)) ([7fa0fe4](https://github.com/pedaling/opensource/commit/7fa0fe431dd9dd23818615ecce6afe6297c1b156))
+
 ### [0.24.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.24.1...vibrant-components-0.24.2) (2022-10-31)
 
 
