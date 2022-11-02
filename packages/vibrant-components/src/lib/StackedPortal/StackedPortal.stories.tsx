@@ -114,7 +114,7 @@ export const Basic: ComponentStory<typeof StackedPortal> = props => (
       of Lorem Ipsum.
     </Paragraph>
 
-    <StackedPortal {...props} order={2} left={0} right={0} height={50}>
+    <StackedPortal {...props} order={2} left={0} right={0} height={50} safeAreaMode="padding" offset={20}>
       {({ layoutStyle }) => <Paper backgroundColor="informative" {...layoutStyle} />}
     </StackedPortal>
     <StackedPortal {...props} order={1} left={0} right={0} safeAreaMode="padding">

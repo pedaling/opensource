@@ -17,7 +17,7 @@ export const StackedPortal = withStackedPortalVariation(
       position: currentPosition,
       id,
       order,
-      offset: currentPositionOffset,
+      offset: safeAreaMode !== 'padding' ? currentPositionOffset : 0,
       safeAreaInset: safeAreaMode === 'margin',
     });
 
@@ -28,6 +28,7 @@ export const StackedPortal = withStackedPortalVariation(
           pl: 0,
           pr: 0,
           pb: 0,
+          [`p${currentPosition[0]}`]: currentPositionOffset,
         };
       }
 
