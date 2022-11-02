@@ -5,23 +5,7 @@ import { isDefined } from '@vibrant-ui/utils';
 import { withStackedPortalVariation } from './StackedPortalProps';
 
 export const StackedPortal = withStackedPortalVariation(
-  ({
-    id,
-    order,
-    innerRef,
-    children,
-    position,
-    positionOffset,
-    safeAreaMode = 'none',
-    p,
-    pt,
-    pl,
-    pr,
-    pb,
-    py,
-    px,
-    ...restProps
-  }) => {
+  ({ id, order, innerRef, children, position, positionOffset, safeAreaMode = 'none', ...restProps }) => {
     const { generateStyle } = useSafeArea();
 
     const { getResponsiveValue } = useResponsiveValue();
@@ -38,39 +22,27 @@ export const StackedPortal = withStackedPortalVariation(
     });
 
     const paddingStyle = useMemo(() => {
-      let padding = {
-        top: pt ?? py ?? p,
-        left: pl ?? px ?? p,
-        right: pr ?? px ?? p,
-        bottom: pb ?? py ?? p,
-      };
-
       if (safeAreaMode !== 'padding' || renderedIndex !== 1) {
         return {
-          pt: padding.top,
-          pl: padding.left,
-          pr: padding.right,
-          pb: padding.bottom,
+          pt: 0,
+          pl: 0,
+          pr: 0,
+          pb: 0,
         };
       }
 
       const generatedStyle = generateStyle({
         edges: [currentPosition],
-        minInsets: { [currentPosition]: padding[currentPosition] },
+        minInsets: { [currentPosition]: currentPositionOffset },
       });
 
-      padding = {
-        ...padding,
-        ...generatedStyle,
-      };
-
       return {
-        pt: padding.top,
-        pl: padding.left,
-        pr: padding.right,
-        pb: padding.bottom,
+        pt: generatedStyle.top,
+        pl: generatedStyle.left,
+        pr: generatedStyle.right,
+        pb: generatedStyle.bottom,
       };
-    }, [currentPosition, generateStyle, p, pb, pl, pr, pt, px, py, renderedIndex, safeAreaMode]);
+    }, [currentPosition, currentPositionOffset, generateStyle, renderedIndex, safeAreaMode]);
 
     const handleLayout = useCallback(
       ({ height }: LayoutEvent) => {
@@ -93,10 +65,15 @@ export const StackedPortal = withStackedPortalVariation(
         hidden={!isDefined(offset)}
         onLayout={handleLayout}
         {...{ [currentPosition]: !isDefined(offset) ? 0 : offset }}
-        {...paddingStyle}
         {...restProps}
       >
-        {children}
+        {children({
+          layoutStyle: {
+            width: '100%',
+            height: '100%',
+            ...paddingStyle,
+          },
+        })}
       </PortalBox>
     );
   }

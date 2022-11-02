@@ -1,31 +1,28 @@
 import type { Ref } from 'react';
-import type {
-  BackgroundSystemProps,
-  BorderSystemProps,
-  ReactElementChild,
-  ResponsiveValue,
-  SizingSystemProps,
-  SpacingSystemProps,
-} from '@vibrant-ui/core';
+import type { ReactElementChild, ResponsiveValue, SizingSystemProps, SpacingSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
-type StackedPortalProps = BackgroundSystemProps &
-  SizingSystemProps &
-  Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'> &
-  Pick<BorderSystemProps, 'borderRadius'> & {
-    id: string;
-    order: number;
-    ref?: Ref<any>;
-    children?: ReactElementChild;
-    safeAreaMode?: 'margin' | 'none' | 'padding';
-    onMount?: () => void;
-  } & {
-    position: ResponsiveValue<'bottom' | 'top'>;
-    offset?: ResponsiveValue<number>;
-    left?: ResponsiveValue<number>;
-    right?: ResponsiveValue<number>;
-    zIndex?: ResponsiveValue<number>;
-  };
+type StackedPortalProps = SizingSystemProps & {
+  id: string;
+  order: number;
+  ref?: Ref<any>;
+  children: ({
+    layoutStyle,
+  }: {
+    layoutStyle: Pick<SpacingSystemProps, 'pb' | 'pl' | 'pr' | 'pt'> & {
+      width: '100%';
+      height: '100%';
+    };
+  }) => ReactElementChild;
+  safeAreaMode?: 'margin' | 'none' | 'padding';
+  onMount?: () => void;
+} & {
+  position: ResponsiveValue<'bottom' | 'top'>;
+  offset?: ResponsiveValue<number>;
+  left?: ResponsiveValue<number>;
+  right?: ResponsiveValue<number>;
+  zIndex?: ResponsiveValue<number>;
+};
 
 export const withStackedPortalVariation = withVariation<StackedPortalProps>('StackedPortal')(
   propVariant({
