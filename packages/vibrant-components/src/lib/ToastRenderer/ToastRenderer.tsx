@@ -4,7 +4,7 @@ import { Transition } from '@vibrant-ui/motion';
 import { StackedPortal } from '../StackedPortal';
 import type { ToastProps } from '../Toast';
 import { Toast } from '../Toast';
-import { useToast, useToastProps } from '../ToastProvider/ToastProvider';
+import { useToast, useToastProps } from '../ToastProvider';
 
 const DURATION = 5000;
 
