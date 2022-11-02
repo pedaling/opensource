@@ -10,4 +10,4 @@ export default {
   },
 } as ComponentMeta<typeof Body>;
 
-export const Basic: ComponentStory<typeof Body> = props => <Body {...props} />;
+export const Basic: ComponentStory<typeof Body> = props => <Body width="100%" {...props} />;
