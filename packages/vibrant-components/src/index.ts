@@ -46,3 +46,4 @@ export { ToastProvider, useToast } from './lib/ToastProvider';
 export { ToastRenderer } from './lib/ToastRenderer';
 export { ModalBottomSheet } from './lib/ModalBottomSheet';
 export { Stack } from './lib/Stack';
+export { OutlinedButton } from './lib/OutlinedButton';

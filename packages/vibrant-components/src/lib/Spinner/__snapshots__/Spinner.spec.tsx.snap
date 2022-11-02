@@ -80,16 +80,16 @@ exports[`<Spinner /> when Spinner rendered match snapshot 1`] = `
 }
 
 <div>
-  <div
+  <span
     class="emotion-0"
   >
-    <div
+    <span
       class="emotion-1"
     />
-    <div
+    <span
       class="emotion-2"
       style="transform: rotate(360deg);"
     />
-  </div>
+  </span>
 </div>
 `;

@@ -4,9 +4,8 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import type { PressableProps } from '../Pressable';
 
-export type ContainedButtonProps = {
+export type OutlinedButtonProps = {
   ref?: Ref<any>;
-  kind: 'primary' | 'secondary' | 'tertiary';
   size: ResponsiveValue<'lg' | 'md' | 'sm' | 'xl'>;
   type?: PressableProps['buttonType'];
   IconComponent?: IconComponent<IconProps, 'Fill' | 'Regular'>;
@@ -18,28 +17,7 @@ export type ContainedButtonProps = {
   children: ReactTextChildren;
 };
 
-export const withContainedButtonVariation = withVariation<ContainedButtonProps>('ContainedButton')(
-  propVariant({
-    props: [
-      {
-        name: 'kind',
-      },
-    ],
-    variants: {
-      primary: {
-        backgroundColor: 'primary',
-        onColor: 'onPrimary',
-      },
-      secondary: {
-        backgroundColor: 'inverseSurface',
-        onColor: 'onInverseSurface',
-      },
-      tertiary: {
-        backgroundColor: 'surface1',
-        onColor: 'onView1',
-      },
-    } as const,
-  }),
+export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('OutlinedButton')(
   propVariant({
     props: [
       {
@@ -50,32 +28,32 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
     variants: {
       sm: {
         typography: 'body4',
-        py: 7,
-        px: 8,
+        py: 6,
+        px: 7,
         spinnerSize: 'sm',
         iconSize: 16,
         disclosureSize: 16,
       },
       md: {
         typography: 'body2',
-        py: 10,
-        px: 10,
+        py: 8,
+        px: 9,
         spinnerSize: 'md',
         iconSize: 18,
         disclosureSize: 16,
       },
       lg: {
         typography: 'body2',
-        py: 13,
-        px: 12,
+        py: 12,
+        px: 11,
         spinnerSize: 'md',
         iconSize: 18,
         disclosureSize: 16,
       },
       xl: {
         typography: 'body1',
-        py: 15,
-        px: 14,
+        py: 14,
+        px: 13,
         spinnerSize: 'md',
         iconSize: 20,
         disclosureSize: 18,
@@ -87,14 +65,18 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
       {
         name: 'disabled',
         keep: true,
+        default: false,
       },
     ],
     variants: {
       true: {
         backgroundColor: 'disable',
-        onColor: 'onView3',
+        borderColor: 'outlineDisable',
       },
-      false: {},
+      false: {
+        backgroundColor: 'surface2',
+        borderColor: 'outline1',
+      },
     },
   }),
   propVariant({
