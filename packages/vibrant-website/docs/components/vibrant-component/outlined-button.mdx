@@ -1,0 +1,93 @@
+---
+title: OutlinedButton
+---
+
+# OutlinedButton
+
+```jsx live
+<OutlinedButton
+  size="md"
+  onClick={() => alert('버튼 클릭')}
+>
+  버튼
+</OutlinedButton>
+```
+
+## How to use
+
+```jsx
+import { OutlinedButton } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                     | Type                                        | Default | Description                                  |
+| ------------------------ | ------------------------------------------- | ------- | -------------------------------------------- |
+| [size](#크기)            | `xl` \| `lg` \| `md` \| `sm`                |         | 버튼의 크기                                  |
+| type                     | `button` \| `submit `                       |         | `button` 요소의 타입                         |
+| [IconComponent](#아이콘) | `IconComponent<IconProps, Fill \| Regular>` |         | 버튼 좌측에 표시되는 아이콘                  |
+| [disclosure](#아이콘)    | `none` \| `top` \| `right` \| `bottom `     |         | 버튼 우측에 표시되는 화살표 아이콘 표시 여부 |
+| disabled                 | `boolean`                                   |         | 버튼의 비활성화 여부                         |
+| [loading](#로딩)         | `boolean`                                   |         | 스피너 표시 여부                             |
+| onClick                  | `() => void`                                |         | 버튼이 클릭됐을 때 호출되는 콜백 함수        |
+
+## Usage
+
+### 크기
+
+```jsx live
+<VStack spacing={12} alignHorizontal="center">
+  <OutlinedButton size="sm">버튼</OutlinedButton>
+  <OutlinedButton size="md">버튼</OutlinedButton>
+  <OutlinedButton size="lg">버튼</OutlinedButton>
+  <OutlinedButton size="xl">버튼</OutlinedButton>
+</VStack>
+```
+
+### 아이콘
+
+`IconComponent` 속성으로 좌측에 표시되는 아이콘을 설정할 수 있습니다. Fill과 Regular 타입의 아이콘만 사용 가능합니다.
+`disclosure` 속성으로 우측에 표시되는 화살표 아이콘의 표시 여부를 설정합니다.
+
+```jsx live
+<HStack spacing={12}>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Heart.Regular}
+  >
+    좋아요
+  </OutlinedButton>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure={true}
+  >
+    메뉴
+  </OutlinedButton>
+</HStack>
+```
+
+### 로딩
+
+```jsx live
+<HStack spacing={12}>
+  <OutlinedButton size="md" loading={true}>
+    로딩
+  </OutlinedButton>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    loading={true}
+  >
+    로딩
+  </OutlinedButton>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure={true}
+    loading={true}
+  >
+    로딩
+  </OutlinedButton>
+</HStack>
+```
