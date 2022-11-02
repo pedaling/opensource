@@ -40,6 +40,7 @@ const lineLimitProp = createSystemProp({
           WebkitLineClamp: value,
         }
       : {
+          display: 'block',
           overflow: 'hidden',
           whiteSpace: 'nowrap',
           textOverflow: 'ellipsis',
