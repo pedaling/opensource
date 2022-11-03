@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.25.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.1...vibrant-components-0.25.2) (2022-11-02)
+
+
+### Bug Fixes
+
+* fix offset bug on StackedPortal ([#403](https://github.com/pedaling/opensource/issues/403)) ([6fb4ecf](https://github.com/pedaling/opensource/commit/6fb4ecfd1354a43a0d8cdc8bf6b5c0bce3c4fe65))
+
+### [0.25.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.0...vibrant-components-0.25.1) (2022-11-02)
+
+
+### Features
+
+* add Backdrop export statement ([#398](https://github.com/pedaling/opensource/issues/398)) ([3663ae3](https://github.com/pedaling/opensource/commit/3663ae37217d236e727a44187f65f0072ed6ee3b)), closes [#384](https://github.com/pedaling/opensource/issues/384)
+
+
+### Bug Fixes
+
+* add close toast to clean up toast props ([#401](https://github.com/pedaling/opensource/issues/401)) ([5675536](https://github.com/pedaling/opensource/commit/5675536b571ef57f601d3f514c0faf322636b1d7))
+
 ## [0.25.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.24.2...vibrant-components-0.25.0) (2022-11-02)
 
 

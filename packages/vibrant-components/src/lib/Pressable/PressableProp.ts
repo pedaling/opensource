@@ -2,6 +2,7 @@ import type { ReactElement, Ref } from 'react';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
+  ElevationSystemProps,
   FlexboxSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
@@ -19,7 +20,8 @@ export type PressableProps = BackgroundSystemProps &
   OverflowSystemProps &
   PositionSystemProps &
   SpacingSystemProps &
-  SizingSystemProps & {
+  SizingSystemProps &
+  ElevationSystemProps & {
     ref?: Ref<any>;
     disabled?: boolean;
     children?: ReactElement;

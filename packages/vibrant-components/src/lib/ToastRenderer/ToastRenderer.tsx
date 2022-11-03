@@ -65,18 +65,20 @@ export const ToastRenderer = () => {
       zIndex={zIndex.toast}
       safeAreaMode="margin"
     >
-      <Transition
-        onEnd={() => {
-          if (!show) {
-            setIsMount(false);
-          }
-        }}
-        animation={{ opacity: show ? 1 : 0 }}
-        duration={200}
-        easing="easeOutQuad"
-      >
-        <Toast {...toastComponentProps} />
-      </Transition>
+      {() => (
+        <Transition
+          onEnd={() => {
+            if (!show) {
+              setIsMount(false);
+            }
+          }}
+          animation={{ opacity: show ? 1 : 0 }}
+          duration={200}
+          easing="easeOutQuad"
+        >
+          <Toast {...toastComponentProps} />
+        </Transition>
+      )}
     </StackedPortal>
   ) : null;
 };
