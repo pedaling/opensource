@@ -39,16 +39,18 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
           setToastProps(undefined);
 
           return;
-        }
+        } else {
+          setToastProps({ ...props, id: lastIdRef.current });
 
-        setToastProps({ ...props, id: lastIdRef.current });
+          if (props.duration !== 0) {
+            const timer = setTimeout(() => {
+              setToastProps(undefined);
+            }, (props.duration ?? DURATION) + 500);
 
-        if (props.duration !== 0) {
-          const timer = setTimeout(() => {
-            setToastProps(undefined);
-          }, (props.duration ?? DURATION) + 500);
-
-          return () => clearTimeout(timer);
+            return () => clearTimeout(timer);
+          } else {
+            return;
+          }
         }
       },
     }),
