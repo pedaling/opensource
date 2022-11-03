@@ -1,5 +1,5 @@
 import type { Ref } from 'react';
-import type { ReactTextChild, ResponsiveValue } from '@vibrant-ui/core';
+import type { ReactElementChildren, ReactTextChildren, ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import { Icon } from '@vibrant-ui/icons';
@@ -15,7 +15,7 @@ type GhostButtonProps = {
   disclosure?: 'bottom' | 'none' | 'right' | 'top';
   disabled?: boolean;
   onClick?: PressableProps['onClick'];
-  children: ReactTextChild;
+  children: ReactElementChildren | ReactTextChildren;
 };
 
 export const withGhostButtonVariation = withVariation<GhostButtonProps>('GhostButton')(
