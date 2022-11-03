@@ -1,5 +1,5 @@
 import type { Ref } from 'react';
-import type { ReactElementChildren, ReactTextChildren, ResponsiveValue } from '@vibrant-ui/core';
+import type { ResponsiveValue, TextChildren } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import type { PressableProps } from '../Pressable';
@@ -15,7 +15,7 @@ export type ContainedButtonProps = {
   disabled?: boolean;
   loading?: boolean;
   onClick?: PressableProps['onClick'];
-  children: ReactElementChildren | ReactTextChildren;
+  children: TextChildren;
 };
 
 export const withContainedButtonVariation = withVariation<ContainedButtonProps>('ContainedButton')(

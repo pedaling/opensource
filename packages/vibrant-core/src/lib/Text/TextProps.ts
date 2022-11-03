@@ -1,4 +1,4 @@
-import type { ReactElementChildren, ReactTextChildren } from '../../types';
+import type { ReactElementChild, ReactTextChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
@@ -49,9 +49,11 @@ export const systemPropNames = systemProps
 
 export type TextElements = 'br' | 'h1' | 'h2' | 'h3' | 'h5' | 'h6' | 'label' | 'p' | 'span';
 
+export type TextChildren = ReactElementChild | ReactTextChild | TextChildren[];
+
 export type TextProps = SystemProps & {
   as?: TextElements;
-  children?: ReactElementChildren | ReactTextChildren;
+  children?: TextChildren;
 };
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
