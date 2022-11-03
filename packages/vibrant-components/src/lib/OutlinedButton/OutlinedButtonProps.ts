@@ -1,5 +1,5 @@
 import type { Ref } from 'react';
-import type { ReactTextChildren, ResponsiveValue } from '@vibrant-ui/core';
+import type { ReactElementChildren, ReactTextChildren, ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import type { PressableProps } from '../Pressable';
@@ -14,7 +14,7 @@ export type OutlinedButtonProps = {
   disabled?: boolean;
   loading?: boolean;
   onClick?: PressableProps['onClick'];
-  children: ReactTextChildren;
+  children: ReactElementChildren | ReactTextChildren;
 };
 
 export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('OutlinedButton')(
