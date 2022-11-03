@@ -43,12 +43,10 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
 
         setToastProps({ ...props, id: lastIdRef.current });
 
-        const unmountDuration = (props.duration ?? DURATION) + 500;
-
         if (props.duration !== 0) {
           const timer = setTimeout(() => {
             setToastProps(undefined);
-          }, unmountDuration);
+          }, (props.duration ?? DURATION) + 500);
 
           return () => clearTimeout(timer);
         }
