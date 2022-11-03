@@ -1,8 +1,10 @@
-import { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react';
+import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { FC } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import type { DistributiveOmit } from '@vibrant-ui/utils';
 import type { ToastProps as ToastComponentProps } from '../Toast/ToastProps';
+
+const DURATION = 5000;
 
 type ToastProviderProps = {
   children: ReactElementChild;
@@ -34,11 +36,23 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
       setToastProps: props => {
         lastIdRef.current++;
 
-        if (props) {
-          setToastProps({ ...props, id: lastIdRef.current });
-        } else {
+        if (!props) {
           setToastProps(undefined);
+
+          return;
         }
+
+        setToastProps({ ...props, id: lastIdRef.current });
+
+        if (props.duration === 0) {
+          return;
+        }
+
+        const timer = setTimeout(() => {
+          setToastProps(undefined);
+        }, (props.duration ?? DURATION) + 500);
+
+        return () => clearTimeout(timer);
       },
     }),
     [toastProps]
@@ -58,10 +72,10 @@ export const useToastProps = () => {
 export const useToast = () => {
   const { setToastProps } = useContext(ToastContext);
 
-  const closeToast = useCallback(() => setToastProps(undefined), [setToastProps]);
-
   return {
     showToast: (props: DistributiveOmit<ToastProps, 'id'>) => setToastProps(props),
-    closeToast,
+    closeToast: () => {
+      setToastProps(undefined);
+    },
   };
 };
