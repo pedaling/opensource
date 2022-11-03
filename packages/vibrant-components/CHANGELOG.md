@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.25.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.2...vibrant-components-0.25.3) (2022-11-03)
+
+
+### Bug Fixes
+
+* children type of Button component to ReactElementChildren ([#406](https://github.com/pedaling/opensource/issues/406)) ([eaf658f](https://github.com/pedaling/opensource/commit/eaf658fe9023bbb7aa26df8f95da38842a4b7012))
+* fix cleanup function speed issue ([#405](https://github.com/pedaling/opensource/issues/405)) ([a5a928c](https://github.com/pedaling/opensource/commit/a5a928ceac47452b112070a5bdaf6ed75fc17fca))
+
 ### [0.25.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.1...vibrant-components-0.25.2) (2022-11-02)
 
 

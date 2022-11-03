@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.25.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.25.2...vibrant-theme-0.25.3) (2022-11-03)
+
+
+### Features
+
+* add linearLeft, linearRight to theme ([#404](https://github.com/pedaling/opensource/issues/404)) ([7429937](https://github.com/pedaling/opensource/commit/7429937692af10f82d6cfd95b697583009fc8cce))
+
 ### [0.25.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.25.1...vibrant-theme-0.25.2) (2022-11-02)
 
 ### [0.25.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.25.0...vibrant-theme-0.25.1) (2022-11-02)
