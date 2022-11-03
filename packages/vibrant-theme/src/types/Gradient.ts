@@ -12,6 +12,8 @@ export type AnyGradient = LinearGradient;
 export type Gradient = {
   linearTop: LinearGradient;
   linearBottom: LinearGradient;
+  linearLeft: LinearGradient;
+  linearRight: LinearGradient;
 };
 
 export type GradientKind = keyof Gradient;
