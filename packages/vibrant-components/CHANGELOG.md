@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.25.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.3...vibrant-components-0.25.4) (2022-11-03)
+
+
+### Bug Fixes
+
+* fix Button children type to TextChildren ([#407](https://github.com/pedaling/opensource/issues/407)) ([9f9e55a](https://github.com/pedaling/opensource/commit/9f9e55ab458a978ece26be53ba9273644077c8ad))
+
 ### [0.25.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.2...vibrant-components-0.25.3) (2022-11-03)
 
 
