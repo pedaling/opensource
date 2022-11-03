@@ -3,6 +3,7 @@ import type { FC } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import type { DistributiveOmit } from '@vibrant-ui/utils';
 import type { ToastProps as ToastComponentProps } from '../Toast/ToastProps';
+
 const DURATION = 5000;
 
 type ToastProviderProps = {
