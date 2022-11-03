@@ -3,7 +3,7 @@ export type { BoxProps, LayoutEvent } from './lib/Box';
 export { Svg } from './lib/Svg';
 export type { SvgProps } from './lib/Svg';
 export { Text } from './lib/Text';
-export type { TextProps, TextElements } from './lib/Text';
+export type { TextProps, TextElements, TextChildren } from './lib/Text';
 export { TextInput } from './lib/TextInput';
 export type {
   TextInputType,
