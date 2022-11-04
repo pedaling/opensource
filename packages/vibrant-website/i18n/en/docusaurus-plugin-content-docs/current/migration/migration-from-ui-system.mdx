@@ -2,19 +2,19 @@
 sidebar_position: 1
 ---
 
-# Migrate From @class101/ui-system
+# From @class101/ui-system to Vibrant
 
 :::caution
 
-아직 ui-system에 있는 모든 컴포넌트가 vibrant-ui로 옮겨지지 않았습니다.
-
-새로운 컴포넌트는 계속 추가되고 있으며 해당 문서도 업데이트될 예정입니다. 자세한 변경사항은 [여기](#)를 참고해주세요.
-
+Migrating ui-system components to Vibrant UI is still in progress.
+Components and documents will continue to be updeated.
+Learn more [here](#).
 :::
 
-## Use `@vibrant-ui/components`
+## Staring with `@vibrant-ui/components`
 
-이제 `@class101/ui-system` 대신 `@vibrant-ui/components` 에서 컴포넌트를 불러와서 새로운 Vibrant 컴포넌트를 사용해주세요!
+The migration guide helps users use `@vibrant-ui/components` instead of `@class101/ui-system`.
+Each section with the component name of `@class101/ui-system` contains changes between libraries and instructions for smooth replacements.
 
 ```jsx
 // Before
@@ -30,17 +30,21 @@ import {
 
 :::note
 
-현재 `@vibrant-ui/components`에 추가된 컴포넌트는 [Vibrant Storybook](https://vibrant-storybook.class101.net/)에서 확인할 수 있습니다.
+We update Storybook always and simultaneously!
+
+Check out realesed Vibrant components in [Vibrant Storybook](https://vibrant-storybook.class101.net/).
 
 :::
 
-# Breaking Changes
+## Changes
 
-## `<Box />`
+## Vibrant Component Guide
 
-### All Box is default flex layout
+### Box
 
-이제 모든 Box 컴포넌트는 flex 레이아웃으로 동작됩니다.
+#### Default layout value of Box is Flex.
+
+In Vibrant Ui, `<Box />` uses flexbox layout system.
 
 ```typescript
 type BoxProps = {
@@ -49,7 +53,7 @@ type BoxProps = {
 };
 ```
 
-기존 ui-system의 Box 컴포넌트는 플랫폼에 따라 스타일이 다르게 적용되었습니다
+In ui-system, `<Box />` uses a different layout system depending on the platform.
 
 ```jsx
 import { Box } from '@class101/ui-system';
@@ -87,7 +91,7 @@ import { Box } from '@class101/ui-system';
 />;
 ```
 
-이제 모든 Box 컴포넌트는 `flex-direction: column`, `align-content: stretch`, `flex-shrink: 1`로 동작됩니다.
+In Vibrant Ui, all the `<Box />` take `flex-direction: column`, `align-content: stretch`, `flex-shrink: 1` as default layout properties.
 
 ```jsx
 import { Box } from '@vibrant-ui/core';
@@ -119,9 +123,9 @@ import { Box } from '@vibrant-ui/core';
 />
 ```
 
-## Migrate `<ResponsiveStack />` to `<Stack />`
+### ResponsiveStack
 
-`<ResponsiveStack />` 컴포넌트가 제거되고 `<Stack />` 컴포넌트가 추가되었습니다.
+Use `<Stack />` instead of `<ResponsiveStack />`.
 
 **Before**
 
@@ -139,11 +143,13 @@ import { Box } from '@vibrant-ui/core';
 <Stack direction={['vertical', 'horizontal']} />
 ```
 
-## `<Paper />`
+### Paper
 
-### Remove kind prop
+#### `kind` property is deprecated
 
-`kind` 속성이 제거되고 borderColor 속성과 backgroundColor 속성을 동시에 사용할 수 있습니다.
+`kind` property of `<Paper />` is deprecated.
+
+`borderColor` and `backgroundColor` properties are added.
 
 **Before**
 
@@ -169,11 +175,12 @@ import { Box } from '@vibrant-ui/core';
 />
 ```
 
-## Migrate `<Action />` to `<Pressable />`
+### Action
 
-`<Action />` 컴포넌트가 제거되고 `<Pressable />` 컴포넌트가 추가되었습니다.
+Use `<Pressable />` instead of `<Action />`.
 
-기존 Action 컴포넌트는 자체적으로 UI를 가지지 않고 자식 컴포넌트를 클릭가능하게 수정했지만, Pressable 컴포넌트는 자체적으로 UI를 갖고 클릭이벤트를 가집니다.
+In ui-system, `<Action />` doesn't own UI and its children components are clickable.
+In Vibrant, `<Pressable />` own its UI and click events.
 
 **Before**
 
@@ -195,11 +202,11 @@ import { Box } from '@vibrant-ui/core';
 </Pressable>
 ```
 
-## Migrate `<SafeAreaContent />` to `<SafeAreaView />`
+### SafeAreaContent
 
-`<SafeAreaContent />` 컴포넌트가 제거되고 `<SafeAreaView />` 컴포넌트가 추가되었습니다.
+Use `<SafeAreaView />` instead of `<SafeAreaContent />`.
 
-기존 API의 변화는 없지만, `minInsets`를 통해 디바이스 safeArea 값이 minInsets보다 작을 때 minInsets에 적용된 값이 나오도록 수정되었습니다.
+There is no change of API, but `mininstes` selects the minimum between the safeArea value of device and users' input value.
 
 **Before**
 
@@ -221,19 +228,20 @@ import { Box } from '@vibrant-ui/core';
 />
 ```
 
-## `<TextField />`
+### TextField
 
-### Support Dynamic Label
+#### Support Dynamic Label
 
 ```jsx live
 <TextField state="normal" label="Focus Here!" />
 ```
 
-입력창이 포커스 되었을 때 label이 애니메이션으로 동작됩니다.
+When `<TextField />` is focused, the animation on the label works.
 
-### prefix, suffix, renderStart, renderEnd
+#### prefix, suffix, renderStart, renderEnd
 
-기존에 있던 `renderRightIcon` prop이 제거되고 `prefix`, `suffix`, `renderStart`, `renderEnd`가 추가되었습니다
+`renderRightIcon` property is deprecated.
+`prefix`, `suffix`, `renderStart`, `renderEnd` are added.
 
 **Before**
 
@@ -256,17 +264,18 @@ import { Box } from '@vibrant-ui/core';
 
 <TextField
   state="default"
-  prefix="입력"
-  suffix="원"
+  prefix="input"
+  suffix="Won"
   renderEnd={() => <Icon.EyeOn.Regular size={20} />}
 />
 ```
 
-## `<Icon />`
+### Icon
 
-### Remove `type` prop
+#### Remove `type` prop
 
-Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 같이 별도의 컴포넌트로 사용해주세요.
+`type` property is deprecated.
+Use seperate Icon component such as `<Icon.Play.Regular />`.
 
 **Before**
 
@@ -282,4 +291,99 @@ Icon 컴포넌트에 `type` 속성이 제거되고 `<Icon.Play.Regular />`와 �
 // import { Icon } from '@vibrant-ui/icons';
 
 <Icon.Play.Regular size={20} />
+```
+
+### Stack, VStack, HStack
+
+#### Default values of Stack, VStack, HStack
+
+Default values of `<Stack />`, `<VStack />`, `<HStack />` are same with `@class101/ui-system`.
+
+`justifyContent` property aligned with main axis has `start` as default.
+
+`alignItems` property aligned with cross axis is `stretch` as default.
+
+| props          | Default Value |
+| -------------- | ------------- |
+| justifyContent | start         |
+| alignItems     | stretch       |
+
+#### `alignment` is deprecated
+
+In the ui-system, `alignment` is quite confusing property.
+
+It transformed as `justifyContent` in `<VStack />`, while it transformed as `alignmendItems` in `<HStack />`.
+
+Vibrant UI fixes this inconsistency, and introduces `alignVertical` and `alignHorizontal`.
+
+These properties are transformed with the consideration of stack's flex direction.
+
+Therefore, `alignVertical` and `alignHorizontal` represent aligmnent in absolute column and row.
+
+Check out the below summary.
+
+**Case of `<VStack />`**
+
+| props           | matching property in VStack |
+| --------------- | --------------------------- |
+| alignVertical   | justifyContent              |
+| alignHorizontal | alignItems                  |
+
+**Case of `<HStack />`**
+
+| props           | matching property in HStack |
+| --------------- | --------------------------- |
+| alignVertical   | alignItems                  |
+| alignHorizontal | justifyContent              |
+
+**Before**
+
+```jsx
+// import { VStack, HStack  } from '@class101/ui-system';
+<Vstack alignment="center" />
+<HStack alignment="center" />
+```
+
+**After**
+
+```jsx live
+// import { VStack } from '@vibrant-ui/components';
+<VStack height={300} alignVertical="center">
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView1"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView2"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView3"
+  />
+</VStack>
+```
+
+```jsx live
+// import { HStack } from '@vibrant-ui/components';
+<HStack alignVertical="center">
+  <Box
+    minHeight={50}
+    width={50}
+    backgroundColor="onView1"
+  />
+  <Box
+    minHeight={50}
+    width={50}
+    backgroundColor="onView2"
+  />
+  <Box
+    minHeight={50}
+    width={50}
+    backgroundColor="onView3"
+  />
+</HStack>
 ```

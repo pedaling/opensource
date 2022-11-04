@@ -1,0 +1,22 @@
+---
+title: ToastProvider
+sidebar_position: 1
+---
+
+# ToastProvider
+
+`<ToastProvider />` is a provider which should be positioned in the upper layer of the application to use `<Toast />` properly.
+
+## How to use
+
+```jsx
+import { ToastProvider } from '@vibrant-ui/components';
+const App = () => {
+  <VibrantProvider>
+    {/* Your other providers */}
+    <ToastProvider>{/* Your app contents */}</ToastProvider>
+  </VibrantProvider>;
+};
+```
+
+After inserting `<ToastProvider />`, read [here](../vibrant-component/toast) to trigger Toast.

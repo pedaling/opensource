@@ -1,0 +1,98 @@
+---
+sidebar_position: 2
+---
+
+# Installation
+
+Vibrant UI works in both Web(React DOM) and native(React Native) environments.
+
+## Web
+
+### Install Library
+
+```bash npm2yarn
+npm install @vibrant-ui/components @vibrant-ui/core
+```
+
+### Configure VibrantProvider for Web
+
+```jsx title="App.tsx"
+import { VibrantProvider } from '@vibrant-ui/core';
+
+// react entrypoint
+const App = ({ children }) => {
+  return <VibrantProvider>{children}</VibrantProvider>;
+};
+```
+
+## React Native
+
+### Install Library
+
+```bash npm2yarn
+npm install @vibrant-ui/components @vibrant-ui/core-native
+```
+
+### Config Metro Config
+
+When using Vibrant UI in a native environment, it is based on `@vibrant-ui/core-native` insead of `@vibrant-ui/core`.
+Therefore, metro configuration should be set.
+
+```js title="metro.config.js"
+const metroResolver = require('metro-resolver');
+
+module.exports = () => {
+  return {
+    resolver: {
+      resolveRequest: (
+        context,
+        realModuleName,
+        platform
+      ) => {
+        if (realModuleName === '@vibrant-ui/core') {
+          return {
+            filePath: require.resolve(
+              '@vibrant-ui/core-native'
+            ),
+            type: 'sourceFile',
+          };
+        }
+
+        return metroResolver.resolve(
+          context,
+          realModuleName,
+          platform
+        );
+      },
+    },
+  };
+};
+```
+
+### Configure VibrantProvider for Native
+
+```tsx title="App.tsx"
+import {
+  VibrantProvider,
+  createShadowsComponent,
+} from '@vibrant-ui/core';
+import type { Dependencies } from '@vibrant-ui/core';
+
+import * as ReactSpringNative from '@react-spring/native';
+import { Shadow } from 'react-native-shadow-2';
+import { LinearGradient } from 'expo-linear-gradient';
+
+const dependencies: Dependencies = {
+  reactSpringModule: ReactSpringNative,
+  nativeShadows: createShadowsComponent(Shadow),
+  nativeLinearGradient: LinearGradient,
+};
+
+const App = ({ children }) => {
+  return (
+    <VibrantProvider dependencies={dependencies}>
+      {children}
+    </VibrantProvider>
+  );
+};
+```

@@ -1,0 +1,93 @@
+---
+title: OutlinedButton
+---
+
+# OutlinedButton
+
+```jsx live
+<OutlinedButton
+  size="md"
+  onClick={() => alert('Button clicked!')}
+>
+  Button
+</OutlinedButton>
+```
+
+## How to use
+
+```jsx
+import { OutlinedButton } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                            | Type                                        | Default | Description                                        |
+| ------------------------------- | ------------------------------------------- | ------- | -------------------------------------------------- |
+| [size](#size)                   | `xl` \| `lg` \| `md` \| `sm`                |         | Size of the button                                 |
+| type                            | `button` \| `submit `                       |         | Type of the button                                 |
+| [IconComponent](#iconComponent) | `IconComponent<IconProps, Fill \| Regular>` |         | Icon on the left side                              |
+| [disclosure](#iconComponent)    | `none` \| `top` \| `right` \| `bottom `     |         | Display status of the arrow Icon in the right side |
+| disabled                        | `boolean`                                   |         | Disable status of the button                       |
+| [loading](#loading)             | `boolean`                                   |         | Display status of Spinner                          |
+| onClick                         | `() => void`                                |         | Callback function runs when the button is clicked  |
+
+## Usage
+
+### size
+
+```jsx live
+<VStack spacing={12} alignHorizontal="center">
+  <OutlinedButton size="sm">Button</OutlinedButton>
+  <OutlinedButton size="md">Button</OutlinedButton>
+  <OutlinedButton size="lg">Button</OutlinedButton>
+  <OutlinedButton size="xl">Button</OutlinedButton>
+</VStack>
+```
+
+### iconComponent
+
+`IconComponent` decides Icon on the left side. Only fill or general type IconComponents are available.
+`disclosure` decides display status of arrow icon on the right side.
+
+```jsx live
+<HStack spacing={12}>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Heart.Regular}
+  >
+    Like
+  </OutlinedButton>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure={true}
+  >
+    Menu
+  </OutlinedButton>
+</HStack>
+```
+
+### Loading
+
+```jsx live
+<HStack spacing={12}>
+  <OutlinedButton size="md" loading={true}>
+    Loading
+  </OutlinedButton>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    loading={true}
+  >
+    Loading
+  </OutlinedButton>
+  <OutlinedButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure={true}
+    loading={true}
+  >
+    Loading
+  </OutlinedButton>
+</HStack>
+```

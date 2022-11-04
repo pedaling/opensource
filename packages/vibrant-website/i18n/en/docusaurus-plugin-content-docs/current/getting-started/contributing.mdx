@@ -1,0 +1,52 @@
+---
+title: Contributing
+sidebar_position: 3
+---
+
+# Contributing to Vibrant UI
+
+Vibrant Design System is developing as open source, and published in [Github](https://github.com/pedaling/opensource).
+
+Everyone who is intersted in VDS can contribute.
+
+## Setup
+
+```bash
+git clone https://github.com/pedaling/opensource
+cd opensource
+yarn install
+```
+
+## Development Workflow
+
+Development and editing is done through Stroybook, which can be executed by the code below.
+
+```bash
+yarn start-storybook
+```
+
+### Development with Native App
+
+Running application is needed to test Storybook native.
+
+```bash
+yarn vibrant-app
+
+# press 'a' to android simulator
+# press 'i' to ios simulator
+```
+
+Run simulator by pressing `a` or `i` key, choose platform on Storybook web.
+Then you can test native components in Storybook.
+
+![Storybook Platform Select](/img/docs/contribution-stoorybook-platform.png)
+
+** Controls panel of storybook is synchronized with selected story**
+
+### Development Document Site
+
+Development of documentation can be done by this code line.
+
+```bash
+yarn vibrant-docs
+```

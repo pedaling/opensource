@@ -1,0 +1,65 @@
+---
+title: GhostButton
+---
+
+# GhostButton
+
+```jsx live
+<GhostButton size="md">Button</GhostButton>
+```
+
+## How to use
+
+```jsx
+import { GhostButton } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                            | Type                                                   | Default | Description                                        |
+| ------------------------------- | ------------------------------------------------------ | ------- | -------------------------------------------------- |
+| [size](#size)                   | `lg` \| `md` \| `sm`                                   |         | Size of the button                                 |
+| color                           | [OnColorToken](/docs/core-concepts/colors/color-token) |         | Button text, Color of Icon                         |
+| type                            | `button` \| `submit `                                  |         | Type of `button`                                   |
+| [IconComponent](#iconComponent) | `IconComponent<IconProps, Fill \| Regular>`            |         | Type of the button                                 |
+| [disclosure](#iconComponent)    | `none` \| `top` \| `right` \| `bottom `                |         | Display status of the arrow Icon in the right side |
+| disabled                        | `boolean`                                              |         | Disable status of the button                       |
+| onClick                         | `() => void`                                           |         | Callback function runs when the button is clicked  |
+
+## Usage
+
+### size
+
+```jsx live
+<VStack spacing={12}>
+  <GhostButton size="lg">Button</GhostButton>
+  <GhostButton size="md">Button</GhostButton>
+  <GhostButton size="sm">Button</GhostButton>
+</VStack>
+```
+
+### iconComponent
+
+`IconComponent` decides Icon on the left side. Only fill or general type IconComponents are available.
+`disclosure` decides display status of arrow icon on the right side.
+
+```jsx live
+<VStack spacing={12}>
+  <GhostButton size="md" IconComponent={Icon.Heart.Regular}>
+    Like
+  </GhostButton>
+  <GhostButton
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure="right"
+  >
+    Menu
+  </GhostButton>
+  <GhostButton size="md" disclosure="top">
+    Menu
+  </GhostButton>
+  <GhostButton size="md" disclosure="bottom">
+    Menu
+  </GhostButton>
+</VStack>
+```

@@ -83,7 +83,7 @@ const config = {
     },
   },
   i18n: {
-    defaultLocale: 'ko',
+    defaultLocale: 'en',
     locales: ['ko', 'en'],
     localeConfigs: {
       en: {
