@@ -57,6 +57,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'sm',
         iconSize: 16,
         disclosureSize: 16,
+        contentsSpacing: 0,
       },
       md: {
         typography: 'body2',
@@ -65,6 +66,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'md',
         iconSize: 18,
         disclosureSize: 16,
+        contentsSpacing: 0,
       },
       lg: {
         typography: 'body2',
@@ -73,6 +75,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'md',
         iconSize: 18,
         disclosureSize: 16,
+        contentsSpacing: 0,
       },
       xl: {
         typography: 'body1',
@@ -81,6 +84,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'md',
         iconSize: 20,
         disclosureSize: 18,
+        contentsSpacing: 2,
       },
     } as const,
   }),

@@ -19,6 +19,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
     iconSize,
     disclosureSize,
     children,
+    contentsSpacing,
     ...restProps
   }) => (
     <Pressable
@@ -35,16 +36,28 @@ export const OutlinedButton = withOutlinedButtonVariation(
       disabled={loading || disabled}
     >
       <>
-        <HStack as="span" alignVertical="center" alignHorizontal="center" opacity={loading ? 0 : 1}>
+        <HStack
+          as="span"
+          alignVertical="center"
+          alignHorizontal="center"
+          opacity={loading ? 0 : 1}
+          spacing={contentsSpacing}
+        >
           {IconComponent && (
             <Box as="span" mx={2}>
               <IconComponent size={iconSize} />
             </Box>
           )}
-          <Text typography={typography} fontWeight="bold" ml={4} mr={DisclosureIconComponent ? 6 : 4}>
-            {children}
-          </Text>
-          {DisclosureIconComponent && <DisclosureIconComponent size={disclosureSize} />}
+          {Boolean(children) && (
+            <Text typography={typography} fontWeight="bold" mx={4}>
+              {children}
+            </Text>
+          )}
+          {DisclosureIconComponent && (
+            <Box as="span" ml={2}>
+              <DisclosureIconComponent size={disclosureSize} />
+            </Box>
+          )}
         </HStack>
         {loading && (
           <HStack

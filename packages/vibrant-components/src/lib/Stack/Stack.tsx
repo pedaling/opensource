@@ -11,7 +11,9 @@ export const Stack = withStackVariation(({ innerRef, spacing, spaceWidth, spaceH
         ? validChildren.map((child, index, { length: childLength }) => (
             <Fragment key={index}>
               {child}
-              {childLength !== index + 1 && <Box flexGrow={0} flexShrink={0} width={spaceWidth} height={spaceHeight} />}
+              {childLength !== index + 1 && (
+                <Box as="span" flexGrow={0} flexShrink={0} width={spaceWidth} height={spaceHeight} />
+              )}
             </Fragment>
           ))
         : children}
