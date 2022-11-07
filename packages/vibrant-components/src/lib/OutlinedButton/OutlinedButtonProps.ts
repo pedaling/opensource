@@ -2,6 +2,7 @@ import type { Ref } from 'react';
 import type { ResponsiveValue, TextChildren } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
+import { Icon } from '@vibrant-ui/icons';
 import type { PressableProps } from '../Pressable';
 
 export type OutlinedButtonProps = {
@@ -10,6 +11,7 @@ export type OutlinedButtonProps = {
   type?: PressableProps['buttonType'];
   IconComponent?: IconComponent<IconProps, 'Fill' | 'Regular'>;
   full?: ResponsiveValue<boolean>;
+  active?: boolean;
   disclosure?: boolean;
   disabled?: boolean;
   loading?: boolean;
@@ -94,6 +96,29 @@ export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('O
       false: {
         width: 'auto',
       },
+    },
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'disclosure',
+      },
+      {
+        name: 'active',
+      },
+    ],
+    variants: ({ disclosure, active }) => {
+      if (!disclosure) {
+        return {
+          DisclosureIconComponent: null,
+        };
+      }
+
+      if (active) {
+        return { DisclosureIconComponent: Icon.ArrowTriangleUp.Fill };
+      }
+
+      return { DisclosureIconComponent: Icon.ArrowTriangleDown.Fill };
     },
   })
 );

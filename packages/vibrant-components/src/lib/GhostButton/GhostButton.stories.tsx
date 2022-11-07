@@ -10,7 +10,6 @@ export default {
     size: 'md',
     IconComponent: Icon.Photo.Regular,
     children: 'click me',
-    disclosure: 'right',
   },
 } as ComponentMeta<typeof GhostButton>;
 
