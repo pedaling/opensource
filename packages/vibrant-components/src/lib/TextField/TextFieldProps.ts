@@ -18,6 +18,7 @@ export type TextFieldProps = BaseInputProps<string> & {
   readOnly?: boolean;
   onFocus?: () => void;
   onBlur?: () => void;
+  onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;
   renderStart?: () => ReactElementChild;
   renderEnd?: () => ReactElementChild;
 };
