@@ -1,5 +1,6 @@
-import { withVariation } from '@vibrant-ui/core';
+import type { ForwardedRef } from 'react';
 import type { AutoCapitalizeOption, AutoCompleteOption, ReactElementChild, TextInputType } from '@vibrant-ui/core';
+import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
 export type TextFieldProps = BaseInputProps<string> & {
@@ -16,6 +17,7 @@ export type TextFieldProps = BaseInputProps<string> & {
   suffix?: string;
   clearable?: boolean;
   readOnly?: boolean;
+  ref?: ForwardedRef<any>;
   onFocus?: () => void;
   onBlur?: () => void;
   renderStart?: () => ReactElementChild;
