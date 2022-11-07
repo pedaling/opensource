@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.25.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.4...vibrant-components-0.25.5) (2022-11-07)
+
+
+### Features
+
+* export modal bottom sheet props ([#408](https://github.com/pedaling/opensource/issues/408)) ([0bf542c](https://github.com/pedaling/opensource/commit/0bf542ca9faae6cba6c5a809302470557ba3ae62))
+* GhostButton QA ([#411](https://github.com/pedaling/opensource/issues/411)) ([09a1e7f](https://github.com/pedaling/opensource/commit/09a1e7f28234bc6682732a25d3b2a46557d104af))
+
+
+### Bug Fixes
+
+* add alert and scroll movement in TextField ([#413](https://github.com/pedaling/opensource/issues/413)) ([122d985](https://github.com/pedaling/opensource/commit/122d9859054483db5542ec5922f83511fbb2ab4b))
+* OutlinedButton QA ([#410](https://github.com/pedaling/opensource/issues/410)) ([0615cfb](https://github.com/pedaling/opensource/commit/0615cfb5151e6ce9fd93db310c8c3d10b4c939cd))
+
 ### [0.25.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.25.3...vibrant-components-0.25.4) (2022-11-03)
 
 
