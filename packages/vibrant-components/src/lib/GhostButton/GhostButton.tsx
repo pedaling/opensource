@@ -1,5 +1,4 @@
 import { Text } from '@vibrant-ui/core';
-import { Icon } from '@vibrant-ui/icons';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { withGhostButtonVariation } from './GhostButtonProps';
@@ -16,7 +15,7 @@ export const GhostButton = withGhostButtonVariation(
     ArrowIconComponent,
     iconSize,
     children,
-    disclosure,
+    DisclosureIconComponent,
     color = 'onView1',
     ...restProps
   }) => (
@@ -37,12 +36,12 @@ export const GhostButton = withGhostButtonVariation(
           fontWeight={fontWeight}
           color={color}
           ml={IconComponent ? 6 : 0}
-          mr={arrow || disclosure ? 4 : 0}
+          mr={arrow || DisclosureIconComponent ? 4 : 0}
         >
           {children}
         </Text>
         {arrow && <ArrowIconComponent size={iconSize} fill={color} />}
-        {disclosure && <Icon.ArrowTriangleDown.Fill size={iconSize} fill={color} />}
+        {DisclosureIconComponent && <DisclosureIconComponent size={iconSize} fill={color} />}
       </HStack>
     </Pressable>
   )

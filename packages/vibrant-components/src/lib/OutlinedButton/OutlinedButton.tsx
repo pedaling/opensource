@@ -1,5 +1,4 @@
 import { Box, Text } from '@vibrant-ui/core';
-import { Icon } from '@vibrant-ui/icons';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { Spinner } from '../Spinner';
@@ -12,7 +11,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
     backgroundColor,
     borderColor,
     IconComponent,
-    disclosure,
+    DisclosureIconComponent,
     loading,
     disabled,
     typography,
@@ -42,10 +41,10 @@ export const OutlinedButton = withOutlinedButtonVariation(
               <IconComponent size={iconSize} />
             </Box>
           )}
-          <Text typography={typography} fontWeight="bold" ml={4} mr={disclosure ? 6 : 4}>
+          <Text typography={typography} fontWeight="bold" ml={4} mr={DisclosureIconComponent ? 6 : 4}>
             {children}
           </Text>
-          {disclosure && <Icon.ArrowTriangleDown.Fill size={disclosureSize} />}
+          {DisclosureIconComponent && <DisclosureIconComponent size={disclosureSize} />}
         </HStack>
         {loading && (
           <HStack

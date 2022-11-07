@@ -22,7 +22,9 @@ import { GhostButton } from '@vibrant-ui/components';
 | color                    | [OnColorToken](/docs/core-concepts/colors/color-token) |         | 버튼 텍스트, 아이콘의 색상                          |
 | type                     | `button` \| `submit `                                  |         | `button` 요소의 타입                                |
 | [IconComponent](#아이콘) | `IconComponent<IconProps, Fill \| Regular>`            |         | 버튼 좌측에 표시되는 아이콘                         |
-| [disclosure](#아이콘)    | `none` \| `top` \| `right` \| `bottom `                |         | 버튼 우측에 표시되는 화살표 아이콘 사용 여부와 방향 |
+| [arrow](#아이콘)         | `top` \| `right` \| `bottom `                          |         | 버튼 우측에 표시되는 화살표 아이콘 사용 여부와 방향 |
+| [disclosure](#아이콘)    | boolean                                                |         | 버튼 우측에 표시되는 토글 아이콘 사용 여부          |
+| [active](#아이콘)        | boolean                                                |         | 버튼 우측에 표시되는 토글 아이콘 방향 설정          |
 | disabled                 | `boolean`                                              |         | 버튼의 비활성화 여부                                |
 | onClick                  | `() => void`                                           |         | 버튼이 클릭됐을 때 호출되는 콜백 함수               |
 
@@ -41,7 +43,8 @@ import { GhostButton } from '@vibrant-ui/components';
 ### 아이콘
 
 `IconComponent` 속성으로 좌측에 표시되는 아이콘을 설정할 수 있습니다. Fill과 Regular 타입의 아이콘만 사용 가능합니다.
-`disclosure` 속성으로 우측에 표시되는 화살표 아이콘의 방향이나 표시 여부를 설정합니다.
+`arrow` 속성으로 우측에 표시되는 화살표 아이콘의 방향이나 표시 여부를 설정합니다.
+`disclousre`와 `active` 속성으로 우측에 표시되는 토글 아이콘의 방향이나 표시 여부를 설정합니다.
 
 ```jsx live
 <VStack spacing={12}>
@@ -55,10 +58,16 @@ import { GhostButton } from '@vibrant-ui/components';
   >
     메뉴
   </GhostButton>
-  <GhostButton size="md" disclosure="top">
+  <GhostButton size="md" arrow="top">
     메뉴
   </GhostButton>
-  <GhostButton size="md" disclosure="bottom">
+  <GhostButton size="md" arrow="bottom">
+    메뉴
+  </GhostButton>
+  <GhostButton size="md" disclosure={true}>
+    메뉴
+  </GhostButton>
+  <GhostButton size="md" disclosure={true} active={true}>
     메뉴
   </GhostButton>
 </VStack>

@@ -19,6 +19,7 @@ type GhostButtonProps = {
 } & Either<
   {
     disclosure?: boolean;
+    active?: boolean;
   },
   {
     arrow?: 'bottom' | 'right' | 'top';
@@ -83,5 +84,28 @@ export const withGhostButtonVariation = withVariation<GhostButtonProps>('GhostBu
         ArrowIconComponent: Icon.ChevronDown.Regular,
       },
     } as const,
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'disclosure',
+      },
+      {
+        name: 'active',
+      },
+    ],
+    variants: ({ disclosure, active }) => {
+      if (!disclosure) {
+        return {
+          DisclosureIconComponent: null,
+        };
+      }
+
+      if (active) {
+        return { DisclosureIconComponent: Icon.ArrowTriangleUp.Fill };
+      }
+
+      return { DisclosureIconComponent: Icon.ArrowTriangleDown.Fill };
+    },
   })
 );

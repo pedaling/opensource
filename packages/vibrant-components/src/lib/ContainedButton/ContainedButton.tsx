@@ -1,5 +1,4 @@
 import { Box, Text } from '@vibrant-ui/core';
-import { Icon } from '@vibrant-ui/icons';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { Spinner } from '../Spinner';
@@ -10,7 +9,7 @@ export const ContainedButton = withContainedButtonVariation(
     innerRef,
     type = 'button',
     IconComponent,
-    disclosure,
+    DisclosureIconComponent,
     loading,
     disabled,
     onColor,
@@ -41,9 +40,9 @@ export const ContainedButton = withContainedButtonVariation(
           <Text typography={typography} fontWeight="bold" mx={4}>
             {children}
           </Text>
-          {disclosure && (
+          {DisclosureIconComponent && (
             <Box as="span" ml={2}>
-              <Icon.ArrowTriangleDown.Fill size={disclosureSize} />
+              <DisclosureIconComponent size={disclosureSize} />
             </Box>
           )}
         </HStack>
