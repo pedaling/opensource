@@ -38,7 +38,7 @@ export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('O
       },
       md: {
         typography: 'body2',
-        py: 8,
+        py: 9,
         px: 9,
         spinnerSize: 'md',
         iconSize: 18,
