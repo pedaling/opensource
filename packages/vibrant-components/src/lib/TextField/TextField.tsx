@@ -23,9 +23,10 @@ export const TextField = withTextFieldVariation(
     clearable = false,
     onFocus,
     onBlur,
+    innerRef,
     ...restProps
   }) => {
-    const inputRef = useRef<TextInputRef>(null);
+    const inputRef = useRef<TextInputRef | null>(null);
 
     const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState(defaultValue ?? '');
@@ -60,7 +61,21 @@ export const TextField = withTextFieldVariation(
         onLabelClick={() => inputRef.current?.focus()}
         renderField={style => (
           <TextInput
-            ref={inputRef}
+            ref={node => {
+              inputRef.current = node;
+
+              if (!innerRef) {
+                return;
+              }
+
+              if (typeof innerRef === 'function') {
+                innerRef(node);
+              }
+
+              if ('current' in innerRef) {
+                innerRef.current = node;
+              }
+            }}
             type={type}
             defaultValue={value}
             placeholder={!label || isFocused || value ? placeholder : ''}
