@@ -1,2 +1,2 @@
 export { ModalBottomSheet } from './ModalBottomSheet';
-export { ModalBottomSheetProps } from './ModalBottomSheetProps';
+export type { ModalBottomSheetProps } from './ModalBottomSheetProps';
