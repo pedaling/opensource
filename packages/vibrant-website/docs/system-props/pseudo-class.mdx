@@ -1,0 +1,31 @@
+# Pseudo Class System Props
+
+CSS의 Pseudo Class 관련 Prop입니다. 현재 웹에서만 동작됩니다.
+
+## Pseudo Class Props
+
+| 속성              | 타입                        | 설명                                 | 크로스플랫폼 지원 |
+| :---------------- | :-------------------------- | :----------------------------------- | :---------------- |
+| pseudoHover       | [SystemProps](#systemprops) | 마우스 hover시 나타나는 스타일입니다 | Web Only          |
+| pseudoFocus       | [SystemProps](#systemprops) | 포커스시 나타나는 스타일입니다       | Web Only          |
+| pseudoActive      | [SystemProps](#systemprops) | 마우스 클릭시 나타나는 스타일입니다  | Web Only          |
+| pseudoBefore      | [SystemProps](#systemprops) | 요소 앞에 나타나는 스타일입니다      | Web Only          |
+| pseudoAfter       | [SystemProps](#systemprops) | 요소 뒤에 나타나는 스타일입니다      | Web Only          |
+| pseudoPlaceholder | [SystemProps](#systemprops) | placeholder 스타일입니다             | Web Only          |
+
+## 타입
+
+### SystemProps
+
+SystemProp은 전체 System Prop을 모아놓는 타입입니다.
+
+**예시**
+
+```jsx live
+<Box
+  background="red"
+  pseudoHover={{ backgroundColor: 'blue' }}
+  width={100}
+  height={100}
+/>
+```
