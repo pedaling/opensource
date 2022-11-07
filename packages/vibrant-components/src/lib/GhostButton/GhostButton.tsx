@@ -42,7 +42,7 @@ export const GhostButton = withGhostButtonVariation(
           {children}
         </Text>
         {arrow && <ArrowIconComponent size={iconSize} fill={color} />}
-        {disclosure && <Icon.ArrowTriangleDown.Fill size={iconSize} />}
+        {disclosure && <Icon.ArrowTriangleDown.Fill size={iconSize} fill={color} />}
       </HStack>
     </Pressable>
   )
