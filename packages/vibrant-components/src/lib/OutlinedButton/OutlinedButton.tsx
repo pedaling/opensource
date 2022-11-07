@@ -41,10 +41,16 @@ export const OutlinedButton = withOutlinedButtonVariation(
               <IconComponent size={iconSize} />
             </Box>
           )}
-          <Text typography={typography} fontWeight="bold" ml={4} mr={DisclosureIconComponent ? 6 : 4}>
-            {children}
-          </Text>
-          {DisclosureIconComponent && <DisclosureIconComponent size={disclosureSize} />}
+          {Boolean(children) && (
+            <Text typography={typography} fontWeight="bold" mx={4}>
+              {children}
+            </Text>
+          )}
+          {DisclosureIconComponent && (
+            <Box as="span" ml={2}>
+              <DisclosureIconComponent size={disclosureSize} />
+            </Box>
+          )}
         </HStack>
         {loading && (
           <HStack

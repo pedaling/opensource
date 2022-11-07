@@ -37,9 +37,11 @@ export const ContainedButton = withContainedButtonVariation(
               <IconComponent size={iconSize} />
             </Box>
           )}
-          <Text typography={typography} fontWeight="bold" mx={4}>
-            {children}
-          </Text>
+          {Boolean(children) && (
+            <Text typography={typography} fontWeight="bold" mx={4}>
+              {children}
+            </Text>
+          )}
           {DisclosureIconComponent && (
             <Box as="span" ml={2}>
               <DisclosureIconComponent size={disclosureSize} />
