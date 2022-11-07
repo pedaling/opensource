@@ -93,8 +93,6 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
           if (key === 'Enter') {
             onSubmit?.(value);
-
-            return;
           }
         }}
         onInput={event => {
