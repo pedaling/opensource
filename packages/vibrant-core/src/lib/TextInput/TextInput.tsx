@@ -89,13 +89,13 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         onKeyDown={event => {
           const { key } = event.nativeEvent;
 
+          onKeyPress?.({ key, prevent: () => event.preventDefault() });
+
           if (key === 'Enter') {
             onSubmit?.(value);
 
             return;
           }
-
-          onKeyPress?.({ key, prevent: () => event.preventDefault() });
         }}
         onInput={event => {
           const replacedValue = replaceValue({
