@@ -15,18 +15,22 @@ const backgroundColorProp = createSystemProp({
 
 const backgroundImageProp = createSystemProp({
   property: 'backgroundImage',
+  disabled: true,
 });
 
 const backgroundSizeProp = createSystemProp({
   property: 'backgroundSize',
+  disabled: true,
 });
 
 const backgroundPositionProp = createSystemProp({
   property: 'backgroundPosition',
+  disabled: true,
 });
 
 const backgroundRepeatProp = createSystemProp({
   property: 'backgroundRepeat',
+  disabled: true,
 });
 
 const gradientProp = createSystemProp({

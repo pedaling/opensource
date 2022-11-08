@@ -37,6 +37,11 @@ const lineLimitProp = createSystemProp({
   }),
 });
 
+const overflowWrapProp = createSystemProp({
+  property: 'overflowWrap',
+  disabled: true,
+});
+
 export const textSystemProps = [
   letterSpacingProp,
   textAlignProp,
@@ -45,4 +50,5 @@ export const textSystemProps = [
   wordBreakProp,
   wordWrapProp,
   lineLimitProp,
+  overflowWrapProp,
 ];
