@@ -33,7 +33,7 @@ export type ModalBottomSheetProps = Either<
   );
 
 export type ButtonOptions = {
-  title: string;
+  text: string;
   disabled?: boolean;
   loading?: boolean;
   onClick?: (_: { close: () => void }) => void;

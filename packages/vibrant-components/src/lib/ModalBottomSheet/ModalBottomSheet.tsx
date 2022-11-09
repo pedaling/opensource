@@ -188,7 +188,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                     >
-                      {primaryButtonOptions.title}
+                      {primaryButtonOptions.text}
                     </ContainedButton>
                   </VStack>
                 )}
@@ -201,7 +201,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       full={true}
                       disabled={secondaryButtonOptions.disabled}
                     >
-                      {secondaryButtonOptions.title}
+                      {secondaryButtonOptions.text}
                     </ContainedButton>
                     <ContainedButton
                       kind="primary"
@@ -210,7 +210,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                     >
-                      {primaryButtonOptions.title}
+                      {primaryButtonOptions.text}
                     </ContainedButton>
                   </HStack>
                 )}
@@ -223,7 +223,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                     >
-                      {primaryButtonOptions.title}
+                      {primaryButtonOptions.text}
                     </ContainedButton>
                     <Box alignSelf="center">
                       <GhostButton
@@ -231,7 +231,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
                         disabled={subButtonOptions.disabled}
                       >
-                        {subButtonOptions.title}
+                        {subButtonOptions.text}
                       </GhostButton>
                     </Box>
                   </VStack>

@@ -94,7 +94,7 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => 
           Primary
         </ContainedButton>
       )}
-      primaryButtonOptions={{ title: 'primary', disabled: false }}
+      primaryButtonOptions={{ text: 'primary', disabled: false }}
     />
     <ModalBottomSheet
       title=""
@@ -104,8 +104,8 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => 
           Primary + Secondary
         </ContainedButton>
       )}
-      primaryButtonOptions={{ title: 'primary', disabled: false }}
-      secondaryButtonOptions={{ title: 'secondary', disabled: false }}
+      primaryButtonOptions={{ text: 'primary', disabled: false }}
+      secondaryButtonOptions={{ text: 'secondary', disabled: false }}
     />
     <ModalBottomSheet
       title=""
@@ -115,8 +115,8 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => 
           Primary + Sub
         </ContainedButton>
       )}
-      primaryButtonOptions={{ title: 'primary', disabled: false }}
-      subButtonOptions={{ title: 'sub', disabled: false }}
+      primaryButtonOptions={{ text: 'primary', disabled: false }}
+      subButtonOptions={{ text: 'sub', disabled: false }}
     />
   </HStack>
 );
