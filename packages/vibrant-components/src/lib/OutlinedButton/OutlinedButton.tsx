@@ -32,6 +32,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
       backgroundColor={backgroundColor}
       borderColor={borderColor}
       borderWidth={1}
+      borderStyle="solid"
       borderRadiusLevel={1}
       disabled={loading || disabled}
     >
