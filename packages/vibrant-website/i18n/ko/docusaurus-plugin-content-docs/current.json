@@ -1,23 +1,23 @@
 {
   "version.label": {
-    "message": "다음",
+    "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.mainSidebar.category.Getting Started": {
+  "sidebar.mainSidebar.category.gettingStarted": {
     "message": "시작하기",
-    "description": "The label for category Getting Started in sidebar mainSidebar"
+    "description": "The label for category gettingStarted in sidebar mainSidebar"
   },
-  "sidebar.mainSidebar.category.Core Concepts": {
+  "sidebar.mainSidebar.category.coreConcepts": {
     "message": "코어 컨셉",
-    "description": "The label for category Core Concepts in sidebar mainSidebar"
+    "description": "The label for category coreConcepts in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.Colors": {
     "message": "색상",
     "description": "The label for category Colors in sidebar mainSidebar"
   },
-  "sidebar.mainSidebar.category.Components": {
+  "sidebar.mainSidebar.category.components": {
     "message": "컴포넌트",
-    "description": "The label for category Components in sidebar mainSidebar"
+    "description": "The label for category components in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.@vibrant-ui/components": {
     "message": "@vibrant-ui/components",
@@ -27,8 +27,16 @@
     "message": "@vibrant-ui/motion",
     "description": "The label for category @vibrant-ui/motion in sidebar mainSidebar"
   },
-  "sidebar.mainSidebar.category.Migration Guide": {
+  "sidebar.mainSidebar.category.coreComponents": {
+    "message": "코어 컴포넌트",
+    "description": "The label for category coreComponents in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.migrationGuide": {
     "message": "마이그레이션 가이드",
-    "description": "The label for category Migration Guide in sidebar mainSidebar"
+    "description": "The label for category migrationGuide in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.systemProps": {
+    "message": "시스템 속성",
+    "description": "The label for category systemProps in sidebar mainSidebar"
   }
 }
