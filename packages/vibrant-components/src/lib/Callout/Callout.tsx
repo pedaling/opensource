@@ -28,8 +28,7 @@ export const Callout = withCalloutVariation(
           <Text mt={8} mb={contents ? 2 : 0} lineHeight={18} fontSize={14} fontWeight="regular" overflowWrap="anywhere">
             {contents}
           </Text>
-        ) : null}
-        {renderContents?.()}
+        ) : renderContents?.()}
         {buttonText ? (
           <Box mt={12} alignSelf="flex-end">
             <Pressable
