@@ -1,3 +1,4 @@
+import type { ReactElementChild } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 
@@ -5,7 +6,6 @@ export type CalloutType = 'default' | 'error' | 'informative' | 'success' | 'war
 
 export type CalloutProps = {
   title: string;
-  description?: string;
   kind?: CalloutType;
 } & (
   | {
@@ -16,7 +16,17 @@ export type CalloutProps = {
       buttonText?: never;
       onButtonClick?: never;
     }
-);
+) &
+  (
+    | {
+        contents?: never;
+        renderContents?: () => ReactElementChild;
+      }
+    | {
+        contents?: string;
+        renderContents?: never;
+      }
+  );
 
 export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
   propVariant({

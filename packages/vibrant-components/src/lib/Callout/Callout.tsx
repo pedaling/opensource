@@ -6,7 +6,7 @@ import { VStack } from '../VStack';
 import { withCalloutVariation } from './CalloutProps';
 
 export const Callout = withCalloutVariation(
-  ({ title, description, buttonText, onButtonClick, backgroundColor, fontColor, IconComponent }) => (
+  ({ title, contents, renderContents, buttonText, onButtonClick, backgroundColor, fontColor, IconComponent }) => (
     <Box
       width="100%"
       borderStyle="solid"
@@ -24,18 +24,12 @@ export const Callout = withCalloutVariation(
             {title}
           </Title>
         </HStack>
-        {description ? (
-          <Text
-            mt={8}
-            mb={description ? 2 : 0}
-            lineHeight={18}
-            fontSize={14}
-            fontWeight="regular"
-            overflowWrap="anywhere"
-          >
-            {description}
+        {contents ? (
+          <Text mt={8} mb={contents ? 2 : 0} lineHeight={18} fontSize={14} fontWeight="regular" overflowWrap="anywhere">
+            {contents}
           </Text>
         ) : null}
+        {renderContents?.()}
         {buttonText ? (
           <Box mt={12} alignSelf="flex-end">
             <Pressable
