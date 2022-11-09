@@ -1,0 +1,58 @@
+---
+title: Stack
+---
+
+# Stack
+
+`<Stack />` is a flex box which can wrap children components.
+
+```jsx live
+// import { Stack } from '@vibrant-ui/components'
+<Stack
+  direction="vertical"
+  alignHorizontal="start"
+  alignVertical="start"
+>
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView1"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView2"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView3"
+  />
+</Stack>
+```
+
+## How to use
+
+```jsx
+import { VStack } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop          | Type                                                                          | Default | Description                                      |
+| ------------- | ----------------------------------------------------------------------------- | ------- | ------------------------------------------------ |
+| direction(\*) | `horizontal` \| `vertical`                                                    | -       | Set `flexDirection`                              |
+| spacing       | number                                                                        | -       | Set space between children components of `Stack` |
+| overflow      | `hidden` \| `visible`                                                         | -       | Set property when overflows                      |
+| width         | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | Set width                                        |
+| minWidth      | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | Set minimum width                                |
+| maxWidth      | number \| `auto` \| `fit-content` \| `max-content` \| `min-content` \| `none` | -       | Set maximum width                                |
+| height        | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | Set height                                       |
+| minHeight     | number \| `auto` \| `fit-content` \| `max-content` \| `min-content`           | -       | Set minimum height                               |
+| maxHeight     | number \| `auto` \| `fit-content` \| `max-content` \| `min-content` \| `none` | -       | Set maximum height                               |
+| position      | `absolute` \| `relative`                                                      | -       | Set `position`                                   |
+| top           | number \| string                                                              | -       | Set top space value of `Stack`                   |
+| right         | number \| string                                                              | -       | Set right space value of `Stack`                 |
+| bottom        | number \| string                                                              | -       | Set bottom space value of `Stack`                |
+| left          | number \| string                                                              | -       | Set left space value of `Stack`                  |
+| zIndex        | number                                                                        | -       | Set z index of `Stack`                           |

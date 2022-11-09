@@ -23,7 +23,7 @@ export const MotionPaper = ({
   </Motion>
 );
 
-`<Motion />` 은 주로 사용자의 인터렉션 없이 애니메이션을 실행하는 컴포넌트입니다.
+`<Motion />` is a component that plays animation without user interaction.
 
 ```jsx live
 // import { Motion } from '@vibrant-ui/motion';
@@ -45,7 +45,7 @@ export const MotionPaper = ({
 
 ### children (required)
 
-children에는 ref를 받을 수 있는 컴포넌트가 들어가야 애니메이션이 정상적으로 작동됩니다.
+Animation will work properly only when children is a component that can take ref.됩니다.
 
 ```jsx
 // animation will not working
@@ -63,9 +63,9 @@ children에는 ref를 받을 수 있는 컴포넌트가 들어가야 애니메�
 
 ### animation (required)
 
-`animation` prop은 모든 System Prop을 받습니다. 다만 애니메이션이 가능한 스타일 속성들만 정상적으로 작동됩니다.
+`animation` prop can take all of the System prop. However, style properties that can work with animation only work properly.
 
-각 속성별로 `from`과 `to`를 통해 각자 애니메이션의 시작과 끝을 지정할 수 있습니다.
+Each property takes `from` and `to` which is set as start and end state of the animation.
 
 ```jsx
 <Motion
@@ -88,12 +88,11 @@ children에는 ref를 받을 수 있는 컴포넌트가 들어가야 애니메�
 
 ### loop
 
-`loop` prop으로 애니메이션을 반복시킬 수 있습니다.
+Animation will be looping with `loop` property.
+`loop` takes `true` and `reverse` as option.
 
-현재 `true`와 `reverse`를 옵션으로 받고 있습니다.
-
-- `true`: 애니메이션을 from에서 to로만 반복합니다
-- `reverse`: 애니메이션을 from에서 to, to에서 from으로 각각 반복합니다.
+- `true`: Animation repeats from `from` to `to` state one way.
+- `reverse`: Animation repeats from `from` to `to`, and `to` to `from`.
 
 <VStack spacing={20}>
   <MotionPaper

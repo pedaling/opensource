@@ -1,0 +1,126 @@
+---
+title: ContainedButton
+---
+
+# ContainedButton
+
+```jsx live
+<ContainedButton
+  kind="primary"
+  size="md"
+  onClick={() => alert('button click!')}
+>
+  Button
+</ContainedButton>
+```
+
+## How to use
+
+```jsx
+import { ContainedButton } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                            | Type                                        | Default | Description                                        |
+| ------------------------------- | ------------------------------------------- | ------- | -------------------------------------------------- |
+| [kind](#kind)                   | `primary` \| `secondary` \| `tertiary`      |         | Variation of the button styling                    |
+| [size](#size)                   | `xl` \| `lg` \| `md` \| `sm`                |         | Size of the button                                 |
+| type                            | `button` \| `submit `                       |         | Type of the button                                 |
+| [IconComponent](#iconComponent) | `IconComponent<IconProps, Fill \| Regular>` |         | Icon on the left side                              |
+| [disclosure](#iconComponent)    | `none` \| `top` \| `right` \| `bottom `     |         | Display status of the arrow Icon in the right side |
+| disabled                        | `boolean`                                   |         | Disable status of the button                       |
+| [loading](#loading)             | `boolean`                                   |         | Display status of Spinner                          |
+| onClick                         | `() => void`                                |         | Callback function runs when the button is clicked  |
+
+## Usage
+
+### kind
+
+`primary`, `secondary` ,`tertiary` variations are supported.
+
+```jsx live
+<HStack spacing={12}>
+  <ContainedButton kind="primary" size="md">
+    primary
+  </ContainedButton>
+  <ContainedButton kind="secondary" size="md">
+    secondary
+  </ContainedButton>
+  <ContainedButton kind="tertiary" size="md">
+    tertiary
+  </ContainedButton>
+</HStack>
+```
+
+### size
+
+```jsx live
+<VStack spacing={12} alignHorizontal="center">
+  <ContainedButton
+    kind="primary"
+    size="sm"
+  ></ContainedButton>
+  <ContainedButton kind="primary" size="md">
+    Button
+  </ContainedButton>
+  <ContainedButton kind="primary" size="lg">
+    Button
+  </ContainedButton>
+  <ContainedButton kind="primary" size="xl">
+    Button
+  </ContainedButton>
+</VStack>
+```
+
+### iconComponent
+
+`IconComponent` decides Icon on the left side. Only fill or general type IconComponents are available.
+`disclosure` decides display status of arrow icon on the right side.
+
+```jsx live
+<HStack spacing={12}>
+  <ContainedButton
+    kind="secondary"
+    size="md"
+    IconComponent={Icon.Heart.Regular}
+  >
+    Like
+  </ContainedButton>
+  <ContainedButton
+    kind="secondary"
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure={true}
+  >
+    Menu
+  </ContainedButton>
+</HStack>
+```
+
+### loading
+
+```jsx live
+<HStack spacing={12}>
+  <ContainedButton kind="tertiary" size="md" loading={true}>
+    Loading
+  </ContainedButton>
+  <ContainedButton
+    kind="tertiary"
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    loading={true}
+  >
+    Loading
+  </ContainedButton>
+  <ContainedButton
+    kind="tertiary"
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    disclosure={true}
+    loading={true}
+  >
+    Loading
+  </ContainedButton>
+</HStack>
+```

@@ -1,0 +1,110 @@
+---
+title: VStack
+---
+
+# VStack
+
+`<VStack />` is a flex box which can wrap children components.
+
+Its `flexDirection` is fiexed as `column`.
+
+```jsx live
+// import { VStack } from '@vibrant-ui/components'
+<VStack
+  width="100%"
+  height={200}
+  alignVertical="start"
+  alignHorizontal="start"
+>
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView1"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView2"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView3"
+  />
+</VStack>
+```
+
+## How to use
+
+```jsx
+import { VStack } from '@vibrant-ui/components';
+```
+
+## Properties
+
+`<VStack />` is based on `<Stack />`, with a fixed direction(flex-direction) as `vertical`.
+
+Therefore, `<Vstack />` can take all properties that `<Stack />` have except `direction`.
+
+Read [Properties section of Stack](../vibrant-component/stack/#properties) to use Siez, Position, Overflow etc.
+
+| Prop                                | Type                                            | Default   | Description                                                                                   |
+| ----------------------------------- | ----------------------------------------------- | --------- | --------------------------------------------------------------------------------------------- |
+| [alignVertical](#alignVertical)     | `space-between` \| `start` \| `end` \| `center` | `start`   | Alignment property along with the main axis. Matched with `justifyContent` of flex box props. |
+| [alignHorizontal](#alignHorizontal) | `stretch` \| `start` \| `end` \| `center`       | `stretch` | Alignment property along with the cross axis. Matched with `alignItems` of flex box props.    |
+
+## Usage
+
+### alignVertical
+
+Alignment property which is aligned along the main axis.
+
+It corresponds to the `justifyContent` of the flex box that `flexDirection` is set as `column`.
+
+```jsx live
+<VStack height={300} alignVertical="space-between">
+  {/* Check out how alignment would change when "space-between" is "start", "end", "center" */}
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView1"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView2"
+  />
+  <Box
+    height={50}
+    minWidth={50}
+    backgroundColor="onView3"
+  />
+</VStack>
+```
+
+### alignHorizontal
+
+Alignment property which is aligned along the main axis.
+
+It corresponds to the `alignItems` of the flex box that `flexDirection` is set as `column`.
+
+```jsx live
+<VStack height={'auto'} alignHorizontal="stretch">
+  {/* Check out how alginment would change when "stretch" is "start", "end", "center"  */}
+  <Box
+    height={20}
+    minWidth={10}
+    backgroundColor="onView1"
+  />
+  <Box
+    height={20}
+    minWidth={10}
+    backgroundColor="onView2"
+  />
+  <Box
+    height={20}
+    minWidth={10}
+    backgroundColor="onView3"
+  />
+</VStack>
+```

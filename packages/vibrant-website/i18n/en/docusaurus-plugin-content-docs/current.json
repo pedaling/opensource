@@ -27,8 +27,16 @@
     "message": "@vibrant-ui/motion",
     "description": "The label for category @vibrant-ui/motion in sidebar mainSidebar"
   },
+  "sidebar.mainSidebar.category.Core Components": {
+    "message": "Core Components",
+    "description": "The label for category Core Components in sidebar mainSidebar"
+  },
   "sidebar.mainSidebar.category.Migration Guide": {
     "message": "Migration Guide",
     "description": "The label for category Migration Guide in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.시스템 속성": {
+    "message": "시스템 속성",
+    "description": "The label for category 시스템 속성 in sidebar mainSidebar"
   }
 }

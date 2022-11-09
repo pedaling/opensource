@@ -1,11 +1,10 @@
 ---
-title: 설치하기
 sidebar_position: 2
 ---
 
 # Installation
 
-Vibrant UI는 현재 웹(React DOM)과 네이티브(React Native)를 지원합니다.
+Vibrant UI works in both Web(React DOM) and native(React Native) environments.
 
 ## Web
 
@@ -30,10 +29,44 @@ const App = ({ children }) => {
 
 ### Install Library
 
-웹과 동일한 라이브러리를 사용합니다
-
 ```bash npm2yarn
-npm install @vibrant-ui/components @vibrant-ui/core
+npm install @vibrant-ui/components @vibrant-ui/core-native
+```
+
+### Config Metro Config
+
+When using Vibrant UI in a native environment, it is based on `@vibrant-ui/core-native` insead of `@vibrant-ui/core`.
+Therefore, metro configuration should be set.
+
+```js title="metro.config.js"
+const metroResolver = require('metro-resolver');
+
+module.exports = () => {
+  return {
+    resolver: {
+      resolveRequest: (
+        context,
+        realModuleName,
+        platform
+      ) => {
+        if (realModuleName === '@vibrant-ui/core') {
+          return {
+            filePath: require.resolve(
+              '@vibrant-ui/core-native'
+            ),
+            type: 'sourceFile',
+          };
+        }
+
+        return metroResolver.resolve(
+          context,
+          realModuleName,
+          platform
+        );
+      },
+    },
+  };
+};
 ```
 
 ### Configure VibrantProvider for Native

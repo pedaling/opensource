@@ -1,0 +1,92 @@
+---
+title: Toast
+---
+
+# Toast
+
+`<Toast />` is a component that deliver result of the user's action.
+
+Toast usually contains a simple and important message to attract user's attention and automatically disappears after duration.
+
+```jsx live
+<Toast
+  kind="success"
+  title="Custom text is applied successfully"
+  duration={3000}
+  onButtonClick={() => {}}
+  buttonText="Preview"
+/>
+```
+
+## How to use
+
+Basically, Toast is tiggered by hook which is provided by the `ToastProvider`.
+
+Therefore you need to make [ToastProvider](../vibrant-core/toast-provider) wraps the application that you want Toast to appear.
+
+Follow how to use guide in [ToastProvider](../vibrant-core/toast-provider) first.
+
+`<ToastRenderer />` should be added in component that you want Toast to appear before triggering Toast by hook.
+
+Note that the position of `<ToastRenderer />` in component code doesn't matter becuase Toast's position is set by the viewport.
+
+Toast is mounted by the hook which is returned by `useToast` hook.
+
+Toast is generated with the properties that were passed by through `showToast` parameters.
+
+```jsx
+import {
+  ToastRenderer,
+  useToast,
+} from '@vibrant-ui/components';
+
+const ContentWithToast = (props) => {
+  const { showToast } = useToast();
+
+  return (
+    <VStack mt={200} height="100%" width="100%" flex={1}>
+      <PressableBox
+        onClick={() => {
+          showToast({
+            kind: 'success',
+            title="Custom text is applied successfully"
+            buttonText: 'preview',
+            onButtonClick: () => {},
+          });
+        }}
+      >
+        <Text>Show my toast!</Text>
+      </PressableBox>
+      <ToastRenderer />
+      {/* //You should insert <ToastRenderer /> like above! */}
+    </VStack>
+  );
+};
+```
+
+## Properties
+
+| Prop          | Type                        | Default | Description                                    |
+| ------------- | --------------------------- | ------- | ---------------------------------------------- |
+| title\*       | string\|node                | -       | Set title of Toast                             |
+| [kind](#kind) | default \| success \| error | default | Set kind of Toast                              |
+| buttonText    | string                      | --      | Set the text of Toast button                   |
+| onButtonClick | fuinction                   | --      | Set function runs when Toast button is pressed |
+| duration      | number                      | 5000    | Set time of Toast appears                      |
+| onClose       | function                    | --      | Function runs when Toast is closed             |
+
+## Usage
+
+### kind
+
+Set the kind of the Toast.
+
+`default` `success` `error` are options.
+
+```jsx live
+<VStack spacing={8}>
+  <Toast kind="default" title="Default toast" />
+  <Toast kind="success" title="Success toast" />
+  <Toast kind="error" title="Error toast" />
+</VStack>
+```

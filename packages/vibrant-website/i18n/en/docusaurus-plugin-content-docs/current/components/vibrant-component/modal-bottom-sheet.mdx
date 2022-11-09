@@ -1,0 +1,160 @@
+---
+title: ModalBottomSheet
+---
+
+# ModalBottomSheet
+
+`<ModalBottomSheet />` is a component to display CTA, alert or other information with covering background screen content.
+
+It shows as Bottom Sheet in Mobile, and as Modal in larger viewport.
+
+```jsx live
+<ModalBottomSheet
+  title="Today's Class Finished!"
+  subtitle="Accept to get notification not to miss the class!"
+  primaryButtonText="Confirm"
+  onPrimaryButtonClick={({ close }) => {
+    close();
+  }}
+  renderOpener={({ open }) => (
+    <Pressable onClick={open}>Open</Pressable>
+  )}
+/>
+```
+
+## How to use
+
+```jsx
+import { ModalBottomSheet } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                                  | Type                                                              | Default | Description                                                 |
+| ------------------------------------- | ----------------------------------------------------------------- | ------- | ----------------------------------------------------------- |
+| [open](#Control)                      | boolean                                                           |         | Control open status                                         |
+| [defaultOpen](#Non-Control)           | boolean                                                           |         | Set initial open status. Incompatible with `open`           |
+| [renderOpener](#Non-Control)          | (\_: \{ open: () => void; isOpen: boolean }) => ReactElementChild |         | Set Modal opener with `open` function                       |
+| title                                 | string                                                            |         | Modal's title                                               |
+| subtitle                              | string                                                            |         | Modal's subtitle                                            |
+| size                                  | lg \| md                                                          | md      | Set Modal width in PC screen                                |
+| renderContents                        | (\_: \{ close: () => void }) => ReactElementChild;                |         | Set content of Modal                                        |
+| onClose                               | () => void                                                        |         | Function runs when outside of Modal or close button clicked |
+| [primaryButtonOptions](#CTA Button)   | \{ title: string, disabled: boolean, onClick: () => void }        |         | Set primary button properties to render                     |
+| [secondaryButtonOptions](#CTA Button) | \{ title: string, disabled: boolean, onClick: () => void }        |         | Set secondary button properties to render                   |
+| [subButtonOptions](#CTA Button)       | \{ title: string, disabled: boolean, onClick: () => void }        |         | Set sub button properties to render                         |
+
+## Usage
+
+### Control
+
+Controls status of open with `open` property.
+
+```jsx
+const Controlled = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Pressable onClick={() => setOpen(true)}>
+        Open
+      </Pressable>
+      <Box mx="auto">
+        <ModalBottomSheet
+          open={open}
+          onClose={() => setOpen(false)}
+        />
+      </Box>
+    </>
+  );
+};
+```
+
+### Non-Control
+
+`defaultOpen` set initial open status.
+Note that it only set status initial value. After initial rendering, open status is only controled by internal of `ModalBottomSheet`.
+
+`renderOpener` property, which is [render prop](https://ko.reactjs.org/docs/render-props.html), set element that can control `ModalButtonSheet`.
+It provides `isOpen` which reperesents open status, and `open` which can change the open status of `ModalBottomSheet`.
+
+```jsx
+const Uncontrolled = () => (
+  <ModalBottomSheet
+    defaultOpen={false}
+    renderOpener={({ open, isOpen }) => (
+      <Pressable onClick={open}>열기</Pressable>
+    )}
+  />
+);
+```
+
+### CTA Button
+
+CTA button can be used by `primaryButtonOptions`, `secondaryButtonOptions`, `subButtonOptions` properties.
+
+Note that secondary or sub buttons can not used without primary button neither secondary and sub buttons can not set simultaneously.
+
+```jsx live
+<HStack alignHorizontal="center" width="100%" spacing={20}>
+  <ModalBottomSheet
+    title=""
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={open}
+      >
+        Primary
+      </ContainedButton>
+    )}
+    primaryButtonOptions={{
+      title: 'primary',
+      disabled: false,
+    }}
+  />
+  <ModalBottomSheet
+    title=""
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={open}
+      >
+        Primary + Secondary
+      </ContainedButton>
+    )}
+    primaryButtonOptions={{
+      title: 'primary',
+      disabled: false,
+    }}
+    secondaryButtonOptions={{
+      title: 'secondary',
+      disabled: false,
+    }}
+  />
+  <ModalBottomSheet
+    title=""
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={open}
+      >
+        Primary + Sub
+      </ContainedButton>
+    )}
+    primaryButtonOptions={{
+      title: 'primary',
+      disabled: false,
+    }}
+    subButtonOptions={{
+      title: 'secondary',
+      disabled: false,
+    }}
+  />
+</HStack>
+```
