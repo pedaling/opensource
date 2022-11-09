@@ -15,6 +15,6 @@ export default {
 
 export const Basic: ComponentStory<typeof Callout> = props => (
   <VStack width="80%" p={10}>
-    <Callout title="dkd" />
+    <Callout {...props} />
   </VStack>
 );
