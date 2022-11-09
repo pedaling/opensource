@@ -17,16 +17,7 @@ export type CalloutProps = {
       onButtonClick?: never;
     }
 ) &
-  (
-    | {
-        contents?: never;
-        renderContents?: () => ReactElementChild;
-      }
-    | {
-        contents?: string;
-        renderContents?: never;
-      }
-  );
+  Either<{  contents?: string; }, {  renderContents?: () => ReactElementChild; }>
 
 export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
   propVariant({
