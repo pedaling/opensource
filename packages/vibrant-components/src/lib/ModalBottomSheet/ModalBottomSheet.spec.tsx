@@ -105,7 +105,7 @@ describe('<ModalBottomSheet />', () => {
         <ModalBottomSheet
           defaultOpen={true}
           primaryButtonOptions={{
-            title: 'primaryButtonText',
+            text: 'primaryButtonText',
             onClick: mockOnPrimaryButtonClick,
           }}
           secondaryButtonOptions={undefined}
@@ -143,11 +143,11 @@ describe('<ModalBottomSheet />', () => {
         <ModalBottomSheet
           defaultOpen={true}
           primaryButtonOptions={{
-            title: 'primaryButtonText',
+            text: 'primaryButtonText',
             onClick: mockOnPrimaryButtonClick,
           }}
           secondaryButtonOptions={{
-            title: 'secondaryButtonText',
+            text: 'secondaryButtonText',
             onClick: mockOnSecondaryButtonClick,
           }}
           subButtonOptions={undefined}
@@ -198,12 +198,12 @@ describe('<ModalBottomSheet />', () => {
         <ModalBottomSheet
           defaultOpen={true}
           primaryButtonOptions={{
-            title: 'primaryButtonText',
+            text: 'primaryButtonText',
             onClick: mockOnPrimaryButtonClick,
           }}
           secondaryButtonOptions={undefined}
           subButtonOptions={{
-            title: 'subButtonText',
+            text: 'subButtonText',
             onClick: mockOnSubButtonClick,
           }}
           renderOpener={({ open }) => <Pressable onClick={open} />}

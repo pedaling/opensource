@@ -17,12 +17,21 @@ export const StackedPortal = withStackedPortalVariation(
       position: currentPosition,
       id,
       order,
-      offset: safeAreaMode !== 'padding' ? currentPositionOffset : 0,
+      offset: safeAreaMode === 'margin' ? currentPositionOffset : 0,
       safeAreaInset: safeAreaMode === 'margin',
     });
 
     const paddingStyle = useMemo(() => {
-      if (safeAreaMode !== 'padding' || renderedIndex !== 1) {
+      if (safeAreaMode === 'margin') {
+        return {
+          pt: 0,
+          pl: 0,
+          pr: 0,
+          pb: 0,
+        };
+      }
+
+      if (renderedIndex !== 1) {
         return {
           pt: 0,
           pl: 0,

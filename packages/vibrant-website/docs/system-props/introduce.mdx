@@ -1,0 +1,88 @@
+---
+title: 소개
+sidebar_position: 1
+---
+
+# 소개
+
+System Prop은 코어 컴포넌트들이 받는 스타일 관련 prop이 정의되어있습니다.
+
+모든 System Prop은 기본적으로 반응형을 지원합니다. 웹에서는 css media query로 분기가 되고, 네이티브에서는 현재 화면에 너비에 따라 다른 스타일이 적용됩니다.
+
+또한 크로스 플랫폼에 맞추어 설계가 되었기때문에. CSS에서 지원하는 기능이더라도 System Prop을 통해서 사용할 수 없는 경우도 있습니다.
+
+## 목록
+
+- [Background](background)
+- [Border](border)
+- [Color](color)
+- [Display](display)
+- [Elevation](elevation)
+- [Flexbox](flexbox)
+- [Input](input)
+- [Interaction](interaction)
+- [Overflow](overflow)
+- [Position](position)
+- [Pseudo Class](pseudo-class)
+- [Sizing](sizing)
+- [Svg](svg)
+- [Text](text)
+- [Transform](transform)
+- [Typography](typography)
+
+## 기존 System Prop에 새로운 prop 추가하기
+
+### Basic
+
+`createSystemProp` 메소드로 새로운 System Prop을 만들 수 있습니다.
+
+```tsx
+// color/color.ts
+import { createSystemProp } from '@vibrant-ui/core';
+
+const newColorProps = createSystemProp({
+  // (required) prop의 이름입니다.
+  property: 'newColor',
+  // (optional) 사용할 theme입니다. 해당 속성을 받을 시 Theme에서 해당 속성을 찾아서 대치합니다.
+  scale: 'colors',
+  // (optional) 사용할 스타일 property입니다. 해당 속성을 넣지 않으면 property 값으로 적용됩니다.
+  styleProperty: 'color',
+
+  // (optional) prop의 값을 커스텀 스타일로 변환합니다. 해당 속성을 넣을 시 styleProperty값이 무시됩니다.
+  // transform: (value) => {
+  //   return {
+  //     color: value,
+  //   };
+  // },
+
+  // (optional) systemProp 내에서 변경된 스타일을 다시 SystemProp으로 변환할지 여부입니다.
+  // 기본값은 false입니다
+  // 'before'로 설정할 시 scale이나 transform 실행 전 사용자가 넘긴 prop이 systemProp으로 변환됩니다.
+  // 'after'시 scale이나 transform 실행 후 transform의 반환값이나 scale로 변환된 theme 값이 systemProp으로 다시 변환됩니다.
+  shouldInterpolation: false,
+
+  // (optional) disable가 true이면 해당 prop을 넣을시 무시됩니다. 주로 웹 전용 스타일 분기에 활용됩니다.
+  disabled: false,
+});
+
+export const colorProps = [
+  // ...이전 코드
+  newColorProps,
+];
+
+// border/type.ts
+import { ColorToken } from '@vibrant-ui/theme';
+import type { ResponsiveValue } from '@vibrant-ui/core';
+
+export type ColorSystemProps = {
+  // ...이전 코드
+  // systemProp은 기본적으로 반응형을 지원합니다.
+  newColor?: ResponsiveValue<ColorToken>;
+};
+```
+
+이제 `newColor` prop을 사용할 수 있습니다.
+
+```jsx
+<Box newColor="primary" />
+```

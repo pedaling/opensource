@@ -22,16 +22,16 @@ import { ContainedButton } from '@vibrant-ui/components';
 
 ## Properties
 
-| Prop                     | Type                                        | Default | Description                                  |
-| ------------------------ | ------------------------------------------- | ------- | -------------------------------------------- |
-| [kind](#종류)            | `primary` \| `secondary` \| `tertiary`      |         | 버튼의 종류                                  |
-| [size](#크기)            | `xl` \| `lg` \| `md` \| `sm`                |         | 버튼의 크기                                  |
-| type                     | `button` \| `submit `                       |         | `button` 요소의 타입                         |
-| [IconComponent](#아이콘) | `IconComponent<IconProps, Fill \| Regular>` |         | 버튼 좌측에 표시되는 아이콘                  |
-| [disclosure](#아이콘)    | `none` \| `top` \| `right` \| `bottom `     |         | 버튼 우측에 표시되는 화살표 아이콘 표시 여부 |
-| disabled                 | `boolean`                                   |         | 버튼의 비활성화 여부                         |
-| [loading](#로딩)         | `boolean`                                   |         | 스피너 표시 여부                             |
-| onClick                  | `() => void`                                |         | 버튼이 클릭됐을 때 호출되는 콜백 함수        |
+| Prop                     | Type                                        | Default | Description                                |
+| ------------------------ | ------------------------------------------- | ------- | ------------------------------------------ |
+| [kind](#종류)            | `primary` \| `secondary` \| `tertiary`      |         | 버튼의 종류                                |
+| [size](#크기)            | `xl` \| `lg` \| `md` \| `sm`                |         | 버튼의 크기                                |
+| type                     | `button` \| `submit `                       |         | `button` 요소의 타입                       |
+| [IconComponent](#아이콘) | `IconComponent<IconProps, Fill \| Regular>` |         | 버튼 좌측에 표시되는 아이콘                |
+| [disclosure](#아이콘)    | boolean                                     |         | 버튼 우측에 표시되는 토글 아이콘 표시 여부 |
+| disabled                 | `boolean`                                   |         | 버튼의 비활성화 여부                       |
+| [loading](#로딩)         | `boolean`                                   |         | 스피너 표시 여부                           |
+| onClick                  | `() => void`                                |         | 버튼이 클릭됐을 때 호출되는 콜백 함수      |
 
 ## Usage
 
@@ -75,7 +75,7 @@ import { ContainedButton } from '@vibrant-ui/components';
 ### 아이콘
 
 `IconComponent` 속성으로 좌측에 표시되는 아이콘을 설정할 수 있습니다. Fill과 Regular 타입의 아이콘만 사용 가능합니다.
-`disclosure` 속성으로 우측에 표시되는 화살표 아이콘의 표시 여부를 설정합니다.
+`disclousre`와 `active` 속성으로 우측에 표시되는 토글 아이콘의 방향이나 표시 여부를 설정합니다.
 
 ```jsx live
 <HStack spacing={12}>
@@ -90,6 +90,15 @@ import { ContainedButton } from '@vibrant-ui/components';
     kind="secondary"
     size="md"
     IconComponent={Icon.Menu.Regular}
+    disclosure={true}
+  >
+    메뉴
+  </ContainedButton>
+  <ContainedButton
+    kind="secondary"
+    size="md"
+    IconComponent={Icon.Menu.Regular}
+    active={true}
     disclosure={true}
   >
     메뉴

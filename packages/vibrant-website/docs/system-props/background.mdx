@@ -1,0 +1,42 @@
+# Background System Props
+
+배경을 설정할 수 있는 Props 입니다.
+
+## Background Props
+
+| 속성               | 타입                                          | 설명                     | 크로스플랫폼 지원 |
+| :----------------- | :-------------------------------------------- | :----------------------- | ----------------- |
+| background         | `Colors`                                      | 배경 색상                | ✅                |
+| backgroundColor    | `Colors`                                      | 배경 색상                | ✅                |
+| backgroundImage    | `string`                                      | 배경 이미지 주소         | Web Only          |
+| backgroundSize     | `auto`, `contain`, `cover`                    | 배경 이미지 크기         | Web Only          |
+| backgroundRepeat   | `no-repeat`, `repeat-x`, `repeat-y`, `repeat` | 배경 이미지 반복 여부    | Web Only          |
+| gradient           | [LinearGradient](#lineargradient)             | 배경 그라데이션          | ✅                |
+| linearGradient     | [LinearGradient](#lineargradient)             | 배경 그라데이션 (Linear) | ✅                |
+| backdropBlurRadius | `number`                                      | 배경 흐림 정도           | Web Only          |
+
+## Type
+
+### LinearGradient
+
+| Attribute | Type            | Description                                   |
+| :-------- | :-------------- | :-------------------------------------------- |
+| colors    | `Array<string>` | 색상 배열                                     |
+| type      | 'linear'        | 그라데이션 타입                               |
+| locations | `Array<0~100>`  | 위치 배열 (색상 배열과 길이가 동일해야합니다) |
+| degree    | `number`        | 각도 (0 ~ 360)                                |
+
+**예시**
+
+```jsx live
+<Box
+  width={100}
+  height={100}
+  gradient={{
+    type: 'linear',
+    colors: ['red', 'blue'],
+    degree: 45,
+    locations: [0, 100],
+  }}
+/>
+```

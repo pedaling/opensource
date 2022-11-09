@@ -1,0 +1,38 @@
+# Elevation System Props
+
+그림자를 설정할 수 있는 Prop입니다.
+
+## Elevation Props
+
+| 속성           | 타입                             | 설명                          | 크로스플랫폼 지원 |
+| :------------- | :------------------------------- | :---------------------------- | :---------------- |
+| elevationLevel | `ElevationLevel`                 | 그림자의 단계를 설정합니다.   | ✅                |
+| boxShadow      | Array\<[BoxShadow](#boxshadow)\> | 그림자의 스타일을 설정합니다. | ✅                |
+
+## 타입
+
+### BoxShadow
+
+| 값           | 설명                             |
+| :----------- | :------------------------------- |
+| color        | 색상을 설정합니다.               |
+| offsetX      | 그림자의 X축 위치를 설정합니다.  |
+| offsetY      | 그림자의 Y축 위치를 설정합니다.  |
+| blurRadius   | 그림자의 흐림 정도를 설정합니다. |
+| spreadRadius | 그림자의 넓이를 설정합니다.      |
+
+**예시**
+
+```jsx live
+<Box
+  width={100}
+  height={100}
+  boxShadow={{
+    color: 'rgba(0, 0, 255)',
+    offsetX: 0,
+    offsetY: 5,
+    blurRadius: 10,
+    spreadRadius: 2,
+  }}
+/>
+```

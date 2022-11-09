@@ -1,5 +1,4 @@
 import { Box, Text } from '@vibrant-ui/core';
-import { Icon } from '@vibrant-ui/icons';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { Spinner } from '../Spinner';
@@ -10,7 +9,7 @@ export const ContainedButton = withContainedButtonVariation(
     innerRef,
     type = 'button',
     IconComponent,
-    disclosure,
+    DisclosureIconComponent,
     loading,
     disabled,
     onColor,
@@ -18,6 +17,7 @@ export const ContainedButton = withContainedButtonVariation(
     spinnerSize,
     iconSize,
     disclosureSize,
+    contentsSpacing,
     children,
     ...restProps
   }) => (
@@ -32,18 +32,26 @@ export const ContainedButton = withContainedButtonVariation(
       disabled={loading || disabled}
     >
       <>
-        <HStack as="span" alignVertical="center" alignHorizontal="center" opacity={loading ? 0 : 1}>
+        <HStack
+          as="span"
+          alignVertical="center"
+          alignHorizontal="center"
+          opacity={loading ? 0 : 1}
+          spacing={contentsSpacing}
+        >
           {IconComponent && (
             <Box as="span" mx={2}>
               <IconComponent size={iconSize} />
             </Box>
           )}
-          <Text typography={typography} fontWeight="bold" mx={4}>
-            {children}
-          </Text>
-          {disclosure && (
+          {Boolean(children) && (
+            <Text typography={typography} fontWeight="bold" mx={4}>
+              {children}
+            </Text>
+          )}
+          {DisclosureIconComponent && (
             <Box as="span" ml={2}>
-              <Icon.ArrowTriangleDown.Fill size={disclosureSize} />
+              <DisclosureIconComponent size={disclosureSize} />
             </Box>
           )}
         </HStack>

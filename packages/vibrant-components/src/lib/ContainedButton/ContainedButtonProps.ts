@@ -2,6 +2,7 @@ import type { Ref } from 'react';
 import type { ResponsiveValue, TextChildren } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
+import { Icon } from '@vibrant-ui/icons';
 import type { PressableProps } from '../Pressable';
 
 export type ContainedButtonProps = {
@@ -12,6 +13,7 @@ export type ContainedButtonProps = {
   IconComponent?: IconComponent<IconProps, 'Fill' | 'Regular'>;
   full?: ResponsiveValue<boolean>;
   disclosure?: boolean;
+  active?: boolean;
   disabled?: boolean;
   loading?: boolean;
   onClick?: PressableProps['onClick'];
@@ -55,6 +57,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'sm',
         iconSize: 16,
         disclosureSize: 16,
+        contentsSpacing: 0,
       },
       md: {
         typography: 'body2',
@@ -63,6 +66,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'md',
         iconSize: 18,
         disclosureSize: 16,
+        contentsSpacing: 0,
       },
       lg: {
         typography: 'body2',
@@ -71,6 +75,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'md',
         iconSize: 18,
         disclosureSize: 16,
+        contentsSpacing: 0,
       },
       xl: {
         typography: 'body1',
@@ -79,6 +84,7 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
         spinnerSize: 'md',
         iconSize: 20,
         disclosureSize: 18,
+        contentsSpacing: 2,
       },
     } as const,
   }),
@@ -112,6 +118,29 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
       false: {
         width: 'auto',
       },
+    },
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'disclosure',
+      },
+      {
+        name: 'active',
+      },
+    ],
+    variants: ({ disclosure, active }) => {
+      if (!disclosure) {
+        return {
+          DisclosureIconComponent: null,
+        };
+      }
+
+      if (active) {
+        return { DisclosureIconComponent: Icon.ArrowTriangleUp.Fill };
+      }
+
+      return { DisclosureIconComponent: Icon.ArrowTriangleDown.Fill };
     },
   })
 );

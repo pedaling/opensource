@@ -4,6 +4,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import { Icon } from '@vibrant-ui/icons';
 import type { OnColorToken } from '@vibrant-ui/theme';
+import type { Either } from '@vibrant-ui/utils';
 import type { PressableProps } from '../Pressable/PressableProp';
 
 type GhostButtonProps = {
@@ -12,11 +13,18 @@ type GhostButtonProps = {
   size: ResponsiveValue<'lg' | 'md' | 'sm'>;
   type?: PressableProps['buttonType'];
   IconComponent?: IconComponent<IconProps, 'Fill' | 'Regular'>;
-  disclosure?: 'bottom' | 'none' | 'right' | 'top';
   disabled?: boolean;
   onClick?: PressableProps['onClick'];
   children: TextChildren;
-};
+} & Either<
+  {
+    disclosure?: boolean;
+    active?: boolean;
+  },
+  {
+    arrow?: 'bottom' | 'right' | 'top';
+  }
+>;
 
 export const withGhostButtonVariation = withVariation<GhostButtonProps>('GhostButton')(
   propVariant({
@@ -61,23 +69,43 @@ export const withGhostButtonVariation = withVariation<GhostButtonProps>('GhostBu
   propVariant({
     props: [
       {
-        name: 'disclosure',
-        default: 'none',
+        name: 'arrow',
+        keep: true,
       },
     ],
     variants: {
       top: {
-        DisclosureIconComponent: Icon.ChevronUp.Regular,
+        ArrowIconComponent: Icon.ChevronUp.Regular,
       },
       right: {
-        DisclosureIconComponent: Icon.ChevronRight.Regular,
+        ArrowIconComponent: Icon.ChevronRight.Regular,
       },
       bottom: {
-        DisclosureIconComponent: Icon.ChevronDown.Regular,
-      },
-      none: {
-        DisclosureIconComponent: null,
+        ArrowIconComponent: Icon.ChevronDown.Regular,
       },
     } as const,
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'disclosure',
+      },
+      {
+        name: 'active',
+      },
+    ],
+    variants: ({ disclosure, active }) => {
+      if (!disclosure) {
+        return {
+          DisclosureIconComponent: null,
+        };
+      }
+
+      if (active) {
+        return { DisclosureIconComponent: Icon.ArrowTriangleUp.Fill };
+      }
+
+      return { DisclosureIconComponent: Icon.ArrowTriangleDown.Fill };
+    },
   })
 );

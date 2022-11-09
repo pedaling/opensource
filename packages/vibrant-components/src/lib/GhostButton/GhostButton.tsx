@@ -11,9 +11,11 @@ export const GhostButton = withGhostButtonVariation(
     disabled,
     typography,
     fontWeight,
-    DisclosureIconComponent,
+    arrow,
+    ArrowIconComponent,
     iconSize,
     children,
+    DisclosureIconComponent,
     color = 'onView1',
     ...restProps
   }) => (
@@ -34,10 +36,11 @@ export const GhostButton = withGhostButtonVariation(
           fontWeight={fontWeight}
           color={color}
           ml={IconComponent ? 6 : 0}
-          mr={DisclosureIconComponent ? 4 : 0}
+          mr={arrow || DisclosureIconComponent ? 4 : 0}
         >
           {children}
         </Text>
+        {arrow && <ArrowIconComponent size={iconSize} fill={color} />}
         {DisclosureIconComponent && <DisclosureIconComponent size={iconSize} fill={color} />}
       </HStack>
     </Pressable>
