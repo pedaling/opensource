@@ -70,6 +70,7 @@ const getOffsetAvoidingOverflowByPosition = (
 export const Dropdown = withDropdownVariation(
   ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
     const openerRef = useRef<HTMLElement>(null);
+    const customOpenerRef = useRef<HTMLElement>(null);
     const [isOpen, setIsOpen] = useState(open);
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
@@ -97,7 +98,10 @@ export const Dropdown = withDropdownVariation(
 
     useLockBodyScroll(isOpen || visible);
 
-    const opener = useMemo(() => renderOpener({ open: () => setIsOpen(!isOpen), isOpen }), [isOpen, renderOpener]);
+    const opener = useMemo(
+      () => renderOpener({ open: () => setIsOpen(!isOpen), isOpen, ref: customOpenerRef }),
+      [isOpen, renderOpener]
+    );
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
@@ -108,7 +112,7 @@ export const Dropdown = withDropdownVariation(
     const handleContentResize = useCallback(
       async ({ width, height, top, left }: LayoutEvent) => {
         if (!isMobile) {
-          const openerRect = await getElementRect(openerRef.current);
+          const openerRect = await getElementRect(customOpenerRef.current ?? openerRef.current);
 
           const { x: offsetX, y: offsetY } = getOffsetAvoidingOverflowByPosition(
             openerRect,
@@ -173,7 +177,12 @@ export const Dropdown = withDropdownVariation(
               }}
               duration={200}
             >
-              <OverlayBox open={isOpen} onDismiss={closeDropdown} targetRef={openerRef} zIndex={zIndex.dropdown}>
+              <OverlayBox
+                open={isOpen}
+                onDismiss={closeDropdown}
+                targetRef={customOpenerRef.current ? customOpenerRef : openerRef}
+                zIndex={zIndex.dropdown}
+              >
                 <Box
                   backgroundColor="surface2"
                   py={CONTENT_PADDING}
