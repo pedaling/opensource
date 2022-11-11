@@ -3,6 +3,7 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
+import { FloatingActionButton } from '../FloatingActionButton';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
 import { Title } from '../Title';
@@ -15,7 +16,7 @@ const DropdownContent = () => {
   return opened ? (
     <VStack spacing={20} px={20}>
       <Pressable onClick={() => setOpened(false)}>
-        <HStack alignItems="center" spacing={4}>
+        <HStack alignVertical="center" spacing={4}>
           <Icon.ChevronLeft.Regular size={16} />
           <Title level={6}>화질</Title>
         </HStack>
@@ -27,14 +28,14 @@ const DropdownContent = () => {
   ) : (
     <VStack spacing={20}>
       <Pressable onClick={() => setOpened(true)}>
-        <HStack px={20} alignHorizontal="space-between" alignItems="flex-end">
+        <HStack px={20} alignHorizontal="space-between" alignVertical="end">
           <Body level={2}>화질</Body>
           <Body level={3} color="onView2">
             1080p
           </Body>
         </HStack>
       </Pressable>
-      <HStack px={20} alignHorizontal="space-between" alignItems="flex-end">
+      <HStack px={20} alignHorizontal="space-between" alignVertical="end">
         <Body level={2}>자동 재생</Body>
         <Body level={3} color="onView2">
           켜짐
@@ -81,6 +82,20 @@ export const WithLongContent: ComponentStory<typeof Dropdown> = props => (
               </Body>
             ))}
           </>
+        )}
+      />
+    </Box>
+  </VStack>
+);
+
+export const WithFloatingActionButton: ComponentStory<typeof Dropdown> = props => (
+  <VStack width="100%">
+    <Box mx="auto">
+      <Dropdown
+        {...props}
+        position="top-end"
+        renderOpener={({ ref, open }) => (
+          <FloatingActionButton ref={ref} IconComponent={Icon.ArrowUpToLine.Thin} onClick={open} />
         )}
       />
     </Box>
