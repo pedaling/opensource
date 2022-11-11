@@ -68,3 +68,4 @@ export type { Platform } from './lib/platform';
 export { useStackedPortal } from './lib/StackedPortalProvider';
 export { useLockBodyScroll } from './lib/useLockBodyScroll';
 export type { HipSlopRect } from './lib/PressableBox';
+export { PageScroll, useScroll } from './lib/PageScroll';

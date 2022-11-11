@@ -7,6 +7,7 @@ import { withGlobalStyle } from './decorators/withGlobalStyle';
 import { withTheme } from './decorators/withTheme';
 import { withVibrantProvider } from './decorators/withVibrantProvider';
 import { withToastProvider } from './decorators/withToastProvider';
+import { withPageScroll } from './decorators/withPageScroll'
 
 export const parameters: Parameters = {
   layout: 'fullscreen',
@@ -53,5 +54,6 @@ export const decorators: DecoratorFn[] = [
   withTheme,
   withToastProvider,
   withAppetize,
+  withPageScroll,
   DeviceDecorator,
 ];

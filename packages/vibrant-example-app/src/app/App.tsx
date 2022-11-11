@@ -6,7 +6,7 @@ import { Shadow } from 'react-native-shadow-2';
 import * as ReactSpring from '@react-spring/native';
 import { ToastProvider } from '@vibrant-ui/components';
 import type { Dependencies } from '@vibrant-ui/core';
-import { Box, ScrollBox, VibrantProvider, createShadowsComponent } from '@vibrant-ui/core';
+import { Box, PageScroll, ScrollBox, VibrantProvider, createShadowsComponent } from '@vibrant-ui/core';
 import { StoryView } from './StoryView';
 import { useAppUpdate } from './useAppUpdate';
 import { useStorybookInformation } from './useStorybookInformation';
@@ -58,11 +58,13 @@ const App = () => {
       portalBottomPriorityOrder={['bottom-bar', 'floating-action-button']}
     >
       <ToastProvider>
-        <ScrollBox height="100%" keyboardShouldPersistTaps="always">
-          <Box base={SafeAreaView} alignItems="start">
-            <StoryView {...story} />
-          </Box>
-        </ScrollBox>
+        <PageScroll>
+          <ScrollBox height="100%" keyboardShouldPersistTaps="always">
+            <Box base={SafeAreaView} alignItems="start">
+              <StoryView storyName="Basic" componentName="PageScroll" componentProps={{}} />
+            </Box>
+          </ScrollBox>
+        </PageScroll>
       </ToastProvider>
     </VibrantProvider>
   );
