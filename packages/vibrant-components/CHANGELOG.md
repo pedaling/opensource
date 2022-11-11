@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.27.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.26.1...vibrant-components-0.27.0) (2022-11-11)
+
+
+### Features
+
+* pass customOpenerRef to renderOpener args ([#419](https://github.com/pedaling/opensource/issues/419)) ([bd156a9](https://github.com/pedaling/opensource/commit/bd156a9376d00a1d3726561b16667eb45f09875f))
+
 ### [0.26.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.26.0...vibrant-components-0.26.1) (2022-11-09)
 
 
