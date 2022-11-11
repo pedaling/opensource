@@ -49,3 +49,4 @@ export { ModalBottomSheet } from './lib/ModalBottomSheet';
 export type { ModalBottomSheetProps } from './lib/ModalBottomSheet';
 export { Stack } from './lib/Stack';
 export { OutlinedButton } from './lib/OutlinedButton';
+export { ScrollDetector } from './lib/ScrollDetector';
