@@ -17,7 +17,7 @@ export const Basic: ComponentStory<typeof PageScroll> = () => {
       <VStack alignHorizontal="center" spacing={20}>
         <Box alignItems="center" justifyContent="center" width="100%" height={1400} backgroundColor="primary">
           <Body level={1} textAlign="center">
-            {`${isScrollDown ? 'Down' : 'Up'} (scroll position: ${scrollPosition})`}
+            {`${isScrollDown ? 'Down' : 'Up'} (scroll position: ${scrollPosition.toFixed(2)})`}
           </Body>
         </Box>
       </VStack>

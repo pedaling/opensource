@@ -61,7 +61,7 @@ const App = () => {
         <PageScroll>
           <ScrollBox height="100%" keyboardShouldPersistTaps="always">
             <Box base={SafeAreaView} alignItems="start">
-              <StoryView storyName="Basic" componentName="PageScroll" componentProps={{}} />
+              <StoryView {...story} />
             </Box>
           </ScrollBox>
         </PageScroll>
