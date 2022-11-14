@@ -7,56 +7,61 @@ type PageScrollProps = {
   children: ReactElement;
 };
 
+type ScrollDirection = 'down' | 'unset' | 'up';
+
+type EventListenerCallback = (args: { scrollDirection: ScrollDirection; position: number }) => void;
+
 type PageScrollContextValue = {
-  isScrollUp: boolean;
-  isScrollDown: boolean;
-  scrollPosition: number;
+  addEventListener: (callback: EventListenerCallback) => () => void;
+  scrollDirection: ScrollDirection;
 };
 
 const PageScrollContext = createContext<PageScrollContextValue>({
-  isScrollDown: false,
-  isScrollUp: false,
-  scrollPosition: 0,
+  addEventListener: () => () => {},
+  scrollDirection: 'unset',
 });
 
-type ScrollDirection = 'down' | 'up';
-
 export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children }) => {
-  const [scrollDirection, setScrollDirection] = useState<ScrollDirection>();
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const prevScrollY = useRef(0);
+  const scrollPosition = useRef(0);
+  const [scrollDirection, setScrollDirection] = useState<ScrollDirection>('unset');
+  const eventListenerRefs = useRef<EventListenerCallback[]>([]);
+  const addEventListener = useCallback<PageScrollContextValue['addEventListener']>(callback => {
+    eventListenerRefs.current.push(callback);
+
+    return () => (eventListenerRefs.current = eventListenerRefs.current.filter(func => func !== callback));
+  }, []);
 
   const handleScroll = useCallback((e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    const currentY = e.nativeEvent.contentOffset.y;
+    const currentPosition = e.nativeEvent.contentOffset.y;
+    let currentDirection: ScrollDirection = 'unset';
 
-    if (currentY < prevScrollY.current && currentY > prevScrollY.current && currentY !== 0) {
-      return;
+    if (currentPosition < scrollPosition.current) {
+      currentDirection = 'up';
+    } else if (currentPosition > scrollPosition.current) {
+      currentDirection = 'down';
     }
 
-    if (currentY > prevScrollY.current) {
-      setScrollDirection('down');
-    } else if (currentY < prevScrollY.current) {
-      setScrollDirection('up');
-    }
+    setScrollDirection(currentDirection);
 
-    prevScrollY.current = currentY;
+    scrollPosition.current = currentPosition;
 
-    setScrollPosition(Math.max(currentY, 0));
+    eventListenerRefs.current.forEach(callback =>
+      callback({ position: currentPosition, scrollDirection: currentDirection })
+    );
   }, []);
 
   const pageScrollContextValue = useMemo<PageScrollContextValue>(
     () => ({
-      isScrollUp: scrollDirection === 'up',
-      isScrollDown: scrollDirection === 'down',
-      scrollPosition,
+      scrollDirection,
+      addEventListener,
     }),
-    [scrollDirection, scrollPosition]
+    [addEventListener, scrollDirection]
   );
 
   return (
     <PageScrollContext.Provider value={pageScrollContextValue}>
       <ScrollView
-        scrollEventThrottle={10}
+        scrollEventThrottle={16}
         onScroll={e => {
           handleScroll(e);
         }}
@@ -68,11 +73,10 @@ export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children })
 };
 
 export const useScroll = () => {
-  const { isScrollDown, isScrollUp, scrollPosition } = useContext(PageScrollContext);
+  const { scrollDirection, addEventListener } = useContext(PageScrollContext);
 
   return {
-    isScrollDown,
-    isScrollUp,
-    scrollPosition,
+    scrollDirection,
+    addEventListener,
   };
 };
