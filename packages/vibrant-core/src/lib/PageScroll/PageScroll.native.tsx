@@ -60,12 +60,7 @@ export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children })
 
   return (
     <PageScrollContext.Provider value={pageScrollContextValue}>
-      <ScrollView
-        scrollEventThrottle={16}
-        onScroll={e => {
-          handleScroll(e);
-        }}
-      >
+      <ScrollView scrollEventThrottle={16} onScroll={handleScroll}>
         {children}
       </ScrollView>
     </PageScrollContext.Provider>
