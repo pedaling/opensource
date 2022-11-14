@@ -23,8 +23,12 @@
       "@vibrant-ui/motion": ["packages/vibrant-motion/src/index.ts"],
       "@vibrant-ui/theme": ["packages/vibrant-theme/src/index.ts"],
       "@vibrant-ui/utils": ["packages/vibrant-utils/src/index.ts"],
-      "@vibrant-ui/utils/testing-native": ["packages/vibrant-utils/src/testing-native.ts"],
-      "@vibrant-ui/utils/testing-web": ["packages/vibrant-utils/src/testing-web.ts"]
+      "@vibrant-ui/utils/testing-native": [
+        "packages/vibrant-utils/src/testing-native.ts"
+      ],
+      "@vibrant-ui/utils/testing-web": [
+        "packages/vibrant-utils/src/testing-web.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
