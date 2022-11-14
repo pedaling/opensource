@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Body, Paper, VStack } from '@vibrant-ui/components';
 import { Box } from '../Box';
+import { Text } from '../Text';
 import { PageScroll, useScroll } from './PageScroll';
 
 export default {
@@ -23,14 +23,12 @@ export const Basic: ComponentStory<typeof PageScroll> = () => {
   }, [addEventListener]);
 
   return (
-    <Paper backgroundColor="background" width="100%" height="100%">
-      <VStack alignHorizontal="center" spacing={20}>
+    <Box backgroundColor="background" width="100%" height="100%">
+      <Box alignItems="center" rowGap={20}>
         <Box alignItems="center" justifyContent="center" width="100%" height={1400} backgroundColor="primary">
-          <Body level={1} textAlign="center">
-            {`${scrollDirection === 'down' ? 'Down' : 'Up'} (scroll position: ${scrollPosition.toFixed(2)})`}
-          </Body>
+          <Text>{`${scrollDirection === 'down' ? 'Down' : 'Up'} (scroll position: ${scrollPosition.toFixed(2)})`}</Text>
         </Box>
-      </VStack>
-    </Paper>
+      </Box>
+    </Box>
   );
 };
