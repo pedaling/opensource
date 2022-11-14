@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.27.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.27.0...vibrant-core-0.27.1) (2022-11-14)
+
+
+### Features
+
+* add PageScroll and ScrollDetector component ([#420](https://github.com/pedaling/opensource/issues/420)) ([abe5b0b](https://github.com/pedaling/opensource/commit/abe5b0baa887bf2dadec8674b19e5a44949239b4))
+
+
+### Bug Fixes
+
+* replace storybook component as core ([#421](https://github.com/pedaling/opensource/issues/421)) ([1fca702](https://github.com/pedaling/opensource/commit/1fca702bd2677d6529eef553270ad2cde14da27f))
+
 ## [0.27.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.26.1...vibrant-core-0.27.0) (2022-11-11)
 
 ### [0.26.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.26.0...vibrant-core-0.26.1) (2022-11-09)
