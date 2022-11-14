@@ -7,7 +7,7 @@ type PageScrollProps = {
 
 export type ScrollDirection = 'down' | 'unset' | 'up';
 
-export type EventListenerCallback = (args: { scrollDirection: ScrollDirection; position: number }) => void;
+export type EventListenerCallback = (args: { scrollDirection: ScrollDirection; scrollPosition: number }) => void;
 
 type PageScrollContextValue = {
   addEventListener: (callback: EventListenerCallback) => () => void;
@@ -45,7 +45,7 @@ export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children })
     setScrollDirection(currentDirection);
 
     eventListenerRefs.current.forEach(callback =>
-      callback({ position: currentPosition, scrollDirection: currentDirection })
+      callback({ scrollPosition: currentPosition, scrollDirection: currentDirection })
     );
   }, []);
 
