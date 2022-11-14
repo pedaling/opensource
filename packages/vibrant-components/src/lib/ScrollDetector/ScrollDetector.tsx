@@ -1,11 +1,15 @@
 import type { ReactElement } from 'react';
 import { useScroll } from '@vibrant-ui/core';
+import type { EventListenerCallback, ScrollDirection } from '@vibrant-ui/core';
 type ScrollDetectorProps = {
-  children: (_: { isScrollDown: boolean; isScrollUp: boolean; scrollPosition: number }) => ReactElement;
+  children: (_: {
+    scrollDirection: ScrollDirection;
+    addEventListener: (callback: EventListenerCallback) => void;
+  }) => ReactElement;
 };
 
 export const ScrollDetector = ({ children }: ScrollDetectorProps) => {
-  const { isScrollDown, isScrollUp, scrollPosition } = useScroll();
+  const { scrollDirection, addEventListener } = useScroll();
 
-  return children ? children({ isScrollDown, isScrollUp, scrollPosition }) : null;
+  return children ? children({ scrollDirection, addEventListener }) : null;
 };

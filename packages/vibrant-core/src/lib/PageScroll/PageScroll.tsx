@@ -5,9 +5,9 @@ type PageScrollProps = {
   children: ReactElement;
 };
 
-type ScrollDirection = 'down' | 'unset' | 'up';
+export type ScrollDirection = 'down' | 'unset' | 'up';
 
-type EventListenerCallback = (args: { scrollDirection: ScrollDirection; position: number }) => void;
+export type EventListenerCallback = (args: { scrollDirection: ScrollDirection; position: number }) => void;
 
 type PageScrollContextValue = {
   addEventListener: (callback: EventListenerCallback) => () => void;

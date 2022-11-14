@@ -69,3 +69,4 @@ export { useStackedPortal } from './lib/StackedPortalProvider';
 export { useLockBodyScroll } from './lib/useLockBodyScroll';
 export type { HipSlopRect } from './lib/PressableBox';
 export { PageScroll, useScroll } from './lib/PageScroll';
+export type { EventListenerCallback, ScrollDirection } from './lib/PageScroll';
