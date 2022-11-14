@@ -15,8 +15,8 @@ export const Basic: ComponentStory<typeof PageScroll> = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    const cleanEventListener = addEventListener(({ position }) => {
-      setScrollPosition(position);
+    const cleanEventListener = addEventListener(({ scrollPosition }) => {
+      setScrollPosition(scrollPosition);
     });
 
     return cleanEventListener;
