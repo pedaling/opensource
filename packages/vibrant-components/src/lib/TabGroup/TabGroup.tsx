@@ -88,7 +88,7 @@ export const TabGroup = withTabGroupVariation(
     const clientXRef = useRef<number | null>(null);
     const scrollXRef = useRef<number | null>(null);
 
-    const setScrollPosition: MouseEventHandler = e => {
+    const startScroll: MouseEventHandler = e => {
       isScrollingRef.current = true;
 
       clientXRef.current = e.clientX;
@@ -104,10 +104,8 @@ export const TabGroup = withTabGroupVariation(
       tabGroupRef.current?.scrollTo({ left: scrollXRef.current - (e.clientX - clientXRef.current) });
     };
 
-    const resetScrollPosition: MouseEventHandler = () => {
+    const resetScroll: MouseEventHandler = () => {
       isScrollingRef.current = false;
-
-      clientXRef.current = null;
     };
 
     return (
@@ -115,10 +113,10 @@ export const TabGroup = withTabGroupVariation(
         <BoxComponent
           as="ul"
           ref={tabGroupRef}
-          onMouseDown={setScrollPosition}
+          onMouseDown={startScroll}
           onMouseMove={scrollOnMove}
-          onMouseUp={resetScrollPosition}
-          onMouseLeave={resetScrollPosition}
+          onMouseUp={resetScroll}
+          onMouseLeave={resetScroll}
           flexDirection="row"
           mb={-1}
           {...restProps}
