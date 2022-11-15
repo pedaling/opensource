@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import type { ForwardedRef, FunctionComponentElement, MouseEventHandler } from 'react';
 import { Children, cloneElement, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
 import { useResponsiveValue } from '@vibrant-ui/core';
@@ -116,23 +115,24 @@ export const TabGroup = withTabGroupVariation(
     };
 
     const isScrollingRef = useRef(false);
+    // eslint-disable-next-line @typescript-eslint/naming-convention
     const clientXRef = useRef<number | null>(null);
-    const scrollXRef = useRef<number | null>(null);
+    const scrollLeftRef = useRef<number | null>(null);
 
     const startScroll: MouseEventHandler = e => {
       isScrollingRef.current = true;
 
       clientXRef.current = e.clientX;
 
-      scrollXRef.current = tabGroupRef.current ? tabGroupRef.current.scrollLeft : null;
+      scrollLeftRef.current = tabGroupRef.current ? tabGroupRef.current.scrollLeft : null;
     };
 
     const scrollOnMove: MouseEventHandler = e => {
-      if (!isScrollingRef.current || clientXRef.current === null || scrollXRef.current === null) {
+      if (!isScrollingRef.current || clientXRef.current === null || scrollLeftRef.current === null) {
         return;
       }
 
-      tabGroupRef.current?.scrollTo({ left: scrollXRef.current - (e.clientX - clientXRef.current) });
+      tabGroupRef.current?.scrollTo({ left: scrollLeftRef.current - (e.clientX - clientXRef.current) });
     };
 
     const resetScroll: MouseEventHandler = () => {
