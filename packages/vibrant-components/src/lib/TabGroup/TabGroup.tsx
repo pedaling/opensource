@@ -212,6 +212,7 @@ export const TabGroup = withTabGroupVariation(
         {isLaptop && !firstTabIsInView && (
           <HStack position="absolute" height="100%" left={0}>
             <Pressable
+              ariaLabel="Go to previous page"
               onClick={goToPrevPage}
               width={40}
               height="100%"
@@ -228,6 +229,7 @@ export const TabGroup = withTabGroupVariation(
           <HStack position="absolute" height="100%" right={0}>
             <Paper width={6} height="100%" gradient="linearRight" />
             <Pressable
+              ariaLabel="Go to next page"
               onClick={goToNextPage}
               width={40}
               height="100%"
