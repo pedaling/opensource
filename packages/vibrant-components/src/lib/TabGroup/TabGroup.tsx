@@ -1,6 +1,13 @@
-import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
+/* eslint-disable @typescript-eslint/naming-convention */
+import type { MouseEventHandler } from 'react';
+import { Children, cloneElement, isValidElement, useEffect, useRef, useState } from 'react';
+import { useResponsiveValue } from '@vibrant-ui/core';
+import { Icon } from '@vibrant-ui/icons';
+import { InView } from '@vibrant-ui/utils';
 import { Divider } from '../Divider';
 import { HStack } from '../HStack';
+import { Paper } from '../Paper';
+import { Pressable } from '../Pressable';
 import { Space } from '../Space';
 import { VStack } from '../VStack';
 import { withTabGroupVariation } from './TabGroupProps';
@@ -9,7 +16,21 @@ export const TabGroup = withTabGroupVariation(
   ({ BoxComponent, tabFlexGrow, tabFlexShrink, tabFlexBasis, tabId, onTabChange, children, ...restProps }) => {
     const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
     const tabRefs = useRef<Record<string, HTMLElement>>({});
-    const tabGroupRef = useRef<HTMLElement>(null);
+    const tabGroupRef = useRef<HTMLUListElement>(null);
+    const [lastTabIsInView, setLastTabIsInView] = useState(false);
+    const [firstTabIsInView, setFirstTabIsInView] = useState(false);
+    const tabInViewRefs = useRef<boolean[]>(new Array(Children.count(children)).fill(false));
+
+    const { breakpointIndex } = useResponsiveValue();
+    const isLaptop = breakpointIndex > 1;
+
+    const setTabRef = (id: string) => (node: HTMLElement | null) => {
+      if (!node) {
+        return;
+      }
+
+      tabRefs.current[id] = node;
+    };
 
     useEffect(() => {
       if (!tabRefs.current[tabId] || !tabGroupRef.current) {
@@ -29,34 +50,167 @@ export const TabGroup = withTabGroupVariation(
       });
     }, [tabId]);
 
+    useEffect(() => {
+      tabInViewRefs.current = new Array(Children.count(children)).fill(false);
+    }, [children]);
+
+    const goToPrevPage = () => {
+      const firstTabInViewIndex = tabInViewRefs.current.indexOf(true);
+      const targetTabIndex = Math.max(firstTabInViewIndex - 1, 0);
+      const targetTabNode = tabRefs.current[tabElements[targetTabIndex].props.id];
+
+      if (!targetTabNode) {
+        return;
+      }
+
+      tabGroupRef.current?.scrollTo({
+        left: targetTabNode.offsetLeft - (tabGroupRef.current.offsetWidth - targetTabNode.offsetWidth) + 40,
+        behavior: 'smooth',
+      });
+    };
+
+    const goToNextPage = () => {
+      const lastTabInViewIndex = tabInViewRefs.current.lastIndexOf(true);
+      const targetTabIndex = Math.min(lastTabInViewIndex + 1, tabInViewRefs.current.length - 1);
+      const targetTabNode = tabRefs.current[tabElements[targetTabIndex].props.id];
+
+      if (!targetTabNode) {
+        return;
+      }
+
+      tabGroupRef.current?.scrollTo({
+        left: targetTabNode.offsetLeft - 40,
+        behavior: 'smooth',
+      });
+    };
+
+    const isScrollingRef = useRef(false);
+    const clientXRef = useRef<number | null>(null);
+    const scrollXRef = useRef<number | null>(null);
+
+    const setScrollPosition: MouseEventHandler = e => {
+      isScrollingRef.current = true;
+
+      clientXRef.current = e.clientX;
+
+      scrollXRef.current = tabGroupRef.current ? tabGroupRef.current.scrollLeft : null;
+    };
+
+    const scrollOnMove: MouseEventHandler = e => {
+      if (!isScrollingRef.current || clientXRef.current === null || scrollXRef.current === null) {
+        return;
+      }
+
+      tabGroupRef.current?.scrollTo({ left: scrollXRef.current - (e.clientX - clientXRef.current) });
+    };
+
+    const resetScrollPosition: MouseEventHandler = () => {
+      isScrollingRef.current = false;
+
+      clientXRef.current = null;
+    };
+
     return (
       <VStack width="100%">
-        <BoxComponent ref={tabGroupRef} flexDirection="row" mb={-1} {...restProps}>
+        <BoxComponent
+          as="ul"
+          ref={tabGroupRef}
+          onMouseDown={setScrollPosition}
+          onMouseMove={scrollOnMove}
+          onMouseUp={resetScrollPosition}
+          onMouseLeave={resetScrollPosition}
+          flexDirection="row"
+          mb={-1}
+          {...restProps}
+        >
           <Space width={[20, 20, 0]} />
-          {tabElements.map((element, index) => (
-            <HStack
-              mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
-              flexGrow={tabFlexGrow}
-              flexShrink={tabFlexShrink}
-              flexBasis={tabFlexBasis}
-              hidden={element.props.hidden}
-              key={element.props.id}
-              ref={(domRef: HTMLElement | null) => {
-                if (!domRef) {
-                  return;
-                }
+          {tabElements.map((element, index) =>
+            isLaptop ? (
+              <InView
+                key={element.props.id}
+                onChange={inView => {
+                  if (index === 0) {
+                    setFirstTabIsInView(inView);
+                  }
 
-                tabRefs.current[element.props.id] = domRef;
-              }}
-            >
-              {cloneElement(element, {
-                active: element.props.id === tabId,
-                onClick: onTabChange,
-              })}
-            </HStack>
-          ))}
+                  if (index === tabElements.length - 1) {
+                    setLastTabIsInView(inView);
+                  }
+
+                  tabInViewRefs.current[index] = inView;
+                }}
+                initialInView={false}
+                options={
+                  index === 0 || index === tabElements.length - 1
+                    ? { threshold: 0.99, root: tabGroupRef.current }
+                    : { threshold: 0.99, rootMargin: '0px -40px 0px -40px', root: tabGroupRef.current }
+                }
+              >
+                <HStack
+                  as="li"
+                  mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
+                  flexGrow={tabFlexGrow}
+                  flexShrink={tabFlexShrink}
+                  flexBasis={tabFlexBasis}
+                  hidden={element.props.hidden}
+                  ref={setTabRef(element.props.id)}
+                >
+                  {cloneElement(element, {
+                    active: element.props.id === tabId,
+                    onClick: onTabChange,
+                  })}
+                </HStack>
+              </InView>
+            ) : (
+              <HStack
+                as="li"
+                key={element.props.id}
+                mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
+                flexGrow={tabFlexGrow}
+                flexShrink={tabFlexShrink}
+                flexBasis={tabFlexBasis}
+                hidden={element.props.hidden}
+                ref={setTabRef(element.props.id)}
+              >
+                {cloneElement(element, {
+                  active: element.props.id === tabId,
+                  onClick: onTabChange,
+                })}
+              </HStack>
+            )
+          )}
           <Space width={[20, 20, 0]} />
         </BoxComponent>
+        {isLaptop && !firstTabIsInView && (
+          <HStack position="absolute" height="100%" left={0}>
+            <Pressable
+              onClick={goToPrevPage}
+              width={40}
+              height="100%"
+              backgroundColor="background"
+              px={12}
+              justifyContent="center"
+            >
+              <Icon.ChevronLeft.Regular size={16} />
+            </Pressable>
+            <Paper width={6} height="100%" gradient="linearLeft" />
+          </HStack>
+        )}
+        {isLaptop && !lastTabIsInView && (
+          <HStack position="absolute" height="100%" right={0}>
+            <Paper width={6} height="100%" gradient="linearRight" />
+            <Pressable
+              onClick={goToNextPage}
+              width={40}
+              height="100%"
+              backgroundColor="background"
+              px={12}
+              justifyContent="center"
+            >
+              <Icon.ChevronRight.Regular size={16} />
+            </Pressable>
+          </HStack>
+        )}
         <Divider direction="horizontal" />
       </VStack>
     );
