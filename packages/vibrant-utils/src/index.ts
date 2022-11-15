@@ -22,7 +22,6 @@ export { detectOverflow } from './lib/detectOverflow';
 export { flipPosition } from './lib/flipPosition';
 export { useCallbackRef } from './lib/useCallbackRef';
 export { useControllableState } from './lib/useControllableState';
-export { InView } from './lib/InView';
 
 export type { Position } from './types/Position';
 export type { Either } from './types/Either';

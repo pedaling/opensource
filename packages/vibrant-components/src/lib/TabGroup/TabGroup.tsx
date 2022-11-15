@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { MouseEventHandler } from 'react';
-import { Children, cloneElement, isValidElement, useEffect, useRef, useState } from 'react';
+import type { ForwardedRef, FunctionComponentElement, MouseEventHandler } from 'react';
+import { Children, cloneElement, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
 import { useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import { InView } from '@vibrant-ui/utils';
+import { useInView } from '@vibrant-ui/utils';
 import { Divider } from '../Divider';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
@@ -11,6 +11,37 @@ import { Pressable } from '../Pressable';
 import { Space } from '../Space';
 import { VStack } from '../VStack';
 import { withTabGroupVariation } from './TabGroupProps';
+
+const InView = ({
+  onChange,
+  children,
+  options,
+}: {
+  onChange: (inView: boolean) => void;
+  children: FunctionComponentElement<{ ref?: ForwardedRef<any> }>;
+  options?: IntersectionObserverInit;
+}) => {
+  const { ref: inViewRef } = useInView({ initialInView: false, onChange, options });
+
+  const composeRef = useCallback(
+    (node: HTMLElement) => {
+      if (children.ref) {
+        if (typeof children.ref === 'function') {
+          children.ref(node);
+        } else {
+          children.ref.current = node;
+        }
+      }
+
+      inViewRef(node);
+    },
+    [children, inViewRef]
+  );
+
+  return cloneElement(children, {
+    ref: composeRef,
+  });
+};
 
 export const TabGroup = withTabGroupVariation(
   ({ BoxComponent, tabFlexGrow, tabFlexShrink, tabFlexBasis, tabId, onTabChange, children, ...restProps }) => {
@@ -137,7 +168,6 @@ export const TabGroup = withTabGroupVariation(
 
                   tabInViewRefs.current[index] = inView;
                 }}
-                initialInView={false}
                 options={
                   index === 0 || index === tabElements.length - 1
                     ? { threshold: 0.99, root: tabGroupRef.current }
