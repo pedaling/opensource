@@ -20,7 +20,7 @@ const InView = ({
   children: FunctionComponentElement<{ ref?: ForwardedRef<any> }>;
   options?: IntersectionObserverInit;
 }) => {
-  const { ref: inViewRef } = useInView({ initialInView: false, onChange, options });
+  const { ref: inViewRef } = useInView({ initialInView: true, onChange, options });
 
   const composeRef = useCallback(
     (node: HTMLElement) => {
@@ -47,8 +47,8 @@ export const TabGroup = withTabGroupVariation(
     const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
     const tabRefs = useRef<Record<string, HTMLElement>>({});
     const tabGroupRef = useRef<HTMLUListElement>(null);
-    const [lastTabIsInView, setLastTabIsInView] = useState(false);
-    const [firstTabIsInView, setFirstTabIsInView] = useState(false);
+    const [lastTabIsInView, setLastTabIsInView] = useState(true);
+    const [firstTabIsInView, setFirstTabIsInView] = useState(true);
     const tabInViewRefs = useRef<boolean[]>(new Array(Children.count(children)).fill(false));
 
     const { breakpointIndex } = useResponsiveValue();
