@@ -1,17 +1,31 @@
-import { useCallback, useEffect, useMemo } from 'react';
+/* eslint-disable @typescript-eslint/naming-convention */
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
 import { PortalBox, useResponsiveValue, useSafeArea, useStackedPortal } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
+import { Transition } from '@vibrant-ui/motion';
+import { addStyleValues, isDefined } from '@vibrant-ui/utils';
 import { withStackedPortalVariation } from './StackedPortalProps';
 
 export const StackedPortal = withStackedPortalVariation(
-  ({ id, order, innerRef, children, position, positionOffset, safeAreaMode = 'none', ...restProps }) => {
+  ({
+    id,
+    order,
+    innerRef,
+    children,
+    position,
+    positionOffset,
+    safeAreaMode = 'none',
+    hidden,
+    duration,
+    ...restProps
+  }) => {
     const { generateStyle } = useSafeArea();
 
     const { getResponsiveValue } = useResponsiveValue();
 
     const currentPosition = getResponsiveValue(position);
     const currentPositionOffset = getResponsiveValue(positionOffset);
+    const [height, setHeight] = useState(0);
 
     const { offset, renderedIndex, unregister, changeHeight } = useStackedPortal({
       position: currentPosition,
@@ -54,12 +68,9 @@ export const StackedPortal = withStackedPortalVariation(
       };
     }, [currentPosition, currentPositionOffset, generateStyle, renderedIndex, safeAreaMode]);
 
-    const handleLayout = useCallback(
-      ({ height }: LayoutEvent) => {
-        changeHeight(height);
-      },
-      [changeHeight]
-    );
+    const handleLayout = useCallback(({ height }: LayoutEvent) => {
+      setHeight(height);
+    }, []);
 
     useEffect(
       () => () => {
@@ -69,7 +80,28 @@ export const StackedPortal = withStackedPortalVariation(
       []
     );
 
-    return (
+    useEffect(() => {
+      changeHeight(hidden ? 0 : height);
+    }, [changeHeight, height, hidden]);
+
+    return duration ? (
+      <Transition
+        animation={{
+          [currentPosition]: addStyleValues(offset ?? 0, hidden ? -height : 0),
+        }}
+        duration={duration}
+      >
+        <PortalBox ref={innerRef} hidden={!isDefined(offset)} onLayout={handleLayout} {...restProps}>
+          {children({
+            layoutStyle: {
+              width: '100%',
+              height: '100%',
+              ...paddingStyle,
+            },
+          })}
+        </PortalBox>
+      </Transition>
+    ) : (
       <PortalBox
         ref={innerRef}
         hidden={!isDefined(offset)}

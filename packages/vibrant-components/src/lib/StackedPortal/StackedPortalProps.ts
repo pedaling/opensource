@@ -22,6 +22,8 @@ type StackedPortalProps = SizingSystemProps & {
   left?: ResponsiveValue<number>;
   right?: ResponsiveValue<number>;
   zIndex?: ResponsiveValue<number>;
+  duration?: number;
+  hidden?: boolean;
 };
 
 export const withStackedPortalVariation = withVariation<StackedPortalProps>('StackedPortal')(
