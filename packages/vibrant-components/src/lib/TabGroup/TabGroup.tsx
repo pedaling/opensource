@@ -43,7 +43,17 @@ const InView = ({
 };
 
 export const TabGroup = withTabGroupVariation(
-  ({ BoxComponent, tabFlexGrow, tabFlexShrink, tabFlexBasis, tabId, onTabChange, children, ...restProps }) => {
+  ({
+    BoxComponent,
+    tabFlexGrow,
+    tabFlexShrink,
+    tabFlexBasis,
+    tabId,
+    onTabChange,
+    children,
+    isScrollable,
+    ...restProps
+  }) => {
     const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
     const tabRefs = useRef<Record<string, HTMLElement>>({});
     const tabGroupRef = useRef<HTMLUListElement>(null);
@@ -144,10 +154,14 @@ export const TabGroup = withTabGroupVariation(
         <BoxComponent
           as="ul"
           ref={tabGroupRef}
-          onMouseDown={startScroll}
-          onMouseMove={scrollOnMove}
-          onMouseUp={resetScroll}
-          onMouseLeave={resetScroll}
+          {...(isScrollable
+            ? {
+                onMouseDown: startScroll,
+                onMouseMove: scrollOnMove,
+                onMouseUp: resetScroll,
+                onMouseLeave: resetScroll,
+              }
+            : {})}
           flexDirection="row"
           mb={-1}
           {...restProps}
@@ -209,7 +223,7 @@ export const TabGroup = withTabGroupVariation(
           )}
           <Space width={[20, 20, 0]} />
         </BoxComponent>
-        {isLaptop && !firstTabIsInView && (
+        {isScrollable && isLaptop && !firstTabIsInView && (
           <HStack position="absolute" height="100%" left={0}>
             <Pressable
               ariaLabel="Go to previous page"
@@ -225,7 +239,7 @@ export const TabGroup = withTabGroupVariation(
             <Paper width={6} height="100%" gradient="linearLeft" />
           </HStack>
         )}
-        {isLaptop && !lastTabIsInView && (
+        {isScrollable && isLaptop && !lastTabIsInView && (
           <HStack position="absolute" height="100%" right={0}>
             <Paper width={6} height="100%" gradient="linearRight" />
             <Pressable
