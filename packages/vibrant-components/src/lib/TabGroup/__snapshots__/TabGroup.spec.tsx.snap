@@ -401,14 +401,14 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   <div
     class="emotion-0"
   >
-    <div
+    <ul
       class="emotion-1"
       data-testid="tabGroup"
     >
       <div
         class="emotion-2"
       />
-      <div
+      <li
         class="emotion-3"
       >
         <button
@@ -421,8 +421,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
             tab1
           </span>
         </button>
-      </div>
-      <div
+      </li>
+      <li
         class="emotion-3"
       >
         <button
@@ -435,8 +435,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
             tab2
           </span>
         </button>
-      </div>
-      <div
+      </li>
+      <li
         class="emotion-9"
       >
         <button
@@ -449,8 +449,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
             hiddenTab
           </span>
         </button>
-      </div>
-      <div
+      </li>
+      <li
         class="emotion-12"
       >
         <button
@@ -463,11 +463,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
             tab3
           </span>
         </button>
-      </div>
+      </li>
       <div
         class="emotion-2"
       />
-    </div>
+    </ul>
     <div
       class="emotion-16"
     />
