@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { Box, useConfig } from '@vibrant-ui/core';
+import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { CalenderDateItem } from '../CalendarDateItem';
@@ -124,8 +124,8 @@ export const Calendar = withCalendarVariation(
             <Pressable onClick={movePrevMonth}>
               <Icon.ChevronLeft.Regular size={16} />
             </Pressable>
-            <VStack flex={1}>
-              <Title level={5} textAlign="center">
+            <VStack flexGrow={1} alignHorizontal="center">
+              <Title level={5}>
                 {calendarTranslation.title
                   .replace('{year}', displayMonth.getFullYear().toString())
                   .replace('{month}', calendarTranslation.months[displayMonth.getMonth()].toString())}
@@ -138,11 +138,9 @@ export const Calendar = withCalendarVariation(
           <VStack spacing={8}>
             <HStack spacing={4}>
               {calendarTranslation.days.map(name => (
-                <Box flex={1} key={name} justifyContent="center" height={40}>
-                  <Body level={3} textAlign="center">
-                    {name}
-                  </Body>
-                </Box>
+                <VStack key={name} flexGrow={1} alignVertical="center" alignHorizontal="center" height={40}>
+                  <Body level={3}>{name}</Body>
+                </VStack>
               ))}
             </HStack>
             <VStack spacing={2}>
