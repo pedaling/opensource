@@ -1,9 +1,9 @@
 import type { ResponsiveValue } from '../../../types';
 
 export type FlexboxSystemProps = {
-  flex?: ResponsiveValue<number | string>;
-  flexGrow?: ResponsiveValue<number | string>;
-  flexShrink?: ResponsiveValue<number | string>;
+  flex?: ResponsiveValue<number>;
+  flexGrow?: ResponsiveValue<number>;
+  flexShrink?: ResponsiveValue<number>;
   flexBasis?: ResponsiveValue<number | string>;
   flexDirection?: ResponsiveValue<'column-reverse' | 'column' | 'row-reverse' | 'row'>;
   flexWrap?: ResponsiveValue<'nowrap' | 'wrap-reverse' | 'wrap'>;
