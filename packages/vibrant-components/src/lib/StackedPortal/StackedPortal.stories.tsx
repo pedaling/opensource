@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
@@ -129,7 +130,7 @@ export const Basic: ComponentStory<typeof StackedPortal> = props => (
   </VStack>
 );
 
-export const AnimatedStackedPortal: ComponentStory<typeof StackedPortal> = props => {
+export const AnimatedStackedPortal: ComponentStory<typeof StackedPortal> = () => {
   const [show, setShow] = useState(false);
 
   return (
@@ -230,7 +231,23 @@ export const AnimatedStackedPortal: ComponentStory<typeof StackedPortal> = props
         Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </Paragraph>
-      <StackedPortal order={2} left={0} right={0} height={50} position="bottom" id="test" safeAreaMode="padding">
+      <StackedPortal
+        position="top"
+        id="test"
+        order={1}
+        left={0}
+        right={0}
+        safeAreaMode="padding"
+        duration={300}
+        hidden={!show}
+      >
+        {({ layoutStyle }) => (
+          <Paper backgroundColor="informative" {...layoutStyle}>
+            <Box height={50} backgroundColor="informative" />
+          </Paper>
+        )}
+      </StackedPortal>
+      <StackedPortal order={2} left={0} right={0} offset={0} position="bottom" id="test" safeAreaMode="padding">
         {({ layoutStyle }) => (
           <Paper {...layoutStyle}>
             <ContainedButton kind="primary" size="lg" onClick={() => setShow(!show)}>
@@ -238,20 +255,6 @@ export const AnimatedStackedPortal: ComponentStory<typeof StackedPortal> = props
             </ContainedButton>
           </Paper>
         )}
-      </StackedPortal>
-
-      <StackedPortal
-        {...props}
-        order={1}
-        left={0}
-        right={0}
-        height={50}
-        safeAreaMode="padding"
-        offset={20}
-        duration={300}
-        hidden={!show}
-      >
-        {({ layoutStyle }) => <Paper backgroundColor="informative" {...layoutStyle} />}
       </StackedPortal>
     </VStack>
   );
