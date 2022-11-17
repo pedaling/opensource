@@ -124,7 +124,7 @@ export const Calendar = withCalendarVariation(
             <Pressable onClick={movePrevMonth}>
               <Icon.ChevronLeft.Regular size={16} />
             </Pressable>
-            <VStack flex={1}>
+            <VStack flexGrow={1} alignHorizontal="center">
               <Title level={5} textAlign="center">
                 {calendarTranslation.title
                   .replace('{year}', displayMonth.getFullYear().toString())
