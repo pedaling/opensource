@@ -108,6 +108,7 @@ export type BoxElements =
   | 'main'
   | 'mask'
   | 'nav'
+  | 'ol'
   | 'path'
   | 'section'
   | 'span'

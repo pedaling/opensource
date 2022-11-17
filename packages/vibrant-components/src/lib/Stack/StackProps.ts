@@ -11,7 +11,7 @@ import type {
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
-type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'nav' | 'section';
+type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'li' | 'nav' | 'ol' | 'section' | 'ul';
 
 export type Alignment = 'center' | 'end' | 'space-between' | 'start' | 'stretch';
 
