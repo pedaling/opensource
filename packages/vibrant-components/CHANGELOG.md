@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.28.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.27.1...vibrant-components-0.28.0) (2022-11-17)
+
+
+### Features
+
+* TabGroup의 컨텐츠가 오버플로우 될 경우 네비게이션 할 수 있는 버튼을 추가한다. ([#422](https://github.com/pedaling/opensource/issues/422)) ([9b48c7d](https://github.com/pedaling/opensource/commit/9b48c7df9db6127961b44facc0350ee02cee47a4))
+* update callout new style ([#423](https://github.com/pedaling/opensource/issues/423)) ([889f802](https://github.com/pedaling/opensource/commit/889f8020166583a1b819792912fa6d7aab4e12eb))
+
+
+### Bug Fixes
+
+* remove flex="none" in Divider ([#424](https://github.com/pedaling/opensource/issues/424)) ([d7b2336](https://github.com/pedaling/opensource/commit/d7b2336fe9109047596cb0bd53768d2dc0049d0c))
+
 ### [0.27.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.27.0...vibrant-components-0.27.1) (2022-11-14)
 
 

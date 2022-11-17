@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.28.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.27.1...vibrant-icons-0.28.0) (2022-11-17)
+
+
+### Features
+
+* add PlaySppedX075, 125 icons ([#426](https://github.com/pedaling/opensource/issues/426)) ([af06784](https://github.com/pedaling/opensource/commit/af06784f4ddb0096ccdea788e38c6743e63ff8f4))
+
 ### [0.27.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.27.0...vibrant-icons-0.27.1) (2022-11-14)
 
 ## [0.27.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.26.1...vibrant-icons-0.27.0) (2022-11-11)
