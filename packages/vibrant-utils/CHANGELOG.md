@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.29.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.28.0...vibrant-utils-0.29.0) (2022-11-18)
+
+
+### Bug Fixes
+
+* TabGroup에서 children이 바뀔 때 네비게이션 버튼이 동작하지 않는 이슈를 수정한다 ([#428](https://github.com/pedaling/opensource/issues/428)) ([b855477](https://github.com/pedaling/opensource/commit/b8554778b636e5a06deb738a652ea164d877f07f))
+
 ## [0.28.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.27.1...vibrant-utils-0.28.0) (2022-11-17)
 
 

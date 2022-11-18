@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.29.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.28.0...vibrant-icons-0.29.0) (2022-11-18)
+
 ## [0.28.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.27.1...vibrant-icons-0.28.0) (2022-11-17)
 
 
