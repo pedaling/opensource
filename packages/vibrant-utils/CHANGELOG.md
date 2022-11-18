@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.29.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.29.0...vibrant-utils-0.29.1) (2022-11-18)
+
+
+### Bug Fixes
+
+* TabGroup의 children이 리렌더링되고 각 Tab의 inView 상태가 변하지 않았을 때 네비게이션 버튼이 동작하지 않는 오류를 수정한다 ([#429](https://github.com/pedaling/opensource/issues/429)) ([96ae020](https://github.com/pedaling/opensource/commit/96ae020e0c20eb9edaff9294044008c5b6ea9e78))
+
 ## [0.29.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.28.0...vibrant-utils-0.29.0) (2022-11-18)
 
 
