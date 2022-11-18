@@ -35,12 +35,12 @@ export const useInView = ({ initialInView, onChange, options }: UseInViewProps):
       observerRef.current = new IntersectionObserver(([entry]) => {
         setIsInView(entry.isIntersecting);
 
-        handleChange?.(isInView);
+        handleChange?.(entry.isIntersecting);
       }, options);
 
       observerRef.current.observe(node);
     },
-    [handleChange, isInView, options, unobserve]
+    [handleChange, options, unobserve]
   );
 
   useEffect(() => unobserve, [unobserve]);
