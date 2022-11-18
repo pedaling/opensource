@@ -18,10 +18,6 @@ export const useInView = ({ initialInView, onChange, options }: UseInViewProps):
   const [isInView, setIsInView] = useState(initialInView);
   const handleChange = useCallbackRef(onChange);
 
-  useEffect(() => {
-    handleChange?.(isInView);
-  }, [isInView, handleChange]);
-
   const unobserve = useCallback(() => {
     observerRef.current?.disconnect();
 
@@ -37,16 +33,14 @@ export const useInView = ({ initialInView, onChange, options }: UseInViewProps):
       }
 
       observerRef.current = new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        } else {
-          setIsInView(false);
-        }
+        setIsInView(entry.isIntersecting);
+
+        handleChange?.(entry.isIntersecting);
       }, options);
 
       observerRef.current.observe(node);
     },
-    [options, unobserve]
+    [handleChange, options, unobserve]
   );
 
   useEffect(() => unobserve, [unobserve]);
