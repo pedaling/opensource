@@ -172,7 +172,6 @@ export const TabGroup = withTabGroupVariation(
               <InView
                 key={element.props.id}
                 onChange={inView => {
-                  console.log(index, inView);
                   if (index === 0) {
                     setFirstTabIsInView(inView);
                   }
