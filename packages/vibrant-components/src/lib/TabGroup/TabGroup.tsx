@@ -2,7 +2,7 @@ import type { ForwardedRef, FunctionComponentElement, MouseEventHandler } from '
 import { Children, cloneElement, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
 import { useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import { useInView } from '@vibrant-ui/utils';
+import { useInView, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
 import { Divider } from '../Divider';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
@@ -90,7 +90,7 @@ export const TabGroup = withTabGroupVariation(
       });
     }, [tabId]);
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       tabInViewRefs.current = new Array(Children.count(children)).fill(false);
     }, [children]);
 
@@ -172,6 +172,7 @@ export const TabGroup = withTabGroupVariation(
               <InView
                 key={element.props.id}
                 onChange={inView => {
+                  console.log(index, inView);
                   if (index === 0) {
                     setFirstTabIsInView(inView);
                   }
