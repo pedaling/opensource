@@ -1,14 +1,12 @@
-import type { ForwardedRef } from 'react';
-import { forwardRef } from 'react';
 import { Text } from '@vibrant-ui/core';
 import { Pressable } from '../Pressable';
 import { withPaginationMiscCellVariation } from './PaginationMiscCellProps';
 
 export const PaginationMiscCell = withPaginationMiscCellVariation(
-  forwardRef(({ page, onClick, overlayColor, ...props }, ref: ForwardedRef<HTMLButtonElement>) => (
+  ({ innerRef, page, onClick, overlayColor, ...props }) => (
     <Pressable
       as="button"
-      ref={ref}
+      ref={innerRef}
       width={38}
       height={38}
       borderRadius={19}
@@ -24,5 +22,5 @@ export const PaginationMiscCell = withPaginationMiscCellVariation(
         {page}
       </Text>
     </Pressable>
-  ))
+  )
 );
