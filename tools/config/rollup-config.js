@@ -38,5 +38,7 @@ module.exports = function rollupConfig(config, options) {
     config.output.chunkFileNames = '[name].js';
   }
 
+  config.output.preserveModules = true;
+
   return config;
 };
