@@ -36,9 +36,11 @@ export const withPaginationButtonVariation = withVariation<PaginationButtonProps
     variants: {
       true: {
         onColor: 'disable',
+        disabled: true,
       },
       false: {
         onColor: 'onView1',
+        disabled: false,
       },
     } as const,
   })
