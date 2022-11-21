@@ -31,7 +31,8 @@
             "input": ".",
             "output": "."
           }
-        ]
+        ],
+        "disablePreserveModules": true
       }
     },
     "build-native": {
