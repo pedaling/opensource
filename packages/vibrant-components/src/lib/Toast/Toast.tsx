@@ -1,5 +1,5 @@
-import { Text } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
+import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
 import { Pressable } from '../Pressable';
@@ -22,15 +22,15 @@ export const Toast = withToastVariation(
               <IconComponent size={18} fill={color} />
             </VStack>
           )}
-          <Text lineHeight={18} wordBreak="keep-all" fontSize={14} color="onInverseSurface">
+          <Body level={2} wordBreak="keep-all" color="onInverseSurface">
             {title}
-          </Text>
+          </Body>
           {isDefined(buttonText) && onButtonClick && (
             <VStack flexShrink={0} ml="auto">
               <Pressable interactions={['focus', 'active']} ml={12} onClick={onButtonClick}>
-                <Text lineHeight={18} fontSize={14} color="onViewInformative" fontWeight="medium">
+                <Body level={2} color="onViewInformative" weight="medium">
                   {buttonText}
-                </Text>
+                </Body>
               </Pressable>
             </VStack>
           )}
