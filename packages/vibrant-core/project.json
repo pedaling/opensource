@@ -50,7 +50,8 @@
         "format": ["cjs"],
         "rollupConfig": "tools/config/rollup-config",
         "buildableProjectDepsInPackageJsonType": "dependencies",
-        "compiler": "babel"
+        "compiler": "babel",
+        "disablePreserveModules": true
       }
     },
     "typecheck": {
