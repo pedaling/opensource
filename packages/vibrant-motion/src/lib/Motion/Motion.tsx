@@ -74,8 +74,6 @@ export const Motion = withMotionVariation(
         return;
       }
 
-      console.log('animation', option);
-
       springApi.start(option);
     }, [innerRef, option, springApi]);
 
