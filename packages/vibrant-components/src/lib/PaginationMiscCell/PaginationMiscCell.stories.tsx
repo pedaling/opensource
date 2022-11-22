@@ -7,7 +7,7 @@ export default {
   title: 'PaginationMiscCell',
   component: PaginationMiscCell,
   args: {
-    page: 10,
+    page: 1,
   },
 } as ComponentMeta<typeof PaginationMiscCell>;
 
