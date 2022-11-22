@@ -57,7 +57,7 @@ export const colorTokens = [
 export type ColorToken = typeof colorTokens[number];
 export type BaseColorToken = Exclude<
   ColorToken,
-  'black' | 'dim' | 'overlay' | 'transparent' | 'white' | `on${string}` | `outline${string}`
+  'black' | 'dim' | 'overlay' | 'white' | `on${string}` | `outline${string}`
 >;
 export type OnColorToken = Exclude<Extract<ColorToken, `on${string}`>, 'onColor'>;
 
@@ -97,4 +97,5 @@ export const BaseColorOnColorMap: { [color in BaseColorToken]: OnColorToken } = 
   disable: 'onView3',
   background: 'onView1',
   inverseSurface: 'onInverseSurface',
+  transparent: 'onView1',
 };
