@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.29.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.29.1...vibrant-components-0.29.2) (2022-11-22)
+
+
+### Features
+
+* migrate PaginationButton ([#432](https://github.com/pedaling/opensource/issues/432)) ([e9825d5](https://github.com/pedaling/opensource/commit/e9825d5c53da74b997135c2995dbd2052865e34f))
+* migrate PaginationMiscCell ([#433](https://github.com/pedaling/opensource/issues/433)) ([22ab323](https://github.com/pedaling/opensource/commit/22ab323c236c20df040162293654a908a9d24606))
+
 ### [0.29.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.29.0...vibrant-components-0.29.1) (2022-11-18)
 
 ## [0.29.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.28.0...vibrant-components-0.29.0) (2022-11-18)

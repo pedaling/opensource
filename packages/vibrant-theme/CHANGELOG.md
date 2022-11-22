@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.29.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.29.1...vibrant-theme-0.29.2) (2022-11-22)
+
+
+### Features
+
+* include transparent into BaseColorToken ([#434](https://github.com/pedaling/opensource/issues/434)) ([a71fff8](https://github.com/pedaling/opensource/commit/a71fff8b4e0f2e4c56d40f32c5b1d6bce833d59a))
+
 ### [0.29.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.29.0...vibrant-theme-0.29.1) (2022-11-18)
 
 ## [0.29.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.28.0...vibrant-theme-0.29.0) (2022-11-18)
