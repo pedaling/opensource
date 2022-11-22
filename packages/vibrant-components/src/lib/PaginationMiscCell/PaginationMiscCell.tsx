@@ -1,4 +1,4 @@
-import { Text } from '@vibrant-ui/core';
+import { Body } from '../Body';
 import { Pressable } from '../Pressable';
 import { withPaginationMiscCellVariation } from './PaginationMiscCellProps';
 
@@ -18,9 +18,9 @@ export const PaginationMiscCell = withPaginationMiscCellVariation(
       flexShrink={0}
       {...props}
     >
-      <Text as="span" fontWeight="bold">
+      <Body level={3} as="span" weight="bold">
         {page}
-      </Text>
+      </Body>
     </Pressable>
   )
 );
