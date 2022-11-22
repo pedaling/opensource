@@ -1,6 +1,7 @@
 import { useEffect, useImperativeHandle, useMemo } from 'react';
 import { useSpring } from '@react-spring/core';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
+import { useObjectMemo, useSafeDeps } from '@vibrant-ui/utils';
 import { easings } from '../constants';
 import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
@@ -13,6 +14,7 @@ export const Motion = withMotionVariation(
   ({ innerRef, children, duration, loop, from, to, easing = 'easeOutQuad', onStart, onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const { animated } = useReactSpring();
+    const onEndRef = useSafeDeps(onEnd);
 
     const AnimatedComponent = useMemo(
       () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
@@ -20,34 +22,36 @@ export const Motion = withMotionVariation(
     );
     const { getResponsiveValue } = useResponsiveValue();
 
-    const [fromStyle, toStyle] = useMemo(
-      () => [
-        Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)])),
-        Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)])),
-      ],
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      [JSON.stringify(from), JSON.stringify(to), getResponsiveValue]
+    const [fromStyle, toStyle] = useObjectMemo(
+      useMemo(
+        () => [
+          interpolation(
+            Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
+          ),
+          interpolation(Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)]))),
+        ],
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [JSON.stringify(from), JSON.stringify(to), getResponsiveValue, interpolation]
+      )
     );
 
     const option = useMemo(
       () => ({
-        from: interpolation(fromStyle),
-        to: interpolation(toStyle),
+        from: fromStyle,
+        to: toStyle,
         config: {
           duration,
           easing: easing && easings[easing],
         },
         loop,
         onStart,
-        onRest: onEnd
-          ? (result: AnimationResult) => {
-              if (result.finished) {
-                onEnd(result);
-              }
-            }
-          : undefined,
+        onRest: (result: AnimationResult) => {
+          if (result.finished) {
+            onEndRef.current?.(result);
+          }
+        },
       }),
-      [duration, easing, fromStyle, interpolation, loop, onEnd, onStart, toStyle]
+      [duration, easing, fromStyle, loop, onEndRef, onStart, toStyle]
     );
 
     const [styles, springApi] = useSpring(() => ({

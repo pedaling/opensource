@@ -23,6 +23,7 @@ export { flipPosition } from './lib/flipPosition';
 export { useCallbackRef } from './lib/useCallbackRef';
 export { useControllableState } from './lib/useControllableState';
 export { useIsomorphicLayoutEffect } from './lib/useIsomorphicLayoutEffect';
+export { useObjectMemo } from './lib/useObjectMemo';
 
 export type { Position } from './types/Position';
 export type { Either } from './types/Either';

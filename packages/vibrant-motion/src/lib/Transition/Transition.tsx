@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { useSpring } from '@react-spring/core';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
+import { useObjectMemo } from '@vibrant-ui/utils';
 import { easings } from '../constants';
 import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
@@ -20,15 +21,20 @@ export const Transition = withTransitionVariation(
     );
     const { getResponsiveValue } = useResponsiveValue();
 
-    const currentStyle = useMemo(
-      () => Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)])),
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      [JSON.stringify(animation), getResponsiveValue]
+    const currentStyle = useObjectMemo(
+      useMemo(
+        () =>
+          interpolation(
+            Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
+          ),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [JSON.stringify(animation), getResponsiveValue, interpolation]
+      )
     );
 
     const option = useMemo(
       () => ({
-        to: interpolation(currentStyle),
+        to: currentStyle,
         config: {
           duration,
           easing: easing && easings[easing],
@@ -42,7 +48,7 @@ export const Transition = withTransitionVariation(
             }
           : undefined,
       }),
-      [currentStyle, duration, easing, interpolation, onEnd, onStart]
+      [currentStyle, duration, easing, onEnd, onStart]
     );
 
     const [styles, springApi] = useSpring(() => ({ from: interpolation(animation) }));

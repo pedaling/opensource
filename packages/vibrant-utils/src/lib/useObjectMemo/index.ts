@@ -1,0 +1,1 @@
+export { useObjectMemo } from './useObjectMemo';

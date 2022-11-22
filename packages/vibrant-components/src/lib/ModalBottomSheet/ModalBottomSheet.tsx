@@ -50,6 +50,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       },
     });
     const [visible, setVisible] = useState(false);
+
     const [containerHeight, setContainerHeight] = useState<number>();
     const { height: viewportHeight } = useWindowDimensions();
     const { generateStyle } = useSafeArea();
