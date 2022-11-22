@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.29.3](https://github.com/pedaling/opensource/compare/vibrant-utils-0.29.2...vibrant-utils-0.29.3) (2022-11-22)
+
+
+### Bug Fixes
+
+* fix Transition and Motion animation run twice issue ([#436](https://github.com/pedaling/opensource/issues/436)) ([6f9f1a5](https://github.com/pedaling/opensource/commit/6f9f1a581b43aa1655110f36e89bd8afd7e4fa8c))
+
 ### [0.29.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.29.1...vibrant-utils-0.29.2) (2022-11-22)
 
 ### [0.29.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.29.0...vibrant-utils-0.29.1) (2022-11-18)
