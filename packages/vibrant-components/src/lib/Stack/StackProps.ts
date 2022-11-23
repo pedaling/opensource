@@ -30,6 +30,7 @@ export type StackProps = DisplaySystemProps &
     children?: ReactElementChildren;
     alignHorizontal?: ResponsiveValue<Alignment>;
     alignVertical?: ResponsiveValue<Alignment>;
+    arialLabel?: string;
   };
 
 const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
