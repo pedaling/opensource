@@ -20,7 +20,7 @@ export const Pagination = withPaginationVariation(
     const hasNextPage = pages[pages.length - 1] < pageCount;
 
     return (
-      <HStack as="nav" aria-label="Pagination Navigation" alignVertical="center">
+      <HStack as="nav" arialLabel="Pagination Navigation" alignVertical="center">
         <PaginationButton type="prev" onClick={moveToPrevPage} disabled={!hasPrevPage} />
         <Space width={spacing} />
         {extra && hasPrevPage && (
