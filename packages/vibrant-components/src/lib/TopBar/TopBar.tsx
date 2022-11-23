@@ -7,7 +7,7 @@ import { Title } from '../Title';
 import { withTopBarVariation } from './TopBarProps';
 
 export const TopBar = withTopBarVariation(
-  ({ backgroundColor = 'background', title, titleLevel, titleCentered, renderLeft, renderRight }) => {
+  ({ backgroundColor = 'background', title, titleAs = 'h1', titleLevel, titleCentered, renderLeft, renderRight }) => {
     const [maxSideWidth, setMaxSideWidth] = useState<number>();
 
     const handleSideLayout = ({ width }: LayoutEvent) => {
@@ -25,6 +25,7 @@ export const TopBar = withTopBarVariation(
             </HStack>
           )}
           <Title
+            as={titleAs}
             level={titleLevel}
             flex={10}
             textAlign={titleCentered ? 'center' : 'left'}
