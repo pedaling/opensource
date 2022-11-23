@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.30.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.29.3...vibrant-components-0.30.0) (2022-11-23)
+
+
+### Features
+
+* add arial-label to StackProps ([#437](https://github.com/pedaling/opensource/issues/437)) ([256f207](https://github.com/pedaling/opensource/commit/256f2079083b4263ea27d93c5ed908768920a5d0))
+* add kind prop in SearchField ([#439](https://github.com/pedaling/opensource/issues/439)) ([09dda3d](https://github.com/pedaling/opensource/commit/09dda3d2c80f6a6fd519805ddb049f83cf39b92b))
+* migrate Pagination Component ([#435](https://github.com/pedaling/opensource/issues/435)) ([159934b](https://github.com/pedaling/opensource/commit/159934baeb51f07ab444d58f1efaa7c71641f0dd))
+
 ### [0.29.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.29.2...vibrant-components-0.29.3) (2022-11-22)
 
 
