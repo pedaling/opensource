@@ -7,7 +7,16 @@ import { Title } from '../Title';
 import { withTopBarVariation } from './TopBarProps';
 
 export const TopBar = withTopBarVariation(
-  ({ backgroundColor = 'background', title, titleAs = 'h1', titleLevel, titleCentered, renderLeft, renderRight }) => {
+  ({
+    as,
+    backgroundColor = 'background',
+    title,
+    titleAs = 'h1',
+    titleLevel,
+    titleCentered,
+    renderLeft,
+    renderRight,
+  }) => {
     const [maxSideWidth, setMaxSideWidth] = useState<number>();
 
     const handleSideLayout = ({ width }: LayoutEvent) => {
@@ -17,7 +26,7 @@ export const TopBar = withTopBarVariation(
     };
 
     return (
-      <Paper width="100%" px={20} height={52} backgroundColor={backgroundColor}>
+      <Paper as={as} width="100%" px={20} height={52} backgroundColor={backgroundColor}>
         <HStack my="auto" alignVertical="center" spacing={16}>
           {(titleCentered || renderLeft) && (
             <HStack onLayout={handleSideLayout} spacing={16} flexShrink={0} flexBasis={maxSideWidth}>

@@ -4,6 +4,7 @@ import type { BaseColorToken } from '@vibrant-ui/theme';
 import type { Either } from '@vibrant-ui/utils';
 
 export type TopBarProps = {
+  as?: 'div' | 'header';
   title: string;
   titleAs?: Extract<TextElements, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
   renderRight?: () => ReactElementChild[];
