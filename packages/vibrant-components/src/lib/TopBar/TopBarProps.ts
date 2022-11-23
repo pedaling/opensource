@@ -5,8 +5,6 @@ import type { Either } from '@vibrant-ui/utils';
 
 export type TopBarProps = {
   title: string;
-  // kind: 'emphasis' | 'regular';
-  // renderLeft?: () => ReactElementChild[];
   renderRight?: () => ReactElementChild[];
   backgroundColor?: BaseColorToken;
 } & Either<
