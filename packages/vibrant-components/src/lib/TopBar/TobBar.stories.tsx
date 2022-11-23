@@ -7,7 +7,7 @@ export default {
   title: 'TopBar',
   component: TopBar,
   args: {
-    renderRight: () => [<Icon.Bell.Regular key={1} size={24} />, <Icon.Gear.Regular key={1} size={24} />],
+    renderRight: () => [<Icon.Bell.Regular key={1} size={24} />, <Icon.Gear.Regular key={2} size={24} />],
     title: 'Title',
   },
 } as ComponentMeta<typeof TopBar>;
