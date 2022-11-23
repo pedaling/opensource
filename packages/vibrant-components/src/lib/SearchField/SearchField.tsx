@@ -5,7 +5,7 @@ import { Icon } from '@vibrant-ui/icons';
 import { Pressable } from '../Pressable';
 import { withSearchFieldVariation } from './SearchFieldProps';
 
-export const SearchField = withSearchFieldVariation(({ defaultValue, onValueChange, ...restProps }) => {
+export const SearchField = withSearchFieldVariation(({ defaultValue, onValueChange, kind, ...restProps }) => {
   const [value, setValue] = useState(defaultValue ?? '');
   const inputRef = useRef<TextInputRef>(null);
 
@@ -21,7 +21,7 @@ export const SearchField = withSearchFieldVariation(({ defaultValue, onValueChan
         py={10}
         pl={16}
         pr={48}
-        backgroundColor="surface1"
+        backgroundColor={kind === 'default' ? 'surface1' : 'transparent'}
         typography="body2"
         color="onView1"
         placeholderColor="onView3"
