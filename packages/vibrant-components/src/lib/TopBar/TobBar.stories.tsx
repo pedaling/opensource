@@ -8,12 +8,18 @@ export default {
   component: TopBar,
   args: {
     renderRight: () => [<Icon.Bell.Regular key={1} size={24} />, <Icon.Gear.Regular key={1} size={24} />],
-    renderLeft: () => [<Icon.ChevronLeft.Regular key={1} size={24} />],
+    title: 'Title',
   },
 } as ComponentMeta<typeof TopBar>;
 
-export const Basic: ComponentStory<typeof TopBar> = props => (
+export const Regular: ComponentStory<typeof TopBar> = props => (
   <VStack width="100%">
-    <TopBar {...props} />
+    <TopBar {...props} renderLeft={() => [<Icon.ChevronLeft.Regular key={1} size={24} />]} kind="regular" />
+  </VStack>
+);
+
+export const Emphasis: ComponentStory<typeof TopBar> = props => (
+  <VStack width="100%">
+    <TopBar {...props} kind="emphasis" />
   </VStack>
 );
