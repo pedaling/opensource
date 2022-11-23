@@ -18,7 +18,7 @@ export const Regular: ComponentStory<typeof TopBar> = props => (
   </VStack>
 );
 
-export const Emphasis: ComponentStory<typeof TopBar> = props => (
+export const Emphasis: ComponentStory<typeof TopBar> = ({ renderLeft: _, ...props }) => (
   <VStack width="100%">
     <TopBar {...props} kind="emphasis" />
   </VStack>
