@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
+import { useCurrentTheme } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
@@ -18,6 +19,9 @@ export const TopBar = withTopBarVariation(
     renderRight,
   }) => {
     const [maxSideWidth, setMaxSideWidth] = useState<number>();
+    const {
+      theme: { contentArea },
+    } = useCurrentTheme();
 
     const handleSideLayout = ({ width }: LayoutEvent) => {
       if (width > (maxSideWidth ?? 0)) {
@@ -26,7 +30,14 @@ export const TopBar = withTopBarVariation(
     };
 
     return (
-      <Paper as={as} width="100%" px={20} height={52} backgroundColor={backgroundColor}>
+      <Paper
+        as={as}
+        width="100%"
+        maxWidth={contentArea.maxWidth}
+        px={contentArea.padding}
+        height={52}
+        backgroundColor={backgroundColor}
+      >
         <HStack my="auto" alignVertical="center" spacing={16}>
           {(titleCentered || renderLeft) && (
             <HStack
