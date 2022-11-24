@@ -1,7 +1,7 @@
-import type { BoxElements } from 'packages/vibrant-core/src/lib/Box/BoxProps';
 import type { Ref } from 'react';
 import type {
   BorderSystemProps,
+  BoxElements,
   DisplaySystemProps,
   ElevationSystemProps,
   FlexboxSystemProps,
