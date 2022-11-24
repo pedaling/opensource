@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { useSpring } from '@react-spring/core';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { useObjectMemo } from '@vibrant-ui/utils';
+import { useObjectMemo, useSafeDeps } from '@vibrant-ui/utils';
 import { easings } from '../constants';
 import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
@@ -14,6 +14,7 @@ export const Transition = withTransitionVariation(
   ({ innerRef, children, style, animation, duration, easing = 'easeOutQuad', onStart, onEnd, ...restProps }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const { animated } = useReactSpring();
+    const onEndRef = useSafeDeps(onEnd);
 
     const AnimatedComponent = useMemo(
       () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
@@ -40,15 +41,11 @@ export const Transition = withTransitionVariation(
           easing: easing && easings[easing],
         },
         onStart,
-        onRest: onEnd
-          ? (result: AnimationResult) => {
-              if (result.finished) {
-                onEnd(result);
-              }
-            }
-          : undefined,
+        onRest: (result: AnimationResult) => {
+          onEndRef.current?.(result);
+        },
       }),
-      [currentStyle, duration, easing, onEnd, onStart]
+      [currentStyle, duration, easing, onEndRef, onStart]
     );
 
     const [styles, springApi] = useSpring(() => ({ from: interpolation(animation) }));

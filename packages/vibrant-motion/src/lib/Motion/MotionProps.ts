@@ -16,7 +16,6 @@ type WithMotion<Style> = { [key in keyof Style]?: Animation<Style[key]> };
 
 type MotionProps = {
   ref?: Ref<any>;
-  motionRef?: Ref<MotionRefValue>;
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
