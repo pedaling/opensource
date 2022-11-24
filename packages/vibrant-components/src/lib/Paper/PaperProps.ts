@@ -4,6 +4,7 @@ import type {
   DisplaySystemProps,
   ElevationSystemProps,
   FlexboxSystemProps,
+  InteractionSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
   ReactElementChild,
@@ -16,10 +17,12 @@ import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 
 type PaperProps = {
   ref?: Ref<any>;
+  id?: string;
   children?: ReactElementChild;
 } & Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
   DisplaySystemProps &
   SpacingSystemProps &
+  InteractionSystemProps &
   PositionSystemProps &
   Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<ElevationSystemProps, 'elevationLevel'> &

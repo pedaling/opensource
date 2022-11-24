@@ -2,6 +2,7 @@ import type { RefObject } from 'react';
 import type {
   DisplaySystemProps,
   FlexboxSystemProps,
+  InteractionSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
   ReactElementChildren,
@@ -21,9 +22,11 @@ export type StackProps = DisplaySystemProps &
   Omit<FlexboxSystemProps, 'alignItems' | 'justifyContent'> &
   OverflowSystemProps &
   SizingSystemProps &
+  InteractionSystemProps &
   PositionSystemProps &
   SpacingSystemProps & {
     as?: SemanticTagName | 'div' | 'label' | 'span';
+    id?: string;
     direction: ResponsiveValue<'horizontal' | 'vertical'>;
     ref?: RefObject<HTMLElement>;
     spacing?: ResponsiveValue<number>;
