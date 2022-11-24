@@ -46,9 +46,7 @@ export const Motion = withMotionVariation(
         loop,
         onStart,
         onRest: (result: AnimationResult) => {
-          if (result.finished) {
-            onEndRef.current?.(result);
-          }
+          onEndRef.current?.(result);
         },
       }),
       [duration, easing, fromStyle, loop, onEndRef, onStart, toStyle]
