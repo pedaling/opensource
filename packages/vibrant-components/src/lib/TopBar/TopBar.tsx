@@ -29,7 +29,13 @@ export const TopBar = withTopBarVariation(
       <Paper as={as} width="100%" px={20} height={52} backgroundColor={backgroundColor}>
         <HStack my="auto" alignVertical="center" spacing={16}>
           {(titleCentered || renderLeft) && (
-            <HStack onLayout={handleSideLayout} spacing={16} flexShrink={0} flexBasis={maxSideWidth}>
+            <HStack
+              onLayout={handleSideLayout}
+              spacing={16}
+              flexShrink={0}
+              flexBasis={maxSideWidth}
+              alignVertical="center"
+            >
               {renderLeft?.()}
             </HStack>
           )}
@@ -50,6 +56,7 @@ export const TopBar = withTopBarVariation(
               flexShrink={0}
               flexBasis={maxSideWidth}
               alignHorizontal="end"
+              alignVertical="center"
             >
               {renderRight?.()}
             </HStack>
