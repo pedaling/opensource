@@ -1,5 +1,11 @@
 import type { ForwardedRef } from 'react';
-import type { AutoCapitalizeOption, AutoCompleteOption, ReactElementChild, TextInputType } from '@vibrant-ui/core';
+import type {
+  AutoCapitalizeOption,
+  AutoCompleteOption,
+  ReactElementChild,
+  ResponsiveValue,
+  TextInputType,
+} from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
@@ -15,6 +21,7 @@ export type TextFieldProps = BaseInputProps<string> & {
   autoCapitalize?: AutoCapitalizeOption;
   prefix?: string;
   suffix?: string;
+  size?: ResponsiveValue<'lg' | 'md'>;
   clearable?: boolean;
   readOnly?: boolean;
   ref?: ForwardedRef<any>;
