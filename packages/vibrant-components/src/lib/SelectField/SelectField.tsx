@@ -2,7 +2,7 @@ import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState 
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, OverlayBox, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import { isDefined } from '@vibrant-ui/utils';
+import { useCallbackRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
@@ -33,7 +33,8 @@ export const SelectField = withSelectFieldVariation(
     );
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
-    const prevSelectedOptionIndexRef = useRef<number>();
+    const prevSelectedValueRef = useRef<string | undefined>(defaultValue);
+    const handleValueChange = useCallbackRef(onValueChange);
 
     const ref = useRef<HTMLElement>(null);
     const inputRef = useRef<TextInputRef>(null);
@@ -105,17 +106,16 @@ export const SelectField = withSelectFieldVariation(
     }, [defaultValue, options]);
 
     useEffect(() => {
-      if (!selectedOption || !isDefined(prevSelectedOptionIndexRef.current)) {
-        prevSelectedOptionIndexRef.current = selectedOptionIndex;
-
+      if (!selectedOption?.value || prevSelectedValueRef.current === selectedOption?.value) {
         return;
       }
 
       setState('default');
 
-      onValueChange?.(selectedOption.value);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedOptionIndex]);
+      handleValueChange?.(selectedOption.value);
+
+      prevSelectedValueRef.current = selectedOption?.value;
+    }, [handleValueChange, selectedOption.value]);
 
     useEffect(() => {
       setState(stateProp);
