@@ -115,7 +115,7 @@ export const SelectField = withSelectFieldVariation(
       handleValueChange?.(selectedOption.value);
 
       prevSelectedValueRef.current = selectedOption?.value;
-    }, [handleValueChange, selectedOption.value]);
+    }, [handleValueChange, selectedOption?.value]);
 
     useEffect(() => {
       setState(stateProp);
