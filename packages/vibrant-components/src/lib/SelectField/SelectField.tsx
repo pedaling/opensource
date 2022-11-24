@@ -2,6 +2,7 @@ import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState 
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, OverlayBox, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import { useCallbackRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
@@ -27,9 +28,13 @@ export const SelectField = withSelectFieldVariation(
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isOpened, setIsOpened] = useState(false);
     const [direction, setDirection] = useState<'down' | 'up'>('down');
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(-1);
+    const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(
+      defaultValue ? options.findIndex(option => !option.disabled && option.value === defaultValue) : -1
+    );
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
+    const prevSelectedValueRef = useRef<string | undefined>(defaultValue);
+    const handleValueChange = useCallbackRef(onValueChange);
 
     const ref = useRef<HTMLElement>(null);
     const inputRef = useRef<TextInputRef>(null);
@@ -101,15 +106,16 @@ export const SelectField = withSelectFieldVariation(
     }, [defaultValue, options]);
 
     useEffect(() => {
-      if (!selectedOption) {
+      if (!selectedOption?.value || prevSelectedValueRef.current === selectedOption?.value) {
         return;
       }
 
       setState('default');
 
-      onValueChange?.(selectedOption.value);
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedOption]);
+      handleValueChange?.(selectedOption.value);
+
+      prevSelectedValueRef.current = selectedOption?.value;
+    }, [handleValueChange, selectedOption?.value]);
 
     useEffect(() => {
       setState(stateProp);
