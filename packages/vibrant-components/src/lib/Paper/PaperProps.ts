@@ -17,7 +17,7 @@ import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 
 type PaperProps = {
   ref?: Ref<any>;
-  id: string;
+  id?: string;
   children?: ReactElementChild;
 } & Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
   DisplaySystemProps &
