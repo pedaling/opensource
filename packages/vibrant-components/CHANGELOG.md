@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.31.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.30.0...vibrant-components-0.31.0) (2022-11-24)
+
+
+### Features
+
+* add id, pointerEvents prop to Stack and Paper ([#441](https://github.com/pedaling/opensource/issues/441)) ([9f0a142](https://github.com/pedaling/opensource/commit/9f0a142b7ab3f83f17277b5841915c1f376f850d))
+
+
+### Bug Fixes
+
+* don't invoke onValueChange when first rendering with defaultValue ([#440](https://github.com/pedaling/opensource/issues/440)) ([eeeb8ac](https://github.com/pedaling/opensource/commit/eeeb8ac51d872a7ba20e7616b2b8d223d6c77280))
+
 ## [0.30.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.29.3...vibrant-components-0.30.0) (2022-11-23)
 
 
