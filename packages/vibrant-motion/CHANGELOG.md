@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.31.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.31.0...vibrant-motion-0.31.1) (2022-11-24)
+
+
+### Bug Fixes
+
+* change onFinish timing on Motion and Transition ([#442](https://github.com/pedaling/opensource/issues/442)) ([5dce330](https://github.com/pedaling/opensource/commit/5dce33036211f94fba84df3a5dd52cb41a126769))
+
 ## [0.31.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.30.0...vibrant-motion-0.31.0) (2022-11-24)
 
 ## [0.30.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.29.3...vibrant-motion-0.30.0) (2022-11-23)
