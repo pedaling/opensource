@@ -30,15 +30,8 @@ export const TopBar = withTopBarVariation(
     };
 
     return (
-      <Paper
-        as={as}
-        width="100%"
-        maxWidth={contentArea.maxWidth}
-        px={contentArea.padding}
-        height={52}
-        backgroundColor={backgroundColor}
-      >
-        <HStack my="auto" alignVertical="center" spacing={16}>
+      <Paper as={as} width="100%" height={52} px={contentArea.padding} backgroundColor={backgroundColor}>
+        <HStack my="auto" mx="auto" width="100%" maxWidth={contentArea.maxWidth} alignVertical="center" spacing={16}>
           {(titleCentered || renderLeft) && (
             <HStack
               onLayout={handleSideLayout}
