@@ -33,13 +33,12 @@ export const TopBar = withTopBarVariation(
         backgroundColor={backgroundColor}
         justifyContent="center"
       >
-        <HStack mx="auto" width="100%" maxWidth={contentArea.maxWidth} alignVertical="center" spacing={16}>
+        <HStack mx="auto" width="100%" maxWidth={contentArea.maxWidth} spacing={16}>
           {(titleCentered || renderLeft) && (
             <Box flexShrink={0} flexBasis={sideWidth} alignItems="start">
               <HStack
                 onLayout={({ width }) => setLeftSideWidth(width)}
-                // MEMO(Mia): ensure onLayout callback invoked when renderLeft return element that sizes 0,0
-                minHeight={1}
+                height="100%"
                 spacing={16}
                 alignVertical="center"
               >
@@ -65,7 +64,7 @@ export const TopBar = withTopBarVariation(
             <Box flexShrink={0} flexBasis={sideWidth} alignItems="end">
               <HStack
                 onLayout={({ width }) => setRightSideWidth(width)}
-                minHeight={1}
+                height="100%"
                 spacing={16}
                 alignVertical="center"
               >
