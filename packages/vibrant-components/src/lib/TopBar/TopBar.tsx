@@ -53,10 +53,10 @@ export const TopBar = withTopBarVariation(
             flex={1}
             textAlign={titleCentered ? 'center' : 'left'}
             lineLimit={1}
-            opacity={
+            visibility={
               titleCentered && (renderLeft || renderRight) && !isDefined(leftSideWidth) && !isDefined(rightSideWidth)
-                ? 0
-                : 1
+                ? 'hidden'
+                : 'visible'
             }
           >
             {title}
