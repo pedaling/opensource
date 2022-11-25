@@ -50,6 +50,7 @@ export const TopBar = withTopBarVariation(
             as={titleAs}
             level={titleLevel}
             flex={1}
+            alignSelf="center"
             textAlign={titleCentered ? 'center' : 'left'}
             lineLimit={1}
             visibility={
