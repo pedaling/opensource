@@ -32,3 +32,19 @@ export const WithAddon: ComponentStory<typeof TextField> = props => (
     />
   </VStack>
 );
+
+export const MidiumSize: ComponentStory<typeof TextField> = props => (
+  <VStack width="100%" p={20}>
+    <TextField {...props} size="md" />
+  </VStack>
+);
+export const MidiumSizeWithAddon: ComponentStory<typeof TextField> = props => (
+  <VStack width="100%" p={20}>
+    <TextField
+      {...props}
+      size="md"
+      renderEnd={() => <Icon.Star.Thin size={20} fill="onView2" />}
+      renderStart={() => <Icon.Add.Thin size={20} fill="onView2" />}
+    />
+  </VStack>
+);
