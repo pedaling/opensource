@@ -8,6 +8,7 @@ export const TextField = withTextFieldVariation(
   ({
     type = 'text',
     state,
+    size = 'lg',
     label,
     placeholder,
     helperText,
@@ -59,6 +60,7 @@ export const TextField = withTextFieldVariation(
         showClearButton={clearable && hasValue}
         onClearButtonClick={onClearButtonClick}
         onLabelClick={() => inputRef.current?.focus()}
+        size={size}
         renderField={style => (
           <TextInput
             ref={node => {
