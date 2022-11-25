@@ -16,8 +16,9 @@ export const TopBar = withTopBarVariation(
     renderLeft,
     renderRight,
   }) => {
-    const [leftSideWidth, setLeftSideWidth] = useState<number>();
-    const [rightSideWidth, setRightSideWidth] = useState<number>();
+    const [leftSideWidth, setLeftSideWidth] = useState<number | undefined>(undefined);
+    const [rightSideWidth, setRightSideWidth] = useState<number | undefined>(undefined);
+    const sideWidth = !leftSideWidth && !rightSideWidth ? 'auto' : Math.max(leftSideWidth ?? 0, rightSideWidth ?? 0);
 
     const {
       theme: { contentArea },
@@ -34,8 +35,14 @@ export const TopBar = withTopBarVariation(
       >
         <HStack mx="auto" width="100%" maxWidth={contentArea.maxWidth} alignVertical="center" spacing={16}>
           {(titleCentered || renderLeft) && (
-            <Box flexShrink={0} flexBasis={Math.max(leftSideWidth ?? 0, rightSideWidth ?? 0)} alignItems="start">
-              <HStack onLayout={({ width }) => setLeftSideWidth(width)} spacing={16} alignVertical="center">
+            <Box flexShrink={0} flexBasis={sideWidth} alignItems="start">
+              <HStack
+                onLayout={({ width }) => setLeftSideWidth(width)}
+                // MEMO(Mia): ensure onLayout callback invoked when renderLeft return element that sizes 0,0
+                minHeight={1}
+                spacing={16}
+                alignVertical="center"
+              >
                 {renderLeft?.()}
               </HStack>
             </Box>
@@ -55,8 +62,13 @@ export const TopBar = withTopBarVariation(
             {title}
           </Title>
           {(titleCentered || renderRight) && (
-            <Box flexShrink={0} flexBasis={Math.max(leftSideWidth ?? 0, rightSideWidth ?? 0)} alignItems="end">
-              <HStack onLayout={({ width }) => setRightSideWidth(width)} spacing={16} alignVertical="center">
+            <Box flexShrink={0} flexBasis={sideWidth} alignItems="end">
+              <HStack
+                onLayout={({ width }) => setRightSideWidth(width)}
+                minHeight={1}
+                spacing={16}
+                alignVertical="center"
+              >
                 {renderRight?.()}
               </HStack>
             </Box>

@@ -15,7 +15,7 @@ export default {
 
 export const Regular: ComponentStory<typeof TopBar> = props => (
   <VStack width="100%">
-    <TopBar {...props} renderLeft={() => [<Icon.ChevronLeft.Regular key={1} size={24} />]} kind="regular" />
+    <TopBar {...props} renderLeft={() => [<Icon.ChevronLeft.Regular key={1} size={24} />]} kind="default" />
   </VStack>
 );
 
