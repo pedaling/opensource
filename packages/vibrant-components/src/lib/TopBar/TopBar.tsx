@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import type { LayoutEvent } from '@vibrant-ui/core';
-import { useCurrentTheme } from '@vibrant-ui/core';
+import { Box, useCurrentTheme } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { HStack } from '../HStack';
-import { Paper } from '../Paper';
 import { Title } from '../Title';
 import { withTopBarVariation } from './TopBarProps';
 
@@ -18,55 +16,53 @@ export const TopBar = withTopBarVariation(
     renderLeft,
     renderRight,
   }) => {
-    const [maxSideWidth, setMaxSideWidth] = useState<number>();
+    const [leftSideWidth, setLeftSideWidth] = useState<number>();
+    const [rightSideWidth, setRightSideWidth] = useState<number>();
+
     const {
       theme: { contentArea },
     } = useCurrentTheme();
 
-    const handleSideLayout = ({ width }: LayoutEvent) => {
-      if (width > (maxSideWidth ?? 0)) {
-        setMaxSideWidth(width);
-      }
-    };
-
     return (
-      <Paper as={as} width="100%" height={52} px={contentArea.padding} backgroundColor={backgroundColor}>
-        <HStack my="auto" mx="auto" width="100%" maxWidth={contentArea.maxWidth} alignVertical="center" spacing={16}>
+      <Box
+        as={as}
+        width="100%"
+        height={52}
+        px={contentArea.padding}
+        backgroundColor={backgroundColor}
+        justifyContent="center"
+      >
+        <HStack mx="auto" width="100%" maxWidth={contentArea.maxWidth} alignVertical="center" spacing={16}>
           {(titleCentered || renderLeft) && (
-            <HStack
-              onLayout={handleSideLayout}
-              spacing={16}
-              flexShrink={0}
-              flexBasis={maxSideWidth}
-              alignVertical="center"
-            >
-              {renderLeft?.()}
-            </HStack>
+            <Box flexShrink={0} flexBasis={Math.max(leftSideWidth ?? 0, rightSideWidth ?? 0)} alignItems="start">
+              <HStack onLayout={({ width }) => setLeftSideWidth(width)} spacing={16} alignVertical="center">
+                {renderLeft?.()}
+              </HStack>
+            </Box>
           )}
           <Title
             as={titleAs}
             level={titleLevel}
-            flex={10}
+            flex={1}
             textAlign={titleCentered ? 'center' : 'left'}
             lineLimit={1}
-            opacity={(renderLeft || renderRight) && !isDefined(maxSideWidth) ? 0 : 1}
+            opacity={
+              titleCentered && (renderLeft || renderRight) && !isDefined(leftSideWidth) && !isDefined(rightSideWidth)
+                ? 0
+                : 1
+            }
           >
             {title}
           </Title>
           {(titleCentered || renderRight) && (
-            <HStack
-              onLayout={handleSideLayout}
-              spacing={16}
-              flexShrink={0}
-              flexBasis={maxSideWidth}
-              alignHorizontal="end"
-              alignVertical="center"
-            >
-              {renderRight?.()}
-            </HStack>
+            <Box flexShrink={0} flexBasis={Math.max(leftSideWidth ?? 0, rightSideWidth ?? 0)} alignItems="end">
+              <HStack onLayout={({ width }) => setRightSideWidth(width)} spacing={16} alignVertical="center">
+                {renderRight?.()}
+              </HStack>
+            </Box>
           )}
         </HStack>
-      </Paper>
+      </Box>
     );
   }
 );
