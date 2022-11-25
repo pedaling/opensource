@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { ReactElementChild } from '@vibrant-ui/core';
+import type { ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { OnColorToken } from '@vibrant-ui/theme';
 
@@ -18,13 +18,14 @@ type FieldLayoutProps = {
   renderEnd?: () => ReactElementChild;
   onLabelClick: () => void;
   renderField: (style: {
-    height: number;
+    height: ResponsiveValue;
     color: OnColorToken;
-    pt: number;
-    pl: number;
-    pr: number;
-    pb: number;
+    pt: ResponsiveValue;
+    pl: ResponsiveValue;
+    pr: ResponsiveValue;
+    pb: ResponsiveValue;
   }) => ReactElementChild;
+  size?: ResponsiveValue<'lg' | 'md'>;
 };
 
 export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLayout')(
@@ -173,7 +174,101 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       hasSuffixComponent: renderEnd !== undefined,
     }),
   }),
-
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        default: 'lg' as const,
+        responsive: true,
+      },
+    ],
+    variants: {
+      md: {
+        pt: {
+          hasLabel: 3,
+          default: 7,
+        },
+        pl: {
+          hasText: 2,
+          hasComponent: 8,
+          default: 10,
+        },
+        pr: {
+          hasText: 2,
+          hasComponent: 8,
+          default: 10,
+        },
+        pb: {
+          hasLabel: 3,
+          default: 7,
+        },
+        height: 38,
+        iconSize: 16,
+        prefixTextPl: {
+          hasComponent: 12,
+          default: 0,
+        },
+        suffixTextPr: {
+          hasComponent: 12,
+          default: 0,
+        },
+        labelPosition: {
+          hasComponent: 8,
+          default: 10,
+        },
+        layoutFieldPl: {
+          hasComponent: 12,
+          default: 0,
+        },
+        layoutFieldPr: {
+          hasComponent: 12,
+          default: 0,
+        },
+      },
+      lg: {
+        pt: {
+          hasLabel: 23,
+          default: 15,
+        },
+        pl: {
+          hasText: 4,
+          hasComponent: 12,
+          default: 15,
+        },
+        pr: {
+          hasText: 4,
+          hasComponent: 12,
+          default: 15,
+        },
+        pb: {
+          hasLabel: 7,
+          default: 15,
+        },
+        height: 50,
+        iconSize: 20,
+        prefixTextPl: {
+          hasComponent: 15,
+          default: 16,
+        },
+        suffixTextPr: {
+          hasComponent: 15,
+          default: 16,
+        },
+        labelPosition: {
+          hasComponent: 12,
+          default: 15,
+        },
+        layoutFieldPl: {
+          hasComponent: 15,
+          default: 0,
+        },
+        layoutFieldPr: {
+          hasComponent: 15,
+          default: 0,
+        },
+      },
+    } as const,
+  }),
   propVariant({
     props: [
       {
@@ -196,12 +291,83 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         name: 'showClearButton',
         keep: true,
       },
+      {
+        name: 'pt',
+        responsive: true,
+      },
+      {
+        name: 'pl',
+        responsive: true,
+      },
+
+      {
+        name: 'pr',
+        responsive: true,
+      },
+      {
+        name: 'pb',
+        responsive: true,
+      },
+      {
+        name: 'height',
+        responsive: true,
+      },
+      {
+        name: 'iconSize',
+        responsive: true,
+      },
+      {
+        name: 'prefixTextPl',
+        responsive: true,
+      },
+      {
+        name: 'suffixTextPr',
+        responsive: true,
+      },
+      {
+        name: 'labelPosition',
+        responsive: true,
+      },
+      {
+        name: 'layoutFieldPl',
+        responsive: true,
+      },
+      {
+        name: 'layoutFieldPr',
+        responsive: true,
+      },
     ],
-    variants: ({ label, hasPrefixText, hasPrefixComponent, hasSuffixComponent, hasSuffixText, showClearButton }) => ({
-      pt: label ? 23 : 15,
-      pl: hasPrefixText ? 4 : hasPrefixComponent ? 12 : 15,
-      pr: hasSuffixText ? 4 : hasSuffixComponent || showClearButton ? 12 : 15,
-      pb: label ? 7 : 15,
+    variants: ({
+      label,
+      hasPrefixText,
+      hasPrefixComponent,
+      hasSuffixComponent,
+      hasSuffixText,
+      showClearButton,
+      pt,
+      pl,
+      pr,
+      pb,
+      height,
+      iconSize,
+      prefixTextPl,
+      suffixTextPr,
+      labelPosition,
+      layoutFieldPl,
+      layoutFieldPr,
+    }) => ({
+      pt: label ? pt.hasLabel : pt.default,
+      pl: hasPrefixText ? pl.hasText : hasPrefixComponent ? pl.hasComponent : pl.default,
+      pr: hasSuffixText ? pr.hasText : hasSuffixComponent || showClearButton ? pr.hasComponent : pr.default,
+      pb: label ? pb.hasLabel : pb.default,
+      height,
+      iconSize,
+      prefixTextPl: hasPrefixComponent ? prefixTextPl.hasComponent : prefixTextPl.default,
+      suffixTextPr: hasSuffixComponent || showClearButton ? suffixTextPr.hasComponent : suffixTextPr.default,
+      labelPositionLeft: hasPrefixComponent ? labelPosition.hasComponent : labelPosition.default,
+      labelPositionRight: hasSuffixComponent ? labelPosition.hasComponent : labelPosition.default,
+      layoutFieldPl: hasPrefixComponent ? layoutFieldPl.hasComponent : layoutFieldPl.default,
+      layoutFieldPr: hasSuffixComponent ? layoutFieldPr.hasComponent : layoutFieldPr.default,
     }),
   })
 );
