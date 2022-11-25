@@ -20,6 +20,14 @@ export const FieldLayout = withFieldLayoutVariation(
     pl,
     pr,
     pb,
+    height,
+    iconSize,
+    prefixTextPl,
+    suffixTextPr,
+    labelPositionLeft,
+    labelPositionRight,
+    layoutFieldPl,
+    layoutFieldPr,
     valueColor,
     onLabelClick,
     renderField,
@@ -35,10 +43,10 @@ export const FieldLayout = withFieldLayoutVariation(
       <Box
         flexDirection="row"
         alignItems="center"
-        pl={renderStart ? 15 : 0}
-        pr={renderEnd ? 15 : 0}
+        pl={layoutFieldPl}
+        pr={layoutFieldPr}
         width="100%"
-        height={50}
+        height={height}
         borderWidth={1}
         borderStyle="solid"
         borderColor={borderColor}
@@ -52,10 +60,11 @@ export const FieldLayout = withFieldLayoutVariation(
               <Text
                 position="absolute"
                 zIndex={1}
-                left={renderStart ? 12 : 15}
-                right={renderEnd ? 12 : 15}
+                left={labelPositionLeft}
+                right={labelPositionRight}
                 color={labelColor}
                 lineLimit={1}
+                top={10}
               >
                 {label}
               </Text>
@@ -63,18 +72,18 @@ export const FieldLayout = withFieldLayoutVariation(
           </PressableBox>
           <HStack alignVertical="center">
             <Text
-              typography="body2"
+              typography="body4"
               color="onView2"
               hidden={!prefixText || (!shrink && Boolean(label))}
               flexShrink={0}
               pt={pt}
-              pl={renderStart ? 12 : 16}
+              pl={prefixTextPl}
               pb={pb}
             >
               {prefixText}
             </Text>
 
-            {renderField({ height: 50, color: valueColor, pt, pl, pr, pb })}
+            {renderField({ height, color: valueColor, pt, pl, pr, pb })}
 
             <Text
               typography="body2"
@@ -82,7 +91,7 @@ export const FieldLayout = withFieldLayoutVariation(
               hidden={!suffixText || (!shrink && Boolean(label))}
               flexShrink={0}
               pt={pt}
-              pr={renderEnd || showClearButton ? 12 : 16}
+              pr={suffixTextPr}
               pb={pb}
             >
               {suffixText}
@@ -91,7 +100,7 @@ export const FieldLayout = withFieldLayoutVariation(
         </Box>
         {showClearButton && (
           <PressableBox flexShrink={0} hitSlop={8} mr={12} onClick={onClearButtonClick}>
-            <Icon.CloseCircle.Fill size={20} fill="onView2" />
+            <Icon.CloseCircle.Fill size={iconSize} fill="onView2" />
           </PressableBox>
         )}
         <VStack flexShrink={0}>{renderEnd?.()}</VStack>
