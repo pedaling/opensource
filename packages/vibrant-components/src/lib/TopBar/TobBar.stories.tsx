@@ -13,9 +13,9 @@ export default {
   },
 } as ComponentMeta<typeof TopBar>;
 
-export const Regular: ComponentStory<typeof TopBar> = props => (
+export const Regular: ComponentStory<typeof TopBar> = ({ kind: _, ...props }) => (
   <VStack width="100%">
-    <TopBar {...props} renderLeft={() => [<Icon.ChevronLeft.Regular key={1} size={24} />]} kind="default" />
+    <TopBar {...props} renderLeft={() => [<Icon.ChevronLeft.Regular key={1} size={24} />]} />
   </VStack>
 );
 

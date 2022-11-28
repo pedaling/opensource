@@ -11,7 +11,7 @@ export type TopBarProps = {
   backgroundColor?: BaseColorToken;
 } & Either<
   {
-    kind: 'default';
+    kind?: 'default';
     renderLeft?: () => ReactElementChild[];
   },
   {
@@ -25,6 +25,7 @@ export const withTopBarVariation = withVariation<TopBarProps>('TopBar')(
     props: [
       {
         name: 'kind',
+        default: 'default',
       },
     ],
     variants: {
