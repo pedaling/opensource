@@ -14,7 +14,7 @@ export type MotionRefValue = {
 
 type WithMotion<Style> = { [key in keyof Style]?: Animation<Style[key]> };
 
-type MotionProps = {
+export type MotionProps = {
   ref?: Ref<any>;
   children: ReactElement;
   duration?: number;
