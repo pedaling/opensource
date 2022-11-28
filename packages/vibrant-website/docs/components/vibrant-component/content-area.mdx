@@ -1,0 +1,31 @@
+---
+title: ContentArea
+---
+
+# ContentArea
+
+`ContentArea` 컴포넌트는 영역에 `maxWidth`와 최소 `padidng`을 설정하기 위해 사용됩니다.
+
+```jsx live
+<Box width="100%" backgroundColor="background">
+  <ContentArea>
+    <Box
+      width="100%"
+      height={100}
+      backgroundColor="primaryContainer"
+    />
+  </ContentArea>
+</Box>
+```
+
+## How to use
+
+```jsx
+import { ContentArea } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop    | Type              | Default | Description                       |
+| ------- | ----------------- | ------- | --------------------------------- |
+| padding | `true` \| `false` | true    | `padding` 적용 여부를 결정합니다. |
