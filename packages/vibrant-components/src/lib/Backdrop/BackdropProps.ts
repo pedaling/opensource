@@ -10,7 +10,6 @@ type BackdropProps = {
   transitionDuration?: number;
   children: ReactElement;
   onClick?: () => void;
-  scrollable?: boolean;
 } & Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'>;
 
 export const withBackdropVariation = withVariation<BackdropProps>('Backdrop')();

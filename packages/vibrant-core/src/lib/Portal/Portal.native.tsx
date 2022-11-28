@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import { View } from 'react-native';
 import { FullWindowOverlay } from 'react-native-screens';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -9,7 +9,7 @@ import { usePortalRoot } from '../PortalRoot';
 import { useWindowDimensions } from '../useWindowDimensions';
 import { withPortalVariation } from './PortalProps';
 
-export const Portal = withPortalVariation(({ innerRef, scrollable, children, style, ...restProps }) => {
+export const Portal = withPortalVariation(({ innerRef, children, style, ...restProps }) => {
   const { createContainer, removeContainer } = usePortalRoot();
   const { width, height } = useWindowDimensions();
 
@@ -41,22 +41,20 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
     return null;
   }
 
-  const ViewComponent = scrollable ? ScrollView : View;
-
   if (platform === 'ios') {
     return (
       <FullWindowOverlay style={{ position: 'absolute', width, height }}>
-        <ViewComponent ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
+        <View ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
           {children}
-        </ViewComponent>
+        </View>
       </FullWindowOverlay>
     );
   }
 
   return createPortal(
-    <ViewComponent ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
+    <View ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
       {children}
-    </ViewComponent>,
+    </View>,
     container
   );
 });

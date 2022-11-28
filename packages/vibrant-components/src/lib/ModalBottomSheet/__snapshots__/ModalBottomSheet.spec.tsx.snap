@@ -35,7 +35,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: fixed;
+  position: relative;
   z-index: 2;
   top: 0;
   right: 0;
@@ -323,7 +323,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   >
     <div
       class="emotion-1"
-      style="opacity: 1;"
+      style="opacity: 1; position: fixed;"
     >
       <div
         class="emotion-2"
@@ -411,8 +411,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  overflow-y: auto;
-  position: fixed;
+  position: relative;
   z-index: 2;
   top: 0;
   right: 0;
@@ -700,7 +699,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   >
     <div
       class="emotion-1"
-      style="opacity: 1;"
+      style="opacity: 1; position: fixed;"
     >
       <div
         class="emotion-2"

@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import { usePortalRoot } from '../PortalRoot';
 import { withPortalVariation } from './PortalProps';
 
-export const Portal = withPortalVariation(({ innerRef, children, scrollable: _, style, ...restProps }) => {
+export const Portal = withPortalVariation(({ innerRef, children, style, ...restProps }) => {
   const { container } = usePortalRoot();
 
   if (!container) {

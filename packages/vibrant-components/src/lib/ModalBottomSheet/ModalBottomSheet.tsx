@@ -116,7 +116,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
             zIndex={zIndex.modalBottomSheet}
             transitionDuration={200}
             onClick={closeModal}
-            scrollable={!isMobile}
             pt={[120, 40]}
             pb={[0, 40]}
           >

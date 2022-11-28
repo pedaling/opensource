@@ -4,7 +4,6 @@ import { withVariation } from '../withVariation';
 
 type PortalBoxProps = DistributiveOmit<BoxProps, 'position'> & {
   onMount?: () => void;
-  scrollable?: boolean;
 };
 
 export const withPortalBoxVariation = withVariation<PortalBoxProps>('PortalBox')();
