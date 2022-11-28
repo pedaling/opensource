@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react';
+import { ScrollView, View } from 'react-native';
 import { FullWindowOverlay } from 'react-native-screens';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { createPortal } from 'react-native/Libraries/Renderer/shims/ReactNative';
-import { useSafeDeps } from '@vibrant-ui/utils';
 import { platform } from '../platform/platform.native';
 import { usePortalRoot } from '../PortalRoot';
 import { useWindowDimensions } from '../useWindowDimensions';
-import { withPortalBoxVariation } from './PortalBoxProps';
+import { withPortalVariation } from './PortalProps';
 
-export const PortalBox = withPortalBoxVariation(({ children, BoxComponent, innerRef, onMount, ...restProps }) => {
+export const Portal = withPortalVariation(({ innerRef, scrollable, children, style, ...restProps }) => {
   const { createContainer, removeContainer } = usePortalRoot();
   const { width, height } = useWindowDimensions();
 
   const [container, setContainer] = useState<Element | number | null>(null);
-
-  const onMountDeps = useSafeDeps(onMount);
 
   useEffect(() => {
     let containerIndex: number | null = null;
@@ -39,30 +37,26 @@ export const PortalBox = withPortalBoxVariation(({ children, BoxComponent, inner
     };
   }, [createContainer, removeContainer]);
 
-  useEffect(() => {
-    if (container) {
-      onMountDeps.current?.();
-    }
-  }, [container, onMountDeps]);
-
   if (!container) {
     return null;
   }
 
+  const ViewComponent = scrollable ? ScrollView : View;
+
   if (platform === 'ios') {
     return (
       <FullWindowOverlay style={{ position: 'absolute', width, height }}>
-        <BoxComponent ref={innerRef} position="absolute" {...restProps}>
+        <ViewComponent ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
           {children}
-        </BoxComponent>
+        </ViewComponent>
       </FullWindowOverlay>
     );
   }
 
   return createPortal(
-    <BoxComponent ref={innerRef} position="absolute" {...restProps}>
+    <ViewComponent ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
       {children}
-    </BoxComponent>,
+    </ViewComponent>,
     container
   );
 });

@@ -32,7 +32,5 @@ export type { TransformSystemProps } from './transform';
 export { transformSystemProps } from './transform';
 export type { TypographySystemProps } from './typography';
 export { typographySystemProps } from './typography';
-export type { WebSystemProps } from './web';
-export { webSystemProps } from './web';
 export type { AllSystemProps } from './systemProp';
 export { allSystemProps, allSystemPropNames } from './systemProp';

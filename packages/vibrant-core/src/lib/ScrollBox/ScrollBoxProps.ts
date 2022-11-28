@@ -15,7 +15,6 @@ import type {
   SizingSystemProps,
   SpacingSystemProps,
   TransformSystemProps,
-  WebSystemProps,
 } from '../props';
 import {
   backgroundSystemProps,
@@ -28,7 +27,6 @@ import {
   sizingSystemProps,
   spacingSystemProps,
   transformSystemProps,
-  webSystemProps,
 } from '../props';
 import { scrollSystemProps } from './props';
 import type { ScrollSystemProps } from './props/type';
@@ -42,8 +40,7 @@ type SystemProps = BackgroundSystemProps &
   SizingSystemProps &
   SpacingSystemProps &
   TransformSystemProps &
-  ScrollSystemProps &
-  WebSystemProps;
+  ScrollSystemProps;
 
 const systemProps = [
   ...scrollSystemProps,
@@ -57,7 +54,6 @@ const systemProps = [
   ...spacingSystemProps,
   ...sizingSystemProps,
   ...transformSystemProps,
-  ...webSystemProps,
 ];
 
 const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
