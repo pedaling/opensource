@@ -1,18 +1,11 @@
-import type { FC, PropsWithChildren, ReactElement } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
-
-type PageScrollProps = {
-  children: ReactElement;
-};
-
-export type ScrollDirection = 'down' | 'unset' | 'up';
-
-export type EventListenerCallback = (args: { scrollDirection: ScrollDirection; scrollPosition: number }) => void;
-
-type PageScrollContextValue = {
-  addEventListener: (callback: EventListenerCallback) => () => void;
-  scrollDirection: ScrollDirection;
-};
+import type {
+  EventListenerCallback,
+  PageScrollContextValue,
+  PageScrollProps,
+  ScrollDirection,
+} from './PageScrollProps';
 
 const PageScrollContext = createContext<PageScrollContextValue>({
   addEventListener: () => () => {},
@@ -68,11 +61,4 @@ export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children })
   return <PageScrollContext.Provider value={pageScrollContextValue}>{children}</PageScrollContext.Provider>;
 };
 
-export const useScroll = () => {
-  const { scrollDirection, addEventListener } = useContext(PageScrollContext);
-
-  return {
-    scrollDirection,
-    addEventListener,
-  };
-};
+export const useScroll = () => useContext(PageScrollContext);
