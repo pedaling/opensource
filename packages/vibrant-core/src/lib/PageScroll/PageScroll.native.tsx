@@ -1,20 +1,13 @@
-import type { FC, PropsWithChildren, ReactElement } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import type { NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
 import { ScrollView } from 'react-native';
-
-type PageScrollProps = {
-  children: ReactElement;
-};
-
-type ScrollDirection = 'down' | 'unset' | 'up';
-
-type EventListenerCallback = (args: { scrollDirection: ScrollDirection; scrollPosition: number }) => void;
-
-type PageScrollContextValue = {
-  addEventListener: (callback: EventListenerCallback) => () => void;
-  scrollDirection: ScrollDirection;
-};
+import type {
+  EventListenerCallback,
+  PageScrollContextValue,
+  PageScrollProps,
+  ScrollDirection,
+} from './PageScrollProps';
 
 const PageScrollContext = createContext<PageScrollContextValue>({
   addEventListener: () => () => {},
@@ -22,9 +15,11 @@ const PageScrollContext = createContext<PageScrollContextValue>({
 });
 
 export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children }) => {
-  const scrollPosition = useRef(0);
   const [scrollDirection, setScrollDirection] = useState<ScrollDirection>('unset');
+
   const eventListenerRefs = useRef<EventListenerCallback[]>([]);
+  const scrollPosition = useRef(0);
+
   const addEventListener = useCallback<PageScrollContextValue['addEventListener']>(callback => {
     eventListenerRefs.current.push(callback);
 
@@ -67,11 +62,4 @@ export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children })
   );
 };
 
-export const useScroll = () => {
-  const { scrollDirection, addEventListener } = useContext(PageScrollContext);
-
-  return {
-    scrollDirection,
-    addEventListener,
-  };
-};
+export const useScroll = () => useContext(PageScrollContext);

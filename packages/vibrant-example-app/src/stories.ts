@@ -9,6 +9,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/CheckboxField/CheckboxField.stories.tsx'),
   require('../../vibrant-components/src/lib/CheckboxGroupField/CheckboxGroupField.stories.tsx'),
   require('../../vibrant-components/src/lib/ContainedButton/ContainedButton.stories.tsx'),
+  require('../../vibrant-components/src/lib/ContentArea/ContentArea.stories.tsx'),
   require('../../vibrant-components/src/lib/DateInput/DateInput.stories.tsx'),
   require('../../vibrant-components/src/lib/DatePickerField/DatePickerField.stories.tsx'),
   require('../../vibrant-components/src/lib/Display/Display.stories.tsx'),
@@ -52,6 +53,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/VerificationCodeItem/VerificationCodeItem.stories.tsx'),
   require('../../vibrant-components/src/lib/VStack/VStack.stories.tsx'),
   require('../../vibrant-core/src/lib/Box/Box.stories.tsx'),
+  require('../../vibrant-core/src/lib/FixedBox/FixedBox.stories.tsx'),
   require('../../vibrant-core/src/lib/OnColorContainer/OnColorContainer.stories.tsx'),
   require('../../vibrant-core/src/lib/OverlayBox/OverlayBox.stories.tsx'),
   require('../../vibrant-core/src/lib/PageScroll/PageScroll.stories.tsx'),
@@ -63,5 +65,6 @@ export const stories = [
   require('../../vibrant-forms/src/lib/Form/Form.stories.tsx'),
   require('../../vibrant-icons/src/lib/Icon/Icon.stories.tsx'),
   require('../../vibrant-motion/src/lib/Motion/Motion.stories.tsx'),
+  require('../../vibrant-motion/src/lib/MountMotion/MountMotion.stories.tsx'),
   require('../../vibrant-motion/src/lib/Transition/Transition.stories.tsx'),
 ];

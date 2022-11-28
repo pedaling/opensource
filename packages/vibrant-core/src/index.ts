@@ -58,6 +58,7 @@ export { PressableBox } from './lib/PressableBox';
 export { PortalBox } from './lib/PortalBox';
 export { isNative } from './lib/isNative';
 export { ScrollBox } from './lib/ScrollBox';
+export { FixedBox } from './lib/FixedBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
 export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
 export type { Edge, Insets, MinInsets } from './lib/SafeAreaProvider';
