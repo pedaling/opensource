@@ -37,6 +37,7 @@ export const GhostButton = withGhostButtonVariation(
           color={color}
           ml={IconComponent ? 6 : 0}
           mr={arrow || DisclosureIconComponent ? 4 : 0}
+          whiteSpace="nowrap"
         >
           {children}
         </Text>

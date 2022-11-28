@@ -1,5 +1,6 @@
 import type { RefObject } from 'react';
 import type {
+  BoxProps,
   DisplaySystemProps,
   FlexboxSystemProps,
   InteractionSystemProps,
@@ -34,7 +35,7 @@ export type StackProps = DisplaySystemProps &
     alignHorizontal?: ResponsiveValue<Alignment>;
     alignVertical?: ResponsiveValue<Alignment>;
     arialLabel?: string;
-  };
+  } & Pick<BoxProps, 'onLayout'>;
 
 const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
   start: 'flex-start',

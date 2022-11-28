@@ -1,6 +1,7 @@
 import type { Ref } from 'react';
 import type {
   BorderSystemProps,
+  BoxElements,
   DisplaySystemProps,
   ElevationSystemProps,
   FlexboxSystemProps,
@@ -18,6 +19,7 @@ import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 type PaperProps = {
   ref?: Ref<any>;
   id?: string;
+  as?: BoxElements;
   children?: ReactElementChild;
 } & Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
   DisplaySystemProps &

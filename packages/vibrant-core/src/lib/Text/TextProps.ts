@@ -25,7 +25,7 @@ import {
 
 type SystemProps = ColorSystemProps &
   DisplaySystemProps &
-  Pick<FlexboxSystemProps, 'flex' | 'flexBasis' | 'flexGrow' | 'flexShrink'> &
+  Pick<FlexboxSystemProps, 'alignSelf' | 'flex' | 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   PositionSystemProps &
   SpacingSystemProps &
   TextSystemProps &
