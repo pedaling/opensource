@@ -5,6 +5,7 @@ import {
   globalTypes as rootGlobalTypes,
   parameters as rootParameters,
 } from '../../../.storybook/preview';
+import { withForm } from './withForm';
 
 export const parameters: Parameters = {
   ...rootParameters,
@@ -13,4 +14,4 @@ export const globalTypes: GlobalTypes = {
   ...rootGlobalTypes,
 };
 
-export const decorators: DecoratorFn[] = [...rootDecorators];
+export const decorators: DecoratorFn[] = [...rootDecorators, withForm];

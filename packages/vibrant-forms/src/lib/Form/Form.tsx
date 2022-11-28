@@ -1,6 +1,6 @@
 import type { FormEvent } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import type { FieldValues as ReactHookFormFieldValues } from 'react-hook-form/dist/types/fields';
+import type { FieldValues as ReactHookFormFieldValues } from 'react-hook-form';
 import { Box } from '@vibrant-ui/core';
 import type { FormProps } from './FormProps';
 import { withFormVariation } from './FormProps';
