@@ -196,7 +196,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
                   <HStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
                     <ContainedButton
-                      kind="secondary"
+                      kind="tertiary"
                       size="xl"
                       onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
