@@ -4,6 +4,7 @@ import type { ReactElementChildren } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
+import { isNative } from '../isNative';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -74,7 +75,6 @@ export type ScrollBoxProps = {
   ref?: Ref<any>;
   as?: ScrollBoxElements;
   children: ReactElementChildren;
-  horizontal?: boolean;
 } & SystemProps &
   Pick<ScrollViewProps, 'keyboardShouldPersistTaps'>;
 
@@ -84,6 +84,7 @@ export const interpolation = injectContext(
     flexDirection: 'column',
     boxSizing: 'border-box',
     position: 'relative',
+    overflow: isNative ? undefined : 'auto',
   })
 );
 
