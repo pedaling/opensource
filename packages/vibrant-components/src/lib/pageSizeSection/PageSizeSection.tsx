@@ -36,7 +36,7 @@ export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions }
             {pageSizeOptions.map(({ label, value, onClick, initial }, index) => (
               <Pressable
                 onClick={() => {
-                  onClick(value);
+                  onClick?.(value);
 
                   selectPageSizeOption({ label, value, onClick, initial });
 
