@@ -146,6 +146,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   padding-top: 24px;
   padding-bottom: 20px;
   width: 100%;
+  max-width: 446px;
   max-height: 648px;
   background-color: #ffffff;
   border-top-left-radius: 20px;
@@ -159,7 +160,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
     margin-bottom: auto;
     padding-top: 36px;
     padding-bottom: 36px;
-    width: 480px;
+    max-width: 480px;
     max-height: 688px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -523,6 +524,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   padding-top: 24px;
   padding-bottom: 20px;
   width: 100%;
+  max-width: 446px;
   max-height: 648px;
   background-color: #ffffff;
   border-top-left-radius: 20px;
@@ -536,7 +538,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
     margin-bottom: auto;
     padding-top: 36px;
     padding-bottom: 36px;
-    width: 480px;
+    max-width: 480px;
     max-height: 688px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
