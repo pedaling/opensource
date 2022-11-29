@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.31.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.31.1...vibrant-motion-0.31.2) (2022-11-29)
+
+
+### Features
+
+* add MountMotion ([#444](https://github.com/pedaling/opensource/issues/444)) ([ff8dd5f](https://github.com/pedaling/opensource/commit/ff8dd5fd4c2a89dc807865e612463604d7ffe828))
+
 ### [0.31.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.31.0...vibrant-motion-0.31.1) (2022-11-24)
 
 

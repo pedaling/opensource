@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.31.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.1...vibrant-core-0.31.2) (2022-11-29)
+
+
+### Features
+
+* add FixedBox ([#448](https://github.com/pedaling/opensource/issues/448)) ([2527dff](https://github.com/pedaling/opensource/commit/2527dff1a0158e697d23e8e9819fbb820d3520fc))
+* add TopBar component ([#438](https://github.com/pedaling/opensource/issues/438)) ([836d019](https://github.com/pedaling/opensource/commit/836d01914cf8be66458df93d81b700bf744c9d26))
+
 ### [0.31.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.0...vibrant-core-0.31.1) (2022-11-24)
 
 ## [0.31.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.30.0...vibrant-core-0.31.0) (2022-11-24)

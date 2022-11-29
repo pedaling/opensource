@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.31.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.1...vibrant-components-0.31.2) (2022-11-29)
+
+
+### Features
+
+* add ContentArea ([#447](https://github.com/pedaling/opensource/issues/447)) ([db8175b](https://github.com/pedaling/opensource/commit/db8175b6b968c248ebcad48ba50f82a2e1acffd4))
+* add TopBar component ([#438](https://github.com/pedaling/opensource/issues/438)) ([836d019](https://github.com/pedaling/opensource/commit/836d01914cf8be66458df93d81b700bf744c9d26))
+* set bottomSheet max width to 446px ([#451](https://github.com/pedaling/opensource/issues/451)) ([ce8dcaf](https://github.com/pedaling/opensource/commit/ce8dcafcd11c4c1927fbfba94660348f06f61011))
+
+
+### Bug Fixes
+
+* fix secondary button kind in ModalBottomSheet ([#446](https://github.com/pedaling/opensource/issues/446)) ([ab457a1](https://github.com/pedaling/opensource/commit/ab457a13affd4b4f72249ce1ad4aafd444bc2966))
+
 ### [0.31.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.0...vibrant-components-0.31.1) (2022-11-24)
 
 ## [0.31.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.30.0...vibrant-components-0.31.0) (2022-11-24)
