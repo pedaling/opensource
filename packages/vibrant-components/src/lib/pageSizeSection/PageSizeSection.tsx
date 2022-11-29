@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Body, Dropdown, GhostButton, HStack, Pressable, VStack } from '@vibrant-ui/components';
-import { Text } from '@vibrant-ui/core';
+import { Text, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import type { PageSizeOption } from './PageSizeSectionProps';
 import { withPageSizeSectionVariation } from './PageSizeSectionProps';
@@ -8,6 +8,9 @@ import { withPageSizeSectionVariation } from './PageSizeSectionProps';
 const DEFAULT_PAGE_SIZE_OPTION = { label: '', value: 0, onClick: () => {}, initial: true };
 
 export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions, total }) => {
+  const {
+    translations: { pageSizeSection: pageSizeSectionTranslation },
+  } = useConfig();
   const [defaultPageSizeOption] = pageSizeOptions.filter(pageSizeOption => pageSizeOption.initial);
   const [selectedOption, setSelectedOption] = useState(defaultPageSizeOption || DEFAULT_PAGE_SIZE_OPTION);
 
@@ -22,7 +25,7 @@ export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions, 
       </HStack>
       <HStack spacing={12}>
         <Text typography="body2" fontWeight="medium" color="onView1">
-          페이지 당 행 수 :
+          {pageSizeSectionTranslation.title}:
         </Text>
 
         <Dropdown
