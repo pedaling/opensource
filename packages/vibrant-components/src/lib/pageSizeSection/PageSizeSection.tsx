@@ -7,7 +7,7 @@ import { withPageSizeSectionVariation } from './PageSizeSectionProps';
 
 const DEFAULT_PAGE_SIZE_OPTION = { label: '', value: 0, onClick: () => {}, initial: true };
 
-export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions, total }) => {
+export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions }) => {
   const {
     translations: { pageSizeSection: pageSizeSectionTranslation },
   } = useConfig();
@@ -19,48 +19,43 @@ export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions, 
   };
 
   return (
-    <HStack alignHorizontal="space-between">
-      <HStack>
-        <Body level={4}>총 {total}</Body>
-      </HStack>
-      <HStack spacing={12}>
-        <Text typography="body2" fontWeight="medium" color="onView1">
-          {pageSizeSectionTranslation.title}:
-        </Text>
+    <HStack spacing={12}>
+      <Text typography="body2" fontWeight="medium" color="onView1">
+        {pageSizeSectionTranslation.title}:
+      </Text>
 
-        <Dropdown
-          position="bottom-end"
-          renderOpener={({ open }) => (
-            <GhostButton size="md" color="onView1" disclosure={true} onClick={open}>
-              {selectedOption.value}
-            </GhostButton>
-          )}
-          renderContents={({ close }) => (
-            <VStack spacing={16}>
-              {pageSizeOptions.map(({ label, value, onClick, initial }, index) => (
-                <Pressable
-                  onClick={() => {
-                    onClick(value);
+      <Dropdown
+        position="bottom-end"
+        renderOpener={({ open }) => (
+          <GhostButton size="md" color="onView1" disclosure={true} onClick={open}>
+            {selectedOption.value}
+          </GhostButton>
+        )}
+        renderContents={({ close }) => (
+          <VStack spacing={16}>
+            {pageSizeOptions.map(({ label, value, onClick, initial }, index) => (
+              <Pressable
+                onClick={() => {
+                  onClick(value);
 
-                    selectPageSizeOption({ label, value, onClick, initial });
+                  selectPageSizeOption({ label, value, onClick, initial });
 
-                    close();
-                  }}
-                  key={`${value}_${index}`}
-                >
-                  <HStack alignHorizontal="space-between" px={16}>
-                    <Body level={1} color="onView1" weight="medium">
-                      {label}
-                    </Body>
-                    {selectedOption.value === value && <Icon.Check.Fill size={18} />}
-                  </HStack>
-                </Pressable>
-              ))}
-            </VStack>
-          )}
-          open={false}
-        />
-      </HStack>
+                  close();
+                }}
+                key={`${value}_${index}`}
+              >
+                <HStack alignHorizontal="space-between" px={16}>
+                  <Body level={1} color="onView1" weight="medium">
+                    {label}
+                  </Body>
+                  {selectedOption.value === value && <Icon.Check.Fill size={18} />}
+                </HStack>
+              </Pressable>
+            ))}
+          </VStack>
+        )}
+        open={false}
+      />
     </HStack>
   );
 });

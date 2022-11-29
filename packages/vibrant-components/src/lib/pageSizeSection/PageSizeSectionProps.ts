@@ -8,7 +8,6 @@ export type PageSizeOption = {
 };
 
 export type PageSizeSectionProps = {
-  total: number;
   pageSizeOptions: PageSizeOption[];
 };
 
