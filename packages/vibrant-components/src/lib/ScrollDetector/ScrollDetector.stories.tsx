@@ -15,7 +15,7 @@ export const Basic: ComponentStory<typeof ScrollDetector> = () => (
   <Paper backgroundColor="background" width="100%" height="100%">
     <VStack alignHorizontal="center" spacing={20}>
       <ScrollDetector>
-        {({ scrollDirection }) => (
+        {({ scrollDirection, scrollPosition }) => (
           <Box
             alignItems="center"
             justifyContent="center"
@@ -24,6 +24,7 @@ export const Basic: ComponentStory<typeof ScrollDetector> = () => (
             backgroundColor={scrollDirection === 'up' ? 'informative' : 'warning'}
           >
             <Body level={1}>{`${scrollDirection === 'down' ? 'Down' : 'Up'}`}</Body>
+            <Body level={1}>{scrollPosition}</Body>
           </Box>
         )}
       </ScrollDetector>
