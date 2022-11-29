@@ -1,9 +1,22 @@
+import type { ComponentProps, FC } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ConfigProvider } from '@vibrant-ui/core';
 import { VStack } from '../VStack';
 import { PageSizeSection } from './PageSizeSection';
+import { pageSizeSectionTranslation } from '.';
+
 export default {
   title: 'PageSizeSection',
   component: PageSizeSection,
+  argTypes: {
+    locale: {
+      type: {
+        name: 'enum',
+        value: ['ko', 'en', 'ja'],
+      },
+      defaultValue: 'ko',
+    },
+  },
   args: {
     total: 100,
     pageSizeOptions: [
@@ -22,9 +35,17 @@ export default {
     ],
   },
 } as ComponentMeta<typeof PageSizeSection>;
+const LocalizedPageSizeSection: FC<ComponentProps<typeof PageSizeSection> & { locale?: 'en' | 'ja' | 'ko' }> = ({
+  locale = 'ko',
+  ...props
+}) => (
+  <ConfigProvider translations={{ pageSizeSection: pageSizeSectionTranslation[locale] }}>
+    <PageSizeSection {...props} />
+  </ConfigProvider>
+);
 
 export const Basic: ComponentStory<typeof PageSizeSection> = props => (
   <VStack width="100%" p={20}>
-    <PageSizeSection {...props} />
+    <LocalizedPageSizeSection {...props} />
   </VStack>
 );
