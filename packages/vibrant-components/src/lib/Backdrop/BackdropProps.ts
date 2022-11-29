@@ -9,6 +9,7 @@ type BackdropProps = {
   color?: Extract<ColorToken, 'dim' | 'transparent'>;
   transitionDuration?: number;
   children: ReactElement;
+  scrollable?: boolean;
   onClick?: () => void;
 } & Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'>;
 

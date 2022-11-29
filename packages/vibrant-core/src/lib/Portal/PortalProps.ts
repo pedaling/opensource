@@ -6,6 +6,7 @@ import { withVariation } from '../withVariation';
 export type PortalProps = {
   ref?: Ref<any>;
   style?: any;
+  scrollable?: boolean;
   children?: ReactElementChildren;
 };
 
