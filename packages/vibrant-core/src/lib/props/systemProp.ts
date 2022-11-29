@@ -32,8 +32,6 @@ import type { TransformSystemProps } from './transform';
 import { transformSystemProps } from './transform';
 import type { TypographySystemProps } from './typography';
 import { typographySystemProps } from './typography';
-import type { WebSystemProps } from './web';
-import { webSystemProps } from './web';
 
 export type AllSystemProps = BackgroundSystemProps &
   BorderSystemProps &
@@ -51,8 +49,7 @@ export type AllSystemProps = BackgroundSystemProps &
   SvgSystemProps &
   TextSystemProps &
   TransformSystemProps &
-  TypographySystemProps &
-  WebSystemProps;
+  TypographySystemProps;
 
 export const allSystemProps = [
   ...backgroundSystemProps,
@@ -72,7 +69,6 @@ export const allSystemProps = [
   ...textSystemProps,
   ...transformSystemProps,
   ...typographySystemProps,
-  ...webSystemProps,
 ];
 
 export const allSystemPropNames = allSystemProps.map(({ propName }) => propName);

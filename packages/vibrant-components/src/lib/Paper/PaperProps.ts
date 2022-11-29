@@ -16,12 +16,7 @@ import type {
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 
-type PaperProps = {
-  ref?: Ref<any>;
-  id?: string;
-  as?: BoxElements;
-  children?: ReactElementChild;
-} & Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
+type PaperProps = Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
   DisplaySystemProps &
   SpacingSystemProps &
   InteractionSystemProps &
@@ -48,6 +43,11 @@ type PaperProps = {
             gradient?: never;
           }
       ))
-  );
+  ) & {
+    ref?: Ref<any>;
+    id?: string;
+    as?: BoxElements;
+    children?: ReactElementChild;
+  };
 
 export const withPaperVariation = withVariation<PaperProps>('Paper')();

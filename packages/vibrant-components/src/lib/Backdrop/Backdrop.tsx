@@ -41,8 +41,8 @@ export const Backdrop = withBackdropVariation(
           right={0}
           bottom={0}
           left={0}
-          scrollable={scrollable}
           backgroundColor={color}
+          scrollable={scrollable}
         >
           <Box flex={1} {...restProps}>
             <Pressable

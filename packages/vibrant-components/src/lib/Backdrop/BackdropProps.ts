@@ -9,8 +9,8 @@ type BackdropProps = {
   color?: Extract<ColorToken, 'dim' | 'transparent'>;
   transitionDuration?: number;
   children: ReactElement;
-  onClick?: () => void;
   scrollable?: boolean;
+  onClick?: () => void;
 } & Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'>;
 
 export const withBackdropVariation = withVariation<BackdropProps>('Backdrop')();

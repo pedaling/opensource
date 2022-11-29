@@ -53,7 +53,6 @@ export const stories = [
   require('../../vibrant-components/src/lib/VerificationCodeItem/VerificationCodeItem.stories.tsx'),
   require('../../vibrant-components/src/lib/VStack/VStack.stories.tsx'),
   require('../../vibrant-core/src/lib/Box/Box.stories.tsx'),
-  require('../../vibrant-core/src/lib/FixedBox/FixedBox.stories.tsx'),
   require('../../vibrant-core/src/lib/OnColorContainer/OnColorContainer.stories.tsx'),
   require('../../vibrant-core/src/lib/OverlayBox/OverlayBox.stories.tsx'),
   require('../../vibrant-core/src/lib/PageScroll/PageScroll.stories.tsx'),

@@ -1,4 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Box } from '@vibrant-ui/core';
+import { Body } from '../Body';
 import { VStack } from '../VStack';
 import { Paper } from './Paper';
 
@@ -32,5 +34,23 @@ export const Elevation: ComponentStory<typeof Paper> = () => (
     <Paper width={200} height={200} backgroundColor="background" elevationLevel={2} />
     <Paper width={200} height={200} backgroundColor="background" elevationLevel={3} />
     <Paper width={200} height={200} backgroundColor="background" elevationLevel={4} />
+  </VStack>
+);
+
+export const Position: ComponentStory<typeof Paper> = () => (
+  <VStack>
+    <Paper width={200} height={200} backgroundColor="primary" p={10}>
+      <Body level={1}>relative</Body>
+    </Paper>
+    <Paper width={200} height={200} backgroundColor="informative" p={10} position="web_sticky" top={0}>
+      <Body level={1}>sticky</Body>
+    </Paper>
+    <Paper width={200} height={200} backgroundColor="warning" p={10} position="absolute" top={50} left={50}>
+      <Body level={1}>absolute</Body>
+    </Paper>
+    <Paper width={200} height={200} backgroundColor="success" p={10} position="fixed" top={150} left={150}>
+      <Body level={1}>fixed</Body>
+    </Paper>
+    <Box height={5000} />
   </VStack>
 );
