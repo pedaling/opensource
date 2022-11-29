@@ -4,7 +4,7 @@ export type PageSizeOption = {
   label: string;
   value: number;
   initial: boolean;
-  onClick: (value: number) => void;
+  onClick?: (value: number) => void;
 };
 
 export type PageSizeSectionProps = {
