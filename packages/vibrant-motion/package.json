@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/motion",
-  "version": "0.31.2",
+  "version": "0.31.3",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
