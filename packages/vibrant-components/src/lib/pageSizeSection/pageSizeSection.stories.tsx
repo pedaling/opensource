@@ -18,7 +18,6 @@ export default {
     },
   },
   args: {
-    total: 100,
     pageSizeOptions: [
       {
         label: '10',
@@ -45,7 +44,7 @@ const LocalizedPageSizeSection: FC<ComponentProps<typeof PageSizeSection> & { lo
 );
 
 export const Basic: ComponentStory<typeof PageSizeSection> = props => (
-  <VStack width="100%" p={20}>
+  <VStack width="100%" p={20} alignHorizontal="end">
     <LocalizedPageSizeSection {...props} />
   </VStack>
 );
