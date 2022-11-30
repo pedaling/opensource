@@ -1,3 +1,4 @@
+import type { AutoCompleteOption } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 
 export type PasswordFieldProps = {
@@ -11,6 +12,7 @@ export type PasswordFieldProps = {
   onValueChange?: (value: string) => void;
   onFocus?: () => void;
   onBlur?: () => void;
+  autoComplete?: Extract<AutoCompleteOption, 'newPassword' | 'none' | 'password'>;
 };
 
 export const withPasswordFieldVariation = withVariation<PasswordFieldProps>('PasswordField')();
