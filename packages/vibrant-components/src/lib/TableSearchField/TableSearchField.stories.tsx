@@ -1,4 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { VStack } from '../VStack';
 import { TableSearchField } from './TableSearchField';
 
 export default {
@@ -10,4 +11,8 @@ export default {
   },
 } as ComponentMeta<typeof TableSearchField>;
 
-export const Basic: ComponentStory<typeof TableSearchField> = props => <TableSearchField {...props} />;
+export const Basic: ComponentStory<typeof TableSearchField> = props => (
+  <VStack m={25}>
+    <TableSearchField {...props} />
+  </VStack>
+);
