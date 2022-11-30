@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.31.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.3...vibrant-components-0.31.4) (2022-11-30)
+
+
+### Bug Fixes
+
+* render children in ContentArea ([#456](https://github.com/pedaling/opensource/issues/456)) ([60c9b89](https://github.com/pedaling/opensource/commit/60c9b893cd67a6e8d9b678c96b51cf9c5f14bdb8))
+
 ### [0.31.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.2...vibrant-components-0.31.3) (2022-11-29)
 
 
