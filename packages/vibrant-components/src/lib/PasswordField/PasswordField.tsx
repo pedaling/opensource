@@ -6,7 +6,18 @@ import { FieldLayout } from '../FieldLayout';
 import { withPasswordFieldVariation } from './PasswordFieldProps';
 
 export const PasswordField = withPasswordFieldVariation(
-  ({ state, label, placeholder, helperText, defaultValue, onValueChange, onFocus, onBlur, ...restProps }) => {
+  ({
+    state,
+    label,
+    placeholder,
+    helperText,
+    defaultValue,
+    onValueChange,
+    onFocus,
+    onBlur,
+    autoComplete = 'password',
+    ...restProps
+  }) => {
     const inputRef = useRef<TextInputRef>(null);
 
     const [value, setValue] = useState(defaultValue ?? '');
@@ -37,6 +48,7 @@ export const PasswordField = withPasswordFieldVariation(
             defaultValue={value}
             placeholder={!label || isFocused || value ? placeholder : ''}
             placeholderColor="onView3"
+            autoComplete={autoComplete}
             onFocus={() => {
               onFocus?.();
 
