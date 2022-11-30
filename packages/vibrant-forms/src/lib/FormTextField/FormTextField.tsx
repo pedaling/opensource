@@ -2,7 +2,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { TextField } from '@vibrant-ui/components';
 import { withFormTextFieldVariation } from './FormTextFieldProps';
 
-export const FormTextField = withFormTextFieldVariation(({ name, rules, defaultValue, ...restProps }) => {
+export const FormTextField = withFormTextFieldVariation(({ name, rules, defaultValue, helperText, ...restProps }) => {
   const { control } = useFormContext();
 
   return (
@@ -14,7 +14,7 @@ export const FormTextField = withFormTextFieldVariation(({ name, rules, defaultV
       render={({ field: { onChange, onBlur, value }, fieldState }) => (
         <TextField
           {...restProps}
-          helperText={fieldState.error?.message}
+          helperText={fieldState.error?.message ?? helperText}
           state={fieldState.error?.message ? 'error' : 'default'}
           defaultValue={value}
           onBlur={onBlur}
