@@ -1,6 +1,7 @@
 import type { Ref } from 'react';
 import type { ScrollViewProps } from 'react-native';
 import type { ReactElementChildren } from '../../types';
+import type { BoxElements } from '../Box';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
@@ -58,22 +59,9 @@ const systemProps = [
 
 const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
 
-export type ScrollBoxElements =
-  | 'article'
-  | 'aside'
-  | 'div'
-  | 'footer'
-  | 'header'
-  | 'li'
-  | 'main'
-  | 'nav'
-  | 'section'
-  | 'span'
-  | 'ul';
-
 export type ScrollBoxProps = {
   ref?: Ref<any>;
-  as?: ScrollBoxElements;
+  as?: BoxElements;
   children: ReactElementChildren;
 } & SystemProps &
   Pick<ScrollViewProps, 'keyboardShouldPersistTaps'>;

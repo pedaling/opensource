@@ -11,7 +11,7 @@ import type {
   SizingSystemProps,
   SpacingSystemProps,
 } from '@vibrant-ui/core';
-import { propVariant, withVariation } from '@vibrant-ui/core';
+import { Box, ScrollBox, propVariant, withVariation } from '@vibrant-ui/core';
 
 type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'li' | 'nav' | 'ol' | 'section' | 'ul';
 
@@ -35,6 +35,7 @@ export type StackProps = DisplaySystemProps &
     alignHorizontal?: ResponsiveValue<Alignment>;
     alignVertical?: ResponsiveValue<Alignment>;
     arialLabel?: string;
+    scrollable?: boolean;
   } & Pick<BoxProps, 'onLayout'>;
 
 const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
@@ -65,9 +66,11 @@ export const withStackVariation = withVariation<StackProps>('Stack')(
     variants: {
       horizontal: {
         flexDirection: 'row',
+        horizontal: true,
       },
       vertical: {
         flexDirection: 'column',
+        horizontal: false,
       },
     } as const,
   }),
@@ -131,6 +134,25 @@ export const withStackVariation = withVariation<StackProps>('Stack')(
       return {
         spaceWidth: 0,
         spaceHeight: spacing,
+      };
+    },
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'scrollable',
+        keep: true,
+      },
+    ],
+    variants: ({ scrollable }) => {
+      if (scrollable) {
+        return {
+          BoxComponent: ScrollBox,
+        };
+      }
+
+      return {
+        BoxComponent: Box,
       };
     },
   })

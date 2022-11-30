@@ -5,16 +5,17 @@ import type { ScrollBoxProps } from './ScrollBoxProps';
 import { interpolation, shouldForwardProp } from './ScrollBoxProps';
 
 export const ScrollBox = styled(
-  forwardRef<any, ScrollBoxProps & { style: any }>(({ style, horizontal, ...restProps }, ref) => {
-    const { props, ...restStyle } = StyleSheet.flatten(style);
+  forwardRef<any, ScrollBoxProps & { style: any }>(({ style, ...restProps }, ref) => {
+    const { props, alignItems, justifyContent, ...restStyle } = StyleSheet.flatten(style);
 
     return (
       <ScrollView
         ref={ref}
         style={restStyle}
-        horizontal={horizontal}
         contentContainerStyle={{
           flexGrow: 1,
+          alignItems,
+          justifyContent,
         }}
         {...restProps}
         {...props}
