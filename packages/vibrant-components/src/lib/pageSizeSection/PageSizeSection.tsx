@@ -11,7 +11,7 @@ export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions }
   const {
     translations: { pageSizeSection: pageSizeSectionTranslation },
   } = useConfig();
-  const [defaultPageSizeOption] = pageSizeOptions.filter(pageSizeOption => pageSizeOption.initial);
+  const defaultPageSizeOption = pageSizeOptions.find(pageSizeOption => pageSizeOption.initial);
   const [selectedOption, setSelectedOption] = useState(defaultPageSizeOption || DEFAULT_PAGE_SIZE_OPTION);
 
   const selectPageSizeOption = (pageSizeOption: PageSizeOption) => {
