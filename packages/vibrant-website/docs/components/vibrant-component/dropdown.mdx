@@ -1,0 +1,309 @@
+---
+title: Dropdown
+---
+
+# Dropdown
+
+`Dropdown`은 뷰포트에 따라 PC에서는 드롭다운, 모바일에서는 바텀 시트로 등장하는 컴포넌트입니다.
+
+```jsx live
+<Dropdown
+  defaultOpen={false}
+  renderOpener={({ open }) => (
+    <Pressable onClick={open}>열기</Pressable>
+  )}
+  renderContents={() => (
+    <VStack spacing={20}>
+      <Body level={2} px={20}>
+        메뉴 1
+      </Body>
+      <Body level={2} px={20}>
+        메뉴 2
+      </Body>
+    </VStack>
+  )}
+/>
+```
+
+## How to use
+
+```jsx
+import { Dropdown } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                    | Type                                                                                                                                                               | Default  | Description                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ----------------------------------------------------------------- |
+| defaultOpen             | `boolean`                                                                                                                                                          | `false`  | 초기 열림 상태를 설정합니다.                                      |
+| [renderOpener](#오프너) | `(_: { open: () => void; isOpen: boolean, ref: RefObject }) => ReactElementChild`                                                                                  |          | open 함수를 이용하여 오프너 요소를 설정합니다.                    |
+| [position](#위치)       | `bottom` \| `left` \| `right` \| `top` \| `bottom-end` \| `bottom-start` \| `left-end` \| `left-start` \| `right-end` \| `right-start` \| `top-end` \| `top-start` | `bottom` | 모달의 제목입니다.                                                |
+| spacing                 | `number`                                                                                                                                                           | `8`      | 드랍다운과 오프너 요소 사이의 간격을 설정합니다                   |
+| renderContents          | `(_: { close: () => void }) => ReactElementChild`                                                                                                                  |          | 내부 컨텐츠를 설정합니다.                                         |
+| onClose                 | `() => void`                                                                                                                                                       |          | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
+
+## Usage
+
+### 오프너
+
+`renderOpener` 렌더 속성을 통해 드랍다운을 열기 위한 오프너 요소를 설정할 수 있습니다. 인자로 전달 받은 `open` 함수를 사용해서 원하는 요소의 이벤트 핸들러로 등록하여 드랍다운을 열도록 설정할 수 있으며, 드랍다운은 오프너 요소를 감싸는 컨테이너를 기준으로 위치가 설정됩니다.
+만약 오프너를 감싸는 컨테이너가 아닌 특정 요소를 기준으로 드랍다운이 위치하길 원하는 경우에는 인자로 전달받은 `ref`로 원하는 요소에 등록합니다.
+
+```jsx
+<VStack width="100%">
+  <Box mx="auto">
+    <Dropdown
+      position="top-end"
+      renderOpener={({ ref, open }) => (
+        <>
+          <Pressable onClick={open}>열기</Pressable>
+          <Box
+            ref={ref}
+            position="fixed"
+            bottom={0}
+            width={50}
+            height={50}
+            borderRadius={25}
+            backgroundColor="surface2"
+            elevationLevel={1}
+          />
+        </>
+      )}
+      renderContents={() => (
+        <Body level={2} px={20}>
+          컨텐츠
+        </Body>
+      )}
+    />
+  </Box>
+</VStack>
+```
+
+### 위치
+
+드랍다운의 위치는 `position` 속성을 통해 `bottom`, `left` ,`right`, `top`, `bottom-end`, `bottom-start`, `left-end`, `left-start`, `right-end`, `right-start`, `top-end`, `top-start`로 설정할 수 있습니다.
+
+<Paper
+  borderRadiusLevel={1}
+  backgroundColor="surface1"
+  p={20}
+>
+  <VStack spacing={30}>
+    <HStack alignHorizontal="space-between" px={100}>
+      <Dropdown
+        position="top-start"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            top-start
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+      <Dropdown
+        position="top"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            top
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+      <Dropdown
+        position="top-end"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            top-end
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+    </HStack>
+    <HStack alignHorizontal="space-between">
+      <Dropdown
+        position="left-start"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            left-start
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+      <Dropdown
+        position="right-start"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            right-start
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+    </HStack>
+    <HStack alignHorizontal="space-between">
+      <Dropdown
+        position="left"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            left
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+      <Dropdown
+        position="right"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            right
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+    </HStack>
+    <HStack alignHorizontal="space-between">
+      <Dropdown
+        position="left-end"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            left-end
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+      <Dropdown
+        position="right-end"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            right-end
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+    </HStack>
+    <HStack alignHorizontal="space-between" px={100}>
+      <Dropdown
+        position="bottom-start"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            bottom-start
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+      <Dropdown
+        position="bottom"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            bottom
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+      <Dropdown
+        position="bottom-end"
+        renderOpener={({ open }) => (
+          <OutlinedButton size="md" onClick={open}>
+            bottom-end
+          </OutlinedButton>
+        )}
+        renderContents={() => (
+          <Body level={2} px={20}>
+            컨텐츠
+          </Body>
+        )}
+      />
+    </HStack>
+  </VStack>
+</Paper>
+
+### 컨텐츠
+
+다양한 콘텐츠가 담길 수 있으며, 콘텐츠가 뎁스를 이동해야 하는 경우에도 닫히지 않고 동일한 컨테이너를 유지한 채 높이가 변화합니다.
+메뉴나 필터의 옵션으로 사용될 수 있으며 이 외에도 다양한 패턴으로 사용될 수 있습니다.
+
+```jsx live noInline
+const DropdownContent = () => {
+  const [opened, setOpened] = useState(false);
+
+  return opened ? (
+    <VStack spacing={20} px={20}>
+      <Pressable onClick={() => setOpened(false)}>
+        <HStack alignVertical="center" spacing={4}>
+          <Icon.ChevronLeft.Regular size={16} />
+          <Title level={6}>화질</Title>
+        </HStack>
+      </Pressable>
+      <Body level={2}>1080p</Body>
+      <Body level={2}>720p</Body>
+      <Body level={2}>540p</Body>
+    </VStack>
+  ) : (
+    <VStack spacing={20}>
+      <Pressable onClick={() => setOpened(true)}>
+        <HStack
+          px={20}
+          alignHorizontal="space-between"
+          alignVertical="end"
+        >
+          <Body level={2}>화질</Body>
+          <Body level={3} color="onView2">
+            1080p
+          </Body>
+        </HStack>
+      </Pressable>
+    </VStack>
+  );
+};
+
+render(
+  <Dropdown
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <Pressable onClick={open}>열기</Pressable>
+    )}
+    renderContents={() => <DropdownContent />}
+  />
+);
+```
