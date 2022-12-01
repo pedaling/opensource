@@ -4,6 +4,7 @@ import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
 export type TextFieldProps = BaseInputProps<string> & {
+  id?: string;
   type?: Exclude<TextInputType, 'password'>;
   state?: 'default' | 'error';
   label?: string;
