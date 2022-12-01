@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.31.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.4...vibrant-components-0.31.5) (2022-12-01)
+
+
+### Features
+
+* add autoComplete prop to PasswordField ([#457](https://github.com/pedaling/opensource/issues/457)) ([bc99943](https://github.com/pedaling/opensource/commit/bc99943b4597a8b66aa68d2d1d45f44550b70f5d))
+* add id prop to PasswordField and remove 'none' from autoComplete prop ([#458](https://github.com/pedaling/opensource/issues/458)) ([7ead39d](https://github.com/pedaling/opensource/commit/7ead39d44dccb27ef41e74178cec4b81f494aafc))
+
 ### [0.31.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.3...vibrant-components-0.31.4) (2022-11-30)
 
 

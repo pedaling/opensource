@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.31.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.4...vibrant-core-0.31.5) (2022-12-01)
+
+
+### Bug Fixes
+
+* stackedPortal이 updateHeight되기전에 register되도록 보장한다 ([#460](https://github.com/pedaling/opensource/issues/460)) ([e328346](https://github.com/pedaling/opensource/commit/e3283463cfa69b5e85b4b09ce350060b4c98d40a))
+
 ### [0.31.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.3...vibrant-core-0.31.4) (2022-11-30)
 
 ### [0.31.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.2...vibrant-core-0.31.3) (2022-11-29)
