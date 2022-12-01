@@ -49,7 +49,7 @@ export default {
   title: 'Dropdown',
   component: Dropdown,
   args: {
-    open: false,
+    defaultOpen: false,
     renderContents: () => <DropdownContent />,
     renderOpener: ({ open }) => (
       <Pressable backgroundColor="primary" onClick={open} p={20} height={100}>
