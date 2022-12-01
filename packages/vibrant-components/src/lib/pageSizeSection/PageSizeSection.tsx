@@ -42,7 +42,7 @@ export const PageSizeSection = withPageSizeSectionVariation(({ pageSizeOptions, 
                 key={pageSize}
               >
                 <HStack alignHorizontal="space-between" px={16}>
-                  <Body level={1} color="onView1" weight="medium">
+                  <Body level={1} weight="medium">
                     {pageSize}
                   </Body>
                   {selectedPageSize === pageSize && <Icon.Check.Fill size={18} />}
