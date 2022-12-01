@@ -8,7 +8,7 @@ export type DropdownProps = {
   renderContents: (_: { close: () => void }) => ReactElementChild;
   renderOpener: (_: { open: () => void; isOpen: boolean; ref: RefObject<any> }) => ReactElementChild;
   spacing?: number;
-  defaultOpen: boolean;
+  defaultOpen?: boolean;
   onClose?: () => void;
 };
 
