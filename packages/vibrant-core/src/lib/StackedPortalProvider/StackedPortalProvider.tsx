@@ -202,6 +202,15 @@ export const useStackedPortal = ({ position, id, order, offset = 0, safeAreaInse
   });
 
   useEffect(() => {
+    registerPortal({
+      position,
+      id,
+      order,
+      offset,
+      safeAreaInset,
+      onOffsetChange: handleOffsetChange,
+    });
+
     const { offset: newOffset, renderedIndex: newRenderedIndex } = getCalculatedOffset({
       position,
       id,
@@ -213,7 +222,7 @@ export const useStackedPortal = ({ position, id, order, offset = 0, safeAreaInse
     setCalculatedOffset(newOffset);
 
     setRenderedIndex(newRenderedIndex);
-  }, [getCalculatedOffset, id, offset, order, position, safeAreaInset]);
+  }, [getCalculatedOffset, id, offset, order, position, registerPortal, safeAreaInset]);
 
   return {
     offset: calculatedOffset,
