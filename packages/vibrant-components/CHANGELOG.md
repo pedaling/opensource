@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.32.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.5...vibrant-components-0.32.0) (2022-12-02)
+
+
+### Features
+
+* add GetStackedOffset ([#465](https://github.com/pedaling/opensource/issues/465)) ([aa94e4e](https://github.com/pedaling/opensource/commit/aa94e4e83176ec8b41a6a24694bd9cbfb0b5f5dc))
+
+
+### Bug Fixes
+
+* set typography body1 in SearchField ([#464](https://github.com/pedaling/opensource/issues/464)) ([6ea95cc](https://github.com/pedaling/opensource/commit/6ea95cc154e5d3adaf2ec63e790765eadaa8655e))
+
 ### [0.31.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.31.4...vibrant-components-0.31.5) (2022-12-01)
 
 

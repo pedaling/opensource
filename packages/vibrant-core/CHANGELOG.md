@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.32.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.5...vibrant-core-0.32.0) (2022-12-02)
+
+
+### Features
+
+* add GetStackedOffset ([#465](https://github.com/pedaling/opensource/issues/465)) ([aa94e4e](https://github.com/pedaling/opensource/commit/aa94e4e83176ec8b41a6a24694bd9cbfb0b5f5dc))
+* add StackedItem ([#463](https://github.com/pedaling/opensource/issues/463)) ([f6c186f](https://github.com/pedaling/opensource/commit/f6c186fffe68da0db6176d1280150b51a432739f))
+
+
+### Bug Fixes
+
+* fix SafeAreaProvider re-rendering when scrolling ([#462](https://github.com/pedaling/opensource/issues/462)) ([839deb8](https://github.com/pedaling/opensource/commit/839deb87a59490230f3de296b056a629ea54f906))
+
 ### [0.31.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.4...vibrant-core-0.31.5) (2022-12-01)
 
 
