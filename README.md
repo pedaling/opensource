@@ -1,6 +1,6 @@
 # Class101 OpenSource
 
-## [Vibrant Design System](https://www.vibrant-design.com/)
+## Vibrant Design System
 
 VDS is designed to build effective and high-performance products for CLASS101 users' consistent and smooth user experience.
 
