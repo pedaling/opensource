@@ -50,34 +50,44 @@ import { Dropdown } from '@vibrant-ui/components';
 만약 오프너를 감싸는 컨테이너가 아닌 특정 요소를 기준으로 드랍다운이 위치하길 원하는 경우에는 인자로 전달받은 `ref`로 원하는 요소에 등록합니다.
 
 ```jsx
-<VStack width="100%">
-  <Box mx="auto">
-    <Dropdown
-      position="top-end"
-      renderOpener={({ ref, open }) => (
-        <>
-          <Pressable onClick={open}>열기</Pressable>
-          <Box
-            // 드랍다운은 이 Box를 기준으로 위치하게 됩니다
-            ref={ref}
-            position="fixed"
-            bottom={0}
-            width={50}
-            height={50}
-            borderRadius={25}
-            backgroundColor="surface2"
-            elevationLevel={1}
-          />
-        </>
-      )}
-      renderContents={() => (
-        <Body level={2} px={20}>
-          컨텐츠
-        </Body>
-      )}
-    />
-  </Box>
-</VStack>
+<HStack mx="auto" spacing={24}>
+  <Dropdown
+    position="top-end"
+    renderOpener={({ ref, open }) => (
+      // 드랍다운은 Pressable을 감싸는 컨테이너 기준으로 위치하게 됩니다
+      <Pressable onClick={open}>열기</Pressable>
+    )}
+    renderContents={() => (
+      <Body level={2} px={20}>
+        컨텐츠
+      </Body>
+    )}
+  />
+  <Dropdown
+    position="top-end"
+    renderOpener={({ ref, open }) => (
+      <>
+        <Pressable onClick={open}>열기</Pressable>
+        <Box
+          // ref를 사용한 경우 드랍다운은 이 Box를 기준으로 위치하게 됩니다
+          ref={ref}
+          position="fixed"
+          bottom={0}
+          width={50}
+          height={50}
+          borderRadius={25}
+          backgroundColor="surface2"
+          elevationLevel={1}
+        />
+      </>
+    )}
+    renderContents={() => (
+      <Body level={2} px={20}>
+        컨텐츠
+      </Body>
+    )}
+  />
+</HStack>
 ```
 
 ### 위치
