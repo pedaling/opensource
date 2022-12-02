@@ -37,8 +37,8 @@ import { Dropdown } from '@vibrant-ui/components';
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ----------------------------------------------------------------- |
 | defaultOpen             | `boolean`                                                                                                                                                          | `false`  | 초기 열림 상태를 설정합니다.                                      |
 | [renderOpener](#오프너) | `(_: { open: () => void; isOpen: boolean, ref: RefObject }) => ReactElementChild`                                                                                  |          | open 함수를 이용하여 오프너 요소를 설정합니다.                    |
-| [position](#위치)       | `bottom` \| `left` \| `right` \| `top` \| `bottom-end` \| `bottom-start` \| `left-end` \| `left-start` \| `right-end` \| `right-start` \| `top-end` \| `top-start` | `bottom` | 모달의 제목입니다.                                                |
-| spacing                 | `number`                                                                                                                                                           | `8`      | 드랍다운과 오프너 요소 사이의 간격을 설정합니다                   |
+| [position](#위치)       | `bottom` \| `left` \| `right` \| `top` \| `bottom-end` \| `bottom-start` \| `left-end` \| `left-start` \| `right-end` \| `right-start` \| `top-end` \| `top-start` | `bottom` | 드랍다운이 열리는 위치를 설정합니다.                              |
+| spacing                 | `number`                                                                                                                                                           | `8`      | 드랍다운과 오프너 요소 사이의 간격을 설정합니다.                  |
 | renderContents          | `(_: { close: () => void }) => ReactElementChild`                                                                                                                  |          | 내부 컨텐츠를 설정합니다.                                         |
 | onClose                 | `() => void`                                                                                                                                                       |          | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
 
@@ -58,6 +58,7 @@ import { Dropdown } from '@vibrant-ui/components';
         <>
           <Pressable onClick={open}>열기</Pressable>
           <Box
+            // 드랍다운은 이 Box를 기준으로 위치하게 됩니다
             ref={ref}
             position="fixed"
             bottom={0}
@@ -260,7 +261,7 @@ import { Dropdown } from '@vibrant-ui/components';
 
 ### 컨텐츠
 
-다양한 콘텐츠가 담길 수 있으며, 콘텐츠가 뎁스를 이동해야 하는 경우에도 닫히지 않고 동일한 컨테이너를 유지한 채 높이가 변화합니다.
+다양한 콘텐츠가 담길 수 있으며, 콘텐츠의 깊이(depth)가 변하는 경우에도 닫히지 않고 동일한 컨테이너를 유지한 채 높이가 변화합니다.
 메뉴나 필터의 옵션으로 사용될 수 있으며 이 외에도 다양한 패턴으로 사용될 수 있습니다.
 
 ```jsx live noInline
