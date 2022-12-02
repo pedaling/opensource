@@ -1,13 +1,17 @@
 import type { FC } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { addStyleValues, isDefined } from '@vibrant-ui/utils';
+import { addStyleValues, isDefined, uuidV4 } from '@vibrant-ui/utils';
 import { useSafeArea } from '../SafeAreaProvider';
 import type {
+  AddEventListener,
   ChangePortalHeight,
+  EventListener,
   GetCalculatedOffset,
   Offset,
   OffsetChangeEvent,
+  Position,
   RegisterPortal,
+  RemoveEventListener,
   RenderedIndex,
   StackOptions,
   StackedPortalContextValue,
@@ -21,12 +25,15 @@ export const StackedPortalContext = createContext<StackedPortalContextValue>({
   unregisterPortal: () => {},
   changePortalHeight: () => {},
   getCalculatedOffset: () => ({}),
+  addEventListener: () => {},
+  removeEventListener: () => {},
 });
 
 export const StackedPortalProvider: FC<StackedPortalProviderProps> = ({ children, priorityOrder }) => {
   const { generateStyle } = useSafeArea();
 
   const heights = useRef<StackedPortalData>({ top: {}, bottom: {} });
+  const globalEventListeners = useRef<Record<Position, Record<string, EventListener>>>({ top: {}, bottom: {} });
 
   const getPrevPortals = useCallback(
     ({ position, id, order }: StackOptions) => {
@@ -111,6 +118,16 @@ export const StackedPortalProvider: FC<StackedPortalProviderProps> = ({ children
 
   const updateNextPortalsOffset = useCallback(
     ({ position, id, order }: StackOptions) => {
+      const offsetSum: Offset = addStyleValues(
+        ...Object.values(heights.current[position]).flatMap(item =>
+          Object.values(item).flatMap(value => [value.offset, value.height])
+        )
+      );
+
+      Object.values(globalEventListeners.current[position]).map(({ onOffsetChange }) =>
+        onOffsetChange?.({ offset: offsetSum })
+      );
+
       const nextItems = getNextPortals({ position, id, order });
 
       for (const nextItem of nextItems) {
@@ -169,11 +186,29 @@ export const StackedPortalProvider: FC<StackedPortalProviderProps> = ({ children
     [updateNextPortalsOffset]
   );
 
+  const addEventListener = useCallback<AddEventListener>(({ key, position, listener }) => {
+    if (globalEventListeners.current[position][key]) {
+      return;
+    }
+
+    globalEventListeners.current[position][key] = listener;
+  }, []);
+
+  const removeEventListener = useCallback<RemoveEventListener>(({ key, position }) => {
+    if (!isDefined(globalEventListeners.current[position][key])) {
+      return;
+    }
+
+    delete globalEventListeners.current[position][key];
+  }, []);
+
   const contextValue = {
     registerPortal,
     unregisterPortal,
     changePortalHeight,
     getCalculatedOffset,
+    addEventListener,
+    removeEventListener,
   };
 
   return <StackedPortalContext.Provider value={contextValue}>{children}</StackedPortalContext.Provider>;
@@ -229,5 +264,37 @@ export const useStackedPortal = ({ position, id, order, offset = 0, safeAreaInse
     renderedIndex,
     unregister: () => unregisterPortal({ position, id, order, offset }),
     changeHeight: (height: number) => changePortalHeight({ position, id, order, offset, height }),
+  };
+};
+
+export const useStackedOffset = ({ position }: { position: Position }) => {
+  const { addEventListener, removeEventListener } = useContext(StackedPortalContext);
+  const [calculatedOffset, setCalculatedOffset] = useState<Offset>();
+  const uuidRef = useRef(uuidV4());
+
+  const handleOffsetChange: OffsetChangeEvent = ({ offset }) => {
+    setCalculatedOffset(offset);
+  };
+
+  useEffect(() => {
+    const key = uuidRef.current;
+
+    addEventListener({
+      key,
+      position,
+      listener: {
+        onOffsetChange: handleOffsetChange,
+      },
+    });
+
+    return () =>
+      removeEventListener({
+        key,
+        position,
+      });
+  }, [addEventListener, position, removeEventListener]);
+
+  return {
+    offset: calculatedOffset ?? 0,
   };
 };

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
+import { useResponsiveValue, useStackedPortal } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
-import { useStackedPortal } from '../StackedPortalProvider';
-import { useResponsiveValue } from '../useResponsiveValue';
 import { withStackedItemVariation } from './StackedItemProps';
 
 export const StackedItem = withStackedItemVariation(
