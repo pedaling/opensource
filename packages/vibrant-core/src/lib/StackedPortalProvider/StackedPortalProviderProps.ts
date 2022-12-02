@@ -34,8 +34,7 @@ export type RegisterPortal = (_: StackOptions & EventListener) => void;
 export type UnregisterPortal = (_: StackOptions) => void;
 export type ChangePortalHeight = (_: StackOptions & { height: number }) => void;
 export type GetCalculatedOffset = (_: StackOptions) => { offset?: Offset; renderedIndex?: RenderedIndex };
-export type AddEventListener = (_: { key: string; position: Position; listener: EventListener }) => void;
-export type RemoveEventListener = (_: { key: string; position: Position }) => void;
+export type AddEventListener = (_: { position: Position; listener: EventListener }) => () => void;
 
 export type StackedPortalContextValue = {
   registerPortal: RegisterPortal;
@@ -43,7 +42,6 @@ export type StackedPortalContextValue = {
   changePortalHeight: ChangePortalHeight;
   getCalculatedOffset: GetCalculatedOffset;
   addEventListener: AddEventListener;
-  removeEventListener: RemoveEventListener;
 };
 
 export type StackedPortalProviderProps = {
