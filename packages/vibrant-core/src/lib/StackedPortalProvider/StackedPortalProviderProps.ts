@@ -28,16 +28,20 @@ export type StackedPortalData = {
   };
 };
 
-export type RegisterPortal = (_: StackOptions & { onOffsetChange: OffsetChangeEvent }) => void;
+export type EventListener = { onOffsetChange: OffsetChangeEvent };
+
+export type RegisterPortal = (_: StackOptions & EventListener) => void;
 export type UnregisterPortal = (_: StackOptions) => void;
 export type ChangePortalHeight = (_: StackOptions & { height: number }) => void;
 export type GetCalculatedOffset = (_: StackOptions) => { offset?: Offset; renderedIndex?: RenderedIndex };
+export type AddEventListener = (_: { position: Position; listener: EventListener }) => () => void;
 
 export type StackedPortalContextValue = {
   registerPortal: RegisterPortal;
   unregisterPortal: UnregisterPortal;
   changePortalHeight: ChangePortalHeight;
   getCalculatedOffset: GetCalculatedOffset;
+  addEventListener: AddEventListener;
 };
 
 export type StackedPortalProviderProps = {

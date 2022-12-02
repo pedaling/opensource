@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box } from '../Box';
+import { Box } from '@vibrant-ui/core';
 import { StackedItem } from './StackedItem';
 
 export default {

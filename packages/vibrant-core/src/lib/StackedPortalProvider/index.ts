@@ -1,1 +1,1 @@
-export { StackedPortalProvider, useStackedPortal } from './StackedPortalProvider';
+export { StackedPortalProvider, useStackedPortal, useStackedOffset } from './StackedPortalProvider';

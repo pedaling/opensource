@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
-import type { ResponsiveValue } from '../../types';
-import { withVariation } from '../withVariation';
+import type { ResponsiveValue } from '@vibrant-ui/core';
+import { withVariation } from '@vibrant-ui/core';
 
 type StackedItemProps = {
   id: string;
