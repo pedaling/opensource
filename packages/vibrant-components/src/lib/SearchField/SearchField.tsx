@@ -23,7 +23,7 @@ export const SearchField = withSearchFieldVariation(
           pl={16}
           pr={48}
           backgroundColor={kind === 'default' ? 'surface1' : 'transparent'}
-          typography="body2"
+          typography="body1"
           color="onView1"
           placeholderColor="onView3"
           defaultValue={value}
