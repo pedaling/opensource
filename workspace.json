@@ -7,6 +7,7 @@
       "implicitDependencies": [
         "utils-eslint-config",
         "vibrant-components",
+        "vibrant-components-web",
         "vibrant-core",
         "vibrant-forms",
         "vibrant-example-app",
@@ -49,6 +50,7 @@
     },
     "utils-eslint-config": "packages/utils-eslint-config",
     "vibrant-components": "packages/vibrant-components",
+    "vibrant-components-web": "packages/vibrant-components-web",
     "vibrant-core": "packages/vibrant-core",
     "vibrant-example-app": "packages/vibrant-example-app",
     "vibrant-forms": "packages/vibrant-forms",
