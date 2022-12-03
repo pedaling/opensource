@@ -5,12 +5,18 @@ type UnResponsiveValues<Values extends Record<string, ResponsiveValue<any>>> = {
   [key in keyof Values]: UnResponsiveValue<Values[key]>;
 };
 
-type MergeToArray<Value extends Record<string, any>> = { [key in keyof Value]: Value[key][] };
+type PickType<Value, Keys extends AllKeys<Value>> = Value extends { [key in Keys]?: any } ? Value[Keys] : undefined;
+
+type AllKeys<Value> = Value extends any ? keyof Value : never;
+
+type MergeObjectToArrayValue<Value extends object> = {
+  [key in AllKeys<Value>]: PickType<Value, key>[];
+};
 
 export function calculateResponsiveValues<
   Values extends Record<string, ResponsiveValue<any>>,
   Result extends Record<string, any>
->(values: Values, fn: (value: UnResponsiveValues<Values>) => Result): MergeToArray<Result> {
+>(values: Values, fn: (value: UnResponsiveValues<Values>) => Result): MergeObjectToArrayValue<Result> {
   const maxLength = Math.max(...Object.values(values).map(value => (Array.isArray(value) ? value.length : 1)));
 
   const responsiveValues = Object.fromEntries(
@@ -33,5 +39,5 @@ export function calculateResponsiveValues<
         ...Object.fromEntries(Object.entries(value).map(([key, value]) => [key, [...(prev[key] ?? []), value]])),
       }),
       {}
-    ) as MergeToArray<Result>;
+    ) as MergeObjectToArrayValue<Result>;
 }

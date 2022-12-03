@@ -1,11 +1,9 @@
 import type { DeepWritable } from '@vibrant-ui/utils';
-import type { ResponsiveValue } from '../../types';
+import type { ResponsiveValue, UnResponsiveValue } from '../../types';
 
 export type VariantFn<PrevProps, NextProps> = (props: PrevProps) => NextProps;
 
 type IsNullable<Value> = Value extends undefined ? true : false;
-
-type UnResponsiveValue<Value> = Value extends (infer T)[] ? (T extends any[] ? T : never) : Value;
 
 type IsResponsiveValue<Value> = 1 | 2 extends (
   Value extends any[][] ? 1 : Value extends any[] ? 2 : Value extends any ? 1 : false
