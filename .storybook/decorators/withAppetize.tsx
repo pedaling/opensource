@@ -3,18 +3,18 @@ import { DeepLinkRenderer } from '@storybook/native-components';
 import type { DecoratorFn } from '@storybook/react';
 import { HStack, Paper, Title, VStack } from '@vibrant-ui/components';
 
-export const withAppetize: DecoratorFn = (StoryFn, context) => {
+export const withAppetize: DecoratorFn = (StoryComponent, context) => {
   const { platform } = context.globals;
 
   if (platform === 'web') {
-    return <StoryFn />;
+    return <StoryComponent />;
   }
 
   return (
     <HStack>
       <Global styles={appetizeIframeStyle} />
       <Paper width="50%" minHeight="100vh" backgroundColor="background">
-        <StoryFn />
+        <StoryComponent />
       </Paper>
       <Paper width="50%" minHeight="100vh">
         <VStack>
