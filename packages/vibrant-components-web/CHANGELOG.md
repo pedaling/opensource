@@ -1,0 +1,10 @@
+# Changelog
+
+This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
+
+## 0.1.0 (2022-12-03)
+
+
+### Features
+
+* add CSSTransition ([#467](https://github.com/pedaling/opensource/issues/467)) ([b21d39d](https://github.com/pedaling/opensource/commit/b21d39d7035602508490049cd2f55a2828eac816))

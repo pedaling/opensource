@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.33.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.32.0...vibrant-core-0.33.0) (2022-12-03)
+
+
+### Features
+
+* add calculateResponsiveValues ([#468](https://github.com/pedaling/opensource/issues/468)) ([72a8c5d](https://github.com/pedaling/opensource/commit/72a8c5d5da30dd5b72989c2278618dc6c9e83abb))
+
+
+### Bug Fixes
+
+* fix circular dependency ([#469](https://github.com/pedaling/opensource/issues/469)) ([83e77ee](https://github.com/pedaling/opensource/commit/83e77eef82d12a770e1fa93070eda501692e90b2))
+
 ## [0.32.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.31.5...vibrant-core-0.32.0) (2022-12-02)
 
 
