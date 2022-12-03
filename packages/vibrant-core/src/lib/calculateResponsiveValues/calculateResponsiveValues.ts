@@ -1,4 +1,4 @@
-import type { ResponsiveValue, UnResponsiveValue } from '@vibrant-ui/core';
+import type { ResponsiveValue, UnResponsiveValue } from '../../types';
 import { toResponsiveValue } from '../toResponsiveValue';
 
 type UnResponsiveValues<Values extends Record<string, ResponsiveValue<any>>> = {
