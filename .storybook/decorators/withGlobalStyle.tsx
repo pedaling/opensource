@@ -1,9 +1,9 @@
 import type { DecoratorFn } from '@storybook/react';
 import { GlobalStyle } from '@vibrant-ui/components';
 
-export const withGlobalStyle: DecoratorFn = StoryFn => (
+export const withGlobalStyle: DecoratorFn = StoryComponent => (
   <>
     <GlobalStyle />
-    <StoryFn />
+    <StoryComponent />
   </>
 );

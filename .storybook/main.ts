@@ -9,6 +9,7 @@ const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
 const storybookLibraries = [
   'vibrant-core',
   'vibrant-components',
+  'vibrant-components-web',
   'vibrant-forms',
   'vibrant-icons',
   'vibrant-motion',

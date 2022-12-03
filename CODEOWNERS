@@ -1,4 +1,5 @@
 packages/vibrant-components/ @pedaling/team-design-system
+packages/vibrant-components-web/ @pedaling/team-design-system
 packages/vibrant-core/ @pedaling/team-design-system
 packages/vibrant-forms/ @pedaling/team-design-system
 packages/vibrant-example-app/ @pedaling/team-design-system
