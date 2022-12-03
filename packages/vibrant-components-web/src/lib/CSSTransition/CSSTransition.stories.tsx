@@ -10,7 +10,7 @@ export default {
   args: {
     property: 'left',
     duration: 300,
-    easing: 'easeOutQuad',
+    easing: 'ease-in-out',
   },
   parameters: {
     chromatic: { disableSnapshot: true },
