@@ -18,6 +18,7 @@ export type {
   ReactTextChild,
   ReactTextChildren,
   ResponsiveValue,
+  UnResponsiveValue,
   WindowDimensions,
 } from './types';
 export type {

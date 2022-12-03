@@ -1,0 +1,1 @@
+export { toResponsiveValue } from './toResponsiveValue';
