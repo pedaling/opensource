@@ -1,4 +1,4 @@
-import type { ResponsiveValue } from '@vibrant-ui/core';
+import type { ResponsiveValue } from '../../types';
 
 export const toResponsiveValue = <Type>(value: ResponsiveValue<Type>, length: number) => {
   const responsiveValue = Array.isArray(value) ? value : [value];
