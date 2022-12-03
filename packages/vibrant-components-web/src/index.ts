@@ -1,1 +1,1 @@
-export default {};
+export { CSSTransition } from './lib/CSSTransition';
