@@ -1,6 +1,7 @@
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
+import { Pressable } from '../../Pressable';
 import { VStack } from '../../VStack';
 import { withTableHeaderCellVariation } from './TableHeaderCellProps';
 
@@ -14,6 +15,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     alignHorizontal = 'center',
     alignVertical = 'center',
     sortable,
+    onSortClick,
     SortIconComponent,
     sortIconFill,
     ...props
@@ -28,7 +30,11 @@ export const TableHeaderCell = withTableHeaderCellVariation(
           </Body>
           {/* TODO(Mia): replace icon with tooltip */}
           {description ? <Icon.InfoCircle.Fill size={14} /> : null}
-          {sortable ? <SortIconComponent size={14} fill={sortIconFill} /> : null}
+          {sortable ? (
+            <Pressable onClick={onSortClick}>
+              <SortIconComponent size={14} fill={sortIconFill} />
+            </Pressable>
+          ) : null}
         </HStack>
       )}
     </VStack>

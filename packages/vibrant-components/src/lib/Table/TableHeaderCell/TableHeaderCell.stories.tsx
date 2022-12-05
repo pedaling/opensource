@@ -8,7 +8,7 @@ export default {
   component: TableHeaderCell,
 };
 
-export const Basic: ComponentStory<typeof TableHeaderCell> = props => (
+export const Basic: ComponentStory<typeof TableHeaderCell> = ({ renderCell: _, ...props }) => (
   <HStack width="100%">
     <TableHeaderCell title="name" flexGrow={1} flexBasis={0} flexShrink={0} {...props} />
     <TableHeaderCell title="calories" flexGrow={1} flexBasis={0} flexShrink={0} {...props} />
@@ -29,7 +29,6 @@ export const Basic: ComponentStory<typeof TableHeaderCell> = props => (
       flexBasis={0}
       flexShrink={0}
       renderCell={() => <OutlinedButton size="sm">가격 일괄 수정</OutlinedButton>}
-      {...props}
     />
   </HStack>
 );

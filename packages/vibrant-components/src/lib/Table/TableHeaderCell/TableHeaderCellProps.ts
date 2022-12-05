@@ -7,15 +7,22 @@ import type {
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import type { Either } from '@vibrant-ui/utils';
 
-export type TableHeaderCellProps = {
-  title?: TextChildren;
-  description?: TextChildren;
+export type TableHeaderCellProps = Either<
+  {
+    title?: TextChildren;
+    description?: TextChildren;
+    sortable?: boolean;
+    sortDirection?: 'asc' | 'desc' | 'none';
+    onSortClick?: () => void;
+  },
+  {
+    renderCell?: () => ReactElementChildren;
+  }
+> & {
   alignVertical?: 'center' | 'end' | 'start';
   alignHorizontal?: 'center' | 'end' | 'start';
-  sortable?: boolean;
-  sortDirection?: 'asc' | 'desc' | 'none';
-  renderCell?: () => ReactElementChildren;
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
   Pick<TextProps, 'lineLimit' | 'wordBreak'>;
