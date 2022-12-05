@@ -13,7 +13,19 @@ import type {
 } from '@vibrant-ui/core';
 import { Box, ScrollBox, propVariant, withVariation } from '@vibrant-ui/core';
 
-type SemanticTagName = 'article' | 'aside' | 'footer' | 'header' | 'li' | 'nav' | 'ol' | 'section' | 'ul';
+type SemanticTagName =
+  | 'article'
+  | 'aside'
+  | 'footer'
+  | 'header'
+  | 'li'
+  | 'nav'
+  | 'ol'
+  | 'section'
+  | 'td'
+  | 'th'
+  | 'tr'
+  | 'ul';
 
 export type Alignment = 'center' | 'end' | 'space-between' | 'start' | 'stretch';
 
