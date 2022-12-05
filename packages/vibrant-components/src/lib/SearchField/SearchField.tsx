@@ -19,7 +19,7 @@ export const SearchField = withSearchFieldVariation(
         <TextInput
           ref={inputRef}
           type="text"
-          py={10}
+          py={9}
           pl={16}
           pr={48}
           backgroundColor={kind === 'default' ? 'surface1' : 'transparent'}
