@@ -17,7 +17,7 @@ export const Basic: ComponentStory<typeof TableHeaderCell> = props => (
       flexGrow={1}
       flexBasis={0}
       flexShrink={0}
-      description="abc"
+      description="animal tissue consisting chiefly of cells distended with greasy or oily matter"
       sortable={true}
       sortDirection="none"
       {...props}
