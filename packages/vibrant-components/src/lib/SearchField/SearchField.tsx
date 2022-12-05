@@ -19,7 +19,7 @@ export const SearchField = withSearchFieldVariation(
         <TextInput
           ref={inputRef}
           type="text"
-          py={10}
+          py={9}
           pl={16}
           pr={48}
           backgroundColor={kind === 'default' ? 'surface1' : 'transparent'}
@@ -59,7 +59,7 @@ export const SearchField = withSearchFieldVariation(
               <Icon.CloseCircle.Fill size={20} fill="onView2" />
             </Pressable>
           ) : (
-            <Icon.Search.Regular size={20} fill="onView1" />
+            <Icon.Search.Thin size={20} fill="onView1" />
           )}
         </Box>
       </Box>
