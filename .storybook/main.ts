@@ -101,6 +101,11 @@ const config: StorybookViteConfig & {
           }
         }
 
+        // Replace TextChildren type with string
+        if (prop.type.raw === 'TextChildren') {
+          prop.type.name = 'string';
+        }
+
         return true;
       },
     },
