@@ -59,7 +59,7 @@ export const SearchField = withSearchFieldVariation(
               <Icon.CloseCircle.Fill size={20} fill="onView2" />
             </Pressable>
           ) : (
-            <Icon.Search.Regular size={20} fill="onView1" />
+            <Icon.Search.Thin size={20} fill="onView1" />
           )}
         </Box>
       </Box>
