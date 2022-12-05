@@ -16,7 +16,7 @@ import type {
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken, GradientKind } from '@vibrant-ui/theme';
 
-type PaperProps = Pick<BorderSystemProps, 'borderColor' | 'borderRadiusLevel' | 'borderStyle' | 'borderWidth'> &
+type PaperProps = Omit<BorderSystemProps, 'outlineColor' | 'outlineOffset' | 'outlineStyle' | 'outlineWidth'> &
   DisplaySystemProps &
   SpacingSystemProps &
   InteractionSystemProps &
