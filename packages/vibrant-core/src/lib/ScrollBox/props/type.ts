@@ -1,7 +1,6 @@
 import type { ResponsiveValue } from '../../../types';
 
 export type ScrollSystemProps = {
-  overflowX?: ResponsiveValue<'auto' | 'hidden' | 'visible'>;
-  overflowY?: ResponsiveValue<'auto' | 'hidden' | 'visible'>;
+  horizontal?: ResponsiveValue<boolean>;
   hideScroll?: ResponsiveValue<boolean>;
 };

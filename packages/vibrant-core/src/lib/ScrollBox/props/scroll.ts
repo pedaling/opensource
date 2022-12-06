@@ -1,12 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { createSystemProp } from '../../createSystemProp';
 
-const overflowXProp = createSystemProp({
-  property: 'overflowX',
-});
-
-const overflowYProp = createSystemProp({
-  property: 'overflowY',
+const horizontalProp = createSystemProp({
+  property: 'horizontal',
+  transform: (value: boolean) => (value ? { flexDirection: 'row' } : { flexDirection: 'column' }),
 });
 
 const hideScrollProp = createSystemProp({
@@ -23,4 +20,4 @@ const hideScrollProp = createSystemProp({
       : {},
 });
 
-export const scrollSystemProps = [overflowXProp, overflowYProp, hideScrollProp];
+export const scrollSystemProps = [hideScrollProp, horizontalProp];

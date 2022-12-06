@@ -1,5 +1,15 @@
 import { createSystemProp } from '../../createSystemProp';
 
+const horizontalProp = createSystemProp({
+  property: 'horizontal',
+  transform: (value: boolean) => ({
+    flexDirection: value ? 'row' : 'column',
+    props: {
+      horizontal: value,
+    },
+  }),
+});
+
 const hideScrollProp = createSystemProp({
   property: 'hideScroll',
   transform: value => ({
@@ -10,4 +20,4 @@ const hideScrollProp = createSystemProp({
   }),
 });
 
-export const scrollSystemProps = [hideScrollProp];
+export const scrollSystemProps = [hideScrollProp, horizontalProp];
