@@ -12,8 +12,11 @@ title: ModalBottomSheet
   title="오늘도 수강 완료!"
   subtitle="원하는 시간에 꾸준히 수강할 수 있도록 알림을 보내드릴게요!"
   primaryButtonText="확인"
-  onPrimaryButtonClick={({ close }) => {
-    close();
+  primaryButtonOptions={{
+    text: '확인',
+    onClick: ({ close }) => {
+      close();
+    },
   }}
   renderOpener={({ open }) => (
     <Pressable onClick={open}>열기</Pressable>
