@@ -203,7 +203,6 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
   font-size: 0.875rem;
-  font-weight: 400;
   line-height: 1.125rem;
   padding-top: 15px;
   padding-left: 16px;
@@ -227,7 +226,6 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   -webkit-text-fill-color: #0c0c0c;
   text-fill-color: #0c0c0c;
   font-size: 0.875rem;
-  font-weight: 400;
   line-height: 1.125rem;
   width: 100%;
   padding: 0;
@@ -275,7 +273,6 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
   font-size: 0.875rem;
-  font-weight: 400;
   line-height: 1.125rem;
   padding-top: 15px;
   padding-right: 16px;
@@ -353,7 +350,7 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
           >
             <span
               class="emotion-6"
-              style="top: 15px; font-size: 0.875rem; font-weight: 400; line-height: 1.125rem;"
+              style="top: 15px; font-size: 0.875rem; line-height: 1.125rem;"
             />
           </div>
           <div
