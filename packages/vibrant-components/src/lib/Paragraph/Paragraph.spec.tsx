@@ -23,14 +23,8 @@ describe('<Paragraph />', () => {
 
     it('paragraph3 style applied', () => {
       const themeTypography = baseTheme.typography;
-      const themeTypographyWeight = baseTheme.typographyWeight;
 
       expect(element).toHaveStyleRule('font-size', themeTypography.paragraph3.fontSize);
-
-      expect(element).toHaveStyleRule(
-        'font-weight',
-        themeTypographyWeight[themeTypography.paragraph3.fontWeight].fontWeight.toString()
-      );
 
       expect(element).toHaveStyleRule('line-height', themeTypography.paragraph3.lineHeight);
     });

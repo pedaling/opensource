@@ -17,8 +17,8 @@ exports[`<Body /> when Body with level 3 rendered match snapshot 1`] = `
   -webkit-text-fill-color: #0c0c0c;
   text-fill-color: #0c0c0c;
   font-size: 0.8125rem;
-  font-weight: 400;
   line-height: 1.125rem;
+  font-weight: 400;
 }
 
 <div>

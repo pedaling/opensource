@@ -7,8 +7,7 @@ export default {
   title: 'OutlinedButton',
   component: OutlinedButton,
   args: {
-    kind: 'primary',
-    size: 'md',
+    size: ['sm', 'md', 'md'],
     IconComponent: Icon.Photo.Regular,
     children: 'click me',
   },

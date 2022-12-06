@@ -17,8 +17,8 @@ exports[`<Title /> when Title with level 3 rendered match snapshot 1`] = `
   -webkit-text-fill-color: #0c0c0c;
   text-fill-color: #0c0c0c;
   font-size: 1.625rem;
-  font-weight: 700;
   line-height: 2.25rem;
+  font-weight: 700;
 }
 
 <div>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Paragraph /> when Paragraph with level 3 rendered match snapshot 1`] = `
+exports[`<OutlinedButton /> match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16,17 +16,23 @@ exports[`<Paragraph /> when Paragraph with level 3 rendered match snapshot 1`] =
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
   text-fill-color: #0c0c0c;
-  font-size: 1rem;
-  line-height: 1.75rem;
-  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
-<div>
-  <span
-    class="emotion-0"
-    data-testid="paragraph"
-  >
-    Hello World
-  </span>
-</div>
+@media screen and (min-width: 640px) {
+  .emotion-0 {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+
+<span
+  class="emotion-0"
+>
+  OutlinedButton
+</span>
 `;
