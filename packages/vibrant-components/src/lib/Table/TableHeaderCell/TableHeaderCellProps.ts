@@ -9,13 +9,15 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import type { Either } from '@vibrant-ui/utils';
 
+export type SortDirection = 'asc' | 'desc' | 'none';
+
 export type TableHeaderCellProps = Either<
   {
     title?: TextChildren;
     description?: TextChildren;
     sortable?: boolean;
-    sortDirection?: 'asc' | 'desc' | 'none';
-    onSortClick?: () => void;
+    defaultSortDirection?: SortDirection;
+    onSort?: (sortDirection: SortDirection) => void;
   },
   {
     renderCell?: () => ReactElementChildren;
@@ -27,7 +29,12 @@ export type TableHeaderCellProps = Either<
   Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
   Pick<TextProps, 'lineLimit' | 'wordBreak'>;
 
-export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>('TableHeaderCell')(
+export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>('TableHeaderCell')();
+
+export const withTableHeaderSortButtonVariation = withVariation<{
+  sortDirection: SortDirection;
+  onClick?: () => void;
+}>('TableHeaderSortButton')(
   propVariant({
     props: [
       {

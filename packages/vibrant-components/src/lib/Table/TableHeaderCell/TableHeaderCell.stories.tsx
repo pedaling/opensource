@@ -19,7 +19,7 @@ export const Basic: ComponentStory<typeof TableHeaderCell> = ({ renderCell: _, .
       flexShrink={0}
       description="animal tissue consisting chiefly of cells distended with greasy or oily matter"
       sortable={true}
-      sortDirection="none"
+      defaultSortDirection="none"
       {...props}
     />
     <TableHeaderCell title="carbs" flexGrow={1} flexBasis={0} flexShrink={0} {...props} />
