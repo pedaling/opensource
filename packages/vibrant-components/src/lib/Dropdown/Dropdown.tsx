@@ -68,10 +68,10 @@ const getOffsetAvoidingOverflowByPosition = (
 };
 
 export const Dropdown = withDropdownVariation(
-  ({ open, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
+  ({ defaultOpen = false, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
     const openerRef = useRef<HTMLElement>(null);
     const customOpenerRef = useRef<HTMLElement>(null);
-    const [isOpen, setIsOpen] = useState(open);
+    const [isOpen, setIsOpen] = useState(defaultOpen);
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
     const [containerHeight, setContainerHeight] = useState<number>();

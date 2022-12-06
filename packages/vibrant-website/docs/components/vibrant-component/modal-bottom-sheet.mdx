@@ -31,17 +31,17 @@ import { ModalBottomSheet } from '@vibrant-ui/components';
 
 | Prop                                | Type                                                              | Default | Description                                                       |
 | ----------------------------------- | ----------------------------------------------------------------- | ------- | ----------------------------------------------------------------- |
-| [open](#제어)                       | boolean                                                           |         | 열림 상태를 제어합니다.                                           |
-| [defaultOpen](#비제어)              | boolean                                                           |         | 초기 열림 상태를 설정합니다. open 속성과 함께 사용할 수 없습니다. |
-| [renderOpener](#비제어)             | (\_: \{ open: () => void; isOpen: boolean }) => ReactElementChild |         | open 함수를 이용하여 모달을 여는 요소를 설정합니다.               |
-| title                               | string                                                            |         | 모달의 제목입니다.                                                |
-| subtitle                            | string                                                            |         | 모달의 부제목입니다.                                              |
-| size                                | lg \| md                                                          | md      | PC 뷰에서 모달의 너비를 설정합니다.                               |
-| renderContents                      | (\_: \{ close: () => void }) => ReactElementChild;                |         | 내부 컨텐츠를 설정합니다.                                         |
-| onClose                             | () => void                                                        |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
-| [primaryButtonOptions](#cta-버튼)   | \{ text: string, disabled: boolean, onClick: () => void }         |         | 렌더할 Primary 버튼의 속성을 지정합니다.                          |
-| [secondaryButtonOptions](#cta-버튼) | \{ text: string, disabled: boolean, onClick: () => void }         |         | 렌더할 Secondary 버튼의 속성을 지정합니다.                        |
-| [subButtonOptions](#cta-버튼)       | \{ text: string, disabled: boolean, onClick: () => void }         |         | 렌더할 Sub 버튼의 속성을 지정합니다.                              |
+| [open](#제어)                       | `boolean`                                                         |         | 열림 상태를 제어합니다.                                           |
+| [defaultOpen](#비제어)              | `boolean`                                                         |         | 초기 열림 상태를 설정합니다. open 속성과 함께 사용할 수 없습니다. |
+| [renderOpener](#비제어)             | `(_: { open: () => void; isOpen: boolean }) => ReactElementChild` |         | open 함수를 이용하여 모달을 여는 요소를 설정합니다.               |
+| title                               | `string`                                                          |         | 모달의 제목입니다.                                                |
+| subtitle                            | `string`                                                          |         | 모달의 부제목입니다.                                              |
+| size                                | `lg` \| `md`                                                      | `md`    | PC 뷰에서 모달의 너비를 설정합니다.                               |
+| renderContents                      | `(_: { close: () => void }) => ReactElementChild`                 |         | 내부 컨텐츠를 설정합니다.                                         |
+| onClose                             | `() => void`                                                      |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
+| [primaryButtonOptions](#cta-버튼)   | `{ text: string, disabled: boolean, onClick: () => void }`        |         | 렌더할 Primary 버튼의 속성을 지정합니다.                          |
+| [secondaryButtonOptions](#cta-버튼) | `{ text: string, disabled: boolean, onClick: () => void }`        |         | 렌더할 Secondary 버튼의 속성을 지정합니다.                        |
+| [subButtonOptions](#cta-버튼)       | `{ text: string, disabled: boolean, onClick: () => void }`        |         | 렌더할 Sub 버튼의 속성을 지정합니다.                              |
 
 ## Usage
 
