@@ -19,7 +19,7 @@ describe('<OutlinedButton />', () => {
     return renderer.container;
   };
 
-  describe('when size property is responsive', () => {
+  describe('when the size property is responsive', () => {
     subject = () => {
       const renderer = render(<OutlinedButton {...props} />);
 
@@ -33,32 +33,32 @@ describe('<OutlinedButton />', () => {
       };
     });
 
-    describe('with mobile viewport', () => {
+    describe('and the viewport is mobile', () => {
       beforeAll(async () => {
         await BrowserTesting.resize(320, 768);
       });
 
-      it('have bold font weight', async () => {
+      it('should have bold font weight', async () => {
         expect(subject()).toHaveStyleRule('font-weight', '700');
       });
 
-      it('does not have responsive font weight', async () => {
+      it('should not have font weight in media query', async () => {
         expect(subject()).not.toHaveStyleRule('font-weight', expect.any(String), {
           media: '(min-width: 0px)',
         });
       });
     });
 
-    describe('with tablet viewport', () => {
+    describe('and the viewport is tablet', () => {
       beforeAll(async () => {
         await BrowserTesting.resize(640, 768);
       });
 
-      it('have bold font weight', async () => {
+      it('should have bold font weight', async () => {
         expect(subject()).toHaveStyleRule('font-weight', '700');
       });
 
-      it('does not have responsive font weight', async () => {
+      it('should not have font weight in media query', async () => {
         expect(subject()).not.toHaveStyleRule('font-weight', expect.any(String), {
           media: '(min-width: 640px)',
         });
