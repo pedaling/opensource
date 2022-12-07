@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.33.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.33.1...vibrant-motion-0.33.2) (2022-12-07)
+
+
+### Features
+
+* add delay prop to Motion ([#477](https://github.com/pedaling/opensource/issues/477)) ([40677e2](https://github.com/pedaling/opensource/commit/40677e2b8ca77035cf8d46367a702016b55c3393))
+
 ### [0.33.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.33.0...vibrant-motion-0.33.1) (2022-12-03)
 
 ## [0.33.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.32.0...vibrant-motion-0.33.0) (2022-12-03)

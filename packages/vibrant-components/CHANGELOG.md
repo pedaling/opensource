@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.33.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.33.1...vibrant-components-0.33.2) (2022-12-07)
+
+
+### Features
+
+* Dropdown의 open 속성을 defaultOpen으로 수정하고 문서를 추가한다. ([#459](https://github.com/pedaling/opensource/issues/459)) ([1c6b12e](https://github.com/pedaling/opensource/commit/1c6b12eb06326313fad4b3b205cdb1e23eaa4cfa))
+* ScrollBox에 horizontal 속성을 추가하고 Stack에 scrollable 속성을 추가한다. ([#455](https://github.com/pedaling/opensource/issues/455)) ([b2a6996](https://github.com/pedaling/opensource/commit/b2a6996fbc91272164c5422924a7fe1d78552e3f))
+
+
+### Bug Fixes
+
+* change SearchField height to 38px ([#470](https://github.com/pedaling/opensource/issues/470)) ([728c5b2](https://github.com/pedaling/opensource/commit/728c5b2c49f9b9a37940c73e05c0a730df03aa48))
+* remove font-weight from typography ([#474](https://github.com/pedaling/opensource/issues/474)) ([0a65a0c](https://github.com/pedaling/opensource/commit/0a65a0c94bf6f4ac056ed020d18bd6ed2323a07b))
+
 ### [0.33.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.33.0...vibrant-components-0.33.1) (2022-12-03)
 
 ## [0.33.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.32.0...vibrant-components-0.33.0) (2022-12-03)

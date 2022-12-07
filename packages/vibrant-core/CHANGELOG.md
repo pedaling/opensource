@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.33.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.33.1...vibrant-core-0.33.2) (2022-12-07)
+
+
+### Features
+
+* ScrollBox에 horizontal 속성을 추가하고 Stack에 scrollable 속성을 추가한다. ([#455](https://github.com/pedaling/opensource/issues/455)) ([b2a6996](https://github.com/pedaling/opensource/commit/b2a6996fbc91272164c5422924a7fe1d78552e3f))
+
 ### [0.33.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.33.0...vibrant-core-0.33.1) (2022-12-03)
 
 ## [0.33.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.32.0...vibrant-core-0.33.0) (2022-12-03)
