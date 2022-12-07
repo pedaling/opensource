@@ -11,7 +11,7 @@ import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, loop, from, to, easing = 'easeOutQuad', onStart, onEnd }) => {
+  ({ innerRef, children, duration, loop, from, to, delay, easing = 'easeOutQuad', onStart, onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const { animated } = useReactSpring();
     const onEndRef = useSafeDeps(onEnd);
@@ -44,12 +44,13 @@ export const Motion = withMotionVariation(
           easing: easing && easings[easing],
         },
         loop,
+        delay,
         onStart,
         onRest: (result: AnimationResult) => {
           onEndRef.current?.(result);
         },
       }),
-      [duration, easing, fromStyle, loop, onEndRef, onStart, toStyle]
+      [delay, duration, easing, fromStyle, loop, onEndRef, onStart, toStyle]
     );
 
     const [styles, springApi] = useSpring(() => ({
