@@ -23,14 +23,8 @@ describe('<Display />', () => {
 
     it('display3 style applied', () => {
       const themeTypography = baseTheme.typography;
-      const themeTypographyWeight = baseTheme.typographyWeight;
 
       expect(element).toHaveStyleRule('font-size', themeTypography.display3.fontSize);
-
-      expect(element).toHaveStyleRule(
-        'font-weight',
-        themeTypographyWeight[themeTypography.display3.fontWeight].fontWeight.toString()
-      );
 
       expect(element).toHaveStyleRule('line-height', themeTypography.display3.lineHeight);
     });

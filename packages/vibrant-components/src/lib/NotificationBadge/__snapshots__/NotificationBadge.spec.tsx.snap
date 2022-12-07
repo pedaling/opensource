@@ -99,8 +99,8 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   -webkit-text-fill-color: #ffffff;
   text-fill-color: #ffffff;
   font-size: 0.625rem;
-  font-weight: 500;
   line-height: 0.75rem;
+  font-weight: 500;
 }
 
 <div>

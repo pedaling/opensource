@@ -61,8 +61,8 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
   font-size: 1rem;
-  font-weight: 700;
   line-height: 1.25rem;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 1024px) {

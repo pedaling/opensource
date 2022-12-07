@@ -23,14 +23,8 @@ describe('<Title />', () => {
 
     it('title3 style applied', () => {
       const themeTypography = baseTheme.typography;
-      const themeTypographyWeight = baseTheme.typographyWeight;
 
       expect(element).toHaveStyleRule('font-size', themeTypography.title3.fontSize);
-
-      expect(element).toHaveStyleRule(
-        'font-weight',
-        themeTypographyWeight[themeTypography.title3.fontWeight].fontWeight.toString()
-      );
 
       expect(element).toHaveStyleRule('line-height', themeTypography.title3.lineHeight);
     });
