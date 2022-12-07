@@ -19,6 +19,7 @@ export type MotionProps = {
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
+  delay?: number;
   animation: WithMotion<AllSystemProps & TransformMotionProps>;
   easing?: keyof EasingDictionary;
   onStart?: (e: AnimationResult) => void;
