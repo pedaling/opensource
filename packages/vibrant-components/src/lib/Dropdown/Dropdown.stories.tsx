@@ -114,8 +114,10 @@ export const WithModalBottomSheet: ComponentStory<typeof Dropdown> = props => {
           {...props}
           defaultOpen={false}
           position="top-end"
-          renderOpener={({ ref, open }) => (
-            <FloatingActionButton ref={ref} IconComponent={Icon.ArrowUpToLine.Thin} onClick={open} />
+          renderOpener={({ open }) => (
+            <Pressable backgroundColor="primary" onClick={open} p={20} height={100}>
+              <Body level={1}>Click Me</Body>
+            </Pressable>
           )}
           renderContents={({ close }) => (
             <Pressable
@@ -126,7 +128,7 @@ export const WithModalBottomSheet: ComponentStory<typeof Dropdown> = props => {
                 setModalOpen(true);
               }}
             >
-              close
+              <Body level={1}>Close</Body>
             </Pressable>
           )}
         />
