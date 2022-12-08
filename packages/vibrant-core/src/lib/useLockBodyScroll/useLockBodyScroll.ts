@@ -25,8 +25,6 @@ export const useLockBodyScroll = (active = false) => {
         touchAction: document.body.style.touchAction,
       };
 
-      body.style.overflow = 'hidden';
-
       const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
       body.style.paddingRight = `${scrollBarWidth}px`;
