@@ -35,6 +35,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     sortable,
     defaultSortDirection,
     onSort,
+    textAlign,
     ...props
   }) => {
     const [sortDirection, setSortDirection] = useState<SortDirection>(defaultSortDirection ?? 'none');
@@ -48,12 +49,20 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     };
 
     return (
-      <VStack as="th" py={12} px={16} alignHorizontal={alignHorizontal} alignVertical={alignVertical} {...props}>
+      <VStack
+        as="th"
+        py={12}
+        px={16}
+        alignHorizontal={alignHorizontal}
+        alignVertical={alignVertical}
+        minWidth={0}
+        {...props}
+      >
         {renderCell ? (
           renderCell()
         ) : (
           <HStack alignVertical="center" spacing={4}>
-            <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak}>
+            <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak} textAlign={textAlign} width="100%">
               {title}
             </Body>
             {/* TODO(Mia): replace icon with tooltip */}

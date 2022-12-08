@@ -29,7 +29,28 @@ export type TableHeaderCellProps = Either<
   Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
   Pick<TextProps, 'lineLimit' | 'wordBreak'>;
 
-export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>('TableHeaderCell')();
+export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>('TableHeaderCell')(
+  propVariant({
+    props: [
+      {
+        name: 'alignHorizontal',
+        default: 'center',
+        keep: true,
+      },
+    ],
+    variants: {
+      start: {
+        textAlign: 'left' as const,
+      },
+      center: {
+        textAlign: 'center' as const,
+      },
+      end: {
+        textAlign: 'right' as const,
+      },
+    },
+  })
+);
 
 export const withTableHeaderSortButtonVariation = withVariation<{
   sortDirection: SortDirection;
