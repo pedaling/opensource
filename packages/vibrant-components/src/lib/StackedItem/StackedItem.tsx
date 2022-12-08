@@ -5,7 +5,7 @@ import { withStackedItemVariation } from './StackedItemProps';
 
 export const StackedItem = withStackedItemVariation(
   ({ id, order, position, height, renderBeforeCalculate, children }) => {
-    const { offset, changeHeight } = useStackedPortal({ id, order, position });
+    const { offset, unregister, changeHeight } = useStackedPortal({ id, order, position });
     const { getResponsiveValue } = useResponsiveValue();
 
     useEffect(() => {
@@ -15,6 +15,14 @@ export const StackedItem = withStackedItemVariation(
         changeHeight(currentHeight);
       }
     }, [changeHeight, getResponsiveValue, height]);
+
+    useEffect(
+      () => () => {
+        unregister();
+      },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      []
+    );
 
     return renderBeforeCalculate || isDefined(offset)
       ? children({ offset: offset ?? 0, setHeight: changeHeight })
