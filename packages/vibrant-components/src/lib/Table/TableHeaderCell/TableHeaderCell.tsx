@@ -77,7 +77,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
 
 export const TableHeaderSortButton = withTableHeaderSortButtonVariation(
   ({ onClick, SortIconComponent, sortIconFill }) => (
-    <Pressable onClick={onClick}>
+    <Pressable onClick={onClick} flexShrink={0}>
       <SortIconComponent size={14} fill={sortIconFill} />
     </Pressable>
   )
