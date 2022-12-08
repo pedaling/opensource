@@ -29,7 +29,7 @@ export const Basic: ComponentStory<typeof MountMotion> = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box alignItems="start">
+    <Box alignItems="flex-start">
       <PressableBox onClick={() => setIsOpen(!isOpen)} backgroundColor="primary" p={16}>
         <Text typography="body1">click</Text>
       </PressableBox>
