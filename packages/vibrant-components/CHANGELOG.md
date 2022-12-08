@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.33.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.33.2...vibrant-components-0.33.3) (2022-12-08)
+
+
+### Bug Fixes
+
+* unregister when StackedItem unmount ([#479](https://github.com/pedaling/opensource/issues/479)) ([36095a5](https://github.com/pedaling/opensource/commit/36095a5977626581e33b47cb8b6477b0f39f85f0))
+
 ### [0.33.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.33.1...vibrant-components-0.33.2) (2022-12-07)
 
 
