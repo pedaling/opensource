@@ -25,11 +25,18 @@ export const useLockBodyScroll = (active = false) => {
 
       const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-      document.body.style.paddingRight = `${scrollBarWidth}px`;
+      const computedBodyPaddingRight = parseInt(
+        window.getComputedStyle(document.body).getPropertyValue('padding-right'),
+        10
+      );
 
-      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => {
+        document.body.style.paddingRight = `${computedBodyPaddingRight + scrollBarWidth}px`;
 
-      document.body.style.touchAction = 'none';
+        document.body.style.overflow = 'hidden';
+
+        document.body.style.touchAction = 'none';
+      });
     }
 
     lockedIds.add(id);
@@ -41,13 +48,15 @@ export const useLockBodyScroll = (active = false) => {
     }
 
     if (lockedIds.size === 1 && lockedIds.has(id)) {
-      document.body.style.paddingRight = initialBodyStyle.paddingRight;
+      requestAnimationFrame(() => {
+        document.body.style.paddingRight = initialBodyStyle.paddingRight;
 
-      document.body.style.overflow = initialBodyStyle.overflow;
+        document.body.style.overflow = initialBodyStyle.overflow;
 
-      document.body.style.touchAction = initialBodyStyle.touchAction;
+        document.body.style.touchAction = initialBodyStyle.touchAction;
 
-      initialBodyStyle = undefined;
+        initialBodyStyle = undefined;
+      });
     }
 
     lockedIds.delete(id);
