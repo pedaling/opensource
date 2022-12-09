@@ -16,8 +16,6 @@ export const useLockBodyScroll = (active = false) => {
   const id = useId();
 
   const lock = useCallback(() => {
-    const { body } = document;
-
     if (!initialBodyStyle) {
       initialBodyStyle = {
         paddingRight: document.body.style.paddingRight,
@@ -27,29 +25,27 @@ export const useLockBodyScroll = (active = false) => {
 
       const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-      body.style.paddingRight = `${scrollBarWidth}px`;
+      document.body.style.paddingRight = `${scrollBarWidth}px`;
 
-      body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
 
-      body.style.touchAction = 'none';
+      document.body.style.touchAction = 'none';
     }
 
     lockedIds.add(id);
   }, [id]);
 
   const unlock = useCallback(() => {
-    const { body } = document;
-
     if (!initialBodyStyle) {
       return;
     }
 
     if (lockedIds.size === 1 && lockedIds.has(id)) {
-      body.style.paddingRight = initialBodyStyle.paddingRight;
+      document.body.style.paddingRight = initialBodyStyle.paddingRight;
 
-      body.style.overflow = initialBodyStyle.overflow;
+      document.body.style.overflow = initialBodyStyle.overflow;
 
-      body.style.touchAction = initialBodyStyle.touchAction;
+      document.body.style.touchAction = initialBodyStyle.touchAction;
 
       initialBodyStyle = undefined;
     }
