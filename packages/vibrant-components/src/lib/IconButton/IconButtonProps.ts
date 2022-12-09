@@ -1,7 +1,7 @@
-import type { ComponentType, Ref } from 'react';
+import type { Ref } from 'react';
 import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { IconProps } from '@vibrant-ui/icons';
+import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import type { OnColorToken } from '@vibrant-ui/theme';
 import type { PressableProps } from '../Pressable';
 
@@ -10,7 +10,7 @@ type IconButtonProps = {
   size: ResponsiveValue<'lg' | 'md' | 'sm'>;
   color?: OnColorToken;
   type?: PressableProps['buttonType'];
-  IconComponent: ComponentType<IconProps>;
+  IconComponent: IconComponent<IconProps, 'Fill' | 'Regular'>;
   disabled?: boolean;
   onClick?: PressableProps['onClick'];
   ariaLabel?: string;
