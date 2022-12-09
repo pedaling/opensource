@@ -5,7 +5,11 @@ title: IconButton
 # IconButton
 
 ```jsx live
-<IconButton size="md" IconComponent={Icon.Play.Fill} />
+<IconButton
+  size="md"
+  IconComponent={Icon.Play.Fill}
+  ariaLabel="Play"
+/>
 ```
 
 ## How to use
@@ -24,6 +28,7 @@ import { IconButton } from '@vibrant-ui/components';
 | IconComponent `IconComponent<IconProps, Fill \| Regular>` |                                                        | 버튼애 표시되는 아이콘 |
 | disabled                                                  | `boolean`                                              |                        | 버튼의 비활성화 여부                  |
 | onClick                                                   | `() => void`                                           |                        | 버튼이 클릭됐을 때 호출되는 콜백 함수 |
+| ariaLabel                                                 | `string`                                               |                        | 버튼의 접근 가능한 이름               |
 
 ## Usage
 
