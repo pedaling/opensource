@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.33.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.33.3...vibrant-core-0.33.4) (2022-12-09)
+
+
+### Bug Fixes
+
+* fix error when using multiple useLockBodyScroll ([#480](https://github.com/pedaling/opensource/issues/480)) ([1649ae1](https://github.com/pedaling/opensource/commit/1649ae15ee0f6eec22d3eb0779d6629b35697286))
+
 ### [0.33.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.33.2...vibrant-core-0.33.3) (2022-12-08)
 
 ### [0.33.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.33.1...vibrant-core-0.33.2) (2022-12-07)
