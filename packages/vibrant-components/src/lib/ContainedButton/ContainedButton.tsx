@@ -34,29 +34,31 @@ export const ContainedButton = withContainedButtonVariation(
       <>
         <HStack
           as="span"
+          data-testid="content-box"
           alignVertical="center"
           alignHorizontal="center"
           opacity={loading ? 0 : 1}
           spacing={contentsSpacing}
         >
           {IconComponent && (
-            <Box as="span" mx={2}>
+            <Box data-testid="icon-box" as="span" mx={2}>
               <IconComponent size={iconSize} />
             </Box>
           )}
           {Boolean(children) && (
-            <Text typography={typography} fontWeight="bold" mx={4}>
+            <Text data-testid="button-text" typography={typography} fontWeight="bold" mx={4}>
               {children}
             </Text>
           )}
           {DisclosureIconComponent && (
-            <Box as="span" ml={2}>
+            <Box data-testid="disclosure-box" as="span" ml={2}>
               <DisclosureIconComponent size={disclosureSize} />
             </Box>
           )}
         </HStack>
         {loading && (
           <HStack
+            data-testid="loading"
             as="span"
             alignVertical="center"
             alignHorizontal="center"
