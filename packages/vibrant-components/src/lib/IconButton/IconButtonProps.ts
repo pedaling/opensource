@@ -10,7 +10,7 @@ type IconButtonProps = {
   size: ResponsiveValue<'lg' | 'md' | 'sm'>;
   color?: OnColorToken;
   type?: PressableProps['buttonType'];
-  IconComponent: IconComponent<IconProps, 'Fill' | 'Regular'>;
+  IconComponent: IconComponent<IconProps, 'Fill' | 'Regular' | 'Thin'>;
   disabled?: boolean;
   onClick?: PressableProps['onClick'];
   ariaLabel?: string;
