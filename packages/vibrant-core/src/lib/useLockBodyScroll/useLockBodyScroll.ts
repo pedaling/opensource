@@ -3,13 +3,11 @@ import { platform } from '../platform';
 
 const IS_BROWSER = platform === 'web' && typeof window !== 'undefined';
 
-let initialBodyStyle:
-  | {
-      paddingRight: string;
-      overflow: string;
-      touchAction: string;
-    }
-  | undefined = undefined;
+let initialBodyStyle: {
+  paddingRight: string;
+  overflow: string;
+  touchAction: string;
+} | null;
 const lockedIds = new Set();
 
 export const useLockBodyScroll = (active = false) => {
@@ -43,19 +41,19 @@ export const useLockBodyScroll = (active = false) => {
   }, [id]);
 
   const unlock = useCallback(() => {
-    if (!initialBodyStyle) {
-      return;
-    }
-
     if (lockedIds.size === 1 && lockedIds.has(id)) {
       requestAnimationFrame(() => {
+        if (!initialBodyStyle) {
+          return;
+        }
+
         document.body.style.paddingRight = initialBodyStyle.paddingRight;
 
         document.body.style.overflow = initialBodyStyle.overflow;
 
         document.body.style.touchAction = initialBodyStyle.touchAction;
 
-        initialBodyStyle = undefined;
+        initialBodyStyle = null;
       });
     }
 
