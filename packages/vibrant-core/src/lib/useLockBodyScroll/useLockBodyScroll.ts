@@ -13,7 +13,7 @@ const lockedIds = new Set();
 export const useLockBodyScroll = (active = false) => {
   const id = useId();
 
-  const lock = useCallback(() => {
+  const lockBodyScroll = useCallback(() => {
     if (!initialBodyStyle) {
       initialBodyStyle = {
         paddingRight: document.body.style.paddingRight,
@@ -40,7 +40,7 @@ export const useLockBodyScroll = (active = false) => {
     lockedIds.add(id);
   }, [id]);
 
-  const unlock = useCallback(() => {
+  const unlockBodyScroll = useCallback(() => {
     if (lockedIds.size === 1 && lockedIds.has(id)) {
       requestAnimationFrame(() => {
         if (!initialBodyStyle) {
@@ -65,10 +65,10 @@ export const useLockBodyScroll = (active = false) => {
       return;
     }
 
-    lock();
+    lockBodyScroll();
 
     return () => {
-      unlock();
+      unlockBodyScroll();
     };
-  }, [active, lock, unlock]);
+  }, [active, lockBodyScroll, unlockBodyScroll]);
 };
