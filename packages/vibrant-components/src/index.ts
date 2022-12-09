@@ -54,3 +54,4 @@ export { Stack } from './lib/Stack';
 export { OutlinedButton } from './lib/OutlinedButton';
 export { ScrollDetector } from './lib/ScrollDetector';
 export { TopBar } from './lib/TopBar';
+export { IconButton } from './lib/IconButton';
