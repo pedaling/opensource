@@ -1,58 +1,67 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useId } from 'react';
 import { platform } from '../platform';
 
 const IS_BROWSER = platform === 'web' && typeof window !== 'undefined';
 
+let initialBodyStyle: {
+  paddingRight: string;
+  overflow: string;
+  touchAction: string;
+} | null;
+const lockedIds = new Set();
+
 export const useLockBodyScroll = (active = false) => {
-  const bodyStyleRef = useRef({
-    paddingRight: '',
-    overflow: '',
-    touchAction: '',
-  });
+  const id = useId();
 
-  const lockBodyScroll = () => {
-    if (!IS_BROWSER) {
-      return;
+  const lockBodyScroll = useCallback(() => {
+    if (!initialBodyStyle) {
+      initialBodyStyle = {
+        paddingRight: document.body.style.paddingRight,
+        overflow: document.body.style.overflow,
+        touchAction: document.body.style.touchAction,
+      };
+
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+      const computedBodyPaddingRight = parseInt(
+        window.getComputedStyle(document.body).getPropertyValue('padding-right'),
+        10
+      );
+
+      requestAnimationFrame(() => {
+        document.body.style.paddingRight = `${computedBodyPaddingRight + scrollBarWidth}px`;
+
+        document.body.style.overflow = 'hidden';
+
+        document.body.style.touchAction = 'none';
+      });
     }
 
-    bodyStyleRef.current = {
-      paddingRight: document.body.style.paddingRight,
-      overflow: document.body.style.overflow,
-      touchAction: document.body.style.touchAction,
-    };
+    lockedIds.add(id);
+  }, [id]);
 
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  const unlockBodyScroll = useCallback(() => {
+    if (lockedIds.size === 1 && lockedIds.has(id)) {
+      requestAnimationFrame(() => {
+        if (!initialBodyStyle) {
+          return;
+        }
 
-    const computedBodyPaddingRight = parseInt(
-      window.getComputedStyle(document.body).getPropertyValue('padding-right'),
-      10
-    );
+        document.body.style.paddingRight = initialBodyStyle.paddingRight;
 
-    requestAnimationFrame(() => {
-      document.body.style.paddingRight = `${computedBodyPaddingRight + scrollBarWidth}px`;
+        document.body.style.overflow = initialBodyStyle.overflow;
 
-      document.body.style.overflow = 'hidden';
+        document.body.style.touchAction = initialBodyStyle.touchAction;
 
-      document.body.style.touchAction = 'none';
-    });
-  };
-
-  const unlockBodyScroll = () => {
-    if (!IS_BROWSER) {
-      return;
+        initialBodyStyle = null;
+      });
     }
 
-    requestAnimationFrame(() => {
-      document.body.style.paddingRight = bodyStyleRef.current.paddingRight;
-
-      document.body.style.overflow = bodyStyleRef.current.overflow;
-
-      document.body.style.touchAction = bodyStyleRef.current.touchAction;
-    });
-  };
+    lockedIds.delete(id);
+  }, [id]);
 
   useEffect(() => {
-    if (!active) {
+    if (!active || !IS_BROWSER) {
       return;
     }
 
@@ -61,5 +70,5 @@ export const useLockBodyScroll = (active = false) => {
     return () => {
       unlockBodyScroll();
     };
-  }, [active]);
+  }, [active, lockBodyScroll, unlockBodyScroll]);
 };
