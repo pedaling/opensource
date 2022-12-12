@@ -1,5 +1,5 @@
 import { Body } from '../../Body';
-import { VStack } from '../../VStack';
+import { HStack } from '../../HStack';
 import { withTableDataCellVariation } from './TableDataCellProps';
 
 export const TableDataCell = withTableDataCellVariation(
@@ -13,7 +13,7 @@ export const TableDataCell = withTableDataCellVariation(
     textAlign,
     ...props
   }) => (
-    <VStack
+    <HStack
       as="td"
       py={12}
       px={16}
@@ -25,10 +25,10 @@ export const TableDataCell = withTableDataCellVariation(
       {renderCell ? (
         renderCell()
       ) : (
-        <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak} textAlign={textAlign} width="100%">
+        <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak} textAlign={textAlign}>
           {children}
         </Body>
       )}
-    </VStack>
+    </HStack>
   )
 );
