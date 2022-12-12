@@ -33,6 +33,7 @@ export const TableRow = withTableRowVariation(
                   onValueChange={onSelectionChange}
                 />
               )}
+              flexShrink={0}
               bottomBordered={bottomBordered}
             />
           )}
@@ -45,6 +46,7 @@ export const TableRow = withTableRowVariation(
                   onClick={() => setIsExpanded(!isExpanded)}
                 />
               )}
+              flexShrink={0}
               bottomBordered={bottomBordered}
             />
           )}
