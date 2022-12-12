@@ -1,4 +1,5 @@
 import type {
+  BorderSystemProps,
   FlexboxSystemProps,
   ReactElementChildren,
   SizingSystemProps,
@@ -16,31 +17,28 @@ export type TableDataCellProps = Either<
     renderCell?: () => ReactElementChildren;
   }
 > & {
+  bottomBordered?: boolean;
   alignVertical?: 'center' | 'end' | 'start';
   alignHorizontal?: 'center' | 'end' | 'start';
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
-  Pick<TextProps, 'lineLimit' | 'wordBreak'>;
+  Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'> &
+  BorderSystemProps;
 
 export const withTableDataCellVariation = withVariation<TableDataCellProps>('TableDataCell')(
   propVariant({
     props: [
       {
-        name: 'alignHorizontal',
-        default: 'center',
-        keep: true,
+        name: 'bottomBordered',
       },
     ],
     variants: {
-      start: {
-        textAlign: 'left' as const,
+      true: {
+        borderBottomColor: 'outline1',
+        borderBottomWidth: 1,
+        borderBottomStyle: 'solid',
       },
-      center: {
-        textAlign: 'center' as const,
-      },
-      end: {
-        textAlign: 'right' as const,
-      },
+      false: {},
     },
   })
 );
