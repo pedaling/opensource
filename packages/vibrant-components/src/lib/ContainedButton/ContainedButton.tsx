@@ -58,7 +58,7 @@ export const ContainedButton = withContainedButtonVariation(
         </HStack>
         {loading && (
           <HStack
-            data-testid="loading"
+            data-testid="loading-box"
             as="span"
             alignVertical="center"
             alignHorizontal="center"
