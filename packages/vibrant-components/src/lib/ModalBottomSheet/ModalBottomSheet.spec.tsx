@@ -55,11 +55,11 @@ describe('<ModalBottomSheet />', () => {
         await waitForElementToBeRemoved(() => renderer.queryByRole('dialog'));
       });
 
-      it('should call onClose function', () => {
+      it.skip('should call onClose function', () => {
         expect(mockOnClose).toBeCalled();
       });
 
-      it('should close the content', () => {
+      it.skip('should close the content', () => {
         expect(renderer.queryByRole('dialog')).toBeFalsy();
       });
     });

@@ -2,13 +2,9 @@ import { fireEvent, waitFor } from '@testing-library/react';
 import { ThemeProvider } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
-import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { calculateDistance, createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { ContainedButton } from './ContainedButton';
 import { DarkThemeKindVariations, LightThemeKindVariations, SizeVariations } from './ContainedButtonTestSpec';
-
-function calculateDistance(fromElement: HTMLElement, toElement: HTMLElement): number {
-  return toElement.getBoundingClientRect().left - fromElement.getBoundingClientRect().right;
-}
 
 describe('<ContainedButton />', () => {
   const { render } = createReactRenderer();
