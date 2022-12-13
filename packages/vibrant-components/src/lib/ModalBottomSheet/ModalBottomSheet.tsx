@@ -20,7 +20,7 @@ import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
 import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
-import { Pressable } from '../Pressable';
+import { IconButton } from '../IconButton';
 import { Space } from '../Space';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
@@ -156,18 +156,10 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       {title}
                     </Title>
                   ) : null}
-                  <Pressable
-                    as="button"
-                    ariaLabel="Close"
-                    pl={12}
-                    ml="auto"
-                    onClick={closeModal}
-                    interactions={['active', 'focus']}
-                    mt={[0, title ? 6 : 0]}
-                    flexShrink={0}
-                  >
-                    <Icon.Close.Regular size={24} />
-                  </Pressable>
+
+                  <HStack ml="auto" mt={[0, title ? 6 : 0]} flexShrink={0} pl={12}>
+                    <IconButton ariaLabel="Close" onClick={closeModal} size="md" IconComponent={Icon.Close.Regular} />
+                  </HStack>
                 </HStack>
                 {subtitle ? (
                   <Body as="p" level={1} mt={[14, 20]} px={[20, 32]} flexShrink={0}>
