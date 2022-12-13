@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
-import { Pressable } from '../../Pressable';
 import { VStack } from '../../VStack';
-import type { SortDirection } from './TableHeaderCellProps';
-import { withTableHeaderCellVariation, withTableHeaderSortButtonVariation } from './TableHeaderCellProps';
+import type { SortDirection } from '../TableSortButton';
+import { TableSortButton } from '../TableSortButton';
+import { withTableHeaderCellVariation } from './TableHeaderCellProps';
 
 const getNextSortDirection = (sortDirection: SortDirection) => {
   if (sortDirection === 'none') {
@@ -67,18 +67,10 @@ export const TableHeaderCell = withTableHeaderCellVariation(
             </Body>
             {/* TODO(Mia): replace icon with tooltip */}
             {description ? <Icon.InfoCircle.Fill size={14} /> : null}
-            {sortable ? <TableHeaderSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
+            {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
           </HStack>
         )}
       </VStack>
     );
   }
-);
-
-export const TableHeaderSortButton = withTableHeaderSortButtonVariation(
-  ({ onClick, SortIconComponent, sortIconFill }) => (
-    <Pressable onClick={onClick} flexShrink={0}>
-      <SortIconComponent size={14} fill={sortIconFill} />
-    </Pressable>
-  )
 );

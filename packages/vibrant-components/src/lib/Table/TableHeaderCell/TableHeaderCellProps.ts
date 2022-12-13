@@ -7,10 +7,8 @@ import type {
   TextProps,
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import { Icon } from '@vibrant-ui/icons';
 import type { Either } from '@vibrant-ui/utils';
-
-export type SortDirection = 'asc' | 'desc' | 'none';
+import type { SortDirection } from '../TableSortButton';
 
 export type TableHeaderCellProps = Either<
   {
@@ -46,33 +44,6 @@ export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>(
         borderBottomStyle: 'solid',
       },
       false: {},
-    },
-  })
-);
-
-export const withTableHeaderSortButtonVariation = withVariation<{
-  sortDirection: SortDirection;
-  onClick?: () => void;
-}>('TableHeaderSortButton')(
-  propVariant({
-    props: [
-      {
-        name: 'sortDirection',
-      },
-    ],
-    variants: {
-      none: {
-        SortIconComponent: Icon.Sorting.Thin,
-        sortIconFill: 'onView3' as const,
-      },
-      desc: {
-        SortIconComponent: Icon.ArrowDown.Regular,
-        sortIconFill: 'onViewPrimary' as const,
-      },
-      asc: {
-        SortIconComponent: Icon.ArrowUp.Regular,
-        sortIconFill: 'onViewPrimary' as const,
-      },
     },
   })
 );
