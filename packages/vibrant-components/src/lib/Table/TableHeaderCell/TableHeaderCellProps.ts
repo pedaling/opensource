@@ -1,5 +1,4 @@
 import type {
-  BorderSystemProps,
   FlexboxSystemProps,
   ReactElementChildren,
   SizingSystemProps,
@@ -27,8 +26,7 @@ export type TableHeaderCellProps = Either<
   alignHorizontal?: 'center' | 'end' | 'start';
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
-  Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'> &
-  BorderSystemProps;
+  Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
 
 export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>('TableHeaderCell')(
   propVariant({
