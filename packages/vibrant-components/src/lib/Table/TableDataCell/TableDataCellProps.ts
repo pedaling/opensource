@@ -17,6 +17,7 @@ export type TableDataCellProps = Either<
     renderCell?: () => ReactElementChildren;
   }
 > & {
+  onClick?: () => void;
   bottomBordered?: boolean;
   alignVertical?: 'center' | 'end' | 'start';
   alignHorizontal?: 'center' | 'end' | 'start';

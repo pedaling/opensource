@@ -14,6 +14,7 @@ export type TableRowProps = {
   renderExpanded?: () => ReactElementChildren;
   children?: ReactElementChildren;
   bottomBordered?: boolean;
+  onClick?: () => void;
 };
 
 export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(

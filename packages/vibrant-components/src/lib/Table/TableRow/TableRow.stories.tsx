@@ -26,27 +26,27 @@ export default {
   },
 };
 
-export const Basic: ComponentStory<typeof TableRow> = props => (
+export const Basic: ComponentStory<typeof TableRow> = ({ bottomBordered, ...props }) => (
   <VStack as="table" width="100%">
-    <TableRow {...props}>
-      <TableDataCell flexGrow={1} bottomBordered={true}>
+    <TableRow {...props} bottomBordered={bottomBordered}>
+      <TableDataCell flexGrow={1} bottomBordered={bottomBordered}>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, accusantium quam libero et ex veniam sequi
         harum illum, beatae excepturi aut? Laborum dicta in veniam consequatur laboriosam distinctio eaque iure.
       </TableDataCell>
-      <TableDataCell flexGrow={0} flexBasis={50} flexShrink={0} bottomBordered={true}>
+      <TableDataCell flexGrow={0} flexBasis={50} flexShrink={0} bottomBordered={bottomBordered}>
         159
       </TableDataCell>
-      <TableDataCell flexGrow={0} flexBasis={50} flexShrink={0} bottomBordered={true}>
+      <TableDataCell flexGrow={0} flexBasis={50} flexShrink={0} bottomBordered={bottomBordered}>
         6
       </TableDataCell>
-      <TableDataCell flexGrow={0} flexBasis={50} flexShrink={0} bottomBordered={true}>
+      <TableDataCell flexGrow={0} flexBasis={50} flexShrink={0} bottomBordered={bottomBordered}>
         24
       </TableDataCell>
       <TableDataCell
         flexGrow={0}
         flexBasis={100}
         flexShrink={0}
-        bottomBordered={true}
+        bottomBordered={bottomBordered}
         renderCell={() => (
           <OutlinedButton size="sm" IconComponent={Icon.Edit.Regular}>
             Edit
