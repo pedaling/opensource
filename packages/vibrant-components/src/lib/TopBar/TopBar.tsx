@@ -62,7 +62,7 @@ export const TopBar = withTopBarVariation(
             {title}
           </Title>
           {(titleCentered || renderRight) && (
-            <Box flexShrink={0} flexBasis={sideWidth} alignItems="end">
+            <Box flexShrink={0} flexBasis={sideWidth} alignItems="flex-end">
               <HStack
                 onLayout={({ width }) => setRightSideWidth(width)}
                 height="100%"
