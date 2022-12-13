@@ -10,44 +10,22 @@ export type FlexboxSystemProps = {
   alignContent?: ResponsiveValue<
     | 'baseline'
     | 'center'
-    | 'end'
     | 'flex-end'
     | 'flex-start'
     | 'normal'
     | 'space-around'
     | 'space-between'
     | 'space-evenly'
-    | 'start'
     | 'stretch'
   >;
   alignItems?: ResponsiveValue<
-    | 'baseline'
-    | 'center'
-    | 'end'
-    | 'flex-end'
-    | 'flex-start'
-    | 'normal'
-    | 'self-end'
-    | 'self-start'
-    | 'start'
-    | 'stretch'
+    'baseline' | 'center' | 'flex-end' | 'flex-start' | 'normal' | 'self-end' | 'self-start' | 'stretch'
   >;
   alignSelf?: ResponsiveValue<
-    | 'auto'
-    | 'baseline'
-    | 'center'
-    | 'end'
-    | 'flex-end'
-    | 'flex-start'
-    | 'normal'
-    | 'self-end'
-    | 'self-start'
-    | 'start'
-    | 'stretch'
+    'auto' | 'baseline' | 'center' | 'flex-end' | 'flex-start' | 'normal' | 'self-end' | 'self-start' | 'stretch'
   >;
   justifyContent?: ResponsiveValue<
     | 'center'
-    | 'end'
     | 'flex-end'
     | 'flex-start'
     | 'left'
@@ -56,13 +34,11 @@ export type FlexboxSystemProps = {
     | 'space-around'
     | 'space-between'
     | 'space-evenly'
-    | 'start'
     | 'stretch'
   >;
   justifyItems?: ResponsiveValue<
     | 'baseline'
     | 'center'
-    | 'end'
     | 'flex-end'
     | 'flex-start'
     | 'left'
@@ -71,14 +47,12 @@ export type FlexboxSystemProps = {
     | 'right'
     | 'self-end'
     | 'self-start'
-    | 'start'
     | 'stretch'
   >;
   justifySelf?: ResponsiveValue<
     | 'auto'
     | 'baseline'
     | 'center'
-    | 'end'
     | 'flex-end'
     | 'flex-start'
     | 'left'
@@ -86,7 +60,6 @@ export type FlexboxSystemProps = {
     | 'right'
     | 'self-end'
     | 'self-start'
-    | 'start'
     | 'stretch'
   >;
   order?: ResponsiveValue<number>;

@@ -59,7 +59,7 @@ const App = () => {
     >
       <ToastProvider>
         <PageScroll>
-          <Box base={SafeAreaView} alignItems="start">
+          <Box base={SafeAreaView} alignItems="flex-start">
             <StoryView {...story} />
           </Box>
         </PageScroll>

@@ -35,7 +35,7 @@ export const TopBar = withTopBarVariation(
       >
         <HStack mx="auto" width="100%" maxWidth={contentArea.maxWidth} spacing={16}>
           {(titleCentered || renderLeft) && (
-            <Box flexShrink={0} flexBasis={sideWidth} alignItems="start">
+            <Box flexShrink={0} flexBasis={sideWidth} alignItems="flex-start">
               <HStack
                 onLayout={({ width }) => setLeftSideWidth(width)}
                 height="100%"
@@ -62,7 +62,7 @@ export const TopBar = withTopBarVariation(
             {title}
           </Title>
           {(titleCentered || renderRight) && (
-            <Box flexShrink={0} flexBasis={sideWidth} alignItems="end">
+            <Box flexShrink={0} flexBasis={sideWidth} alignItems="flex-end">
               <HStack
                 onLayout={({ width }) => setRightSideWidth(width)}
                 height="100%"
