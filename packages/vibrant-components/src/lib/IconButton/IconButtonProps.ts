@@ -2,13 +2,13 @@ import type { Ref } from 'react';
 import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
-import type { OnColorToken } from '@vibrant-ui/theme';
+import type { ColorToken } from '@vibrant-ui/theme';
 import type { PressableProps } from '../Pressable';
 
 type IconButtonProps = {
   ref?: Ref<any>;
   size: ResponsiveValue<'lg' | 'md' | 'sm'>;
-  color?: OnColorToken;
+  color?: ColorToken;
   type?: PressableProps['buttonType'];
   IconComponent: IconComponent<IconProps, 'Fill' | 'Regular' | 'Thin'>;
   disabled?: boolean;
