@@ -88,7 +88,7 @@ const config: StorybookViteConfig & {
             }
           } else if (
             filteredValue.every(
-              ({ value }) => typeof value === 'string' && value[0] !== '"' && !['true', 'false'].includes(value)
+              ({ value }) => typeof value === 'string' && value[0] !== '"' && !['true', 'false'].includes(value) && !prop.name.includes('RadiusLevel')
             )
           ) {
             return false;
