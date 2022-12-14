@@ -18,16 +18,16 @@ export const withTableSortButtonVariation = withVariation<TableSortButtonProps>(
     variants: {
       none: {
         SortIconComponent: Icon.Sorting.Thin,
-        sortIconFill: 'onView3' as const,
+        sortIconFill: 'onView3',
       },
       desc: {
         SortIconComponent: Icon.ArrowDown.Regular,
-        sortIconFill: 'onViewPrimary' as const,
+        sortIconFill: 'onViewPrimary',
       },
       asc: {
         SortIconComponent: Icon.ArrowUp.Regular,
-        sortIconFill: 'onViewPrimary' as const,
+        sortIconFill: 'onViewPrimary',
       },
-    },
+    } as const,
   })
 );
