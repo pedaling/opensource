@@ -110,6 +110,10 @@ export type BoxElements =
   | 'span'
   | 'stop'
   | 'svg'
+  | 'table'
+  | 'td'
+  | 'th'
+  | 'tr'
   | 'ul';
 
 type ComponentProps<Component extends ComponentType | undefined> = Component extends undefined

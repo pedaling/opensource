@@ -30,21 +30,13 @@ const overflowWrapProp = createSystemProp({
 
 const lineLimitProp = createSystemProp({
   property: 'lineLimit',
-  transform: (value: number) =>
-    value > 1
-      ? {
-          display: '-webkit-box',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          WebkitBoxOrient: 'vertical',
-          WebkitLineClamp: value,
-        }
-      : {
-          display: 'block',
-          overflow: 'hidden',
-          whiteSpace: 'nowrap',
-          textOverflow: 'ellipsis',
-        },
+  transform: (value: number) => ({
+    display: '-webkit-box',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    WebkitBoxOrient: 'vertical',
+    WebkitLineClamp: value,
+  }),
 });
 
 export const textSystemProps = [
