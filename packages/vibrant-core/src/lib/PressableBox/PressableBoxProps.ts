@@ -50,7 +50,7 @@ export type PressableBoxProps = {
   children?: ReactElementChild | ReactElementChild[];
 } & Either<
   {
-    as?: 'div' | 'li';
+    as?: 'div' | 'li' | 'td';
     buttonType?: never;
   },
   {

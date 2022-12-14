@@ -37,7 +37,11 @@ export const withTableDataCellVariation = withVariation<TableDataCellProps>('Tab
         borderBottomWidth: 1,
         borderBottomStyle: 'solid',
       },
-      false: {},
-    },
+      false: {
+        borderBottomColor: undefined,
+        borderBottomWidth: 0,
+        borderBottomStyle: undefined,
+      },
+    } as const,
   })
 );
