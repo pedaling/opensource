@@ -144,7 +144,7 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
 }
 
 .emotion-6 {
-  display: block;
+  display: -webkit-box;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
@@ -160,8 +160,9 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   left: 15px;
   right: 15px;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .emotion-7 {
