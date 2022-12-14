@@ -6,24 +6,18 @@ import type {
   TextProps,
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { Either } from '@vibrant-ui/utils';
 import type { SortDirection } from '../TableSortButton';
 
-export type TableHeaderCellProps = Either<
-  {
-    title?: TextChildren;
-    description?: TextChildren;
-    sortable?: boolean;
-    defaultSortDirection?: SortDirection;
-    onSort?: (sortDirection: SortDirection) => void;
-  },
-  {
-    renderCell?: () => ReactElementChildren;
-  }
-> & {
+export type TableHeaderCellProps = {
+  title?: TextChildren;
+  description?: TextChildren;
+  sortable?: boolean;
+  defaultSortDirection?: SortDirection;
+  onSort?: (sortDirection: SortDirection) => void;
+  renderCell?: () => ReactElementChildren;
   bottomBordered?: boolean;
-  alignVertical?: 'center' | 'end' | 'start';
-  alignHorizontal?: 'center' | 'end' | 'start';
+  alignVertical?: 'center' | 'flex-end' | 'flex-start';
+  alignHorizontal?: 'center' | 'flex-end' | 'flex-start';
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
   Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
@@ -46,6 +40,6 @@ export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>(
         borderBottomWidth: 0,
         borderBottomStyle: undefined,
       },
-    },
+    } as const,
   })
 );

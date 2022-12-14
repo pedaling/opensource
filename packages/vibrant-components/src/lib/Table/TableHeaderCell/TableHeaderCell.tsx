@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
-import { VStack } from '../../VStack';
 import type { SortDirection } from '../TableSortButton';
 import { TableSortButton } from '../TableSortButton';
 import { withTableHeaderCellVariation } from './TableHeaderCellProps';
@@ -27,6 +27,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
   ({
     title,
     description,
+    textAlign,
     lineLimit,
     wordBreak,
     renderCell,
@@ -35,8 +36,15 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     sortable,
     defaultSortDirection,
     onSort,
-    textAlign,
-    ...props
+    flexBasis,
+    flexGrow,
+    flexShrink,
+    maxWidth,
+    minWidth,
+    width,
+    borderBottomColor,
+    borderBottomWidth,
+    borderBottomStyle,
   }) => {
     const [sortDirection, setSortDirection] = useState<SortDirection>(defaultSortDirection ?? 'none');
 
@@ -49,14 +57,21 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     };
 
     return (
-      <VStack
+      <Box
         as="th"
         py={12}
         px={16}
-        alignHorizontal={alignHorizontal}
-        alignVertical={alignVertical}
-        minWidth={0}
-        {...props}
+        alignItems={alignHorizontal}
+        justifyContent={alignVertical}
+        minWidth={minWidth ?? 0}
+        flexBasis={flexBasis}
+        flexGrow={flexGrow}
+        flexShrink={flexShrink}
+        maxWidth={maxWidth}
+        width={width}
+        borderBottomColor={borderBottomColor}
+        borderBottomWidth={borderBottomWidth}
+        borderBottomStyle={borderBottomStyle}
       >
         {renderCell ? (
           renderCell()
@@ -70,7 +85,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
             {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
           </HStack>
         )}
-      </VStack>
+      </Box>
     );
   }
 );

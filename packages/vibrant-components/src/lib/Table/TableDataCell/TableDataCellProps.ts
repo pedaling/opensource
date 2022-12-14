@@ -6,20 +6,14 @@ import type {
   TextProps,
 } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { Either } from '@vibrant-ui/utils';
 
-export type TableDataCellProps = Either<
-  {
-    children?: TextChildren;
-  },
-  {
-    renderCell?: () => ReactElementChildren;
-  }
-> & {
+export type TableDataCellProps = {
+  children?: TextChildren;
+  renderCell?: () => ReactElementChildren;
   onClick?: () => void;
   bottomBordered?: boolean;
-  alignVertical?: 'center' | 'end' | 'start';
-  alignHorizontal?: 'center' | 'end' | 'start';
+  alignVertical?: 'center' | 'flex-end' | 'flex-start';
+  alignHorizontal?: 'center' | 'flex-end' | 'flex-start';
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
   Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
