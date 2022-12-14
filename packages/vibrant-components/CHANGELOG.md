@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.34.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.34.0...vibrant-components-0.34.1) (2022-12-14)
+
+
+### Bug Fixes
+
+* allow baseColor in IconButton color prop ([#485](https://github.com/pedaling/opensource/issues/485)) ([fe7e5d6](https://github.com/pedaling/opensource/commit/fe7e5d6a5832a72bf1f0069f2173a2ca59224ef2))
+
 ## [0.34.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.33.4...vibrant-components-0.34.0) (2022-12-14)
 
 
