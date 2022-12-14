@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.34.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.33.4...vibrant-forms-0.34.0) (2022-12-14)
+
+
+### Features
+
+* add TableHeaderCell component ([#472](https://github.com/pedaling/opensource/issues/472)) ([aa333c7](https://github.com/pedaling/opensource/commit/aa333c75bfc5e62c1938082bd2cbf85fd392112e))
+
 ### [0.33.4](https://github.com/pedaling/opensource/compare/vibrant-forms-0.33.3...vibrant-forms-0.33.4) (2022-12-09)
 
 ### [0.33.3](https://github.com/pedaling/opensource/compare/vibrant-forms-0.33.2...vibrant-forms-0.33.3) (2022-12-08)

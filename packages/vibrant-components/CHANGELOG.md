@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.34.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.33.4...vibrant-components-0.34.0) (2022-12-14)
+
+
+### Features
+
+* add IconButton Component ([#481](https://github.com/pedaling/opensource/issues/481)) ([efce531](https://github.com/pedaling/opensource/commit/efce531c8c5a2693e14eca40a0d69c4b5151f17a))
+* add TableHeaderCell component ([#472](https://github.com/pedaling/opensource/issues/472)) ([aa333c7](https://github.com/pedaling/opensource/commit/aa333c75bfc5e62c1938082bd2cbf85fd392112e))
+* ContainedButton 테스트 코드를 추가한다 ([#482](https://github.com/pedaling/opensource/issues/482)) ([f051af6](https://github.com/pedaling/opensource/commit/f051af6d8c7feaac352d7332f9d930863334753a))
+
+
+### Bug Fixes
+
+* remove start, end from flex align prop ([#478](https://github.com/pedaling/opensource/issues/478)) ([6ec368c](https://github.com/pedaling/opensource/commit/6ec368c814d8223385defe6f5dddd7fe07dd5249))
+
 ### [0.33.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.33.3...vibrant-components-0.33.4) (2022-12-09)
 
 

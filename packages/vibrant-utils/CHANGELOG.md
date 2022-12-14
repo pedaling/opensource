@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.34.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.33.4...vibrant-utils-0.34.0) (2022-12-14)
+
+
+### Features
+
+* ContainedButton 테스트 코드를 추가한다 ([#482](https://github.com/pedaling/opensource/issues/482)) ([f051af6](https://github.com/pedaling/opensource/commit/f051af6d8c7feaac352d7332f9d930863334753a))
+
 ### [0.33.4](https://github.com/pedaling/opensource/compare/vibrant-utils-0.33.3...vibrant-utils-0.33.4) (2022-12-09)
 
 ### [0.33.3](https://github.com/pedaling/opensource/compare/vibrant-utils-0.33.2...vibrant-utils-0.33.3) (2022-12-08)
