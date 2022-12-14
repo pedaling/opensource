@@ -22,6 +22,7 @@ type SemanticTagName =
   | 'nav'
   | 'ol'
   | 'section'
+  | 'table'
   | 'td'
   | 'th'
   | 'tr'
