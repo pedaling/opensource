@@ -71,6 +71,24 @@ export const Basic: ComponentStory<typeof Dropdown> = props => (
   </VStack>
 );
 
+export const WithLongWidth: ComponentStory<typeof Dropdown> = props => (
+  <VStack width="100%">
+    <Box mx="auto">
+      <Dropdown
+        {...props}
+        renderContents={() => (
+          <HStack width={400} px={20} alignHorizontal="space-between" alignVertical="end">
+            <Body level={2}>화질</Body>
+            <Body level={3} color="onView2">
+              1080p
+            </Body>
+          </HStack>
+        )}
+      />
+    </Box>
+  </VStack>
+);
+
 export const WithLongContent: ComponentStory<typeof Dropdown> = props => (
   <VStack width="100%">
     <Box mx="auto">
