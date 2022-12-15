@@ -188,7 +188,7 @@ export const Dropdown = withDropdownVariation(
                   py={CONTENT_PADDING}
                   elevationLevel={4}
                   borderRadiusLevel={1}
-                  width={[280, 280, 240]}
+                  minWidth={[280, 280, 240]}
                 >
                   <Transition
                     animation={
