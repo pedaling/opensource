@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
 import type { ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Callout } from '../Callout';
 import { OutlinedButton } from '../OutlinedButton';
 import { Paper } from '../Paper';
 import { Table, useTable } from './Table';
+import type { SortDirection } from './TableSortButton';
 
 type Data = {
   name: string;
@@ -33,8 +35,8 @@ export default {
     rowKey: 'name',
     selectable: true,
     selectButtons: [
-      { text: 'Edit', onClick: selectedRows => console.log(selectedRows) },
-      { text: 'Move', onClick: selectedRows => console.log(selectedRows) },
+      { text: 'Edit', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
+      { text: 'Move', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
     ],
     renderExpanded: () => (
       <Paper backgroundColor="surface1" p={10}>
@@ -45,7 +47,7 @@ export default {
         />
       </Paper>
     ),
-    onSort: (dataKey, direction) => console.log(dataKey, direction),
+    onSort: (dataKey: string, direction: SortDirection) => console.log(dataKey, direction),
     onRow: row => console.log(row),
     emptyText: 'No Data',
     emptyImage: 'https://cdn.class101.net/images/a097865b-683e-4386-a6a3-1fa27d1463d0',
