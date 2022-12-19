@@ -36,15 +36,12 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     sortable,
     defaultSortDirection,
     onSort,
-    flexBasis,
+    flexBasis = 0,
     flexGrow,
     flexShrink,
     maxWidth,
-    minWidth,
+    minWidth = 120,
     width,
-    borderBottomColor,
-    borderBottomWidth,
-    borderBottomStyle,
   }) => {
     const [sortDirection, setSortDirection] = useState<SortDirection>(defaultSortDirection ?? 'none');
 
@@ -63,15 +60,12 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         px={16}
         alignItems={alignHorizontal}
         justifyContent={alignVertical}
-        minWidth={minWidth ?? 0}
+        minWidth={minWidth}
         flexBasis={flexBasis}
         flexGrow={flexGrow}
         flexShrink={flexShrink}
         maxWidth={maxWidth}
         width={width}
-        borderBottomColor={borderBottomColor}
-        borderBottomWidth={borderBottomWidth}
-        borderBottomStyle={borderBottomStyle}
       >
         {renderCell ? (
           renderCell()

@@ -7,14 +7,16 @@ import { TableHeaderCell } from '../TableHeaderCell';
 export type TableRowProps = {
   header?: boolean;
   selectable?: boolean;
-  defaultSelected?: boolean;
+  selected?: boolean;
   indeterminate?: boolean;
   onSelectionChange?: CheckboxProps['onValueChange'];
   expandable?: boolean;
+  expanded?: boolean;
   renderExpanded?: () => ReactElementChildren;
   children?: ReactElementChildren;
   bottomBordered?: boolean;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(
@@ -23,6 +25,7 @@ export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(
       {
         name: 'header',
         default: false,
+        keep: true,
       },
     ],
     variants: {
@@ -33,5 +36,24 @@ export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(
         TableCellComponent: TableDataCell,
       },
     },
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'bottomBordered',
+      },
+    ],
+    variants: {
+      true: {
+        borderBottomColor: 'outline1',
+        borderBottomWidth: 1,
+        borderBottomStyle: 'solid',
+      },
+      false: {
+        borderBottomColor: undefined,
+        borderBottomWidth: 0,
+        borderBottomStyle: undefined,
+      },
+    } as const,
   })
 );
