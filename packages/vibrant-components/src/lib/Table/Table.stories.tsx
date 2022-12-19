@@ -48,7 +48,7 @@ export default {
       </Paper>
     ),
     onSort: (dataKey: string, direction: SortDirection) => console.log(dataKey, direction),
-    onRow: row => console.log(row),
+    onRow: (row: Data) => console.log(row),
     emptyText: 'No Data',
     emptyImage: 'https://cdn.class101.net/images/a097865b-683e-4386-a6a3-1fa27d1463d0',
     disabledRowKey: 'Cupcake',
