@@ -32,7 +32,7 @@ export const ScrollBox = styled(
         style={restStyle}
         scrollEnabled={currentScrollEnabled}
         contentContainerStyle={{
-          flexGrow: 1,
+          flex: 1,
           flexDirection,
           alignItems,
           justifyContent,
