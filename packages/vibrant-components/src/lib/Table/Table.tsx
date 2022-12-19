@@ -33,7 +33,7 @@ export const Table = <DataType extends Record<string, any>>({
 }: TableProps<DataType>) => {
   const columns =
     (Children.toArray(children).filter(child => isValidElement(child)) as unknown as typeof children).map(
-      ({ props }) => props
+      ({ props, key }) => ({ ...props, key })
     ) ?? [];
   const [selectedRowKeys, setSelectedRowKeys] = useState(new Set<string>());
   const isCellClickEnabled = columns?.some(column => isDefined(column.onCell));
