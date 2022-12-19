@@ -20,11 +20,12 @@ export const VibrantProvider: FC<VibrantProviderProps> = ({
   theme,
   root,
   dependencies,
+  translations,
   portalRootZIndex = 100,
   portalTopPriorityOrder = [],
   portalBottomPriorityOrder = [],
 }) => (
-  <ConfigProvider dependencies={dependencies ?? {}}>
+  <ConfigProvider dependencies={dependencies} translations={translations}>
     <SafeAreaProvider>
       <ThemeProvider theme={theme ?? {}} root={root}>
         <StackedPortalProvider
