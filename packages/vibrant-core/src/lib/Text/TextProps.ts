@@ -54,6 +54,7 @@ export type TextChildren = ReactElementChild | ReactTextChild | TextChildren[];
 export type TextProps = SystemProps & {
   as?: TextElements;
   children?: TextChildren;
+  onCopy?: () => void;
 };
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
