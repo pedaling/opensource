@@ -62,7 +62,6 @@ export const Basic: ComponentStory<typeof Table> = props => (
         key="name"
         dataKey="name"
         renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-        textAlign="center"
       />
       <Table.Column<Data> key="calories" dataKey="calories" title="calories" />
       <Table.Column<Data>
@@ -101,7 +100,6 @@ export const UseTable: ComponentStory<typeof Table> = () => {
           key="name"
           dataKey="name"
           renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-          textAlign="center"
         />
         <TableComponent.Column key="calories" dataKey="calories" title="calories" />
         <TableComponent.Column
@@ -111,7 +109,6 @@ export const UseTable: ComponentStory<typeof Table> = () => {
           description="abc"
           sortable={true}
           defaultSortDirection="asc"
-          selectable={true}
           formatData={({ fat }) => `${fat} kcal`}
         />
         <TableComponent.Column key="carbs" dataKey="carbs" title="carbs" />

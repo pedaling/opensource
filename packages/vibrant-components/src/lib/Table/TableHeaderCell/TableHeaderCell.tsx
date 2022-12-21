@@ -60,9 +60,9 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         px={16}
         alignItems={alignHorizontal}
         justifyContent={alignVertical}
-        flexBasis={flexBasis}
+        flexBasis={width ?? flexBasis}
         flexGrow={isDefined(width) ? 0 : flexGrow}
-        flexShrink={flexShrink}
+        flexShrink={isDefined(width) ? 0 : flexShrink}
         minWidth={minWidth}
         width={width}
       >
