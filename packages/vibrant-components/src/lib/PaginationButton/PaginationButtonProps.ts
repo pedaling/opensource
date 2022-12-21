@@ -8,6 +8,7 @@ export type PaginationButtonProps = {
   onClick: () => void;
   disabled?: boolean;
   children?: never;
+  ariaLabel?: string;
 };
 
 export const withPaginationButtonVariation = withVariation<PaginationButtonProps>('PaginationButton')(

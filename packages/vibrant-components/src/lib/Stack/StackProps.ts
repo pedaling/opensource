@@ -47,7 +47,7 @@ export type StackProps = DisplaySystemProps &
     children?: ReactElementChildren;
     alignHorizontal?: ResponsiveValue<Alignment>;
     alignVertical?: ResponsiveValue<Alignment>;
-    arialLabel?: string;
+    ariaLabel?: string;
     scrollable?: boolean;
   } & Pick<BoxProps, 'onLayout'>;
 

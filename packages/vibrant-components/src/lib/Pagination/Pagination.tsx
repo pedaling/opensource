@@ -1,5 +1,5 @@
 import { HStack } from '@vibrant-ui/components';
-import { Box } from '@vibrant-ui/core';
+import { Box, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { PaginationButton } from '../PaginationButton';
 import { PaginationMiscCell } from '../PaginationMiscCell';
@@ -8,6 +8,10 @@ import { withPaginationVariation } from './PaginationProps';
 
 export const Pagination = withPaginationVariation(
   ({ pageCount, pageSize = 5, currentPage, onPageChange, spacing, extra = false }) => {
+    const {
+      translations: { pagination: paginationTranslation },
+    } = useConfig();
+
     const pages = Array(pageSize)
       .fill(null)
       .map((_, index) => Math.floor((currentPage - 1) / pageSize) * pageSize + index + 1)
@@ -20,8 +24,13 @@ export const Pagination = withPaginationVariation(
     const hasNextPage = pages[pages.length - 1] < pageCount;
 
     return (
-      <HStack as="nav" arialLabel="Pagination Navigation" alignVertical="center">
-        <PaginationButton type="prev" onClick={moveToPrevPage} disabled={!hasPrevPage} />
+      <HStack as="nav" ariaLabel={paginationTranslation.ariaLabel} alignVertical="center">
+        <PaginationButton
+          type="prev"
+          onClick={moveToPrevPage}
+          disabled={!hasPrevPage}
+          ariaLabel={paginationTranslation.prev}
+        />
         <Space width={spacing} />
         {extra && hasPrevPage && (
           <>
@@ -54,7 +63,12 @@ export const Pagination = withPaginationVariation(
           </>
         )}
         <Space width={spacing} />
-        <PaginationButton type="next" onClick={moveToNextPage} disabled={!hasNextPage} />
+        <PaginationButton
+          type="next"
+          onClick={moveToNextPage}
+          disabled={!hasNextPage}
+          ariaLabel={paginationTranslation.next}
+        />
       </HStack>
     );
   }

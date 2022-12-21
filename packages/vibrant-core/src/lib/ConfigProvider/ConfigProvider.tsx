@@ -30,6 +30,11 @@ export type Translation = {
     rowsPerPage: string;
     total: string;
   };
+  pagination: {
+    ariaLabel: string;
+    prev: string;
+    next: string;
+  };
 };
 
 export type DependencyName = keyof Dependencies;
@@ -52,6 +57,11 @@ const ConfigContext = createContext<ConfigContextValue>({
     tableFooter: {
       rowsPerPage: '페이지당 행 수',
       total: '총 {count}개',
+    },
+    pagination: {
+      ariaLabel: '페이지네이션',
+      prev: '이전',
+      next: '다음',
     },
   },
 });
