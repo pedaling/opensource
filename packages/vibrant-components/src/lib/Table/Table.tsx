@@ -6,6 +6,7 @@ import { Body } from '../Body';
 import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
+import { VStack } from '../VStack';
 import { TableDataCell } from './TableDataCell';
 import { TableHeaderCell } from './TableHeaderCell';
 import type { TableColumnProps, TableProps, UseTableResult } from './TableProps';
@@ -33,7 +34,7 @@ export const Table = <DataType extends Record<string, any>>({
 }: TableProps<DataType>) => {
   const columns =
     (Children.toArray(children).filter(child => isValidElement(child)) as unknown as typeof children).map(
-      ({ props, key }) => ({ ...props, key })
+      ({ props, key }) => ({ ...props, key: key as string })
     ) ?? [];
   const [selectedRowKeys, setSelectedRowKeys] = useState(new Set<string>());
   const isCellClickEnabled = columns?.some(column => isDefined(column.onCell));
@@ -70,16 +71,18 @@ export const Table = <DataType extends Record<string, any>>({
       width="100%"
       borderBottomWidth={0}
     >
-      <Box as="table" flexDirection="column" alignItems="flex-start" width="100%" overflowWrap="anywhere">
+      <Box as="table" flexDirection="column" alignItems="flex-start" width="100%" overflowWrap="break-word">
         <TableRow
           header={true}
           selectable={selectable}
           selected={selectedRowKeys.size !== 0}
           expanded={data.length === 0}
           renderExpanded={() => (
-            <Box mx="auto" mt={32} mb={64} alignItems="center">
-              {isDefined(emptyImage) && <Image src={emptyImage} alt="" width={124} height={124} />}
-              <Body level={1}>{emptyText}</Body>
+            <Box borderTopColor="outline1" borderTopWidth={1} borderTopStyle="solid">
+              <VStack mx="auto" alignHorizontal="center" mt={32} mb={64}>
+                {isDefined(emptyImage) && <Image src={emptyImage} alt="" width={124} height={124} />}
+                <Body level={1}>{emptyText}</Body>
+              </VStack>
             </Box>
           )}
           indeterminate={selectedRowKeys.size !== data.length}
