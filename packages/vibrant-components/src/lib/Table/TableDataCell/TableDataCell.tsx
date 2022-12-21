@@ -50,7 +50,7 @@ export const TableDataCell = withTableDataCellVariation(
         borderColor="outlineInformative"
         borderWidth={selected ? 1 : 0}
         disabled={disabled || !isDefined(onClick)}
-        cursor={isDefined(onClick) ? 'pointer' : 'default'}
+        cursor={isDefined(onClick) && !disabled ? 'pointer' : 'default'}
       >
         <>
           {renderCell ? (
