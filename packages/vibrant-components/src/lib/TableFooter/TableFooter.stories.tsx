@@ -5,6 +5,7 @@ export default {
   title: 'TableFooter',
   component: TableFooter,
   args: {
+    total: 101,
     pagination: true,
     pageSize: 5,
     currentPage: 1,

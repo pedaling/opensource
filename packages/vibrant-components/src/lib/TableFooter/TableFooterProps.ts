@@ -1,19 +1,17 @@
 import { withVariation } from '@vibrant-ui/core';
 import type { Either } from '@vibrant-ui/utils';
 
-export type TableFooterProps = {
-  total?: number;
-} & Either<
+export type TableFooterProps = Either<
   {
+    total: number;
+    showTotal?: boolean;
     pagination: true;
-    pageSize: number;
-    pageCount: number;
-    currentPage: number;
-    onPageChange: (page: number) => void;
+    defaultPageSize: number;
+    onPageChange?: (page: number) => void;
     pageSizeOptions?: number[];
     onPageSizeChange?: (value: number) => void;
   },
-  { pagination?: false }
+  { pagination?: false; total?: number }
 >;
 
 export const withTableFooterVariation = withVariation<TableFooterProps>('TableFooter')();
