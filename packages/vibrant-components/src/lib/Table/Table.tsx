@@ -93,6 +93,7 @@ export const Table = <DataType extends Record<string, any>>({
             <TableHeaderCell
               renderCell={() => <Box width={16} height={16} />}
               minWidth={0}
+              flexGrow={0}
               flexShrink={0}
               flexBasis="auto"
             />

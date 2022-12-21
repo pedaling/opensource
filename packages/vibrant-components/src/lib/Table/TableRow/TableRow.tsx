@@ -61,6 +61,7 @@ export const TableRow = withTableRowVariation(
                 />
               )}
               minWidth={0}
+              flexGrow={0}
               flexShrink={0}
               flexBasis="auto"
             />
@@ -76,6 +77,7 @@ export const TableRow = withTableRowVariation(
                 />
               )}
               minWidth={0}
+              flexGrow={0}
               flexShrink={0}
               flexBasis="auto"
             />

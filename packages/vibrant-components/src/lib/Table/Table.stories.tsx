@@ -62,11 +62,9 @@ export const Basic: ComponentStory<typeof Table> = props => (
         key="name"
         dataKey="name"
         renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-        flexGrow={1}
-        flexShrink={1}
         textAlign="center"
       />
-      <Table.Column<Data> key="calories" dataKey="calories" title="calories" flexGrow={1} flexShrink={1} />
+      <Table.Column<Data> key="calories" dataKey="calories" title="calories" />
       <Table.Column<Data>
         key="fat"
         dataKey="fat"
@@ -75,23 +73,15 @@ export const Basic: ComponentStory<typeof Table> = props => (
         sortable={true}
         defaultSortDirection="asc"
         selectable={true}
-        flexGrow={1}
-        flexShrink={1}
         onCell={{
           onClick: row => console.log(row),
           onCopy: row => console.log(row),
         }}
         formatData={({ fat }) => `${fat} kcal`}
       />
-      <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" flexGrow={1} flexShrink={1} flexBasis={0} />
-      <Table.Column<Data> key="protein" dataKey="protein" title="protein" flexGrow={1} flexShrink={1} flexBasis={0} />
-      <Table.Column<Data>
-        key="Edit"
-        title=""
-        flexGrow={1}
-        flexShrink={1}
-        renderCell={() => <OutlinedButton size="sm">수정</OutlinedButton>}
-      />
+      <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" />
+      <Table.Column<Data> key="protein" dataKey="protein" title="protein" />
+      <Table.Column<Data> key="Edit" title="" renderCell={() => <OutlinedButton size="sm">수정</OutlinedButton>} />
     </Table>
   </Box>
 );
@@ -106,23 +96,21 @@ export const UseTable: ComponentStory<typeof Table> = () => {
           key="name"
           dataKey="name"
           renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-          flexGrow={2}
           textAlign="center"
         />
-        <TableComponent.Column key="calories" dataKey="calories" title="calories" flexGrow={1} />
+        <TableComponent.Column key="calories" dataKey="calories" title="calories" />
         <TableComponent.Column
           key="fat"
           dataKey="fat"
           title="fat"
-          flexGrow={1}
           description="abc"
           sortable={true}
           defaultSortDirection="asc"
           selectable={true}
           formatData={({ fat }) => `${fat} kcal`}
         />
-        <TableComponent.Column key="carbs" dataKey="carbs" title="carbs" flexGrow={1} />
-        <TableComponent.Column key="protein" dataKey="protein" title="protein" flexGrow={1} />
+        <TableComponent.Column key="carbs" dataKey="carbs" title="carbs" />
+        <TableComponent.Column key="protein" dataKey="protein" title="protein" />
       </TableComponent>
     </Box>
   );

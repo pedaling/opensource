@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ComponentType, ReactElement } from 'react';
 import type {
-  FlexboxSystemProps,
   ReactElementChild,
   ReactElementChildren,
   SizingSystemProps,
@@ -52,8 +51,7 @@ export type TableColumnProps<Data extends Record<string, any>> = {
     onClick?: (row: Data) => void;
     onCopy?: (row: Data) => void;
   };
-} & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
-  Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
+} & Pick<SizingSystemProps, 'width'> &
   Either<
     {
       title?: TextChildren;
