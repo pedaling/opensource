@@ -7,9 +7,11 @@ import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
 import { VStack } from '../VStack';
+import { TableColumn } from './TableColumn';
+import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import { TableDataCell } from './TableDataCell';
 import { TableHeaderCell } from './TableHeaderCell';
-import type { TableColumnProps, TableProps, UseTableResult } from './TableProps';
+import type { TableProps, UseTableResult } from './TableProps';
 import { TableRow } from './TableRow';
 import type { SortDirection } from './TableSortButton';
 
@@ -113,7 +115,7 @@ export const Table = <DataType extends Record<string, any>>({
                 alignVertical={alignVerticalHeader}
                 alignHorizontal={alignHorizontalHeader}
                 renderCell={renderHeader}
-                onSort={(sortDirection: SortDirection) => onSort?.((dataKey ?? key) as string, sortDirection)}
+                onSort={(sortDirection: SortDirection) => onSort?.(dataKey as string, sortDirection)}
               />
             )
           )}
@@ -154,7 +156,7 @@ export const Table = <DataType extends Record<string, any>>({
                 onCell,
                 formatData,
                 renderCell,
-                selectable,
+                selectable: cellSelectable,
                 ...column
               }: TableColumnProps<DataType>) => (
                 <TableDataCell
@@ -176,11 +178,11 @@ export const Table = <DataType extends Record<string, any>>({
                   alignHorizontal={alignHorizontalCell}
                   alignVertical={alignVerticalCell}
                   disabled={disabledRowKey === row[rowKey]}
-                  selected={selectedCellKey === getCellKey(key, index)}
+                  selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
                   renderCell={renderCell ? () => renderCell?.(row) : undefined}
                   {...column}
                 >
-                  {isDefined(formatData) ? formatData(row) : row[dataKey ?? key]}
+                  {isDefined(formatData) ? formatData(row) : dataKey ? row[dataKey] : null}
                 </TableDataCell>
               )
             )}
@@ -191,10 +193,6 @@ export const Table = <DataType extends Record<string, any>>({
   );
 };
 
-export const TableColumn = <Data extends Record<string, any>>(_: TableColumnProps<Data>) => null;
-
 Table.displayName = 'Table';
 
 Table.Column = TableColumn;
-
-TableColumn.displayName = 'TableColumn';
