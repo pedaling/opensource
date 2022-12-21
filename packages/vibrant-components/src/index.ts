@@ -56,4 +56,4 @@ export { ScrollDetector } from './lib/ScrollDetector';
 export { TopBar } from './lib/TopBar';
 export { IconButton } from './lib/IconButton';
 export { Pagination } from './lib/Pagination';
-export { TableFooter } from './lib/TableFooter';
+export { TableFooter, tableFooterTranslation } from './lib/TableFooter';
