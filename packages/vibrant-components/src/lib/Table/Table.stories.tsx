@@ -81,7 +81,12 @@ export const Basic: ComponentStory<typeof Table> = props => (
       />
       <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" />
       <Table.Column<Data> key="protein" dataKey="protein" title="protein" />
-      <Table.Column<Data> key="Edit" title="" renderCell={() => <OutlinedButton size="sm">수정</OutlinedButton>} />
+      <Table.Column<Data>
+        key="Edit"
+        title=""
+        width={120}
+        renderCell={() => <OutlinedButton size="sm">수정</OutlinedButton>}
+      />
     </Table>
   </Box>
 );

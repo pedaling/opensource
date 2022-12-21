@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import { isDefined } from '@vibrant-ui/utils';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
 import type { SortDirection } from '../TableSortButton';
@@ -39,7 +40,6 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     flexBasis = 0,
     flexGrow = 1,
     flexShrink = 1,
-    maxWidth,
     minWidth = 120,
     width,
   }) => {
@@ -60,11 +60,10 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         px={16}
         alignItems={alignHorizontal}
         justifyContent={alignVertical}
-        minWidth={minWidth}
         flexBasis={flexBasis}
-        flexGrow={flexGrow}
+        flexGrow={isDefined(width) ? 0 : flexGrow}
         flexShrink={flexShrink}
-        maxWidth={maxWidth}
+        minWidth={minWidth}
         width={width}
       >
         {renderCell ? (

@@ -17,7 +17,7 @@ export type TableDataCellProps = {
   disabled?: boolean;
   selected?: boolean;
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
-  Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
+  Pick<SizingSystemProps, 'minWidth' | 'width'> &
   Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
 
 export const withTableDataCellVariation = withVariation<TableDataCellProps>('TableDataCell')(

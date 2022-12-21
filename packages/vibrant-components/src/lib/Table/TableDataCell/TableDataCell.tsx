@@ -17,9 +17,8 @@ export const TableDataCell = withTableDataCellVariation(
     flexBasis = 0,
     flexGrow = 1,
     flexShrink = 1,
-    maxWidth,
-    minWidth = 120,
     width,
+    minWidth = 120,
     color,
     disabled,
     selected,
@@ -41,11 +40,10 @@ export const TableDataCell = withTableDataCellVariation(
         px={selected ? 15 : 16}
         alignItems={alignHorizontal}
         justifyContent={alignVertical}
-        minWidth={minWidth}
         flexBasis={flexBasis}
-        flexGrow={flexGrow}
+        flexGrow={isDefined(width) ? 0 : flexGrow}
         flexShrink={flexShrink}
-        maxWidth={maxWidth}
+        minWidth={minWidth}
         width={width}
         onClick={onClick}
         borderStyle="solid"
