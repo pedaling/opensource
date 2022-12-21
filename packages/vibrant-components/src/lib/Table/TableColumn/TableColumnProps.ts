@@ -28,4 +28,4 @@ export type TableColumnProps<Data extends Record<string, any>> = {
       renderHeader?: () => ReactElementChild;
     }
   > &
-  Pick<TextProps, 'lineLimit' | 'wordBreak'>;
+  Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
