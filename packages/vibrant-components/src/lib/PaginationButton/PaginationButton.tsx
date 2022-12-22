@@ -2,7 +2,7 @@ import { Pressable } from '../Pressable';
 import { withPaginationButtonVariation } from './PaginationButtonProps';
 
 export const PaginationButton = withPaginationButtonVariation(
-  ({ innerRef, IconComponent, onClick, onColor, ...restProps }) => (
+  ({ innerRef, IconComponent, onClick, onColor, ariaLabel, ...restProps }) => (
     <Pressable
       ref={innerRef}
       alignItems="center"
@@ -12,6 +12,7 @@ export const PaginationButton = withPaginationButtonVariation(
       height={38}
       borderRadius={19}
       interactions={['focus', 'active']}
+      ariaLabel={ariaLabel}
       {...restProps}
     >
       <IconComponent size={20} fill={onColor} />
