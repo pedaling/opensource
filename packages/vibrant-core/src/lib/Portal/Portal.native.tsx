@@ -9,11 +9,13 @@ import { usePortalRoot } from '../PortalRoot';
 import { useWindowDimensions } from '../useWindowDimensions';
 import { withPortalVariation } from './PortalProps';
 
-export const Portal = withPortalVariation(({ innerRef, scrollable, children, style, ...restProps }) => {
+export const Portal = withPortalVariation(({ innerRef, scrollable, children, style = {}, ...restProps }) => {
   const { createContainer, removeContainer } = usePortalRoot();
   const { width, height } = useWindowDimensions();
 
   const [container, setContainer] = useState<Element | number | null>(null);
+
+  const { top, right, bottom, left } = style;
 
   useEffect(() => {
     let containerIndex: number | null = null;
@@ -45,8 +47,12 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
 
   if (platform === 'ios') {
     return (
-      <FullWindowOverlay style={{ position: 'absolute', width, height }}>
-        <ViewComponent ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
+      <FullWindowOverlay style={{ position: 'absolute', width, height, top, right, bottom, left }}>
+        <ViewComponent
+          ref={innerRef}
+          {...restProps}
+          style={{ ...style, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}
+        >
           {children}
         </ViewComponent>
       </FullWindowOverlay>
