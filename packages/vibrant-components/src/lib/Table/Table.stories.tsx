@@ -3,7 +3,6 @@ import type { ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Callout } from '../Callout';
 import { OutlinedButton } from '../OutlinedButton';
-import { Paper } from '../Paper';
 import { Table, useTable } from './Table';
 
 type Data = {
@@ -38,13 +37,11 @@ export default {
       { text: 'Move', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
     ],
     renderExpanded: () => (
-      <Paper backgroundColor="surface1" p={10}>
-        <Callout
-          title="Title"
-          contents="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, accusantium quam libero et ex veniam sequi
+      <Callout
+        title="Title"
+        contents="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, accusantium quam libero et ex veniam sequi
         harum illum, beatae excepturi aut? Laborum dicta in veniam consequatur laboriosam distinctio eaque iure."
-        />
-      </Paper>
+      />
     ),
     onRow: {
       onClick: (row: Data) => console.log(row),

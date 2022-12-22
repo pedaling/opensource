@@ -4,6 +4,7 @@ import { Icon } from '@vibrant-ui/icons';
 import { isDefined } from '@vibrant-ui/utils';
 import { Checkbox } from '../../Checkbox';
 import { IconButton } from '../../IconButton';
+import { Paper } from '../../Paper';
 import { withTableRowVariation } from './TableRowProps';
 
 export const TableRow = withTableRowVariation(
@@ -92,7 +93,11 @@ export const TableRow = withTableRowVariation(
             borderBottomStyle={borderBottomStyle}
             borderBottomWidth={borderBottomWidth}
           >
-            <Box as="td">{renderExpanded?.()}</Box>
+            <Box as="td">
+              <Paper backgroundColor="surface1" p={16}>
+                {renderExpanded?.()}
+              </Paper>
+            </Box>
           </Box>
         )}
       </>
