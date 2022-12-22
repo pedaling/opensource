@@ -3,10 +3,11 @@ import { withVariation } from '@vibrant-ui/core';
 import type { Position } from '@vibrant-ui/utils';
 
 export type TooltipProps = {
+  children: ReactElementChild;
   content: ReactElementChild | string;
+  spacing?: number;
   maxWidth?: number;
   position?: Position;
-  open?: boolean;
   enterDelay?: number;
   enterTouchDelay?: number;
   leaveDelay?: number;
