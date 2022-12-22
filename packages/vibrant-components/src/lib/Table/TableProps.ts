@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ComponentType, ReactElement } from 'react';
-import type { ReactElementChildren, TextChildren } from '@vibrant-ui/core';
+import type { ReactElementChild, TextChildren } from '@vibrant-ui/core';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import type { SortDirection } from './TableSortButton';
 
@@ -20,7 +20,7 @@ export type TableProps<Data extends Record<string, any>> = {
   rowKey: Extract<keyof Data, string>;
   selectable?: boolean;
   selectButtons?: { text: string; onClick: (selectedRows: Data[]) => void }[];
-  renderExpanded?: (row: Data) => ReactElementChildren;
+  renderExpanded?: (row: Data) => ReactElementChild;
   children: ReactElement<TableColumnProps<Data>>[];
   onRow?: {
     onClick: (row: Data) => void;

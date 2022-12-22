@@ -1,4 +1,4 @@
-import type { ReactElementChildren } from '@vibrant-ui/core';
+import type { ReactElementChild, ReactElementChildren } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { CheckboxProps } from '../../Checkbox';
 import { TableDataCell } from '../TableDataCell';
@@ -12,7 +12,7 @@ export type TableRowProps = {
   onSelectionChange?: CheckboxProps['onValueChange'];
   expandable?: boolean;
   expanded?: boolean;
-  renderExpanded?: () => ReactElementChildren;
+  renderExpanded?: () => ReactElementChild;
   children?: ReactElementChildren;
   bottomBordered?: boolean;
   onClick?: () => void;
