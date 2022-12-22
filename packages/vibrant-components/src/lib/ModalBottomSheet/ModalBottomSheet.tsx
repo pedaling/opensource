@@ -142,7 +142,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 pb={[bottomSheetPaddingBottom ?? 20, 36]}
                 width="100%"
                 maxWidth={[446, 480, desktopModalWidth]}
-                maxHeight={[viewportHeight - 120, Math.max(viewportHeight - 80, 480)]}
+                maxHeight={[viewportHeight - 120, 0]}
                 backgroundColor="surface2"
                 borderTopLeftRadiusLevel={4}
                 borderTopRightRadiusLevel={4}
@@ -168,7 +168,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 ) : null}
 
                 {renderContents ? (
-                  <ScrollBox mt={[16, 24]}>{renderContents({ close: closeModal })}</ScrollBox>
+                  <ScrollBox mt={[16, 24]} scrollEnabled={[true, false]}>
+                    {renderContents({ close: closeModal })}
+                  </ScrollBox>
                 ) : (
                   <Space height={8} />
                 )}
