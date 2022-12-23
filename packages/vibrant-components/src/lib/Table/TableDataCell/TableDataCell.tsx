@@ -1,6 +1,7 @@
 import { Box, PressableBox } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { Body } from '../../Body';
+import { VStack } from '../../VStack';
 import { useTableRow } from '../context';
 import { withTableDataCellVariation } from './TableDataCellProps';
 
@@ -16,7 +17,6 @@ export const TableDataCell = withTableDataCellVariation(
     renderCell,
     alignHorizontal = 'center',
     alignVertical = 'center',
-    textAlign,
     width,
     color,
     disabled,
@@ -69,7 +69,7 @@ export const TableDataCell = withTableDataCellVariation(
               opacity="overlay.active"
             />
           )}
-          <Box alignItems={alignHorizontal} justifyContent={alignVertical} overflowWrap={overflowWrap}>
+          <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
             {renderCell ? (
               renderCell()
             ) : (
@@ -77,15 +77,16 @@ export const TableDataCell = withTableDataCellVariation(
                 level={2}
                 lineLimit={lineLimit}
                 wordBreak={wordBreak}
-                textAlign={textAlign}
+                textAlign={alignHorizontal}
                 whiteSpace={whiteSpace}
+                overflowWrap={overflowWrap}
                 color={color}
                 onCopy={handleCopyEvent}
               >
                 {children}
               </Body>
             )}
-          </Box>
+          </VStack>
         </>
       </PressableBox>
     );

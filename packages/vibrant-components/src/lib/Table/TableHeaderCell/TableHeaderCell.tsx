@@ -3,6 +3,7 @@ import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
+import { VStack } from '../../VStack';
 import type { SortDirection } from '../TableSortButton';
 import { TableSortButton } from '../TableSortButton';
 import { withTableHeaderCellVariation } from './TableHeaderCellProps';
@@ -27,7 +28,6 @@ export const TableHeaderCell = withTableHeaderCellVariation(
   ({
     title,
     description,
-    textAlign,
     lineLimit,
     wordBreak,
     overflowWrap,
@@ -52,12 +52,19 @@ export const TableHeaderCell = withTableHeaderCellVariation(
 
     return (
       <Box as="th" display="table-cell" py={12} px={16} width={width}>
-        <Box alignItems={alignHorizontal} justifyContent={alignVertical} overflowWrap={overflowWrap}>
+        <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
           {renderCell ? (
             renderCell()
           ) : (
             <HStack alignVertical="center" spacing={4}>
-              <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak} textAlign={textAlign} whiteSpace={whiteSpace}>
+              <Body
+                level={2}
+                lineLimit={lineLimit}
+                wordBreak={wordBreak}
+                textAlign={alignHorizontal}
+                whiteSpace={whiteSpace}
+                overflowWrap={overflowWrap}
+              >
                 {title}
               </Body>
               {/* TODO(Mia): replace icon with tooltip */}
@@ -65,7 +72,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
               {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
             </HStack>
           )}
-        </Box>
+        </VStack>
       </Box>
     );
   }

@@ -15,10 +15,10 @@ export type TableHeaderCellProps = {
   defaultSortDirection?: SortDirection;
   onSort?: (sortDirection: SortDirection) => void;
   renderCell?: () => ReactElementChildren;
-  alignVertical?: 'center' | 'flex-end' | 'flex-start';
-  alignHorizontal?: 'center' | 'flex-end' | 'flex-start';
+  alignVertical?: 'center' | 'end' | 'start';
+  alignHorizontal?: 'center' | 'end' | 'start';
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'minWidth' | 'width'> &
-  Pick<TextProps, 'lineLimit' | 'overflowWrap' | 'textAlign' | 'whiteSpace' | 'wordBreak'>;
+  Pick<TextProps, 'lineLimit' | 'overflowWrap' | 'whiteSpace' | 'wordBreak'>;
 
 export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>('TableHeaderCell')();
