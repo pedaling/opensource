@@ -1,7 +1,6 @@
 import { Children, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import { isDefined } from '@vibrant-ui/utils';
 import { Checkbox } from '../../Checkbox';
 import { IconButton } from '../../IconButton';
 import { TableRowProvider } from '../context';
@@ -25,7 +24,6 @@ export const TableRow = withTableRowVariation(
     borderBottomWidth,
   }) => {
     const [isExpanded, setIsExpanded] = useState(expanded);
-    const [rowWidth, setRowWidth] = useState<number>();
     const getColumnsCount = () => {
       let columnsNum = Children.count(children);
 
@@ -43,7 +41,6 @@ export const TableRow = withTableRowVariation(
           height="100%"
           display="table-row"
           backgroundColor={header ? 'surface2' : 'background'}
-          onLayout={isExpanded ? ({ width }) => setRowWidth(width) : undefined}
           borderBottomColor={borderBottomColor}
           borderBottomStyle={borderBottomStyle}
           borderBottomWidth={isExpanded ? 0 : borderBottomWidth}
@@ -77,7 +74,7 @@ export const TableRow = withTableRowVariation(
           )}
           {children}
         </Box>
-        {isExpanded && isDefined(rowWidth) && (
+        {isExpanded && (
           <Box
             as="tr"
             display="table-row"
