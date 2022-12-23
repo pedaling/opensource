@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { Children, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { isDefined } from '@vibrant-ui/utils';
 import { Checkbox } from '../../Checkbox';
 import { IconButton } from '../../IconButton';
-import { Paper } from '../../Paper';
+import { TableRowProvider } from './TableRowContext';
 import { withTableRowVariation } from './TableRowProps';
 
 export const TableRow = withTableRowVariation(
@@ -26,30 +26,28 @@ export const TableRow = withTableRowVariation(
   }) => {
     const [isExpanded, setIsExpanded] = useState(expanded);
     const [rowWidth, setRowWidth] = useState<number>();
+    const getColumnsCount = () => {
+      let columnsNum = Children.count(children);
+
+      if (selectable) columnsNum += 1;
+
+      if (expandable) columnsNum += 1;
+
+      return columnsNum;
+    };
 
     return (
-      <>
+      <TableRowProvider selected={selected ?? false}>
         <Box
           as="tr"
-          flexDirection="row"
-          minWidth="100%"
+          height="100%"
+          display="table-row"
           backgroundColor={header ? 'surface2' : 'background'}
           onLayout={isExpanded ? ({ width }) => setRowWidth(width) : undefined}
           borderBottomColor={borderBottomColor}
           borderBottomStyle={borderBottomStyle}
           borderBottomWidth={isExpanded ? 0 : borderBottomWidth}
         >
-          {!header && selected && (
-            <Box
-              position="absolute"
-              left={0}
-              right={0}
-              top={0}
-              bottom={0}
-              backgroundColor="onView1"
-              opacity="overlay.active"
-            />
-          )}
           {selectable && (
             <TableCellComponent
               renderCell={() => (
@@ -61,10 +59,7 @@ export const TableRow = withTableRowVariation(
                   disabled={disabled}
                 />
               )}
-              minWidth={0}
-              flexGrow={0}
-              flexShrink={0}
-              flexBasis="auto"
+              width={52}
             />
           )}
           {expandable && (
@@ -77,10 +72,7 @@ export const TableRow = withTableRowVariation(
                   disabled={disabled}
                 />
               )}
-              minWidth={0}
-              flexGrow={0}
-              flexShrink={0}
-              flexBasis="auto"
+              width={48}
             />
           )}
           {children}
@@ -88,19 +80,17 @@ export const TableRow = withTableRowVariation(
         {isExpanded && isDefined(rowWidth) && (
           <Box
             as="tr"
-            width={rowWidth}
+            display="table-row"
             borderBottomColor={borderBottomColor}
             borderBottomStyle={borderBottomStyle}
             borderBottomWidth={borderBottomWidth}
           >
-            <Box as="td">
-              <Paper backgroundColor="surface1" p={16}>
-                {renderExpanded?.()}
-              </Paper>
+            <Box as="td" display="table-cell" colspan={getColumnsCount()}>
+              {renderExpanded?.()}
             </Box>
           </Box>
         )}
-      </>
+      </TableRowProvider>
     );
   }
 );

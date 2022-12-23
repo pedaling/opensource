@@ -1,6 +1,7 @@
-import { PressableBox } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { Body } from '../../Body';
+import { useTableRow } from '../TableRow';
 import { withTableDataCellVariation } from './TableDataCellProps';
 
 export const TableDataCell = withTableDataCellVariation(
@@ -14,11 +15,7 @@ export const TableDataCell = withTableDataCellVariation(
     alignHorizontal = 'center',
     alignVertical = 'center',
     textAlign,
-    flexBasis = 0,
-    flexGrow = 1,
-    flexShrink = 1,
     width,
-    minWidth = 120,
     color,
     disabled,
     selected,
@@ -33,26 +30,45 @@ export const TableDataCell = withTableDataCellVariation(
       onCopy?.();
     };
 
+    const { selected: rowSelected } = useTableRow();
+
     return (
       <PressableBox
         as="td"
-        py={selected ? 11 : 12}
-        px={selected ? 15 : 16}
+        display="table-cell"
+        py={12}
+        px={16}
         alignItems={alignHorizontal}
         justifyContent={alignVertical}
-        flexBasis={width ?? flexBasis}
-        flexGrow={isDefined(width) ? 0 : flexGrow}
-        flexShrink={isDefined(width) ? 0 : flexShrink}
-        minWidth={minWidth}
         width={width}
         onClick={onClick}
-        borderStyle="solid"
-        borderColor="outlineInformative"
-        borderWidth={selected ? 1 : 0}
         disabled={disabled || !isDefined(onClick)}
         cursor={disabled || !isDefined(onClick) ? 'default' : 'pointer'}
       >
         <>
+          {selected && (
+            <Box
+              position="absolute"
+              top={0}
+              left={0}
+              bottom={0}
+              right={0}
+              borderWidth={1}
+              borderStyle="solid"
+              borderColor="outlineInformative"
+            />
+          )}
+          {rowSelected && (
+            <Box
+              position="absolute"
+              left={0}
+              right={0}
+              top={0}
+              bottom={0}
+              backgroundColor="onView1"
+              opacity="overlay.active"
+            />
+          )}
           {renderCell ? (
             renderCell()
           ) : (

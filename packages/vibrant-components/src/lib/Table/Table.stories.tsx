@@ -37,11 +37,7 @@ export default {
       { text: 'Move', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
     ],
     renderExpanded: () => (
-      <Callout
-        title="Title"
-        contents="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, accusantium quam libero et ex veniam sequi
-        harum illum, beatae excepturi aut? Laborum dicta in veniam consequatur laboriosam distinctio eaque iure."
-      />
+      <Callout title="Title" contents="My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park." />
     ),
     onRow: {
       onClick: (row: Data) => console.log(row),

@@ -39,8 +39,8 @@ export const Table = <DataType extends Record<string, any>>({
       ({ props, key }) => ({ ...props, key: key as string })
     ) ?? [];
   const [selectedRowKeys, setSelectedRowKeys] = useState(new Set<string>());
-  const isCellClickEnabled = columns?.some(column => isDefined(column.onCell));
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
+  const isCellClickEnabled = columns?.some(column => isDefined(column.onCell));
 
   const handleToggleCheckbox = (key: string) => {
     const newSelectedRowKeys = new Set(selectedRowKeys);
@@ -73,7 +73,7 @@ export const Table = <DataType extends Record<string, any>>({
       width="100%"
       borderBottomWidth={0}
     >
-      <Box as="table" flexDirection="column" alignItems="flex-start" width="100%" overflowWrap="break-word">
+      <Box as="table" display="table-layout" flexDirection="column" alignItems="flex-start" width="100%">
         <TableRow
           header={true}
           selectable={selectable}
@@ -120,7 +120,7 @@ export const Table = <DataType extends Record<string, any>>({
             )
           )}
           {selectable && selectedRowKeys.size > 0 && (
-            <Paper position="absolute" top={0} bottom={1} right={0} left={52} backgroundColor="background">
+            <Paper position="absolute" top={0} bottom={0} right={0} left={52} backgroundColor="surface2">
               <HStack alignVertical="center" height="100%" py={12} px={16} spacing={12}>
                 {selectButtons?.map(({ text, onClick }) => (
                   <GhostButton
@@ -143,7 +143,11 @@ export const Table = <DataType extends Record<string, any>>({
             selected={selectedRowKeys.has(row[rowKey])}
             onSelectionChange={() => handleToggleCheckbox(row[rowKey])}
             expandable={isDefined(renderExpanded)}
-            renderExpanded={() => renderExpanded?.(row)}
+            renderExpanded={() => (
+              <Paper backgroundColor="surface1" p={16}>
+                {renderExpanded?.(row)}
+              </Paper>
+            )}
             bottomBordered={true}
             disabled={disabledRowKey === row[rowKey]}
           >
