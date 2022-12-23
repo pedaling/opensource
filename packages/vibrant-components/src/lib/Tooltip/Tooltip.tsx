@@ -82,9 +82,7 @@ export const Tooltip = withTooltipVariation(
     children,
     content,
     enterDelay = 100,
-    enterTouchDelay = 700,
     leaveDelay = 0,
-    leaveTouchDelay = 1500,
     maxWidth = 320,
     onClose,
     onOpen,
@@ -130,12 +128,16 @@ export const Tooltip = withTooltipVariation(
     const openTooltip = () => {
       setTimeout(() => {
         setIsOpen(true);
+
+        onOpen?.();
       }, enterDelay);
     };
 
     const closeTooltip = () => {
       setTimeout(() => {
         setIsMounted(false);
+
+        onClose?.();
       }, leaveDelay);
     };
 
