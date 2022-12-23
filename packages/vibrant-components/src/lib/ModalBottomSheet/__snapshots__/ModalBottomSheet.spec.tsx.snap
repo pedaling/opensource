@@ -161,7 +161,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
     padding-top: 36px;
     padding-bottom: 36px;
     max-width: 480px;
-    max-height: 688px;
+    max-height: unset;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
@@ -321,6 +321,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
 
 @media screen and (min-width: 640px) {
   .emotion-12 {
+    overflow: hidden;
     margin-top: 24px;
   }
 }
@@ -551,7 +552,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
     padding-top: 36px;
     padding-bottom: 36px;
     max-width: 480px;
-    max-height: 688px;
+    max-height: unset;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
@@ -711,6 +712,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
 
 @media screen and (min-width: 640px) {
   .emotion-12 {
+    overflow: hidden;
     margin-top: 24px;
   }
 }
