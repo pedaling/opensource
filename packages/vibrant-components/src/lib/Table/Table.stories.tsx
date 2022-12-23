@@ -70,7 +70,7 @@ export const Basic: ComponentStory<typeof Table> = props => (
         key="Edit"
         title=""
         width={120}
-        renderCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
+        renderDataCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
       />
     </Table>
   </Box>
@@ -99,7 +99,7 @@ export const RowSelectable: ComponentStory<typeof Table> = props => (
         key="Edit"
         title=""
         width={120}
-        renderCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
+        renderDataCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
       />
     </Table>
   </Box>
@@ -113,7 +113,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         dataKey="name"
         renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
         selectable={true}
-        onCell={{
+        onDataCell={{
           onClick: row => console.log('clicked', row),
           onCopy: row => console.log(row),
         }}
@@ -123,7 +123,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         dataKey="calories"
         title="calories"
         selectable={true}
-        onCell={{
+        onDataCell={{
           onClick: row => console.log('clicked', row),
           onCopy: row => console.log('copied', row),
         }}
@@ -134,7 +134,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         dataKey="carbs"
         title="carbs"
         selectable={true}
-        onCell={{
+        onDataCell={{
           onClick: row => console.log('clicked', row),
           onCopy: row => console.log('copied', row),
         }}
@@ -144,7 +144,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         dataKey="protein"
         title="protein"
         selectable={true}
-        onCell={{
+        onDataCell={{
           onClick: row => console.log('clicked', row),
           onCopy: row => console.log('copied', row),
         }}
@@ -153,7 +153,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         key="Edit"
         title=""
         width={120}
-        renderCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
+        renderDataCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
       />
     </Table>
   </Box>

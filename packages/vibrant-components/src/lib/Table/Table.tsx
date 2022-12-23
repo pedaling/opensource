@@ -40,7 +40,7 @@ export const Table = <DataType extends Record<string, any>>({
     ) ?? [];
   const [selectedRowKeys, setSelectedRowKeys] = useState(new Set<string>());
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
-  const isCellClickEnabled = columns?.some(column => isDefined(column.onCell));
+  const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
 
   const handleToggleCheckbox = (key: string) => {
     const newSelectedRowKeys = new Set(selectedRowKeys);
@@ -169,9 +169,9 @@ export const Table = <DataType extends Record<string, any>>({
                 wordBreak,
                 whiteSpace,
                 overflowWrap,
-                onCell,
+                onDataCell,
                 formatData,
-                renderCell,
+                renderDataCell,
                 selectable: cellSelectable,
                 ...column
               }: TableColumnProps<DataType>) => (
@@ -179,9 +179,9 @@ export const Table = <DataType extends Record<string, any>>({
                   key={key}
                   onClick={
                     isCellClickEnabled
-                      ? onCell
+                      ? onDataCell
                         ? () => {
-                            onCell.onClick?.(row);
+                            onDataCell.onClick?.(row);
 
                             setSelectedCellKey(getCellKey(key, index));
                           }
@@ -190,7 +190,7 @@ export const Table = <DataType extends Record<string, any>>({
                       ? () => onRow.onClick?.(row)
                       : undefined
                   }
-                  onCopy={() => onCell?.onCopy?.(row)}
+                  onCopy={() => onDataCell?.onCopy?.(row)}
                   alignVertical={alignVertical?.dataCell}
                   alignHorizontal={alignHorizontal?.dataCell}
                   lineLimit={lineLimit?.dataCell}
@@ -199,7 +199,7 @@ export const Table = <DataType extends Record<string, any>>({
                   overflowWrap={overflowWrap?.dataCell}
                   disabled={disabledRowKey === row[rowKey]}
                   selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
-                  renderCell={renderCell ? () => renderCell?.(row) : undefined}
+                  renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
                   {...column}
                 >
                   {isDefined(formatData) ? formatData(row) : dataKey ? row[dataKey] : null}

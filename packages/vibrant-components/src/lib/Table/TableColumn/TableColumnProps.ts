@@ -12,7 +12,7 @@ export type TableColumnProps<Data extends Record<string, any>> = {
   whiteSpace?: { header?: TextSystemProps['whiteSpace']; dataCell?: TextSystemProps['whiteSpace'] };
   overflowWrap?: { header?: TextSystemProps['overflowWrap']; dataCell?: TextSystemProps['overflowWrap'] };
   formatData?: (row: Data) => TextChildren;
-  onCell?: {
+  onDataCell?: {
     onClick?: (row: Data) => void;
     onCopy?: (row: Data) => void;
   };
@@ -21,7 +21,7 @@ export type TableColumnProps<Data extends Record<string, any>> = {
     dataKey?: keyof Data;
   },
   {
-    renderCell: (row: Data) => ReactElementChild;
+    renderDataCell: (row: Data) => ReactElementChild;
   }
 > &
   Either<
