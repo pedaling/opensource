@@ -4,7 +4,7 @@ import { Icon } from '@vibrant-ui/icons';
 import { isDefined } from '@vibrant-ui/utils';
 import { Checkbox } from '../../Checkbox';
 import { IconButton } from '../../IconButton';
-import { TableRowProvider } from './TableRowContext';
+import { TableRowProvider } from '../context';
 import { withTableRowVariation } from './TableRowProps';
 
 export const TableRow = withTableRowVariation(
