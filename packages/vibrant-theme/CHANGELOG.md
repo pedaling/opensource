@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.34.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.34.1...vibrant-theme-0.34.2) (2022-12-23)
+
+
+### Bug Fixes
+
+* update dim color in dark theme ([#490](https://github.com/pedaling/opensource/issues/490)) ([d6c2919](https://github.com/pedaling/opensource/commit/d6c2919380a4ea60699b5b5ae262c74ee3ca5917))
+
 ### [0.34.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.34.0...vibrant-theme-0.34.1) (2022-12-14)
 
 ## [0.34.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.33.4...vibrant-theme-0.34.0) (2022-12-14)
