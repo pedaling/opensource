@@ -2,7 +2,7 @@ import { createSystemProp } from '../../createSystemProp';
 
 const displayProp = createSystemProp({
   property: 'display',
-  transform: (value: string) => {
+  transform: (value = 'flex') => {
     if (value === 'none') {
       return { display: 'none' };
     }
@@ -16,10 +16,16 @@ const displayProp = createSystemProp({
       };
     }
 
+    if (value === 'flex') {
+      return {
+        display: 'flex',
+        alignContent: 'stretch',
+        flexShrink: 1,
+      };
+    }
+
     return {
-      display: 'flex',
-      alignContent: 'stretch',
-      flexShrink: 1,
+      display: value,
     };
   },
 });
