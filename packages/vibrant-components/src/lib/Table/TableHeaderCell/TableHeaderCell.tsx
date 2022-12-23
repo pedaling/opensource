@@ -30,6 +30,8 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     textAlign,
     lineLimit,
     wordBreak,
+    overflowWrap,
+    whiteSpace,
     renderCell,
     alignHorizontal = 'center',
     alignVertical = 'center',
@@ -49,27 +51,21 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     };
 
     return (
-      <Box
-        as="th"
-        display="table-cell"
-        py={12}
-        px={16}
-        alignItems={alignHorizontal}
-        justifyContent={alignVertical}
-        width={width}
-      >
-        {renderCell ? (
-          renderCell()
-        ) : (
-          <HStack alignVertical="center" spacing={4}>
-            <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak} textAlign={textAlign} width="100%">
-              {title}
-            </Body>
-            {/* TODO(Mia): replace icon with tooltip */}
-            {description ? <Icon.InfoCircle.Fill size={14} /> : null}
-            {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
-          </HStack>
-        )}
+      <Box as="th" display="table-cell" py={12} px={16} width={width}>
+        <Box alignItems={alignHorizontal} justifyContent={alignVertical} overflowWrap={overflowWrap}>
+          {renderCell ? (
+            renderCell()
+          ) : (
+            <HStack alignVertical="center" spacing={4}>
+              <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak} textAlign={textAlign} whiteSpace={whiteSpace}>
+                {title}
+              </Body>
+              {/* TODO(Mia): replace icon with tooltip */}
+              {description ? <Icon.InfoCircle.Fill size={14} /> : null}
+              {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
+            </HStack>
+          )}
+        </Box>
       </Box>
     );
   }

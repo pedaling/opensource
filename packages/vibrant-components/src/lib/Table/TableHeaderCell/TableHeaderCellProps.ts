@@ -19,6 +19,6 @@ export type TableHeaderCellProps = {
   alignHorizontal?: 'center' | 'flex-end' | 'flex-start';
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'minWidth' | 'width'> &
-  Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
+  Pick<TextProps, 'lineLimit' | 'overflowWrap' | 'textAlign' | 'whiteSpace' | 'wordBreak'>;
 
 export const withTableHeaderCellVariation = withVariation<TableHeaderCellProps>('TableHeaderCell')();
