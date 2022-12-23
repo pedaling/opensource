@@ -85,7 +85,7 @@ export const TableRow = withTableRowVariation(
             borderBottomStyle={borderBottomStyle}
             borderBottomWidth={borderBottomWidth}
           >
-            <Box as="td" display="table-cell" colspan={getColumnsCount()}>
+            <Box as="td" display="table-cell" colSpan={getColumnsCount()}>
               {renderExpanded?.()}
             </Box>
           </Box>

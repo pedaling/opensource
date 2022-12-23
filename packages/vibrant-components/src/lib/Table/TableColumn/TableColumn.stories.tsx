@@ -23,10 +23,15 @@ export default {
   args: {},
 };
 
-export const Basic: ComponentStory<typeof TableColumn> = ({ renderHeader: _, ...props }) => (
+export const Basic: ComponentStory<typeof TableColumn> = ({
+  renderHeader: _renderHeader,
+  renderCell: _renderCell,
+  dataKey: _dataKey,
+  ...props
+}) => (
   <Box p={20} width="100%">
     <Table data={rows} rowKey="id">
-      <TableColumn<Data> {...props} key="title" title="제목" dataKey="id" />
+      <TableColumn<Data> {...props} key="title" title="제목" dataKey="title" />
       <TableColumn<Data> {...props} key="id" title="ID" dataKey="id" />
       <TableColumn<Data>
         {...props}
@@ -39,7 +44,6 @@ export const Basic: ComponentStory<typeof TableColumn> = ({ renderHeader: _, ...
         {...props}
         key="Edit"
         title=""
-        dataKey="createdAt"
         formatData={({ createdAt }) => createdAt.toLocaleDateString('en-US')}
         width={160}
         renderCell={() => (

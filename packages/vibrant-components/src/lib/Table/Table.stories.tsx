@@ -36,9 +36,7 @@ export default {
       { text: 'Edit', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
       { text: 'Move', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
     ],
-    renderExpanded: () => (
-      <Callout title="Title" contents="My name is John Brown, I am 32 years old, living in New York No. 1 Lake Park." />
-    ),
+    renderExpanded: ({ name, calories }: Data) => <Callout title={name} contents={`${name} has ${calories}kcal`} />,
     onRow: {
       onClick: (row: Data) => console.log(row),
     },
@@ -55,7 +53,6 @@ export const Basic: ComponentStory<typeof Table> = props => (
         key="name"
         dataKey="name"
         renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-        textAlign="center"
       />
       <Table.Column<Data> key="calories" dataKey="calories" title="calories" />
       <Table.Column<Data>
@@ -73,7 +70,7 @@ export const Basic: ComponentStory<typeof Table> = props => (
         key="Edit"
         title=""
         width={120}
-        renderCell={() => <OutlinedButton size="sm">수정</OutlinedButton>}
+        renderCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
       />
     </Table>
   </Box>
@@ -86,25 +83,23 @@ export const RowSelectable: ComponentStory<typeof Table> = props => (
         key="name"
         dataKey="name"
         renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-        textAlign="center"
       />
-      <Table.Column<Data> key="calories" dataKey="calories" title="calories" />
       <Table.Column<Data>
-        key="fat"
-        dataKey="fat"
-        title="fat"
-        description="abc"
+        key="calories"
+        dataKey="calories"
+        title="calories"
         sortable={true}
         defaultSortDirection="asc"
-        formatData={({ fat }) => `${fat} kcal`}
+        formatData={({ calories }) => `${calories} kcal`}
       />
+      <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
       <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" />
       <Table.Column<Data> key="protein" dataKey="protein" title="protein" />
       <Table.Column<Data>
         key="Edit"
         title=""
         width={120}
-        renderCell={() => <OutlinedButton size="sm">수정</OutlinedButton>}
+        renderCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
       />
     </Table>
   </Box>
@@ -117,7 +112,6 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         key="name"
         dataKey="name"
         renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-        textAlign="center"
         selectable={true}
         onCell={{
           onClick: row => console.log('clicked', row),
@@ -134,20 +128,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
           onCopy: row => console.log('copied', row),
         }}
       />
-      <Table.Column<Data>
-        key="fat"
-        dataKey="fat"
-        title="fat"
-        description="abc"
-        sortable={true}
-        defaultSortDirection="asc"
-        formatData={({ fat }) => `${fat} kcal`}
-        selectable={true}
-        onCell={{
-          onClick: row => console.log('clicked', row),
-          onCopy: row => console.log('copied', row),
-        }}
-      />
+      <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
       <Table.Column<Data>
         key="carbs"
         dataKey="carbs"
@@ -172,7 +153,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         key="Edit"
         title=""
         width={120}
-        renderCell={() => <OutlinedButton size="sm">수정</OutlinedButton>}
+        renderCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
       />
     </Table>
   </Box>
@@ -184,21 +165,9 @@ export const UseTable: ComponentStory<typeof Table> = () => {
   return (
     <Box p={20} width="100%">
       <TableComponent data={rows} rowKey="name">
-        <TableComponent.Column
-          key="name"
-          dataKey="name"
-          renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
-        />
+        <TableComponent.Column key="name" dataKey="name" title="name" />
         <TableComponent.Column key="calories" dataKey="calories" title="calories" />
-        <TableComponent.Column
-          key="fat"
-          dataKey="fat"
-          title="fat"
-          description="abc"
-          sortable={true}
-          defaultSortDirection="asc"
-          formatData={({ fat }) => `${fat} kcal`}
-        />
+        <TableComponent.Column key="fat" dataKey="fat" title="fat" />
         <TableComponent.Column key="carbs" dataKey="carbs" title="carbs" />
         <TableComponent.Column key="protein" dataKey="protein" title="protein" />
       </TableComponent>

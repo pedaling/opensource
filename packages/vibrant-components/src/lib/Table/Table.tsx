@@ -104,16 +104,24 @@ export const Table = <DataType extends Record<string, any>>({
             ({
               key,
               dataKey,
-              alignVerticalHeader,
-              alignHorizontalHeader,
+              alignHorizontal,
+              alignVertical,
               renderHeader,
+              lineLimit,
+              wordBreak,
+              whiteSpace,
+              overflowWrap,
               ...column
             }: TableColumnProps<DataType>) => (
               <TableHeaderCell
                 key={key}
                 {...column}
-                alignVertical={alignVerticalHeader}
-                alignHorizontal={alignHorizontalHeader}
+                alignVertical={alignVertical?.header}
+                alignHorizontal={alignHorizontal?.header}
+                lineLimit={lineLimit?.header}
+                wordBreak={wordBreak?.header}
+                whiteSpace={whiteSpace?.header}
+                overflowWrap={overflowWrap?.header}
                 renderCell={renderHeader}
                 onSort={(sortDirection: SortDirection) => onSort?.(dataKey as string, sortDirection)}
               />
@@ -155,8 +163,12 @@ export const Table = <DataType extends Record<string, any>>({
               ({
                 key,
                 dataKey,
-                alignVerticalCell,
-                alignHorizontalCell,
+                alignHorizontal,
+                alignVertical,
+                lineLimit,
+                wordBreak,
+                whiteSpace,
+                overflowWrap,
                 onCell,
                 formatData,
                 renderCell,
@@ -179,8 +191,12 @@ export const Table = <DataType extends Record<string, any>>({
                       : undefined
                   }
                   onCopy={() => onCell?.onCopy?.(row)}
-                  alignHorizontal={alignHorizontalCell}
-                  alignVertical={alignVerticalCell}
+                  alignVertical={alignVertical?.dataCell}
+                  alignHorizontal={alignHorizontal?.dataCell}
+                  lineLimit={lineLimit?.dataCell}
+                  wordBreak={wordBreak?.dataCell}
+                  whiteSpace={whiteSpace?.dataCell}
+                  overflowWrap={overflowWrap?.dataCell}
                   disabled={disabledRowKey === row[rowKey]}
                   selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
                   renderCell={renderCell ? () => renderCell?.(row) : undefined}

@@ -1,22 +1,29 @@
-import type { ReactElementChild, SizingSystemProps, TextChildren, TextProps } from '@vibrant-ui/core';
+import type { ReactElementChild, SizingSystemProps, TextChildren, TextSystemProps } from '@vibrant-ui/core';
 import type { Either } from '@vibrant-ui/utils';
 import type { SortDirection } from '../TableSortButton';
 
 export type TableColumnProps<Data extends Record<string, any>> = {
   key: string;
-  dataKey?: keyof Data;
   selectable?: boolean;
-  alignVerticalHeader?: 'center' | 'flex-end' | 'flex-start';
-  alignHorizontalHeader?: 'center' | 'flex-end' | 'flex-start';
-  alignVerticalCell?: 'center' | 'flex-end' | 'flex-start';
-  alignHorizontalCell?: 'center' | 'flex-end' | 'flex-start';
+  alignVertical?: { header?: 'center' | 'end' | 'start'; dataCell?: 'center' | 'end' | 'start' };
+  alignHorizontal?: { header: 'center' | 'end' | 'start'; dataCell?: 'center' | 'end' | 'start' };
+  lineLimit?: { header?: TextSystemProps['lineLimit']; dataCell?: TextSystemProps['lineLimit'] };
+  wordBreak?: { header?: TextSystemProps['wordBreak']; dataCell?: TextSystemProps['wordBreak'] };
+  whiteSpace?: { header?: TextSystemProps['whiteSpace']; dataCell?: TextSystemProps['whiteSpace'] };
+  overflowWrap?: { header?: TextSystemProps['overflowWrap']; dataCell?: TextSystemProps['overflowWrap'] };
   formatData?: (row: Data) => TextChildren;
-  renderCell?: (row: Data) => ReactElementChild;
   onCell?: {
     onClick?: (row: Data) => void;
     onCopy?: (row: Data) => void;
   };
-} & Pick<SizingSystemProps, 'width'> &
+} & Either<
+  {
+    dataKey?: keyof Data;
+  },
+  {
+    renderCell: (row: Data) => ReactElementChild;
+  }
+> &
   Either<
     {
       title?: TextChildren;
@@ -28,4 +35,4 @@ export type TableColumnProps<Data extends Record<string, any>> = {
       renderHeader?: () => ReactElementChild;
     }
   > &
-  Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
+  Pick<SizingSystemProps, 'width'>;
