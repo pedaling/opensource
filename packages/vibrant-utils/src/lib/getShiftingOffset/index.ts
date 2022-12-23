@@ -1,1 +1,0 @@
-export { getShiftingOffset } from './getShiftingOffset';

@@ -1,15 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { Box, PressableBox, getWindowDimensions, useCurrentTheme, useResponsiveValue } from '@vibrant-ui/core';
 import { MountMotion, Transition } from '@vibrant-ui/motion';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
-import {
-  detectOverflow,
-  flipPosition,
-  getElementRect,
-  getOffsetByPosition,
-  getShiftingOffset,
-} from '@vibrant-ui/utils';
+import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import { Body } from '../Body';
+import { HStack } from '../HStack';
 import { withTooltipVariation } from './TooltipProps';
 
 const getOffsetAvoidingOverflowByPosition = (
@@ -24,6 +19,7 @@ const getOffsetAvoidingOverflowByPosition = (
     position,
     spacing,
   });
+
   const viewport = getWindowDimensions();
 
   const isOverflowing = detectOverflow({
@@ -32,15 +28,25 @@ const getOffsetAvoidingOverflowByPosition = (
   });
 
   if (!isOverflowing) {
-    return { x, y };
+    return {
+      x: x + openerRect.x,
+      y: y + openerRect.y,
+    };
   }
 
   if (position.includes('top') || position.includes('bottom')) {
-    const { x: shiftedX, y: shiftedY } = getShiftingOffset({ viewport, targetRect });
+    let overflowLeft = false;
+    let overflowRight = false;
 
-    console.log({ shiftedX, shiftedY });
+    if (x + openerRect.x < 0) {
+      overflowLeft = true;
+    }
 
-    return { x: x + shiftedX, y: y + shiftedY };
+    if (x + openerRect.x + targetRect.width > viewport.width) {
+      overflowRight = true;
+    }
+
+    return { y: y + openerRect.y, left: overflowLeft ? 0 : undefined, right: overflowRight ? 0 : undefined };
   }
 
   if (position.includes('left') || position.includes('right')) {
@@ -56,16 +62,19 @@ const getOffsetAvoidingOverflowByPosition = (
         viewport,
         targetRect: {
           ...targetRect,
-          x: openerRect.x + flippedX,
-          y: openerRect.y + flippedY,
+          x: flippedX,
+          y: flippedY,
         },
       })
     ) {
-      return { x: flippedX, y: flippedY };
+      return {
+        x: openerRect.x + flippedX,
+        y: openerRect.y + flippedY,
+      };
     }
   }
 
-  return { x, y };
+  return { x: x + openerRect.x, y: y + openerRect.y };
 };
 
 export const Tooltip = withTooltipVariation(
@@ -84,9 +93,13 @@ export const Tooltip = withTooltipVariation(
   }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const [offSet, setOffset] = useState<{ x?: number; y?: number }>({});
+    const [offSet, setOffset] = useState<{
+      x?: number;
+      y?: number;
+      left?: number;
+      right?: number;
+    }>({});
     const openerRef = useRef<HTMLElement>(null);
-    const [openerRect, setOpenerRect] = useState<Rect | null>(null);
     const {
       theme: { zIndex },
     } = useCurrentTheme();
@@ -99,11 +112,14 @@ export const Tooltip = withTooltipVariation(
 
         const targetRect: Rect = { x: left, y: top, width, height };
 
-        const { x, y } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
+        const {
+          x,
+          y,
+          left: leftOffset,
+          right: rightOffset,
+        } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
 
-        setOpenerRect(openerRect);
-
-        setOffset({ x, y });
+        setOffset({ x, y, left: leftOffset, right: rightOffset });
 
         setTimeout(() => {
           setIsMounted(true);
@@ -123,24 +139,16 @@ export const Tooltip = withTooltipVariation(
       }, leaveDelay);
     };
 
-    useEffect(() => {
-      if (!isMounted) {
-        setIsOpen(false);
-
-        return;
-      }
-    }, [isMounted]);
-
     return (
-      <Box ref={openerRef}>
+      <HStack>
         <PressableBox
-          onFocusIn={isMobile ? openTooltip : undefined}
-          onFocusOut={isMobile ? closeTooltip : undefined}
+          ref={openerRef}
           onHoverIn={isMobile ? undefined : openTooltip}
           onHoverOut={isMobile ? undefined : closeTooltip}
         >
           {children}
         </PressableBox>
+
         <MountMotion mount={isOpen}>
           <Transition
             duration={200}
@@ -148,16 +156,25 @@ export const Tooltip = withTooltipVariation(
             animation={{
               opacity: isMounted ? 1 : 0,
             }}
-            onEnd={!isOpen ? () => setOffset({}) : undefined}
+            onEnd={
+              !isMounted
+                ? () => {
+                    setIsOpen(false);
+
+                    setOffset({});
+                  }
+                : undefined
+            }
           >
             <Box
               maxWidth={maxWidth}
               position="fixed"
-              zIndex={zIndex.dropdown}
               py={6}
               px={8}
-              top={(offSet.y ?? 0) + (openerRect?.y ?? 0)}
-              left={(offSet.x ?? 0) + (openerRect?.x ?? 0)}
+              zIndex={zIndex.dropdown}
+              top={offSet.y}
+              left={offSet.left ?? offSet.x}
+              right={offSet.right}
               borderRadius={3}
               backgroundColor="inverseSurface"
               flexShrink={0}
@@ -173,7 +190,7 @@ export const Tooltip = withTooltipVariation(
             </Box>
           </Transition>
         </MountMotion>
-      </Box>
+      </HStack>
     );
   }
 );
