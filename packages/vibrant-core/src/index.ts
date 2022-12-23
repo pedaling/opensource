@@ -60,6 +60,7 @@ export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
 export { PortalBox } from './lib/PortalBox';
 export { isNative } from './lib/isNative';
+export { KeyboardAvoidingBox } from './lib/KeyboardAvoidingBox';
 export { ScrollBox } from './lib/ScrollBox';
 export { useWindowDimensions } from './lib/useWindowDimensions';
 export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
