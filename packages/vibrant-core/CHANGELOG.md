@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.35.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.34.2...vibrant-core-0.35.0) (2022-12-23)
+
+
+### Features
+
+* add KeyboardAvoidingBox ([#495](https://github.com/pedaling/opensource/issues/495)) ([ec8d914](https://github.com/pedaling/opensource/commit/ec8d914a8c0b2c9a74e7fb1b7a224221343206fa))
+
 ### [0.34.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.34.1...vibrant-core-0.34.2) (2022-12-23)
 
 
