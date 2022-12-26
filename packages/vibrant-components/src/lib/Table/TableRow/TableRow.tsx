@@ -19,9 +19,6 @@ export const TableRow = withTableRowVariation(
     header,
     children,
     disabled = false,
-    borderBottomColor,
-    borderBottomStyle,
-    borderBottomWidth,
   }) => {
     const [isExpanded, setIsExpanded] = useState(expanded);
     const getColumnsCount = () => {
@@ -35,59 +32,54 @@ export const TableRow = withTableRowVariation(
     };
 
     return (
-      <TableRowProvider selected={selected ?? false}>
-        <Box
-          as="tr"
-          height="100%"
-          display="table-row"
-          backgroundColor={header ? 'surface2' : 'background'}
-          borderBottomColor={borderBottomColor}
-          borderBottomStyle={borderBottomStyle}
-          borderBottomWidth={isExpanded ? 0 : borderBottomWidth}
-        >
-          {selectable && (
-            <TableCellComponent
-              renderCell={() => (
-                <Checkbox
-                  size="sm"
-                  defaultValue={selected}
-                  indeterminate={indeterminate}
-                  onValueChange={onSelectionChange}
-                  disabled={disabled}
-                />
-              )}
-              width={52}
-            />
-          )}
-          {expandable && (
-            <TableCellComponent
-              renderCell={() => (
-                <IconButton
-                  size="sm"
-                  IconComponent={isExpanded ? Icon.ChevronDown.Regular : Icon.ChevronRight.Regular}
-                  onClick={() => setIsExpanded(!isExpanded)}
-                  disabled={disabled}
-                />
-              )}
-              width={48}
-            />
-          )}
-          {children}
+      <>
+        <Box as="tr" height="100%" display="table-row" backgroundColor={header ? 'surface2' : 'background'}>
+          <TableRowProvider selected={selected ?? false} bottomBordered={!isExpanded}>
+            {selectable && (
+              <TableCellComponent
+                renderCell={() => (
+                  <Checkbox
+                    size="sm"
+                    defaultValue={selected}
+                    indeterminate={indeterminate}
+                    onValueChange={onSelectionChange}
+                    disabled={disabled}
+                  />
+                )}
+                width={52}
+              />
+            )}
+            {expandable && (
+              <TableCellComponent
+                renderCell={() => (
+                  <IconButton
+                    size="sm"
+                    IconComponent={isExpanded ? Icon.ChevronDown.Regular : Icon.ChevronRight.Regular}
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    disabled={disabled}
+                  />
+                )}
+                width={48}
+              />
+            )}
+            {children}
+          </TableRowProvider>
         </Box>
         {isExpanded && (
-          <Box
-            as="tr"
-            display="table-row"
-            borderBottomColor={borderBottomColor}
-            borderBottomStyle={borderBottomStyle}
-            borderBottomWidth={borderBottomWidth}
-          >
-            <Box as="td" display="table-cell" colSpan={getColumnsCount()}>
+          <Box as="tr" display="table-row">
+            <Box
+              as="td"
+              display="table-cell"
+              colSpan={getColumnsCount()}
+              borderBottomStyle="solid"
+              borderBottomColor="outline1"
+              borderBottomWidth={1}
+            >
               {renderExpanded?.()}
             </Box>
           </Box>
         )}
-      </TableRowProvider>
+      </>
     );
   }
 );

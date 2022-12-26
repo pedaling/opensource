@@ -14,7 +14,6 @@ export type TableRowProps = {
   expanded?: boolean;
   renderExpanded?: () => ReactElementChild;
   children?: ReactElementChildren;
-  bottomBordered?: boolean;
   onClick?: () => void;
   disabled?: boolean;
 };
@@ -36,24 +35,5 @@ export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(
         TableCellComponent: TableDataCell,
       },
     },
-  }),
-  propVariant({
-    props: [
-      {
-        name: 'bottomBordered',
-      },
-    ],
-    variants: {
-      true: {
-        borderBottomColor: 'outline1',
-        borderBottomWidth: 1,
-        borderBottomStyle: 'solid',
-      },
-      false: {
-        borderBottomColor: undefined,
-        borderBottomWidth: 0,
-        borderBottomStyle: undefined,
-      },
-    } as const,
   })
 );

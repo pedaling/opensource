@@ -74,23 +74,27 @@ export const Table = <DataType extends Record<string, any>>({
       borderBottomWidth={0}
       borderRadius={1}
     >
-      <Box as="table" display="table-layout" flexDirection="column" alignItems="flex-start" width="100%">
+      <Box
+        as="table"
+        display="table-layout"
+        flexDirection="column"
+        alignItems="flex-start"
+        width="100%"
+        borderCollapse="separate"
+      >
         <TableRow
           header={true}
           selectable={selectable}
           selected={selectedRowKeys.size !== 0}
           expanded={data.length === 0}
           renderExpanded={() => (
-            <Box borderTopColor="outline1" borderTopWidth={1} borderTopStyle="solid">
-              <VStack mx="auto" alignHorizontal="center" mt={32} mb={64}>
-                {isDefined(emptyImage) && <Image src={emptyImage} alt="" width={124} height={124} />}
-                <Body level={1}>{emptyText}</Body>
-              </VStack>
-            </Box>
+            <VStack alignHorizontal="center" mt={32} mb={64}>
+              {isDefined(emptyImage) && <Image src={emptyImage} alt="" width={124} height={124} />}
+              <Body level={1}>{emptyText}</Body>
+            </VStack>
           )}
           indeterminate={selectedRowKeys.size !== data.length}
           onSelectionChange={handleToggleAllCheckbox}
-          bottomBordered={true}
         >
           {isDefined(renderExpanded) && (
             <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
@@ -122,8 +126,10 @@ export const Table = <DataType extends Record<string, any>>({
               />
             )
           )}
-          {selectable && selectedRowKeys.size > 0 && (
-            <Paper position="absolute" top={0} bottom={0} right={0} left={52} backgroundColor="surface2">
+        </TableRow>
+        {selectable && selectedRowKeys.size > 0 && (
+          <TableRow>
+            <Paper as="td" position="absolute" top={0} right={0} left={52} height={53} backgroundColor="surface2">
               <HStack alignVertical="center" height="100%" py={12} px={16} spacing={12}>
                 {selectButtons?.map(({ text, onClick }) => (
                   <GhostButton
@@ -137,8 +143,8 @@ export const Table = <DataType extends Record<string, any>>({
                 ))}
               </HStack>
             </Paper>
-          )}
-        </TableRow>
+          </TableRow>
+        )}
         {data.map((row, index) => (
           <TableRow
             key={row[rowKey]}
@@ -151,7 +157,6 @@ export const Table = <DataType extends Record<string, any>>({
                 {renderExpanded?.(row)}
               </Paper>
             )}
-            bottomBordered={true}
             disabled={disabledRowKey === row[rowKey]}
           >
             {columns.map(

@@ -51,7 +51,16 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     };
 
     return (
-      <Box as="th" display="table-cell" py={12} px={16} width={width}>
+      <Box
+        as="th"
+        display="table-cell"
+        py={12}
+        px={16}
+        width={width}
+        borderBottomColor="outline1"
+        borderBottomWidth={1}
+        borderBottomStyle="solid"
+      >
         <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
           {renderCell ? (
             renderCell()

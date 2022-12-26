@@ -32,7 +32,7 @@ export const TableDataCell = withTableDataCellVariation(
       onCopy?.();
     };
 
-    const { selected: rowSelected } = useTableRow();
+    const { selected: rowSelected, bottomBordered } = useTableRow();
 
     return (
       <PressableBox
@@ -44,6 +44,9 @@ export const TableDataCell = withTableDataCellVariation(
         onClick={onClick}
         disabled={disabled || !isDefined(onClick)}
         cursor={disabled || !isDefined(onClick) ? 'default' : 'pointer'}
+        borderBottomStyle="solid"
+        borderBottomColor="outline1"
+        borderBottomWidth={bottomBordered ? 1 : 0}
       >
         <>
           {selected && (
