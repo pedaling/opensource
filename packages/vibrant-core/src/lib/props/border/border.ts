@@ -115,6 +115,10 @@ const borderBottomRightRadiusLevelProp = createSystemProp({
   scale: 'borderRadius',
 });
 
+const borderCollapseProp = createSystemProp({
+  property: 'borderCollapse',
+});
+
 const outlineWidthProp = createSystemProp({
   property: 'outlineWidth',
 });
@@ -158,6 +162,7 @@ export const borderSystemProps = [
   borderTopRightRadiusLevelProp,
   borderBottomLeftRadiusLevelProp,
   borderBottomRightRadiusLevelProp,
+  borderCollapseProp,
   outlineWidthProp,
   outlineStyleProp,
   outlineColorProp,
