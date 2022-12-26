@@ -75,6 +75,7 @@ export const TableDataCell = withTableDataCellVariation(
             ) : (
               <Body
                 level={2}
+                weight="medium"
                 lineLimit={lineLimit}
                 wordBreak={wordBreak}
                 textAlign={alignHorizontal}
