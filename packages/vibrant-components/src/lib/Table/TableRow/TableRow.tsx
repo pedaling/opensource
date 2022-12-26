@@ -92,7 +92,7 @@ export const TableRow = withTableRowVariation(
           </TableRowProvider>
         </Box>
         {overlaid && rowRect && (
-          <Box as="tr" display="web_table-row">
+          <Box as="tr" display="web_table-row" position="web_static">
             <Box
               as="td"
               colSpan={getColumnsCount()}
