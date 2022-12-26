@@ -4,7 +4,9 @@ import type { SortDirection } from '../TableSortButton';
 
 export type TableColumnProps<Data extends Record<string, any>> = {
   key: string;
+  dataKey?: keyof Data;
   selectable?: boolean;
+  renderDataCell?: (row: Data) => ReactElementChild;
   alignVertical?: { header?: 'center' | 'end' | 'start'; dataCell?: 'center' | 'end' | 'start' };
   alignHorizontal?: { header: 'center' | 'end' | 'start'; dataCell?: 'center' | 'end' | 'start' };
   lineLimit?: { header?: TextSystemProps['lineLimit']; dataCell?: TextSystemProps['lineLimit'] };
@@ -18,21 +20,13 @@ export type TableColumnProps<Data extends Record<string, any>> = {
   };
 } & Either<
   {
-    dataKey: keyof Data;
+    title?: TextChildren;
+    description?: TextChildren;
+    sortable?: boolean;
+    defaultSortDirection?: SortDirection;
   },
   {
-    renderDataCell: (row: Data) => ReactElementChild;
+    renderHeader?: () => ReactElementChild;
   }
 > &
-  Either<
-    {
-      title?: TextChildren;
-      description?: TextChildren;
-      sortable?: boolean;
-      defaultSortDirection?: SortDirection;
-    },
-    {
-      renderHeader?: () => ReactElementChild;
-    }
-  > &
   Pick<SizingSystemProps, 'width'>;
