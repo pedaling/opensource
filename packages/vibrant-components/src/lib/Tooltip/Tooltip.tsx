@@ -41,6 +41,29 @@ const getOffsetAvoidingOverflowByPosition = (
     };
   }
 
+  const { x: flippedX, y: flippedY } = getOffsetByPosition({
+    referenceRect: openerRect,
+    targetRect,
+    position: flipPosition(position),
+    spacing,
+  });
+
+  if (
+    !detectOverflow({
+      viewport,
+      targetRect: {
+        ...targetRect,
+        x: flippedX,
+        y: flippedY,
+      },
+    })
+  ) {
+    return {
+      x: openerRect.x + flippedX,
+      y: openerRect.y + flippedY,
+    };
+  }
+
   if (position.includes('top') || position.includes('bottom')) {
     let overflowLeft = false;
     let overflowRight = false;
@@ -54,31 +77,6 @@ const getOffsetAvoidingOverflowByPosition = (
     }
 
     return { y: y + openerRect.y, left: overflowLeft ? 0 : undefined, right: overflowRight ? 0 : undefined };
-  }
-
-  if (position.includes('left') || position.includes('right')) {
-    const { x: flippedX, y: flippedY } = getOffsetByPosition({
-      referenceRect: openerRect,
-      targetRect,
-      position: flipPosition(position),
-      spacing,
-    });
-
-    if (
-      !detectOverflow({
-        viewport,
-        targetRect: {
-          ...targetRect,
-          x: flippedX,
-          y: flippedY,
-        },
-      })
-    ) {
-      return {
-        x: openerRect.x + flippedX,
-        y: openerRect.y + flippedY,
-      };
-    }
   }
 
   return { x: x + openerRect.x, y: y + openerRect.y };
@@ -106,7 +104,7 @@ export const Tooltip = withTooltipVariation(
     }>({});
     const openerRef = useRef<HTMLElement>(null);
     const {
-      theme: { zIndex },
+      theme: { zIndex, contentArea },
     } = useCurrentTheme();
     const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
     const [prevScrollPosition, setPrevScrollPosition] = useState(0);
