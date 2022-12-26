@@ -2,6 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.35.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.35.0...vibrant-components-0.35.1) (2022-12-26)
+
+## [0.35.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.34.2...vibrant-components-0.35.0) (2022-12-23)
+
+
+### Features
+
+* add KeyboardAvoidingBox ([#495](https://github.com/pedaling/opensource/issues/495)) ([ec8d914](https://github.com/pedaling/opensource/commit/ec8d914a8c0b2c9a74e7fb1b7a224221343206fa))
+
+### [0.34.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.34.1...vibrant-components-0.34.2) (2022-12-23)
+
+
+### Features
+
+* add TableFooter component ([#491](https://github.com/pedaling/opensource/issues/491)) ([943f08e](https://github.com/pedaling/opensource/commit/943f08ef1153ae6c2c55aca8828e2c49735075c1))
+
+
+### Bug Fixes
+
+* change Dropdown default width to minimum width ([#487](https://github.com/pedaling/opensource/issues/487)) ([44979f9](https://github.com/pedaling/opensource/commit/44979f988909097151006918ad6e7bd951c8896e))
+* set modal min-height to unset ([#494](https://github.com/pedaling/opensource/issues/494)) ([0ac61ae](https://github.com/pedaling/opensource/commit/0ac61ae2404edab9502d350029ac4d7b08e3a14c))
+
 ### [0.34.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.34.0...vibrant-components-0.34.1) (2022-12-14)
 
 

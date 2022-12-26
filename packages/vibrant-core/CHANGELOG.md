@@ -2,6 +2,35 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.35.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.35.0...vibrant-core-0.35.1) (2022-12-26)
+
+
+### Bug Fixes
+
+* set ScrollBox scrollEnabled default value to true ([#496](https://github.com/pedaling/opensource/issues/496)) ([704a121](https://github.com/pedaling/opensource/commit/704a121617c1b9d17b392d2aa0cbf38cfdab7e85))
+
+## [0.35.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.34.2...vibrant-core-0.35.0) (2022-12-23)
+
+
+### Features
+
+* add KeyboardAvoidingBox ([#495](https://github.com/pedaling/opensource/issues/495)) ([ec8d914](https://github.com/pedaling/opensource/commit/ec8d914a8c0b2c9a74e7fb1b7a224221343206fa))
+
+### [0.34.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.34.1...vibrant-core-0.34.2) (2022-12-23)
+
+
+### Features
+
+* add (simple) Image Component ([#486](https://github.com/pedaling/opensource/issues/486)) ([08e3afb](https://github.com/pedaling/opensource/commit/08e3afb4726178c96ddb1cb94e570b0bdadaf917))
+* add TableFooter component ([#491](https://github.com/pedaling/opensource/issues/491)) ([943f08e](https://github.com/pedaling/opensource/commit/943f08ef1153ae6c2c55aca8828e2c49735075c1))
+
+
+### Bug Fixes
+
+* Portal이 부모의 alilgnment에 영향을 받는 문제를 수정한다 ([#493](https://github.com/pedaling/opensource/issues/493)) ([4f91999](https://github.com/pedaling/opensource/commit/4f91999b3f6a6a1e280a0b4c53f9a4f6d88ebfa0))
+* set modal min-height to unset ([#494](https://github.com/pedaling/opensource/issues/494)) ([0ac61ae](https://github.com/pedaling/opensource/commit/0ac61ae2404edab9502d350029ac4d7b08e3a14c))
+* use transition prop from VibrantProvider ([#488](https://github.com/pedaling/opensource/issues/488)) ([8ea1eb5](https://github.com/pedaling/opensource/commit/8ea1eb5bbc8490776690ed6c066acb2568a1bdc3))
+
 ### [0.34.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.34.0...vibrant-core-0.34.1) (2022-12-14)
 
 ## [0.34.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.33.4...vibrant-core-0.34.0) (2022-12-14)

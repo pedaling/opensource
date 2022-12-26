@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box } from '@vibrant-ui/core';
+import { Box, useCurrentTheme } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
 import { HStack } from '../HStack';
 import { Paragraph } from '../Paragraph';
 import { Pressable } from '../Pressable';
+import { SelectField } from '../SelectField';
+import { TextField } from '../TextField';
 import { VStack } from '../VStack';
 import { ModalBottomSheet } from './ModalBottomSheet';
 
@@ -120,3 +122,41 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => 
     />
   </HStack>
 );
+
+export const WithFormContent: ComponentStory<typeof ModalBottomSheet> = props => {
+  const {
+    theme: { zIndex },
+  } = useCurrentTheme();
+
+  return (
+    <VStack width="100%">
+      <Box mx="auto">
+        <ModalBottomSheet
+          {...props}
+          renderContents={() => (
+            <VStack spacing={20} px={[20, 32]}>
+              <SelectField
+                label="실 색상"
+                options={[
+                  { label: '4397 아이비', value: '4397 아이비' },
+                  { label: '4396 코니퍼', value: '4396 코니퍼' },
+                  { label: '4394 네이비', value: '4394 네이비' },
+                  { label: '4393 크림', value: '4393 크림' },
+                  { label: '4392 블랙', value: '4392 블랙' },
+                  { label: '4391 그레이', value: '4391 그레이' },
+                  { label: '4390 데님', value: '4390 데님' },
+                  { label: '4388 포세린', value: '4388 포세린' },
+                  { label: '4387 라일락', value: '4387 라일락' },
+                  { label: '4386 린덴', value: '4386 린덴' },
+                  { label: '4385 오트밀', value: '4385 오트밀' },
+                ]}
+                zIndex={zIndex.modalBottomSheet + 1}
+              />
+              <TextField />
+            </VStack>
+          )}
+        />
+      </Box>
+    </VStack>
+  );
+};

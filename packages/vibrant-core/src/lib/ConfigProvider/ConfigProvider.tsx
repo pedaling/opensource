@@ -26,6 +26,15 @@ export type Translation = {
     days: string[];
     months: string[];
   };
+  tableFooter: {
+    rowsPerPage: string;
+    total: string;
+  };
+  pagination: {
+    ariaLabel: string;
+    prev: string;
+    next: string;
+  };
 };
 
 export type DependencyName = keyof Dependencies;
@@ -44,6 +53,15 @@ const ConfigContext = createContext<ConfigContextValue>({
       title: '{year}년 {month}',
       days: ['일', '월', '화', '수', '목', '금', '토'],
       months: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    },
+    tableFooter: {
+      rowsPerPage: '페이지당 행 수',
+      total: '총 {count}개',
+    },
+    pagination: {
+      ariaLabel: '페이지네이션',
+      prev: '이전',
+      next: '다음',
     },
   },
 });
