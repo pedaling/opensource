@@ -57,7 +57,7 @@ export const TableRow = withTableRowVariation(
           ref={rowRef}
           as="tr"
           height="100%"
-          display="table-row"
+          display="web_table-row"
           backgroundColor={header ? 'surface2' : 'background'}
         >
           <TableRowProvider selected={selected ?? false} bottomBordered={!isExpanded}>
@@ -92,7 +92,7 @@ export const TableRow = withTableRowVariation(
           </TableRowProvider>
         </Box>
         {overlaid && rowRect && (
-          <Box as="tr" display="table-row">
+          <Box as="tr" display="web_table-row">
             <Box
               as="td"
               colSpan={getColumnsCount()}
@@ -113,10 +113,10 @@ export const TableRow = withTableRowVariation(
           </Box>
         )}
         {isExpanded && (
-          <Box as="tr" display="table-row">
+          <Box as="tr" display="web_table-row">
             <Box
               as="td"
-              display="table-cell"
+              display="web_table-cell"
               colSpan={getColumnsCount()}
               borderBottomStyle="solid"
               borderBottomColor="outline1"

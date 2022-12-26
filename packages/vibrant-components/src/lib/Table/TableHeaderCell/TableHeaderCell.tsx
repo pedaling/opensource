@@ -53,7 +53,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     return (
       <Box
         as="th"
-        display="table-cell"
+        display="web_table-cell"
         py={12}
         px={16}
         width={width}

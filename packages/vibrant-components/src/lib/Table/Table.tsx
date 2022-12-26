@@ -76,7 +76,7 @@ export const Table = <DataType extends Record<string, any>>({
     >
       <Box
         as="table"
-        display="table-layout"
+        display="web_table-layout"
         flexDirection="column"
         alignItems="flex-start"
         width="100%"

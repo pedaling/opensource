@@ -37,7 +37,7 @@ export const TableDataCell = withTableDataCellVariation(
     return (
       <PressableBox
         as="td"
-        display="table-cell"
+        display="web_table-cell"
         py={12}
         px={16}
         width={width}
