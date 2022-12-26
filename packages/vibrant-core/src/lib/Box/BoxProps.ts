@@ -111,6 +111,7 @@ export type BoxElements =
   | 'stop'
   | 'svg'
   | 'table'
+  | 'tbody'
   | 'td'
   | 'th'
   | 'tr'
