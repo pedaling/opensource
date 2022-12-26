@@ -72,6 +72,7 @@ export const Table = <DataType extends Record<string, any>>({
       borderStyle="solid"
       width="100%"
       borderBottomWidth={0}
+      borderRadius={1}
     >
       <Box as="table" display="table-layout" flexDirection="column" alignItems="flex-start" width="100%">
         <TableRow
@@ -92,13 +93,7 @@ export const Table = <DataType extends Record<string, any>>({
           bottomBordered={true}
         >
           {isDefined(renderExpanded) && (
-            <TableHeaderCell
-              renderCell={() => <Box width={16} height={16} />}
-              minWidth={0}
-              flexGrow={0}
-              flexShrink={0}
-              flexBasis="auto"
-            />
+            <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
           )}
           {columns.map(
             ({
