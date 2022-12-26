@@ -104,7 +104,7 @@ export const Tooltip = withTooltipVariation(
     }>({});
     const openerRef = useRef<HTMLElement>(null);
     const {
-      theme: { zIndex, contentArea },
+      theme: { zIndex },
     } = useCurrentTheme();
     const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
     const [prevScrollPosition, setPrevScrollPosition] = useState(0);
