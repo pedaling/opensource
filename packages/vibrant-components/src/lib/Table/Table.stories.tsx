@@ -3,7 +3,7 @@ import type { ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Callout } from '../Callout';
 import { OutlinedButton } from '../OutlinedButton';
-import { Table, useTable } from './Table';
+import { Table } from './Table';
 
 type Data = {
   name: string;
@@ -159,18 +159,14 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
   </Box>
 );
 
-export const UseTable: ComponentStory<typeof Table> = () => {
-  const { Table: TableComponent } = useTable<Data>();
-
-  return (
-    <Box p={20} width="100%">
-      <TableComponent data={rows} rowKey="name">
-        <TableComponent.Column key="name" dataKey="name" title="name" />
-        <TableComponent.Column key="calories" dataKey="calories" title="calories" />
-        <TableComponent.Column key="fat" dataKey="fat" title="fat" />
-        <TableComponent.Column key="carbs" dataKey="carbs" title="carbs" />
-        <TableComponent.Column key="protein" dataKey="protein" title="protein" />
-      </TableComponent>
-    </Box>
-  );
-};
+export const Empty: ComponentStory<typeof Table> = props => (
+  <Box p={20} width="100%">
+    <Table rowKey="name" {...props} data={[]}>
+      <Table.Column key="name" dataKey="name" title="name" />
+      <Table.Column key="calories" dataKey="calories" title="calories" />
+      <Table.Column key="fat" dataKey="fat" title="fat" />
+      <Table.Column key="carbs" dataKey="carbs" title="carbs" />
+      <Table.Column key="protein" dataKey="protein" title="protein" />
+    </Table>
+  </Box>
+);
