@@ -1,14 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import {
-  Box,
-  PressableBox,
-  getWindowDimensions,
-  useCurrentTheme,
-  useResponsiveValue,
-  useScroll,
-} from '@vibrant-ui/core';
-import { MountMotion, Transition } from '@vibrant-ui/motion';
-import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
+import { Box, PressableBox, getWindowDimensions, useCurrentTheme, useScroll } from '@vibrant-ui/core';
+import { Transition } from '@vibrant-ui/motion';
+import type { Position, Rect } from '@vibrant-ui/utils';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
@@ -53,8 +46,8 @@ const getOffsetAvoidingOverflowByPosition = (
       viewport,
       targetRect: {
         ...targetRect,
-        x: flippedX,
-        y: flippedY,
+        x: openerRect.x + flippedX,
+        y: openerRect.y + flippedY,
       },
     })
   ) {
@@ -101,39 +94,48 @@ export const Tooltip = withTooltipVariation(
       y?: number;
       left?: number;
       right?: number;
-    }>({});
+    }>({ x: 0, y: 0 });
     const openerRef = useRef<HTMLElement>(null);
+    const calculateCompleteRef = useRef(false);
+    const targetRef = useRef<HTMLElement>();
+    const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const {
       theme: { zIndex },
     } = useCurrentTheme();
-    const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
     const [prevScrollPosition, setPrevScrollPosition] = useState(0);
     const { addEventListener } = useScroll();
-    const isMobile = breakpointIndex === 0;
 
-    const handleTooltipPosition = useCallback(
-      async ({ width, height, top, left }: LayoutEvent) => {
-        const openerRect = await getElementRect(openerRef.current);
+    const handleTooltipPosition = useCallback(async () => {
+      if (calculateCompleteRef.current) {
+        return;
+      }
 
-        const targetRect: Rect = { x: left, y: top, width, height };
+      const openerRect = await getElementRect(openerRef.current);
 
-        const {
-          x,
-          y,
-          left: leftOffset,
-          right: rightOffset,
-        } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
+      const targetRect: Rect = await getElementRect(targetRef.current);
 
-        setOffset({ x, y, left: leftOffset, right: rightOffset });
+      const {
+        x,
+        y,
+        left: leftOffset,
+        right: rightOffset,
+      } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
 
-        setTimeout(() => {
-          setIsMounted(true);
-        }, enterDelay);
-      },
-      [enterDelay, position, spacing]
-    );
-    const openTooltip = () => {
+      setOffset({ x, y, left: leftOffset, right: rightOffset });
+
+      calculateCompleteRef.current = true;
+
       setTimeout(() => {
+        setIsMounted(true);
+      }, enterDelay);
+    }, [enterDelay, position, spacing]);
+
+    const openTooltip = () => {
+      clearTimeout(timerRef.current);
+
+      timerRef.current = setTimeout(() => {
+        calculateCompleteRef.current = false;
+
         setIsOpen(true);
 
         onOpen?.();
@@ -141,7 +143,9 @@ export const Tooltip = withTooltipVariation(
     };
 
     const closeTooltip = useCallback(() => {
-      setTimeout(() => {
+      clearTimeout(timerRef.current);
+
+      timerRef.current = setTimeout(() => {
         setIsMounted(false);
 
         onClose?.();
@@ -162,16 +166,17 @@ export const Tooltip = withTooltipVariation(
 
     return (
       <HStack>
-        <PressableBox
-          ref={openerRef}
-          onHoverIn={isMobile ? undefined : openTooltip}
-          onHoverOut={isMobile ? undefined : closeTooltip}
-        >
+        <PressableBox ref={openerRef} onHoverIn={openTooltip} onHoverOut={closeTooltip}>
           {children}
         </PressableBox>
 
-        <MountMotion mount={isOpen}>
+        {isOpen && (
           <Transition
+            ref={nextRef => {
+              targetRef.current = nextRef;
+
+              handleTooltipPosition();
+            }}
             duration={200}
             easing="easeOutQuad"
             animation={{
@@ -182,7 +187,7 @@ export const Tooltip = withTooltipVariation(
                 ? () => {
                     setIsOpen(false);
 
-                    setOffset({});
+                    setOffset({ x: 0, y: 0 });
                   }
                 : undefined
             }
@@ -199,7 +204,6 @@ export const Tooltip = withTooltipVariation(
               borderRadius={3}
               backgroundColor="inverseSurface"
               flexShrink={0}
-              onLayout={handleTooltipPosition}
             >
               {typeof content === 'string' ? (
                 <Body level={4} color="onInverseSurface">
@@ -210,7 +214,7 @@ export const Tooltip = withTooltipVariation(
               )}
             </Box>
           </Transition>
-        </MountMotion>
+        )}
       </HStack>
     );
   }
