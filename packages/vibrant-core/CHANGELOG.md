@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.35.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.35.0...vibrant-core-0.35.1) (2022-12-26)
+
+
+### Bug Fixes
+
+* set ScrollBox scrollEnabled default value to true ([#496](https://github.com/pedaling/opensource/issues/496)) ([704a121](https://github.com/pedaling/opensource/commit/704a121617c1b9d17b392d2aa0cbf38cfdab7e85))
+
 ## [0.35.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.34.2...vibrant-core-0.35.0) (2022-12-23)
 
 
