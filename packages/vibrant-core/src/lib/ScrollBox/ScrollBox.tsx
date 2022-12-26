@@ -17,7 +17,7 @@ const SystemScrollBox = styled(
 )(interpolation);
 
 export const ScrollBox = forwardRef<any, ScrollBoxProps>(
-  ({ keyboardShouldPersistTaps: _, scrollEnabled, ...restProps }, ref) => (
+  ({ keyboardShouldPersistTaps: _, scrollEnabled = true, ...restProps }, ref) => (
     <SystemScrollBox
       ref={ref}
       {...restProps}
