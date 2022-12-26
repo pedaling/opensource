@@ -13,6 +13,8 @@ export type TableRowProps = {
   expandable?: boolean;
   expanded?: boolean;
   renderExpanded?: () => ReactElementChild;
+  overlaid?: boolean;
+  renderOverlay?: () => ReactElementChild;
   children?: ReactElementChildren;
   onClick?: () => void;
   disabled?: boolean;

@@ -1,6 +1,8 @@
-import { Children, useState } from 'react';
+import { Children, useEffect, useRef, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import type { Rect } from '@vibrant-ui/utils';
+import { getElementRect } from '@vibrant-ui/utils';
 import { Checkbox } from '../../Checkbox';
 import { IconButton } from '../../IconButton';
 import { TableRowProvider } from '../context';
@@ -15,12 +17,16 @@ export const TableRow = withTableRowVariation(
     expandable,
     expanded = false,
     renderExpanded,
+    overlaid = false,
+    renderOverlay,
     TableCellComponent,
     header,
     children,
     disabled = false,
   }) => {
-    const [isExpanded, setIsExpanded] = useState(expanded);
+    const [isExpanded, setIsExpanded] = useState(expandable && expanded);
+    const [rowRect, setRowRect] = useState<Rect>();
+    const rowRef = useRef<HTMLTableRowElement>(null);
     const getColumnsCount = () => {
       let columnsNum = Children.count(children);
 
@@ -31,9 +37,29 @@ export const TableRow = withTableRowVariation(
       return columnsNum;
     };
 
+    useEffect(() => {
+      const updateRowRect = async () => {
+        if (!overlaid || !rowRef.current) {
+          return;
+        }
+
+        const rect = await getElementRect(rowRef.current);
+
+        setRowRect(rect);
+      };
+
+      updateRowRect();
+    }, [overlaid]);
+
     return (
       <>
-        <Box as="tr" height="100%" display="table-row" backgroundColor={header ? 'surface2' : 'background'}>
+        <Box
+          ref={rowRef}
+          as="tr"
+          height="100%"
+          display="table-row"
+          backgroundColor={header ? 'surface2' : 'background'}
+        >
           <TableRowProvider selected={selected ?? false} bottomBordered={!isExpanded}>
             {selectable && (
               <TableCellComponent
@@ -65,6 +91,27 @@ export const TableRow = withTableRowVariation(
             {children}
           </TableRowProvider>
         </Box>
+        {overlaid && rowRect && (
+          <Box as="tr" display="table-row">
+            <Box
+              as="td"
+              colSpan={getColumnsCount()}
+              position="absolute"
+              top={0}
+              left={52}
+              right={0}
+              height={rowRect.height}
+              py={12}
+              px={16}
+              backgroundColor="surface2"
+              borderBottomStyle="solid"
+              borderBottomColor="outline1"
+              borderBottomWidth={1}
+            >
+              {renderOverlay?.()}
+            </Box>
+          </Box>
+        )}
         {isExpanded && (
           <Box as="tr" display="table-row">
             <Box

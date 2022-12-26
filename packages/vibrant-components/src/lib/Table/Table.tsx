@@ -93,6 +93,21 @@ export const Table = <DataType extends Record<string, any>>({
               <Body level={1}>{emptyText}</Body>
             </VStack>
           )}
+          overlaid={selectable && selectedRowKeys.size > 0}
+          renderOverlay={() => (
+            <HStack alignVertical="center" height="100%" spacing={12}>
+              {selectButtons?.map(({ text, onClick }) => (
+                <GhostButton
+                  key={text}
+                  size="md"
+                  color="onViewInformative"
+                  onClick={() => onClick(data.filter(row => selectedRowKeys.has(row[rowKey])))}
+                >
+                  {text}
+                </GhostButton>
+              ))}
+            </HStack>
+          )}
           indeterminate={selectedRowKeys.size !== data.length}
           onSelectionChange={handleToggleAllCheckbox}
         >
@@ -127,24 +142,6 @@ export const Table = <DataType extends Record<string, any>>({
             )
           )}
         </TableRow>
-        {selectable && selectedRowKeys.size > 0 && (
-          <TableRow>
-            <Paper as="td" position="absolute" top={0} right={0} left={52} height={53} backgroundColor="surface2">
-              <HStack alignVertical="center" height="100%" py={12} px={16} spacing={12}>
-                {selectButtons?.map(({ text, onClick }) => (
-                  <GhostButton
-                    key={text}
-                    size="md"
-                    color="onViewInformative"
-                    onClick={() => onClick(data.filter(row => selectedRowKeys.has(row[rowKey])))}
-                  >
-                    {text}
-                  </GhostButton>
-                ))}
-              </HStack>
-            </Paper>
-          </TableRow>
-        )}
         {data.map((row, index) => (
           <TableRow
             key={row[rowKey]}
