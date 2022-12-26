@@ -1,5 +1,12 @@
-import { useCallback, useRef, useState } from 'react';
-import { Box, PressableBox, getWindowDimensions, useCurrentTheme, useResponsiveValue } from '@vibrant-ui/core';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import {
+  Box,
+  PressableBox,
+  getWindowDimensions,
+  useCurrentTheme,
+  useResponsiveValue,
+  useScroll,
+} from '@vibrant-ui/core';
 import { MountMotion, Transition } from '@vibrant-ui/motion';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
@@ -102,6 +109,8 @@ export const Tooltip = withTooltipVariation(
       theme: { zIndex },
     } = useCurrentTheme();
     const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
+    const [prevScrollPosition, setPrevScrollPosition] = useState(0);
+    const { addEventListener } = useScroll();
     const isMobile = breakpointIndex === 0;
 
     const handleTooltipPosition = useCallback(
@@ -133,13 +142,25 @@ export const Tooltip = withTooltipVariation(
       }, enterDelay);
     };
 
-    const closeTooltip = () => {
+    const closeTooltip = useCallback(() => {
       setTimeout(() => {
         setIsMounted(false);
 
         onClose?.();
       }, leaveDelay);
-    };
+    }, [leaveDelay, onClose]);
+
+    useEffect(() => {
+      const cleanEventListener = addEventListener(({ scrollPosition }) => {
+        if (prevScrollPosition !== scrollPosition) {
+          closeTooltip();
+        }
+
+        setPrevScrollPosition(scrollPosition);
+      });
+
+      return cleanEventListener;
+    }, [addEventListener, closeTooltip, prevScrollPosition]);
 
     return (
       <HStack>
