@@ -18,7 +18,7 @@ export type TableColumnProps<Data extends Record<string, any>> = {
   };
 } & Either<
   {
-    dataKey?: keyof Data;
+    dataKey: keyof Data;
   },
   {
     renderDataCell: (row: Data) => ReactElementChild;

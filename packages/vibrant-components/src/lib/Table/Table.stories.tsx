@@ -82,7 +82,7 @@ export const RowSelectable: ComponentStory<typeof Table> = props => (
       <Table.Column<Data>
         key="name"
         dataKey="name"
-        renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
+        renderHeader={() => <OutlinedButton size="xl">이름 수정</OutlinedButton>}
       />
       <Table.Column<Data>
         key="calories"
@@ -161,7 +161,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
 
 export const Empty: ComponentStory<typeof Table> = props => (
   <Box p={20} width="100%">
-    <Table rowKey="name" {...props} data={[]}>
+    <Table {...props} data={[]}>
       <Table.Column key="name" dataKey="name" title="name" />
       <Table.Column key="calories" dataKey="calories" title="calories" />
       <Table.Column key="fat" dataKey="fat" title="fat" />
