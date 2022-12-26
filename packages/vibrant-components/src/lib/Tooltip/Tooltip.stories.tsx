@@ -17,7 +17,7 @@ export default {
 
 export const Basic: ComponentStory<typeof Tooltip> = props => (
   <ContentArea>
-    <VStack height={300} alignHorizontal="end" alignVertical="start">
+    <VStack height={300} alignHorizontal="center" alignVertical="center">
       <Tooltip {...props}>
         <Box width={100} height={100} backgroundColor="warning" />
       </Tooltip>
