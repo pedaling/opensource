@@ -102,7 +102,7 @@ export const Tooltip = withTooltipVariation(
     const {
       theme: { zIndex },
     } = useCurrentTheme();
-    const [prevScrollPosition, setPrevScrollPosition] = useState(0);
+    const prevScrollPosition = useRef(0);
     const { addEventListener } = useScroll();
 
     const handleTooltipPosition = useCallback(async () => {
@@ -125,10 +125,8 @@ export const Tooltip = withTooltipVariation(
 
       calculateCompleteRef.current = true;
 
-      setTimeout(() => {
-        setIsMounted(true);
-      }, enterDelay);
-    }, [enterDelay, position, spacing]);
+      setIsMounted(true);
+    }, [position, spacing]);
 
     const openTooltip = () => {
       clearTimeout(timerRef.current);
@@ -154,11 +152,11 @@ export const Tooltip = withTooltipVariation(
 
     useEffect(() => {
       const cleanEventListener = addEventListener(({ scrollPosition }) => {
-        if (prevScrollPosition !== scrollPosition) {
+        if (prevScrollPosition.current !== scrollPosition) {
           closeTooltip();
         }
 
-        setPrevScrollPosition(scrollPosition);
+        prevScrollPosition.current = scrollPosition;
       });
 
       return cleanEventListener;
