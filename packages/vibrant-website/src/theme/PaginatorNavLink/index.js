@@ -5,10 +5,10 @@ import { Icon } from '@vibrant-ui/icons';
 export default function PaginatorNavLink(props) {
   const { permalink, title, subLabel, isNext } = props;
   return (
-    <VStack>
+    <VStack width="100%">
       <Link to={permalink}>
         {isNext ? (
-          <VStack alignHorizontal="end" spacing={8}>
+          <VStack alignSelf="flex-end" alignHorizontal="end" spacing={8}>
             <Body mr={2} level={3} color="onView2">
               {subLabel}
             </Body>
@@ -20,7 +20,7 @@ export default function PaginatorNavLink(props) {
             </HStack>
           </VStack>
         ) : (
-          <VStack alignHorizontal="start" spacing={8}>
+          <VStack alignSelf="flex-start" alignHorizontal="start" spacing={8}>
             <Body ml={2} level={3} color="onView2">
               {subLabel}
             </Body>
