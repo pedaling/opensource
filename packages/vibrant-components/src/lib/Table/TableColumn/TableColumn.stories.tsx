@@ -25,7 +25,7 @@ export default {
 
 export const Basic: ComponentStory<typeof TableColumn> = ({
   renderHeader: _renderHeader,
-  renderCell: _renderCell,
+  renderDataCell: _renderDataCell,
   dataKey: _dataKey,
   ...props
 }) => (
@@ -46,7 +46,7 @@ export const Basic: ComponentStory<typeof TableColumn> = ({
         title=""
         formatData={({ createdAt }) => createdAt.toLocaleDateString('en-US')}
         width={160}
-        renderCell={() => (
+        renderDataCell={() => (
           <HStack alignVertical="center" spacing={10}>
             <OutlinedButton size="sm">수정</OutlinedButton>
             <OutlinedButton size="sm">삭제</OutlinedButton>
