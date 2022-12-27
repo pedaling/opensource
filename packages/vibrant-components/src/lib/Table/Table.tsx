@@ -80,7 +80,6 @@ export const Table = <DataType extends Record<string, any>>({
             header={true}
             selectable={selectable}
             selected={selectedRowKeys.size !== 0}
-            expandable={true}
             expanded={data.length === 0}
             renderExpanded={() => (
               <VStack alignHorizontal="center" mt={32} mb={64}>
