@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.35.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.35.1...vibrant-core-0.35.2) (2022-12-27)
+
+
+### Bug Fixes
+
+* fix the problem that the modal does not close when dim is clicked ([#498](https://github.com/pedaling/opensource/issues/498)) ([47e0f9d](https://github.com/pedaling/opensource/commit/47e0f9debf4363b17164dce5847c8bdad687ef87))
+
 ### [0.35.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.35.0...vibrant-core-0.35.1) (2022-12-26)
 
 
