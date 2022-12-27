@@ -6,7 +6,7 @@ import type { ScrollBoxProps } from './ScrollBoxProps';
 import { interpolation, shouldForwardProp } from './ScrollBoxProps';
 
 export const ScrollBox = styled(
-  forwardRef<any, ScrollBoxProps & { style: any }>(({ style, scrollEnabled, ...restProps }, ref) => {
+  forwardRef<any, ScrollBoxProps & { style: any }>(({ style, scrollEnabled = true, ...restProps }, ref) => {
     const { getResponsiveValue } = useResponsiveValue();
 
     const currentScrollEnabled = getResponsiveValue(scrollEnabled);
