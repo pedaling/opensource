@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.35.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.35.2...vibrant-components-0.35.3) (2022-12-27)
+
+
+### Features
+
+* Table 컴포넌트를 구현한다 ([#489](https://github.com/pedaling/opensource/issues/489)) ([7545da1](https://github.com/pedaling/opensource/commit/7545da1685b1d17faf053d5202533b9258257e10))
+* Table에 loading 속성을 추가한다 ([#500](https://github.com/pedaling/opensource/issues/500)) ([824e08a](https://github.com/pedaling/opensource/commit/824e08a6cb9b6822d49c0d5db9e6b6a0100b3bf0))
+
 ### [0.35.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.35.1...vibrant-components-0.35.2) (2022-12-27)
 
 
