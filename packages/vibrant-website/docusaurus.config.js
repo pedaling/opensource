@@ -32,7 +32,7 @@ const config = {
           remarkPlugins: [require('@docusaurus/remark-plugin-npm2yarn')],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          // customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],
