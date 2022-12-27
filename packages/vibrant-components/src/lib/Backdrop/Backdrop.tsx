@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Box, PortalBox } from '@vibrant-ui/core';
+import { Box, KeyboardAvoidingBox, PortalBox } from '@vibrant-ui/core';
 import { Motion } from '@vibrant-ui/motion';
 import { Pressable } from '../Pressable';
 import { withBackdropVariation } from './BackdropProps';
@@ -44,19 +44,21 @@ export const Backdrop = withBackdropVariation(
           backgroundColor={color}
           scrollable={scrollable}
         >
-          <Box flex={1} {...restProps}>
-            <Pressable
-              as="div"
-              position="absolute"
-              cursor="default"
-              top={0}
-              right={0}
-              bottom={0}
-              left={0}
-              onClick={onClick}
-            />
-            {children}
-          </Box>
+          <KeyboardAvoidingBox>
+            <Box flex={1} {...restProps}>
+              <Pressable
+                as="div"
+                position="absolute"
+                cursor="default"
+                top={0}
+                right={0}
+                bottom={0}
+                left={0}
+                onClick={onClick}
+              />
+              {children}
+            </Box>
+          </KeyboardAvoidingBox>
         </PortalBox>
       </Motion>
     );
