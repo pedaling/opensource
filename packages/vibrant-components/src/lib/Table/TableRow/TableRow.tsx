@@ -24,7 +24,7 @@ export const TableRow = withTableRowVariation(
     children,
     disabled = false,
   }) => {
-    const [isExpanded, setIsExpanded] = useState(expandable && expanded);
+    const [isExpanded, setIsExpanded] = useState(expanded);
     const [rowRect, setRowRect] = useState<Rect>();
     const rowRef = useRef<HTMLTableRowElement>(null);
     const getColumnsCount = () => {
