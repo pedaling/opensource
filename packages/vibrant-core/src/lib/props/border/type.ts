@@ -29,6 +29,7 @@ export type BorderSystemProps = {
   borderTopRightRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
   borderBottomLeftRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
   borderBottomRightRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
+  borderCollapse?: ResponsiveValue<'collapse' | 'separate'>;
   outlineWidth?: ResponsiveValue<number>;
   outlineStyle?: ResponsiveValue<'none' | 'solid'>;
   outlineColor?: ResponsiveValue<string>;

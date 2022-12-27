@@ -3,6 +3,7 @@ import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
+import { VStack } from '../../VStack';
 import type { SortDirection } from '../TableSortButton';
 import { TableSortButton } from '../TableSortButton';
 import { withTableHeaderCellVariation } from './TableHeaderCellProps';
@@ -27,24 +28,17 @@ export const TableHeaderCell = withTableHeaderCellVariation(
   ({
     title,
     description,
-    textAlign,
     lineLimit,
     wordBreak,
+    overflowWrap,
+    whiteSpace,
     renderCell,
     alignHorizontal = 'center',
     alignVertical = 'center',
     sortable,
     defaultSortDirection,
     onSort,
-    flexBasis,
-    flexGrow,
-    flexShrink,
-    maxWidth,
-    minWidth,
     width,
-    borderBottomColor,
-    borderBottomWidth,
-    borderBottomStyle,
   }) => {
     const [sortDirection, setSortDirection] = useState<SortDirection>(defaultSortDirection ?? 'none');
 
@@ -59,32 +53,36 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     return (
       <Box
         as="th"
+        display="web_table-cell"
         py={12}
         px={16}
-        alignItems={alignHorizontal}
-        justifyContent={alignVertical}
-        minWidth={minWidth ?? 0}
-        flexBasis={flexBasis}
-        flexGrow={flexGrow}
-        flexShrink={flexShrink}
-        maxWidth={maxWidth}
         width={width}
-        borderBottomColor={borderBottomColor}
-        borderBottomWidth={borderBottomWidth}
-        borderBottomStyle={borderBottomStyle}
+        borderBottomColor="outline1"
+        borderBottomWidth={1}
+        borderBottomStyle="solid"
       >
-        {renderCell ? (
-          renderCell()
-        ) : (
-          <HStack alignVertical="center" spacing={4}>
-            <Body level={2} lineLimit={lineLimit} wordBreak={wordBreak} textAlign={textAlign} width="100%">
-              {title}
-            </Body>
-            {/* TODO(Mia): replace icon with tooltip */}
-            {description ? <Icon.InfoCircle.Fill size={14} /> : null}
-            {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
-          </HStack>
-        )}
+        <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
+          {renderCell ? (
+            renderCell()
+          ) : (
+            <HStack alignVertical="center" spacing={4}>
+              <Body
+                level={2}
+                weight="bold"
+                lineLimit={lineLimit}
+                wordBreak={wordBreak}
+                textAlign={alignHorizontal}
+                whiteSpace={whiteSpace}
+                overflowWrap={overflowWrap}
+              >
+                {title}
+              </Body>
+              {/* TODO(Mia): replace icon with tooltip */}
+              {description ? <Icon.InfoCircle.Fill size={14} /> : null}
+              {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
+            </HStack>
+          )}
+        </VStack>
       </Box>
     );
   }

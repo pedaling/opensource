@@ -3,14 +3,14 @@ import { Portal } from '../../Portal';
 
 const positionProp = createSystemProp({
   property: 'position',
-  transform: (value: 'absolute' | 'fixed' | 'relative' | 'web_sticky') => {
+  transform: (value: 'absolute' | 'fixed' | 'relative' | 'web_static' | 'web_sticky') => {
     if (value === 'fixed') {
       return {
         BaseComponent: Portal,
       };
     }
 
-    if (value === 'web_sticky') {
+    if (value === 'web_sticky' || value === 'web_static') {
       return {
         position: 'relative',
       };
