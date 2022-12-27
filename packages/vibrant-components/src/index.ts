@@ -57,3 +57,4 @@ export { TopBar } from './lib/TopBar';
 export { IconButton } from './lib/IconButton';
 export { Pagination } from './lib/Pagination';
 export { TableFooter, tableFooterTranslation } from './lib/TableFooter';
+export { Table } from './lib/Table';
