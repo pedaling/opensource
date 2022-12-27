@@ -10,7 +10,7 @@ export default {
   args: {
     maxWidth: 800,
     content:
-      '테이블 프리뷰가 나왔습니다 .. 아직 리뷰 중이긴 하지만요! Table/ TableColumn 컴포넌트로 QA 해주시면 될 것 같아요!',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper leo non faucibus rhoncus. Etiam dignissim, urna sit amet placerat dictum, justo lacus ullamcorper nunc, at fermentum magna felis a libero. In tortor ligula, ultricies nec semper ut, bibendum non mauris. Nullam sit amet risus quis eros accumsan sollicitudin vitae ac mauris. ',
     position: 'bottom',
   },
 } as ComponentMeta<typeof Tooltip>;
