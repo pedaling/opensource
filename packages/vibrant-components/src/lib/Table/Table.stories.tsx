@@ -113,7 +113,7 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         selectable={true}
         onDataCell={{
           onClick: row => console.log('clicked', row),
-          onCopy: row => console.log(row),
+          onCopy: row => console.log('copied', row),
         }}
       />
       <Table.Column<Data>

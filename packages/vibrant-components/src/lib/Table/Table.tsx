@@ -131,7 +131,7 @@ export const Table = <DataType extends Record<string, any>>({
                   whiteSpace={whiteSpace?.header}
                   overflowWrap={overflowWrap?.header}
                   renderCell={renderHeader}
-                  onSort={(sortDirection: SortDirection) => onSort?.(dataKey as string, sortDirection)}
+                  onSort={(sortDirection: SortDirection) => onSort?.({ dataKey, direction: sortDirection })}
                 />
               )
             )}

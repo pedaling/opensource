@@ -25,7 +25,7 @@ export type TableProps<Data extends Record<string, any>> = {
   onRow?: {
     onClick: (row: Data) => void;
   };
-  onSort?: (dataKey: string, direction: SortDirection) => void;
+  onSort?: ({ dataKey, direction }: { dataKey: keyof Data; direction: SortDirection }) => void;
   emptyText?: TextChildren;
   emptyImage?: string;
   disabledRowKey?: keyof Data;
