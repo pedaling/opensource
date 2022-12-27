@@ -13,6 +13,7 @@ export type UseTableResult<Data extends Record<string, any>, RowKey extends keyo
 export type TableProps<Data extends Record<string, any>, RowKey extends keyof Data> = {
   data: Data[];
   rowKey: RowKey;
+  loading?: boolean;
   selectable?: boolean;
   selectButtons?: { text: string; onClick: (selectedRows: Data[]) => void }[];
   renderExpanded?: (row: Data) => ReactElementChild;
