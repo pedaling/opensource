@@ -40,7 +40,7 @@ export default {
     onRow: {
       onClick: (row: Data) => console.log(row),
     },
-    disabledRowKey: 'Cupcake',
+    disabledRowKeys: ['Cupcake'],
   },
 };
 

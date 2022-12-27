@@ -4,20 +4,15 @@ import type { ReactElementChild, TextChildren } from '@vibrant-ui/core';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import type { SortDirection } from './TableSortButton';
 
-export type UseTableProps<Data extends Record<string, any>> = {
-  data: Data[];
-  rowKey: Extract<keyof Data, string>;
-};
-
-export type UseTableResult<Data extends Record<string, any>> = {
-  Table: ComponentType<TableProps<Data>> & {
+export type UseTableResult<Data extends Record<string, any>, RowKey extends keyof Data> = {
+  Table: ComponentType<TableProps<Data, RowKey>> & {
     Column: ComponentType<TableColumnProps<Data>>;
   };
 };
 
-export type TableProps<Data extends Record<string, any>> = {
+export type TableProps<Data extends Record<string, any>, RowKey extends keyof Data> = {
   data: Data[];
-  rowKey: Extract<keyof Data, string>;
+  rowKey: RowKey;
   selectable?: boolean;
   selectButtons?: { text: string; onClick: (selectedRows: Data[]) => void }[];
   renderExpanded?: (row: Data) => ReactElementChild;
@@ -25,8 +20,8 @@ export type TableProps<Data extends Record<string, any>> = {
   onRow?: {
     onClick: (row: Data) => void;
   };
-  onSort?: ({ dataKey, direction }: { dataKey: keyof Data; direction: SortDirection }) => void;
+  onSort?: ({ dataKey, direction }: { dataKey?: keyof Data; direction: SortDirection }) => void;
   emptyText?: TextChildren;
   emptyImage?: string;
-  disabledRowKey?: keyof Data;
+  disabledRowKeys?: Data[RowKey][];
 };

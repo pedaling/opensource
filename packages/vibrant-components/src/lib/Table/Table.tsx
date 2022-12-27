@@ -17,11 +17,14 @@ import type { SortDirection } from './TableSortButton';
 
 const getCellKey = (key: any, rowIndex: number) => `${key}:${rowIndex}`;
 
-export const useTable = <Data extends Record<string, any>>(): UseTableResult<Data> => ({
+export const useTable = <Data extends Record<string, any>, RowKey extends keyof Data>(): UseTableResult<
+  Data,
+  RowKey
+> => ({
   Table,
 });
 
-export const Table = <DataType extends Record<string, any>>({
+export const Table = <Data extends Record<string, any>, RowKey extends keyof Data>({
   data,
   rowKey,
   selectable,
@@ -32,8 +35,8 @@ export const Table = <DataType extends Record<string, any>>({
   emptyText,
   emptyImage,
   children,
-  disabledRowKey,
-}: TableProps<DataType>) => {
+  disabledRowKeys,
+}: TableProps<Data, RowKey>) => {
   const columns =
     (Children.toArray(children).filter(child => isValidElement(child)) as unknown as typeof children).map(
       ({ props, key }) => ({ ...props, key: key as string })
@@ -56,7 +59,11 @@ export const Table = <DataType extends Record<string, any>>({
 
   const handleToggleAllCheckbox = ({ value }: { value: boolean }) => {
     if (value) {
-      const allRowKeys = new Set<string>(data.filter(row => disabledRowKey !== row[rowKey]).map(row => row[rowKey]));
+      const allRowKeys = new Set<string>(
+        data
+          .filter(row => (isDefined(disabledRowKeys) ? !disabledRowKeys.includes(row[rowKey]) : true))
+          .map(row => row[rowKey])
+      );
 
       setSelectedRowKeys(allRowKeys);
     } else {
@@ -120,7 +127,7 @@ export const Table = <DataType extends Record<string, any>>({
                 whiteSpace,
                 overflowWrap,
                 ...column
-              }: TableColumnProps<DataType>) => (
+              }: TableColumnProps<Data>) => (
                 <TableHeaderCell
                   key={key}
                   {...column}
@@ -148,7 +155,7 @@ export const Table = <DataType extends Record<string, any>>({
                   {renderExpanded?.(row)}
                 </Paper>
               )}
-              disabled={disabledRowKey === row[rowKey]}
+              disabled={disabledRowKeys?.includes(row[rowKey])}
             >
               {columns.map(
                 ({
@@ -165,7 +172,7 @@ export const Table = <DataType extends Record<string, any>>({
                   renderDataCell,
                   selectable: cellSelectable,
                   ...column
-                }: TableColumnProps<DataType>) => (
+                }: TableColumnProps<Data>) => (
                   <TableDataCell
                     key={key}
                     onClick={
@@ -188,7 +195,7 @@ export const Table = <DataType extends Record<string, any>>({
                     wordBreak={wordBreak?.dataCell}
                     whiteSpace={whiteSpace?.dataCell}
                     overflowWrap={overflowWrap?.dataCell}
-                    disabled={disabledRowKey === row[rowKey]}
+                    disabled={disabledRowKeys?.includes(row[rowKey])}
                     selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
                     renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
                     {...column}
