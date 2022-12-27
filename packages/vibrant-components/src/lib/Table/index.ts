@@ -1,1 +1,1 @@
-export { Table } from './Table';
+export { Table, useTable } from './Table';
