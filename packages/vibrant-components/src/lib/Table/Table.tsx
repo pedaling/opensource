@@ -89,7 +89,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
             header={true}
             selectable={selectable}
             selected={selectedRowKeys.size !== 0}
-            expanded={data.length === 0}
+            expanded={loading ? false : data.length === 0}
             renderExpanded={() => (
               <VStack alignHorizontal="center" mt={32} mb={64}>
                 {isDefined(emptyImage) && <Image src={emptyImage} alt="" width={124} height={124} />}
