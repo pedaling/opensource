@@ -6,6 +6,7 @@ import { Body } from '../Body';
 import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
+import { Skeleton } from '../Skeleton';
 import { VStack } from '../VStack';
 import { TableColumn } from './TableColumn';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
@@ -27,7 +28,8 @@ export const useTable = <Data extends Record<string, any>, RowKey extends keyof 
 export const Table = <Data extends Record<string, any>, RowKey extends keyof Data>({
   data,
   rowKey,
-  selectable,
+  loading = false,
+  selectable = false,
   selectButtons,
   renderExpanded,
   onRow,
@@ -87,7 +89,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
             header={true}
             selectable={selectable}
             selected={selectedRowKeys.size !== 0}
-            expanded={data.length === 0}
+            expanded={!loading && data.length === 0}
             renderExpanded={() => (
               <VStack alignHorizontal="center" mt={32} mb={64}>
                 {isDefined(emptyImage) && <Image src={emptyImage} alt="" width={124} height={124} />}
@@ -111,6 +113,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
             )}
             indeterminate={selectedRowKeys.size !== data.length}
             onSelectionChange={handleToggleAllCheckbox}
+            disabled={loading}
           >
             {isDefined(renderExpanded) && (
               <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
@@ -137,75 +140,89 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   wordBreak={wordBreak?.header}
                   whiteSpace={whiteSpace?.header}
                   overflowWrap={overflowWrap?.header}
-                  renderCell={renderHeader}
+                  renderCell={loading ? () => <Skeleton maxWidth={80} width="100%" height={18} /> : renderHeader}
                   onSort={(sortDirection: SortDirection) => onSort?.({ dataKey, direction: sortDirection })}
                 />
               )
             )}
           </TableRow>
-          {data.map((row, index) => (
-            <TableRow
-              key={row[rowKey]}
-              selectable={selectable}
-              selected={selectedRowKeys.has(row[rowKey])}
-              onSelectionChange={() => handleToggleCheckbox(row[rowKey])}
-              expandable={isDefined(renderExpanded)}
-              renderExpanded={() => (
-                <Paper backgroundColor="surface1" p={16}>
-                  {renderExpanded?.(row)}
-                </Paper>
-              )}
-              disabled={disabledRowKeys?.includes(row[rowKey])}
-            >
-              {columns.map(
-                ({
-                  key,
-                  dataKey,
-                  alignHorizontal,
-                  alignVertical,
-                  lineLimit,
-                  wordBreak,
-                  whiteSpace,
-                  overflowWrap,
-                  onDataCell,
-                  formatData,
-                  renderDataCell,
-                  selectable: cellSelectable,
-                  ...column
-                }: TableColumnProps<Data>) => (
-                  <TableDataCell
-                    key={key}
-                    onClick={
-                      isCellClickEnabled
-                        ? onDataCell
-                          ? () => {
-                              onDataCell.onClick?.(row);
+          {!loading
+            ? data.map((row, index) => (
+                <TableRow
+                  key={row[rowKey]}
+                  selectable={selectable}
+                  selected={selectedRowKeys.has(row[rowKey])}
+                  onSelectionChange={() => handleToggleCheckbox(row[rowKey])}
+                  expandable={isDefined(renderExpanded)}
+                  renderExpanded={() => (
+                    <Paper backgroundColor="surface1" p={16}>
+                      {renderExpanded?.(row)}
+                    </Paper>
+                  )}
+                  disabled={disabledRowKeys?.includes(row[rowKey])}
+                >
+                  {columns.map(
+                    ({
+                      key,
+                      dataKey,
+                      alignHorizontal,
+                      alignVertical,
+                      lineLimit,
+                      wordBreak,
+                      whiteSpace,
+                      overflowWrap,
+                      onDataCell,
+                      formatData,
+                      renderDataCell,
+                      selectable: cellSelectable,
+                      ...column
+                    }: TableColumnProps<Data>) => (
+                      <TableDataCell
+                        key={key}
+                        onClick={
+                          isCellClickEnabled
+                            ? onDataCell
+                              ? () => {
+                                  onDataCell.onClick?.(row);
 
-                              setSelectedCellKey(getCellKey(key, index));
-                            }
-                          : undefined
-                        : onRow
-                        ? () => onRow.onClick?.(row)
-                        : undefined
-                    }
-                    onCopy={() => onDataCell?.onCopy?.(row)}
-                    alignVertical={alignVertical?.dataCell}
-                    alignHorizontal={alignHorizontal?.dataCell}
-                    lineLimit={lineLimit?.dataCell}
-                    wordBreak={wordBreak?.dataCell}
-                    whiteSpace={whiteSpace?.dataCell}
-                    overflowWrap={overflowWrap?.dataCell}
-                    disabled={disabledRowKeys?.includes(row[rowKey])}
-                    selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
-                    renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
-                    {...column}
-                  >
-                    {isDefined(formatData) ? formatData(row) : dataKey ? row[dataKey] : null}
-                  </TableDataCell>
-                )
-              )}
-            </TableRow>
-          ))}
+                                  setSelectedCellKey(getCellKey(key, index));
+                                }
+                              : undefined
+                            : onRow
+                            ? () => onRow.onClick?.(row)
+                            : undefined
+                        }
+                        onCopy={() => onDataCell?.onCopy?.(row)}
+                        alignVertical={alignVertical?.dataCell}
+                        alignHorizontal={alignHorizontal?.dataCell}
+                        lineLimit={lineLimit?.dataCell}
+                        wordBreak={wordBreak?.dataCell}
+                        whiteSpace={whiteSpace?.dataCell}
+                        overflowWrap={overflowWrap?.dataCell}
+                        disabled={disabledRowKeys?.includes(row[rowKey])}
+                        selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
+                        renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
+                        {...column}
+                      >
+                        {isDefined(formatData) ? formatData(row) : dataKey ? row[dataKey] : null}
+                      </TableDataCell>
+                    )
+                  )}
+                </TableRow>
+              ))
+            : Array.from({ length: 3 }, (_, index) => (
+                <TableRow key={index} disabled={true} selectable={selectable} expandable={isDefined(renderExpanded)}>
+                  {columns.map(({ key, alignHorizontal, alignVertical }: TableColumnProps<Data>) => (
+                    <TableDataCell
+                      key={key}
+                      disabled={true}
+                      alignVertical={alignVertical?.dataCell}
+                      alignHorizontal={alignHorizontal?.dataCell}
+                      renderCell={() => <Skeleton maxWidth={index === 1 ? 80 : 104} width="100%" height={18} />}
+                    />
+                  ))}
+                </TableRow>
+              ))}
         </Box>
       </Box>
     </ScrollBox>
