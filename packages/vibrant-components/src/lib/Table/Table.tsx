@@ -39,6 +39,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   children,
   disabledRowKeys,
   expandedRowKeys,
+  tableLayout,
 }: TableProps<Data, RowKey>) => {
   const columns =
     (Children.toArray(children).filter(child => isValidElement(child)) as unknown as typeof children).map(
@@ -82,9 +83,9 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       borderStyle="solid"
       width="100%"
       borderBottomWidth={0}
-      borderRadius={1}
+      borderRadiusLevel={1}
     >
-      <Box as="table" display="web_table" borderCollapse="separate" width="100%">
+      <Box as="table" display="web_table" borderCollapse="separate" tableLayout={tableLayout} width="100%">
         <Box as="thead" display="web_table-row-group">
           <TableRow
             header={true}
@@ -188,6 +189,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                       formatData,
                       renderDataCell,
                       selectable: cellSelectable,
+                      width: _,
                       ...column
                     }: TableColumnProps<Data>) => (
                       <TableDataCell
