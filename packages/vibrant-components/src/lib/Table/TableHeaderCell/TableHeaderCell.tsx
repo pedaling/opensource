@@ -5,8 +5,8 @@ import { Body } from '../../Body';
 import { HStack } from '../../HStack';
 import { Tooltip } from '../../Tooltip';
 import { VStack } from '../../VStack';
-import type { SortDirection } from '../TableSortButton';
-import { TableSortButton } from '../TableSortButton';
+import type { SortDirection } from '../TableSortIcon';
+import { TableSortIcon } from '../TableSortIcon';
 import { withTableHeaderCellVariation } from './TableHeaderCellProps';
 
 const getNextSortDirection = (sortDirection: SortDirection) => {
@@ -89,7 +89,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
                 )}
               </>
             )}
-            {sortable && <TableSortButton sortDirection={sortDirection} />}
+            {sortable && <TableSortIcon sortDirection={sortDirection} />}
           </HStack>
         </VStack>
       </PressableBox>
