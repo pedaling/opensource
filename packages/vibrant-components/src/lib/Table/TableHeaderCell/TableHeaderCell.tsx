@@ -66,29 +66,31 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         borderBottomStyle="solid"
       >
         <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
-          {renderCell ? (
-            renderCell()
-          ) : (
-            <HStack alignVertical="center" spacing={4}>
-              <Body
-                level={2}
-                weight="bold"
-                lineLimit={lineLimit}
-                wordBreak={wordBreak}
-                textAlign={alignHorizontal}
-                whiteSpace={whiteSpace}
-                overflowWrap={overflowWrap}
-              >
-                {title}
-              </Body>
-              {description ? (
-                <Tooltip content={description}>
-                  <Icon.InfoCircle.Fill size={14} />
-                </Tooltip>
-              ) : null}
-              {sortable ? <TableSortButton sortDirection={sortDirection} /> : null}
-            </HStack>
-          )}
+          <HStack alignVertical="center" spacing={4}>
+            {renderCell ? (
+              renderCell()
+            ) : (
+              <>
+                <Body
+                  level={2}
+                  weight="bold"
+                  lineLimit={lineLimit}
+                  wordBreak={wordBreak}
+                  textAlign={alignHorizontal}
+                  whiteSpace={whiteSpace}
+                  overflowWrap={overflowWrap}
+                >
+                  {title}
+                </Body>
+                {description && (
+                  <Tooltip content={description}>
+                    <Icon.InfoCircle.Fill size={14} />
+                  </Tooltip>
+                )}
+              </>
+            )}
+            {sortable && <TableSortButton sortDirection={sortDirection} />}
+          </HStack>
         </VStack>
       </PressableBox>
     );

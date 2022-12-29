@@ -41,14 +41,12 @@ export const Basic: ComponentStory<typeof TableColumn> = ({
         formatData={({ createdAt }) => createdAt.toLocaleDateString('en-US')}
       />
       <TableColumn<Data>
-        {...props}
         key="Edit"
         title=""
         formatData={({ createdAt }) => createdAt.toLocaleDateString('en-US')}
-        width={160}
         renderDataCell={() => (
           <HStack alignVertical="center" spacing={10}>
-            <OutlinedButton size="sm">수정</OutlinedButton>
+            <OutlinedButton size="xl">수정</OutlinedButton>
             <OutlinedButton size="sm">삭제</OutlinedButton>
           </HStack>
         )}

@@ -18,12 +18,12 @@ export type TableColumnProps<Data extends Record<string, any>> = {
     onClick?: (row: Data) => void;
     onCopy?: (row: Data) => void;
   };
+  sortable?: boolean;
+  defaultSortDirection?: SortDirection;
 } & Either<
   {
     title?: TextChildren;
     description?: ReactElementChild | string;
-    sortable?: boolean;
-    defaultSortDirection?: SortDirection;
   },
   {
     renderHeader?: () => ReactElementChild;
