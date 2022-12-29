@@ -1,10 +1,10 @@
-import type { ReactElementChild } from '@vibrant-ui/core';
+import type { ReactElementChild, TextChildren } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { Position } from '@vibrant-ui/utils';
 
 export type TooltipProps = {
   children: ReactElementChild;
-  content: ReactElementChild | string;
+  content: TextChildren;
   spacing?: number;
   maxWidth?: number;
   position?: Position;

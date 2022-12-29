@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { PressableBox } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
+import { Tooltip } from '../../Tooltip';
 import { VStack } from '../../VStack';
 import type { SortDirection } from '../TableSortButton';
 import { TableSortButton } from '../TableSortButton';
@@ -51,12 +52,15 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     };
 
     return (
-      <Box
+      <PressableBox
         as="th"
         display="web_table-cell"
         py={12}
         px={16}
         width={width}
+        disabled={!sortable}
+        onClick={handleSortButtonClick}
+        cursor={sortable ? 'pointer' : 'default'}
         borderBottomColor="outline1"
         borderBottomWidth={1}
         borderBottomStyle="solid"
@@ -77,13 +81,16 @@ export const TableHeaderCell = withTableHeaderCellVariation(
               >
                 {title}
               </Body>
-              {/* TODO(Mia): replace icon with tooltip */}
-              {description ? <Icon.InfoCircle.Fill size={14} /> : null}
-              {sortable ? <TableSortButton sortDirection={sortDirection} onClick={handleSortButtonClick} /> : null}
+              {description ? (
+                <Tooltip content={description}>
+                  <Icon.InfoCircle.Fill size={14} />
+                </Tooltip>
+              ) : null}
+              {sortable ? <TableSortButton sortDirection={sortDirection} /> : null}
             </HStack>
           )}
         </VStack>
-      </Box>
+      </PressableBox>
     );
   }
 );
