@@ -96,7 +96,6 @@ export const Tooltip = withTooltipVariation(
       right?: number;
     }>({ x: 0, y: 0 });
     const openerRef = useRef<HTMLElement>(null);
-    const calculateCompleteRef = useRef(false);
     const targetRef = useRef<HTMLElement>();
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const {
@@ -106,9 +105,6 @@ export const Tooltip = withTooltipVariation(
     const { addEventListener } = useScroll();
 
     const handleTooltipPosition = useCallback(async () => {
-      if (calculateCompleteRef.current) {
-        return;
-      }
 
       const openerRect = await getElementRect(openerRef.current);
 
@@ -123,8 +119,6 @@ export const Tooltip = withTooltipVariation(
 
       setOffset({ x, y, left: leftOffset, right: rightOffset });
 
-      calculateCompleteRef.current = true;
-
       setIsMounted(true);
     }, [position, spacing]);
 
@@ -132,7 +126,6 @@ export const Tooltip = withTooltipVariation(
       clearTimeout(timerRef.current);
 
       timerRef.current = setTimeout(() => {
-        calculateCompleteRef.current = false;
 
         setIsOpen(true);
 
