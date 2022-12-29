@@ -84,7 +84,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       borderRadius={1}
     >
       <Box as="table" display="web_table" borderCollapse="separate" width="100%">
-        <Box as="tbody" display="web_table-row-group">
+        <Box as="thead" display="web_table-row-group">
           <TableRow
             header={true}
             selectable={selectable}
@@ -155,6 +155,8 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   />
                 ))}
           </TableRow>
+        </Box>
+        <Box as="tbody" display="web_table-row-group">
           {!loading
             ? data.map((row, index) => (
                 <TableRow
