@@ -51,4 +51,8 @@ const hiddenProp = createSystemProp({
         },
 });
 
-export const displaySystemProps = [displayProp, visibilityProp, opacityProp, hiddenProp];
+const tableLayoutProp = createSystemProp({
+  property: 'tableLayout',
+});
+
+export const displaySystemProps = [displayProp, visibilityProp, opacityProp, hiddenProp, tableLayoutProp];

@@ -8,4 +8,5 @@ export type DisplaySystemProps = {
   visibility?: ResponsiveValue<'hidden' | 'inherit' | 'visible'>;
   opacity?: ResponsiveValue<OpacityToken | number>;
   hidden?: ResponsiveValue<boolean>;
+  tableLayout?: ResponsiveValue<'auto' | 'fixed'>;
 };
