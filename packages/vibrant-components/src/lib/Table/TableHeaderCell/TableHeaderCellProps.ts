@@ -1,5 +1,6 @@
 import type {
   FlexboxSystemProps,
+  ReactElementChild,
   ReactElementChildren,
   SizingSystemProps,
   TextChildren,
@@ -10,7 +11,7 @@ import type { SortDirection } from '../TableSortButton';
 
 export type TableHeaderCellProps = {
   title?: TextChildren;
-  description?: TextChildren;
+  description?: ReactElementChild | string;
   sortable?: boolean;
   defaultSortDirection?: SortDirection;
   onSort?: (sortDirection: SortDirection) => void;
