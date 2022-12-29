@@ -114,6 +114,7 @@ export type BoxElements =
   | 'tbody'
   | 'td'
   | 'th'
+  | 'thead'
   | 'tr'
   | 'ul';
 
