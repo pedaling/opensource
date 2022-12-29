@@ -105,7 +105,6 @@ export const Tooltip = withTooltipVariation(
     const { addEventListener } = useScroll();
 
     const handleTooltipPosition = useCallback(async () => {
-
       const openerRect = await getElementRect(openerRef.current);
 
       const targetRect: Rect = await getElementRect(targetRef.current);
@@ -126,7 +125,6 @@ export const Tooltip = withTooltipVariation(
       clearTimeout(timerRef.current);
 
       timerRef.current = setTimeout(() => {
-
         setIsOpen(true);
 
         onOpen?.();
