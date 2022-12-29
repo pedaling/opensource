@@ -21,7 +21,7 @@ export type TableColumnProps<Data extends Record<string, any>> = {
 } & Either<
   {
     title?: TextChildren;
-    description?: TextChildren;
+    description?: ReactElementChild | string;
     sortable?: boolean;
     defaultSortDirection?: SortDirection;
   },
