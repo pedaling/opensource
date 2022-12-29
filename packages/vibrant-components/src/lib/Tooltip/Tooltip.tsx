@@ -183,7 +183,7 @@ export const Tooltip = withTooltipVariation(
             duration={200}
             easing="easeOutQuad"
             animation={{
-              opacity: isMounted ? 1 : 1,
+              opacity: isMounted ? 1 : 0,
             }}
             onEnd={
               !isMounted
