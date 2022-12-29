@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Box, PressableBox, getWindowDimensions, useCurrentTheme, useScroll } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import type { Position, Rect } from '@vibrant-ui/utils';
@@ -162,6 +162,15 @@ export const Tooltip = withTooltipVariation(
       return cleanEventListener;
     }, [addEventListener, closeTooltip, prevScrollPosition]);
 
+    const handleTargetRect = useCallback(
+      (ref?: HTMLElement) => {
+        targetRef.current = ref;
+
+        handleTooltipPosition();
+      },
+      [handleTooltipPosition]
+    );
+
     return (
       <HStack>
         <PressableBox ref={openerRef} onHoverIn={openTooltip} onHoverOut={closeTooltip}>
@@ -170,15 +179,11 @@ export const Tooltip = withTooltipVariation(
 
         {isOpen && (
           <Transition
-            ref={nextRef => {
-              targetRef.current = nextRef;
-
-              handleTooltipPosition();
-            }}
+            ref={handleTargetRect}
             duration={200}
             easing="easeOutQuad"
             animation={{
-              opacity: isMounted ? 1 : 0,
+              opacity: isMounted ? 1 : 1,
             }}
             onEnd={
               !isMounted
