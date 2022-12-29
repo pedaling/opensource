@@ -17,7 +17,9 @@
     "paths": {
       "@class101/workspace-plugin": ["packages/workspace-plugin/src/index.ts"],
       "@vibrant-ui/components": ["packages/vibrant-components/src/index.ts"],
-      "@vibrant-ui/components-web": ["packages/vibrant-components-web/src/index.ts"],
+      "@vibrant-ui/components-web": [
+        "packages/vibrant-components-web/src/index.ts"
+      ],
       "@vibrant-ui/core": ["packages/vibrant-core/src/index.ts"],
       "@vibrant-ui/forms": ["packages/vibrant-forms/src/index.ts"],
       "@vibrant-ui/icons": ["packages/vibrant-icons/src/index.ts"],
