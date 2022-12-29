@@ -118,33 +118,42 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
             {isDefined(renderExpanded) && (
               <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
             )}
-            {columns.map(
-              ({
-                key,
-                dataKey,
-                alignHorizontal,
-                alignVertical,
-                renderHeader,
-                lineLimit,
-                wordBreak,
-                whiteSpace,
-                overflowWrap,
-                ...column
-              }: TableColumnProps<Data>) => (
-                <TableHeaderCell
-                  key={key}
-                  {...column}
-                  alignVertical={alignVertical?.header}
-                  alignHorizontal={alignHorizontal?.header}
-                  lineLimit={lineLimit?.header}
-                  wordBreak={wordBreak?.header}
-                  whiteSpace={whiteSpace?.header}
-                  overflowWrap={overflowWrap?.header}
-                  renderCell={loading ? () => <Skeleton maxWidth={80} width="100%" height={18} /> : renderHeader}
-                  onSort={(sortDirection: SortDirection) => onSort?.({ dataKey, direction: sortDirection })}
-                />
-              )
-            )}
+            {!loading
+              ? columns.map(
+                  ({
+                    key,
+                    dataKey,
+                    alignHorizontal,
+                    alignVertical,
+                    renderHeader,
+                    lineLimit,
+                    wordBreak,
+                    whiteSpace,
+                    overflowWrap,
+                    ...column
+                  }: TableColumnProps<Data>) => (
+                    <TableHeaderCell
+                      key={key}
+                      {...column}
+                      alignVertical={alignVertical?.header}
+                      alignHorizontal={alignHorizontal?.header}
+                      lineLimit={lineLimit?.header}
+                      wordBreak={wordBreak?.header}
+                      whiteSpace={whiteSpace?.header}
+                      overflowWrap={overflowWrap?.header}
+                      renderCell={renderHeader}
+                      onSort={(sortDirection: SortDirection) => onSort?.({ dataKey, direction: sortDirection })}
+                    />
+                  )
+                )
+              : Array.from({ length: 4 }, (_, columnIndex) => (
+                  <TableDataCell
+                    key={columnIndex}
+                    disabled={true}
+                    alignHorizontal="start"
+                    renderCell={() => <Skeleton width={80} height={18} />}
+                  />
+                ))}
           </TableRow>
           {!loading
             ? data.map((row, index) => (
@@ -210,15 +219,14 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   )}
                 </TableRow>
               ))
-            : Array.from({ length: 3 }, (_, index) => (
-                <TableRow key={index} disabled={true} selectable={selectable} expandable={isDefined(renderExpanded)}>
-                  {columns.map(({ key, alignHorizontal, alignVertical }: TableColumnProps<Data>) => (
+            : Array.from({ length: 3 }, (_, rowIndex) => (
+                <TableRow key={rowIndex} disabled={true} selectable={selectable} expandable={isDefined(renderExpanded)}>
+                  {Array.from({ length: 4 }, (_, columnIndex) => (
                     <TableDataCell
-                      key={key}
+                      key={columnIndex}
                       disabled={true}
-                      alignVertical={alignVertical?.dataCell}
-                      alignHorizontal={alignHorizontal?.dataCell}
-                      renderCell={() => <Skeleton maxWidth={index === 1 ? 80 : 104} width="100%" height={18} />}
+                      alignHorizontal="start"
+                      renderCell={() => <Skeleton width={rowIndex === 1 ? 80 : 104} height={18} />}
                     />
                   ))}
                 </TableRow>

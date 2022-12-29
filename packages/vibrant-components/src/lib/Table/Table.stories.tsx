@@ -80,7 +80,7 @@ export const RowSelectable: ComponentStory<typeof Table> = props => (
       <Table.Column<Data>
         key="name"
         dataKey="name"
-        renderHeader={() => <OutlinedButton size="xl">이름 수정</OutlinedButton>}
+        renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
       />
       <Table.Column<Data>
         key="calories"
