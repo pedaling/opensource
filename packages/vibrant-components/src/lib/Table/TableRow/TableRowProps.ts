@@ -1,4 +1,4 @@
-import type { ReactElementChildren } from '@vibrant-ui/core';
+import type { ReactElementChild, ReactElementChildren } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { CheckboxProps } from '../../Checkbox';
 import { TableDataCell } from '../TableDataCell';
@@ -7,14 +7,17 @@ import { TableHeaderCell } from '../TableHeaderCell';
 export type TableRowProps = {
   header?: boolean;
   selectable?: boolean;
-  defaultSelected?: boolean;
+  selected?: boolean;
   indeterminate?: boolean;
   onSelectionChange?: CheckboxProps['onValueChange'];
   expandable?: boolean;
-  renderExpanded?: () => ReactElementChildren;
+  expanded?: boolean;
+  renderExpanded?: () => ReactElementChild;
+  overlaid?: boolean;
+  renderOverlay?: () => ReactElementChild;
   children?: ReactElementChildren;
-  bottomBordered?: boolean;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(
@@ -23,6 +26,7 @@ export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(
       {
         name: 'header',
         default: false,
+        keep: true,
       },
     ],
     variants: {

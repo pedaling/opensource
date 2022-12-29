@@ -9,22 +9,18 @@ export default {
   component: TableDataCell,
 };
 
-export const Basic: ComponentStory<typeof TableDataCell> = ({
-  renderCell: _renderCell,
-  children: _children,
-  ...props
-}) => (
+export const Basic: ComponentStory<typeof TableDataCell> = props => (
   <HStack width="100%">
     <TableDataCell flexGrow={1} flexBasis={0} flexShrink={0} {...props}>
       Frozen yoghurt
     </TableDataCell>
-    <TableDataCell flexGrow={1} flexBasis={0} flexShrink={0} onClick={() => {}} {...props}>
+    <TableDataCell flexGrow={1} flexBasis={0} flexShrink={0} {...props}>
       159
     </TableDataCell>
-    <TableDataCell flexGrow={1} flexBasis={0} flexShrink={0} onClick={() => {}} {...props}>
+    <TableDataCell flexGrow={1} flexBasis={0} flexShrink={0} {...props}>
       6
     </TableDataCell>
-    <TableDataCell flexGrow={1} flexBasis={0} flexShrink={0} onClick={() => {}} {...props}>
+    <TableDataCell flexGrow={1} flexBasis={0} flexShrink={0} {...props}>
       24
     </TableDataCell>
     <TableDataCell

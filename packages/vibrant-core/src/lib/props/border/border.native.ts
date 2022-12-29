@@ -117,6 +117,7 @@ const borderBottomRightRadiusLevelProp = createSystemProp({
 
 const borderCollapseProp = createSystemProp({
   property: 'borderCollapse',
+  disabled: true,
 });
 
 const outlineWidthProp = createSystemProp({

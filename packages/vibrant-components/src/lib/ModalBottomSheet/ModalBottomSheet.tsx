@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   Box,
-  KeyboardAvoidingBox,
   ScrollBox,
   ThemeProvider,
   isNative,
@@ -121,128 +120,120 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
             pt={[120, 40]}
             pb={[0, 40]}
           >
-            <KeyboardAvoidingBox>
-              <Transition
-                animation={{
-                  ...(isMobile
-                    ? {
-                        y: visible ? 0 : containerHeight,
-                      }
-                    : {
-                        opacity: isOpen ? 1 : 0,
-                      }),
-                }}
-                duration={200}
-                style={{ y: isMobile ? viewportHeight : undefined }}
+            <Transition
+              animation={{
+                ...(isMobile
+                  ? {
+                      y: visible ? 0 : containerHeight,
+                    }
+                  : {
+                      opacity: isOpen ? 1 : 0,
+                    }),
+              }}
+              duration={200}
+              style={{ y: isMobile ? viewportHeight : undefined }}
+            >
+              <Box
+                role={isNative ? 'none' : 'dialog'}
+                mx="auto"
+                mt="auto"
+                mb={[0, 'auto']}
+                pt={[24, 36]}
+                pb={[bottomSheetPaddingBottom ?? 20, 36]}
+                width="100%"
+                maxWidth={[446, 480, desktopModalWidth]}
+                maxHeight={[viewportHeight - 120, 'unset']}
+                backgroundColor="surface2"
+                borderTopLeftRadiusLevel={4}
+                borderTopRightRadiusLevel={4}
+                borderBottomLeftRadiusLevel={[0, 4]}
+                borderBottomRightRadiusLevel={[0, 4]}
+                onLayout={handleContainerResize}
               >
-                <Box
-                  role={isNative ? 'none' : 'dialog'}
-                  mx="auto"
-                  mt="auto"
-                  mb={[0, 'auto']}
-                  pt={[24, 36]}
-                  pb={[bottomSheetPaddingBottom ?? 20, 36]}
-                  width="100%"
-                  maxWidth={[446, 480, desktopModalWidth]}
-                  maxHeight={[viewportHeight - 120, 'unset']}
-                  backgroundColor="surface2"
-                  borderTopLeftRadiusLevel={4}
-                  borderTopRightRadiusLevel={4}
-                  borderBottomLeftRadiusLevel={[0, 4]}
-                  borderBottomRightRadiusLevel={[0, 4]}
-                  onLayout={handleContainerResize}
-                >
-                  <HStack px={[20, 32]} flexShrink={0}>
-                    {title ? (
-                      <Title as="h2" level={[4, 3]}>
-                        {title}
-                      </Title>
-                    ) : null}
-
-                    <HStack ml="auto" mt={[0, title ? 6 : 0]} flexShrink={0} pl={12}>
-                      <IconButton ariaLabel="Close" onClick={closeModal} size="md" IconComponent={Icon.Close.Regular} />
-                    </HStack>
-                  </HStack>
-                  {subtitle ? (
-                    <Body as="p" level={1} mt={[14, 20]} px={[20, 32]} flexShrink={0}>
-                      {subtitle}
-                    </Body>
+                <HStack px={[20, 32]} flexShrink={0}>
+                  {title ? (
+                    <Title as="h2" level={[4, 3]}>
+                      {title}
+                    </Title>
                   ) : null}
 
-                  {renderContents ? (
-                    <ScrollBox mt={[16, 24]} scrollEnabled={[true, false]}>
-                      {renderContents({ close: closeModal })}
-                    </ScrollBox>
-                  ) : (
-                    <Space height={8} />
-                  )}
+                  <HStack ml="auto" mt={[0, title ? 6 : 0]} flexShrink={0} pl={12}>
+                    <IconButton ariaLabel="Close" onClick={closeModal} size="md" IconComponent={Icon.Close.Regular} />
+                  </HStack>
+                </HStack>
+                {subtitle ? (
+                  <Body as="p" level={1} mt={[14, 20]} px={[20, 32]} flexShrink={0}>
+                    {subtitle}
+                  </Body>
+                ) : null}
 
-                  {isDefined(primaryButtonOptions) &&
-                    !isDefined(secondaryButtonOptions) &&
-                    !isDefined(subButtonOptions) && (
-                      <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
-                        <ContainedButton
-                          kind="primary"
-                          size="xl"
-                          onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
-                          full={true}
-                          disabled={primaryButtonOptions.disabled}
-                        >
-                          {primaryButtonOptions.text}
-                        </ContainedButton>
-                      </VStack>
-                    )}
-                  {isDefined(primaryButtonOptions) &&
-                    isDefined(secondaryButtonOptions) &&
-                    !isDefined(subButtonOptions) && (
-                      <HStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
-                        <ContainedButton
-                          kind="tertiary"
-                          size="xl"
-                          onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
-                          full={true}
-                          disabled={secondaryButtonOptions.disabled}
-                        >
-                          {secondaryButtonOptions.text}
-                        </ContainedButton>
-                        <ContainedButton
-                          kind="primary"
-                          size="xl"
-                          onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
-                          full={true}
-                          disabled={primaryButtonOptions.disabled}
-                        >
-                          {primaryButtonOptions.text}
-                        </ContainedButton>
-                      </HStack>
-                    )}
-                  {isDefined(primaryButtonOptions) &&
-                    !isDefined(secondaryButtonOptions) &&
-                    isDefined(subButtonOptions) && (
-                      <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={16}>
-                        <ContainedButton
-                          kind="primary"
-                          size="xl"
-                          onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
-                          full={true}
-                          disabled={primaryButtonOptions.disabled}
-                        >
-                          {primaryButtonOptions.text}
-                        </ContainedButton>
-                        <Box alignSelf="center">
-                          <GhostButton
-                            size="md"
-                            onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
-                            disabled={subButtonOptions.disabled}
-                          >
-                            {subButtonOptions.text}
-                          </GhostButton>
-                        </Box>
-                      </VStack>
-                    )}
-                </Box>
-              </Transition>
-            </KeyboardAvoidingBox>
+                {renderContents ? (
+                  <ScrollBox mt={[16, 24]} scrollEnabled={[true, false]}>
+                    {renderContents({ close: closeModal })}
+                  </ScrollBox>
+                ) : (
+                  <Space height={8} />
+                )}
+
+                {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
+                  <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={primaryButtonOptions.disabled}
+                    >
+                      {primaryButtonOptions.text}
+                    </ContainedButton>
+                  </VStack>
+                )}
+                {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
+                  <HStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
+                    <ContainedButton
+                      kind="tertiary"
+                      size="xl"
+                      onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={secondaryButtonOptions.disabled}
+                    >
+                      {secondaryButtonOptions.text}
+                    </ContainedButton>
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={primaryButtonOptions.disabled}
+                    >
+                      {primaryButtonOptions.text}
+                    </ContainedButton>
+                  </HStack>
+                )}
+                {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
+                  <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={16}>
+                    <ContainedButton
+                      kind="primary"
+                      size="xl"
+                      onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={primaryButtonOptions.disabled}
+                    >
+                      {primaryButtonOptions.text}
+                    </ContainedButton>
+                    <Box alignSelf="center">
+                      <GhostButton
+                        size="md"
+                        onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
+                        disabled={subButtonOptions.disabled}
+                      >
+                        {subButtonOptions.text}
+                      </GhostButton>
+                    </Box>
+                  </VStack>
+                )}
+              </Box>
+            </Transition>
           </Backdrop>
         </ThemeProvider>
       </>

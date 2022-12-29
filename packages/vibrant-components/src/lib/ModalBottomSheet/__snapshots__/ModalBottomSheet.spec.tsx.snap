@@ -60,6 +60,26 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -68,13 +88,13 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-2 {
+  .emotion-3 {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -103,7 +123,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   left: 0;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -121,26 +141,6 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   position: relative;
   width: auto;
   height: auto;
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .emotion-6 {
@@ -360,16 +360,16 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
       >
         <div
           class="emotion-3"
-          tabindex="0"
         >
-          <span
+          <div
             class="emotion-4"
-            style="opacity: 1;"
-          />
-        </div>
-        <div
-          class="emotion-5"
-        >
+            tabindex="0"
+          >
+            <span
+              class="emotion-5"
+              style="opacity: 1;"
+            />
+          </div>
           <div
             class="emotion-6"
             role="dialog"
@@ -388,7 +388,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
                   type="button"
                 >
                   <span
-                    class="emotion-4"
+                    class="emotion-5"
                     style="opacity: 1;"
                   >
                     <svg
@@ -475,6 +475,26 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -483,13 +503,13 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-2 {
+  .emotion-3 {
     padding-top: 40px;
     padding-bottom: 40px;
   }
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -518,7 +538,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   left: 0;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -536,26 +556,6 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   position: relative;
   width: auto;
   height: auto;
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 
 .emotion-6 {
@@ -775,16 +775,16 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
       >
         <div
           class="emotion-3"
-          tabindex="0"
         >
-          <span
+          <div
             class="emotion-4"
-            style="opacity: 1;"
-          />
-        </div>
-        <div
-          class="emotion-5"
-        >
+            tabindex="0"
+          >
+            <span
+              class="emotion-5"
+              style="opacity: 1;"
+            />
+          </div>
           <div
             class="emotion-6"
             role="dialog"
@@ -803,7 +803,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
                   type="button"
                 >
                   <span
-                    class="emotion-4"
+                    class="emotion-5"
                     style="opacity: 1;"
                   >
                     <svg

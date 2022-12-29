@@ -52,6 +52,7 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
           ref={innerRef}
           {...restProps}
           style={{ ...style, position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}
+          contentContainerStyle={{ flex: 1 }}
         >
           {children}
         </ViewComponent>

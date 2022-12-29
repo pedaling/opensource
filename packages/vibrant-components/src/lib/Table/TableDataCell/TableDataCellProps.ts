@@ -11,30 +11,24 @@ export type TableDataCellProps = {
   children?: TextChildren;
   renderCell?: () => ReactElementChildren;
   onClick?: () => void;
-  bottomBordered?: boolean;
-  alignVertical?: 'center' | 'flex-end' | 'flex-start';
-  alignHorizontal?: 'center' | 'flex-end' | 'flex-start';
+  onCopy?: () => void;
+  alignVertical?: 'center' | 'end' | 'start';
+  alignHorizontal?: 'center' | 'end' | 'start';
+  disabled?: boolean;
+  selected?: boolean;
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
-  Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
-  Pick<TextProps, 'lineLimit' | 'textAlign' | 'wordBreak'>;
+  Pick<SizingSystemProps, 'minWidth' | 'width'> &
+  Pick<TextProps, 'lineLimit' | 'overflowWrap' | 'whiteSpace' | 'wordBreak'>;
 
 export const withTableDataCellVariation = withVariation<TableDataCellProps>('TableDataCell')(
   propVariant({
-    props: [
-      {
-        name: 'bottomBordered',
-      },
-    ],
+    props: [{ name: 'disabled', default: false, keep: true }],
     variants: {
       true: {
-        borderBottomColor: 'outline1',
-        borderBottomWidth: 1,
-        borderBottomStyle: 'solid',
+        color: 'disable',
       },
       false: {
-        borderBottomColor: undefined,
-        borderBottomWidth: 0,
-        borderBottomStyle: undefined,
+        color: 'onView1',
       },
     } as const,
   })

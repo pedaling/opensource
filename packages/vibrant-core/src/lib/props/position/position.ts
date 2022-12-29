@@ -2,10 +2,16 @@ import { createSystemProp } from '../../createSystemProp';
 
 const positionProp = createSystemProp({
   property: 'position',
-  transform: (value: 'absolute' | 'fixed' | 'relative' | 'web_sticky') => {
+  transform: (value: 'absolute' | 'fixed' | 'relative' | 'web_static' | 'web_sticky') => {
     if (value === 'web_sticky') {
       return {
         position: 'sticky',
+      };
+    }
+
+    if (value === 'web_static') {
+      return {
+        position: 'static',
       };
     }
 
