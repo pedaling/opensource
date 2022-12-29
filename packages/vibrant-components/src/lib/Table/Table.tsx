@@ -38,6 +38,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   emptyImage,
   children,
   disabledRowKeys,
+  expandedRowKeys,
 }: TableProps<Data, RowKey>) => {
   const columns =
     (Children.toArray(children).filter(child => isValidElement(child)) as unknown as typeof children).map(
@@ -170,6 +171,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                       {renderExpanded?.(row)}
                     </Paper>
                   )}
+                  expanded={expandedRowKeys?.includes(row[rowKey])}
                   disabled={disabledRowKeys?.includes(row[rowKey])}
                 >
                   {columns.map(

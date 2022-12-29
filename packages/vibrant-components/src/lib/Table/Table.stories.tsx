@@ -76,7 +76,7 @@ export const Basic: ComponentStory<typeof Table> = props => (
 
 export const RowSelectable: ComponentStory<typeof Table> = props => (
   <Box p={20} width="100%">
-    <Table {...props}>
+    <Table expandedRowKeys={['Eclair']} {...props}>
       <Table.Column<Data>
         key="name"
         dataKey="name"

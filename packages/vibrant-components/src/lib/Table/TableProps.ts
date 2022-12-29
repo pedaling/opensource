@@ -25,4 +25,5 @@ export type TableProps<Data extends Record<string, any>, RowKey extends keyof Da
   emptyText?: TextChildren;
   emptyImage?: string;
   disabledRowKeys?: Data[RowKey][];
+  expandedRowKeys?: Data[RowKey][];
 };
