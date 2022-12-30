@@ -3,12 +3,12 @@ import { Icon } from '@vibrant-ui/icons';
 
 export type SortDirection = 'asc' | 'desc' | 'none';
 
-export type TableSortButtonProps = {
+export type TableSortIconProps = {
+  as?: string;
   sortDirection: SortDirection;
-  onClick?: () => void;
 };
 
-export const withTableSortButtonVariation = withVariation<TableSortButtonProps>('TableHeaderSortButton')(
+export const withTableSortIconVariation = withVariation<TableSortIconProps>('TableHeaderSortButton')(
   propVariant({
     props: [
       {

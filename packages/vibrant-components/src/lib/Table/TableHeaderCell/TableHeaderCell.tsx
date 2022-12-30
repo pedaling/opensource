@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { PressableBox } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
 import { Tooltip } from '../../Tooltip';
 import { VStack } from '../../VStack';
-import type { SortDirection } from '../TableSortButton';
-import { TableSortButton } from '../TableSortButton';
+import type { SortDirection } from '../TableSortIcon';
+import { TableSortIcon } from '../TableSortIcon';
 import { withTableHeaderCellVariation } from './TableHeaderCellProps';
 
 const getNextSortDirection = (sortDirection: SortDirection) => {
@@ -55,6 +55,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
       <PressableBox
         as="th"
         display="web_table-cell"
+        height="100%"
         py={12}
         px={16}
         width={width}
@@ -65,30 +66,39 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         borderBottomWidth={1}
         borderBottomStyle="solid"
       >
-        <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
-          {renderCell ? (
-            renderCell()
-          ) : (
-            <HStack alignVertical="center" spacing={4}>
-              <Body
-                level={2}
-                weight="bold"
-                lineLimit={lineLimit}
-                wordBreak={wordBreak}
-                textAlign={alignHorizontal}
-                whiteSpace={whiteSpace}
-                overflowWrap={overflowWrap}
-              >
-                {title}
-              </Body>
-              {description ? (
-                <Tooltip content={description}>
-                  <Icon.InfoCircle.Fill size={14} />
-                </Tooltip>
-              ) : null}
-              {sortable ? <TableSortButton sortDirection={sortDirection} /> : null}
-            </HStack>
-          )}
+        <VStack height="100%" alignVertical={alignVertical}>
+          <HStack width="100%" alignVertical="center" alignHorizontal={alignHorizontal}>
+            {renderCell ? (
+              renderCell()
+            ) : (
+              <>
+                <Body
+                  level={2}
+                  weight="bold"
+                  minWidth={0}
+                  lineLimit={lineLimit}
+                  wordBreak={wordBreak}
+                  textAlign={alignHorizontal}
+                  whiteSpace={whiteSpace}
+                  overflowWrap={overflowWrap}
+                >
+                  {title}
+                </Body>
+                {description && (
+                  <Box ml={4}>
+                    <Tooltip content={description}>
+                      <Icon.InfoCircle.Fill size={14} />
+                    </Tooltip>
+                  </Box>
+                )}
+              </>
+            )}
+            {sortable && (
+              <Box ml={4}>
+                <TableSortIcon sortDirection={sortDirection} />
+              </Box>
+            )}
+          </HStack>
         </VStack>
       </PressableBox>
     );

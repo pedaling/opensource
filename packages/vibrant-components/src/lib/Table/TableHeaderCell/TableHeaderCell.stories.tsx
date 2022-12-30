@@ -29,6 +29,7 @@ export const Basic: ComponentStory<typeof TableHeaderCell> = ({ renderCell: _, .
       flexBasis={0}
       flexShrink={0}
       renderCell={() => <OutlinedButton size="sm">가격 일괄 수정</OutlinedButton>}
+      {...props}
     />
   </HStack>
 );

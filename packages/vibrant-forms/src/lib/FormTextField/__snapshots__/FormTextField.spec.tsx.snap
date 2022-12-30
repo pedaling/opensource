@@ -151,6 +151,9 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: left;
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
@@ -199,6 +202,9 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: left;
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
@@ -269,6 +275,9 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: left;
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;

@@ -41,6 +41,8 @@ export default {
       onClick: (row: Data) => console.log(row),
     },
     disabledRowKeys: ['Cupcake'],
+    emptyImage: 'https://cdn.class101.net/images/a097865b-683e-4386-a6a3-1fa27d1463d0',
+    emptyText: 'No Data',
   },
 };
 
@@ -157,14 +159,9 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
   </Box>
 );
 
-export const Empty: ComponentStory<typeof Table> = () => (
+export const Empty: ComponentStory<typeof Table> = ({ emptyImage, emptyText }) => (
   <Box p={20} width="100%">
-    <Table
-      rowKey="name"
-      data={[]}
-      emptyText="No Data"
-      emptyImage="https://cdn.class101.net/images/a097865b-683e-4386-a6a3-1fa27d1463d0"
-    >
+    <Table rowKey="name" data={[]} emptyText={emptyText} emptyImage={emptyImage}>
       <Table.Column key="name" dataKey="name" title="name" />
       <Table.Column key="calories" dataKey="calories" title="calories" />
       <Table.Column key="fat" dataKey="fat" title="fat" />
