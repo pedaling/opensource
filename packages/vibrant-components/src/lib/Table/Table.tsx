@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Children, isValidElement, useState } from 'react';
 import { Box, Image, ScrollBox } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
+import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
@@ -31,6 +31,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   loading = false,
   selectable = false,
   selectButtons,
+  onSelectionChange,
   renderExpanded,
   onRow,
   onSort,
@@ -45,11 +46,14 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     (Children.toArray(children).filter(child => isValidElement(child)) as unknown as typeof children).map(
       ({ props, key }) => ({ ...props, key: key as string })
     ) ?? [];
-  const [selectedRowKeys, setSelectedRowKeys] = useState(new Set<string>());
+  const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
+    defaultValue: new Set<Data[RowKey]>(),
+    onChange: (value: Set<Data[RowKey]>) => onSelectionChange?.([...value]),
+  });
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
 
-  const handleToggleCheckbox = (key: string) => {
+  const handleToggleCheckbox = (key: Data[RowKey]) => {
     const newSelectedRowKeys = new Set(selectedRowKeys);
 
     if (newSelectedRowKeys.has(key)) {
@@ -63,7 +67,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
   const handleToggleAllCheckbox = ({ value }: { value: boolean }) => {
     if (value) {
-      const allRowKeys = new Set<string>(
+      const allRowKeys = new Set<Data[RowKey]>(
         data
           .filter(row => (isDefined(disabledRowKeys) ? !disabledRowKeys.includes(row[rowKey]) : true))
           .map(row => row[rowKey])
