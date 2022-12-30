@@ -62,6 +62,7 @@ export const shouldForwardProp = createShouldForwardProp(systemPropNames);
 export const interpolation = injectContext(
   createInterpolation(systemProps, {
     display: 'flex',
+    flexDirection: 'column',
     textAlign: 'left',
     color: 'onColor',
   })
