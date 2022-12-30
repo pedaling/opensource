@@ -7,7 +7,7 @@ import type {
   TextProps,
 } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
-import type { SortDirection } from '../TableSortButton';
+import type { SortDirection } from '../TableSortIcon';
 
 export type TableHeaderCellProps = {
   title?: TextChildren;
