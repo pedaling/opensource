@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PressableBox } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { HStack } from '../../HStack';
@@ -66,8 +66,8 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         borderBottomWidth={1}
         borderBottomStyle="solid"
       >
-        <VStack height="100%" alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
-          <HStack width="100%" alignVertical="center" spacing={4}>
+        <VStack height="100%" alignVertical={alignVertical}>
+          <HStack width="100%" alignVertical="center" alignHorizontal={alignHorizontal}>
             {renderCell ? (
               renderCell()
             ) : (
@@ -75,7 +75,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
                 <Body
                   level={2}
                   weight="bold"
-                  width="100%"
+                  minWidth={0}
                   lineLimit={lineLimit}
                   wordBreak={wordBreak}
                   textAlign={alignHorizontal}
@@ -85,13 +85,19 @@ export const TableHeaderCell = withTableHeaderCellVariation(
                   {title}
                 </Body>
                 {description && (
-                  <Tooltip content={description}>
-                    <Icon.InfoCircle.Fill size={14} />
-                  </Tooltip>
+                  <Box ml={4}>
+                    <Tooltip content={description}>
+                      <Icon.InfoCircle.Fill size={14} />
+                    </Tooltip>
+                  </Box>
                 )}
               </>
             )}
-            {sortable && <TableSortIcon sortDirection={sortDirection} />}
+            {sortable && (
+              <Box ml={4}>
+                <TableSortIcon sortDirection={sortDirection} />
+              </Box>
+            )}
           </HStack>
         </VStack>
       </PressableBox>
