@@ -12,7 +12,11 @@ type Data = {
 };
 
 const rows: Data[] = [
-  { title: '제목1', id: '1', createdAt: new Date(2022, 11, 20) },
+  {
+    title: 'titletitletitletitletitletitletitletitletitletitletitletitletitle',
+    id: '1',
+    createdAt: new Date(2022, 11, 20),
+  },
   { title: '제목2', id: '2', createdAt: new Date(2022, 11, 21) },
   { title: '제목3', id: '3', createdAt: new Date(2022, 11, 22) },
 ];
@@ -20,7 +24,24 @@ const rows: Data[] = [
 export default {
   title: 'TableColumn',
   component: TableColumn,
-  args: {},
+  args: {
+    overflowWrap: {
+      header: 'break-word',
+      dataCell: 'break-word',
+    },
+    lineLimit: {
+      header: 1,
+      dataCell: 2,
+    },
+    whiteSpace: {
+      header: 'normal',
+      dataCell: 'normal',
+    },
+    wordBreak: {
+      header: 'normal',
+      dataCell: 'normal',
+    },
+  },
 };
 
 export const Basic: ComponentStory<typeof TableColumn> = ({
@@ -30,7 +51,7 @@ export const Basic: ComponentStory<typeof TableColumn> = ({
   ...props
 }) => (
   <Box p={20} width="100%">
-    <Table data={rows} rowKey="id">
+    <Table data={rows} rowKey="id" tableLayout="fixed">
       <TableColumn<Data> {...props} key="title" title="제목" dataKey="title" />
       <TableColumn<Data> {...props} key="id" title="ID" dataKey="id" />
       <TableColumn<Data>
@@ -46,7 +67,7 @@ export const Basic: ComponentStory<typeof TableColumn> = ({
         formatData={({ createdAt }) => createdAt.toLocaleDateString('en-US')}
         renderDataCell={() => (
           <HStack alignVertical="center" spacing={10}>
-            <OutlinedButton size="xl">수정</OutlinedButton>
+            <OutlinedButton size="sm">수정</OutlinedButton>
             <OutlinedButton size="sm">삭제</OutlinedButton>
           </HStack>
         )}

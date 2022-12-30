@@ -2,7 +2,7 @@
 import type { ComponentType, ReactElement } from 'react';
 import type { ReactElementChild, TextChildren } from '@vibrant-ui/core';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
-import type { SortDirection } from './TableSortButton';
+import type { SortDirection } from './TableSortIcon';
 
 export type UseTableResult<Data extends Record<string, any>, RowKey extends keyof Data> = {
   Table: ComponentType<TableProps<Data, RowKey>> & {

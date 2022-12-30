@@ -1,6 +1,6 @@
 import type { ReactElementChild, SizingSystemProps, TextChildren, TextSystemProps } from '@vibrant-ui/core';
 import type { Either } from '@vibrant-ui/utils';
-import type { SortDirection } from '../TableSortButton';
+import type { SortDirection } from '../TableSortIcon';
 
 export type TableColumnProps<Data extends Record<string, any>> = {
   key: string;

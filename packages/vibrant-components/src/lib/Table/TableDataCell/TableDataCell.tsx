@@ -79,6 +79,7 @@ export const TableDataCell = withTableDataCellVariation(
             ) : (
               <Body
                 level={2}
+                width="100%"
                 weight="medium"
                 lineLimit={lineLimit}
                 wordBreak={wordBreak}

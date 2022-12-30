@@ -67,7 +67,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         borderBottomStyle="solid"
       >
         <VStack height="100%" alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
-          <HStack alignVertical="center" spacing={4}>
+          <HStack width="100%" alignVertical="center" spacing={4}>
             {renderCell ? (
               renderCell()
             ) : (
@@ -75,6 +75,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
                 <Body
                   level={2}
                   weight="bold"
+                  width="100%"
                   lineLimit={lineLimit}
                   wordBreak={wordBreak}
                   textAlign={alignHorizontal}
