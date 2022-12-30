@@ -25,6 +25,14 @@ export default {
   title: 'TableColumn',
   component: TableColumn,
   args: {
+    alignHorizontal: {
+      header: 'center',
+      dataCell: 'center',
+    },
+    alignVertical: {
+      header: 'center',
+      dataCell: 'center',
+    },
     overflowWrap: {
       header: 'break-word',
       dataCell: 'break-word',
