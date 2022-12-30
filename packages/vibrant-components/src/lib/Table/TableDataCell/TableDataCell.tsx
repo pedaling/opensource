@@ -38,6 +38,7 @@ export const TableDataCell = withTableDataCellVariation(
       <PressableBox
         as="td"
         display="web_table-cell"
+        height="100%"
         py={12}
         px={16}
         width={width}
@@ -72,7 +73,7 @@ export const TableDataCell = withTableDataCellVariation(
               opacity="overlay.active"
             />
           )}
-          <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
+          <VStack height="100%" alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
             {renderCell ? (
               renderCell()
             ) : (

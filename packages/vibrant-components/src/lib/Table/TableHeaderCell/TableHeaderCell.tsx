@@ -55,6 +55,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
       <PressableBox
         as="th"
         display="web_table-cell"
+        height="100%"
         py={12}
         px={16}
         width={width}
@@ -65,7 +66,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         borderBottomWidth={1}
         borderBottomStyle="solid"
       >
-        <VStack alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
+        <VStack height="100%" alignHorizontal={alignHorizontal} alignVertical={alignVertical}>
           <HStack alignVertical="center" spacing={4}>
             {renderCell ? (
               renderCell()

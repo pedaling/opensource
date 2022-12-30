@@ -14,7 +14,7 @@ import { TableDataCell } from './TableDataCell';
 import { TableHeaderCell } from './TableHeaderCell';
 import type { TableProps, UseTableResult } from './TableProps';
 import { TableRow } from './TableRow';
-import type { SortDirection } from './TableSortButton';
+import type { SortDirection } from './TableSortIcon';
 
 const getCellKey = (key: any, rowIndex: number) => `${key}:${rowIndex}`;
 
@@ -85,8 +85,15 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       borderBottomWidth={0}
       borderRadiusLevel={1}
     >
-      <Box as="table" display="web_table" borderCollapse="separate" tableLayout={tableLayout} width="100%">
-        <Box as="thead" display="web_table-row-group">
+      <Box
+        as="table"
+        display="web_table"
+        borderCollapse="separate"
+        tableLayout={tableLayout}
+        width="100%"
+        height="100%"
+      >
+        <Box as="thead" display="web_table-row-group" height="100%">
           <TableRow
             header={true}
             selectable={selectable}
@@ -158,7 +165,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                 ))}
           </TableRow>
         </Box>
-        <Box as="tbody" display="web_table-row-group">
+        <Box as="tbody" display="web_table-row-group" height="100%">
           {!loading
             ? data.map((row, index) => (
                 <TableRow
