@@ -12,6 +12,9 @@ exports[`<OutlinedButton /> match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: left;
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
