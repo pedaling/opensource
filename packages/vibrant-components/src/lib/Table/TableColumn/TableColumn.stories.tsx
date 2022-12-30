@@ -38,7 +38,6 @@ export default {
       dataCell: 'break-word',
     },
     lineLimit: {
-      header: 1,
       dataCell: 2,
     },
     whiteSpace: {
@@ -60,7 +59,7 @@ export const Basic: ComponentStory<typeof TableColumn> = ({
 }) => (
   <Box p={20} width="100%">
     <Table data={rows} rowKey="id" tableLayout="fixed">
-      <TableColumn<Data> {...props} key="title" title="제목" dataKey="title" />
+      <TableColumn<Data> {...props} key="title" title="Antidisestablishmentarianism" dataKey="title" />
       <TableColumn<Data> {...props} key="id" title="ID" dataKey="id" />
       <TableColumn<Data>
         {...props}
