@@ -4,13 +4,13 @@ import { TableHeader } from './TableHeader';
 export default {
   title: 'TableHeader',
   component: TableHeader,
-  args: {
-    buttonOptions: [
-      { text: '다운로드', kind: 'tertiary' },
-      { text: '새로고침', kind: 'tertiary' },
-      { text: '추가', kind: 'primary' },
-    ],
-  },
+  args: {},
 } as ComponentMeta<typeof TableHeader>;
 
-export const Basic: ComponentStory<typeof TableHeader> = props => <TableHeader {...props} />;
+export const Basic: ComponentStory<typeof TableHeader> = props => (
+  <TableHeader {...props}>
+    <TableHeader.Button kind="tertiary">다운로드</TableHeader.Button>
+    <TableHeader.Button kind="tertiary">새로고침</TableHeader.Button>
+    <TableHeader.Button kind="primary">추가</TableHeader.Button>
+  </TableHeader>
+);
