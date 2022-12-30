@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.36.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.35.3...vibrant-forms-0.36.0) (2022-12-30)
+
+
+### Bug Fixes
+
+* Table QA 사항을 반영한다 ([#504](https://github.com/pedaling/opensource/issues/504)) ([3311189](https://github.com/pedaling/opensource/commit/3311189c3e5620677395aa538eb08e653c525b81))
+
 ### [0.35.3](https://github.com/pedaling/opensource/compare/vibrant-forms-0.35.2...vibrant-forms-0.35.3) (2022-12-27)
 
 ### [0.35.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.35.1...vibrant-forms-0.35.2) (2022-12-27)

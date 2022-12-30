@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.36.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.35.3...vibrant-components-0.36.0) (2022-12-30)
+
+
+### Features
+
+* add onSelectionChange prop ([#505](https://github.com/pedaling/opensource/issues/505)) ([d5eb950](https://github.com/pedaling/opensource/commit/d5eb950d80adae4ddf902380e35c25612090be42))
+* add TableHeader component ([#501](https://github.com/pedaling/opensource/issues/501)) ([8866a32](https://github.com/pedaling/opensource/commit/8866a32a1777339829761d047750ed58db44c47c))
+* Tooltip 을 추가한다 ([#497](https://github.com/pedaling/opensource/issues/497)) ([b04df5b](https://github.com/pedaling/opensource/commit/b04df5b3a4cdeb17c6d34eb9d847f390af0c6a7a))
+
+
+### Bug Fixes
+
+* Table QA 사항을 반영한다 ([#503](https://github.com/pedaling/opensource/issues/503)) ([958e634](https://github.com/pedaling/opensource/commit/958e634001448bc987f7f745826d61f75e594463))
+* Table QA 사항을 반영한다 ([#504](https://github.com/pedaling/opensource/issues/504)) ([3311189](https://github.com/pedaling/opensource/commit/3311189c3e5620677395aa538eb08e653c525b81))
+
 ### [0.35.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.35.2...vibrant-components-0.35.3) (2022-12-27)
 
 

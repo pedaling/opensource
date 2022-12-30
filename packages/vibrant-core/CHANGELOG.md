@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.36.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.35.3...vibrant-core-0.36.0) (2022-12-30)
+
+
+### Bug Fixes
+
+* Table QA 사항을 반영한다 ([#503](https://github.com/pedaling/opensource/issues/503)) ([958e634](https://github.com/pedaling/opensource/commit/958e634001448bc987f7f745826d61f75e594463))
+* Table QA 사항을 반영한다 ([#504](https://github.com/pedaling/opensource/issues/504)) ([3311189](https://github.com/pedaling/opensource/commit/3311189c3e5620677395aa538eb08e653c525b81))
+
 ### [0.35.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.35.2...vibrant-core-0.35.3) (2022-12-27)
 
 
