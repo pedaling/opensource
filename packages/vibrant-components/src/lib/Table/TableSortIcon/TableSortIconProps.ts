@@ -6,7 +6,6 @@ export type SortDirection = 'asc' | 'desc' | 'none';
 export type TableSortIconProps = {
   as?: string;
   sortDirection: SortDirection;
-  onClick?: () => void;
 };
 
 export const withTableSortIconVariation = withVariation<TableSortIconProps>('TableHeaderSortButton')(
