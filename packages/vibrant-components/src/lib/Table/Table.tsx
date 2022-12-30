@@ -105,7 +105,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                 <Body level={1}>{emptyText}</Body>
               </VStack>
             )}
-            overlaid={selectable && selectedRowKeys.size > 0}
+            overlaid={selectable && selectButtons && selectedRowKeys.size > 0}
             renderOverlay={() => (
               <HStack alignVertical="center" height="100%" spacing={12}>
                 {selectButtons?.map(({ text, onClick }) => (
