@@ -1,0 +1,49 @@
+---
+title: TableHeader
+---
+
+# TableHeader
+
+```jsx live
+<TableHeader>
+  <TableHeader.Button
+    kind="tertiary"
+    IconComponent={Icon.RotateClockwise.Regular}
+  >
+    새로고침
+  </TableHeader.Button>
+  <TableHeader.Button
+    kind="primary"
+    IconComponent={Icon.Add.Regular}
+  >
+    추가
+  </TableHeader.Button>
+</TableHeader>
+```
+
+## How to use
+
+```tsx
+import { TableHeader } from '@vibrant-ui/Table';
+```
+
+## Properties
+
+### TableHeader
+
+| Prop | Type | Default | Description |
+| ---- | ---- | ------- | ----------- |
+| -    | -    | -       | -           |
+
+### TableHeader.Button
+
+| Prop          | Type                                        | Default | Description                                |
+| ------------- | ------------------------------------------- | ------- | ------------------------------------------ |
+| kind          | `primary` \| `secondary` \| `tertiary`      |         | 버튼의 종류                                |
+| size          | `xl` \| `lg` \| `md` \| `sm`                |         | 버튼의 크기                                |
+| type          | `button` \| `submit `                       |         | `button` 요소의 타입                       |
+| IconComponent | `IconComponent<IconProps, Fill \| Regular>` |         | 버튼 좌측에 표시되는 아이콘                |
+| disclosure    | boolean                                     |         | 버튼 우측에 표시되는 토글 아이콘 표시 여부 |
+| disabled      | `boolean`                                   |         | 버튼의 비활성화 여부                       |
+| loading       | `boolean`                                   |         | 스피너 표시 여부                           |
+| onClick       | `() => void`                                |         | 버튼이 클릭됐을 때 호출되는 콜백 함수      |
