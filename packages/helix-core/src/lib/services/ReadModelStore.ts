@@ -1,12 +1,12 @@
+import { Promises, retryIfError } from '@helix-js/utils';
 import type { EntityInterface } from '../concepts';
 import { ReadModelAction } from '../concepts';
 import type { EntityEnvelope } from '../envelopes';
 import { ReadModelEnvelope } from '../envelopes';
+import { OptimisticConcurrencyError } from '../errors';
 import { getMetadataStorage } from '../metadata';
 import type { ProjectionMetadata } from '../metadata/definitions';
 import { getProvider } from '../Provider';
-import { OptimisticConcurrencyError, retryIfError } from '../utils/error';
-import { Promises } from '../utils/promises';
 
 export class ReadModelStore {
   private readonly provider = getProvider();

@@ -1,6 +1,6 @@
 export class Promises {
-  public static async allSettledAndFulfilled<TValue>(
-    values: Iterable<TValue>
+  public static async allSettledAndFulfilled<Value>(
+    values: Iterable<Value>
   ): ReturnType<PromiseConstructor['allSettled']> {
     const results = await Promise.allSettled(values);
 

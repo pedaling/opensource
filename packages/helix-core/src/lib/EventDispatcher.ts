@@ -1,11 +1,11 @@
 import { groupBy } from 'lodash';
+import { Promises } from '@helix-js/utils';
 import { Register } from './concepts';
 import type { EventEnvelope } from './envelopes';
 import { getMetadataStorage } from './metadata';
 import { getProvider } from './Provider';
 import { RegisterHandler } from './RegisterHandler';
 import { EntityStore } from './services/EntityStore';
-import { Promises } from './utils/promises';
 
 export class EventDispatcher {
   private readonly provider = getProvider();

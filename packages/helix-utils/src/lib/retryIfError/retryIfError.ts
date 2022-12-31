@@ -1,12 +1,10 @@
-import type { Class } from '@helix-js/utils';
+import type { Class } from '../Class';
 
-export class OptimisticConcurrencyError extends Error {}
-
-export async function retryIfError<TReturn>(
-  logicToRetry: () => Promise<TReturn>,
+export async function retryIfError<ReturnType>(
+  logicToRetry: () => Promise<ReturnType>,
   targetErrorClass: Class<Error>,
   maxRetries = 1000
-): Promise<TReturn> {
+): Promise<ReturnType> {
   let errorAfterMaxTries: Error | undefined;
 
   for (let tryNumber = 1; tryNumber <= maxRetries; tryNumber++) {
