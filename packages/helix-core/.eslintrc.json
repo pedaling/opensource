@@ -1,0 +1,32 @@
+{
+  "extends": ["../../.eslintrc.json"],
+  "ignorePatterns": ["!**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/naming-convention": [
+          "error", 
+          {
+            "selector": ["default", "variable"],
+            "format": null,
+            "filter": {
+              "regex": "(Projects|Reduces|RegisterCommand|RegisterEntity|RegisterEvent|RegisterEventHandler|RegisterMigration|RegisterReadModel|ToVersion)",
+              "match": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/helix-core/src",
+  "projectType": "library",
+  "tags": ["scope:helix"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/helix-core",
+        "main": "packages/helix-core/src/index.ts",
+        "tsConfig": "packages/helix-core/tsconfig.lib.json",
+        "assets": ["packages/helix-core/*.md"]
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["yarn tsc --project ./packages/helix-core/tsconfig.lib.json"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/helix-core/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/helix-core/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

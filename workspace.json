@@ -48,6 +48,8 @@
         }
       }
     },
+    "helix-core": "packages/helix-core",
+    "helix-utils": "packages/helix-utils",
     "utils-eslint-config": "packages/utils-eslint-config",
     "vibrant-components": "packages/vibrant-components",
     "vibrant-components-web": "packages/vibrant-components-web",

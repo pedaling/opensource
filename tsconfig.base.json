@@ -16,6 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@class101/workspace-plugin": ["packages/workspace-plugin/src/index.ts"],
+      "@helix-js/core": ["packages/helix-core/src/index.ts"],
+      "@helix-js/utils": ["packages/helix-utils/src/index.ts"],
       "@vibrant-ui/components": ["packages/vibrant-components/src/index.ts"],
       "@vibrant-ui/components-web": [
         "packages/vibrant-components-web/src/index.ts"
