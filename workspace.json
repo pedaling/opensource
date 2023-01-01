@@ -5,6 +5,8 @@
     "testing": {
       "root": ".",
       "implicitDependencies": [
+        "helix-core",
+        "helix-utils",
         "utils-eslint-config",
         "vibrant-components",
         "vibrant-components-web",

@@ -1,15 +1,17 @@
-import type { Config } from '@jest/types';
+/* eslint-disable */
+import { readFileSync } from "fs";
 
-const config: Config.InitialOptions = {
-  displayName: 'helix-utils',
-  preset: '../../jest.preset.js',
+// Reading the SWC compilation config and remove the "exclude"
+// for the test files to be compiled by SWC
+const { exclude: _, ...swcJestConfig } = JSON.parse(
+  readFileSync(`${__dirname}/.lib.swcrc`, "utf-8")
+);
+export default {
+  displayName: "helix-utils",
+  preset: "../../jest.preset.js",
   transform: {
-    '^.+\\.[tj]s$': 'babel-jest',
+    "^.+\\.[tj]s$": ["@swc/jest", swcJestConfig],
   },
-  moduleFileExtensions: ['ts', 'js', 'html'],
-  collectCoverage: true,
-  coverageDirectory: '../../coverage/packages/helix-utils',
-  coverageReporters: ['lcov'],
+  moduleFileExtensions: ["ts", "js", "html"],
+  coverageDirectory: "../../coverage/packages/helix-utils",
 };
-
-export default config;
