@@ -5,7 +5,7 @@ import type { Position } from '@vibrant-ui/utils';
 export type TooltipProps = {
   children: ReactElementChild;
   content: ReactElementChild | string;
-  spacing?: number;
+  offset?: number;
   maxWidth?: number;
   position?: Position;
   enterDelay?: number;
