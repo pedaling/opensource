@@ -21,14 +21,14 @@ import { Callout } from '@vibrant-ui/components';
 
 ## Properties
 
-| Prop           | Type                                                            | Default   | Description                                                                   |
-| -------------- | --------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
-| title(\*)      | `string`                                                        |           | Callout 의 제목으로 보여지는 값                                               |
-| contents       | `string`                                                        |           | Callout 의 본문으로 보여지는 값. `renderContents` 와 함께 사용할 수 없습니다. |
-| renderContents | `() => ReactElementChild`                                       |           | Callout 의 본문으로 보여지는 값. `content` 와 함께 사용할 수 없습니다.        |
-| [kind](#종류)  | `default` \| `informative` \| `error` \| `warning` \| `success` | `default` | Callout 의 종류를 지정합니다.                                                 |
-| buttonText     | string                                                          |           | Callout 내부에 위치하는 버튼에 등록되는 값                                    |
-| onButtonClick  | `() => void`                                                    |           | 버튼이 클릭되었을 경우 실행할 함수                                            |
+| Prop                | Type                                                            | Default   | Description                                                                   |
+| ------------------- | --------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------- |
+| title(\*)           | `string`                                                        |           | Callout 의 제목으로 보여지는 값                                               |
+| contents            | `string`                                                        |           | Callout 의 본문으로 보여지는 값. `renderContents` 와 함께 사용할 수 없습니다. |
+| renderContents      | `() => ReactElementChild`                                       |           | Callout 의 본문으로 보여지는 값. `content` 와 함께 사용할 수 없습니다.        |
+| [kind](#종류)       | `default` \| `informative` \| `error` \| `warning` \| `success` | `default` | Callout 의 종류를 지정합니다.                                                 |
+| [buttonText](#버튼) | string                                                          |           | Callout 내부에 위치하는 버튼에 등록되는 값                                    |
+| onButtonClick       | `() => void`                                                    |           | 버튼이 클릭되었을 경우 실행할 함수                                            |
 
 ## Usage
 
@@ -62,4 +62,16 @@ import { Callout } from '@vibrant-ui/components';
     kind="success"
   />
 </VStack>
+```
+
+### 버튼
+
+Callout 내부에 있는 버튼을 사용하려면 `buttonText` 와 `onButtonClick` 을 함께 제공해주어야 합니다.
+
+```jsx live
+<Callout
+  title="팝업을 보려면 확인 버튼을 누르세요"
+  buttonText="확인"
+  onButtonClick={() => alert('확인')}
+/>
 ```
