@@ -58,18 +58,17 @@ const getOffsetAvoidingOverflowByPosition = (
   }
 
   if (position.includes('top') || position.includes('bottom')) {
-    let overflowLeft = false;
-    let overflowRight = false;
-
-    if (x + openerRect.x < 0) {
-      overflowLeft = true;
+    if (x + openerRect.x < 0 && x + openerRect.x + targetRect.width > viewport.width) {
+      return {
+        y: y + openerRect.y,
+        left: 0,
+        right: 0,
+      };
     }
+  }
 
-    if (x + openerRect.x + targetRect.width > viewport.width) {
-      overflowRight = true;
-    }
-
-    return { y: y + openerRect.y, left: overflowLeft ? 0 : undefined, right: overflowRight ? 0 : undefined };
+  if (position.includes('right')) {
+    return { y: y + openerRect.y, right: viewport.width - (x + openerRect.x + targetRect.width) };
   }
 
   return { x: x + openerRect.x, y: y + openerRect.y };
@@ -84,7 +83,7 @@ export const Tooltip = withTooltipVariation(
     maxWidth = 320,
     onClose,
     onOpen,
-    spacing = 8,
+    offset = 8,
     position = 'top',
   }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -114,12 +113,12 @@ export const Tooltip = withTooltipVariation(
         y,
         left: leftOffset,
         right: rightOffset,
-      } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, spacing);
+      } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, offset);
 
       setOffset({ x, y, left: leftOffset, right: rightOffset });
 
       setIsMounted(true);
-    }, [position, spacing]);
+    }, [offset, position]);
 
     const openTooltip = () => {
       clearTimeout(timerRef.current);
