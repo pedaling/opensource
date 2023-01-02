@@ -1,0 +1,111 @@
+---
+title: Tooltip
+---
+
+# Tooltip
+
+`Tooltip`은 지정된 요소를 hover 하는 경우 정보를 보여줄 수 있도록 사용하는 컴포넌트입니다.
+
+```jsx live
+<Tooltip
+  position="right"
+  leaveDelay={0}
+  content="지금 이 페이지를 나가시면 혜택을 받을 수 없어요!"
+>
+  <Box width={100} height={100} backgroundColor="primary" />
+</Tooltip>
+```
+
+## How to use
+
+```jsx
+import { Tooltip } from "@vibrant-ui/components";
+```
+
+## Properties
+
+| Prop                  | Type                                                                                                                                                               | Default  | Description                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------------------------- |
+| [children](#children) | `ReactElementChild`                                                                                                                                                |          | Tooltip 을 등장시킬 수 있는 지정 요소 |
+| content               | `string` \| `() => ReactElementChild`                                                                                                                              |          | Tooltip 안에 등장할 내용              |
+| [position](#위치)     | `bottom` \| `left` \| `right` \| `top` \| `bottom-end` \| `bottom-start` \| `left-end` \| `left-start` \| `right-end` \| `right-start` \| `top-end` \| `top-start` | `bottom` | Tooltip 열리는 위치                   |
+| offset                | `number`                                                                                                                                                           | `8`      | Tooltip 과 지정 요소 사이의 여백 값   |
+| maxWidth              | `number`                                                                                                                                                           | `320`    | Tooltip 의 최대 너비값                |
+| enterDelay            | `number`                                                                                                                                                           | `100`    | Tooltip 이 보여지기 까지의 시간       |
+| leaveDelay            | `number`                                                                                                                                                           | 0        | Tooltip 이 사라지기 까지의 시간       |
+| onOpen                | `() => void`                                                                                                                                                       |          | Tooltip 이 열릴 때 실행할 함수        |
+| onClose               | `() => void`                                                                                                                                                       |          | Tooltip 이 닫힐 때 실행할 함수        |
+
+## Usage
+
+### children
+
+Tooltip 은 기준 요소가 있어야만 해당 요소를 기준으로 위치를 설정 및 등장할 수 있습니다.
+Tooltip 이 감싸는 children 이 곧 Tooltip 의 기준 요소가 됩니다.
+이 children 은 `ReactElementChild` 타입이어야 합니다.
+
+```jsx
+<Tooltip
+  position="right"
+  leaveDelay={0}
+  content="지금 이 페이지를 나가시면 혜택을 받을 수 없어요!"
+>
+  {/* This Box is a pivot element of Tooltip */}
+  <Box width={100} height={100} backgroundColor="primary" />
+</Tooltip>
+```
+
+### 위치
+
+Tooltip 의 위치는 `position` 속성을 통해 `bottom`, `left` ,`right`, `top`, `bottom-end`, `bottom-start`, `left-end`, `left-start`, `right-end`, `right-start`, `top-end`, `top-start`로 설정할 수 있습니다.
+
+<Paper borderRadiusLevel={1} backgroundColor="surface1" p={20}>
+  <VStack spacing={30}>
+    <HStack alignHorizontal="space-between" px={100}>
+      <Tooltip content="top-start" position="top-start">
+        <OutlinedButton size="lg">top-start</OutlinedButton>
+      </Tooltip>
+      <Tooltip content="top" position="top">
+        <OutlinedButton size="lg">top</OutlinedButton>
+      </Tooltip>
+      <Tooltip content="top-end" position="top-end">
+        <OutlinedButton size="lg">top-end</OutlinedButton>
+      </Tooltip>
+    </HStack>
+    <HStack alignHorizontal="space-between">
+      <Tooltip content="left-start" position="left-start">
+        <OutlinedButton size="lg">left-start</OutlinedButton>
+      </Tooltip>
+      <Tooltip content="right-start" position="right-start">
+        <OutlinedButton size="lg">right-start</OutlinedButton>
+      </Tooltip>
+    </HStack>
+    <HStack alignHorizontal="space-between">
+      <Tooltip content="left" position="left">
+        <OutlinedButton size="lg">left</OutlinedButton>
+      </Tooltip>
+      <Tooltip content="right" position="right">
+        <OutlinedButton size="lg">right</OutlinedButton>
+      </Tooltip>
+    </HStack>
+    <HStack alignHorizontal="space-between">
+      <Tooltip content="left-end" position="left-end">
+        <OutlinedButton size="lg">left-end</OutlinedButton>
+      </Tooltip>
+      <Tooltip content="right-end" position="right-end">
+        <OutlinedButton size="lg">right-end</OutlinedButton>
+      </Tooltip>
+    </HStack>
+    <HStack alignHorizontal="space-between" px={40}>
+      <Tooltip content="bottom-start" position="bottom-start">
+        <OutlinedButton size="lg">bottom-start</OutlinedButton>
+      </Tooltip>
+      <Tooltip content="bottom" position="bottom">
+        <OutlinedButton size="lg">bottom</OutlinedButton>
+      </Tooltip>
+      <Tooltip content="bottom-end" position="bottom-end">
+        <OutlinedButton size="lg">bottom-end</OutlinedButton>
+      </Tooltip>
+    </HStack>
+  </VStack>
+</Paper>
