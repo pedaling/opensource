@@ -62,8 +62,8 @@ const typescriptRules = {
     // 타입 정의는 PascalCase
     { selector: 'typeLike', format: ['StrictPascalCase'] },
 
-    // type의 property는 기본적으로 camelCase다
-    { selector: 'typeProperty', format: ['strictCamelCase'] },
+    // type의 property는 기본적으로 camelCase, PascalCase이다
+    { selector: 'typeProperty', format: ['strictCamelCase', 'StrictPascalCase'] },
 
     {
       selector: ['typeProperty', 'objectLiteralProperty', 'parameter'],
