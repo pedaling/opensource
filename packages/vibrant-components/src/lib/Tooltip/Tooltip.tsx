@@ -92,6 +92,7 @@ export const Tooltip = withTooltipVariation(
     }>({ x: 0, y: 0 });
     const openerRef = useRef<HTMLElement>(null);
     const targetRef = useRef<HTMLElement>();
+    const [width, setWidth] = useState(0);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
     const {
       theme: { zIndex },
@@ -112,6 +113,8 @@ export const Tooltip = withTooltipVariation(
       } = getOffsetAvoidingOverflowByPosition(openerRect, targetRect, position, offset);
 
       setOffset({ x, y, left: leftOffset, right: rightOffset });
+
+      setWidth(targetRect.width);
 
       setIsMounted(true);
     }, [offset, position]);
@@ -182,6 +185,7 @@ export const Tooltip = withTooltipVariation(
             }
           >
             <Box
+              width={width}
               maxWidth={maxWidth}
               position="fixed"
               py={6}
