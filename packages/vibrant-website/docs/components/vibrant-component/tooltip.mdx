@@ -19,7 +19,7 @@ title: Tooltip
 ## How to use
 
 ```jsx
-import { Tooltip } from "@vibrant-ui/components";
+import { Tooltip } from '@vibrant-ui/components';
 ```
 
 ## Properties
@@ -59,7 +59,11 @@ Tooltip 이 감싸는 children 이 곧 Tooltip 의 기준 요소가 됩니다.
 
 Tooltip 의 위치는 `position` 속성을 통해 `bottom`, `left` ,`right`, `top`, `bottom-end`, `bottom-start`, `left-end`, `left-start`, `right-end`, `right-start`, `top-end`, `top-start`로 설정할 수 있습니다.
 
-<Paper borderRadiusLevel={1} backgroundColor="surface1" p={20}>
+<Paper
+  borderRadiusLevel={1}
+  backgroundColor="surface1"
+  p={20}
+>
   <VStack spacing={30}>
     <HStack alignHorizontal="space-between" px={100}>
       <Tooltip content="top-start" position="top-start">
@@ -74,10 +78,14 @@ Tooltip 의 위치는 `position` 속성을 통해 `bottom`, `left` ,`right`, `to
     </HStack>
     <HStack alignHorizontal="space-between">
       <Tooltip content="left-start" position="left-start">
-        <OutlinedButton size="lg">left-start</OutlinedButton>
+        <OutlinedButton size="lg">
+          left-start
+        </OutlinedButton>
       </Tooltip>
       <Tooltip content="right-start" position="right-start">
-        <OutlinedButton size="lg">right-start</OutlinedButton>
+        <OutlinedButton size="lg">
+          right-start
+        </OutlinedButton>
       </Tooltip>
     </HStack>
     <HStack alignHorizontal="space-between">
@@ -97,14 +105,21 @@ Tooltip 의 위치는 `position` 속성을 통해 `bottom`, `left` ,`right`, `to
       </Tooltip>
     </HStack>
     <HStack alignHorizontal="space-between" px={40}>
-      <Tooltip content="bottom-start" position="bottom-start">
-        <OutlinedButton size="lg">bottom-start</OutlinedButton>
+      <Tooltip
+        content="bottom-start"
+        position="bottom-start"
+      >
+        <OutlinedButton size="lg">
+          bottom-start
+        </OutlinedButton>
       </Tooltip>
       <Tooltip content="bottom" position="bottom">
         <OutlinedButton size="lg">bottom</OutlinedButton>
       </Tooltip>
       <Tooltip content="bottom-end" position="bottom-end">
-        <OutlinedButton size="lg">bottom-end</OutlinedButton>
+        <OutlinedButton size="lg">
+          bottom-end
+        </OutlinedButton>
       </Tooltip>
     </HStack>
   </VStack>
