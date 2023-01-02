@@ -67,6 +67,10 @@ const getOffsetAvoidingOverflowByPosition = (
     }
   }
 
+  if (position.includes('right')) {
+    return { y: y + openerRect.y, right: viewport.width - (x + openerRect.x + targetRect.width) };
+  }
+
   return { x: x + openerRect.x, y: y + openerRect.y };
 };
 
@@ -182,7 +186,6 @@ export const Tooltip = withTooltipVariation(
             }
           >
             <Box
-              width="100%"
               maxWidth={maxWidth}
               position="fixed"
               py={6}
