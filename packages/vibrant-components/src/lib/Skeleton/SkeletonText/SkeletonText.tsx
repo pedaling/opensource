@@ -1,9 +1,9 @@
 import { Box, transformResponsiveValue, useCurrentTheme } from '@vibrant-ui/core';
 import { Motion } from '@vibrant-ui/motion';
 import { VStack } from '../../VStack';
-import { withTextSkeletonVariation } from './SkeletonTextProps';
+import { withSkeletonTextVariation } from './SkeletonTextProps';
 
-export const SkeletonText = withTextSkeletonVariation(({ lines = 1, typography, ...props }) => {
+export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, ...props }) => {
   const {
     theme: { typography: themeTypography },
   } = useCurrentTheme();

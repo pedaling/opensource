@@ -8,4 +8,4 @@ export type SkeletonTextProps = {
   lines?: number;
 };
 
-export const withTextSkeletonVariation = withVariation<SkeletonTextProps>('Skeleton')();
+export const withSkeletonTextVariation = withVariation<SkeletonTextProps>('SkeletonText')();
