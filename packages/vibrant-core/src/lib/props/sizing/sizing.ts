@@ -28,6 +28,13 @@ const boxSizingProp = createSystemProp({
   property: 'boxSizing',
 });
 
+const aspectRatioProp = createSystemProp({
+  property: 'aspectRatio',
+  transform: (value: number) => ({
+    aspectRatio: value ? value.toString() : value,
+  }),
+});
+
 export const sizingSystemProps = [
   widthProp,
   minWidthProp,
@@ -36,4 +43,5 @@ export const sizingSystemProps = [
   minHeightProp,
   maxHeightProp,
   boxSizingProp,
+  aspectRatioProp,
 ];
