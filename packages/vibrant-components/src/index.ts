@@ -60,3 +60,4 @@ export { Tooltip } from './lib/Tooltip';
 export { Table, useTable } from './lib/Table';
 export { TableHeader } from './lib/TableHeader';
 export { TableFooter, tableFooterTranslation } from './lib/TableFooter';
+export { Ratio } from './lib/Ratio';
