@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.36.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.36.0...vibrant-core-0.36.1) (2023-01-03)
+
+
+### Bug Fixes
+
+* restore scollBox native property ([#512](https://github.com/pedaling/opensource/issues/512)) ([39c6d79](https://github.com/pedaling/opensource/commit/39c6d796e5c948f915de47d8a318906deeeb3fa4))
+
 ## [0.36.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.35.3...vibrant-core-0.36.0) (2022-12-30)
 
 
