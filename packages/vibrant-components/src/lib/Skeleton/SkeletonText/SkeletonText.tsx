@@ -1,6 +1,6 @@
 import { Box, transformResponsiveValue, useCurrentTheme } from '@vibrant-ui/core';
-import { Motion } from '@vibrant-ui/motion';
 import { VStack } from '../../VStack';
+import { SkeletonMotion } from '../SkeletonMotion';
 import { withSkeletonTextVariation } from './SkeletonTextProps';
 
 export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, ...props }) => {
@@ -18,22 +18,13 @@ export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, 
           alignVertical="center"
           {...props}
         >
-          <Motion
-            animation={{
-              opacity: {
-                from: 1,
-                to: 0.4,
-              },
-            }}
-            loop="reverse"
-            duration={2400}
-          >
+          <SkeletonMotion>
             <Box
               backgroundColor="surface1"
               height={transformResponsiveValue(typography, value => themeTypography[value].fontSize)}
               borderRadiusLevel={1}
             />
-          </Motion>
+          </SkeletonMotion>
         </VStack>
       ))}
     </>
