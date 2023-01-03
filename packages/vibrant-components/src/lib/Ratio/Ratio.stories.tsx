@@ -6,8 +6,7 @@ export default {
   title: 'Ratio',
   component: Ratio,
   args: {
-    ratio: '9:16',
-    width: 200,
+    ratio: '16:9',
   },
 } as ComponentMeta<typeof Ratio>;
 
