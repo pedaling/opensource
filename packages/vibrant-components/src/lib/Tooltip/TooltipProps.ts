@@ -9,9 +9,7 @@ export type TooltipProps = {
   maxWidth?: number;
   position?: Position;
   enterDelay?: number;
-  enterTouchDelay?: number;
   leaveDelay?: number;
-  leaveTouchDelay?: number;
   onClose?: () => void;
   onOpen?: () => void;
 };
