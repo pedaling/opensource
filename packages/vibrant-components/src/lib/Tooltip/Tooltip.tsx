@@ -176,10 +176,10 @@ export const Tooltip = withTooltipVariation(
             onEnd={
               !isMounted
                 ? () => {
-                  setIsOpen(false);
+                    setIsOpen(false);
 
-                  setOffset({ x: 0, y: 0 });
-                }
+                    setOffset({ x: 0, y: 0 });
+                  }
                 : undefined
             }
           >

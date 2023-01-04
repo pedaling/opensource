@@ -18,9 +18,9 @@ export const flipPosition = (position: Position, flipAlignment = true) => {
   return (
     alignment
       ? [
-        oppositeSideMap[side as Side],
-        flipAlignment ? oppositeAlignment[alignment as Align] : (alignment as Align),
-      ].join('-')
+          oppositeSideMap[side as Side],
+          flipAlignment ? oppositeAlignment[alignment as Align] : (alignment as Align),
+        ].join('-')
       : oppositeSideMap[side as Side]
   ) as Position;
 };
