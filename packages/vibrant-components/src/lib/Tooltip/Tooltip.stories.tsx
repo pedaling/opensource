@@ -8,6 +8,7 @@ export default {
   title: 'Tooltip',
   component: Tooltip,
   args: {
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     position: 'bottom',
   },
   argTypes: {

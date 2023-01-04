@@ -37,7 +37,7 @@ const getOffsetAvoidingOverflowByPosition = (
   const { x: flippedX, y: flippedY } = getOffsetByPosition({
     referenceRect: openerRect,
     targetRect,
-    position: flipPosition(position),
+    position: flipPosition(position, false),
     spacing,
   });
 
@@ -58,13 +58,11 @@ const getOffsetAvoidingOverflowByPosition = (
   }
 
   if (position.includes('top') || position.includes('bottom')) {
-    if (x + openerRect.x < 0 && x + openerRect.x + targetRect.width > viewport.width) {
-      return {
-        y: y + openerRect.y,
-        left: 0,
-        right: 0,
-      };
-    }
+    return {
+      y: y + openerRect.y,
+      left: x + openerRect.x < 0 ? 0 : undefined,
+      right: x + openerRect.x + targetRect.width > viewport.width ? 0 : undefined,
+    };
   }
 
   if (position.includes('right')) {
@@ -178,10 +176,10 @@ export const Tooltip = withTooltipVariation(
             onEnd={
               !isMounted
                 ? () => {
-                    setIsOpen(false);
+                  setIsOpen(false);
 
-                    setOffset({ x: 0, y: 0 });
-                  }
+                  setOffset({ x: 0, y: 0 });
+                }
                 : undefined
             }
           >

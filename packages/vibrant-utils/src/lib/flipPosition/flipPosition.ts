@@ -1,6 +1,6 @@
 import type { Align, Position, Side } from '../../types';
 
-export const flipPosition = (position: Position) => {
+export const flipPosition = (position: Position, flipAlignment = true) => {
   const [side, alignment] = position.split('-');
 
   const oppositeSideMap = {
@@ -17,7 +17,10 @@ export const flipPosition = (position: Position) => {
 
   return (
     alignment
-      ? [oppositeSideMap[side as Side], oppositeAlignment[alignment as Align]].join('-')
+      ? [
+        oppositeSideMap[side as Side],
+        flipAlignment ? oppositeAlignment[alignment as Align] : (alignment as Align),
+      ].join('-')
       : oppositeSideMap[side as Side]
   ) as Position;
 };
