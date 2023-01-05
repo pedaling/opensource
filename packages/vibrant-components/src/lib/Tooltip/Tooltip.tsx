@@ -154,7 +154,9 @@ export const Tooltip = withTooltipVariation(
       (ref?: HTMLElement) => {
         targetRef.current = ref;
 
-        handleTooltipPosition();
+        if (ref) {
+          handleTooltipPosition();
+        }
       },
       [handleTooltipPosition]
     );
