@@ -1,15 +1,8 @@
-import type { ComponentType, ReactNode } from 'react';
+import type { ComponentType } from 'react';
 import type { Dependencies, DependencyName } from '../ConfigProvider';
 import { useConfig } from '../ConfigProvider';
-import { withVariation } from '../withVariation';
-
-type ExternalComponentProps<Name extends DependencyName> = {
-  ref?: any;
-  name: Name;
-  children?: ReactNode;
-};
-
-const withExternalComponentVariation = withVariation<ExternalComponentProps<DependencyName>>('ExternalComponent')();
+import type { ExternalComponentProps } from './ExternalComponentProps';
+import { withExternalComponentVariation } from './ExternalComponentProps';
 
 export const ExternalComponent = withExternalComponentVariation(({ innerRef, name, ...restProps }) => {
   const { dependencies } = useConfig();

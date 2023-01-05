@@ -1,5 +1,6 @@
 import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
+import { ExternalComponent } from '../ExternalComponent';
 import { withImageVariation } from './ImageProps';
 
 export const Image = withImageVariation(({ src, alt, ...props }) => {
@@ -8,7 +9,7 @@ export const Image = withImageVariation(({ src, alt, ...props }) => {
   } = useConfig();
 
   if (image) {
-    return <Box as="img" src={image.defaultProps?.src} alt={alt} {...props} />;
+    return <ExternalComponent name="image" src={src} {...props} />;
   }
 
   return <Box as="img" src={src} alt={alt} {...props} />;
