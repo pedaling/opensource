@@ -11,3 +11,5 @@ export default {
 } as ComponentMeta<typeof Image>;
 
 export const Basic: ComponentStory<typeof Image> = props => <Image width={400} height={300} {...props} />;
+
+export const ExternalComponent: ComponentStory<typeof Image> = props => <Image width={400} height={300} {...props} />;

@@ -18,6 +18,9 @@ export type Dependencies = {
     }[];
   }>;
   reactSpringModule?: any;
+  image?: ComponentType<{
+    src?: string;
+  }>;
 };
 
 export type Translation = {
