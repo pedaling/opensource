@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.37.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.36.2...vibrant-components-0.37.0) (2023-01-05)
+
+
+### Features
+
+* add Ratio component ([#513](https://github.com/pedaling/opensource/issues/513)) ([95111be](https://github.com/pedaling/opensource/commit/95111be5b351cd09f07e9ae694527baf91476e2b))
+* add Skeleton component ([#511](https://github.com/pedaling/opensource/issues/511)) ([b3eb7c3](https://github.com/pedaling/opensource/commit/b3eb7c37d61c29e61a56144e79bf5848121c377b))
+
+
+### Bug Fixes
+
+* cannot read properties of null issue ([#516](https://github.com/pedaling/opensource/issues/516)) ([6016722](https://github.com/pedaling/opensource/commit/6016722623dc63631492e587297a06f30e60ff85))
+
 ### [0.36.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.36.1...vibrant-components-0.36.2) (2023-01-05)
 
 
