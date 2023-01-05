@@ -4,6 +4,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import { Icon } from '@vibrant-ui/icons';
 import type { PressableProps } from '../Pressable';
+import { sizeVariation } from './constants/size';
 
 export type ContainedButtonProps = {
   ref?: Ref<any>;
@@ -50,43 +51,11 @@ export const withContainedButtonVariation = withVariation<ContainedButtonProps>(
       },
     ],
     variants: {
-      sm: {
-        typography: 'body4',
-        py: 7,
-        px: 8,
-        spinnerSize: 'sm',
-        iconSize: 16,
-        disclosureSize: 16,
-        contentsSpacing: 0,
-      },
-      md: {
-        typography: 'body2',
-        py: 10,
-        px: 10,
-        spinnerSize: 'md',
-        iconSize: 18,
-        disclosureSize: 16,
-        contentsSpacing: 0,
-      },
-      lg: {
-        typography: 'body2',
-        py: 13,
-        px: 12,
-        spinnerSize: 'md',
-        iconSize: 18,
-        disclosureSize: 16,
-        contentsSpacing: 0,
-      },
-      xl: {
-        typography: 'body1',
-        py: 15,
-        px: 14,
-        spinnerSize: 'md',
-        iconSize: 20,
-        disclosureSize: 18,
-        contentsSpacing: 2,
-      },
-    } as const,
+      sm: sizeVariation.sm,
+      md: sizeVariation.md,
+      lg: sizeVariation.lg,
+      xl: sizeVariation.xl,
+    },
   }),
   propVariant({
     props: [

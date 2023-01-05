@@ -42,6 +42,7 @@ export type {
 } from './lib/props';
 export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
+export type { ComponentWithRef } from './lib/withVariation';
 export { ThemeProvider, useCurrentTheme, useCurrentThemeMode } from './lib/ThemeProvider';
 export { OnColorContainer } from './lib/OnColorContainer';
 export type { Dependencies, Translation } from './lib/ConfigProvider';
