@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.36.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.36.1...vibrant-utils-0.36.2) (2023-01-05)
+
+
+### Bug Fixes
+
+* Tooltip 위치 조정을 수정한다 ([#514](https://github.com/pedaling/opensource/issues/514)) ([62085f4](https://github.com/pedaling/opensource/commit/62085f4003ea6f63470c0681d29fede17ba24f3d))
+
 ### [0.36.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.36.0...vibrant-utils-0.36.1) (2023-01-03)
 
 ## [0.36.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.35.3...vibrant-utils-0.36.0) (2022-12-30)

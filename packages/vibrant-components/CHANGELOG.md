@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.36.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.36.1...vibrant-components-0.36.2) (2023-01-05)
+
+
+### Features
+
+* can use boolean or null type in Table children ([#515](https://github.com/pedaling/opensource/issues/515)) ([f856f5e](https://github.com/pedaling/opensource/commit/f856f5e39391a4d9e19793a583b491907e54cd9f))
+
+
+### Bug Fixes
+
+* Tooltip 위치 조정을 수정한다 ([#514](https://github.com/pedaling/opensource/issues/514)) ([62085f4](https://github.com/pedaling/opensource/commit/62085f4003ea6f63470c0681d29fede17ba24f3d))
+
 ### [0.36.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.36.0...vibrant-components-0.36.1) (2023-01-03)
 
 
