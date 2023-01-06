@@ -1,6 +1,10 @@
+import { useRef } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
+import { Icon } from '@vibrant-ui/icons';
+import { Body } from '../Body';
 import { ContentArea } from '../ContentArea';
+import { HStack } from '../HStack';
 import { VStack } from '../VStack';
 import { Tooltip } from './Tooltip';
 
@@ -37,3 +41,20 @@ export const ElementContent: ComponentStory<typeof Tooltip> = props => (
     </VStack>
   </ContentArea>
 );
+
+export const CustomRefTooltip: ComponentStory<typeof Tooltip> = props => {
+  const openerRef = useRef(null);
+
+  return (
+    <ContentArea>
+      <HStack height={300} alignHorizontal="center" alignVertical="center" spacing={8}>
+        <Body ref={openerRef} level={3} weight="medium">
+          이 기준으로 툴팁이 떠줬으면 좋겠다
+        </Body>
+        <Tooltip {...props} customRef={openerRef}>
+          <Icon.InfoCircle.Fill fill="informative" size={20} />
+        </Tooltip>
+      </HStack>
+    </ContentArea>
+  );
+};

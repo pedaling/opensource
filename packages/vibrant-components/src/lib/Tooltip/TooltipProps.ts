@@ -1,3 +1,4 @@
+import type { RefObject } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { Position } from '@vibrant-ui/utils';
@@ -12,6 +13,7 @@ export type TooltipProps = {
   leaveDelay?: number;
   onClose?: () => void;
   onOpen?: () => void;
+  customRef?: RefObject<any>;
 };
 
 export const withTooltipVariation = withVariation<TooltipProps>('Tooltip')();
