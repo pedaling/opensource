@@ -66,12 +66,13 @@ export const Basic: ComponentStory<typeof Table> = props => (
       />
       <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" />
       <Table.Column<Data> key="protein" dataKey="protein" title="protein" />
-      <Table.Column<Data>
-        key="Edit"
-        title=""
-        width={120}
-        renderDataCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
-      />
+      {['Edit', 'Delete'].map(value => (
+        <Table.Column<Data>
+          key={value}
+          title=""
+          renderDataCell={() => <OutlinedButton size="sm">{value}</OutlinedButton>}
+        />
+      ))}
     </Table>
   </Box>
 );
