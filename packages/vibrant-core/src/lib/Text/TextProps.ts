@@ -1,3 +1,4 @@
+import type { Ref } from 'react';
 import type { ReactElementChild, ReactTextChild } from '../../types';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
@@ -55,6 +56,7 @@ export type TextProps = SystemProps & {
   as?: TextElements;
   children?: TextChildren;
   onCopy?: () => void;
+  ref?: Ref<any>;
 };
 
 export const shouldForwardProp = createShouldForwardProp(systemPropNames);
