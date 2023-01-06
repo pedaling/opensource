@@ -13,7 +13,7 @@ export type TooltipProps = {
   leaveDelay?: number;
   onClose?: () => void;
   onOpen?: () => void;
-  customRef?: RefObject<any>;
+  anchorRef?: RefObject<any>;
 };
 
 export const withTooltipVariation = withVariation<TooltipProps>('Tooltip')();
