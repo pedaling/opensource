@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.37.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.37.0...vibrant-forms-0.37.1) (2023-01-06)
+
+
+### Bug Fixes
+
+* remove default display in Text ([#518](https://github.com/pedaling/opensource/issues/518)) ([6d60f24](https://github.com/pedaling/opensource/commit/6d60f240a6240e47487a3d17c3a052265c9f8b5a))
+
 ## [0.37.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.36.2...vibrant-forms-0.37.0) (2023-01-05)
 
 ### [0.36.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.36.1...vibrant-forms-0.36.2) (2023-01-05)

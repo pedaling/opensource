@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.37.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.0...vibrant-components-0.37.1) (2023-01-06)
+
+
+### Features
+
+* add custom ref into Tooltip ([#519](https://github.com/pedaling/opensource/issues/519)) ([388ddb5](https://github.com/pedaling/opensource/commit/388ddb5e4bf1e615675cf3924e49fca26a6e2da0))
+
+
+### Bug Fixes
+
+* remove default display in Text ([#518](https://github.com/pedaling/opensource/issues/518)) ([6d60f24](https://github.com/pedaling/opensource/commit/6d60f240a6240e47487a3d17c3a052265c9f8b5a))
+
 ## [0.37.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.36.2...vibrant-components-0.37.0) (2023-01-05)
 
 
