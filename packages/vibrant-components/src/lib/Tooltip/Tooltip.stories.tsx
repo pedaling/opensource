@@ -49,9 +49,9 @@ export const CustomRefTooltip: ComponentStory<typeof Tooltip> = props => {
     <ContentArea>
       <HStack height={300} alignHorizontal="center" alignVertical="center" spacing={8}>
         <Body ref={openerRef} level={3} weight="medium">
-          이 기준으로 툴팁이 떠줬으면 좋겠다
+          이 텍스트 영역을 기준으로 툴팁의 위치가 설정됩니다.
         </Body>
-        <Tooltip {...props} customRef={openerRef}>
+        <Tooltip {...props} anchorRef={openerRef}>
           <Icon.InfoCircle.Fill fill="informative" size={20} />
         </Tooltip>
       </HStack>

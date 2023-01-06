@@ -75,7 +75,7 @@ const getOffsetAvoidingOverflowByPosition = (
 export const Tooltip = withTooltipVariation(
   ({
     children,
-    customRef,
+    anchorRef,
     content,
     enterDelay = 100,
     leaveDelay = 0,
@@ -103,7 +103,7 @@ export const Tooltip = withTooltipVariation(
     const { addEventListener } = useScroll();
 
     const handleTooltipPosition = useCallback(async () => {
-      const openerRect = await getElementRect(customRef?.current ?? openerRef.current);
+      const openerRect = await getElementRect(anchorRef?.current ?? openerRef.current);
 
       const targetRect: Rect = await getElementRect(targetRef.current);
 
@@ -117,7 +117,7 @@ export const Tooltip = withTooltipVariation(
       setOffset({ x, y, left: leftOffset, right: rightOffset });
 
       setIsMounted(true);
-    }, [customRef, offset, position]);
+    }, [anchorRef, offset, position]);
 
     const openTooltip = () => {
       clearTimeout(timerRef.current);
