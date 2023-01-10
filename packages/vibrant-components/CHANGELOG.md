@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.37.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.1...vibrant-components-0.37.2) (2023-01-10)
+
+
+### Bug Fixes
+
+* when expanded prop change update isExpanded state in TableRow ([#522](https://github.com/pedaling/opensource/issues/522)) ([ca373ca](https://github.com/pedaling/opensource/commit/ca373caaf73589de0a50bc2f85c6b2a56a051722))
+
 ### [0.37.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.0...vibrant-components-0.37.1) (2023-01-06)
 
 
