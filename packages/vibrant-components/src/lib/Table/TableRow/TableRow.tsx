@@ -38,6 +38,10 @@ export const TableRow = withTableRowVariation(
     };
 
     useEffect(() => {
+      setIsExpanded(expanded);
+    }, [expanded]);
+
+    useEffect(() => {
       const updateRowRect = async () => {
         if (!overlaid || !rowRef.current) {
           return;
