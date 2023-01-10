@@ -54,3 +54,21 @@ export const Position: ComponentStory<typeof Paper> = () => (
     <Box height={5000} />
   </VStack>
 );
+
+export const RadiusCustom: ComponentStory<typeof Paper> = () => (
+  <VStack>
+    <Paper
+      borderTopLeftRadiusLevel={0}
+      borderTopRightRadiusLevel={2}
+      borderBottomLeftRadiusLevel={3}
+      borderBottomRightRadiusLevel={4}
+      width={200}
+      height={200}
+      backgroundColor="informative"
+      p={10}
+      top={0}
+    >
+      <Body level={1}>sticky</Body>
+    </Paper>
+  </VStack>
+);
