@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.37.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.2...vibrant-components-0.37.3) (2023-01-10)
+
+
+### Features
+
+* add borderRadius four edge properties into Paper ([#523](https://github.com/pedaling/opensource/issues/523)) ([248f632](https://github.com/pedaling/opensource/commit/248f632b14ceb6627482c22f91758c009b036654))
+
 ### [0.37.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.1...vibrant-components-0.37.2) (2023-01-10)
 
 
