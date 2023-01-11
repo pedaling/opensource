@@ -2,6 +2,7 @@ import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import * as ReactSpring from 'react-spring';
 import type { ReactElementChild } from '../../types';
+import type { MediaSystemProps } from '../props';
 
 export type Dependencies = {
   nativeLinearGradient?: ComponentType<{
@@ -20,7 +21,8 @@ export type Dependencies = {
   reactSpringModule?: any;
   image?: ComponentType<{
     src?: string;
-  }>;
+  }> &
+    MediaSystemProps;
 };
 
 export type Translation = {
