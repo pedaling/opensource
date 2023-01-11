@@ -6,6 +6,7 @@ export default {
   component: SkeletonButton,
   args: {
     size: 'xl',
+    maxWidth: 200,
   },
 } as ComponentMeta<typeof SkeletonButton>;
 

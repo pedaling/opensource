@@ -6,6 +6,7 @@ export default {
   component: SkeletonField,
   args: {
     size: 'lg',
+    maxWidth: 500,
   },
 } as ComponentMeta<typeof SkeletonField>;
 
