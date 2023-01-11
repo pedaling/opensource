@@ -5,7 +5,7 @@ export default {
   title: 'Skeleton',
   component: Skeleton,
   args: {
-    width: 200,
+    width: '100%',
     height: 200,
     borderRadiusLevel: 2,
   },

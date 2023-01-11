@@ -4,7 +4,7 @@ import { sizeVariation } from '../../ContainedButton';
 
 export type SkeletonButtonProps = {
   size: ResponsiveValue<'lg' | 'md' | 'sm' | 'xl'>;
-  width?: ResponsiveValue<number | '100%'>;
+  width?: ResponsiveValue<number | `${number}%`>;
 };
 
 export const withSkeletonButtonVariation = withVariation<SkeletonButtonProps>('SkeletonButton')(

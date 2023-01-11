@@ -3,7 +3,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type SkeletonFieldProps = {
   size: ResponsiveValue<'lg' | 'md'>;
-  width: ResponsiveValue<number | '100%'>;
+  width: ResponsiveValue<number | `${number}%`>;
 };
 
 export const withSkeletonFieldVariation = withVariation<SkeletonFieldProps>('SkeletonField')(
