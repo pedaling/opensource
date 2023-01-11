@@ -4,7 +4,7 @@ import type { TypographyKind } from '@vibrant-ui/theme';
 
 export type SkeletonTextProps = {
   typography: ResponsiveValue<TypographyKind>;
-  maxWidth?: ResponsiveValue<number>;
+  maxWidth?: ResponsiveValue<number | `${number}%`>;
   lines?: number;
 };
 
