@@ -3,20 +3,19 @@ import { VStack } from '../../VStack';
 import { SkeletonMotion } from '../SkeletonMotion';
 import { withSkeletonTextVariation } from './SkeletonTextProps';
 
-export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, ...props }) => {
+export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, maxWidth }) => {
   const {
     theme: { typography: themeTypography },
   } = useCurrentTheme();
 
   return (
-    <>
+    <VStack width="100%" maxWidth={maxWidth}>
       {Array.from({ length: lines }, (_, index) => (
         <VStack
           key={index}
-          width="100%"
+          width={index === lines - 1 && lines !== 1 ? '40%' : '100%'}
           height={transformResponsiveValue(typography, value => themeTypography[value].lineHeight)}
           alignVertical="center"
-          {...props}
         >
           <SkeletonMotion>
             <Box
@@ -27,6 +26,6 @@ export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, 
           </SkeletonMotion>
         </VStack>
       ))}
-    </>
+    </VStack>
   );
 });
