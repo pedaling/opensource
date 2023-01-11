@@ -132,6 +132,7 @@
     "@storybook/native-components": "2.2.7",
     "@swc/helpers": "~0.3.3",
     "babel-plugin-tsconfig-paths": "1.0.3",
+    "card-validator": "8.1.1",
     "clsx": "1.1.1",
     "core-js": "3.23.4",
     "docusaurus-remark-plugin-codetabs": "1.0.0-alpha.3",
