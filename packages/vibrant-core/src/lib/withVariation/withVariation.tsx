@@ -8,7 +8,7 @@ type PickRefElement<Props, DefaultElement = HTMLElement> = Props extends {
   ? Element
   : DefaultElement;
 
-type ComponentWithRef<Props, DefaultElement = HTMLElement> = ForwardRefExoticComponent<
+export type ComponentWithRef<Props, DefaultElement = HTMLElement> = ForwardRefExoticComponent<
   PropsWithoutRef<Props> & RefAttributes<PickRefElement<Props, DefaultElement>>
 >;
 

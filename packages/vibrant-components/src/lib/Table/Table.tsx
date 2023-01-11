@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import type { ReactElement } from 'react';
 import { Children, isValidElement, useState } from 'react';
 import { Box, Image, ScrollBox } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
@@ -43,9 +44,12 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   tableLayout,
 }: TableProps<Data, RowKey>) => {
   const columns =
-    (Children.toArray(children).filter(child => isValidElement(child)) as unknown as typeof children).map(
-      ({ props, key }) => ({ ...props, key: key as string })
-    ) ?? [];
+    (
+      Children.toArray(children).filter(child => isValidElement(child)) as unknown as ReactElement<
+        TableColumnProps<Data>
+      >[]
+    ).map(({ props, key }) => ({ ...props, key: key as string })) ?? [];
+
   const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
     defaultValue: new Set<Data[RowKey]>(),
     onChange: (value: Set<Data[RowKey]>) => onSelectionChange?.([...value]),

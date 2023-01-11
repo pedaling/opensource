@@ -18,7 +18,7 @@ export type TableProps<Data extends Record<string, any>, RowKey extends keyof Da
   selectButtons?: { text: string; onClick: (selectedRows: Data[]) => void }[];
   onSelectionChange?: (selectedRowKeys: Data[RowKey][]) => void;
   renderExpanded?: (row: Data) => ReactElementChild;
-  children: ReactElement<TableColumnProps<Data>>[];
+  children: (ReactElement<TableColumnProps<Data>> | ReactElement<TableColumnProps<Data>>[] | boolean | null)[];
   onRow?: {
     onClick: (row: Data) => void;
   };

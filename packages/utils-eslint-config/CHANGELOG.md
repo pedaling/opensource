@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.37.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.37.0...utils-eslint-config-0.37.1) (2023-01-06)
+
+## [0.37.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.36.2...utils-eslint-config-0.37.0) (2023-01-05)
+
+
+### Features
+
+* add Skeleton component ([#511](https://github.com/pedaling/opensource/issues/511)) ([b3eb7c3](https://github.com/pedaling/opensource/commit/b3eb7c37d61c29e61a56144e79bf5848121c377b))
+
+### [0.36.2](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.36.1...utils-eslint-config-0.36.2) (2023-01-05)
+
 ### [0.36.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.36.0...utils-eslint-config-0.36.1) (2023-01-03)
 
 ## [0.36.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.35.3...utils-eslint-config-0.36.0) (2022-12-30)
