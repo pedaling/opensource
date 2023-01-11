@@ -6,6 +6,7 @@ export default {
   component: Skeleton,
   args: {
     width: '100%',
+    maxWidth: 200,
     height: 200,
     borderRadiusLevel: 2,
   },
