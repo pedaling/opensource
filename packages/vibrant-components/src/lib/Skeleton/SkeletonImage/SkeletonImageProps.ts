@@ -4,6 +4,7 @@ import { withVariation } from '@vibrant-ui/core';
 export type SkeletonImageProps = Pick<BorderSystemProps, 'borderRadiusLevel'> & {
   width: ResponsiveValue<number | `${number}%`>;
   ratio: ResponsiveValue<number>;
+  maxWidth?: ResponsiveValue<number | `${number}%`>;
 };
 
 export const withSkeletonImageVariation = withVariation<SkeletonImageProps>('SkeletonImage')();

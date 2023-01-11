@@ -3,7 +3,8 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type SkeletonChipProps = {
   size: ResponsiveValue<'md' | 'sm'>;
-  width: ResponsiveValue<number | `${number}%`>;
+  width?: ResponsiveValue<number | `${number}%`>;
+  maxWidth?: ResponsiveValue<number | `${number}%`>;
 };
 
 export const withSkeletonChipVariation = withVariation<SkeletonChipProps>('SkeletonChip')(
