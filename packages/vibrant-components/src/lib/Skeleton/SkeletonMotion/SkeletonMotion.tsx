@@ -10,7 +10,8 @@ export const SkeletonMotion = withSkeletonMotionVariation(({ children }) => (
       },
     }}
     loop="reverse"
-    duration={2400}
+    duration={1200}
+    easing="easeOutQuad"
   >
     {children}
   </Motion>

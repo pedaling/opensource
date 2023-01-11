@@ -2,7 +2,7 @@ import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type SkeletonAvatarProps = {
-  size: ResponsiveValue<'lg' | 'md' | 'sm' | 'xl'>;
+  size: ResponsiveValue<'lg' | 'md' | 'sm' | 'xl' | 'xs'>;
 };
 
 export const withSkeletonAvatarVariation = withVariation<SkeletonAvatarProps>('SkeletonAvatar')(

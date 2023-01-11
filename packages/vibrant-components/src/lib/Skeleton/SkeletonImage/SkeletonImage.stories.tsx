@@ -6,7 +6,7 @@ export default {
   component: SkeletonImage,
   args: {
     width: 300,
-    ratio: '1:1',
+    ratio: 1,
   },
 } as ComponentMeta<typeof SkeletonImage>;
 
