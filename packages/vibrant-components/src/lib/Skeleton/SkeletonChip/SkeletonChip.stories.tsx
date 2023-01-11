@@ -6,6 +6,7 @@ export default {
   component: SkeletonChip,
   args: {
     size: 'md',
+    maxWidth: 500,
   },
 } as ComponentMeta<typeof SkeletonChip>;
 
