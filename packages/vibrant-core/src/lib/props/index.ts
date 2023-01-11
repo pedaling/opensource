@@ -34,3 +34,5 @@ export type { TypographySystemProps } from './typography';
 export { typographySystemProps } from './typography';
 export type { AllSystemProps } from './systemProp';
 export { allSystemProps, allSystemPropNames } from './systemProp';
+export type { MediaSystemProps } from './media';
+export { mediaSystemProps } from './media';
