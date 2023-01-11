@@ -2,7 +2,7 @@ import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
 import { withImageVariation } from './ImageProps';
 
-export const Image = withImageVariation(({ src, alt, loading, objectFit, ...props }) => {
+export const Image = withImageVariation(({ src, alt, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
@@ -21,7 +21,7 @@ export const Image = withImageVariation(({ src, alt, loading, objectFit, ...prop
 
           return (
             <Box key={currentSrc} display={display}>
-              <Component as="img" src={currentSrc} objectFit={objectFit} loading={loading} {...props} />
+              <Component as="img" src={currentSrc} {...props} />
             </Box>
           );
         })}

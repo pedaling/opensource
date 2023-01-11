@@ -4,7 +4,7 @@ import { useConfig } from '../ConfigProvider';
 import { ExternalComponent } from '../ExternalComponent';
 import { withImageVariation } from './ImageProps';
 
-export const Image = withImageVariation(({ src, alt, loading, objectFit, ...props }) => {
+export const Image = withImageVariation(({ src, alt, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
@@ -21,7 +21,7 @@ export const Image = withImageVariation(({ src, alt, loading, objectFit, ...prop
 
           if (image) {
             <Box display={display}>
-              <ExternalComponent name="image" src={currentSrc} loading={loading} objectFit={objectFit} />
+              <ExternalComponent name="image" src={currentSrc} />
             </Box>;
           }
 
@@ -30,6 +30,7 @@ export const Image = withImageVariation(({ src, alt, loading, objectFit, ...prop
               base={NativeImage}
               display={display}
               key={currentSrc}
+              accessibilityLabel={alt}
               as="img"
               source={{
                 uri: currentSrc,
