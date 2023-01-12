@@ -33,7 +33,7 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
         return {
           bodyLevel: 4,
           iconSize: 14,
-          py: 6,
+          minHeight: 30,
           pl: isDefined(startIcon) ? 9 : 11,
           pr: isDefined(endIcon) ? 9 : 11,
           spacing: 4,
@@ -43,7 +43,7 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
       return {
         bodyLevel: 2,
         iconSize: 16,
-        py: 9,
+        minHeight: 38,
         pl: isDefined(startIcon) ? 11 : 15,
         pr: isDefined(endIcon) ? 11 : 15,
         spacing: 6,
@@ -80,6 +80,8 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
           borderStyle: 'solid',
           borderColor: 'outlinePrimary',
           backgroundColor: 'primaryContainer',
+          overlayColor: 'onPrimaryContainer',
+          interactions: ['hover', 'focus', 'active'],
         } as const;
       }
 
@@ -89,6 +91,8 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
         borderStyle: 'solid',
         borderColor: 'outline1',
         backgroundColor: 'background',
+        overlayColor: 'onView1',
+        interactions: ['hover', 'focus', 'active'],
       } as const;
     },
   })
