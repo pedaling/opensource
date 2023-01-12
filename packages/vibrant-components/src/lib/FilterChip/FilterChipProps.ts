@@ -15,7 +15,7 @@ export type FilterChipProps = {
   children: TextChildren;
 };
 
-export const withFilterChipVariation = withVariation<FilterChipProps>('ContainedButton')(
+export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChip')(
   propVariant({
     props: [
       {
