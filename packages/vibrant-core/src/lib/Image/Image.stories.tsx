@@ -11,7 +11,7 @@ export default {
       'https://cdn.class101.net/images/f9191e82-606e-4012-b049-30ece34fb863',
     ],
     alt: 'image',
-    objectFit: 'none',
+    objectFit: 'cover',
   },
 } as ComponentMeta<typeof Image>;
 
