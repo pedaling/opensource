@@ -4,30 +4,33 @@ import { useConfig } from '../ConfigProvider';
 import { ExternalComponent } from '../ExternalComponent';
 import { withImageVariation } from './ImageProps';
 
+type ImagePropType = {
+  src: string;
+  display: ResponsiveValue<'flex' | 'none'>;
+}[];
+
 export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
-  const imageProps = new Map<number, { src: string; display: ResponsiveValue<'flex' | 'none'> }>();
+  const imageProps: ImagePropType = [];
 
   if (Array.isArray(src)) {
-    const basicDisplay = new Array(src.length).fill('none');
-
     for (let index = 0; index < src.length; index++) {
-      const display = [...basicDisplay];
+      const display = new Array(src.length).fill('none');
 
       display[index] = 'flex';
 
-      imageProps.set(index, { src: src[index], display });
+      imageProps.push({ src: src[index], display });
     }
   } else {
-    imageProps.set(0, { src, display: 'flex' });
+    imageProps.push({ src, display: 'flex' });
   }
 
   if (image) {
     return (
       <>
-        {[...imageProps.values()].map(({ src, display }) => (
+        {imageProps.map(({ src, display }) => (
           <ExternalComponent
             name="image"
             key={src}
@@ -44,7 +47,7 @@ export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
 
   return (
     <>
-      {[...imageProps.values()].map(({ src, display }) => (
+      {imageProps.map(({ src, display }) => (
         <Box as="img" key={src} loading={loading} alt={alt} src={src} display={display} {...props} />
       ))}
     </>
