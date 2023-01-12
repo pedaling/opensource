@@ -7,8 +7,8 @@ import { withFilterChipVariation } from './FilterChipProps';
 
 export const FilterChip = withFilterChipVariation(
   ({ startIcon, endIcon, children, bodyLevel, color, spacing, iconSize, ...props }) => (
-    <Pressable flexGrow={0} flexShrink={0} alignItems="center" borderRadiusLevel={5} {...props}>
-      <HStack as="span" alignVertical="center">
+    <Pressable flexGrow={0} flexShrink={0} borderRadiusLevel={5} {...props}>
+      <HStack as="span" my="auto" alignVertical="center">
         {startIcon && (
           <Box as="span" mr={spacing}>
             {cloneElement(startIcon, { size: iconSize, fill: color })}

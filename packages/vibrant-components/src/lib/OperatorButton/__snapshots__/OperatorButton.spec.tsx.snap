@@ -73,6 +73,10 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   width: auto;
   height: auto;
   padding: 7px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
 
 .emotion-3 {

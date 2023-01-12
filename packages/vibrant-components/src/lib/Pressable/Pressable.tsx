@@ -99,6 +99,7 @@ export const Pressable = withPressableVariation(
             pr={pr}
             pb={pb}
             pl={pl}
+            flexGrow={1}
           >
             {children}
           </Box>
