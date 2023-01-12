@@ -62,3 +62,4 @@ export { TableHeader } from './lib/TableHeader';
 export { TableFooter, tableFooterTranslation } from './lib/TableFooter';
 export { Ratio } from './lib/Ratio';
 export { Skeleton } from './lib/Skeleton';
+export { FilterChip } from './lib/FilterChip';
