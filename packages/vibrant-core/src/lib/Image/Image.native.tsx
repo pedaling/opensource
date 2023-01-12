@@ -5,7 +5,7 @@ import { ExternalComponent } from '../ExternalComponent';
 import type { ImagePropType } from './Image';
 import { withImageVariation } from './ImageProps';
 
-export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
+export const Image = withImageVariation(({ src, alt, loading, innerRef, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
@@ -30,6 +30,7 @@ export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
           <ExternalComponent
             name="image"
             key={src}
+            ref={innerRef}
             loading={loading}
             alt={alt}
             src={src}

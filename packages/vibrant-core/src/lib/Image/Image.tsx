@@ -4,12 +4,12 @@ import { useConfig } from '../ConfigProvider';
 import { ExternalComponent } from '../ExternalComponent';
 import { withImageVariation } from './ImageProps';
 
-type ImagePropType = {
+export type ImagePropType = {
   src: string;
   display: ResponsiveValue<'flex' | 'none'>;
 }[];
 
-export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
+export const Image = withImageVariation(({ src, alt, loading, innerRef, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
@@ -34,6 +34,7 @@ export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
           <ExternalComponent
             name="image"
             key={src}
+            ref={innerRef}
             loading={loading}
             alt={alt}
             src={src}

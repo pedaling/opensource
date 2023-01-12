@@ -21,6 +21,7 @@ export type Dependencies = {
   reactSpringModule?: any;
   image?: ComponentType<{
     src?: string;
+    ref?: any;
     alt?: string;
     loading?: 'eager' | 'lazy';
     display?: ResponsiveValue<'flex' | 'none'>;

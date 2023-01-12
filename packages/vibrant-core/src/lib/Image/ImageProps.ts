@@ -3,6 +3,7 @@ import type { BorderSystemProps, MediaSystemProps, SizingSystemProps } from '../
 import { withVariation } from '../withVariation';
 
 type ImageProps = {
+  ref?: any;
   src: ResponsiveValue<string>;
   alt?: string;
   loading?: 'eager' | 'lazy';
