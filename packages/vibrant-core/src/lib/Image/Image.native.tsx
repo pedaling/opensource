@@ -1,56 +1,53 @@
 import { Image as NativeImage } from 'react-native';
+import type { ResponsiveValue } from '../../types';
 import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
-import { ExternalComponent } from '../ExternalComponent';
 import { withImageVariation } from './ImageProps';
 
-export const Image = withImageVariation(({ src, alt, ...props }) => {
+export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
+  const imageProps = new Map<number, { src: string; display: ResponsiveValue<'flex' | 'none'> }>();
 
   if (Array.isArray(src)) {
     const basicDisplay = new Array(src.length).fill('none');
 
+    for (let index = 0; index < src.length; index++) {
+      const display = [...basicDisplay];
+
+      display[index] = 'flex';
+
+      imageProps.set(index, { src: src[index], display });
+    }
+  } else {
+    imageProps.set(0, { src, display: 'flex' });
+  }
+
+  if (image) {
     return (
       <>
-        {src.map((currentSrc, idx) => {
-          const display = [...basicDisplay];
-
-          display[idx] = 'flex';
-
-          if (image) {
-            <Box display={display}>
-              <ExternalComponent name="image" src={currentSrc} />
-            </Box>;
-          }
-
-          return (
-            <Box
-              base={NativeImage}
-              display={display}
-              key={currentSrc}
-              accessibilityLabel={alt}
-              as="img"
-              source={{
-                uri: currentSrc,
-              }}
-              {...props}
-            />
-          );
-        })}
+        {[...imageProps.values()].map(({ src, display }) => (
+          <Box base={image} key={src} loading={loading} alt={alt} src={src} display={display} {...props} />
+        ))}
       </>
     );
   }
 
   return (
-    <Box
-      base={NativeImage}
-      as="img"
-      source={{
-        uri: src,
-      }}
-      {...props}
-    />
+    <>
+      {[...imageProps.values()].map(({ src, display }) => (
+        <Box
+          accessibilityLabel={alt}
+          key={src}
+          base={NativeImage}
+          source={{
+            uri: src,
+          }}
+          display={display}
+          {...props}
+        />
+      ))}
+    </>
   );
 });

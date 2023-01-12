@@ -21,6 +21,8 @@ export type Dependencies = {
   reactSpringModule?: any;
   image?: ComponentType<{
     src?: string;
+    alt?: string;
+    loading?: 'eager' | 'lazy';
   }> &
     MediaSystemProps;
 };
