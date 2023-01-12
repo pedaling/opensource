@@ -2,6 +2,7 @@ import { Image as NativeImage } from 'react-native';
 import type { ResponsiveValue } from '../../types';
 import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
+import { ExternalComponent } from '../ExternalComponent';
 import { withImageVariation } from './ImageProps';
 
 export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
@@ -28,7 +29,15 @@ export const Image = withImageVariation(({ src, alt, loading, ...props }) => {
     return (
       <>
         {[...imageProps.values()].map(({ src, display }) => (
-          <Box base={image} key={src} loading={loading} alt={alt} src={src} display={display} {...props} />
+          <ExternalComponent
+            name="image"
+            key={src}
+            loading={loading}
+            alt={alt}
+            src={src}
+            display={display}
+            {...props}
+          />
         ))}
       </>
     );

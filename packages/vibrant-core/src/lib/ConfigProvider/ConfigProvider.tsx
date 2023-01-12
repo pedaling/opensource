@@ -1,7 +1,7 @@
 import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import * as ReactSpring from 'react-spring';
-import type { ReactElementChild } from '../../types';
+import type { ReactElementChild, ResponsiveValue } from '../../types';
 import type { MediaSystemProps } from '../props';
 
 export type Dependencies = {
@@ -23,6 +23,7 @@ export type Dependencies = {
     src?: string;
     alt?: string;
     loading?: 'eager' | 'lazy';
+    display: ResponsiveValue<'flex' | 'none'>;
   }> &
     MediaSystemProps;
 };
