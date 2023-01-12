@@ -7,8 +7,8 @@ export default {
   component: FilterChip,
   args: {
     size: 'md',
-    StartIconComponent: Icon.Clip.Regular,
-    EndIconComponent: Icon.ArrowTriangleDown.Regular,
+    startIcon: <Icon.Clip.Regular />,
+    endIcon: <Icon.ArrowTriangleDown.Regular />,
     children: 'FilterChip',
   },
 } as ComponentMeta<typeof FilterChip>;

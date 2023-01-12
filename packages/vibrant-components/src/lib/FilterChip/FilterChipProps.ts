@@ -1,15 +1,14 @@
-import type { Ref } from 'react';
+import type { ReactElement, Ref } from 'react';
 import type { ResponsiveValue, TextChildren } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import { isDefined } from '@vibrant-ui/utils';
 import type { PressableProps } from '../Pressable';
 
 export type FilterChipProps = {
   ref?: Ref<any>;
   size: ResponsiveValue<'md' | 'sm'>;
-  StartIconComponent?: IconComponent<IconProps, 'Fill' | 'Regular'>;
-  EndIconComponent?: IconComponent<IconProps, 'Fill' | 'Regular'>;
+  startIcon?: ReactElement;
+  endIcon?: ReactElement;
   selected?: boolean;
   disabled?: boolean;
   onClick?: PressableProps['onClick'];
@@ -24,19 +23,19 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('Contained
         responsive: true,
       },
       {
-        name: 'StartIconComponent',
+        name: 'startIcon',
         keep: true,
       },
-      { name: 'EndIconComponent', keep: true },
+      { name: 'endIcon', keep: true },
     ],
-    variants: ({ size, StartIconComponent, EndIconComponent }) => {
+    variants: ({ size, startIcon, endIcon }) => {
       if (size === 'sm') {
         return {
           bodyLevel: 4,
           iconSize: 14,
           py: 6,
-          pl: isDefined(StartIconComponent) ? 9 : 11,
-          pr: isDefined(EndIconComponent) ? 9 : 11,
+          pl: isDefined(startIcon) ? 9 : 11,
+          pr: isDefined(endIcon) ? 9 : 11,
           spacing: 4,
         } as const;
       }
@@ -45,8 +44,8 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('Contained
         bodyLevel: 2,
         iconSize: 16,
         py: 9,
-        pl: isDefined(StartIconComponent) ? 11 : 15,
-        pr: isDefined(EndIconComponent) ? 11 : 15,
+        pl: isDefined(startIcon) ? 11 : 15,
+        pr: isDefined(endIcon) ? 11 : 15,
         spacing: 6,
       } as const;
     },
