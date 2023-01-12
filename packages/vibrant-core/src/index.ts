@@ -26,6 +26,7 @@ export type {
   BorderSystemProps,
   ColorSystemProps,
   DisplaySystemProps,
+  MediaSystemProps,
   ElevationSystemProps,
   FlexboxSystemProps,
   InteractionSystemProps,

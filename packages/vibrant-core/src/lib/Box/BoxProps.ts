@@ -13,6 +13,7 @@ import type {
   FlexboxSystemProps,
   InputSystemProps,
   InteractionSystemProps,
+  MediaSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
   PseudoClassSystemProps,
@@ -32,6 +33,7 @@ import {
   flexboxSystemProps,
   inputSystemProps,
   interactionSystemProps,
+  mediaSystemProps,
   overflowSystemProps,
   positionSystemProps,
   pseudoClassSystemProps,
@@ -59,7 +61,8 @@ export type SystemProps = BackgroundSystemProps &
   SvgSystemProps &
   TextSystemProps &
   TypographySystemProps &
-  TransformSystemProps;
+  TransformSystemProps &
+  MediaSystemProps;
 
 const systemProps = [
   ...backgroundSystemProps,
@@ -79,6 +82,7 @@ const systemProps = [
   ...textSystemProps,
   ...typographySystemProps,
   ...transformSystemProps,
+  ...mediaSystemProps,
 ];
 
 const systemPropNames = systemProps

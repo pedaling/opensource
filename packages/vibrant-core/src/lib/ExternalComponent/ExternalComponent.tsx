@@ -1,23 +1,20 @@
-import type { ComponentType, FC, ReactNode } from 'react';
-import { forwardRef } from 'react';
-import type { DependencyName } from '../ConfigProvider';
+import type { ComponentType } from 'react';
+import type { Dependencies, DependencyName } from '../ConfigProvider';
 import { useConfig } from '../ConfigProvider';
+import type { ExternalComponentProps } from './ExternalComponentProps';
+import { withExternalComponentVariation } from './ExternalComponentProps';
 
-type ExternalComponentProps = {
-  name: DependencyName;
-  children?: ReactNode;
-};
-
-export const ExternalComponent: FC<ExternalComponentProps> = forwardRef(({ name, ...restProps }, ref) => {
+export const ExternalComponent = withExternalComponentVariation(({ innerRef, name, ...restProps }) => {
   const { dependencies } = useConfig();
 
   const Component = dependencies[name] as ComponentType<any>;
 
   if (Component) {
-    return <Component ref={ref} {...restProps} />;
+    return <Component ref={innerRef} {...restProps} />;
   }
 
   return null;
-});
-
-ExternalComponent.displayName = 'ExternalComponent';
+}) as <Name extends DependencyName>(
+  props: ExternalComponentProps<Name> &
+    (Required<Dependencies>[Name] extends ComponentType<infer Props> ? Props : Record<never, never>)
+) => JSX.Element;
