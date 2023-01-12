@@ -23,7 +23,7 @@ export type Dependencies = {
     src?: string;
     alt?: string;
     loading?: 'eager' | 'lazy';
-    display: ResponsiveValue<'flex' | 'none'>;
+    display?: ResponsiveValue<'flex' | 'none'>;
   }> &
     MediaSystemProps;
 };
