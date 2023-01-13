@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.38.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.37.3...vibrant-core-0.38.0) (2023-01-13)
+
+
+### Features
+
+* Image 컴포넌트가 외부 컴포넌트를 받을 수 있게 수정한다 ([#521](https://github.com/pedaling/opensource/issues/521)) ([518586d](https://github.com/pedaling/opensource/commit/518586dcebb05c243caf878351f118bc78754c4c)), closes [#522](https://github.com/pedaling/opensource/issues/522) [#523](https://github.com/pedaling/opensource/issues/523) [#524](https://github.com/pedaling/opensource/issues/524) [#525](https://github.com/pedaling/opensource/issues/525) [#526](https://github.com/pedaling/opensource/issues/526) [#527](https://github.com/pedaling/opensource/issues/527)
+
 ### [0.37.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.37.2...vibrant-core-0.37.3) (2023-01-10)
 
 ### [0.37.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.37.1...vibrant-core-0.37.2) (2023-01-10)

@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.38.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.3...vibrant-components-0.38.0) (2023-01-13)
+
+
+### Features
+
+* FilterChip 컴포넌트를 구현한다 ([#527](https://github.com/pedaling/opensource/issues/527)) ([3688db0](https://github.com/pedaling/opensource/commit/3688db0eefa3e702ffd7ceedff5ab37c095e2f91))
+* Title 과 Display 가 level 의 최소값을 받아 Element tag 를 설정할 수 있도록 한다 ([#529](https://github.com/pedaling/opensource/issues/529)) ([e129f24](https://github.com/pedaling/opensource/commit/e129f240d442573477d77b007afcdef3effa3454))
+
+
+### Bug Fixes
+
+* FilterChip QA 사항을 반영한다 ([#528](https://github.com/pedaling/opensource/issues/528)) ([d2b9a8f](https://github.com/pedaling/opensource/commit/d2b9a8fed5570202ba6e263f520dbd4984c06c8a))
+* Skeleton QA 사항을 반영한다 ([#524](https://github.com/pedaling/opensource/issues/524)) ([136fb7e](https://github.com/pedaling/opensource/commit/136fb7ed4ff1897eb7e96fad842aedc4bbad68c0))
+
 ### [0.37.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.2...vibrant-components-0.37.3) (2023-01-10)
 
 
