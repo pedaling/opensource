@@ -108,7 +108,7 @@ export const WithLongContent: ComponentStory<typeof Dropdown> = props => (
   </VStack>
 );
 
-export const WithFloatingActionButton: ComponentStory<typeof Dropdown> = props => (
+export const WithFloatingActionButton: ComponentStory<typeof Dropdown> = ({ open: _, ...props }) => (
   <VStack width="100%">
     <Box mx="auto">
       <Dropdown
@@ -122,7 +122,7 @@ export const WithFloatingActionButton: ComponentStory<typeof Dropdown> = props =
   </VStack>
 );
 
-export const WithModalBottomSheet: ComponentStory<typeof Dropdown> = props => {
+export const WithModalBottomSheet: ComponentStory<typeof Dropdown> = ({ open: _, ...props }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -187,5 +187,20 @@ export const WithModalBottomSheet: ComponentStory<typeof Dropdown> = props => {
         including versions of Lorem Ipsum.
       </Paragraph>
     </ScrollBox>
+  );
+};
+
+export const WithControlledOpen: ComponentStory<typeof ModalBottomSheet> = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Pressable backgroundColor="primary" onClick={() => setOpen(true)} p={20} mx="auto">
+        <Body level={1}>Open</Body>
+      </Pressable>
+      <Box mx="auto">
+        <Dropdown open={open} onClose={() => setOpen(false)} renderContents={() => <DropdownContent />} />
+      </Box>
+    </>
   );
 };

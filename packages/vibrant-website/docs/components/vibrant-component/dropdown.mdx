@@ -35,7 +35,8 @@ import { Dropdown } from '@vibrant-ui/components';
 
 | Prop                    | Type                                                                                                                                                               | Default  | Description                                                       |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- | ----------------------------------------------------------------- |
-| defaultOpen             | `boolean`                                                                                                                                                          | `false`  | 초기 열림 상태를 설정합니다.                                      |
+| [open](#제어)           | `boolean`                                                                                                                                                          |          | 열림 상태를 제어합니다.                                           |
+| [defaultOpen](#비제어)  | `boolean`                                                                                                                                                          | `false`  | 초기 열림 상태를 설정합니다.                                      |
 | [renderOpener](#오프너) | `(_: { open: () => void; isOpen: boolean, ref: RefObject }) => ReactElementChild`                                                                                  |          | open 함수를 이용하여 오프너 요소를 설정합니다.                    |
 | [position](#위치)       | `bottom` \| `left` \| `right` \| `top` \| `bottom-end` \| `bottom-start` \| `left-end` \| `left-start` \| `right-end` \| `right-start` \| `top-end` \| `top-start` | `bottom` | 드랍다운이 열리는 위치를 설정합니다.                              |
 | spacing                 | `number`                                                                                                                                                           | `8`      | 드랍다운과 오프너 요소 사이의 간격을 설정합니다.                  |
@@ -43,6 +44,64 @@ import { Dropdown } from '@vibrant-ui/components';
 | onClose                 | `() => void`                                                                                                                                                       |          | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
 
 ## Usage
+
+### 제어
+
+`open` 속성을 통해 열림 상태를 제어합니다.
+
+```jsx
+const Controlled = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Pressable onClick={() => setOpen(true)}>
+        열기
+      </Pressable>
+      <Dropdown
+        open={open}
+        onClose={() => setOpen(false)}
+        renderContents={() => (
+          <VStack spacing={20}>
+            <Body level={2} px={20}>
+              메뉴 1
+            </Body>
+            <Body level={2} px={20}>
+              메뉴 2
+            </Body>
+          </VStack>
+        )}
+      />
+    </>
+  );
+};
+```
+
+### 비제어
+
+`defaultOpen` 속성을 통해 초기 열림 상태만 지정하고 이후의 상태는 `Dropdown` 컴포넌트 내부에서 관리됩니다.
+[render prop](https://ko.reactjs.org/docs/render-props.html)인 `renderOpener` 속성으로 `Dropdown`을 열리게 하는 요소를 지정할 수 있으며 전달인자로 `Dropdown`을 열린 상태로 변경하는 함수 `open`와 현재 열림 상태를 나타내는 `isOpen` 프로퍼티를 가진 객체를 제공합니다.
+
+```jsx
+const Uncontrolled = () => (
+  <Dropdown
+    defaultOpen={false}
+    renderOpener={({ open }) => (
+      <Pressable onClick={open}>열기</Pressable>
+    )}
+    renderContents={() => (
+      <VStack spacing={20}>
+        <Body level={2} px={20}>
+          메뉴 1
+        </Body>
+        <Body level={2} px={20}>
+          메뉴 2
+        </Body>
+      </VStack>
+    )}
+  />
+);
+```
 
 ### 오프너
 

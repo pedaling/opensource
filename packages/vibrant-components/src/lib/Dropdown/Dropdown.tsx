@@ -13,7 +13,13 @@ import {
   useWindowDimensions,
 } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
-import { detectOverflow, flipPosition, getElementRect, getOffsetByPosition } from '@vibrant-ui/utils';
+import {
+  detectOverflow,
+  flipPosition,
+  getElementRect,
+  getOffsetByPosition,
+  useControllableState,
+} from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { withDropdownVariation } from './DropdownProps';
@@ -68,21 +74,25 @@ const getOffsetAvoidingOverflowByPosition = (
 };
 
 export const Dropdown = withDropdownVariation(
-  ({ defaultOpen = false, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
+  ({ defaultOpen = false, open, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
     const openerRef = useRef<HTMLElement>(null);
     const customOpenerRef = useRef<HTMLElement>(null);
-    const [isOpen, setIsOpen] = useState(defaultOpen);
+
+    const [isOpen, setIsOpen] = useControllableState<boolean>({
+      value: open,
+      defaultValue: defaultOpen,
+    });
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
     const [containerHeight, setContainerHeight] = useState<number>();
     const [contentHeight, setContentHeight] = useState<number>();
+
     const { height: viewportHeight } = useWindowDimensions();
     const { generateStyle } = useSafeArea();
     const { bottom: bottomSheetPaddingBottom } = generateStyle({
       edges: ['bottom'],
       minInsets: { bottom: 20 },
     });
-
     const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
     const {
@@ -99,15 +109,15 @@ export const Dropdown = withDropdownVariation(
     useLockBodyScroll(isOpen || visible);
 
     const opener = useMemo(
-      () => renderOpener({ open: () => setIsOpen(!isOpen), isOpen, ref: customOpenerRef }),
-      [isOpen, renderOpener]
+      () => renderOpener?.({ open: () => setIsOpen(!isOpen), isOpen, ref: customOpenerRef }),
+      [isOpen, renderOpener, setIsOpen]
     );
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
 
       onClose?.();
-    }, [onClose]);
+    }, [onClose, setIsOpen]);
 
     const handleContentResize = useCallback(
       async ({ width, height, top, left }: LayoutEvent) => {

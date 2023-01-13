@@ -1,14 +1,18 @@
 import type { RefObject } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
-import type { Position } from '@vibrant-ui/utils';
+import type { Either, Position } from '@vibrant-ui/utils';
 
-export type DropdownProps = {
+export type DropdownProps = Either<
+  { open: boolean },
+  {
+    defaultOpen?: boolean;
+    renderOpener: (_: { open: () => void; isOpen: boolean; ref: RefObject<any> }) => ReactElementChild;
+  }
+> & {
   position?: Position;
   renderContents: (_: { close: () => void }) => ReactElementChild;
-  renderOpener: (_: { open: () => void; isOpen: boolean; ref: RefObject<any> }) => ReactElementChild;
   spacing?: number;
-  defaultOpen?: boolean;
   onClose?: () => void;
 };
 
