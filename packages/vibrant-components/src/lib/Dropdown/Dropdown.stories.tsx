@@ -191,7 +191,7 @@ export const WithModalBottomSheet: ComponentStory<typeof Dropdown> = ({ open: _,
 };
 
 export const WithControlledOpen: ComponentStory<typeof ModalBottomSheet> = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
