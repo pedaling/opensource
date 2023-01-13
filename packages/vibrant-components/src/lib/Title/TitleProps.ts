@@ -7,6 +7,16 @@ export type TitleProps = Omit<TextProps, keyof PositionSystemProps | keyof Typog
   weight?: ResponsiveValue<TypographyWeight>;
 };
 
+const TitleLevelTagMap: { [key: number]: string } = {
+  1: 'h2',
+  2: 'h2',
+  3: 'h2',
+  4: 'h3',
+  5: 'h3',
+  6: 'h3',
+  7: 'h3',
+};
+
 export const withTitleVariation = withVariation<TitleProps>('Title')(
   propVariant({
     props: [
@@ -17,6 +27,7 @@ export const withTitleVariation = withVariation<TitleProps>('Title')(
     ],
     variants: ({ level }) => ({
       typography: `title${level}` as const,
+      as: TitleLevelTagMap[level] ?? undefined,
     }),
   }),
   propVariant({
