@@ -7,23 +7,17 @@ export type DisplayProps = Omit<TextProps, keyof PositionSystemProps | keyof Typ
   weight?: ResponsiveValue<TypographyWeight>;
 };
 
-const DisplayLevelTagMap: { [key: number]: string } = {
-  2: 'h1',
-  3: 'h1',
-  4: 'h1',
-};
-
 export const withDisplayVariation = withVariation<DisplayProps>('Display')(
   propVariant({
     props: [
       {
         name: 'level',
         responsive: true,
+        keep: true,
       },
     ],
     variants: ({ level }) => ({
       typography: `display${level}` as const,
-      as: DisplayLevelTagMap[level] ?? undefined,
     }),
   }),
   propVariant({
