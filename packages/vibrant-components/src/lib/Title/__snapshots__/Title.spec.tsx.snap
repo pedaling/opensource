@@ -12,11 +12,11 @@ exports[`<Title /> when Title with level 3 rendered match snapshot 1`] = `
 }
 
 <div>
-  <span
+  <h2
     class="emotion-0"
     data-testid="title"
   >
     Hello World
-  </span>
+  </h2>
 </div>
 `;

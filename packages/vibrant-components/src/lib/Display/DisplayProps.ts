@@ -13,6 +13,7 @@ export const withDisplayVariation = withVariation<DisplayProps>('Display')(
       {
         name: 'level',
         responsive: true,
+        keep: true,
       },
     ],
     variants: ({ level }) => ({

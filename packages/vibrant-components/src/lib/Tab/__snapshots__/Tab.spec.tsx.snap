@@ -67,11 +67,11 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
     class="emotion-0"
     data-testid="tab"
   >
-    <span
+    <h3
       class="emotion-1"
     >
       tab1
-    </span>
+    </h3>
   </button>
 </div>
 `;

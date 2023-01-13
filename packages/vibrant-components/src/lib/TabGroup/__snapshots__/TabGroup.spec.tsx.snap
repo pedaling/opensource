@@ -399,11 +399,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
           class="emotion-4"
           data-testid="tab1"
         >
-          <span
+          <h3
             class="emotion-5"
           >
             tab1
-          </span>
+          </h3>
         </button>
       </li>
       <li
@@ -413,11 +413,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
           class="emotion-7"
           data-testid="tab2"
         >
-          <span
+          <h3
             class="emotion-8"
           >
             tab2
-          </span>
+          </h3>
         </button>
       </li>
       <li
@@ -427,11 +427,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
           class="emotion-10"
           data-testid="hidden-tab"
         >
-          <span
+          <h3
             class="emotion-8"
           >
             hiddenTab
-          </span>
+          </h3>
         </button>
       </li>
       <li
@@ -441,11 +441,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
           class="emotion-7"
           data-testid="tab3"
         >
-          <span
+          <h3
             class="emotion-8"
           >
             tab3
-          </span>
+          </h3>
         </button>
       </li>
       <div

@@ -13,6 +13,7 @@ export const withTitleVariation = withVariation<TitleProps>('Title')(
       {
         name: 'level',
         responsive: true,
+        keep: true,
       },
     ],
     variants: ({ level }) => ({
