@@ -1,6 +1,6 @@
-import { HStack } from '@vibrant-ui/components';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import { HStack } from '../HStack';
 import { PaginationButton } from '../PaginationButton';
 import { PaginationMiscCell } from '../PaginationMiscCell';
 import { Space } from '../Space';
