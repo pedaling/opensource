@@ -5,7 +5,7 @@ export type TableStringFilterProps = {
   dataKey: string;
   label: string;
   placeholder?: string;
-  operators: StringFilterOperator[];
+  operators?: StringFilterOperator[];
   defaultValue?: {
     value: string;
     operator: StringFilterOperator;

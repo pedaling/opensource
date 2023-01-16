@@ -13,7 +13,13 @@ import type { StringFilterOperator } from '../type';
 import { withTableStringFilterVariation } from './TableStringFilterProps';
 
 export const TableStringFilter = withTableStringFilterVariation(
-  ({ dataKey, label, operators, placeholder, defaultValue }) => {
+  ({
+    dataKey,
+    label,
+    operators = ['equals', 'notEquals', 'contains', 'notContains', 'empty', 'notEmpty'],
+    placeholder,
+    defaultValue,
+  }) => {
     const [inputValue, setInputValue] = useState<string | undefined>(defaultValue?.value);
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
     const [filterOption, setFilterOption] = useState<{ value?: string; operator: StringFilterOperator }>(

@@ -9,7 +9,6 @@ export default {
   args: {
     dataKey: 'id',
     label: 'ID',
-    operators: ['equals', 'contains', 'empty'],
     defaultValue: {
       value: '1234',
       operator: 'equals',
