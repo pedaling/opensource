@@ -35,6 +35,17 @@ export type Translation = {
     prev: string;
     next: string;
   };
+  tableFilter: {
+    delete: string;
+    stringOperator: {
+      equals: string;
+      notEquals: string;
+      contains: string;
+      notContains: string;
+      empty: string;
+      notEmpty: string;
+    };
+  };
 };
 
 export type DependencyName = keyof Dependencies;
@@ -62,6 +73,17 @@ const ConfigContext = createContext<ConfigContextValue>({
       ariaLabel: '페이지네이션',
       prev: '이전',
       next: '다음',
+    },
+    tableFilter: {
+      delete: '삭제',
+      stringOperator: {
+        equals: '같다',
+        notEquals: '같지 않다',
+        contains: '포함한다',
+        notContains: '포함하지 않는다',
+        empty: '비어있다',
+        notEmpty: '비어있지 않다',
+      },
     },
   },
 });
