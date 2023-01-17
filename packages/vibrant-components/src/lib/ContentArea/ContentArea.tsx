@@ -1,5 +1,5 @@
-import { VStack } from '@vibrant-ui/components';
 import { useCurrentTheme } from '@vibrant-ui/core';
+import { VStack } from '../VStack';
 import { withContentAreaVariation } from './ContentAreaProps';
 
 export const ContentArea = withContentAreaVariation(({ padding = true, children }) => {

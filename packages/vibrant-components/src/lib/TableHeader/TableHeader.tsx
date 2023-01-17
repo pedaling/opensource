@@ -1,4 +1,4 @@
-import { HStack } from '@vibrant-ui/components';
+import { HStack } from '../HStack';
 import { TableHeaderButton } from './TableHeaderButton';
 import type { TableHeaderProps } from './TableHeaderProps';
 

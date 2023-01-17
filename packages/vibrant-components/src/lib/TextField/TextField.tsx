@@ -38,6 +38,8 @@ export const TextField = withTextFieldVariation(
       inputRef.current?.focus();
 
       setIsFocused(true);
+
+      onValueChange?.({ value: '', prevent: () => {} });
     };
 
     useEffect(() => {

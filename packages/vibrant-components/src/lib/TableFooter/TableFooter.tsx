@@ -1,9 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Body, Dropdown, GhostButton, HStack, Pressable, VStack } from '@vibrant-ui/components';
 import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { isDefined } from '@vibrant-ui/utils';
+import { Body } from '../Body';
+import { Dropdown } from '../Dropdown';
+import { GhostButton } from '../GhostButton';
+import { HStack } from '../HStack';
 import { Pagination } from '../Pagination';
+import { Pressable } from '../Pressable';
+import { VStack } from '../VStack';
 import { withTableFooterVariation } from './TableFooterProps';
 
 export const TableFooter = withTableFooterVariation(
