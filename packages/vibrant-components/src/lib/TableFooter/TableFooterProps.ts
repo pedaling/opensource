@@ -6,7 +6,8 @@ export type TableFooterProps = Either<
     total: number;
     showTotal?: boolean;
     pagination: true;
-    defaultPageSize: number;
+    defaultPageSize?: number;
+    currentPage?: number;
     onPageChange?: (page: number) => void;
     pageSizeOptions?: number[];
     onPageSizeChange?: (value: number) => void;
