@@ -15,7 +15,7 @@ export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderO
   helperText?: string;
   disabled?: boolean;
   defaultValue?: string;
-  onValueChange?: (value: string) => void;
+  onValueChange?: (value?: string) => void;
   onOpen?: () => void;
   zIndex?: number;
 } & (

@@ -106,13 +106,11 @@ export const SelectField = withSelectFieldVariation(
     }, [defaultValue, options]);
 
     useEffect(() => {
-      if (!selectedOption?.value || prevSelectedValueRef.current === selectedOption?.value) {
-        return;
+      if (prevSelectedValueRef.current !== selectedOption?.value) {
+        setState('default');
+
+        handleValueChange?.(selectedOption?.value);
       }
-
-      setState('default');
-
-      handleValueChange?.(selectedOption.value);
 
       prevSelectedValueRef.current = selectedOption?.value;
     }, [handleValueChange, selectedOption?.value]);
