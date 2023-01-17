@@ -3,8 +3,8 @@ import { forwardRef } from 'react';
 import type { LayoutChangeEvent } from 'react-native';
 import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
-import { OnColorContainer } from '@vibrant-ui/core';
 import { getElementPosition } from '../getElementPosition';
+import { OnColorContainer } from '../OnColorContainer';
 import type { BoxProps } from './BoxProps';
 import { interpolation, shouldForwardProp } from './BoxProps';
 
