@@ -22,7 +22,5 @@ export const Controlled: ComponentStory<typeof TableFooter> = props => {
     setCurrentPage(currentPage);
   };
 
-  return (
-    <TableFooter {...props} total={101} pagination={true} currentPage={currentPage} onPageChange={handlePageChange} />
-  );
+  return <TableFooter {...props} total={101} pagination={true} page={currentPage} onPageChange={handlePageChange} />;
 };

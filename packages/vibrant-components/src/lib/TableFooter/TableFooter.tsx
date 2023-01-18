@@ -17,7 +17,7 @@ export const TableFooter = withTableFooterVariation(
     showTotal = true,
     pagination,
     defaultPageSize = 10,
-    currentPage: currentPageProp,
+    page,
     onPageChange,
     pageSizeOptions,
     onPageSizeChange,
@@ -27,7 +27,7 @@ export const TableFooter = withTableFooterVariation(
     } = useConfig();
     const [selectedPageSize, setSelectedPageSize] = useState(defaultPageSize);
     const [currentPage, setCurrentPage] = useControllableState({
-      value: currentPageProp,
+      value: page,
       defaultValue: 1,
       onChange: onPageChange,
     });
