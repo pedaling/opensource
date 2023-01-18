@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.40.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.40.0...vibrant-components-0.40.1) (2023-01-18)
+
+
+### Bug Fixes
+
+* TableFooter에 currentPage 속성을 추가하고, Table.Column에서 defaultSortDirection이 바뀔 시 해당 direction으로 상태를 업데이트한다 ([#533](https://github.com/pedaling/opensource/issues/533)) ([e7ead2a](https://github.com/pedaling/opensource/commit/e7ead2a9f9d027f59b89edd4dfcec02fd4f8434f))
+
 ## [0.40.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.39.0...vibrant-components-0.40.0) (2023-01-17)
 
 ## [0.38.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.37.3...vibrant-components-0.38.0) (2023-01-13)
