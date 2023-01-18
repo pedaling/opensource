@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import { isDefined } from '@vibrant-ui/utils';
+import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { Dropdown } from '../Dropdown';
 import { GhostButton } from '../GhostButton';
@@ -12,12 +12,25 @@ import { VStack } from '../VStack';
 import { withTableFooterVariation } from './TableFooterProps';
 
 export const TableFooter = withTableFooterVariation(
-  ({ total, showTotal = true, pagination, defaultPageSize = 10, onPageChange, pageSizeOptions, onPageSizeChange }) => {
+  ({
+    total,
+    showTotal = true,
+    pagination,
+    defaultPageSize = 10,
+    page,
+    onPageChange,
+    pageSizeOptions,
+    onPageSizeChange,
+  }) => {
     const {
       translations: { tableFooter: tableFooterTranslation },
     } = useConfig();
     const [selectedPageSize, setSelectedPageSize] = useState(defaultPageSize);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useControllableState({
+      value: page,
+      defaultValue: 1,
+      onChange: onPageChange,
+    });
 
     const selectPageSizeOption = (pageSize: number) => {
       setSelectedPageSize(pageSize);
@@ -25,7 +38,7 @@ export const TableFooter = withTableFooterVariation(
 
     useEffect(() => {
       setCurrentPage(1);
-    }, [selectedPageSize]);
+    }, [selectedPageSize, setCurrentPage]);
 
     return (
       <HStack width="100%" alignVertical="center">
@@ -77,11 +90,7 @@ export const TableFooter = withTableFooterVariation(
               pageCount={Math.ceil(total / selectedPageSize)}
               pageSize={selectedPageSize}
               currentPage={currentPage}
-              onPageChange={(page: number) => {
-                setCurrentPage(page);
-
-                onPageChange?.(page);
-              }}
+              onPageChange={setCurrentPage}
             />
           </HStack>
         )}
