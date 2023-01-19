@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/utils",
-  "version": "0.41.1",
+  "version": "0.42.0",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
