@@ -20,12 +20,11 @@ export const TableStringFilter = withTableStringFilterVariation(
     placeholder,
     defaultValue,
   }) => {
-    const [inputValue, setInputValue] = useState<string | undefined>(defaultValue?.value);
+    const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
-    const [filterOption, setFilterOption] = useState<{ value?: string; operator: StringFilterOperator }>(
-      defaultValue ?? { value: inputValue, operator }
-    );
-    const { initialFilterDataKeys, currentFilterDataKeys, onFilterDelete } = useTableFilterGroup();
+    const [value, setValue] = useState<string>(inputValue);
+    const { initialFilterDataKeys, currentFilterDataKeys, onFilterDelete, onFilterSave, onFilterClear } =
+      useTableFilterGroup();
 
     const {
       translations: {
@@ -35,6 +34,16 @@ export const TableStringFilter = withTableStringFilterVariation(
 
     const isInitialFilter = initialFilterDataKeys.includes(dataKey);
     const isOperatorEmptyOrNotEmpty = (op: StringFilterOperator) => op === 'empty' || op === 'notEmpty';
+    const isValidFilter = (filter: { value: string; operator: StringFilterOperator }) =>
+      Boolean(filter.value) || isOperatorEmptyOrNotEmpty(filter.operator);
+
+    const handleFilterChange = (filter: { value: string; operator: StringFilterOperator }) => {
+      if (isValidFilter({ value: filter.value, operator: filter.operator })) {
+        onFilterSave({ ...filter, dataKey });
+      } else {
+        onFilterClear(dataKey);
+      }
+    };
 
     if (!isInitialFilter && !currentFilterDataKeys.includes(dataKey)) {
       return null;
@@ -45,25 +54,22 @@ export const TableStringFilter = withTableStringFilterVariation(
         position="bottom-start"
         onClose={() => {
           if (isOperatorEmptyOrNotEmpty(operator)) {
-            setInputValue(undefined);
+            setInputValue('');
+
+            setValue('');
+
+            return;
           }
 
-          setFilterOption({
-            value: isOperatorEmptyOrNotEmpty(operator) ? undefined : inputValue,
-            operator,
-          });
+          setInputValue(value);
         }}
         renderOpener={({ open }) => (
-          <FilterChip
-            size="md"
-            onClick={open}
-            selected={Boolean(filterOption.value) || isOperatorEmptyOrNotEmpty(filterOption.operator)}
-          >
+          <FilterChip size="md" onClick={open} selected={isValidFilter({ value, operator })}>
             {label}
-            {isOperatorEmptyOrNotEmpty(filterOption.operator)
-              ? `: ${operatorTranslation[operator]}`
-              : filterOption.value
-              ? `: ${filterOption.value}`
+            {isOperatorEmptyOrNotEmpty(operator)
+              ? `: ${operatorTranslation.filterLabel[operator as 'empty' | 'notEmpty']}`
+              : value
+              ? `: ${value}`
               : null}
           </FilterChip>
         )}
@@ -97,6 +103,11 @@ export const TableStringFilter = withTableStringFilterVariation(
                               setOperator(operatorOption);
 
                               close();
+
+                              handleFilterChange({
+                                value: isOperatorEmptyOrNotEmpty(operatorOption) ? '' : value,
+                                operator: operatorOption,
+                              });
                             }}
                           >
                             <Body level={2}>{operatorOption && operatorTranslation[operatorOption]}</Body>
@@ -117,14 +128,27 @@ export const TableStringFilter = withTableStringFilterVariation(
               <TextField
                 placeholder={placeholder}
                 clearable={true}
-                defaultValue={inputValue ?? filterOption.value}
-                onValueChange={({ value }) => setInputValue(value)}
-                onSubmit={() =>
-                  setFilterOption({
-                    value: inputValue ?? '',
+                defaultValue={inputValue}
+                onValueChange={({ value: newValue }) => {
+                  if (!newValue) {
+                    setValue(newValue);
+
+                    handleFilterChange({
+                      value: newValue,
+                      operator,
+                    });
+                  }
+
+                  setInputValue(newValue);
+                }}
+                onSubmit={() => {
+                  setValue(inputValue);
+
+                  handleFilterChange({
+                    value: inputValue,
                     operator,
-                  })
-                }
+                  });
+                }}
               />
             )}
           </VStack>

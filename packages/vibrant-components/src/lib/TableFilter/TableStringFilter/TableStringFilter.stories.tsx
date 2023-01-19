@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TableFilterGroupProvider } from '../context';
@@ -23,7 +24,8 @@ export const Basic: ComponentStory<typeof TableStringFilter> = props => {
     <TableFilterGroupProvider
       currentFilterDataKeys={currentFilter}
       onFilterDelete={() => setCurrentFilter([])}
-      onFilterSave={() => {}}
+      onFilterSave={filter => console.log(filter)}
+      onFilterClear={filterKey => console.log(filterKey)}
     >
       <TableStringFilter {...props} />
     </TableFilterGroupProvider>
@@ -35,7 +37,8 @@ export const DefaultFilter: ComponentStory<typeof TableStringFilter> = props => 
     initialFilterDataKeys={['id']}
     currentFilterDataKeys={[]}
     onFilterDelete={() => {}}
-    onFilterSave={() => {}}
+    onFilterSave={filter => console.log(filter)}
+    onFilterClear={filterKey => console.log(filterKey)}
   >
     <TableStringFilter {...props} />
   </TableFilterGroupProvider>
