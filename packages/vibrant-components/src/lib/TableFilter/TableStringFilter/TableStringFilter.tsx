@@ -1,14 +1,8 @@
 import { useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
-import { Body } from '../../Body';
-import { Dropdown } from '../../Dropdown';
-import { FilterChip } from '../../FilterChip';
-import { GhostButton } from '../../GhostButton';
-import { HStack } from '../../HStack';
-import { Pressable } from '../../Pressable';
 import { TextField } from '../../TextField';
-import { VStack } from '../../VStack';
 import { useTableFilterGroup } from '../context';
+import { TableFieldFilter } from '../TableFieldFilter';
 import type { StringFilterOperator } from '../type';
 import { withTableStringFilterVariation } from './TableStringFilterProps';
 
@@ -23,16 +17,14 @@ export const TableStringFilter = withTableStringFilterVariation(
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
     const [value, setValue] = useState<string>(inputValue);
-    const { initialFilterDataKeys, currentFilterDataKeys, onFilterDelete, onFilterSave, onFilterClear } =
-      useTableFilterGroup();
+    const { onFilterSave, onFilterClear } = useTableFilterGroup();
 
     const {
       translations: {
-        tableFilter: { stringOperator: operatorTranslation, delete: deleteTranslation },
+        tableFilter: { stringOperator: operatorTranslation },
       },
     } = useConfig();
 
-    const isInitialFilter = initialFilterDataKeys.includes(dataKey);
     const isOperatorEmptyOrNotEmpty = (op: StringFilterOperator) => op === 'empty' || op === 'notEmpty';
     const isValidFilter = (filter: { value: string; operator: StringFilterOperator }) =>
       Boolean(filter.value) || isOperatorEmptyOrNotEmpty(filter.operator);
@@ -45,13 +37,17 @@ export const TableStringFilter = withTableStringFilterVariation(
       }
     };
 
-    if (!isInitialFilter && !currentFilterDataKeys.includes(dataKey)) {
-      return null;
-    }
-
     return (
-      <Dropdown
-        position="bottom-start"
+      <TableFieldFilter
+        dataKey={dataKey}
+        label={label.concat(
+          isOperatorEmptyOrNotEmpty(operator)
+            ? `: ${operatorTranslation.filterLabel[operator as 'empty' | 'notEmpty']}`
+            : value
+            ? `: ${value}`
+            : ''
+        )}
+        active={isValidFilter({ value, operator })}
         onClose={() => {
           if (isOperatorEmptyOrNotEmpty(operator)) {
             setInputValue('');
@@ -63,96 +59,50 @@ export const TableStringFilter = withTableStringFilterVariation(
 
           setInputValue(value);
         }}
-        renderOpener={({ open }) => (
-          <FilterChip size="md" onClick={open} selected={isValidFilter({ value, operator })}>
-            {label}
-            {isOperatorEmptyOrNotEmpty(operator)
-              ? `: ${operatorTranslation.filterLabel[operator as 'empty' | 'notEmpty']}`
-              : value
-              ? `: ${value}`
-              : null}
-          </FilterChip>
-        )}
-        renderContents={() => (
-          <VStack px={20} spacing={16}>
-            <HStack alignHorizontal="space-between" alignVertical="center">
-              <>
-                {operators.length <= 1 ? (
-                  <Body level={2}>{operator && operatorTranslation[operator]}</Body>
-                ) : (
-                  <Dropdown
-                    position="bottom-start"
-                    renderOpener={({ open }) => (
-                      <GhostButton size="md" onClick={open} disclosure={true}>
-                        {operator && operatorTranslation[operator]}
-                      </GhostButton>
-                    )}
-                    renderContents={({ close }) => (
-                      <VStack as="ul">
-                        {operators.map(operatorOption => (
-                          <Pressable
-                            key={operatorOption}
-                            as="li"
-                            py={7}
-                            px={20}
-                            width="100%"
-                            overlayColor="onView1"
-                            interactions={['hover', 'active']}
-                            flexShrink={0}
-                            onClick={() => {
-                              setOperator(operatorOption);
+        operatorOptions={
+          operators.reduce(
+            (record, operator) => ({ ...record, [operator]: operatorTranslation[operator] }),
+            {}
+          ) as Record<StringFilterOperator, string>
+        }
+        selectedOperator={operator}
+        onOperatorSelect={operatorOption => {
+          setOperator(operatorOption);
 
-                              close();
-
-                              handleFilterChange({
-                                value: isOperatorEmptyOrNotEmpty(operatorOption) ? '' : value,
-                                operator: operatorOption,
-                              });
-                            }}
-                          >
-                            <Body level={2}>{operatorOption && operatorTranslation[operatorOption]}</Body>
-                          </Pressable>
-                        ))}
-                      </VStack>
-                    )}
-                  />
-                )}
-              </>
-              {!isInitialFilter && (
-                <GhostButton size="md" color="onView2" onClick={() => onFilterDelete(dataKey)}>
-                  {deleteTranslation}
-                </GhostButton>
-              )}
-            </HStack>
-            {!isOperatorEmptyOrNotEmpty(operator) && (
-              <TextField
-                placeholder={placeholder}
-                clearable={true}
-                defaultValue={inputValue}
-                onValueChange={({ value: newValue }) => {
-                  if (!newValue) {
-                    setValue(newValue);
-
-                    handleFilterChange({
-                      value: newValue,
-                      operator,
-                    });
-                  }
-
-                  setInputValue(newValue);
-                }}
-                onSubmit={() => {
-                  setValue(inputValue);
+          handleFilterChange({
+            value: isOperatorEmptyOrNotEmpty(operatorOption) ? '' : value,
+            operator: operatorOption,
+          });
+        }}
+        field={
+          !isOperatorEmptyOrNotEmpty(operator) && (
+            <TextField
+              placeholder={placeholder}
+              clearable={true}
+              defaultValue={inputValue}
+              onValueChange={({ value: newValue }) => {
+                if (!newValue) {
+                  setValue(newValue);
 
                   handleFilterChange({
-                    value: inputValue,
+                    value: newValue,
                     operator,
                   });
-                }}
-              />
-            )}
-          </VStack>
-        )}
+                }
+
+                setInputValue(newValue);
+              }}
+              onSubmit={() => {
+                setValue(inputValue);
+
+                handleFilterChange({
+                  value: inputValue,
+                  operator,
+                });
+              }}
+            />
+          )
+        }
       />
     );
   }
