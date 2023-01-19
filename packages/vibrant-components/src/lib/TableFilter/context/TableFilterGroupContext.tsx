@@ -8,6 +8,7 @@ type TableFilterGroupContextValue = {
   currentFilterDataKeys: string[];
   onFilterDelete: (filterDataKey: string) => void;
   onFilterSave: (filter: Filter) => void;
+  onFilterClear: (filterDataKey: string) => void;
 };
 
 const TableFilterGroupContext = createContext<TableFilterGroupContextValue>({
@@ -15,6 +16,7 @@ const TableFilterGroupContext = createContext<TableFilterGroupContextValue>({
   currentFilterDataKeys: [],
   onFilterDelete: () => {},
   onFilterSave: () => {},
+  onFilterClear: () => {},
 });
 
 type TableFilterGroupProviderProps = {
@@ -22,6 +24,7 @@ type TableFilterGroupProviderProps = {
   currentFilterDataKeys: string[];
   onFilterDelete: (filterDataKey: string) => void;
   onFilterSave: (filter: Filter) => void;
+  onFilterClear: (filterDataKey: string) => void;
   children: ReactElementChildren;
 };
 
@@ -31,6 +34,7 @@ export const TableFilterGroupProvider: FC<TableFilterGroupProviderProps> = ({
   currentFilterDataKeys,
   onFilterDelete,
   onFilterSave,
+  onFilterClear,
 }) => {
   const contextValue = useMemo<TableFilterGroupContextValue>(
     () => ({
@@ -38,8 +42,9 @@ export const TableFilterGroupProvider: FC<TableFilterGroupProviderProps> = ({
       currentFilterDataKeys,
       onFilterDelete,
       onFilterSave,
+      onFilterClear,
     }),
-    [currentFilterDataKeys, initialFilterDataKeys, onFilterDelete, onFilterSave]
+    [currentFilterDataKeys, initialFilterDataKeys, onFilterClear, onFilterDelete, onFilterSave]
   );
 
   return <TableFilterGroupContext.Provider value={contextValue}>{children}</TableFilterGroupContext.Provider>;
