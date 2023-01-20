@@ -40,11 +40,13 @@ export const TableDateFilter = withTableDateFilterVariation(
     } = useConfig();
 
     useEffect(() => {
-      if (isValidFilter({ value, operator })) {
-        onFilterSave({ dataKey, value: isOperatorEmptyOrNotEmpty(operator) ? [] : value, operator });
-      } else {
+      if (!isValidFilter({ value, operator })) {
         onFilterClear(dataKey);
+
+        return;
       }
+
+      onFilterSave({ dataKey, value: isOperatorEmptyOrNotEmpty(operator) ? [] : value, operator });
     }, [dataKey, onFilterClear, onFilterSave, operator, value]);
 
     return (
