@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
 import { useState } from 'react';
+import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TableFilterGroupProvider } from '../context';
 import { TableDateFilter } from './TableDateFilter';
@@ -20,8 +20,8 @@ export const Basic: ComponentStory<typeof TableDateFilter> = props => {
     <TableFilterGroupProvider
       currentFilterDataKeys={currentFilter}
       onFilterDelete={() => setCurrentFilter([])}
-      onFilterSave={filter => console.log(filter)}
-      onFilterClear={filterKey => console.log(filterKey)}
+      onFilterSave={action('onFilterSave')}
+      onFilterClear={action('onFilterClear')}
     >
       <TableDateFilter defaultValue={undefined} {...props} />
     </TableFilterGroupProvider>
@@ -33,8 +33,8 @@ export const DefaultFilter: ComponentStory<typeof TableDateFilter> = props => (
     initialFilterDataKeys={['id']}
     currentFilterDataKeys={[]}
     onFilterDelete={() => {}}
-    onFilterSave={filter => console.log(filter)}
-    onFilterClear={filterKey => console.log(filterKey)}
+    onFilterSave={action('onFilterSave')}
+    onFilterClear={action('onFilterClear')}
   >
     <TableDateFilter {...props} />
   </TableFilterGroupProvider>
