@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
+import { useTableFilterGroup } from '../../TableFilterGroup/context';
 import { TextField } from '../../TextField';
-import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { StringFilterOperator } from '../type';
 import { withTableStringFilterVariation } from './TableStringFilterProps';

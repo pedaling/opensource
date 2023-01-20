@@ -3,7 +3,7 @@ import { useConfig, useCurrentTheme } from '@vibrant-ui/core';
 import { getDateString } from '@vibrant-ui/utils';
 import { DatePickerField } from '../../DatePickerField';
 import { RangePickerField } from '../../RangePickerField';
-import { useTableFilterGroup } from '../context';
+import { useTableFilterGroup } from '../../TableFilterGroup/context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { DateFilterOperator } from '../type';
 import { withTableDateFilterVariation } from './TableDateFilterProps';

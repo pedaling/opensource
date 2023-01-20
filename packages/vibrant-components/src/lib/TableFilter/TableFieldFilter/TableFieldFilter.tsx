@@ -5,8 +5,8 @@ import { FilterChip } from '../../FilterChip';
 import { GhostButton } from '../../GhostButton';
 import { HStack } from '../../HStack';
 import { Pressable } from '../../Pressable';
+import { useTableFilterGroup } from '../../TableFilterGroup/context';
 import { VStack } from '../../VStack';
-import { useTableFilterGroup } from '../context';
 import type { TableFieldFilterProps } from './TableFieldFilterProps';
 
 export const TableFieldFilter = <Operator extends string>({

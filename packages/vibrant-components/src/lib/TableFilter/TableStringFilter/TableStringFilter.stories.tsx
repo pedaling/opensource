@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { TableFilterGroupProvider } from '../context';
+import { TableFilterGroupProvider } from '../../TableFilterGroup/context';
 import { TableStringFilter } from './TableStringFilter';
 
 export default {
