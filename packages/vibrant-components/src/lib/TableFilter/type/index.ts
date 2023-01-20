@@ -2,7 +2,23 @@ export type StringFilterOperator = 'contains' | 'empty' | 'equals' | 'notContain
 
 export type StringFilter = {
   value: string;
-  operator: StringFilterOperator[];
+  operator: StringFilterOperator;
 };
 
-export type Filter = StringFilter & { dataKey: string };
+export type DateFilterOperator =
+  | 'after'
+  | 'before'
+  | 'between'
+  | 'empty'
+  | 'equals'
+  | 'notEmpty'
+  | 'notEquals'
+  | 'onOrAfter'
+  | 'onOrBefore';
+
+export type DateFilter = {
+  value: Date[];
+  operator: DateFilterOperator;
+};
+
+export type Filter = (DateFilter | StringFilter) & { dataKey: string };

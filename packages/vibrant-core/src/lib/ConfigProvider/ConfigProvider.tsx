@@ -47,10 +47,36 @@ export type Translation = {
   tableFilter: {
     delete: string;
     stringOperator: {
+      filterLabel: {
+        empty: string;
+        notEmpty: string;
+      };
       equals: string;
       notEquals: string;
       contains: string;
       notContains: string;
+      empty: string;
+      notEmpty: string;
+    };
+    dateOperator: {
+      filterLabel: {
+        equals: string;
+        notEquals: string;
+        before: string;
+        after: string;
+        onOrBefore: string;
+        onOrAfter: string;
+        empty: string;
+        notEmpty: string;
+        between: string;
+      };
+      equals: string;
+      notEquals: string;
+      before: string;
+      after: string;
+      onOrBefore: string;
+      onOrAfter: string;
+      between: string;
       empty: string;
       notEmpty: string;
     };
@@ -86,12 +112,38 @@ const ConfigContext = createContext<ConfigContextValue>({
     tableFilter: {
       delete: '삭제',
       stringOperator: {
+        filterLabel: {
+          empty: '비어있음',
+          notEmpty: '비어있지 않음',
+        },
         equals: '같다',
         notEquals: '같지 않다',
         contains: '포함한다',
         notContains: '포함하지 않는다',
         empty: '비어있다',
         notEmpty: '비어있지 않다',
+      },
+      dateOperator: {
+        filterLabel: {
+          equals: '{date}',
+          notEquals: '{date} 같지 않음',
+          before: '{date} 이전',
+          after: '{date} 이후',
+          onOrBefore: '{date} 당일 혹은 이전',
+          onOrAfter: '{date} 당일 혹은 이후',
+          empty: '비어있음',
+          notEmpty: '비어있지 않음',
+          between: '{startDate} - {endDate}',
+        },
+        equals: '같다',
+        notEquals: '같지 않다',
+        before: '이전',
+        after: '이후',
+        onOrBefore: '당일 혹은 이전',
+        onOrAfter: '당일 혹은 이후',
+        empty: '비어있다',
+        notEmpty: '비어있지 않다',
+        between: '범위 내',
       },
     },
   },

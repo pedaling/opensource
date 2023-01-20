@@ -2,23 +2,19 @@ import { useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TableFilterGroupProvider } from '../context';
-import { TableStringFilter } from './TableStringFilter';
+import { TableDateFilter } from './TableDateFilter';
 
 export default {
-  title: 'TableStringFilter',
-  component: TableStringFilter,
+  title: 'TableDateFilter',
+  component: TableDateFilter,
   args: {
-    dataKey: 'id',
-    label: 'ID',
-    defaultValue: {
-      value: '1234',
-      operator: 'equals',
-    },
+    dataKey: 'createdAt',
+    label: '생성일',
   },
-} as ComponentMeta<typeof TableStringFilter>;
+} as ComponentMeta<typeof TableDateFilter>;
 
-export const Basic: ComponentStory<typeof TableStringFilter> = props => {
-  const [currentFilter, setCurrentFilter] = useState<string[]>(['id']);
+export const Basic: ComponentStory<typeof TableDateFilter> = props => {
+  const [currentFilter, setCurrentFilter] = useState<string[]>(['createdAt']);
 
   return (
     <TableFilterGroupProvider
@@ -27,12 +23,12 @@ export const Basic: ComponentStory<typeof TableStringFilter> = props => {
       onFilterSave={action('onFilterSave')}
       onFilterClear={action('onFilterClear')}
     >
-      <TableStringFilter {...props} />
+      <TableDateFilter defaultValue={undefined} {...props} />
     </TableFilterGroupProvider>
   );
 };
 
-export const DefaultFilter: ComponentStory<typeof TableStringFilter> = props => (
+export const DefaultFilter: ComponentStory<typeof TableDateFilter> = props => (
   <TableFilterGroupProvider
     initialFilterDataKeys={['id']}
     currentFilterDataKeys={[]}
@@ -40,6 +36,6 @@ export const DefaultFilter: ComponentStory<typeof TableStringFilter> = props => 
     onFilterSave={action('onFilterSave')}
     onFilterClear={action('onFilterClear')}
   >
-    <TableStringFilter {...props} />
+    <TableDateFilter {...props} />
   </TableFilterGroupProvider>
 );
