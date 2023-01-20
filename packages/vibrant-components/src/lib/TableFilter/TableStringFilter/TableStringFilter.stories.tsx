@@ -36,7 +36,7 @@ export const DefaultFilter: ComponentStory<typeof TableStringFilter> = props => 
   <TableFilterGroupProvider
     initialFilterDataKeys={['id']}
     currentFilterDataKeys={[]}
-    onFilterDelete={() => {}}
+    onFilterDelete={action('onFilterDelete')}
     onFilterSave={action('onFilterSave')}
     onFilterClear={action('onFilterClear')}
   >
