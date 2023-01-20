@@ -3,7 +3,7 @@ import type { ReactElementChild } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
-type CardNumberFieldProps = Omit<BaseInputProps<string>, 'onValueChange'> & {
+type CardNumberFieldProps = BaseInputProps<string> & {
   id?: string;
   state?: 'default' | 'error';
   label?: ReactElement | string;
