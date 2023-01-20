@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
 import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { StringFilterOperator } from '../type';
 import { withTableStringFilterVariation } from './TableStringFilterProps';
+
+const isOperatorEmptyOrNotEmpty = (op: StringFilterOperator) => op === 'empty' || op === 'notEmpty';
+const isValidFilter = (filter: { value: string; operator: StringFilterOperator }) =>
+  Boolean(filter.value) || isOperatorEmptyOrNotEmpty(filter.operator);
 
 export const TableStringFilter = withTableStringFilterVariation(
   ({
@@ -25,17 +29,15 @@ export const TableStringFilter = withTableStringFilterVariation(
       },
     } = useConfig();
 
-    const isOperatorEmptyOrNotEmpty = (op: StringFilterOperator) => op === 'empty' || op === 'notEmpty';
-    const isValidFilter = (filter: { value: string; operator: StringFilterOperator }) =>
-      Boolean(filter.value) || isOperatorEmptyOrNotEmpty(filter.operator);
-
-    const handleFilterChange = (filter: { value: string; operator: StringFilterOperator }) => {
-      if (isValidFilter({ value: filter.value, operator: filter.operator })) {
-        onFilterSave({ ...filter, dataKey });
-      } else {
+    useEffect(() => {
+      if (!isValidFilter({ value, operator })) {
         onFilterClear(dataKey);
+
+        return;
       }
-    };
+
+      onFilterSave({ value: isOperatorEmptyOrNotEmpty(operator) ? '' : value, operator, dataKey });
+    }, [dataKey, onFilterClear, onFilterSave, operator, value]);
 
     return (
       <TableFieldFilter
@@ -68,11 +70,6 @@ export const TableStringFilter = withTableStringFilterVariation(
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);
-
-          handleFilterChange({
-            value: isOperatorEmptyOrNotEmpty(operatorOption) ? '' : value,
-            operator: operatorOption,
-          });
         }}
         field={
           !isOperatorEmptyOrNotEmpty(operator) && (
@@ -83,22 +80,12 @@ export const TableStringFilter = withTableStringFilterVariation(
               onValueChange={({ value: newValue }) => {
                 if (!newValue) {
                   setValue(newValue);
-
-                  handleFilterChange({
-                    value: newValue,
-                    operator,
-                  });
                 }
 
                 setInputValue(newValue);
               }}
               onSubmit={() => {
                 setValue(inputValue);
-
-                handleFilterChange({
-                  value: inputValue,
-                  operator,
-                });
               }}
             />
           )
