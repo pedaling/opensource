@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+import { action } from '@storybook/addon-actions';
 import type { ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Callout } from '../Callout';
@@ -33,12 +33,12 @@ export default {
     rowKey: 'name',
     selectable: true,
     selectButtons: [
-      { text: 'Edit', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
-      { text: 'Move', onClick: (selectedRows: Data[]) => console.log(selectedRows) },
+      { text: 'Edit', onClick: action('onSelectButtonClick') },
+      { text: 'Move', onClick: action('onSelectButtonClick') },
     ],
     renderExpanded: ({ name, calories }: Data) => <Callout title={name} contents={`${name} has ${calories}kcal`} />,
     onRow: {
-      onClick: (row: Data) => console.log(row),
+      onClick: action('onRow'),
     },
     disabledRowKeys: ['Cupcake'],
     emptyImage: 'https://cdn.class101.net/images/a097865b-683e-4386-a6a3-1fa27d1463d0',
@@ -115,8 +115,8 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
         selectable={true}
         onDataCell={{
-          onClick: row => console.log('clicked', row),
-          onCopy: row => console.log('copied', row),
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
         }}
       />
       <Table.Column<Data>
@@ -125,8 +125,8 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         title="calories"
         selectable={true}
         onDataCell={{
-          onClick: row => console.log('clicked', row),
-          onCopy: row => console.log('copied', row),
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
         }}
       />
       <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
@@ -136,8 +136,8 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         title="carbs"
         selectable={true}
         onDataCell={{
-          onClick: row => console.log('clicked', row),
-          onCopy: row => console.log('copied', row),
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
         }}
       />
       <Table.Column<Data>
@@ -146,8 +146,8 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         title="protein"
         selectable={true}
         onDataCell={{
-          onClick: row => console.log('clicked', row),
-          onCopy: row => console.log('copied', row),
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
         }}
       />
       <Table.Column<Data>
