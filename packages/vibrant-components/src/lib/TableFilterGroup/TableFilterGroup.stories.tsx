@@ -7,9 +7,7 @@ export default {
   component: TableFilterGroup,
   args: {
     initialFilterDataKeys: ['id'],
-    onFilterChange: filters => {
-      console.log(filters);
-    },
+    onFilterChange: () => {},
   },
 } as ComponentMeta<typeof TableFilterGroup>;
 
