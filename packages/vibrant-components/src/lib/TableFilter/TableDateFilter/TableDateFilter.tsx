@@ -46,8 +46,8 @@ export const TableDateFilter = withTableDateFilterVariation(
         return;
       }
 
-      onFilterSave({ dataKey, value: isOperatorEmptyOrNotEmpty(operator) ? [] : value, operator });
-    }, [dataKey, onFilterClear, onFilterSave, operator, value]);
+      onFilterSave({ dataKey, value: isOperatorEmptyOrNotEmpty(operator) ? [] : value, operator, label });
+    }, [dataKey, label, onFilterClear, onFilterSave, operator, value]);
 
     return (
       <TableFieldFilter

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
 import { useTableFilterGroup } from '../../TableFilterGroup/context';
 import { TextField } from '../../TextField';
@@ -21,7 +21,7 @@ export const TableStringFilter = withTableStringFilterVariation(
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
     const [value, setValue] = useState<string>(inputValue);
-    const { onFilterSave, onFilterClear } = useTableFilterGroup();
+    const { onFilterSave, onFilterClear, isFilterShown } = useTableFilterGroup();
 
     const {
       translations: {
@@ -29,17 +29,17 @@ export const TableStringFilter = withTableStringFilterVariation(
       },
     } = useConfig();
 
-    useEffect(() => {
+    const onSave = (value: string) => {
       if (!isValidFilter({ value, operator })) {
         onFilterClear(dataKey);
 
         return;
       }
 
-      onFilterSave({ value: isOperatorEmptyOrNotEmpty(operator) ? '' : value, operator, dataKey });
-    }, [dataKey, onFilterClear, onFilterSave, operator, value]);
+      onFilterSave({ value: isOperatorEmptyOrNotEmpty(operator) ? '' : value, operator, dataKey, label });
+    };
 
-    return (
+    return isFilterShown(dataKey) ? (
       <TableFieldFilter
         dataKey={dataKey}
         label={label.concat(
@@ -86,11 +86,13 @@ export const TableStringFilter = withTableStringFilterVariation(
               }}
               onSubmit={() => {
                 setValue(inputValue);
+
+                onSave(value);
               }}
             />
           )
         }
       />
-    );
+    ) : null;
   }
 );

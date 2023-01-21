@@ -21,4 +21,4 @@ export type DateFilter = {
   operator: DateFilterOperator;
 };
 
-export type Filter = (DateFilter | StringFilter) & { dataKey: string };
+export type Filter = (DateFilter | StringFilter) & { dataKey: string; label: string };
