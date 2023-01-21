@@ -6,22 +6,25 @@ import type { Filter, Filter } from '../../TableFilter/type';
 type TableFilterGroupContextValue = {
   initialFilterDataKeys: string[];
   currentFilterDataKeys: string[];
+  isFilterChanged: boolean;
   onFilterDelete: (filterDataKey: string) => void;
   onFilterSave: (filter: Filter) => void;
   onFilterClear: (filterDataKey: string) => void;
+  isFilterShown: (filterDataKey: string) => boolean;
 };
 
 const TableFilterGroupContext = createContext<TableFilterGroupContextValue>({
   initialFilterDataKeys: [],
   currentFilterDataKeys: [],
+  isFilterChanged: false,
   onFilterDelete: () => {},
   onFilterSave: () => {},
   onFilterClear: () => {},
+  isFilterShown: () => false,
 });
 
 type TableFilterGroupProviderProps = {
   initialFilterDataKeys?: string[];
-  currentFilterDataKeys: string[];
   onFilterDelete: (filterDataKey: string) => void;
   onFilterSave: (filter: Filter) => void;
   onFilterClear: (filterDataKey: string) => void;
@@ -31,7 +34,6 @@ type TableFilterGroupProviderProps = {
 export const TableFilterGroupProvider: FC<TableFilterGroupProviderProps> = ({
   children,
   initialFilterDataKeys = [],
-  currentFilterDataKeys,
   onFilterDelete,
   onFilterSave,
   onFilterClear,
@@ -44,11 +46,30 @@ export const TableFilterGroupProvider: FC<TableFilterGroupProviderProps> = ({
     () => ({
       initialFilterDataKeys,
       currentFilterDataKeys,
-      onFilterDelete,
-      onFilterSave,
-      onFilterClear,
+      isFilterChanged,
+      onFilterDelete: filterDataKey => {
+        setCurrentFilterDataKeys(currentFilterDataKeys.filter(dataKey => filterDataKey !== dataKey));
+
+        onFilterDelete(filterDataKey);
+      },
+      onFilterSave: filter => {
+        if (currentFilterDataKeys.includes(filter.dataKey)) {
+          return;
+        }
+
+        setIsFilterChanged(true);
+
+        onFilterSave(filter);
+
+        setCurrentFilterDataKeys([...currentFilterDataKeys, filter.dataKey]);
+      },
+      onFilterClear: filterDataKey => {
+        onFilterClear(filterDataKey);
+      },
+      isFilterShown: filterDataKey =>
+        initialFilterDataKeys.includes(filterDataKey) || currentFilterDataKeys.includes(filterDataKey),
     }),
-    [currentFilterDataKeys, initialFilterDataKeys, onFilterClear, onFilterDelete, onFilterSave]
+    [currentFilterDataKeys, initialFilterDataKeys, isFilterChanged, onFilterClear, onFilterDelete, onFilterSave]
   );
 
   return <TableFilterGroupContext.Provider value={contextValue}>{children}</TableFilterGroupContext.Provider>;

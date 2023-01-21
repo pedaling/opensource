@@ -21,6 +21,7 @@ export type DateFilter = {
   operator: DateFilterOperator;
 };
 
+<<<<<<< HEAD:packages/vibrant-components/src/lib/TableFilterGroup/types/index.ts
 export type MultiSelectFilterOperator = 'empty' | 'equals' | 'notEmpty' | 'notEquals';
 
 export type Option = {
@@ -34,3 +35,6 @@ export type MultiSelectFilter = {
 };
 
 export type Filter = (DateFilter | MultiSelectFilter | StringFilter) & { dataKey: string };
+=======
+export type Filter = (DateFilter | StringFilter) & { dataKey: string; label: string };
+>>>>>>> 6299bb43 (feat: implementation TableFilterGroup except initialize and onFilterChange):packages/vibrant-components/src/lib/TableFilter/type/index.ts
