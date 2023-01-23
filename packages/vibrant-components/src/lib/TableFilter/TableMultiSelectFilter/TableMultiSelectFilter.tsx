@@ -39,7 +39,15 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     return (
       <TableFieldFilter
         dataKey={dataKey}
-        label={label}
+        label={
+          label +
+          (isValidFilter({ value: selectedValues, operator })
+            ? `: ${operatorTranslation.filterLabel[operator].replace(
+                '{options}',
+                selectedValues.map(value => options.find(option => option.value === value)?.label).join(', ')
+              )}`
+            : '')
+        }
         active={isValidFilter({ value: selectedValues, operator })}
         onClose={() => {
           if (isOperatorEmptyOrNotEmpty(operator)) {

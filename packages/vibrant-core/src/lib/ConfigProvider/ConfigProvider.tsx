@@ -82,6 +82,12 @@ export type Translation = {
       notEmpty: string;
     };
     multiSelectOperator: {
+      filterLabel: {
+        equals: string;
+        notEquals: string;
+        empty: string;
+        notEmpty: string;
+      };
       equals: string;
       notEquals: string;
       empty: string;
@@ -154,6 +160,12 @@ const ConfigContext = createContext<ConfigContextValue>({
         between: '범위 내',
       },
       multiSelectOperator: {
+        filterLabel: {
+          equals: '{options}',
+          notEquals: '{options} 같지 않음',
+          empty: '비어있음',
+          notEmpty: '비어있지 않음',
+        },
         equals: '같다',
         notEquals: '같지 않다',
         empty: '비어있다',
