@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useConfig } from '@vibrant-ui/core';
+import { Box, useConfig } from '@vibrant-ui/core';
 import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
@@ -73,21 +73,23 @@ export const TableStringFilter = withTableStringFilterVariation(
         }}
         field={
           !isOperatorEmptyOrNotEmpty(operator) && (
-            <TextField
-              placeholder={placeholder}
-              clearable={true}
-              defaultValue={inputValue}
-              onValueChange={({ value: newValue }) => {
-                if (!newValue) {
-                  setValue(newValue);
-                }
+            <Box px={20}>
+              <TextField
+                placeholder={placeholder}
+                clearable={true}
+                defaultValue={inputValue}
+                onValueChange={({ value: newValue }) => {
+                  if (!newValue) {
+                    setValue(newValue);
+                  }
 
-                setInputValue(newValue);
-              }}
-              onSubmit={() => {
-                setValue(inputValue);
-              }}
-            />
+                  setInputValue(newValue);
+                }}
+                onSubmit={() => {
+                  setValue(inputValue);
+                }}
+              />
+            </Box>
           )
         }
       />

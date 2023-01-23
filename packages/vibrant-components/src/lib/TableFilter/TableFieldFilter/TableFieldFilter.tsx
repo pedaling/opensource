@@ -43,8 +43,8 @@ export const TableFieldFilter = <Operator extends string>({
         </FilterChip>
       )}
       renderContents={() => (
-        <VStack px={20} spacing={16}>
-          <HStack alignHorizontal="space-between" alignVertical="center" width={width}>
+        <VStack spacing={16}>
+          <HStack alignHorizontal="space-between" alignVertical="center" width={width} px={20}>
             <>
               {Object.keys(operatorOptions).length <= 1 ? (
                 <Body level={2}>{operatorOptions[selectedOperator]}</Body>

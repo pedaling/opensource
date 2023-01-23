@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useConfig, useCurrentTheme } from '@vibrant-ui/core';
+import { Box, useConfig, useCurrentTheme } from '@vibrant-ui/core';
 import { getDateString } from '@vibrant-ui/utils';
 import { DatePickerField } from '../../DatePickerField';
 import { RangePickerField } from '../../RangePickerField';
@@ -79,27 +79,31 @@ export const TableDateFilter = withTableDateFilterVariation(
         field={
           !isOperatorEmptyOrNotEmpty(operator) &&
           (isOperatorBetween(operator) ? (
-            <RangePickerField
-              zIndex={zIndex.dropdown + 1}
-              placeholder={placeholder}
-              defaultValue={value.length >= 2 ? { start: value[0], end: value[1] } : undefined}
-              onValueChange={({ value }) => {
-                const newValue = value ? [value.start, value.end] : [];
+            <Box px={20}>
+              <RangePickerField
+                zIndex={zIndex.dropdown + 1}
+                placeholder={placeholder}
+                defaultValue={value.length >= 2 ? { start: value[0], end: value[1] } : undefined}
+                onValueChange={({ value }) => {
+                  const newValue = value ? [value.start, value.end] : [];
 
-                setValue(newValue);
-              }}
-            />
+                  setValue(newValue);
+                }}
+              />
+            </Box>
           ) : (
-            <DatePickerField
-              zIndex={zIndex.dropdown + 1}
-              placeholder={placeholder}
-              defaultValue={defaultValue?.value?.[0] ?? value?.[0]}
-              onValueChange={({ value }) => {
-                const newValue = value ? [value] : [];
+            <Box px={20}>
+              <DatePickerField
+                zIndex={zIndex.dropdown + 1}
+                placeholder={placeholder}
+                defaultValue={defaultValue?.value?.[0] ?? value?.[0]}
+                onValueChange={({ value }) => {
+                  const newValue = value ? [value] : [];
 
-                setValue(newValue);
-              }}
-            />
+                  setValue(newValue);
+                }}
+              />
+            </Box>
           ))
         }
       />
