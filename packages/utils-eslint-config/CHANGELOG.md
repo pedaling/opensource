@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.42.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.42.0...utils-eslint-config-0.42.1) (2023-01-23)
+
+
+### Features
+
+* **utils-eslint-config:** exclude JSON from naming convention ([#535](https://github.com/pedaling/opensource/issues/535)) ([ca8b272](https://github.com/pedaling/opensource/commit/ca8b2726c77570e4157081d4df5196408779c597))
+
 ## [0.42.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.41.1...utils-eslint-config-0.42.0) (2023-01-19)
 
 ### [0.41.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.41.0...utils-eslint-config-0.41.1) (2023-01-18)
