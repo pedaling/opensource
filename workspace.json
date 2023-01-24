@@ -2,6 +2,9 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "helix-core": "packages/helix-core",
+    "helix-provider-aws": "packages/helix-provider-aws",
+    "helix-utils": "packages/helix-utils",
     "testing": {
       "root": ".",
       "implicitDependencies": [
@@ -50,8 +53,6 @@
         }
       }
     },
-    "helix-core": "packages/helix-core",
-    "helix-utils": "packages/helix-utils",
     "utils-eslint-config": "packages/utils-eslint-config",
     "vibrant-components": "packages/vibrant-components",
     "vibrant-components-web": "packages/vibrant-components-web",

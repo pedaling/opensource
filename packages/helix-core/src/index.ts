@@ -25,4 +25,4 @@ export { EntityDispatcher } from './lib/EntityDispatcher';
 export { EntityReader } from './lib/EntityReader';
 export { EventDispatcher } from './lib/EventDispatcher';
 export { ReadModelsReader } from './lib/ReadModelsReader';
-export { Provider, useProvider } from './lib/Provider';
+export { Provider, setupProvider } from './lib/Provider';

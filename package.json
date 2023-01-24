@@ -122,6 +122,8 @@
     "vite-tsconfig-paths": "3.5.0"
   },
   "dependencies": {
+    "@aws-sdk/client-sns": "3.256.0",
+    "@aws-sdk/util-dynamodb": "3.256.0",
     "@docusaurus/core": "2.1.0",
     "@docusaurus/preset-classic": "2.1.0",
     "@docusaurus/remark-plugin-npm2yarn": "2.1.0",
@@ -132,10 +134,12 @@
     "@expo/metro-config": "0.3.22",
     "@mdx-js/react": "1.6.22",
     "@storybook/native-components": "2.2.7",
+    "aws-xray-sdk-core": "3.4.1",
     "babel-plugin-tsconfig-paths": "1.0.3",
     "clsx": "1.1.1",
     "core-js": "3.23.4",
     "docusaurus-remark-plugin-codetabs": "1.0.0-alpha.3",
+    "dynamoose": "3.1.0",
     "expo": "46.0.13",
     "expo-dev-client": "~1.2.1",
     "expo-font": "10.2.0",

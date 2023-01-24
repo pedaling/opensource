@@ -32,7 +32,7 @@ export interface Provider {
 
 let userProvider: Provider;
 
-export function useProvider(provider: Provider): void {
+export function setupProvider(provider: Provider): void {
   userProvider = provider;
 }
 
@@ -41,5 +41,5 @@ export function getProvider(): Provider {
     return userProvider;
   }
 
-  throw new Error('Cannot find provider. Looks like you forgot to call useProvider?');
+  throw new Error('Cannot find provider. Looks like you forgot to call setupProvider?');
 }

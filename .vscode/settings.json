@@ -12,5 +12,9 @@
     "javascriptreact",
     "typescript",
     "typescriptreact"
+  ],
+  "cSpell.words": [
+    "dynamoose",
+    "unmarshall"
   ]
 }

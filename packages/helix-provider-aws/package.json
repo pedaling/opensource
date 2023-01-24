@@ -1,5 +1,5 @@
 {
-  "name": "@helix-js/core",
+  "name": "@helix-js/provider-aws",
   "version": "0.0.2",
   "type": "commonjs"
 }
