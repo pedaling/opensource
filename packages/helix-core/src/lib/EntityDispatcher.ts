@@ -1,6 +1,8 @@
+import { Service } from 'typedi';
 import { getProvider } from './Provider';
 import { ReadModelStore } from './services/ReadModelStore';
 
+@Service()
 export class EntityDispatcher {
   private readonly provider = getProvider();
   private readonly readModelStore = new ReadModelStore();

@@ -16,7 +16,7 @@ export class ReadModelStore {
   }
 
   public async projectAndStoreSnapshot(entityEnvelope: EntityEnvelope) {
-    const entity = entityEnvelope.instance;
+    const entity = entityEnvelope.payload;
     const projections = getMetadataStorage().projections[entityEnvelope.typeName];
 
     if (!projections) {
@@ -118,7 +118,7 @@ export class ReadModelStore {
     readModelEnvelope: ReadModelEnvelope | null,
     readModelId: string
   ) {
-    const readModel = readModelEnvelope?.instance;
+    const readModel = readModelEnvelope?.payload;
     const projector = this.getProjectorForReadModel(metadata);
 
     const nextReadModel = Array.isArray(entity[metadata.joinKey])

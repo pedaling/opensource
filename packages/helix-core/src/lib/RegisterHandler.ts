@@ -27,7 +27,7 @@ export class RegisterHandler {
       throw new Error(`Could not find entity for event ${eventName}`);
     }
 
-    if (!event.getEntityId()) {
+    if (!event.entityId) {
       throw new Error(`Event ${event.constructor.name} does not have an entityId`);
     }
 

@@ -5,8 +5,9 @@ export enum ReadModelAction {
   None = 'none',
 }
 
-export interface ReadModelInterface {
-  getId: () => string;
-}
+export type ReadModelInterface = {
+  id: string;
+  [key: string]: any;
+};
 
-export type ReadModelAttrs<EventType> = Pick<EventType, PropertyKeys<EventType>>;
+export type ReadModelAttrs<ReadModelType> = Pick<ReadModelType, Exclude<PropertyKeys<ReadModelType>, 'id'>>;

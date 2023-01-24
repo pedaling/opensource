@@ -5,7 +5,7 @@ export class EventEnvelope<EventType extends EventInterface = EventInterface> {
   public readonly entityId: string;
   public readonly entityName: string;
   public readonly typeName: string;
-  public readonly instance: EventType;
+  public readonly payload: EventType;
   public readonly schemaVersion: number;
 
   public readonly requestId: string;
@@ -21,9 +21,9 @@ export class EventEnvelope<EventType extends EventInterface = EventInterface> {
   ) {
     this.typeName = event.constructor.name;
 
-    this.instance = { ...event };
+    this.payload = { ...event };
 
-    this.entityId = event.getEntityId();
+    this.entityId = event.entityId;
 
     this.entityName = getMetadataStorage().reducers[this.typeName].class.name;
 

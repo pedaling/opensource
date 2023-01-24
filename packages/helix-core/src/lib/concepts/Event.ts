@@ -1,7 +1,7 @@
 import type { PropertyKeys } from '@helix-js/utils';
 
-export interface EventInterface {
-  getEntityId: () => string;
-}
+export type EventInterface = {
+  entityId: string;
+};
 
-export type EventAttrs<EventType> = Pick<EventType, PropertyKeys<EventType>>;
+export type EventAttrs<EventType> = Pick<EventType, Exclude<PropertyKeys<EventType>, 'entityId'>>;

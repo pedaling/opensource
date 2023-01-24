@@ -4,18 +4,18 @@ import { getMetadataStorage } from '../metadata';
 export class EntityEnvelope<EntityType extends EntityInterface = EntityInterface> {
   public readonly id: string;
   public readonly typeName: string;
-  public readonly instance: EntityType;
+  public readonly payload: EntityType;
   public readonly schemaVersion: number;
 
   public readonly deletedAt: number;
   public readonly appliedEventCreatedAt: number;
 
   public constructor(entity: EntityType, context: { appliedEventCreatedAt: number }) {
-    this.id = entity.getId();
+    this.id = entity.id;
 
     this.typeName = entity.constructor.name;
 
-    this.instance = { ...entity };
+    this.payload = { ...entity };
 
     this.schemaVersion = getMetadataStorage().currentVersionFor(this.typeName);
 

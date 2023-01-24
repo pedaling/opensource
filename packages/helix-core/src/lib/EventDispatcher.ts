@@ -1,4 +1,5 @@
 import { groupBy } from 'lodash';
+import { Service } from 'typedi';
 import { Promises } from '@helix-js/utils';
 import { Register } from './concepts';
 import type { EventEnvelope } from './envelopes';
@@ -7,6 +8,7 @@ import { getProvider } from './Provider';
 import { RegisterHandler } from './RegisterHandler';
 import { EntityStore } from './services/EntityStore';
 
+@Service()
 export class EventDispatcher {
   private readonly provider = getProvider();
   private readonly entityStore = new EntityStore();
@@ -61,7 +63,7 @@ export class EventDispatcher {
 
       await Promises.allSettledAndFulfilled(
         eventHandlerClasses.map(async eventHandlerClass => {
-          const event = eventEnvelope.instance;
+          const event = eventEnvelope.payload;
           const eventHandler = new eventHandlerClass();
 
           const register = new Register({

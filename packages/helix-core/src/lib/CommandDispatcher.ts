@@ -1,3 +1,4 @@
+import { Service } from 'typedi';
 import type { CommandInterface } from './concepts';
 import { Register } from './concepts';
 import type { CommandEnvelope } from './envelopes';
@@ -5,6 +6,7 @@ import { getMetadataStorage } from './metadata';
 import { getProvider } from './Provider';
 import { RegisterHandler } from './RegisterHandler';
 
+@Service()
 export class CommandDispatcher {
   private readonly provider = getProvider();
 
@@ -32,7 +34,7 @@ export class CommandDispatcher {
       return;
     }
 
-    const command = new commandMetadata.class(commandEnvelope.instance) as CommandInterface<ReturnType>;
+    const command = new commandMetadata.class(commandEnvelope.payload) as CommandInterface<ReturnType>;
     const register = new Register({
       requestId: commandEnvelope.requestId,
       userId: commandEnvelope.userId,

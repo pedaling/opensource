@@ -1,7 +1,9 @@
+import { Service } from 'typedi';
 import type { Class } from '@helix-js/utils';
 import type { EntityInterface } from './concepts';
 import { EntityStore } from './services/EntityStore';
 
+@Service()
 export class EntityReader {
   private readonly entityStore = new EntityStore();
 
@@ -19,7 +21,7 @@ export class EntityReader {
     const snapshot = await this.entityStore.fetchSnapshot(entityClass.name, id);
 
     return snapshot && snapshot.deletedAt < 0
-      ? Object.assign(new entityClass(snapshot.instance), snapshot.instance)
+      ? Object.assign(new entityClass(snapshot.payload), snapshot.payload)
       : null;
   }
 }

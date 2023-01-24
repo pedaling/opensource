@@ -69,8 +69,8 @@ export class EntityStore {
   }
 
   private reduceEvent(entityEnvelope: EntityEnvelope | null, eventEnvelope: EventEnvelope) {
-    const entity = entityEnvelope?.instance;
-    const event = eventEnvelope.instance;
+    const entity = entityEnvelope?.payload;
+    const event = eventEnvelope.payload;
     const reducer = this.getReducerForEvent(eventEnvelope.typeName);
 
     const nextEntity = reducer(event, entity);
