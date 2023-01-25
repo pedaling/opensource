@@ -2,8 +2,10 @@
 import validate from "card-validator";
 import { useState } from "react";
 import { Icon } from "@vibrant-ui/icons";
+import { MountMotion } from "@vibrant-ui/motion";
 import { Body } from "../Body";
 import { HStack } from "../HStack";
+import { Paper } from "../Paper";
 import { TextField } from "../TextField";
 import { VStack } from "../VStack";
 import { withCardNumberFieldVariation } from "./CardNumberFieldProps";
@@ -25,6 +27,20 @@ export const CardNumberField = withCardNumberFieldVariation(
     })();
 
     //MEMO: BIN을 통해서 카드사를 검증하고 포메팅할 수 있다.
+    const cardType = validate.number(value).card?.niceType ?? "others";
+
+    const mountAnimation = {
+      opacity: {
+        from: 0,
+        to: 1,
+      },
+    };
+    const unmountAnimation = {
+      opacity: {
+        from: 1,
+        to: 0,
+      },
+    };
 
     return (
       <VStack>
@@ -43,34 +59,48 @@ export const CardNumberField = withCardNumberFieldVariation(
           {card?.maxLength}
           maxLength
         </VStack> */}
-        <TextField
-          type="number"
-          autoComplete="ccNumber"
-          label="라벨"
-          placeholder="플레이스홀더"
-          defaultValue=""
-          renderEnd={() => (
-            <HStack alignVertical="center" spacing={12}>
-              <VStack>
-                <Body level={1}>{validate.number(value).card?.niceType}</Body>
-              </VStack>
-              {showLockIcon && <Icon.Lock.Thin fill="onView2" />}
-            </HStack>
-          )}
-          maxLength={maxLength}
-          onValueChange={({ value, prevent }) => {
-            setValue(value);
-            if (value.length > 0) {
-              setShowLockIcon(true);
-            } else {
-              setShowLockIcon(false);
-            }
 
-            if (onValueChange) {
-              onValueChange({ value, prevent });
-            }
-          }}
-        />
+        {/* 카드 이미지 고려하여 minWidth 설정 */}
+        <VStack minWidth={400}>
+          <TextField
+            type="number"
+            autoComplete="ccNumber"
+            // label="라벨"
+            // placeholder="플레이스홀더"
+            // defaultValue=""
+            renderEnd={() => (
+              <HStack alignVertical="center" spacing={12}>
+                <VStack>
+                  <MountMotion
+                    mountAnimation={mountAnimation}
+                    unmountAnimation={unmountAnimation}
+                    mount={value.length !== 0}
+                    easing="easeOutQuad"
+                    duration={200}
+                  >
+                    <Paper width={50} backgroundColor="primary">
+                      <Body level={1}>{cardType}</Body>
+                    </Paper>
+                  </MountMotion>
+                </VStack>
+                {showLockIcon && <Icon.Lock.Thin fill="onView2" />}
+              </HStack>
+            )}
+            maxLength={maxLength}
+            onValueChange={({ value, prevent }) => {
+              setValue(value);
+              if (value.length > 0) {
+                setShowLockIcon(true);
+              } else {
+                setShowLockIcon(false);
+              }
+
+              if (onValueChange) {
+                onValueChange({ value, prevent });
+              }
+            }}
+          />
+        </VStack>
       </VStack>
     );
   }
