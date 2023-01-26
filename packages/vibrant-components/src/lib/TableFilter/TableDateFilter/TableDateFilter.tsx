@@ -6,17 +6,8 @@ import { RangePickerField } from '../../RangePickerField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { DateFilterOperator } from '../types';
+import { isDateFilterValid, isValueRequiredOperator } from '../utils';
 import { withTableDateFilterVariation } from './TableDateFilterProps';
-
-const isOperatorEmptyOrNotEmpty = (op: DateFilterOperator) => op === 'empty' || op === 'notEmpty';
-const isOperatorBetween = (op: DateFilterOperator) => op === 'between';
-const isValidFilter = (filter: { value: Date[]; operator: DateFilterOperator }) => {
-  if (isOperatorEmptyOrNotEmpty(filter.operator)) return true;
-
-  if (isOperatorBetween(filter.operator)) return filter.value.length >= 2;
-
-  return filter.value.length >= 1;
-};
 
 export const TableDateFilter = withTableDateFilterVariation(
   ({
@@ -40,29 +31,29 @@ export const TableDateFilter = withTableDateFilterVariation(
     } = useConfig();
 
     useEffect(() => {
-      if (!isValidFilter({ value, operator })) {
+      if (!isDateFilterValid({ value, operator })) {
         onFilterClear(dataKey);
 
         return;
       }
 
-      onFilterSave({ dataKey, value: isOperatorEmptyOrNotEmpty(operator) ? [] : value, operator });
+      onFilterSave({ dataKey, value: isValueRequiredOperator(operator) ? [] : value, operator });
     }, [dataKey, onFilterClear, onFilterSave, operator, value]);
 
     return (
       <TableFieldFilter
         dataKey={dataKey}
         label={label.concat(
-          isValidFilter({ value, operator })
+          isDateFilterValid({ value, operator })
             ? `: ${operatorTranslation.filterLabel[operator]
                 .replace(/\{date\}|\{startDate\}/g, value?.[0] ? getDateString(value?.[0]) : '')
                 .replace('{endDate}', value?.[1] ? getDateString(value?.[1]) : '')}`
             : ''
         )}
-        width={isOperatorBetween(operator) ? 320 : 240}
-        active={isValidFilter({ value, operator })}
+        width={operator === 'between' ? 320 : 240}
+        active={isDateFilterValid({ value, operator })}
         onClose={() => {
-          if (isOperatorEmptyOrNotEmpty(operator)) {
+          if (isValueRequiredOperator(operator)) {
             setValue([]);
           }
         }}
@@ -77,9 +68,9 @@ export const TableDateFilter = withTableDateFilterVariation(
           setOperator(operatorOption);
         }}
         field={
-          !isOperatorEmptyOrNotEmpty(operator) && (
+          !isValueRequiredOperator(operator) && (
             <Box px={20}>
-              {isOperatorBetween(operator) ? (
+              {operator === 'between' ? (
                 <RangePickerField
                   zIndex={zIndex.dropdown + 1}
                   placeholder={placeholder}

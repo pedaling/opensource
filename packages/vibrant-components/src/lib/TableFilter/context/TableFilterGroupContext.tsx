@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import type { ReactElementChildren } from '@vibrant-ui/core';
-import type { Filter } from '../type';
+import type { Filter } from '../types';
 
 type TableFilterGroupContextValue = {
   initialFilterDataKeys: string[];

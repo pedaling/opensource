@@ -8,11 +8,8 @@ import { VStack } from '../../VStack';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { MultiSelectFilterOperator, Option } from '../types';
+import { isMultiSelectFilterValid, isValueRequiredOperator } from '../utils';
 import { withTableMultiSelectFilterVariation } from './TableMultiSelectFilterProps';
-
-const isOperatorEmptyOrNotEmpty = (op: MultiSelectFilterOperator) => op === 'empty' || op === 'notEmpty';
-const isValidFilter = (filter: { value: Option['value'][]; operator: MultiSelectFilterOperator }) =>
-  Boolean(filter.value.length > 0) || isOperatorEmptyOrNotEmpty(filter.operator);
 
 export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
   ({ dataKey, label, options, operators = ['equals', 'notEquals', 'empty', 'notEmpty'], defaultValue }) => {
@@ -27,13 +24,13 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     } = useConfig();
 
     useEffect(() => {
-      if (!isValidFilter({ value: selectedValues, operator })) {
+      if (!isMultiSelectFilterValid({ value: selectedValues, operator })) {
         onFilterClear(dataKey);
 
         return;
       }
 
-      onFilterSave({ value: isOperatorEmptyOrNotEmpty(operator) ? [] : selectedValues, operator, dataKey });
+      onFilterSave({ value: isValueRequiredOperator(operator) ? [] : selectedValues, operator, dataKey });
     }, [dataKey, onFilterClear, onFilterSave, operator, selectedValues]);
 
     return (
@@ -41,7 +38,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
         dataKey={dataKey}
         label={
           label +
-          (isValidFilter({ value: selectedValues, operator })
+          (isMultiSelectFilterValid({ value: selectedValues, operator })
             ? `: ${operatorTranslation.filterLabel[operator].replace(
                 '{options}',
                 selectedValues
@@ -50,9 +47,9 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
               )}`
             : '')
         }
-        active={isValidFilter({ value: selectedValues, operator })}
+        active={isMultiSelectFilterValid({ value: selectedValues, operator })}
         onClose={() => {
-          if (isOperatorEmptyOrNotEmpty(operator)) {
+          if (isValueRequiredOperator(operator)) {
             setSelectedValues([]);
           }
         }}
@@ -67,7 +64,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
           setOperator(operatorOption);
         }}
         field={
-          !isOperatorEmptyOrNotEmpty(operator) && (
+          !isValueRequiredOperator(operator) && (
             <VStack>
               <Box px={20}>
                 <CheckboxGroupField

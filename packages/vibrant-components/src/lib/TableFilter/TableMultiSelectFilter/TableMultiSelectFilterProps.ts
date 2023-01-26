@@ -1,5 +1,5 @@
 import { withVariation } from '@vibrant-ui/core';
-import type { MultiSelectFilterOperator, Option } from '../type';
+import type { MultiSelectFilterOperator, Option } from '../types';
 
 export type TableMultiSelectFilterProps = {
   dataKey: string;

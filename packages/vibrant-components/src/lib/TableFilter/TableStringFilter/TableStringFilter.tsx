@@ -4,11 +4,8 @@ import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { StringFilterOperator } from '../types';
+import { isStringFilterValid, isValueRequiredOperator } from '../utils';
 import { withTableStringFilterVariation } from './TableStringFilterProps';
-
-const isOperatorEmptyOrNotEmpty = (op: StringFilterOperator) => op === 'empty' || op === 'notEmpty';
-const isValidFilter = (filter: { value: string; operator: StringFilterOperator }) =>
-  Boolean(filter.value) || isOperatorEmptyOrNotEmpty(filter.operator);
 
 export const TableStringFilter = withTableStringFilterVariation(
   ({
@@ -30,28 +27,28 @@ export const TableStringFilter = withTableStringFilterVariation(
     } = useConfig();
 
     useEffect(() => {
-      if (!isValidFilter({ value, operator })) {
+      if (!isStringFilterValid({ value, operator })) {
         onFilterClear(dataKey);
 
         return;
       }
 
-      onFilterSave({ value: isOperatorEmptyOrNotEmpty(operator) ? '' : value, operator, dataKey });
+      onFilterSave({ value: isValueRequiredOperator(operator) ? '' : value, operator, dataKey });
     }, [dataKey, onFilterClear, onFilterSave, operator, value]);
 
     return (
       <TableFieldFilter
         dataKey={dataKey}
         label={label.concat(
-          isOperatorEmptyOrNotEmpty(operator)
+          isValueRequiredOperator(operator)
             ? `: ${operatorTranslation.filterLabel[operator as 'empty' | 'notEmpty']}`
             : value
             ? `: ${value}`
             : ''
         )}
-        active={isValidFilter({ value, operator })}
+        active={isStringFilterValid({ value, operator })}
         onClose={() => {
-          if (isOperatorEmptyOrNotEmpty(operator)) {
+          if (isValueRequiredOperator(operator)) {
             setInputValue('');
 
             setValue('');
@@ -72,7 +69,7 @@ export const TableStringFilter = withTableStringFilterVariation(
           setOperator(operatorOption);
         }}
         field={
-          !isOperatorEmptyOrNotEmpty(operator) && (
+          !isValueRequiredOperator(operator) && (
             <Box px={20}>
               <TextField
                 placeholder={placeholder}
