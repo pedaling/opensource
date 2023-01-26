@@ -59,7 +59,7 @@ export const TableDateFilter = withTableDateFilterVariation(
                 .replace('{endDate}', value?.[1] ? getDateString(value?.[1]) : '')}`
             : ''
         )}
-        width={isOperatorBetween(operator) ? 280 : 'auto'}
+        width={isOperatorBetween(operator) ? 320 : 240}
         active={isValidFilter({ value, operator })}
         onClose={() => {
           if (isOperatorEmptyOrNotEmpty(operator)) {
