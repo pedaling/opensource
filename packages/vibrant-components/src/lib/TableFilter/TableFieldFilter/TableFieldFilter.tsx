@@ -45,43 +45,42 @@ export const TableFieldFilter = <Operator extends string>({
       renderContents={() => (
         <VStack spacing={16}>
           <HStack alignHorizontal="space-between" alignVertical="center" width={width} px={20}>
-            <>
-              {Object.keys(operatorOptions).length <= 1 ? (
-                <Body level={2}>{operatorOptions[selectedOperator]}</Body>
-              ) : (
-                <Dropdown
-                  position="bottom-start"
-                  renderOpener={({ open }) => (
-                    <GhostButton size="md" onClick={open} disclosure={true}>
-                      {operatorOptions[selectedOperator]}
-                    </GhostButton>
-                  )}
-                  renderContents={({ close }) => (
-                    <VStack as="ul">
-                      {Object.keys(operatorOptions).map(operator => (
-                        <Pressable
-                          key={operator}
-                          as="li"
-                          py={7}
-                          px={20}
-                          width="100%"
-                          overlayColor="onView1"
-                          interactions={['hover', 'active']}
-                          flexShrink={0}
-                          onClick={() => {
-                            onOperatorSelect(operator as Operator);
+            {Object.keys(operatorOptions).length <= 1 ? (
+              <Body level={2}>{operatorOptions[selectedOperator]}</Body>
+            ) : (
+              <Dropdown
+                position="bottom-start"
+                renderOpener={({ open }) => (
+                  <GhostButton size="md" onClick={open} disclosure={true}>
+                    {operatorOptions[selectedOperator]}
+                  </GhostButton>
+                )}
+                renderContents={({ close }) => (
+                  <VStack as="ul">
+                    {Object.keys(operatorOptions).map(operator => (
+                      <Pressable
+                        key={operator}
+                        as="li"
+                        py={7}
+                        px={20}
+                        width="100%"
+                        overlayColor="onView1"
+                        interactions={['hover', 'active']}
+                        flexShrink={0}
+                        onClick={() => {
+                          onOperatorSelect(operator as Operator);
 
-                            close();
-                          }}
-                        >
-                          <Body level={2}>{operatorOptions[operator as Operator]}</Body>
-                        </Pressable>
-                      ))}
-                    </VStack>
-                  )}
-                />
-              )}
-            </>
+                          close();
+                        }}
+                      >
+                        <Body level={2}>{operatorOptions[operator as Operator]}</Body>
+                      </Pressable>
+                    ))}
+                  </VStack>
+                )}
+              />
+            )}
+
             {!isInitialFilter && (
               <GhostButton size="md" color="onView2" onClick={() => onFilterDelete(dataKey)}>
                 {deleteTranslation}
