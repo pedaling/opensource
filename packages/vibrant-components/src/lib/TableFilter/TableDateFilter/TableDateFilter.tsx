@@ -5,7 +5,7 @@ import { DatePickerField } from '../../DatePickerField';
 import { RangePickerField } from '../../RangePickerField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
-import type { DateFilterOperator } from '../type';
+import type { DateFilterOperator } from '../types';
 import { withTableDateFilterVariation } from './TableDateFilterProps';
 
 const isOperatorEmptyOrNotEmpty = (op: DateFilterOperator) => op === 'empty' || op === 'notEmpty';
@@ -77,34 +77,29 @@ export const TableDateFilter = withTableDateFilterVariation(
           setOperator(operatorOption);
         }}
         field={
-          !isOperatorEmptyOrNotEmpty(operator) &&
-          (isOperatorBetween(operator) ? (
+          !isOperatorEmptyOrNotEmpty(operator) && (
             <Box px={20}>
-              <RangePickerField
-                zIndex={zIndex.dropdown + 1}
-                placeholder={placeholder}
-                defaultValue={value.length >= 2 ? { start: value[0], end: value[1] } : undefined}
-                onValueChange={({ value }) => {
-                  const newValue = value ? [value.start, value.end] : [];
-
-                  setValue(newValue);
-                }}
-              />
+              {isOperatorBetween(operator) ? (
+                <RangePickerField
+                  zIndex={zIndex.dropdown + 1}
+                  placeholder={placeholder}
+                  defaultValue={value.length >= 2 ? { start: value[0], end: value[1] } : undefined}
+                  onValueChange={({ value: newValue }) => {
+                    setValue(newValue ? [newValue.start, newValue.end] : []);
+                  }}
+                />
+              ) : (
+                <DatePickerField
+                  zIndex={zIndex.dropdown + 1}
+                  placeholder={placeholder}
+                  defaultValue={defaultValue?.value?.[0] ?? value?.[0]}
+                  onValueChange={({ value: newValue }) => {
+                    setValue(newValue ? [newValue] : []);
+                  }}
+                />
+              )}
             </Box>
-          ) : (
-            <Box px={20}>
-              <DatePickerField
-                zIndex={zIndex.dropdown + 1}
-                placeholder={placeholder}
-                defaultValue={defaultValue?.value?.[0] ?? value?.[0]}
-                onValueChange={({ value }) => {
-                  const newValue = value ? [value] : [];
-
-                  setValue(newValue);
-                }}
-              />
-            </Box>
-          ))
+          )
         }
       />
     );

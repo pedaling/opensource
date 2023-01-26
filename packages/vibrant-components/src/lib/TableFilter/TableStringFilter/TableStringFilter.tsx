@@ -3,7 +3,7 @@ import { Box, useConfig } from '@vibrant-ui/core';
 import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
-import type { StringFilterOperator } from '../type';
+import type { StringFilterOperator } from '../types';
 import { withTableStringFilterVariation } from './TableStringFilterProps';
 
 const isOperatorEmptyOrNotEmpty = (op: StringFilterOperator) => op === 'empty' || op === 'notEmpty';

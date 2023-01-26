@@ -7,7 +7,7 @@ import { Space } from '../../Space';
 import { VStack } from '../../VStack';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
-import type { MultiSelectFilterOperator, Option } from '../type';
+import type { MultiSelectFilterOperator, Option } from '../types';
 import { withTableMultiSelectFilterVariation } from './TableMultiSelectFilterProps';
 
 const isOperatorEmptyOrNotEmpty = (op: MultiSelectFilterOperator) => op === 'empty' || op === 'notEmpty';
@@ -44,7 +44,9 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
           (isValidFilter({ value: selectedValues, operator })
             ? `: ${operatorTranslation.filterLabel[operator].replace(
                 '{options}',
-                selectedValues.map(value => options.find(option => option.value === value)?.label).join(', ')
+                selectedValues
+                  .map(selectedValue => options.find(option => option.value === selectedValue)?.label)
+                  .join(', ')
               )}`
             : '')
         }
@@ -77,8 +79,8 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
                     }),
                     {}
                   )}
-                  onValueChange={value => {
-                    setSelectedValues(Object.keys(value).filter(key => value[key]));
+                  onValueChange={newValue => {
+                    setSelectedValues(Object.keys(newValue).filter(key => newValue[key]));
                   }}
                 />
               </Box>
