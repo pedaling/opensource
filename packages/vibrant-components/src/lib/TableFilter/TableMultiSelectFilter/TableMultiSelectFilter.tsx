@@ -15,7 +15,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
   ({ dataKey, label, options, operators = ['equals', 'notEquals', 'empty', 'notEmpty'], defaultValue }) => {
     const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value ?? []);
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator ?? operators[0]);
-    const { onFilterSave, onFilterClear } = useTableFilterGroup();
+    const { saveFilter, clearFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -25,13 +25,13 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
 
     useEffect(() => {
       if (!isMultiSelectFilterValid({ value: selectedValues, operator })) {
-        onFilterClear(dataKey);
+        clearFilter(dataKey);
 
         return;
       }
 
-      onFilterSave({ value: isValueRequiredOperator(operator) ? [] : selectedValues, operator, dataKey });
-    }, [dataKey, onFilterClear, onFilterSave, operator, selectedValues]);
+      saveFilter({ value: isValueRequiredOperator(operator) ? [] : selectedValues, operator, dataKey });
+    }, [dataKey, clearFilter, operator, selectedValues, saveFilter]);
 
     return (
       <TableFieldFilter

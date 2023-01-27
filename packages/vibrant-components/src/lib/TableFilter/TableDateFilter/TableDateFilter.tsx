@@ -22,7 +22,7 @@ export const TableDateFilter = withTableDateFilterVariation(
     const {
       theme: { zIndex },
     } = useCurrentTheme();
-    const { onFilterSave, onFilterClear } = useTableFilterGroup();
+    const { saveFilter, clearFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -32,13 +32,13 @@ export const TableDateFilter = withTableDateFilterVariation(
 
     useEffect(() => {
       if (!isDateFilterValid({ value, operator })) {
-        onFilterClear(dataKey);
+        clearFilter(dataKey);
 
         return;
       }
 
-      onFilterSave({ dataKey, value: isValueRequiredOperator(operator) ? [] : value, operator });
-    }, [dataKey, onFilterClear, onFilterSave, operator, value]);
+      saveFilter({ dataKey, value: isValueRequiredOperator(operator) ? [] : value, operator });
+    }, [clearFilter, dataKey, operator, saveFilter, value]);
 
     return (
       <TableFieldFilter

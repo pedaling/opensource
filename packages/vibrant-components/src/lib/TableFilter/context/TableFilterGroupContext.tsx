@@ -4,47 +4,47 @@ import type { ReactElementChildren } from '@vibrant-ui/core';
 import type { Filter } from '../types';
 
 type TableFilterGroupContextValue = {
-  initialFilterDataKeys: string[];
-  currentFilterDataKeys: string[];
-  onFilterDelete: (filterDataKey: string) => void;
-  onFilterSave: (filter: Filter) => void;
-  onFilterClear: (filterDataKey: string) => void;
+  isFilterVisible: (filterDataKey: string) => boolean;
+  isDeletableFilter: (filterDataKey: string) => boolean;
+  deleteFilter: (filterDataKey: string) => void;
+  saveFilter: (filter: Filter) => void;
+  clearFilter: (filterDataKey: string) => void;
 };
 
 const TableFilterGroupContext = createContext<TableFilterGroupContextValue>({
-  initialFilterDataKeys: [],
-  currentFilterDataKeys: [],
-  onFilterDelete: () => {},
-  onFilterSave: () => {},
-  onFilterClear: () => {},
+  isFilterVisible: () => false,
+  isDeletableFilter: () => false,
+  deleteFilter: () => {},
+  saveFilter: () => {},
+  clearFilter: () => {},
 });
 
 type TableFilterGroupProviderProps = {
-  initialFilterDataKeys?: string[];
-  currentFilterDataKeys: string[];
-  onFilterDelete: (filterDataKey: string) => void;
-  onFilterSave: (filter: Filter) => void;
-  onFilterClear: (filterDataKey: string) => void;
+  isFilterVisible: (filterDataKey: string) => boolean;
+  isDeletableFilter: (filterDataKey: string) => boolean;
+  deleteFilter: (filterDataKey: string) => void;
+  saveFilter: (filter: Filter) => void;
+  clearFilter: (filterDataKey: string) => void;
   children: ReactElementChildren;
 };
 
 export const TableFilterGroupProvider: FC<TableFilterGroupProviderProps> = ({
   children,
-  initialFilterDataKeys = [],
-  currentFilterDataKeys,
-  onFilterDelete,
-  onFilterSave,
-  onFilterClear,
+  isFilterVisible,
+  isDeletableFilter,
+  deleteFilter,
+  saveFilter,
+  clearFilter,
 }) => {
   const contextValue = useMemo<TableFilterGroupContextValue>(
     () => ({
-      initialFilterDataKeys,
-      currentFilterDataKeys,
-      onFilterDelete,
-      onFilterSave,
-      onFilterClear,
+      isFilterVisible,
+      isDeletableFilter,
+      deleteFilter,
+      saveFilter,
+      clearFilter,
     }),
-    [currentFilterDataKeys, initialFilterDataKeys, onFilterClear, onFilterDelete, onFilterSave]
+    [clearFilter, deleteFilter, isDeletableFilter, isFilterVisible, saveFilter]
   );
 
   return <TableFilterGroupContext.Provider value={contextValue}>{children}</TableFilterGroupContext.Provider>;

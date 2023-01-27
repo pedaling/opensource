@@ -18,7 +18,7 @@ export const TableStringFilter = withTableStringFilterVariation(
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
     const [value, setValue] = useState<string>(inputValue);
-    const { onFilterSave, onFilterClear } = useTableFilterGroup();
+    const { saveFilter, clearFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -28,13 +28,13 @@ export const TableStringFilter = withTableStringFilterVariation(
 
     useEffect(() => {
       if (!isStringFilterValid({ value, operator })) {
-        onFilterClear(dataKey);
+        clearFilter(dataKey);
 
         return;
       }
 
-      onFilterSave({ value: isValueRequiredOperator(operator) ? '' : value, operator, dataKey });
-    }, [dataKey, onFilterClear, onFilterSave, operator, value]);
+      saveFilter({ value: isValueRequiredOperator(operator) ? '' : value, operator, dataKey });
+    }, [clearFilter, dataKey, operator, saveFilter, value]);
 
     return (
       <TableFieldFilter

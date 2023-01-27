@@ -18,18 +18,16 @@ export const TableFieldFilter = <Operator extends string>({
   onOperatorSelect,
   onClose,
   field,
-  width = 240,
+  width,
 }: TableFieldFilterProps<Operator>) => {
   const {
     translations: {
       tableFilter: { delete: deleteTranslation },
     },
   } = useConfig();
-  const { initialFilterDataKeys, currentFilterDataKeys, onFilterDelete } = useTableFilterGroup();
+  const { isFilterVisible, isDeletableFilter, deleteFilter } = useTableFilterGroup();
 
-  const isInitialFilter = initialFilterDataKeys.includes(dataKey);
-
-  if (!isInitialFilter && !currentFilterDataKeys.includes(dataKey)) {
+  if (!isFilterVisible(dataKey)) {
     return null;
   }
 
@@ -81,8 +79,8 @@ export const TableFieldFilter = <Operator extends string>({
               />
             )}
 
-            {!isInitialFilter && (
-              <GhostButton size="md" color="onView2" onClick={() => onFilterDelete(dataKey)}>
+            {isDeletableFilter(dataKey) && (
+              <GhostButton size="md" color="onView2" onClick={() => deleteFilter(dataKey)}>
                 {deleteTranslation}
               </GhostButton>
             )}

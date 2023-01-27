@@ -32,10 +32,11 @@ export const Basic: ComponentStory<typeof TableMultiSelectFilter> = props => {
 
   return (
     <TableFilterGroupProvider
-      currentFilterDataKeys={currentFilter}
-      onFilterDelete={() => setCurrentFilter([])}
-      onFilterSave={action('onFilterSave')}
-      onFilterClear={action('onFilterClear')}
+      isFilterVisible={dataKey => currentFilter.includes(dataKey)}
+      isDeletableFilter={() => true}
+      deleteFilter={() => setCurrentFilter([])}
+      saveFilter={action('saveFilter')}
+      clearFilter={action('clearFilter')}
     >
       <TableMultiSelectFilter {...props} />
     </TableFilterGroupProvider>
@@ -44,11 +45,11 @@ export const Basic: ComponentStory<typeof TableMultiSelectFilter> = props => {
 
 export const DefaultFilter: ComponentStory<typeof TableMultiSelectFilter> = props => (
   <TableFilterGroupProvider
-    initialFilterDataKeys={['status']}
-    currentFilterDataKeys={[]}
-    onFilterDelete={action('onFilterDelete')}
-    onFilterSave={action('onFilterSave')}
-    onFilterClear={action('onFilterClear')}
+    isFilterVisible={() => true}
+    isDeletableFilter={() => false}
+    deleteFilter={action('deleteFilter')}
+    saveFilter={action('saveFilter')}
+    clearFilter={action('clearFilter')}
   >
     <TableMultiSelectFilter {...props} />
   </TableFilterGroupProvider>
