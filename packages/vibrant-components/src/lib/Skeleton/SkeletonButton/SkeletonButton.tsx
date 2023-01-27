@@ -9,7 +9,7 @@ export const SkeletonButton = withSkeletonButtonVariation(({ typography, py, wid
 
   return (
     <SkeletonMotion>
-      <Box backgroundColor="surface1" borderRadiusLevel={1} py={py} width={width}>
+      <Box backgroundColor="disable" borderRadiusLevel={1} py={py} width={width}>
         <Box height={transformResponsiveValue(typography, value => themeTypography[value].lineHeight)} />
       </Box>
     </SkeletonMotion>
