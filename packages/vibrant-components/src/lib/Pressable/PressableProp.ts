@@ -4,6 +4,7 @@ import type {
   BorderSystemProps,
   ElevationSystemProps,
   FlexboxSystemProps,
+  InteractionSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
   ResponsiveValue,
@@ -21,7 +22,8 @@ export type PressableProps = BackgroundSystemProps &
   PositionSystemProps &
   SpacingSystemProps &
   SizingSystemProps &
-  ElevationSystemProps & {
+  ElevationSystemProps &
+  Pick<InteractionSystemProps, 'hitSlop'> & {
     ref?: Ref<any>;
     disabled?: boolean;
     children?: ReactElement;
@@ -30,7 +32,6 @@ export type PressableProps = BackgroundSystemProps &
     onClick?: () => void;
     onFocus?: () => void;
     onBlur?: () => void;
-    hitSlop?: number;
   } & Either<
     {
       as: 'div' | 'li';
