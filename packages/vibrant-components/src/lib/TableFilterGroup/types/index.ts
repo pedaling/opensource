@@ -21,4 +21,16 @@ export type DateFilter = {
   operator: DateFilterOperator;
 };
 
-export type Filter = (DateFilter | StringFilter) & { dataKey: string; label: string };
+export type MultiSelectFilterOperator = 'empty' | 'equals' | 'notEmpty' | 'notEquals';
+
+export type Option = {
+  label: string;
+  value: string;
+};
+
+export type MultiSelectFilter = {
+  value: Option['value'][];
+  operator: MultiSelectFilterOperator;
+};
+
+export type Filter = (DateFilter | MultiSelectFilter | StringFilter) & { dataKey: string };

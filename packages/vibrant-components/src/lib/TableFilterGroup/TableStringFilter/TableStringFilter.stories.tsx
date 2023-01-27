@@ -22,10 +22,11 @@ export const Basic: ComponentStory<typeof TableStringFilter> = props => {
 
   return (
     <TableFilterGroupProvider
-      currentFilterDataKeys={currentFilter}
-      onFilterDelete={() => setCurrentFilter([])}
-      onFilterSave={action('onFilterSave')}
-      onFilterClear={action('onFilterClear')}
+      isFilterVisible={dataKey => currentFilter.includes(dataKey)}
+      isDeletableFilter={() => true}
+      deleteFilter={() => setCurrentFilter([])}
+      saveFilter={action('saveFilter')}
+      clearFilter={action('clearFilter')}
     >
       <TableStringFilter {...props} />
     </TableFilterGroupProvider>
@@ -34,11 +35,11 @@ export const Basic: ComponentStory<typeof TableStringFilter> = props => {
 
 export const DefaultFilter: ComponentStory<typeof TableStringFilter> = props => (
   <TableFilterGroupProvider
-    initialFilterDataKeys={['id']}
-    currentFilterDataKeys={[]}
-    onFilterDelete={action('onFilterDelete')}
-    onFilterSave={action('onFilterSave')}
-    onFilterClear={action('onFilterClear')}
+    isFilterVisible={() => true}
+    isDeletableFilter={() => false}
+    deleteFilter={action('deleteFilter')}
+    saveFilter={action('saveFilter')}
+    clearFilter={action('clearFilter')}
   >
     <TableStringFilter {...props} />
   </TableFilterGroupProvider>

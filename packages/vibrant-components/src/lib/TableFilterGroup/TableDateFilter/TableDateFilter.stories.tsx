@@ -18,10 +18,11 @@ export const Basic: ComponentStory<typeof TableDateFilter> = props => {
 
   return (
     <TableFilterGroupProvider
-      currentFilterDataKeys={currentFilter}
-      onFilterDelete={() => setCurrentFilter([])}
-      onFilterSave={action('onFilterSave')}
-      onFilterClear={action('onFilterClear')}
+      isFilterVisible={dataKey => currentFilter.includes(dataKey)}
+      isDeletableFilter={() => true}
+      deleteFilter={() => setCurrentFilter([])}
+      saveFilter={action('saveFilter')}
+      clearFilter={action('clearFilter')}
     >
       <TableDateFilter defaultValue={undefined} {...props} />
     </TableFilterGroupProvider>
@@ -30,11 +31,11 @@ export const Basic: ComponentStory<typeof TableDateFilter> = props => {
 
 export const DefaultFilter: ComponentStory<typeof TableDateFilter> = props => (
   <TableFilterGroupProvider
-    initialFilterDataKeys={['id']}
-    currentFilterDataKeys={[]}
-    onFilterDelete={action('onFilterDelete')}
-    onFilterSave={action('onFilterSave')}
-    onFilterClear={action('onFilterClear')}
+    isFilterVisible={() => true}
+    isDeletableFilter={() => false}
+    deleteFilter={action('deleteFilter')}
+    saveFilter={action('saveFilter')}
+    clearFilter={action('clearFilter')}
   >
     <TableDateFilter {...props} />
   </TableFilterGroupProvider>

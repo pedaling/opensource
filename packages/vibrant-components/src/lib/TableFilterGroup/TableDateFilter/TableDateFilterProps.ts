@@ -1,5 +1,5 @@
 import { withVariation } from '@vibrant-ui/core';
-import type { DateFilterOperator } from '../type';
+import type { DateFilterOperator } from '../types';
 
 export type TableDateFilterProps = {
   dataKey: string;
