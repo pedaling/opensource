@@ -46,6 +46,7 @@ export type Translation = {
   };
   tableFilter: {
     delete: string;
+    reset: string;
     stringOperator: {
       filterLabel: {
         empty: string;
@@ -80,6 +81,18 @@ export type Translation = {
       empty: string;
       notEmpty: string;
     };
+    multiSelectOperator: {
+      filterLabel: {
+        equals: string;
+        notEquals: string;
+        empty: string;
+        notEmpty: string;
+      };
+      equals: string;
+      notEquals: string;
+      empty: string;
+      notEmpty: string;
+    };
   };
 };
 
@@ -111,6 +124,7 @@ const ConfigContext = createContext<ConfigContextValue>({
     },
     tableFilter: {
       delete: '삭제',
+      reset: '초기화',
       stringOperator: {
         filterLabel: {
           empty: '비어있음',
@@ -144,6 +158,18 @@ const ConfigContext = createContext<ConfigContextValue>({
         empty: '비어있다',
         notEmpty: '비어있지 않다',
         between: '범위 내',
+      },
+      multiSelectOperator: {
+        filterLabel: {
+          equals: '{options}',
+          notEquals: '{options} 같지 않음',
+          empty: '비어있음',
+          notEmpty: '비어있지 않음',
+        },
+        equals: '같다',
+        notEquals: '같지 않다',
+        empty: '비어있다',
+        notEmpty: '비어있지 않다',
       },
     },
   },
