@@ -53,12 +53,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
             setSelectedValues([]);
           }
         }}
-        operatorOptions={
-          operators.reduce(
-            (record, operator) => ({ ...record, [operator]: operatorTranslation[operator] }),
-            {}
-          ) as Record<MultiSelectFilterOperator, string>
-        }
+        operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);

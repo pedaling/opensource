@@ -58,12 +58,7 @@ export const TableStringFilter = withTableStringFilterVariation(
 
           setInputValue(value);
         }}
-        operatorOptions={
-          operators.reduce(
-            (record, operator) => ({ ...record, [operator]: operatorTranslation[operator] }),
-            {}
-          ) as Record<StringFilterOperator, string>
-        }
+        operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);

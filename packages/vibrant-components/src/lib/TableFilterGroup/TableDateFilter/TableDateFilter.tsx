@@ -50,19 +50,14 @@ export const TableDateFilter = withTableDateFilterVariation(
                 .replace('{endDate}', value?.[1] ? getDateString(value?.[1]) : '')}`
             : ''
         )}
-        width={operator === 'between' ? 320 : 240}
+        width={operator === 'between' ? 320 : 'auto'}
         active={isDateFilterValid({ value, operator })}
         onClose={() => {
           if (isValueRequiredOperator(operator)) {
             setValue([]);
           }
         }}
-        operatorOptions={
-          operators.reduce(
-            (record, operator) => ({ ...record, [operator]: operatorTranslation[operator] }),
-            {}
-          ) as Record<DateFilterOperator, string>
-        }
+        operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);

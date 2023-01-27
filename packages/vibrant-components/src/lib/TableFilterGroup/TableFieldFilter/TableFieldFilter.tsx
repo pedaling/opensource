@@ -27,6 +27,8 @@ export const TableFieldFilter = <Operator extends string>({
   } = useConfig();
   const { isFilterVisible, isDeletableFilter, deleteFilter } = useTableFilterGroup();
 
+  const selectedOperatorLabel = operatorOptions.find(({ operator }) => operator === selectedOperator)?.label;
+
   if (!isFilterVisible(dataKey)) {
     return null;
   }
@@ -43,19 +45,19 @@ export const TableFieldFilter = <Operator extends string>({
       renderContents={() => (
         <VStack spacing={16} alignHorizontal="stretch" width={width}>
           <HStack alignHorizontal="space-between" alignVertical="center" px={20}>
-            {Object.keys(operatorOptions).length <= 1 ? (
-              <Body level={2}>{operatorOptions[selectedOperator]}</Body>
+            {operatorOptions.length <= 1 ? (
+              <Body level={2}>{operatorOptions?.[0].label}</Body>
             ) : (
               <Dropdown
                 position="bottom-start"
                 renderOpener={({ open }) => (
                   <GhostButton size="md" onClick={open} disclosure={true}>
-                    {operatorOptions[selectedOperator]}
+                    {selectedOperatorLabel}
                   </GhostButton>
                 )}
                 renderContents={({ close }) => (
                   <VStack as="ul">
-                    {Object.keys(operatorOptions).map(operator => (
+                    {operatorOptions.map(({ operator, label: operatorLabel }) => (
                       <Pressable
                         key={operator}
                         as="li"
@@ -71,7 +73,7 @@ export const TableFieldFilter = <Operator extends string>({
                           close();
                         }}
                       >
-                        <Body level={2}>{operatorOptions[operator as Operator]}</Body>
+                        <Body level={2}>{operatorLabel}</Body>
                       </Pressable>
                     ))}
                   </VStack>
