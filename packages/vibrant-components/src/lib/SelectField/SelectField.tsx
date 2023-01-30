@@ -23,6 +23,7 @@ export const SelectField = withSelectFieldVariation(
     onValueChange,
     onOpen,
     zIndex,
+    optionTextTransform = 'none',
     ...restProps
   }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
@@ -248,7 +249,12 @@ export const SelectField = withSelectFieldVariation(
                       </Box>
                     </>
                   )}
-                  <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={1}>
+                  <Body
+                    level={2}
+                    color={disabled ? 'onView3' : 'onView1'}
+                    lineLimit={1}
+                    textTransform={optionTextTransform}
+                  >
                     {selectedOption.label}
                   </Body>
                 </Box>
@@ -292,6 +298,7 @@ export const SelectField = withSelectFieldVariation(
             reverse={direction === 'up'}
             options={options}
             focusIndex={focusIndex}
+            textTransform={optionTextTransform}
           />
         </OverlayBox>
         {Boolean(helperText) && (

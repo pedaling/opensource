@@ -1,5 +1,6 @@
 import type { ReactElement, Ref } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { TextSystemProps } from '@vibrant-ui/core';
 
 type SelectOptionItemProps = {
   children: ReactElement | string;
@@ -7,6 +8,7 @@ type SelectOptionItemProps = {
   active?: boolean;
   ref?: Ref<HTMLElement>;
   disabled?: boolean;
+  textTransform?: TextSystemProps['textTransform'];
 };
 
 export const withSelectOptionItemVariation = withVariation<SelectOptionItemProps>('SelectOptionItem')(
