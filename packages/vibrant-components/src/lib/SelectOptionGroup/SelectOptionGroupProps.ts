@@ -9,7 +9,7 @@ export type SelectOptionGroupProps = {
   state?: 'default' | 'error';
   reverse?: boolean;
   renderOption?: (index: number) => ReactElement;
-  optionTextTransform?: TextSystemProps['textTransform'];
+  textTransform?: TextSystemProps['textTransform'];
 };
 
 export const withSelectOptionGroupVariation = withVariation<SelectOptionGroupProps>('SelectOptionGroup')(

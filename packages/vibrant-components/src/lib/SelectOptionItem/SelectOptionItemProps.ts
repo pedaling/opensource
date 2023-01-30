@@ -8,7 +8,7 @@ type SelectOptionItemProps = {
   active?: boolean;
   ref?: Ref<HTMLElement>;
   disabled?: boolean;
-  optionTextTransform?: TextSystemProps['textTransform'];
+  textTransform?: TextSystemProps['textTransform'];
 };
 
 export const withSelectOptionItemVariation = withVariation<SelectOptionItemProps>('SelectOptionItem')(

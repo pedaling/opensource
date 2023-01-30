@@ -298,7 +298,7 @@ export const SelectField = withSelectFieldVariation(
             reverse={direction === 'up'}
             options={options}
             focusIndex={focusIndex}
-            optionTextTransform={optionTextTransform}
+            textTransform={optionTextTransform}
           />
         </OverlayBox>
         {Boolean(helperText) && (
