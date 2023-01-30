@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { TextSystemProps } from '@vibrant-ui/core';
 
 export type SelectOptionGroupProps = {
   focusIndex: number;
@@ -8,6 +9,7 @@ export type SelectOptionGroupProps = {
   state?: 'default' | 'error';
   reverse?: boolean;
   renderOption?: (index: number) => ReactElement;
+  optionTextTransform?: TextSystemProps['textTransform'];
 };
 
 export const withSelectOptionGroupVariation = withVariation<SelectOptionGroupProps>('SelectOptionGroup')(

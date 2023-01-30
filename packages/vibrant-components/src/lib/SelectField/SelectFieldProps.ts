@@ -1,5 +1,6 @@
 import type { RefObject } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { TextSystemProps } from '@vibrant-ui/core';
 import type { SelectOptionGroupProps } from '../SelectOptionGroup';
 
 export type SelectFieldRefValue = {
@@ -18,17 +19,18 @@ export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderO
   onValueChange?: (value?: string) => void;
   onOpen?: () => void;
   zIndex?: number;
+  optionTextTransform?: TextSystemProps['textTransform'];
 } & (
     | {
-        label: string;
-        inlineLabel?: boolean;
-        placeholder?: never;
-      }
+      label: string;
+      inlineLabel?: boolean;
+      placeholder?: never;
+    }
     | {
-        label?: never;
-        inlineLabel?: never;
-        placeholder: string;
-      }
+      label?: never;
+      inlineLabel?: never;
+      placeholder: string;
+    }
   );
 
 export const withSelectFieldVariation = withVariation<SelectFieldProps>('SelectField')(

@@ -3,7 +3,7 @@ import { Body } from '../Body';
 import { Pressable } from '../Pressable';
 import { withSelectOptionItemVariation } from './SelectOptionItemProps';
 
-export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, active, children, color, ...restProps }) => (
+export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, active, children, color, optionTextTransform, ...restProps }) => (
   <Pressable
     ref={innerRef}
     as="li"
@@ -27,7 +27,7 @@ export const SelectOptionItem = withSelectOptionItemVariation(({ innerRef, activ
           opacity="overlay.active"
         />
       )}
-      <Body level={2} color={color}>
+      <Body level={2} color={color} textTransform={optionTextTransform}>
         {children}
       </Body>
     </>
