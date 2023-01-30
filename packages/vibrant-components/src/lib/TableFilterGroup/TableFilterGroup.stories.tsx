@@ -1,20 +1,17 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { TableStringFilter } from '../TableFilter/TableStringFilter';
 import { TableFilterGroup } from './TableFilterGroup';
+import { TableStringFilter } from './TableStringFilter';
 
 export default {
   title: 'TableFilterGroup',
   component: TableFilterGroup,
   args: {
     initialFilterDataKeys: ['id'],
-    onFilterChange: filters => {
-      console.log(filters);
-    },
   },
 } as ComponentMeta<typeof TableFilterGroup>;
 
 export const Basic: ComponentStory<typeof TableStringFilter> = props => (
-  <TableFilterGroup {...props}>
+  <TableFilterGroup initialFilterDataKeys={['id']}>
     <TableStringFilter
       dataKey="id"
       label="ID"
@@ -25,7 +22,7 @@ export const Basic: ComponentStory<typeof TableStringFilter> = props => (
     />
     <TableStringFilter
       dataKey="location"
-      label="Location"
+      label="장소"
       defaultValue={{
         value: 'Seoul',
         operator: 'contains',
@@ -33,19 +30,11 @@ export const Basic: ComponentStory<typeof TableStringFilter> = props => (
     />
     <TableStringFilter
       dataKey="class"
-      label="Class"
+      label="수강 중인 클래스"
       defaultValue={{
         value: 'Something',
         operator: 'equals',
       }}
     />
-    {/* <TableDateFilter
-      dataKey="birthday"
-      label="생년월일"
-      defaultValue={{
-        value: [],
-        operator: 'before',
-      }}
-    /> */}
   </TableFilterGroup>
 );

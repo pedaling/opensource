@@ -1,4 +1,5 @@
-import { Children, isValidElement, useState } from 'react';
+import type { RefObject } from 'react';
+import { Children, cloneElement, isValidElement, useRef, useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
@@ -6,11 +7,13 @@ import { Dropdown } from '../Dropdown';
 import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
-import type { Filter } from '../TableFilter/type';
 import { VStack } from '../VStack';
 import { TableFilterGroupProvider } from './context';
-import { TableFilterGroupConsumer } from './context/TableFilterGroupContext';
+import type { TableDateFilterProps } from './TableDateFilter';
 import { withTableFilterGroupPropsVariation } from './TableFilterGroupProps';
+import type { TableMultiSelectFilterProps } from './TableMultiSelectFilter';
+import type { TableStringFilterProps } from './TableStringFilter';
+import type { Filter, TableFilterRefValue } from './types';
 
 export const TableFilterGroup = withTableFilterGroupPropsVariation(({ initialFilterDataKeys = [], children }) => {
   const {
@@ -19,104 +22,83 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(({ initialFil
     },
   } = useConfig();
 
-  const filterElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
+  const filterElements =
+    Children.toArray(children).filter(
+      isValidElement<TableDateFilterProps | TableMultiSelectFilterProps | TableStringFilterProps>
+    ) ?? [];
 
-  const [availableFilterDataKeys, setAvailableFilterDataKeys] = useState<string[]>(
-    filterElements
-      .filter(element => !initialFilterDataKeys.includes(element.props.dataKey))
-      .map(filter => filter.props.dataKey)
-  );
+  const filterReferences = useRef<Record<string, RefObject<TableFilterRefValue>>>({});
 
-  function getFilterElement(dataKey: string): Filter {
-    return filterElements.find(filter => filter.props.dataKey === dataKey)?.props as any as Filter;
-  }
+  const [currentFilterDataKeys, setCurrentFilterDataKeys] = useState<string[]>(initialFilterDataKeys);
 
-  const [validFilters, setValidFilters] = useState<Filter[]>(
-    filterElements.filter(element => initialFilterDataKeys.includes(element.props.dataKey)).map(filter => filter.props)
-  );
-
-  const onFilterSave = (filter: Filter) => {
-    if (!availableFilterDataKeys.includes(filter.dataKey)) {
-      return;
-    }
-
-    setAvailableFilterDataKeys(availableFilterDataKeys.filter(dataKey => dataKey !== filter.dataKey));
-
-    setValidFilters([...validFilters, filter]);
+  const updateFilter = (filter: Filter) => {
+    setCurrentFilterDataKeys([...currentFilterDataKeys, filter.dataKey]);
   };
 
-  const onFilterDelete = (filterDataKey: string) => {
-    setAvailableFilterDataKeys([...availableFilterDataKeys, filterDataKey]);
+  const deleteFilter = (filterDataKey: string) => {
+    setCurrentFilterDataKeys([...currentFilterDataKeys.filter(key => key !== filterDataKey)]);
   };
 
-  const onFilterClear = (filterDataKey: string) => {
-    setValidFilters(validFilters.filter(filter => filter.dataKey !== filterDataKey));
-  };
+  const onInitialize = () => {
+    currentFilterDataKeys.map(key => filterReferences.current[key].current?.reset);
 
-  const onInitialize = () => {};
+    setCurrentFilterDataKeys(initialFilterDataKeys);
+  };
 
   return (
     <TableFilterGroupProvider
-      initialFilterDataKeys={initialFilterDataKeys}
-      onFilterClear={onFilterClear}
-      onFilterDelete={onFilterDelete}
-      onFilterSave={onFilterSave}
+      updateFilter={updateFilter}
+      deleteFilter={deleteFilter}
+      isCurrentFilter={filterDataKey => currentFilterDataKeys.includes(filterDataKey)}
+      isDeletableFilter={filterDataKey => initialFilterDataKeys.includes(filterDataKey)}
     >
-      <TableFilterGroupConsumer>
-        {({ onFilterSave, isFilterChanged }) => (
-          <HStack width="100%" alignHorizontal="space-between" alignVertical="center">
-            <HStack spacing={8} alignVertical="center">
-              {children}
-              <Dropdown
-                position="bottom-start"
-                renderContents={({ close }) => (
-                  <VStack>
-                    {availableFilterDataKeys.map(dataKey => {
-                      const filter = getFilterElement(dataKey);
+      <HStack width="100%" alignHorizontal="space-between" alignVertical="center">
+        <HStack spacing={8} alignVertical="center">
+          {children.map(child =>
+            cloneElement(child, {
+              ref: (ref: any) => (filterReferences.current[child.props.dataKey] = ref),
+            })
+          )}
+          <Dropdown
+            position="bottom-start"
+            renderContents={({ close }) => (
+              <VStack>
+                {filterElements
+                  .filter(element => !currentFilterDataKeys.includes(element.props.dataKey))
+                  .map(element => (
+                    <Pressable
+                      overlayColor="onView1"
+                      interactions={['hover', 'focus', 'active']}
+                      key={element.props.dataKey}
+                      pl={20}
+                      py={7}
+                      onClick={() => {
+                        setCurrentFilterDataKeys([...currentFilterDataKeys, element.props.dataKey]);
 
-                      return (
-                        <Pressable
-                          overlayColor="onView1"
-                          interactions={['hover', 'focus', 'active']}
-                          key={dataKey}
-                          pl={20}
-                          py={7}
-                          onClick={() => {
-                            onFilterSave(filter);
-
-                            close();
-                          }}
-                        >
-                          <Body level={2} weight="medium">
-                            {filter.label}
-                          </Body>
-                        </Pressable>
-                      );
-                    })}
-                  </VStack>
-                )}
-                renderOpener={({ open }) => (
-                  <GhostButton size="md" IconComponent={Icon.Add.Regular} onClick={open}>
-                    <Body level={2}>{add}</Body>
-                  </GhostButton>
-                )}
-              />
-            </HStack>
-            {isFilterChanged && (
-              <GhostButton
-                size="md"
-                color="onView2"
-                IconComponent={Icon.RotateClockwise.Regular}
-                onClick={onInitialize}
-              >
-                <Body color="onView2" level={2}>
-                  {initialize}
-                </Body>
+                        close();
+                      }}
+                    >
+                      <Body level={2} weight="medium">
+                        {element.props.label}
+                      </Body>
+                    </Pressable>
+                  ))}
+              </VStack>
+            )}
+            renderOpener={({ open }) => (
+              <GhostButton size="md" IconComponent={Icon.Add.Regular} onClick={open}>
+                <Body level={2}>{add}</Body>
               </GhostButton>
             )}
-          </HStack>
-        )}
-      </TableFilterGroupConsumer>
+          />
+        </HStack>
+        {/* TODO: isAnyFilterModified 를 통해 초기화 버튼 유무를 제어해야 합니다 (LOU) */}
+        <GhostButton size="md" color="onView2" IconComponent={Icon.RotateClockwise.Regular} onClick={onInitialize}>
+          <Body color="onView2" level={2}>
+            {initialize}
+          </Body>
+        </GhostButton>
+      </HStack>
     </TableFilterGroupProvider>
   );
 });

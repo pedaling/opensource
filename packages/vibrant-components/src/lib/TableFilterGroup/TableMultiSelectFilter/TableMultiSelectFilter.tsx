@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useImperativeHandle, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { CheckboxGroupField } from '../../CheckboxGroupField';
 import { Divider } from '../../Divider';
@@ -12,10 +12,10 @@ import { isMultiSelectFilterValid, isValueRequiredOperator } from '../utils';
 import { withTableMultiSelectFilterVariation } from './TableMultiSelectFilterProps';
 
 export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
-  ({ dataKey, label, options, operators = ['equals', 'notEquals', 'empty', 'notEmpty'], defaultValue }) => {
+  ({ innerRef, dataKey, label, options, operators = ['equals', 'notEquals', 'empty', 'notEmpty'], defaultValue }) => {
     const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value ?? []);
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator ?? operators[0]);
-    const { saveFilter, clearFilter } = useTableFilterGroup();
+    const { updateFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -23,15 +23,14 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       },
     } = useConfig();
 
-    useEffect(() => {
-      if (!isMultiSelectFilterValid({ value: selectedValues, operator })) {
-        clearFilter(dataKey);
+    useImperativeHandle(innerRef, () => ({
+      reset: () => {
+        setSelectedValues(defaultValue?.value ?? []);
 
-        return;
-      }
-
-      saveFilter({ value: isValueRequiredOperator(operator) ? [] : selectedValues, operator, dataKey });
-    }, [dataKey, clearFilter, operator, selectedValues, saveFilter]);
+        setOperator(defaultValue?.operator ?? operators[0]);
+      },
+      value: { value: selectedValues, operator },
+    }));
 
     return (
       <TableFieldFilter
@@ -73,6 +72,13 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
                   )}
                   onValueChange={newValue => {
                     setSelectedValues(Object.keys(newValue).filter(key => newValue[key]));
+
+                    updateFilter({
+                      value: isValueRequiredOperator(operator) ? [] : selectedValues,
+                      operator,
+                      dataKey,
+                      type: 'multiSelect',
+                    });
                   }}
                 />
               </Box>

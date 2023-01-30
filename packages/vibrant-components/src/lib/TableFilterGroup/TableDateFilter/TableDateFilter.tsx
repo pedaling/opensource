@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useImperativeHandle, useState } from 'react';
 import { Box, useConfig, useCurrentTheme } from '@vibrant-ui/core';
 import { getDateString } from '@vibrant-ui/utils';
 import { DatePickerField } from '../../DatePickerField';
@@ -11,6 +11,7 @@ import { withTableDateFilterVariation } from './TableDateFilterProps';
 
 export const TableDateFilter = withTableDateFilterVariation(
   ({
+    innerRef,
     dataKey,
     label,
     operators = ['equals', 'notEquals', 'before', 'after', 'onOrBefore', 'onOrAfter', 'between', 'empty', 'notEmpty'],
@@ -22,7 +23,7 @@ export const TableDateFilter = withTableDateFilterVariation(
     const {
       theme: { zIndex },
     } = useCurrentTheme();
-    const { saveFilter, clearFilter } = useTableFilterGroup();
+    const { updateFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -30,15 +31,23 @@ export const TableDateFilter = withTableDateFilterVariation(
       },
     } = useConfig();
 
-    useEffect(() => {
-      if (!isDateFilterValid({ value, operator })) {
-        clearFilter(dataKey);
+    const onUpdateFilter = () => {
+      updateFilter({
+        dataKey,
+        value: isValueRequiredOperator(operator) ? [] : value,
+        operator,
+        type: 'date',
+      });
+    };
 
-        return;
-      }
+    useImperativeHandle(innerRef, () => ({
+      reset: () => {
+        setValue(defaultValue?.value ?? []);
 
-      saveFilter({ dataKey, value: isValueRequiredOperator(operator) ? [] : value, operator });
-    }, [clearFilter, dataKey, operator, saveFilter, value]);
+        setOperator(defaultValue?.operator ?? operators[0]);
+      },
+      value: { value, operator },
+    }));
 
     return (
       <TableFieldFilter
@@ -72,6 +81,8 @@ export const TableDateFilter = withTableDateFilterVariation(
                   defaultValue={value.length >= 2 ? { start: value[0], end: value[1] } : undefined}
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue.start, newValue.end] : []);
+
+                    onUpdateFilter();
                   }}
                 />
               ) : (
@@ -81,6 +92,8 @@ export const TableDateFilter = withTableDateFilterVariation(
                   defaultValue={defaultValue?.value?.[0] ?? value?.[0]}
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue] : []);
+
+                    onUpdateFilter();
                   }}
                 />
               )}

@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import { withVariation } from '@vibrant-ui/core';
-import type { Filter } from '../TableFilter/type';
+import type { Filter } from './types';
 
 export type TableFilterGroupProps = {
   onFilterChange?: (filters: Filter[]) => void;

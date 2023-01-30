@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useImperativeHandle, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
@@ -9,6 +9,7 @@ import { withTableStringFilterVariation } from './TableStringFilterProps';
 
 export const TableStringFilter = withTableStringFilterVariation(
   ({
+    innerRef,
     dataKey,
     label,
     operators = ['equals', 'notEquals', 'contains', 'notContains', 'empty', 'notEmpty'],
@@ -18,7 +19,7 @@ export const TableStringFilter = withTableStringFilterVariation(
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
     const [value, setValue] = useState<string>(inputValue);
-    const { saveFilter, clearFilter } = useTableFilterGroup();
+    const { updateFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -26,15 +27,16 @@ export const TableStringFilter = withTableStringFilterVariation(
       },
     } = useConfig();
 
-    useEffect(() => {
-      if (!isStringFilterValid({ value, operator })) {
-        clearFilter(dataKey);
+    useImperativeHandle(innerRef, () => ({
+      reset: () => {
+        setInputValue(defaultValue?.value ?? '');
 
-        return;
-      }
+        setValue(defaultValue?.value ?? '');
 
-      saveFilter({ value: isValueRequiredOperator(operator) ? '' : value, operator, dataKey });
-    }, [clearFilter, dataKey, operator, saveFilter, value]);
+        setOperator(defaultValue?.operator ?? operators[0]);
+      },
+      value: { value, operator },
+    }));
 
     return (
       <TableFieldFilter
@@ -79,6 +81,13 @@ export const TableStringFilter = withTableStringFilterVariation(
                 }}
                 onSubmit={() => {
                   setValue(inputValue);
+
+                  updateFilter({
+                    value: isValueRequiredOperator(operator) ? '' : value,
+                    operator,
+                    dataKey,
+                    type: 'string',
+                  });
                 }}
               />
             </Box>

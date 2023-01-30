@@ -1,8 +1,11 @@
+import type { RefObject } from 'react';
+
 export type StringFilterOperator = 'contains' | 'empty' | 'equals' | 'notContains' | 'notEmpty' | 'notEquals';
 
 export type StringFilter = {
   value: string;
   operator: StringFilterOperator;
+  type: 'string';
 };
 
 export type DateFilterOperator =
@@ -19,9 +22,9 @@ export type DateFilterOperator =
 export type DateFilter = {
   value: Date[];
   operator: DateFilterOperator;
+  type: 'date';
 };
 
-<<<<<<< HEAD:packages/vibrant-components/src/lib/TableFilterGroup/types/index.ts
 export type MultiSelectFilterOperator = 'empty' | 'equals' | 'notEmpty' | 'notEquals';
 
 export type Option = {
@@ -32,9 +35,19 @@ export type Option = {
 export type MultiSelectFilter = {
   value: Option['value'][];
   operator: MultiSelectFilterOperator;
+  type: 'multiSelect';
 };
 
-export type Filter = (DateFilter | MultiSelectFilter | StringFilter) & { dataKey: string };
-=======
-export type Filter = (DateFilter | StringFilter) & { dataKey: string; label: string };
->>>>>>> 6299bb43 (feat: implementation TableFilterGroup except initialize and onFilterChange):packages/vibrant-components/src/lib/TableFilter/type/index.ts
+export type TableFilterRefValue = {
+  reset: () => void;
+  value: FilterValue;
+};
+
+export type FilterValue = Pick<Filter, 'value'>;
+
+export type FilterType = Pick<Filter, 'type'>;
+
+export type Filter = (DateFilter | MultiSelectFilter | StringFilter) & {
+  dataKey: string;
+  ref?: RefObject<TableFilterRefValue>;
+};

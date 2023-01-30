@@ -25,11 +25,11 @@ export const TableFieldFilter = <Operator extends string>({
       tableFilter: { delete: deleteTranslation },
     },
   } = useConfig();
-  const { isFilterVisible, isDeletableFilter, deleteFilter } = useTableFilterGroup();
+  const { isCurrentFilter, isDeletableFilter, deleteFilter } = useTableFilterGroup();
 
   const selectedOperatorLabel = operatorOptions.find(({ operator }) => operator === selectedOperator)?.label;
 
-  if (!isFilterVisible(dataKey)) {
+  if (!isCurrentFilter(dataKey)) {
     return null;
   }
 
