@@ -388,7 +388,6 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
                 <button
                   aria-label="Close"
                   class="emotion-9"
-                  hipslot="8"
                   type="button"
                 >
                   <span
@@ -807,7 +806,6 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
                 <button
                   aria-label="Close"
                   class="emotion-9"
-                  hipslot="8"
                   type="button"
                 >
                   <span
