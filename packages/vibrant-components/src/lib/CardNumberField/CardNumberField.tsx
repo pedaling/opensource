@@ -82,9 +82,6 @@ export const CardNumberField = withCardNumberFieldVariation(
       return components.join(separator);
     };
 
-    /**
-     * maxLength는 각 카드사의 포멧의 최대 길이에 맞춰 강제한다.
-     */
     const maxLength = (() => {
       if (card?.lengths) {
         return Math.max(...card.lengths);
@@ -110,6 +107,8 @@ export const CardNumberField = withCardNumberFieldVariation(
     const hasValue = value.length > 0;
     const onClearButtonClick = () => {
       setValue('');
+
+      setShowLockIcon(false);
 
       inputRef.current?.focus();
 
