@@ -18,7 +18,7 @@ import { SkeletonText } from './SkeletonText';
 
 export const Skeleton = withSkeletonVariation(props => (
   <SkeletonMotion>
-    <Box backgroundColor="surface1" {...props} />
+    <Box backgroundColor="disable" {...props} />
   </SkeletonMotion>
 )) as ComponentWithRef<SkeletonProps> & {
   Image: ComponentWithRef<SkeletonImageProps>;

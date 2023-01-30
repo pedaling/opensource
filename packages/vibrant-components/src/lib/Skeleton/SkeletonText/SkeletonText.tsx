@@ -19,7 +19,7 @@ export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, 
         >
           <SkeletonMotion>
             <Box
-              backgroundColor="surface1"
+              backgroundColor="disable"
               height={transformResponsiveValue(typography, value => themeTypography[value].fontSize)}
               borderRadiusLevel={1}
             />
