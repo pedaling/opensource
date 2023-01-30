@@ -9,11 +9,6 @@ export default {
   component: TableFilterGroup,
   args: {
     initialFilterDataKeys: ['id', 'orderStatus'],
-    onFilterChange: filters => {
-      filters.map(filter =>
-        console.log(`dataKey: ${filter.dataKey} / value: ${filter.value} / operator: ${filter.operator}`)
-      );
-    },
   },
 } as ComponentMeta<typeof TableFilterGroup>;
 
