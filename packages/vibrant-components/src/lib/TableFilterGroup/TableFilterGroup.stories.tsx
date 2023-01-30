@@ -10,7 +10,7 @@ export default {
   },
 } as ComponentMeta<typeof TableFilterGroup>;
 
-export const Basic: ComponentStory<typeof TableStringFilter> = props => (
+export const Basic: ComponentStory<typeof TableStringFilter> = () => (
   <TableFilterGroup initialFilterDataKeys={['id']}>
     <TableStringFilter
       dataKey="id"
