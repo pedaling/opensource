@@ -46,7 +46,7 @@ export const TableDateFilter = withTableDateFilterVariation(
 
         setOperator(defaultValue?.operator ?? operators[0]);
       },
-      value: { value, operator },
+      value: { value, operator, dataKey, type: 'date' as const },
     }));
 
     return (

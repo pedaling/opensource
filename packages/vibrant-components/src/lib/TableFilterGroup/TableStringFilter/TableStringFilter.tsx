@@ -35,7 +35,7 @@ export const TableStringFilter = withTableStringFilterVariation(
 
         setOperator(defaultValue?.operator ?? operators[0]);
       },
-      value: { value, operator },
+      value: { value, operator, dataKey, type: 'string' as const },
     }));
 
     return (

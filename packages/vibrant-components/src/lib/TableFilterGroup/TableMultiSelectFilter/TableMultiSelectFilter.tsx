@@ -29,7 +29,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
 
         setOperator(defaultValue?.operator ?? operators[0]);
       },
-      value: { value: selectedValues, operator },
+      value: { value: selectedValues, operator, dataKey, type: 'multiSelect' as const },
     }));
 
     return (

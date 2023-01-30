@@ -1,5 +1,3 @@
-import type { RefObject } from 'react';
-
 export type StringFilterOperator = 'contains' | 'empty' | 'equals' | 'notContains' | 'notEmpty' | 'notEquals';
 
 export type StringFilter = {
@@ -40,7 +38,7 @@ export type MultiSelectFilter = {
 
 export type TableFilterRefValue = {
   reset: () => void;
-  value: FilterValue;
+  value: Filter;
 };
 
 export type FilterValue = Pick<Filter, 'value'>;
@@ -49,5 +47,5 @@ export type FilterType = Pick<Filter, 'type'>;
 
 export type Filter = (DateFilter | MultiSelectFilter | StringFilter) & {
   dataKey: string;
-  ref?: RefObject<TableFilterRefValue>;
+  ref?: TableFilterRefValue;
 };

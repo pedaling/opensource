@@ -5,7 +5,7 @@ import type { Filter } from './types';
 export type TableFilterGroupProps = {
   onFilterChange?: (filters: Filter[]) => void;
   initialFilterDataKeys?: string[];
-  children: ReactElement<Filter>[];
+  children: ReactElement<Filter> | ReactElement<Filter>[];
 };
 
 export const withTableFilterGroupPropsVariation = withVariation<TableFilterGroupProps>('TableFilterGroup')();

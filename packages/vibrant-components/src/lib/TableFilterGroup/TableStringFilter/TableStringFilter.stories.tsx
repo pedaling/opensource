@@ -1,7 +1,5 @@
-import { useState } from 'react';
-import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { TableFilterGroupProvider } from '../../TableFilterGroup/context';
+import { TableFilterGroup } from '../TableFilterGroup';
 import { TableStringFilter } from './TableStringFilter';
 
 export default {
@@ -17,30 +15,14 @@ export default {
   },
 } as ComponentMeta<typeof TableStringFilter>;
 
-export const Basic: ComponentStory<typeof TableStringFilter> = props => {
-  const [currentFilter, setCurrentFilter] = useState<string[]>(['id']);
-
-  return (
-    <TableFilterGroupProvider
-      isFilterVisible={dataKey => currentFilter.includes(dataKey)}
-      isDeletableFilter={() => true}
-      deleteFilter={() => setCurrentFilter([])}
-      saveFilter={action('saveFilter')}
-      clearFilter={action('clearFilter')}
-    >
-      <TableStringFilter {...props} />
-    </TableFilterGroupProvider>
-  );
-};
+export const Basic: ComponentStory<typeof TableStringFilter> = props => (
+  <TableFilterGroup initialFilterDataKeys={['id']}>
+    <TableStringFilter {...props} />
+  </TableFilterGroup>
+);
 
 export const DefaultFilter: ComponentStory<typeof TableStringFilter> = props => (
-  <TableFilterGroupProvider
-    isFilterVisible={() => true}
-    isDeletableFilter={() => false}
-    deleteFilter={action('deleteFilter')}
-    saveFilter={action('saveFilter')}
-    clearFilter={action('clearFilter')}
-  >
+  <TableFilterGroup initialFilterDataKeys={['id']}>
     <TableStringFilter {...props} />
-  </TableFilterGroupProvider>
+  </TableFilterGroup>
 );
