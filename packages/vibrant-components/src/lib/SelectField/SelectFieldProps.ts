@@ -22,15 +22,15 @@ export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderO
   optionTextTransform?: TextSystemProps['textTransform'];
 } & (
     | {
-      label: string;
-      inlineLabel?: boolean;
-      placeholder?: never;
-    }
+        label: string;
+        inlineLabel?: boolean;
+        placeholder?: never;
+      }
     | {
-      label?: never;
-      inlineLabel?: never;
-      placeholder: string;
-    }
+        label?: never;
+        inlineLabel?: never;
+        placeholder: string;
+      }
   );
 
 export const withSelectFieldVariation = withVariation<SelectFieldProps>('SelectField')(

@@ -249,7 +249,12 @@ export const SelectField = withSelectFieldVariation(
                       </Box>
                     </>
                   )}
-                  <Body level={2} color={disabled ? 'onView3' : 'onView1'} lineLimit={1} textTransform={optionTextTransform}>
+                  <Body
+                    level={2}
+                    color={disabled ? 'onView3' : 'onView1'}
+                    lineLimit={1}
+                    textTransform={optionTextTransform}
+                  >
                     {selectedOption.label}
                   </Body>
                 </Box>
