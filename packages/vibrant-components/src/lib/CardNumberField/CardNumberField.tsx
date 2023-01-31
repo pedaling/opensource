@@ -1,5 +1,5 @@
 import validate from 'card-validator';
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Image, TextInput } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
@@ -68,19 +68,22 @@ export const CardNumberField = withCardNumberFieldVariation(
     const cardImageSource = cardImage[CARD_TYPE_IMG_MAP[cardType]]?.default;
     const gaps = card?.gaps ?? DEFAULT_GAPS;
 
-    const prettyCardNumber = (cardNumber: string) => {
-      const offsets = [0].concat(gaps, cardNumber.length);
-      const components = [];
+    const prettyCardNumber = useCallback(
+      (cardNumber: string) => {
+        const offsets = [0].concat(gaps, cardNumber.length);
+        const components = [];
 
-      for (let i = 0; offsets[i] < cardNumber.length; i++) {
-        const start = offsets[i];
-        const end = Math.min(offsets[i + 1], cardNumber.length);
+        for (let i = 0; offsets[i] < cardNumber.length; i++) {
+          const start = offsets[i];
+          const end = Math.min(offsets[i + 1], cardNumber.length);
 
-        components.push(cardNumber.substring(start, end));
-      }
+          components.push(cardNumber.substring(start, end));
+        }
 
-      return components.join(separator);
-    };
+        return components.join(separator);
+      },
+      [gaps, separator]
+    );
 
     const maxLength = (() => {
       if (card?.lengths) {
@@ -116,85 +119,82 @@ export const CardNumberField = withCardNumberFieldVariation(
     };
 
     return (
-      <VStack>
-        <FieldLayout
-          label={label}
-          helperText={helperText}
-          state={state}
-          focused={isFocused}
-          filled={value.length > 0}
-          disabled={disabled}
-          renderStart={renderStart}
-          renderEnd={() => (
-            <HStack alignVertical="center" spacing={12}>
-              <VStack>
-                <MountMotion
-                  mountAnimation={mountAnimation}
-                  unmountAnimation={unmountAnimation}
-                  mount={value.length !== 0}
-                  easing="easeOutQuad"
-                  duration={200}
-                >
-                  <Image width={22.38} src={cardImageSource} />
-                </MountMotion>
-              </VStack>
-              {showLockIcon && <Icon.Lock.Thin fill="onView2" />}
-            </HStack>
-          )}
-          showClearButton={clearable && hasValue}
-          onClearButtonClick={onClearButtonClick}
-          onLabelClick={() => inputRef.current?.focus()}
-          renderField={style => (
-            <TextInput
-              ref={inputRef}
-              type="number"
-              maxLength={maxLength}
-              defaultValue={prettyCardNumber(value)}
-              placeholder={!label || isFocused || value ? placeholder : ''}
-              placeholderColor="onView3"
-              disabled={disabled}
-              autoComplete="ccNumber"
-              onFocus={() => {
-                onFocus?.();
+      <FieldLayout
+        label={label}
+        helperText={helperText}
+        state={state}
+        focused={isFocused}
+        filled={value.length > 0}
+        disabled={disabled}
+        renderStart={renderStart}
+        renderEnd={() => (
+          <HStack alignVertical="center" spacing={12}>
+            <VStack>
+              <MountMotion
+                mountAnimation={mountAnimation}
+                unmountAnimation={unmountAnimation}
+                mount={value.length !== 0}
+                easing="easeOutQuad"
+                duration={200}
+              >
+                <Image width={22.38} src={cardImageSource} />
+              </MountMotion>
+            </VStack>
+            {showLockIcon && <Icon.Lock.Thin fill="onView2" />}
+          </HStack>
+        )}
+        showClearButton={clearable && hasValue}
+        onClearButtonClick={onClearButtonClick}
+        onLabelClick={() => inputRef.current?.focus()}
+        renderField={style => (
+          <TextInput
+            ref={inputRef}
+            type="number"
+            maxLength={maxLength}
+            defaultValue={prettyCardNumber(value)}
+            placeholder={!label || isFocused || value ? placeholder : ''}
+            placeholderColor="onView3"
+            disabled={disabled}
+            autoComplete="ccNumber"
+            onFocus={() => {
+              onFocus?.();
 
-                setIsFocused(true);
-              }}
-              onBlur={() => {
-                onBlur?.();
+              setIsFocused(true);
+            }}
+            onBlur={() => {
+              onBlur?.();
 
-                setIsFocused(false);
-              }}
-              onValueChange={({ value, prevent }) => {
-                let isPrevented = false;
+              setIsFocused(false);
+            }}
+            onValueChange={({ value, prevent }) => {
+              let isPrevented = false;
 
-                onValueChange?.({
-                  value,
-                  prevent: () => {
-                    isPrevented = true;
+              onValueChange?.({
+                value,
+                prevent: () => {
+                  isPrevented = true;
 
-                    prevent();
-                  },
-                });
+                  prevent();
+                },
+              });
 
-                if (!isPrevented) {
-                  setValue(value);
-                }
-
+              if (!isPrevented) {
                 setValue(value);
+              }
 
-                prevent();
-                if (value.length > 0) {
-                  setShowLockIcon(true);
-                } else {
-                  setShowLockIcon(false);
-                }
-              }}
-              {...style}
-              {...restProps}
-            />
-          )}
-        />
-      </VStack>
+              if (value.length > 0) {
+                setShowLockIcon(true);
+              } else {
+                setShowLockIcon(false);
+              }
+
+              prevent();
+            }}
+            {...style}
+            {...restProps}
+          />
+        )}
+      />
     );
   }
 );
