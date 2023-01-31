@@ -1,7 +1,9 @@
+import type { RefObject } from 'react';
 import { withVariation } from '@vibrant-ui/core';
-import type { StringFilterOperator } from '../types';
+import type { StringFilterOperator, TableFilterRefValue } from '../types';
 
 export type TableStringFilterProps = {
+  ref?: RefObject<TableFilterRefValue>;
   dataKey: string;
   label: string;
   placeholder?: string;

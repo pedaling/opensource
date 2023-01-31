@@ -1,55 +1,50 @@
 import type { FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import type { ReactElementChildren } from '@vibrant-ui/core';
-import type { Filter } from '../types';
 
 type TableFilterGroupContextValue = {
-  isFilterVisible: (filterDataKey: string) => boolean;
-  isDeletableFilter: (filterDataKey: string) => boolean;
+  updateFilter: () => void;
   deleteFilter: (filterDataKey: string) => void;
-  saveFilter: (filter: Filter) => void;
-  clearFilter: (filterDataKey: string) => void;
+  isCurrentFilter: (filterDataKey: string) => boolean;
+  isDeletableFilter: (filterDataKey: string) => boolean;
 };
 
 const TableFilterGroupContext = createContext<TableFilterGroupContextValue>({
-  isFilterVisible: () => false,
-  isDeletableFilter: () => false,
+  updateFilter: () => {},
   deleteFilter: () => {},
-  saveFilter: () => {},
-  clearFilter: () => {},
+  isCurrentFilter: () => false,
+  isDeletableFilter: () => false,
 });
 
 type TableFilterGroupProviderProps = {
-  isFilterVisible: (filterDataKey: string) => boolean;
-  isDeletableFilter: (filterDataKey: string) => boolean;
+  updateFilter: () => void;
   deleteFilter: (filterDataKey: string) => void;
-  saveFilter: (filter: Filter) => void;
-  clearFilter: (filterDataKey: string) => void;
+  isCurrentFilter: (filterDataKey: string) => boolean;
+  isDeletableFilter: (filterDataKey: string) => boolean;
   children: ReactElementChildren;
 };
 
 export const TableFilterGroupProvider: FC<TableFilterGroupProviderProps> = ({
   children,
-  isFilterVisible,
-  isDeletableFilter,
+  updateFilter,
   deleteFilter,
-  saveFilter,
-  clearFilter,
+  isCurrentFilter,
+  isDeletableFilter,
 }) => {
   const contextValue = useMemo<TableFilterGroupContextValue>(
     () => ({
-      isFilterVisible,
-      isDeletableFilter,
+      updateFilter,
       deleteFilter,
-      saveFilter,
-      clearFilter,
+      isCurrentFilter,
+      isDeletableFilter,
     }),
-    [clearFilter, deleteFilter, isDeletableFilter, isFilterVisible, saveFilter]
+    [deleteFilter, isCurrentFilter, isDeletableFilter, updateFilter]
   );
 
   return <TableFilterGroupContext.Provider value={contextValue}>{children}</TableFilterGroupContext.Provider>;
 };
 
+export const TableFilterGroupConsumer = TableFilterGroupContext.Consumer;
 export const useTableFilterGroup = (): TableFilterGroupContextValue => useContext(TableFilterGroupContext);
 
 TableFilterGroupProvider.displayName = 'TableFilterGroupProvider';

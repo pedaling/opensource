@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useImperativeHandle, useState } from 'react';
 import { Box, useConfig, useCurrentTheme } from '@vibrant-ui/core';
 import { getDateString } from '@vibrant-ui/utils';
 import { DatePickerField } from '../../DatePickerField';
@@ -11,18 +11,22 @@ import { withTableDateFilterVariation } from './TableDateFilterProps';
 
 export const TableDateFilter = withTableDateFilterVariation(
   ({
+    innerRef,
     dataKey,
     label,
     operators = ['equals', 'notEquals', 'before', 'after', 'onOrBefore', 'onOrAfter', 'between', 'empty', 'notEmpty'],
     placeholder,
-    defaultValue,
+    defaultValue = {
+      value: [],
+      operator: operators[0],
+    },
   }) => {
     const [value, setValue] = useState<Date[]>(defaultValue?.value ?? []);
     const [operator, setOperator] = useState<DateFilterOperator>(defaultValue?.operator ?? operators[0]);
     const {
       theme: { zIndex },
     } = useCurrentTheme();
-    const { saveFilter, clearFilter } = useTableFilterGroup();
+    const { updateFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -30,15 +34,24 @@ export const TableDateFilter = withTableDateFilterVariation(
       },
     } = useConfig();
 
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        reset: () => {
+          setValue(defaultValue?.value ?? []);
+
+          setOperator(defaultValue?.operator ?? operators[0]);
+        },
+        value: { value, operator, dataKey, type: 'date' as const },
+      }),
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
+    );
+
     useEffect(() => {
-      if (!isDateFilterValid({ value, operator })) {
-        clearFilter(dataKey);
-
-        return;
+      if (value !== defaultValue?.value || operator !== defaultValue?.operator) {
+        updateFilter();
       }
-
-      saveFilter({ dataKey, value: isValueRequiredOperator(operator) ? [] : value, operator });
-    }, [clearFilter, dataKey, operator, saveFilter, value]);
+    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, updateFilter, value]);
 
     return (
       <TableFieldFilter
@@ -61,10 +74,6 @@ export const TableDateFilter = withTableDateFilterVariation(
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);
-
-          if (operatorOption === 'between' || operator === 'between') {
-            setValue([]);
-          }
         }}
         field={
           !isValueRequiredOperator(operator) && (
@@ -76,6 +85,8 @@ export const TableDateFilter = withTableDateFilterVariation(
                   defaultValue={value.length >= 2 ? { start: value[0], end: value[1] } : undefined}
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue.start, newValue.end] : []);
+
+                    updateFilter();
                   }}
                 />
               ) : (
@@ -85,6 +96,8 @@ export const TableDateFilter = withTableDateFilterVariation(
                   defaultValue={defaultValue?.value?.[0] ?? value?.[0]}
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue] : []);
+
+                    updateFilter();
                   }}
                 />
               )}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useImperativeHandle, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
@@ -9,16 +9,20 @@ import { withTableStringFilterVariation } from './TableStringFilterProps';
 
 export const TableStringFilter = withTableStringFilterVariation(
   ({
+    innerRef,
     dataKey,
     label,
     operators = ['equals', 'notEquals', 'contains', 'notContains', 'empty', 'notEmpty'],
     placeholder,
-    defaultValue,
+    defaultValue = {
+      value: '',
+      operator: operators[0],
+    },
   }) => {
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
     const [value, setValue] = useState<string>(inputValue);
-    const { saveFilter, clearFilter } = useTableFilterGroup();
+    const { updateFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -26,15 +30,26 @@ export const TableStringFilter = withTableStringFilterVariation(
       },
     } = useConfig();
 
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        reset: () => {
+          setInputValue(defaultValue?.value ?? '');
+
+          setValue(defaultValue?.value ?? '');
+
+          setOperator(defaultValue?.operator ?? operators[0]);
+        },
+        value: { value, operator, dataKey, type: 'string' as const },
+      }),
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
+    );
+
     useEffect(() => {
-      if (!isStringFilterValid({ value, operator })) {
-        clearFilter(dataKey);
-
-        return;
+      if (value !== defaultValue?.value || operator !== defaultValue?.operator) {
+        updateFilter();
       }
-
-      saveFilter({ value: isValueRequiredOperator(operator) ? '' : value, operator, dataKey });
-    }, [clearFilter, dataKey, operator, saveFilter, value]);
+    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, updateFilter, value]);
 
     return (
       <TableFieldFilter

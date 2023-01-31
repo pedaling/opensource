@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useImperativeHandle, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { CheckboxGroupField } from '../../CheckboxGroupField';
 import { Divider } from '../../Divider';
@@ -12,10 +12,20 @@ import { isMultiSelectFilterValid, isValueRequiredOperator } from '../utils';
 import { withTableMultiSelectFilterVariation } from './TableMultiSelectFilterProps';
 
 export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
-  ({ dataKey, label, options, operators = ['equals', 'notEquals', 'empty', 'notEmpty'], defaultValue }) => {
+  ({
+    innerRef,
+    dataKey,
+    label,
+    options,
+    operators = ['equals', 'notEquals', 'empty', 'notEmpty'],
+    defaultValue = {
+      value: [],
+      operator: operators[0],
+    },
+  }) => {
     const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value ?? []);
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator ?? operators[0]);
-    const { saveFilter, clearFilter } = useTableFilterGroup();
+    const { updateFilter } = useTableFilterGroup();
 
     const {
       translations: {
@@ -23,15 +33,27 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       },
     } = useConfig();
 
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        reset: () => {
+          setSelectedValues(defaultValue?.value ?? []);
+
+          setOperator(defaultValue?.operator ?? operators[0]);
+        },
+        value: { value: selectedValues, operator, dataKey, type: 'multiSelect' as const },
+      }),
+      [dataKey, defaultValue, operator, operators, selectedValues]
+    );
+
     useEffect(() => {
-      if (!isMultiSelectFilterValid({ value: selectedValues, operator })) {
-        clearFilter(dataKey);
-
-        return;
+      if (
+        selectedValues.sort().join(',') !== defaultValue?.value.sort().join(',') ||
+        operator !== defaultValue?.operator
+      ) {
+        updateFilter();
       }
-
-      saveFilter({ value: isValueRequiredOperator(operator) ? [] : selectedValues, operator, dataKey });
-    }, [dataKey, clearFilter, operator, selectedValues, saveFilter]);
+    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, selectedValues, updateFilter]);
 
     return (
       <TableFieldFilter
