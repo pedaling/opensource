@@ -12,4 +12,11 @@ const pointerEventsProp = createSystemProp({
   }),
 });
 
-export const interactionSystemProps = [cursorProp, pointerEventsProp];
+const hitSlopProp = createSystemProp({
+  property: 'hitSlop',
+  transform: value => ({
+    props: { hitSlop: value },
+  }),
+});
+
+export const interactionSystemProps = [cursorProp, pointerEventsProp, hitSlopProp];

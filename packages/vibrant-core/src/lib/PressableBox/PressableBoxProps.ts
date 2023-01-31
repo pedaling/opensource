@@ -28,17 +28,9 @@ type SystemProps = BackgroundSystemProps &
   SpacingSystemProps &
   TransformSystemProps;
 
-export type HipSlopRect = {
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
-};
-
 export type PressableBoxProps = {
   ref?: Ref<any>;
   disabled?: boolean;
-  hitSlop?: HipSlopRect | number;
   ariaLabel?: string;
   onClick?: () => void;
   onFocusIn?: () => void;

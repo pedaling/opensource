@@ -8,4 +8,9 @@ const pointerEventsProp = createSystemProp({
   property: 'pointerEvents',
 });
 
-export const interactionSystemProps = [cursorProp, pointerEventsProp];
+const hitSlopProp = createSystemProp({
+  property: 'hitSlop',
+  disabled: true,
+});
+
+export const interactionSystemProps = [cursorProp, pointerEventsProp, hitSlopProp];

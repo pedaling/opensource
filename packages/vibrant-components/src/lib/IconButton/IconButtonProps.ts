@@ -27,17 +27,17 @@ export const withIconButtonVariation = withVariation<IconButtonProps>('IconButto
     variants: {
       sm: {
         iconSize: 16,
-        hipSlot: 8,
+        hitSlop: 8,
       },
       md: {
         iconSize: 24,
-        hipSlot: 8,
+        hitSlop: 8,
       },
       lg: {
         iconSize: 40,
-        hipSlot: 0,
+        hitSlop: 0,
       },
-    },
+    } as const,
   }),
   propVariant({
     props: [

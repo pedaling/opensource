@@ -12,7 +12,7 @@ export type { FlexboxSystemProps } from './flexbox';
 export { flexboxSystemProps } from './flexbox';
 export type { InputSystemProps } from './input';
 export { inputSystemProps } from './input';
-export type { InteractionSystemProps } from './interaction';
+export type { InteractionSystemProps, HitSlopRect } from './interaction';
 export { interactionSystemProps } from './interaction';
 export type { OverflowSystemProps } from './overflow';
 export { overflowSystemProps } from './overflow';
