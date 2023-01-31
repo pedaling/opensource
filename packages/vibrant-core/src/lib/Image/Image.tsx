@@ -49,7 +49,7 @@ export const Image = withImageVariation(({ src, alt, loading, innerRef, ...props
   return (
     <>
       {imageProps.map(({ src, display }) => (
-        <Box as="img" key={src} loading={loading} alt={alt} src={src} display={display} {...props} />
+        <Box as="img" ref={innerRef} key={src} loading={loading} alt={alt} src={src} display={display} {...props} />
       ))}
     </>
   );
