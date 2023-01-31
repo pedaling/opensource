@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.43.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.42.1...vibrant-components-0.43.0) (2023-01-31)
+
+
+### Features
+
+* add optionTextTransform property to SelectField component ([#542](https://github.com/pedaling/opensource/issues/542)) ([8dc217d](https://github.com/pedaling/opensource/commit/8dc217d2e1e005259f79362cf6655b0decdb5ca6))
+* add TableMultiSelectFilter component ([#537](https://github.com/pedaling/opensource/issues/537)) ([29a64e8](https://github.com/pedaling/opensource/commit/29a64e86d6f4fe1da50adbc7d53fa89cc0e11fd7))
+
+
+### Bug Fixes
+
+* change Skeleton background color to disable ([#539](https://github.com/pedaling/opensource/issues/539)) ([3afe96b](https://github.com/pedaling/opensource/commit/3afe96b299a8dddec96fe5402412f90b920beefe))
+
 ### [0.42.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.42.0...vibrant-components-0.42.1) (2023-01-23)
 
 

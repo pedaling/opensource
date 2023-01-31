@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.43.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.42.1...vibrant-core-0.43.0) (2023-01-31)
+
+
+### Features
+
+* add ref in Image component ([#541](https://github.com/pedaling/opensource/issues/541)) ([f4af010](https://github.com/pedaling/opensource/commit/f4af0107af5628d6535b858311656eee2bfdf071))
+* add TableMultiSelectFilter component ([#537](https://github.com/pedaling/opensource/issues/537)) ([29a64e8](https://github.com/pedaling/opensource/commit/29a64e86d6f4fe1da50adbc7d53fa89cc0e11fd7))
+
 ### [0.42.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.42.0...vibrant-core-0.42.1) (2023-01-23)
 
 
