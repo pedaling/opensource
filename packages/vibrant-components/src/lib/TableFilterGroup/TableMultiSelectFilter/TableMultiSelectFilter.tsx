@@ -47,7 +47,10 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     );
 
     useEffect(() => {
-      if (!selectedValues.every(value => defaultValue?.value.includes(value)) || operator !== defaultValue?.operator) {
+      if (
+        selectedValues.sort().join(',') !== defaultValue?.value.sort().join(',') ||
+        operator !== defaultValue?.operator
+      ) {
         updateFilter();
       }
     }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, selectedValues, updateFilter]);

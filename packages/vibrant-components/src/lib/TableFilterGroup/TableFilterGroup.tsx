@@ -31,6 +31,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
     const filterChildren = (Array.isArray(children) ? children : [children]).filter(child =>
       currentFilterDataKeys.includes(child.props.dataKey)
     );
+
     const filterElements =
       Children.toArray(children).filter(
         isValidElement<TableDateFilterProps | TableMultiSelectFilterProps | TableStringFilterProps>
@@ -39,13 +40,21 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
     const addFilter = (filterDataKey: string) => {
       setCurrentFilterDataKeys([...currentFilterDataKeys, filterDataKey]);
 
-      onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
+      onFilterChange?.(
+        currentFilterDataKeys
+          .filter(key => filterReferences.current[key])
+          .map(key => filterReferences.current[key].value)
+      );
 
       setIsChanged(true);
     };
 
     const updateFilter = () => {
-      onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
+      onFilterChange?.(
+        currentFilterDataKeys
+          .filter(key => filterReferences.current[key])
+          .map(key => filterReferences.current[key].value)
+      );
 
       setIsChanged(true);
     };
@@ -53,7 +62,11 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
     const deleteFilter = (filterDataKey: string) => {
       setCurrentFilterDataKeys([...currentFilterDataKeys.filter(key => key !== filterDataKey)]);
 
-      onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
+      onFilterChange?.(
+        currentFilterDataKeys
+          .filter(key => filterReferences.current[key])
+          .map(key => filterReferences.current[key].value)
+      );
 
       setIsChanged(true);
     };
@@ -81,6 +94,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
           <HStack alignVertical="center" spacing={8}>
             {filterChildren.map(child =>
               cloneElement(child, {
+                key: child.props.dataKey,
                 ref: (ref: any) => (filterReferences.current[child.props.dataKey] = ref),
               })
             )}
