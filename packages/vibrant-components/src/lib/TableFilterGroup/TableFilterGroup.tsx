@@ -1,4 +1,4 @@
-import { Children, cloneElement, isValidElement, useRef, useState } from 'react';
+import { Children, Fragment, cloneElement, isValidElement, useRef, useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
@@ -92,12 +92,20 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       >
         <HStack width="100%" alignHorizontal="space-between" alignVertical="center">
           <HStack alignVertical="center" spacing={8}>
-            {filterChildren.map(child =>
-              cloneElement(child, {
-                key: child.props.dataKey,
-                ref: (ref: any) => (filterReferences.current[child.props.dataKey] = ref),
-              })
-            )}
+            {currentFilterDataKeys.map(key => {
+              const filterElement = filterChildren.find(child => child.props.dataKey === key);
+
+              return (
+                filterElement && (
+                  <Fragment key={key}>
+                    {cloneElement(filterElement, {
+                      key,
+                      ref: (ref: any) => (filterReferences.current[key] = ref),
+                    })}
+                  </Fragment>
+                )
+              );
+            })}
             <Dropdown
               position="bottom-start"
               renderContents={({ close }) => (

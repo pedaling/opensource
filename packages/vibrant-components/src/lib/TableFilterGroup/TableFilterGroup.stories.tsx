@@ -2,6 +2,7 @@ import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TableDateFilter } from './TableDateFilter';
 import { TableFilterGroup } from './TableFilterGroup';
+import { TableMultiSelectFilter } from './TableMultiSelectFilter';
 import { TableStringFilter } from './TableStringFilter';
 
 export default {
@@ -50,7 +51,7 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
       }}
     />
     <TableDateFilter dataKey="period" label="수강 기간" />
-    {/* <TableMultiSelectFilter
+    <TableMultiSelectFilter
       dataKey="orderStatus"
       label="주문 상태"
       options={[
@@ -67,7 +68,7 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
           label: '배송 준비중',
         },
       ]}
-    /> */}
+    />
     <TableStringFilter
       dataKey="class"
       label="수강 중인 클래스"

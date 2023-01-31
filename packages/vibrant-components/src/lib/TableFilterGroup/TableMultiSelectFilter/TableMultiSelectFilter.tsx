@@ -27,6 +27,8 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator ?? operators[0]);
     const { updateFilter } = useTableFilterGroup();
 
+    console.log({ selectedValues });
+
     const {
       translations: {
         tableFilter: { multiSelectOperator: operatorTranslation, reset: resetTranslation },
