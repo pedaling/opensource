@@ -61,6 +61,10 @@ export const TableDateFilter = withTableDateFilterVariation(
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);
+
+          if (operatorOption === 'between' || operator === 'between') {
+            setValue([]);
+          }
         }}
         field={
           !isValueRequiredOperator(operator) && (
