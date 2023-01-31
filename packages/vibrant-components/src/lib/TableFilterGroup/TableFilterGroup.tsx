@@ -37,9 +37,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
     const addFilter = (filterDataKey: string) => {
       setIsChanged(true);
 
-      if (!currentFilterDataKeys.includes(filterDataKey)) {
-        setCurrentFilterDataKeys([...currentFilterDataKeys, filterDataKey]);
-      }
+      setCurrentFilterDataKeys([...currentFilterDataKeys, filterDataKey]);
 
       onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
     };
@@ -61,11 +59,13 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
     };
 
     const onInitialize = () => {
-      currentFilterDataKeys.map(key => {
+      currentFilterDataKeys.forEach(key => {
         filterReferences.current[key].reset();
       });
 
       setCurrentFilterDataKeys(initialFilterDataKeys);
+
+      onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
 
       setIsChanged(false);
     };
@@ -117,7 +117,6 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
               )}
             />
           </HStack>
-          {/* TODO: isAnyFilterModified 를 통해 초기화 버튼 유무를 제어해야 합니다 (LOU) */}
           {isChanged && (
             <GhostButton size="md" color="onView2" IconComponent={Icon.RotateClockwise.Regular} onClick={onInitialize}>
               <Body color="onView2" level={2}>

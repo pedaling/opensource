@@ -40,14 +40,18 @@ export const TableDateFilter = withTableDateFilterVariation(
       });
     };
 
-    useImperativeHandle(innerRef, () => ({
-      reset: () => {
-        setValue(defaultValue?.value ?? []);
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        reset: () => {
+          setValue(defaultValue?.value ?? []);
 
-        setOperator(defaultValue?.operator ?? operators[0]);
-      },
-      value: { value, operator, dataKey, type: 'date' as const },
-    }));
+          setOperator(defaultValue?.operator ?? operators[0]);
+        },
+        value: { value, operator, dataKey, type: 'date' as const },
+      }),
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
+    );
 
     return (
       <TableFieldFilter

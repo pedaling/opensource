@@ -23,14 +23,18 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       },
     } = useConfig();
 
-    useImperativeHandle(innerRef, () => ({
-      reset: () => {
-        setSelectedValues(defaultValue?.value ?? []);
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        reset: () => {
+          setSelectedValues(defaultValue?.value ?? []);
 
-        setOperator(defaultValue?.operator ?? operators[0]);
-      },
-      value: { value: selectedValues, operator, dataKey, type: 'multiSelect' as const },
-    }));
+          setOperator(defaultValue?.operator ?? operators[0]);
+        },
+        value: { value: selectedValues, operator, dataKey, type: 'multiSelect' as const },
+      }),
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, selectedValues]
+    );
 
     return (
       <TableFieldFilter

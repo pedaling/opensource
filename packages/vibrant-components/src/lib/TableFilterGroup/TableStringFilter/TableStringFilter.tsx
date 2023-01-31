@@ -27,16 +27,20 @@ export const TableStringFilter = withTableStringFilterVariation(
       },
     } = useConfig();
 
-    useImperativeHandle(innerRef, () => ({
-      reset: () => {
-        setInputValue(defaultValue?.value ?? '');
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        reset: () => {
+          setInputValue(defaultValue?.value ?? '');
 
-        setValue(defaultValue?.value ?? '');
+          setValue(defaultValue?.value ?? '');
 
-        setOperator(defaultValue?.operator ?? operators[0]);
-      },
-      value: { value, operator, dataKey, type: 'string' as const },
-    }));
+          setOperator(defaultValue?.operator ?? operators[0]);
+        },
+        value: { value, operator, dataKey, type: 'string' as const },
+      }),
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
+    );
 
     return (
       <TableFieldFilter

@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TableDateFilter } from './TableDateFilter';
 import { TableFilterGroup } from './TableFilterGroup';
@@ -12,8 +13,8 @@ export default {
   },
 } as ComponentMeta<typeof TableFilterGroup>;
 
-export const Basic: ComponentStory<typeof TableStringFilter> = props => (
-  <TableFilterGroup {...props}>
+export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
+  <TableFilterGroup {...props} onFilterChange={action('onFilterChange')}>
     <TableStringFilter
       dataKey="id"
       label="ID"

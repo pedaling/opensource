@@ -47,5 +47,5 @@ export type FilterType = Pick<Filter, 'type'>;
 
 export type Filter = (DateFilter | MultiSelectFilter | StringFilter) & {
   dataKey: string;
-  ref?: TableFilterRefValue;
+  ref?: (ref: any) => TableFilterRefValue;
 };
