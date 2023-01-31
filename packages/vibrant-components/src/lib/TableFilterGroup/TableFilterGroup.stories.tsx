@@ -9,12 +9,13 @@ export default {
   title: 'TableFilterGroup',
   component: TableFilterGroup,
   args: {
+    onFilterChange: action('onFilterChange'),
     initialFilterDataKeys: ['id', 'orderStatus'],
   },
 } as ComponentMeta<typeof TableFilterGroup>;
 
 export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
-  <TableFilterGroup {...props} onFilterChange={action('onFilterChange')}>
+  <TableFilterGroup {...props}>
     <TableStringFilter
       dataKey="id"
       label="ID"

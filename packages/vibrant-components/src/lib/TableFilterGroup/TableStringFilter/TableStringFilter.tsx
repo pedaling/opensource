@@ -14,7 +14,10 @@ export const TableStringFilter = withTableStringFilterVariation(
     label,
     operators = ['equals', 'notEquals', 'contains', 'notContains', 'empty', 'notEmpty'],
     placeholder,
-    defaultValue,
+    defaultValue = {
+      value: '',
+      operator: operators[0],
+    },
   }) => {
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
@@ -43,8 +46,10 @@ export const TableStringFilter = withTableStringFilterVariation(
     );
 
     useEffect(() => {
-      updateFilter();
-    }, [value, operator, updateFilter]);
+      if (value !== defaultValue?.value || operator !== defaultValue?.operator) {
+        updateFilter();
+      }
+    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, updateFilter, value]);
 
     return (
       <TableFieldFilter

@@ -37,23 +37,25 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       ) ?? [];
 
     const addFilter = (filterDataKey: string) => {
-      setIsChanged(true);
-
       setCurrentFilterDataKeys([...currentFilterDataKeys, filterDataKey]);
 
       onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
+
+      setIsChanged(true);
     };
 
     const updateFilter = () => {
-      setIsChanged(true);
-
       onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
+
+      setIsChanged(true);
     };
 
     const deleteFilter = (filterDataKey: string) => {
       setCurrentFilterDataKeys([...currentFilterDataKeys.filter(key => key !== filterDataKey)]);
 
       onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
+
+      setIsChanged(true);
     };
 
     const onInitialize = () => {
@@ -115,6 +117,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
               )}
             />
           </HStack>
+
           {isChanged && (
             <GhostButton size="md" color="onView2" IconComponent={Icon.RotateClockwise.Regular} onClick={onInitialize}>
               <Body color="onView2" level={2}>

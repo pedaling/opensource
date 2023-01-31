@@ -16,7 +16,10 @@ export const TableDateFilter = withTableDateFilterVariation(
     label,
     operators = ['equals', 'notEquals', 'before', 'after', 'onOrBefore', 'onOrAfter', 'between', 'empty', 'notEmpty'],
     placeholder,
-    defaultValue,
+    defaultValue = {
+      value: [],
+      operator: operators[0],
+    },
   }) => {
     const [value, setValue] = useState<Date[]>(defaultValue?.value ?? []);
     const [operator, setOperator] = useState<DateFilterOperator>(defaultValue?.operator ?? operators[0]);
@@ -45,8 +48,10 @@ export const TableDateFilter = withTableDateFilterVariation(
     );
 
     useEffect(() => {
-      updateFilter();
-    }, [value, operator, updateFilter]);
+      if (value !== defaultValue?.value || operator !== defaultValue?.operator) {
+        updateFilter();
+      }
+    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, updateFilter, value]);
 
     return (
       <TableFieldFilter

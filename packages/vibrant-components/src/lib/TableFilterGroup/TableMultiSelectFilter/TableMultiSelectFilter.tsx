@@ -12,7 +12,17 @@ import { isMultiSelectFilterValid, isValueRequiredOperator } from '../utils';
 import { withTableMultiSelectFilterVariation } from './TableMultiSelectFilterProps';
 
 export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
-  ({ innerRef, dataKey, label, options, operators = ['equals', 'notEquals', 'empty', 'notEmpty'], defaultValue }) => {
+  ({
+    innerRef,
+    dataKey,
+    label,
+    options,
+    operators = ['equals', 'notEquals', 'empty', 'notEmpty'],
+    defaultValue = {
+      value: [],
+      operator: operators[0],
+    },
+  }) => {
     const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value ?? []);
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator ?? operators[0]);
     const { updateFilter } = useTableFilterGroup();
@@ -33,12 +43,14 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
         },
         value: { value: selectedValues, operator, dataKey, type: 'multiSelect' as const },
       }),
-      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, selectedValues]
+      [dataKey, defaultValue, operator, operators, selectedValues]
     );
 
     useEffect(() => {
-      updateFilter();
-    }, [operator, selectedValues, updateFilter]);
+      if (!selectedValues.every(value => defaultValue?.value.includes(value)) || operator !== defaultValue?.operator) {
+        updateFilter();
+      }
+    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, selectedValues, updateFilter]);
 
     return (
       <TableFieldFilter
