@@ -56,7 +56,7 @@ export const CardNumberField = withCardNumberFieldVariation(
     clearable = true,
     onFocus,
     onBlur,
-    separator = ' ',
+    separator = '',
     ...restProps
   }) => {
     const [showLockIcon, setShowLockIcon] = useState(false);
