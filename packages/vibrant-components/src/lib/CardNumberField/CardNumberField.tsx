@@ -60,8 +60,9 @@ export const CardNumberField = withCardNumberFieldVariation(
     ...restProps
   }) => {
     const [showLockIcon, setShowLockIcon] = useState(false);
-
+    const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState('');
+    const inputRef = useRef<TextInputRef | null>(null);
 
     const { card } = validate.number(value);
     const cardType = (card?.type ?? 'others') as CardType;
@@ -105,8 +106,7 @@ export const CardNumberField = withCardNumberFieldVariation(
         to: 0,
       },
     };
-    const inputRef = useRef<TextInputRef | null>(null);
-    const [isFocused, setIsFocused] = useState(false);
+
     const hasValue = value.length > 0;
     const onClearButtonClick = () => {
       setValue('');
