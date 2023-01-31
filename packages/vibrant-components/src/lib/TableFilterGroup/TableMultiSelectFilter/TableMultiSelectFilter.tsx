@@ -1,4 +1,4 @@
-import { useImperativeHandle, useState } from 'react';
+import { useEffect, useImperativeHandle, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { CheckboxGroupField } from '../../CheckboxGroupField';
 import { Divider } from '../../Divider';
@@ -35,6 +35,10 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       }),
       [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, selectedValues]
     );
+
+    useEffect(() => {
+      updateFilter();
+    }, [operator, selectedValues, updateFilter]);
 
     return (
       <TableFieldFilter
@@ -76,13 +80,6 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
                   )}
                   onValueChange={newValue => {
                     setSelectedValues(Object.keys(newValue).filter(key => newValue[key]));
-
-                    updateFilter({
-                      value: isValueRequiredOperator(operator) ? [] : selectedValues,
-                      operator,
-                      dataKey,
-                      type: 'multiSelect',
-                    });
                   }}
                 />
               </Box>

@@ -1,10 +1,9 @@
 import type { FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import type { ReactElementChildren } from '@vibrant-ui/core';
-import type { Filter } from '../types';
 
 type TableFilterGroupContextValue = {
-  updateFilter: (filter: Filter) => void;
+  updateFilter: () => void;
   deleteFilter: (filterDataKey: string) => void;
   isCurrentFilter: (filterDataKey: string) => boolean;
   isDeletableFilter: (filterDataKey: string) => boolean;
@@ -18,7 +17,7 @@ const TableFilterGroupContext = createContext<TableFilterGroupContextValue>({
 });
 
 type TableFilterGroupProviderProps = {
-  updateFilter: (filter: Filter) => void;
+  updateFilter: () => void;
   deleteFilter: (filterDataKey: string) => void;
   isCurrentFilter: (filterDataKey: string) => boolean;
   isDeletableFilter: (filterDataKey: string) => boolean;

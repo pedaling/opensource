@@ -1,4 +1,4 @@
-import { useImperativeHandle, useState } from 'react';
+import { useEffect, useImperativeHandle, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
@@ -41,6 +41,10 @@ export const TableStringFilter = withTableStringFilterVariation(
       }),
       [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
     );
+
+    useEffect(() => {
+      updateFilter();
+    }, [value, operator, updateFilter]);
 
     return (
       <TableFieldFilter
@@ -85,13 +89,6 @@ export const TableStringFilter = withTableStringFilterVariation(
                 }}
                 onSubmit={() => {
                   setValue(inputValue);
-
-                  updateFilter({
-                    value: isValueRequiredOperator(operator) ? '' : value,
-                    operator,
-                    dataKey,
-                    type: 'string',
-                  });
                 }}
               />
             </Box>

@@ -1,4 +1,4 @@
-import { useImperativeHandle, useState } from 'react';
+import { useEffect, useImperativeHandle, useState } from 'react';
 import { Box, useConfig, useCurrentTheme } from '@vibrant-ui/core';
 import { getDateString } from '@vibrant-ui/utils';
 import { DatePickerField } from '../../DatePickerField';
@@ -31,15 +31,6 @@ export const TableDateFilter = withTableDateFilterVariation(
       },
     } = useConfig();
 
-    const onUpdateFilter = () => {
-      updateFilter({
-        dataKey,
-        value: isValueRequiredOperator(operator) ? [] : value,
-        operator,
-        type: 'date',
-      });
-    };
-
     useImperativeHandle(
       innerRef,
       () => ({
@@ -52,6 +43,10 @@ export const TableDateFilter = withTableDateFilterVariation(
       }),
       [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
     );
+
+    useEffect(() => {
+      updateFilter();
+    }, [value, operator, updateFilter]);
 
     return (
       <TableFieldFilter
@@ -86,7 +81,7 @@ export const TableDateFilter = withTableDateFilterVariation(
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue.start, newValue.end] : []);
 
-                    onUpdateFilter();
+                    updateFilter();
                   }}
                 />
               ) : (
@@ -97,7 +92,7 @@ export const TableDateFilter = withTableDateFilterVariation(
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue] : []);
 
-                    onUpdateFilter();
+                    updateFilter();
                   }}
                 />
               )}

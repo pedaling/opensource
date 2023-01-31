@@ -12,7 +12,7 @@ import type { TableDateFilterProps } from './TableDateFilter';
 import { withTableFilterGroupPropsVariation } from './TableFilterGroupProps';
 import type { TableMultiSelectFilterProps } from './TableMultiSelectFilter';
 import type { TableStringFilterProps } from './TableStringFilter';
-import type { Filter, TableFilterRefValue } from './types';
+import type { TableFilterRefValue } from './types';
 
 export const TableFilterGroup = withTableFilterGroupPropsVariation(
   ({ initialFilterDataKeys = [], onFilterChange, children }) => {
@@ -22,17 +22,19 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       },
     } = useConfig();
 
-    const filterChildren = Array.isArray(children) ? children : [children];
-    const filterElements =
-      Children.toArray(children).filter(
-        isValidElement<TableDateFilterProps | TableMultiSelectFilterProps | TableStringFilterProps>
-      ) ?? [];
-
     const filterReferences = useRef<Record<string, TableFilterRefValue>>({});
 
     const [currentFilterDataKeys, setCurrentFilterDataKeys] = useState<string[]>(initialFilterDataKeys);
 
     const [isChanged, setIsChanged] = useState(false);
+
+    const filterChildren = (Array.isArray(children) ? children : [children]).filter(child =>
+      currentFilterDataKeys.includes(child.props.dataKey)
+    );
+    const filterElements =
+      Children.toArray(children).filter(
+        isValidElement<TableDateFilterProps | TableMultiSelectFilterProps | TableStringFilterProps>
+      ) ?? [];
 
     const addFilter = (filterDataKey: string) => {
       setIsChanged(true);
@@ -42,12 +44,8 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
     };
 
-    const updateFilter = (filter: Filter) => {
+    const updateFilter = () => {
       setIsChanged(true);
-
-      if (!currentFilterDataKeys.includes(filter.dataKey)) {
-        setCurrentFilterDataKeys([...currentFilterDataKeys, filter.dataKey]);
-      }
 
       onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
     };
