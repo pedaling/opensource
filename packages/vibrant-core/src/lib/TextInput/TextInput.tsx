@@ -18,7 +18,6 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       type,
       defaultValue,
       pattern,
-      maxLength,
       hidden,
       focusStyle,
       autoCapitalize,
@@ -101,7 +100,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
           const replacedValue = replaceValue({
             pattern: type === 'number' ? /\d/ : pattern,
             value: event.currentTarget.value,
-          }).substring(0, maxLength);
+          });
 
           let isPrevented = false;
 
