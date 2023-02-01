@@ -10,7 +10,7 @@ export default {
   component: TableFilterGroup,
   args: {
     onFilterChange: action('onFilterChange'),
-    initialFilterDataKeys: ['id'],
+    initialFilterDataKeys: ['id', 'orderStatus'],
   },
 } as ComponentMeta<typeof TableFilterGroup>;
 
@@ -36,6 +36,7 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
     <TableMultiSelectFilter
       dataKey="orderStatus"
       label="주문 상태"
+      defaultValue={{ operator: 'equals', value: ['completed'] }}
       options={[
         {
           value: 'completed',

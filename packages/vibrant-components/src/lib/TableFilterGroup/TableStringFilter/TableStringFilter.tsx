@@ -41,15 +41,14 @@ export const TableStringFilter = withTableStringFilterVariation(
           setOperator(defaultValue?.operator);
         },
         value: { value, operator, dataKey, type: 'string' as const },
+        isDefaultState: value === defaultValue?.value && operator === defaultValue?.operator,
       }),
       [dataKey, defaultValue?.operator, defaultValue?.value, operator, value]
     );
 
     useEffect(() => {
-      if (value !== defaultValue?.value || operator !== defaultValue?.operator) {
-        updateFilter();
-      }
-    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, updateFilter, value]);
+      updateFilter();
+    }, [value, operator, updateFilter]);
 
     return (
       <TableFieldFilter

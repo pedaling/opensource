@@ -43,15 +43,14 @@ export const TableDateFilter = withTableDateFilterVariation(
           setOperator(defaultValue?.operator);
         },
         value: { value, operator, dataKey, type: 'date' as const },
+        isDefaultState: value === defaultValue?.value && operator === defaultValue?.operator,
       }),
       [dataKey, defaultValue?.operator, defaultValue?.value, operator, value]
     );
 
     useEffect(() => {
-      if (value !== defaultValue?.value || operator !== defaultValue?.operator) {
-        updateFilter();
-      }
-    }, [defaultValue, defaultValue?.operator, defaultValue?.value, operator, updateFilter, value]);
+      updateFilter();
+    }, [operator, value, updateFilter]);
 
     return (
       <TableFieldFilter
@@ -74,6 +73,9 @@ export const TableDateFilter = withTableDateFilterVariation(
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);
+          if (operatorOption === 'between' || operator === 'between') {
+            setValue([]);
+          }
         }}
         field={
           !isValueRequiredOperator(operator) && (

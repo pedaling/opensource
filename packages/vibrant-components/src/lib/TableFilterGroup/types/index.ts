@@ -39,6 +39,7 @@ export type MultiSelectFilter = {
 export type TableFilterRefValue = {
   reset: () => void;
   value: Filter;
+  isDefaultState: boolean;
 };
 
 export type FilterValue = Pick<Filter, 'value'>;

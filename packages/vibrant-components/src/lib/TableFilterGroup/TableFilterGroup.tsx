@@ -28,14 +28,30 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
 
     const [isChanged, setIsChanged] = useState(false);
 
-    const filterChildren = (Array.isArray(children) ? children : [children]).filter(child =>
-      currentFilterDataKeys.includes(child.props.dataKey)
-    );
-
     const filterElements =
       Children.toArray(children).filter(
         isValidElement<TableDateFilterProps | TableMultiSelectFilterProps | TableStringFilterProps>
       ) ?? [];
+
+    function checkInitialButtonState() {
+      if (initialFilterDataKeys.sort().join(',') !== currentFilterDataKeys.sort().join(',')) {
+        setIsChanged(true);
+
+        return;
+      }
+
+      if (
+        !currentFilterDataKeys
+          .map(key => filterReferences.current[key].isDefaultState)
+          .every(isDefault => isDefault === true)
+      ) {
+        setIsChanged(true);
+
+        return;
+      }
+
+      setIsChanged(false);
+    }
 
     const addFilter = (filterDataKey: string) => {
       setCurrentFilterDataKeys([...currentFilterDataKeys, filterDataKey]);
@@ -46,7 +62,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
           .map(key => filterReferences.current[key].value)
       );
 
-      setIsChanged(true);
+      checkInitialButtonState();
     };
 
     const updateFilter = () => {
@@ -56,7 +72,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
           .map(key => filterReferences.current[key].value)
       );
 
-      setIsChanged(true);
+      checkInitialButtonState();
     };
 
     const deleteFilter = (filterDataKey: string) => {
@@ -68,7 +84,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
           .map(key => filterReferences.current[key].value)
       );
 
-      setIsChanged(true);
+      checkInitialButtonState();
     };
 
     const onInitialize = () => {
@@ -80,7 +96,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
 
       onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
 
-      setIsChanged(false);
+      checkInitialButtonState();
     };
 
     return (
@@ -93,7 +109,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
         <HStack width="100%" alignHorizontal="space-between" alignVertical="center">
           <HStack alignVertical="center" spacing={8}>
             {currentFilterDataKeys.map(key => {
-              const filterElement = filterChildren.find(child => child.props.dataKey === key);
+              const filterElement = filterElements.find(child => child.props.dataKey === key);
 
               return (
                 filterElement && (
