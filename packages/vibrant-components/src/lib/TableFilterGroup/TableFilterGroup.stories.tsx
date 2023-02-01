@@ -52,13 +52,6 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
         },
       ]}
     />
-    <TableStringFilter
-      dataKey="class"
-      label="수강 중인 클래스"
-      defaultValue={{
-        value: 'Something',
-        operator: 'equals',
-      }}
-    />
+    <TableStringFilter dataKey="class" label="수강 중인 클래스" />
   </TableFilterGroup>
 );

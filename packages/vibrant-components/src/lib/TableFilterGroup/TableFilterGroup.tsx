@@ -40,17 +40,11 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
         return;
       }
 
-      if (
+      setIsChanged(
         !currentFilterDataKeys
           .map(key => filterReferences.current[key].isDefaultState)
           .every(isDefault => isDefault === true)
-      ) {
-        setIsChanged(true);
-
-        return;
-      }
-
-      setIsChanged(false);
+      );
     }
 
     const addFilter = (filterDataKey: string) => {
