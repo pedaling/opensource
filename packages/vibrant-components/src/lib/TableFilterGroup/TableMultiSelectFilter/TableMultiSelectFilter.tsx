@@ -43,7 +43,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
         },
         value: { value: selectedValues, operator, dataKey, type: 'multiSelect' as const },
         isDefaultState:
-          selectedValues.sort().join(',') === defaultValue?.value.sort().join(',') &&
+          [...selectedValues].sort().join(',') === [...(defaultValue?.value ?? [])].sort().join(',') &&
           operator === defaultValue?.operator,
       }),
       [dataKey, defaultValue, operator, selectedValues]

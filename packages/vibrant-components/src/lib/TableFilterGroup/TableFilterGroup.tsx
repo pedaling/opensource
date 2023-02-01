@@ -34,7 +34,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       ) ?? [];
 
     function checkInitialButtonState() {
-      if (initialFilterDataKeys.sort().join(',') !== currentFilterDataKeys.sort().join(',')) {
+      if ([...initialFilterDataKeys].sort().join(',') !== [...currentFilterDataKeys].sort().join(',')) {
         setIsChanged(true);
 
         return;
