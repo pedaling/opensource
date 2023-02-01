@@ -23,8 +23,8 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       operator: operators[0],
     },
   }) => {
-    const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value ?? []);
-    const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator ?? operators[0]);
+    const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value);
+    const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator);
     const { updateFilter } = useTableFilterGroup();
 
     const {
@@ -37,13 +37,13 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       innerRef,
       () => ({
         reset: () => {
-          setSelectedValues(defaultValue?.value ?? []);
+          setSelectedValues(defaultValue?.value);
 
-          setOperator(defaultValue?.operator ?? operators[0]);
+          setOperator(defaultValue?.operator);
         },
         value: { value: selectedValues, operator, dataKey, type: 'multiSelect' as const },
       }),
-      [dataKey, defaultValue, operator, operators, selectedValues]
+      [dataKey, defaultValue, operator, selectedValues]
     );
 
     useEffect(() => {

@@ -24,24 +24,6 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
         operator: 'equals',
       }}
     />
-    {/* <TableMultiSelectFilter
-      dataKey="test"
-      label="의문 상태"
-      options={[
-        {
-          value: '1',
-          label: '주문',
-        },
-        {
-          value: 'caed',
-          label: '좋아',
-        },
-        {
-          value: 'pakaged',
-          label: '배 준비중',
-        },
-      ]}
-    /> */}
     <TableStringFilter
       dataKey="location"
       label="장소"

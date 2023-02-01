@@ -44,7 +44,6 @@ export const TableFilterGroupProvider: FC<TableFilterGroupProviderProps> = ({
   return <TableFilterGroupContext.Provider value={contextValue}>{children}</TableFilterGroupContext.Provider>;
 };
 
-export const TableFilterGroupConsumer = TableFilterGroupContext.Consumer;
 export const useTableFilterGroup = (): TableFilterGroupContextValue => useContext(TableFilterGroupContext);
 
 TableFilterGroupProvider.displayName = 'TableFilterGroupProvider';

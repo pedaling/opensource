@@ -19,8 +19,8 @@ export const TableStringFilter = withTableStringFilterVariation(
       operator: operators[0],
     },
   }) => {
-    const [inputValue, setInputValue] = useState<string>(defaultValue?.value ?? '');
-    const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator ?? operators[0]);
+    const [inputValue, setInputValue] = useState<string>(defaultValue?.value);
+    const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator);
     const [value, setValue] = useState<string>(inputValue);
     const { updateFilter } = useTableFilterGroup();
 
@@ -34,15 +34,15 @@ export const TableStringFilter = withTableStringFilterVariation(
       innerRef,
       () => ({
         reset: () => {
-          setInputValue(defaultValue?.value ?? '');
+          setInputValue(defaultValue?.value);
 
-          setValue(defaultValue?.value ?? '');
+          setValue(defaultValue?.value);
 
-          setOperator(defaultValue?.operator ?? operators[0]);
+          setOperator(defaultValue?.operator);
         },
         value: { value, operator, dataKey, type: 'string' as const },
       }),
-      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, value]
     );
 
     useEffect(() => {

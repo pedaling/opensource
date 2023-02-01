@@ -10,7 +10,7 @@ export const Stack = withStackVariation(
       <BoxComponent display="flex" ref={innerRef} {...(scrollable ? { horizontal } : {})} {...restProps}>
         {spacing
           ? validChildren.map((child, index, { length: childLength }) => (
-              <Fragment key={child.key}>
+              <Fragment key={child.key ?? index}>
                 {child}
                 {childLength !== index + 1 && (
                   <Box as="span" flexGrow={0} flexShrink={0} width={spaceWidth} height={spaceHeight} />

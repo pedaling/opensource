@@ -21,8 +21,8 @@ export const TableDateFilter = withTableDateFilterVariation(
       operator: operators[0],
     },
   }) => {
-    const [value, setValue] = useState<Date[]>(defaultValue?.value ?? []);
-    const [operator, setOperator] = useState<DateFilterOperator>(defaultValue?.operator ?? operators[0]);
+    const [value, setValue] = useState<Date[]>(defaultValue?.value);
+    const [operator, setOperator] = useState<DateFilterOperator>(defaultValue?.operator);
     const {
       theme: { zIndex },
     } = useCurrentTheme();
@@ -38,13 +38,13 @@ export const TableDateFilter = withTableDateFilterVariation(
       innerRef,
       () => ({
         reset: () => {
-          setValue(defaultValue?.value ?? []);
+          setValue(defaultValue?.value);
 
-          setOperator(defaultValue?.operator ?? operators[0]);
+          setOperator(defaultValue?.operator);
         },
         value: { value, operator, dataKey, type: 'date' as const },
       }),
-      [dataKey, defaultValue?.operator, defaultValue?.value, operator, operators, value]
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, value]
     );
 
     useEffect(() => {
@@ -85,8 +85,6 @@ export const TableDateFilter = withTableDateFilterVariation(
                   defaultValue={value.length >= 2 ? { start: value[0], end: value[1] } : undefined}
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue.start, newValue.end] : []);
-
-                    updateFilter();
                   }}
                 />
               ) : (
