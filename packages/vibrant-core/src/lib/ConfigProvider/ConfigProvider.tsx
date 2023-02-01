@@ -45,6 +45,8 @@ export type Translation = {
     next: string;
   };
   tableFilter: {
+    add: string;
+    initialize: string;
     delete: string;
     reset: string;
     stringOperator: {
@@ -123,6 +125,8 @@ const ConfigContext = createContext<ConfigContextValue>({
       next: '다음',
     },
     tableFilter: {
+      add: '필터 추가',
+      initialize: '초기화',
       delete: '삭제',
       reset: '초기화',
       stringOperator: {

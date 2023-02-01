@@ -1,7 +1,8 @@
 import { withVariation } from '@vibrant-ui/core';
-import type { MultiSelectFilterOperator, Option } from '../types';
+import type { MultiSelectFilterOperator, Option, TableFilterRefValue } from '../types';
 
 export type TableMultiSelectFilterProps = {
+  ref?: (ref: any) => TableFilterRefValue;
   dataKey: string;
   label: string;
   options: Option[];
