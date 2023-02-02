@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.44.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.43.0...vibrant-core-0.44.0) (2023-02-02)
+
+
+### Features
+
+* add TableFilterGroup ([#545](https://github.com/pedaling/opensource/issues/545)) ([7061649](https://github.com/pedaling/opensource/commit/7061649675bb21ac35db0f993ed7edb2587e275a))
+
+
+### Bug Fixes
+
+* hitSlop을 반응형으로 받을 수 있게 한다 ([#540](https://github.com/pedaling/opensource/issues/540)) ([cd80e70](https://github.com/pedaling/opensource/commit/cd80e702e64db284aaf2d64177440cfe5bc57f8c))
+* Portal scrollable할 때 컨텐츠가 줄어들지 않도록 한다 ([#548](https://github.com/pedaling/opensource/issues/548)) ([ad073a7](https://github.com/pedaling/opensource/commit/ad073a72d84aac7e6e4ae07e6ad9310f7470c639))
+* use native maxlength in TextInput ([#546](https://github.com/pedaling/opensource/issues/546)) ([e4adf91](https://github.com/pedaling/opensource/commit/e4adf91652a1771b428c931dc3298fb1b6ad2571))
+
 ## [0.43.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.42.1...vibrant-core-0.43.0) (2023-01-31)
 
 

@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.44.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.43.0...vibrant-components-0.44.0) (2023-02-02)
+
+
+### Features
+
+* add TableFilterGroup ([#545](https://github.com/pedaling/opensource/issues/545)) ([7061649](https://github.com/pedaling/opensource/commit/7061649675bb21ac35db0f993ed7edb2587e275a))
+* clear value when prev operator is between or current operator is between In TableDatefilter ([#544](https://github.com/pedaling/opensource/issues/544)) ([87ca841](https://github.com/pedaling/opensource/commit/87ca841941962622a766dbf5f2eba068bce26b87))
+
+
+### Bug Fixes
+
+* currentKey sort mutates original array issue ([#547](https://github.com/pedaling/opensource/issues/547)) ([150313e](https://github.com/pedaling/opensource/commit/150313ee3dff08dde7ff481282262355c4ddec19))
+* hitSlop을 반응형으로 받을 수 있게 한다 ([#540](https://github.com/pedaling/opensource/issues/540)) ([cd80e70](https://github.com/pedaling/opensource/commit/cd80e702e64db284aaf2d64177440cfe5bc57f8c))
+
 ## [0.43.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.42.1...vibrant-components-0.43.0) (2023-01-31)
 
 
