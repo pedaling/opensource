@@ -128,7 +128,7 @@ const ConfigContext = createContext<ConfigContextValue>({
       add: '필터 추가',
       initialize: '초기화',
       delete: '삭제',
-      reset: '초기화',
+      reset: '전체 해제',
       stringOperator: {
         filterLabel: {
           empty: '비어있음',
