@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.44.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.44.0...vibrant-components-0.44.1) (2023-02-03)
+
+
+### Bug Fixes
+
+* 제어 모드로 SelectField를 사용하고 옵션이 달라지는 경우 무한 리렌더링 되는 이슈를 수정한다 ([#549](https://github.com/pedaling/opensource/issues/549)) ([4665211](https://github.com/pedaling/opensource/commit/4665211701f9e1cb8a817bbae582dd3e2d8dcefb))
+
 ## [0.44.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.43.0...vibrant-components-0.44.0) (2023-02-02)
 
 
