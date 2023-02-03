@@ -32,9 +32,9 @@ export const SelectField = withSelectFieldVariation(
     const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(
       defaultValue ? options.findIndex(option => !option.disabled && option.value === defaultValue) : -1
     );
+    const prevSelectedIndexRef = useRef<number | undefined>(selectedOptionIndex);
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
-    const prevSelectedValueRef = useRef<string | undefined>(defaultValue);
     const handleValueChange = useCallbackRef(onValueChange);
 
     const ref = useRef<HTMLElement>(null);
@@ -97,24 +97,14 @@ export const SelectField = withSelectFieldVariation(
     );
 
     useEffect(() => {
-      if (!defaultValue) {
-        setSelectedOptionIndex(-1);
-
-        return;
-      }
-
-      setSelectedOptionIndex(options.findIndex(option => !option.disabled && option.value === defaultValue));
-    }, [defaultValue, options]);
-
-    useEffect(() => {
-      if (prevSelectedValueRef.current !== selectedOption?.value) {
+      if (prevSelectedIndexRef.current !== selectedOptionIndex) {
         setState('default');
 
-        handleValueChange?.(selectedOption?.value);
+        handleValueChange?.(options[selectedOptionIndex]?.value);
       }
 
-      prevSelectedValueRef.current = selectedOption?.value;
-    }, [handleValueChange, selectedOption?.value]);
+      prevSelectedIndexRef.current = selectedOptionIndex;
+    }, [handleValueChange, options, selectedOptionIndex]);
 
     useEffect(() => {
       setState(stateProp);
