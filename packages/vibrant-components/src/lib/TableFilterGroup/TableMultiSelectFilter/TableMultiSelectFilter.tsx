@@ -29,7 +29,13 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
 
     const {
       translations: {
-        tableFilter: { multiSelectOperator: operatorTranslation, reset: resetTranslation },
+        tableFilterGroup: {
+          multiSelectFilter: {
+            operators: operatorTranslation,
+            filterLabel: filterLabelTranslation,
+            reset: resetTranslation,
+          },
+        },
       },
     } = useConfig();
 
@@ -59,7 +65,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
         label={
           label +
           (isMultiSelectFilterValid({ value: selectedValues, operator })
-            ? `: ${operatorTranslation.filterLabel[operator].replace(
+            ? `: ${filterLabelTranslation[operator].replace(
                 '{options}',
                 selectedValues
                   .map(selectedValue => options.find(option => option.value === selectedValue)?.label)
