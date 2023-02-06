@@ -1,0 +1,107 @@
+---
+title: Backdrop
+---
+
+`Backdrop` 은 배경에 깔리는 반투명한 배경입니다. 특정 컴포넌트를 강조하고자 할 때 그 배경으로 사용할 수 있습니다.
+
+속성을 통해 등장 속도나 효과를 제어할 수 있습니다.
+
+# Backdrop
+
+```jsx live noInline
+const BackdropExample = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={() => setOpen(true)}
+      >
+        Backdrop 열기
+      </ContainedButton>
+
+      <Backdrop
+        open={open}
+        zIndex={1000}
+        onClick={() => setOpen(false)}
+      >
+        <Box
+          alignContent="center"
+          justifyContent="center"
+          mt={100}
+        >
+          <Title
+            level={1}
+            textAlign="center"
+            color="primary"
+          >
+            Backdrop
+          </Title>
+        </Box>
+      </Backdrop>
+    </>
+  );
+};
+render(<BackdropExample />);
+```
+
+## How to use
+
+```jsx
+import { Backdrop } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                            | Type                   | Default | Description                                                 |
+| ------------------------------- | ---------------------- | ------- | ----------------------------------------------------------- |
+| open(\*)                        | `boolean`              | -       | `Backdrop` 의 렌더 여부를 제어                              |
+| zIndex                          | `number`               | -       | `Backdrop` 의 zIndex                                        |
+| color                           | `dim` \| `transparent` | `dim`   | `Backdrop` 의 설정 색상                                     |
+| transitionDuration              | `number`               | 0       | `Backdrop` 이 등장하고 사라질 때의 animation 지속 시간      |
+| children(\*)                    | `ReactElementChild`    | -       | `Backdrop` 위에 등장하는 요소                               |
+| [scrollable](#스크롤 가능 여부) | `boolean`              | -       | `Backdrop` 이 보여지는 영역이 스크롤을 가능한지에 대한 여부 |
+
+## Usage
+
+### 스크롤 가능 여부
+
+```jsx live noInline
+const NonScrollableExample = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <ContainedButton
+        kind="primary"
+        size="md"
+        onClick={() => setOpen(true)}
+      >
+        NonScrollable Backdrop 열기
+      </ContainedButton>
+
+      <Backdrop
+        open={open}
+        // scrollable 속성을 바꾸고 Backdrop 위의 컴포넌트의 스크롤 여부를 확인해보세요
+        scrollable={true}
+        onClick={() => setOpen(false)}
+      >
+        {new Array(5).fill(0).map((_, idx) => (
+          <Box
+            alignItems="center"
+            justifyContent="center"
+            width={200}
+            height={400}
+            backgroundColor={'warning'}
+          >
+            <Body color="onView1" level={2} weight="bold">
+              {idx}
+            </Body>
+          </Box>
+        ))}
+      </Backdrop>
+    </>
+  );
+};
+render(<NonScrollableExample />);
+```
