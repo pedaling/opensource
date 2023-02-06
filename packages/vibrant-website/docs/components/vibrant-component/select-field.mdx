@@ -1,0 +1,46 @@
+---
+title: SelectField
+---
+
+# SelectField
+
+`SelectField`는 사용자가 일련의 옵션들 사이에서 단일한 선택을 할 수 있는 컴포넌트입니다.
+
+```jsx live
+<SelectField
+  label="label"
+  options={[
+    {
+      label: 'option 1',
+      value: '1',
+    },
+    {
+      label: 'option 2',
+      value: '2',
+    },
+  ]}
+/>
+```
+
+## How to use
+
+```jsx
+import { SelectField } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                | Type                                                        | Default | Description                                                       |
+| ------------------- | ----------------------------------------------------------- | ------- | ----------------------------------------------------------------- |
+| label               | `string`                                                    |         | 라벨 컨텐츠                                                       |
+| options             | `{ label: string; value: string; disabled?: boolean }`      |         | 옵션 목록을 설정합니다.                                           |
+| renderOption        | `(index: number) => ReactElement`                           |         | 옵션을 보여주기 위한 요소를 커스텀하기 위해 사용할 수 있습니다.   |
+| placeHolder         | `string`                                                    |         | 플레이스홀더                                                      |
+| inlineLabel         | `boolean`                                                   |         | 라벨과 선택된 옵션을 인라인으로 보여줄 지 여부                    |
+| helperText          | `string`                                                    |         | 사용자가 적절한 값을 입력할 수 있도록 도와주는 짧은 도움말 컨텐츠 |
+| disabled            | `boolean`                                                   |         | SelectField의 비활성화 여부                                       |
+| defaultValue        | `string`                                                    |         | SelectField의 기본값을 설정합니다.                                |
+| onValueChange       | `(value?: string) => void`                                  |         | SelectField의 값이 바뀔 때 실행되는 콜백 함수                     |
+| onOpen              | `() => void`                                                |         | 옵션 선택창이 열릴 때 실행되는 콜백 함수                          |
+| zIndex              | `number`                                                    |         | 옵션 선택창의 zIndex를 설정합니다.                                |
+| optionTextTransform | [TextSystemProps](/docs/system-props/text)['textTransform'] |         | 옵션의 textTransform을 설정합니다.                                |
