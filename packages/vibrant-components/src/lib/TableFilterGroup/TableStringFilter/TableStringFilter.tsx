@@ -24,7 +24,7 @@ export const TableStringFilter = withTableStringFilterVariation(
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator);
     const [value, setValue] = useState<string>(inputValue);
     const { updateFilter } = useTableFilterGroup();
-    const inputRef = useRef<TextInputRef | null>();
+    const filedRef = useRef<TextInputRef | null>();
 
     const {
       translations: {
@@ -52,6 +52,10 @@ export const TableStringFilter = withTableStringFilterVariation(
       updateFilter();
     }, [value, operator, updateFilter]);
 
+    useEffect(() => {
+      filedRef.current?.focus();
+    }, [operator]);
+
     return (
       <TableFieldFilter
         dataKey={dataKey}
@@ -78,14 +82,12 @@ export const TableStringFilter = withTableStringFilterVariation(
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);
-
-          inputRef.current?.focus();
         }}
         field={
           !isValueRequiredOperator(operator) && (
             <Box px={20}>
               <TextField
-                ref={inputRef}
+                ref={filedRef}
                 autoFocus={true}
                 placeholder={placeholder}
                 clearable={true}
