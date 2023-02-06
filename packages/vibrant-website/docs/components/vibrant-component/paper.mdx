@@ -1,0 +1,114 @@
+---
+title: Paper
+---
+
+# Paper
+
+```jsx live
+<Paper
+  width={200}
+  height={200}
+  backgroundColor="primary"
+  borderRadiusLevel={1}
+/>
+```
+
+## How to use
+
+```jsx
+import { Paper } from '@vibrant-ui/components';
+```
+
+## Properties
+
+[DisplaySystemProps](/docs/system-props/display), [SpacingSystemProps](/docs/system-props/spacing), [InteractionSystemProps](/docs/system-props/interaction), [PositionSystemProps](/docs/system-props/position),
+Pick< [FlexboxSystemProps](/docs/system-props/flexbox), 'flexBasis' | 'flexGrow' | 'flexShrink'>, Pick< [ElevationSystemProps](/docs/system-props/elevation), 'elevationLevel'>, [OverflowSystemProps](/docs/system-props/overflow), [SizingSystemProps](/docs/system-props/overflow), Pick< [BorderSystemProps](/docs/system-props/border), 'borderBottomLeftRadiusLevel' | 'borderBottomRightRadiusLevel' | 'borderTopLeftRadiusLevel' | 'borderTopRightRadiusLevel' | 'borderRadiusLevel'>,
+Pick< [BackgroundSystemProps](/docs/system-props/background), 'backgroundColor' | 'gradient' >
+
+| Prop     | Type                | Default | Description               |
+| -------- | ------------------- | ------- | ------------------------- |
+| id       | `string`            |         |                           |
+| as       | `string`            |         | 렌더될 요소를 지정합니다. |
+| children | `ReactElementChild` |         |                           |
+
+## Usage
+
+### Border
+
+`borderWidth`, `borderStyle`, `borderColor`속성을 통해 테두리의 두께, 스타일, 색상을 지정할 수 있습니다.
+
+```jsx live
+<Paper
+  m={20}
+  width={200}
+  height={200}
+  borderWidth={1}
+  borderColor="outline1"
+  borderStyle="solid"
+/>
+```
+
+### Border Radius
+
+`borderBottomLeftRadiusLevel`, `borderBottomRightRadiusLevel`, `borderTopLeftRadiusLevel` , `borderTopRightRadiusLevel` 또는 `borderRadiusLevel` 속성을 통해 theme에 정의된 테두리 경계의 꼭짓점을 둥글기를 설정합니다.
+
+```jsx live
+<Paper
+  borderTopLeftRadiusLevel={0}
+  borderTopRightRadiusLevel={2}
+  borderBottomLeftRadiusLevel={3}
+  borderBottomRightRadiusLevel={4}
+  width={200}
+  height={200}
+  backgroundColor="informative"
+  p={10}
+  top={0}
+/>
+```
+
+### Gradient
+
+`gradient` 속성을 통해 theme에 정의된 그라데이션을 사용할 수 있습니다.
+
+```jsx live
+<Paper
+  width="100%"
+  height={300}
+  backgroundColor="inverseSurface"
+>
+  <Paper width="100%" height={200} gradient="linearTop" />
+</Paper>
+```
+
+### Elevation
+
+`elevationLevel` 속성을 통해 theme에 정의된 테두리를 감싸는 그림자 효과를 사용할 수 있습니다.
+
+```jsx live
+<HStack m={50} spacing={50}>
+  <Paper
+    width={100}
+    height={100}
+    backgroundColor="background"
+    elevationLevel={1}
+  />
+  <Paper
+    width={100}
+    height={100}
+    backgroundColor="background"
+    elevationLevel={2}
+  />
+  <Paper
+    width={100}
+    height={100}
+    backgroundColor="background"
+    elevationLevel={3}
+  />
+  <Paper
+    width={100}
+    height={100}
+    backgroundColor="background"
+    elevationLevel={4}
+  />
+</HStack>
+```
