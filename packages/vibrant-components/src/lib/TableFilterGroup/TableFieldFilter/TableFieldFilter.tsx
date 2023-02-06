@@ -22,7 +22,7 @@ export const TableFieldFilter = <Operator extends string>({
 }: TableFieldFilterProps<Operator>) => {
   const {
     translations: {
-      tableFilter: { delete: deleteTranslation },
+      tableFilterGroup: { delete: deleteTranslation },
     },
   } = useConfig();
   const { isCurrentFilter, isDeletableFilter, deleteFilter } = useTableFilterGroup();

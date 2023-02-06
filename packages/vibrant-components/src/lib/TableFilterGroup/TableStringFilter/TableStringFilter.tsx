@@ -28,7 +28,9 @@ export const TableStringFilter = withTableStringFilterVariation(
 
     const {
       translations: {
-        tableFilter: { stringOperator: operatorTranslation },
+        tableFilterGroup: {
+          stringFilter: { operators: operatorsTranslation, filterLabel: filterLabelTranslation },
+        },
       },
     } = useConfig();
 
@@ -61,7 +63,7 @@ export const TableStringFilter = withTableStringFilterVariation(
         dataKey={dataKey}
         label={label.concat(
           isValueRequiredOperator(operator)
-            ? `: ${operatorTranslation.filterLabel[operator as 'empty' | 'notEmpty']}`
+            ? `: ${filterLabelTranslation[operator as 'empty' | 'notEmpty']}`
             : value
             ? `: ${value}`
             : ''
@@ -78,7 +80,7 @@ export const TableStringFilter = withTableStringFilterVariation(
 
           setInputValue(value);
         }}
-        operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
+        operatorOptions={operators.map(operator => ({ operator, label: operatorsTranslation[operator] }))}
         selectedOperator={operator}
         onOperatorSelect={operatorOption => {
           setOperator(operatorOption);

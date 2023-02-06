@@ -30,7 +30,9 @@ export const TableDateFilter = withTableDateFilterVariation(
 
     const {
       translations: {
-        tableFilter: { dateOperator: operatorTranslation },
+        tableFilterGroup: {
+          dateFilter: { operators: operatorTranslation, filterLabel: filterLabelTranslation },
+        },
       },
     } = useConfig();
 
@@ -57,7 +59,7 @@ export const TableDateFilter = withTableDateFilterVariation(
         dataKey={dataKey}
         label={label.concat(
           isDateFilterValid({ value, operator })
-            ? `: ${operatorTranslation.filterLabel[operator]
+            ? `: ${filterLabelTranslation[operator]
                 .replace(/\{date\}|\{startDate\}/g, value?.[0] ? getDateString(value?.[0]) : '')
                 .replace('{endDate}', value?.[1] ? getDateString(value?.[1]) : '')}`
             : ''

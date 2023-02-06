@@ -18,7 +18,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
   ({ initialFilterDataKeys = [], onFilterChange, children }) => {
     const {
       translations: {
-        tableFilter: { add, initialize },
+        tableFilterGroup: { add, initialize },
       },
     } = useConfig();
 

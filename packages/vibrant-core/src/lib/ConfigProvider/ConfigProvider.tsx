@@ -44,24 +44,25 @@ export type Translation = {
     prev: string;
     next: string;
   };
-  tableFilter: {
+  tableFilterGroup: {
     add: string;
     initialize: string;
     delete: string;
-    reset: string;
-    stringOperator: {
+    stringFilter: {
       filterLabel: {
         empty: string;
         notEmpty: string;
       };
-      equals: string;
-      notEquals: string;
-      contains: string;
-      notContains: string;
-      empty: string;
-      notEmpty: string;
+      operators: {
+        equals: string;
+        notEquals: string;
+        contains: string;
+        notContains: string;
+        empty: string;
+        notEmpty: string;
+      };
     };
-    dateOperator: {
+    dateFilter: {
       filterLabel: {
         equals: string;
         notEquals: string;
@@ -73,27 +74,32 @@ export type Translation = {
         notEmpty: string;
         between: string;
       };
-      equals: string;
-      notEquals: string;
-      before: string;
-      after: string;
-      onOrBefore: string;
-      onOrAfter: string;
-      between: string;
-      empty: string;
-      notEmpty: string;
+      operators: {
+        equals: string;
+        notEquals: string;
+        before: string;
+        after: string;
+        onOrBefore: string;
+        onOrAfter: string;
+        between: string;
+        empty: string;
+        notEmpty: string;
+      };
     };
-    multiSelectOperator: {
+    multiSelectFilter: {
+      reset: string;
       filterLabel: {
         equals: string;
         notEquals: string;
         empty: string;
         notEmpty: string;
       };
-      equals: string;
-      notEquals: string;
-      empty: string;
-      notEmpty: string;
+      operators: {
+        equals: string;
+        notEquals: string;
+        empty: string;
+        notEmpty: string;
+      };
     };
   };
 };
@@ -124,24 +130,25 @@ const ConfigContext = createContext<ConfigContextValue>({
       prev: '이전',
       next: '다음',
     },
-    tableFilter: {
+    tableFilterGroup: {
       add: '필터 추가',
       initialize: '초기화',
       delete: '삭제',
-      reset: '전체 해제',
-      stringOperator: {
+      stringFilter: {
         filterLabel: {
           empty: '비어있음',
           notEmpty: '비어있지 않음',
         },
-        equals: '같다',
-        notEquals: '같지 않다',
-        contains: '포함한다',
-        notContains: '포함하지 않는다',
-        empty: '비어있다',
-        notEmpty: '비어있지 않다',
+        operators: {
+          equals: '같다',
+          notEquals: '같지 않다',
+          contains: '포함한다',
+          notContains: '포함하지 않는다',
+          empty: '비어있다',
+          notEmpty: '비어있지 않다',
+        },
       },
-      dateOperator: {
+      dateFilter: {
         filterLabel: {
           equals: '{date}',
           notEquals: '{date} 같지 않음',
@@ -153,27 +160,32 @@ const ConfigContext = createContext<ConfigContextValue>({
           notEmpty: '비어있지 않음',
           between: '{startDate} - {endDate}',
         },
-        equals: '같다',
-        notEquals: '같지 않다',
-        before: '이전',
-        after: '이후',
-        onOrBefore: '당일 혹은 이전',
-        onOrAfter: '당일 혹은 이후',
-        empty: '비어있다',
-        notEmpty: '비어있지 않다',
-        between: '범위 내',
+        operators: {
+          equals: '같다',
+          notEquals: '같지 않다',
+          before: '이전',
+          after: '이후',
+          onOrBefore: '당일 혹은 이전',
+          onOrAfter: '당일 혹은 이후',
+          empty: '비어있다',
+          notEmpty: '비어있지 않다',
+          between: '범위 내',
+        },
       },
-      multiSelectOperator: {
+      multiSelectFilter: {
+        reset: '전체 해제',
         filterLabel: {
           equals: '{options}',
           notEquals: '{options} 같지 않음',
           empty: '비어있음',
           notEmpty: '비어있지 않음',
         },
-        equals: '같다',
-        notEquals: '같지 않다',
-        empty: '비어있다',
-        notEmpty: '비어있지 않다',
+        operators: {
+          equals: '같다',
+          notEquals: '같지 않다',
+          empty: '비어있다',
+          notEmpty: '비어있지 않다',
+        },
       },
     },
   },
