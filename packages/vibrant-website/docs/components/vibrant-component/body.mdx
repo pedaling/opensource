@@ -1,0 +1,69 @@
+---
+title: Body
+---
+
+# Body
+
+Body 는 본문 텍스트를 나타내기 위해 사용할수 있는 컴포넌트입니다.
+
+```jsx live
+<VStack>
+  <Body level={1}>Body level 1</Body>
+  <Body level={2}>Body level 2</Body>
+  <Body level={3}>Body level 3</Body>
+  <Body level={5}>Body level 4</Body>
+  <Body level={5}>Body level 5</Body>
+</VStack>
+```
+
+## How to use
+
+```jsx
+import { Body } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                | Type                                           | Default | Description   |
+| ------------------- | ---------------------------------------------- | ------- | ------------- |
+| [level](#크기)(\*)  | `1` \| `2` \| `3` \| `4` \| `5`                | -       | 텍스트의 크기 |
+| [weight](#두께)(\*) | `bold` \| `extraBold` \| `medium` \| `regular` | -       | 텍스트의 두께 |
+
+## Usage
+
+### 크기
+
+`level` 은 필수 속성이며, 폰트의 크기를 설정합니다.
+
+```jsx live
+<VStack>
+  <Body level={1}>Body level 1</Body>
+  <Body level={2}>Body level 2</Body>
+  <Body level={3}>Body level 3</Body>
+  <Body level={5}>Body level 4</Body>
+  <Body level={5}>Body level 5</Body>
+</VStack>
+```
+
+### 두께
+
+`weight` 는 폰트의 두께를 설정합니다.
+
+```jsx live
+<VStack>
+  <Body level={1} weight="bold">
+    Bold body
+  </Body>
+  <Body level={1} weight="extraBold">
+    Extra bold body
+  </Body>
+
+  <Body level={1} weight="medium">
+    Medium body
+  </Body>
+
+  <Body level={1} weight="regular">
+    Regular body
+  </Body>
+</VStack>
+```
