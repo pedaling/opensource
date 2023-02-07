@@ -5,7 +5,7 @@ export type DateInputProps = {
   ref?: Ref<HTMLElement>;
   value: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onFocus?: () => void;
   onClear?: () => void;
   label?: string;
   placeholder?: string;

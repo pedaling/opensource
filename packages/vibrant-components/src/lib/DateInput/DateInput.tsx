@@ -20,7 +20,7 @@ export const DateInput = withDateInputVariation(
     labelColor,
     onClear,
     calendarOpened,
-    onClick,
+    onFocus,
     helperColor,
     color,
     disabled,
@@ -55,9 +55,12 @@ export const DateInput = withDateInputVariation(
           p={15}
           py={isContentExists && label ? 7 : 15}
           pr={disabled ? 48 : 80}
-          onClick={onClick}
           disabled={disabled}
-          onFocus={() => setIsFocused(true)}
+          onFocus={() => {
+            setIsFocused(true);
+
+            onFocus?.();
+          }}
           onBlur={() => setIsFocused(false)}
           height={50}
           borderRadius={2}
