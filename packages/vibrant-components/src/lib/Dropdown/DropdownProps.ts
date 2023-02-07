@@ -7,9 +7,9 @@ export type DropdownProps = Either<
   { open: boolean },
   {
     defaultOpen?: boolean;
-    renderOpener: (_: { open: () => void; isOpen: boolean; ref: RefObject<any> }) => ReactElementChild;
   }
 > & {
+  renderOpener: (_: { open: () => void; isOpen: boolean; ref: RefObject<any> }) => ReactElementChild;
   position?: Position;
   renderContents: (_: { close: () => void }) => ReactElementChild;
   spacing?: number;
