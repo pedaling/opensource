@@ -3,7 +3,7 @@ import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
 export type RangePickerFieldRefValue = {
-  focus: () => void;
+  focus: (_: { preventScroll?: boolean }) => void;
   blur: () => void;
 };
 
