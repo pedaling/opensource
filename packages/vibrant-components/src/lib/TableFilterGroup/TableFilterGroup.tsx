@@ -1,4 +1,5 @@
 import { Children, Fragment, cloneElement, isValidElement, useRef, useState } from 'react';
+import type { ComponentWithRef } from '@vibrant-ui/core';
 import { ScrollBox, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
@@ -9,9 +10,13 @@ import { Pressable } from '../Pressable';
 import { VStack } from '../VStack';
 import { TableFilterGroupProvider } from './context';
 import type { TableDateFilterProps } from './TableDateFilter';
+import { TableDateFilter } from './TableDateFilter';
+import type { TableFilterGroupProps } from './TableFilterGroupProps';
 import { withTableFilterGroupPropsVariation } from './TableFilterGroupProps';
 import type { TableMultiSelectFilterProps } from './TableMultiSelectFilter';
+import { TableMultiSelectFilter } from './TableMultiSelectFilter';
 import type { TableStringFilterProps } from './TableStringFilter';
+import { TableStringFilter } from './TableStringFilter';
 import type { TableFilterRefValue } from './types';
 
 export const TableFilterGroup = withTableFilterGroupPropsVariation(
@@ -175,4 +180,14 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       </TableFilterGroupProvider>
     );
   }
-);
+) as ComponentWithRef<TableFilterGroupProps> & {
+  StringFilter: ComponentWithRef<TableStringFilterProps>;
+  DateFilter: ComponentWithRef<TableDateFilterProps>;
+  MultiSelectFilter: ComponentWithRef<TableMultiSelectFilterProps>;
+};
+
+TableFilterGroup.StringFilter = TableStringFilter;
+
+TableFilterGroup.DateFilter = TableDateFilter;
+
+TableFilterGroup.MultiSelectFilter = TableMultiSelectFilter;

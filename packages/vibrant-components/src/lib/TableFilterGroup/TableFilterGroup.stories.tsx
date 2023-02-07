@@ -1,9 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { TableDateFilter } from './TableDateFilter';
 import { TableFilterGroup } from './TableFilterGroup';
-import { TableMultiSelectFilter } from './TableMultiSelectFilter';
-import { TableStringFilter } from './TableStringFilter';
 
 export default {
   title: 'TableFilterGroup',
@@ -16,7 +13,7 @@ export default {
 
 export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
   <TableFilterGroup {...props}>
-    <TableStringFilter
+    <TableFilterGroup.StringFilter
       dataKey="id"
       label="ID"
       defaultValue={{
@@ -24,7 +21,7 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
         operator: 'equals',
       }}
     />
-    <TableStringFilter
+    <TableFilterGroup.StringFilter
       dataKey="location"
       label="장소"
       defaultValue={{
@@ -32,8 +29,8 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
         operator: 'contains',
       }}
     />
-    <TableDateFilter dataKey="period" label="수강 기간" />
-    <TableMultiSelectFilter
+    <TableFilterGroup.DateFilter dataKey="period" label="수강 기간" />
+    <TableFilterGroup.MultiSelectFilter
       dataKey="orderStatus"
       label="주문 상태"
       defaultValue={{ operator: 'equals', value: ['completed'] }}
@@ -52,6 +49,6 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
         },
       ]}
     />
-    <TableStringFilter dataKey="class" label="수강 중인 클래스" />
+    <TableFilterGroup.StringFilter dataKey="class" label="수강 중인 클래스" />
   </TableFilterGroup>
 );
