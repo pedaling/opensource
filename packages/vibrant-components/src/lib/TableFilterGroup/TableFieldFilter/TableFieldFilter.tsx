@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
-import { useCallbackRef } from '@vibrant-ui/utils';
 import { Body } from '../../Body';
 import { Dropdown } from '../../Dropdown';
 import { FilterChip } from '../../FilterChip';
@@ -19,7 +17,6 @@ export const TableFieldFilter = <Operator extends string>({
   operatorOptions,
   onOperatorSelect,
   onClose,
-  onOpen,
   field,
   width,
 }: TableFieldFilterProps<Operator>) => {
@@ -29,16 +26,8 @@ export const TableFieldFilter = <Operator extends string>({
     },
   } = useConfig();
   const { isCurrentFilter, isDeletableFilter, deleteFilter } = useTableFilterGroup();
-  const [isOpen, setIsOpen] = useState(false);
-  const handleOpen = useCallbackRef(onOpen);
 
   const selectedOperatorLabel = operatorOptions.find(({ operator }) => operator === selectedOperator)?.label;
-
-  useEffect(() => {
-    if (isOpen) {
-      handleOpen();
-    }
-  }, [handleOpen, isOpen]);
 
   if (!isCurrentFilter(dataKey)) {
     return null;
@@ -46,15 +35,10 @@ export const TableFieldFilter = <Operator extends string>({
 
   return (
     <Dropdown
-      open={isOpen}
       position="bottom-start"
-      onClose={() => {
-        setIsOpen(false);
-
-        onClose?.();
-      }}
-      renderOpener={() => (
-        <FilterChip size="md" onClick={() => setIsOpen(true)} selected={active}>
+      onClose={onClose}
+      renderOpener={({ open }) => (
+        <FilterChip size="md" onClick={open} selected={active}>
           {label}
         </FilterChip>
       )}

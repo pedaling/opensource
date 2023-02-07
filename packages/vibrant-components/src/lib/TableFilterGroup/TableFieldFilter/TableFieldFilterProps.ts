@@ -5,7 +5,6 @@ export type TableFieldFilterProps<Operator extends string> = {
   label: string;
   active: boolean;
   width?: number | string;
-  onOpen?: () => void;
   onClose?: () => void;
   selectedOperator: Operator;
   operatorOptions: { label: string; operator: Operator }[];
