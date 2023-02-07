@@ -4,6 +4,73 @@ title: TableFilterGroup
 
 # TableFilterGroup
 
+`<TableFilterGroup />` 은 Table 의 데이터에 필터를 적용하고자 할 때 사용할 수 있는 컴포넌트 입니다.
+
+`<TableFilterGroup />` 하위에 올 수 있는 필터의 종류는 세가지가 있으며, 필터의 타입에 따라 `operators` 와 `value` 타입이 상이합니다.
+
+필터의 종류별로 사용할 수 있는 속성과 예제는 각 항목에 소개되어 있습니다.
+
+:::caution
+
+1개의 필터만을 사용하기 위해서도 `<TableFilterGroup />` 으로 감싸주어야 제대로 동작합니다.
+
+이는 `<TableFilterGroup />` 가 하위 필터들의 상태를 관리하는 동시에 필터의 변경사항을 테이블에 반영하는 주체이기 때문입니다.
+
+:::
+
+```jsx live
+<TableFilterGroup
+  initialFilterDataKeys={['id', 'orderStatus']}
+>
+  <TableFilterGroup.StringFilter
+    dataKey="id"
+    label="ID"
+    defaultValue={{
+      value: 'loulee',
+      operator: 'equals',
+    }}
+  />
+  <TableFilterGroup.StringFilter
+    dataKey="location"
+    label="장소"
+    defaultValue={{
+      value: 'Seoul',
+      operator: 'contains',
+    }}
+  />
+  <TableFilterGroup.DateFilter
+    dataKey="period"
+    label="수강 기간"
+  />
+  <TableFilterGroup.MultiSelectFilter
+    dataKey="orderStatus"
+    label="주문 상태"
+    defaultValue={{
+      operator: 'equals',
+      value: ['completed'],
+    }}
+    options={[
+      {
+        value: 'completed',
+        label: '주문 완료',
+      },
+      {
+        value: 'canceled',
+        label: '취소처리',
+      },
+      {
+        value: 'packaged',
+        label: '배송 준비중',
+      },
+    ]}
+  />
+  <TableFilterGroup.StringFilter
+    dataKey="class"
+    label="수강 중인 클래스"
+  />
+</TableFilterGroup>
+```
+
 ## How to use
 
 ```jsx
@@ -12,13 +79,25 @@ import { TableFilterGroup } from '@vibrant-ui/components';
 
 ## Properties
 
-### TableFilterGroup
+### `TableFilterGroup`
 
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| -    | -    | -       | -           |
+`<TableFilterGroup />` 은 가장 상위에서 필터 컴포넌트들을 감싸며, 현재 상태의 필더 데이터값을 `onFilterChange` 함수를 통해 전달하여 테이블에 반영할 수 있습니다.
 
-### TableFilterGroup.StringFilter
+`initialFilterDataKeys` 에 있는 데이터키를 통해 초기에 등록되어 있으며 사용자가 삭제할 수 없는 필터를 설정할 수 있습니다.
+
+만약, `<TableFilterGroup />` 하위에 있는 모든 필터가 추가되어 있는 상태라면, 필터 추가 버튼은 등장하지 않습니다.
+
+`<TableFilterGroup />` 하위에 있는 각각의 필터들 중 하나라도 초기 상태로부터의 변경 사항이 존재한다면 초기화 버튼이 우측에 등장합니다.
+
+| Prop                  | Type                                                  | Default | Description                                                     |
+| --------------------- | ----------------------------------------------------- | ------- | --------------------------------------------------------------- |
+| onFilterChange        | `(filters: Filter[] => void`                          | -       | `TableFilterGroup` 하위에 있는 필터가 변경될 때마다 호출될 함수 |
+| initialFilterDataKeys | `string[]`                                            | -       | 기본으로 적용된 채로 보여질 필터의 `dataKey` 배열               |
+| children(\*)          | `StringFilter` \| `DateFilter` \| `MultiSelectFilter` | -       | `TableFilterGroup` 에 포함될 필터 컴포넌트들                    |
+
+### `TableFilterGroup.StringFilter`
+
+`<TableFilterGroup.StringFilter />` 는 문자열 타입의 필터 값과 연산자를 받는 필터칩입니다.
 
 | Prop         | Type                                                | Default                                                                       | Description                                                                                            |
 | ------------ | --------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
@@ -28,7 +107,22 @@ import { TableFilterGroup } from '@vibrant-ui/components';
 | operators    | `StringFilterOperator[]`                            | [ `equals `, `notEquals `, `contains `, `notContains `, `empty `, `notEmpty`] | StringFilter의 조건을 지정합니다.                                                                      |
 | defaultValue | `{ value: string, operator: StringFilterOperator }` |                                                                               | StringFilter의 기본 값을 지정합니다. operator가 `empty`, `notEmpty`일 경우 value를 지정할 수 없습니다. |
 
-### TableFilterGroup.DateFilter
+```jsx live
+<TableFilterGroup initialFilterDataKeys={['location']}>
+  <TableFilterGroup.StringFilter
+    dataKey="location"
+    label="장소"
+    defaultValue={{
+      value: 'Seoul',
+      operator: 'contains',
+    }}
+  />
+</TableFilterGroup>
+```
+
+### `TableFilterGroup.DateFilter`
+
+`<TableFilterGroup.DateFilter />` 는 날짜 형식의 필터 값과 연산자를 받는 필터칩입니다.
 
 | Prop         | Type                                              | Default                                                                                               | Description                                                                                          |
 | ------------ | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -38,7 +132,18 @@ import { TableFilterGroup } from '@vibrant-ui/components';
 | operators    | `DateFilterOperator[]`                            | [`equals`, `notEquals`, `before`, `after`, `onOrBefore`, `onOrAfter`, `between`, `empty`, `notEmpty`] | DateFilter의 조건을 지정합니다.                                                                      |
 | defaultValue | `{ value: Date[], operator: DateFilterOperator }` |                                                                                                       | DateFilter의 기본 값을 지정합니다. operator가 `empty`, `notEmpty`일 경우 value를 지정할 수 없습니다. |
 
-### TableFilterGroup.MultiSelectField
+```jsx live
+<TableFilterGroup initialFilterDataKeys={['period']}>
+  <TableFilterGroup.DateFilter
+    dataKey="period"
+    label="수강 기간"
+  />
+</TableFilterGroup>
+```
+
+### `TableFilterGroup.MultiSelectField`
+
+`<TableFilterGroup.MultiSelectField />` 는 1개 이상의 값을 선택하여 반영할 수 있는 필터칩입니다.
 
 | Prop         | Type                                                       | Default                                      | Description                                                                                                |
 | ------------ | ---------------------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -48,3 +153,30 @@ import { TableFilterGroup } from '@vibrant-ui/components';
 | options      | `{ label: string, value: string }[]`                       |                                              | MultiSelectFilter의 옵션 목록을 지정합니다.                                                                |
 | operators    | `MultiSelectFilterOperator[]`                              | [`equals`, `notEquals`, `empty`, `notEmpty`] | MultiSelectField의 조건을 지정합니다.                                                                      |
 | defaultValue | `{ value: string[], operator: MultiSelectFilterOperator }` |                                              | MultiSelectField의 기본 값을 지정합니다. operator가 `empty`, `notEmpty`일 경우 value를 지정할 수 없습니다. |
+
+```jsx live
+<TableFilterGroup initialFilterDataKeys={['orderStatus']}>
+  <TableFilterGroup.MultiSelectFilter
+    dataKey="orderStatus"
+    label="주문 상태"
+    defaultValue={{
+      operator: 'equals',
+      value: ['completed', 'canceled'],
+    }}
+    options={[
+      {
+        value: 'completed',
+        label: '주문 완료',
+      },
+      {
+        value: 'canceled',
+        label: '취소처리',
+      },
+      {
+        value: 'packaged',
+        label: '배송 준비중',
+      },
+    ]}
+  />
+</TableFilterGroup>
+```
