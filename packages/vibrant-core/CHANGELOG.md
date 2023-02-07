@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.45.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.44.1...vibrant-core-0.45.0) (2023-02-07)
+
+
+### Bug Fixes
+
+* TableStringFilter에서 옵션을 바꾸거나 드랍다운이 열렸을 때 인풋 필드가 포커스되도록 한다. ([#555](https://github.com/pedaling/opensource/issues/555)) ([cab2b57](https://github.com/pedaling/opensource/commit/cab2b5791ec57e77c570bc2f41f8930112484edd))
+
 ### [0.44.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.44.0...vibrant-core-0.44.1) (2023-02-03)
 
 ## [0.44.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.43.0...vibrant-core-0.44.0) (2023-02-02)

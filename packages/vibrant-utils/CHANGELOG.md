@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.45.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.44.1...vibrant-utils-0.45.0) (2023-02-07)
+
+
+### Bug Fixes
+
+* TableDateFilter에서 드랍다운이 열렸을 때, operator를 변경했는데 값이 없을 때 DateField에 포커스한다. ([#557](https://github.com/pedaling/opensource/issues/557)) ([c2c276e](https://github.com/pedaling/opensource/commit/c2c276e9727d304101e68fcece70c0af0fea90ed))
+
 ### [0.44.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.44.0...vibrant-utils-0.44.1) (2023-02-03)
 
 ## [0.44.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.43.0...vibrant-utils-0.44.0) (2023-02-02)

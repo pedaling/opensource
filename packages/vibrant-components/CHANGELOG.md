@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.45.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.44.1...vibrant-components-0.45.0) (2023-02-07)
+
+
+### Features
+
+* add ScrollBox into TableFilterGroup ([#550](https://github.com/pedaling/opensource/issues/550)) ([74718d3](https://github.com/pedaling/opensource/commit/74718d39c75ed96f8f275eed6be52f7f0facccae))
+* add StringFilter, DateFilter, MultiSelectFilter property in TableFilterGroup ([#559](https://github.com/pedaling/opensource/issues/559)) ([932c0a2](https://github.com/pedaling/opensource/commit/932c0a26ffd025de7f2c1f167404a5a7bf8e5869))
+
+
+### Bug Fixes
+
+* open calander when focused in Date/RangePickerField ([#558](https://github.com/pedaling/opensource/issues/558)) ([10a662c](https://github.com/pedaling/opensource/commit/10a662ca268176eac7cb113e03e80f3cd5f3db52))
+* TableDateFilter에서 드랍다운이 열렸을 때, operator를 변경했는데 값이 없을 때 DateField에 포커스한다. ([#557](https://github.com/pedaling/opensource/issues/557)) ([c2c276e](https://github.com/pedaling/opensource/commit/c2c276e9727d304101e68fcece70c0af0fea90ed))
+* TableStringFilter에서 옵션을 바꾸거나 드랍다운이 열렸을 때 인풋 필드가 포커스되도록 한다. ([#555](https://github.com/pedaling/opensource/issues/555)) ([cab2b57](https://github.com/pedaling/opensource/commit/cab2b5791ec57e77c570bc2f41f8930112484edd))
+
 ### [0.44.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.44.0...vibrant-components-0.44.1) (2023-02-03)
 
 
