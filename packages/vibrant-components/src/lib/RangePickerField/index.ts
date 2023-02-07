@@ -1,2 +1,2 @@
 export { RangePickerField } from './RangePickerField';
-export type { RangePickerFieldProps } from './RangePickerFieldProps';
+export type { RangePickerFieldProps, RangePickerFieldRefValue } from './RangePickerFieldProps';
