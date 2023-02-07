@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, OverlayBox, getElementPosition } from '@vibrant-ui/core';
 import type { TargetElement } from '@vibrant-ui/utils';
-import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
+import { getDateString, useComposedRef, useSafeDeps } from '@vibrant-ui/utils';
 import { Calendar } from '../Calendar';
 import { DateInput } from '../DateInput';
 import { withRangePickerFieldVariation } from './RangePickerFieldProps';
@@ -9,7 +9,19 @@ import { withRangePickerFieldVariation } from './RangePickerFieldProps';
 const getRangeString = (start: Date, end?: Date) => `${getDateString(start)} - ${end ? getDateString(end) : ''}`;
 
 export const RangePickerField = withRangePickerFieldVariation(
-  ({ defaultValue, onValueChange, label, disabled, placeholder, helperText, state, onOpen, zIndex }) => {
+  ({
+    innerRef,
+    defaultValue,
+    onValueChange,
+    label,
+    disabled,
+    placeholder,
+    helperText,
+    state,
+    onOpen,
+    zIndex,
+    autoFocus,
+  }) => {
     const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
     const onValueChangeRef = useSafeDeps(onValueChange);
@@ -88,10 +100,12 @@ export const RangePickerField = withRangePickerFieldVariation(
       }
     }, [onValueChangeRef]);
 
+    const composeRef = useComposedRef(innerRef, inputRef);
+
     return (
       <Box position="relative" width="100%" height={50}>
         <DateInput
-          ref={inputRef}
+          ref={composeRef}
           value={inputValue}
           onClick={openCalendar}
           disabled={disabled}
@@ -101,6 +115,7 @@ export const RangePickerField = withRangePickerFieldVariation(
           calendarOpened={isCalendarOpened}
           helperText={helperText}
           state={state}
+          autoFocus={autoFocus}
         />
         <OverlayBox
           open={isCalendarOpened}

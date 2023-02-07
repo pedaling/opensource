@@ -1,13 +1,25 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, OverlayBox, getElementPosition } from '@vibrant-ui/core';
 import type { TargetElement } from '@vibrant-ui/utils';
-import { getDateString, useSafeDeps } from '@vibrant-ui/utils';
+import { getDateString, useComposedRef, useSafeDeps } from '@vibrant-ui/utils';
 import { Calendar } from '../Calendar';
 import { DateInput } from '../DateInput';
 import { withDatePickerFieldVariation } from './DatePickerFieldProps';
 
 export const DatePickerField = withDatePickerFieldVariation(
-  ({ defaultValue, disabled, label, state, helperText, onValueChange, placeholder, onOpen, zIndex }) => {
+  ({
+    innerRef,
+    defaultValue,
+    disabled,
+    label,
+    state,
+    helperText,
+    onValueChange,
+    placeholder,
+    onOpen,
+    zIndex,
+    autoFocus,
+  }) => {
     const [value, setValue] = useState(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
     const onValueChangeRef = useSafeDeps(onValueChange);
@@ -77,10 +89,12 @@ export const DatePickerField = withDatePickerFieldVariation(
       }
     }, [onValueChangeRef]);
 
+    const composeRef = useComposedRef(innerRef, inputRef);
+
     return (
       <Box position="relative" width="100%" height={50}>
         <DateInput
-          ref={inputRef}
+          ref={composeRef}
           value={inputValue}
           onClick={openCalendar}
           disabled={disabled}
@@ -90,6 +104,7 @@ export const DatePickerField = withDatePickerFieldVariation(
           label={label}
           state={state}
           helperText={helperText}
+          autoFocus={autoFocus}
         />
         <OverlayBox
           open={isCalendarOpened}
