@@ -97,6 +97,10 @@ export const SelectField = withSelectFieldVariation(
     );
 
     useEffect(() => {
+      setSelectedOptionIndex(options.findIndex(option => !option.disabled && option.value === defaultValue) ?? -1);
+    }, [defaultValue, options]);
+
+    useEffect(() => {
       if (prevSelectedIndexRef.current !== selectedOptionIndex) {
         setState('default');
 
