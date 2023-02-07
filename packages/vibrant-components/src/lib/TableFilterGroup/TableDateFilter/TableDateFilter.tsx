@@ -60,7 +60,7 @@ export const TableDateFilter = withTableDateFilterVariation(
 
     useEffect(() => {
       if (!isDateFilterValid({ value, operator }) && prevOperatorRef.current !== operator) {
-        fieldRef.current?.focus({
+        fieldRef.current?.focus?.({
           preventScroll: true,
         });
       }

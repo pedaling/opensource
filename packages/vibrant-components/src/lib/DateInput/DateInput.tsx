@@ -36,7 +36,7 @@ export const DateInput = withDateInputVariation(
     // TODO: use input native autoFocus and remove this
     useEffect(() => {
       if (autoFocus) {
-        inputRef.current?.focus({
+        inputRef.current?.focus?.({
           preventScroll: true,
         });
       }
