@@ -12,6 +12,7 @@ export type DateInputProps = {
   calendarOpened?: boolean;
   helperText?: string;
   state?: 'default' | 'error';
+  autoFocus?: boolean;
 };
 
 export const withDateInputVariation = withVariation<DateInputProps>('DateInput')(

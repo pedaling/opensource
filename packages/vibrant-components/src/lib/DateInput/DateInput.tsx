@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import { useComposedRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
@@ -25,15 +26,28 @@ export const DateInput = withDateInputVariation(
     disabled,
     borderColor,
     helperText,
+    autoFocus,
     ...restProps
   }) => {
+    const inputRef = useRef<any>(null);
     const [isFocused, setIsFocused] = useState(false);
     const isContentExists = Boolean(value);
+
+    // TODO: use input native autoFocus and remove this
+    useEffect(() => {
+      if (autoFocus) {
+        inputRef.current?.focus({
+          preventScroll: true,
+        });
+      }
+    }, [autoFocus]);
+
+    const composeRef = useComposedRef(innerRef, inputRef);
 
     return (
       <Box width="100%" position="relative">
         <Pressable
-          ref={innerRef}
+          ref={composeRef}
           width="100%"
           borderWidth={1}
           borderStyle="solid"
