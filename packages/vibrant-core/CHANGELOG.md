@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.46.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.45.0...vibrant-core-0.46.0) (2023-02-08)
+
+
+### Features
+
+* add textDecorationLine system prop ([#562](https://github.com/pedaling/opensource/issues/562)) ([f2dc35a](https://github.com/pedaling/opensource/commit/f2dc35acb2a6e960664717531f9077bf1bf1f34f))
+
+
+### Bug Fixes
+
+* add h4 to TextElements type ([#563](https://github.com/pedaling/opensource/issues/563)) ([7c9ef52](https://github.com/pedaling/opensource/commit/7c9ef524d366bcde945dbc0cb6d0728e09596470))
+
 ## [0.45.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.44.1...vibrant-core-0.45.0) (2023-02-07)
 
 
