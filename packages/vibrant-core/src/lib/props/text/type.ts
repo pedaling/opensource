@@ -8,5 +8,6 @@ export type TextSystemProps = {
   wordBreak?: ResponsiveValue<'break-all' | 'break-word' | 'keep-all' | 'normal'>;
   wordWrap?: ResponsiveValue<'break-word' | 'normal'>;
   overflowWrap?: ResponsiveValue<'anywhere' | 'break-word' | 'normal'>;
+  textDecorationLine?: ResponsiveValue<'line-through' | 'none' | 'underline line-through' | 'underline'>;
   lineLimit?: number;
 };
