@@ -48,7 +48,7 @@ export const systemPropNames = systemProps
   .filter(systemProp => !systemProp.disabled)
   .map(systemProp => systemProp.propName);
 
-export type TextElements = 'br' | 'h1' | 'h2' | 'h3' | 'h5' | 'h6' | 'label' | 'p' | 'span';
+export type TextElements = 'br' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label' | 'p' | 'span';
 
 export type TextChildren = ReactElementChild | ReactTextChild | TextChildren[];
 
