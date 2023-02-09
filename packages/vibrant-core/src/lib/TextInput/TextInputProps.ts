@@ -1,4 +1,3 @@
-import type { ChangeEvent } from 'react';
 import { createInterpolation } from '../createInterpolation';
 import { injectContext } from '../injectContext';
 import type {
@@ -193,7 +192,6 @@ export type TextInputProps = SystemProps &
       prevent: () => void;
       target?: HTMLInputElement | null;
     }) => void;
-    onChange?: (e: ChangeEvent<HTMLInputElement> | undefined) => void;
     onSubmit?: (value: string) => void;
   };
 
