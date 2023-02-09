@@ -179,7 +179,7 @@ export type TextInputProps = SystemProps &
     focusStyle?: SystemProps;
     autoCapitalize?: AutoCapitalizeOption;
     autoComplete?: AutoCompleteOption;
-    defaultCursor?: number;
+    cursor?: number;
     onFocus?: () => void;
     onBlur?: () => void;
     onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;
