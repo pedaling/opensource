@@ -273,7 +273,7 @@ export const SelectField = withSelectFieldVariation(
           width="100%"
           maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 336]}
           zIndex={zIndex}
-          {...(direction === 'down' ? { top: 54 } : { bottom: 54 })}
+          {...(direction === 'down' ? { top: 56 } : { bottom: 56 })}
         >
           <SelectOptionGroup
             onOptionClick={index => {
