@@ -22,6 +22,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       focusStyle,
       autoCapitalize,
       autoComplete = 'none',
+      defaultCursor,
       onFocus,
       onBlur,
       onKeyPress,
@@ -32,6 +33,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
     ref
   ) => {
     const [value, setValue] = useState(defaultValue ?? '');
+    const [cursor, setCursor] = useState(defaultCursor ?? 0);
+
     const [isFocused, setIsFocused] = useState(false);
 
     const innerRef = useRef<HTMLInputElement>(null);
@@ -54,7 +57,14 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
     useEffect(() => {
       setValue(defaultValue ?? '');
-    }, [defaultValue]);
+
+      if (defaultCursor) {
+        setCursor(defaultCursor);
+        if (innerRef.current) {
+          innerRef.current.setSelectionRange(cursor, cursor);
+        }
+      }
+    }, [cursor, defaultCursor, defaultValue, value]);
 
     useImperativeHandle(ref, () => ({
       focus: () => innerRef.current?.focus(),
