@@ -1,3 +1,4 @@
+import type { ChangeEvent } from 'react';
 import { createInterpolation } from '../createInterpolation';
 import { injectContext } from '../injectContext';
 import type {
@@ -184,7 +185,7 @@ export type TextInputProps = SystemProps &
     onBlur?: () => void;
     onKeyPress?: ({ key, prevent }: { key: string; prevent: () => void }) => void;
     onValueChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
-    onChange?: () => void;
+    onChange?: (e: ChangeEvent<HTMLInputElement> | undefined) => void;
     onSubmit?: (value: string) => void;
   };
 
