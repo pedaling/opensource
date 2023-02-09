@@ -123,6 +123,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
               event.preventDefault();
             },
+            target: innerRef.current,
           });
 
           if (!isPrevented) {
