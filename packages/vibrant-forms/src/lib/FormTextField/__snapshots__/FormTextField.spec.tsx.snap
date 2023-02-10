@@ -279,9 +279,9 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
@@ -314,10 +314,6 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   position: relative;
   width: auto;
   height: auto;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 <div>

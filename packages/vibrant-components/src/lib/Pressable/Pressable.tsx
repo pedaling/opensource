@@ -45,6 +45,7 @@ export const Pressable = withPressableVariation(
     return (
       <PressableBox
         ref={innerRef}
+        flexDirection="row"
         position="relative"
         overflow="hidden"
         cursor={disabled ? 'default' : 'pointer'}
@@ -99,7 +100,6 @@ export const Pressable = withPressableVariation(
             pr={pr}
             pb={pb}
             pl={pl}
-            flexGrow={1}
           >
             {children}
           </Box>
