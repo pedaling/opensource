@@ -6,27 +6,15 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
 
 # Color Token
 
-<Paper backgroundColor="background" px={50} py={40}>
-  <VStack>
-    <HStack>
-      <ColorTokenItem
-        backgroundColor="white"
-        textColor="black"
-        colorToken="white"
-      />
-      <ColorTokenItem
-        backgroundColor="black"
-        textColor="white"
-        colorToken="black"
-      />
-      <ColorTokenItem
-        backgroundColor="transparent"
-        textColor="onView1"
-        colorToken="transparent"
-      />
-    </HStack>
-    <Space height={32} />
-    <HStack>
+Vibrant color token 은 다크/라이트 모드에 맞추어 제작되었습니다.
+
+다크/라이트 모드를 변경하여 다르게 적용되는 컬러 토큰을 확인할 수 있습니다.
+
+### Basic Token
+
+<Paper backgroundColor="background" p={4}>
+  <VStack spacing={12}>
+    <HStack width="100%" flexWrap="wrap">
       <ColorTokenItem
         backgroundColor="primary"
         textColor="onPrimary"
@@ -47,9 +35,6 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         textColor="primaryContainer"
         colorToken="onPrimaryContainer"
       />
-    </HStack>
-    <Space height={32} />
-    <HStack>
       <ColorTokenItem
         backgroundColor="informative"
         textColor="onInformative"
@@ -70,9 +55,6 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         textColor="primaryContainer"
         colorToken="onInformativeContainer"
       />
-    </HStack>
-    <Space height={12} />
-    <HStack>
       <ColorTokenItem
         backgroundColor="error"
         textColor="onError"
@@ -93,9 +75,6 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         textColor="primaryContainer"
         colorToken="onErrorContainer"
       />
-    </HStack>
-    <Space height={12} />
-    <HStack>
       <ColorTokenItem
         backgroundColor="success"
         textColor="onSuccess"
@@ -116,9 +95,6 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         textColor="primaryContainer"
         colorToken="onSuccessContainer"
       />
-    </HStack>
-    <Space height={12} />
-    <HStack>
       <ColorTokenItem
         backgroundColor="warning"
         textColor="onWarning"
@@ -140,18 +116,14 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         colorToken="onWarningContainer"
       />
     </HStack>
-    <Space height={60} />
-    <Divider
-      direction="horizontal"
-      kind="thick"
-      margin="none"
-    />
-    <Space height={40} />
-    <Title level={5} ml={16}>
-      surface
-    </Title>
-    <Space height={12} />
-    <HStack>
+  </VStack>
+</Paper>
+
+### `surface` Token
+
+<Paper backgroundColor="background" p={4}>
+  <VStack spacing={12}>
+    <HStack width="100%" flexWrap="wrap" rowGap={10}>
       <ColorTokenItem
         backgroundColor="surface1"
         textColor="onView1"
@@ -178,18 +150,14 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         colorToken="disable"
       />
     </HStack>
-    <Space height={60} />
-    <Divider
-      direction="horizontal"
-      kind="thick"
-      margin="none"
-    />
-    <Space height={40} />
-    <Title level={5} ml={16}>
-      outline
-    </Title>
-    <Space height={12} />
-    <HStack>
+  </VStack>
+</Paper>
+
+### `outline` Token
+
+<Paper backgroundColor="background" p={4}>
+  <VStack spacing={12}>
+    <HStack width="100%" flexWrap="wrap" rowGap={10}>
       <ColorTokenItem
         backgroundColor="outline1"
         textColor="onView1"
@@ -211,18 +179,14 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         colorToken="disableOutline"
       />
     </HStack>
-    <Space height={60} />
-    <Divider
-      direction="horizontal"
-      kind="thick"
-      margin="none"
-    />
-    <Space height={40} />
-    <Title level={5} ml={16}>
-      onView
-    </Title>
-    <Space height={12} />
-    <HStack>
+  </VStack>
+</Paper>
+
+### `onView` Token
+
+<Paper backgroundColor="background" p={4}>
+  <VStack spacing={12}>
+    <HStack width="100%" flexWrap="wrap" rowGap={10}>
       <ColorTokenItem
         backgroundColor="onView1"
         textColor="onInverseSurface"
@@ -239,8 +203,7 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         colorToken="onView3"
       />
     </HStack>
-    <Space height={12} />
-    <HStack>
+    <HStack width="100%" flexWrap="wrap" rowGap={10}>
       <ColorTokenItem
         backgroundColor="onViewPrimary"
         textColor="onView1"
@@ -267,17 +230,13 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         colorToken="onViewWarning"
       />
     </HStack>
-    <Space height={60} />
-    <Divider
-      direction="horizontal"
-      kind="thick"
-      margin="none"
-    />
-    <Space height={40} />
-    <Title level={5} ml={16}>
-      background
-    </Title>
-    <Space height={12} />
+  </VStack>
+</Paper>
+
+### `background` token
+
+<Paper backgroundColor="background" p={4}>
+  <VStack spacing={12}>
     <HStack>
       <ColorTokenItem
         backgroundColor="background"
@@ -285,8 +244,12 @@ import { ColorTokenItem } from '../../../src/components/ColorTokenItem';
         colorToken="background"
       />
     </HStack>
-    <Space height={12} />
-    <HStack>
+    <HStack width="100%" flexWrap="wrap" rowGap={10}>
+      <ColorTokenItem
+        backgroundColor="transparent"
+        textColor="onView1"
+        colorToken="transparent"
+      />
       <ColorTokenItem
         backgroundColor="inverseSurface"
         textColor="onInverseSurface"
