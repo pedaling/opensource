@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import React from 'react';
-import { Space } from '@vibrant-ui/components';
-import { Box, Text, useCurrentTheme } from '@vibrant-ui/core';
+import { Body, Paper, Space, VStack } from '@vibrant-ui/components';
+import { useCurrentTheme } from '@vibrant-ui/core';
 import type { ColorToken } from '@vibrant-ui/theme';
 
 type ColorItemProps = {
@@ -19,22 +19,27 @@ export const ColorTokenItem: FC<ColorItemProps> = ({ backgroundColor, textColor,
     colors.background === colors[backgroundColor] || backgroundColor === 'transparent' ? 'outline1' : 'transparent';
 
   return (
-    <Box
-      flex={1}
-      height={100}
-      backgroundColor={backgroundColor}
+    <Paper
+      flexGrow={1}
+      maxWidth={['50%', '50%', '100%']}
+      minWidth={['50%']}
+      minHeight={90}
+      backgroundColor={backgroundColor as any}
       borderWidth={1}
+      borderRadiusLevel={1}
       borderStyle="solid"
       borderColor={borderColor}
-      p={16}
+      p={12}
     >
-      <Text color={textColor as any} fontWeight="medium">
-        {colorToken}
-      </Text>
-      <Space flex={1} />
-      <Text color={textColor as any} fontWeight="medium">
-        {colors[backgroundColor]}
-      </Text>
-    </Box>
+      <VStack alignVertical="center">
+        <Body level={[3, 3, 2]} color={textColor as any} weight="medium">
+          {colorToken}
+        </Body>
+        <Space height={4} />
+        <Body level={[3, 3, 2]} color={textColor as any} weight="medium">
+          {colors[backgroundColor]}
+        </Body>
+      </VStack>
+    </Paper>
   );
 };
