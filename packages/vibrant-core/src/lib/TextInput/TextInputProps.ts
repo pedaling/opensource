@@ -190,7 +190,7 @@ export type TextInputProps = SystemProps &
     }: {
       value: string;
       prevent: () => void;
-      target?: HTMLInputElement | null;
+      target: HTMLInputElement | null;
     }) => void;
     onSubmit?: (value: string) => void;
   };

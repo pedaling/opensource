@@ -60,7 +60,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       if (cursor && innerRef.current) {
         innerRef.current.setSelectionRange(cursor, cursor);
       }
-    }, [cursor, defaultValue, value]);
+    }, [cursor, defaultValue]);
 
     useImperativeHandle(ref, () => ({
       focus: () => innerRef.current?.focus(),
@@ -68,7 +68,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       clear: () => {
         setValue('');
 
-        onValueChange?.({ value: '', prevent: () => {} });
+        onValueChange?.({ value: '', prevent: () => {}, target: innerRef.current });
       },
       isFocused: () => document.activeElement === innerRef.current,
     }));
