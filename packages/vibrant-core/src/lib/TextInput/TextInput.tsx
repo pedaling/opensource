@@ -22,6 +22,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       focusStyle,
       autoCapitalize,
       autoComplete = 'none',
+      cursor,
       onFocus,
       onBlur,
       onKeyPress,
@@ -32,6 +33,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
     ref
   ) => {
     const [value, setValue] = useState(defaultValue ?? '');
+
     const [isFocused, setIsFocused] = useState(false);
 
     const innerRef = useRef<HTMLInputElement>(null);
@@ -54,7 +56,11 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
     useEffect(() => {
       setValue(defaultValue ?? '');
-    }, [defaultValue]);
+
+      if (cursor && innerRef.current) {
+        innerRef.current.setSelectionRange(cursor, cursor);
+      }
+    }, [cursor, defaultValue]);
 
     useImperativeHandle(ref, () => ({
       focus: () => innerRef.current?.focus(),
@@ -62,7 +68,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       clear: () => {
         setValue('');
 
-        onValueChange?.({ value: '', prevent: () => {} });
+        onValueChange?.({ value: '', prevent: () => {}, target: innerRef.current });
       },
       isFocused: () => document.activeElement === innerRef.current,
     }));
@@ -117,6 +123,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
               event.preventDefault();
             },
+            target: innerRef.current,
           });
 
           if (!isPrevented) {
