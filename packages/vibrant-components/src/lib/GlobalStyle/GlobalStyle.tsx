@@ -61,8 +61,7 @@ const style = css`
     font-weight: normal;
   }
 
-  ul,
-  li {
+  ul {
     list-style: none;
   }
 
