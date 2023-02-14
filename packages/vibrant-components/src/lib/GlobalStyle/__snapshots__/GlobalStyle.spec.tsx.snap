@@ -42,7 +42,7 @@ NodeList [
     data-s=""
   >
     
-    ul,li{list-style:none;}
+    ul{list-style:none;}
   </style>,
   <style
     data-emotion="emotion-global"
