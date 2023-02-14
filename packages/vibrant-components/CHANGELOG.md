@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.1...vibrant-components-0.46.2) (2023-02-14)
+
+
+### Bug Fixes
+
+* remove li reset style ([#570](https://github.com/pedaling/opensource/issues/570)) ([a4c4b10](https://github.com/pedaling/opensource/commit/a4c4b100df38d58a7e04b0b50a5a9c0a8cb17416))
+
 ### [0.46.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.0...vibrant-components-0.46.1) (2023-02-14)
 
 

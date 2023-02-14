@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.1...vibrant-core-0.46.2) (2023-02-14)
+
+
+### Features
+
+* TextInput can get cursor  ([#564](https://github.com/pedaling/opensource/issues/564)) ([4b57c2a](https://github.com/pedaling/opensource/commit/4b57c2acfadcc3a61ab00507adecf9ee7a8f07ba))
+
 ### [0.46.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.0...vibrant-core-0.46.1) (2023-02-14)
 
 ## [0.46.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.45.0...vibrant-core-0.46.0) (2023-02-08)
