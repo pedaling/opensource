@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.0...vibrant-components-0.46.1) (2023-02-14)
+
+
+### Bug Fixes
+
+* calculate responsive value in ContentArea ([#567](https://github.com/pedaling/opensource/issues/567)) ([822ee43](https://github.com/pedaling/opensource/commit/822ee43d41d47725733714a0a0f85bb968c745e6))
+* remove flexGrow 1 in Pressable innerBox ([#566](https://github.com/pedaling/opensource/issues/566)) ([9ac49b8](https://github.com/pedaling/opensource/commit/9ac49b81eb31494eb87a9a07053e4dd9f1e1e72f))
+* set spacing between SelectField and OptionGroup from 4 to 6 ([#565](https://github.com/pedaling/opensource/issues/565)) ([6a161c3](https://github.com/pedaling/opensource/commit/6a161c3b730e5959dc2f7abafc1383793fc97284))
+
 ## [0.46.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.45.0...vibrant-components-0.46.0) (2023-02-08)
 
 ## [0.45.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.44.1...vibrant-components-0.45.0) (2023-02-07)

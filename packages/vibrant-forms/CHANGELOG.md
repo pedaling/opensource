@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.46.0...vibrant-forms-0.46.1) (2023-02-14)
+
+
+### Bug Fixes
+
+* remove flexGrow 1 in Pressable innerBox ([#566](https://github.com/pedaling/opensource/issues/566)) ([9ac49b8](https://github.com/pedaling/opensource/commit/9ac49b81eb31494eb87a9a07053e4dd9f1e1e72f))
+
 ## [0.46.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.45.0...vibrant-forms-0.46.0) (2023-02-08)
 
 ## [0.45.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.44.1...vibrant-forms-0.45.0) (2023-02-07)
