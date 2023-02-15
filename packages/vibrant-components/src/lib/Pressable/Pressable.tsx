@@ -17,7 +17,11 @@ export const Pressable = withPressableVariation(
     interactions,
     disabled = false,
     width,
+    minWidth,
+    maxWidth,
     height,
+    minHeight,
+    maxHeight,
     alignItems,
     justifyContent,
     p,
@@ -45,7 +49,6 @@ export const Pressable = withPressableVariation(
     return (
       <PressableBox
         ref={innerRef}
-        flexDirection="row"
         position="relative"
         overflow="hidden"
         cursor={disabled ? 'default' : 'pointer'}
@@ -69,6 +72,10 @@ export const Pressable = withPressableVariation(
         }}
         onPressIn={() => setIsActivated(true)}
         onPressOut={() => setIsActivated(false)}
+        minWidth={minWidth}
+        maxWidth={maxWidth}
+        minHeight={minHeight}
+        maxHeight={maxHeight}
         {...(as === 'button' ? { as, buttonType } : { as })}
         {...restProps}
       >
@@ -89,8 +96,8 @@ export const Pressable = withPressableVariation(
         <Transition animation={{ opacity: textOpacity }} duration={200}>
           <Box
             as="span"
-            width={width ? '100%' : 'auto'}
-            height={height ? '100%' : 'auto'}
+            width={width ?? minWidth ?? maxWidth ? '100%' : 'auto'}
+            height={height ?? minHeight ?? maxHeight ? '100%' : 'auto'}
             alignItems={alignItems}
             justifyContent={justifyContent}
             p={p}

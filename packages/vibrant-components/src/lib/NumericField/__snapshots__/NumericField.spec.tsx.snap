@@ -117,9 +117,9 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
