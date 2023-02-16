@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.3...vibrant-components-0.46.4) (2023-02-16)
+
+
+### Bug Fixes
+
+* Pressable flexDirection="row"를 제거한다 ([#572](https://github.com/pedaling/opensource/issues/572)) ([c89115f](https://github.com/pedaling/opensource/commit/c89115fbcac6bb9ca9162f7328a7f05a63049eaf))
+
 ### [0.46.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.2...vibrant-components-0.46.3) (2023-02-15)
 
 
