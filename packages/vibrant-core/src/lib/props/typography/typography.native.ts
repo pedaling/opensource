@@ -1,12 +1,5 @@
+import { convertRemToPixels } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
-
-const transformRem = (value: any) => {
-  if (typeof value === 'string' && value.endsWith('rem')) {
-    return parseFloat(value.replace('rem', '')) * 16;
-  }
-
-  return value;
-};
 
 const typographyProp = createSystemProp({
   property: 'typography',
@@ -23,7 +16,7 @@ const fontFamilyProp = createSystemProp({
 
 const fontSizeProp = createSystemProp({
   property: 'fontSize',
-  transform: value => ({ fontSize: transformRem(value) }),
+  transform: value => ({ fontSize: convertRemToPixels(value) }),
 });
 
 const fontWeightProp = createSystemProp({
@@ -40,7 +33,7 @@ const fontStyleProp = createSystemProp({
 
 const lineHeightProp = createSystemProp({
   property: 'lineHeight',
-  transform: value => ({ lineHeight: transformRem(value) }),
+  transform: value => ({ lineHeight: convertRemToPixels(value) }),
 });
 
 export const typographySystemProps = [
