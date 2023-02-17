@@ -36,6 +36,7 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
           minHeight: 30,
           pl: isDefined(startIcon) ? 9 : 11,
           pr: isDefined(endIcon) ? 9 : 11,
+          py: 6,
           spacing: 4,
         } as const;
       }
@@ -46,6 +47,7 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
         minHeight: 38,
         pl: isDefined(startIcon) ? 11 : 15,
         pr: isDefined(endIcon) ? 11 : 15,
+        py: 9,
         spacing: 6,
       } as const;
     },
