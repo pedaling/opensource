@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.4...vibrant-components-0.46.5) (2023-02-17)
+
+
+### Bug Fixes
+
+* add children to SkeletonProps ([#574](https://github.com/pedaling/opensource/issues/574)) ([26ed0df](https://github.com/pedaling/opensource/commit/26ed0df615a1069392ece51dfd7f5bc7c97c5b49))
+* text alignment in FilterChip ([#573](https://github.com/pedaling/opensource/issues/573)) ([56ae9dc](https://github.com/pedaling/opensource/commit/56ae9dce357ad4791dd640170fb106daad18933b))
+
 ### [0.46.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.3...vibrant-components-0.46.4) (2023-02-16)
 
 

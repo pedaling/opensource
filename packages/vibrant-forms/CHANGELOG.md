@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.5](https://github.com/pedaling/opensource/compare/vibrant-forms-0.46.4...vibrant-forms-0.46.5) (2023-02-17)
+
 ### [0.46.4](https://github.com/pedaling/opensource/compare/vibrant-forms-0.46.3...vibrant-forms-0.46.4) (2023-02-16)
 
 
