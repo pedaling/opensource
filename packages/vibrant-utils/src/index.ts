@@ -5,6 +5,7 @@ export type { DistributivePick } from './lib/type/DistributivePick';
 export type { TargetElement, Rect } from './lib/getElementRect';
 export type { Path } from './lib/type/Path';
 export { addStyleValues } from './lib/addStyleValues';
+export { convertRemToPixels } from './lib/convertRemToPixels';
 export { isDefined } from './lib/isDefined';
 export { get } from './lib/get';
 export { range } from './lib/range';
