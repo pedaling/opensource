@@ -6,10 +6,16 @@ const widthProp = createSystemProp({
 
 const minWidthProp = createSystemProp({
   property: 'minWidth',
+  transform: value => ({
+    minWidth: value === 'unset' ? undefined : value,
+  }),
 });
 
 const maxWidthProp = createSystemProp({
   property: 'maxWidth',
+  transform: value => ({
+    maxWidth: value === 'unset' ? undefined : value,
+  }),
 });
 
 const heightProp = createSystemProp({
@@ -18,6 +24,9 @@ const heightProp = createSystemProp({
 
 const minHeightProp = createSystemProp({
   property: 'minHeight',
+  transform: value => ({
+    minHeight: value === 'unset' ? undefined : value,
+  }),
 });
 
 const maxHeightProp = createSystemProp({
