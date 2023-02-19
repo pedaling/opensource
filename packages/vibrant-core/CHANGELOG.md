@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.5...vibrant-core-0.46.6) (2023-02-19)
+
+
+### Bug Fixes
+
+* change SkeletonText height value from rem to px ([#575](https://github.com/pedaling/opensource/issues/575)) ([7051df9](https://github.com/pedaling/opensource/commit/7051df9c255f9d5254bd86e744f7defaba044277))
+* transform unset to undefined in RN ([#576](https://github.com/pedaling/opensource/issues/576)) ([29f08f0](https://github.com/pedaling/opensource/commit/29f08f03edd9d947f10a010564726122e25ccbf4))
+
 ### [0.46.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.4...vibrant-core-0.46.5) (2023-02-17)
 
 ### [0.46.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.3...vibrant-core-0.46.4) (2023-02-16)
