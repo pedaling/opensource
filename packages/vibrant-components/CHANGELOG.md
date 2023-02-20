@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.6...vibrant-components-0.46.7) (2023-02-20)
+
+
+### Bug Fixes
+
+* disableOutline to outlineDisable ([#577](https://github.com/pedaling/opensource/issues/577)) ([f397da8](https://github.com/pedaling/opensource/commit/f397da87c1a7c8457e09c743544e0c81256beddb))
+
 ### [0.46.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.5...vibrant-components-0.46.6) (2023-02-19)
 
 
