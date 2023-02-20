@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.8](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.7...vibrant-components-0.46.8) (2023-02-20)
+
+
+### Features
+
+* allow 'auto' for Skeleton width, height value ([#578](https://github.com/pedaling/opensource/issues/578)) ([b51548b](https://github.com/pedaling/opensource/commit/b51548b484be1c09a531fec361455319fd2600fb))
+
 ### [0.46.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.6...vibrant-components-0.46.7) (2023-02-20)
 
 
