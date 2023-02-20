@@ -59,6 +59,7 @@ export { transformResponsiveValue } from './lib/transformResponsiveValue';
 export { useInterpolation } from './lib/useInterpolation';
 export { getWindowDimensions } from './lib/getWindowDimensions';
 export { createShadowsComponent } from './lib/createShadowsComponent';
+export { createNativeImageComponent } from './lib/createNativeImageComponent';
 export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
 export { PortalBox } from './lib/PortalBox';

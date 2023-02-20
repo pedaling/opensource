@@ -1,7 +1,6 @@
 import type { ResponsiveValue } from '../../types';
 import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
-import { ExternalComponent } from '../ExternalComponent';
 import { withImageVariation } from './ImageProps';
 
 export type ImagePropType = {
@@ -31,9 +30,9 @@ export const Image = withImageVariation(({ src, alt, loading, innerRef, ...props
     return (
       <>
         {imageProps.map(({ src, display }) => (
-          <ExternalComponent
-            name="image"
+          <Box
             key={src}
+            base={image}
             ref={innerRef}
             loading={loading}
             alt={alt}

@@ -18,13 +18,12 @@ export type Dependencies = {
     }[];
   }>;
   reactSpringModule?: any;
-  image?: ComponentType<
-    {
-      src: string;
-      alt?: string;
-      loading?: 'eager' | 'lazy';
-    } & Record<string, any>
-  >;
+  image?: ComponentType<{
+    src: string;
+    alt?: string;
+    ref?: any;
+    loading?: 'eager' | 'lazy';
+  }>;
 };
 
 export type Translation = {
