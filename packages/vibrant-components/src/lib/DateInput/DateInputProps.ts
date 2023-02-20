@@ -52,7 +52,7 @@ export const withDateInputVariation = withVariation<DateInputProps>('DateInput')
         color: 'onView3',
         labelColor: 'onView3',
         backgroundColor: 'disable',
-        borderColor: 'disableOutline',
+        borderColor: 'outlineDisable',
         helperColor: 'onView3',
         placeholderColor: 'onView3',
       },

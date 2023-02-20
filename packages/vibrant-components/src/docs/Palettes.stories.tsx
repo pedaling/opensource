@@ -49,7 +49,7 @@ export const ColorTokenChips: ComponentStory<typeof HStack> = () => {
     outline1: 'onView1',
     outline2: 'onView1',
     outlineNeutral: 'onInverseSurface',
-    disableOutline: 'onView1',
+    outlineDisable: 'onView1',
     outlinePrimary: 'onView1',
     outlineInformative: 'onView1',
     outlineError: 'onView1',
