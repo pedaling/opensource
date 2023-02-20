@@ -131,7 +131,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         backgroundColor: 'disable',
         labelColor: 'onView3',
         helperTextColor: 'onView3',
-        borderColor: 'disableOutline',
+        borderColor: 'outlineDisable',
         valueColor: 'onView3',
       },
       false: {
