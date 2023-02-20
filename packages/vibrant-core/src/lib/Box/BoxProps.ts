@@ -122,14 +122,14 @@ export type BoxElements =
   | 'tr'
   | 'ul';
 
-type ComponentProps<Component extends ComponentType | undefined> = Component extends undefined
+type ComponentProps<Component extends ComponentType<any> | undefined> = Component extends undefined
   ? undefined
   : Component extends ComponentType<infer ComponentProps>
   ? ComponentProps
   : undefined;
 
 export type BoxProps<
-  BaseComponent extends ComponentType | undefined = undefined,
+  BaseComponent extends ComponentType<any> | undefined = undefined,
   ElementName extends BoxElements | undefined = undefined
 > = SystemProps & {
   as?: ElementName;
