@@ -1,3 +1,3 @@
 export type MediaSystemProps = {
-  objectFit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
+  objectFit?: 'contain' | 'cover' | 'fill' | 'none';
 };

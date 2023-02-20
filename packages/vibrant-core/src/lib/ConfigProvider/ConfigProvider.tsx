@@ -1,8 +1,7 @@
 import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import * as ReactSpring from 'react-spring';
-import type { ReactElementChild, ResponsiveValue } from '../../types';
-import type { MediaSystemProps } from '../props';
+import type { ReactElementChild } from '../../types';
 
 export type Dependencies = {
   nativeLinearGradient?: ComponentType<{
@@ -19,14 +18,13 @@ export type Dependencies = {
     }[];
   }>;
   reactSpringModule?: any;
-  image?: ComponentType<{
-    src?: string;
-    ref?: any;
-    alt?: string;
-    loading?: 'eager' | 'lazy';
-    display?: ResponsiveValue<'flex' | 'none'>;
-  }> &
-    MediaSystemProps;
+  image?: ComponentType<
+    {
+      src: string;
+      alt?: string;
+      loading?: 'eager' | 'lazy';
+    } & Record<string, any>
+  >;
 };
 
 export type Translation = {
