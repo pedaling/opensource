@@ -49,6 +49,7 @@ type PaperProps = Pick<BorderSystemProps, 'borderColor' | 'borderStyle' | 'borde
     id?: string;
     as?: BoxElements;
     children?: ReactElementChild;
+    testId?: string;
   } & Either<
     Pick<
       BorderSystemProps,

@@ -19,10 +19,12 @@ export const ContainedButton = withContainedButtonVariation(
     disclosureSize,
     contentsSpacing,
     children,
+    testId,
     ...restProps
   }) => (
     <Pressable
       {...restProps}
+      data-testId={testId}
       ref={innerRef}
       as="button"
       buttonType={type}
