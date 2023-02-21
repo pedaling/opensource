@@ -1,30 +1,21 @@
-import type { ResponsiveValue } from '../../types';
 import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
 import { withImageVariation } from './ImageProps';
 
-export type ImagePropType = {
-  src: string;
-  display: ResponsiveValue<'flex' | 'none'>;
-}[];
-
-export const Image = withImageVariation(({ src, alt, loading, innerRef, ...props }) => {
+export const Image = withImageVariation(({ innerRef, src, alt, loading, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
-  const imageProps: ImagePropType = [];
 
-  if (Array.isArray(src)) {
-    for (let index = 0; index < src.length; index++) {
-      const display = new Array(src.length).fill('none');
+  const responsiveValueLength = Array.isArray(src) ? src.length : 1;
 
-      display[index] = 'flex';
+  const imageProps = (Array.isArray(src) ? src : [src]).map((value, index) => {
+    const display = new Array(responsiveValueLength).fill('none');
 
-      imageProps.push({ src: src[index], display });
-    }
-  } else {
-    imageProps.push({ src, display: 'flex' });
-  }
+    display[index] = 'flex';
+
+    return { src: typeof value === 'string' ? value : '', display };
+  });
 
   if (image) {
     return (

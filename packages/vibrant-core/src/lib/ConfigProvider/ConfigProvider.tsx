@@ -1,5 +1,6 @@
 import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
+import type { ImageRequireSource } from 'react-native';
 import * as ReactSpring from 'react-spring';
 import type { ReactElementChild } from '../../types';
 
@@ -19,7 +20,7 @@ export type Dependencies = {
   }>;
   reactSpringModule?: any;
   image?: ComponentType<{
-    src: string;
+    src: ImageRequireSource | string;
     alt?: string;
     ref?: any;
     loading?: 'eager' | 'lazy';

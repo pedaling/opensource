@@ -4,7 +4,7 @@ import { useConfig } from '../ConfigProvider';
 import { useResponsiveValue } from '../useResponsiveValue';
 import { withImageVariation } from './ImageProps';
 
-export const Image = withImageVariation(({ src, alt, loading, innerRef, ...props }) => {
+export const Image = withImageVariation(({ innerRef, src, alt, loading, draggable: _, ...props }) => {
   const { getResponsiveValue } = useResponsiveValue();
   const {
     dependencies: { image },
@@ -16,5 +16,12 @@ export const Image = withImageVariation(({ src, alt, loading, innerRef, ...props
     return <Box base={image} ref={innerRef} loading={loading} alt={alt} src={currentSrc} {...props} />;
   }
 
-  return <Box base={NativeImage} accessibilityLabel={alt} source={{ uri: currentSrc }} {...props} />;
+  return (
+    <Box
+      base={NativeImage}
+      accessibilityLabel={alt}
+      source={typeof currentSrc === 'string' ? { uri: currentSrc } : currentSrc}
+      {...props}
+    />
+  );
 });

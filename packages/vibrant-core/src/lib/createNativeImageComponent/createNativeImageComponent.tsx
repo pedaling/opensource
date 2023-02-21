@@ -1,14 +1,15 @@
 import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
+import type { ImageRequireSource } from 'react-native';
 
 type ImageComponentType = ComponentType<{
-  source: { uri: string };
+  source?: ImageRequireSource | { uri?: string };
   resizeMode?: 'center' | 'contain' | 'cover' | 'stretch';
 }>;
 
 type ImageProps = {
   ref?: any;
-  src: string;
+  src: ImageRequireSource | string;
   objectFit?: 'contain' | 'cover' | 'fill' | 'none';
 };
 
@@ -23,7 +24,7 @@ export const createNativeImageComponent = (ImageComponent: ImageComponentType) =
   forwardRef<any, ImageProps>(({ src, objectFit, ...restProps }, ref) => (
     <ImageComponent
       ref={ref}
-      source={{ uri: src }}
+      source={typeof src === 'string' ? { uri: src } : src}
       resizeMode={objectFit ? ObjectFitResizeModeMap[objectFit] : undefined}
       {...restProps}
     />
