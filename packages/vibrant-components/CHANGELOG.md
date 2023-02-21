@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.11](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.10...vibrant-components-0.46.11) (2023-02-21)
+
+
+### Features
+
+* add whitespace property with pre-wrap in ModalBottomSheet ([#582](https://github.com/pedaling/opensource/issues/582)) ([05551d1](https://github.com/pedaling/opensource/commit/05551d13def8377baba8b0244476e8572489b737))
+
 ### [0.46.10](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.9...vibrant-components-0.46.10) (2023-02-21)
 
 ### [0.46.9](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.8...vibrant-components-0.46.9) (2023-02-20)
