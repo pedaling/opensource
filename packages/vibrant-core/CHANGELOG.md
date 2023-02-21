@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.10](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.9...vibrant-core-0.46.10) (2023-02-21)
+
+
+### Bug Fixes
+
+* 이미지 컴포넌트 src 값으로 ImageRequireSource 타입을 사용할 수 있게 수정한다 ([#580](https://github.com/pedaling/opensource/issues/580)) ([e3ef53d](https://github.com/pedaling/opensource/commit/e3ef53d2359dace2cdbd81b8415ef37bb9bbf065))
+
 ### [0.46.9](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.8...vibrant-core-0.46.9) (2023-02-20)
 
 ### [0.46.8](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.7...vibrant-core-0.46.8) (2023-02-20)
