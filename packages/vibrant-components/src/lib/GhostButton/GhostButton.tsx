@@ -29,7 +29,7 @@ export const GhostButton = withGhostButtonVariation(
       hitSlop={8}
       borderRadiusLevel={1}
       disabled={disabled}
-      data-testId={testId}
+      data-testid={testId}
     >
       <HStack as="span" alignVertical="center">
         {IconComponent && <IconComponent size={iconSize} fill={color} />}

@@ -27,7 +27,7 @@ describe('<ContainedButton />', () => {
         beforeEach(() => {
           renderer = render(
             <ThemeProvider theme={{ mode: 'dark' }}>
-              <ContainedButton data-testid={`${kind}-sm-button`} size="sm" kind={kind} onClick={() => mockOnClick}>
+              <ContainedButton testId={`${kind}-sm-button`} size="sm" kind={kind} onClick={() => mockOnClick}>
                 Click Me
               </ContainedButton>
             </ThemeProvider>
@@ -92,7 +92,7 @@ describe('<ContainedButton />', () => {
         beforeEach(() => {
           renderer = render(
             <ThemeProvider theme={{ mode: 'light' }}>
-              <ContainedButton data-testid={`${kind}-sm-button`} size="sm" kind={kind} onClick={() => mockOnClick}>
+              <ContainedButton testId={`${kind}-sm-button`} size="sm" kind={kind} onClick={() => mockOnClick}>
                 Click Me
               </ContainedButton>
             </ThemeProvider>
@@ -156,7 +156,7 @@ describe('<ContainedButton />', () => {
       ({ size, fontSize, fontWeight, height, lineHeight, paddingLeft, paddingRight }) => {
         beforeEach(() => {
           renderer = render(
-            <ContainedButton data-testid={`${size}-button`} size={size} kind="primary" onClick={() => mockOnClick}>
+            <ContainedButton testId={`${size}-button`} size={size} kind="primary" onClick={() => mockOnClick}>
               Click Me
             </ContainedButton>
           );
@@ -188,13 +188,7 @@ describe('<ContainedButton />', () => {
   describe('when disable', () => {
     beforeEach(() => {
       renderer = render(
-        <ContainedButton
-          data-testid="disable-button"
-          size="sm"
-          kind="primary"
-          onClick={() => mockOnClick}
-          disabled={true}
-        >
+        <ContainedButton testId="disable-button" size="sm" kind="primary" onClick={() => mockOnClick} disabled={true}>
           Click Me
         </ContainedButton>
       );
@@ -231,7 +225,7 @@ describe('<ContainedButton />', () => {
     beforeEach(() => {
       renderer = render(
         <ContainedButton
-          data-testid="disable-button"
+          testId="disable-button"
           size="xl"
           kind="primary"
           onClick={() => mockOnClick}
@@ -277,7 +271,7 @@ describe('<ContainedButton />', () => {
       beforeEach(() => {
         renderer = render(
           <ContainedButton
-            data-testid="loading-button"
+            testId="loading-button"
             size={size}
             loading={true}
             kind="primary"

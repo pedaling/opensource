@@ -25,7 +25,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
   }) => (
     <Pressable
       {...restProps}
-      data-testId={testId}
+      data-testid={testId}
       ref={innerRef}
       as="button"
       buttonType={type}

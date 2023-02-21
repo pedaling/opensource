@@ -150,7 +150,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 borderBottomLeftRadiusLevel={[0, 4]}
                 borderBottomRightRadiusLevel={[0, 4]}
                 onLayout={handleContainerResize}
-                data-testId={testId}
+                data-testid={testId}
               >
                 <HStack px={[20, 32]} flexShrink={0}>
                   {title ? (

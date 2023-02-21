@@ -5,7 +5,7 @@ export const IconButton = withIconButtonVariation(
   ({ innerRef, type = 'button', iconSize, IconComponent, color = 'onView1', testId = 'icon-button', ...restProps }) => (
     <Pressable
       {...restProps}
-      data-testId={testId}
+      data-testid={testId}
       ref={innerRef}
       as="button"
       buttonType={type}

@@ -169,7 +169,7 @@ export const SelectField = withSelectFieldVariation(
     );
 
     return (
-      <Box data-testId={testId}>
+      <Box data-testid={testId}>
         <TextInput
           ref={inputRef}
           type="text"
