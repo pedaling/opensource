@@ -110,13 +110,13 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       >
         <HStack width="100%" alignHorizontal="space-between">
           <ScrollBox horizontal={true} hideScroll={true}>
-            <HStack alignVertical="center" spacing={8} flexShrink={0}>
+            <HStack data-testid="filter-wrapper" alignVertical="center" spacing={8} flexShrink={0}>
               {currentFilterDataKeys.map(key => {
                 const filterElement = filterElements.find(child => child.props.dataKey === key);
 
                 return (
                   filterElement && (
-                    <Fragment key={key}>
+                    <Fragment key={key} data-testid={filterElement.props.dataKey}>
                       {cloneElement(filterElement, {
                         key,
                         ref: (ref: any) => (filterReferences.current[key] = ref),
@@ -130,7 +130,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
                 <Dropdown
                   position="bottom-start"
                   renderContents={({ close }) => (
-                    <VStack>
+                    <VStack data-testid="filter-add-button">
                       {filterElements
                         .filter(element => !currentFilterDataKeys.includes(element.props.dataKey))
                         .map(element => (
@@ -165,6 +165,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
           <HStack flexShrink={0} ml={24} alignVertical="center">
             {isChanged && (
               <GhostButton
+                data-testid="filter-initialize-button"
                 size="md"
                 color="onView2"
                 IconComponent={Icon.RotateClockwise.Regular}
