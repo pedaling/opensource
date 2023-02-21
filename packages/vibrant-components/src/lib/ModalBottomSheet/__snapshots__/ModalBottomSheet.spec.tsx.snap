@@ -372,6 +372,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
           </div>
           <div
             class="emotion-6"
+            data-testid="modal-bottom-sheet"
             role="dialog"
             style=""
           >
@@ -384,6 +385,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
                 <button
                   aria-label="Close"
                   class="emotion-9"
+                  data-testid="icon-button"
                   type="button"
                 >
                   <span
@@ -786,6 +788,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
           </div>
           <div
             class="emotion-6"
+            data-testid="modal-bottom-sheet"
             role="dialog"
             style="opacity: 1;"
           >
@@ -798,6 +801,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
                 <button
                   aria-label="Close"
                   class="emotion-9"
+                  data-testid="icon-button"
                   type="button"
                 >
                   <span

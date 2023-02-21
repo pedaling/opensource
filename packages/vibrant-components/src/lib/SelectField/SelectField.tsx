@@ -23,6 +23,7 @@ export const SelectField = withSelectFieldVariation(
     onValueChange,
     onOpen,
     zIndex,
+    testId = 'select-field',
     optionTextTransform = 'none',
     ...restProps
   }) => {
@@ -168,7 +169,7 @@ export const SelectField = withSelectFieldVariation(
     );
 
     return (
-      <Box>
+      <Box data-testid={testId}>
         <TextInput
           ref={inputRef}
           type="text"

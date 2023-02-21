@@ -20,10 +20,12 @@ export const OutlinedButton = withOutlinedButtonVariation(
     disclosureSize,
     children,
     contentsSpacing,
+    testId = 'outlined-button',
     ...restProps
   }) => (
     <Pressable
       {...restProps}
+      data-testid={testId}
       ref={innerRef}
       as="button"
       buttonType={type}

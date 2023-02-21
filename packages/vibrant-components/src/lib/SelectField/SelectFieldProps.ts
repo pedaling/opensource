@@ -19,6 +19,7 @@ export type SelectFieldProps = Pick<SelectOptionGroupProps, 'options' | 'renderO
   onValueChange?: (value?: string) => void;
   onOpen?: () => void;
   zIndex?: number;
+  testId?: string;
   optionTextTransform?: TextSystemProps['textTransform'];
 } & (
     | {
