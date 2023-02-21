@@ -30,7 +30,12 @@ export const SafeAreaView = withSafeAreaViewVariation(
 
     return (
       <Box width={width} height={height} {...(mode === 'margin' && style)}>
-        <Box width="100%" height="100%" {...(mode === 'padding' && style)} {...restProps}>
+        <Box
+          width={width === 'auto' ? 'auto' : '100%'}
+          height={height === 'auto' ? 'auto' : '100%'}
+          {...(mode === 'padding' && style)}
+          {...restProps}
+        >
           {children}
         </Box>
       </Box>

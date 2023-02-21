@@ -24,3 +24,11 @@ export const Basic: ComponentStory<typeof SafeAreaView> = props => (
     <Box width={200} height={200} backgroundColor="primary" />
   </SafeAreaView>
 );
+
+export const withAutoHeight: ComponentStory<typeof SafeAreaView> = () => (
+  <Box width="100%" height={500}>
+    <SafeAreaView edges={['top']} backgroundColor="black" width="auto" height="auto">
+      <Box width={200} height={200} backgroundColor="primary" />
+    </SafeAreaView>
+  </Box>
+);
