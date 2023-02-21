@@ -23,7 +23,7 @@ export const SelectField = withSelectFieldVariation(
     onValueChange,
     onOpen,
     zIndex,
-    testId,
+    testId = 'select-field',
     optionTextTransform = 'none',
     ...restProps
   }) => {

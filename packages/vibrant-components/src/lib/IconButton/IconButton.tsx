@@ -2,7 +2,7 @@ import { Pressable } from '../Pressable';
 import { withIconButtonVariation } from './IconButtonProps';
 
 export const IconButton = withIconButtonVariation(
-  ({ innerRef, type = 'button', iconSize, IconComponent, color = 'onView1', testId, ...restProps }) => (
+  ({ innerRef, type = 'button', iconSize, IconComponent, color = 'onView1', testId = 'icon-button', ...restProps }) => (
     <Pressable
       {...restProps}
       data-testId={testId}

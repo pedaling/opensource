@@ -39,7 +39,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     secondaryButtonOptions,
     subButtonOptions,
     onClose,
-    testId,
+    testId = 'modal-bottom-sheet',
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
       value: open,

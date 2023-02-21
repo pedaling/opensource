@@ -12,6 +12,7 @@ export type ModalBottomSheetProps = Either<
   title?: string;
   subtitle?: string;
   size?: 'lg' | 'md';
+  testId?: string;
   renderContents?: (_: { close: () => void }) => ReactElementChild;
   onClose?: () => void;
 } & (
