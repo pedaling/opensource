@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.46.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.11...vibrant-components-0.46.12) (2023-02-21)
+
+
+### Bug Fixes
+
+* width가 auto일 때는 100% 대신 auto로 넣도록 수정한다 ([1412fbf](https://github.com/pedaling/opensource/commit/1412fbfd6bfbe28dc9659faa12881886c1a17041))
+
 ### [0.46.11](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.10...vibrant-components-0.46.11) (2023-02-21)
 
 
