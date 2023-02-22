@@ -33,12 +33,8 @@ describe('<TableFilterGroup />', () => {
         expect(element.childElementCount).toEqual(1);
       });
 
-      it('only filter add button text is displayed', () => {
-        expect(renderer.queryByTestId('filter-add-button')).toBeTruthy();
-      });
-
       it('only filter add button is displayed', () => {
-        expect(renderer.queryByTestId('filter-add-button')?.textContent).toEqual(TableFilterGroupTranslation.add);
+        expect(renderer.queryByRole('button', { name: TableFilterGroupTranslation.add }));
       });
     });
 

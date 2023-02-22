@@ -130,7 +130,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
                 <Dropdown
                   position="bottom-start"
                   renderContents={({ close }) => (
-                    <VStack key="filter-add">
+                    <VStack>
                       {filterElements
                         .filter(element => !currentFilterDataKeys.includes(element.props.dataKey))
                         .map(element => (
