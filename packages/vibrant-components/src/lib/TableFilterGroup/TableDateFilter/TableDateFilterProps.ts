@@ -11,6 +11,7 @@ export type TableDateFilterProps = {
     value: Date[];
     operator: DateFilterOperator;
   };
+  testId?: string;
 };
 
 export const withTableDateFilterVariation = withVariation<TableDateFilterProps>('TableDateFilter')();

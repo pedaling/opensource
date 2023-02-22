@@ -11,6 +11,7 @@ export type TableMultiSelectFilterProps = {
     value: Option['value'][];
     operator: MultiSelectFilterOperator;
   };
+  testId?: string;
 };
 
 export const withTableMultiSelectFilterVariation =

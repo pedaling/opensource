@@ -19,6 +19,7 @@ export const TableFieldFilter = <Operator extends string>({
   onClose,
   field,
   width,
+  testId,
 }: TableFieldFilterProps<Operator>) => {
   const {
     translations: {
@@ -38,7 +39,7 @@ export const TableFieldFilter = <Operator extends string>({
       position="bottom-start"
       onClose={onClose}
       renderOpener={({ open }) => (
-        <FilterChip size="md" onClick={open} selected={active}>
+        <FilterChip testId={testId} size="md" onClick={open} selected={active}>
           {label}
         </FilterChip>
       )}

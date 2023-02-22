@@ -22,6 +22,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       value: [],
       operator: operators[0],
     },
+    testId = 'table-multi-select-filter',
   }) => {
     const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value);
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator);
@@ -61,6 +62,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
 
     return (
       <TableFieldFilter
+        testId={testId}
         dataKey={dataKey}
         label={
           label +

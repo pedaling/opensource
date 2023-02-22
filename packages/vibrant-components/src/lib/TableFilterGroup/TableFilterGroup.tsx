@@ -110,7 +110,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       >
         <HStack width="100%" alignHorizontal="space-between">
           <ScrollBox horizontal={true} hideScroll={true}>
-            <HStack alignVertical="center" spacing={8} flexShrink={0}>
+            <HStack data-testid="filter-wrapper" alignVertical="center" spacing={8} flexShrink={0}>
               {currentFilterDataKeys.map(key => {
                 const filterElement = filterElements.find(child => child.props.dataKey === key);
 
@@ -135,6 +135,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
                         .filter(element => !currentFilterDataKeys.includes(element.props.dataKey))
                         .map(element => (
                           <Pressable
+                            data-testid={`${element.props.testId}-add`}
                             overlayColor="onView1"
                             interactions={['hover', 'focus', 'active']}
                             key={element.props.dataKey}
@@ -154,7 +155,12 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
                     </VStack>
                   )}
                   renderOpener={({ open }) => (
-                    <GhostButton size="md" IconComponent={Icon.Add.Regular} onClick={open}>
+                    <GhostButton
+                      data-testid="filter-add-button"
+                      size="md"
+                      IconComponent={Icon.Add.Regular}
+                      onClick={open}
+                    >
                       <Body level={2}>{add}</Body>
                     </GhostButton>
                   )}
@@ -165,6 +171,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
           <HStack flexShrink={0} ml={24} alignVertical="center">
             {isChanged && (
               <GhostButton
+                data-testid="filter-initialize-button"
                 size="md"
                 color="onView2"
                 IconComponent={Icon.RotateClockwise.Regular}

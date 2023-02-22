@@ -10,4 +10,5 @@ export type TableFieldFilterProps<Operator extends string> = {
   operatorOptions: { label: string; operator: Operator }[];
   onOperatorSelect: (operator: Operator) => void;
   field: ReactElementChild;
+  testId?: string;
 };

@@ -11,6 +11,7 @@ export type TableStringFilterProps = {
     value: string;
     operator: StringFilterOperator;
   };
+  testId?: string;
 };
 
 export const withTableStringFilterVariation = withVariation<TableStringFilterProps>('TableStringFilter')();
