@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { TableFilterGroup } from '../TableFilterGroup';
+import { TableDateFilter, TableFilterGroup, TableMultiSelectFilter, TableStringFilter } from '../TableFilterGroup';
 import { VStack } from '../VStack';
 import { TableHeader } from './TableHeader';
 
@@ -24,8 +24,8 @@ export const withFilterGroup: ComponentStory<typeof TableHeader> = props => (
       <TableHeader.Button kind="tertiary">새로고침</TableHeader.Button>
       <TableHeader.Button kind="primary">추가</TableHeader.Button>
     </TableHeader>
-    <TableFilterGroup {...props}>
-      <TableFilterGroup.StringFilter
+    <TableFilterGroup initialFilterDataKeys={[]}>
+      <TableStringFilter
         dataKey="id"
         label="ID"
         defaultValue={{
@@ -33,7 +33,7 @@ export const withFilterGroup: ComponentStory<typeof TableHeader> = props => (
           operator: 'equals',
         }}
       />
-      <TableFilterGroup.StringFilter
+      <TableStringFilter
         dataKey="location"
         label="장소"
         defaultValue={{
@@ -41,8 +41,8 @@ export const withFilterGroup: ComponentStory<typeof TableHeader> = props => (
           operator: 'contains',
         }}
       />
-      <TableFilterGroup.DateFilter dataKey="period" label="수강 기간" />
-      <TableFilterGroup.MultiSelectFilter
+      <TableDateFilter dataKey="period" label="수강 기간" />
+      <TableMultiSelectFilter
         dataKey="orderStatus"
         label="주문 상태"
         defaultValue={{ operator: 'equals', value: ['completed'] }}
@@ -61,7 +61,7 @@ export const withFilterGroup: ComponentStory<typeof TableHeader> = props => (
           },
         ]}
       />
-      <TableFilterGroup.StringFilter dataKey="class" label="수강 중인 클래스" />
+      <TableStringFilter dataKey="class" label="수강 중인 클래스" />
     </TableFilterGroup>
   </VStack>
 );
