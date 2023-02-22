@@ -19,6 +19,7 @@ export const TableStringFilter = withTableStringFilterVariation(
       value: '',
       operator: operators[0],
     },
+    testId = 'table-string-filter',
   }) => {
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value);
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator);
@@ -61,6 +62,7 @@ export const TableStringFilter = withTableStringFilterVariation(
     return (
       <TableFieldFilter
         dataKey={dataKey}
+        testId={testId}
         label={label.concat(
           isValueRequiredOperator(operator)
             ? `: ${filterLabelTranslation[operator as 'empty' | 'notEmpty']}`

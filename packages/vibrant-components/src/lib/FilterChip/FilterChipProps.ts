@@ -13,6 +13,7 @@ export type FilterChipProps = {
   disabled?: boolean;
   onClick?: PressableProps['onClick'];
   children: TextChildren;
+  testId?: string;
 };
 
 export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChip')(

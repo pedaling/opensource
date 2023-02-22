@@ -21,6 +21,7 @@ export const TableDateFilter = withTableDateFilterVariation(
       value: [],
       operator: operators[0],
     },
+    testId = 'table-date-filter',
   }) => {
     const [value, setValue] = useState<Date[]>(defaultValue?.value);
     const [operator, setOperator] = useState<DateFilterOperator>(defaultValue?.operator);
@@ -70,6 +71,7 @@ export const TableDateFilter = withTableDateFilterVariation(
 
     return (
       <TableFieldFilter
+        testId={testId}
         dataKey={dataKey}
         label={label.concat(
           isDateFilterValid({ value, operator })

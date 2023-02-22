@@ -116,7 +116,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
 
                 return (
                   filterElement && (
-                    <Fragment key={key} data-testid={filterElement.props.dataKey}>
+                    <Fragment key={key}>
                       {cloneElement(filterElement, {
                         key,
                         ref: (ref: any) => (filterReferences.current[key] = ref),
@@ -130,11 +130,12 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
                 <Dropdown
                   position="bottom-start"
                   renderContents={({ close }) => (
-                    <VStack data-testid="filter-add-button">
+                    <VStack key="filter-add">
                       {filterElements
                         .filter(element => !currentFilterDataKeys.includes(element.props.dataKey))
                         .map(element => (
                           <Pressable
+                            data-testid={`${element.props.testId}-add`}
                             overlayColor="onView1"
                             interactions={['hover', 'focus', 'active']}
                             key={element.props.dataKey}
@@ -154,7 +155,12 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
                     </VStack>
                   )}
                   renderOpener={({ open }) => (
-                    <GhostButton size="md" IconComponent={Icon.Add.Regular} onClick={open}>
+                    <GhostButton
+                      data-testid="filter-add-button"
+                      size="md"
+                      IconComponent={Icon.Add.Regular}
+                      onClick={open}
+                    >
                       <Body level={2}>{add}</Body>
                     </GhostButton>
                   )}
