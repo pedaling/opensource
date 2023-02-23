@@ -7,44 +7,48 @@ import type { BoxElements, BoxProps } from './BoxProps';
 import { interpolation, shouldForwardProp } from './BoxProps';
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps>(({ as, base, onLayout, ariaLabel, backgroundColor, ...restProps }, ref) => {
-    const Component = base ? (base as ComponentType<any>) : undefined;
+  forwardRef<HTMLDivElement, BoxProps>(
+    ({ as, base, onLayout, ariaLabel, ariaChecked, ariaLabelledBy, backgroundColor, ...restProps }, ref) => {
+      const Component = base ? (base as ComponentType<any>) : undefined;
 
-    const { ref: layoutEventRef } = useLayoutEvent(onLayout);
+      const { ref: layoutEventRef } = useLayoutEvent(onLayout);
 
-    const composeRef = useCallback(
-      (node: HTMLDivElement) => {
-        if (ref) {
-          if (typeof ref === 'function') {
-            ref(node);
-          } else {
-            ref.current = node;
+      const composeRef = useCallback(
+        (node: HTMLDivElement) => {
+          if (ref) {
+            if (typeof ref === 'function') {
+              ref(node);
+            } else {
+              ref.current = node;
+            }
           }
-        }
 
-        layoutEventRef(node);
-      },
-      [ref, layoutEventRef]
-    );
+          layoutEventRef(node);
+        },
+        [ref, layoutEventRef]
+      );
 
-    if (Component) {
+      if (Component) {
+        return (
+          <OnColorContainer backgroundColor={backgroundColor}>
+            <Component ref={composeRef} {...(as ? { as } : {})} aria-label={ariaLabel} {...restProps} />
+          </OnColorContainer>
+        );
+      }
+
       return (
         <OnColorContainer backgroundColor={backgroundColor}>
-          <Component ref={composeRef} {...(as ? { as } : {})} aria-label={ariaLabel} {...restProps} />
+          {createElement(as ?? 'div', {
+            ref: composeRef,
+            'aria-label': ariaLabel,
+            'aria-checked': ariaChecked,
+            'aria-labelledby': ariaLabelledBy,
+            ...restProps,
+          })}
         </OnColorContainer>
       );
     }
-
-    return (
-      <OnColorContainer backgroundColor={backgroundColor}>
-        {createElement(as ?? 'div', {
-          ref: composeRef,
-          'aria-label': ariaLabel,
-          ...restProps,
-        })}
-      </OnColorContainer>
-    );
-  }),
+  ),
   {
     shouldForwardProp,
   }
