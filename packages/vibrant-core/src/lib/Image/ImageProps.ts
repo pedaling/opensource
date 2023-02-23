@@ -8,6 +8,7 @@ type ImageProps = {
   ref?: any;
   alt?: string;
   loading?: 'eager' | 'lazy';
+  sizes?: ResponsiveValue<number>;
   draggable?: boolean;
 } & SizingSystemProps &
   MediaSystemProps &

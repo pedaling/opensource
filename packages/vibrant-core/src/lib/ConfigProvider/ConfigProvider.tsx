@@ -2,7 +2,7 @@ import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import type { ImageRequireSource } from 'react-native';
 import * as ReactSpring from 'react-spring';
-import type { ReactElementChild } from '../../types';
+import type { ReactElementChild, ResponsiveValue } from '../../types';
 
 export type Dependencies = {
   nativeLinearGradient?: ComponentType<{
@@ -23,6 +23,8 @@ export type Dependencies = {
     src: ImageRequireSource | string;
     alt?: string;
     ref?: any;
+    sizes?: ResponsiveValue<number>;
+    draggable?: boolean;
     loading?: 'eager' | 'lazy';
   }>;
 };

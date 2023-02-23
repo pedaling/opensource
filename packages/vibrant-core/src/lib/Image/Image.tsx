@@ -2,7 +2,7 @@ import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
 import { withImageVariation } from './ImageProps';
 
-export const Image = withImageVariation(({ innerRef, src, alt, loading, ...props }) => {
+export const Image = withImageVariation(({ innerRef, src, alt, loading, draggable = false, sizes, ...props }) => {
   const {
     dependencies: { image },
   } = useConfig();
@@ -29,6 +29,8 @@ export const Image = withImageVariation(({ innerRef, src, alt, loading, ...props
             alt={alt}
             src={src}
             display={display}
+            sizes={sizes}
+            draggable={draggable}
             {...props}
           />
         ))}
@@ -39,7 +41,17 @@ export const Image = withImageVariation(({ innerRef, src, alt, loading, ...props
   return (
     <>
       {imageProps.map(({ src, display }) => (
-        <Box as="img" ref={innerRef} key={src} loading={loading} alt={alt} src={src} display={display} {...props} />
+        <Box
+          as="img"
+          ref={innerRef}
+          key={src}
+          loading={loading}
+          alt={alt}
+          src={src}
+          display={display}
+          draggable={draggable}
+          {...props}
+        />
       ))}
     </>
   );
