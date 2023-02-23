@@ -155,12 +155,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
                     </VStack>
                   )}
                   renderOpener={({ open }) => (
-                    <GhostButton
-                      data-testid="filter-add-button"
-                      size="md"
-                      IconComponent={Icon.Add.Regular}
-                      onClick={open}
-                    >
+                    <GhostButton testId="filter-add-button" size="md" IconComponent={Icon.Add.Regular} onClick={open}>
                       <Body level={2}>{add}</Body>
                     </GhostButton>
                   )}
@@ -171,7 +166,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
           <HStack flexShrink={0} ml={24} alignVertical="center">
             {isChanged && (
               <GhostButton
-                data-testid="filter-initialize-button"
+                testId="filter-initialize-button"
                 size="md"
                 color="onView2"
                 IconComponent={Icon.RotateClockwise.Regular}
