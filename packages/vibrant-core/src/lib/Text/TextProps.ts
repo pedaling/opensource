@@ -54,6 +54,7 @@ export type TextChildren = ReactElementChild | ReactTextChild | TextChildren[];
 
 export type TextProps = SystemProps & {
   as?: TextElements;
+  id?: string;
   children?: TextChildren;
   onCopy?: () => void;
   ref?: Ref<any>;

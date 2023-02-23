@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
+import { PressableBox } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { Checkbox } from '../Checkbox';
 import { HStack } from '../HStack';
-import { Pressable } from '../Pressable';
 import { VStack } from '../VStack';
 import { withCheckboxFieldVariation } from './CheckboxFieldProps';
 
@@ -21,6 +21,8 @@ export const CheckboxField = withCheckboxFieldVariation(
     ...restProps
   }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
+
+    const labelId = useId();
 
     useEffect(() => {
       setIsChecked(defaultValue);
@@ -43,11 +45,17 @@ export const CheckboxField = withCheckboxFieldVariation(
 
     return (
       <VStack>
-        <Pressable disabled={disabled} onClick={handleChange}>
-          <HStack spacing={8}>
-            <Checkbox defaultValue={isChecked} disabled={disabled} onValueChange={handleChange} {...restProps} />
+        <HStack spacing={8}>
+          <Checkbox
+            defaultValue={isChecked}
+            disabled={disabled}
+            onValueChange={handleChange}
+            ariaLabelledBy={labelId}
+            {...restProps}
+          />
+          <PressableBox disabled={disabled} onClick={handleChange}>
             <VStack spacing={4} mt={3}>
-              <Body level={labelLevel} color={labelColor}>
+              <Body id={labelId} level={labelLevel} color={labelColor}>
                 {label}
               </Body>
               {Boolean(helperText) && (
@@ -56,8 +64,8 @@ export const CheckboxField = withCheckboxFieldVariation(
                 </Body>
               )}
             </VStack>
-          </HStack>
-        </Pressable>
+          </PressableBox>
+        </HStack>
         {renderContent?.({
           checked: isChecked,
           label,
