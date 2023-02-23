@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.47.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.47.0...vibrant-components-0.47.1) (2023-02-23)
+
+
+### Bug Fixes
+
+* native인 경우에만 Ratio에서 aspect-ratio를 사용하게 수정한다 ([#589](https://github.com/pedaling/opensource/issues/589)) ([b6dabe4](https://github.com/pedaling/opensource/commit/b6dabe4a3b774cbddcc9ea23ec6566a5a12ade6a))
+
 ## [0.47.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.12...vibrant-components-0.47.0) (2023-02-23)
 
 
