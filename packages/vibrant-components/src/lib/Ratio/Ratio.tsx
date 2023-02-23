@@ -3,12 +3,13 @@ import { withRatioVariation } from './RatioProps';
 
 export const Ratio = withRatioVariation(
   ({ innerRef, aspectRatio, children, paddingBottom, width = '100%', ...props }) => {
-    if (isNative || (typeof CSS !== 'undefined' && CSS.supports(`aspect-ratio: ${aspectRatio}`)))
+    if (isNative) {
       return (
         <Box ref={innerRef} width={width} aspectRatio={aspectRatio} {...props}>
           {children}
         </Box>
       );
+    }
 
     return (
       <Box ref={innerRef} width={width} {...props}>
