@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.47.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.12...vibrant-components-0.47.0) (2023-02-23)
+
+
+### Features
+
+* add TableFilterGroup test codes and add testId props into TableFilter components ([#585](https://github.com/pedaling/opensource/issues/585)) ([424532d](https://github.com/pedaling/opensource/commit/424532d095f7cd5381b4a22ae39a952cf76d604a))
+* add TableHeader with FilterGroup component ([#587](https://github.com/pedaling/opensource/issues/587)) ([2ddbe30](https://github.com/pedaling/opensource/commit/2ddbe30c6e73dcaa28593b6a0beb7761dfedb812))
+
 ### [0.46.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.11...vibrant-components-0.46.12) (2023-02-21)
 
 

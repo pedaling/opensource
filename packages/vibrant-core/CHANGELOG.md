@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.47.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.12...vibrant-core-0.47.0) (2023-02-23)
+
+
+### Bug Fixes
+
+* add sizes prop to image ([#588](https://github.com/pedaling/opensource/issues/588)) ([950e82c](https://github.com/pedaling/opensource/commit/950e82c816ea5d049e62089762b6a386310a5777))
+
 ### [0.46.12](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.11...vibrant-core-0.46.12) (2023-02-21)
 
 ### [0.46.11](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.10...vibrant-core-0.46.11) (2023-02-21)
