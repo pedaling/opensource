@@ -157,6 +157,7 @@
     "react-native-shadow-2": "6.0.6",
     "react-native-svg": "12.3.0",
     "react-native-svg-transformer": "1.0.0",
+    "react-native-tab-view": "3.3.4",
     "react-native-uuid": "2.0.1",
     "react-native-web": "~0.18.7",
     "react-spring": "9.5.0",

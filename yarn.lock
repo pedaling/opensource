@@ -13104,6 +13104,7 @@ __metadata:
     react-native-storybook-loader: 2.0.5
     react-native-svg: 12.3.0
     react-native-svg-transformer: 1.0.0
+    react-native-tab-view: 3.3.4
     react-native-uuid: 2.0.1
     react-native-web: ~0.18.7
     react-spring: 9.5.0
@@ -29429,6 +29430,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-tab-view@npm:3.3.4":
+  version: 3.3.4
+  resolution: "react-native-tab-view@npm:3.3.4"
+  dependencies:
+    use-latest-callback: ^0.1.5
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-pager-view: "*"
+  checksum: 9bb6b84afd155067c1021bdd14569eb0f3b3b274a2aec87360a672fbb3a2d67d083678c78ef11f1848d7ac9760baf026416f2b63671f25ad4bdef1ef5ae560f9
+  languageName: node
+  linkType: hard
+
 "react-native-uuid@npm:2.0.1":
   version: 2.0.1
   resolution: "react-native-uuid@npm:2.0.1"
@@ -34426,6 +34440,13 @@ __metadata:
     "@types/react":
       optional: true
   checksum: a6532f7fc9ae222c3725ff0308aaf1f1ddbd3c00d685ef9eee6714fd0684de5cb9741b432fbf51e61a784e2955424864f7ea9f99734a02f237b17ad3e18ea5cb
+  languageName: node
+  linkType: hard
+
+"use-latest-callback@npm:^0.1.5":
+  version: 0.1.5
+  resolution: "use-latest-callback@npm:0.1.5"
+  checksum: a7af3275985b7918c3e0e7a57bb5fc8ad678b21673fc618fe778d111992bdabb4f9592cd3e0286e032a7c956ee3c9d1aba39801c13f32d68bc4c4a008e38783b
   languageName: node
   linkType: hard
 
