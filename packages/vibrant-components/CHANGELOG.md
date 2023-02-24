@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.48.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.47.1...vibrant-components-0.48.0) (2023-02-24)
+
+
+### Features
+
+* add storybook action utils to prevent native crash ([#592](https://github.com/pedaling/opensource/issues/592)) ([1e000d8](https://github.com/pedaling/opensource/commit/1e000d86890e4a54115159ba6b98a36c3410c95f))
+
 ### [0.47.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.47.0...vibrant-components-0.47.1) (2023-02-23)
 
 
