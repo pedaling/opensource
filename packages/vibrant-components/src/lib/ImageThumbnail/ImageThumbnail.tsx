@@ -13,7 +13,7 @@ export const ImageThumbnail = withImageThumbnailVariation(
           zIndex={2}
           width="100%"
           height="100%"
-          backgroundColor="disable"
+          backgroundColor="surface1"
         />
       )}
       <Image
