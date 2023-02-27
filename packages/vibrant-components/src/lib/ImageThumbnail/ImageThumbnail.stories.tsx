@@ -6,9 +6,10 @@ export default {
   component: ImageThumbnail,
   args: {
     dim: true,
+    borderRadius: 5,
     aspectRatio: 4 / 3,
     loading: 'eager',
-    width: '90%',
+    width: '40%',
     src: [
       'https://cdn.class101.net/images/eaaf7c33-fafa-44bf-bc5a-a1b426923df1/640xauto.webp',
       'https://cdn.class101.net/images/1f37098a-806a-41a7-8693-01006b4b9f35/640xauto.webp',
