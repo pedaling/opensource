@@ -4,9 +4,10 @@ import { withImageThumbnailVariation } from './ImageThumbnailProps';
 
 export const ImageThumbnail = withImageThumbnailVariation(
   ({ src, alt = '', borderRadius, aspectRatio, dim = true, loading, width = '100%' }) => (
-    <Ratio ratio={aspectRatio} width={width}>
+    <Ratio data-testId="image-thumbnail" ratio={aspectRatio} width={width}>
       {dim && (
         <Box
+          data-testId="image-thumbnail-overlay"
           borderRadius={borderRadius}
           position="absolute"
           zIndex={2}
@@ -15,7 +16,15 @@ export const ImageThumbnail = withImageThumbnailVariation(
           backgroundColor="disable"
         />
       )}
-      <Image width="100%" height="100%" borderRadius={borderRadius} src={src} alt={alt} loading={loading} />
+      <Image
+        data-testId="image-thumbnail-content"
+        width="100%"
+        height="100%"
+        borderRadius={borderRadius}
+        src={src}
+        alt={alt}
+        loading={loading}
+      />
     </Ratio>
   )
 );
