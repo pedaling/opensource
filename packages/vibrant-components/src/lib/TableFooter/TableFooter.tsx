@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
@@ -26,7 +26,6 @@ export const TableFooter = withTableFooterVariation(
       translations: { tableFooter: tableFooterTranslation },
     } = useConfig();
     const [selectedPageSize, setSelectedPageSize] = useState(defaultPageSize);
-    const prevSelectedPageSizeRef = useRef(selectedPageSize);
     const [currentPage, setCurrentPage] = useControllableState({
       value: page,
       defaultValue: 1,
@@ -38,12 +37,8 @@ export const TableFooter = withTableFooterVariation(
     };
 
     useEffect(() => {
-      if (prevSelectedPageSizeRef.current !== selectedPageSize) {
-        setCurrentPage(1);
-      }
-
-      prevSelectedPageSizeRef.current = selectedPageSize;
-    }, [prevSelectedPageSizeRef, selectedPageSize, setCurrentPage]);
+      setCurrentPage(1);
+    }, [selectedPageSize, setCurrentPage]);
 
     return (
       <HStack width="100%" alignVertical="center">
