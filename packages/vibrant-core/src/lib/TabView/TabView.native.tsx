@@ -1,10 +1,10 @@
 import type { ReactElement } from 'react';
 import { Children, isValidElement, useMemo, useState } from 'react';
 import { TabView as RNTabView, SceneMap } from 'react-native-tab-view';
-import type { TabViewItemProps } from '../TabViewItem';
+import type { TabViewItemProps } from './TabViewProps';
 import { withTabViewVariation } from './TabViewProps';
 
-export const TabView = withTabViewVariation(({ children, onChangeTab, renderTabViewContainer, renderTabViewItem }) => {
+export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobBarContainer, renderTobBarItem }) => {
   const childrenElement = Children.toArray(children).filter(isValidElement) as ReactElement<TabViewItemProps>[];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,9 +36,9 @@ export const TabView = withTabViewVariation(({ children, onChangeTab, renderTabV
   return (
     <RNTabView
       renderTabBar={() =>
-        renderTabViewContainer(
+        renderTobBarContainer(
           routes.map((route, index) =>
-            renderTabViewItem(route.title, index === currentIndex, () => handleTabChange(index))
+            renderTobBarItem(route.title, index === currentIndex, () => handleTabChange(index))
           )
         )
       }
