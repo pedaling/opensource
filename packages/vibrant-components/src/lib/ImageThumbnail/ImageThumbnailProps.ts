@@ -10,6 +10,7 @@ export type ImageThumbnailProps = {
   dim?: ResponsiveValue<boolean>;
   aspectRatio: number;
   alt?: string;
+  testId?: string;
 };
 
 export const withImageThumbnailVariation = withVariation<ImageThumbnailProps>('ImageThumbnail')();
