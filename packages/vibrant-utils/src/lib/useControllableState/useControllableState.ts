@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { isDefined } from '../isDefined';
 import { useCallbackRef } from '../useCallbackRef';
 
@@ -13,20 +13,29 @@ export function useControllableState<Value>({
   defaultValue,
   onChange,
 }: UseControllableStateProps<Value>) {
-  const [uncontrolledValue, setUncontrolledValue] = useState<Value>(defaultValue as Value);
+  const [valueState, setValueState] = useState<Value>(defaultValue as Value);
   const isControlled = isDefined(valueProp);
   const handleChange = useCallbackRef(onChange);
+  const valueRef = useRef(isControlled ? valueProp : valueState);
 
   const setValue = useCallback(
     (nextValue: Value) => {
+      if (valueRef.current === nextValue) {
+        return;
+      }
+
       handleChange(nextValue);
 
       if (!isControlled) {
-        setUncontrolledValue(nextValue);
+        setValueState(nextValue);
       }
     },
-    [isControlled, handleChange]
+    [handleChange, isControlled]
   );
 
-  return [isControlled ? valueProp : uncontrolledValue, setValue] as const;
+  useEffect(() => {
+    valueRef.current = isControlled ? valueProp : valueState;
+  }, [isControlled, valueProp, valueState]);
+
+  return [isControlled ? valueProp : valueState, setValue] as const;
 }
