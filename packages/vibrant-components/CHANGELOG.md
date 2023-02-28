@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.49.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.48.0...vibrant-components-0.49.0) (2023-02-28)
+
+
+### Features
+
+* add ImageThumbnail ([#593](https://github.com/pedaling/opensource/issues/593)) ([ccc1772](https://github.com/pedaling/opensource/commit/ccc1772d0b55afaf0940109d8c5baafb36062622))
+* add ImageThumbnail test codes ([#594](https://github.com/pedaling/opensource/issues/594)) ([aa710d7](https://github.com/pedaling/opensource/commit/aa710d76ab62453e99530058ff55b511297ea299))
+
 ## [0.48.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.47.1...vibrant-components-0.48.0) (2023-02-24)
 
 

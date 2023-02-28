@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.49.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.48.0...vibrant-utils-0.49.0) (2023-02-28)
+
+
+### Bug Fixes
+
+* don't invoke onChange when value not changed in useControllableState ([#595](https://github.com/pedaling/opensource/issues/595)) ([d89c56b](https://github.com/pedaling/opensource/commit/d89c56bb25ffba22529b9c5929b383f69f0a45f6))
+
 ## [0.48.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.47.1...vibrant-utils-0.48.0) (2023-02-24)
 
 
