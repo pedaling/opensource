@@ -1,4 +1,4 @@
-import { Children, isValidElement, useState } from 'react';
+import { Children, Fragment, isValidElement, useState } from 'react';
 import { Box } from '../Box';
 import type { TabViewItemProps } from '../TabViewItem';
 import { withTabViewVariation } from './TabViewProps';
@@ -22,13 +22,15 @@ export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobB
   return (
     <Box>
       {renderTobBarContainer(
-        childrenElement.map((element, index) =>
-          renderTobBarItem({
-            title: element.props.title,
-            isSelected: currentIndex === index,
-            onClick: () => handleTabChange(index),
-          })
-        )
+        childrenElement.map((element, index) => (
+          <Fragment key={index}>
+            {renderTobBarItem({
+              title: element.props.title,
+              isSelected: currentIndex === index,
+              onClick: () => handleTabChange(index),
+            })}
+          </Fragment>
+        ))
       )}
       {selectedTab}
     </Box>
