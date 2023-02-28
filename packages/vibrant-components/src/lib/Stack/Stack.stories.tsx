@@ -14,7 +14,7 @@ export default {
 export const Basic: ComponentStory<typeof Stack> = props => (
   <Stack {...props}>
     <Box width={200} height={200} backgroundColor="primary" borderRadius={12} />
-    <Box width={200} height={200} backgroundColor="primary" borderRadius={12} />
+    <Box width={200} height={200} backgroundColor="informative" borderRadius={12} />
   </Stack>
 );
 
