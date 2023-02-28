@@ -1,11 +1,10 @@
-import type { ReactElement } from 'react';
 import { Children, isValidElement, useState } from 'react';
 import type { TabViewItemProps } from './TabViewProps';
 import { withTabViewVariation } from './TabViewProps';
 
 export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobBarItem, renderTobBarContainer }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const childrenElement = Children.toArray(children).filter(isValidElement) as ReactElement<TabViewItemProps>[];
+  const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
 
   const selectedTab = childrenElement.find((_, index) => index === currentIndex);
 

@@ -5,7 +5,7 @@ import type { TabViewItemProps } from './TabViewProps';
 import { withTabViewVariation } from './TabViewProps';
 
 export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobBarContainer, renderTobBarItem }) => {
-  const childrenElement = Children.toArray(children).filter(isValidElement) as ReactElement<TabViewItemProps>[];
+  const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [routes] = useState(
