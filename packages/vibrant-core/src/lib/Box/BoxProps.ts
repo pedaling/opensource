@@ -137,6 +137,8 @@ export type BoxProps<
   id?: string;
   role?: string;
   ariaLabel?: string;
+  ariaChecked?: boolean;
+  ariaLabelledBy?: string;
   onLayout?: (layoutEvent: LayoutEvent) => void;
 } & DistributiveOmit<
     ComponentProps<BaseComponent> extends undefined

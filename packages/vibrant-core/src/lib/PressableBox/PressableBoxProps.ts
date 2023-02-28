@@ -40,9 +40,12 @@ export type PressableBoxProps = {
   onHoverIn?: () => void;
   onHoverOut?: () => void;
   children?: ReactElementChild | ReactElementChild[];
+  role?: string;
+  ariaChecked?: boolean;
+  ariaLabelledBy?: string;
 } & Either<
   {
-    as?: 'div' | 'li' | 'td' | 'th';
+    as?: 'div' | 'label' | 'li' | 'span' | 'td' | 'th';
     buttonType?: never;
   },
   {

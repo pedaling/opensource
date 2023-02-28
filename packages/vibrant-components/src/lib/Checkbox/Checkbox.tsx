@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Pressable } from '../Pressable';
+import { PressableBox } from '@vibrant-ui/core';
 import { withCheckboxVariation } from './CheckboxProps';
 
 export const Checkbox = withCheckboxVariation(
@@ -12,6 +12,7 @@ export const Checkbox = withCheckboxVariation(
     CheckboxOffIconComponent,
     iconFillColor,
     iconOutlineColor,
+    ariaLabelledBy,
   }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
 
@@ -37,9 +38,15 @@ export const Checkbox = withCheckboxVariation(
     const IconComponent = isChecked ? CheckboxOnIconComponent : CheckboxOffIconComponent;
 
     return (
-      <Pressable disabled={disabled} onClick={handleChange}>
+      <PressableBox
+        role="checkbox"
+        disabled={disabled}
+        onClick={handleChange}
+        ariaLabelledBy={ariaLabelledBy}
+        ariaChecked={isChecked}
+      >
         <IconComponent size={iconSize} fill={isChecked ? iconFillColor : iconOutlineColor} />
-      </Pressable>
+      </PressableBox>
     );
   }
 );

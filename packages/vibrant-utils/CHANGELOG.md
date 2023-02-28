@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.49.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.49.0...vibrant-utils-0.49.1) (2023-02-28)
+
+## [0.49.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.48.0...vibrant-utils-0.49.0) (2023-02-28)
+
+
+### Bug Fixes
+
+* don't invoke onChange when value not changed in useControllableState ([#595](https://github.com/pedaling/opensource/issues/595)) ([d89c56b](https://github.com/pedaling/opensource/commit/d89c56bb25ffba22529b9c5929b383f69f0a45f6))
+
+## [0.48.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.47.1...vibrant-utils-0.48.0) (2023-02-24)
+
+
+### Features
+
+* add storybook action utils to prevent native crash ([#592](https://github.com/pedaling/opensource/issues/592)) ([1e000d8](https://github.com/pedaling/opensource/commit/1e000d86890e4a54115159ba6b98a36c3410c95f))
+
+### [0.47.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.47.0...vibrant-utils-0.47.1) (2023-02-23)
+
 ## [0.47.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.46.12...vibrant-utils-0.47.0) (2023-02-23)
 
 ### [0.46.12](https://github.com/pedaling/opensource/compare/vibrant-utils-0.46.11...vibrant-utils-0.46.12) (2023-02-21)

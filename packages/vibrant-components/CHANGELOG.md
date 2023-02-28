@@ -2,6 +2,35 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.49.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.49.0...vibrant-components-0.49.1) (2023-02-28)
+
+
+### Features
+
+* add reverse property in Stack ([#596](https://github.com/pedaling/opensource/issues/596)) ([29eb1d1](https://github.com/pedaling/opensource/commit/29eb1d1c25e09a924fe1a6d9e45a94e47a014a42))
+
+## [0.49.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.48.0...vibrant-components-0.49.0) (2023-02-28)
+
+
+### Features
+
+* add ImageThumbnail ([#593](https://github.com/pedaling/opensource/issues/593)) ([ccc1772](https://github.com/pedaling/opensource/commit/ccc1772d0b55afaf0940109d8c5baafb36062622))
+* add ImageThumbnail test codes ([#594](https://github.com/pedaling/opensource/issues/594)) ([aa710d7](https://github.com/pedaling/opensource/commit/aa710d76ab62453e99530058ff55b511297ea299))
+
+## [0.48.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.47.1...vibrant-components-0.48.0) (2023-02-24)
+
+
+### Features
+
+* add storybook action utils to prevent native crash ([#592](https://github.com/pedaling/opensource/issues/592)) ([1e000d8](https://github.com/pedaling/opensource/commit/1e000d86890e4a54115159ba6b98a36c3410c95f))
+
+### [0.47.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.47.0...vibrant-components-0.47.1) (2023-02-23)
+
+
+### Bug Fixes
+
+* native인 경우에만 Ratio에서 aspect-ratio를 사용하게 수정한다 ([#589](https://github.com/pedaling/opensource/issues/589)) ([b6dabe4](https://github.com/pedaling/opensource/commit/b6dabe4a3b774cbddcc9ea23ec6566a5a12ade6a))
+
 ## [0.47.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.46.12...vibrant-components-0.47.0) (2023-02-23)
 
 

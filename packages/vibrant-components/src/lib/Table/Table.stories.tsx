@@ -1,6 +1,6 @@
-import { action } from '@storybook/addon-actions';
 import type { ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
+import { action } from '@vibrant-ui/utils';
 import { Callout } from '../Callout';
 import { OutlinedButton } from '../OutlinedButton';
 import { Table } from './Table';

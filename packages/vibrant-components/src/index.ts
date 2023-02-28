@@ -64,3 +64,4 @@ export { Ratio } from './lib/Ratio';
 export { Skeleton } from './lib/Skeleton';
 export { FilterChip } from './lib/FilterChip';
 export { TableFilterGroup, tableFilterGroupTranslation } from './lib/TableFilterGroup';
+export { ImageThumbnail } from './lib/ImageThumbnail';

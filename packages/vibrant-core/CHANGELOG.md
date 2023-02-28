@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.49.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.49.0...vibrant-core-0.49.1) (2023-02-28)
+
+## [0.49.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.48.0...vibrant-core-0.49.0) (2023-02-28)
+
+## [0.48.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.47.1...vibrant-core-0.48.0) (2023-02-24)
+
+
+### Features
+
+* add nl2br utils into core and applies to Text component ([#591](https://github.com/pedaling/opensource/issues/591)) ([d3bb773](https://github.com/pedaling/opensource/commit/d3bb77330a5eddcc3e6d44575584cc7323d9015a))
+
+### [0.47.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.47.0...vibrant-core-0.47.1) (2023-02-23)
+
 ## [0.47.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.46.12...vibrant-core-0.47.0) (2023-02-23)
 
 

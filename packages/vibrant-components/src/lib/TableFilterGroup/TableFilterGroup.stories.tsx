@@ -1,5 +1,5 @@
-import { action } from '@storybook/addon-actions';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { action } from '@vibrant-ui/utils';
 import { TableFilterGroup } from './TableFilterGroup';
 
 export default {

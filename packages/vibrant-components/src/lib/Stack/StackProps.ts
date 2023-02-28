@@ -49,6 +49,7 @@ export type StackProps = DisplaySystemProps &
     alignVertical?: ResponsiveValue<Alignment>;
     ariaLabel?: string;
     scrollable?: boolean;
+    reverse?: ResponsiveValue<boolean>;
   } & Pick<BoxProps, 'onLayout'>;
 
 const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
@@ -75,17 +76,26 @@ export const withStackVariation = withVariation<StackProps>('Stack')(
         responsive: true,
         keep: true,
       },
+      {
+        name: 'reverse',
+        responsive: true,
+        default: false,
+        keep: true,
+      },
     ],
-    variants: {
-      horizontal: {
-        flexDirection: 'row',
-        horizontal: true,
-      },
-      vertical: {
-        flexDirection: 'column',
-        horizontal: false,
-      },
-    } as const,
+    variants: ({ direction, reverse }) => {
+      if (direction === 'horizontal') {
+        return {
+          flexDirection: reverse ? 'row-reverse' : 'row',
+          horizontal: true,
+        };
+      } else {
+        return {
+          flexDirection: reverse ? 'column-reverse' : 'column',
+          horizontal: false,
+        };
+      }
+    },
   }),
   propVariant({
     props: [
