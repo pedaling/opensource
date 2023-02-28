@@ -1,6 +1,6 @@
 import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Box, useConfig, useCurrentTheme } from '@vibrant-ui/core';
-import { getDateString } from '@vibrant-ui/utils';
+import { getDateString, useCallbackRef } from '@vibrant-ui/utils';
 import type { DatePickerFieldRefValue } from '../../DatePickerField';
 import { DatePickerField } from '../../DatePickerField';
 import { RangePickerField } from '../../RangePickerField';
@@ -29,6 +29,7 @@ export const TableDateFilter = withTableDateFilterVariation(
       theme: { zIndex },
     } = useCurrentTheme();
     const { updateFilter } = useTableFilterGroup();
+    const handleFilterChange = useCallbackRef(updateFilter);
     const prevOperatorRef = useRef<DateFilterOperator | undefined>();
     const [fieldAutoFocus, setFieldAutoFocus] = useState(true);
     const fieldRef = useRef<DatePickerFieldRefValue | null>(null);
@@ -56,8 +57,8 @@ export const TableDateFilter = withTableDateFilterVariation(
     );
 
     useEffect(() => {
-      updateFilter();
-    }, [operator, value, updateFilter]);
+      handleFilterChange();
+    }, [operator, value, handleFilterChange]);
 
     useEffect(() => {
       if (!isDateFilterValid({ value, operator }) && prevOperatorRef.current !== operator) {

@@ -1,5 +1,6 @@
 import { useEffect, useImperativeHandle, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
+import { useCallbackRef } from '@vibrant-ui/utils';
 import { CheckboxGroupField } from '../../CheckboxGroupField';
 import { Divider } from '../../Divider';
 import { GhostButton } from '../../GhostButton';
@@ -27,6 +28,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value);
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator);
     const { updateFilter } = useTableFilterGroup();
+    const handleFilterChange = useCallbackRef(updateFilter);
 
     const {
       translations: {
@@ -57,8 +59,8 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     );
 
     useEffect(() => {
-      updateFilter();
-    }, [selectedValues, operator, updateFilter]);
+      handleFilterChange();
+    }, [selectedValues, operator, handleFilterChange]);
 
     return (
       <TableFieldFilter
