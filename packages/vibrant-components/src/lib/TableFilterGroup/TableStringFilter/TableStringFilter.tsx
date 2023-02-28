@@ -1,6 +1,7 @@
 import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, useConfig } from '@vibrant-ui/core';
+import { useCallbackRef } from '@vibrant-ui/utils';
 import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
@@ -25,6 +26,7 @@ export const TableStringFilter = withTableStringFilterVariation(
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator);
     const [value, setValue] = useState<string>(inputValue);
     const { updateFilter } = useTableFilterGroup();
+    const handleFilterChange = useCallbackRef(updateFilter);
     const filedRef = useRef<TextInputRef | null>();
 
     const {
@@ -52,8 +54,8 @@ export const TableStringFilter = withTableStringFilterVariation(
     );
 
     useEffect(() => {
-      updateFilter();
-    }, [value, operator, updateFilter]);
+      handleFilterChange();
+    }, [value, operator, handleFilterChange]);
 
     useEffect(() => {
       filedRef.current?.focus();
