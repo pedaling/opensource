@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.49.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.49.0...vibrant-components-0.49.1) (2023-02-28)
+
+
+### Features
+
+* add reverse property in Stack ([#596](https://github.com/pedaling/opensource/issues/596)) ([29eb1d1](https://github.com/pedaling/opensource/commit/29eb1d1c25e09a924fe1a6d9e45a94e47a014a42))
+
 ## [0.49.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.48.0...vibrant-components-0.49.0) (2023-02-28)
 
 
