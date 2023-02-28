@@ -79,4 +79,4 @@ export { PageScroll, useScroll } from './lib/PageScroll';
 export type { EventListenerCallback, ScrollDirection } from './lib/PageScroll';
 export { Image } from './lib/Image';
 export { TabView } from './lib/TabView';
-export type { TabViewItemProps } from './lib/TabView';
+export { TabViewItem } from './lib/TabViewItem';

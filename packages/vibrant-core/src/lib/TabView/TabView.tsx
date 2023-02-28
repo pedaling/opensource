@@ -1,5 +1,6 @@
 import { Children, isValidElement, useState } from 'react';
-import type { TabViewItemProps } from './TabViewProps';
+import { Box } from '../Box';
+import type { TabViewItemProps } from '../TabViewItem';
 import { withTabViewVariation } from './TabViewProps';
 
 export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobBarItem, renderTobBarContainer }) => {
@@ -19,13 +20,17 @@ export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobB
   };
 
   return (
-    <>
+    <Box>
       {renderTobBarContainer(
         childrenElement.map((element, index) =>
-          renderTobBarItem(element.props.title, currentIndex === index, () => handleTabChange(index))
+          renderTobBarItem({
+            title: element.props.title,
+            isSelected: currentIndex === index,
+            onClick: () => handleTabChange(index),
+          })
         )
       )}
       {selectedTab}
-    </>
+    </Box>
   );
 });
