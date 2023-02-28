@@ -2,6 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react';
 import type { NativeScrollEvent, NativeSyntheticEvent } from 'react-native';
 import { ScrollView } from 'react-native';
+import { Box } from '../Box';
 import type {
   EventListenerCallback,
   PageScrollContextValue,
@@ -55,9 +56,9 @@ export const PageScroll: FC<PropsWithChildren<PageScrollProps>> = ({ children })
 
   return (
     <PageScrollContext.Provider value={pageScrollContextValue}>
-      <ScrollView scrollEventThrottle={16} onScroll={handleScroll}>
+      <Box base={ScrollView} scrollEventThrottle={16} onScroll={handleScroll} contentContainerStyle={{ flexGrow: 1 }}>
         {children}
-      </ScrollView>
+      </Box>
     </PageScrollContext.Provider>
   );
 };
