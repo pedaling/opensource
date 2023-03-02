@@ -66,6 +66,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: chromaui/action@v1
         with:
+          node-version: 16
           projectToken: ${{ secrets.CHROMATIC_TOKEN }}
           autoAcceptChanges: true
 
