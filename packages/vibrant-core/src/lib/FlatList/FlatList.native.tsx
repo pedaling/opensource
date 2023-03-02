@@ -48,9 +48,11 @@ export const FlatList = withFlatListVariation(
             index < column * responsiveMaxRows[breakPointIndex] ? 'flex' : 'none'
           )
         : undefined;
+    const currentColumn = getResponsiveValue(columns);
 
     return (
       <Box
+        key={currentColumn}
         base={NativeFlatList}
         data={data}
         renderItem={(itemInfo: { item: any; index: number }) => (
@@ -65,7 +67,7 @@ export const FlatList = withFlatListVariation(
         )}
         onViewableItemsChanged={isDefined(onItemImpressed) ? handleViewableItemChange : undefined}
         keyExtractor={keyExtractor}
-        numColumns={getResponsiveValue(columns)}
+        numColumns={currentColumn}
         onEndReached={onEndReached}
         width="100%"
         {...props}
