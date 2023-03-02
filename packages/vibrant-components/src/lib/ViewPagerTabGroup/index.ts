@@ -1,0 +1,1 @@
+export { ViewPagerTabGroup } from './ViewPagerTabGroup';

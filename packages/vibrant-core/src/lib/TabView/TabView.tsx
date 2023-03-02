@@ -20,7 +20,7 @@ export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobB
   };
 
   return (
-    <Box>
+    <Box width="100%" height="100%">
       {renderTobBarContainer(
         childrenElement.map((element, index) => (
           <Fragment key={index}>
