@@ -5,19 +5,4 @@ const gridTemplateColumnsProp = createSystemProp({
   disabled: true,
 });
 
-const columnGapProp = createSystemProp({
-  property: 'columnGap',
-  disabled: true,
-});
-
-const rowGapProp = createSystemProp({
-  property: 'rowGap',
-  disabled: true,
-});
-
-const gapProp = createSystemProp({
-  property: 'gap',
-  disabled: true,
-});
-
-export const gridSystemProps = [gridTemplateColumnsProp, columnGapProp, rowGapProp, gapProp];
+export const gridSystemProps = [gridTemplateColumnsProp];
