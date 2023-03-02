@@ -111,7 +111,7 @@ const typescriptRules = {
 
     // _id와 __typename은 허용된다
     {
-      selector: ['typeProperty', 'objectLiteralProperty', 'classProperty'],
+      selector: ['parameter', 'typeProperty', 'objectLiteralProperty', 'classProperty'],
       format: null,
       filter: { regex: '^(_id|__typename)$', match: true },
     },
