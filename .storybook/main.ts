@@ -111,7 +111,7 @@ const config: StorybookViteConfig & {
     },
   },
   core: {
-    builder: 'webpack5',
+    builder: '@storybook/builder-vite',
   },
   previewHead: head => `
     ${head}
