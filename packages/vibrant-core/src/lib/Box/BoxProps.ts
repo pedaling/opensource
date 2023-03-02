@@ -11,6 +11,7 @@ import type {
   DisplaySystemProps,
   ElevationSystemProps,
   FlexboxSystemProps,
+  GridSystemProps,
   InputSystemProps,
   InteractionSystemProps,
   MediaSystemProps,
@@ -31,6 +32,7 @@ import {
   displaySystemProps,
   elevationSystemProps,
   flexboxSystemProps,
+  gridSystemProps,
   inputSystemProps,
   interactionSystemProps,
   mediaSystemProps,
@@ -62,7 +64,8 @@ export type SystemProps = BackgroundSystemProps &
   TextSystemProps &
   TypographySystemProps &
   TransformSystemProps &
-  MediaSystemProps;
+  MediaSystemProps &
+  GridSystemProps;
 
 const systemProps = [
   ...backgroundSystemProps,
@@ -83,6 +86,7 @@ const systemProps = [
   ...typographySystemProps,
   ...transformSystemProps,
   ...mediaSystemProps,
+  ...gridSystemProps,
 ];
 
 const systemPropNames = systemProps
