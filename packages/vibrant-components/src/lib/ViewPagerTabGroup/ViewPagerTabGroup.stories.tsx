@@ -2,7 +2,6 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { Paper } from '../Paper';
-import { ViewPagerTabGroupItem } from '../ViewPagerTabGroupItem';
 import { VStack } from '../VStack';
 import { ViewPagerTabGroup } from './ViewPagerTabGroup';
 
@@ -17,7 +16,7 @@ export default {
 export const Basic: ComponentStory<typeof ViewPagerTabGroup> = props => (
   <VStack width="100%" height="100%">
     <ViewPagerTabGroup {...props}>
-      <ViewPagerTabGroupItem
+      <ViewPagerTabGroup.Item
         tabId="first"
         title="First Tab"
         renderContent={() => (
@@ -29,7 +28,7 @@ export const Basic: ComponentStory<typeof ViewPagerTabGroup> = props => (
         )}
       />
 
-      <ViewPagerTabGroupItem
+      <ViewPagerTabGroup.Item
         tabId="second"
         title="Second Tab"
         renderContent={() => (

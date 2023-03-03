@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Body } from '../Body';
-import { Paper } from '../Paper';
-import { ViewPagerTabGroupItem } from '../ViewPagerTabGroupItem';
+import { Body } from '../../Body';
+import { Paper } from '../../Paper';
+import { ViewPagerTabGroupItem } from '.';
 
 export default {
   title: 'ViewPagerTabGroupItem',

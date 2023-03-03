@@ -5,7 +5,7 @@ import { Box } from '../Box';
 import type { TabViewItemProps } from '../TabViewItem';
 import { withTabViewVariation } from './TabViewProps';
 
-export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobBarContainer, renderTobBarItem }) => {
+export const TabView = withTabViewVariation(({ children, onTabChange, renderTobBarContainer, renderTobBarItem }) => {
   const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,7 +23,7 @@ export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobB
 
     setCurrentIndex(index);
 
-    onChangeTab?.();
+    onTabChange?.();
   };
 
   const renderScene = useMemo(() => {
