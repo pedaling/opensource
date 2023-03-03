@@ -6,6 +6,7 @@ import { getPaddedResponsiveArray } from '../getPaddedResponsiveArray';
 import { useCurrentTheme } from '../ThemeProvider';
 import { transformResponsiveValue } from '../transformResponsiveValue';
 import { useResponsiveValue } from '../useResponsiveValue';
+import { FlatListItem } from './FlatListItem';
 import { withFlatListVariation } from './FlatListProps';
 
 export const FlatList = withFlatListVariation(
@@ -56,14 +57,14 @@ export const FlatList = withFlatListVariation(
         base={NativeFlatList}
         data={data}
         renderItem={(itemInfo: { item: any; index: number }) => (
-          <Box
+          <FlatListItem
             flex={transformResponsiveValue(columns, column => 1 / column)}
             display={getResponsiveDisplay(itemInfo.index)}
             mr={getResponsiveMarginRight(itemInfo.index)}
             mt={getResponsiveMarginTop(itemInfo.index)}
           >
             {renderItem(itemInfo)}
-          </Box>
+          </FlatListItem>
         )}
         onViewableItemsChanged={isDefined(onItemImpressed) ? handleViewableItemChange : undefined}
         keyExtractor={keyExtractor}

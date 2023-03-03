@@ -1,60 +1,68 @@
-import type { FC, ReactElement } from 'react';
-import { isDefined, useInView } from '@vibrant-ui/utils';
+import type { ReactElement } from 'react';
+import { isDefined } from '@vibrant-ui/utils';
 import { Box } from '../Box';
+import { getPaddedResponsiveArray } from '../getPaddedResponsiveArray';
+import { useCurrentTheme } from '../ThemeProvider';
 import { transformResponsiveValue } from '../transformResponsiveValue';
+import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
-const ImpressibleItem: FC<{ onImpressed?: () => void; children: ReactElement | null }> = ({
-  onImpressed,
-  ...props
-}) => {
-  const { ref } = useInView({ initialInView: true, onChange: inView => inView && onImpressed?.() });
-
-  return <Box as="li" ref={isDefined(onImpressed) ? ref : null} {...props} />;
-};
-
 export const FlatList = withFlatListVariation(
   ({
-    testId,
+    testId = 'flat-list',
     data,
     renderItem,
     keyExtractor,
     columns,
-    columnSpacing,
-    rowSpacing,
+    maxRows,
+    columnSpacing = 0,
+    rowSpacing = 0,
     onEndReached,
     onItemImpressed,
     ...props
-  }) => (
-    <Box
-      as="ul"
-      display="grid"
-      width="100%"
-      gridTemplateColumns={transformResponsiveValue(columns, column => `repeat(${column}, 1fr)`)}
-      columnGap={columnSpacing}
-      rowGap={rowSpacing}
-      data-testId={testId}
-      {...props}
-    >
-      {data.map((item, index) => (
-        <ImpressibleItem
-          key={keyExtractor(item, index)}
-          onImpressed={
-            isDefined(onItemImpressed) || index === data.length - 1
-              ? () => {
-                  onItemImpressed?.(item, index);
+  }) => {
+    const {
+      theme: { breakpoints },
+    } = useCurrentTheme();
+    const getResponsiveDisplay = (index: number) =>
+      isDefined(maxRows)
+        ? getPaddedResponsiveArray(breakpoints, columns).map((column, breakPointIndex) =>
+            index < column * getPaddedResponsiveArray(breakpoints, maxRows)[breakPointIndex] ? 'flex' : 'none'
+          )
+        : undefined;
 
-                  if (index === data.length - 1) {
-                    onEndReached?.();
+    return (
+      <Box
+        as="ul"
+        display="grid"
+        width="100%"
+        gridTemplateColumns={transformResponsiveValue(columns, column => `repeat(${column}, 1fr)`)}
+        columnGap={columnSpacing}
+        rowGap={rowSpacing}
+        data-testid={testId}
+        {...props}
+      >
+        {data.map((item, index) => (
+          <FlatListItem
+            key={keyExtractor(item, index)}
+            display={getResponsiveDisplay(index)}
+            onImpressed={
+              isDefined(onItemImpressed) || index === data.length - 1
+                ? () => {
+                    onItemImpressed?.(item, index);
+
+                    if (index === data.length - 1) {
+                      onEndReached?.();
+                    }
                   }
-                }
-              : undefined
-          }
-        >
-          {renderItem({ item, index })}
-        </ImpressibleItem>
-      ))}
-    </Box>
-  )
+                : undefined
+            }
+          >
+            {renderItem({ item, index })}
+          </FlatListItem>
+        ))}
+      </Box>
+    );
+  }
 ) as <Data>(props: FlatListProps<Data>) => ReactElement;

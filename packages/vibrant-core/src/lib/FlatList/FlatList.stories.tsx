@@ -53,6 +53,7 @@ export default {
     keyExtractor: item => item.id,
     columnSpacing: 8,
     rowSpacing: 8,
+    maxRows: 3,
   },
 } as ComponentMeta<typeof FlatList>;
 
