@@ -44,6 +44,7 @@ export const TabView = withTabViewVariation(({ children, onTabChange, renderTobB
                 title: route.title,
                 isSelected: currentIndex === index,
                 onClick: () => handleTabChange(index),
+                tabId: route.key,
               })}
             </Box>
           ))

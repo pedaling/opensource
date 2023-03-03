@@ -6,5 +6,6 @@ export type ViewPagerTabGroupItemProps = {
   tabId: string;
   onTabSelected?: () => void;
   renderContent: () => ReactElement;
+  testId?: string;
 };
 export const withViewPagerTabGroupItemVariation = withVariation<ViewPagerTabGroupItemProps>('ViewPagerTabGroupItem')();

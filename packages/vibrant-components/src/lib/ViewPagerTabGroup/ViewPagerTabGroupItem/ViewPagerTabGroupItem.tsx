@@ -2,7 +2,13 @@ import { TabViewItem } from '@vibrant-ui/core';
 import { withViewPagerTabGroupItemVariation } from './ViewPagerTabGroupItemProps';
 
 export const ViewPagerTabGroupItem = withViewPagerTabGroupItemVariation(
-  ({ tabId, title, onTabSelected, renderContent }) => (
-    <TabViewItem tabId={tabId} title={title} onTabSelected={onTabSelected} renderContent={renderContent} />
+  ({ tabId, title, testId, onTabSelected, renderContent }) => (
+    <TabViewItem
+      tabId={tabId}
+      title={title}
+      testId={testId}
+      onTabSelected={onTabSelected}
+      renderContent={renderContent}
+    />
   )
 );

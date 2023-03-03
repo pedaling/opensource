@@ -10,16 +10,17 @@ import { ViewPagerTabGroupItem } from './ViewPagerTabGroupItem';
 import type { ViewPagerTabGroupProps } from './ViewPagerTabGroupProps';
 import { withViewPagerTabGroupVariation } from './ViewPagerTabGroupProps';
 
-export const ViewPagerTabGroup = withViewPagerTabGroupVariation(({ children, onTabChange, tabSpacing }) => (
+export const ViewPagerTabGroup = withViewPagerTabGroupVariation(({ children, testId, onTabChange, tabSpacing }) => (
   <TabView
+    testId={testId}
     renderTobBarContainer={props => (
-      <HStack px={20} spacing={tabSpacing}>
+      <HStack px={20} spacing={tabSpacing} data-testid="view-pager-top-bar">
         {props}
       </HStack>
     )}
-    renderTobBarItem={({ isSelected, onClick, title }) => (
+    renderTobBarItem={({ isSelected, onClick, title, tabId }) => (
       <VStack key={title} spacing={8}>
-        <Pressable onClick={onClick}>
+        <Pressable onClick={onClick} data-testid={`top-bar-${tabId}`}>
           <Title level={5}>{title}</Title>
         </Pressable>
         {isSelected && <Paper borderColor="onView1" borderStyle="solid" borderWidth={1} />}
