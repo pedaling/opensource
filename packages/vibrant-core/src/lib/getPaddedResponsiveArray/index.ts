@@ -1,0 +1,1 @@
+export { getPaddedResponsiveArray } from './getPaddedResponsiveArray';

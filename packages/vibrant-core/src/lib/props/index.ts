@@ -36,3 +36,5 @@ export type { AllSystemProps } from './systemProp';
 export { allSystemProps, allSystemPropNames } from './systemProp';
 export type { MediaSystemProps } from './media';
 export { mediaSystemProps } from './media';
+export type { GridSystemProps } from './grid';
+export { gridSystemProps } from './grid';
