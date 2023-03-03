@@ -1,10 +1,11 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Image } from '../Image';
-import { FlatList } from './FlatList';
+import { Image } from '@vibrant-ui/core';
+import { SkeletonImage } from '../Skeleton/SkeletonImage';
+import { GridList } from './GridList';
 
 export default {
-  title: 'FlatList',
-  component: FlatList,
+  title: 'GridList',
+  component: GridList,
   args: {
     columns: [2, 3, 4],
     data: [
@@ -53,8 +54,10 @@ export default {
     keyExtractor: item => item.id,
     columnSpacing: 8,
     rowSpacing: 8,
-    maxRows: 3,
+    skeletonItemCount: 4,
+    loading: true,
+    renderSkeleton: () => <SkeletonImage width="100%" ratio={4 / 3} />,
   },
-} as ComponentMeta<typeof FlatList<{ id: string; image: string }>>;
+} as ComponentMeta<typeof GridList<{ id: string; image: string }>>;
 
-export const Basic: ComponentStory<typeof FlatList> = props => <FlatList {...props} />;
+export const Basic: ComponentStory<typeof GridList> = props => <GridList {...props} />;
