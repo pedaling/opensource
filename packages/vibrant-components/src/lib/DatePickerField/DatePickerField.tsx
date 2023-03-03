@@ -92,7 +92,7 @@ export const DatePickerField = withDatePickerFieldVariation(
     const composeRef = useComposedRef(innerRef, inputRef);
 
     return (
-      <Box position="relative" width="100%" height={50}>
+      <Box position="relative" width="100%">
         <DateInput
           ref={composeRef}
           value={inputValue}
