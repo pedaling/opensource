@@ -6,6 +6,7 @@ export type TabViewItemProps = {
   tabId: string;
   onTabSelected?: () => void;
   renderContent: () => ReactElement;
+  testId?: string;
 };
 
 export const withTabViewItemVariation = withVariation<TabViewItemProps>('TabViewItem')();

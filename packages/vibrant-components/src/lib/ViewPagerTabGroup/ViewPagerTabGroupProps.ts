@@ -6,6 +6,7 @@ export type ViewPagerTabGroupProps = {
   children: ReactElement<ViewPagerTabGroupItemProps> | ReactElement<ViewPagerTabGroupItemProps>[];
   tabSpacing?: number;
   onTabChange?: () => void;
+  testId?: string;
 };
 
 export const withViewPagerTabGroupVariation = withVariation<ViewPagerTabGroupProps>('ViewPagerTabGroup')();

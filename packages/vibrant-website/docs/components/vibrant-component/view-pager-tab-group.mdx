@@ -1,0 +1,88 @@
+---
+title: ViewPagerTabGroup
+---
+
+# ViewPagerTabGroup
+
+`<ViewPagerTabGroup />` 은 상단에 Tab 선택으로 페이지를 이동할 수 있는 뷰 컴포넌트입니다.
+
+:::caution
+
+`<ViewPagerTabGroup />` 의 children 으로는 반드시 `<ViewPagerTabGroup.Item />` 을 사용해야 합니다.
+
+:::
+
+```jsx live
+<ViewPagerTabGroup tabSpacing={10}>
+  <ViewPagerTabGroup.Item
+    tabId="first"
+    title="First Tab"
+    renderContent={() => (
+      <ContentArea>
+        <Paper backgroundColor="surface1" width="100%">
+          <HStack p={12} width="100%" height={200}>
+            <Body level={2}>First Page Content</Body>
+          </HStack>
+        </Paper>
+      </ContentArea>
+    )}
+  />
+
+  <ViewPagerTabGroup.Item
+    tabId="second"
+    title="Second Tab"
+    renderContent={() => (
+      <ContentArea>
+        <Paper backgroundColor="surface1" width="100%">
+          <HStack p={12} width="100%" height={200}>
+            <Body level={2}>Second Page Content</Body>
+          </HStack>
+        </Paper>
+      </ContentArea>
+    )}
+  />
+</ViewPagerTabGroup>
+```
+
+## How to use
+
+```jsx
+import { ViewPagerTabGroup } from '@vibrant-ui/components';
+```
+
+## Properties
+
+### `ViewPagerTabGroup`
+
+`<ViewPagerTabGroup />` 은 현재 보여지고 있는 페이지 뷰를 전환할 수 있는 탭바를 보여주는 동시에, 각각의 페이지 뷰를 담고 있는 `<ViewPagerTabGroup.Item />` 을 감싸는 상위 컴포넌트입니다.
+
+| Prop         | Type                                                | Default | Description                                                                                   |
+| ------------ | --------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------- |
+| children(\*) | [`ViewPagerTabGroup.Item`](#ViewPagerTabGroup.Item) | -       | `ViewPagerTabGroup` 의 탭 중 하나가 선택되었을때 보여질 View page 를 렌더하는 하위 컴포넌트들 |
+| tabSpacing   | `number`                                            | -       | 탭을 변경할 수 있는 탭 아이템 간의 간격                                                       |
+| onTabChange  | `() => void`                                        | -       | 탭이 변경될 때마다 호출될 함수                                                                |
+
+### `ViewPagerTabGroup.Item`
+
+`<ViewPagerTabGroup.Item />` 은 각각의 탭이 렌더해야 하는 content 와 탭바에서 보여질 탭의 title 을 설정할 수 있는 컴포넌트입니다.
+
+탭을 선택하면 `<ViewPagerTabGroup.Item />` 가 렌더하는 페이지가 보여집니다.
+
+| Prop               | Type                 | Default | Description                               |
+| ------------------ | -------------------- | ------- | ----------------------------------------- |
+| title (\*)         | `string`             |         | 탭바에서 보여지는 해당 탭의 텍스트        |
+| tabId (\*)         | `string`             |         | 탭의 고유한 id 값                         |
+| renderContent (\*) | `() => ReactElement` | -       | 탭이 선택되었을때 페이지에 보여질 content |
+| onTabSelected      | `() => void`         |         | 탭이 선택되었을 때 호출될 함수            |
+
+```jsx live
+<ViewPagerTabGroup.Item
+  tabId="myPage"
+  title="My Page"
+  renderContent={() => (
+    <Paper backgroundColor="surface1" width="100%">
+      <Body level={2}>Page Content</Body>
+    </Paper>
+  )}
+/>
+```
