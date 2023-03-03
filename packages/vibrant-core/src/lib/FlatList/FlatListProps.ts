@@ -12,8 +12,8 @@ export type FlatListProps<Data> = {
   maxRows?: ResponsiveValue<number>;
   columnSpacing?: ResponsiveValue<number>;
   rowSpacing?: ResponsiveValue<number>;
-  onItemImpressed: (item: Data, index: number | null) => void;
-  onEndReached: () => void;
+  onItemImpressed?: (item: Data, index: number | null) => void;
+  onEndReached?: () => void;
 };
 
 export const withFlatListVariation = withVariation<FlatListProps<any>>('FlatList')();
