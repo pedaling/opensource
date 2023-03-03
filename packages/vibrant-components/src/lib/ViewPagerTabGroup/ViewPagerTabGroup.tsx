@@ -14,7 +14,7 @@ export const ViewPagerTabGroup = withViewPagerTabGroupVariation(({ children, tes
   <TabView
     testId={testId}
     renderTobBarContainer={props => (
-      <HStack px={20} spacing={tabSpacing} data-testid="view-pager-top-bar">
+      <HStack px={20} spacing={tabSpacing} data-testid="top-bar-container">
         {props}
       </HStack>
     )}
