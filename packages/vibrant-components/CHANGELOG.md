@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.49.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.49.1...vibrant-components-0.49.2) (2023-03-03)
+
+
+### Features
+
+* add test code and documentation of ViewPagerTabGroup ([#604](https://github.com/pedaling/opensource/issues/604)) ([60cad37](https://github.com/pedaling/opensource/commit/60cad37e00b277e53372e610fb598ce11d3e8c8e))
+* add ViewpagerTabGroup and Item into components ([#601](https://github.com/pedaling/opensource/issues/601)) ([31fc31e](https://github.com/pedaling/opensource/commit/31fc31e6738b77bde1de4b2014ad30920b80fe01))
+* FlatList 컴포넌트를 구현한다 ([#602](https://github.com/pedaling/opensource/issues/602)) ([703f143](https://github.com/pedaling/opensource/commit/703f143785f36ab68bc3943e22c739a9abfdce64))
+
+
+### Bug Fixes
+
+* prevent multiple onFilterChange call ([#598](https://github.com/pedaling/opensource/issues/598)) ([48294c2](https://github.com/pedaling/opensource/commit/48294c23fa6d2477a8d154297dcd356ec4393fb3))
+* release fixed height in DatePickerField ([#605](https://github.com/pedaling/opensource/issues/605)) ([9492bc6](https://github.com/pedaling/opensource/commit/9492bc6a7d9b12cfd245f35f77060468e91fe6a7))
+
 ### [0.49.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.49.0...vibrant-components-0.49.1) (2023-02-28)
 
 

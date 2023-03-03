@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.49.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.49.1...vibrant-core-0.49.2) (2023-03-03)
+
+
+### Features
+
+* add flexGrow property in contentContainerStyle ([#599](https://github.com/pedaling/opensource/issues/599)) ([d497f5c](https://github.com/pedaling/opensource/commit/d497f5c0414d2e7ed5f61814e87d8aa66811ee3b))
+* add TabView into core package ([#597](https://github.com/pedaling/opensource/issues/597)) ([ddcb706](https://github.com/pedaling/opensource/commit/ddcb7060cdccb0148f35aaab39b7dfc724f96bf3))
+* add test code and documentation of ViewPagerTabGroup ([#604](https://github.com/pedaling/opensource/issues/604)) ([60cad37](https://github.com/pedaling/opensource/commit/60cad37e00b277e53372e610fb598ce11d3e8c8e))
+* add ViewpagerTabGroup and Item into components ([#601](https://github.com/pedaling/opensource/issues/601)) ([31fc31e](https://github.com/pedaling/opensource/commit/31fc31e6738b77bde1de4b2014ad30920b80fe01))
+* FlatList 컴포넌트를 구현한다 ([#602](https://github.com/pedaling/opensource/issues/602)) ([703f143](https://github.com/pedaling/opensource/commit/703f143785f36ab68bc3943e22c739a9abfdce64))
+
 ### [0.49.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.49.0...vibrant-core-0.49.1) (2023-02-28)
 
 ## [0.49.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.48.0...vibrant-core-0.49.0) (2023-02-28)
