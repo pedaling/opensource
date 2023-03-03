@@ -80,7 +80,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/VerificationCodeField/VerificationCodeField.stories.tsx'),
   require('../../vibrant-components/src/lib/VerificationCodeItem/VerificationCodeItem.stories.tsx'),
   require('../../vibrant-components/src/lib/ViewPagerTabGroup/ViewPagerTabGroup.stories.tsx'),
-  require('../../vibrant-components/src/lib/ViewPagerTabGroupItem/ViewPagerTabGroupItem.stories.tsx'),
+  require('../../vibrant-components/src/lib/ViewPagerTabGroup/ViewPagerTabGroupItem/ViewPagerTabGroupItem.stories.tsx'),
   require('../../vibrant-components/src/lib/VStack/VStack.stories.tsx'),
   require('../../vibrant-core/src/lib/Box/Box.stories.tsx'),
   require('../../vibrant-core/src/lib/Image/Image.stories.tsx'),
