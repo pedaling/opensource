@@ -3,7 +3,7 @@ import { Box } from '../Box';
 import type { TabViewItemProps } from '../TabViewItem';
 import { withTabViewVariation } from './TabViewProps';
 
-export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobBarItem, renderTobBarContainer }) => {
+export const TabView = withTabViewVariation(({ children, onTabChange, renderTobBarItem, renderTobBarContainer }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
 
@@ -16,11 +16,11 @@ export const TabView = withTabViewVariation(({ children, onChangeTab, renderTobB
 
     setCurrentIndex(index);
 
-    onChangeTab?.();
+    onTabChange?.();
   };
 
   return (
-    <Box>
+    <Box width="100%" height="100%">
       {renderTobBarContainer(
         childrenElement.map((element, index) => (
           <Fragment key={index}>
