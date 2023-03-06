@@ -8,15 +8,13 @@ export type GridListProps<Data> = {
   data: Data[];
   renderItem: (_: { item: Data; index: number }) => ReactElement | null;
   keyExtractor: (item: Data, index: number) => string;
+  breakPoints?: number[];
   columns: ResponsiveValue<number>;
   maxRows?: ResponsiveValue<number>;
   columnSpacing?: ResponsiveValue<number>;
   rowSpacing?: ResponsiveValue<number>;
   onItemImpressed?: (item: Data, index: number | null) => void;
   onEndReached?: () => void;
-  loading?: boolean;
-  skeletonItemCount?: number;
-  renderSkeleton?: () => ReactElement;
 };
 
 export const withGridListVariation = withVariation<GridListProps<any>>('GridList')();

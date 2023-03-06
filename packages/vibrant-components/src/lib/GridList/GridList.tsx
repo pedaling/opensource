@@ -1,42 +1,26 @@
 import type { ReactElement } from 'react';
-import { FlatList } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
+import { FlatList, ThemeProvider, useCurrentTheme } from '@vibrant-ui/core';
 import type { GridListProps } from './GridListProps';
 import { withGridListVariation } from './GridListProps';
 
-export const GridList = withGridListVariation(
-  ({
-    testId = 'grid-list',
-    data,
-    renderItem,
-    loading,
-    keyExtractor,
-    skeletonItemCount = 0,
-    renderSkeleton,
-    onItemImpressed,
-    ...props
-  }) => (
-    <FlatList
-      testId={testId}
-      data={loading ? data.concat(new Array(skeletonItemCount).fill(null)) : data}
-      keyExtractor={(item, index) => (item !== null ? keyExtractor(item, index) : `grid-list-skeleton-${index}`)}
-      renderItem={itemInfo => {
-        if (itemInfo.item == null) {
-          return isDefined(renderSkeleton) ? renderSkeleton() : null;
-        }
+export const GridList = withGridListVariation(({ testId = 'grid-list', breakpoints, renderItem, ...props }) => {
+  const {
+    theme: { breakpoints: currentBreakPoints },
+  } = useCurrentTheme();
 
-        return renderItem(itemInfo);
-      }}
-      onItemImpressed={
-        isDefined(onItemImpressed)
-          ? (item, index) => {
-              if (item !== null) {
-                onItemImpressed(item, index);
-              }
-            }
-          : undefined
-      }
-      {...props}
-    />
-  )
-) as <Data extends NonNullable<unknown>>(props: GridListProps<Data>) => ReactElement;
+  if (breakpoints) {
+    return (
+      <ThemeProvider theme={{ breakpoints }}>
+        <FlatList
+          testId={testId}
+          renderItem={itemInfo => (
+            <ThemeProvider theme={{ breakpoints: currentBreakPoints }}>{renderItem(itemInfo)}</ThemeProvider>
+          )}
+          {...props}
+        ></FlatList>
+      </ThemeProvider>
+    );
+  }
+
+  return <FlatList testId={testId} renderItem={renderItem} {...props} />;
+}) as <Data extends NonNullable<unknown>>(props: GridListProps<Data>) => ReactElement;
