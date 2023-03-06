@@ -1,0 +1,81 @@
+---
+title: GridList
+---
+
+# GridList
+
+```jsx live
+<GridList
+  data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  columns={[2, 3, 4]}
+  breakpoints={[480, 720, 960]}
+  renderItem={({ item }) => (
+    <Box
+      aspectRatio={4 / 3}
+      width="100%"
+      background="onPrimaryContainer"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Body level={1} color="onPrimary">
+        {item}
+      </Body>
+    </Box>
+  )}
+  keyExtractor={(item) => item}
+  rowSpacing={8}
+  columnSpacing={8}
+/>
+```
+
+## How to use
+
+```jsx
+import { GridList } from '@vibrant-ui/components';
+```
+
+## Properties
+
+| Prop                        | Type                                         | Default | Description                                                      |
+| --------------------------- | -------------------------------------------- | ------- | ---------------------------------------------------------------- |
+| renderItem                  | () => ReactElement \| null                   |         | `data`로부터 아이템을 받아 리스트에 렌더할 요소를 지정합니다     |
+| data                        | array                                        |         | 배열 형태로 `renderItem`으로 전달될 아이템의 리스트를 지정합니다 |
+| columns                     | number                                       |         | 열의 개수                                                        |
+| maxRows                     | number                                       |         | 최대 행의 개수                                                   |
+| [breakpoints](#breakpoints) | number[]                                     |         | 오버라이드할 반응형 브레이크포인트를 지정합니다                  |
+| keyExtractor                | (item: Data, index: number) => string        |         | 주어진 아이템에 대한 키를 지정합니다                             |
+| columnSpacing               | number                                       | `0`     | 열 사이의 간격                                                   |
+| rowSpacing                  | number                                       | `0`     | 행 사이의 간격                                                   |
+| onItemImpressed             | (item: Data, index: number \| null) => void; |         | 아이템이 화면에 보이는 순간 호출되는 콜백함수                    |
+| onEndReached                | () => void;                                  |         | 리스트의 끝에 도달했을 때 호출되는 콜백함수                      |
+
+## Usage
+
+### Breakpoints
+
+`Theme`에 정의된 브레이크포인트가 아닌 커스텀한 브레이크포인트로 열의 개수나 간격 등을 설정하고 싶은 경우에 `breakpoints` 속성을 통해 해당 GridList에 커스텀한 브레이크포인트를 지정할 수 있습니다.
+
+```jsx
+<GridList
+  data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+  // 해당 브레이크포인트를 기준으로 열의 개수가 설정됩니다
+  breakpoints={[480, 720, 960]}
+  columns={[2, 3, 4]}
+  renderItem={({ item }) => (
+    <Box
+      aspectRatio={4 / 3}
+      width="100%"
+      background="onPrimaryContainer"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Body level={1} color="onPrimary">
+        {item}
+      </Body>
+    </Box>
+  )}
+  keyExtractor={(item) => item}
+  rowSpacing={8}
+  columnSpacing={8}
+/>
+```
