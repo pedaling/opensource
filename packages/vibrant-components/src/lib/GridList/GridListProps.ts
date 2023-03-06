@@ -8,7 +8,7 @@ export type GridListProps<Data> = {
   data: Data[];
   renderItem: (_: { item: Data; index: number }) => ReactElement | null;
   keyExtractor: (item: Data, index: number) => string;
-  breakPoints?: number[];
+  breakpoints?: number[];
   columns: ResponsiveValue<number>;
   maxRows?: ResponsiveValue<number>;
   columnSpacing?: ResponsiveValue<number>;
