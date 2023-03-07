@@ -17,7 +17,7 @@ export const GridList = withGridListVariation(({ testId = 'grid-list', breakpoin
             <ThemeProvider theme={{ breakpoints: currentBreakPoints }}>{renderItem(itemInfo)}</ThemeProvider>
           )}
           {...props}
-        ></FlatList>
+        />
       </ThemeProvider>
     );
   }
