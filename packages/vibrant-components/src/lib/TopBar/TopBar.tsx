@@ -13,6 +13,7 @@ export const TopBar = withTopBarVariation(
     titleAs = 'h1',
     titleLevel,
     titleCentered,
+    testId = 'top-bar',
     renderLeft,
     renderRight,
   }) => {
@@ -27,6 +28,7 @@ export const TopBar = withTopBarVariation(
     return (
       <Box
         as={as}
+        data-testid={testId}
         width="100%"
         height={52}
         px={contentArea.padding}
@@ -35,7 +37,7 @@ export const TopBar = withTopBarVariation(
       >
         <HStack mx="auto" width="100%" maxWidth={contentArea.maxWidth} spacing={16}>
           {(titleCentered || renderLeft) && (
-            <Box flexShrink={0} flexBasis={sideWidth} alignItems="flex-start">
+            <Box data-testid="top-bar-left-area" flexShrink={0} flexBasis={sideWidth} alignItems="flex-start">
               <HStack
                 onLayout={({ width }) => setLeftSideWidth(width)}
                 height="100%"
@@ -47,6 +49,7 @@ export const TopBar = withTopBarVariation(
             </Box>
           )}
           <Title
+            data-testId="top-bar-title"
             as={titleAs}
             level={titleLevel}
             flex={1}
@@ -62,7 +65,7 @@ export const TopBar = withTopBarVariation(
             {title}
           </Title>
           {(titleCentered || renderRight) && (
-            <Box flexShrink={0} flexBasis={sideWidth} alignItems="flex-end">
+            <Box data-testid="top-bar-right-area" flexShrink={0} flexBasis={sideWidth} alignItems="flex-end">
               <HStack
                 onLayout={({ width }) => setRightSideWidth(width)}
                 height="100%"
