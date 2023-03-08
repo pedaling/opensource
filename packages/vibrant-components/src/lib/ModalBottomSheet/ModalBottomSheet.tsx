@@ -185,6 +185,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
+                      loading={primaryButtonOptions.loading}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -198,6 +199,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={secondaryButtonOptions.disabled}
+                      loading={secondaryButtonOptions.loading}
                     >
                       {secondaryButtonOptions.text}
                     </ContainedButton>
@@ -207,6 +209,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
+                      loading={primaryButtonOptions.loading}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -220,6 +223,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
+                      loading={primaryButtonOptions.loading}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -228,6 +232,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         size="md"
                         onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
                         disabled={subButtonOptions.disabled}
+                        loading={subButtonOptions.loading}
                       >
                         {subButtonOptions.text}
                       </GhostButton>
