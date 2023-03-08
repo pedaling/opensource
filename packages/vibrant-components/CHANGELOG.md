@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.50.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.49.2...vibrant-components-0.50.0) (2023-03-08)
+
+
+### Features
+
+* GridList 컴포넌트를 export하고 GridList, FlatList의 문서를 작성한다 ([#607](https://github.com/pedaling/opensource/issues/607)) ([277af22](https://github.com/pedaling/opensource/commit/277af2214685b63ce6a8f36991f6fc9dd5abcada))
+* GridList 컴포넌트를 추가한다 ([#606](https://github.com/pedaling/opensource/issues/606)) ([8a36284](https://github.com/pedaling/opensource/commit/8a36284dafffba1448a31f3f4f83a13483224b93))
+
 ### [0.49.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.49.1...vibrant-components-0.49.2) (2023-03-03)
 
 

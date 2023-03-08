@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.50.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.49.2...vibrant-core-0.50.0) (2023-03-08)
+
+
+### Features
+
+* GridList 컴포넌트를 추가한다 ([#606](https://github.com/pedaling/opensource/issues/606)) ([8a36284](https://github.com/pedaling/opensource/commit/8a36284dafffba1448a31f3f4f83a13483224b93))
+
 ### [0.49.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.49.1...vibrant-core-0.49.2) (2023-03-03)
 
 

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.50.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.49.2...utils-eslint-config-0.50.0) (2023-03-08)
+
+
+### Bug Fixes
+
+* **utils-eslint-config:** add exception using _id in parameter ([#600](https://github.com/pedaling/opensource/issues/600)) ([1fc7068](https://github.com/pedaling/opensource/commit/1fc7068c876f517176dec34a6c7166919baa4408))
+
 ### [0.49.2](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.49.1...utils-eslint-config-0.49.2) (2023-03-03)
 
 ### [0.49.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.49.0...utils-eslint-config-0.49.1) (2023-02-28)
