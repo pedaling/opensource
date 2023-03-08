@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -74,9 +75,9 @@ describe('<TopBar />', () => {
           />
         );
 
-        topBarLeftSide = renderer.queryByTestId('top-bar-left-area');
+        topBarLeftSide = renderer.getByTestId('top-bar-left-area');
 
-        topBarRightSide = renderer.queryByTestId('top-bar-right-area');
+        topBarRightSide = renderer.getByTestId('top-bar-right-area');
       });
 
       it('render left should not be shown', () => {
@@ -111,6 +112,36 @@ describe('<TopBar />', () => {
 
       it('render left should not be shown', () => {
         expect(renderer.queryByTestId('top-bar-left-area')).toBeFalsy();
+      });
+    });
+  });
+
+  describe("when 'backgroundColor' prop", () => {
+    describe('is set as informative', () => {
+      beforeEach(() => {
+        renderer = render(
+          <ThemeProvider theme={{ mode: 'light' }}>
+            <TopBar kind="emphasis" title="My Liked Class" backgroundColor="informative" />
+          </ThemeProvider>
+        );
+
+        topBar = renderer.getByTestId('top-bar');
+      });
+
+      it('render right should be shown', () => {
+        expect(topBar).toHaveStyleRule('background-color', '#376dfa');
+      });
+    });
+
+    describe('is unset', () => {
+      beforeEach(() => {
+        renderer = render(<TopBar kind="emphasis" title="My Liked Class" />);
+
+        topBar = renderer.getByTestId('top-bar');
+      });
+
+      it('render right should be shown', () => {
+        expect(topBar).toHaveStyleRule('background-color', '#ffffff');
       });
     });
   });
