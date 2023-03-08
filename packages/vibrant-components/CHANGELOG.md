@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.50.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.0...vibrant-components-0.50.1) (2023-03-08)
+
+
+### Bug Fixes
+
+* set button loading state in ModalBottomSheet ([#609](https://github.com/pedaling/opensource/issues/609)) ([ac9246a](https://github.com/pedaling/opensource/commit/ac9246ab26690841ea2665184758b0674b3f32c6))
+
 ## [0.50.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.49.2...vibrant-components-0.50.0) (2023-03-08)
 
 
