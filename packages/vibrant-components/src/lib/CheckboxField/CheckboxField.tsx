@@ -45,7 +45,7 @@ export const CheckboxField = withCheckboxFieldVariation(
 
     return (
       <VStack>
-        <HStack spacing={8}>
+        <HStack spacing={8} alignVertical={helperText ? 'start' : 'center'}>
           <Checkbox
             defaultValue={isChecked}
             disabled={disabled}
