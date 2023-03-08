@@ -24,7 +24,7 @@ export type ModalBottomSheetProps = Either<
     | {
         primaryButtonOptions: ButtonOptions;
         secondaryButtonOptions?: never;
-        subButtonOptions?: ButtonOptions;
+        subButtonOptions?: Omit<ButtonOptions, 'loading'>;
       }
     | {
         primaryButtonOptions?: never;

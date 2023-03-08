@@ -232,7 +232,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         size="md"
                         onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
                         disabled={subButtonOptions.disabled}
-                        loading={subButtonOptions.loading}
                       >
                         {subButtonOptions.text}
                       </GhostButton>
