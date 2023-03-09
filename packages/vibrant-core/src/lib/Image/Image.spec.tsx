@@ -1,6 +1,7 @@
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Image } from '../Image';
+import { ThemeProvider } from '../ThemeProvider';
 
 describe('<Image />', () => {
   const { render } = createReactRenderer();
@@ -19,18 +20,38 @@ describe('<Image />', () => {
 
     describe('has responsive values', () => {
       beforeEach(() => {
+        window.innerWidth = 500;
+
         renderer = render(
-          <Image
-            src={[
-              'https://cdn.class101.net/images/58037c45-3716-4eb0-9991-d68b4489215d',
-              'https://cdn.class101.net/images/d86d2ab8-0726-403b-9d60-d133f9c5eacd',
-            ]}
-          />
+          <ThemeProvider
+            theme={{
+              breakpoints: [400, 800],
+            }}
+          >
+            <Image
+              src={[
+                'https://cdn.class101.net/images/58037c45-3716-4eb0-9991-d68b4489215d',
+                'https://cdn.class101.net/images/d86d2ab8-0726-403b-9d60-d133f9c5eacd',
+              ]}
+            />
+          </ThemeProvider>
         );
       });
 
       it('it should render every src components', () => {
         expect(renderer.getAllByTestId('image').length).toEqual(2);
+      });
+
+      it('responsive style apply on div', () => {
+        expect(renderer.queryAllByTestId('image')[0]).toHaveStyleRule('display', 'none', {
+          media: '@media screen and (min-width: 400px)',
+        });
+      });
+
+      it('responsive style apply on div', () => {
+        expect(renderer.queryAllByTestId('image')[1]).toHaveStyleRule('display', 'flex', {
+          media: '@media screen and (min-width: 400px)',
+        });
       });
     });
   });
