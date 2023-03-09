@@ -1,6 +1,9 @@
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { Box } from '../Box';
+import { ConfigProvider } from '../ConfigProvider';
 import { Image } from '../Image';
+import { Text } from '../Text';
 import { ThemeProvider } from '../ThemeProvider';
 
 describe('<Image />', () => {
@@ -123,23 +126,36 @@ describe('<Image />', () => {
     });
   });
 
-  describe('sizes prop', () => {
-    describe('is set as cover', () => {
+  describe('with dependencies', () => {
+    describe('when injected component is Box', () => {
       beforeEach(() => {
         renderer = render(
-          <Image
-            sizes={[800, 400]}
-            src={[
-              'https://dummyimage.com/100x100/000/fff',
-              'https://dummyimage.com/400x400/000/fff',
-              'https://dummyimage.com/800x800/000/fff',
-            ]}
-          />
+          <ConfigProvider
+            dependencies={{
+              image: ({ src }) => (
+                <Box>
+                  <Text data-testid="image-text">{src}</Text>
+                </Box>
+              ),
+            }}
+          >
+            <Image draggable={true} src="sample-image-src" />
+          </ConfigProvider>
         );
       });
 
-      it('it should be rendered', () => {
-        expect(renderer.getByTestId('image')).toHaveStyleRule('object-fit', 'fill');
+      it('it should be rendered with injected image component', () => {
+        expect(renderer.getByTestId('image-text').textContent).toEqual('sample-image-src');
+      });
+    });
+
+    describe('is unset', () => {
+      beforeEach(() => {
+        renderer = render(<Image src="https://cdn.class101.net/images/58037c45-3716-4eb0-9991-d68b4489215d" />);
+      });
+
+      it('default value is false', () => {
+        expect(renderer.getByTestId('image')).toHaveProperty('draggable', false);
       });
     });
   });

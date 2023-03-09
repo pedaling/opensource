@@ -49,7 +49,7 @@ export const TopBar = withTopBarVariation(
             </Box>
           )}
           <Title
-            data-testId="top-bar-title"
+            data-testid="top-bar-title"
             as={titleAs}
             level={titleLevel}
             flex={1}
