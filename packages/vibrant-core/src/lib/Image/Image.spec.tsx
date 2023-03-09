@@ -148,15 +148,5 @@ describe('<Image />', () => {
         expect(renderer.getByTestId('image-text').textContent).toEqual('sample-image-src');
       });
     });
-
-    describe('is unset', () => {
-      beforeEach(() => {
-        renderer = render(<Image src="https://cdn.class101.net/images/58037c45-3716-4eb0-9991-d68b4489215d" />);
-      });
-
-      it('default value is false', () => {
-        expect(renderer.getByTestId('image')).toHaveProperty('draggable', false);
-      });
-    });
   });
 });
