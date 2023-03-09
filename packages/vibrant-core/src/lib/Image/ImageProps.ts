@@ -10,6 +10,7 @@ type ImageProps = {
   loading?: 'eager' | 'lazy';
   sizes?: ResponsiveValue<number>;
   draggable?: boolean;
+  testId?: string;
 } & SizingSystemProps &
   MediaSystemProps &
   BorderSystemProps;
