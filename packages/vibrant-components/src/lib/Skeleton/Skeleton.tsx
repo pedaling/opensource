@@ -10,16 +10,13 @@ import type { SkeletonFieldProps } from './SkeletonField';
 import { SkeletonField } from './SkeletonField';
 import type { SkeletonImageProps } from './SkeletonImage';
 import { SkeletonImage } from './SkeletonImage';
-import { SkeletonMotion } from './SkeletonMotion';
 import type { SkeletonProps } from './SkeletonProps';
 import { withSkeletonVariation } from './SkeletonProps';
 import type { SkeletonTextProps } from './SkeletonText';
 import { SkeletonText } from './SkeletonText';
 
 export const Skeleton = withSkeletonVariation(props => (
-  <SkeletonMotion>
-    <Box backgroundColor="disable" {...props} />
-  </SkeletonMotion>
+  <Box backgroundColor="disable" {...props} />
 )) as ComponentWithRef<SkeletonProps> & {
   Image: ComponentWithRef<SkeletonImageProps>;
   Button: ComponentWithRef<SkeletonButtonProps>;

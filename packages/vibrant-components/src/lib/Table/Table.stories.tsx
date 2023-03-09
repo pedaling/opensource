@@ -3,6 +3,7 @@ import { Box } from '@vibrant-ui/core';
 import { action } from '@vibrant-ui/utils';
 import { Callout } from '../Callout';
 import { OutlinedButton } from '../OutlinedButton';
+import { VStack } from '../VStack';
 import { Table } from './Table';
 
 type Data = {
@@ -52,7 +53,11 @@ export const Basic: ComponentStory<typeof Table> = props => (
       <Table.Column<Data>
         key="name"
         dataKey="name"
-        renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
+        renderHeader={() => (
+          <VStack maxWidth={150} size="sm">
+            이름 수정
+          </VStack>
+        )}
       />
       <Table.Column<Data> key="calories" dataKey="calories" title="calories" />
       <Table.Column<Data>
