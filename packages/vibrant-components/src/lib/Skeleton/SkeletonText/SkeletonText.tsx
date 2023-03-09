@@ -1,7 +1,6 @@
 import { Box, calculateResponsiveValues, useCurrentTheme } from '@vibrant-ui/core';
 import { convertRemToPixels } from '@vibrant-ui/utils';
 import { VStack } from '../../VStack';
-import { SkeletonMotion } from '../SkeletonMotion';
 import { withSkeletonTextVariation } from './SkeletonTextProps';
 
 export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, maxWidth }) => {
@@ -23,9 +22,7 @@ export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, 
           height={lineHeight}
           alignVertical="center"
         >
-          <SkeletonMotion>
-            <Box backgroundColor="disable" height={fontSize} borderRadiusLevel={1} />
-          </SkeletonMotion>
+          <Box backgroundColor="disable" height={fontSize} borderRadiusLevel={1} />
         </VStack>
       ))}
     </VStack>
