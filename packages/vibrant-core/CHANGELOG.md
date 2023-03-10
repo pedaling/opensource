@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.50.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.50.1...vibrant-core-0.50.2) (2023-03-10)
+
+
+### Features
+
+* add Image test code ([#612](https://github.com/pedaling/opensource/issues/612)) ([d204be7](https://github.com/pedaling/opensource/commit/d204be78e78ccd53651e8c159a944a563e99cf9e))
+
 ### [0.50.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.50.0...vibrant-core-0.50.1) (2023-03-08)
 
 ## [0.50.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.49.2...vibrant-core-0.50.0) (2023-03-08)

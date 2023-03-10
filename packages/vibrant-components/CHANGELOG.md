@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.50.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.1...vibrant-components-0.50.2) (2023-03-10)
+
+
+### Features
+
+* add Image test code ([#612](https://github.com/pedaling/opensource/issues/612)) ([d204be7](https://github.com/pedaling/opensource/commit/d204be78e78ccd53651e8c159a944a563e99cf9e))
+* add TopBar test codes ([#608](https://github.com/pedaling/opensource/issues/608)) ([094c925](https://github.com/pedaling/opensource/commit/094c92563413087b36866ddb0f999e2b4f7a6897))
+* remove Skeleton Animation ([#613](https://github.com/pedaling/opensource/issues/613)) ([a95364a](https://github.com/pedaling/opensource/commit/a95364aa8b8439fc24f9a6f5a67d02620bb3b64a))
+
+
+### Bug Fixes
+
+* add alignment property in CheckBox ([#610](https://github.com/pedaling/opensource/issues/610)) ([8514834](https://github.com/pedaling/opensource/commit/85148344f1057b5ced2b68799c83757dcb3d5d6b))
+
 ### [0.50.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.0...vibrant-components-0.50.1) (2023-03-08)
 
 
