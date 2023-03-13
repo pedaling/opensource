@@ -97,7 +97,6 @@ export const DatePickerField = withDatePickerFieldVariation(
           ref={composeRef}
           value={inputValue}
           onFocus={openCalendar}
-          onClick={openCalendar}
           disabled={disabled}
           onClear={handleClear}
           placeholder={placeholder}

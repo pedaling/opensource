@@ -7,7 +7,6 @@ export type DateInputProps = {
   disabled?: boolean;
   onFocus?: () => void;
   onClear?: () => void;
-  onClick?: () => void;
   label?: string;
   placeholder?: string;
   calendarOpened?: boolean;
