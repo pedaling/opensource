@@ -4,7 +4,7 @@ import type { TextSystemProps } from '@vibrant-ui/core';
 
 export type SelectOptionGroupProps = {
   focusIndex: number;
-  onOptionClick: (index: number) => void;
+  onOptionClick: (value: string) => void;
   options: { label: string; value: string; disabled?: boolean }[];
   state?: 'default' | 'error';
   reverse?: boolean;

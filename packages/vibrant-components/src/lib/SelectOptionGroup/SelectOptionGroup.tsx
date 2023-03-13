@@ -52,7 +52,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
             {index !== 0 && <Divider direction="horizontal" />}
             <SelectOptionItem
               ref={el => el && (itemRefs.current[index] = el)}
-              onClick={() => onOptionClick(renderIndex)}
+              onClick={() => onOptionClick(options[renderIndex].value)}
               active={focusIndex === renderIndex}
               disabled={options[renderIndex].disabled}
               textTransform={textTransform}
