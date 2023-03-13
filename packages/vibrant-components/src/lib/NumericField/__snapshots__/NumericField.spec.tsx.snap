@@ -269,6 +269,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
         >
           <svg
             class="emotion-6"
+            data-testid="minus"
             viewBox="0 0 24 24"
           >
             <path
@@ -296,6 +297,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
         >
           <svg
             class="emotion-6"
+            data-testid="add"
             viewBox="0 0 24 24"
           >
             <path
