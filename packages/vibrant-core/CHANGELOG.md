@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.50.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.50.2...vibrant-core-0.50.3) (2023-03-13)
+
+
+### Features
+
+* add lineLimit as responsive value ([#611](https://github.com/pedaling/opensource/issues/611)) ([740e887](https://github.com/pedaling/opensource/commit/740e887a23a5592dc5456a414e195ab4799ab6ad))
+
 ### [0.50.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.50.1...vibrant-core-0.50.2) (2023-03-10)
 
 

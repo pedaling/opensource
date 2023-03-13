@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.50.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.2...vibrant-components-0.50.3) (2023-03-13)
+
+
+### Bug Fixes
+
+* invoke onValueChange when defaultValue changed ([#619](https://github.com/pedaling/opensource/issues/619)) ([6f464fc](https://github.com/pedaling/opensource/commit/6f464fc26d7b7b585b53a806c1c6908eadbd1d60))
+* open Calendar when clicked in DatePickerField ([#618](https://github.com/pedaling/opensource/issues/618)) ([d361723](https://github.com/pedaling/opensource/commit/d3617233e2dc2328221fbb3714f8eda6f9e01a35))
+
 ### [0.50.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.1...vibrant-components-0.50.2) (2023-03-10)
 
 
