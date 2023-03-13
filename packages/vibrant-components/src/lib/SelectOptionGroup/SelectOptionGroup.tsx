@@ -6,7 +6,7 @@ import { SelectOptionItem } from '../SelectOptionItem';
 import { withSelectOptionGroupVariation } from './SelectOptionGroupProps';
 
 export const SelectOptionGroup = withSelectOptionGroupVariation(
-  ({ options, focusIndex, onOptionClick, renderOption, reverse, textTransform, ...restProps }) => {
+  ({ options, focusIndex, onOptionClick, renderOption, reverse, textTransform, size, ...restProps }) => {
     const ref = useRef<HTMLUListElement>(null);
     const itemRefs = useRef<HTMLElement[]>([]);
     const renderIndices = reverse ? range(options.length).reverse() : range(options.length);
@@ -52,6 +52,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
             {index !== 0 && <Divider direction="horizontal" />}
             <SelectOptionItem
               ref={el => el && (itemRefs.current[index] = el)}
+              size={size}
               onClick={() => onOptionClick(options[renderIndex].value)}
               active={focusIndex === renderIndex}
               disabled={options[renderIndex].disabled}

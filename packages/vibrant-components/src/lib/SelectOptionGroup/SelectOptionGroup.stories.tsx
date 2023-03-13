@@ -23,7 +23,7 @@ export default {
         disabled: true,
       },
       {
-        label: '데일리 원피스 제작 레굴려 패키지',
+        label: '데일리 원피스 제작 레귤러 패키지',
         value: '4',
       },
     ],
