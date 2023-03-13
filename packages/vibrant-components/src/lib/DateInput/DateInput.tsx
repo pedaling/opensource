@@ -27,7 +27,6 @@ export const DateInput = withDateInputVariation(
     borderColor,
     helperText,
     autoFocus,
-    onClick,
     ...restProps
   }) => {
     const inputRef = useRef<any>(null);
