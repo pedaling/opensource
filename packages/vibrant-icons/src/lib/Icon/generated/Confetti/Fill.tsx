@@ -1,7 +1,12 @@
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
 
-export const Fill: IconComponent<IconProps, 'Fill'> = ({ size = 24, fill = 'onColor', testId, ...props }) => (
+export const Fill: IconComponent<IconProps, 'Fill'> = ({
+  size = 24,
+  fill = 'onColor',
+  testId = 'confetti',
+  ...props
+}) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M21.5 16a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
     <Svg.Path
