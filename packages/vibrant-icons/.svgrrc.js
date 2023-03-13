@@ -41,7 +41,9 @@ function template({ componentName, jsx, ...restProps }, { tpl, options }) {
 
   replaceJsxChild(jsx);
 
-  const testId = options.state.filePath.split('/')[4].toLowerCase();
+  const { filePath } = options.state;
+
+  const testId = filePath.split('/icons/')[1].split('/')[0].toLowerCase();
 
   const nl = '\n';
 
