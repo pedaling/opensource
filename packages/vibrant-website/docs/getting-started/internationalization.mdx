@@ -1,0 +1,50 @@
+---
+title: 국제화
+---
+
+# 국제화
+
+기본적으로 모든 컴포넌트에 포함되는 텍스트는 한국어로 되어 있습니다. 한국어 이외의 언어를 사용하는 유저를 위해 국제화를 위한 번역 텍스트 등의 의존성을 외부에서 설정하기 위해서는 `ConfigProvider`를 사용해야 합니다.
+
+## How to use
+
+`ConfigProvider`의 `translation` 속성으로 적절한 언어로 번역된 용어 사전을 제공합니다.
+
+```jsx live
+// import { ConfigProvider } from '@vibrant-ui/core';
+// import { TableFooter } from '@vibrant-ui/component';
+
+<ConfigProvider
+  translations={{
+    tableFooter: {
+      rowsPerPage: 'Rows per page',
+      total: 'total {count} items',
+    },
+  }}
+>
+  <TableFooter
+    pagination={true}
+    total={10}
+    pageSizeOptions={[3, 5]}
+  />
+</ConfigProvider>
+```
+
+컴포넌트별로 한국어, 영어, 일본어에 대한 번역 텍스트를 제공하고 있어 해당 번역 텍스트를 사용해서 용어 사전을 구성할 수 있습니다.
+
+```jsx live
+// import { ConfigProvider } from '@vibrant-ui/core';
+// import { TableFooter, tableFooterTranslation } from '@vibrant-ui/component';
+
+<ConfigProvider
+  translations={{
+    tableFooter: tableFooterTranslation['en'],
+  }}
+>
+  <TableFooter
+    pagination={true}
+    total={10}
+    pageSizeOptions={[3, 5]}
+  />
+</ConfigProvider>
+```
