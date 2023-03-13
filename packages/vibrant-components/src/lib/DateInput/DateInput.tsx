@@ -27,6 +27,7 @@ export const DateInput = withDateInputVariation(
     borderColor,
     helperText,
     autoFocus,
+    onClick,
     ...restProps
   }) => {
     const inputRef = useRef<any>(null);
@@ -61,6 +62,7 @@ export const DateInput = withDateInputVariation(
 
             onFocus?.();
           }}
+          onClick={onClick}
           onBlur={() => setIsFocused(false)}
           height={50}
           borderRadius={2}
