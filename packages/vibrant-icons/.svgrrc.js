@@ -47,7 +47,7 @@ function template({ componentName, jsx }, { tpl }) {
   import type { IconProps, IconComponent } from '../../IconProp';
   import { Svg } from '@vibrant-ui/core';
   ${nl}
-  export const ${componentNameWithPropType} = ({ size = 24, fill = 'onColor', ...props }) => (
+  export const ${componentNameWithPropType} = ({ size = 24, fill = 'onColor', testId, ...props }) => (
     ${jsx}
   );
   ${nl}
@@ -76,6 +76,7 @@ module.exports = {
     width: '{size}',
     height: '{size}',
     fill: '{fill}',
+    'data-testid': '{testId}',
   },
   plugins: ['@svgr/plugin-jsx'],
 };
