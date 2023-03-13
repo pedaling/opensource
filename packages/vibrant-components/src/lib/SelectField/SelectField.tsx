@@ -30,10 +30,8 @@ export const SelectField = withSelectFieldVariation(
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isOpened, setIsOpened] = useState(false);
     const [direction, setDirection] = useState<'down' | 'up'>('down');
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState<number>(
-      defaultValue ? options.findIndex(option => !option.disabled && option.value === defaultValue) : -1
-    );
-    const prevSelectedIndexRef = useRef<number | undefined>(selectedOptionIndex);
+    const [value, setValue] = useState(defaultValue);
+    const prevValueRef = useRef(value);
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
     const handleValueChange = useCallbackRef(onValueChange);
@@ -73,7 +71,7 @@ export const SelectField = withSelectFieldVariation(
       return isOpened ? 'outlineNeutral' : 'outline1';
     }, [disabled, state, isOpened]);
 
-    const selectedOption = options[selectedOptionIndex];
+    const selectedOption = options.find(option => option.value === value);
 
     const updateFocusIndex = useCallback(
       (index: number) => {
@@ -98,14 +96,18 @@ export const SelectField = withSelectFieldVariation(
     );
 
     useEffect(() => {
-      if (prevSelectedIndexRef.current !== selectedOptionIndex) {
-        setState('default');
+      setState('default');
 
-        handleValueChange?.(options[selectedOptionIndex]?.value);
+      setValue(defaultValue);
+    }, [defaultValue]);
+
+    useEffect(() => {
+      if (prevValueRef.current !== value) {
+        handleValueChange?.(value);
       }
 
-      prevSelectedIndexRef.current = selectedOptionIndex;
-    }, [handleValueChange, options, selectedOptionIndex]);
+      prevValueRef.current = value;
+    }, [handleValueChange, value]);
 
     useEffect(() => {
       setState(stateProp);
@@ -124,8 +126,8 @@ export const SelectField = withSelectFieldVariation(
         const spaceAbove = top;
         const spaceBelow = bottom;
 
-        if (selectedOptionIndex !== -1) {
-          updateFocusIndex(selectedOptionIndex);
+        if (value) {
+          updateFocusIndex(options.findIndex(option => option.value === value));
         } else {
           updateFocusIndex(index);
         }
@@ -144,7 +146,7 @@ export const SelectField = withSelectFieldVariation(
 
         onOpen?.();
       },
-      [disabled, onOpen, selectedOptionIndex, updateFocusIndex]
+      [disabled, onOpen, options, updateFocusIndex, value]
     );
 
     const close = () => {
@@ -162,7 +164,7 @@ export const SelectField = withSelectFieldVariation(
           open(0);
         },
         blur: () => inputRef.current?.blur(),
-        clear: () => setSelectedOptionIndex(-1),
+        clear: () => setValue(undefined),
         isFocused: () => inputRef.current?.isFocused(),
       }),
       [open]
@@ -185,7 +187,7 @@ export const SelectField = withSelectFieldVariation(
             }
 
             if (focusIndex !== -1) {
-              setSelectedOptionIndex(focusIndex);
+              setValue(options[focusIndex]?.value);
 
               close();
             }
@@ -277,8 +279,8 @@ export const SelectField = withSelectFieldVariation(
           {...(direction === 'down' ? { top: 56 } : { bottom: 56 })}
         >
           <SelectOptionGroup
-            onOptionClick={index => {
-              setSelectedOptionIndex(index);
+            onOptionClick={value => {
+              setValue(value);
 
               close();
 
