@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box, useCurrentTheme } from '@vibrant-ui/core';
 import { Body } from '../Body';
@@ -159,5 +159,50 @@ export const WithOnModalBottomSheet: ComponentStory<typeof SelectField> = props 
         )}
       />
     </VStack>
+  );
+};
+
+export const ControlledDefaultValue: ComponentStory<typeof SelectField> = () => {
+  const [size, setSize] = useState<string>('level1');
+
+  const weightOptions = useMemo(() => {
+    if (size === 'level1' || size === 'level2' || size === 'level3') {
+      return ['extraBold'];
+    }
+
+    return ['regular', 'extraBold'];
+  }, [size]);
+
+  const [weight, setWeight] = useState<string>(weightOptions[0]);
+
+  const sizeOptions = ['level1', 'level2', 'level3', 'level4'];
+
+  useEffect(() => {
+    setWeight(weightOptions[0]);
+  }, [weightOptions]);
+
+  return (
+    <Box width="100%">
+      <SelectField
+        label="Size"
+        options={sizeOptions.map(name => ({ label: name, value: name }))}
+        defaultValue={size}
+        onValueChange={value => {
+          if (value) {
+            setSize(value);
+          }
+        }}
+      />
+      <SelectField
+        label="Weight"
+        options={weightOptions.map(name => ({ label: name, value: name }))}
+        defaultValue={weight}
+        onValueChange={value => {
+          if (value) {
+            setWeight(value);
+          }
+        }}
+      />
+    </Box>
   );
 };
