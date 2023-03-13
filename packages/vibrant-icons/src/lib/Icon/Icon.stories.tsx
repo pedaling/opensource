@@ -27,6 +27,9 @@ export default {
     fill: {
       type: 'string',
     },
+    testId: {
+      type: 'string',
+    },
   },
 };
 

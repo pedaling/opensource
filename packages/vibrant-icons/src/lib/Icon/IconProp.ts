@@ -7,4 +7,5 @@ export type IconComponent<Props, Type extends 'Fill' | 'Regular' | 'Thin'> = FC<
 
 export type IconProps = Pick<BoxProps, 'fill'> & {
   size?: ResponsiveValue<number>;
+  testId?: string;
 };
