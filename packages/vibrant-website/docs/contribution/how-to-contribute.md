@@ -3,7 +3,6 @@ title: 기여하는 방법
 sidebar_position: 1
 ---
 
-# Vibrant UI 에 기여하세요
 
 Vibrant Design System은 오픈소스로 개발중이며, [Github](https://github.com/pedaling/opensource)에 공개되어있습니다.
 
@@ -11,6 +10,7 @@ Vibrant Design System은 오픈소스로 개발중이며, [Github](https://githu
 
 
 ## PR 생성으로 기여하기
+
 
 
 ### PR ticket 생성하기
@@ -28,24 +28,29 @@ PR 생성을 진행하기 전 branch 이름을 설정하기 위해 사전 이슈
 
 ### branch 작업하기
 
+Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 아래와 같은 수순을 따라 진행합니다.
 
-• [Vibrant opensource](https://github.com/pedaling/opensource) 리포지토리를 fork 합니다.
-
-• fork 된 리포지토리를 clone 합니다.
-
-• `main` 브랜치로부터 본인의 branch 를 새로 분기합니다. branch 이름은 티켓의 이름 (ex. `vs-20`) 으로 설정합니다.
-
-• 본인의 branch 에 작업을 한 후, `main` 을 base 로 PR을 생성합니다.
+본격적인 개발에 앞서, vibrant 가 따르고 있는 [디자인 규칙](./develope-principle.md) 을 읽어보시는 것을 권장드립니다.
 
 
+(1) [Vibrant opensource](https://github.com/pedaling/opensource) 리포지토리를 fork 합니다.
 
-### PR 가이드라인
+(2) fork 된 리포지토리를 clone 합니다.
+
+(3) `main` 브랜치로부터 본인의 branch 를 새로 분기합니다. branch 이름은 티켓의 이름 (ex. `vs-20`) 으로 설정합니다.
+
+(4) 본인의 branch 에 작업을 한 후, `main` 을 base 로 PR을 생성합니다.
+
+
+
+### Pull Request 
 
 • PR 에는 변경 전/후의 스크린샷과 더불어 변경한 내용을 기술합니다.
 
 • PR 은 자동으로 등록되어있는 CI/CD 체크를 통과해야 리뷰 단계를 거칠 수 있습니다.
 
 • PR 은 모든 리뷰어들의 댓글이 해결되고, 1개 이상의 승인을 받아야 머지될 수 있습니다. 
+
 
 
 ### 배포와 버전관리
@@ -55,6 +60,15 @@ PR 생성을 진행하기 전 branch 이름을 설정하기 위해 사전 이슈
 릴리즈는 시급한 요청이 있을 시에는 하루에 2번 이상 나가기도 하지만, 대체적으로는 일주일에 1번 이상 진행됩니다.
 
 버전 관리는 [유의적 버전](https://semver.org/lang/ko/) 을 따릅니다.
+
+
+• `patch` : 기존 버전과 호환되면서 버그 및 디자인을 수정한 버전
+
+• `minor` : 기존 버전과 호환되면서 새로운 기능을 추가한 버전
+
+• `major` : 기존 버전과 호환되지 않게 API 가 바뀌는 모든 수정 버전
+
+
 
 
 ## 이슈 보고를 통해 기여하기
