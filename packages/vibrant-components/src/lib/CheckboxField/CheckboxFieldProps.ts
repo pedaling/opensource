@@ -4,6 +4,7 @@ import type { CheckboxProps } from '../Checkbox';
 
 export type CheckboxFieldProps = CheckboxProps & {
   label: string;
+  testId?: string;
 } & (
     | {
         helperText?: never;

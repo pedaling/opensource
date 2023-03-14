@@ -12,6 +12,7 @@ export type CheckboxFieldOption<Value extends string> = DistributivePick<
    * This is not displayed on the client-side.
    */
   value: Value;
+  testId?: string;
 };
 
 export type CheckboxGroupFieldProps<Value extends string, Options extends readonly CheckboxFieldOption<Value>[]> = {

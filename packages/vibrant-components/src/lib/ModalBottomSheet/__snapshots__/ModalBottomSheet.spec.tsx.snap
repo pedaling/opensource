@@ -353,6 +353,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   >
     <div
       class="emotion-1"
+      data-testid="backdrop"
       style="opacity: 1; position: fixed;"
     >
       <div
@@ -770,6 +771,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   >
     <div
       class="emotion-1"
+      data-testid="backdrop"
       style="opacity: 1; position: fixed; overflow: auto;"
     >
       <div

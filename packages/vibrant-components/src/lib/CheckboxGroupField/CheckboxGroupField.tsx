@@ -6,7 +6,15 @@ import type { CheckboxFieldOption, CheckboxGroupFieldProps } from './CheckboxGro
 import { withCheckboxGroupFieldVariation } from './CheckboxGroupFieldProps';
 
 export const CheckboxGroupField = withCheckboxGroupFieldVariation(
-  ({ options, defaultValue, disabled = false, size = 'md', spacing = 16, onValueChange }) => {
+  ({
+    options,
+    defaultValue,
+    disabled = false,
+    size = 'md',
+    spacing = 16,
+    testId = 'checkbox-group-field',
+    onValueChange,
+  }) => {
     const [checkboxValue, setCheckboxValue] = useState(
       () =>
         defaultValue ?? options.reduce((prevValue, currentValue) => ({ ...prevValue, [currentValue.value]: false }), {})
@@ -31,7 +39,7 @@ export const CheckboxGroupField = withCheckboxGroupFieldVariation(
     };
 
     return (
-      <VStack spacing={spacing}>
+      <VStack spacing={spacing} data-testid={testId}>
         {options.map(({ value, ...checkboxFieldProps }) => (
           <CheckboxField
             key={value}

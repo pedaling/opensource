@@ -11,7 +11,7 @@ import { VStack } from '../VStack';
 import { withCalendarVariation } from './CalendarProps';
 
 export const Calendar = withCalendarVariation(
-  ({ date, startDate, endDate, onDateRangeSelect, range, onDateSelect, ...restProps }) => {
+  ({ date, startDate, endDate, onDateRangeSelect, range, onDateSelect, testId = 'calendar', ...restProps }) => {
     const {
       translations: { calendar: calendarTranslation },
     } = useConfig();
@@ -117,6 +117,7 @@ export const Calendar = withCalendarVariation(
         width={320}
         elevationLevel={2}
         borderRadiusLevel={1}
+        testId={testId}
         {...restProps}
       >
         <VStack spacing={24}>

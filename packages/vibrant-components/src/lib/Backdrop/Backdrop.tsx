@@ -5,7 +5,17 @@ import { Pressable } from '../Pressable';
 import { withBackdropVariation } from './BackdropProps';
 
 export const Backdrop = withBackdropVariation(
-  ({ open, children, zIndex, color = 'dim', transitionDuration = 0, onClick, scrollable, ...restProps }) => {
+  ({
+    open,
+    children,
+    zIndex,
+    color = 'dim',
+    transitionDuration = 0,
+    onClick,
+    scrollable,
+    testId = 'backdrop',
+    ...restProps
+  }) => {
     const [isMount, setIsMount] = useState(open);
 
     useEffect(() => {
@@ -43,6 +53,7 @@ export const Backdrop = withBackdropVariation(
           left={0}
           backgroundColor={color}
           scrollable={scrollable}
+          data-testid={testId}
         >
           <KeyboardAvoidingBox>
             <Box flex={1} {...restProps}>

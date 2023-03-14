@@ -4,8 +4,15 @@ import { Pressable } from '../Pressable';
 import { withCalendarDateItemVariation } from './CalendarDateItemProps';
 
 export const CalenderDateItem = withCalendarDateItemVariation(
-  ({ date, onClick, color, today, range, ...restProps }) => (
-    <Pressable onClick={() => onClick(date)} position="relative" overflow="visible" width={40} height={40}>
+  ({ date, onClick, color, today, range, testId = 'calender-date-item', ...restProps }) => (
+    <Pressable
+      onClick={() => onClick(date)}
+      position="relative"
+      overflow="visible"
+      width={40}
+      height={40}
+      data-testid={testId}
+    >
       <>
         <Box
           position="absolute"

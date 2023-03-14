@@ -7,6 +7,7 @@ export type CalendarDateItemProps = {
   today: boolean;
   onClick: (date: Date) => void;
   range: 'end' | 'start' | false | true;
+  testId?: string;
 };
 
 export const withCalendarDateItemVariation = withVariation<CalendarDateItemProps>('CalendarDateItem')(
