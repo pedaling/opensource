@@ -25,6 +25,15 @@ export const SelectField = withSelectFieldVariation(
     zIndex,
     testId = 'select-field',
     optionTextTransform = 'none',
+    size,
+    height,
+    px,
+    bodyLevel,
+    helperTextBodyLevel,
+    helperTextSpacing,
+    optionsOffset,
+    iconSize,
+    iconSpacing,
     ...restProps
   }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
@@ -51,13 +60,7 @@ export const SelectField = withSelectFieldVariation(
       return 'onView2';
     }, [disabled, state]);
 
-    const placeholderColor = useMemo(() => {
-      if (disabled || state === 'error') {
-        return 'onView3';
-      }
-
-      return 'onView2';
-    }, [disabled, state]);
+    const placeholderColor = 'onView3';
 
     const borderColor = useMemo(() => {
       if (disabled) {
@@ -208,8 +211,8 @@ export const SelectField = withSelectFieldVariation(
           ref={ref}
           alignItems="center"
           flexDirection="row"
-          height={50}
-          px={16}
+          height={height}
+          px={px}
           borderWidth={1}
           borderStyle="solid"
           borderColor={borderColor}
@@ -219,13 +222,13 @@ export const SelectField = withSelectFieldVariation(
           {...restProps}
         >
           <HStack alignVertical="center" width="100%">
-            <Box as="span" flex={1} pr={12} minWidth={0}>
+            <Box as="span" flex={1} pr={iconSpacing} minWidth={0}>
               {selectedOption ? (
                 <Box as="span" flexDirection={inlineLabel ? 'row' : 'column'}>
                   {Boolean(label) && (
                     <>
                       <Body
-                        level={inlineLabel ? 2 : 6}
+                        level={inlineLabel ? bodyLevel : 6}
                         color={labelColor}
                         lineLimit={1}
                         flexGrow={0}
@@ -236,14 +239,14 @@ export const SelectField = withSelectFieldVariation(
                         {label}
                       </Body>
                       <Box as="span" flexShrink={0} hidden={!inlineLabel}>
-                        <Body level={2} color={disabled ? 'onView3' : 'onView2'}>
+                        <Body level={bodyLevel} color={disabled ? 'onView3' : 'onView2'}>
                           &nbsp;/&nbsp;
                         </Body>
                       </Box>
                     </>
                   )}
                   <Body
-                    level={2}
+                    level={bodyLevel}
                     color={disabled ? 'onView3' : 'onView1'}
                     lineLimit={1}
                     textTransform={optionTextTransform}
@@ -253,7 +256,7 @@ export const SelectField = withSelectFieldVariation(
                 </Box>
               ) : (
                 <Body
-                  level={2}
+                  level={bodyLevel}
                   color={label ? labelColor : placeholderColor}
                   lineLimit={1}
                   wordBreak="break-all"
@@ -263,8 +266,8 @@ export const SelectField = withSelectFieldVariation(
                 </Body>
               )}
             </Box>
-            <Icon.ArrowTriangleDown.Regular
-              size={20}
+            <Icon.ArrowTriangleDown.Thin
+              size={iconSize}
               fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
             />
           </HStack>
@@ -276,9 +279,10 @@ export const SelectField = withSelectFieldVariation(
           width="100%"
           maxHeight={[optionGroupMaxHeight, optionGroupMaxHeight, 336]}
           zIndex={zIndex}
-          {...(direction === 'down' ? { top: 56 } : { bottom: 56 })}
+          {...(direction === 'down' ? { top: optionsOffset } : { bottom: optionsOffset })}
         >
           <SelectOptionGroup
+            size={size}
             onOptionClick={value => {
               setValue(value);
 
@@ -295,7 +299,13 @@ export const SelectField = withSelectFieldVariation(
           />
         </OverlayBox>
         {Boolean(helperText) && (
-          <Body level={4} color={state === 'error' ? 'error' : 'onView2'} wordBreak="keep-all" wordWrap="break-word">
+          <Body
+            level={helperTextBodyLevel}
+            color={state === 'error' ? 'error' : 'onView2'}
+            wordBreak="keep-all"
+            wordWrap="break-word"
+            mt={helperTextSpacing}
+          >
             {helperText}
           </Body>
         )}

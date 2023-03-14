@@ -1,8 +1,9 @@
 import type { ReactElement } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { TextSystemProps } from '@vibrant-ui/core';
+import type { ResponsiveValue, TextSystemProps } from '@vibrant-ui/core';
 
 export type SelectOptionGroupProps = {
+  size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
   focusIndex: number;
   onOptionClick: (value: string) => void;
   options: { label: string; value: string; disabled?: boolean }[];
