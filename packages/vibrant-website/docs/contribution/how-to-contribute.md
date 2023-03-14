@@ -37,9 +37,9 @@ Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 �
 
 (1) [Vibrant opensource](https://github.com/pedaling/opensource) 리포지토리를 clone 합니다.
 
-(3) `main` 브랜치로부터 본인의 branch 를 새로 분기합니다. branch 이름은 티켓의 이름 (ex. `vs-20`) 으로 설정합니다.
+(2) `main` 브랜치로부터 본인의 branch 를 새로 분기합니다. branch 이름은 티켓의 이름 (ex. `vs-20`) 으로 설정합니다.
 
-(4) 본인의 branch 에 작업을 한 후, `main` 을 base 로 PR을 생성합니다.
+(3) 본인의 branch 에 작업을 한 후, `main` 을 base 로 PR을 생성합니다.
 
 
 
