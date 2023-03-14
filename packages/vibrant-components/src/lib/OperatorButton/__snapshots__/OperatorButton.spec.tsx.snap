@@ -130,7 +130,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
     >
       <svg
         class="emotion-3"
-        data-testid="add"
+        data-testid="add-regular"
         viewBox="0 0 24 24"
       >
         <path

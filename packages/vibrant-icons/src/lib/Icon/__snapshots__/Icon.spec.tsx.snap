@@ -43,7 +43,7 @@ exports[`<Icon /> when Add.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="add"
+    data-testid="add-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -97,7 +97,7 @@ exports[`<Icon /> when Add.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="add"
+    data-testid="add-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -151,7 +151,7 @@ exports[`<Icon /> when Add.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="add"
+    data-testid="add-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -205,7 +205,7 @@ exports[`<Icon /> when AddCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="addcircle"
+    data-testid="addcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -259,7 +259,7 @@ exports[`<Icon /> when AddCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="addcircle"
+    data-testid="addcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -317,7 +317,7 @@ exports[`<Icon /> when AddCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="addcircle"
+    data-testid="addcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -375,7 +375,7 @@ exports[`<Icon /> when Alert.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="alert"
+    data-testid="alert-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -429,7 +429,7 @@ exports[`<Icon /> when Alert.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="alert"
+    data-testid="alert-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -487,7 +487,7 @@ exports[`<Icon /> when Alert.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="alert"
+    data-testid="alert-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -545,7 +545,7 @@ exports[`<Icon /> when AlertCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="alertcircle"
+    data-testid="alertcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -599,7 +599,7 @@ exports[`<Icon /> when AlertCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="alertcircle"
+    data-testid="alertcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -657,7 +657,7 @@ exports[`<Icon /> when AlertCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="alertcircle"
+    data-testid="alertcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -715,7 +715,7 @@ exports[`<Icon /> when Analysis.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="analysis"
+    data-testid="analysis-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -769,7 +769,7 @@ exports[`<Icon /> when Analysis.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="analysis"
+    data-testid="analysis-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -823,7 +823,7 @@ exports[`<Icon /> when Analysis.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="analysis"
+    data-testid="analysis-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -877,7 +877,7 @@ exports[`<Icon /> when AppDownloadCircle.Fill Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="appdownloadcircle"
+    data-testid="appdownloadcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -931,7 +931,7 @@ exports[`<Icon /> when AppDownloadCircle.Regular Icon rendered match snapshot 1`
 <div>
   <svg
     class="emotion-0"
-    data-testid="appdownloadcircle"
+    data-testid="appdownloadcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -989,7 +989,7 @@ exports[`<Icon /> when AppDownloadCircle.Thin Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="appdownloadcircle"
+    data-testid="appdownloadcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -1051,7 +1051,7 @@ exports[`<Icon /> when AppleCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="applecircle"
+    data-testid="applecircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -1105,7 +1105,7 @@ exports[`<Icon /> when AppleCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="applecircle"
+    data-testid="applecircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -1165,7 +1165,7 @@ exports[`<Icon /> when AppleCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="applecircle"
+    data-testid="applecircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -1225,7 +1225,7 @@ exports[`<Icon /> when Archive.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="archive"
+    data-testid="archive-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -1279,7 +1279,7 @@ exports[`<Icon /> when Archive.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="archive"
+    data-testid="archive-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -1337,7 +1337,7 @@ exports[`<Icon /> when Archive.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="archive"
+    data-testid="archive-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -1395,7 +1395,7 @@ exports[`<Icon /> when ArrowDown.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowdown"
+    data-testid="arrowdown-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -1449,7 +1449,7 @@ exports[`<Icon /> when ArrowDown.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowdown"
+    data-testid="arrowdown-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -1503,7 +1503,7 @@ exports[`<Icon /> when ArrowDown.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowdown"
+    data-testid="arrowdown-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -1557,7 +1557,7 @@ exports[`<Icon /> when ArrowDownToLine.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowdowntoline"
+    data-testid="arrowdowntoline-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -1611,7 +1611,7 @@ exports[`<Icon /> when ArrowDownToLine.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowdowntoline"
+    data-testid="arrowdowntoline-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -1665,7 +1665,7 @@ exports[`<Icon /> when ArrowDownToLine.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowdowntoline"
+    data-testid="arrowdowntoline-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -1719,7 +1719,7 @@ exports[`<Icon /> when ArrowLeft.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowleft"
+    data-testid="arrowleft-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -1773,7 +1773,7 @@ exports[`<Icon /> when ArrowLeft.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowleft"
+    data-testid="arrowleft-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -1827,7 +1827,7 @@ exports[`<Icon /> when ArrowLeft.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowleft"
+    data-testid="arrowleft-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -1881,7 +1881,7 @@ exports[`<Icon /> when ArrowLeftToLine.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowlefttoline"
+    data-testid="arrowlefttoline-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -1935,7 +1935,7 @@ exports[`<Icon /> when ArrowLeftToLine.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowlefttoline"
+    data-testid="arrowlefttoline-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -1989,7 +1989,7 @@ exports[`<Icon /> when ArrowLeftToLine.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowlefttoline"
+    data-testid="arrowlefttoline-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -2043,7 +2043,7 @@ exports[`<Icon /> when ArrowRight.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowright"
+    data-testid="arrowright-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -2097,7 +2097,7 @@ exports[`<Icon /> when ArrowRight.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowright"
+    data-testid="arrowright-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -2151,7 +2151,7 @@ exports[`<Icon /> when ArrowRight.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowright"
+    data-testid="arrowright-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -2205,7 +2205,7 @@ exports[`<Icon /> when ArrowRightToLine.Fill Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowrighttoline"
+    data-testid="arrowrighttoline-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -2259,7 +2259,7 @@ exports[`<Icon /> when ArrowRightToLine.Regular Icon rendered match snapshot 1`]
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowrighttoline"
+    data-testid="arrowrighttoline-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -2313,7 +2313,7 @@ exports[`<Icon /> when ArrowRightToLine.Thin Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowrighttoline"
+    data-testid="arrowrighttoline-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -2367,7 +2367,7 @@ exports[`<Icon /> when ArrowTriangleDown.Fill Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowtriangledown"
+    data-testid="arrowtriangledown-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -2421,7 +2421,7 @@ exports[`<Icon /> when ArrowTriangleDown.Regular Icon rendered match snapshot 1`
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowtriangledown"
+    data-testid="arrowtriangledown-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -2475,7 +2475,7 @@ exports[`<Icon /> when ArrowTriangleDown.Thin Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowtriangledown"
+    data-testid="arrowtriangledown-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -2529,7 +2529,7 @@ exports[`<Icon /> when ArrowTriangleUp.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowtriangleup"
+    data-testid="arrowtriangleup-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -2583,7 +2583,7 @@ exports[`<Icon /> when ArrowTriangleUp.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowtriangleup"
+    data-testid="arrowtriangleup-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -2637,7 +2637,7 @@ exports[`<Icon /> when ArrowTriangleUp.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowtriangleup"
+    data-testid="arrowtriangleup-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -2691,7 +2691,7 @@ exports[`<Icon /> when ArrowUp.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowup"
+    data-testid="arrowup-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -2745,7 +2745,7 @@ exports[`<Icon /> when ArrowUp.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowup"
+    data-testid="arrowup-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -2799,7 +2799,7 @@ exports[`<Icon /> when ArrowUp.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowup"
+    data-testid="arrowup-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -2853,7 +2853,7 @@ exports[`<Icon /> when ArrowUpToLine.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowuptoline"
+    data-testid="arrowuptoline-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -2907,7 +2907,7 @@ exports[`<Icon /> when ArrowUpToLine.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowuptoline"
+    data-testid="arrowuptoline-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -2961,7 +2961,7 @@ exports[`<Icon /> when ArrowUpToLine.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="arrowuptoline"
+    data-testid="arrowuptoline-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -3015,7 +3015,7 @@ exports[`<Icon /> when Aspectratio.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="aspectratio"
+    data-testid="aspectratio-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -3071,7 +3071,7 @@ exports[`<Icon /> when Aspectratio.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="aspectratio"
+    data-testid="aspectratio-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -3127,7 +3127,7 @@ exports[`<Icon /> when Aspectratio.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="aspectratio"
+    data-testid="aspectratio-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -3183,7 +3183,7 @@ exports[`<Icon /> when BCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bcircle"
+    data-testid="bcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -3241,7 +3241,7 @@ exports[`<Icon /> when BCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bcircle"
+    data-testid="bcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -3299,7 +3299,7 @@ exports[`<Icon /> when BCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bcircle"
+    data-testid="bcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -3357,7 +3357,7 @@ exports[`<Icon /> when Badge.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="badge"
+    data-testid="badge-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -3411,7 +3411,7 @@ exports[`<Icon /> when Badge.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="badge"
+    data-testid="badge-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -3469,7 +3469,7 @@ exports[`<Icon /> when Badge.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="badge"
+    data-testid="badge-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -3527,7 +3527,7 @@ exports[`<Icon /> when Bell.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bell"
+    data-testid="bell-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -3581,7 +3581,7 @@ exports[`<Icon /> when Bell.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bell"
+    data-testid="bell-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -3635,7 +3635,7 @@ exports[`<Icon /> when Bell.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bell"
+    data-testid="bell-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -3689,7 +3689,7 @@ exports[`<Icon /> when BellOff.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="belloff"
+    data-testid="belloff-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -3743,7 +3743,7 @@ exports[`<Icon /> when BellOff.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="belloff"
+    data-testid="belloff-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -3797,7 +3797,7 @@ exports[`<Icon /> when BellOff.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="belloff"
+    data-testid="belloff-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -3851,7 +3851,7 @@ exports[`<Icon /> when Bold.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bold"
+    data-testid="bold-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -3905,7 +3905,7 @@ exports[`<Icon /> when Bold.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bold"
+    data-testid="bold-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -3959,7 +3959,7 @@ exports[`<Icon /> when Bold.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bold"
+    data-testid="bold-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -4013,7 +4013,7 @@ exports[`<Icon /> when Bookmark.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bookmark"
+    data-testid="bookmark-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -4067,7 +4067,7 @@ exports[`<Icon /> when Bookmark.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bookmark"
+    data-testid="bookmark-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -4121,7 +4121,7 @@ exports[`<Icon /> when Bookmark.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="bookmark"
+    data-testid="bookmark-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -4175,7 +4175,7 @@ exports[`<Icon /> when Brightness.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="brightness"
+    data-testid="brightness-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -4229,7 +4229,7 @@ exports[`<Icon /> when Brightness.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="brightness"
+    data-testid="brightness-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -4283,7 +4283,7 @@ exports[`<Icon /> when Brightness.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="brightness"
+    data-testid="brightness-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -4337,7 +4337,7 @@ exports[`<Icon /> when Calendar.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="calendar"
+    data-testid="calendar-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -4391,7 +4391,7 @@ exports[`<Icon /> when Calendar.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="calendar"
+    data-testid="calendar-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -4449,7 +4449,7 @@ exports[`<Icon /> when Calendar.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="calendar"
+    data-testid="calendar-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -4507,7 +4507,7 @@ exports[`<Icon /> when Camera.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="camera"
+    data-testid="camera-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -4565,7 +4565,7 @@ exports[`<Icon /> when Camera.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="camera"
+    data-testid="camera-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -4623,7 +4623,7 @@ exports[`<Icon /> when Camera.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="camera"
+    data-testid="camera-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -4681,7 +4681,7 @@ exports[`<Icon /> when Caption.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="caption"
+    data-testid="caption-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -4739,7 +4739,7 @@ exports[`<Icon /> when Caption.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="caption"
+    data-testid="caption-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -4797,7 +4797,7 @@ exports[`<Icon /> when Caption.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="caption"
+    data-testid="caption-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -4855,7 +4855,7 @@ exports[`<Icon /> when Cart.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="cart"
+    data-testid="cart-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -4909,7 +4909,7 @@ exports[`<Icon /> when Cart.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="cart"
+    data-testid="cart-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -4963,7 +4963,7 @@ exports[`<Icon /> when Cart.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="cart"
+    data-testid="cart-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -5017,7 +5017,7 @@ exports[`<Icon /> when Check.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="check"
+    data-testid="check-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -5071,7 +5071,7 @@ exports[`<Icon /> when Check.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="check"
+    data-testid="check-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -5125,7 +5125,7 @@ exports[`<Icon /> when Check.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="check"
+    data-testid="check-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -5179,7 +5179,7 @@ exports[`<Icon /> when CheckCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkcircle"
+    data-testid="checkcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -5233,7 +5233,7 @@ exports[`<Icon /> when CheckCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkcircle"
+    data-testid="checkcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -5291,7 +5291,7 @@ exports[`<Icon /> when CheckCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkcircle"
+    data-testid="checkcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -5349,7 +5349,7 @@ exports[`<Icon /> when CheckboxIndeterminate.Fill Icon rendered match snapshot 1
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxindeterminate"
+    data-testid="checkboxindeterminate-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -5403,7 +5403,7 @@ exports[`<Icon /> when CheckboxIndeterminate.Regular Icon rendered match snapsho
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxindeterminate"
+    data-testid="checkboxindeterminate-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -5457,7 +5457,7 @@ exports[`<Icon /> when CheckboxIndeterminate.Thin Icon rendered match snapshot 1
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxindeterminate"
+    data-testid="checkboxindeterminate-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -5511,7 +5511,7 @@ exports[`<Icon /> when CheckboxOff.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxoff"
+    data-testid="checkboxoff-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -5567,7 +5567,7 @@ exports[`<Icon /> when CheckboxOff.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxoff"
+    data-testid="checkboxoff-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -5623,7 +5623,7 @@ exports[`<Icon /> when CheckboxOff.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxoff"
+    data-testid="checkboxoff-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -5679,7 +5679,7 @@ exports[`<Icon /> when CheckboxOn.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxon"
+    data-testid="checkboxon-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -5735,7 +5735,7 @@ exports[`<Icon /> when CheckboxOn.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxon"
+    data-testid="checkboxon-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -5791,7 +5791,7 @@ exports[`<Icon /> when CheckboxOn.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="checkboxon"
+    data-testid="checkboxon-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -5847,7 +5847,7 @@ exports[`<Icon /> when ChevronDown.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevrondown"
+    data-testid="chevrondown-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -5901,7 +5901,7 @@ exports[`<Icon /> when ChevronDown.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevrondown"
+    data-testid="chevrondown-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -5955,7 +5955,7 @@ exports[`<Icon /> when ChevronDown.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevrondown"
+    data-testid="chevrondown-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -6009,7 +6009,7 @@ exports[`<Icon /> when ChevronLeft.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronleft"
+    data-testid="chevronleft-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -6063,7 +6063,7 @@ exports[`<Icon /> when ChevronLeft.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronleft"
+    data-testid="chevronleft-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -6117,7 +6117,7 @@ exports[`<Icon /> when ChevronLeft.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronleft"
+    data-testid="chevronleft-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -6171,7 +6171,7 @@ exports[`<Icon /> when ChevronRight.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronright"
+    data-testid="chevronright-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -6225,7 +6225,7 @@ exports[`<Icon /> when ChevronRight.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronright"
+    data-testid="chevronright-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -6279,7 +6279,7 @@ exports[`<Icon /> when ChevronRight.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronright"
+    data-testid="chevronright-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -6333,7 +6333,7 @@ exports[`<Icon /> when ChevronUp.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronup"
+    data-testid="chevronup-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -6387,7 +6387,7 @@ exports[`<Icon /> when ChevronUp.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronup"
+    data-testid="chevronup-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -6441,7 +6441,7 @@ exports[`<Icon /> when ChevronUp.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="chevronup"
+    data-testid="chevronup-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -6495,7 +6495,7 @@ exports[`<Icon /> when Clap.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clap"
+    data-testid="clap-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -6549,7 +6549,7 @@ exports[`<Icon /> when Clap.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clap"
+    data-testid="clap-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -6603,7 +6603,7 @@ exports[`<Icon /> when Clap.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clap"
+    data-testid="clap-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -6657,7 +6657,7 @@ exports[`<Icon /> when ClearStyle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clearstyle"
+    data-testid="clearstyle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -6711,7 +6711,7 @@ exports[`<Icon /> when ClearStyle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clearstyle"
+    data-testid="clearstyle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -6765,7 +6765,7 @@ exports[`<Icon /> when ClearStyle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clearstyle"
+    data-testid="clearstyle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -6819,7 +6819,7 @@ exports[`<Icon /> when Clip.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clip"
+    data-testid="clip-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -6873,7 +6873,7 @@ exports[`<Icon /> when Clip.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clip"
+    data-testid="clip-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -6927,7 +6927,7 @@ exports[`<Icon /> when Clip.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clip"
+    data-testid="clip-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -6981,7 +6981,7 @@ exports[`<Icon /> when Clock.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clock"
+    data-testid="clock-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -7035,7 +7035,7 @@ exports[`<Icon /> when Clock.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clock"
+    data-testid="clock-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -7093,7 +7093,7 @@ exports[`<Icon /> when Clock.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="clock"
+    data-testid="clock-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -7151,7 +7151,7 @@ exports[`<Icon /> when Close.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="close"
+    data-testid="close-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -7205,7 +7205,7 @@ exports[`<Icon /> when Close.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="close"
+    data-testid="close-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -7259,7 +7259,7 @@ exports[`<Icon /> when Close.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="close"
+    data-testid="close-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -7313,7 +7313,7 @@ exports[`<Icon /> when CloseCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="closecircle"
+    data-testid="closecircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -7367,7 +7367,7 @@ exports[`<Icon /> when CloseCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="closecircle"
+    data-testid="closecircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -7425,7 +7425,7 @@ exports[`<Icon /> when CloseCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="closecircle"
+    data-testid="closecircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -7483,7 +7483,7 @@ exports[`<Icon /> when Comment.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="comment"
+    data-testid="comment-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -7537,7 +7537,7 @@ exports[`<Icon /> when Comment.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="comment"
+    data-testid="comment-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -7595,7 +7595,7 @@ exports[`<Icon /> when Comment.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="comment"
+    data-testid="comment-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -7653,7 +7653,7 @@ exports[`<Icon /> when Compass.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="compass"
+    data-testid="compass-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -7707,7 +7707,7 @@ exports[`<Icon /> when Compass.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="compass"
+    data-testid="compass-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -7765,7 +7765,7 @@ exports[`<Icon /> when Compass.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="compass"
+    data-testid="compass-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -7823,7 +7823,7 @@ exports[`<Icon /> when Confetti.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="confetti"
+    data-testid="confetti-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -7887,7 +7887,7 @@ exports[`<Icon /> when Confetti.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="confetti"
+    data-testid="confetti-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -7941,7 +7941,7 @@ exports[`<Icon /> when Confetti.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="confetti"
+    data-testid="confetti-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -8005,7 +8005,7 @@ exports[`<Icon /> when Contents.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="contents"
+    data-testid="contents-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -8059,7 +8059,7 @@ exports[`<Icon /> when Contents.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="contents"
+    data-testid="contents-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -8117,7 +8117,7 @@ exports[`<Icon /> when Contents.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="contents"
+    data-testid="contents-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -8175,7 +8175,7 @@ exports[`<Icon /> when Copy.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="copy"
+    data-testid="copy-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -8233,7 +8233,7 @@ exports[`<Icon /> when Copy.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="copy"
+    data-testid="copy-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -8291,7 +8291,7 @@ exports[`<Icon /> when Copy.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="copy"
+    data-testid="copy-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -8349,7 +8349,7 @@ exports[`<Icon /> when Coupon.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="coupon"
+    data-testid="coupon-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -8403,7 +8403,7 @@ exports[`<Icon /> when Coupon.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="coupon"
+    data-testid="coupon-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -8457,7 +8457,7 @@ exports[`<Icon /> when Coupon.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="coupon"
+    data-testid="coupon-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -8511,7 +8511,7 @@ exports[`<Icon /> when CreditCard.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="creditcard"
+    data-testid="creditcard-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -8565,7 +8565,7 @@ exports[`<Icon /> when CreditCard.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="creditcard"
+    data-testid="creditcard-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -8619,7 +8619,7 @@ exports[`<Icon /> when CreditCard.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="creditcard"
+    data-testid="creditcard-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -8673,7 +8673,7 @@ exports[`<Icon /> when Crop.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crop"
+    data-testid="crop-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -8727,7 +8727,7 @@ exports[`<Icon /> when Crop.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crop"
+    data-testid="crop-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -8781,7 +8781,7 @@ exports[`<Icon /> when Crop.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crop"
+    data-testid="crop-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -8835,7 +8835,7 @@ exports[`<Icon /> when Crown.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crown"
+    data-testid="crown-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -8889,7 +8889,7 @@ exports[`<Icon /> when Crown.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crown"
+    data-testid="crown-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -8943,7 +8943,7 @@ exports[`<Icon /> when Crown.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crown"
+    data-testid="crown-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -8997,7 +8997,7 @@ exports[`<Icon /> when CrownCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crowncircle"
+    data-testid="crowncircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -9053,7 +9053,7 @@ exports[`<Icon /> when CrownCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crowncircle"
+    data-testid="crowncircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -9113,7 +9113,7 @@ exports[`<Icon /> when CrownCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="crowncircle"
+    data-testid="crowncircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -9173,7 +9173,7 @@ exports[`<Icon /> when DepositPassbook.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="depositpassbook"
+    data-testid="depositpassbook-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -9227,7 +9227,7 @@ exports[`<Icon /> when DepositPassbook.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="depositpassbook"
+    data-testid="depositpassbook-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -9281,7 +9281,7 @@ exports[`<Icon /> when DepositPassbook.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="depositpassbook"
+    data-testid="depositpassbook-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -9335,7 +9335,7 @@ exports[`<Icon /> when Dislike.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="dislike"
+    data-testid="dislike-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -9389,7 +9389,7 @@ exports[`<Icon /> when Dislike.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="dislike"
+    data-testid="dislike-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -9443,7 +9443,7 @@ exports[`<Icon /> when Dislike.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="dislike"
+    data-testid="dislike-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -9497,7 +9497,7 @@ exports[`<Icon /> when Divider.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="divider"
+    data-testid="divider-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -9551,7 +9551,7 @@ exports[`<Icon /> when Divider.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="divider"
+    data-testid="divider-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -9605,7 +9605,7 @@ exports[`<Icon /> when Divider.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="divider"
+    data-testid="divider-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -9659,7 +9659,7 @@ exports[`<Icon /> when DollarCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="dollarcircle"
+    data-testid="dollarcircle-fill"
     viewBox="0 0 24 24"
   >
     <g
@@ -9731,7 +9731,7 @@ exports[`<Icon /> when DollarCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="dollarcircle"
+    data-testid="dollarcircle-regular"
     viewBox="0 0 24 24"
   >
     <g
@@ -9805,7 +9805,7 @@ exports[`<Icon /> when DollarCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="dollarcircle"
+    data-testid="dollarcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -9861,7 +9861,7 @@ exports[`<Icon /> when Download.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="download"
+    data-testid="download-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -9919,7 +9919,7 @@ exports[`<Icon /> when Download.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="download"
+    data-testid="download-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -9977,7 +9977,7 @@ exports[`<Icon /> when Download.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="download"
+    data-testid="download-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -10035,7 +10035,7 @@ exports[`<Icon /> when Edit.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="edit"
+    data-testid="edit-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -10089,7 +10089,7 @@ exports[`<Icon /> when Edit.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="edit"
+    data-testid="edit-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -10143,7 +10143,7 @@ exports[`<Icon /> when Edit.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="edit"
+    data-testid="edit-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -10197,7 +10197,7 @@ exports[`<Icon /> when EyeOff.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="eyeoff"
+    data-testid="eyeoff-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -10251,7 +10251,7 @@ exports[`<Icon /> when EyeOff.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="eyeoff"
+    data-testid="eyeoff-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -10305,7 +10305,7 @@ exports[`<Icon /> when EyeOff.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="eyeoff"
+    data-testid="eyeoff-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -10359,7 +10359,7 @@ exports[`<Icon /> when EyeOn.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="eyeon"
+    data-testid="eyeon-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -10417,7 +10417,7 @@ exports[`<Icon /> when EyeOn.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="eyeon"
+    data-testid="eyeon-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -10475,7 +10475,7 @@ exports[`<Icon /> when EyeOn.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="eyeon"
+    data-testid="eyeon-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -10533,7 +10533,7 @@ exports[`<Icon /> when FacebookCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="facebookcircle"
+    data-testid="facebookcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -10587,7 +10587,7 @@ exports[`<Icon /> when FacebookCircle.Regular Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="facebookcircle"
+    data-testid="facebookcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -10647,7 +10647,7 @@ exports[`<Icon /> when FacebookCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="facebookcircle"
+    data-testid="facebookcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -10707,7 +10707,7 @@ exports[`<Icon /> when Filter.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="filter"
+    data-testid="filter-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -10761,7 +10761,7 @@ exports[`<Icon /> when Filter.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="filter"
+    data-testid="filter-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -10815,7 +10815,7 @@ exports[`<Icon /> when Filter.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="filter"
+    data-testid="filter-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -10869,7 +10869,7 @@ exports[`<Icon /> when Flash.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flash"
+    data-testid="flash-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -10923,7 +10923,7 @@ exports[`<Icon /> when Flash.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flash"
+    data-testid="flash-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -10977,7 +10977,7 @@ exports[`<Icon /> when Flash.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flash"
+    data-testid="flash-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -11031,7 +11031,7 @@ exports[`<Icon /> when FlashAuto.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flashauto"
+    data-testid="flashauto-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -11085,7 +11085,7 @@ exports[`<Icon /> when FlashAuto.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flashauto"
+    data-testid="flashauto-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -11139,7 +11139,7 @@ exports[`<Icon /> when FlashAuto.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flashauto"
+    data-testid="flashauto-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -11193,7 +11193,7 @@ exports[`<Icon /> when FlashOff.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flashoff"
+    data-testid="flashoff-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -11247,7 +11247,7 @@ exports[`<Icon /> when FlashOff.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flashoff"
+    data-testid="flashoff-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -11301,7 +11301,7 @@ exports[`<Icon /> when FlashOff.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="flashoff"
+    data-testid="flashoff-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -11355,7 +11355,7 @@ exports[`<Icon /> when FullScreen.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="fullscreen"
+    data-testid="fullscreen-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -11409,7 +11409,7 @@ exports[`<Icon /> when FullScreen.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="fullscreen"
+    data-testid="fullscreen-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -11463,7 +11463,7 @@ exports[`<Icon /> when FullScreen.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="fullscreen"
+    data-testid="fullscreen-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -11521,7 +11521,7 @@ exports[`<Icon /> when FullScreenExit.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="fullscreenexit"
+    data-testid="fullscreenexit-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -11575,7 +11575,7 @@ exports[`<Icon /> when FullScreenExit.Regular Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="fullscreenexit"
+    data-testid="fullscreenexit-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -11629,7 +11629,7 @@ exports[`<Icon /> when FullScreenExit.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="fullscreenexit"
+    data-testid="fullscreenexit-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -11687,7 +11687,7 @@ exports[`<Icon /> when Gear.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gear"
+    data-testid="gear-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -11741,7 +11741,7 @@ exports[`<Icon /> when Gear.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gear"
+    data-testid="gear-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -11795,7 +11795,7 @@ exports[`<Icon /> when Gear.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gear"
+    data-testid="gear-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -11849,7 +11849,7 @@ exports[`<Icon /> when Gift.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gift"
+    data-testid="gift-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -11903,7 +11903,7 @@ exports[`<Icon /> when Gift.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gift"
+    data-testid="gift-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -11957,7 +11957,7 @@ exports[`<Icon /> when Gift.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gift"
+    data-testid="gift-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -12011,7 +12011,7 @@ exports[`<Icon /> when GridRectangle1x2.Fill Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="gridrectangle1x2"
+    data-testid="gridrectangle1x2-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -12065,7 +12065,7 @@ exports[`<Icon /> when GridRectangle1x2.Regular Icon rendered match snapshot 1`]
 <div>
   <svg
     class="emotion-0"
-    data-testid="gridrectangle1x2"
+    data-testid="gridrectangle1x2-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -12121,7 +12121,7 @@ exports[`<Icon /> when GridRectangle1x2.Thin Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="gridrectangle1x2"
+    data-testid="gridrectangle1x2-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -12177,7 +12177,7 @@ exports[`<Icon /> when GridSqaure2x2.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gridsqaure2x2"
+    data-testid="gridsqaure2x2-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -12231,7 +12231,7 @@ exports[`<Icon /> when GridSqaure2x2.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="gridsqaure2x2"
+    data-testid="gridsqaure2x2-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -12285,7 +12285,7 @@ exports[`<Icon /> when GridSqaure2x2.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="gridsqaure2x2"
+    data-testid="gridsqaure2x2-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -12339,7 +12339,7 @@ exports[`<Icon /> when Groove.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="groove"
+    data-testid="groove-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -12393,7 +12393,7 @@ exports[`<Icon /> when Groove.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="groove"
+    data-testid="groove-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -12447,7 +12447,7 @@ exports[`<Icon /> when Groove.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="groove"
+    data-testid="groove-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -12501,7 +12501,7 @@ exports[`<Icon /> when Hashtag.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="hashtag"
+    data-testid="hashtag-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -12555,7 +12555,7 @@ exports[`<Icon /> when Hashtag.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="hashtag"
+    data-testid="hashtag-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -12609,7 +12609,7 @@ exports[`<Icon /> when Hashtag.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="hashtag"
+    data-testid="hashtag-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -12663,7 +12663,7 @@ exports[`<Icon /> when Heart.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="heart"
+    data-testid="heart-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -12717,7 +12717,7 @@ exports[`<Icon /> when Heart.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="heart"
+    data-testid="heart-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -12771,7 +12771,7 @@ exports[`<Icon /> when Heart.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="heart"
+    data-testid="heart-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -12825,7 +12825,7 @@ exports[`<Icon /> when HelpCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="helpcircle"
+    data-testid="helpcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -12879,7 +12879,7 @@ exports[`<Icon /> when HelpCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="helpcircle"
+    data-testid="helpcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -12937,7 +12937,7 @@ exports[`<Icon /> when HelpCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="helpcircle"
+    data-testid="helpcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -12995,7 +12995,7 @@ exports[`<Icon /> when Home.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="home"
+    data-testid="home-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -13049,7 +13049,7 @@ exports[`<Icon /> when Home.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="home"
+    data-testid="home-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -13103,7 +13103,7 @@ exports[`<Icon /> when Home.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="home"
+    data-testid="home-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -13157,7 +13157,7 @@ exports[`<Icon /> when Hot.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="hot"
+    data-testid="hot-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -13211,7 +13211,7 @@ exports[`<Icon /> when Hot.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="hot"
+    data-testid="hot-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -13269,7 +13269,7 @@ exports[`<Icon /> when Hot.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="hot"
+    data-testid="hot-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -13327,7 +13327,7 @@ exports[`<Icon /> when InfoCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="infocircle"
+    data-testid="infocircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -13381,7 +13381,7 @@ exports[`<Icon /> when InfoCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="infocircle"
+    data-testid="infocircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -13439,7 +13439,7 @@ exports[`<Icon /> when InfoCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="infocircle"
+    data-testid="infocircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -13497,7 +13497,7 @@ exports[`<Icon /> when InstagramCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="instagramcircle"
+    data-testid="instagramcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -13555,7 +13555,7 @@ exports[`<Icon /> when InstagramCircle.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="instagramcircle"
+    data-testid="instagramcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -13617,7 +13617,7 @@ exports[`<Icon /> when InstagramCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="instagramcircle"
+    data-testid="instagramcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -13679,7 +13679,7 @@ exports[`<Icon /> when Laptop.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="laptop"
+    data-testid="laptop-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -13733,7 +13733,7 @@ exports[`<Icon /> when Laptop.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="laptop"
+    data-testid="laptop-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -13787,7 +13787,7 @@ exports[`<Icon /> when Laptop.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="laptop"
+    data-testid="laptop-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -13841,7 +13841,7 @@ exports[`<Icon /> when Like.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="like"
+    data-testid="like-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -13895,7 +13895,7 @@ exports[`<Icon /> when Like.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="like"
+    data-testid="like-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -13949,7 +13949,7 @@ exports[`<Icon /> when Like.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="like"
+    data-testid="like-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -14003,7 +14003,7 @@ exports[`<Icon /> when Link.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="link"
+    data-testid="link-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -14061,7 +14061,7 @@ exports[`<Icon /> when Link.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="link"
+    data-testid="link-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -14119,7 +14119,7 @@ exports[`<Icon /> when Link.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="link"
+    data-testid="link-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -14177,7 +14177,7 @@ exports[`<Icon /> when LinkOutside.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="linkoutside"
+    data-testid="linkoutside-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -14235,7 +14235,7 @@ exports[`<Icon /> when LinkOutside.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="linkoutside"
+    data-testid="linkoutside-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -14293,7 +14293,7 @@ exports[`<Icon /> when LinkOutside.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="linkoutside"
+    data-testid="linkoutside-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -14351,7 +14351,7 @@ exports[`<Icon /> when ListBullet.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="listbullet"
+    data-testid="listbullet-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -14405,7 +14405,7 @@ exports[`<Icon /> when ListBullet.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="listbullet"
+    data-testid="listbullet-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -14459,7 +14459,7 @@ exports[`<Icon /> when ListBullet.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="listbullet"
+    data-testid="listbullet-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -14513,7 +14513,7 @@ exports[`<Icon /> when ListBulletBackward.Fill Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="listbulletbackward"
+    data-testid="listbulletbackward-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -14567,7 +14567,7 @@ exports[`<Icon /> when ListBulletBackward.Regular Icon rendered match snapshot 1
 <div>
   <svg
     class="emotion-0"
-    data-testid="listbulletbackward"
+    data-testid="listbulletbackward-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -14621,7 +14621,7 @@ exports[`<Icon /> when ListBulletBackward.Thin Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="listbulletbackward"
+    data-testid="listbulletbackward-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -14675,7 +14675,7 @@ exports[`<Icon /> when ListNumber.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="listnumber"
+    data-testid="listnumber-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -14729,7 +14729,7 @@ exports[`<Icon /> when ListNumber.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="listnumber"
+    data-testid="listnumber-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -14783,7 +14783,7 @@ exports[`<Icon /> when ListNumber.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="listnumber"
+    data-testid="listnumber-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -14837,7 +14837,7 @@ exports[`<Icon /> when Location.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="location"
+    data-testid="location-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -14891,7 +14891,7 @@ exports[`<Icon /> when Location.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="location"
+    data-testid="location-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -14949,7 +14949,7 @@ exports[`<Icon /> when Location.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="location"
+    data-testid="location-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -15007,7 +15007,7 @@ exports[`<Icon /> when LocationCurrent.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="locationcurrent"
+    data-testid="locationcurrent-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -15061,7 +15061,7 @@ exports[`<Icon /> when LocationCurrent.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="locationcurrent"
+    data-testid="locationcurrent-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -15115,7 +15115,7 @@ exports[`<Icon /> when LocationCurrent.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="locationcurrent"
+    data-testid="locationcurrent-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -15169,7 +15169,7 @@ exports[`<Icon /> when Lock.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="lock"
+    data-testid="lock-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -15223,7 +15223,7 @@ exports[`<Icon /> when Lock.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="lock"
+    data-testid="lock-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -15281,7 +15281,7 @@ exports[`<Icon /> when Lock.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="lock"
+    data-testid="lock-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -15339,7 +15339,7 @@ exports[`<Icon /> when LockOff.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="lockoff"
+    data-testid="lockoff-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -15393,7 +15393,7 @@ exports[`<Icon /> when LockOff.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="lockoff"
+    data-testid="lockoff-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -15451,7 +15451,7 @@ exports[`<Icon /> when LockOff.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="lockoff"
+    data-testid="lockoff-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -15509,7 +15509,7 @@ exports[`<Icon /> when Logout.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="logout"
+    data-testid="logout-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -15563,7 +15563,7 @@ exports[`<Icon /> when Logout.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="logout"
+    data-testid="logout-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -15617,7 +15617,7 @@ exports[`<Icon /> when Logout.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="logout"
+    data-testid="logout-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -15671,7 +15671,7 @@ exports[`<Icon /> when Menu.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="menu"
+    data-testid="menu-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -15725,7 +15725,7 @@ exports[`<Icon /> when Menu.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="menu"
+    data-testid="menu-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -15779,7 +15779,7 @@ exports[`<Icon /> when Menu.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="menu"
+    data-testid="menu-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -15833,7 +15833,7 @@ exports[`<Icon /> when Message.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="message"
+    data-testid="message-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -15891,7 +15891,7 @@ exports[`<Icon /> when Message.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="message"
+    data-testid="message-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -15945,7 +15945,7 @@ exports[`<Icon /> when Message.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="message"
+    data-testid="message-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -15999,7 +15999,7 @@ exports[`<Icon /> when Mic.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="mic"
+    data-testid="mic-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -16057,7 +16057,7 @@ exports[`<Icon /> when Mic.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="mic"
+    data-testid="mic-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -16115,7 +16115,7 @@ exports[`<Icon /> when Mic.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="mic"
+    data-testid="mic-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -16173,7 +16173,7 @@ exports[`<Icon /> when Minus.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="minus"
+    data-testid="minus-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -16227,7 +16227,7 @@ exports[`<Icon /> when Minus.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="minus"
+    data-testid="minus-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -16281,7 +16281,7 @@ exports[`<Icon /> when Minus.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="minus"
+    data-testid="minus-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -16335,7 +16335,7 @@ exports[`<Icon /> when MinusCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="minuscircle"
+    data-testid="minuscircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -16389,7 +16389,7 @@ exports[`<Icon /> when MinusCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="minuscircle"
+    data-testid="minuscircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -16447,7 +16447,7 @@ exports[`<Icon /> when MinusCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="minuscircle"
+    data-testid="minuscircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -16505,7 +16505,7 @@ exports[`<Icon /> when Mobile.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="mobile"
+    data-testid="mobile-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -16559,7 +16559,7 @@ exports[`<Icon /> when Mobile.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="mobile"
+    data-testid="mobile-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -16617,7 +16617,7 @@ exports[`<Icon /> when Mobile.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="mobile"
+    data-testid="mobile-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -16675,7 +16675,7 @@ exports[`<Icon /> when Monitor.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="monitor"
+    data-testid="monitor-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -16729,7 +16729,7 @@ exports[`<Icon /> when Monitor.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="monitor"
+    data-testid="monitor-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -16783,7 +16783,7 @@ exports[`<Icon /> when Monitor.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="monitor"
+    data-testid="monitor-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -16837,7 +16837,7 @@ exports[`<Icon /> when MoreHorizontal.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="morehorizontal"
+    data-testid="morehorizontal-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -16891,7 +16891,7 @@ exports[`<Icon /> when MoreHorizontal.Regular Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="morehorizontal"
+    data-testid="morehorizontal-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -16945,7 +16945,7 @@ exports[`<Icon /> when MoreHorizontal.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="morehorizontal"
+    data-testid="morehorizontal-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -16999,7 +16999,7 @@ exports[`<Icon /> when MoreVertical.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="morevertical"
+    data-testid="morevertical-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -17053,7 +17053,7 @@ exports[`<Icon /> when MoreVertical.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="morevertical"
+    data-testid="morevertical-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -17107,7 +17107,7 @@ exports[`<Icon /> when MoreVertical.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="morevertical"
+    data-testid="morevertical-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -17161,7 +17161,7 @@ exports[`<Icon /> when NaverCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="navercircle"
+    data-testid="navercircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -17215,7 +17215,7 @@ exports[`<Icon /> when NaverCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="navercircle"
+    data-testid="navercircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -17273,7 +17273,7 @@ exports[`<Icon /> when NaverCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="navercircle"
+    data-testid="navercircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -17331,7 +17331,7 @@ exports[`<Icon /> when Notice.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="notice"
+    data-testid="notice-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -17385,7 +17385,7 @@ exports[`<Icon /> when Notice.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="notice"
+    data-testid="notice-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -17439,7 +17439,7 @@ exports[`<Icon /> when Notice.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="notice"
+    data-testid="notice-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -17493,7 +17493,7 @@ exports[`<Icon /> when Paper1.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper1"
+    data-testid="paper1-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -17547,7 +17547,7 @@ exports[`<Icon /> when Paper1.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper1"
+    data-testid="paper1-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -17601,7 +17601,7 @@ exports[`<Icon /> when Paper1.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper1"
+    data-testid="paper1-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -17655,7 +17655,7 @@ exports[`<Icon /> when Paper2.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper2"
+    data-testid="paper2-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -17709,7 +17709,7 @@ exports[`<Icon /> when Paper2.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper2"
+    data-testid="paper2-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -17767,7 +17767,7 @@ exports[`<Icon /> when Paper2.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper2"
+    data-testid="paper2-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -17825,7 +17825,7 @@ exports[`<Icon /> when Paper3.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper3"
+    data-testid="paper3-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -17879,7 +17879,7 @@ exports[`<Icon /> when Paper3.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper3"
+    data-testid="paper3-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -17937,7 +17937,7 @@ exports[`<Icon /> when Paper3.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="paper3"
+    data-testid="paper3-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -17995,7 +17995,7 @@ exports[`<Icon /> when Pause.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pause"
+    data-testid="pause-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -18049,7 +18049,7 @@ exports[`<Icon /> when Pause.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pause"
+    data-testid="pause-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -18103,7 +18103,7 @@ exports[`<Icon /> when Pause.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pause"
+    data-testid="pause-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -18157,7 +18157,7 @@ exports[`<Icon /> when PauseCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pausecircle"
+    data-testid="pausecircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -18211,7 +18211,7 @@ exports[`<Icon /> when PauseCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pausecircle"
+    data-testid="pausecircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -18269,7 +18269,7 @@ exports[`<Icon /> when PauseCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pausecircle"
+    data-testid="pausecircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -18327,7 +18327,7 @@ exports[`<Icon /> when Person.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="person"
+    data-testid="person-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -18381,7 +18381,7 @@ exports[`<Icon /> when Person.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="person"
+    data-testid="person-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -18435,7 +18435,7 @@ exports[`<Icon /> when Person.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="person"
+    data-testid="person-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -18489,7 +18489,7 @@ exports[`<Icon /> when Phone.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="phone"
+    data-testid="phone-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -18543,7 +18543,7 @@ exports[`<Icon /> when Phone.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="phone"
+    data-testid="phone-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -18597,7 +18597,7 @@ exports[`<Icon /> when Phone.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="phone"
+    data-testid="phone-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -18651,7 +18651,7 @@ exports[`<Icon /> when Photo.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photo"
+    data-testid="photo-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -18709,7 +18709,7 @@ exports[`<Icon /> when Photo.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photo"
+    data-testid="photo-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -18767,7 +18767,7 @@ exports[`<Icon /> when Photo.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photo"
+    data-testid="photo-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -18825,7 +18825,7 @@ exports[`<Icon /> when PhotoAdd.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photoadd"
+    data-testid="photoadd-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -18883,7 +18883,7 @@ exports[`<Icon /> when PhotoAdd.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photoadd"
+    data-testid="photoadd-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -18945,7 +18945,7 @@ exports[`<Icon /> when PhotoAdd.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photoadd"
+    data-testid="photoadd-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -19003,7 +19003,7 @@ exports[`<Icon /> when PhotoDouble.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photodouble"
+    data-testid="photodouble-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -19065,7 +19065,7 @@ exports[`<Icon /> when PhotoDouble.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photodouble"
+    data-testid="photodouble-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -19123,7 +19123,7 @@ exports[`<Icon /> when PhotoDouble.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="photodouble"
+    data-testid="photodouble-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -19181,7 +19181,7 @@ exports[`<Icon /> when Pin.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pin"
+    data-testid="pin-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -19235,7 +19235,7 @@ exports[`<Icon /> when Pin.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pin"
+    data-testid="pin-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -19289,7 +19289,7 @@ exports[`<Icon /> when Pin.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pin"
+    data-testid="pin-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -19343,7 +19343,7 @@ exports[`<Icon /> when Pip.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pip"
+    data-testid="pip-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -19401,7 +19401,7 @@ exports[`<Icon /> when Pip.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pip"
+    data-testid="pip-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -19459,7 +19459,7 @@ exports[`<Icon /> when Pip.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pip"
+    data-testid="pip-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -19521,7 +19521,7 @@ exports[`<Icon /> when Play.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="play"
+    data-testid="play-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -19575,7 +19575,7 @@ exports[`<Icon /> when Play.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="play"
+    data-testid="play-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -19629,7 +19629,7 @@ exports[`<Icon /> when Play.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="play"
+    data-testid="play-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -19683,7 +19683,7 @@ exports[`<Icon /> when PlayBackA.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playbacka"
+    data-testid="playbacka-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -19741,7 +19741,7 @@ exports[`<Icon /> when PlayBackA.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playbacka"
+    data-testid="playbacka-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -19799,7 +19799,7 @@ exports[`<Icon /> when PlayBackA.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playbacka"
+    data-testid="playbacka-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -19853,7 +19853,7 @@ exports[`<Icon /> when PlayCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playcircle"
+    data-testid="playcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -19907,7 +19907,7 @@ exports[`<Icon /> when PlayCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playcircle"
+    data-testid="playcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -19965,7 +19965,7 @@ exports[`<Icon /> when PlayCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playcircle"
+    data-testid="playcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -20023,7 +20023,7 @@ exports[`<Icon /> when PlayFast.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast"
+    data-testid="playfast-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -20077,7 +20077,7 @@ exports[`<Icon /> when PlayFast.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast"
+    data-testid="playfast-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -20131,7 +20131,7 @@ exports[`<Icon /> when PlayFast.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast"
+    data-testid="playfast-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -20185,7 +20185,7 @@ exports[`<Icon /> when PlayFast5sec.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast5sec"
+    data-testid="playfast5sec-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -20243,7 +20243,7 @@ exports[`<Icon /> when PlayFast5sec.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast5sec"
+    data-testid="playfast5sec-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -20301,7 +20301,7 @@ exports[`<Icon /> when PlayFast5sec.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast5sec"
+    data-testid="playfast5sec-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -20359,7 +20359,7 @@ exports[`<Icon /> when PlayFast10sec.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast10sec"
+    data-testid="playfast10sec-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -20417,7 +20417,7 @@ exports[`<Icon /> when PlayFast10sec.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast10sec"
+    data-testid="playfast10sec-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -20475,7 +20475,7 @@ exports[`<Icon /> when PlayFast10sec.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast10sec"
+    data-testid="playfast10sec-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -20533,7 +20533,7 @@ exports[`<Icon /> when PlayFast15sec.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast15sec"
+    data-testid="playfast15sec-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -20591,7 +20591,7 @@ exports[`<Icon /> when PlayFast15sec.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast15sec"
+    data-testid="playfast15sec-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -20649,7 +20649,7 @@ exports[`<Icon /> when PlayFast15sec.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playfast15sec"
+    data-testid="playfast15sec-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -20707,7 +20707,7 @@ exports[`<Icon /> when PlayNext.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playnext"
+    data-testid="playnext-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -20761,7 +20761,7 @@ exports[`<Icon /> when PlayNext.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playnext"
+    data-testid="playnext-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -20815,7 +20815,7 @@ exports[`<Icon /> when PlayNext.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playnext"
+    data-testid="playnext-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -20869,7 +20869,7 @@ exports[`<Icon /> when PlayPrevious.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playprevious"
+    data-testid="playprevious-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -20923,7 +20923,7 @@ exports[`<Icon /> when PlayPrevious.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playprevious"
+    data-testid="playprevious-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -20977,7 +20977,7 @@ exports[`<Icon /> when PlayPrevious.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playprevious"
+    data-testid="playprevious-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -21031,7 +21031,7 @@ exports[`<Icon /> when PlayRewind5sec.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind5sec"
+    data-testid="playrewind5sec-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -21089,7 +21089,7 @@ exports[`<Icon /> when PlayRewind5sec.Regular Icon rendered match snapshot 1`] =
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind5sec"
+    data-testid="playrewind5sec-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -21147,7 +21147,7 @@ exports[`<Icon /> when PlayRewind5sec.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind5sec"
+    data-testid="playrewind5sec-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -21205,7 +21205,7 @@ exports[`<Icon /> when PlayRewind10sec.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind10sec"
+    data-testid="playrewind10sec-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -21263,7 +21263,7 @@ exports[`<Icon /> when PlayRewind10sec.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind10sec"
+    data-testid="playrewind10sec-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -21321,7 +21321,7 @@ exports[`<Icon /> when PlayRewind10sec.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind10sec"
+    data-testid="playrewind10sec-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -21379,7 +21379,7 @@ exports[`<Icon /> when PlayRewind15sec.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind15sec"
+    data-testid="playrewind15sec-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -21437,7 +21437,7 @@ exports[`<Icon /> when PlayRewind15sec.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind15sec"
+    data-testid="playrewind15sec-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -21495,7 +21495,7 @@ exports[`<Icon /> when PlayRewind15sec.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playrewind15sec"
+    data-testid="playrewind15sec-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -21553,7 +21553,7 @@ exports[`<Icon /> when PlaySlowly.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playslowly"
+    data-testid="playslowly-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -21607,7 +21607,7 @@ exports[`<Icon /> when PlaySlowly.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playslowly"
+    data-testid="playslowly-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -21661,7 +21661,7 @@ exports[`<Icon /> when PlaySlowly.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playslowly"
+    data-testid="playslowly-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -21715,7 +21715,7 @@ exports[`<Icon /> when PlaySpeedX05.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx05"
+    data-testid="playspeedx05-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -21769,7 +21769,7 @@ exports[`<Icon /> when PlaySpeedX05.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx05"
+    data-testid="playspeedx05-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -21823,7 +21823,7 @@ exports[`<Icon /> when PlaySpeedX05.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx05"
+    data-testid="playspeedx05-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -21877,7 +21877,7 @@ exports[`<Icon /> when PlaySpeedX025.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx025"
+    data-testid="playspeedx025-fill"
     viewBox="0 0 24 24"
   >
     <g
@@ -21949,7 +21949,7 @@ exports[`<Icon /> when PlaySpeedX025.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx025"
+    data-testid="playspeedx025-regular"
     viewBox="0 0 24 24"
   >
     <g
@@ -22021,7 +22021,7 @@ exports[`<Icon /> when PlaySpeedX025.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx025"
+    data-testid="playspeedx025-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -22075,7 +22075,7 @@ exports[`<Icon /> when PlaySpeedX075.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx075"
+    data-testid="playspeedx075-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -22145,7 +22145,7 @@ exports[`<Icon /> when PlaySpeedX075.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx075"
+    data-testid="playspeedx075-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -22215,7 +22215,7 @@ exports[`<Icon /> when PlaySpeedX075.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx075"
+    data-testid="playspeedx075-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -22285,7 +22285,7 @@ exports[`<Icon /> when PlaySpeedX1.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx1"
+    data-testid="playspeedx1-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -22339,7 +22339,7 @@ exports[`<Icon /> when PlaySpeedX1.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx1"
+    data-testid="playspeedx1-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -22393,7 +22393,7 @@ exports[`<Icon /> when PlaySpeedX1.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx1"
+    data-testid="playspeedx1-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -22447,7 +22447,7 @@ exports[`<Icon /> when PlaySpeedX2.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx2"
+    data-testid="playspeedx2-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -22501,7 +22501,7 @@ exports[`<Icon /> when PlaySpeedX2.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx2"
+    data-testid="playspeedx2-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -22555,7 +22555,7 @@ exports[`<Icon /> when PlaySpeedX2.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx2"
+    data-testid="playspeedx2-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -22609,7 +22609,7 @@ exports[`<Icon /> when PlaySpeedX15.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx15"
+    data-testid="playspeedx15-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -22663,7 +22663,7 @@ exports[`<Icon /> when PlaySpeedX15.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx15"
+    data-testid="playspeedx15-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -22717,7 +22717,7 @@ exports[`<Icon /> when PlaySpeedX15.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx15"
+    data-testid="playspeedx15-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -22771,7 +22771,7 @@ exports[`<Icon /> when PlaySpeedX125.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx125"
+    data-testid="playspeedx125-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -22841,7 +22841,7 @@ exports[`<Icon /> when PlaySpeedX125.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx125"
+    data-testid="playspeedx125-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -22911,7 +22911,7 @@ exports[`<Icon /> when PlaySpeedX125.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playspeedx125"
+    data-testid="playspeedx125-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -22981,7 +22981,7 @@ exports[`<Icon /> when PlaystoreCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playstorecircle"
+    data-testid="playstorecircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -23035,7 +23035,7 @@ exports[`<Icon /> when PlaystoreCircle.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="playstorecircle"
+    data-testid="playstorecircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -23093,7 +23093,7 @@ exports[`<Icon /> when PlaystoreCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="playstorecircle"
+    data-testid="playstorecircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -23151,7 +23151,7 @@ exports[`<Icon /> when PointCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pointcircle"
+    data-testid="pointcircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -23209,7 +23209,7 @@ exports[`<Icon /> when PointCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pointcircle"
+    data-testid="pointcircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -23267,7 +23267,7 @@ exports[`<Icon /> when PointCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="pointcircle"
+    data-testid="pointcircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -23325,7 +23325,7 @@ exports[`<Icon /> when Project.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="project"
+    data-testid="project-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -23379,7 +23379,7 @@ exports[`<Icon /> when Project.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="project"
+    data-testid="project-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -23433,7 +23433,7 @@ exports[`<Icon /> when Project.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="project"
+    data-testid="project-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -23487,7 +23487,7 @@ exports[`<Icon /> when Quote.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="quote"
+    data-testid="quote-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -23541,7 +23541,7 @@ exports[`<Icon /> when Quote.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="quote"
+    data-testid="quote-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -23595,7 +23595,7 @@ exports[`<Icon /> when Quote.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="quote"
+    data-testid="quote-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -23649,7 +23649,7 @@ exports[`<Icon /> when QuoteReverse.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="quotereverse"
+    data-testid="quotereverse-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -23703,7 +23703,7 @@ exports[`<Icon /> when QuoteReverse.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="quotereverse"
+    data-testid="quotereverse-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -23757,7 +23757,7 @@ exports[`<Icon /> when QuoteReverse.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="quotereverse"
+    data-testid="quotereverse-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -23811,7 +23811,7 @@ exports[`<Icon /> when Receipt.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="receipt"
+    data-testid="receipt-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -23865,7 +23865,7 @@ exports[`<Icon /> when Receipt.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="receipt"
+    data-testid="receipt-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -23923,7 +23923,7 @@ exports[`<Icon /> when Receipt.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="receipt"
+    data-testid="receipt-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -23981,7 +23981,7 @@ exports[`<Icon /> when Repeat.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="repeat"
+    data-testid="repeat-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -24035,7 +24035,7 @@ exports[`<Icon /> when Repeat.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="repeat"
+    data-testid="repeat-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -24089,7 +24089,7 @@ exports[`<Icon /> when Repeat.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="repeat"
+    data-testid="repeat-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -24143,7 +24143,7 @@ exports[`<Icon /> when Replay.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="replay"
+    data-testid="replay-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -24201,7 +24201,7 @@ exports[`<Icon /> when Replay.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="replay"
+    data-testid="replay-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -24259,7 +24259,7 @@ exports[`<Icon /> when Replay.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="replay"
+    data-testid="replay-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -24317,7 +24317,7 @@ exports[`<Icon /> when Reply.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="reply"
+    data-testid="reply-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -24371,7 +24371,7 @@ exports[`<Icon /> when Reply.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="reply"
+    data-testid="reply-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -24429,7 +24429,7 @@ exports[`<Icon /> when Reply.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="reply"
+    data-testid="reply-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -24487,7 +24487,7 @@ exports[`<Icon /> when Report.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="report"
+    data-testid="report-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -24541,7 +24541,7 @@ exports[`<Icon /> when Report.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="report"
+    data-testid="report-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -24595,7 +24595,7 @@ exports[`<Icon /> when Report.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="report"
+    data-testid="report-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -24649,7 +24649,7 @@ exports[`<Icon /> when RotateClockwise.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="rotateclockwise"
+    data-testid="rotateclockwise-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -24703,7 +24703,7 @@ exports[`<Icon /> when RotateClockwise.Regular Icon rendered match snapshot 1`] 
 <div>
   <svg
     class="emotion-0"
-    data-testid="rotateclockwise"
+    data-testid="rotateclockwise-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -24757,7 +24757,7 @@ exports[`<Icon /> when RotateClockwise.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="rotateclockwise"
+    data-testid="rotateclockwise-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -24811,7 +24811,7 @@ exports[`<Icon /> when Sad.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sad"
+    data-testid="sad-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -24865,7 +24865,7 @@ exports[`<Icon /> when Sad.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sad"
+    data-testid="sad-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -24927,7 +24927,7 @@ exports[`<Icon /> when Sad.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sad"
+    data-testid="sad-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -24989,7 +24989,7 @@ exports[`<Icon /> when Search.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="search"
+    data-testid="search-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -25043,7 +25043,7 @@ exports[`<Icon /> when Search.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="search"
+    data-testid="search-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -25097,7 +25097,7 @@ exports[`<Icon /> when Search.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="search"
+    data-testid="search-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -25151,7 +25151,7 @@ exports[`<Icon /> when Send.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="send"
+    data-testid="send-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -25205,7 +25205,7 @@ exports[`<Icon /> when Send.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="send"
+    data-testid="send-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -25259,7 +25259,7 @@ exports[`<Icon /> when Send.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="send"
+    data-testid="send-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -25313,7 +25313,7 @@ exports[`<Icon /> when Send2.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="send2"
+    data-testid="send2-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -25367,7 +25367,7 @@ exports[`<Icon /> when Send2.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="send2"
+    data-testid="send2-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -25421,7 +25421,7 @@ exports[`<Icon /> when Send2.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="send2"
+    data-testid="send2-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -25475,7 +25475,7 @@ exports[`<Icon /> when Serious.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="serious"
+    data-testid="serious-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -25529,7 +25529,7 @@ exports[`<Icon /> when Serious.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="serious"
+    data-testid="serious-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -25587,7 +25587,7 @@ exports[`<Icon /> when Serious.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="serious"
+    data-testid="serious-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -25649,7 +25649,7 @@ exports[`<Icon /> when Share.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="share"
+    data-testid="share-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -25703,7 +25703,7 @@ exports[`<Icon /> when Share.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="share"
+    data-testid="share-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -25757,7 +25757,7 @@ exports[`<Icon /> when Share.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="share"
+    data-testid="share-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -25811,7 +25811,7 @@ exports[`<Icon /> when Sheild.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sheild"
+    data-testid="sheild-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -25865,7 +25865,7 @@ exports[`<Icon /> when Sheild.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sheild"
+    data-testid="sheild-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -25923,7 +25923,7 @@ exports[`<Icon /> when Sheild.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sheild"
+    data-testid="sheild-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -25981,7 +25981,7 @@ exports[`<Icon /> when ShippingTruck.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="shippingtruck"
+    data-testid="shippingtruck-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -26039,7 +26039,7 @@ exports[`<Icon /> when ShippingTruck.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="shippingtruck"
+    data-testid="shippingtruck-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -26093,7 +26093,7 @@ exports[`<Icon /> when ShippingTruck.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="shippingtruck"
+    data-testid="shippingtruck-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -26147,7 +26147,7 @@ exports[`<Icon /> when Smile.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="smile"
+    data-testid="smile-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -26201,7 +26201,7 @@ exports[`<Icon /> when Smile.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="smile"
+    data-testid="smile-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -26259,7 +26259,7 @@ exports[`<Icon /> when Smile.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="smile"
+    data-testid="smile-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -26321,7 +26321,7 @@ exports[`<Icon /> when Sorting.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sorting"
+    data-testid="sorting-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -26375,7 +26375,7 @@ exports[`<Icon /> when Sorting.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sorting"
+    data-testid="sorting-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -26429,7 +26429,7 @@ exports[`<Icon /> when Sorting.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="sorting"
+    data-testid="sorting-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -26483,7 +26483,7 @@ exports[`<Icon /> when Star.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="star"
+    data-testid="star-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -26537,7 +26537,7 @@ exports[`<Icon /> when Star.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="star"
+    data-testid="star-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -26591,7 +26591,7 @@ exports[`<Icon /> when Star.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="star"
+    data-testid="star-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -26645,7 +26645,7 @@ exports[`<Icon /> when StarFull.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="starfull"
+    data-testid="starfull-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -26699,7 +26699,7 @@ exports[`<Icon /> when StarFull.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="starfull"
+    data-testid="starfull-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -26753,7 +26753,7 @@ exports[`<Icon /> when StarFull.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="starfull"
+    data-testid="starfull-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -26807,7 +26807,7 @@ exports[`<Icon /> when StarHalf.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="starhalf"
+    data-testid="starhalf-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -26861,7 +26861,7 @@ exports[`<Icon /> when StarHalf.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="starhalf"
+    data-testid="starhalf-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -26915,7 +26915,7 @@ exports[`<Icon /> when StarHalf.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="starhalf"
+    data-testid="starhalf-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -26969,7 +26969,7 @@ exports[`<Icon /> when Store.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="store"
+    data-testid="store-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -27027,7 +27027,7 @@ exports[`<Icon /> when Store.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="store"
+    data-testid="store-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -27081,7 +27081,7 @@ exports[`<Icon /> when Store.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="store"
+    data-testid="store-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -27139,7 +27139,7 @@ exports[`<Icon /> when Subtitle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="subtitle"
+    data-testid="subtitle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -27193,7 +27193,7 @@ exports[`<Icon /> when Subtitle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="subtitle"
+    data-testid="subtitle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -27251,7 +27251,7 @@ exports[`<Icon /> when Subtitle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="subtitle"
+    data-testid="subtitle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -27309,7 +27309,7 @@ exports[`<Icon /> when TalkHelp.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="talkhelp"
+    data-testid="talkhelp-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -27363,7 +27363,7 @@ exports[`<Icon /> when TalkHelp.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="talkhelp"
+    data-testid="talkhelp-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -27421,7 +27421,7 @@ exports[`<Icon /> when TalkHelp.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="talkhelp"
+    data-testid="talkhelp-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -27479,7 +27479,7 @@ exports[`<Icon /> when TextH1.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth1"
+    data-testid="texth1-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -27533,7 +27533,7 @@ exports[`<Icon /> when TextH1.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth1"
+    data-testid="texth1-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -27587,7 +27587,7 @@ exports[`<Icon /> when TextH1.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth1"
+    data-testid="texth1-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -27641,7 +27641,7 @@ exports[`<Icon /> when TextH2.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth2"
+    data-testid="texth2-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -27695,7 +27695,7 @@ exports[`<Icon /> when TextH2.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth2"
+    data-testid="texth2-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -27749,7 +27749,7 @@ exports[`<Icon /> when TextH2.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth2"
+    data-testid="texth2-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -27803,7 +27803,7 @@ exports[`<Icon /> when TextH3.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth3"
+    data-testid="texth3-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -27857,7 +27857,7 @@ exports[`<Icon /> when TextH3.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth3"
+    data-testid="texth3-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -27911,7 +27911,7 @@ exports[`<Icon /> when TextH3.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="texth3"
+    data-testid="texth3-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -27965,7 +27965,7 @@ exports[`<Icon /> when ThunderCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="thundercircle"
+    data-testid="thundercircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -28019,7 +28019,7 @@ exports[`<Icon /> when ThunderCircle.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="thundercircle"
+    data-testid="thundercircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -28077,7 +28077,7 @@ exports[`<Icon /> when ThunderCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="thundercircle"
+    data-testid="thundercircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -28135,7 +28135,7 @@ exports[`<Icon /> when Timer.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="timer"
+    data-testid="timer-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -28189,7 +28189,7 @@ exports[`<Icon /> when Timer.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="timer"
+    data-testid="timer-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -28247,7 +28247,7 @@ exports[`<Icon /> when Timer.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="timer"
+    data-testid="timer-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -28305,7 +28305,7 @@ exports[`<Icon /> when ToggleOff.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="toggleoff"
+    data-testid="toggleoff-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -28359,7 +28359,7 @@ exports[`<Icon /> when ToggleOff.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="toggleoff"
+    data-testid="toggleoff-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -28413,7 +28413,7 @@ exports[`<Icon /> when ToggleOff.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="toggleoff"
+    data-testid="toggleoff-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -28467,7 +28467,7 @@ exports[`<Icon /> when ToggleOn.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="toggleon"
+    data-testid="toggleon-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -28521,7 +28521,7 @@ exports[`<Icon /> when ToggleOn.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="toggleon"
+    data-testid="toggleon-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -28575,7 +28575,7 @@ exports[`<Icon /> when ToggleOn.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="toggleon"
+    data-testid="toggleon-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -28629,7 +28629,7 @@ exports[`<Icon /> when ToteBag.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="totebag"
+    data-testid="totebag-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -28683,7 +28683,7 @@ exports[`<Icon /> when ToteBag.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="totebag"
+    data-testid="totebag-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -28737,7 +28737,7 @@ exports[`<Icon /> when ToteBag.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="totebag"
+    data-testid="totebag-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -28791,7 +28791,7 @@ exports[`<Icon /> when Translate.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="translate"
+    data-testid="translate-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -28849,7 +28849,7 @@ exports[`<Icon /> when Translate.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="translate"
+    data-testid="translate-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -28907,7 +28907,7 @@ exports[`<Icon /> when Translate.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="translate"
+    data-testid="translate-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -28965,7 +28965,7 @@ exports[`<Icon /> when Trash.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="trash"
+    data-testid="trash-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -29019,7 +29019,7 @@ exports[`<Icon /> when Trash.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="trash"
+    data-testid="trash-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -29077,7 +29077,7 @@ exports[`<Icon /> when Trash.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="trash"
+    data-testid="trash-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -29135,7 +29135,7 @@ exports[`<Icon /> when TwitterCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="twittercircle"
+    data-testid="twittercircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -29189,7 +29189,7 @@ exports[`<Icon /> when TwitterCircle.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="twittercircle"
+    data-testid="twittercircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -29247,7 +29247,7 @@ exports[`<Icon /> when TwitterCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="twittercircle"
+    data-testid="twittercircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -29305,7 +29305,7 @@ exports[`<Icon /> when Undo.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="undo"
+    data-testid="undo-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -29359,7 +29359,7 @@ exports[`<Icon /> when Undo.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="undo"
+    data-testid="undo-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -29413,7 +29413,7 @@ exports[`<Icon /> when Undo.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="undo"
+    data-testid="undo-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -29467,7 +29467,7 @@ exports[`<Icon /> when Video.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="video"
+    data-testid="video-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -29521,7 +29521,7 @@ exports[`<Icon /> when Video.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="video"
+    data-testid="video-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -29579,7 +29579,7 @@ exports[`<Icon /> when Video.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="video"
+    data-testid="video-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -29637,7 +29637,7 @@ exports[`<Icon /> when Volume.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="volume"
+    data-testid="volume-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -29695,7 +29695,7 @@ exports[`<Icon /> when Volume.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="volume"
+    data-testid="volume-regular"
     viewBox="0 0 24 24"
   >
     <g
@@ -29771,7 +29771,7 @@ exports[`<Icon /> when Volume.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="volume"
+    data-testid="volume-thin"
     viewBox="0 0 24 24"
   >
     <g
@@ -29847,7 +29847,7 @@ exports[`<Icon /> when VolumeMute.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="volumemute"
+    data-testid="volumemute-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -29901,7 +29901,7 @@ exports[`<Icon /> when VolumeMute.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="volumemute"
+    data-testid="volumemute-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -29955,7 +29955,7 @@ exports[`<Icon /> when VolumeMute.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="volumemute"
+    data-testid="volumemute-thin"
     viewBox="0 0 24 24"
   >
     <g
@@ -30027,7 +30027,7 @@ exports[`<Icon /> when Web.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="web"
+    data-testid="web-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -30081,7 +30081,7 @@ exports[`<Icon /> when Web.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="web"
+    data-testid="web-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -30135,7 +30135,7 @@ exports[`<Icon /> when Web.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="web"
+    data-testid="web-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -30189,7 +30189,7 @@ exports[`<Icon /> when Won.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="won"
+    data-testid="won-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -30243,7 +30243,7 @@ exports[`<Icon /> when Won.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="won"
+    data-testid="won-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -30297,7 +30297,7 @@ exports[`<Icon /> when Won.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="won"
+    data-testid="won-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -30351,7 +30351,7 @@ exports[`<Icon /> when WonCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="woncircle"
+    data-testid="woncircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -30405,7 +30405,7 @@ exports[`<Icon /> when WonCircle.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="woncircle"
+    data-testid="woncircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -30463,7 +30463,7 @@ exports[`<Icon /> when WonCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="woncircle"
+    data-testid="woncircle-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -30521,7 +30521,7 @@ exports[`<Icon /> when Write.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="write"
+    data-testid="write-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -30575,7 +30575,7 @@ exports[`<Icon /> when Write.Regular Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="write"
+    data-testid="write-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -30629,7 +30629,7 @@ exports[`<Icon /> when Write.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="write"
+    data-testid="write-thin"
     viewBox="0 0 24 24"
   >
     <path
@@ -30683,7 +30683,7 @@ exports[`<Icon /> when YoutubeCircle.Fill Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="youtubecircle"
+    data-testid="youtubecircle-fill"
     viewBox="0 0 24 24"
   >
     <path
@@ -30741,7 +30741,7 @@ exports[`<Icon /> when YoutubeCircle.Regular Icon rendered match snapshot 1`] = 
 <div>
   <svg
     class="emotion-0"
-    data-testid="youtubecircle"
+    data-testid="youtubecircle-regular"
     viewBox="0 0 24 24"
   >
     <path
@@ -30799,7 +30799,7 @@ exports[`<Icon /> when YoutubeCircle.Thin Icon rendered match snapshot 1`] = `
 <div>
   <svg
     class="emotion-0"
-    data-testid="youtubecircle"
+    data-testid="youtubecircle-thin"
     viewBox="0 0 24 24"
   >
     <path

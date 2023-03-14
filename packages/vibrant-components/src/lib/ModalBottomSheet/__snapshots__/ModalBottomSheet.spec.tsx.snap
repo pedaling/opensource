@@ -394,7 +394,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
                   >
                     <svg
                       class="emotion-11"
-                      data-testid="close"
+                      data-testid="close-regular"
                       viewBox="0 0 24 24"
                     >
                       <path
@@ -811,7 +811,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
                   >
                     <svg
                       class="emotion-11"
-                      data-testid="close"
+                      data-testid="close-regular"
                       viewBox="0 0 24 24"
                     >
                       <path
