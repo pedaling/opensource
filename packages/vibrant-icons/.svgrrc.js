@@ -30,7 +30,7 @@ function replaceJsxChild(jsx) {
   }
 }
 
-function template({ componentName, jsx }, { tpl }) {
+function template({ componentName, jsx, ...restProps }, { tpl, options }) {
   const fileName = componentName.replace('Svg', '');
 
   const componentNameWithPropType = `${fileName}: IconComponent<IconProps, '${fileName}'>`;
@@ -40,6 +40,11 @@ function template({ componentName, jsx }, { tpl }) {
   );
 
   replaceJsxChild(jsx);
+
+  const { filePath } = options.state;
+
+  const testId = filePath.split('/icons/')[1].split('/')[0].toLowerCase() + '-' + fileName.toLowerCase();
+
   const nl = '\n';
 
   return tpl`
@@ -47,7 +52,7 @@ function template({ componentName, jsx }, { tpl }) {
   import type { IconProps, IconComponent } from '../../IconProp';
   import { Svg } from '@vibrant-ui/core';
   ${nl}
-  export const ${componentNameWithPropType} = ({ size = 24, fill = 'onColor', testId, ...props }) => (
+  export const ${componentNameWithPropType} = ({ size = 24, fill = 'onColor', testId='${testId}', ...props }) => (
     ${jsx}
   );
   ${nl}
