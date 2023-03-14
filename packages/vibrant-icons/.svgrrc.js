@@ -43,7 +43,7 @@ function template({ componentName, jsx, ...restProps }, { tpl, options }) {
 
   const { filePath } = options.state;
 
-  const testId = filePath.split('/icons/')[1].split('/')[0].toLowerCase();
+  const testId = filePath.split('/icons/')[1].split('/')[0].toLowerCase() + '-' + fileName.toLowerCase();
 
   const nl = '\n';
 

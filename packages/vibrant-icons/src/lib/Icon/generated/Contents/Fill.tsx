@@ -4,7 +4,7 @@ import type { IconComponent, IconProps } from '../../IconProp';
 export const Fill: IconComponent<IconProps, 'Fill'> = ({
   size = 24,
   fill = 'onColor',
-  testId = 'contents',
+  testId = 'contents-fill',
   ...props
 }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
