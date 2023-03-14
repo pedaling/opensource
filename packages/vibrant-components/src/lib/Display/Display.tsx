@@ -8,8 +8,8 @@ const DisplayLevelTagMap: { [level: number]: TextElements } = {
   4: 'h1',
 };
 
-export const Display = withDisplayVariation(({ level, as, ...props }) => {
+export const Display = withDisplayVariation(({ level, as, testId = 'display', ...props }) => {
   const minLevel = Math.min(...(Array.isArray(level) ? level.map(level => Number(level)) : [Number(level)]));
 
-  return <Text as={as ?? DisplayLevelTagMap[minLevel]} {...props} />;
+  return <Text data-testid={testId} as={as ?? DisplayLevelTagMap[minLevel]} {...props} />;
 });

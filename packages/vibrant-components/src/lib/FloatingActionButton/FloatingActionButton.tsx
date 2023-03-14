@@ -5,7 +5,15 @@ import { StackedPortal } from '../StackedPortal';
 import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
 
 export const FloatingActionButton = withFloatingActionButtonVariation(
-  ({ order = 1, position = 'right', offset = 20, IconComponent, innerRef, ...restProps }) => {
+  ({
+    order = 1,
+    position = 'right',
+    offset = 20,
+    IconComponent,
+    innerRef,
+    testId = 'floating-action-button',
+    ...restProps
+  }) => {
     const { width: viewportWidth } = useWindowDimensions();
     const {
       theme: { zIndex },
@@ -28,6 +36,7 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
     return (
       <StackedPortal
         id="floating-action-button"
+        data-testid={testId}
         order={order}
         zIndex={zIndex.floatingActionButton}
         safeAreaMode="margin"

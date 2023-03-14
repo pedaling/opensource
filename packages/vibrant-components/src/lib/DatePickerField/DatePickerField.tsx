@@ -19,6 +19,7 @@ export const DatePickerField = withDatePickerFieldVariation(
     onOpen,
     zIndex,
     autoFocus,
+    testId = 'date-picker-field',
   }) => {
     const [value, setValue] = useState(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
@@ -92,7 +93,7 @@ export const DatePickerField = withDatePickerFieldVariation(
     const composeRef = useComposedRef(innerRef, inputRef);
 
     return (
-      <Box position="relative" width="100%">
+      <Box position="relative" width="100%" data-testid={testId}>
         <DateInput
           ref={composeRef}
           value={inputValue}

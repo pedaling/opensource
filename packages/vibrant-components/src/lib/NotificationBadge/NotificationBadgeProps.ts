@@ -5,6 +5,7 @@ import type { BaseColorToken } from '@vibrant-ui/theme';
 export type NotificationBadgeProps = {
   children?: never;
   borderColor?: BaseColorToken;
+  testId?: string;
 } & (
   | {
       kind: 'dot';
