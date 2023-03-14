@@ -33,9 +33,7 @@ Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 �
 본격적인 개발에 앞서, vibrant 가 따르고 있는 [디자인 규칙](./develope-principle.md) 을 읽어보시는 것을 권장드립니다.
 
 
-(1) [Vibrant opensource](https://github.com/pedaling/opensource) 리포지토리를 fork 합니다.
-
-(2) fork 된 리포지토리를 clone 합니다.
+(1) [Vibrant opensource](https://github.com/pedaling/opensource) 리포지토리를 clone 합니다.
 
 (3) `main` 브랜치로부터 본인의 branch 를 새로 분기합니다. branch 이름은 티켓의 이름 (ex. `vs-20`) 으로 설정합니다.
 
