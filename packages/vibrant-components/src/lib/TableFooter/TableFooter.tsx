@@ -21,6 +21,7 @@ export const TableFooter = withTableFooterVariation(
     onPageChange,
     pageSizeOptions,
     onPageSizeChange,
+    testId = 'table-footer',
   }) => {
     const {
       translations: { tableFooter: tableFooterTranslation },
@@ -41,7 +42,7 @@ export const TableFooter = withTableFooterVariation(
     }, [selectedPageSize, setCurrentPage]);
 
     return (
-      <HStack width="100%" alignVertical="center">
+      <HStack width="100%" alignVertical="center" data-testid={testId}>
         {isDefined(total) && showTotal && (
           <Body level={2}>{tableFooterTranslation.total.replace('{count}', total.toString())}</Body>
         )}

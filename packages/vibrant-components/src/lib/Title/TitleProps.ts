@@ -5,6 +5,7 @@ import type { TypographyWeight } from '@vibrant-ui/theme';
 export type TitleProps = Omit<TextProps, keyof PositionSystemProps | keyof TypographySystemProps> & {
   level: ResponsiveValue<1 | 2 | 3 | 4 | 5 | 6 | 7>;
   weight?: ResponsiveValue<TypographyWeight>;
+  testId?: string;
 };
 
 export const withTitleVariation = withVariation<TitleProps>('Title')(

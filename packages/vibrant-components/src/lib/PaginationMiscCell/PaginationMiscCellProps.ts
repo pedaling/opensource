@@ -6,6 +6,7 @@ export type PaginationMiscCellProps = {
   page: number;
   onClick: (page: number) => void;
   selected?: boolean;
+  testId?: string;
 };
 
 export const withPaginationMiscCellVariation = withVariation<PaginationMiscCellProps>('PaginationMiscCell')(

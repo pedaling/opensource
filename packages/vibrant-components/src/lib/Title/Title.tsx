@@ -12,8 +12,8 @@ const TitleLevelTagMap: { [level: number]: TextElements } = {
   7: 'h3',
 };
 
-export const Title = withTitleVariation(({ level, as, ...props }) => {
+export const Title = withTitleVariation(({ level, as, testId = 'title', ...props }) => {
   const minLevel = Math.min(...(Array.isArray(level) ? level.map(level => Number(level)) : [Number(level)]));
 
-  return <Text as={as ?? TitleLevelTagMap[minLevel]} {...props} />;
+  return <Text data-testid={testId} as={as ?? TitleLevelTagMap[minLevel]} {...props} />;
 });

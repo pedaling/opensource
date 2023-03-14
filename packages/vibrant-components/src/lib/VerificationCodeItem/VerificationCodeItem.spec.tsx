@@ -15,7 +15,7 @@ describe('<VerificationCodeItem />', () => {
     beforeEach(async () => {
       renderer = render(<VerificationCodeItem value="1" onClick={mockHandleClick} />);
 
-      element = await renderer.findByTestId('VerificationCodeItem');
+      element = await renderer.findByTestId('verification-code-item');
     });
 
     afterEach(() => {

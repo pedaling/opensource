@@ -11,8 +11,9 @@ export type TableFooterProps = Either<
     onPageChange?: (page: number) => void;
     pageSizeOptions?: number[];
     onPageSizeChange?: (pageSize: number) => void;
+    testId?: string;
   },
-  { pagination?: false; total?: number }
+  { pagination?: false; total?: number; testId?: string }
 >;
 
 export const withTableFooterVariation = withVariation<TableFooterProps>('TableFooter')();

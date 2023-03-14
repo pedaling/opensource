@@ -5,6 +5,7 @@ export type VerificationCodeFieldProps = {
   state?: 'default' | 'error';
   errorMessage?: string;
   blurOnComplete?: boolean;
+  testId?: string;
   onComplete?: (value: string) => void;
 };
 

@@ -28,6 +28,7 @@ export type TextFieldProps = BaseInputProps<string> &
     clearable?: boolean;
     readOnly?: boolean;
     ref?: ForwardedRef<any>;
+    testId?: string;
     onFocus?: () => void;
     onBlur?: () => void;
     renderStart?: () => ReactElementChild;

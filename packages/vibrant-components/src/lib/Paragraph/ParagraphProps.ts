@@ -5,6 +5,7 @@ import type { TypographyWeight } from '@vibrant-ui/theme';
 export type ParagraphProps = Omit<TextProps, keyof PositionSystemProps | keyof TypographySystemProps> & {
   level: ResponsiveValue<1 | 2 | 3>;
   weight?: ResponsiveValue<TypographyWeight>;
+  testId?: string;
 };
 
 export const withParagraphVariation = withVariation<ParagraphProps>('Paragraph')(

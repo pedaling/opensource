@@ -11,6 +11,7 @@ export type SelectOptionGroupProps = {
   reverse?: boolean;
   renderOption?: (index: number) => ReactElement;
   textTransform?: TextSystemProps['textTransform'];
+  testId?: string;
 };
 
 export const withSelectOptionGroupVariation = withVariation<SelectOptionGroupProps>('SelectOptionGroup')(

@@ -7,6 +7,7 @@ export type ToastProps = {
   kind?: 'default' | 'error' | 'success';
   onClose?: () => void;
   ref?: Ref<any>;
+  testId?: string;
 } & (
   | {
       buttonText: string;

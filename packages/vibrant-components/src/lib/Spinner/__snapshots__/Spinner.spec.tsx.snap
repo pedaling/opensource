@@ -82,6 +82,7 @@ exports[`<Spinner /> when Spinner rendered match snapshot 1`] = `
 <div>
   <span
     class="emotion-0"
+    data-testid="spinner"
   >
     <span
       class="emotion-1"

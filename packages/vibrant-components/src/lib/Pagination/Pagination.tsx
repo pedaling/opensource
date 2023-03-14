@@ -7,7 +7,7 @@ import { Space } from '../Space';
 import { withPaginationVariation } from './PaginationProps';
 
 export const Pagination = withPaginationVariation(
-  ({ pageCount, pageSize = 5, currentPage, onPageChange, spacing, extra = false }) => {
+  ({ pageCount, pageSize = 5, currentPage, onPageChange, spacing, extra = false, testId = 'pagination' }) => {
     const {
       translations: { pagination: paginationTranslation },
     } = useConfig();
@@ -24,7 +24,7 @@ export const Pagination = withPaginationVariation(
     const hasNextPage = pages[pages.length - 1] < pageCount;
 
     return (
-      <HStack as="nav" ariaLabel={paginationTranslation.ariaLabel} alignVertical="center">
+      <HStack as="nav" ariaLabel={paginationTranslation.ariaLabel} alignVertical="center" data-testid={testId}>
         <PaginationButton
           type="prev"
           onClick={moveToPrevPage}

@@ -8,6 +8,7 @@ import type { Filter } from './types';
 export type TableFilterGroupProps = {
   onFilterChange?: (filters: Filter[]) => void;
   initialFilterDataKeys?: string[];
+  testId?: string;
   children:
     | ReactElement<TableDateFilterProps | TableMultiSelectFilterProps | TableStringFilterProps>
     | ReactElement<TableDateFilterProps | TableMultiSelectFilterProps | TableStringFilterProps>[];

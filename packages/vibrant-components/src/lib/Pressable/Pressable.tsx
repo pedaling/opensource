@@ -8,6 +8,7 @@ export const Pressable = withPressableVariation(
   ({
     innerRef,
     as = 'button',
+    testId = 'pressable',
     buttonType,
     children,
     overlayColor,
@@ -45,6 +46,7 @@ export const Pressable = withPressableVariation(
     return (
       <PressableBox
         ref={innerRef}
+        data-testid={testId}
         position="relative"
         overflow="hidden"
         cursor={disabled ? 'default' : 'pointer'}

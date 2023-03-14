@@ -14,6 +14,7 @@ export type TooltipProps = {
   onClose?: () => void;
   onOpen?: () => void;
   anchorRef?: RefObject<any>;
+  testId?: string;
 };
 
 export const withTooltipVariation = withVariation<TooltipProps>('Tooltip')();

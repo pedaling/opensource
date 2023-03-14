@@ -25,6 +25,7 @@ export const TextField = withTextFieldVariation(
     onFocus,
     onBlur,
     innerRef,
+    testId = 'text-field',
     ...restProps
   }) => {
     const inputRef = useRef<TextInputRef | null>(null);
@@ -49,6 +50,7 @@ export const TextField = withTextFieldVariation(
 
     return (
       <FieldLayout
+        testId={testId}
         size={size}
         label={label}
         helperText={helperText}

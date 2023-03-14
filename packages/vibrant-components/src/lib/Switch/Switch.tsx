@@ -5,7 +5,18 @@ import { Pressable } from '../Pressable';
 import { withSwitchVariation } from './SwitchProps';
 
 export const Switch = withSwitchVariation(
-  ({ defaultValue, opacity, roundRadius, roundSize, onValueChange, borderRadius, height, disabled, width }) => {
+  ({
+    defaultValue,
+    opacity,
+    roundRadius,
+    roundSize,
+    onValueChange,
+    borderRadius,
+    height,
+    disabled,
+    width,
+    testId = 'switch',
+  }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
 
     useEffect(() => {
@@ -33,6 +44,7 @@ export const Switch = withSwitchVariation(
           p={3}
           onClick={toggleChecked}
           disabled={disabled}
+          testId={testId}
         >
           <Transition animation={{ x: isChecked ? roundSize : 0 }} duration={200}>
             <Box width={roundSize} height={roundSize} borderRadius={roundRadius} backgroundColor="white" />

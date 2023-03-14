@@ -42,6 +42,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   disabledRowKeys,
   expandedRowKeys,
   tableLayout,
+  testId = 'table',
 }: TableProps<Data, RowKey>) => {
   const columns =
     (
@@ -92,6 +93,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       width="100%"
       borderBottomWidth={0}
       borderRadiusLevel={1}
+      data-testid={testId}
     >
       <Box
         as="table"

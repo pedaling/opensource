@@ -18,11 +18,11 @@ describe('<VerificationCodeField />', () => {
     beforeEach(() => {
       renderer = render(<VerificationCodeField length={6} onComplete={mockHandleComplete} />);
 
-      element = renderer.getByTestId('VerificationCodeField');
+      element = renderer.getByTestId('verification-code-field');
 
       inputElement = element.getElementsByTagName('input')[0];
 
-      itemElements = renderer.getAllByTestId('VerificationCodeItem');
+      itemElements = renderer.getAllByTestId('verification-code-item');
     });
 
     afterEach(() => {
@@ -102,11 +102,11 @@ describe('<VerificationCodeField />', () => {
     beforeEach(() => {
       renderer = render(<VerificationCodeField length={6} onComplete={mockHandleComplete} blurOnComplete={true} />);
 
-      element = renderer.getByTestId('VerificationCodeField');
+      element = renderer.getByTestId('verification-code-field');
 
       inputElement = element.getElementsByTagName('input')[0];
 
-      itemElements = renderer.getAllByTestId('VerificationCodeItem');
+      itemElements = renderer.getAllByTestId('verification-code-item');
     });
 
     describe('enter 123456', () => {

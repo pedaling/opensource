@@ -6,7 +6,17 @@ import { SelectOptionItem } from '../SelectOptionItem';
 import { withSelectOptionGroupVariation } from './SelectOptionGroupProps';
 
 export const SelectOptionGroup = withSelectOptionGroupVariation(
-  ({ options, focusIndex, onOptionClick, renderOption, reverse, textTransform, size, ...restProps }) => {
+  ({
+    options,
+    focusIndex,
+    onOptionClick,
+    renderOption,
+    reverse,
+    textTransform,
+    testId = 'select-option-group',
+    size,
+    ...restProps
+  }) => {
     const ref = useRef<HTMLUListElement>(null);
     const itemRefs = useRef<HTMLElement[]>([]);
     const renderIndices = reverse ? range(options.length).reverse() : range(options.length);
@@ -45,6 +55,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         borderStyle="solid"
         borderRadius={2}
         hideScroll={true}
+        data-testid={testId}
         {...restProps}
       >
         {renderIndices.map((renderIndex, index) => (

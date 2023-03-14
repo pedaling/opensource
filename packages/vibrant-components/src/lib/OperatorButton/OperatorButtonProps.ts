@@ -4,6 +4,7 @@ import { Icon } from '@vibrant-ui/icons';
 export type OperatorButtonProps = {
   operator: 'minus' | 'plus';
   disabled?: boolean;
+  testId?: string;
   onClick?: () => void;
 };
 

@@ -84,6 +84,7 @@ export const Tooltip = withTooltipVariation(
     onOpen,
     offset = 8,
     position = 'top',
+    testId = 'tooltip',
   }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
@@ -163,7 +164,7 @@ export const Tooltip = withTooltipVariation(
     );
 
     return (
-      <HStack>
+      <HStack data-testid={testId}>
         <PressableBox ref={openerRef} onHoverIn={openTooltip} onHoverOut={closeTooltip}>
           {children}
         </PressableBox>

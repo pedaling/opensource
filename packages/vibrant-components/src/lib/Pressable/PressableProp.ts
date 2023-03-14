@@ -32,6 +32,7 @@ export type PressableProps = BackgroundSystemProps &
     onClick?: () => void;
     onFocus?: () => void;
     onBlur?: () => void;
+    testId?: string;
   } & Either<
     {
       as: 'div' | 'li';

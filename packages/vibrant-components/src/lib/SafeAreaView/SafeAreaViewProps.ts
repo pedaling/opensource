@@ -7,6 +7,7 @@ export type SafeAreaViewProps = BackgroundSystemProps &
     mode?: 'margin' | 'padding';
     edges?: Edge[];
     minInsets?: MinInsets;
+    testId?: string;
   };
 
 export const withSafeAreaViewVariation = withVariation<SafeAreaViewProps>('SafeAreaView')();

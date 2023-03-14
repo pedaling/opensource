@@ -2,8 +2,8 @@ import { Box } from '@vibrant-ui/core';
 import { Motion } from '@vibrant-ui/motion';
 import { withSpinnerVariation } from './SpinnerProps';
 
-export const Spinner = withSpinnerVariation(({ borderWidth, borderRadius, ...restProps }) => (
-  <Box as="span" {...restProps}>
+export const Spinner = withSpinnerVariation(({ borderWidth, borderRadius, testId = 'spinner', ...restProps }) => (
+  <Box as="span" data-testid={testId} {...restProps}>
     <Box
       as="span"
       position="absolute"

@@ -5,6 +5,7 @@ type SearchFieldProps = BaseInputProps<string> & {
   autoFocus?: boolean;
   placeholder?: string;
   kind?: 'default' | 'transparent';
+  testId?: string;
   onSubmit?: (value: string) => void;
 };
 

@@ -7,8 +7,8 @@ import { VStack } from '../VStack';
 import { withToastVariation } from './ToastProps';
 
 export const Toast = withToastVariation(
-  ({ innerRef, IconComponent, color, title, buttonText, onButtonClick, ...restProps }) => (
-    <HStack ref={innerRef} {...restProps} px={20} width="100%" alignHorizontal="center">
+  ({ innerRef, IconComponent, color, title, buttonText, onButtonClick, testId = 'toast', ...restProps }) => (
+    <HStack ref={innerRef} {...restProps} px={20} width="100%" alignHorizontal="center" data-testid={testId}>
       <Paper
         borderRadiusLevel={1}
         backgroundColor="inverseSurface"

@@ -6,6 +6,7 @@ export type RatioProps = Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'widt
   ratio: ResponsiveValue<number>;
   children: ReactElementChildren;
   ref?: Ref<any>;
+  testId?: string;
 };
 
 export const withRatioVariation = withVariation<RatioProps>('Ratio')(

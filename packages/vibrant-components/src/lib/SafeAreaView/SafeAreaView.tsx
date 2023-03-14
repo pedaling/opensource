@@ -10,6 +10,7 @@ export const SafeAreaView = withSafeAreaViewVariation(
     height = '100%',
     minInsets = { bottom: 0, left: 0, right: 0, top: 0 },
     children,
+    testId = 'safe-area-view',
     ...restProps
   }) => {
     const { generateStyle } = useSafeArea();
@@ -29,7 +30,7 @@ export const SafeAreaView = withSafeAreaViewVariation(
     }, [edges, generateStyle, minInsets]);
 
     return (
-      <Box width={width} height={height} {...(mode === 'margin' && style)}>
+      <Box width={width} height={height} data-testid={testId} {...(mode === 'margin' && style)}>
         <Box
           width={width === 'auto' ? 'auto' : '100%'}
           height={height === 'auto' ? 'auto' : '100%'}

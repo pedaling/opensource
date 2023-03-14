@@ -10,6 +10,7 @@ export type TabProps = Pick<DisplaySystemProps, 'hidden'> & {
   description?: string;
   onClick?: (id: string) => void;
   ref?: ForwardedRef<HTMLButtonElement>;
+  testId?: string;
 };
 
 export const withTabVariation = withVariation<TabProps>('Tab')(
