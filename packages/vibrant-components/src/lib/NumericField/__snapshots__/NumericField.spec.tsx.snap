@@ -257,6 +257,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
     >
       <button
         class="emotion-3"
+        data-testid="operator-button"
         type="button"
       >
         <span
@@ -285,6 +286,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
     >
       <button
         class="emotion-3"
+        data-testid="operator-button"
         type="button"
       >
         <span

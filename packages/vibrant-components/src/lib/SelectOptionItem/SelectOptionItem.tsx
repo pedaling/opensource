@@ -4,7 +4,7 @@ import { Pressable } from '../Pressable';
 import { withSelectOptionItemVariation } from './SelectOptionItemProps';
 
 export const SelectOptionItem = withSelectOptionItemVariation(
-  ({ innerRef, active, children, color, textTransform, bodyLevel, ...restProps }) => (
+  ({ innerRef, active, children, color, textTransform, testId = 'select-option-item', bodyLevel, ...restProps }) => (
     <Pressable
       ref={innerRef}
       as="li"
@@ -12,6 +12,7 @@ export const SelectOptionItem = withSelectOptionItemVariation(
       overlayColor="onView1"
       interactions={['hover', 'active']}
       flexShrink={0}
+      testId={testId}
       {...restProps}
     >
       <>

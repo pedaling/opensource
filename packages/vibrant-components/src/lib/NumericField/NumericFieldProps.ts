@@ -5,6 +5,7 @@ export type NumericFieldProps = BaseInputProps<number> & {
   placeholder?: number;
   min?: number;
   max?: number;
+  testId?: string;
 };
 
 export const withNumericFieldVariation = withVariation<NumericFieldProps>('NumericField')(

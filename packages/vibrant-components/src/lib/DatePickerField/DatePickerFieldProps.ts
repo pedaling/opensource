@@ -14,6 +14,7 @@ export type DatePickerFieldProps = BaseInputProps<Date | undefined> & {
   onOpen?: () => void;
   zIndex?: number;
   autoFocus?: boolean;
+  testId?: string;
 } & (
     | {
         label?: never;

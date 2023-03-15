@@ -6,6 +6,7 @@ export type SwitchProps = {
   defaultValue?: boolean;
   onValueChange?: (state: boolean) => void;
   disabled?: boolean;
+  testId?: string;
 };
 
 export const withSwitchVariation = withVariation<SwitchProps>('Switch')(

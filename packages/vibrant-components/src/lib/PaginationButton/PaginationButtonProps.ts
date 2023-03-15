@@ -9,6 +9,7 @@ export type PaginationButtonProps = {
   disabled?: boolean;
   children?: never;
   ariaLabel?: string;
+  testId?: string;
 };
 
 export const withPaginationButtonVariation = withVariation<PaginationButtonProps>('PaginationButton')(

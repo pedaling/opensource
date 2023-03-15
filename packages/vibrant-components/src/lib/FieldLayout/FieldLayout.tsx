@@ -34,6 +34,7 @@ export const FieldLayout = withFieldLayoutVariation(
     shrink,
     prefixText,
     suffixText,
+    testId = 'field-layout',
     bodyLevel,
     helperTextBodyLevel,
     helperTextSpacing,
@@ -42,7 +43,7 @@ export const FieldLayout = withFieldLayoutVariation(
     iconSize,
     hitSlop,
   }) => (
-    <VStack width="100%" spacing={helperTextSpacing}>
+    <VStack data-testid={testId} width="100%" spacing={helperTextSpacing}>
       <Box
         flexDirection="row"
         alignItems="center"

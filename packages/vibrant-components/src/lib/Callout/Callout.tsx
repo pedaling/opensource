@@ -6,7 +6,17 @@ import { VStack } from '../VStack';
 import { withCalloutVariation } from './CalloutProps';
 
 export const Callout = withCalloutVariation(
-  ({ title, contents, renderContents, buttonText, onButtonClick, backgroundColor, fontColor, IconComponent }) => (
+  ({
+    title,
+    contents,
+    renderContents,
+    buttonText,
+    onButtonClick,
+    backgroundColor,
+    fontColor,
+    IconComponent,
+    testId = 'callout',
+  }) => (
     <Box
       width="100%"
       borderStyle="solid"
@@ -15,6 +25,7 @@ export const Callout = withCalloutVariation(
       borderColor="outline1"
       borderRadius={2}
       p={15}
+      data-testid={testId}
     >
       <HStack spacing={6}>
         <Box mt={1}>

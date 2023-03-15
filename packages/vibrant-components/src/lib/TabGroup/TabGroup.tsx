@@ -52,6 +52,7 @@ export const TabGroup = withTabGroupVariation(
     onTabChange,
     children,
     isScrollable,
+    testId = 'tab-group',
     ...restProps
   }) => {
     const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
@@ -150,7 +151,7 @@ export const TabGroup = withTabGroupVariation(
     };
 
     return (
-      <VStack width="100%">
+      <VStack width="100%" data-testid={testId}>
         <BoxComponent
           as="ul"
           ref={tabGroupRef}

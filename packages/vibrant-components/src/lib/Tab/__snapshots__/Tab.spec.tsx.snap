@@ -69,6 +69,7 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   >
     <h3
       class="emotion-1"
+      data-testid="title"
     >
       tab1
     </h3>

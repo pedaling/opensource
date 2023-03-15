@@ -20,7 +20,7 @@ import { TableStringFilter } from './TableStringFilter';
 import type { TableFilterRefValue } from './types';
 
 export const TableFilterGroup = withTableFilterGroupPropsVariation(
-  ({ initialFilterDataKeys = [], onFilterChange, children }) => {
+  ({ initialFilterDataKeys = [], onFilterChange, testId = 'table-filter-group', children }) => {
     const {
       translations: {
         tableFilterGroup: { add, initialize },
@@ -108,7 +108,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
         isCurrentFilter={filterDataKey => currentFilterDataKeys.includes(filterDataKey)}
         isDeletableFilter={filterDataKey => !initialFilterDataKeys.includes(filterDataKey)}
       >
-        <HStack width="100%" alignHorizontal="space-between">
+        <HStack width="100%" alignHorizontal="space-between" data-testid={testId}>
           <ScrollBox horizontal={true} hideScroll={true}>
             <HStack data-testid="filter-wrapper" alignVertical="center" spacing={8} flexShrink={0}>
               {currentFilterDataKeys.map(key => {

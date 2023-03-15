@@ -8,7 +8,15 @@ import { VStack } from '../VStack';
 import { withVerificationCodeFieldVariation } from './VerificationCodeFieldProps';
 
 export const VerificationCodeField = withVerificationCodeFieldVariation(
-  ({ length, state: stateProp = 'default', errorMessage, blurOnComplete, onComplete, ...restProps }) => {
+  ({
+    length,
+    state: stateProp = 'default',
+    errorMessage,
+    blurOnComplete,
+    onComplete,
+    testId = 'verification-code-field',
+    ...restProps
+  }) => {
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [code, setCode] = useState<string[]>([]);
     const [focusIndex, setFocusIndex] = useState(-1);
@@ -28,7 +36,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
     }, [stateProp]);
 
     return (
-      <Box data-testid="VerificationCodeField" {...restProps}>
+      <Box data-testid={testId} {...restProps}>
         <TextInput
           ref={inputRef}
           type="number"

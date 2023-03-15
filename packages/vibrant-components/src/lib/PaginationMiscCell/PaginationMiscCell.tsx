@@ -3,7 +3,7 @@ import { Pressable } from '../Pressable';
 import { withPaginationMiscCellVariation } from './PaginationMiscCellProps';
 
 export const PaginationMiscCell = withPaginationMiscCellVariation(
-  ({ innerRef, page, onClick, overlayColor, ...props }) => (
+  ({ innerRef, page, onClick, overlayColor, testId, ...props }) => (
     <Pressable
       as="button"
       ref={innerRef}
@@ -16,6 +16,7 @@ export const PaginationMiscCell = withPaginationMiscCellVariation(
       overlayColor={overlayColor}
       interactions={['hover', 'focus', 'active']}
       flexShrink={0}
+      data-testid={testId}
       {...props}
     >
       <Body level={3} as="span" weight="bold">

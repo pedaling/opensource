@@ -5,7 +5,18 @@ import { Title } from '../Title';
 import { withTabVariation } from './TabProps';
 
 export const Tab = withTabVariation(
-  ({ innerRef, title, borderBottomColor, textColor, update, description, id, onClick, ...restProps }) => (
+  ({
+    innerRef,
+    title,
+    borderBottomColor,
+    textColor,
+    update,
+    description,
+    id,
+    onClick,
+    testId = 'tab',
+    ...restProps
+  }) => (
     <Box
       as="button"
       borderWidth={0}
@@ -26,6 +37,7 @@ export const Tab = withTabVariation(
       pt={12}
       pb={10}
       backgroundColor="inherit"
+      data-testid={testId}
       {...restProps}
     >
       <Title level={[6, 6, 5]} weight="bold" color={textColor}>

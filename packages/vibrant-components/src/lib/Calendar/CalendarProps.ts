@@ -8,6 +8,7 @@ export type CalendarProps =
       onDateSelect: (date: Date) => void;
       startDate?: never;
       endDate?: never;
+      testId?: string;
     }
   | {
       date?: never;
@@ -16,6 +17,7 @@ export type CalendarProps =
       onDateSelect?: never;
       startDate: Date | undefined;
       endDate: Date | undefined;
+      testId?: string;
     };
 
 export const withCalendarVariation = withVariation<CalendarProps>('Calendar')();

@@ -14,6 +14,7 @@ export type RangePickerFieldProps = BaseInputProps<{ start: Date; end: Date } | 
   onOpen?: () => void;
   zIndex?: number;
   autoFocus?: boolean;
+  testId?: string;
 } & (
     | {
         label?: never;

@@ -5,6 +5,7 @@ import type { TypographyWeight } from '@vibrant-ui/theme';
 export type DisplayProps = Omit<TextProps, keyof PositionSystemProps | keyof TypographySystemProps> & {
   level: ResponsiveValue<1 | 2 | 3 | 4>;
   weight?: ResponsiveValue<TypographyWeight>;
+  testId?: string;
 };
 
 export const withDisplayVariation = withVariation<DisplayProps>('Display')(

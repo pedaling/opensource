@@ -16,6 +16,7 @@ export const PasswordField = withPasswordFieldVariation(
     onValueChange,
     onFocus,
     onBlur,
+    testId = 'password-field',
     autoComplete = 'password',
     ...restProps
   }) => {
@@ -32,6 +33,7 @@ export const PasswordField = withPasswordFieldVariation(
     return (
       <FieldLayout
         size={size}
+        testId={testId}
         label={label}
         helperText={helperText}
         state={state}

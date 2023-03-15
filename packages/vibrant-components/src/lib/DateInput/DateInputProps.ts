@@ -13,6 +13,7 @@ export type DateInputProps = {
   helperText?: string;
   state?: 'default' | 'error';
   autoFocus?: boolean;
+  testId?: string;
 };
 
 export const withDateInputVariation = withVariation<DateInputProps>('DateInput')(

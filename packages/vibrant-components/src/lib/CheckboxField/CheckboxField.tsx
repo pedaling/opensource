@@ -18,6 +18,7 @@ export const CheckboxField = withCheckboxFieldVariation(
     helperTextLevel,
     labelColor,
     helperTextColor,
+    testId = 'checkbox-field',
     ...restProps
   }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
@@ -44,7 +45,7 @@ export const CheckboxField = withCheckboxFieldVariation(
     };
 
     return (
-      <VStack>
+      <VStack data-testid={testId}>
         <HStack spacing={8} alignVertical={helperText ? 'start' : 'center'}>
           <Checkbox
             defaultValue={isChecked}

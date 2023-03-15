@@ -13,6 +13,7 @@ export const Checkbox = withCheckboxVariation(
     iconFillColor,
     iconOutlineColor,
     ariaLabelledBy,
+    testId = 'checkbox',
   }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
 
@@ -40,6 +41,7 @@ export const Checkbox = withCheckboxVariation(
     return (
       <PressableBox
         role="checkbox"
+        data-testid={testId}
         disabled={disabled}
         onClick={handleChange}
         ariaLabelledBy={ariaLabelledBy}

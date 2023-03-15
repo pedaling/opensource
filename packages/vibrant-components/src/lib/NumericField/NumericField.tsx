@@ -16,6 +16,7 @@ export const NumericField = withNumericFieldVariation(
     backgroundColor,
     min,
     tabIndex,
+    testId = 'numeric-field',
     ...restProps
   }) => {
     const inputRef = useRef<TextInputRef>(null);
@@ -46,7 +47,7 @@ export const NumericField = withNumericFieldVariation(
     );
 
     return (
-      <Box position="relative" width={128} height={38} {...restProps}>
+      <Box position="relative" width={128} height={38} data-testid={testId} {...restProps}>
         <TextInput
           ref={inputRef}
           type="number"

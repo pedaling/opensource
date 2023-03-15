@@ -12,6 +12,7 @@ export type CheckboxFieldOption<Value extends string> = DistributivePick<
    * This is not displayed on the client-side.
    */
   value: Value;
+  testId?: string;
 };
 
 export type CheckboxGroupFieldProps<Value extends string, Options extends readonly CheckboxFieldOption<Value>[]> = {
@@ -29,6 +30,7 @@ export type CheckboxGroupFieldProps<Value extends string, Options extends readon
    * @default 16
    */
   spacing?: ResponsiveValue<8 | 16 | 24>;
+  testId?: string;
   onValueChange?: (value: Record<Options[number]['value'], boolean>, info: { allChecked: boolean }) => void;
 };
 

@@ -6,7 +6,7 @@ import { Pressable } from '../Pressable';
 import { withSearchFieldVariation } from './SearchFieldProps';
 
 export const SearchField = withSearchFieldVariation(
-  ({ defaultValue, onValueChange, kind = 'default', ...restProps }) => {
+  ({ defaultValue, onValueChange, kind = 'default', testId = 'search-field', ...restProps }) => {
     const [value, setValue] = useState(defaultValue ?? '');
     const inputRef = useRef<TextInputRef>(null);
 
@@ -15,7 +15,7 @@ export const SearchField = withSearchFieldVariation(
     }, [defaultValue]);
 
     return (
-      <Box position="relative" width="100%">
+      <Box position="relative" width="100%" data-testid={testId}>
         <TextInput
           ref={inputRef}
           type="text"

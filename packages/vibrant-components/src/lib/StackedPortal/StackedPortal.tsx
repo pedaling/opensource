@@ -17,6 +17,7 @@ export const StackedPortal = withStackedPortalVariation(
     safeAreaMode = 'none',
     hidden,
     duration,
+    testId = 'stacked-portal',
     ...restProps
   }) => {
     const { generateStyle } = useSafeArea();

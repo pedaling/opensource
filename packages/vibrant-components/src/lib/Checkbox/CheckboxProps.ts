@@ -7,6 +7,7 @@ export type CheckboxProps = BaseInputProps<boolean> & {
   size: ResponsiveValue<'md' | 'sm'>;
   indeterminate?: boolean;
   ariaLabelledBy?: string;
+  testId?: string;
 };
 
 export const withCheckboxVariation = withVariation<CheckboxProps>('Checkbox')(

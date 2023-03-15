@@ -8,6 +8,7 @@ export type CalloutType = 'default' | 'error' | 'informative' | 'success' | 'war
 export type CalloutProps = {
   title: string;
   kind?: CalloutType;
+  testId?: string;
 } & (
   | {
       buttonText: string;

@@ -21,6 +21,7 @@ export const RangePickerField = withRangePickerFieldVariation(
     onOpen,
     zIndex,
     autoFocus,
+    testId = 'range-picker-field',
   }) => {
     const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
@@ -103,7 +104,7 @@ export const RangePickerField = withRangePickerFieldVariation(
     const composeRef = useComposedRef(innerRef, inputRef);
 
     return (
-      <Box position="relative" width="100%" height={50}>
+      <Box position="relative" width="100%" height={50} data-testid={testId}>
         <DateInput
           ref={composeRef}
           value={inputValue}

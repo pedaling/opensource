@@ -6,6 +6,7 @@ export type PaginationProps = {
   currentPage: number;
   onPageChange: (page: number) => void;
   extra?: boolean;
+  testId?: string;
 };
 
 export const withPaginationVariation = withVariation<PaginationProps>('Pagination')(

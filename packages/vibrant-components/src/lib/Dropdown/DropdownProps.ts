@@ -14,6 +14,7 @@ export type DropdownProps = Either<
   renderContents: (_: { close: () => void }) => ReactElementChild;
   spacing?: number;
   onClose?: () => void;
+  testId?: string;
 };
 
 export const withDropdownVariation = withVariation<DropdownProps>('Dropdown')();

@@ -74,7 +74,16 @@ const getOffsetAvoidingOverflowByPosition = (
 };
 
 export const Dropdown = withDropdownVariation(
-  ({ defaultOpen = false, open, renderOpener, renderContents, position = 'bottom', spacing = 8, onClose }) => {
+  ({
+    defaultOpen = false,
+    open,
+    renderOpener,
+    renderContents,
+    position = 'bottom',
+    spacing = 8,
+    onClose,
+    testId = 'dropdown',
+  }) => {
     const openerRef = useRef<HTMLElement>(null);
     const customOpenerRef = useRef<HTMLElement>(null);
 
@@ -211,7 +220,7 @@ export const Dropdown = withDropdownVariation(
                     duration={200}
                   >
                     <Box overflow="hidden" height={contentHeight}>
-                      <Box onLayout={handleContentResize} flexShrink={0}>
+                      <Box onLayout={handleContentResize} flexShrink={0} data-testid={testId}>
                         {renderContents({ close: closeDropdown })}
                       </Box>
                     </Box>
@@ -252,7 +261,7 @@ export const Dropdown = withDropdownVariation(
                       height={contentHeight}
                       hideScroll={(containerHeight ?? 0) < viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
                     >
-                      <Box onLayout={handleContentResize} flexShrink={0}>
+                      <Box onLayout={handleContentResize} flexShrink={0} data-testid={testId}>
                         {renderContents({ close: closeDropdown })}
                       </Box>
                     </ScrollBox>

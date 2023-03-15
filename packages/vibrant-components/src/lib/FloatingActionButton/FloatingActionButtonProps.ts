@@ -8,6 +8,7 @@ type FloatingActionButtonProps = {
   position?: 'left' | 'right';
   offset?: number;
   onClick: () => void;
+  testId?: string;
   IconComponent: ComponentType<IconProps>;
 };
 

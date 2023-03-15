@@ -15,6 +15,7 @@ export type PasswordFieldProps = {
   onFocus?: () => void;
   onBlur?: () => void;
   autoComplete?: Extract<AutoCompleteOption, 'newPassword' | 'password'>;
+  testId?: string;
 };
 
 export const withPasswordFieldVariation = withVariation<PasswordFieldProps>('PasswordField')();

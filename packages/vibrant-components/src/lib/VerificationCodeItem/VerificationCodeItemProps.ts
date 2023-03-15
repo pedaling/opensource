@@ -5,6 +5,7 @@ type VerificationCodeItemProps = {
   state?: 'default' | 'error';
   active?: boolean;
   onClick?: () => void;
+  testId?: string;
 };
 
 export const withVerificationCodeItemVariation = withVariation<VerificationCodeItemProps>('VerificationCodeItem')(

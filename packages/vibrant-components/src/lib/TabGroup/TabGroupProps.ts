@@ -7,6 +7,7 @@ export type TabGroupProps = {
   type: 'fitContent' | 'fullWidth';
   onTabChange: (tabId: string) => void;
   children: ReactElement<TabProps>[];
+  testId?: string;
 };
 
 export const withTabGroupVariation = withVariation<TabGroupProps>('TabGroup')(

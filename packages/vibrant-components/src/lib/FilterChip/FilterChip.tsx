@@ -7,7 +7,7 @@ import { withFilterChipVariation } from './FilterChipProps';
 
 export const FilterChip = withFilterChipVariation(
   ({ startIcon, endIcon, children, bodyLevel, color, spacing, iconSize, testId, ...props }) => (
-    <Pressable data-testid={testId} flexGrow={0} flexShrink={0} borderRadiusLevel={5} {...props}>
+    <Pressable testId={testId} flexGrow={0} flexShrink={0} borderRadiusLevel={5} {...props}>
       <HStack as="span" my="auto" alignVertical="center">
         {startIcon && (
           <Box as="span" mr={spacing}>

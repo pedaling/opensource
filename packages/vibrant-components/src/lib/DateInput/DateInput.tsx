@@ -27,6 +27,7 @@ export const DateInput = withDateInputVariation(
     borderColor,
     helperText,
     autoFocus,
+    testId = 'date-input',
     ...restProps
   }) => {
     const inputRef = useRef<any>(null);
@@ -45,7 +46,7 @@ export const DateInput = withDateInputVariation(
     const composeRef = useComposedRef(innerRef, inputRef);
 
     return (
-      <Box width="100%" position="relative">
+      <Box width="100%" position="relative" data-testid={testId}>
         <Pressable
           ref={composeRef}
           width="100%"
