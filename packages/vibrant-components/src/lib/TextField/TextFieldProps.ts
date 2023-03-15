@@ -3,6 +3,7 @@ import type {
   AutoCapitalizeOption,
   AutoCompleteOption,
   ReactElementChild,
+  ResponsiveValue,
   TextInputProps,
   TextInputType,
 } from '@vibrant-ui/core';
@@ -11,6 +12,7 @@ import type { BaseInputProps } from '../../types';
 
 export type TextFieldProps = BaseInputProps<string> &
   Pick<TextInputProps, 'onSubmit'> & {
+    size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
     id?: string;
     type?: Exclude<TextInputType, 'password'>;
     state?: 'default' | 'error';

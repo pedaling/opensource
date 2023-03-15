@@ -8,6 +8,7 @@ export default {
   args: {
     label: '비밀번호',
     helperText: '비밀번호을 입력해주세요',
+    size: 'lg',
   },
 } as ComponentMeta<typeof PasswordField>;
 

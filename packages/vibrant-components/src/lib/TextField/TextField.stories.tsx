@@ -10,6 +10,7 @@ export default {
     helperText: '이메일을 입력해주세요',
     autoCapitalize: 'none',
     autoComplete: 'none',
+    size: 'lg',
   },
   argTypes: {
     renderStart: { controls: false },

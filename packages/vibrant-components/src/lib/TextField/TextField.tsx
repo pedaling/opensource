@@ -7,6 +7,7 @@ import { withTextFieldVariation } from './TextFieldProps';
 export const TextField = withTextFieldVariation(
   ({
     type = 'text',
+    size,
     state,
     label,
     placeholder,
@@ -48,6 +49,7 @@ export const TextField = withTextFieldVariation(
 
     return (
       <FieldLayout
+        size={size}
         label={label}
         helperText={helperText}
         state={state}
