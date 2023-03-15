@@ -188,6 +188,7 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
         >
           <span
             class="emotion-5"
+            data-testid="body"
           >
             label
           </span>
@@ -396,6 +397,7 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
         >
           <span
             class="emotion-5"
+            data-testid="body"
           >
             label
           </span>
@@ -604,6 +606,7 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
         >
           <span
             class="emotion-5"
+            data-testid="body"
           >
             label
           </span>

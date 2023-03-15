@@ -325,6 +325,7 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   >
     <div
       class="emotion-1"
+      data-testid="text-field"
     >
       <div
         class="emotion-2"
@@ -349,6 +350,7 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
           >
             <span
               class="emotion-8"
+              data-testid="body"
             />
             <input
               autocapitalize="none"
@@ -361,6 +363,7 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
             />
             <span
               class="emotion-10"
+              data-testid="body"
             />
           </div>
         </div>

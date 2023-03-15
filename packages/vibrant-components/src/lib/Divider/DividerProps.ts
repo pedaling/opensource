@@ -5,7 +5,6 @@ export type DividerProps = {
   direction: 'horizontal' | 'vertical';
   kind?: ResponsiveValue<'dashed' | 'default' | 'thick'>;
   margin?: ResponsiveValue<'lg' | 'md' | 'none'>;
-  testId?: string;
 };
 
 export const withDividerVariation = withVariation<DividerProps>('Divider')(
