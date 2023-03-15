@@ -52,6 +52,7 @@ describe('<SelectField />', () => {
     beforeEach(async () => {
       renderer = render(
         <SelectField
+          size="lg"
           label="label"
           options={[
             {
@@ -76,6 +77,7 @@ describe('<SelectField />', () => {
     beforeEach(async () => {
       renderer = render(
         <SelectField
+          size="md"
           label="label"
           options={[
             {
@@ -100,6 +102,7 @@ describe('<SelectField />', () => {
     beforeEach(async () => {
       renderer = render(
         <SelectField
+          size="sm"
           label="label"
           options={[
             {

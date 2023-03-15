@@ -194,6 +194,7 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
         </span>
         <svg
           class="emotion-6"
+          data-testid="arrowtriangledown-thin"
           viewBox="0 0 24 24"
         >
           <path
@@ -272,9 +273,9 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 50px;
-  padding-left: 16px;
-  padding-right: 16px;
+  height: 38px;
+  padding-left: 9px;
+  padding-right: 9px;
   border-width: 1px;
   border-style: solid;
   border-color: #00000026;
@@ -328,7 +329,7 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding-right: 12px;
+  padding-right: 8px;
   min-width: 0;
 }
 
@@ -401,6 +402,7 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
         </span>
         <svg
           class="emotion-6"
+          data-testid="arrowtriangledown-thin"
           viewBox="0 0 24 24"
         >
           <path
@@ -479,9 +481,9 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 50px;
-  padding-left: 16px;
-  padding-right: 16px;
+  height: 30px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-width: 1px;
   border-style: solid;
   border-color: #00000026;
@@ -535,7 +537,7 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  padding-right: 12px;
+  padding-right: 6px;
   min-width: 0;
 }
 
@@ -551,8 +553,8 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   -webkit-line-clamp: 1;
   word-break: break-all;
   word-wrap: break-word;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   font-weight: 400;
 }
 
@@ -572,8 +574,8 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   fill: #0c0c0c;
 }
 
@@ -608,6 +610,7 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
         </span>
         <svg
           class="emotion-6"
+          data-testid="arrowtriangledown-thin"
           viewBox="0 0 24 24"
         >
           <path
