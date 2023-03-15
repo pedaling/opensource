@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { ReactElementChild } from '@vibrant-ui/core';
+import type { ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { OnColorToken } from '@vibrant-ui/theme';
 
 type FieldLayoutProps = {
+  size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
   state?: 'default' | 'error' | 'success';
   label?: string;
   helperText?: string;
@@ -28,6 +29,48 @@ type FieldLayoutProps = {
 };
 
 export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLayout')(
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        default: 'lg',
+        keep: true,
+        responsive: true,
+      },
+    ],
+    variants: {
+      lg: {
+        height: 50,
+        bodyLevel: 2,
+        helperTextBodyLevel: 4,
+        helperTextSpacing: 4,
+        px: 15,
+        spacing: 12,
+        iconSize: 20,
+        hitSlop: 8,
+      },
+      md: {
+        height: 38,
+        bodyLevel: 2,
+        helperTextBodyLevel: 4,
+        helperTextSpacing: 4,
+        px: 9,
+        spacing: 8,
+        iconSize: 20,
+        hitSlop: 6,
+      },
+      sm: {
+        height: 30,
+        bodyLevel: 4,
+        helperTextBodyLevel: 5,
+        helperTextSpacing: 2,
+        px: 7,
+        spacing: 6,
+        iconSize: 16,
+        hitSlop: 4,
+      },
+    } as const,
+  }),
   propVariant({
     props: [
       {
@@ -99,28 +142,6 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
   propVariant({
     props: [
       {
-        name: 'shrink',
-        keep: true,
-      },
-    ],
-    variants: {
-      true: {
-        animation: {
-          top: 7,
-          typography: 'body6',
-        },
-      },
-      false: {
-        animation: {
-          top: 15,
-          typography: 'body2',
-        },
-      },
-    } as const,
-  }),
-  propVariant({
-    props: [
-      {
         name: 'disabled',
         default: false,
       },
@@ -173,9 +194,59 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       hasSuffixComponent: renderEnd !== undefined,
     }),
   }),
-
   propVariant({
     props: [
+      {
+        name: 'shrink',
+        keep: true,
+      },
+      {
+        name: 'size',
+        responsive: true,
+        keep: true,
+      },
+      {
+        name: 'hasPrefixComponent',
+        keep: true,
+      },
+      {
+        name: 'hasSuffixComponent',
+        keep: true,
+      },
+    ],
+    variants: ({ shrink, size, hasPrefixComponent, hasSuffixComponent }) => {
+      if (size === 'md') {
+        return {
+          labelTop: shrink ? 3 : 9,
+          labelTypography: shrink ? 'body6' : 'body2',
+          labelLeft: hasPrefixComponent ? 8 : 9,
+          labelRight: hasSuffixComponent ? 8 : 9,
+        } as const;
+      }
+
+      if (size === 'sm') {
+        return {
+          labelTop: shrink ? 0 : 7,
+          labelTypography: shrink ? 'body6' : 'body4',
+          labelLeft: hasPrefixComponent ? 6 : 7,
+          labelRight: hasSuffixComponent ? 6 : 7,
+        } as const;
+      }
+
+      return {
+        labelTop: shrink ? 7 : 15,
+        labelTypography: shrink ? 'body6' : 'body2',
+        labelLeft: hasPrefixComponent ? 12 : 15,
+        labelRight: hasSuffixComponent ? 12 : 15,
+      } as const;
+    },
+  }),
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        responsive: true,
+      },
       {
         name: 'label',
         keep: true,
@@ -197,11 +268,39 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         keep: true,
       },
     ],
-    variants: ({ label, hasPrefixText, hasPrefixComponent, hasSuffixComponent, hasSuffixText, showClearButton }) => ({
-      pt: label ? 23 : 15,
-      pl: hasPrefixText ? 4 : hasPrefixComponent ? 12 : 15,
-      pr: hasSuffixText ? 4 : hasSuffixComponent || showClearButton ? 12 : 15,
-      pb: label ? 7 : 15,
-    }),
+    variants: ({
+      size,
+      label,
+      hasPrefixText,
+      hasPrefixComponent,
+      hasSuffixComponent,
+      hasSuffixText,
+      showClearButton,
+    }) => {
+      if (size === 'md') {
+        return {
+          pt: label ? 13 : 9,
+          pl: hasPrefixText ? 2 : hasPrefixComponent ? 8 : 9,
+          pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 8 : 9,
+          pb: label ? 3 : 9,
+        };
+      }
+
+      if (size === 'sm') {
+        return {
+          pt: label ? 12 : 7,
+          pl: hasPrefixText ? 2 : hasPrefixComponent ? 6 : 7,
+          pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 6 : 7,
+          pb: label ? 0 : 7,
+        };
+      }
+
+      return {
+        pt: label ? 23 : 15,
+        pl: hasPrefixText ? 4 : hasPrefixComponent ? 12 : 15,
+        pr: hasSuffixText ? 4 : hasSuffixComponent || showClearButton ? 12 : 15,
+        pb: label ? 7 : 15,
+      };
+    },
   })
 );
