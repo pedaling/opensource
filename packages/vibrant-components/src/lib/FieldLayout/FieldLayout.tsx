@@ -15,11 +15,15 @@ export const FieldLayout = withFieldLayoutVariation(
     labelColor,
     helperTextColor,
     borderColor,
-    animation,
+    labelTop,
+    labelTypography,
+    labelLeft,
+    labelRight,
     pt,
     pl,
     pr,
     pb,
+    px,
     valueColor,
     onLabelClick,
     renderField,
@@ -30,15 +34,22 @@ export const FieldLayout = withFieldLayoutVariation(
     shrink,
     prefixText,
     suffixText,
+    bodyLevel,
+    helperTextBodyLevel,
+    helperTextSpacing,
+    height,
+    spacing,
+    iconSize,
+    hitSlop,
   }) => (
-    <VStack width="100%" spacing={6}>
+    <VStack width="100%" spacing={helperTextSpacing}>
       <Box
         flexDirection="row"
         alignItems="center"
-        pl={renderStart ? 15 : 0}
-        pr={renderEnd ? 15 : 0}
+        pl={renderStart ? px : 0}
+        pr={renderEnd ? px : 0}
         width="100%"
-        height={50}
+        height={height}
         borderWidth={1}
         borderStyle="solid"
         borderColor={borderColor}
@@ -48,56 +59,55 @@ export const FieldLayout = withFieldLayoutVariation(
         <VStack flexShrink={0}>{renderStart?.()}</VStack>
         <Box width="100%" height="100%" cursor={cursor}>
           <PressableBox cursor={cursor} onClick={onLabelClick}>
-            <Transition animation={animation} duration={100}>
-              <Text
-                position="absolute"
-                zIndex={1}
-                left={renderStart ? 12 : 15}
-                right={renderEnd ? 12 : 15}
-                color={labelColor}
-                lineLimit={1}
-              >
+            <Transition
+              animation={{
+                top: labelTop,
+                typography: labelTypography,
+              }}
+              duration={100}
+            >
+              <Text position="absolute" zIndex={1} left={labelLeft} right={labelRight} color={labelColor} lineLimit={1}>
                 {label}
               </Text>
             </Transition>
           </PressableBox>
           <HStack alignVertical="center">
-            <Text
-              typography="body2"
+            <Body
+              level={bodyLevel}
               color="onView2"
               hidden={!prefixText || (!shrink && Boolean(label))}
               flexShrink={0}
               pt={pt}
-              pl={renderStart ? 12 : 16}
+              pl={labelLeft}
               pb={pb}
             >
               {prefixText}
-            </Text>
+            </Body>
 
-            {renderField({ height: 50, color: valueColor, pt, pl, pr, pb })}
+            {renderField({ height, color: valueColor, pt, pl, pr, pb })}
 
-            <Text
-              typography="body2"
+            <Body
+              level={bodyLevel}
               color="onView2"
               hidden={!suffixText || (!shrink && Boolean(label))}
               flexShrink={0}
               pt={pt}
-              pr={renderEnd || showClearButton ? 12 : 16}
+              pr={renderEnd || showClearButton ? spacing : px}
               pb={pb}
             >
               {suffixText}
-            </Text>
+            </Body>
           </HStack>
         </Box>
         {showClearButton && (
-          <PressableBox flexShrink={0} hitSlop={8} mr={12} onClick={onClearButtonClick}>
-            <Icon.CloseCircle.Fill size={20} fill="onView2" />
+          <PressableBox flexShrink={0} hitSlop={hitSlop} mr={spacing} onClick={onClearButtonClick}>
+            <Icon.CloseCircle.Fill size={iconSize} fill="onView2" />
           </PressableBox>
         )}
         <VStack flexShrink={0}>{renderEnd?.()}</VStack>
       </Box>
       {Boolean(helperText) && (
-        <Body level={4} color={helperTextColor}>
+        <Body level={helperTextBodyLevel} color={helperTextColor}>
           {helperText}
         </Body>
       )}

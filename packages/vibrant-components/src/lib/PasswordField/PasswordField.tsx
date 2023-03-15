@@ -7,6 +7,7 @@ import { withPasswordFieldVariation } from './PasswordFieldProps';
 
 export const PasswordField = withPasswordFieldVariation(
   ({
+    size,
     state,
     label,
     placeholder,
@@ -30,6 +31,7 @@ export const PasswordField = withPasswordFieldVariation(
 
     return (
       <FieldLayout
+        size={size}
         label={label}
         helperText={helperText}
         state={state}

@@ -1,7 +1,8 @@
-import type { AutoCompleteOption } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
+import type { AutoCompleteOption, ResponsiveValue } from '@vibrant-ui/core';
 
 export type PasswordFieldProps = {
+  size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
   id?: string;
   state?: 'default' | 'error' | 'success';
   label?: string;

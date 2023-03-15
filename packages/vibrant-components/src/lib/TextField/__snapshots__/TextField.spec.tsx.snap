@@ -1,0 +1,913 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextField /> when size is lg match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  height: 50px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000026;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: text;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+}
+
+.emotion-5 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  position: absolute;
+  z-index: 1;
+  left: 15px;
+  right: 15px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  display: none;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 23px;
+  padding-left: 15px;
+  padding-bottom: 7px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  background-color: #00000000;
+  border-width: 0;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  width: 100%;
+  padding: 0;
+  height: 50px;
+  padding-top: 23px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 7px;
+}
+
+.emotion-8::-webkit-input-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8::-moz-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8:-ms-input-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8::placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-9 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  display: none;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 23px;
+  padding-right: 15px;
+  padding-bottom: 7px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <div
+      class="emotion-1"
+    >
+      <div
+        class="emotion-2"
+      />
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-4"
+          tabindex="0"
+        >
+          <span
+            class="emotion-5"
+            style="top: 15px; font-size: 0.875rem; line-height: 1.125rem;"
+          >
+            label
+          </span>
+        </div>
+        <div
+          class="emotion-6"
+        >
+          <span
+            class="emotion-7"
+          />
+          <input
+            autocapitalize="none"
+            autocomplete="off"
+            class="emotion-8"
+            inputmode="text"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-9"
+          />
+        </div>
+      </div>
+      <div
+        class="emotion-2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> when size is md match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  height: 38px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000026;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: text;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+}
+
+.emotion-5 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  position: absolute;
+  z-index: 1;
+  left: 9px;
+  right: 9px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  display: none;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 13px;
+  padding-left: 9px;
+  padding-bottom: 3px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  background-color: #00000000;
+  border-width: 0;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  width: 100%;
+  padding: 0;
+  height: 38px;
+  padding-top: 13px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 3px;
+}
+
+.emotion-8::-webkit-input-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8::-moz-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8:-ms-input-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8::placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-9 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  display: none;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 13px;
+  padding-right: 9px;
+  padding-bottom: 3px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <div
+      class="emotion-1"
+    >
+      <div
+        class="emotion-2"
+      />
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-4"
+          tabindex="0"
+        >
+          <span
+            class="emotion-5"
+            style="top: 9px; font-size: 0.875rem; line-height: 1.125rem;"
+          >
+            label
+          </span>
+        </div>
+        <div
+          class="emotion-6"
+        >
+          <span
+            class="emotion-7"
+          />
+          <input
+            autocapitalize="none"
+            autocomplete="off"
+            class="emotion-8"
+            inputmode="text"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-9"
+          />
+        </div>
+      </div>
+      <div
+        class="emotion-2"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextField /> when size is sm match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  height: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000026;
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: text;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+}
+
+.emotion-5 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  position: absolute;
+  z-index: 1;
+  left: 7px;
+  right: 7px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: relative;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  display: none;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 12px;
+  padding-left: 7px;
+  padding-bottom: 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  background-color: #00000000;
+  border-width: 0;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  width: 100%;
+  padding: 0;
+  height: 30px;
+  padding-top: 12px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-bottom: 0;
+}
+
+.emotion-8::-webkit-input-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8::-moz-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8:-ms-input-placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-8::placeholder {
+  color: #949494;
+  -webkit-text-fill-color: #949494;
+  text-fill-color: #949494;
+}
+
+.emotion-9 {
+  text-align: left;
+  color: #5b5b5b;
+  -webkit-text-fill-color: #5b5b5b;
+  text-fill-color: #5b5b5b;
+  display: none;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  padding-top: 12px;
+  padding-right: 7px;
+  padding-bottom: 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <div
+      class="emotion-1"
+    >
+      <div
+        class="emotion-2"
+      />
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-4"
+          tabindex="0"
+        >
+          <span
+            class="emotion-5"
+            style="top: 7px; font-size: 0.75rem; line-height: 1rem;"
+          >
+            label
+          </span>
+        </div>
+        <div
+          class="emotion-6"
+        >
+          <span
+            class="emotion-7"
+          />
+          <input
+            autocapitalize="none"
+            autocomplete="off"
+            class="emotion-8"
+            inputmode="text"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-9"
+          />
+        </div>
+      </div>
+      <div
+        class="emotion-2"
+      />
+    </div>
+  </div>
+</div>
+`;
