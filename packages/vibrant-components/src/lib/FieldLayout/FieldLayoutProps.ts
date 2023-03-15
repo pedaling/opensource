@@ -19,12 +19,12 @@ type FieldLayoutProps = {
   renderEnd?: () => ReactElementChild;
   onLabelClick: () => void;
   renderField: (style: {
-    height: number;
+    height: ResponsiveValue<number>;
     color: OnColorToken;
-    pt: number;
-    pl: number;
-    pr: number;
-    pb: number;
+    pt: ResponsiveValue<number>;
+    pl: ResponsiveValue<number>;
+    pr: ResponsiveValue<number>;
+    pb: ResponsiveValue<number>;
   }) => ReactElementChild;
 };
 
