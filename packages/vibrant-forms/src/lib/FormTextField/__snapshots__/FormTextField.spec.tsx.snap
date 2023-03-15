@@ -190,15 +190,16 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
   display: none;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   padding-top: 15px;
-  padding-left: 16px;
+  padding-left: 15px;
   padding-bottom: 15px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
 }
 
 .emotion-9 {
@@ -257,15 +258,16 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
   display: none;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   padding-top: 15px;
-  padding-right: 16px;
+  padding-right: 15px;
   padding-bottom: 15px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
 }
 
 .emotion-12 {
