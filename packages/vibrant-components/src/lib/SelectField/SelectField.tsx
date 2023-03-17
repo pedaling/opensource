@@ -2,7 +2,6 @@ import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState 
 import type { TextInputRef } from '@vibrant-ui/core';
 import { Box, OverlayBox, PressableBox, TextInput, getElementPosition } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import { useCallbackRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { SelectOptionGroup } from '../SelectOptionGroup';
@@ -15,7 +14,7 @@ export const SelectField = withSelectFieldVariation(
     placeholder,
     inlineLabel,
     options,
-    state: stateProp = 'default',
+    state = 'default',
     helperText,
     renderOption,
     disabled,
@@ -36,14 +35,11 @@ export const SelectField = withSelectFieldVariation(
     iconSpacing,
     ...restProps
   }) => {
-    const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isOpened, setIsOpened] = useState(false);
     const [direction, setDirection] = useState<'down' | 'up'>('down');
     const [value, setValue] = useState(defaultValue);
-    const prevValueRef = useRef(value);
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
-    const handleValueChange = useCallbackRef(onValueChange);
 
     const ref = useRef<HTMLElement>(null);
     const inputRef = useRef<TextInputRef>(null);
@@ -72,7 +68,7 @@ export const SelectField = withSelectFieldVariation(
       }
 
       return isOpened ? 'outlineNeutral' : 'outline1';
-    }, [disabled, state, isOpened]);
+    }, [disabled, isOpened, state]);
 
     const selectedOption = options.find(option => option.value === value);
 
@@ -99,22 +95,8 @@ export const SelectField = withSelectFieldVariation(
     );
 
     useEffect(() => {
-      setState('default');
-
       setValue(defaultValue);
     }, [defaultValue]);
-
-    useEffect(() => {
-      if (prevValueRef.current !== value) {
-        handleValueChange?.(value);
-      }
-
-      prevValueRef.current = value;
-    }, [handleValueChange, value]);
-
-    useEffect(() => {
-      setState(stateProp);
-    }, [stateProp]);
 
     const open = useCallback(
       async (index: number) => {
@@ -167,10 +149,14 @@ export const SelectField = withSelectFieldVariation(
           open(0);
         },
         blur: () => inputRef.current?.blur(),
-        clear: () => setValue(undefined),
+        clear: () => {
+          setValue(undefined);
+
+          onValueChange?.(undefined);
+        },
         isFocused: () => inputRef.current?.isFocused(),
       }),
-      [open]
+      [onValueChange, open]
     );
 
     return (
@@ -191,6 +177,8 @@ export const SelectField = withSelectFieldVariation(
 
             if (focusIndex !== -1) {
               setValue(options[focusIndex]?.value);
+
+              onValueChange?.(options[focusIndex]?.value);
 
               close();
             }
@@ -285,6 +273,8 @@ export const SelectField = withSelectFieldVariation(
             size={size}
             onOptionClick={value => {
               setValue(value);
+
+              onValueChange?.(value);
 
               close();
 
