@@ -19,7 +19,7 @@ export const SelectField = withSelectFieldVariation(
     helperText,
     renderOption,
     disabled,
-    defaultValue,
+    value,
     onValueChange,
     onOpen,
     zIndex,
@@ -39,7 +39,6 @@ export const SelectField = withSelectFieldVariation(
     const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isOpened, setIsOpened] = useState(false);
     const [direction, setDirection] = useState<'down' | 'up'>('down');
-    const [value, setValue] = useState(defaultValue);
     const prevValueRef = useRef(value);
     const [focusIndex, setFocusIndex] = useState(-1);
     const [optionGroupMaxHeight, setOptionGroupMaxHeight] = useState<number | string>('auto');
@@ -97,12 +96,6 @@ export const SelectField = withSelectFieldVariation(
       },
       [focusIndex, options]
     );
-
-    useEffect(() => {
-      setState('default');
-
-      setValue(defaultValue);
-    }, [defaultValue]);
 
     useEffect(() => {
       if (prevValueRef.current !== value) {
@@ -167,10 +160,10 @@ export const SelectField = withSelectFieldVariation(
           open(0);
         },
         blur: () => inputRef.current?.blur(),
-        clear: () => setValue(undefined),
+        clear: () => handleValueChange?.(undefined),
         isFocused: () => inputRef.current?.isFocused(),
       }),
-      [open]
+      [handleValueChange, open]
     );
 
     return (
@@ -190,7 +183,7 @@ export const SelectField = withSelectFieldVariation(
             }
 
             if (focusIndex !== -1) {
-              setValue(options[focusIndex]?.value);
+              handleValueChange?.(options[focusIndex]?.value);
 
               close();
             }
@@ -284,7 +277,7 @@ export const SelectField = withSelectFieldVariation(
           <SelectOptionGroup
             size={size}
             onOptionClick={value => {
-              setValue(value);
+              handleValueChange?.(value);
 
               close();
 

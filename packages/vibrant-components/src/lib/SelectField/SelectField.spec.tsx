@@ -9,22 +9,22 @@ describe('<SelectField />', () => {
   let renderer: ReactRenderer;
   let mockOnValueChange: jest.Mock<any, any>;
 
-  describe('when defaultValue changed', () => {
+  describe('when value changed', () => {
     beforeEach(async () => {
       mockOnValueChange = jest.fn();
 
       // eslint-disable-next-line @typescript-eslint/naming-convention
       const ControlledSelectField = () => {
-        const [defaultValue, setDefaultValue] = useState('1');
+        const [value, setValue] = useState('1');
 
         useEffect(() => {
-          setDefaultValue('2');
+          setValue('2');
         }, []);
 
         return (
           <SelectField
             label="label"
-            defaultValue={defaultValue}
+            value={value}
             onValueChange={mockOnValueChange}
             options={[
               {
