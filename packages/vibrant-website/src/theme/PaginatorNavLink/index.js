@@ -13,20 +13,20 @@ export default function PaginatorNavLink(props) {
               {subLabel}
             </Body>
             <HStack spacing={2} alignVertical="center">
-              <Body level={2} weight="bold" color="primary">
+              <Body level={2} weight="bold" color="informative">
                 {title}
               </Body>
-              <Icon.ChevronRight.Fill fill="primary" size={14} />
+              <Icon.ChevronRight.Fill fill="informative" size={14} />
             </HStack>
           </VStack>
         ) : (
           <VStack alignSelf="flex-start" alignHorizontal="start" spacing={8}>
-            <Body ml={2} level={3} color="onView2">
+            <Body ml={2} level={3} color="informative">
               {subLabel}
             </Body>
             <HStack spacing={2} alignVertical="center">
-              <Icon.ChevronLeft.Fill fill="primary" size={14} />
-              <Body level={2} weight="bold" color="primary">
+              <Icon.ChevronLeft.Fill fill="informative" size={14} />
+              <Body level={2} weight="bold" color="informative">
                 {title}
               </Body>
             </HStack>
