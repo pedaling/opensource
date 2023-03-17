@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.51.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.3...vibrant-components-0.51.0) (2023-03-17)
+
+
+### Features
+
+* add testId into components from vibrant-components ([#621](https://github.com/pedaling/opensource/issues/621)) ([236c131](https://github.com/pedaling/opensource/commit/236c1319dcd1d1af8552eec0b820bb0268b38932))
+* SelectField에 size 속성을 추가한다 ([#617](https://github.com/pedaling/opensource/issues/617)) ([86ad041](https://github.com/pedaling/opensource/commit/86ad04175866158a28b52086d4106fa31b0004f9))
+* TextField, PasswordField에 size 속성을 추가한다 ([#622](https://github.com/pedaling/opensource/issues/622)) ([3e2271b](https://github.com/pedaling/opensource/commit/3e2271b22b0d534f6897b9c1c171a08408062cdb))
+
+
+### Bug Fixes
+
+* don't call onValueChange when defaultValue changed ([#626](https://github.com/pedaling/opensource/issues/626)) ([6637143](https://github.com/pedaling/opensource/commit/6637143c171efa5d2fc5299a8f42c1fc04f2a8fc))
+
 ### [0.50.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.2...vibrant-components-0.50.3) (2023-03-13)
 
 

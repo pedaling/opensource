@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.51.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.50.3...vibrant-forms-0.51.0) (2023-03-17)
+
+
+### Features
+
+* add testId into components from vibrant-components ([#621](https://github.com/pedaling/opensource/issues/621)) ([236c131](https://github.com/pedaling/opensource/commit/236c1319dcd1d1af8552eec0b820bb0268b38932))
+* TextField, PasswordField에 size 속성을 추가한다 ([#622](https://github.com/pedaling/opensource/issues/622)) ([3e2271b](https://github.com/pedaling/opensource/commit/3e2271b22b0d534f6897b9c1c171a08408062cdb))
+
 ### [0.50.3](https://github.com/pedaling/opensource/compare/vibrant-forms-0.50.2...vibrant-forms-0.50.3) (2023-03-13)
 
 ### [0.50.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.50.1...vibrant-forms-0.50.2) (2023-03-10)
