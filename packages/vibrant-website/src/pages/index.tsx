@@ -18,13 +18,13 @@ const Home = (): JSX.Element => {
         description: 'Title of',
       })}
     >
-      <VStack width="100%">
+      <VStack width="100%" height="100%">
         <Image
+          aspectRatio={3 / 4}
           maxHeight={720}
           objectFit="cover"
-          src="https://cdn.class101.net/attachment/ca5fbcf0-4b02-4034-99d1-1a8b35132c5e.png"
+          src="https://cdn.class101.net/images/8f5f548c-78dd-4469-8da0-d8f7d32a1cac"
         />
-
         <VStack
           width="100%"
           height="100%"
