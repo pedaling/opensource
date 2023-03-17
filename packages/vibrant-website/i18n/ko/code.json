@@ -277,5 +277,20 @@
   },
   "homepage.core-value.consistent": {
     "message": "사용자들이 플랫폼에 관계 없이 일관된 프로덕트를 경험할 수 있는 일관적인 사용자 경험을 줄 수 있습니다."
+  },
+  "theme.admonition.default": {
+    "message": "참고"
+  },
+  "theme.admonition.success": {
+    "message": "성공"
+  },
+  "theme.admonition.error": {
+    "message": "주의"
+  },
+  "theme.admonition.informative": {
+    "message": "정보"
+  },
+  "theme.admonition.warning": {
+    "message": "경고"
   }
 }

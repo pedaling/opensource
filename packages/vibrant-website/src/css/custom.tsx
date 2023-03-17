@@ -5,7 +5,7 @@ import { useCurrentTheme } from '@vibrant-ui/core';
 
 const style = theme => css`
   :root {
-    --ifm-color-primary: ${theme.colors.primary};
+    --ifm-color-primary: ${theme.colors.informative};
     --ifm-color-primary-dark: rgb(33, 175, 144);
     --ifm-color-primary-darker: rgb(31, 165, 136);
     --ifm-color-primary-darkest: rgb(26, 136, 112);

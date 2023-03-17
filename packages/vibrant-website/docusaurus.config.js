@@ -24,6 +24,10 @@ const config = {
           // Please change this to your repo.
           editUrl: 'https://github.com/pedaling/opensource/edit/main/packages/vibrant-website/docs/',
           remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
+          admonitions: {
+            tag: ':::',
+            keywords: ['default', 'error', 'informative', 'success', 'warning'],
+          },
         },
         blog: {
           showReadingTime: true,
