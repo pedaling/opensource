@@ -38,5 +38,9 @@
   "sidebar.mainSidebar.category.System Props": {
     "message": "시스템 속성",
     "description": "The label for category System Props in sidebar mainSidebar"
+  },
+  "sidebar.mainSidebar.category.Contributing": {
+    "message": "기여하기",
+    "description": "The label for category Contributing in sidebar mainSidebar"
   }
 }
