@@ -14,7 +14,7 @@ export const SelectField = withSelectFieldVariation(
     placeholder,
     inlineLabel,
     options,
-    state: stateProp = 'default',
+    state = 'default',
     helperText,
     renderOption,
     disabled,
@@ -35,7 +35,6 @@ export const SelectField = withSelectFieldVariation(
     iconSpacing,
     ...restProps
   }) => {
-    const [state, setState] = useState<'default' | 'error'>(stateProp);
     const [isOpened, setIsOpened] = useState(false);
     const [direction, setDirection] = useState<'down' | 'up'>('down');
     const [value, setValue] = useState(defaultValue);
@@ -69,7 +68,7 @@ export const SelectField = withSelectFieldVariation(
       }
 
       return isOpened ? 'outlineNeutral' : 'outline1';
-    }, [disabled, state, isOpened]);
+    }, [disabled, isOpened, state]);
 
     const selectedOption = options.find(option => option.value === value);
 
@@ -98,10 +97,6 @@ export const SelectField = withSelectFieldVariation(
     useEffect(() => {
       setValue(defaultValue);
     }, [defaultValue]);
-
-    useEffect(() => {
-      setState(stateProp);
-    }, [stateProp]);
 
     const open = useCallback(
       async (index: number) => {
