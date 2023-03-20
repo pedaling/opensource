@@ -11,22 +11,11 @@ Vibrant Design System은 오픈소스로 개발중이며, [Github](https://githu
 
 ## PR 생성으로 기여하기
 
-
-
-### PR ticket 생성하기
+### 이슈 생성하기
 
 PR 생성을 진행하기 전 branch 이름을 설정하기 위해 사전 이슈 티켓 발급이 필요합니다.
- [Issue 섹션](https://github.com/pedaling/opensource/issues) 에 접속하여, 작업 내용을 정리합니다.
-
-
-#### 기능 추가
-
-
-#### 버그 수정
-
-
-#### 
-
+ [Issue 섹션](https://github.com/pedaling/opensource/issues) 에서 Feature Request 를 선택해 작성합니다.
+ 
 
 ### branch 작업하기
 
@@ -91,13 +80,12 @@ Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 �
 | wontfix | 이슈 파악 후, VDS 의 수정이 필요하지 않은 경우의 라벨 | Vibrant Builder | 
 | invalid | 기술한 경로로 이슈가 재현되지 않거나, 이미 존재하는 제안에 대한 반려 | Vibrant Builder |
 | duplicate | 해당 이슈가 이미 발견되어 진행중이거나 수정된 경우 | Vibrant Builder | 
-| duplicate | 해당 이슈가 이미 발견되어 진행중이거나 수정된 경우 | Vibrant Builder |
+| completed | 이슈가 수정되거나, 요청한 feature 가 반영된 경우  | Vibrant Builder |
 
 
 ### 버그 수정
 
-
-• 이슈 생성시 라벨을 `bug` 로 등록합니다.
+• 이슈 생성시 `Bug report` 템플릿을 선택합니다. 
 
 • 이슈 보고시에는 **재현경로** 와 이미지를 첨부해야 합니다. `기대했던 결과` `실제 동작한 내용` 을 함께 상세히 기술하면 이슈 파악에 큰 도움이 됩니다.
 
@@ -109,12 +97,14 @@ Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 �
 
 ### 기능 제안
 
-
-• 이슈 생성시 라벨을 `enhancement` 로 등록합니다.
+• 이슈 생성시 `Feature request` 템플릿을 선택합니다. 
 
 • 추가하고자 하는 기능 또는 컴포넌트에 대한 소개를 작성하여 등록합니다. 세부적인 요구 사항을 추가할수록 토의가 빠르게 진행된 후 기능 추가가 이루어질 수 있습니다.
  
 • 이슈가 제출된 후에는 최대 2일 이내로 담당자가 배정되어 진행됩니다. 담당자가 이슈 확인 및 진행중의 과정에서 보고자에게 답변을 할 수 있으며, 이 답변에 대해 보고자가 답변하지 않으면 이슈는 14일 이내로 자동 종료됩니다.
 
-• 이슈가 담당자 확인 후 해결될 시에는 이슈의 라벨이 추가되는 방식으로 업데이트 됩니다.
+• 단순히 기능 요청을 제안하는 경우에는, `For Only Suggestion` 에 해당하는 내용을 기입하고 제출합니다.
 
+• 직접 PR 을 생성하여 기여하고자 하는 경우에는, `For Your Own Contribution with PR` 에 안내된 대로 RFC (Request for Comments) 를 작성하고, 헤당 페이지 링크를 기입합니다.
+
+• 이슈가 담당자 확인 후 해결될 시에는 이슈의 라벨이 추가되는 방식으로 업데이트 됩니다.

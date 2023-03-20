@@ -2,7 +2,7 @@ import React from 'react';
 import { translate } from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { Display, Paragraph, Stack, Title, VStack } from '@vibrant-ui/components';
+import { Paragraph, Stack, Title, VStack } from '@vibrant-ui/components';
 import { Image } from '@vibrant-ui/core';
 import { CoreValueCard } from '../components/CoreValueCard';
 
@@ -29,14 +29,15 @@ const Home = (): JSX.Element => {
         <VStack
           width="100%"
           height="100%"
+          p={12}
           spacing={16}
           position="absolute"
           alignHorizontal="center"
           alignVertical="center"
         >
-          <Display as="h1" level={[4, 4, 3]} color="white">
+          <Title as="h1" level={[3, 2, 1]} color="white">
             Vibrant Design System
-          </Display>
+          </Title>
           <Paragraph as="p" color="white" weight="regular" level={3} textAlign="center">
             Class101의 사용자들이 보다 일관적인 서비스를 경험하기 위하여\n효율적이고 우수한 성능의 프로덕트를 제작할 수
             있도록 고안된 시스템입니다.
