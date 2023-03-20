@@ -91,11 +91,13 @@ export const DateInput = withDateInputVariation(
             <Icon.Calendar.Regular size={20} fill="onView2" />
           </HStack>
         </Box>
-        <Space height={6} />
         {helperText ? (
-          <Body level={4} color={helperColor}>
-            {helperText}
-          </Body>
+          <>
+            <Space height={6} />
+            <Body level={4} color={helperColor}>
+              {helperText}
+            </Body>
+          </>
         ) : null}
       </Box>
     );
