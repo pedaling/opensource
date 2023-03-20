@@ -95,4 +95,5 @@ export const BaseColorOnColorMap: { [color in BaseColorToken]: OnColorToken } = 
   background: 'onView1',
   inverseSurface: 'onInverseSurface',
   transparent: 'onView1',
+  dim: 'onView1',
 };
