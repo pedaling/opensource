@@ -18,6 +18,7 @@ export const PasswordField = withPasswordFieldVariation(
     onBlur,
     testId = 'password-field',
     autoComplete = 'password',
+    iconSize,
     ...restProps
   }) => {
     const inputRef = useRef<TextInputRef>(null);
@@ -42,7 +43,11 @@ export const PasswordField = withPasswordFieldVariation(
         onLabelClick={() => inputRef.current?.focus()}
         renderEnd={() => (
           <PressableBox onClick={() => setShowValue(!showValue)}>
-            {showValue ? <Icon.EyeOn.Thin size={20} fill="onView2" /> : <Icon.EyeOff.Thin size={20} fill="onView2" />}
+            {showValue ? (
+              <Icon.EyeOn.Thin size={iconSize} fill="onView2" />
+            ) : (
+              <Icon.EyeOff.Thin size={iconSize} fill="onView2" />
+            )}
           </PressableBox>
         )}
         renderField={style => (
