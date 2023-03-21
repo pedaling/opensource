@@ -224,7 +224,7 @@ export const SelectField = withSelectFieldVariation(
                         flexShrink={0}
                         flexBasis="auto"
                         maxWidth="90%"
-                        mb={inlineLabel ? labelSpacing : 0}
+                        mb={inlineLabel ? 0 : labelSpacing}
                       >
                         {label}
                       </Body>
