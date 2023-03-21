@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { useComposedRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
@@ -67,9 +67,11 @@ export const DateInput = withDateInputVariation(
           <Pressable
             ref={composeRef}
             pl={px}
+            height="100%"
+            justifyContent="center"
+            flexGrow={1}
             disabled={disabled}
             onClick={onFocus}
-            flexGrow={1}
             onBlur={() => setIsFocused(false)}
             onFocus={() => {
               setIsFocused(true);
@@ -88,15 +90,15 @@ export const DateInput = withDateInputVariation(
               </Body>
             </>
           </Pressable>
-          <HStack spacing={iconSpacing} pr={px} pl={iconSpacing}>
+          <HStack spacing={iconSpacing} pl={iconSpacing} height="100%">
             {!disabled && value ? (
-              <Pressable onClick={onClear} as="button" hitSlop={hitSlop}>
+              <PressableBox as="button" onClick={onClear} hitSlop={hitSlop} justifyContent="center">
                 <Icon.CloseCircle.Fill size={iconSize} fill="onView2" />
-              </Pressable>
+              </PressableBox>
             ) : null}
-            <Pressable disabled={disabled} onClick={onFocus}>
+            <PressableBox as="button" disabled={disabled} onClick={onFocus} justifyContent="center" pr={px}>
               <Icon.Calendar.Thin size={iconSize} fill="onView2" />
-            </Pressable>
+            </PressableBox>
           </HStack>
         </Box>
         {helperText ? (

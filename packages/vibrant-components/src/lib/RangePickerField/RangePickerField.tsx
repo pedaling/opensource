@@ -23,6 +23,7 @@ export const RangePickerField = withRangePickerFieldVariation(
     autoFocus,
     testId = 'range-picker-field',
     size,
+    calendarOffset,
   }) => {
     const [value, setValue] = useState<{ start: Date; end?: Date } | undefined>(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
@@ -126,7 +127,7 @@ export const RangePickerField = withRangePickerFieldVariation(
           onDismiss={() => setIsCalendarOpened(false)}
           left={0}
           zIndex={zIndex}
-          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
+          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: calendarOffset }}
         >
           <Calendar
             range={true}

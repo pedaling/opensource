@@ -21,6 +21,7 @@ export const DatePickerField = withDatePickerFieldVariation(
     autoFocus,
     testId = 'date-picker-field',
     size,
+    calendarOffset,
   }) => {
     const [value, setValue] = useState(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
@@ -115,7 +116,7 @@ export const DatePickerField = withDatePickerFieldVariation(
           onDismiss={() => setIsCalendarOpened(false)}
           left={0}
           zIndex={zIndex}
-          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
+          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: calendarOffset }}
         >
           <Calendar range={false} date={value} onDateSelect={handleDateSelect} />
         </OverlayBox>

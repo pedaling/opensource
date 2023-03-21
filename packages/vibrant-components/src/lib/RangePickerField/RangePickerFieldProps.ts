@@ -1,6 +1,6 @@
 import type { ForwardedRef } from 'react';
 import type { ResponsiveValue } from '@vibrant-ui/core';
-import { withVariation } from '@vibrant-ui/core';
+import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
 export type RangePickerFieldRefValue = {
@@ -28,4 +28,25 @@ export type RangePickerFieldProps = BaseInputProps<{ start: Date; end: Date } | 
       }
   );
 
-export const withRangePickerFieldVariation = withVariation<RangePickerFieldProps>('RangePickerField')();
+export const withRangePickerFieldVariation = withVariation<RangePickerFieldProps>('RangePickerField')(
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        keep: true,
+        responsive: true,
+      },
+    ],
+    variants: {
+      lg: {
+        calendarOffset: 56,
+      },
+      md: {
+        calendarOffset: 42,
+      },
+      sm: {
+        calendarOffset: 32,
+      },
+    },
+  })
+);

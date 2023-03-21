@@ -1,5 +1,5 @@
 import type { ForwardedRef } from 'react';
-import { withVariation } from '@vibrant-ui/core';
+import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { ResponsiveValue } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
@@ -28,4 +28,25 @@ export type DatePickerFieldProps = BaseInputProps<Date | undefined> & {
       }
   );
 
-export const withDatePickerFieldVariation = withVariation<DatePickerFieldProps>('DatePickerField')();
+export const withDatePickerFieldVariation = withVariation<DatePickerFieldProps>('DatePickerField')(
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        keep: true,
+        responsive: true,
+      },
+    ],
+    variants: {
+      lg: {
+        calendarOffset: 56,
+      },
+      md: {
+        calendarOffset: 42,
+      },
+      sm: {
+        calendarOffset: 32,
+      },
+    },
+  })
+);
