@@ -33,6 +33,7 @@ export const withRangePickerFieldVariation = withVariation<RangePickerFieldProps
     props: [
       {
         name: 'size',
+        default: 'lg',
         keep: true,
         responsive: true,
       },

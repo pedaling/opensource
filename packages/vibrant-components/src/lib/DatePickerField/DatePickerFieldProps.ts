@@ -33,6 +33,7 @@ export const withDatePickerFieldVariation = withVariation<DatePickerFieldProps>(
     props: [
       {
         name: 'size',
+        default: 'lg',
         keep: true,
         responsive: true,
       },
