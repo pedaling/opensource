@@ -33,6 +33,7 @@ export const SelectField = withSelectFieldVariation(
     optionsOffset,
     iconSize,
     iconSpacing,
+    labelSpacing,
     ...restProps
   }) => {
     const [isOpened, setIsOpened] = useState(false);
@@ -223,6 +224,7 @@ export const SelectField = withSelectFieldVariation(
                         flexShrink={0}
                         flexBasis="auto"
                         maxWidth="90%"
+                        mb={inlineLabel ? labelSpacing : 0}
                       >
                         {label}
                       </Body>

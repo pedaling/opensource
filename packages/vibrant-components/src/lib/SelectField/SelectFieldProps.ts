@@ -65,7 +65,8 @@ export const withSelectFieldVariation = withVariation<SelectFieldProps>('SelectF
     variants: {
       lg: {
         height: 50,
-        px: 16,
+        px: 15,
+        labelSpacing: 4,
         bodyLevel: 2,
         helperTextBodyLevel: 4,
         helperTextSpacing: 4,
@@ -76,6 +77,7 @@ export const withSelectFieldVariation = withVariation<SelectFieldProps>('SelectF
       md: {
         height: 38,
         px: 9,
+        labelSpacing: 0,
         bodyLevel: 2,
         helperTextBodyLevel: 4,
         helperTextSpacing: 4,
@@ -86,6 +88,7 @@ export const withSelectFieldVariation = withVariation<SelectFieldProps>('SelectF
       sm: {
         height: 30,
         px: 7,
+        labelSpacing: 0,
         bodyLevel: 4,
         helperTextBodyLevel: 5,
         helperTextSpacing: 2,
