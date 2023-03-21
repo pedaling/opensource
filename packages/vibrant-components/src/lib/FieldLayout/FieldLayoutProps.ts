@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import type { OnColorToken } from '@vibrant-ui/theme';
+import type { OnColorToken, TypographyKind } from '@vibrant-ui/theme';
 
 type FieldLayoutProps = {
   size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
@@ -26,6 +26,7 @@ type FieldLayoutProps = {
     pl: ResponsiveValue<number>;
     pr: ResponsiveValue<number>;
     pb: ResponsiveValue<number>;
+    typography: ResponsiveValue<TypographyKind>;
   }) => ReactElementChild;
 };
 
@@ -280,7 +281,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     }) => {
       if (size === 'md') {
         return {
-          pt: label ? 13 : 9,
+          pt: label ? 15 : 9,
           pl: hasPrefixText ? 2 : hasPrefixComponent ? 8 : 9,
           pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 8 : 9,
           pb: label ? 3 : 9,

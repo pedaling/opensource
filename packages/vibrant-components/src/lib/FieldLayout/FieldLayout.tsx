@@ -85,7 +85,7 @@ export const FieldLayout = withFieldLayoutVariation(
               {prefixText}
             </Body>
 
-            {renderField({ height, color: valueColor, pt, pl, pr, pb })}
+            {renderField({ height: height - 2, color: valueColor, pt, pl, pr, pb, typography: `body${bodyLevel}` })}
 
             <Body
               level={bodyLevel}

@@ -204,7 +204,7 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
   line-height: 1.125rem;
   width: 100%;
   padding: 0;
-  height: 50px;
+  height: 48px;
   padding-top: 23px;
   padding-left: 15px;
   padding-right: 15px;
@@ -483,7 +483,7 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  padding-top: 13px;
+  padding-top: 15px;
   padding-left: 9px;
   padding-bottom: 3px;
   font-size: 0.875rem;
@@ -511,8 +511,8 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
   line-height: 1.125rem;
   width: 100%;
   padding: 0;
-  height: 38px;
-  padding-top: 13px;
+  height: 36px;
+  padding-top: 15px;
   padding-left: 9px;
   padding-right: 9px;
   padding-bottom: 3px;
@@ -551,7 +551,7 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  padding-top: 13px;
+  padding-top: 15px;
   padding-right: 9px;
   padding-bottom: 3px;
   font-size: 0.875rem;
@@ -814,11 +814,11 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
   text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   width: 100%;
   padding: 0;
-  height: 30px;
+  height: 28px;
   padding-top: 12px;
   padding-left: 7px;
   padding-right: 7px;

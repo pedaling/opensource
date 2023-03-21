@@ -1,4 +1,4 @@
-import { withVariation } from '@vibrant-ui/core';
+import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { AutoCompleteOption, ResponsiveValue } from '@vibrant-ui/core';
 
 export type PasswordFieldProps = {
@@ -18,4 +18,26 @@ export type PasswordFieldProps = {
   testId?: string;
 };
 
-export const withPasswordFieldVariation = withVariation<PasswordFieldProps>('PasswordField')();
+export const withPasswordFieldVariation = withVariation<PasswordFieldProps>('PasswordField')(
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        default: 'lg',
+        responsive: true,
+        keep: true,
+      },
+    ],
+    variants: {
+      lg: {
+        iconSize: 20,
+      },
+      md: {
+        iconSize: 20,
+      },
+      sm: {
+        iconSize: 16,
+      },
+    } as const,
+  })
+);
