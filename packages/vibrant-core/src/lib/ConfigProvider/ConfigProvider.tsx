@@ -30,6 +30,9 @@ export type Dependencies = {
 };
 
 export type Translation = {
+  datePicker: {
+    ariaLabel: string;
+  };
   calendar: {
     title: string;
     days: string[];
@@ -116,6 +119,9 @@ const ConfigContext = createContext<ConfigContextValue>({
     reactSpringModule: ReactSpring,
   },
   translations: {
+    datePicker: {
+      ariaLabel: '날짜 선택',
+    },
     calendar: {
       title: '{year}년 {month}',
       days: ['일', '월', '화', '수', '목', '금', '토'],

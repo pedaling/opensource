@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box, PressableBox, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { useComposedRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { Pressable } from '../Pressable';
-import { Space } from '../Space';
-import { VStack } from '../VStack';
 import { withDateInputVariation } from './DateInputProps';
 
 export const DateInput = withDateInputVariation(
@@ -14,7 +12,6 @@ export const DateInput = withDateInputVariation(
     innerRef,
     value,
     placeholder,
-    placeholderColor,
     state,
     label,
     labelColor,
@@ -28,11 +25,22 @@ export const DateInput = withDateInputVariation(
     helperText,
     autoFocus,
     testId = 'date-input',
+    height,
+    bodyLevel,
+    helperTextBodyLevel,
+    helperTextSpacing,
+    px,
+    iconSpacing,
+    iconSize,
+    labelSpacing,
+    hitSlop,
     ...restProps
   }) => {
     const inputRef = useRef<any>(null);
     const [isFocused, setIsFocused] = useState(false);
-    const isContentExists = Boolean(value);
+    const {
+      translations: { datePicker: datePickerTranslation },
+    } = useConfig();
 
     // TODO: use input native autoFocus and remove this
     useEffect(() => {
@@ -47,53 +55,64 @@ export const DateInput = withDateInputVariation(
 
     return (
       <Box width="100%" position="relative" data-testid={testId}>
-        <Pressable
-          ref={composeRef}
+        <Box
+          flexDirection="row"
           width="100%"
           borderWidth={1}
           borderStyle="solid"
           borderColor={(isFocused || calendarOpened) && state !== 'error' ? 'outlineNeutral' : borderColor}
-          p={15}
-          py={isContentExists && label ? 7 : 15}
-          pr={disabled ? 48 : 80}
-          disabled={disabled}
-          onFocus={() => {
-            setIsFocused(true);
-
-            onFocus?.();
-          }}
-          onClick={onFocus}
-          onBlur={() => setIsFocused(false)}
-          height={50}
+          height={height}
           borderRadius={2}
           flexShrink={0}
+          alignItems="center"
           {...restProps}
         >
-          <VStack spacing={4}>
-            {isContentExists && label ? (
-              <Body level={6} color={labelColor}>
-                {label}
-              </Body>
-            ) : null}
-            <Body level={2} lineLimit={1} color={value ? color : label ? labelColor : placeholderColor}>
-              {value || label || placeholder}
-            </Body>
-          </VStack>
-        </Pressable>
+          <Pressable
+            ref={composeRef}
+            pl={px}
+            height="100%"
+            justifyContent="center"
+            flexGrow={1}
+            disabled={disabled}
+            onClick={onFocus}
+            onBlur={() => setIsFocused(false)}
+            onFocus={() => {
+              setIsFocused(true);
 
-        <Box position="absolute" top={15} right={15}>
-          <HStack spacing={12}>
+              onFocus?.();
+            }}
+          >
+            <>
+              {value && label ? (
+                <Body level={6} color={labelColor} mb={labelSpacing}>
+                  {label}
+                </Body>
+              ) : null}
+              <Body level={bodyLevel} lineLimit={1} color={value ? color : label ? labelColor : 'onView3'}>
+                {value || label || placeholder}
+              </Body>
+            </>
+          </Pressable>
+          <HStack spacing={iconSpacing} pl={iconSpacing} height="100%">
             {!disabled && value ? (
-              <Pressable onClick={onClear} as="button">
-                <Icon.CloseCircle.Fill size={20} fill="onView2" />
-              </Pressable>
+              <PressableBox as="button" onClick={onClear} hitSlop={hitSlop} justifyContent="center">
+                <Icon.CloseCircle.Fill size={iconSize} fill="onView2" />
+              </PressableBox>
             ) : null}
-            <Icon.Calendar.Regular size={20} fill="onView2" />
+            <PressableBox
+              as="button"
+              ariaLabel={datePickerTranslation.ariaLabel}
+              disabled={disabled}
+              onClick={onFocus}
+              justifyContent="center"
+              pr={px}
+            >
+              <Icon.Calendar.Thin size={iconSize} fill="onView2" />
+            </PressableBox>
           </HStack>
         </Box>
-        <Space height={6} />
         {helperText ? (
-          <Body level={4} color={helperColor}>
+          <Body level={helperTextBodyLevel} color={helperColor} mt={helperTextSpacing}>
             {helperText}
           </Body>
         ) : null}

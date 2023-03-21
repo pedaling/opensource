@@ -66,8 +66,8 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
   -ms-flex-align: center;
   align-items: center;
   height: 50px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-width: 1px;
   border-style: solid;
   border-color: #00000026;

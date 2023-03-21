@@ -20,6 +20,8 @@ export const DatePickerField = withDatePickerFieldVariation(
     zIndex,
     autoFocus,
     testId = 'date-picker-field',
+    size,
+    calendarOffset,
   }) => {
     const [value, setValue] = useState(defaultValue);
     const [isCalendarOpened, setIsCalendarOpened] = useState(false);
@@ -96,6 +98,7 @@ export const DatePickerField = withDatePickerFieldVariation(
       <Box position="relative" width="100%" data-testid={testId}>
         <DateInput
           ref={composeRef}
+          size={size}
           value={inputValue}
           onFocus={openCalendar}
           disabled={disabled}
@@ -113,7 +116,7 @@ export const DatePickerField = withDatePickerFieldVariation(
           onDismiss={() => setIsCalendarOpened(false)}
           left={0}
           zIndex={zIndex}
-          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: 56 }}
+          {...{ [calendarPosition === 'top' ? 'bottom' : 'top']: calendarOffset }}
         >
           <Calendar range={false} date={value} onDateSelect={handleDateSelect} />
         </OverlayBox>
