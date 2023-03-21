@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Box, PressableBox } from '@vibrant-ui/core';
+import { Box, PressableBox, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { useComposedRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
@@ -38,6 +38,9 @@ export const DateInput = withDateInputVariation(
   }) => {
     const inputRef = useRef<any>(null);
     const [isFocused, setIsFocused] = useState(false);
+    const {
+      translations: { datePicker: datePickerTranslation },
+    } = useConfig();
 
     // TODO: use input native autoFocus and remove this
     useEffect(() => {
@@ -96,7 +99,14 @@ export const DateInput = withDateInputVariation(
                 <Icon.CloseCircle.Fill size={iconSize} fill="onView2" />
               </PressableBox>
             ) : null}
-            <PressableBox as="button" disabled={disabled} onClick={onFocus} justifyContent="center" pr={px}>
+            <PressableBox
+              as="button"
+              ariaLabel={datePickerTranslation.ariaLabel}
+              disabled={disabled}
+              onClick={onFocus}
+              justifyContent="center"
+              pr={px}
+            >
               <Icon.Calendar.Thin size={iconSize} fill="onView2" />
             </PressableBox>
           </HStack>
