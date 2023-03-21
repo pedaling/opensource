@@ -1,4 +1,5 @@
 import type { ForwardedRef } from 'react';
+import type { ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
@@ -9,6 +10,7 @@ export type RangePickerFieldRefValue = {
 
 export type RangePickerFieldProps = BaseInputProps<{ start: Date; end: Date } | undefined> & {
   ref: ForwardedRef<RangePickerFieldRefValue>;
+  size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
   helperText?: string;
   state?: 'default' | 'error';
   onOpen?: () => void;
