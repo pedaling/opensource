@@ -228,7 +228,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
 
       if (size === 'sm') {
         return {
-          labelTop: shrink ? 0 : 7,
+          labelTop: shrink ? 0 : 6,
           labelTypography: shrink ? 'body6' : 'body4',
           labelLeft: hasPrefixComponent ? 6 : 7,
           labelRight: hasSuffixComponent ? 6 : 7,
@@ -290,10 +290,10 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
 
       if (size === 'sm') {
         return {
-          pt: label ? 12 : 7,
+          pt: label ? 12 : 6,
           pl: hasPrefixText ? 2 : hasPrefixComponent ? 6 : 7,
           pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 6 : 7,
-          pb: label ? 0 : 7,
+          pb: label ? 0 : 6,
         };
       }
 
