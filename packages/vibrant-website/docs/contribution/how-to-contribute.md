@@ -26,7 +26,8 @@ Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 �
 
 (1) [Vibrant opensource](https://github.com/pedaling/opensource) 리포지토리를 clone 합니다.
 
-(2) `main` 브랜치로부터 본인의 branch 를 새로 분기합니다. branch 이름은 티켓의 이름 (ex. `vs-20`) 으로 설정합니다.
+(2) `main` 브랜치로부터 본인의 branch 를 새로 분기합니다. branch 이름은 이슈 태그와 이슈의 번호로 생성합니다.
+>  이슈 번호가 #622 이고, 버그 수정을 위해 이슈태그를 bug 태그로 생성한 이슈라면 `bug-622` 로 설정하고, 피쳐 추가의 경우라면 `enhancement-622` 가 됩니다.
 
 (3) 본인의 branch 에 작업을 한 후, `main` 을 base 로 PR을 생성합니다.
 
