@@ -47,17 +47,15 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
 
   if (platform === 'ios') {
     return (
-      <FullWindowOverlay style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0 }}>
-        <View pointerEvents="box-none">
-          <ViewComponent
-            ref={innerRef}
-            {...restProps}
-            style={{ ...style, position: 'absolute', width, height, top, bottom, left, right }}
-            contentContainerStyle={{ flexGrow: 1 }}
-          >
-            {children}
-          </ViewComponent>
-        </View>
+      <FullWindowOverlay>
+        <ViewComponent
+          ref={innerRef}
+          {...restProps}
+          style={{ ...style, position: 'absolute', width, height, top, bottom, left, right }}
+          contentContainerStyle={{ flexGrow: 1 }}
+        >
+          {children}
+        </ViewComponent>
       </FullWindowOverlay>
     );
   }
