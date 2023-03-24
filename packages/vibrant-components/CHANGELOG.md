@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.51.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.51.1...vibrant-components-0.51.2) (2023-03-24)
+
+
+### Features
+
+* DatePickerField, RangePickerField에 size 속성을 추가한다 ([#636](https://github.com/pedaling/opensource/issues/636)) ([1668f89](https://github.com/pedaling/opensource/commit/1668f893e530297ce29dfeb4a2a3f81af33bcd5d))
+
+
+### Bug Fixes
+
+* FieldLayout size QA 사항 반영  ([#635](https://github.com/pedaling/opensource/issues/635)) ([0e5d428](https://github.com/pedaling/opensource/commit/0e5d4289940f3fa0102f87c5233ae747ec7d1a29))
+* fix padding top and align in FieldLayout ([#637](https://github.com/pedaling/opensource/issues/637)) ([e5cd881](https://github.com/pedaling/opensource/commit/e5cd8812453083695e48f886ae2843f10a130441))
+
 ### [0.51.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.51.0...vibrant-components-0.51.1) (2023-03-20)
 
 ## [0.51.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.50.3...vibrant-components-0.51.0) (2023-03-17)

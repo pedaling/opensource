@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.51.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.1...vibrant-core-0.51.2) (2023-03-24)
+
+
+### Features
+
+* DatePickerField, RangePickerField에 size 속성을 추가한다 ([#636](https://github.com/pedaling/opensource/issues/636)) ([1668f89](https://github.com/pedaling/opensource/commit/1668f893e530297ce29dfeb4a2a3f81af33bcd5d))
+
+
+### Bug Fixes
+
+* modify ios Portal pointerEvents ([#638](https://github.com/pedaling/opensource/issues/638)) ([bdc2305](https://github.com/pedaling/opensource/commit/bdc23052ffbe3b2c8a267ef06ad99d7c4f5c7ba2))
+
 ### [0.51.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.0...vibrant-core-0.51.1) (2023-03-20)
 
 ## [0.51.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.50.3...vibrant-core-0.51.0) (2023-03-17)
