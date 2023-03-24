@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GridList /> when the 'breakpoints' prop provided other responsive props should work based on the 'breakpoints' prop, not the theme breakpoints 1`] = `
+.emotion-0 {
+  display: grid;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  grid-template-columns: repeat(1, 1fr);
+  -webkit-column-gap: 0;
+  column-gap: 0;
+  row-gap: 0;
+}
+
+@media screen and (min-width: 200px) {
+  .emotion-0 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .emotion-0 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.emotion-1 {
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.emotion-2 {
+  text-align: left;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  text-fill-color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+
+<div>
+  <ul
+    class="emotion-0"
+    data-testid="grid-list"
+  >
+    <li
+      class="emotion-1"
+    >
+      <span
+        class="emotion-2"
+        data-testid="body"
+      >
+        1
+      </span>
+    </li>
+    <li
+      class="emotion-1"
+    >
+      <span
+        class="emotion-2"
+        data-testid="body"
+      >
+        2
+      </span>
+    </li>
+    <li
+      class="emotion-1"
+    >
+      <span
+        class="emotion-2"
+        data-testid="body"
+      >
+        3
+      </span>
+    </li>
+    <li
+      class="emotion-1"
+    >
+      <span
+        class="emotion-2"
+        data-testid="body"
+      >
+        4
+      </span>
+    </li>
+    <li
+      class="emotion-1"
+    >
+      <span
+        class="emotion-2"
+        data-testid="body"
+      >
+        5
+      </span>
+    </li>
+  </ul>
+</div>
+`;

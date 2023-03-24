@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@emotion/react';
 import { fireEvent, waitFor } from '@testing-library/react';
 import { Box } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -31,6 +32,32 @@ describe('<GridList />', () => {
 
     it('the number of columns should be columns', () => {
       expect(element).toHaveStyleRule('grid-template-columns', 'repeat(2, 1fr)');
+    });
+  });
+
+  describe("when the 'breakpoints' prop provided", () => {
+    beforeEach(async () => {
+      renderer = render(
+        <ThemeProvider theme={{ breakpoints: [640, 1024, 1312] }}>
+          <GridList
+            data={[1, 2, 3, 4, 5]}
+            columns={[1, 2, 3]}
+            renderItem={({ item }) => (
+              <Body level={1} color="onPrimary">
+                {item}
+              </Body>
+            )}
+            keyExtractor={item => item.toString()}
+            breakpoints={[200, 400, 600, 800]}
+          />
+        </ThemeProvider>
+      );
+
+      element = await renderer.getByTestId('grid-list');
+    });
+
+    it("other responsive props should work based on the 'breakpoints' prop, not the theme breakpoints", () => {
+      expect(renderer.container).toMatchSnapshot();
     });
   });
 
