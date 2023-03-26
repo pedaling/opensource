@@ -58,7 +58,8 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
           dark: { ...parentTheme.opacity.dark, ...(theme.opacity?.dark ?? {}) },
         },
       } as Theme),
-    [parentTheme, theme]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [JSON.stringify(parentTheme), JSON.stringify(theme)]
   );
 
   const contextValue: ThemeContextValue = useMemo(
