@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.51.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.2...vibrant-core-0.51.3) (2023-03-26)
+
+
+### Features
+
+* 모든 vibrant 컴포넌트에 memo를 추가한다 ([#642](https://github.com/pedaling/opensource/issues/642)) ([fc20de1](https://github.com/pedaling/opensource/commit/fc20de1b92037bc17fe0211510cb37d446fd5f83))
+
+
+### Bug Fixes
+
+* themeProvider가 의미없는 리랜더링을 하지 않도록 한다 ([#643](https://github.com/pedaling/opensource/issues/643)) ([4929c3b](https://github.com/pedaling/opensource/commit/4929c3b39c3598aedf88d130c9b25ed2b4bdc27e))
+
 ### [0.51.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.1...vibrant-core-0.51.2) (2023-03-24)
 
 
