@@ -1,5 +1,5 @@
 import type { FC, ForwardRefExoticComponent, PropsWithoutRef, Ref, RefAttributes } from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, memo } from 'react';
 import type { VariantFn } from '../propVariant';
 
 type PickRefElement<Props, DefaultElement = HTMLElement> = Props extends {
@@ -91,13 +91,17 @@ export function withVariation<Props>(componentName: string): WithVariationFn<Pro
   return (...variantFns: VariantFn<Props, any>[]) =>
     (BaseComponent: ComponentWithInnerRef<Props>) =>
       Object.assign(
-        forwardRef<PickRefElement<Props>, Props>((props, ref) => {
-          const nextProps = variantFns.reduce<Props>((prevProps, variantFn) => variantFn(prevProps), {
-            ...props,
-          });
+        memo<PropsWithoutRef<Props> & RefAttributes<PickRefElement<Props, HTMLElement>>>(
+          forwardRef<PickRefElement<Props>, Props>((props, ref) => {
+            const nextProps = variantFns.reduce<Props>((prevProps, variantFn) => variantFn(prevProps), {
+              ...props,
+            });
 
-          return <BaseComponent {...(nextProps as any)} {...((ref ? { innerRef: ref } : {}) as WithInnerRef<Props>)} />;
-        }),
+            return (
+              <BaseComponent {...(nextProps as any)} {...((ref ? { innerRef: ref } : {}) as WithInnerRef<Props>)} />
+            );
+          })
+        ),
         { displayName: componentName }
       );
 }
