@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.51.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.3...vibrant-core-0.51.4) (2023-03-27)
+
+
+### Bug Fixes
+
+* **portal:** ios portal 에서 클릭이 동작하도록한다 ([#644](https://github.com/pedaling/opensource/issues/644)) ([c412e8f](https://github.com/pedaling/opensource/commit/c412e8f0cb89936ada7fc9946a42d05d67ce2cb2))
+
 ### [0.51.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.2...vibrant-core-0.51.3) (2023-03-26)
 
 
