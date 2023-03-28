@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
-import { withVariation } from '@vibrant-ui/core';
 import type { ResponsiveValue } from '../../types/ResponsiveValue';
+import { withVariation } from '../withVariation';
 
 export type FlatListProps<Data> = {
   id?: string;

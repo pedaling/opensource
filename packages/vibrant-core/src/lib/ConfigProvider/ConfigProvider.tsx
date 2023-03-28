@@ -27,6 +27,12 @@ export type Dependencies = {
     draggable?: boolean;
     loading?: 'eager' | 'lazy';
   }>;
+  link?: ComponentType<{
+    href?: string;
+    ref?: any;
+    target?: string;
+    rel?: string;
+  }>;
 };
 
 export type Translation = {
