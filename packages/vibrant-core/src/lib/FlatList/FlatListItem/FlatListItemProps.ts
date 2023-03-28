@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { DisplaySystemProps, FlexboxSystemProps, SpacingSystemProps } from '@vibrant-ui/core';
-import { withVariation } from '@vibrant-ui/core';
+import { withVariation } from '../../withVariation';
 
 export type FlatListItemProps = {
   children: ReactElement | null;
