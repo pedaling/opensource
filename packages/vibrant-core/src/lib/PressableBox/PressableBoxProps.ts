@@ -1,5 +1,4 @@
 import type { Ref } from 'react';
-import type { Either } from '@vibrant-ui/utils';
 import type { ReactElementChild } from '../../types';
 import type {
   BackgroundSystemProps,
@@ -43,16 +42,8 @@ export type PressableBoxProps = {
   role?: string;
   ariaChecked?: boolean;
   ariaLabelledBy?: string;
-} & Either<
-  {
-    as?: 'div' | 'label' | 'li' | 'span' | 'td' | 'th';
-    buttonType?: never;
-  },
-  {
-    as: 'button';
-    buttonType?: 'button' | 'submit';
-  }
-> &
-  SystemProps;
+  as?: string;
+  buttonType?: 'button' | 'submit';
+} & SystemProps;
 
 export const withPressableBoxVariation = withVariation<PressableBoxProps>('PressableBox')();

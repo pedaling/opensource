@@ -13,7 +13,6 @@ import type {
 } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { ColorToken } from '@vibrant-ui/theme';
-import type { Either } from '@vibrant-ui/utils';
 
 export type PressableProps = BackgroundSystemProps &
   BorderSystemProps &
@@ -33,16 +32,23 @@ export type PressableProps = BackgroundSystemProps &
     onFocus?: () => void;
     onBlur?: () => void;
     testId?: string;
-  } & Either<
-    {
-      as: 'div' | 'li';
-      buttonType?: never;
-    },
-    {
-      as?: 'button';
-      buttonType?: 'button' | 'submit';
-    }
-  > &
+  } & (
+    | {
+        as: 'div' | 'li';
+        buttonType?: never;
+        href?: never;
+      }
+    | {
+        as?: 'a';
+        buttonType?: never;
+        href?: string;
+      }
+    | {
+        as?: 'button';
+        buttonType?: 'button' | 'submit';
+        href: never;
+      }
+  ) &
   (
     | {
         overlayColor: ResponsiveValue<ColorToken>;

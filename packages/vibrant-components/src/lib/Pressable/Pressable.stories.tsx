@@ -1,4 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Body } from '../Body';
 import { VStack } from '../VStack';
 import { Pressable } from './Pressable';
 
@@ -23,6 +24,12 @@ export const Basic: ComponentStory<typeof Pressable> = props => (
     borderColor="primary"
     {...props}
   ></Pressable>
+);
+
+export const Link: ComponentStory<typeof Pressable> = ({ as: _, buttonType: _buttonType, ...props }) => (
+  <Pressable {...props} href="https://www.vibrant-design.com">
+    <Body level={1}>Link</Body>
+  </Pressable>
 );
 
 export const MultiplePressable: ComponentStory<typeof Pressable> = props => (
