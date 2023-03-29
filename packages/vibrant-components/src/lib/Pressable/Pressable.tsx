@@ -9,6 +9,7 @@ export const Pressable = withPressableVariation(
   ({
     innerRef,
     as = 'button',
+    buttonType,
     testId = 'pressable',
     href,
     children,
@@ -73,7 +74,7 @@ export const Pressable = withPressableVariation(
         }}
         onPressIn={() => setIsActivated(true)}
         onPressOut={() => setIsActivated(false)}
-        {...(isDefined(href) ? { as: 'a', href } : { as })}
+        {...(isDefined(href) ? { as: 'a', href } : { as, buttonType })}
         {...restProps}
       >
         {overlayColor && (
