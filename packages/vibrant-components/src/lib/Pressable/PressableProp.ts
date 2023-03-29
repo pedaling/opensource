@@ -2,6 +2,7 @@ import type { ReactElement, Ref } from 'react';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
+  BoxElements,
   ElevationSystemProps,
   FlexboxSystemProps,
   InteractionSystemProps,
@@ -32,24 +33,10 @@ export type PressableProps = BackgroundSystemProps &
     onFocus?: () => void;
     onBlur?: () => void;
     testId?: string;
+    as?: BoxElements;
+    buttonType?: 'button' | 'submit';
+    href?: string;
   } & (
-    | {
-        as: 'div' | 'li';
-        buttonType?: never;
-        href?: never;
-      }
-    | {
-        as?: 'a';
-        buttonType?: never;
-        href?: string;
-      }
-    | {
-        as?: 'button';
-        buttonType?: 'button' | 'submit';
-        href: never;
-      }
-  ) &
-  (
     | {
         overlayColor: ResponsiveValue<ColorToken>;
         interactions?: ('active' | 'focus' | 'hover')[];

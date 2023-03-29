@@ -1,5 +1,6 @@
 import type { Ref } from 'react';
 import type { ReactElementChild } from '../../types';
+import type { BoxElements } from '../Box';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -42,7 +43,7 @@ export type PressableBoxProps = {
   role?: string;
   ariaChecked?: boolean;
   ariaLabelledBy?: string;
-  as?: string;
+  as?: BoxElements;
   buttonType?: 'button' | 'submit';
 } & SystemProps;
 
