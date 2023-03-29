@@ -14,3 +14,7 @@ export default {
 } as ComponentMeta<typeof GhostButton>;
 
 export const Basic: ComponentStory<typeof GhostButton> = props => <GhostButton {...props} />;
+
+export const Link: ComponentStory<typeof GhostButton> = props => (
+  <GhostButton {...props} href="https://www.vibrant-design.com" />
+);

@@ -18,3 +18,7 @@ export const Basic: ComponentStory<typeof OutlinedButton> = props => (
     <OutlinedButton {...props} />
   </VStack>
 );
+
+export const Link: ComponentStory<typeof OutlinedButton> = props => (
+  <OutlinedButton {...props} href="https://www.vibrant-design.com" />
+);
