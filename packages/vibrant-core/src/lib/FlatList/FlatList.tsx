@@ -10,7 +10,7 @@ import { withFlatListVariation } from './FlatListProps';
 
 export const FlatList = withFlatListVariation(
   ({
-    testId = 'flat-list',
+    testId,
     data,
     renderItem,
     keyExtractor,

@@ -94,6 +94,7 @@ const systemPropNames = systemProps
   .map(systemProp => systemProp.propName);
 
 export type BoxElements =
+  | 'a'
   | 'article'
   | 'aside'
   | 'button'

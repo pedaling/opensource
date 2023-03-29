@@ -86,6 +86,7 @@ export const stories = [
   require('../../vibrant-core/src/lib/Box/Box.stories.tsx'),
   require('../../vibrant-core/src/lib/FlatList/FlatList.stories.tsx'),
   require('../../vibrant-core/src/lib/Image/Image.stories.tsx'),
+  require('../../vibrant-core/src/lib/Link/Link.stories.tsx'),
   require('../../vibrant-core/src/lib/OnColorContainer/OnColorContainer.stories.tsx'),
   require('../../vibrant-core/src/lib/OverlayBox/OverlayBox.stories.tsx'),
   require('../../vibrant-core/src/lib/PageScroll/PageScroll.stories.tsx'),
