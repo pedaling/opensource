@@ -3,7 +3,7 @@ import { useConfig } from '../ConfigProvider';
 import { withLinkVariation } from './LinkProps';
 
 export const Link = withLinkVariation(
-  ({ innerRef, isExternal, onFocusIn, onFocusOut, onHoverIn, onHoverOut, onPressIn, onPressOut, ...props }) => {
+  ({ innerRef, isExternal, onFocusIn, onFocusOut, onHoverIn, onHoverOut, onPressIn, onPressOut, testId, ...props }) => {
     const {
       dependencies: { link },
     } = useConfig();
@@ -11,6 +11,7 @@ export const Link = withLinkVariation(
     return (
       <Box
         as="a"
+        data-testid={testId}
         base={link}
         ref={innerRef}
         onMouseEnter={onHoverIn}

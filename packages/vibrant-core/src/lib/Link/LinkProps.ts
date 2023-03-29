@@ -15,6 +15,7 @@ import type {
 import { withVariation } from '../withVariation';
 
 type LinkProps = {
+  testId?: string;
   ref?: any;
   href: string;
   isExternal?: boolean;
