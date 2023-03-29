@@ -1,6 +1,6 @@
 import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
-import type { ImageRequireSource } from 'react-native';
+import type { ImageRequireSource, PressableProps } from 'react-native';
 import * as ReactSpring from 'react-spring';
 import type { ReactElementChild, ResponsiveValue } from '../../types';
 
@@ -27,12 +27,22 @@ export type Dependencies = {
     draggable?: boolean;
     loading?: 'eager' | 'lazy';
   }>;
-  link?: ComponentType<{
-    href?: string;
-    ref?: any;
-    target?: string;
-    rel?: string;
-  }>;
+  link?: ComponentType<
+    {
+      className?: string;
+      href?: string;
+      ref?: any;
+      target?: string;
+      rel?: string;
+      onClick?: () => void;
+      onMouseEnter?: () => void;
+      onMouseLeave?: () => void;
+      onMouseDown?: () => void;
+      onMouseUp?: () => void;
+      onFocus?: () => void;
+      onBlur?: () => void;
+    } & PressableProps
+  >;
 };
 
 export type Translation = {
