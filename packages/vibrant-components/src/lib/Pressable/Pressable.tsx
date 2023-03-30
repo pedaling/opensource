@@ -75,7 +75,7 @@ export const Pressable = withPressableVariation(
         }}
         onPressIn={() => setIsActivated(true)}
         onPressOut={() => setIsActivated(false)}
-        {...(isDefined(href) ? { as: 'a', href } : { as, buttonType })}
+        {...(isDefined(href) ? { href } : { as, buttonType })}
         {...restProps}
       >
         {overlayColor && (
