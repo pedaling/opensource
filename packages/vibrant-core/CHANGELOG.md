@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.52.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.52.0...vibrant-core-0.52.1) (2023-03-30)
+
+
+### Bug Fixes
+
+* don't pass as="a" when link dependency exists ([#651](https://github.com/pedaling/opensource/issues/651)) ([356ab7a](https://github.com/pedaling/opensource/commit/356ab7a99d77a68b1907e2cbd25c79cdb5881971))
+
 ## [0.52.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.4...vibrant-core-0.52.0) (2023-03-30)
 
 
