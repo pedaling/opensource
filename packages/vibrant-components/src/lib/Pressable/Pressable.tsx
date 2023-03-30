@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Box, PressableBox } from '@vibrant-ui/core';
+import type { ComponentWithRef, LinkProps, PressableBoxProps } from '@vibrant-ui/core';
+import { Box, Link, PressableBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
+import { isDefined } from '@vibrant-ui/utils';
 import { getOpacity } from './getOpacity';
 import { withPressableVariation } from './PressableProp';
 
@@ -8,8 +10,9 @@ export const Pressable = withPressableVariation(
   ({
     innerRef,
     as = 'button',
-    testId = 'pressable',
     buttonType,
+    testId = 'pressable',
+    href,
     children,
     overlayColor,
     onFocus,
@@ -43,8 +46,10 @@ export const Pressable = withPressableVariation(
       disabled,
     });
 
+    const Component = (isDefined(href) ? Link : PressableBox) as ComponentWithRef<LinkProps | PressableBoxProps>;
+
     return (
-      <PressableBox
+      <Component
         ref={innerRef}
         data-testid={testId}
         position="relative"
@@ -70,7 +75,7 @@ export const Pressable = withPressableVariation(
         }}
         onPressIn={() => setIsActivated(true)}
         onPressOut={() => setIsActivated(false)}
-        {...(as === 'button' ? { as, buttonType } : { as })}
+        {...(isDefined(href) ? { as: 'a', href } : { as, buttonType })}
         {...restProps}
       >
         {overlayColor && (
@@ -105,7 +110,7 @@ export const Pressable = withPressableVariation(
             {children}
           </Box>
         </Transition>
-      </PressableBox>
+      </Component>
     );
   }
 );

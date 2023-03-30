@@ -12,3 +12,7 @@ export default {
 } as ComponentMeta<typeof IconButton>;
 
 export const Basic: ComponentStory<typeof IconButton> = props => <IconButton {...props} />;
+
+export const withHref: ComponentStory<typeof IconButton> = props => (
+  <IconButton {...props} href="https://www.vibrant-design.com" />
+);

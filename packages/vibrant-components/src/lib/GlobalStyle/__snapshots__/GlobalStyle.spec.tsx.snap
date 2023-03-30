@@ -98,6 +98,13 @@ NodeList [
     data-s=""
   >
     
+    a{-webkit-text-decoration:none;text-decoration:none;color:inherit;}
+  </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
     *:focus{outline:0;}
   </style>,
 ]

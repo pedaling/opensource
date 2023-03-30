@@ -14,6 +14,7 @@ export type FilterChipProps = {
   onClick?: PressableProps['onClick'];
   children: TextChildren;
   testId?: string;
+  href?: string;
 };
 
 export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChip')(

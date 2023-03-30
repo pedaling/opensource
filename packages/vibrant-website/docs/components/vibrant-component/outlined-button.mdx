@@ -30,6 +30,7 @@ import { OutlinedButton } from '@vibrant-ui/components';
 | disabled                 | `boolean`                                   |         | 버튼의 비활성화 여부                       |
 | [loading](#로딩)         | `boolean`                                   |         | 스피너 표시 여부                           |
 | onClick                  | `() => void`                                |         | 버튼이 클릭됐을 때 호출되는 콜백 함수      |
+| [href](#링크)            | `string`                                    |         | 버튼이 클릭됐을 때 이동할 URL              |
 
 ## Usage
 
@@ -98,4 +99,14 @@ import { OutlinedButton } from '@vibrant-ui/components';
     로딩
   </OutlinedButton>
 </HStack>
+```
+
+### 링크
+
+`href` 속성으로 버튼이 클릭됐을 때 이동할 URL을 지정할 수 있습니다. `href`이 지정되면 `button` 요소가 아닌 `a` 요소로 렌더링됩니다.
+
+```jsx live
+<OutlinedButton size="md" href="/">
+  링크
+</OutlinedButton>
 ```

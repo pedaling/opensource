@@ -14,3 +14,7 @@ export default {
 } as ComponentMeta<typeof FilterChip>;
 
 export const Basic: ComponentStory<typeof FilterChip> = props => <FilterChip {...props} />;
+
+export const withHref: ComponentStory<typeof FilterChip> = props => (
+  <FilterChip {...props} href="https://www.vibrant-design.com" />
+);

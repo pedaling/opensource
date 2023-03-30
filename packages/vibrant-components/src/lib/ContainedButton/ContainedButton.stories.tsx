@@ -14,3 +14,7 @@ export default {
 } as ComponentMeta<typeof ContainedButton>;
 
 export const Basic: ComponentStory<typeof ContainedButton> = props => <ContainedButton {...props} />;
+
+export const withHref: ComponentStory<typeof ContainedButton> = props => (
+  <ContainedButton {...props} href="https://www.vibrant-design.com" />
+);

@@ -17,6 +17,7 @@ type GhostButtonProps = {
   onClick?: PressableProps['onClick'];
   children: TextChildren;
   testId?: string;
+  href?: string;
 } & Either<
   {
     disclosure?: boolean;
