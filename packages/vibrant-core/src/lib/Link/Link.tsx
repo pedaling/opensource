@@ -1,3 +1,4 @@
+import { isDefined } from '@vibrant-ui/utils';
 import { Box } from '../Box';
 import { useConfig } from '../ConfigProvider';
 import { withLinkVariation } from './LinkProps';
@@ -22,7 +23,7 @@ export const Link = withLinkVariation(
 
     return (
       <Box
-        as="a"
+        {...(isDefined(link) ? {} : { as: 'a' })}
         data-testid={testId}
         base={link}
         ref={innerRef}
