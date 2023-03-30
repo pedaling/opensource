@@ -14,10 +14,10 @@ import type {
 } from '../props';
 import { withVariation } from '../withVariation';
 
-type LinkProps = {
+export type LinkProps = {
   testId?: string;
   ref?: any;
-  href?: string;
+  href: string;
   isExternal?: boolean;
   onClick?: () => void;
   onFocusIn?: () => void;

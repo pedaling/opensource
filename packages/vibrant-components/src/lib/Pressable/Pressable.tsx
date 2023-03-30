@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { ComponentWithRef, LinkProps, PressableBoxProps } from '@vibrant-ui/core';
 import { Box, Link, PressableBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { isDefined } from '@vibrant-ui/utils';
@@ -45,7 +46,7 @@ export const Pressable = withPressableVariation(
       disabled,
     });
 
-    const Component = isDefined(href) ? Link : PressableBox;
+    const Component = (isDefined(href) ? Link : PressableBox) as ComponentWithRef<LinkProps | PressableBoxProps>;
 
     return (
       <Component
