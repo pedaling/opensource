@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.52.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.52.1...vibrant-components-0.52.2) (2023-03-30)
+
+
+### Bug Fixes
+
+* don't pass as="a" in Pressable ([#652](https://github.com/pedaling/opensource/issues/652)) ([ec977a2](https://github.com/pedaling/opensource/commit/ec977a23ecc13a57c50811dc83b37ad89162d1c9))
+
 ### [0.52.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.52.0...vibrant-components-0.52.1) (2023-03-30)
 
 ## [0.52.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.51.4...vibrant-components-0.52.0) (2023-03-30)
