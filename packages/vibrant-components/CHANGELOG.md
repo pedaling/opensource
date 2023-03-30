@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.52.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.51.4...vibrant-components-0.52.0) (2023-03-30)
+
+
+### Features
+
+* Contained/Outlined/Ghost/IconButton, FilterChip 컴포넌트에 href 속성을 추가한다 ([#650](https://github.com/pedaling/opensource/issues/650)) ([c922324](https://github.com/pedaling/opensource/commit/c922324de8db4e22c5d4dc091cfb9a2dd8726d17))
+
 ### [0.51.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.51.3...vibrant-components-0.51.4) (2023-03-27)
 
 ### [0.51.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.51.2...vibrant-components-0.51.3) (2023-03-26)
