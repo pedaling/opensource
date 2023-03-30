@@ -9,12 +9,10 @@ export const Link = withLinkVariation(({ innerRef, isExternal: _, href, onClick,
   } = useConfig();
 
   const openLink = () => {
-    if (href) {
-      Linking.openURL(href).catch(err => {
-        // eslint-disable-next-line no-console
-        console.error(err);
-      });
-    }
+    Linking.openURL(href).catch(err => {
+      // eslint-disable-next-line no-console
+      console.error(err);
+    });
 
     onClick?.();
   };
