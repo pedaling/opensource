@@ -26,7 +26,7 @@ export const Basic: ComponentStory<typeof Pressable> = props => (
   ></Pressable>
 );
 
-export const Link: ComponentStory<typeof Pressable> = props => (
+export const withHref: ComponentStory<typeof Pressable> = props => (
   <Pressable {...props} href="https://www.vibrant-design.com">
     <Body level={1}>Link</Body>
   </Pressable>

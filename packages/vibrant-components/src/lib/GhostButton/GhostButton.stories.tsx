@@ -15,6 +15,6 @@ export default {
 
 export const Basic: ComponentStory<typeof GhostButton> = props => <GhostButton {...props} />;
 
-export const Link: ComponentStory<typeof GhostButton> = props => (
+export const withHref: ComponentStory<typeof GhostButton> = props => (
   <GhostButton {...props} href="https://www.vibrant-design.com" />
 );

@@ -13,6 +13,6 @@ export default {
 
 export const Basic: ComponentStory<typeof IconButton> = props => <IconButton {...props} />;
 
-export const Link: ComponentStory<typeof IconButton> = props => (
+export const withHref: ComponentStory<typeof IconButton> = props => (
   <IconButton {...props} href="https://www.vibrant-design.com" />
 );
