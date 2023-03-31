@@ -10,6 +10,7 @@ export default {
     startIcon: <Icon.Clip.Regular />,
     endIcon: <Icon.ArrowTriangleDown.Regular />,
     children: 'FilterChip',
+    lineLimit: 1,
   },
 } as ComponentMeta<typeof FilterChip>;
 
