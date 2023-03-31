@@ -10,6 +10,7 @@ export default {
     startIcon: <Icon.Clip.Regular />,
     endIcon: <Icon.ArrowTriangleDown.Regular />,
     children: 'FilterChip',
+    lineLimit: 1,
   },
 } as ComponentMeta<typeof FilterChip>;
 
@@ -17,4 +18,8 @@ export const Basic: ComponentStory<typeof FilterChip> = props => <FilterChip {..
 
 export const withHref: ComponentStory<typeof FilterChip> = props => (
   <FilterChip {...props} href="https://www.vibrant-design.com" />
+);
+
+export const withLongText: ComponentStory<typeof FilterChip> = props => (
+  <FilterChip {...props} children={'Long Text '.repeat(100)} />
 );
