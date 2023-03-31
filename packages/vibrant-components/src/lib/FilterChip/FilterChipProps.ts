@@ -15,6 +15,7 @@ export type FilterChipProps = {
   children: TextChildren;
   testId?: string;
   href?: string;
+  lineLimit?: ResponsiveValue<number>;
 };
 
 export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChip')(
