@@ -18,3 +18,7 @@ export const Basic: ComponentStory<typeof FilterChip> = props => <FilterChip {..
 export const withHref: ComponentStory<typeof FilterChip> = props => (
   <FilterChip {...props} href="https://www.vibrant-design.com" />
 );
+
+export const withLongText: ComponentStory<typeof FilterChip> = props => (
+  <FilterChip {...props} children={'Long Text '.repeat(100)} />
+);
