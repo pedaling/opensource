@@ -295,4 +295,18 @@ describe('<ContainedButton />', () => {
       });
     });
   });
+
+  describe('when href provided', () => {
+    beforeEach(() => {
+      renderer = render(
+        <ContainedButton kind="primary" size="md" href="https://www.vibrant-design.com">
+          Click Me
+        </ContainedButton>
+      );
+    });
+
+    it('should render link with href attribute', () => {
+      expect(renderer.getByRole('link').getAttribute('href')).toBe('https://www.vibrant-design.com');
+    });
+  });
 });
