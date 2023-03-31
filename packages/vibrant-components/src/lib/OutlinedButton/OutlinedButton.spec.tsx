@@ -1,3 +1,4 @@
+import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { BrowserTesting, createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { OutlinedButton } from './OutlinedButton';
 import type { OutlinedButtonProps } from './OutlinedButtonProps';
@@ -63,6 +64,18 @@ describe('<OutlinedButton />', () => {
           media: '(min-width: 640px)',
         });
       });
+    });
+  });
+
+  describe('when href provided', () => {
+    let renderer: ReactRenderer;
+
+    beforeEach(() => {
+      renderer = render(<OutlinedButton {...props} href="https://www.vibrant-design.com" />);
+    });
+
+    it('should render link with href attribute', () => {
+      expect(renderer.getByRole('link').getAttribute('href')).toBe('https://www.vibrant-design.com');
     });
   });
 
