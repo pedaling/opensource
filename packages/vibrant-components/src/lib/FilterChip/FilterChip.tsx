@@ -14,7 +14,7 @@ export const FilterChip = withFilterChipVariation(
             {cloneElement(startIcon, { size: iconSize, fill: color })}
           </Box>
         )}
-        <Body level={bodyLevel} color={color}>
+        <Body level={bodyLevel} color={color} lineLimit={1}>
           {children}
         </Body>
         {endIcon && (
