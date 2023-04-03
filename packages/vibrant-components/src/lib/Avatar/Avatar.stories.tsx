@@ -6,7 +6,7 @@ export default {
   component: Avatar,
   args: {
     size: 'lg',
-    src: 'https://cdn-media.class101.net/images/e4415fdb-dea2-4527-8aed-cada0b7c1bed/200x200.webp',
+    src: 'https://cdn.class101.net/images/7776e542-d6db-49c6-b86f-7e93f0cf5425/200x200.webp',
     placeholder: 'https://cdn.class101.net/images/e1cba897-73d1-43de-864b-c36cefdea670/200x200.webp',
     alt: 'avatar',
   },

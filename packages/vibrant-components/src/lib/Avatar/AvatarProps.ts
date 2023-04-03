@@ -3,7 +3,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type AvatarProps = {
   testId?: string;
-  size: ResponsiveValue<number | 'lg' | 'md' | 'sm' | 'xl' | 'xs'>;
+  size: ResponsiveValue<number | 'lg' | 'md' | 'sm' | 'xs'>;
   src: string;
   alt: string;
   placeholder?: string;
@@ -36,11 +36,7 @@ export const withAvatarVariation = withVariation<AvatarProps>('Avatar')(
         return { size: 30 };
       }
 
-      if (size === 'lg') {
-        return { size: 44 };
-      }
-
-      return { size: 144 };
+      return { size: 44 };
     },
   })
 );

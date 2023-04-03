@@ -2,7 +2,7 @@ import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type SkeletonAvatarProps = {
-  size: ResponsiveValue<'lg' | 'md' | 'sm' | 'xl' | 'xs'>;
+  size: ResponsiveValue<number | 'lg' | 'md' | 'sm' | 'xs'>;
 };
 
 export const withSkeletonAvatarVariation = withVariation<SkeletonAvatarProps>('SkeletonAvatar')(
@@ -13,22 +13,26 @@ export const withSkeletonAvatarVariation = withVariation<SkeletonAvatarProps>('S
         responsive: true,
       },
     ],
-    variants: {
-      xs: {
-        size: 16,
-      },
-      sm: {
-        size: 22,
-      },
-      md: {
-        size: 34,
-      },
-      lg: {
-        size: 48,
-      },
-      xl: {
-        size: 62,
-      },
+    variants: ({ size }) => {
+      if (typeof size === 'number') {
+        return {
+          size,
+        };
+      }
+
+      if (size === 'xs') {
+        return { size: 16 };
+      }
+
+      if (size === 'sm') {
+        return { size: 24 };
+      }
+
+      if (size === 'md') {
+        return { size: 30 };
+      }
+
+      return { size: 44 };
     },
   })
 );
