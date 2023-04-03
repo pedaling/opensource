@@ -4,21 +4,7 @@ import { Box, useResponsiveValue } from '@vibrant-ui/core';
 import { withSliderVariation } from './SliderProps';
 
 export const Slider = withSliderVariation(
-  ({
-    data,
-    keyExtractor,
-    renderItem,
-    initialIndex,
-    loop,
-    snap,
-    panelsPerView,
-    panelWidth,
-    px,
-    spacing,
-    onEndReached,
-    onItemImpressed,
-    snapAlignment,
-  }) => {
+  ({ data, keyExtractor, renderItem, panelsPerView, panelWidth, snapAlignment }) => {
     const [sliderWidth, setSliderWidth] = useState(0);
     const { getResponsiveValue } = useResponsiveValue();
 
