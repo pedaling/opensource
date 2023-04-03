@@ -26,6 +26,7 @@ export type Dependencies = {
     sizes?: ResponsiveValue<number>;
     draggable?: boolean;
     loading?: 'eager' | 'lazy';
+    onError?: () => void;
   }>;
   link?: ComponentType<
     {
