@@ -11,6 +11,7 @@ type ImageProps = {
   sizes?: ResponsiveValue<number>;
   draggable?: boolean;
   testId?: string;
+  onError?: () => void;
 } & SizingSystemProps &
   MediaSystemProps &
   BorderSystemProps;
