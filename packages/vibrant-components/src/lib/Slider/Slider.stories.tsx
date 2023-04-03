@@ -1,16 +1,13 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Image } from '@vibrant-ui/core';
-import { Slider } from '../Slider';
 import { VStack } from '../VStack';
+import { Slider } from './Slider';
 
 export default {
   title: 'Slider',
   component: Slider,
   args: {
     snap: true,
-    spacing: 10,
-    panelsPerView: 2,
-    initialIndex: 5,
     data: [
       {
         id: 'id1',
@@ -44,6 +41,14 @@ export default {
         id: 'id8',
         image: 'https://cdn.class101.net/images/664ab038-0b3d-4384-b70c-3b03ebbde82d/3840xauto.webp',
       },
+      {
+        id: 'id9',
+        image: 'https://cdn.class101.net/images/0dbf3697-3eed-4279-88d0-77ec628108cd/3840xauto.webp',
+      },
+      {
+        id: 'id10',
+        image: 'https://cdn.class101.net/images/518a534c-fec3-4407-99c2-bc29b874c198/3840xauto.webp',
+      },
     ],
     renderItem: ({ item: { image } }) => <Image src={image} aspectRatio={4 / 3} width="100%" />,
     keyExtractor: ({ item: { id } }) => id,
@@ -51,7 +56,7 @@ export default {
 } as ComponentMeta<typeof Slider>;
 
 export const Basic: ComponentStory<typeof Slider> = props => (
-  <VStack width={600}>
+  <VStack width={800}>
     <Slider {...props} />
   </VStack>
 );
