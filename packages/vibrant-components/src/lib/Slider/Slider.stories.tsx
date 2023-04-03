@@ -45,12 +45,9 @@ export default {
         id: 'id9',
         image: 'https://cdn.class101.net/images/0dbf3697-3eed-4279-88d0-77ec628108cd/3840xauto.webp',
       },
-      {
-        id: 'id10',
-        image: 'https://cdn.class101.net/images/518a534c-fec3-4407-99c2-bc29b874c198/3840xauto.webp',
-      },
     ],
     renderItem: ({ item: { image } }) => <Image src={image} aspectRatio={4 / 3} width="100%" />,
+
     keyExtractor: ({ item: { id } }) => id,
   },
 } as ComponentMeta<typeof Slider>;
