@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.53.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.52.3...vibrant-components-0.53.0) (2023-04-04)
+
+
+### Features
+
+* Avatar 컴포넌트를 추가한다 ([#655](https://github.com/pedaling/opensource/issues/655)) ([d385636](https://github.com/pedaling/opensource/commit/d385636bd4ba5a08a2f4752cb5365e1548dd05b4))
+
 ### [0.52.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.52.2...vibrant-components-0.52.3) (2023-03-31)
 
 ### [0.52.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.52.1...vibrant-components-0.52.2) (2023-03-30)
