@@ -82,6 +82,7 @@ export const Dropdown = withDropdownVariation(
     position = 'bottom',
     spacing = 8,
     onClose,
+    onOpen,
     testId = 'dropdown',
   }) => {
     const openerRef = useRef<HTMLElement>(null);
@@ -117,16 +118,22 @@ export const Dropdown = withDropdownVariation(
 
     useLockBodyScroll(isOpen || visible);
 
-    const opener = useMemo(
-      () => renderOpener?.({ open: () => setIsOpen(!isOpen), isOpen, ref: customOpenerRef }),
-      [isOpen, renderOpener, setIsOpen]
-    );
+    const openDropdown = useCallback(() => {
+      setIsOpen(true);
+
+      onOpen?.();
+    }, [onOpen, setIsOpen]);
 
     const closeDropdown = useCallback(() => {
       setIsOpen(false);
 
       onClose?.();
     }, [onClose, setIsOpen]);
+
+    const opener = useMemo(
+      () => renderOpener?.({ open: openDropdown, isOpen, ref: customOpenerRef }),
+      [isOpen, openDropdown, renderOpener]
+    );
 
     const handleContentResize = useCallback(
       async ({ width, height, top, left }: LayoutEvent) => {
