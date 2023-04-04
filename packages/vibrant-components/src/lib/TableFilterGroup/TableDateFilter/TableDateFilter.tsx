@@ -31,7 +31,7 @@ export const TableDateFilter = withTableDateFilterVariation(
     const { updateFilter } = useTableFilterGroup();
     const handleFilterChange = useCallbackRef(updateFilter);
     const prevOperatorRef = useRef<DateFilterOperator | undefined>();
-    const [fieldAutoFocus, setFieldAutoFocus] = useState(true);
+    const [fieldAutoFocus, setFieldAutoFocus] = useState(false);
     const fieldRef = useRef<DatePickerFieldRefValue | null>(null);
 
     const {
@@ -81,14 +81,14 @@ export const TableDateFilter = withTableDateFilterVariation(
                 .replace('{endDate}', value?.[1] ? getDateString(value?.[1]) : '')}`
             : ''
         )}
-        width={operator === 'between' ? 320 : 'auto'}
+        minWidth={operator === 'between' ? 320 : 'auto'}
         active={isDateFilterValid({ value, operator })}
         onClose={() => {
           if (isValueRequiredOperator(operator)) {
             setValue([]);
           }
 
-          setFieldAutoFocus(true);
+          setFieldAutoFocus(false);
         }}
         operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
         selectedOperator={operator}
