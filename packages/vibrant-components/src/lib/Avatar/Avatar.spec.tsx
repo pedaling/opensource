@@ -8,6 +8,46 @@ describe('<Avatar />', () => {
   const { render } = createReactRenderer();
   let renderer: ReactRenderer;
 
+  describe('when size is lg', () => {
+    beforeEach(async () => {
+      renderer = render(<Avatar size="lg" src="" alt="" />);
+    });
+
+    it('match snapshot', () => {
+      expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('when size is md', () => {
+    beforeEach(async () => {
+      renderer = render(<Avatar size="md" src="" alt="" />);
+    });
+
+    it('match snapshot', () => {
+      expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('when size is sm', () => {
+    beforeEach(async () => {
+      renderer = render(<Avatar size="sm" src="" alt="" />);
+    });
+
+    it('match snapshot', () => {
+      expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('when size is xs', () => {
+    beforeEach(async () => {
+      renderer = render(<Avatar size="xs" src="" alt="" />);
+    });
+
+    it('match snapshot', () => {
+      expect(renderer.container).toMatchSnapshot();
+    });
+  });
+
   describe('when valid src provided', () => {
     beforeEach(() => {
       renderer = render(
