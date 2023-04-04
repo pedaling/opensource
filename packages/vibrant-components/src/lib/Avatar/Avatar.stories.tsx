@@ -13,3 +13,5 @@ export default {
 } as ComponentMeta<typeof Avatar>;
 
 export const Basic: ComponentStory<typeof Avatar> = props => <Avatar {...props} />;
+
+export const Placeholder: ComponentStory<typeof Avatar> = props => <Avatar {...props} src="" />;
