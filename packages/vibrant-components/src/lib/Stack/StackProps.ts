@@ -52,7 +52,7 @@ export type StackProps = DisplaySystemProps &
     ariaLabel?: string;
     reverse?: ResponsiveValue<boolean>;
   } & Pick<BoxProps, 'onLayout'> &
-  Either<{ scrollable?: false }, { scrollable: true } & ScrollSystemProps>;
+  Either<{ scrollable?: false }, { scrollable: true } & Pick<ScrollSystemProps, 'hideScroll'>>;
 
 const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
   start: 'flex-start',
