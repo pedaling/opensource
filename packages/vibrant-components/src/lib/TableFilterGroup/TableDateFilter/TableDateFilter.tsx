@@ -75,7 +75,7 @@ export const TableDateFilter = withTableDateFilterVariation(
         testId={testId}
         dataKey={dataKey}
         onOpen={() => {
-          /* MEMO: Focus dateField after dropdown animation ends */
+          /* MEMO: Focus dateField after dropdown opening animation ends */
           setTimeout(() => {
             setFieldAutoFocus(true);
           }, 200);
