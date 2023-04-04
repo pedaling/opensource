@@ -46,14 +46,46 @@ export default {
         image: 'https://cdn.class101.net/images/0dbf3697-3eed-4279-88d0-77ec628108cd/3840xauto.webp',
       },
     ],
-    renderItem: ({ item: { image } }) => <Image src={image} aspectRatio={4 / 3} width="100%" />,
-
-    keyExtractor: ({ item: { id } }) => id,
+    spacing: 10,
+    panelsPerView: 3,
+    renderItem: ({ item: { image } }) => <Image src={image} height={200} objectFit="fill" />,
   },
 } as ComponentMeta<typeof Slider>;
 
 export const Basic: ComponentStory<typeof Slider> = props => (
-  <VStack width={800}>
+  <VStack width="100%" height={200}>
     <Slider {...props} />
+  </VStack>
+);
+
+export const StaticPanelWidth: ComponentStory<typeof Slider> = () => (
+  <VStack width={300} height={200}>
+    <Slider
+      renderItem={({ item: { image } }) => <Image src={image} height={200} objectFit="fill" />}
+      keyExtractor={item => item.id}
+      panelWidth={150}
+      data={[
+        {
+          id: 'id1',
+          image: 'https://cdn.class101.net/images/518a534c-fec3-4407-99c2-bc29b874c198/3840xauto.webp',
+        },
+        {
+          id: 'id2',
+          image: 'https://cdn.class101.net/images/f4f99ea0-e506-471d-b82e-16f01a960c69/3840xauto.webp',
+        },
+        {
+          id: 'id3',
+          image: 'https://cdn.class101.net/images/29b7e8e6-a30c-4447-9124-17121b5c51db/3840xauto.webp',
+        },
+        {
+          id: 'id4',
+          image: 'https://cdn.class101.net/images/f43dd700-33b7-4218-a2d3-7612cb1eb3ad/3840xauto.webp',
+        },
+        {
+          id: 'id5',
+          image: 'https://cdn.class101.net/images/53b28edd-2731-4fa4-aa9a-e6ba28cd7c0e/3840xauto.webp',
+        },
+      ]}
+    />
   </VStack>
 );

@@ -17,10 +17,12 @@ export type SliderProps<Data> = {
   snapAlignment?: 'center' | 'end' | 'start';
 } & Either<
   {
-    panelsPerView?: ResponsiveValue<number>;
+    panelsPerView: ResponsiveValue<number>;
+    panelWidth?: never;
   },
   {
-    panelWidth?: ResponsiveValue<number>;
+    panelWidth: ResponsiveValue<number>;
+    panelsPerView?: never;
   }
 >;
 
