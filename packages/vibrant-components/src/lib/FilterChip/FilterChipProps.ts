@@ -16,6 +16,7 @@ export type FilterChipProps = {
   testId?: string;
   href?: string;
   lineLimit?: ResponsiveValue<number>;
+  maxWidth?: ResponsiveValue<number | `${number}%`>;
 };
 
 export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChip')(
