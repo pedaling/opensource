@@ -74,6 +74,12 @@ export const TableDateFilter = withTableDateFilterVariation(
       <TableFieldFilter
         testId={testId}
         dataKey={dataKey}
+        onOpen={() => {
+          /* MEMO: Focus dateField after dropdown animation ends */
+          setTimeout(() => {
+            setFieldAutoFocus(true);
+          }, 200);
+        }}
         label={label.concat(
           isDateFilterValid({ value, operator })
             ? `: ${filterLabelTranslation[operator]
