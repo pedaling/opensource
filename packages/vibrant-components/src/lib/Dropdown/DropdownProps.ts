@@ -13,6 +13,7 @@ export type DropdownProps = Either<
   position?: Position;
   renderContents: (_: { close: () => void }) => ReactElementChild;
   spacing?: number;
+  onOpen?: () => void;
   onClose?: () => void;
   testId?: string;
 };
