@@ -45,7 +45,6 @@ export type Dependencies = {
       children?: ReactNode;
     } & PressableProps
   >;
-  cardIconMap?: Record<string, ComponentType<{ size: ResponsiveValue<number> }>>;
 };
 
 export type Translation = {
