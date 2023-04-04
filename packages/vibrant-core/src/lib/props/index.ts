@@ -38,3 +38,5 @@ export type { MediaSystemProps } from './media';
 export { mediaSystemProps } from './media';
 export type { GridSystemProps } from './grid';
 export { gridSystemProps } from './grid';
+export type { ScrollSystemProps } from './scroll';
+export { scrollSystemProps } from './scroll';

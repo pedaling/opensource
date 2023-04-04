@@ -41,6 +41,7 @@ export type {
   TypographySystemProps,
   AllSystemProps,
   HitSlopRect,
+  ScrollSystemProps,
 } from './lib/props';
 export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';

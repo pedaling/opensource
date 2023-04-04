@@ -13,6 +13,7 @@ import type {
   DisplaySystemProps,
   FlexboxSystemProps,
   PositionSystemProps,
+  ScrollSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
   TransformSystemProps,
@@ -25,12 +26,11 @@ import {
   flexboxSystemProps,
   overflowSystemProps,
   positionSystemProps,
+  scrollSystemProps,
   sizingSystemProps,
   spacingSystemProps,
   transformSystemProps,
 } from '../props';
-import { scrollSystemProps } from './props';
-import type { ScrollSystemProps } from './props/type';
 
 type SystemProps = BackgroundSystemProps &
   BorderSystemProps &
