@@ -7,8 +7,8 @@ import { HStack } from '../HStack';
 import { Space } from '../Space';
 import { withBreadCrumbsVariation } from './BreadCrumbsProps';
 
-export const BreadCrumbs = withBreadCrumbsVariation(({ children, Separator = Icon.ChevronRight.Thin }) => (
-  <HStack as="ol" alignVertical="center" flexWrap="wrap">
+export const BreadCrumbs = withBreadCrumbsVariation(({ innerRef, children, Separator = Icon.ChevronRight.Thin }) => (
+  <HStack as="ol" alignVertical="center" flexWrap="wrap" ref={innerRef}>
     {Children.toArray(children)
       .filter(isValidElement<BreadCrumbProps>)
       .map((child, index, array) =>
