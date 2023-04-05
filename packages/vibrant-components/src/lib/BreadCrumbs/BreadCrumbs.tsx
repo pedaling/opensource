@@ -13,12 +13,12 @@ export const BreadCrumbs = withBreadCrumbsVariation(({ innerRef, children, Separ
       .filter(isValidElement<BreadCrumbProps>)
       .map((child, index, array) =>
         index === 0 ? (
-          <HStack key={`child-${index}`}>
+          <HStack as="li" key={`child-${index}`}>
             {child}
             {array.length > 1 && <Space width={4} />}
           </HStack>
         ) : (
-          <HStack alignVertical="center" key={`child-${index}`}>
+          <HStack as="li" alignVertical="center" key={`child-${index}`}>
             <HStack>
               {typeof Separator === 'string' ? (
                 <Body level={2} weight="regular" color="onView2">
