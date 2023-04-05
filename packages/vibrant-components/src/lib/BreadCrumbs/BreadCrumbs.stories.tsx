@@ -25,7 +25,7 @@ export const Basic: ComponentStory<typeof BreadCrumbs> = props => (
 
 export const withStringSeparator: ComponentStory<typeof BreadCrumbs> = props => (
   <VStack p={10}>
-    <BreadCrumbs Separator="+" {...props}>
+    <BreadCrumbs {...props} Separator="+">
       <BreadCrumb href="/">Depth1 has link</BreadCrumb>
       <BreadCrumb href="/" isExternal={true}>
         Depth2 has external link
