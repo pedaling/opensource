@@ -5,7 +5,7 @@ import type { BreadCrumbProps } from '../BreadCrumb';
 
 export type BreadCrumbsProps = {
   children: ReactElement<BreadCrumbProps> | ReactElement<BreadCrumbProps>[];
-  Separator: ComponentType<IconProps>;
+  Separator: ComponentType<IconProps> | string;
 };
 
 export const withBreadCrumbsVariation = withVariation<BreadCrumbsProps>('BreadCrumbs')();

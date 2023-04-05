@@ -23,6 +23,19 @@ export const Basic: ComponentStory<typeof BreadCrumbs> = props => (
   </VStack>
 );
 
+export const withStringSeparator: ComponentStory<typeof BreadCrumbs> = props => (
+  <VStack p={10}>
+    <BreadCrumbs Separator="+" {...props}>
+      <BreadCrumb href="/">Depth1 has link</BreadCrumb>
+      <BreadCrumb href="/" isExternal={true}>
+        Depth2 has external link
+      </BreadCrumb>
+      <BreadCrumb onClick={action('Depth3 is clicked')}>Depth3 has onClick function</BreadCrumb>
+      <BreadCrumb>Last depth is highlighted</BreadCrumb>
+    </BreadCrumbs>
+  </VStack>
+);
+
 export const withLongName: ComponentStory<typeof BreadCrumbs> = props => (
   <VStack p={10}>
     <BreadCrumbs {...props}>
