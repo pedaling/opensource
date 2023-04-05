@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.53.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.5...vibrant-core-0.53.6) (2023-04-05)
+
+
+### Reverts
+
+* Revert "chore: change image dependency type (#663)" (#667) ([49a1297](https://github.com/pedaling/opensource/commit/49a129792e79c407d3f6f97d7b9aadf7a9aa9007)), closes [#663](https://github.com/pedaling/opensource/issues/663) [#667](https://github.com/pedaling/opensource/issues/667)
+
 ### [0.53.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.4...vibrant-core-0.53.5) (2023-04-05)
 
 ### [0.53.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.3...vibrant-core-0.53.4) (2023-04-05)
