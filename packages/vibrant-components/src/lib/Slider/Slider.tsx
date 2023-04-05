@@ -16,7 +16,7 @@ export const Slider = withSliderVariation(
     onItemImpressed,
     spacing,
     px,
-    initialIndex,
+    initialIndex = 0,
     loop = false,
     snap = false,
     snapAlignment = 'start',
@@ -24,29 +24,63 @@ export const Slider = withSliderVariation(
     panelWidth,
   }) => {
     const { getResponsiveValue } = useResponsiveValue();
+
     const [sliderWidth, setSliderWidth] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const [buffedData, setBuffedData] = useState(data);
 
     const itemRefs = useRef<HTMLElement[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
+    const buffedInitialIndex = initialIndex + (loop ? LOOP_BUFFER : 0);
+    const currentIndexRef = useRef(buffedInitialIndex);
 
-    const [buffedData, setBuffedData] = useState(data);
+    const computedSpacing = spacing ? getResponsiveValue(spacing) : 0;
+    const currentPanelsPerView = Math.max(1, getResponsiveValue(panelsPerView));
+
+    const computedPanelWidth = useMemo(() => {
+      if (panelWidth) {
+        return getResponsiveValue(panelWidth);
+      }
+
+      return (sliderWidth - computedSpacing * (currentPanelsPerView - 1)) / currentPanelsPerView;
+    }, [getResponsiveValue, panelWidth, panelsPerView, sliderWidth, spacing]);
 
     const handleItemRef = (index: number) => (ref: HTMLElement) => {
       itemRefs.current[index] = ref;
     };
 
     const scrollToTargetIndex = useCallback(
-      ({ index }: { index: number }) => {
+      ({ index, animation = false }: { index: number; animation?: boolean }) => {
         if (index < 0 || index >= buffedData.length) {
           return;
         }
 
         const targetItem = itemRefs.current[index];
 
-        containerRef.current?.scrollTo({ left: targetItem.offsetLeft });
+        containerRef.current?.scrollTo({
+          left: targetItem.offsetLeft,
+          behavior: animation ? 'smooth' : 'auto',
+        });
+
+        setTimeout(() => {
+          if (loop && currentIndexRef.current < LOOP_BUFFER) {
+            currentIndexRef.current = data.length + LOOP_BUFFER;
+
+            scrollToTargetIndex({ index: currentIndexRef.current });
+
+            return;
+          }
+
+          if (loop && currentIndexRef.current >= LOOP_BUFFER + data.length) {
+            currentIndexRef.current = LOOP_BUFFER;
+
+            scrollToTargetIndex({ index: currentIndexRef.current });
+
+            return;
+          }
+        }, 2000);
       },
       [buffedData.length]
     );
@@ -55,11 +89,10 @@ export const Slider = withSliderVariation(
       if (loop) {
         const frontBuff = data.slice(data.length - LOOP_BUFFER);
         const backBuff = data.slice(0, LOOP_BUFFER);
-        const boundedIndex = initialIndex ?? 0;
 
         setBuffedData([...frontBuff, ...data, ...backBuff]);
 
-        scrollToTargetIndex({ index: boundedIndex + LOOP_BUFFER });
+        scrollToTargetIndex({ index: buffedInitialIndex });
       }
     }, [loop]);
 
@@ -71,8 +104,6 @@ export const Slider = withSliderVariation(
           setIsDragging(true);
 
           setStartX(event.pageX - container.offsetLeft);
-
-          setScrollLeft(container.scrollLeft);
         };
 
         const handleMouseMove = (event: MouseEvent) => {
@@ -80,28 +111,21 @@ export const Slider = withSliderVariation(
 
           event.preventDefault();
 
-          const x = event.pageX - container.offsetLeft;
-          const delta = x - startX;
+          const currentX = event.pageX - container.offsetLeft;
 
-          container.scrollLeft = scrollLeft - delta;
+          const delta = currentX - startX;
+
+          const nextIndex = Math.round((container.scrollLeft - delta) / computedPanelWidth);
+
+          currentIndexRef.current = nextIndex;
+
+          scrollToTargetIndex({ index: nextIndex, animation: true });
         };
 
         const handleMouseUp = () => {
           setIsDragging(false);
 
-          const newIndex = Math.round(container.scrollLeft / computedPanelWidth);
-
-          if (loop && newIndex >= data.length + LOOP_BUFFER) {
-            scrollToTargetIndex({ index: newIndex - data.length });
-
-            return;
-          }
-
-          if (loop && newIndex < LOOP_BUFFER) {
-            scrollToTargetIndex({ index: newIndex + data.length });
-
-            return;
-          }
+          scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
         };
 
         container.addEventListener('mousedown', handleMouseDown);
@@ -122,20 +146,7 @@ export const Slider = withSliderVariation(
           container.removeEventListener('mouseleave', handleMouseUp);
         };
       }
-
-      return;
-    }, [containerRef.current, isDragging, scrollLeft, startX]);
-
-    const computedPanelWidth = useMemo(() => {
-      if (panelWidth) {
-        return getResponsiveValue(panelWidth);
-      }
-
-      const currentPanelsPerView = Math.max(1, getResponsiveValue(panelsPerView));
-      const computedSpacing = spacing ? getResponsiveValue(spacing) : 0;
-
-      return (sliderWidth - computedSpacing * (currentPanelsPerView - 1)) / currentPanelsPerView;
-    }, [getResponsiveValue, panelWidth, panelsPerView, sliderWidth, spacing]);
+    }, [containerRef.current, isDragging, startX]);
 
     return (
       <Box width="100%" onLayout={({ width }) => setSliderWidth(width)}>
@@ -145,7 +156,7 @@ export const Slider = withSliderVariation(
           snap={snap}
           flexDirection="row"
           scrollEnabled={true}
-          hideScroll={true}
+          // hideScroll={true}
           width={sliderWidth}
           columnGap={spacing}
         >
