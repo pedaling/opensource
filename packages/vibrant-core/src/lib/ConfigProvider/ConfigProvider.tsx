@@ -1,6 +1,6 @@
 import type { ComponentType, FC, ReactEventHandler, ReactNode } from 'react';
 import { createContext, useContext, useMemo } from 'react';
-import type { ImageProps, ImageRequireSource, PressableProps } from 'react-native';
+import type { ImageErrorEventData, ImageRequireSource, NativeSyntheticEvent, PressableProps } from 'react-native';
 import * as ReactSpring from 'react-spring';
 import type { ReactElementChild, ResponsiveValue } from '../../types';
 
@@ -26,7 +26,7 @@ export type Dependencies = {
     sizes?: ResponsiveValue<number>;
     draggable?: boolean;
     loading?: 'eager' | 'lazy';
-    onError?: ImageProps['onError'] | ReactEventHandler<HTMLImageElement>;
+    onError?: ReactEventHandler<HTMLImageElement> | ((event: NativeSyntheticEvent<ImageErrorEventData>) => void);
   }>;
   link?: ComponentType<
     {
