@@ -13,6 +13,7 @@ import type {
   SpacingSystemProps,
 } from '@vibrant-ui/core';
 import { Box, ScrollBox, propVariant, withVariation } from '@vibrant-ui/core';
+import type { Either } from '@vibrant-ui/utils';
 
 type SemanticTagName =
   | 'article'
@@ -50,9 +51,8 @@ export type StackProps = DisplaySystemProps &
     alignVertical?: ResponsiveValue<Alignment>;
     ariaLabel?: string;
     reverse?: ResponsiveValue<boolean>;
-    scrollable?: boolean;
   } & Pick<BoxProps, 'onLayout'> &
-  Pick<ScrollSystemProps, 'hideScroll'>;
+  Either<{ scrollable?: false }, { scrollable: true } & Pick<ScrollSystemProps, 'hideScroll'>>;
 
 const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
   start: 'flex-start',
