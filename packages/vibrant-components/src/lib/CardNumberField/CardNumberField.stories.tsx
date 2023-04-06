@@ -16,14 +16,31 @@ export default {
   },
 } as ComponentMeta<typeof CardNumberField>;
 
-const Test = ({ size }: { size: ResponsiveValue<number> }) => (
-  <Paper backgroundColor="primary" width={size}>
-    <Body level={2}>other</Body>
-  </Paper>
-);
+const generateCardComponentMock =
+  (name: string) =>
+  ({ size }: { size: ResponsiveValue<number> }) =>
+    (
+      <Paper backgroundColor="primary" width={size}>
+        <Body level={3}>{name}</Body>
+      </Paper>
+    );
 
 export const Basic: ComponentStory<typeof CardNumberField> = props => (
-  <CustomizationProvider cardNumberField={{ cardIconMap: { others: Test } }}>
+  <CustomizationProvider
+    cardNumberField={{
+      cardIconMap: {
+        others: generateCardComponentMock('others'),
+        'american-express': generateCardComponentMock('amex'),
+        'diners-club': generateCardComponentMock('diners'),
+        discover: generateCardComponentMock('discover'),
+        jcb: generateCardComponentMock('jcb'),
+        maestro: generateCardComponentMock('maestro'),
+        mastercard: generateCardComponentMock('mastercard'),
+        unionpay: generateCardComponentMock('unionpay'),
+        visa: generateCardComponentMock('visa'),
+      },
+    }}
+  >
     <VStack width="100%" p={20}>
       <CardNumberField
         onValueChange={({ prevent }) => {
