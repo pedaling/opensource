@@ -10,7 +10,7 @@ import { withCardNumberFieldVariation } from './CardNumberFieldProps';
 
 const DEFAULT_GAPS = [4, 8, 12];
 
-export const CardNumberField = withCardNumberFieldVariation(({ separator = '', ...restProps }) => {
+export const CardNumberField = withCardNumberFieldVariation(({ separator = '', onValueChange, ...restProps }) => {
   const { cardNumberField } = useCustomization();
 
   const cardIconMap = cardNumberField?.cardIconMap;
@@ -74,6 +74,8 @@ export const CardNumberField = withCardNumberFieldVariation(({ separator = '', .
       type="number"
       defaultValue={value}
       onValueChange={({ value, prevent }) => {
+        onValueChange?.({ value, prevent });
+
         onCardNumberChange(value);
         if (value.length > 0) {
           setShowLockIcon(true);
