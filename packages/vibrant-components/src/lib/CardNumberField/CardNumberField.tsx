@@ -31,8 +31,8 @@ export const CardNumberField = withCardNumberFieldVariation(({ separator = '', .
     const numberGroups: string[] = [];
     let startIndex = 0;
 
-    [...gaps, maxLength].forEach(gapSize => {
-      const endIndex = Math.min(gapSize, totalLength);
+    [...gaps, maxLength].forEach(breakPoint => {
+      const endIndex = Math.min(breakPoint, totalLength);
 
       const group = newCardNumberOnlyNumber.slice(startIndex, endIndex).join('');
 
