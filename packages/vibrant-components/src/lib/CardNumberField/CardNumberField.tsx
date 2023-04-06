@@ -13,7 +13,6 @@ const DEFAULT_GAPS = [4, 8, 12];
 export const CardNumberField = withCardNumberFieldVariation(({ separator = '', ...restProps }) => {
   const { cardNumberField } = useCustomization();
 
-  //cardIconMap의 key 값은 card-validator의 card.type 값과 맞추어 보낸다.
   const cardIconMap = cardNumberField?.cardIconMap;
 
   const [showLockIcon, setShowLockIcon] = useState(false);
@@ -24,7 +23,6 @@ export const CardNumberField = withCardNumberFieldVariation(({ separator = '', .
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
   const CardIcon = cardIconMap?.[cardType] ?? null;
-  // const cardImageSource = cardImage[CARD_TYPE_IMG_MAP[cardType]]?.default;
   const gaps: number[] = card?.gaps ?? DEFAULT_GAPS;
 
   const onCardNumberChange = (newCardNumber: string) => {
