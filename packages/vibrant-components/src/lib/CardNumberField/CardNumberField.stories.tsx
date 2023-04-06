@@ -26,9 +26,7 @@ export const Basic: ComponentStory<typeof CardNumberField> = props => (
   <CustomizationProvider cardNumberField={{ cardIconMap: { others: Test } }}>
     <VStack width="100%" p={20}>
       <CardNumberField
-        onValueChange={({ value, prevent }) => {
-          console.log(value);
-
+        onValueChange={({ prevent }) => {
           prevent();
         }}
         {...props}
