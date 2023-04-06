@@ -14,11 +14,6 @@ export default {
     helperText: '카드번호를 입력해주세요',
     separator: '-',
   },
-  argTypes: {
-    onValueChange: { controls: false },
-    onFocus: { controls: false },
-    onBlur: { controls: false },
-  },
 } as ComponentMeta<typeof CardNumberField>;
 
 const Test = ({ size }: { size: ResponsiveValue<number> }) => (
