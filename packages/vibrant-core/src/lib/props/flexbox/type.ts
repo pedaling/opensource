@@ -65,4 +65,5 @@ export type FlexboxSystemProps = {
   order?: ResponsiveValue<number>;
   rowGap?: ResponsiveValue<number>;
   columnGap?: ResponsiveValue<number>;
+  snap?: ResponsiveValue<boolean>;
 };

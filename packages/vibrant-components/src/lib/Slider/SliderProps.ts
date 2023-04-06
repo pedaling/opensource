@@ -8,7 +8,7 @@ export type SliderProps<Data> = {
   renderItem: (_: { item: Data; index: number }) => ReactElement | null;
   keyExtractor: (item: Data) => string;
   onEndReached?: () => void;
-  onItemImpressed?: (_: { item: Data; index: number }) => void;
+  onItemImpressed?: (item: Data, index: number | null) => void;
   spacing?: ResponsiveValue<number>;
   px?: ResponsiveValue<number>;
   loop?: boolean;

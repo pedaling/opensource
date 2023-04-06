@@ -14,7 +14,7 @@ export const FlatList = withFlatListVariation(
     data,
     renderItem,
     keyExtractor,
-    columns,
+    columns = 1,
     maxRows,
     onItemImpressed,
     onEndReached,

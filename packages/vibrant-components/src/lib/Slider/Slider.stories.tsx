@@ -1,6 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Image } from '@vibrant-ui/core';
-import { VStack } from '../VStack';
 import { Slider } from './Slider';
 
 export default {
@@ -47,13 +46,10 @@ export default {
       },
     ],
     spacing: 10,
-    panelsPerView: 3,
+    panelWidth: 200,
+    keyExtractor: item => item.id,
     renderItem: ({ item: { image } }) => <Image src={image} height={200} objectFit="fill" />,
   },
 } as ComponentMeta<typeof Slider>;
 
-export const Basic: ComponentStory<typeof Slider> = props => (
-  <VStack width="100%" height={300}>
-    <Slider {...props} />
-  </VStack>
-);
+export const Basic: ComponentStory<typeof Slider> = props => <Slider {...props} />;

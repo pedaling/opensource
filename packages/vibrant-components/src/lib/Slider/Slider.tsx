@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { Box, ScrollBox, useResponsiveValue } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
-import { Panel } from './Panel/Panel';
+import { Box, FlatList, useResponsiveValue } from '@vibrant-ui/core';
 import { withSliderVariation } from './SliderProps';
 
 const LOOP_BUFFER = 3;
@@ -150,37 +148,16 @@ export const Slider = withSliderVariation(
 
     return (
       <Box width="100%" onLayout={({ width }) => setSliderWidth(width)}>
-        <ScrollBox
-          ref={containerRef}
-          px={px}
-          snap={snap}
-          flexDirection="row"
-          scrollEnabled={true}
-          // hideScroll={true}
-          width={sliderWidth}
-          columnGap={spacing}
-        >
-          {buffedData.map((item, index) => (
-            <Panel
-              ref={handleItemRef(index)}
-              snapAlignment={snapAlignment}
-              key={(keyExtractor?.({ item }) ?? index) + (loop ? `-${index}` : '')}
-              width={computedPanelWidth}
-              onImpressed={
-                isDefined(onItemImpressed) || index === data.length - 1
-                  ? () => {
-                      onItemImpressed?.({ item, index });
-                      if (index === data.length - 1) {
-                        onEndReached?.();
-                      }
-                    }
-                  : undefined
-              }
-            >
-              {renderItem({ item, index })}
-            </Panel>
-          ))}
-        </ScrollBox>
+        <FlatList
+          horizontal={true}
+          columnSpacing={computedSpacing}
+          columnWidth={computedPanelWidth}
+          data={buffedData}
+          renderItem={renderItem}
+          keyExtractor={keyExtractor}
+          onEndReached={onEndReached}
+          onItemImpressed={onItemImpressed}
+        />
       </Box>
     );
   }
