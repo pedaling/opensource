@@ -57,14 +57,9 @@ export const FlatList = withFlatListVariation(
 
     const scrollToIndex = useCallback(
       ({ index, animated = true }: { index: number; animated?: boolean }) => {
-        console.log('scrollToIndex');
         if (index < 0 || index > data.length + (loop ? LOOP_BUFFER : 0)) {
-          console.log('out!');
-
           return;
         }
-
-        console.log(index, ' is target index');
 
         ref.current?.scrollToIndex({ index, animated });
       },
