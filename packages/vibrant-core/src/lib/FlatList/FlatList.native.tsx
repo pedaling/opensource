@@ -9,7 +9,7 @@ import { useResponsiveValue } from '../useResponsiveValue';
 import { FlatListItem } from './FlatListItem';
 import { withFlatListVariation } from './FlatListProps';
 
-const LOOP_BUFFER = 3;
+const LOOP_BUFFER = 1;
 
 export const FlatList = withFlatListVariation(
   ({
@@ -57,13 +57,18 @@ export const FlatList = withFlatListVariation(
 
     const scrollToIndex = useCallback(
       ({ index, animated = true }: { index: number; animated?: boolean }) => {
-        if (index < 0 || index >= data.length) {
+        console.log('scrollToIndex');
+        if (index < 0 || index > data.length + (loop ? LOOP_BUFFER : 0)) {
+          console.log('out!');
+
           return;
         }
 
+        console.log(index, ' is target index');
+
         ref.current?.scrollToIndex({ index, animated });
       },
-      [data.length]
+      [data.length, loop]
     );
 
     const getResponsiveMarginLeft = (index: number) =>
@@ -139,7 +144,7 @@ export const FlatList = withFlatListVariation(
         onScroll={event => {
           const newPage = Math.round(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
 
-          if (newPage < 0 || newPage >= data.length) {
+          if (newPage < 0 || newPage >= buffedData.length) {
             return;
           }
 
@@ -148,12 +153,12 @@ export const FlatList = withFlatListVariation(
         onMomentumScrollEnd={event => {
           const newPage = Math.round(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
 
-          if (loop && newPage >= data.length + LOOP_BUFFER) {
-            scrollToIndex({ index: LOOP_BUFFER, animated: false });
-          }
-
-          if (loop && newPage < LOOP_BUFFER) {
-            scrollToIndex({ index: data.length, animated: false });
+          if (loop) {
+            if (newPage < LOOP_BUFFER) {
+              scrollToIndex({ index: LOOP_BUFFER + data.length - 1, animated: false });
+            } else if (newPage >= LOOP_BUFFER + data.length) {
+              scrollToIndex({ index: LOOP_BUFFER, animated: false });
+            }
           }
         }}
         {...props}

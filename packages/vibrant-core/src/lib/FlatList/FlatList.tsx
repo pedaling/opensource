@@ -10,7 +10,7 @@ import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
-const LOOP_BUFFER = 3;
+const LOOP_BUFFER = 1;
 
 export const FlatList = withFlatListVariation(
   ({
