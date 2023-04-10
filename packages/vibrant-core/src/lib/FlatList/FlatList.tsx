@@ -55,12 +55,13 @@ export const FlatList = withFlatListVariation(
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}
+        hideScroll={horizontal ? true : false}
         ref={innerRef}
         {...props}
       >
         {data.map((item, index) => (
           <FlatListItem
-            key={keyExtractor(item, index)}
+            key={`${keyExtractor(item, index)}-${index}`}
             ref={handleItemRef?.(index)}
             snapAlignment={snapAlignment}
             width={width}

@@ -72,7 +72,7 @@ export const Slider = withSliderVariation(
 
         setBuffedData([...frontBuff, ...data, ...backBuff]);
 
-        scrollToTargetIndex({ index: buffedInitialIndex });
+        scrollToTargetIndex({ index: buffedInitialIndex, animation: false });
       }
     }, [loop]);
 
@@ -80,25 +80,27 @@ export const Slider = withSliderVariation(
       const container = containerRef.current;
 
       if (container) {
-        const handleMouseDown = (event: MouseEvent) => {
+        const handleMouseDown = (event: MouseEvent | TouchEvent) => {
           setIsDragging(true);
 
-          setStartX(event.pageX - container.offsetLeft);
+          const pageX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
+
+          setStartX(pageX - container.offsetLeft);
         };
 
-        const handleMouseMove = (event: MouseEvent) => {
+        const handleMouseMove = (event: MouseEvent | TouchEvent) => {
           if (isDragging) {
             event.preventDefault();
 
-            const currentX = event.pageX - container.offsetLeft;
+            const currentX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
 
-            const updatedScrollLeft = container.scrollLeft + startX - currentX;
+            const updatedScrollLeft = container.scrollLeft + (startX - currentX) * 1.2;
+
+            container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
 
             const nextIndex = Math.round(updatedScrollLeft / computedPanelWidth);
 
             currentIndexRef.current = nextIndex;
-
-            container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
 
             if (snap) {
               scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
@@ -108,6 +110,24 @@ export const Slider = withSliderVariation(
 
         const handleMouseUp = () => {
           setIsDragging(false);
+
+          if (loop) {
+            if (currentIndexRef.current < LOOP_BUFFER) {
+              setTimeout(() => {
+                containerRef.current?.scrollTo({
+                  left: (data.length + LOOP_BUFFER - 1) * computedPanelWidth,
+                  behavior: 'auto',
+                });
+              }, 600);
+            } else if (currentIndexRef.current >= LOOP_BUFFER + data.length) {
+              setTimeout(() => {
+                containerRef.current?.scrollTo({
+                  left: LOOP_BUFFER * computedPanelWidth,
+                  behavior: 'auto',
+                });
+              }, 600);
+            }
+          }
         };
 
         container.addEventListener('mousedown', handleMouseDown);
