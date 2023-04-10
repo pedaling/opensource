@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Children, cloneElement, isValidElement } from 'react';
+import { Children, isValidElement } from 'react';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import type { BreadCrumbProps } from '../BreadCrumb';
+import { BreadCrumbProvider } from '../BreadCrumbProvider';
 import { HStack } from '../HStack';
 import { Space } from '../Space';
 import { withBreadCrumbsVariation } from './BreadCrumbsProps';
@@ -29,7 +30,9 @@ export const BreadCrumbs = withBreadCrumbsVariation(({ innerRef, children, Separ
               )}
             </HStack>
             <Space width={4} />
-            {index < array.length - 1 ? child : cloneElement(child, { highlight: true })}
+            <BreadCrumbProvider current={index === array.length - 1}>
+              <>{child}</>
+            </BreadCrumbProvider>
             {index < array.length - 1 ? <Space width={4} /> : null}
           </HStack>
         )
