@@ -25,6 +25,7 @@ export const FlatList = withFlatListVariation(
     snap,
     snapAlignment,
     handleItemRef,
+    innerRef,
     ...props
   }) => {
     const {
@@ -54,6 +55,7 @@ export const FlatList = withFlatListVariation(
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}
+        ref={innerRef}
         {...props}
       >
         {data.map((item, index) => (

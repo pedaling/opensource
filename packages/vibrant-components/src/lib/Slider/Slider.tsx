@@ -25,9 +25,8 @@ export const Slider = withSliderVariation(
 
     const [sliderWidth, setSliderWidth] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-
     const [buffedData, setBuffedData] = useState(data);
+    const [startX, setStartX] = useState(0);
 
     const itemRefs = useRef<HTMLElement[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -36,7 +35,7 @@ export const Slider = withSliderVariation(
 
     const computedSpacing = spacing ? getResponsiveValue(spacing) : 0;
     const computedPaddingX = px ? getResponsiveValue(px) : 0;
-    const currentPanelsPerView = Math.max(1, getResponsiveValue(panelsPerView));
+    const currentPanelsPerView = Math.min(data.length, getResponsiveValue(panelsPerView));
 
     const computedPanelWidth = useMemo(() => {
       if (panelWidth) {
@@ -62,24 +61,6 @@ export const Slider = withSliderVariation(
           left: targetItem.offsetLeft,
           behavior: animation ? 'smooth' : 'auto',
         });
-
-        setTimeout(() => {
-          if (loop && currentIndexRef.current < LOOP_BUFFER) {
-            currentIndexRef.current = data.length + LOOP_BUFFER;
-
-            scrollToTargetIndex({ index: currentIndexRef.current });
-
-            return;
-          }
-
-          if (loop && currentIndexRef.current >= LOOP_BUFFER + data.length) {
-            currentIndexRef.current = LOOP_BUFFER;
-
-            scrollToTargetIndex({ index: currentIndexRef.current });
-
-            return;
-          }
-        }, 2000);
       },
       [buffedData.length]
     );
@@ -106,25 +87,27 @@ export const Slider = withSliderVariation(
         };
 
         const handleMouseMove = (event: MouseEvent) => {
-          if (!isDragging) return;
+          if (isDragging) {
+            event.preventDefault();
 
-          event.preventDefault();
+            const currentX = event.pageX - container.offsetLeft;
 
-          const currentX = event.pageX - container.offsetLeft;
+            const updatedScrollLeft = container.scrollLeft + startX - currentX;
 
-          const delta = currentX - startX;
+            const nextIndex = Math.round(updatedScrollLeft / computedPanelWidth);
 
-          const nextIndex = Math.round((container.scrollLeft - delta) / computedPanelWidth);
+            currentIndexRef.current = nextIndex;
 
-          currentIndexRef.current = nextIndex;
+            container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
 
-          scrollToTargetIndex({ index: nextIndex, animation: true });
+            if (snap) {
+              scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
+            }
+          }
         };
 
         const handleMouseUp = () => {
           setIsDragging(false);
-
-          scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
         };
 
         container.addEventListener('mousedown', handleMouseDown);
@@ -150,6 +133,7 @@ export const Slider = withSliderVariation(
     return (
       <Box px={px} width="100%" onLayout={({ width }) => setSliderWidth(width)}>
         <FlatList
+          ref={containerRef}
           horizontal={true}
           columnSpacing={computedSpacing}
           columnWidth={computedPanelWidth}

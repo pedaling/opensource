@@ -5,6 +5,7 @@ import { withVariation } from '../withVariation';
 
 export type FlatListProps<Data> = {
   id?: string;
+  ref?: any;
   testId?: string;
   data: Data[];
   horizontal?: boolean;

@@ -11,6 +11,7 @@ import { withVariation } from '../../withVariation';
 export type FlatListItemProps = {
   children: ReactElement | null;
   onImpressed?: () => void;
+  ref?: any;
 } & Pick<SpacingSystemProps, 'ml' | 'mr' | 'mt'> &
   Pick<FlexboxSystemProps, 'flex' | 'flexShrink'> &
   Pick<DisplaySystemProps, 'display'> &
