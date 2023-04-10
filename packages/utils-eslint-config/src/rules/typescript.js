@@ -80,7 +80,15 @@ const typescriptRules = {
         match: true,
       },
     },
-
+    // 일부 단어로 시작하는 네이밍을 허용한다
+    {
+      selector: ['default', 'variable', 'typeLike', 'typeProperty'],
+      format: null,
+      filter: {
+        regex: '^(CO)',
+        match: true,
+      },
+    },
     // 일부 스타일들을 허용한다
     {
       selector: ['objectLiteralProperty'],
