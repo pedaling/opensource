@@ -22,6 +22,9 @@ export const FlatList = withFlatListVariation(
     onEndReached,
     onItemImpressed,
     horizontal = false,
+    snap,
+    snapAlignment,
+    handleItemRef,
     ...props
   }) => {
     const {
@@ -47,6 +50,7 @@ export const FlatList = withFlatListVariation(
         width="100%"
         flexDirection="row"
         flexWrap={horizontal ? 'nowrap' : 'wrap'}
+        snap={snap}
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}
@@ -55,6 +59,8 @@ export const FlatList = withFlatListVariation(
         {data.map((item, index) => (
           <FlatListItem
             key={keyExtractor(item, index)}
+            ref={handleItemRef?.(index)}
+            snapAlignment={snapAlignment}
             width={width}
             flexShrink={horizontal ? 0 : 1}
             display={getResponsiveDisplay(index)}

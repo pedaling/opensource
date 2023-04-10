@@ -46,9 +46,8 @@ export default {
       },
     ],
     spacing: 10,
-    panelWidth: 200,
     keyExtractor: item => item.id,
-    renderItem: ({ item: { image } }) => <Image src={image} height={200} objectFit="fill" />,
+    renderItem: ({ item: { image } }) => <Image src={image} height={240} width="100%" objectFit="fill" />,
   },
 } as ComponentMeta<typeof Slider>;
 

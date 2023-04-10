@@ -1,7 +1,6 @@
 import type { ViewToken } from 'react-native';
 import { FlatList as NativeFlatList } from 'react-native';
 import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
-import { Box } from '../Box';
 import { getPaddedResponsiveArray } from '../getPaddedResponsiveArray';
 import { useCurrentTheme } from '../ThemeProvider';
 import { transformResponsiveValue } from '../transformResponsiveValue';
@@ -19,6 +18,11 @@ export const FlatList = withFlatListVariation(
     onItemImpressed,
     onEndReached,
     columnSpacing = 0,
+    columnWidth,
+    horizontal = false,
+    // snap,
+    snapAlignment,
+    handleItemRef,
     rowSpacing = 0,
     ...props
   }) => {
@@ -37,12 +41,19 @@ export const FlatList = withFlatListVariation(
     const responsiveRowSpacing = getPaddedResponsiveArray(breakpoints, rowSpacing);
     const responsiveMaxRows = isDefined(maxRows) ? getPaddedResponsiveArray(breakpoints, maxRows) : undefined;
 
+    const computedColumnWidth = getResponsiveValue(columnWidth ?? 0);
+    const computedSpacing = getResponsiveValue(columnSpacing ?? 0);
+
+    const getResponsiveMarginLeft = (index: number) =>
+      responsiveColumns.map((_, breakPointIndex) => (index > 0 ? responsiveColumnSpacing[breakPointIndex] : 0));
+
     const getResponsiveMarginRight = (index: number) =>
       responsiveColumns.map((column, breakPointIndex) =>
         index % column === column - 1 ? 0 : responsiveColumnSpacing[breakPointIndex]
       );
     const getResponsiveMarginTop = (index: number) =>
       responsiveColumns.map((column, breakPointIndex) => (index < column ? 0 : responsiveRowSpacing[breakPointIndex]));
+
     const getResponsiveDisplay = (index: number) =>
       isDefined(responsiveMaxRows)
         ? responsiveColumns.map((column, breakPointIndex) =>
@@ -52,16 +63,30 @@ export const FlatList = withFlatListVariation(
     const currentColumn = getResponsiveValue(columns);
 
     return (
-      <Box
+      <NativeFlatList
         key={currentColumn}
-        base={NativeFlatList}
+        style={{ width: '100%' }}
+        horizontal={horizontal}
+        pagingEnabled={horizontal}
         data={data}
+        decelerationRate={horizontal ? 'fast' : undefined}
+        snapToAlignment={snapAlignment}
+        snapToInterval={computedColumnWidth + computedSpacing}
+        getItemLayout={(_, index) => ({
+          length: computedColumnWidth + computedSpacing,
+          offset: (computedColumnWidth + computedSpacing) * index,
+          index,
+        })}
         renderItem={(itemInfo: { item: any; index: number }) => (
           <FlatListItem
-            flex={transformResponsiveValue(columns, column => 1 / column)}
+            flex={horizontal ? undefined : transformResponsiveValue(columns, column => 1 / column)}
+            flexShrink={horizontal ? 0 : 1}
+            width={computedColumnWidth}
             display={getResponsiveDisplay(itemInfo.index)}
+            ml={horizontal ? getResponsiveMarginLeft(itemInfo.index) : undefined}
             mr={getResponsiveMarginRight(itemInfo.index)}
             mt={getResponsiveMarginTop(itemInfo.index)}
+            ref={handleItemRef?.(itemInfo.index)}
           >
             {renderItem(itemInfo)}
           </FlatListItem>
@@ -70,7 +95,6 @@ export const FlatList = withFlatListVariation(
         keyExtractor={keyExtractor}
         numColumns={currentColumn}
         onEndReached={onEndReached}
-        width="100%"
         {...props}
       />
     );

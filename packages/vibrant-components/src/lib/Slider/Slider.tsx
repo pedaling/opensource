@@ -35,6 +35,7 @@ export const Slider = withSliderVariation(
     const currentIndexRef = useRef(buffedInitialIndex);
 
     const computedSpacing = spacing ? getResponsiveValue(spacing) : 0;
+    const computedPaddingX = px ? getResponsiveValue(px) : 0;
     const currentPanelsPerView = Math.max(1, getResponsiveValue(panelsPerView));
 
     const computedPanelWidth = useMemo(() => {
@@ -42,7 +43,7 @@ export const Slider = withSliderVariation(
         return getResponsiveValue(panelWidth);
       }
 
-      return (sliderWidth - computedSpacing * (currentPanelsPerView - 1)) / currentPanelsPerView;
+      return (sliderWidth - computedPaddingX - computedSpacing * (currentPanelsPerView - 1)) / currentPanelsPerView;
     }, [getResponsiveValue, panelWidth, panelsPerView, sliderWidth, spacing]);
 
     const handleItemRef = (index: number) => (ref: HTMLElement) => {
@@ -147,16 +148,19 @@ export const Slider = withSliderVariation(
     }, [containerRef.current, isDragging, startX]);
 
     return (
-      <Box width="100%" onLayout={({ width }) => setSliderWidth(width)}>
+      <Box px={px} width="100%" onLayout={({ width }) => setSliderWidth(width)}>
         <FlatList
           horizontal={true}
           columnSpacing={computedSpacing}
           columnWidth={computedPanelWidth}
           data={buffedData}
+          snap={snap}
+          snapAlignment={snapAlignment}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
           onEndReached={onEndReached}
           onItemImpressed={onItemImpressed}
+          handleItemRef={handleItemRef}
         />
       </Box>
     );

@@ -15,6 +15,7 @@ export type FlatListProps<Data> = {
   rowSpacing?: ResponsiveValue<number>;
   onItemImpressed?: (item: Data, index: number | null) => void;
   onEndReached?: () => void;
+  handleItemRef?: (index: number) => (ref: HTMLElement) => void;
   snap?: ResponsiveValue<boolean>;
   snapAlignment?: 'center' | 'end' | 'start';
 } & Either<
