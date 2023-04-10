@@ -30,9 +30,13 @@ export const BreadCrumbs = withBreadCrumbsVariation(({ innerRef, children, Separ
               )}
             </HStack>
             <Space width={4} />
-            <BreadCrumbProvider current={index === array.length - 1}>
-              <>{child}</>
-            </BreadCrumbProvider>
+            {index === array.length - 1 ? (
+              <BreadCrumbProvider current={true}>
+                <>{child}</>
+              </BreadCrumbProvider>
+            ) : (
+              child
+            )}
             {index < array.length - 1 ? <Space width={4} /> : null}
           </HStack>
         )

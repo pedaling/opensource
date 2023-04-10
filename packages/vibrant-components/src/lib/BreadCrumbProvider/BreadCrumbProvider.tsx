@@ -12,7 +12,7 @@ type BreadCrumbContextValue = {
 };
 
 const BreadCrumbContext = createContext<BreadCrumbContextValue>({
-  current: undefined,
+  current: false,
 });
 
 export const BreadCrumbProvider: FC<BreadCrumbProviderProps> = ({ current, children }) => (
