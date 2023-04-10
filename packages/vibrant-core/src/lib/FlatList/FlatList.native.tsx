@@ -1,3 +1,4 @@
+import { useCallback, useRef } from 'react';
 import type { ViewToken } from 'react-native';
 import { FlatList as NativeFlatList } from 'react-native';
 import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
@@ -7,6 +8,8 @@ import { transformResponsiveValue } from '../transformResponsiveValue';
 import { useResponsiveValue } from '../useResponsiveValue';
 import { FlatListItem } from './FlatListItem';
 import { withFlatListVariation } from './FlatListProps';
+
+const LOOP_BUFFER = 3;
 
 export const FlatList = withFlatListVariation(
   ({
@@ -21,15 +24,17 @@ export const FlatList = withFlatListVariation(
     columnWidth,
     horizontal = false,
     // snap,
+    loop,
     snapAlignment,
-    handleItemRef,
     rowSpacing = 0,
     ...props
   }) => {
     const {
       theme: { breakpoints },
     } = useCurrentTheme();
+
     const { getResponsiveValue } = useResponsiveValue();
+
     const handleViewableItemChange = useCallbackRef<
       (info: { viewableItems: ViewToken[]; changed: ViewToken[] }) => void
     >(({ changed }) =>
@@ -43,6 +48,19 @@ export const FlatList = withFlatListVariation(
 
     const computedColumnWidth = getResponsiveValue(columnWidth ?? 0);
     const computedSpacing = getResponsiveValue(columnSpacing ?? 0);
+
+    const ref = useRef<NativeFlatList<{ index: number }>>(null);
+
+    const scrollToIndex = useCallback(
+      ({ index, animated = true }: { index: number; animated?: boolean }) => {
+        if (index < 0 || index >= data.length) {
+          return;
+        }
+
+        ref.current?.scrollToIndex({ index, animated });
+      },
+      [data.length]
+    );
 
     const getResponsiveMarginLeft = (index: number) =>
       responsiveColumns.map((_, breakPointIndex) => (index > 0 ? responsiveColumnSpacing[breakPointIndex] : 0));
@@ -64,6 +82,7 @@ export const FlatList = withFlatListVariation(
 
     return (
       <NativeFlatList
+        ref={ref}
         key={currentColumn}
         style={{ width: '100%' }}
         horizontal={horizontal}
@@ -72,6 +91,7 @@ export const FlatList = withFlatListVariation(
         decelerationRate={horizontal ? 'fast' : undefined}
         snapToAlignment={snapAlignment}
         snapToInterval={computedColumnWidth + computedSpacing}
+        showsHorizontalScrollIndicator={false}
         getItemLayout={(_, index) => ({
           length: computedColumnWidth + computedSpacing,
           offset: (computedColumnWidth + computedSpacing) * index,
@@ -86,15 +106,25 @@ export const FlatList = withFlatListVariation(
             ml={horizontal ? getResponsiveMarginLeft(itemInfo.index) : undefined}
             mr={getResponsiveMarginRight(itemInfo.index)}
             mt={getResponsiveMarginTop(itemInfo.index)}
-            ref={handleItemRef?.(itemInfo.index)}
           >
             {renderItem(itemInfo)}
           </FlatListItem>
         )}
         onViewableItemsChanged={isDefined(onItemImpressed) ? handleViewableItemChange : undefined}
-        keyExtractor={keyExtractor}
+        keyExtractor={(item: any, index: number) => `${keyExtractor(item, index)}-${index}`}
         numColumns={currentColumn}
         onEndReached={onEndReached}
+        onMomentumScrollEnd={event => {
+          const newPage = Math.round(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
+
+          if (loop && newPage >= data.length + LOOP_BUFFER) {
+            scrollToIndex({ index: newPage - data.length, animated: false });
+          }
+
+          if (loop && newPage < LOOP_BUFFER) {
+            scrollToIndex({ index: newPage + data.length, animated: false });
+          }
+        }}
         {...props}
       />
     );

@@ -5,10 +5,8 @@ import { withVariation } from '../withVariation';
 
 export type FlatListProps<Data> = {
   id?: string;
-  ref?: any;
   testId?: string;
   data: Data[];
-  horizontal?: boolean;
   renderItem: (_: { item: Data; index: number }) => ReactElement | null;
   keyExtractor: (item: Data, index: number) => string;
   maxRows?: ResponsiveValue<number>;
@@ -16,15 +14,18 @@ export type FlatListProps<Data> = {
   rowSpacing?: ResponsiveValue<number>;
   onItemImpressed?: (item: Data, index: number | null) => void;
   onEndReached?: () => void;
-  handleItemRef?: (index: number) => (ref: HTMLElement) => void;
-  snap?: ResponsiveValue<boolean>;
+  snap?: boolean;
+  loop?: boolean;
+  initialIndex?: number; // web only
   snapAlignment?: 'center' | 'end' | 'start';
 } & Either<
   {
+    horizontal?: false;
     columns: ResponsiveValue<number>;
     columnWidth?: never;
   },
   {
+    horizontal?: true;
     columnWidth: ResponsiveValue<number>;
     columns?: never;
   }
