@@ -23,7 +23,7 @@ export const FlatList = withFlatListVariation(
     columnSpacing = 0,
     columnWidth,
     horizontal = false,
-    snap,
+    snap = false,
     loop,
     snapAlignment,
     rowSpacing = 0,
@@ -110,7 +110,7 @@ export const FlatList = withFlatListVariation(
         key={currentColumn}
         style={{ width: '100%' }}
         horizontal={horizontal}
-        pagingEnabled={horizontal}
+        pagingEnabled={snap}
         data={buffedData}
         onLayout={() => {
           setIsReady(true);
