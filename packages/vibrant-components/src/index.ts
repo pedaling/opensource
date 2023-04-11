@@ -2,7 +2,6 @@ export { Body } from './lib/Body';
 export { Backdrop } from './lib/Backdrop';
 export { BreadCrumbs } from './lib/BreadCrumbs';
 export { BreadCrumb } from './lib/BreadCrumb';
-export type { AriaCurrent } from './lib/BreadCrumbs';
 export { ContainedButton } from './lib/ContainedButton';
 export { ContentArea } from './lib/ContentArea';
 export { Display } from './lib/Display';

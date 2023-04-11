@@ -18,7 +18,7 @@ export const Basic: ComponentStory<typeof BreadCrumbs> = props => (
         Depth2 has external link
       </BreadCrumb>
       <BreadCrumb onClick={action('Depth3 is clicked')}>Depth3 has onClick function</BreadCrumb>
-      <BreadCrumb>Last depth is highlighted</BreadCrumb>
+      <BreadCrumb href="/">Last depth is highlighted</BreadCrumb>
     </BreadCrumbs>
   </VStack>
 );

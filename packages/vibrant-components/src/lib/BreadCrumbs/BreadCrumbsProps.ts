@@ -3,12 +3,9 @@ import { withVariation } from '@vibrant-ui/core';
 import type { IconProps } from '@vibrant-ui/icons';
 import type { BreadCrumbProps } from '../BreadCrumb';
 
-export type AriaCurrent = 'date' | 'location' | 'page' | 'step' | 'time' | 'true';
-
 export type BreadCrumbsProps = {
   children: ReactElement<BreadCrumbProps> | ReactElement<BreadCrumbProps>[];
   Separator: ComponentType<IconProps> | string;
-  ariaCurrent?: AriaCurrent;
   ref?: Ref<any>;
 };
 

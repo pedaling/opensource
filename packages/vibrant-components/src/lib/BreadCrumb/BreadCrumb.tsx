@@ -10,7 +10,7 @@ export const BreadCrumb = withBreadCrumbVariation(({ children, href, isExternal,
   return (
     <>
       {href ? (
-        <Link href={href} isExternal={isExternal} onClick={onClick}>
+        <Link href={href} isExternal={isExternal} onClick={onClick} ariaCurrent="page">
           <Body level={2} weight="regular" color={current ? 'onView1' : 'onView2'} lineLimit={1}>
             {children}
           </Body>
