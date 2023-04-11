@@ -13,7 +13,9 @@ BreadCrumbs의 하위 아이템으로는 BreadCrumb 컴포넌트를 사용합니
 ```jsx live
 <BreadCrumbs>
   <BreadCrumb href="/">Home</BreadCrumb>
-  <BreadCrumb href="/docs/getting-started/introduction">Docs</BreadCrumb>
+  <BreadCrumb href="/docs/getting-started/introduction">
+    Docs
+  </BreadCrumb>
   <BreadCrumb>Current Page</BreadCrumb>
 </BreadCrumbs>
 ```
@@ -21,22 +23,25 @@ BreadCrumbs의 하위 아이템으로는 BreadCrumb 컴포넌트를 사용합니
 ## How to use
 
 ```jsx
-import { BreadCrumbs, BreadCrumb } from '@vibrant-ui/components';
+import {
+  BreadCrumbs,
+  BreadCrumb,
+} from '@vibrant-ui/components';
 ```
 
 ## Properties
 
 ### BreadCrumbs
 
-| Prop         | Type                        | Default | Description                              |
-|--------------|-----------------------------|---------|------------------------------------------|
+| Prop                    | Type                        | Default | Description                              |
+| ----------------------- | --------------------------- | ------- | ---------------------------------------- |
 | [children](#아이템)(\*) | `ReactElementChild`         | -       | BreadCrumb 컴포넌트로 감싸진 하위 아이템 |
-| href         | `ComponentType` \| `string` | -       | BreadCrumb 을 구분하기 위한 아이콘/문장  |
+| href                    | `ComponentType` \| `string` | -       | BreadCrumb 을 구분하기 위한 아이콘/문장  |
 
 ### BreadCrumb
 
 | Prop         | Type           | Default | Description                                                           |
-|--------------|----------------|---------|-----------------------------------------------------------------------|
+| ------------ | -------------- | ------- | --------------------------------------------------------------------- |
 | children(\*) | `TextChildren` | -       | BreadCrumb 아이템 내부 텍스트                                         |
 | href         | `string`       | -       | BreadCrumb 을 구분하기 위한 아이콘/문장BreadCrumb 클릭 시 이동 할 URL |
 | isExternal   | `boolean`      | false   | BreadCrumb 클릭 시 href URL을 브라우저 새 탭으로 열기 위한 값         |
@@ -46,7 +51,7 @@ import { BreadCrumbs, BreadCrumb } from '@vibrant-ui/components';
 
 ### 아이템
 
-브레드크럼의 아이템 갯수는 자유롭게 지정할 수 있습니다. 일반적으로 최대 3-4개의 브레드크럼이 사용되지만 복잡한 계층구조의 경우에는 더 많은 브레드크럼이 필요할 수 있습니다. 
+브레드크럼의 아이템 갯수는 자유롭게 지정할 수 있습니다. 일반적으로 최대 3-4개의 브레드크럼이 사용되지만 복잡한 계층구조의 경우에는 더 많은 브레드크럼이 필요할 수 있습니다.
 
 현재 위치를 보여줄만큼 충분한 아이템이 있어야 하지만 지저분하거나 혼란스럽지 않도록 주의해야 합니다.
 
@@ -70,20 +75,29 @@ import { BreadCrumbs, BreadCrumb } from '@vibrant-ui/components';
 ```jsx live
 <BreadCrumbs>
   <BreadCrumb>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis purus vitae justo suscipit bibendum.
-    Aliquam nibh risus, malesuada a venenatis quis, pharetra eget tellus. Nam ut erat ac sapien scelerisque faucibus eu
-    nec odio. Ut ut nunc massa. Fusce tincidunt lorem sollicitudin dolor rhoncus porttitor. Curabitur at elementum eros
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Donec convallis purus vitae justo suscipit bibendum.
+    Aliquam nibh risus, malesuada a venenatis quis, pharetra
+    eget tellus. Nam ut erat ac sapien scelerisque faucibus
+    eu nec odio. Ut ut nunc massa. Fusce tincidunt lorem
+    sollicitudin dolor rhoncus porttitor. Curabitur at
+    elementum eros
   </BreadCrumb>
   <BreadCrumb>
-    Phasellus lobortis lectus sapien, eget gravida quam eleifend a. Morbi rhoncus odio turpis, in rutrum lectus pulvinar
-    quis. Nam volutpat augue libero, pellentesque porttitor tellus volutpat non. Nam cursus, nibh sit amet scelerisque
-    commodo, enim ligula ullamcorper eros, vel sodales libero neque sed enim. Duis porta tellus a lectus varius, vitae
-    vehicula magna feugiat
+    Phasellus lobortis lectus sapien, eget gravida quam
+    eleifend a. Morbi rhoncus odio turpis, in rutrum lectus
+    pulvinar quis. Nam volutpat augue libero, pellentesque
+    porttitor tellus volutpat non. Nam cursus, nibh sit amet
+    scelerisque commodo, enim ligula ullamcorper eros, vel
+    sodales libero neque sed enim. Duis porta tellus a
+    lectus varius, vitae vehicula magna feugiat
   </BreadCrumb>
   <BreadCrumb>
-    Mauris felis est, congue a ante quis, imperdiet convallis enim. Duis vitae hendrerit enim, ut tincidunt dolor. In ac
-    viverra nisl. Nulla non eros mollis, auctor elit ac, maximus tortor. Aenean urna odio, ullamcorper eget sapien ac,
-    placerat fermentum ex.
+    Mauris felis est, congue a ante quis, imperdiet
+    convallis enim. Duis vitae hendrerit enim, ut tincidunt
+    dolor. In ac viverra nisl. Nulla non eros mollis, auctor
+    elit ac, maximus tortor. Aenean urna odio, ullamcorper
+    eget sapien ac, placerat fermentum ex.
   </BreadCrumb>
 </BreadCrumbs>
 ```
