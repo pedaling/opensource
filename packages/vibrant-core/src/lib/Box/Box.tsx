@@ -8,7 +8,10 @@ import { interpolation, shouldForwardProp } from './BoxProps';
 
 export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps>(
-    ({ as, base, onLayout, ariaLabel, ariaChecked, ariaLabelledBy, backgroundColor, ...restProps }, ref) => {
+    (
+      { as, base, onLayout, ariaLabel, ariaChecked, ariaLabelledBy, ariaCurrent, backgroundColor, ...restProps },
+      ref
+    ) => {
       const Component = base ? (base as ComponentType<any>) : undefined;
 
       const { ref: layoutEventRef } = useLayoutEvent(onLayout);
@@ -31,7 +34,13 @@ export const Box = styled(
       if (Component) {
         return (
           <OnColorContainer backgroundColor={backgroundColor}>
-            <Component ref={composeRef} {...(as ? { as } : {})} aria-label={ariaLabel} {...restProps} />
+            <Component
+              ref={composeRef}
+              {...(as ? { as } : {})}
+              aria-label={ariaLabel}
+              aria-current={ariaCurrent}
+              {...restProps}
+            />
           </OnColorContainer>
         );
       }
@@ -43,6 +52,7 @@ export const Box = styled(
             'aria-label': ariaLabel,
             'aria-checked': ariaChecked,
             'aria-labelledby': ariaLabelledBy,
+            'aria-current': ariaCurrent,
             ...restProps,
           })}
         </OnColorContainer>

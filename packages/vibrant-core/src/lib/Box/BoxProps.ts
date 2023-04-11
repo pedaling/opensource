@@ -1,4 +1,5 @@
 import type { ComponentType, Ref } from 'react';
+import type { AriaCurrent } from '@vibrant-ui/components';
 import type { DistributiveOmit, LayoutEvent } from '@vibrant-ui/utils';
 import type { ReactElementChildren } from '../../types';
 import { createInterpolation } from '../createInterpolation';
@@ -144,6 +145,7 @@ export type BoxProps<
   ariaLabel?: string;
   ariaChecked?: boolean;
   ariaLabelledBy?: string;
+  ariaCurrent?: AriaCurrent;
   onLayout?: (layoutEvent: LayoutEvent) => void;
 } & DistributiveOmit<
     ComponentProps<BaseComponent> extends undefined
