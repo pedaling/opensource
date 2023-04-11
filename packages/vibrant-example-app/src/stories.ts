@@ -3,6 +3,8 @@ export const stories = [
   require('../../vibrant-components/src/docs/Palettes.stories.tsx'),
   require('../../vibrant-components/src/lib/Backdrop/Backdrop.stories.tsx'),
   require('../../vibrant-components/src/lib/Body/Body.stories.tsx'),
+  require('../../vibrant-components/src/lib/BreadCrumb/BreadCrumb.stories.tsx'),
+  require('../../vibrant-components/src/lib/BreadCrumbs/BreadCrumbs.stories.tsx'),
   require('../../vibrant-components/src/lib/Calendar/Calendar.stories.tsx'),
   require('../../vibrant-components/src/lib/CalendarDateItem/CalendarDateItem.stories.tsx'),
   require('../../vibrant-components/src/lib/Callout/Callout.stories.tsx'),
