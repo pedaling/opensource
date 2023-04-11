@@ -20,7 +20,7 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
 };
 
 export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps & { style: any }>(
+  forwardRef<HTMLDivElement, Omit<BoxProps, 'ariaCurrent'> & { style: any }>(
     ({ as, base, style, onLayout, role, ariaLabel, backgroundColor, ...restProps }, ref) => {
       const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
 
