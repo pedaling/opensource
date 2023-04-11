@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.53.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.53.5...vibrant-motion-0.53.6) (2023-04-05)
+
+### [0.53.5](https://github.com/pedaling/opensource/compare/vibrant-motion-0.53.4...vibrant-motion-0.53.5) (2023-04-05)
+
+### [0.53.4](https://github.com/pedaling/opensource/compare/vibrant-motion-0.53.2...vibrant-motion-0.53.4) (2023-04-05)
+
+### [0.53.3](https://github.com/pedaling/opensource/compare/vibrant-motion-0.53.2...vibrant-motion-0.53.3) (2023-04-05)
+
+## [0.53.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.52.3...vibrant-motion-0.53.0) (2023-04-04)
+
+### [0.52.3](https://github.com/pedaling/opensource/compare/vibrant-motion-0.52.2...vibrant-motion-0.52.3) (2023-03-31)
+
+### [0.52.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.52.1...vibrant-motion-0.52.2) (2023-03-30)
+
+### [0.52.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.52.0...vibrant-motion-0.52.1) (2023-03-30)
+
+## [0.52.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.51.4...vibrant-motion-0.52.0) (2023-03-30)
+
 ### [0.51.4](https://github.com/pedaling/opensource/compare/vibrant-motion-0.51.3...vibrant-motion-0.51.4) (2023-03-27)
 
 ### [0.51.3](https://github.com/pedaling/opensource/compare/vibrant-motion-0.51.2...vibrant-motion-0.51.3) (2023-03-26)

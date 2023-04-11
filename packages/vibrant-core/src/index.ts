@@ -41,6 +41,7 @@ export type {
   TypographySystemProps,
   AllSystemProps,
   HitSlopRect,
+  ScrollSystemProps,
 } from './lib/props';
 export { propVariant } from './lib/propVariant';
 export { withVariation } from './lib/withVariation';
@@ -62,6 +63,7 @@ export { createShadowsComponent } from './lib/createShadowsComponent';
 export { createNativeImageComponent } from './lib/createNativeImageComponent';
 export { createSystemProp } from './lib/createSystemProp';
 export { PressableBox } from './lib/PressableBox';
+export type { PressableBoxProps } from './lib/PressableBox';
 export { PortalBox } from './lib/PortalBox';
 export { isNative } from './lib/isNative';
 export { KeyboardAvoidingBox } from './lib/KeyboardAvoidingBox';
@@ -82,3 +84,4 @@ export { TabView } from './lib/TabView';
 export { TabViewItem } from './lib/TabViewItem';
 export { FlatList } from './lib/FlatList';
 export { Link } from './lib/Link';
+export type { LinkProps } from './lib/Link';

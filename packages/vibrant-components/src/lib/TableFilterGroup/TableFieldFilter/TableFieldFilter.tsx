@@ -17,8 +17,9 @@ export const TableFieldFilter = <Operator extends string>({
   operatorOptions,
   onOperatorSelect,
   onClose,
+  onOpen,
   field,
-  width,
+  minWidth,
   testId,
 }: TableFieldFilterProps<Operator>) => {
   const {
@@ -37,6 +38,7 @@ export const TableFieldFilter = <Operator extends string>({
   return (
     <Dropdown
       position="bottom-start"
+      onOpen={onOpen}
       onClose={onClose}
       renderOpener={({ open }) => (
         <FilterChip testId={testId} size="md" onClick={open} selected={active}>
@@ -44,7 +46,7 @@ export const TableFieldFilter = <Operator extends string>({
         </FilterChip>
       )}
       renderContents={() => (
-        <VStack spacing={16} alignHorizontal="stretch" width={width}>
+        <VStack spacing={16} alignHorizontal="stretch" minWidth={minWidth}>
           <HStack alignHorizontal="space-between" alignVertical="center" px={20}>
             {operatorOptions.length <= 1 ? (
               <Body level={2}>{operatorOptions?.[0].label}</Body>

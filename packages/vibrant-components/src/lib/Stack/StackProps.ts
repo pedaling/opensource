@@ -8,6 +8,7 @@ import type {
   PositionSystemProps,
   ReactElementChildren,
   ResponsiveValue,
+  ScrollSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
 } from '@vibrant-ui/core';
@@ -48,9 +49,10 @@ export type StackProps = DisplaySystemProps &
     alignHorizontal?: ResponsiveValue<Alignment>;
     alignVertical?: ResponsiveValue<Alignment>;
     ariaLabel?: string;
-    scrollable?: boolean;
     reverse?: ResponsiveValue<boolean>;
-  } & Pick<BoxProps, 'onLayout'>;
+    scrollable?: boolean;
+  } & Pick<BoxProps, 'onLayout'> &
+  Pick<ScrollSystemProps, 'hideScroll'>;
 
 const CrossAlignmentMap: { [key in Alignment]: Exclude<AlignmentStyle, 'space-between'> } = {
   start: 'flex-start',

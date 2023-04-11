@@ -20,6 +20,7 @@ export type ContainedButtonProps = {
   onClick?: PressableProps['onClick'];
   children: TextChildren;
   testId?: string;
+  href?: string;
 };
 
 export const withContainedButtonVariation = withVariation<ContainedButtonProps>('ContainedButton')(

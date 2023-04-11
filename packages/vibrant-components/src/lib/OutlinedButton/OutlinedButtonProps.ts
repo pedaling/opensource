@@ -18,6 +18,7 @@ export type OutlinedButtonProps = {
   onClick?: PressableProps['onClick'];
   children: TextChildren;
   testId?: string;
+  href?: string;
 };
 
 export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('OutlinedButton')(

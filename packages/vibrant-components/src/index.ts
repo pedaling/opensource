@@ -67,3 +67,7 @@ export { TableFilterGroup, tableFilterGroupTranslation } from './lib/TableFilter
 export { ImageThumbnail } from './lib/ImageThumbnail';
 export { ViewPagerTabGroup } from './lib/ViewPagerTabGroup';
 export { GridList } from './lib/GridList';
+export { Avatar } from './lib/Avatar';
+export type { AvatarProps } from './lib/Avatar';
+export { CustomizationProvider } from './lib/CustomizationProvider';
+export type { CustomizationProviderProps, Configurations } from './lib/CustomizationProvider';

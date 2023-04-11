@@ -2,6 +2,45 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.53.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.5...vibrant-core-0.53.6) (2023-04-05)
+
+
+### Reverts
+
+* Revert "chore: change image dependency type (#663)" (#667) ([49a1297](https://github.com/pedaling/opensource/commit/49a129792e79c407d3f6f97d7b9aadf7a9aa9007)), closes [#663](https://github.com/pedaling/opensource/issues/663) [#667](https://github.com/pedaling/opensource/issues/667)
+
+### [0.53.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.4...vibrant-core-0.53.5) (2023-04-05)
+
+### [0.53.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.3...vibrant-core-0.53.4) (2023-04-05)
+
+### [0.53.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.2...vibrant-core-0.53.3) (2023-04-05)
+
+## [0.53.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.52.3...vibrant-core-0.53.0) (2023-04-04)
+
+
+### Features
+
+* Avatar 컴포넌트를 추가한다 ([#655](https://github.com/pedaling/opensource/issues/655)) ([d385636](https://github.com/pedaling/opensource/commit/d385636bd4ba5a08a2f4752cb5365e1548dd05b4))
+
+### [0.52.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.52.2...vibrant-core-0.52.3) (2023-03-31)
+
+### [0.52.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.52.1...vibrant-core-0.52.2) (2023-03-30)
+
+### [0.52.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.52.0...vibrant-core-0.52.1) (2023-03-30)
+
+
+### Bug Fixes
+
+* don't pass as="a" when link dependency exists ([#651](https://github.com/pedaling/opensource/issues/651)) ([356ab7a](https://github.com/pedaling/opensource/commit/356ab7a99d77a68b1907e2cbd25c79cdb5881971))
+
+## [0.52.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.4...vibrant-core-0.52.0) (2023-03-30)
+
+
+### Features
+
+* Contained/Outlined/Ghost/IconButton, FilterChip 컴포넌트에 href 속성을 추가한다 ([#650](https://github.com/pedaling/opensource/issues/650)) ([c922324](https://github.com/pedaling/opensource/commit/c922324de8db4e22c5d4dc091cfb9a2dd8726d17))
+* Link 컴포넌트를 추가한다 ([#645](https://github.com/pedaling/opensource/issues/645)) ([4f59ae2](https://github.com/pedaling/opensource/commit/4f59ae21a597c3452d0c86d7e2e48b48841e2d08))
+
 ### [0.51.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.51.3...vibrant-core-0.51.4) (2023-03-27)
 
 

@@ -101,6 +101,11 @@ const style = css`
     padding: 0;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   *:focus {
     outline: 0;
   }

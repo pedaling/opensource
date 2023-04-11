@@ -6,15 +6,27 @@ import { Pressable } from '../Pressable';
 import { withFilterChipVariation } from './FilterChipProps';
 
 export const FilterChip = withFilterChipVariation(
-  ({ startIcon, endIcon, children, bodyLevel, color, spacing, iconSize, testId, ...props }) => (
-    <Pressable testId={testId} flexGrow={0} flexShrink={0} borderRadiusLevel={5} {...props}>
+  ({
+    startIcon,
+    endIcon,
+    children,
+    bodyLevel,
+    color,
+    spacing,
+    iconSize,
+    testId,
+    lineLimit,
+    maxWidth = '100%',
+    ...props
+  }) => (
+    <Pressable testId={testId} flexGrow={0} flexShrink={0} borderRadiusLevel={5} maxWidth={maxWidth} {...props}>
       <HStack as="span" my="auto" alignVertical="center">
         {startIcon && (
           <Box as="span" mr={spacing}>
             {cloneElement(startIcon, { size: iconSize, fill: color })}
           </Box>
         )}
-        <Body level={bodyLevel} color={color}>
+        <Body level={bodyLevel} color={color} lineLimit={lineLimit}>
           {children}
         </Body>
         {endIcon && (

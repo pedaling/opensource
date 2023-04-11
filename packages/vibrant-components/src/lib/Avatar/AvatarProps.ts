@@ -1,11 +1,15 @@
 import type { ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
-export type SkeletonAvatarProps = {
+export type AvatarProps = {
+  testId?: string;
   size: ResponsiveValue<number | 'lg' | 'md' | 'sm' | 'xs'>;
+  src: string;
+  alt: string;
+  placeholder?: string;
 };
 
-export const withSkeletonAvatarVariation = withVariation<SkeletonAvatarProps>('SkeletonAvatar')(
+export const withAvatarVariation = withVariation<AvatarProps>('Avatar')(
   propVariant({
     props: [
       {

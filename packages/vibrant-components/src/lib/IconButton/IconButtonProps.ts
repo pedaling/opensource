@@ -15,6 +15,7 @@ type IconButtonProps = {
   onClick?: PressableProps['onClick'];
   ariaLabel?: string;
   testId?: string;
+  href?: string;
 };
 
 export const withIconButtonVariation = withVariation<IconButtonProps>('IconButton')(

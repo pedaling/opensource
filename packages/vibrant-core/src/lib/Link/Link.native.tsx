@@ -18,7 +18,17 @@ export const Link = withLinkVariation(({ innerRef, isExternal: _, href, onClick,
   };
 
   if (link) {
-    return <Box base={link} ref={innerRef} onPress={openLink} onFocus={onFocusIn} onBlur={onFocusOut} {...props} />;
+    return (
+      <Box
+        base={link}
+        href={href}
+        ref={innerRef}
+        onPress={onClick}
+        onFocus={onFocusIn}
+        onBlur={onFocusOut}
+        {...props}
+      />
+    );
   }
 
   return (

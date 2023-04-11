@@ -14,6 +14,9 @@ export type FilterChipProps = {
   onClick?: PressableProps['onClick'];
   children: TextChildren;
   testId?: string;
+  href?: string;
+  lineLimit?: ResponsiveValue<number>;
+  maxWidth?: ResponsiveValue<number | `${number}%`>;
 };
 
 export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChip')(
