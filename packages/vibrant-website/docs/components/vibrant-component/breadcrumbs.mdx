@@ -1,0 +1,89 @@
+---
+title: BreadCrumbs
+---
+
+# BreadCrumbs
+
+사이트 전체에 대한 사용자의 위치를 보여줌으로써, 브레드크럼은 사용자가 자신의 위치를 파악하고 필요한 경우 다시 찾아갈 수 있도록 도와줍니다.
+
+주 메뉴나 뒤로 가기 버튼을 사용하지 않고 상위 카테고리나 페이지로 빠르게 이동하는 데에도 유용합니다.
+
+BreadCrumbs의 하위 아이템으로는 BreadCrumb 컴포넌트를 사용합니다.
+
+```jsx live
+<BreadCrumbs>
+  <BreadCrumb href="/">Home</BreadCrumb>
+  <BreadCrumb href="/docs/getting-started/introduction">Docs</BreadCrumb>
+  <BreadCrumb>Current Page</BreadCrumb>
+</BreadCrumbs>
+```
+
+## How to use
+
+```jsx
+import { BreadCrumbs, BreadCrumb } from '@vibrant-ui/components';
+```
+
+## Properties
+
+### BreadCrumbs
+
+| Prop         | Type                        | Default | Description                              |
+|--------------|-----------------------------|---------|------------------------------------------|
+| [children](#아이템)(\*) | `ReactElementChild`         | -       | BreadCrumb 컴포넌트로 감싸진 하위 아이템 |
+| href         | `ComponentType` \| `string` | -       | BreadCrumb 을 구분하기 위한 아이콘/문장  |
+
+### BreadCrumb
+
+| Prop         | Type           | Default | Description                                                           |
+|--------------|----------------|---------|-----------------------------------------------------------------------|
+| children(\*) | `TextChildren` | -       | BreadCrumb 아이템 내부 텍스트                                         |
+| href         | `string`       | -       | BreadCrumb 을 구분하기 위한 아이콘/문장BreadCrumb 클릭 시 이동 할 URL |
+| isExternal   | `boolean`      | false   | BreadCrumb 클릭 시 href URL을 브라우저 새 탭으로 열기 위한 값         |
+| onClick      | `() => void`   | -       | BreadCrumb 클릭 시 실행 할 콜백 함수                                  |
+
+## Usage
+
+### 아이템
+
+브레드크럼의 아이템 갯수는 자유롭게 지정할 수 있습니다. 일반적으로 최대 3-4개의 브레드크럼이 사용되지만 복잡한 계층구조의 경우에는 더 많은 브레드크럼이 필요할 수 있습니다. 
+
+현재 위치를 보여줄만큼 충분한 아이템이 있어야 하지만 지저분하거나 혼란스럽지 않도록 주의해야 합니다.
+
+### 현재 페이지
+
+브레드 크럼의 마지막 아이템은 현재 페이지를 나타내며 언제나 onView1의 색상을 갖습니다.
+
+```jsx live
+<BreadCrumbs>
+  <BreadCrumb>Item1</BreadCrumb>
+  <BreadCrumb>Item2</BreadCrumb>
+  <BreadCrumb>Item3</BreadCrumb>
+</BreadCrumbs>
+```
+
+### 래핑
+
+브레드 크럼의 아이템은 너비가 모자랄 경우 래핑됩니다.
+이 때 텍스트까지 유지된 채 항상 Separator부터 다음 줄로 넘어가며 한 줄에 공간이 모자란 텍스트는 ellipsis 처리 됩니다.
+
+```jsx live
+<BreadCrumbs>
+  <BreadCrumb>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis purus vitae justo suscipit bibendum.
+    Aliquam nibh risus, malesuada a venenatis quis, pharetra eget tellus. Nam ut erat ac sapien scelerisque faucibus eu
+    nec odio. Ut ut nunc massa. Fusce tincidunt lorem sollicitudin dolor rhoncus porttitor. Curabitur at elementum eros
+  </BreadCrumb>
+  <BreadCrumb>
+    Phasellus lobortis lectus sapien, eget gravida quam eleifend a. Morbi rhoncus odio turpis, in rutrum lectus pulvinar
+    quis. Nam volutpat augue libero, pellentesque porttitor tellus volutpat non. Nam cursus, nibh sit amet scelerisque
+    commodo, enim ligula ullamcorper eros, vel sodales libero neque sed enim. Duis porta tellus a lectus varius, vitae
+    vehicula magna feugiat
+  </BreadCrumb>
+  <BreadCrumb>
+    Mauris felis est, congue a ante quis, imperdiet convallis enim. Duis vitae hendrerit enim, ut tincidunt dolor. In ac
+    viverra nisl. Nulla non eros mollis, auctor elit ac, maximus tortor. Aenean urna odio, ullamcorper eget sapien ac,
+    placerat fermentum ex.
+  </BreadCrumb>
+</BreadCrumbs>
+```
