@@ -29,7 +29,7 @@ export const BreadCrumbs = withBreadCrumbsVariation(
                 alignItems="center"
                 ariaCurrent={index === array.length - 1 ? ariaCurrent : undefined}
               >
-                <>
+                <Box>
                   {typeof Separator === 'string' ? (
                     <Body level={2} weight="regular" color="onView2">
                       {Separator}
@@ -37,7 +37,7 @@ export const BreadCrumbs = withBreadCrumbsVariation(
                   ) : (
                     <Separator fill="onView2" size={12} />
                   )}
-                </>
+                </Box>
                 <Space width={4} />
                 {index === array.length - 1 ? (
                   <BreadCrumbProvider current={true}>
