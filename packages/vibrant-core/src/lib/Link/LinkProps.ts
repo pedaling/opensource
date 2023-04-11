@@ -19,6 +19,7 @@ export type LinkProps = {
   ref?: any;
   href: string;
   isExternal?: boolean;
+  ariaCurrent?: 'date' | 'location' | 'page' | 'step' | 'time' | 'true';
   onClick?: () => void;
   onFocusIn?: () => void;
   onFocusOut?: () => void;
