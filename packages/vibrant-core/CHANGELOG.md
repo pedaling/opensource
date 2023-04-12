@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.54.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.7...vibrant-core-0.54.0) (2023-04-12)
+
+
+### Features
+
+* breadcrumb 컴포넌트를 추가한다 ([#662](https://github.com/pedaling/opensource/issues/662)) ([b6f117d](https://github.com/pedaling/opensource/commit/b6f117da1a9ce3a98e495c98982b232b8c32b366))
+
 ### [0.53.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.6...vibrant-core-0.53.7) (2023-04-11)
 
 ### [0.53.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.5...vibrant-core-0.53.6) (2023-04-05)
