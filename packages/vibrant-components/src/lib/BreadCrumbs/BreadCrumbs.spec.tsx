@@ -61,6 +61,21 @@ describe('<BreadCrumbs />', () => {
     });
   });
 
+  describe('when separator is provided at BreadCrumbs', () => {
+    beforeEach(() => {
+      renderer = render(
+        <BreadCrumbs testId="BreadCrumbs" Separator="*">
+          <BreadCrumb testId="BreadCrumb">BreadCrumb1</BreadCrumb>
+          <BreadCrumb testId="BreadCrumb">BreadCrumb2</BreadCrumb>
+        </BreadCrumbs>
+      );
+    });
+
+    it('should render separator with provided text', () => {
+      expect(renderer.getByTestId('separator').textContent).toBe('*');
+    });
+  });
+
   describe('when href provided at BreadCrumb', () => {
     beforeEach(() => {
       renderer = render(
