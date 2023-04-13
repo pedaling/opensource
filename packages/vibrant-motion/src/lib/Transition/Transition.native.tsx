@@ -1,7 +1,7 @@
 import type { ComponentClass } from 'react';
 import { useMemo } from 'react';
 import Animated from 'react-native-reanimated';
-import { useTransition } from '../useTransition/useTransition';
+import { useTransition } from '../useTransition';
 import { withTransitionVariation } from './TransitionProp';
 
 export const Transition = withTransitionVariation(
