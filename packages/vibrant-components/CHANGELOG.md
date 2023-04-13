@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.54.0...vibrant-components-0.54.1) (2023-04-13)
+
+## [0.54.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.53.7...vibrant-components-0.54.0) (2023-04-12)
+
+
+### Features
+
+* breadcrumb 컴포넌트를 추가한다 ([#662](https://github.com/pedaling/opensource/issues/662)) ([b6f117d](https://github.com/pedaling/opensource/commit/b6f117da1a9ce3a98e495c98982b232b8c32b366))
+* change title level 1, 2 default tag  to h1 ([#673](https://github.com/pedaling/opensource/issues/673)) ([de0fcec](https://github.com/pedaling/opensource/commit/de0fcecf90931164b9542e26c5296fd60e46de7a))
+
+### [0.53.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.53.6...vibrant-components-0.53.7) (2023-04-11)
+
 ### [0.53.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.53.5...vibrant-components-0.53.6) (2023-04-05)
 
 ### [0.53.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.53.4...vibrant-components-0.53.5) (2023-04-05)
