@@ -6,6 +6,7 @@ import { easings } from '../constants';
 import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
 import type { AnimationResult } from '../types';
+import type { AnimationOptions } from '../useAnimation';
 import { useReactSpring } from '../useReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
@@ -60,7 +61,7 @@ export const Motion = withMotionVariation(
     useImperativeHandle(
       innerRef,
       () => ({
-        start: (startOption = {}) => springApi.start({ ...option, ...startOption }),
+        start: (startOption: AnimationOptions) => springApi.start({ ...option, ...startOption }),
         pause: () => springApi.pause(),
         stop: () => springApi.stop(),
         resume: () => springApi.resume(),

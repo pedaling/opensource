@@ -22,8 +22,8 @@ export type MotionProps = {
   delay?: number;
   animation: WithMotion<AllSystemProps & TransformMotionProps>;
   easing?: keyof EasingDictionary;
-  onStart?: (e: AnimationResult) => void;
-  onEnd?: (e: AnimationResult) => void;
+  onStart?: (e?: AnimationResult) => void;
+  onEnd?: (e?: AnimationResult) => void;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(

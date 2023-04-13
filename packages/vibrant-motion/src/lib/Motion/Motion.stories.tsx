@@ -10,6 +10,14 @@ export default {
   args: {
     duration: 1000,
     animation: {
+      opacity: {
+        from: 0.1,
+        to: 0.8,
+      },
+      y: {
+        from: 0,
+        to: 250,
+      },
       x: {
         from: 0,
         to: 250,
