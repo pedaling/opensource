@@ -16,11 +16,11 @@ export default {
       },
       y: {
         from: 0,
-        to: 250,
+        to: 20,
       },
       x: {
         from: 0,
-        to: 250,
+        to: 50,
       },
       backgroundColor: {
         from: 'primary',

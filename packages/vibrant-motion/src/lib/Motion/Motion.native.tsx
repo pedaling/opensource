@@ -28,12 +28,12 @@ export const Motion = withMotionVariation(
         Object.keys(interpolationTo).reduce<Record<string, [number, number]>>(
           (acc, key) => ({
             ...acc,
-            [key]: [interpolationFrom[key], interpolationTo[key]],
+            [key]: [getResponsiveValue(interpolationFrom[key]), getResponsiveValue(interpolationTo[key])],
           }),
           {}
         )
       );
-    }, [from, interpolation, to]);
+    }, [from, getResponsiveValue, interpolation, to]);
 
     const style = useAnimatedStyle(
       () =>
