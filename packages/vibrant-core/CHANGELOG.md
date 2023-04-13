@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.54.0...vibrant-core-0.54.1) (2023-04-13)
+
+
+### Bug Fixes
+
+* if heights.current[position][id] not exsits early return ([#678](https://github.com/pedaling/opensource/issues/678)) ([20b3017](https://github.com/pedaling/opensource/commit/20b3017b3bf3916452fc1f59e6bfd447ee462aa3))
+
 ## [0.54.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.7...vibrant-core-0.54.0) (2023-04-12)
 
 
