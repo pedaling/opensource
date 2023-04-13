@@ -142,6 +142,10 @@ export const StackedPortalProvider: FC<StackedPortalProviderProps> = ({ children
 
   const changePortalHeight = useCallback<ChangePortalHeight>(
     ({ position, id, order, height }) => {
+      if (isDefined(heights.current[position][id]?.[order])) {
+        return;
+      }
+
       heights.current[position][id][order].height = height;
 
       updateNextPortalsOffset({ position, id, order });
