@@ -39,7 +39,7 @@ export const Motion = withMotionVariation(
       () =>
         Object.keys(styleWithTransform).reduce((acc, key) => {
           if (key === 'transform') {
-            const tranform = styleWithTransform['transform']?.map((transformStyle: Record<string, any>) => {
+            const transform = styleWithTransform['transform']?.map((transformStyle: Record<string, any>) => {
               const [[key, value]] = Object.entries(transformStyle) as [string, [number, number]][];
 
               return { [key]: interpolate(progress.value, [0, 1], value) };
@@ -47,11 +47,11 @@ export const Motion = withMotionVariation(
 
             return {
               ...acc,
-              [key]: tranform,
+              [key]: transform,
             };
           }
 
-          const value = key.includes('Color')
+          const value = key.match(/color/i)
             ? interpolateColor(progress.value, [0, 1], styleWithTransform[key], 'RGB')
             : interpolate(progress.value, [0, 1], styleWithTransform[key]);
 

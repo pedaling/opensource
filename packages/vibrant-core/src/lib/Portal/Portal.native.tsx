@@ -47,8 +47,8 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
 
   if (platform === 'ios') {
     return (
-      <View pointerEvents="box-none">
-        <FullWindowOverlay>
+      <FullWindowOverlay>
+        <View pointerEvents="box-none">
           <ViewComponent
             ref={innerRef}
             {...restProps}
@@ -57,8 +57,8 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
           >
             {children}
           </ViewComponent>
-        </FullWindowOverlay>
-      </View>
+        </View>
+      </FullWindowOverlay>
     );
   }
 
