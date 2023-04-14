@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isDefined } from '@vibrant-ui/utils';
 import { calculateResponsiveValues } from '../calculateResponsiveValues';
 import { getPaddedResponsiveArray } from '../getPaddedResponsiveArray';
@@ -38,12 +38,15 @@ export const FlatList = withFlatListVariation(
 
     const { getResponsiveValue } = useResponsiveValue();
 
-    const getResponsiveDisplay = (index: number) =>
-      isDefined(maxRows)
-        ? getPaddedResponsiveArray(breakpoints, columns).map((column, breakPointIndex) =>
-            index < column * getPaddedResponsiveArray(breakpoints, maxRows)[breakPointIndex] ? 'flex' : 'none'
-          )
-        : undefined;
+    const getResponsiveDisplay = useCallback(
+      (index: number) =>
+        isDefined(maxRows)
+          ? getPaddedResponsiveArray(breakpoints, columns).map((column, breakPointIndex) =>
+              index < column * getPaddedResponsiveArray(breakpoints, maxRows)[breakPointIndex] ? 'flex' : 'none'
+            )
+          : undefined,
+      [breakpoints, columns, maxRows]
+    );
 
     const { width } = columnWidth
       ? { width: columnWidth }
@@ -78,6 +81,45 @@ export const FlatList = withFlatListVariation(
         });
       },
       [buffedData.length]
+    );
+
+    const memoizedFlatListItems = useMemo(
+      () =>
+        buffedData.map((item, index) => (
+          <FlatListItem
+            key={`${keyExtractor(item, index)}-${index}`}
+            ref={handleItemRef?.(index)}
+            snapAlignment={snapAlignment}
+            width={width}
+            flexShrink={horizontal ? 0 : 1}
+            display={getResponsiveDisplay(index)}
+            onImpressed={
+              isDefined(onItemImpressed) || index === data.length - 1
+                ? () => {
+                    onItemImpressed?.(item, index);
+
+                    if (index === data.length - 1) {
+                      onEndReached?.();
+                    }
+                  }
+                : undefined
+            }
+          >
+            {renderItem({ item, index })}
+          </FlatListItem>
+        )),
+      [
+        buffedData,
+        data.length,
+        getResponsiveDisplay,
+        horizontal,
+        keyExtractor,
+        onEndReached,
+        onItemImpressed,
+        renderItem,
+        snapAlignment,
+        width,
+      ]
     );
 
     useEffect(() => {
@@ -196,29 +238,7 @@ export const FlatList = withFlatListVariation(
         ref={containerRef}
         {...props}
       >
-        {buffedData.map((item, index) => (
-          <FlatListItem
-            key={`${keyExtractor(item, index)}-${index}`}
-            ref={handleItemRef?.(index)}
-            snapAlignment={snapAlignment}
-            width={width}
-            flexShrink={horizontal ? 0 : 1}
-            display={getResponsiveDisplay(index)}
-            onImpressed={
-              isDefined(onItemImpressed) || index === data.length - 1
-                ? () => {
-                    onItemImpressed?.(item, index);
-
-                    if (index === data.length - 1) {
-                      onEndReached?.();
-                    }
-                  }
-                : undefined
-            }
-          >
-            {renderItem({ item, index })}
-          </FlatListItem>
-        ))}
+        {memoizedFlatListItems}
       </ScrollBox>
     );
   }
