@@ -1,8 +1,7 @@
 import { fireEvent } from '@testing-library/react';
-import { ThemeProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
-import { darkModeColors } from '../../../../vibrant-theme/src/lib/theme/darkModeColors';
+import { lightModeColors } from '../../../../vibrant-theme/src/lib/theme/lightModeColors';
 import { BreadCrumb } from '../BreadCrumb';
 import { BreadCrumbs } from './BreadCrumbs';
 
@@ -11,6 +10,7 @@ describe('<BreadCrumbs />', () => {
 
   let renderer: ReactRenderer;
   let mockOnClick: jest.Mock;
+  let breadcrumbTexts: HTMLElement[];
 
   beforeEach(() => {
     mockOnClick = jest.fn();
@@ -25,6 +25,8 @@ describe('<BreadCrumbs />', () => {
           <BreadCrumb testId="BreadCrumb">BreadCrumb3</BreadCrumb>
         </BreadCrumbs>
       );
+
+      breadcrumbTexts = await renderer.findAllByTestId('breadcrumb-text');
     });
 
     it('should render 3 BreadCrumb', async () => {
@@ -35,29 +37,20 @@ describe('<BreadCrumbs />', () => {
       expect(renderer.getAllByTestId('separator').length).toBe(2);
     });
 
-    it('match snapshot', () => {
-      expect(renderer.container).toMatchSnapshot();
-    });
-  });
+    it('non last BreadCrumb should have onView2 color', () => {
+      breadcrumbTexts.forEach((text, idx, arr) => {
+        if (idx === arr.length - 1) return;
 
-  describe('when BreadCrumbs with 2 item rendered', () => {
-    beforeEach(async () => {
-      renderer = render(
-        <ThemeProvider theme={{ mode: 'dark' }}>
-          <BreadCrumbs testId="BreadCrumbs">
-            <BreadCrumb testId="BreadCrumb">BreadCrumb1</BreadCrumb>
-            <BreadCrumb testId="BreadCrumb">BreadCrumb2</BreadCrumb>
-          </BreadCrumbs>
-        </ThemeProvider>
-      );
-    });
-
-    it('first BreadCrumb should have onView2 color', () => {
-      expect(renderer.getAllByTestId('breadcrumb-text')[0]).toHaveStyleRule('color', darkModeColors.onView2);
+        expect(text).toHaveStyleRule('color', lightModeColors.onView2);
+      });
     });
 
     it('last BreadCrumb should have onView1 color', () => {
-      expect(renderer.getAllByTestId('breadcrumb-text')[1]).toHaveStyleRule('color', darkModeColors.onView1);
+      expect(breadcrumbTexts[breadcrumbTexts.length - 1]).toHaveStyleRule('color', lightModeColors.onView1);
+    });
+
+    it('match snapshot', () => {
+      expect(renderer.container).toMatchSnapshot();
     });
   });
 
@@ -103,7 +96,7 @@ describe('<BreadCrumbs />', () => {
       );
     });
 
-    it('should render with external link', () => {
+    it('should open link with new tab', () => {
       expect(renderer.getByRole('link').getAttribute('target')).toBe('_blank');
     });
   });
