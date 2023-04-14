@@ -60,11 +60,6 @@ const columnGapProp = createSystemProp({
   property: 'columnGap',
 });
 
-const snapProp = createSystemProp({
-  property: 'snap',
-  transform: (value: boolean) => (value ? { scrollSnapType: 'x mandatory' } : { scrollSnapType: 'none' }),
-});
-
 export const flexboxSystemProps = [
   flexProp,
   flexGrowProp,
@@ -81,5 +76,4 @@ export const flexboxSystemProps = [
   orderProp,
   rowGapProp,
   columnGapProp,
-  snapProp,
 ];
