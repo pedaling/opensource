@@ -13,6 +13,7 @@ export default {
         translateX: 50,
       },
       opacity: 1,
+      backgroundColor: 'primary',
     },
   },
   parameters: {
@@ -42,6 +43,7 @@ export const withAction: ComponentStory<typeof Transition> = props => {
                   translateX: 0,
                 },
                 opacity: 0.5,
+                backgroundColor: 'black',
               },
             }
           : {})}

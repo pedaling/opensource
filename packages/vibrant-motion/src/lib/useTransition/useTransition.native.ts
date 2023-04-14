@@ -3,7 +3,8 @@ import type { EasingFunction } from 'react-native';
 import type { AnimatableValue, EasingFunctionFactory } from 'react-native-reanimated';
 import { Easing, runOnJS, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import type { AllSystemProps } from '@vibrant-ui/core';
-import { useResponsiveValue } from '@vibrant-ui/core';
+import { useCurrentTheme, useResponsiveValue } from '@vibrant-ui/core';
+import type { ColorToken } from '@vibrant-ui/theme';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
 import type { AnimationResult } from '../types';
@@ -24,7 +25,9 @@ const convertEasing: Record<keyof EasingDictionary, EasingFunction | EasingFunct
 
 export const useTransition = ({ animation, duration = 200, easing, onStart, onEnd }: UseTransitionProps) => {
   const { getResponsiveValue } = useResponsiveValue();
-
+  const {
+    theme: { colors },
+  } = useCurrentTheme();
   const isStarted = useRef(false);
   const initialAnimation = useRef(true);
   const onStartCallback = useCallback(() => {
@@ -76,12 +79,13 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
     runOnJS(onStartCallback)();
 
     return Object.entries(animation).reduce((acc, [key, val], i) => {
-      const value =
-        key === 'transform'
-          ? Object.entries(val).map(([transformKey, transformValue], j) => ({
-              [transformKey]: timingAnimation(transformValue as AnimatableValue, i, j),
-            }))
-          : timingAnimation(val, i, 0);
+      const value = key.match(/color/i)
+        ? timingAnimation(colors[val as ColorToken], i, 0)
+        : key === 'transform'
+        ? Object.entries(val).map(([transformKey, transformValue], j) => ({
+            [transformKey]: timingAnimation(transformValue as AnimatableValue, i, j),
+          }))
+        : timingAnimation(val, i, 0);
 
       return {
         ...acc,
