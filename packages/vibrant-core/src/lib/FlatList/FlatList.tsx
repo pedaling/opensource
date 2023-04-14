@@ -97,10 +97,9 @@ export const FlatList = withFlatListVariation(
       }
 
       const container = containerRef.current;
-      //TODO: FIx this issue
-      const computedColumnWidth = getResponsiveValue(columnWidth) ?? 1;
 
       if (container) {
+        const computedColumnWidth = getResponsiveValue(columnWidth) ?? container.clientWidth;
         const handleMouseDown = (event: MouseEvent | TouchEvent) => {
           setIsDragging(true);
 
