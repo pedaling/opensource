@@ -35,7 +35,7 @@ describe('Native <Box />', () => {
       });
 
       it('id prop injected', () => {
-        expect(renderer.container.findByType(Pressable).props['id']).toBe('component');
+        expect(renderer.container.findByType(Pressable).props['nativeID']).toBe('component');
       });
 
       it('match snapshot', () => {
