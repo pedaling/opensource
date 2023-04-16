@@ -31,6 +31,9 @@
       ],
       "@vibrant-ui/utils/testing-web": [
         "packages/vibrant-utils/src/testing-web.ts"
+      ],
+      "@vibrant-ui/utils/storybook": [
+        "packages/vibrant-utils/src/storybook.ts"
       ]
     }
   },
