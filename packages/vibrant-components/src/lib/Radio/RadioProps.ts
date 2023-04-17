@@ -8,7 +8,6 @@ export type RadioProps = {
   children?: ReactElementChild;
   value: string;
   checked?: boolean;
-  onChange?: (_: { checked: boolean }) => void;
   size?: ResponsiveValue<'md' | 'sm'>;
   direction?: ResponsiveValue<'horizontal' | 'vertical'>;
   disabled?: boolean;

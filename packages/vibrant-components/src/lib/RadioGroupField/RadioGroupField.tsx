@@ -5,7 +5,7 @@ import { withRadioGroupFieldVariation } from './RadioGroupFieldProps';
 
 export const RadioGroupField = withRadioGroupFieldVariation(
   ({ defaultValue, value: valueProp, onChange, size, children, ...props }) => {
-    const [value, setValue] = useControllableState<string | undefined>({
+    const [value, setValue] = useControllableState<string>({
       value: valueProp,
       defaultValue,
       onChange,

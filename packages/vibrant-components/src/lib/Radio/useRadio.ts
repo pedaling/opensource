@@ -20,7 +20,7 @@ export function useRadio({ value, disabled, checked }: Pick<RadioProps, 'checked
     }
 
     if (!checked && isChecked) {
-      onChange(undefined);
+      onChange('');
     }
   }, [checked, isChecked, onChange, value]);
 
@@ -33,7 +33,7 @@ export function useRadio({ value, disabled, checked }: Pick<RadioProps, 'checked
       return;
     }
 
-    onChange(isChecked ? undefined : value);
+    onChange(isChecked ? '' : value);
   };
 
   return {

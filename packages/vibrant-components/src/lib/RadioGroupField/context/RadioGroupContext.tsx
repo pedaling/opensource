@@ -5,7 +5,7 @@ import type { ReactElementChildren } from '@vibrant-ui/core';
 export type RadioGroupContextValue = {
   name: string;
   value?: string;
-  onChange: (value: string | undefined) => void;
+  onChange: (value: string) => void;
   disabled?: boolean;
 };
 
