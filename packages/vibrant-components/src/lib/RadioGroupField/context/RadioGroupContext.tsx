@@ -5,29 +5,29 @@ import type { ReactElementChildren } from '@vibrant-ui/core';
 export type RadioGroupContextValue = {
   name: string;
   value?: string;
-  onValueChange: (_: { value: string | undefined }) => void;
+  onChange: (value: string | undefined) => void;
   disabled?: boolean;
 };
 
 const RadioGroupContext = createContext<RadioGroupContextValue>({
   name: '',
   value: undefined,
-  onValueChange: () => {},
+  onChange: () => {},
 });
 
 type RadioGroupProviderProps = {
   children: ReactElementChildren;
 } & RadioGroupContextValue;
 
-export const RadioGroupProvider: FC<RadioGroupProviderProps> = ({ children, name, value, onValueChange, disabled }) => {
+export const RadioGroupProvider: FC<RadioGroupProviderProps> = ({ children, name, value, onChange, disabled }) => {
   const contextValue = useMemo<RadioGroupContextValue>(
     () => ({
       name,
       value,
-      onValueChange,
+      onChange,
       disabled,
     }),
-    [disabled, name, onValueChange, value]
+    [disabled, name, onChange, value]
   );
 
   return <RadioGroupContext.Provider value={contextValue}>{children}</RadioGroupContext.Provider>;

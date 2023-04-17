@@ -28,20 +28,14 @@ export const Controlled: ComponentStory<typeof RadioGroupField> = () => {
 
   return (
     <VStack spacing={10}>
-      <RadioGroupField
-        name="controlled"
-        onValueChange={event => {
-          setValue(event.value);
-        }}
-        defaultValue={value}
-      >
+      <RadioGroupField name="controlled" onChange={setValue} value={value}>
         <VStack spacing={8}>
           <Radio value="1" label="First" />
           <Radio value="2" label="Second" />
           <Radio value="3" label="Third" />
         </VStack>
       </RadioGroupField>
-      <GhostButton size="md" onClick={() => setValue(undefined)}>
+      <GhostButton size="md" onClick={() => setValue('')}>
         초기화
       </GhostButton>
     </VStack>

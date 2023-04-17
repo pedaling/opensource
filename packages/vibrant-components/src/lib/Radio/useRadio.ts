@@ -4,7 +4,7 @@ import { useRadioGroup } from '../RadioGroupField/context/RadioGroupContext';
 import type { RadioProps } from './RadioProps';
 
 export function useRadio({ value, disabled, checked }: Pick<RadioProps, 'checked' | 'disabled' | 'value'>) {
-  const { name, value: checkedValue, onValueChange, disabled: groupDisabled } = useRadioGroup();
+  const { name, value: checkedValue, onChange, disabled: groupDisabled } = useRadioGroup();
 
   const isChecked = value === checkedValue;
   const isDisabled = disabled || groupDisabled;
@@ -16,13 +16,13 @@ export function useRadio({ value, disabled, checked }: Pick<RadioProps, 'checked
     }
 
     if (checked) {
-      onValueChange({ value });
+      onChange(value);
     }
 
     if (!checked && isChecked) {
-      onValueChange({ value: undefined });
+      onChange(undefined);
     }
-  }, [checked, isChecked, onValueChange, value]);
+  }, [checked, isChecked, onChange, value]);
 
   useEffect(() => {
     prevCheckedRef.current = checked;
@@ -33,7 +33,7 @@ export function useRadio({ value, disabled, checked }: Pick<RadioProps, 'checked
       return;
     }
 
-    onValueChange({ value: isChecked ? undefined : value });
+    onChange(isChecked ? undefined : value);
   };
 
   return {
