@@ -1,0 +1,173 @@
+---
+title: RadioGroupField
+---
+
+# RadioGroupField
+
+```jsx live
+<RadioGroupField
+  name="method"
+  size="md"
+  defaultValue="email"
+>
+  <VStack spacing={8}>
+    <Radio value="email" label="Email" />
+    <Radio value="phone" label="Phone" />
+  </VStack>
+</RadioGroupField>
+```
+
+## How to use
+
+```jsx
+import {
+  RadioGroupField,
+  Radio,
+} from '@vibrant-ui/components';
+```
+
+## Properties
+
+### RadioGroupField
+
+| Prop          | Type                      | Default | Description                                       |
+| ------------- | ------------------------- | ------- | ------------------------------------------------- |
+| name          | `string`                  |         | 그룹 내 라디오 인풋 필드의 `name`                 |
+| value         | `string`                  |         |                                                   |
+| defaultValue  | `string`                  |         | 초기에 선택된 라디오의 `value`                    |
+| onChange      | `(value: string) => void` |         | 선택된 라디오의 상태가 바뀔 때 호출되는 콜백 함수 |
+| disabled      | `boolean`                 |         | 그룹 내 라디오의 비활성화 여부                    |
+| [size](#크기) | `sm` \| `md`              | `md`    | 그룹 내 라디오의 크기                             |
+| children      | `ReactElementChild`       |         |                                                   |
+
+### Radio
+
+| Prop          | Type                       | Default    | Description                                                                                 |
+| ------------- | -------------------------- | ---------- | ------------------------------------------------------------------------------------------- |
+| value         | `string`                   |            | 그룹 내에서 라디오를 식별하기 위한 값                                                       |
+| checked       | `string`                   |            | 라디오의 체크 여부                                                                          |
+| disabled      | `boolean`                  | `false`    | 라디오의 비활성화 여부                                                                      |
+| [size](#크기) | `sm` \| `md`               | `md`       | 라디오의 크기. `size`가 지정되지 않은 경우 `RadioGroupField`의 `size` 속성 값이 사용됩니다. |
+| label         | `string`                   |            | 라디오의 라벨                                                                               |
+| description   | `string`                   |            | 라디오의 설명                                                                               |
+| direction     | `horizontal` \| `vertical` | `vertical` | 라디오의 방향. `direction`을 지정하면 `label` 혹은 `description`이 지정되어야 합니다.       |
+| tabIndex      | `0` \| `-1`                |            | 탭 포커스의 도달 순서 지정                                                                  |
+
+### useRadio
+
+| Prop     | Type      | Default | Description                           |
+| -------- | --------- | ------- | ------------------------------------- |
+| value    | `string`  |         | 그룹 내에서 라디오를 식별하기 위한 값 |
+| checked  | `string`  |         | 라디오의 체크 여부                    |
+| disabled | `boolean` | `false` | 라디오의 비활성화 여부                |
+
+## Usage
+
+### 크기
+
+`Radio`는 기본값인 `md`와 `sm` 2개의 사이즈를 갖습니다. `Radio`의 사이즈는`RadioGroupField`의 `size` 속성 값을 따르고 `size` 속성으로 다른 값으로 오버라이드할 수 있습니다.
+
+```jsx live
+<HStack>
+  <RadioGroupField name="size-example-1" size="md">
+    <VStack flex={1} spacing={8}>
+      <Radio value="1" label="First" />
+      <Radio value="2" label="Second" />
+      <Radio value="3" label="Third" />
+    </VStack>
+  </RadioGroupField>
+
+  <RadioGroupField name="size-example-2" size="md">
+    <VStack flex={1} spacing={8}>
+      <Radio value="1" label="First" size="sm" />
+      <Radio value="2" label="Second" size="sm" />
+      <Radio value="3" label="Third" size="sm" />
+    </VStack>
+  </RadioGroupField>
+</HStack>
+```
+
+### 비활성화
+
+`RadioGroupField`의 `disabled` 속성으로 그룹 내 모든 라디오 필드를 비활성화시킬 수 있습니다. 또는 `Radio`의 `disabled` 속성으로 개별 라디오의 비활성화 여부를 설정할 수 있습니다.
+
+```jsx live
+<HStack>
+  <RadioGroupField
+    name="disable-example-1"
+    disabled={true}
+    defaultValue="1"
+  >
+    <VStack flex={1} spacing={8}>
+      <Radio value="1" label="First" />
+      <Radio value="2" label="Second" />
+      <Radio value="3" label="Third" />
+    </VStack>
+  </RadioGroupField>
+
+  <RadioGroupField
+    name="disable-example-2"
+    defaultValue="1"
+  >
+    <VStack flex={1} spacing={8}>
+      <Radio value="1" label="First" disabled={true} />
+      <Radio value="2" label="Second" />
+      <Radio value="3" label="Third" />
+    </VStack>
+  </RadioGroupField>
+</HStack>
+```
+
+### 커스텀 라디오
+
+라디오로 동작하지만 `Radio`의 디자인을 따르지 않는 라디오 컴포넌트가 필요하다면 `useRadio` 훅을 사용하여 구현할 수 있습니다.
+`useRadio`는 라디오의 체크된 상태나 상태가 바뀌었을 때 호출할 콜백 함수 등을 반환합니다.
+
+```jsx
+const RadioButton = ({
+  value,
+  label,
+}: {
+  value: string,
+  label: string,
+}) => {
+  const { name, isChecked, isDisabled, onChange } =
+    useRadio({ value });
+
+  return (
+    <Pressable
+      as="span"
+      width={100}
+      disabled={isDisabled}
+      backgroundColor={isChecked ? 'primary' : 'background'}
+    >
+      <>
+        <Box
+          as="input"
+          id="radio"
+          type="radio"
+          value={value}
+          name={name}
+          checked={isChecked}
+          onChange={onChange}
+          opacity={0}
+          position="absolute"
+          top={0}
+          left={0}
+          width="100%"
+          height="100%"
+        />
+        <Body as="label" level={1} htmlFor="radio">
+          {label}
+        </Body>
+      </>
+    </Pressable>
+  );
+};
+
+<RadioGroupField name="radioGroup">
+  <RadioButton value="1" label="First" />
+  <RadioButton value="2" label="Second" />
+  <RadioButton value="3" label="Third" />
+</RadioGroupField>;
+```
