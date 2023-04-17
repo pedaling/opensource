@@ -21,47 +21,10 @@ export const withRadioVariation = withVariation<RadioProps>('Radio')(
   propVariant({
     props: [
       {
-        name: 'size',
-        responsive: true,
-        default: 'sm' as const,
-      },
-      {
-        name: 'direction',
-        responsive: true,
-        default: 'vertical' as const,
-        keep: true,
-      },
-    ],
-    variants: ({ size, direction }) => {
-      if (size === 'md') {
-        return {
-          iconSize: 24,
-          labelBodyLevel: 2,
-          descriptionBodyLevel: 4,
-          labelPl: 8,
-          labelPt: 3,
-          descriptionPt: 4,
-          descriptionPl: direction === 'vertical' ? 32 : 8,
-        } as const;
-      }
-
-      return {
-        iconSize: 20,
-        labelBodyLevel: 4,
-        descriptionBodyLevel: 5,
-        labelPl: 8,
-        labelPt: 2,
-        descriptionPt: direction === 'vertical' ? 2 : 2.5,
-        descriptionPl: direction === 'vertical' ? 28 : 8,
-      } as const;
-    },
-  }),
-  propVariant({
-    props: [
-      {
         name: 'direction',
         responsive: true,
         default: 'vertical',
+        keep: true,
       },
     ],
     variants: {
@@ -72,5 +35,83 @@ export const withRadioVariation = withVariation<RadioProps>('Radio')(
         flexDirection: 'row',
       },
     } as const,
+  })
+);
+
+export const withRadioIconVariation = withVariation<Pick<RadioProps, 'checked' | 'disabled' | 'size'>>('RadioIcon')(
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        responsive: true,
+        default: 'sm' as const,
+      },
+    ],
+    variants: {
+      md: {
+        size: 24,
+      },
+      sm: {
+        size: 20,
+      },
+    },
+  })
+);
+
+export const withRadioLabelVariation = withVariation<Pick<RadioProps, 'disabled' | 'label' | 'size'>>('RadioLabel')(
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        responsive: true,
+        default: 'sm' as const,
+      },
+    ],
+    variants: {
+      md: {
+        bodyLevel: 2,
+        pl: 8,
+        pt: 3,
+      },
+      sm: {
+        bodyLevel: 4,
+        pl: 8,
+        pt: 2,
+      },
+    } as const,
+  })
+);
+
+export const withRadioDescriptionVariation = withVariation<
+  Pick<RadioProps, 'description' | 'direction' | 'disabled' | 'size'>
+>('RadioDescription')(
+  propVariant({
+    props: [
+      {
+        name: 'size',
+        responsive: true,
+        default: 'sm' as const,
+      },
+      {
+        name: 'direction',
+        responsive: true,
+        default: 'vertical' as const,
+      },
+    ],
+    variants: ({ size, direction }) => {
+      if (size === 'md') {
+        return {
+          bodyLevel: 4,
+          pt: 4,
+          pl: direction === 'vertical' ? 32 : 8,
+        } as const;
+      }
+
+      return {
+        bodyLevel: 5,
+        pt: direction === 'vertical' ? 2 : 2.5,
+        pl: direction === 'vertical' ? 28 : 8,
+      } as const;
+    },
   })
 );

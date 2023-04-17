@@ -2,27 +2,20 @@ import { Box, PressableBox, isNative } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
-import { withRadioVariation } from './RadioProps';
+import { useRadioSize } from '../RadioGroupField/context/RadioSizeContext';
+import {
+  withRadioDescriptionVariation,
+  withRadioIconVariation,
+  withRadioLabelVariation,
+  withRadioVariation,
+} from './RadioProps';
 import { useRadio } from './useRadio';
 
 export const Radio = withRadioVariation(
-  ({
-    innerRef,
-    checked,
-    value,
-    label,
-    description,
-    iconSize,
-    labelBodyLevel,
-    labelPl,
-    labelPt,
-    descriptionBodyLevel,
-    descriptionPt,
-    descriptionPl,
-    flexDirection,
-    disabled,
-  }) => {
+  ({ innerRef, checked, value, label, description, size: sizeProp, direction, flexDirection, disabled }) => {
     const { name, isChecked, isDisabled, onChange } = useRadio({ value, checked, disabled });
+    const radioGroupSize = useRadioSize();
+    const size = radioGroupSize ?? sizeProp;
 
     return (
       <PressableBox
@@ -54,30 +47,35 @@ export const Radio = withRadioVariation(
                 left={0}
               />
             ) : null}
-            {isChecked ? (
-              <Icon.ToggleOn.Fill fill={isDisabled ? 'onView3' : 'onViewPrimary'} size={iconSize} />
-            ) : (
-              <Icon.ToggleOff.Thin fill="onView3" size={iconSize} />
-            )}
+            <RadioIcon size={size} checked={isChecked} disabled={isDisabled} />
           </Box>
-          {label ? (
-            <Body level={labelBodyLevel} pl={labelPl} pt={labelPt} color={isDisabled ? 'onView3' : 'onView1'}>
-              {label}
-            </Body>
-          ) : null}
+          {label ? <RadioLabel label={label} disabled={disabled} size={size} /> : null}
         </HStack>
 
         {description ? (
-          <Body
-            level={descriptionBodyLevel}
-            pl={descriptionPl}
-            pt={descriptionPt}
-            color={isDisabled ? 'onView3' : 'onView2'}
-          >
-            {description}
-          </Body>
+          <RadioDescription description={description} disabled={isDisabled} size={size} direction={direction} />
         ) : null}
       </PressableBox>
     );
   }
+);
+
+export const RadioLabel = withRadioLabelVariation(({ bodyLevel, pl, pt, label, disabled }) => (
+  <Body level={bodyLevel} pl={pl} pt={pt} color={disabled ? 'onView3' : 'onView1'}>
+    {label}
+  </Body>
+));
+
+export const RadioDescription = withRadioDescriptionVariation(({ bodyLevel, pl, pt, description, disabled }) => (
+  <Body level={bodyLevel} pl={pl} pt={pt} color={disabled ? 'onView3' : 'onView2'}>
+    {description}
+  </Body>
+));
+
+export const RadioIcon = withRadioIconVariation(({ size, checked, disabled }) =>
+  checked ? (
+    <Icon.ToggleOn.Fill fill={disabled ? 'onView3' : 'onViewPrimary'} size={size} />
+  ) : (
+    <Icon.ToggleOff.Thin fill="onView3" size={size} />
+  )
 );
