@@ -15,7 +15,7 @@ export const Radio = withRadioVariation(
   ({ innerRef, checked, value, label, description, size: sizeProp, direction, flexDirection, disabled }) => {
     const { name, isChecked, isDisabled, onChange } = useRadio({ value, checked, disabled });
     const radioGroupSize = useRadioSize();
-    const size = radioGroupSize ?? sizeProp;
+    const size = sizeProp ?? radioGroupSize;
 
     return (
       <PressableBox
@@ -49,7 +49,7 @@ export const Radio = withRadioVariation(
             ) : null}
             <RadioIcon size={size} checked={isChecked} disabled={isDisabled} />
           </Box>
-          {label ? <RadioLabel label={label} disabled={disabled} size={size} /> : null}
+          {label ? <RadioLabel label={label} disabled={isDisabled} size={size} /> : null}
         </HStack>
 
         {description ? (

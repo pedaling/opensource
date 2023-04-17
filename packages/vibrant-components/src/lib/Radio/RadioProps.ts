@@ -43,7 +43,7 @@ export const withRadioIconVariation = withVariation<Pick<RadioProps, 'checked' |
       {
         name: 'size',
         responsive: true,
-        default: 'sm' as const,
+        default: 'md' as const,
       },
     ],
     variants: {
@@ -63,7 +63,7 @@ export const withRadioLabelVariation = withVariation<Pick<RadioProps, 'disabled'
       {
         name: 'size',
         responsive: true,
-        default: 'sm' as const,
+        default: 'md' as const,
       },
     ],
     variants: {
@@ -89,7 +89,7 @@ export const withRadioDescriptionVariation = withVariation<
       {
         name: 'size',
         responsive: true,
-        default: 'sm' as const,
+        default: 'md' as const,
       },
       {
         name: 'direction',
