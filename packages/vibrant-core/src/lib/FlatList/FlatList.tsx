@@ -10,7 +10,7 @@ import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
-const LOOP_BUFFER = 1;
+const LOOP_BUFFER = 2;
 
 export const FlatList = withFlatListVariation(
   ({
@@ -160,7 +160,7 @@ export const FlatList = withFlatListVariation(
 
             container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
 
-            const nextIndex = Math.round(updatedScrollLeft / computedColumnWidth);
+            const nextIndex = Math.floor(updatedScrollLeft / computedColumnWidth);
 
             currentIndexRef.current = nextIndex;
 

@@ -9,7 +9,7 @@ import { useResponsiveValue } from '../useResponsiveValue';
 import { FlatListItem } from './FlatListItem';
 import { withFlatListVariation } from './FlatListProps';
 
-const LOOP_BUFFER = 1;
+const LOOP_BUFFER = 2;
 
 export const FlatList = withFlatListVariation(
   ({
@@ -137,7 +137,7 @@ export const FlatList = withFlatListVariation(
         numColumns={currentColumn}
         onEndReached={onEndReached}
         onScroll={event => {
-          const newPage = Math.round(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
+          const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
 
           if (newPage < 0 || newPage >= buffedData.length) {
             return;
@@ -146,7 +146,7 @@ export const FlatList = withFlatListVariation(
           currentIndex.current = newPage;
         }}
         onMomentumScrollEnd={event => {
-          const newPage = Math.round(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
+          const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
 
           if (loop) {
             if (newPage < LOOP_BUFFER) {
