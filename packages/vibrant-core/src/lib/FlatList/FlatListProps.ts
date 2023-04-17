@@ -18,6 +18,7 @@ export type FlatListProps<Data> = {
   loop?: boolean;
   initialIndex?: number; // web only
   snapAlignment?: 'center' | 'end' | 'start';
+  hideScroll?: boolean;
 } & Either<
   {
     horizontal?: false;

@@ -10,6 +10,8 @@ import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
+const SCROLL_THROTTLE = 1.2;
+
 export const FlatList = withFlatListVariation(
   ({
     testId,
@@ -28,6 +30,7 @@ export const FlatList = withFlatListVariation(
     loop,
     snapAlignment,
     initialIndex = 0,
+    hideScroll = true,
     ...props
   }) => {
     const {
@@ -149,7 +152,7 @@ export const FlatList = withFlatListVariation(
           const computedColumnWidth = getResponsiveValue(columnWidth) ?? container.clientWidth;
           const currentX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
 
-          const updatedScrollLeft = container.scrollLeft + (startX - currentX) * 1.2;
+          const updatedScrollLeft = container.scrollLeft + (startX - currentX) * SCROLL_THROTTLE;
 
           container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
 
@@ -247,7 +250,7 @@ export const FlatList = withFlatListVariation(
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}
-        hideScroll={horizontal ? true : false}
+        hideScroll={hideScroll}
         ref={containerRef}
         {...props}
       >
