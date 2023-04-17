@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { ViewToken } from 'react-native';
 import { FlatList as NativeFlatList } from 'react-native';
 import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
@@ -9,7 +9,7 @@ import { useResponsiveValue } from '../useResponsiveValue';
 import { FlatListItem } from './FlatListItem';
 import { withFlatListVariation } from './FlatListProps';
 
-const LOOP_BUFFER = 2;
+const LOOP_BUFFER = 3;
 
 export const FlatList = withFlatListVariation(
   ({
@@ -26,6 +26,7 @@ export const FlatList = withFlatListVariation(
     snap = false,
     loop,
     snapAlignment,
+    initialIndex = 0,
     rowSpacing = 0,
     ...props
   }) => {
@@ -49,21 +50,26 @@ export const FlatList = withFlatListVariation(
     const computedColumnWidth = getResponsiveValue(columnWidth ?? 0);
     const computedSpacing = getResponsiveValue(columnSpacing ?? 0);
 
-    const ref = useRef<NativeFlatList<{ index: number }>>(null);
-    const currentIndex = useRef(0);
+    const boundedBuffer = Math.min(LOOP_BUFFER, data.length);
 
-    const [buffedData, setBuffedData] = useState(data);
+    const buffedData = useMemo(
+      () => (loop ? [...data.slice(-boundedBuffer), ...data, ...data.slice(0, boundedBuffer)] : data),
+      [boundedBuffer, data, loop]
+    );
+    const ref = useRef<NativeFlatList<{ index: number }>>(null);
+    const currentIndexRef = useRef(Math.min(initialIndex + (loop ? boundedBuffer : 0), buffedData.length - 1));
+
     const [isReady, setIsReady] = useState(false);
 
     const scrollToIndex = useCallback(
       ({ index, animated = true }: { index: number; animated?: boolean }) => {
-        if (index < 0 || index > data.length + (loop ? LOOP_BUFFER : 0)) {
+        if (index < 0 || index > data.length + (loop ? boundedBuffer : 0)) {
           return;
         }
 
         ref.current?.scrollToIndex({ index, animated });
       },
-      [data.length, loop]
+      [boundedBuffer, data.length, loop]
     );
 
     const getResponsiveMarginLeft = (index: number) =>
@@ -89,15 +95,8 @@ export const FlatList = withFlatListVariation(
         return;
       }
 
-      if (loop) {
-        const frontBuff = data.slice(data.length - LOOP_BUFFER);
-        const backBuff = data.slice(0, LOOP_BUFFER);
-
-        setBuffedData(loop ? [...frontBuff, ...data, ...backBuff] : data);
-
-        scrollToIndex({ index: LOOP_BUFFER, animated: false });
-      }
-    }, [data, isReady, loop, scrollToIndex]);
+      scrollToIndex({ index: currentIndexRef.current, animated: false });
+    }, [isReady, scrollToIndex]);
 
     return (
       <NativeFlatList
@@ -143,7 +142,7 @@ export const FlatList = withFlatListVariation(
             return;
           }
 
-          currentIndex.current = newPage;
+          currentIndexRef.current = newPage;
         }}
         onMomentumScrollEnd={event => {
           if (!loop) {
@@ -152,10 +151,10 @@ export const FlatList = withFlatListVariation(
 
           const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
 
-          if (newPage < LOOP_BUFFER) {
-            scrollToIndex({ index: LOOP_BUFFER + data.length - 1, animated: false });
-          } else if (newPage >= LOOP_BUFFER + data.length) {
-            scrollToIndex({ index: LOOP_BUFFER, animated: false });
+          if (newPage < boundedBuffer) {
+            scrollToIndex({ index: boundedBuffer + data.length - 1, animated: false });
+          } else if (newPage >= boundedBuffer + data.length) {
+            scrollToIndex({ index: boundedBuffer, animated: false });
           }
         }}
         {...props}

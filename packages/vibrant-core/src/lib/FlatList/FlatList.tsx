@@ -11,6 +11,7 @@ import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
 const SCROLL_THROTTLE = 1.2;
+const LOOP_BUFFER = 3;
 
 export const FlatList = withFlatListVariation(
   ({
@@ -61,15 +62,13 @@ export const FlatList = withFlatListVariation(
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const LOOP_BUFFER = Math.min(2, data.length);
-
+    const boundedBuffer = Math.min(LOOP_BUFFER, data.length);
     const buffedData = useMemo(
-      () => (loop ? [...data.slice(-LOOP_BUFFER), ...data, ...data.slice(0, LOOP_BUFFER)] : data),
-      [LOOP_BUFFER, data, loop]
+      () => (loop ? [...data.slice(-boundedBuffer), ...data, ...data.slice(0, boundedBuffer)] : data),
+      [boundedBuffer, data, loop]
     );
 
-    const currentIndexRef = useRef(Math.min(initialIndex + (loop ? LOOP_BUFFER : 0), buffedData.length - 1));
+    const currentIndexRef = useRef(Math.min(initialIndex + (loop ? boundedBuffer : 0), buffedData.length - 1));
 
     const handleItemRef = (index: number) => (ref: HTMLElement) => {
       itemRefs.current[index] = ref;
@@ -174,23 +173,23 @@ export const FlatList = withFlatListVariation(
       if (loop && containerRef.current) {
         const computedColumnWidth = getResponsiveValue(columnWidth) ?? containerRef.current.clientWidth;
 
-        if (currentIndexRef.current < LOOP_BUFFER) {
+        if (currentIndexRef.current < boundedBuffer) {
           setTimeout(() => {
             containerRef.current?.scrollTo({
-              left: (data.length + LOOP_BUFFER - 1) * computedColumnWidth,
+              left: (data.length + boundedBuffer - 1) * computedColumnWidth,
               behavior: 'auto',
             });
           }, 600);
-        } else if (currentIndexRef.current >= LOOP_BUFFER + data.length) {
+        } else if (currentIndexRef.current >= boundedBuffer + data.length) {
           setTimeout(() => {
             containerRef.current?.scrollTo({
-              left: LOOP_BUFFER * computedColumnWidth,
+              left: boundedBuffer * computedColumnWidth,
               behavior: 'auto',
             });
           }, 600);
         }
       }
-    }, [LOOP_BUFFER, columnWidth, data.length, getResponsiveValue, loop]);
+    }, [boundedBuffer, columnWidth, data.length, getResponsiveValue, loop]);
 
     useEffect(() => {
       scrollToTargetIndex({ index: currentIndexRef.current, animation: false });
@@ -223,7 +222,6 @@ export const FlatList = withFlatListVariation(
         };
       }
     }, [
-      LOOP_BUFFER,
       columnWidth,
       data.length,
       getResponsiveValue,
