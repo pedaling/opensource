@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.54.1...vibrant-utils-0.54.2) (2023-04-17)
+
+
+### Bug Fixes
+
+* remove storybook from utils package ([#680](https://github.com/pedaling/opensource/issues/680)) ([c569967](https://github.com/pedaling/opensource/commit/c569967595afc6d2eabde98fbe32f9db864c19ab))
+
 ### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.54.0...vibrant-utils-0.54.1) (2023-04-13)
 
 ## [0.54.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.53.7...vibrant-utils-0.54.0) (2023-04-12)
