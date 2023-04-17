@@ -26,6 +26,12 @@ exports[`<GridList /> when the 'breakpoints' prop provided other responsive prop
   -webkit-column-gap: 0;
   column-gap: 0;
   row-gap: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emotion-0::-webkit-scrollbar {
+  display: none;
 }
 
 .emotion-1 {

@@ -128,7 +128,7 @@ describe('<Slider />', () => {
   });
 
   describe("when the 'loop' prop", () => {
-    const loopBuffer = 2;
+    const loopBuffer = 3;
     const dataLength = 5;
 
     beforeEach(async () => {
