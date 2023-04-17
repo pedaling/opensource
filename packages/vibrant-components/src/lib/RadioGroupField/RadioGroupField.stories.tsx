@@ -28,7 +28,7 @@ export const Controlled: ComponentStory<typeof RadioGroupField> = () => {
 
   return (
     <VStack spacing={10}>
-      <RadioGroupField name="controlled" onChange={setValue} value={value}>
+      <RadioGroupField name="controlled" onChange={({ value }) => setValue(value)} value={value}>
         <VStack spacing={8}>
           <Radio value="1" label="First" />
           <Radio value="2" label="Second" />
