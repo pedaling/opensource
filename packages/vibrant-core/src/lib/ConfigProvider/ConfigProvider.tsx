@@ -110,16 +110,12 @@ export type Translation = {
     multiSelectFilter: {
       reset: string;
       filterLabel: {
-        equals: string;
-        notEquals: string;
-        empty: string;
-        notEmpty: string;
+        contains: string;
+        notContains: string;
       };
       operators: {
-        equals: string;
-        notEquals: string;
-        empty: string;
-        notEmpty: string;
+        contains: string;
+        notContains: string;
       };
     };
   };
@@ -199,16 +195,12 @@ const ConfigContext = createContext<ConfigContextValue>({
       multiSelectFilter: {
         reset: '전체 해제',
         filterLabel: {
-          equals: '{options}',
-          notEquals: '{options} 같지 않음',
-          empty: '비어있음',
-          notEmpty: '비어있지 않음',
+          contains: '{options}',
+          notContains: '{options}',
         },
         operators: {
-          equals: '같다',
-          notEquals: '같지 않다',
-          empty: '비어있다',
-          notEmpty: '비어있지 않다',
+          contains: '포함한다',
+          notContains: '포함하지 않는다',
         },
       },
     },
