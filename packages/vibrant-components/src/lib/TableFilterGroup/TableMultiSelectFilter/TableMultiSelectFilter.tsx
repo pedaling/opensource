@@ -18,7 +18,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     dataKey,
     label,
     options,
-    operators = ['equals', 'notEquals', 'empty', 'notEmpty'],
+    operators = ['contains', 'notContains'],
     defaultValue = {
       value: [],
       operator: operators[0],

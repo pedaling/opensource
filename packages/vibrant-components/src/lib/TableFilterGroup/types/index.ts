@@ -23,7 +23,7 @@ export type DateFilter = {
   type: 'date';
 };
 
-export type MultiSelectFilterOperator = 'empty' | 'equals' | 'notEmpty' | 'notEquals';
+export type MultiSelectFilterOperator = 'contains' | 'notContains';
 
 export type Option = {
   label: string;
