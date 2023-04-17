@@ -146,14 +146,16 @@ export const FlatList = withFlatListVariation(
           currentIndex.current = newPage;
         }}
         onMomentumScrollEnd={event => {
+          if (!loop) {
+            return;
+          }
+
           const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
 
-          if (loop) {
-            if (newPage < LOOP_BUFFER) {
-              scrollToIndex({ index: LOOP_BUFFER + data.length - 1, animated: false });
-            } else if (newPage >= LOOP_BUFFER + data.length) {
-              scrollToIndex({ index: LOOP_BUFFER, animated: false });
-            }
+          if (newPage < LOOP_BUFFER) {
+            scrollToIndex({ index: LOOP_BUFFER + data.length - 1, animated: false });
+          } else if (newPage >= LOOP_BUFFER + data.length) {
+            scrollToIndex({ index: LOOP_BUFFER, animated: false });
           }
         }}
         {...props}

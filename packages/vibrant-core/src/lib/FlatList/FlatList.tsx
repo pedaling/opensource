@@ -10,8 +10,6 @@ import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
-const LOOP_BUFFER = 2;
-
 export const FlatList = withFlatListVariation(
   ({
     testId,
@@ -58,10 +56,17 @@ export const FlatList = withFlatListVariation(
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [isDragging, setIsDragging] = useState(false);
-    const [buffedData, setBuffedData] = useState(data);
     const [startX, setStartX] = useState(0);
-    const buffedInitialIndex = initialIndex + (loop ? LOOP_BUFFER : 0);
-    const currentIndexRef = useRef(buffedInitialIndex);
+
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    const LOOP_BUFFER = Math.min(2, data.length);
+
+    const buffedData = useMemo(
+      () => (loop ? [...data.slice(-LOOP_BUFFER), ...data, ...data.slice(0, LOOP_BUFFER)] : data),
+      [LOOP_BUFFER, data, loop]
+    );
+
+    const currentIndexRef = useRef(Math.min(initialIndex + (loop ? LOOP_BUFFER : 0), buffedData.length - 1));
 
     const handleItemRef = (index: number) => (ref: HTMLElement) => {
       itemRefs.current[index] = ref;
@@ -122,16 +127,71 @@ export const FlatList = withFlatListVariation(
       ]
     );
 
-    useEffect(() => {
-      if (loop) {
-        const frontBuff = data.slice(data.length - LOOP_BUFFER);
-        const backBuff = data.slice(0, LOOP_BUFFER);
+    const handleMouseDown = useCallback((event: MouseEvent | TouchEvent) => {
+      setIsDragging(true);
 
-        setBuffedData([...frontBuff, ...data, ...backBuff]);
+      const container = containerRef.current;
 
-        scrollToTargetIndex({ index: buffedInitialIndex, animation: false });
+      if (container) {
+        const pageX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
+
+        setStartX(pageX - container.offsetLeft);
       }
-    }, [buffedInitialIndex, data, loop, scrollToTargetIndex]);
+    }, []);
+
+    const handleMouseMove = useCallback(
+      (event: MouseEvent | TouchEvent) => {
+        const container = containerRef.current;
+
+        if (isDragging && container) {
+          event.preventDefault();
+
+          const computedColumnWidth = getResponsiveValue(columnWidth) ?? container.clientWidth;
+          const currentX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
+
+          const updatedScrollLeft = container.scrollLeft + (startX - currentX) * 1.2;
+
+          container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
+
+          const nextIndex = Math.round(updatedScrollLeft / computedColumnWidth);
+
+          currentIndexRef.current = nextIndex;
+
+          if (snap) {
+            scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
+          }
+        }
+      },
+      [columnWidth, getResponsiveValue, isDragging, scrollToTargetIndex, snap, startX]
+    );
+
+    const handleMouseUp = useCallback(() => {
+      setIsDragging(false);
+
+      if (loop && containerRef.current) {
+        const computedColumnWidth = getResponsiveValue(columnWidth) ?? containerRef.current.clientWidth;
+
+        if (currentIndexRef.current < LOOP_BUFFER) {
+          setTimeout(() => {
+            containerRef.current?.scrollTo({
+              left: (data.length + LOOP_BUFFER - 1) * computedColumnWidth,
+              behavior: 'auto',
+            });
+          }, 600);
+        } else if (currentIndexRef.current >= LOOP_BUFFER + data.length) {
+          setTimeout(() => {
+            containerRef.current?.scrollTo({
+              left: LOOP_BUFFER * computedColumnWidth,
+              behavior: 'auto',
+            });
+          }, 600);
+        }
+      }
+    }, [LOOP_BUFFER, columnWidth, data.length, getResponsiveValue, loop]);
+
+    useEffect(() => {
+      scrollToTargetIndex({ index: currentIndexRef.current, animation: false });
+    }, [scrollToTargetIndex]);
 
     useEffect(() => {
       if (!horizontal) {
@@ -141,57 +201,6 @@ export const FlatList = withFlatListVariation(
       const container = containerRef.current;
 
       if (container) {
-        const computedColumnWidth = getResponsiveValue(columnWidth) ?? container.clientWidth;
-        const handleMouseDown = (event: MouseEvent | TouchEvent) => {
-          setIsDragging(true);
-
-          const pageX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
-
-          setStartX(pageX - container.offsetLeft);
-        };
-
-        const handleMouseMove = (event: MouseEvent | TouchEvent) => {
-          if (isDragging) {
-            event.preventDefault();
-
-            const currentX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
-
-            const updatedScrollLeft = container.scrollLeft + (startX - currentX) * 1.2;
-
-            container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
-
-            const nextIndex = Math.floor(updatedScrollLeft / computedColumnWidth);
-
-            currentIndexRef.current = nextIndex;
-
-            if (snap) {
-              scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
-            }
-          }
-        };
-
-        const handleMouseUp = () => {
-          setIsDragging(false);
-
-          if (loop) {
-            if (currentIndexRef.current < LOOP_BUFFER) {
-              setTimeout(() => {
-                containerRef.current?.scrollTo({
-                  left: (data.length + LOOP_BUFFER - 1) * computedColumnWidth,
-                  behavior: 'auto',
-                });
-              }, 600);
-            } else if (currentIndexRef.current >= LOOP_BUFFER + data.length) {
-              setTimeout(() => {
-                containerRef.current?.scrollTo({
-                  left: LOOP_BUFFER * computedColumnWidth,
-                  behavior: 'auto',
-                });
-              }, 600);
-            }
-          }
-        };
-
         container.addEventListener('mousedown', handleMouseDown);
 
         container.addEventListener('mousemove', handleMouseMove);
@@ -211,9 +220,13 @@ export const FlatList = withFlatListVariation(
         };
       }
     }, [
+      LOOP_BUFFER,
       columnWidth,
       data.length,
       getResponsiveValue,
+      handleMouseDown,
+      handleMouseMove,
+      handleMouseUp,
       horizontal,
       isDragging,
       loop,
@@ -230,7 +243,7 @@ export const FlatList = withFlatListVariation(
         width="100%"
         flexDirection="row"
         flexWrap={horizontal ? 'nowrap' : 'wrap'}
-        snap={snap}
+        scrollSnap={snap}
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}
