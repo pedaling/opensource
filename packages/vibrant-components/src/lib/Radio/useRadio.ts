@@ -7,8 +7,8 @@ export function useRadio({ value, disabled, checked }: Pick<RadioProps, 'checked
   const { name, value: checkedValue, onChange, disabled: groupDisabled } = useRadioGroup();
 
   const isChecked = value === checkedValue;
-  const isDisabled = disabled || groupDisabled;
-  const prevCheckedRef = useRef(checked);
+  const isDisabled = groupDisabled || disabled;
+  const prevCheckedRef = useRef<boolean>();
 
   useEffect(() => {
     if (!isDefined(checked) || checked === prevCheckedRef.current) {
