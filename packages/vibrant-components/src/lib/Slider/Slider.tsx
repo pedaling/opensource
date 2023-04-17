@@ -18,6 +18,7 @@ export const Slider = withSliderVariation(
     snapAlignment = 'start',
     panelsPerView = 1,
     panelWidth,
+    testId = 'slider',
   }) => {
     const { getResponsiveValue } = useResponsiveValue();
 
@@ -35,8 +36,9 @@ export const Slider = withSliderVariation(
     }, [getResponsiveValue, panelWidth, panelsPerView, sliderWidth, spacing]);
 
     return (
-      <Box px={px} width="100%" onLayout={({ width }) => setSliderWidth(width)}>
+      <Box data-testid={testId} px={px} width="100%" onLayout={({ width }) => setSliderWidth(width)}>
         <FlatList
+          testId="slider-container"
           horizontal={true}
           initialIndex={initialIndex}
           columnSpacing={computedSpacing}

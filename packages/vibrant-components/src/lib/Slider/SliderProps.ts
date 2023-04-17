@@ -13,8 +13,9 @@ export type SliderProps<Data> = {
   px?: ResponsiveValue<number>;
   loop?: boolean;
   snap?: boolean;
-  initialIndex?: number; // web only
+  initialIndex?: number;
   snapAlignment?: 'center' | 'end' | 'start';
+  testId?: string;
 } & Either<
   {
     panelsPerView: ResponsiveValue<number>;
