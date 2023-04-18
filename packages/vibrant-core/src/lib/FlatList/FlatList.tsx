@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { isDefined } from '@vibrant-ui/utils';
 import { calculateResponsiveValues } from '../calculateResponsiveValues';
 import { getPaddedResponsiveArray } from '../getPaddedResponsiveArray';
@@ -10,7 +10,7 @@ import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
-const SCROLL_THROTTLE = 1.2;
+const SCROLL_ACCELERATION = 1.2;
 const LOOP_BUFFER = 3;
 
 export const FlatList = withFlatListVariation(
@@ -59,8 +59,8 @@ export const FlatList = withFlatListVariation(
     const itemRefs = useRef<HTMLElement[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
+    const isDragging = useRef(false);
+    const startX = useRef(0);
 
     const boundedBuffer = Math.min(LOOP_BUFFER, data.length);
     const buffedData = useMemo(
@@ -130,14 +130,14 @@ export const FlatList = withFlatListVariation(
     );
 
     const handleMouseDown = useCallback((event: MouseEvent | TouchEvent) => {
-      setIsDragging(true);
+      isDragging.current = true;
 
       const container = containerRef.current;
 
       if (container) {
         const pageX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
 
-        setStartX(pageX - container.offsetLeft);
+        startX.current = pageX - container.offsetLeft;
       }
     }, []);
 
@@ -145,13 +145,13 @@ export const FlatList = withFlatListVariation(
       (event: MouseEvent | TouchEvent) => {
         const container = containerRef.current;
 
-        if (isDragging && container) {
+        if (isDragging.current && container) {
           event.preventDefault();
 
           const computedColumnWidth = getResponsiveValue(columnWidth) ?? container.clientWidth;
           const currentX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
 
-          const updatedScrollLeft = container.scrollLeft + (startX - currentX) * SCROLL_THROTTLE;
+          const updatedScrollLeft = container.scrollLeft + (startX.current - currentX) * SCROLL_ACCELERATION;
 
           container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
 
@@ -168,7 +168,7 @@ export const FlatList = withFlatListVariation(
     );
 
     const handleMouseUp = useCallback(() => {
-      setIsDragging(false);
+      isDragging.current = false;
 
       if (loop && containerRef.current) {
         const computedColumnWidth = getResponsiveValue(columnWidth) ?? containerRef.current.clientWidth;
