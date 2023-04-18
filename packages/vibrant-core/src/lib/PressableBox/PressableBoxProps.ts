@@ -45,6 +45,7 @@ export type PressableBoxProps = {
   ariaLabelledBy?: string;
   as?: BoxElements;
   buttonType?: 'button' | 'submit';
+  tabIndex?: number;
 } & SystemProps;
 
 export const withPressableBoxVariation = withVariation<PressableBoxProps>('PressableBox')();
