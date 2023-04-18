@@ -1,5 +1,5 @@
 import { fireEvent, waitFor } from '@testing-library/react';
-import { Box } from '@vibrant-ui/core';
+import { Box, LOOP_BUFFER } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Body } from '../Body';
@@ -148,7 +148,6 @@ describe('<Slider />', () => {
   });
 
   describe("when the 'loop' prop", () => {
-    const loopBuffer = 3;
     const dataLength = 5;
 
     beforeEach(async () => {
@@ -172,7 +171,7 @@ describe('<Slider />', () => {
     });
 
     it('it should have snap style in Slider container', () => {
-      expect(element.childElementCount).toBe(loopBuffer * 2 + dataLength);
+      expect(element.childElementCount).toBe(LOOP_BUFFER * 2 + dataLength);
     });
   });
 
@@ -244,7 +243,7 @@ describe('<Slider />', () => {
 
     beforeEach(async () => {
       renderer = render(
-        <VStack width={500}>
+        <VStack width={panelWidth}>
           <Slider
             onItemImpressed={index => onItemImpressed(index)}
             panelsPerView={1}

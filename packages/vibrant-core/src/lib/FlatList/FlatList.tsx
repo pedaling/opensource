@@ -11,7 +11,8 @@ import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
 const SCROLL_ACCELERATION = 1.2;
-const LOOP_BUFFER = 3;
+
+export const LOOP_BUFFER = 3;
 
 export const FlatList = withFlatListVariation(
   ({
