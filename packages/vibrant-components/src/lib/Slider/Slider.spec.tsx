@@ -264,7 +264,7 @@ describe('<Slider />', () => {
 
     it('onItemImpressed should be called', async () => {
       await waitFor(() => {
-        expect(onItemImpressed.mock.lastCall[0]).toBe(2);
+        expect(onItemImpressed).toBeCalledWith(2);
       });
     });
   });
