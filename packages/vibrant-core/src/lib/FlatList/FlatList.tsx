@@ -221,6 +221,8 @@ export const FlatList = withFlatListVariation(
           container.removeEventListener('mouseleave', handleMouseUp);
         };
       }
+
+      return;
     }, [
       columnWidth,
       data.length,
