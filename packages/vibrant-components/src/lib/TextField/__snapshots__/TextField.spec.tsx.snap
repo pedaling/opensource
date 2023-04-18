@@ -264,7 +264,7 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
       >
         <div
           class="emotion-4"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="emotion-5"
@@ -567,7 +567,7 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
       >
         <div
           class="emotion-4"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="emotion-5"
@@ -870,7 +870,7 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
       >
         <div
           class="emotion-4"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="emotion-5"
