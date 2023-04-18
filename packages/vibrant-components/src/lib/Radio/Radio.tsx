@@ -12,7 +12,7 @@ import {
 import { useRadio } from './useRadio';
 
 export const Radio = withRadioVariation(
-  ({ innerRef, checked, value, label, description, size: sizeProp, direction, flexDirection, disabled }) => {
+  ({ innerRef, checked, value, label, description, size: sizeProp, direction, flexDirection, width, disabled }) => {
     const { name, isChecked, isDisabled, onChange } = useRadio({ value, checked, disabled });
     const radioGroupSize = useRadioSize();
     const size = sizeProp ?? radioGroupSize;
@@ -21,7 +21,7 @@ export const Radio = withRadioVariation(
       <PressableBox
         as="label"
         flexDirection={flexDirection}
-        width="100%"
+        width={width}
         disabled={isDisabled}
         cursor={isDisabled ? 'default' : 'pointer'}
         onClick={isNative ? onChange : undefined}

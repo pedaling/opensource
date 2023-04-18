@@ -29,9 +29,11 @@ export const withRadioVariation = withVariation<RadioProps>('Radio')(
     variants: {
       vertical: {
         flexDirection: 'column',
+        width: '100%',
       },
       horizontal: {
         flexDirection: 'row',
+        width: 'auto',
       },
     } as const,
   })

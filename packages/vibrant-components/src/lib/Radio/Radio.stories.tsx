@@ -3,6 +3,7 @@ import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { Pressable } from '../Pressable';
 import { RadioGroupField } from '../RadioGroupField/RadioGroupField';
+import { VStack } from '../VStack';
 import { Radio } from './Radio';
 import { useRadio } from './useRadio';
 
@@ -18,9 +19,11 @@ export default {
 
 export const Basic: ComponentStory<typeof Radio> = props => (
   <RadioGroupField name="radioGroup">
-    <Radio {...props} />
-    <Radio value="2" label="Second" />
-    <Radio value="3" label="Third" />
+    <VStack spacing={8} width={300} alignHorizontal="start">
+      <Radio {...props} />
+      <Radio value="2" label="Second" />
+      <Radio value="3" label="Third" />
+    </VStack>
   </RadioGroupField>
 );
 
