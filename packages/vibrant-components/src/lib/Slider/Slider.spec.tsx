@@ -54,16 +54,36 @@ describe('<Slider />', () => {
           />
         );
 
-        renderer.debug();
-
         element = await renderer.getByTestId('slider-container');
 
-        panel = await renderer.getByTestId('panel-0');
+        panel = await renderer.getByTestId('panel-3');
       });
 
-      it('it should have same width style rule', async () => {
+      it('it should be divided slider width', async () => {
         await waitFor(() => expect(panel.clientWidth).toBe(Math.floor(element.clientWidth / 3)));
       });
+    });
+  });
+
+  describe("when the 'initialIndex' prop", () => {
+    const initialIndex = 1;
+
+    beforeEach(async () => {
+      renderer = render(
+        <Slider
+          panelsPerView={1}
+          initialIndex={initialIndex}
+          data={[1, 2, 3, 4, 5]}
+          renderItem={({ item, index }) => <Box data-testid={`panel-${index}`}>{item}</Box>}
+          keyExtractor={item => item.toString()}
+        />
+      );
+
+      element = await renderer.getByTestId('slider-container');
+    });
+
+    it('it should be at initial position', async () => {
+      await waitFor(() => expect(element.scrollLeft).toBe(element.clientWidth * initialIndex));
     });
   });
 
@@ -214,6 +234,40 @@ describe('<Slider />', () => {
 
     it('onEndReached should be called', async () => {
       await waitFor(() => expect(onEndReachedMockFn).toBeCalled());
+    });
+  });
+
+  describe("when the 'onItemImpressed' prop provided and the user has scrolled to certain item", () => {
+    const onItemImpressed = jest.fn(index => `${index} is called`);
+
+    const panelWidth = 500;
+
+    beforeEach(async () => {
+      renderer = render(
+        <VStack width={500}>
+          <Slider
+            onItemImpressed={index => onItemImpressed(index)}
+            panelsPerView={1}
+            data={[1, 2, 3, 4, 5]}
+            renderItem={({ item }) => (
+              <Body level={1} color="onPrimary">
+                {item}
+              </Body>
+            )}
+            keyExtractor={item => item.toString()}
+          />
+        </VStack>
+      );
+
+      element = await renderer.getByTestId('slider-container');
+
+      fireEvent.scroll(element, { target: { scrollLeft: panelWidth * 2 } });
+    });
+
+    it('onEndReached should be called', async () => {
+      await waitFor(() => {
+        expect(onItemImpressed.mock.results[2].value).toBe('2 is called');
+      });
     });
   });
 });
