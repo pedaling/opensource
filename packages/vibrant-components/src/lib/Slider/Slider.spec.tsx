@@ -238,7 +238,6 @@ describe('<Slider />', () => {
 
   describe("when the 'onItemImpressed' prop provided and the user has scrolled to certain item", () => {
     const onItemImpressed = jest.fn(index => `${index} is called`);
-
     const panelWidth = 500;
 
     beforeEach(async () => {
@@ -263,9 +262,9 @@ describe('<Slider />', () => {
       fireEvent.scroll(element, { target: { scrollLeft: panelWidth * 2 } });
     });
 
-    it('onEndReached should be called', async () => {
+    it('onItemImpressed should be called', async () => {
       await waitFor(() => {
-        expect(onItemImpressed.mock.results[2].value).toBe('2 is called');
+        expect(onItemImpressed.mock.lastCall[0]).toBe(2);
       });
     });
   });
