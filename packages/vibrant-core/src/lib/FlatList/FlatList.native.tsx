@@ -9,7 +9,7 @@ import { useResponsiveValue } from '../useResponsiveValue';
 import { FlatListItem } from './FlatListItem';
 import { withFlatListVariation } from './FlatListProps';
 
-const LOOP_BUFFER = 3;
+export const LOOP_BUFFER = 3;
 
 export const FlatList = withFlatListVariation(
   ({
