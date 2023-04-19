@@ -4,6 +4,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type RadioProps = {
   ref?: Ref<any>;
+  id?: string;
   testId?: string;
   children?: ReactElementChild;
   value: string;

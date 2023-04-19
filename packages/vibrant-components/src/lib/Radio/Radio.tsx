@@ -14,14 +14,27 @@ import {
 import { useRadio } from './useRadio';
 
 export const Radio = withRadioVariation(
-  ({ innerRef, checked, value, label, description, size: sizeProp, direction, flexDirection, width, disabled }) => {
+  ({
+    innerRef,
+    testId,
+    id,
+    checked,
+    value,
+    label,
+    description,
+    size: sizeProp,
+    direction,
+    flexDirection,
+    width,
+    disabled,
+  }) => {
     const { name, isChecked, isDisabled, onChange } = useRadio({ value, checked, disabled });
     const radioGroupSize = useRadioSize();
     const size = sizeProp ?? radioGroupSize;
     const [isActivated, setIsActivated] = useState(false);
 
     return (
-      <Box flexDirection={flexDirection} width={width}>
+      <Box id={id} data-testid={testId} flexDirection={flexDirection} width={width}>
         <PressableBox
           as="label"
           flexDirection="row"
