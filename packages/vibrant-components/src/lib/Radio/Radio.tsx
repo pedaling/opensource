@@ -1,7 +1,6 @@
 import { Box, PressableBox, isNative } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
-import { HStack } from '../HStack';
 import { useRadioSize } from '../RadioGroupField/context/RadioSizeContext';
 import {
   withRadioDescriptionVariation,
@@ -18,16 +17,15 @@ export const Radio = withRadioVariation(
     const size = sizeProp ?? radioGroupSize;
 
     return (
-      <PressableBox
-        as="label"
-        flexDirection={flexDirection}
-        width={width}
-        disabled={isDisabled}
-        cursor={isDisabled ? 'default' : 'pointer'}
-        onClick={isNative ? onChange : undefined}
-        tabIndex={isNative ? 0 : -1}
-      >
-        <HStack as="span">
+      <Box flexDirection={flexDirection} width={width}>
+        <PressableBox
+          as="label"
+          flexDirection="row"
+          disabled={isDisabled}
+          cursor={isDisabled ? 'default' : 'pointer'}
+          onClick={isNative ? onChange : undefined}
+          tabIndex={isNative ? 0 : -1}
+        >
           <Box as="span">
             {!isNative ? (
               <Box
@@ -50,12 +48,12 @@ export const Radio = withRadioVariation(
             <RadioIcon size={size} checked={isChecked} disabled={isDisabled} />
           </Box>
           {label ? <RadioLabel label={label} disabled={isDisabled} size={size} /> : null}
-        </HStack>
+        </PressableBox>
 
         {description ? (
           <RadioDescription description={description} disabled={isDisabled} size={size} direction={direction} />
         ) : null}
-      </PressableBox>
+      </Box>
     );
   }
 );
