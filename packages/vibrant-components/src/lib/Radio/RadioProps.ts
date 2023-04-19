@@ -110,7 +110,7 @@ export const withRadioDescriptionVariation = withVariation<
 
       return {
         bodyLevel: 5,
-        pt: direction === 'vertical' ? 2 : 2.5,
+        pt: direction === 'vertical' ? 2 : 3,
         pl: direction === 'vertical' ? 28 : 8,
       } as const;
     },
