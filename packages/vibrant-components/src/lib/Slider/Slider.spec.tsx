@@ -263,9 +263,7 @@ describe('<Slider />', () => {
     });
 
     it('onItemImpressed should be called', async () => {
-      await waitFor(() => {
-        expect(onItemImpressed).toBeCalledWith(2);
-      });
+      await waitFor(() => expect(onItemImpressed).toHaveBeenCalledWith(2));
     });
   });
 });
