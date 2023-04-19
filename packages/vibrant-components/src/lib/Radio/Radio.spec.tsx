@@ -18,7 +18,7 @@ describe('<Radio />', () => {
     });
 
     it('radio should be checked', async () => {
-      await waitFor(() => expect((renderer.getByRole('radio') as HTMLInputElement).checked).toBe(true));
+      await waitFor(() => expect(renderer.getByRole('radio')).toHaveProperty('checked', true));
     });
   });
 
