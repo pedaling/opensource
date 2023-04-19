@@ -74,8 +74,8 @@ export const RadioDescription = withRadioDescriptionVariation(({ bodyLevel, pl, 
 
 export const RadioIcon = withRadioIconVariation(({ size, checked, disabled }) =>
   checked ? (
-    <Icon.ToggleOn.Fill fill={disabled ? 'onView3' : 'onViewPrimary'} size={size} />
+    <Icon.ToggleOn.Fill fill={disabled ? 'outlineDisable' : 'onViewPrimary'} size={size} />
   ) : (
-    <Icon.ToggleOff.Thin fill="onView3" size={size} />
+    <Icon.ToggleOff.Thin fill={disabled ? 'outlineDisable' : 'onView3'} size={size} />
   )
 );
