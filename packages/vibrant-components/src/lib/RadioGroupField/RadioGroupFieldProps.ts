@@ -8,6 +8,7 @@ export type RadioGroupFieldProps = {
   onChange?: (_: { value: string }) => void;
   disabled?: boolean;
   size?: ResponsiveValue<'md' | 'sm'>;
+  state?: 'default' | 'error';
   children: ReactElementChildren;
 };
 
