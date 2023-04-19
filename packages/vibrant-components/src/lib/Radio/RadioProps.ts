@@ -39,7 +39,9 @@ export const withRadioVariation = withVariation<RadioProps>('Radio')(
   })
 );
 
-export const withRadioIconVariation = withVariation<Pick<RadioProps, 'checked' | 'disabled' | 'size'>>('RadioIcon')(
+export const withRadioIconVariation = withVariation<
+  Pick<RadioProps, 'checked' | 'disabled' | 'size'> & { active: boolean }
+>('RadioIcon')(
   propVariant({
     props: [
       {

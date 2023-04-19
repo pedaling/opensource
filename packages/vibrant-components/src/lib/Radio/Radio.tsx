@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Box, PressableBox, isNative } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import { Transition } from '@vibrant-ui/motion';
 import { Body } from '../Body';
+import { getOpacity } from '../Pressable';
 import { useRadioSize } from '../RadioGroupField/context/RadioSizeContext';
 import {
   withRadioDescriptionVariation,
@@ -15,6 +18,7 @@ export const Radio = withRadioVariation(
     const { name, isChecked, isDisabled, onChange } = useRadio({ value, checked, disabled });
     const radioGroupSize = useRadioSize();
     const size = sizeProp ?? radioGroupSize;
+    const [isActivated, setIsActivated] = useState(false);
 
     return (
       <Box flexDirection={flexDirection} width={width}>
@@ -24,6 +28,8 @@ export const Radio = withRadioVariation(
           disabled={isDisabled}
           cursor={isDisabled ? 'default' : 'pointer'}
           onClick={isNative ? onChange : undefined}
+          onPressIn={() => setIsActivated(true)}
+          onPressOut={() => setIsActivated(false)}
           tabIndex={isNative ? 0 : -1}
         >
           <Box as="span">
@@ -45,7 +51,7 @@ export const Radio = withRadioVariation(
                 left={0}
               />
             ) : null}
-            <RadioIcon size={size} checked={isChecked} disabled={isDisabled} />
+            <RadioIcon size={size} checked={isChecked} disabled={isDisabled} active={isActivated} />
           </Box>
           {label ? <RadioLabel label={label} disabled={isDisabled} size={size} /> : null}
         </PressableBox>
@@ -70,10 +76,20 @@ export const RadioDescription = withRadioDescriptionVariation(({ bodyLevel, pl, 
   </Body>
 ));
 
-export const RadioIcon = withRadioIconVariation(({ size, checked, disabled }) =>
-  checked ? (
-    <Icon.ToggleOn.Fill fill={disabled ? 'outlineDisable' : 'onViewPrimary'} size={size} />
-  ) : (
-    <Icon.ToggleOff.Thin fill={disabled ? 'outlineDisable' : 'onView3'} size={size} />
-  )
-);
+export const RadioIcon = withRadioIconVariation(({ size, checked, disabled, active }) => {
+  const { textOpacity } = getOpacity({
+    interactions: ['active'],
+    isActivated: active,
+    disabled,
+  });
+
+  return (
+    <Transition animation={{ opacity: textOpacity }}>
+      {checked ? (
+        <Icon.ToggleOn.Fill fill={disabled ? 'outlineDisable' : 'onViewPrimary'} size={size} />
+      ) : (
+        <Icon.ToggleOff.Thin fill={disabled ? 'outlineDisable' : 'onView3'} size={size} />
+      )}
+    </Transition>
+  );
+});
