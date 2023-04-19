@@ -13,6 +13,7 @@ import { withFlatListVariation } from './FlatListProps';
 const SCROLL_ACCELERATION = 1.2;
 
 const LOOP_BUFFER = 3;
+// When looping, FlatList will get buffer data at the front and end respectively to make scrolling auto behavior smoothly.
 
 export const FlatList = withFlatListVariation(
   ({
