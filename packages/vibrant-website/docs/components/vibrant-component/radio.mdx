@@ -133,20 +133,24 @@ const RadioButton = ({
   const { name, isChecked, isDisabled, onChange } =
     useRadio({ value });
 
+  const id = useId();
+
   return (
     <Pressable
       as="span"
       width={100}
       disabled={isDisabled}
       backgroundColor={isChecked ? 'primary' : 'background'}
+      p={10}
+      borderRadiusLevel={2}
     >
       <>
         <Box
           as="input"
-          id="radio"
-          type="radio"
+          id={id}
           value={value}
           name={name}
+          type="radio"
           checked={isChecked}
           onChange={onChange}
           opacity={0}
@@ -156,7 +160,7 @@ const RadioButton = ({
           width="100%"
           height="100%"
         />
-        <Body as="label" level={1} htmlFor="radio">
+        <Body as="label" level={1} htmlFor={id}>
           {label}
         </Body>
       </>

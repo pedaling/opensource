@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Box } from '@vibrant-ui/core';
 import { Body } from '../Body';
@@ -30,6 +31,8 @@ export const Basic: ComponentStory<typeof Radio> = props => (
 const RadioButton = ({ value, label }: { value: string; label: string }) => {
   const { name, isChecked, isDisabled, onChange } = useRadio({ value });
 
+  const id = useId();
+
   return (
     <Pressable
       as="span"
@@ -42,7 +45,7 @@ const RadioButton = ({ value, label }: { value: string; label: string }) => {
       <>
         <Box
           as="input"
-          id="radio"
+          id={id}
           value={value}
           name={name}
           type="radio"
@@ -55,7 +58,7 @@ const RadioButton = ({ value, label }: { value: string; label: string }) => {
           width="100%"
           height="100%"
         />
-        <Body as="label" level={1} htmlFor="radio">
+        <Body as="label" level={1} htmlFor={id}>
           {label}
         </Body>
       </>
