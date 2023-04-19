@@ -334,7 +334,7 @@ exports[`<FormTextField /> when FormTextField rendered match snapshot 1`] = `
         >
           <div
             class="emotion-5"
-            tabindex="0"
+            tabindex="-1"
           >
             <span
               class="emotion-6"

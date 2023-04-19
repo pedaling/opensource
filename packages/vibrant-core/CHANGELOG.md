@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.54.1...vibrant-core-0.54.2) (2023-04-17)
+
+
+### Bug Fixes
+
+* transform unsupported accessiblity prop in native ([#668](https://github.com/pedaling/opensource/issues/668)) ([54db980](https://github.com/pedaling/opensource/commit/54db98058c43b02d3551aaa7c6564ed47d287ec0))
+
 ### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.54.0...vibrant-core-0.54.1) (2023-04-13)
 
 
