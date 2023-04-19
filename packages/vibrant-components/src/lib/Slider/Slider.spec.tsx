@@ -240,7 +240,7 @@ describe('<Slider />', () => {
     const onItemImpressed = jest.fn(index => `${index} is called`);
     const panelWidth = 500;
 
-    beforeEach(async () => {
+    beforeEach(done => {
       renderer = render(
         <VStack width={panelWidth}>
           <Slider
@@ -257,9 +257,13 @@ describe('<Slider />', () => {
         </VStack>
       );
 
-      element = await renderer.getByTestId('slider-container');
+      element = renderer.getByTestId('slider-container');
 
-      fireEvent.scroll(element, { target: { scrollLeft: panelWidth * 2 } });
+      setTimeout(() => {
+        fireEvent.scroll(element, { target: { scrollLeft: panelWidth * 2 } });
+
+        done();
+      }, 1000);
     });
 
     it('onItemImpressed should be called', async () => {
