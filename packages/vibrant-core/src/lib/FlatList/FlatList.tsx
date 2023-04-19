@@ -195,7 +195,7 @@ export const FlatList = withFlatListVariation(
 
     useEffect(() => {
       scrollToTargetIndex({ index: currentIndexRef.current, animation: false });
-    }, [scrollToTargetIndex, width]);
+    }, [scrollToTargetIndex]);
 
     useEffect(() => {
       if (!horizontal) {
