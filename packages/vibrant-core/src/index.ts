@@ -82,6 +82,6 @@ export type { EventListenerCallback, ScrollDirection } from './lib/PageScroll';
 export { Image } from './lib/Image';
 export { TabView } from './lib/TabView';
 export { TabViewItem } from './lib/TabViewItem';
-export { FlatList, LOOP_BUFFER } from './lib/FlatList';
+export { FlatList } from './lib/FlatList';
 export { Link } from './lib/Link';
 export type { LinkProps } from './lib/Link';

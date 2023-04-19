@@ -12,7 +12,7 @@ import { withFlatListVariation } from './FlatListProps';
 
 const SCROLL_ACCELERATION = 1.2;
 
-export const LOOP_BUFFER = 3;
+const LOOP_BUFFER = 3;
 
 export const FlatList = withFlatListVariation(
   ({
@@ -194,7 +194,7 @@ export const FlatList = withFlatListVariation(
 
     useEffect(() => {
       scrollToTargetIndex({ index: currentIndexRef.current, animation: false });
-    }, [scrollToTargetIndex]);
+    }, [scrollToTargetIndex, width]);
 
     useEffect(() => {
       if (!horizontal) {

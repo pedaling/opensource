@@ -1,5 +1,5 @@
 import { fireEvent, waitFor } from '@testing-library/react';
-import { Box, LOOP_BUFFER } from '@vibrant-ui/core';
+import { Box } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Body } from '../Body';
@@ -147,14 +147,16 @@ describe('<Slider />', () => {
     });
   });
 
-  describe("when the 'loop' prop", () => {
-    const dataLength = 5;
+  describe("when the 'loop' prop and scrolls to end", () => {
+    const panelWidth = 500;
+    const panelLength = 5;
+    const onItemImpressed = jest.fn(index => `${index} is called`);
 
-    beforeEach(async () => {
+    beforeEach(done => {
       renderer = render(
-        <VStack width={500}>
+        <VStack width={panelWidth}>
           <Slider
-            panelWidth={100}
+            panelWidth={panelWidth}
             loop={true}
             data={[1, 2, 3, 4, 5]}
             renderItem={({ item }) => (
@@ -162,16 +164,23 @@ describe('<Slider />', () => {
                 {item}
               </Body>
             )}
+            onItemImpressed={index => onItemImpressed(index)}
             keyExtractor={item => item.toString()}
           />
         </VStack>
       );
 
-      element = await renderer.getByTestId('slider-container');
+      element = renderer.getByTestId('slider-container');
+
+      setTimeout(() => {
+        fireEvent.scroll(element, { target: { scrollLeft: panelLength * panelWidth } });
+
+        done();
+      }, 1000);
     });
 
-    it('it should have snap style in Slider container', () => {
-      expect(element.childElementCount).toBe(LOOP_BUFFER * 2 + dataLength);
+    it('it should go back to first', async () => {
+      await waitFor(() => expect(onItemImpressed).toHaveBeenCalledWith(2));
     });
   });
 
@@ -239,6 +248,7 @@ describe('<Slider />', () => {
   describe("when the 'onItemImpressed' prop provided and the user has scrolled to certain item", () => {
     const onItemImpressed = jest.fn(index => `${index} is called`);
     const panelWidth = 500;
+    const panelLength = 5;
 
     beforeEach(done => {
       renderer = render(
@@ -260,14 +270,16 @@ describe('<Slider />', () => {
       element = renderer.getByTestId('slider-container');
 
       setTimeout(() => {
-        fireEvent.scroll(element, { target: { scrollLeft: panelWidth * 2 } });
+        fireEvent.scroll(element, { target: { scrollLeft: panelWidth * (panelLength + 1) } });
 
         done();
       }, 1000);
     });
 
     it('onItemImpressed should be called', async () => {
-      await waitFor(() => expect(onItemImpressed).toHaveBeenCalledWith(2));
+      await waitFor(() => {
+        expect(onItemImpressed).toHaveBeenCalledWith(1);
+      });
     });
   });
 });
