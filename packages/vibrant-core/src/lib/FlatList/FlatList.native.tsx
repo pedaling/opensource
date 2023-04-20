@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import type { ViewToken } from 'react-native';
+import type { NativeScrollEvent, NativeSyntheticEvent, ViewToken } from 'react-native';
 import { FlatList as NativeFlatList } from 'react-native';
 import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
 import { getPaddedResponsiveArray } from '../getPaddedResponsiveArray';
@@ -91,6 +91,19 @@ export const FlatList = withFlatListVariation(
         : undefined;
     const currentColumn = getResponsiveValue(columns);
 
+    const handleLoop = useCallback(
+      (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
+
+        if (newPage < boundedBuffer) {
+          scrollToIndex({ index: boundedBuffer + data.length - 1, animated: false });
+        } else if (newPage >= boundedBuffer + data.length) {
+          scrollToIndex({ index: boundedBuffer, animated: false });
+        }
+      },
+      [boundedBuffer, computedColumnWidth, computedSpacing, data.length, scrollToIndex]
+    );
+
     useEffect(() => {
       if (!isReady) {
         return;
@@ -146,16 +159,8 @@ export const FlatList = withFlatListVariation(
           currentIndexRef.current = newPage;
         }}
         onMomentumScrollEnd={event => {
-          if (!loop) {
-            return;
-          }
-
-          const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
-
-          if (newPage < boundedBuffer) {
-            scrollToIndex({ index: boundedBuffer + data.length - 1, animated: false });
-          } else if (newPage >= boundedBuffer + data.length) {
-            scrollToIndex({ index: boundedBuffer, animated: false });
+          if (loop) {
+            handleLoop(event);
           }
         }}
         {...props}
