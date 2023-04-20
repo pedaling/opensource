@@ -11,4 +11,5 @@ export type InteractionSystemProps = {
   cursor?: ResponsiveValue<'default' | 'pointer' | 'text'>;
   pointerEvents?: ResponsiveValue<'auto' | 'none'>;
   hitSlop?: ResponsiveValue<HitSlopRect | number>;
+  tabIndex?: -1 | 0;
 };

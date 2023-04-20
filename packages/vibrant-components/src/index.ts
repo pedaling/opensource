@@ -73,3 +73,5 @@ export { Avatar } from './lib/Avatar';
 export type { AvatarProps } from './lib/Avatar';
 export { CustomizationProvider } from './lib/CustomizationProvider';
 export type { CustomizationProviderProps, Configurations } from './lib/CustomizationProvider';
+export { Radio, useRadio } from './lib/Radio';
+export { RadioGroupField } from './lib/RadioGroupField';
