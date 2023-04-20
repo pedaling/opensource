@@ -40,6 +40,8 @@ export const stories = [
   require('../../vibrant-components/src/lib/Paragraph/Paragraph.stories.tsx'),
   require('../../vibrant-components/src/lib/PasswordField/PasswordField.stories.tsx'),
   require('../../vibrant-components/src/lib/Pressable/Pressable.stories.tsx'),
+  require('../../vibrant-components/src/lib/Radio/Radio.stories.tsx'),
+  require('../../vibrant-components/src/lib/RadioGroupField/RadioGroupField.stories.tsx'),
   require('../../vibrant-components/src/lib/RangePickerField/RangePickerField.stories.tsx'),
   require('../../vibrant-components/src/lib/Ratio/Ratio.stories.tsx'),
   require('../../vibrant-components/src/lib/SafeAreaView/SafeAreaView.stories.tsx'),
