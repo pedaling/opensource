@@ -8,11 +8,11 @@ export const RadioGroupField = withRadioGroupFieldVariation(
     const [value, setValue] = useControllableState<string>({
       value: valueProp,
       defaultValue,
-      onChange: value => onChange?.({ value }),
+      onValueChange: value => onChange?.({ value }),
     });
 
     return (
-      <RadioGroupProvider value={value} onChange={setValue} state={state} disabled={disabled} name={name}>
+      <RadioGroupProvider value={value} onValueChange={setValue} state={state} disabled={disabled} name={name}>
         <RadioSizeProvider size={size}>{children}</RadioSizeProvider>
       </RadioGroupProvider>
     );

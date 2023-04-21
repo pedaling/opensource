@@ -5,17 +5,17 @@ import { useCallbackRef } from '../useCallbackRef';
 export type UseControllableStateProps<Value> = {
   value?: Value;
   defaultValue?: Value;
-  onChange?: (value: Value) => void;
+  onValueChange?: (value: Value) => void;
 };
 
 export function useControllableState<Value>({
   value: valueProp,
   defaultValue,
-  onChange,
+  onValueChange,
 }: UseControllableStateProps<Value>) {
   const [valueState, setValueState] = useState<Value>(defaultValue as Value);
   const isControlled = isDefined(valueProp);
-  const handleChange = useCallbackRef(onChange);
+  const handleValueChange = useCallbackRef(onValueChange);
   const valueRef = useRef(isControlled ? valueProp : valueState);
 
   const setValue = useCallback(
@@ -24,13 +24,13 @@ export function useControllableState<Value>({
         return;
       }
 
-      handleChange(nextValue);
+      handleValueChange(nextValue);
 
       if (!isControlled) {
         setValueState(nextValue);
       }
     },
-    [handleChange, isControlled]
+    [handleValueChange, isControlled]
   );
 
   useEffect(() => {
