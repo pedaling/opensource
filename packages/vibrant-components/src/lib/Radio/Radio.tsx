@@ -101,7 +101,7 @@ export const RadioIcon = withRadioIconVariation(({ size, checked, disabled, acti
       {checked ? (
         <Icon.ToggleOn.Fill fill={disabled ? 'outlineDisable' : 'onViewPrimary'} size={size} />
       ) : (
-        <Icon.ToggleOff.Thin fill={disabled ? 'outlineDisable' : 'onView3'} size={size} />
+        <Icon.ToggleOff.Thin fill={disabled ? 'outlineDisable' : 'outline1'} size={size} />
       )}
     </Transition>
   );
