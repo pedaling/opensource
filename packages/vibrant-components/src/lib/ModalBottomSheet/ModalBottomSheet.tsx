@@ -44,7 +44,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     const [isOpen, setIsOpen] = useControllableState<boolean>({
       value: open,
       defaultValue: defaultOpen,
-      onChange: (value: boolean) => {
+      onValueChange: (value: boolean) => {
         if (!value) {
           onClose?.();
         }
