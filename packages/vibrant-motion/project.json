@@ -7,10 +7,18 @@
     "build": {
       "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        },
+        "build-native"
+      ],
       "options": {
         "outputPath": "dist/packages/vibrant-motion",
         "tsConfig": "packages/vibrant-motion/tsconfig.lib.json",
         "project": "packages/vibrant-motion/package.json",
+        "deleteOutputPath": false,
         "entryFile": "packages/vibrant-motion/src/index.ts",
         "external": ["react/jsx-runtime"],
         "generateExportsField": true,
@@ -25,6 +33,25 @@
             "output": "."
           }
         ]
+      }
+    },
+    "build-native": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/vibrant-motion",
+        "tsConfig": "packages/vibrant-motion/tsconfig.lib.json",
+        "moduleSuffixes": [".native", ""],
+        "project": "packages/vibrant-motion/package.json",
+        "outputFileName": "index.native",
+        "entryFile": "packages/vibrant-motion/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "forceOutputJsExtension": true,
+        "format": ["cjs"],
+        "rollupConfig": "tools/config/rollup-config",
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "compiler": "babel",
+        "disablePreserveModules": true
       }
     },
     "typecheck": {
