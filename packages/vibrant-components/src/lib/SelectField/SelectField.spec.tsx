@@ -85,27 +85,23 @@ describe('<SelectField />', () => {
     });
   });
 
-  describe('when select option', () => {
+  describe('when select first option', () => {
     const handleValueChange = jest.fn();
+    const options = [
+      {
+        label: 'option 1',
+        value: '1',
+      },
+      {
+        label: 'option 2',
+        value: '2',
+      },
+    ];
 
     beforeEach(async () => {
       renderer = render(
         <PortalRootProvider zIndex={1}>
-          <SelectField
-            size="sm"
-            label="label"
-            onValueChange={handleValueChange}
-            options={[
-              {
-                label: 'option 1',
-                value: '1',
-              },
-              {
-                label: 'option 2',
-                value: '2',
-              },
-            ]}
-          />
+          <SelectField size="sm" label="label" onValueChange={handleValueChange} options={options} />
         </PortalRootProvider>
       );
 
@@ -118,8 +114,8 @@ describe('<SelectField />', () => {
       await waitFor(() => optionItems[0].click());
     });
 
-    it('onValueChange called', () => {
-      expect(handleValueChange).toBeCalledTimes(1);
+    it('should call onValueChange with first option value', () => {
+      expect(handleValueChange).toBeCalledWith(options[0].value);
     });
   });
 });
