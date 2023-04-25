@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.54.2...vibrant-utils-0.55.0) (2023-04-25)
+
+
+### Bug Fixes
+
+* change unchecked radio icon button to outline1 ([#685](https://github.com/pedaling/opensource/issues/685)) ([5f1cca5](https://github.com/pedaling/opensource/commit/5f1cca541133f23b3e0d88d309da0e382e35fd26))
+
 ### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.54.1...vibrant-utils-0.54.2) (2023-04-17)
 
 

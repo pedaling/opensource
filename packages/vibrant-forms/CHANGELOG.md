@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.54.2...vibrant-forms-0.55.0) (2023-04-25)
+
+
+### Bug Fixes
+
+* add tab-index prop to pressable ([#684](https://github.com/pedaling/opensource/issues/684)) ([7c8a0be](https://github.com/pedaling/opensource/commit/7c8a0bedff10933c0f2d5e9025911aa2933138a6))
+
 ### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.54.1...vibrant-forms-0.54.2) (2023-04-17)
 
 ### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.54.0...vibrant-forms-0.54.1) (2023-04-13)
