@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.54.2...vibrant-motion-0.55.0) (2023-04-25)
+
+
+### Features
+
+* set build setting of vibrant-motion to let .native extenstion ([#687](https://github.com/pedaling/opensource/issues/687)) ([da39c1a](https://github.com/pedaling/opensource/commit/da39c1ad1350aa9f409fa46529436d77f3dc0602))
+
 ### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.54.1...vibrant-motion-0.54.2) (2023-04-17)
 
 ### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.54.0...vibrant-motion-0.54.1) (2023-04-13)
