@@ -5313,6 +5313,91 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@motionone/animation@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/animation@npm:10.15.1"
+  dependencies:
+    "@motionone/easing": ^10.15.1
+    "@motionone/types": ^10.15.1
+    "@motionone/utils": ^10.15.1
+    tslib: ^2.3.1
+  checksum: 75b7a1e6c47c27073a578eb5559ea0a6e7075862c72e1eb1598403c8c2725f596a95b0369514c9e72f3c7439a9845c468b85a14d4e500df48e09d01b0739d4a7
+  languageName: node
+  linkType: hard
+
+"@motionone/dom@npm:^10.15.5":
+  version: 10.15.5
+  resolution: "@motionone/dom@npm:10.15.5"
+  dependencies:
+    "@motionone/animation": ^10.15.1
+    "@motionone/generators": ^10.15.1
+    "@motionone/types": ^10.15.1
+    "@motionone/utils": ^10.15.1
+    hey-listen: ^1.0.8
+    tslib: ^2.3.1
+  checksum: 2453fe3df6a2b4b339d075bcd598bda1eee1926ba0ad881edfd154362b0992c91f31c08d83c469c7e8cb8bf8ebc0ed5530972673cf5c74d99e46e3772cf5f1cb
+  languageName: node
+  linkType: hard
+
+"@motionone/easing@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/easing@npm:10.15.1"
+  dependencies:
+    "@motionone/utils": ^10.15.1
+    tslib: ^2.3.1
+  checksum: cf7cfcf9917525d892334c58282425aafc69d9ab9004c190bfa7cf91317a680e8143f227adc79557424e7f26cdf8478dcbb2ae467e744cebc58195d6f0b8153a
+  languageName: node
+  linkType: hard
+
+"@motionone/generators@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/generators@npm:10.15.1"
+  dependencies:
+    "@motionone/types": ^10.15.1
+    "@motionone/utils": ^10.15.1
+    tslib: ^2.3.1
+  checksum: 0eb6797a64d536bb5c26628343d6594a2ebc45c3c447b8ce442b4ac3a41be847b860ac009bda7968fc7d339d2ee49b18bfe36306c5dd99cf17c7d84c82de93f3
+  languageName: node
+  linkType: hard
+
+"@motionone/svelte@npm:^10.15.5":
+  version: 10.15.5
+  resolution: "@motionone/svelte@npm:10.15.5"
+  dependencies:
+    "@motionone/dom": ^10.15.5
+    tslib: ^2.3.1
+  checksum: 17c7cf75f9c2635b1f11204fc4944a62b6febe19d9ffca50b15b45019e98d74cb9c7b9c1a780d8dbd945d8f397ebc3ff97a765d16cad7aae99d1ec979c3aa5ad
+  languageName: node
+  linkType: hard
+
+"@motionone/types@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/types@npm:10.15.1"
+  checksum: 98091f7dca257508d94d1080678c433da39a814e8e58aaa742212bf6c2a5b5e2120a6251a06e3ea522219ce6d1b6eb6aa2cab224b803fe52789033d8398ef0aa
+  languageName: node
+  linkType: hard
+
+"@motionone/utils@npm:^10.15.1":
+  version: 10.15.1
+  resolution: "@motionone/utils@npm:10.15.1"
+  dependencies:
+    "@motionone/types": ^10.15.1
+    hey-listen: ^1.0.8
+    tslib: ^2.3.1
+  checksum: 6ef13cd6637ec87c340e5536f849f8c40d30cc90139a3856d11cd70d78e3740f8815b0e63564fefd23c05a060da7a0ea5395390549606ed8801a7b832b74e04e
+  languageName: node
+  linkType: hard
+
+"@motionone/vue@npm:^10.15.5":
+  version: 10.15.5
+  resolution: "@motionone/vue@npm:10.15.5"
+  dependencies:
+    "@motionone/dom": ^10.15.5
+    tslib: ^2.3.1
+  checksum: c87c019edfa1224aed7f2edf3f0f764829eeebbc6efefeca2235a5cabbd1553b7516376c744a39e1f7e6b13a7699bceac02c7cb59091d4d1019d5e9dd11c8cf2
+  languageName: node
+  linkType: hard
+
 "@mrmlnc/readdir-enhanced@npm:^2.2.1":
   version: 2.2.1
   resolution: "@mrmlnc/readdir-enhanced@npm:2.2.1"
@@ -13087,6 +13172,7 @@ __metadata:
     jsonc-eslint-parser: ^2.1.0
     metro-babel-register: 0.71.0
     metro-resolver: 0.72.3
+    motion: 10.15.5
     ngx-deploy-npm: 4.1.1
     nx: 15.0.0
     prettier: 2.7.1
@@ -19862,6 +19948,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hey-listen@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "hey-listen@npm:1.0.8"
+  checksum: 6bad60b367688f5348e25e7ca3276a74b59ac5a09b0455e6ff8ab7d4a9e38cd2116c708a7dcd8a954d27253ce1d8717ec891d175723ea739885b828cf44e4072
+  languageName: node
+  linkType: hard
+
 "history@npm:^4.9.0":
   version: 4.10.1
   resolution: "history@npm:4.10.1"
@@ -25509,6 +25602,20 @@ __metadata:
   version: 1.0.1
   resolution: "modify-values@npm:1.0.1"
   checksum: 8296610c608bc97b03c2cf889c6cdf4517e32fa2d836440096374c2209f6b7b3e256c209493a0b32584b9cb32d528e99d0dd19dcd9a14d2d915a312d391cc7e9
+  languageName: node
+  linkType: hard
+
+"motion@npm:10.15.5":
+  version: 10.15.5
+  resolution: "motion@npm:10.15.5"
+  dependencies:
+    "@motionone/animation": ^10.15.1
+    "@motionone/dom": ^10.15.5
+    "@motionone/svelte": ^10.15.5
+    "@motionone/types": ^10.15.1
+    "@motionone/utils": ^10.15.1
+    "@motionone/vue": ^10.15.5
+  checksum: 43e7883d95da6e4949b2e5ca01732bce28214f4978bf940511a3fbd8e00943ab7c00fcb28f3f1ce1ed099a404016f784243330be161c4805958deaf60d1b0571
   languageName: node
   linkType: hard
 
