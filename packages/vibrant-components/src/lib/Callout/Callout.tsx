@@ -35,22 +35,23 @@ export const Callout = withCalloutVariation(
           {title}
         </Title>
       </HStack>
-      {contents ? (
-        <Text
-          color="onView1"
-          mt={8}
-          mb={contents ? 2 : 0}
-          lineHeight={18}
-          fontSize={14}
-          fontWeight="regular"
-          flex={1}
-          overflowWrap="anywhere"
-        >
-          {contents}
-        </Text>
-      ) : (
-        renderContents?.()
-      )}
+      <VStack mt={8}>
+        {contents ? (
+          <Text
+            color="onView1"
+            mb={contents ? 2 : 0}
+            lineHeight={18}
+            fontSize={14}
+            fontWeight="regular"
+            flex={1}
+            overflowWrap="anywhere"
+          >
+            {contents}
+          </Text>
+        ) : (
+          renderContents?.()
+        )}
+      </VStack>
       {buttonText ? (
         <VStack alignHorizontal="end" mt={12}>
           <ContainedButton onClick={onButtonClick} size="md" kind="tertiary">
