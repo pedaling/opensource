@@ -3,7 +3,7 @@ import type { AllSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
-import type { Animation, AnimationResult } from '../types';
+import type { Animation } from '../types';
 
 export type MotionRefValue = {
   start: (options?: { reverse?: boolean; reset?: boolean }) => void;
@@ -22,8 +22,7 @@ export type MotionProps = {
   delay?: number;
   animation: WithMotion<AllSystemProps & TransformMotionProps>;
   easing?: keyof EasingDictionary;
-  onStart?: (e: AnimationResult) => void;
-  onEnd?: (e: AnimationResult) => void;
+  onEnd?: () => void;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(
@@ -43,6 +42,7 @@ export const withMotionVariation = withVariation<MotionProps>('Motion')(
     ) as { from: Record<keyof Omit<MotionProps, 'base'>, any>; to: Record<keyof Omit<MotionProps, 'base'>, any> };
 
     return {
+      animation,
       from,
       to,
       ...restProps,
