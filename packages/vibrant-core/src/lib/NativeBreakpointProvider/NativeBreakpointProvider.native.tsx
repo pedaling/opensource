@@ -4,12 +4,12 @@ import type { LayoutChangeEvent } from 'react-native';
 import { Dimensions, View } from 'react-native';
 import { useCurrentTheme } from '../ThemeProvider';
 
-type ProviderType = {
+type ContextType = {
   currentBreakpointIndex: number;
   rootBreakpointIndex: number;
 };
 
-const BreakpointContext = createContext<ProviderType>({
+const BreakpointContext = createContext<ContextType>({
   currentBreakpointIndex: 0,
   rootBreakpointIndex: 0,
 });
@@ -40,13 +40,13 @@ export const NativeBreakpointProvider: FC<{ children: ReactElement }> = ({ child
     return index === -1 ? rootBreakpoint.length : index;
   }, [rootBreakpoint, width]);
 
+  const contextValue = useMemo(
+    () => ({ currentBreakpointIndex, rootBreakpointIndex }),
+    [currentBreakpointIndex, rootBreakpointIndex]
+  );
+
   return (
-    <BreakpointContext.Provider
-      value={useMemo(
-        () => ({ currentBreakpointIndex, rootBreakpointIndex }),
-        [currentBreakpointIndex, rootBreakpointIndex]
-      )}
-    >
+    <BreakpointContext.Provider value={contextValue}>
       <View onLayout={onLayout} style={{ width: '100%', height: '100%' }}>
         {children}
       </View>
