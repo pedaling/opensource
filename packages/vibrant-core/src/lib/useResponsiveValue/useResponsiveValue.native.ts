@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import type { ResponsiveValue } from '../../types';
-import { useNativeBreakpoint } from '../BreakpointProvider';
+import { useNativeBreakpoint } from '../NativeBreakpointProvider';
 import type { UseResponsiveValueProps } from './type';
 
 export const useResponsiveValue = ({ useRootBreakPoints = false }: UseResponsiveValueProps = {}) => {
