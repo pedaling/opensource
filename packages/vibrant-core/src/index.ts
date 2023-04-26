@@ -44,6 +44,7 @@ export type {
   ScrollSystemProps,
 } from './lib/props';
 export { propVariant } from './lib/propVariant';
+export { NativeBreakpointProvider, useNativeBreakpoint } from './lib/NativeBreakpointProvider';
 export { withVariation } from './lib/withVariation';
 export type { ComponentWithRef } from './lib/withVariation';
 export { ThemeProvider, useCurrentTheme, useCurrentThemeMode } from './lib/ThemeProvider';

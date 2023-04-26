@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import type { ReactElementChild } from '../../types';
 import { ConfigProvider } from '../ConfigProvider';
 import type { ConfigProviderProps } from '../ConfigProvider';
+import { NativeBreakpointProvider } from '../NativeBreakpointProvider';
 import { PortalRootProvider } from '../PortalRoot';
 import { SafeAreaProvider } from '../SafeAreaProvider';
 import { StackedPortalProvider } from '../StackedPortalProvider';
@@ -34,7 +35,9 @@ export const VibrantProvider: FC<VibrantProviderProps> = ({
             bottom: portalBottomPriorityOrder,
           }}
         >
-          <PortalRootProvider zIndex={portalRootZIndex}>{children}</PortalRootProvider>
+          <PortalRootProvider zIndex={portalRootZIndex}>
+            <NativeBreakpointProvider>{children}</NativeBreakpointProvider>
+          </PortalRootProvider>
         </StackedPortalProvider>
       </ThemeProvider>
     </SafeAreaProvider>
