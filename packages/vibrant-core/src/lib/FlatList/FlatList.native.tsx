@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import type { NativeScrollEvent, NativeSyntheticEvent, ViewToken } from 'react-native';
 import { FlatList as NativeFlatList } from 'react-native';
 import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
@@ -58,9 +58,8 @@ export const FlatList = withFlatListVariation(
       [boundedBuffer, data, loop]
     );
     const ref = useRef<NativeFlatList<{ index: number }>>(null);
-    const currentIndexRef = useRef(Math.min(initialIndex + (loop ? boundedBuffer : 0), buffedData.length - 1));
-
-    const [isReady, setIsReady] = useState(false);
+    const buffedInitialIndex = Math.min(initialIndex + (loop ? boundedBuffer : 0), buffedData.length - 1);
+    const currentIndexRef = useRef(buffedInitialIndex);
 
     const scrollToIndex = useCallback(
       ({ index, animated = true }: { index: number; animated?: boolean }) => {
@@ -104,25 +103,16 @@ export const FlatList = withFlatListVariation(
       [boundedBuffer, computedColumnWidth, computedSpacing, data.length, scrollToIndex]
     );
 
-    useEffect(() => {
-      if (!isReady) {
-        return;
-      }
-
-      scrollToIndex({ index: currentIndexRef.current, animated: false });
-    }, [isReady, scrollToIndex]);
-
     return (
       <NativeFlatList
         ref={ref}
         key={currentColumn}
         style={{ width: '100%' }}
         horizontal={horizontal}
-        pagingEnabled={snap}
+        initialNumToRender={buffedData.length}
+        initialScrollIndex={buffedInitialIndex}
+        pagingEnabled={true}
         data={buffedData}
-        onLayout={() => {
-          setIsReady(true);
-        }}
         decelerationRate={snap ? 'fast' : undefined}
         snapToAlignment={snap ? snapAlignment : undefined}
         snapToInterval={snap ? computedColumnWidth + computedSpacing : undefined}

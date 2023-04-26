@@ -9,6 +9,7 @@ export type SliderProps<Data> = {
   keyExtractor: (item: Data) => string;
   onEndReached?: () => void;
   onItemImpressed?: (item: Data, index: number | null) => void;
+  width?: ResponsiveValue<number>;
   spacing?: ResponsiveValue<number>;
   px?: ResponsiveValue<number>;
   loop?: boolean;

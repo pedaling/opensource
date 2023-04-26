@@ -69,8 +69,8 @@ export const FlatList = withFlatListVariation(
       () => (loop ? [...data.slice(-boundedBuffer), ...data, ...data.slice(0, boundedBuffer)] : data),
       [boundedBuffer, data, loop]
     );
-
-    const currentIndexRef = useRef(Math.min(initialIndex + (loop ? boundedBuffer : 0), buffedData.length - 1));
+    const buffedInitialIndex = Math.min(initialIndex + (loop ? boundedBuffer : 0), buffedData.length - 1);
+    const currentIndexRef = useRef(buffedInitialIndex);
 
     const handleItemRef = (index: number) => (ref: HTMLElement) => {
       itemRefs.current[index] = ref;
