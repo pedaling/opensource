@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.55.0...vibrant-core-0.56.0) (2023-04-26)
+
+
+### Features
+
+* 실제 랜더링 크기가 breakpoint 계산에 쓰이도록 한다 ([#690](https://github.com/pedaling/opensource/issues/690)) ([502fd50](https://github.com/pedaling/opensource/commit/502fd500ea12bea7c2408cfead0a405ce577815e))
+
 ## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.54.2...vibrant-core-0.55.0) (2023-04-25)
 
 
