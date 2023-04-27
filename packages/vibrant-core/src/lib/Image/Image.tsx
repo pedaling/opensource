@@ -5,7 +5,7 @@ import { withImageVariation } from './ImageProps';
 export const Image = withImageVariation(
   ({ innerRef, src, alt, loading, draggable = false, testId = 'image', sizes, ...props }) => {
     const {
-      dependencies: { image },
+      dependencies: { image: ImageComponent },
     } = useConfig();
 
     const responsiveValueLength = Array.isArray(src) ? src.length : 1;
@@ -18,14 +18,13 @@ export const Image = withImageVariation(
       return { src: typeof value === 'string' ? value : '', display };
     });
 
-    if (image) {
+    if (ImageComponent) {
       return (
         <>
           {imageProps.map(({ src, display }) => (
-            <Box
+            <ImageComponent
               key={src}
               data-testid={testId}
-              base={image}
               ref={innerRef}
               loading={loading}
               alt={alt}
