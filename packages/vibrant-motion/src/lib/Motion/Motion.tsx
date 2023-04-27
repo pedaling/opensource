@@ -2,7 +2,7 @@ import type { AnimationControls } from 'motion';
 import { animate } from 'motion';
 import { cloneElement, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { useCallbackRef, useComposedRef, useObjectMemo } from '@vibrant-ui/utils';
+import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
 import { transformMotionProps } from '../props/transform';
 import { withMotionVariation } from './MotionProps';
@@ -13,26 +13,26 @@ export const Motion = withMotionVariation(
     const elementRef = useRef();
     const animationRef = useRef<AnimationControls>();
     const ref = useComposedRef(innerRef, elementRef);
-    const onEndRef = useCallbackRef(onEnd);
-
     const { getResponsiveValue } = useResponsiveValue();
 
-    const keyframes = useObjectMemo(
-      useMemo(
-        () =>
-          Object.entries(animation).reduce(
-            (acc, [key, value]) => ({
-              ...acc,
-              [key]: [
-                interpolation({ [key]: getResponsiveValue(value.from) })[key],
-                interpolation({ [key]: getResponsiveValue(value.to) })[key],
-              ],
-            }),
-            {}
-          ),
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [JSON.stringify(animation), getResponsiveValue, interpolation]
-      )
+    const getResponsiveValueRef = useCallbackRef(getResponsiveValue);
+    const interpolationRef = useCallbackRef(interpolation);
+    const onEndRef = useCallbackRef(onEnd);
+
+    const keyframes = useMemo(
+      () =>
+        Object.entries(animation).reduce(
+          (acc, [key, value]) => ({
+            ...acc,
+            [key]: [
+              interpolationRef({ [key]: getResponsiveValueRef(value.from) })[key],
+              interpolationRef({ [key]: getResponsiveValueRef(value.to) })[key],
+            ],
+          }),
+          {}
+        ),
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [JSON.stringify(animation), getResponsiveValueRef, interpolationRef]
     );
 
     useEffect(() => {
