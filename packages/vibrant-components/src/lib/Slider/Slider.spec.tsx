@@ -78,10 +78,6 @@ describe('<Slider />', () => {
       renderer.debug();
 
       element = await renderer.findByTestId('slider-container');
-
-      console.log(element.clientWidth, 'is rendered');
-
-      console.log(element.scrollLeft, 'is initial scroll');
     });
 
     it('it should be at initial position', async () => {
