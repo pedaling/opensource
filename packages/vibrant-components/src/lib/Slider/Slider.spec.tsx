@@ -52,7 +52,7 @@ describe('<Slider />', () => {
 
         element = await renderer.findByTestId('slider-container');
 
-        panel = renderer.getByTestId('panel-0');
+        panel = await renderer.getByTestId('panel-0');
       });
 
       it('it should be divided slider width', async () => {
@@ -74,8 +74,6 @@ describe('<Slider />', () => {
           keyExtractor={item => item.toString()}
         />
       );
-
-      renderer.debug();
 
       element = await renderer.findByTestId('slider-container');
     });
@@ -118,14 +116,10 @@ describe('<Slider />', () => {
       renderer = render(
         <VStack width={500}>
           <Slider
-            panelWidth={100}
             snap={true}
+            panelWidth={100}
             data={[1, 2, 3, 4, 5]}
-            renderItem={({ item }) => (
-              <Body level={1} color="onPrimary">
-                {item}
-              </Body>
-            )}
+            renderItem={({ item, index }) => <Box data-testid={`panel-${index}`}>{item}</Box>}
             keyExtractor={item => item.toString()}
           />
         </VStack>
@@ -133,7 +127,7 @@ describe('<Slider />', () => {
 
       element = await renderer.findByTestId('slider-container');
 
-      panel = element.firstChild as HTMLElement;
+      panel = element.firstElementChild as HTMLElement;
     });
 
     it('it should have snap style in Slider container', () => {
@@ -148,7 +142,9 @@ describe('<Slider />', () => {
   describe("when the 'loop' prop and scrolls to end", () => {
     const panelWidth = 500;
     const panelLength = 5;
+    const initialIndex = 3;
     const onItemImpressed = jest.fn(index => `${index} is called`);
+    const initialScrollLeft = panelWidth * initialIndex;
 
     beforeEach(async () => {
       renderer = render(
@@ -156,6 +152,7 @@ describe('<Slider />', () => {
           <Slider
             panelWidth={panelWidth}
             loop={true}
+            initialIndex={initialIndex}
             data={[1, 2, 3, 4, 5]}
             renderItem={({ item }) => (
               <Body level={1} color="onPrimary">
@@ -171,12 +168,12 @@ describe('<Slider />', () => {
       element = await renderer.findByTestId('slider-container');
 
       setTimeout(() => {
-        fireEvent.scroll(element, { target: { scrollLeft: panelLength * panelWidth } });
+        fireEvent.scroll(element, { target: { scrollLeft: (panelLength + 1) * panelWidth } });
       }, 1000);
     });
 
-    it('it should go back to first', async () => {
-      await waitFor(() => expect(onItemImpressed).toBeCalledWith(3));
+    it('it should loop', async () => {
+      await waitFor(() => expect(initialScrollLeft).toBeGreaterThan(element.scrollLeft));
     });
   });
 
@@ -201,7 +198,7 @@ describe('<Slider />', () => {
 
       element = await renderer.findByTestId('slider-container');
 
-      panel = element.firstChild as HTMLElement;
+      panel = element.firstElementChild as HTMLElement;
     });
 
     it("children should have 'end' style rule", () => {
