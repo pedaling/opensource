@@ -1,5 +1,6 @@
+import type { AnimationControls } from 'motion';
 import { animate } from 'motion';
-import { cloneElement, useEffect, useMemo, useRef } from 'react';
+import { cloneElement, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
@@ -10,6 +11,7 @@ export const Motion = withMotionVariation(
   ({ innerRef, children, duration, animation, loop, delay, easing = 'easeOutQuad', onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const elementRef = useRef();
+    const animationRef = useRef<AnimationControls>();
     const ref = useComposedRef(innerRef, elementRef);
     const onEndRef = useCallbackRef(onEnd);
 
@@ -36,15 +38,26 @@ export const Motion = withMotionVariation(
         return;
       }
 
-      animate(elementRef.current, keyframes, {
+      animationRef.current = animate(elementRef.current, keyframes, {
         duration: duration ? duration / 1000 : undefined,
         repeat: loop ? Infinity : 0,
         easing: timingFunctions[easing],
         delay: delay ? delay / 1000 : undefined,
-      }).finished.then(() => {
-        onEndRef?.();
       });
-    }, [delay, duration, easing, keyframes, loop, onEndRef]);
+
+      animationRef.current.finished.then(() => onEndRef?.());
+    }, [delay, duration, easing, innerRef, keyframes, loop, onEndRef]);
+
+    useImperativeHandle(
+      innerRef,
+      () => ({
+        start: () => animationRef.current?.play(),
+        pause: () => animationRef.current?.pause(),
+        stop: () => animationRef.current?.stop(),
+        resume: () => animationRef.current?.play(),
+      }),
+      []
+    );
 
     return cloneElement(children, {
       ref,

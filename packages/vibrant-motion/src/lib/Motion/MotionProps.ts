@@ -6,7 +6,7 @@ import type { TransformMotionProps } from '../props/transform';
 import type { Animation } from '../types';
 
 export type MotionRefValue = {
-  start: (options?: { reverse?: boolean; reset?: boolean }) => void;
+  start: () => void;
   pause: () => void;
   stop: () => void;
   resume: () => void;
@@ -15,7 +15,7 @@ export type MotionRefValue = {
 type WithMotion<Style> = { [key in keyof Style]?: Animation<Style[key]> };
 
 export type MotionProps = {
-  ref?: Ref<any>;
+  ref?: Ref<MotionRefValue>;
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
