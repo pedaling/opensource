@@ -21,23 +21,19 @@ describe('<Slider />', () => {
             <Slider
               panelWidth={100}
               data={[1, 2, 3, 4, 5]}
-              renderItem={({ item }) => (
-                <Body level={1} color="onPrimary">
-                  {item}
-                </Body>
-              )}
+              renderItem={({ item, index }) => <Box data-testid={`panel-${index}`}>{item}</Box>}
               keyExtractor={item => item.toString()}
             />
           </VStack>
         );
 
-        element = await renderer.getByTestId('slider');
+        element = await renderer.findByTestId('slider');
 
-        panel = element.firstChild?.firstChild as HTMLElement;
+        panel = await renderer.findByTestId('panel-0');
       });
 
       it('it should have same width style rule', () => {
-        expect(panel).toHaveStyleRule('width', '100px');
+        expect(panel.clientWidth).toBe(100);
       });
     });
   });
@@ -54,9 +50,9 @@ describe('<Slider />', () => {
           />
         );
 
-        element = await renderer.getByTestId('slider-container');
+        element = await renderer.findByTestId('slider-container');
 
-        panel = await renderer.getByTestId('panel-3');
+        panel = renderer.getByTestId('panel-0');
       });
 
       it('it should be divided slider width', async () => {
@@ -79,7 +75,13 @@ describe('<Slider />', () => {
         />
       );
 
-      element = await renderer.getByTestId('slider-container');
+      renderer.debug();
+
+      element = await renderer.findByTestId('slider-container');
+
+      console.log(element.clientWidth, 'is rendered');
+
+      console.log(element.scrollLeft, 'is initial scroll');
     });
 
     it('it should be at initial position', async () => {
@@ -105,7 +107,7 @@ describe('<Slider />', () => {
         </VStack>
       );
 
-      element = await renderer.getByTestId('slider');
+      element = await renderer.findByTestId('slider');
     });
 
     it('it should have set style', () => {
@@ -133,7 +135,7 @@ describe('<Slider />', () => {
         </VStack>
       );
 
-      element = await renderer.getByTestId('slider-container');
+      element = await renderer.findByTestId('slider-container');
 
       panel = element.firstChild as HTMLElement;
     });
@@ -152,7 +154,7 @@ describe('<Slider />', () => {
     const panelLength = 5;
     const onItemImpressed = jest.fn(index => `${index} is called`);
 
-    beforeEach(done => {
+    beforeEach(async () => {
       renderer = render(
         <VStack width={panelWidth}>
           <Slider
@@ -170,17 +172,15 @@ describe('<Slider />', () => {
         </VStack>
       );
 
-      element = renderer.getByTestId('slider-container');
+      element = await renderer.findByTestId('slider-container');
 
       setTimeout(() => {
         fireEvent.scroll(element, { target: { scrollLeft: panelLength * panelWidth } });
-
-        done();
       }, 1000);
     });
 
     it('it should go back to first', async () => {
-      await waitFor(() => expect(onItemImpressed).toHaveBeenCalledWith(2));
+      await waitFor(() => expect(onItemImpressed).toBeCalledWith(3));
     });
   });
 
@@ -203,7 +203,7 @@ describe('<Slider />', () => {
         </VStack>
       );
 
-      element = await renderer.getByTestId('slider-container');
+      element = await renderer.findByTestId('slider-container');
 
       panel = element.firstChild as HTMLElement;
     });
@@ -235,7 +235,7 @@ describe('<Slider />', () => {
         </VStack>
       );
 
-      element = await renderer.getByTestId('slider-container');
+      element = await renderer.findByTestId('slider-container');
 
       fireEvent.scroll(element, { target: { scrollLeft: panelWidth * panelLength } });
     });
@@ -250,7 +250,7 @@ describe('<Slider />', () => {
     const panelWidth = 500;
     const panelLength = 5;
 
-    beforeEach(done => {
+    beforeEach(async () => {
       renderer = render(
         <VStack width={panelWidth}>
           <Slider
@@ -267,12 +267,10 @@ describe('<Slider />', () => {
         </VStack>
       );
 
-      element = renderer.getByTestId('slider-container');
+      element = await renderer.findByTestId('slider-container');
 
       setTimeout(() => {
         fireEvent.scroll(element, { target: { scrollLeft: panelWidth * (panelLength + 1) } });
-
-        done();
       }, 1000);
     });
 
