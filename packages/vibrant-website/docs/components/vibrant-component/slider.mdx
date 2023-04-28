@@ -8,7 +8,7 @@ Slider 는 입력된 Data 들이 가로 형태로 슬라이드 될 수 있는 �
 
 ```jsx live
 <Slider
-  data={[1,2,3,4,5]}
+  data={[1, 2, 3, 4, 5]}
   panelsPerView={2}
   renderItem={({ item, index }) => (
     <Box
@@ -21,9 +21,9 @@ Slider 는 입력된 Data 들이 가로 형태로 슬라이드 될 수 있는 �
       justifyContent="center"
       alignItems="center"
     >
-        <Body level={1} weight="bold">
-          {index}
-        </Body>
+      <Body level={1} weight="bold">
+        {index}
+      </Body>
     </Box>
   )}
   keyExtractor={(item) => item}
@@ -38,22 +38,22 @@ import { Slider } from '@vibrant-ui/components';
 
 ## Properties
 
-| Prop                        | Type                                         | Default | Description                                                      |
-| --------------------------- | -------------------------------------------- | ------- | ---------------------------------------------------------------- |
-| renderItem (\*)             | () => ReactElement \| null                   |         | `data`로부터 아이템을 받아 리스트에 렌더할 요소를 지정합니다     |
-| data (\*)                   | array                                        |         | 배열 형태로 `renderItem`으로 전달될 아이템의 리스트를 지정합니다 |
-| keyExtractor (\*)           | (item: Data, index: number) => string        |         | 주어진 아이템에 대한 키를 지정합니다                             |
-| onItemImpressed             | (item: Data, index: number \| null) => void; |         | 아이템이 화면에 보이는 순간 호출되는 콜백함수                    |
-| onEndReached                | () => void;                                  |         | 리스트의 끝에 도달했을 때 호출되는 콜백함수                      |
-| width | `number` |  100%  |  Slider 의 width 를 지정합니다 |
-| spacing | `number` |   | Panel 간의 간격을 지정합니다 |
-| px | `number` |   | Slider 안쪽의 padding horizontal 값을 지정합니다 | 
-| loop | `boolean` | false |  Slider 를 처음과 끝에서 이동했을때 무한으로 이어질 수 있는가 여부의 설정값을 지정합니다 | 
-| snap | `boolean` | false | 각 Panel 이 화면에 완전히 보여질 때까지 스크롤을 멈추는 설정값을 지정합니다 |
-| snapAlignment | `center` \| `end` \| `start` | `center` | snap 이 활성화 되었을 때, snap 되는 위치를 지정합니다 |
-| initialIndex | `number` | 0 | 초기에 보여질 Panel 의 index 를 지정합니다 |
-| [panelsPerView\(\*\)](###PanelWidth) | `number` | - | 화면에 보여질 Panel 의 개수를 지정합니다 |
-| [panelWidth\(\*\)](###PanelWidth) | `number` | - | Panel 의 width 를 지정합니다 |
+| Prop                                 | Type                                         | Default  | Description                                                                             |
+| ------------------------------------ | -------------------------------------------- | -------- | --------------------------------------------------------------------------------------- |
+| renderItem (\*)                      | () => ReactElement \| null                   |          | `data`로부터 아이템을 받아 리스트에 렌더할 요소를 지정합니다                            |
+| data (\*)                            | array                                        |          | 배열 형태로 `renderItem`으로 전달될 아이템의 리스트를 지정합니다                        |
+| keyExtractor (\*)                    | (item: Data, index: number) => string        |          | 주어진 아이템에 대한 키를 지정합니다                                                    |
+| onItemImpressed                      | (item: Data, index: number \| null) => void; |          | 아이템이 화면에 보이는 순간 호출되는 콜백함수                                           |
+| onEndReached                         | () => void;                                  |          | 리스트의 끝에 도달했을 때 호출되는 콜백함수                                             |
+| width                                | `number`                                     | 100%     | Slider 의 width 를 지정합니다                                                           |
+| spacing                              | `number`                                     |          | Panel 간의 간격을 지정합니다                                                            |
+| px                                   | `number`                                     |          | Slider 안쪽의 padding horizontal 값을 지정합니다                                        |
+| loop                                 | `boolean`                                    | false    | Slider 를 처음과 끝에서 이동했을때 무한으로 이어질 수 있는가 여부의 설정값을 지정합니다 |
+| snap                                 | `boolean`                                    | false    | 각 Panel 이 화면에 완전히 보여질 때까지 스크롤을 멈추는 설정값을 지정합니다             |
+| snapAlignment                        | `center` \| `end` \| `start`                 | `center` | snap 이 활성화 되었을 때, snap 되는 위치를 지정합니다                                   |
+| initialIndex                         | `number`                                     | 0        | 초기에 보여질 Panel 의 index 를 지정합니다                                              |
+| [panelsPerView\(\*\)](###PanelWidth) | `number`                                     | -        | 화면에 보여질 Panel 의 개수를 지정합니다                                                |
+| [panelWidth\(\*\)](###PanelWidth)    | `number`                                     | -        | Panel 의 width 를 지정합니다                                                            |
 
 ## Usage
 
@@ -67,7 +67,7 @@ Slider 의 Panel Width 는 두가지 방법으로 설정할 수 있습니다.
 
 ```jsx live
 <Slider
-  data={[1,2,3,4,5,6]}
+  data={[1, 2, 3, 4, 5, 6]}
   panelsPerView={3}
   renderItem={({ item, index }) => (
     <Box
@@ -80,9 +80,9 @@ Slider 의 Panel Width 는 두가지 방법으로 설정할 수 있습니다.
       justifyContent="center"
       alignItems="center"
     >
-        <Body level={1} weight="bold">
-          {index}
-        </Body>
+      <Body level={1} weight="bold">
+        {index}
+      </Body>
     </Box>
   )}
   keyExtractor={(item) => item}
@@ -93,7 +93,7 @@ Slider 의 Panel Width 는 두가지 방법으로 설정할 수 있습니다.
 
 ```jsx live
 <Slider
-  data={[1,2,3,4,5,6]}
+  data={[1, 2, 3, 4, 5, 6]}
   panelWidth={100}
   renderItem={({ item, index }) => (
     <Box
@@ -106,9 +106,9 @@ Slider 의 Panel Width 는 두가지 방법으로 설정할 수 있습니다.
       justifyContent="center"
       alignItems="center"
     >
-        <Body level={1} weight="bold">
-          {index}
-        </Body>
+      <Body level={1} weight="bold">
+        {index}
+      </Body>
     </Box>
   )}
   keyExtractor={(item) => item}
