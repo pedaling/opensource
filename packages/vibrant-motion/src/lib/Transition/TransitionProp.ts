@@ -3,7 +3,6 @@ import type { AllSystemProps } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
-import type { AnimationResult } from '../types';
 
 type TransitionProps = {
   children: ReactElement;
@@ -12,8 +11,7 @@ type TransitionProps = {
   style?: any;
   ref?: Ref<any>;
   easing?: keyof EasingDictionary;
-  onStart?: (e: AnimationResult) => void;
-  onEnd?: (e: AnimationResult) => void;
+  onEnd?: () => void;
 };
 
 export const withTransitionVariation = withVariation<TransitionProps>('Transition')();
