@@ -75,3 +75,4 @@ export { CustomizationProvider } from './lib/CustomizationProvider';
 export type { CustomizationProviderProps, Configurations } from './lib/CustomizationProvider';
 export { Radio, useRadio } from './lib/Radio';
 export { RadioGroupField } from './lib/RadioGroupField';
+export { Slider } from './lib/Slider';
