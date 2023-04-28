@@ -6,7 +6,7 @@ import type { Either } from '@vibrant-ui/utils';
 export type SliderProps<Data> = {
   data: Data[];
   renderItem: (_: { item: Data; index: number }) => ReactElement | null;
-  keyExtractor: (item: Data) => string;
+  keyExtractor: (_: { item: Data; index: number }) => string;
   onEndReached?: () => void;
   onItemImpressed?: (item: Data, index: number | null) => void;
   width?: ResponsiveValue<number>;
