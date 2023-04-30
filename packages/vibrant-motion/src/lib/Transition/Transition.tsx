@@ -1,4 +1,4 @@
-import { cloneElement, useEffect, useMemo, useRef } from 'react';
+import { cloneElement, useEffect, useMemo, useRef, useState } from 'react';
 import { useInterpolation } from '@vibrant-ui/core';
 import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
 import { withTransitionVariation } from './TransitionProp';
@@ -9,17 +9,15 @@ export const Transition = withTransitionVariation(
 
     const elementRef = useRef<HTMLElement>(null);
     const composedRef = useComposedRef(innerRef, elementRef);
-    const onEndRef = useCallbackRef(onEnd);
+    const interpolationRef = useCallbackRef(interpolation);
+    const [animationStyle, setAnimationStyle] = useState(interpolation(animation));
 
     useEffect(() => {
-      elementRef.current?.addEventListener('transitionend', () => {
-        onEndRef?.();
-      });
-    }, [onEndRef]);
+      requestAnimationFrame(() => setAnimationStyle(interpolationRef(animation)));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [JSON.stringify(animation), interpolationRef]);
 
-    const animationStyle = useMemo(() => interpolation(animation), [animation, interpolation]);
     const currentStyle = useMemo(() => interpolation(style), [style, interpolation]);
-
     const properties = Object.keys(animationStyle).join(',');
 
     return cloneElement(children, {
