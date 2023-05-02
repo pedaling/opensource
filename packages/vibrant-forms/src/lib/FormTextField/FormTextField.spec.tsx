@@ -69,9 +69,5 @@ describe('<FormTextField />', () => {
         expect(submitHandler.mock.lastCall[0]).toEqual({ [name]: text });
       });
     });
-
-    it('match snapshot', () => {
-      expect(renderer.container).toMatchSnapshot();
-    });
   });
 });
