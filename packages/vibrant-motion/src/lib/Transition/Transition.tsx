@@ -1,9 +1,25 @@
 import { cloneElement, useEffect, useMemo, useRef, useState } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
+import { isDefined, useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
 import { transformMotionProps } from '../props/transform';
 import { withTransitionVariation } from './TransitionProp';
+
+const handleTransformStyle = (style: Record<string, any>) => {
+  const { x, y, rotate, ...restStyle } = style;
+
+  if (isDefined(x) || isDefined(y) || isDefined(rotate)) {
+    return {
+      ...restStyle,
+      transform:
+        (isDefined(x) ? `translateX(${x}px) ` : '') +
+        (isDefined(y) ? `translateY(${y}px) ` : '') +
+        (isDefined(rotate) ? `rotate(${rotate})` : ''),
+    };
+  }
+
+  return style;
+};
 
 export const Transition = withTransitionVariation(
   ({ innerRef, children, style, animation, duration = 200, easing = 'easeOutQuad', onEnd }) => {
@@ -15,8 +31,10 @@ export const Transition = withTransitionVariation(
     const { getResponsiveValue } = useResponsiveValue();
     const onEndRef = useCallbackRef(onEnd);
     const [animationStyle, setAnimationStyle] = useState(
-      interpolation(
-        Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
+      handleTransformStyle(
+        interpolation(
+          Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
+        )
       )
     );
 
@@ -35,15 +53,17 @@ export const Transition = withTransitionVariation(
     useEffect(() => {
       requestAnimationFrame(() =>
         setAnimationStyle(
-          interpolationRef(
-            Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
+          handleTransformStyle(
+            interpolationRef(
+              Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
+            )
           )
         )
       );
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [JSON.stringify(animation), interpolationRef]);
 
-    const currentStyle = useMemo(() => interpolation(style), [style, interpolation]);
+    const currentStyle = useMemo(() => handleTransformStyle(interpolation(style)), [style, interpolation]);
     const properties = Object.keys(animationStyle).join(',');
 
     return cloneElement(children, {
