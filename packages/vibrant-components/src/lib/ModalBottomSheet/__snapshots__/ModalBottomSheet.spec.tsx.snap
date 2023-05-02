@@ -369,14 +369,14 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
           >
             <span
               class="emotion-5"
-              style="opacity: 1; transition-property: opacity; transition-duration: 200ms;"
+              style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
             />
           </div>
           <div
             class="emotion-6"
             data-testid="modal-bottom-sheet"
             role="dialog"
-            style="transition-property: opacity; transition-duration: 200ms;"
+            style="transform: translateY(0px); transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1); transition-property: transform;"
           >
             <div
               class="emotion-7"
@@ -392,7 +392,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
                 >
                   <span
                     class="emotion-5"
-                    style="opacity: 1; transition-property: opacity; transition-duration: 200ms;"
+                    style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
                   >
                     <svg
                       class="emotion-11"
