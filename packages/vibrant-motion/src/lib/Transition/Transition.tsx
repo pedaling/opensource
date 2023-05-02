@@ -13,11 +13,24 @@ export const Transition = withTransitionVariation(
     const composedRef = useComposedRef(innerRef, elementRef);
     const interpolationRef = useCallbackRef(interpolation);
     const { getResponsiveValue } = useResponsiveValue();
+    const onEndRef = useCallbackRef(onEnd);
     const [animationStyle, setAnimationStyle] = useState(
       interpolation(
         Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
       )
     );
+
+    useEffect(() => {
+      if (!elementRef.current) {
+        return;
+      }
+
+      const element = elementRef.current;
+
+      element.addEventListener('transitionend', onEndRef);
+
+      return () => element.removeEventListener('transitionend', onEndRef);
+    }, [onEndRef]);
 
     useEffect(() => {
       requestAnimationFrame(() =>
