@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.56.0...vibrant-motion-0.57.0) (2023-05-02)
+
+
+### Features
+
+* Motion 컴포넌트를 motion 라이브러리를 사용해서 구현한다  ([#692](https://github.com/pedaling/opensource/issues/692)) ([b997bbc](https://github.com/pedaling/opensource/commit/b997bbcf9bb314b02b90e4de93da98e619b819a9))
+
 ## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.55.0...vibrant-motion-0.56.0) (2023-04-26)
 
 ## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.54.2...vibrant-motion-0.55.0) (2023-04-25)
