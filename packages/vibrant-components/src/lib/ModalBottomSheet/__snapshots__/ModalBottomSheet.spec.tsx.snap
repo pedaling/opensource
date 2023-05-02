@@ -369,14 +369,14 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
           >
             <span
               class="emotion-5"
-              style="opacity: 1;"
+              style="opacity: 1; transition-property: opacity; transition-duration: 200ms;"
             />
           </div>
           <div
             class="emotion-6"
             data-testid="modal-bottom-sheet"
             role="dialog"
-            style=""
+            style="transition-property: opacity; transition-duration: 200ms;"
           >
             <div
               class="emotion-7"
@@ -392,7 +392,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
                 >
                   <span
                     class="emotion-5"
-                    style="opacity: 1;"
+                    style="opacity: 1; transition-property: opacity; transition-duration: 200ms;"
                   >
                     <svg
                       class="emotion-11"
@@ -788,14 +788,14 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
           >
             <span
               class="emotion-5"
-              style="opacity: 1;"
+              style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
             />
           </div>
           <div
             class="emotion-6"
             data-testid="modal-bottom-sheet"
             role="dialog"
-            style="opacity: 1;"
+            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             <div
               class="emotion-7"
@@ -811,7 +811,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
                 >
                   <span
                     class="emotion-5"
-                    style="opacity: 1;"
+                    style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
                   >
                     <svg
                       class="emotion-11"

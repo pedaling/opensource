@@ -248,7 +248,7 @@ describe('<ModalBottomSheet />', () => {
     });
 
     it('match snapshot', async () => {
-      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe(''));
+      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe('translateY(0px)'));
 
       expect(renderer.container).toMatchSnapshot();
     });
