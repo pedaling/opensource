@@ -1,14 +1,15 @@
 import type { AnimationControls } from 'motion';
 import { animate } from 'motion';
-import { cloneElement, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
+import { cloneElement, useImperativeHandle, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
+import { useCallbackRef, useComposedRef, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
 import { transformMotionProps } from '../props/transform';
+import { handleTransformStyle } from '../utils/handleTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, animation, loop, delay, easing = 'easeOutQuad', onEnd }) => {
+  ({ innerRef, children, duration, from, to, loop, delay, easing = 'easeOutQuad', onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const elementRef = useRef();
     const animationRef = useRef<AnimationControls>();
@@ -20,22 +21,26 @@ export const Motion = withMotionVariation(
     const onEndRef = useCallbackRef(onEnd);
 
     const keyframes = useMemo(
-      () =>
-        Object.entries(animation).reduce(
-          (acc, [key, value]) => ({
-            ...acc,
-            [key]: [
-              interpolationRef({ [key]: getResponsiveValueRef(value.from) })[key],
-              interpolationRef({ [key]: getResponsiveValueRef(value.to) })[key],
-            ],
-          }),
-          {}
-        ),
+      () => {
+        const fromStyle = handleTransformStyle(
+          interpolation(
+            Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
+          )
+        );
+
+        const toStyle = handleTransformStyle(
+          interpolation(Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)])))
+        );
+
+        return Object.fromEntries(
+          Object.entries(fromStyle).map(([property]) => [property, [fromStyle[property], toStyle[property]]])
+        );
+      },
       // eslint-disable-next-line react-hooks/exhaustive-deps
-      [JSON.stringify(animation), getResponsiveValueRef, interpolationRef]
+      [JSON.stringify(from), JSON.stringify(to), getResponsiveValueRef, interpolationRef]
     );
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       if (!elementRef.current) {
         return;
       }
