@@ -5,13 +5,12 @@ import { useObjectMemo, useSafeDeps } from '@vibrant-ui/utils';
 import { easings } from '../constants';
 import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
-import type { AnimationResult } from '../types';
 import { useReactSpring } from '../useReactSpring';
 import { withTransformStyle } from '../withTransformStyle';
 import { withTransitionVariation } from './TransitionProp';
 
 export const Transition = withTransitionVariation(
-  ({ innerRef, children, style, animation, duration, easing = 'easeOutQuad', onStart, onEnd, ...restProps }) => {
+  ({ innerRef, children, style, animation, duration, easing = 'easeOutQuad', onEnd, ...restProps }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const { animated } = useReactSpring();
     const onEndRef = useSafeDeps(onEnd);
@@ -40,12 +39,11 @@ export const Transition = withTransitionVariation(
           duration,
           easing: easing && easings[easing],
         },
-        onStart,
-        onRest: (result: AnimationResult) => {
-          onEndRef.current?.(result);
+        onRest: () => {
+          onEndRef.current?.();
         },
       }),
-      [currentStyle, duration, easing, onEndRef, onStart]
+      [currentStyle, duration, easing, onEndRef]
     );
 
     const [styles, springApi] = useSpring(() => ({ from: interpolation(animation) }));
