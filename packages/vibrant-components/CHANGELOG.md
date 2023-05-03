@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.57.0...vibrant-components-0.57.1) (2023-05-03)
+
+
+### Performance Improvements
+
+* Motion의 사용성을 개선한다 ([#699](https://github.com/pedaling/opensource/issues/699)) ([a25a734](https://github.com/pedaling/opensource/commit/a25a7344c1fa5d682e6f6d7031584d90bc5d3ed2))
+
 ## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.56.0...vibrant-components-0.57.0) (2023-05-02)
 
 
