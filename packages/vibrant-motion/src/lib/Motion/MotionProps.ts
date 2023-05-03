@@ -42,7 +42,6 @@ export const withMotionVariation = withVariation<MotionProps>('Motion')(
     ) as { from: Record<keyof Omit<MotionProps, 'base'>, any>; to: Record<keyof Omit<MotionProps, 'base'>, any> };
 
     return {
-      animation,
       from,
       to,
       ...restProps,
