@@ -1,8 +1,8 @@
 import type { AnimationControls } from 'motion';
 import { animate } from 'motion';
-import { cloneElement, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
+import { cloneElement, useImperativeHandle, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
+import { useCallbackRef, useComposedRef, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
 import { transformMotionProps } from '../props/transform';
 import { handleTransformStyle } from '../utils/handleTransformStyle';
@@ -40,7 +40,7 @@ export const Motion = withMotionVariation(
       [JSON.stringify(from), JSON.stringify(to), getResponsiveValueRef, interpolationRef]
     );
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       if (!elementRef.current) {
         return;
       }
