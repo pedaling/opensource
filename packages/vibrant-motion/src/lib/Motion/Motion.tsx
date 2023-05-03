@@ -22,10 +22,8 @@ export const Motion = withMotionVariation(
 
     const keyframes = useMemo(
       () => {
-        const fromStyle = handleTransformStyle(
-          interpolation(
-            Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
-          )
+        const fromStyle = interpolation(
+          Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
         );
 
         const toStyle = handleTransformStyle(

@@ -6,10 +6,11 @@ export const handleTransformStyle = (style: Record<string, any>) => {
   if (isDefined(x) || isDefined(y) || isDefined(rotate)) {
     return {
       ...restStyle,
-      transform:
-        (isDefined(x) ? `translateX(${x}px) ` : '') +
-        (isDefined(y) ? `translateY(${y}px) ` : '') +
-        (isDefined(rotate) ? `rotate(${rotate})` : ''),
+      transform: {
+        ...(isDefined(x) ? { translateX: x } : {}),
+        ...(isDefined(y) ? { translateY: y } : {}),
+        ...(isDefined(rotate) ? { rotate } : {}),
+      },
     };
   }
 

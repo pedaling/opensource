@@ -4,6 +4,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
 import type { Animation } from '../types';
+import { handleTransformStyle } from '../utils/handleTransformStyle';
 
 export type MotionRefValue = {
   start: () => void;
@@ -42,8 +43,8 @@ export const withMotionVariation = withVariation<MotionProps>('Motion')(
     ) as { from: Record<keyof Omit<MotionProps, 'base'>, any>; to: Record<keyof Omit<MotionProps, 'base'>, any> };
 
     return {
-      from,
-      to,
+      from: handleTransformStyle(from),
+      to: handleTransformStyle(to),
       ...restProps,
     };
   },

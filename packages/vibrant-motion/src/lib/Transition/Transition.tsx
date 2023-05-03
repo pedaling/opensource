@@ -31,10 +31,8 @@ export const Transition = withTransitionVariation(
     const { getResponsiveValue } = useResponsiveValue();
     const onEndRef = useCallbackRef(onEnd);
     const [animationStyle, setAnimationStyle] = useState(
-      handleTransformStyle(
-        interpolation(
-          Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
-        )
+      interpolation(
+        Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
       )
     );
 
@@ -53,10 +51,8 @@ export const Transition = withTransitionVariation(
     useEffect(() => {
       requestAnimationFrame(() =>
         setAnimationStyle(
-          handleTransformStyle(
-            interpolationRef(
-              Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
-            )
+          interpolationRef(
+            Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
           )
         )
       );
