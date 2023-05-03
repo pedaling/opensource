@@ -89,7 +89,6 @@ exports[`<Spinner /> when Spinner rendered match snapshot 1`] = `
     />
     <span
       class="emotion-2"
-      style="transform: rotate(var(--motion-rotate));"
     />
   </span>
 </div>
