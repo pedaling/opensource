@@ -5,7 +5,7 @@ import type { Rect } from '@vibrant-ui/utils';
 import { getElementRect } from '@vibrant-ui/utils';
 import { Box } from '../Box';
 import { PortalBox } from '../PortalBox';
-import { useWindowDimensions } from '../useWindowDimensions';
+import { useWindowDimensions } from '../WindowDimensionsProvider';
 import { withOverlayBoxVariation } from './OverlayBoxProps';
 
 export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, targetRef, children, ...boxProps }) => {
