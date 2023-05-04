@@ -10,7 +10,7 @@ const WindowDimensionsContext = createContext<WindowDimensionsContextValue>({
 });
 
 export const WindowDimensionsProvider: FC<{ children: ReactElementChild }> = ({ children }) => {
-  const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>(()=> getWindowDimensions());
+  const [windowDimensions, setWindowDimensions] = useState<WindowDimensions>(() => getWindowDimensions());
 
   useEffect(() => {
     function handleWindowResize() {
