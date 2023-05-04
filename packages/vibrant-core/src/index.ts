@@ -44,7 +44,7 @@ export type {
   ScrollSystemProps,
 } from './lib/props';
 export { propVariant } from './lib/propVariant';
-export { NativeBreakpointProvider, useNativeBreakpoint } from './lib/NativeBreakpointProvider';
+export { WindowDimensionsProvider, useWindowDimensions } from './lib/WindowDimensionsProvider';
 export { withVariation } from './lib/withVariation';
 export type { ComponentWithRef } from './lib/withVariation';
 export { ThemeProvider, useCurrentTheme, useCurrentThemeMode } from './lib/ThemeProvider';
@@ -69,7 +69,6 @@ export { PortalBox } from './lib/PortalBox';
 export { isNative } from './lib/isNative';
 export { KeyboardAvoidingBox } from './lib/KeyboardAvoidingBox';
 export { ScrollBox } from './lib/ScrollBox';
-export { useWindowDimensions } from './lib/useWindowDimensions';
 export { SafeAreaProvider, useSafeArea } from './lib/SafeAreaProvider';
 export type { Edge, Insets, MinInsets } from './lib/SafeAreaProvider';
 export { PortalRootProvider, usePortalRoot } from './lib/PortalRoot';
