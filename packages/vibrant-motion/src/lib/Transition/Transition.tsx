@@ -1,29 +1,13 @@
 import { cloneElement, useEffect, useMemo, useRef, useState } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { isDefined, useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
+import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
-import { transformMotionProps } from '../props/transform';
+import { handleTransformStyle } from '../utils/handleTransformStyle';
 import { withTransitionVariation } from './TransitionProp';
 
-const handleTransformStyle = (style: Record<string, any>) => {
-  const { x, y, rotate, ...restStyle } = style;
-
-  if (isDefined(x) || isDefined(y) || isDefined(rotate)) {
-    return {
-      ...restStyle,
-      transform:
-        (isDefined(x) ? `translateX(${x}px) ` : '') +
-        (isDefined(y) ? `translateY(${y}px) ` : '') +
-        (isDefined(rotate) ? `rotate(${rotate})` : ''),
-    };
-  }
-
-  return style;
-};
-
 export const Transition = withTransitionVariation(
-  ({ innerRef, children, style, animation, duration = 200, easing = 'easeOutQuad', onEnd }) => {
-    const { interpolation } = useInterpolation(transformMotionProps);
+  ({ innerRef, children, style = {}, animation, duration = 200, easing = 'easeOutQuad', onEnd }) => {
+    const { interpolation } = useInterpolation();
 
     const elementRef = useRef<HTMLElement>(null);
     const composedRef = useComposedRef(innerRef, elementRef);
@@ -59,7 +43,7 @@ export const Transition = withTransitionVariation(
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [JSON.stringify(animation), interpolationRef]);
 
-    const currentStyle = useMemo(() => handleTransformStyle(interpolation(style)), [style, interpolation]);
+    const currentStyle = useMemo(() => interpolation(handleTransformStyle(style)), [style, interpolation]);
     const properties = Object.keys(animationStyle).join(',');
 
     return cloneElement(children, {

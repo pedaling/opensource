@@ -1,6 +1,6 @@
 import type { ReactElement, Ref } from 'react';
 import type { AllSystemProps } from '@vibrant-ui/core';
-import { propVariant, withVariation } from '@vibrant-ui/core';
+import { isNative, propVariant, withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
 import { handleTransformStyle } from '../utils/handleTransformStyle';
@@ -23,7 +23,7 @@ export const withTransitionVariation = withVariation<TransitionProps>('Transitio
       },
     ],
     variants: ({ animation }) => ({
-      animation: handleTransformStyle(animation),
+      animation: isNative ? animation : handleTransformStyle(animation),
     }),
   })
 );

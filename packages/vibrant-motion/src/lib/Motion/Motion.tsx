@@ -4,13 +4,12 @@ import { cloneElement, useImperativeHandle, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { useCallbackRef, useComposedRef, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
-import { transformMotionProps } from '../props/transform';
 import { handleTransformStyle } from '../utils/handleTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
   ({ innerRef, children, duration, from, to, loop, delay, easing = 'easeOutQuad', onEnd }) => {
-    const { interpolation } = useInterpolation(transformMotionProps);
+    const { interpolation } = useInterpolation();
     const elementRef = useRef();
     const animationRef = useRef<AnimationControls>();
     const ref = useComposedRef(innerRef, elementRef);
