@@ -4,7 +4,6 @@ import { cloneElement, useImperativeHandle, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { useCallbackRef, useComposedRef, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
-import { handleTransformStyle } from '../utils/handleTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
@@ -25,8 +24,8 @@ export const Motion = withMotionVariation(
           Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
         );
 
-        const toStyle = handleTransformStyle(
-          interpolation(Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)])))
+        const toStyle = interpolation(
+          Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)]))
         );
 
         return Object.fromEntries(
