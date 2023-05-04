@@ -1,6 +1,6 @@
 import type { ReactElement, Ref } from 'react';
 import type { AllSystemProps } from '@vibrant-ui/core';
-import { isNative, propVariant, withVariation } from '@vibrant-ui/core';
+import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
 import type { Animation } from '../types';
@@ -43,8 +43,8 @@ export const withMotionVariation = withVariation<MotionProps>('Motion')(
     ) as { from: Record<keyof Omit<MotionProps, 'base'>, any>; to: Record<keyof Omit<MotionProps, 'base'>, any> };
 
     return {
-      from: isNative ? from : handleTransformStyle(from),
-      to: isNative ? to : handleTransformStyle(to),
+      from: handleTransformStyle(from),
+      to: handleTransformStyle(to),
       ...restProps,
     };
   },
