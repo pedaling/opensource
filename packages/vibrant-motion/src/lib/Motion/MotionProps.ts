@@ -21,7 +21,7 @@ export type MotionProps = {
   duration?: number;
   loop?: boolean | 'reverse';
   delay?: number;
-  animation: WithMotion<AllSystemProps & TransformMotionProps>;
+  animation: WithMotion<Omit<AllSystemProps, 'transform'> & TransformMotionProps>;
   easing?: keyof EasingDictionary;
   onEnd?: () => void;
 };

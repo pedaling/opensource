@@ -8,7 +8,7 @@ import { handleTransformStyle } from '../utils/handleTransformStyle';
 type TransitionProps = {
   children: ReactElement;
   duration?: number;
-  animation: AllSystemProps & TransformMotionProps;
+  animation: Omit<AllSystemProps, 'transform'> & TransformMotionProps;
   style?: any;
   ref?: Ref<any>;
   easing?: keyof EasingDictionary;
