@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.57.1...vibrant-core-0.58.0) (2023-05-04)
+
+
+### Bug Fixes
+
+* useWindowDimensions훅을 최상위뷰의 width, height를 리턴하게 변경한다 ([#700](https://github.com/pedaling/opensource/issues/700)) ([ea7e39e](https://github.com/pedaling/opensource/commit/ea7e39e5e942a1708949ebc23be6bdbd7992ccd4))
+
 ### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.57.0...vibrant-core-0.57.1) (2023-05-03)
 
 ## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.56.0...vibrant-core-0.57.0) (2023-05-02)
