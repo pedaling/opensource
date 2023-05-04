@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.58.0...vibrant-motion-0.58.1) (2023-05-04)
+
+
+### Bug Fixes
+
+* 앱에서 motion 네이티브 빌드파일을 보도록 수정한다 ([#701](https://github.com/pedaling/opensource/issues/701)) ([3215ae8](https://github.com/pedaling/opensource/commit/3215ae8be1f5c79960ac5972e679366ae7a27093))
+
 ## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.57.1...vibrant-motion-0.58.0) (2023-05-04)
 
 ### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.57.0...vibrant-motion-0.57.1) (2023-05-03)
