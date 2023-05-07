@@ -12,6 +12,7 @@ export const Backdrop = withBackdropVariation(
     color = 'dim',
     transitionDuration = 0,
     onClick,
+    onDismiss,
     scrollable,
     testId = 'backdrop',
     ...restProps
@@ -43,7 +44,11 @@ export const Backdrop = withBackdropVariation(
           },
         }}
         duration={transitionDuration}
-        onEnd={unmount}
+        onEnd={() => {
+          unmount();
+
+          onDismiss?.();
+        }}
       >
         <PortalBox
           zIndex={zIndex}
