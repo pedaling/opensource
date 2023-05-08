@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { action } from '@vibrant-ui/utils';
+import { action } from '@vibrant-ui/utils/storybook';
 import { BreadCrumb } from '../BreadCrumb';
 import { VStack } from '../VStack';
 import { BreadCrumbs } from './BreadCrumbs';

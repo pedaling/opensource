@@ -2,6 +2,53 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.58.0...vibrant-core-0.58.1) (2023-05-04)
+
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.57.1...vibrant-core-0.58.0) (2023-05-04)
+
+
+### Bug Fixes
+
+* useWindowDimensions훅을 최상위뷰의 width, height를 리턴하게 변경한다 ([#700](https://github.com/pedaling/opensource/issues/700)) ([ea7e39e](https://github.com/pedaling/opensource/commit/ea7e39e5e942a1708949ebc23be6bdbd7992ccd4))
+
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.57.0...vibrant-core-0.57.1) (2023-05-03)
+
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.56.0...vibrant-core-0.57.0) (2023-05-02)
+
+## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.55.0...vibrant-core-0.56.0) (2023-04-26)
+
+
+### Features
+
+* 실제 랜더링 크기가 breakpoint 계산에 쓰이도록 한다 ([#690](https://github.com/pedaling/opensource/issues/690)) ([502fd50](https://github.com/pedaling/opensource/commit/502fd500ea12bea7c2408cfead0a405ce577815e))
+
+## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.54.2...vibrant-core-0.55.0) (2023-04-25)
+
+
+### Features
+
+* Radio, RadioGroupField 컴포넌트를 추가한다 ([#683](https://github.com/pedaling/opensource/issues/683)) ([07a77fa](https://github.com/pedaling/opensource/commit/07a77fad4fbe3d49c5629088ccfd5ddcc81a7ca8))
+
+
+### Bug Fixes
+
+* add tab-index prop to pressable ([#684](https://github.com/pedaling/opensource/issues/684)) ([7c8a0be](https://github.com/pedaling/opensource/commit/7c8a0bedff10933c0f2d5e9025911aa2933138a6))
+* change the operator used by TableMultiSelectFilter ([#682](https://github.com/pedaling/opensource/issues/682)) ([7d26611](https://github.com/pedaling/opensource/commit/7d26611c5e4ec9390e06ad7458ace801a2741fbc))
+
+### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.54.1...vibrant-core-0.54.2) (2023-04-17)
+
+
+### Bug Fixes
+
+* transform unsupported accessiblity prop in native ([#668](https://github.com/pedaling/opensource/issues/668)) ([54db980](https://github.com/pedaling/opensource/commit/54db98058c43b02d3551aaa7c6564ed47d287ec0))
+
+### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.54.0...vibrant-core-0.54.1) (2023-04-13)
+
+
+### Bug Fixes
+
+* if heights.current[position][id] not exsits early return ([#678](https://github.com/pedaling/opensource/issues/678)) ([20b3017](https://github.com/pedaling/opensource/commit/20b3017b3bf3916452fc1f59e6bfd447ee462aa3))
+
 ## [0.54.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.53.7...vibrant-core-0.54.0) (2023-04-12)
 
 

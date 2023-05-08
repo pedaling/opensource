@@ -3,20 +3,18 @@ import { useEffect, useImperativeHandle, useMemo } from 'react';
 import Animated, { interpolate, interpolateColor, useAnimatedStyle } from 'react-native-reanimated';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { transformMotionProps } from '../props/transform';
-import type { AnimationOptions } from '../useAnimation';
 import { useAnimation } from '../useAnimation';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, loop, from, to, delay = 0, easing = 'easeOutQuad', onStart, onEnd }) => {
+  ({ innerRef, children, duration, loop, from, to, delay = 0, easing = 'easeOutQuad', onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
     const { getResponsiveValue } = useResponsiveValue();
     const { progress, startAnimation, stopAnimation, resumeAnimation } = useAnimation({
       loop,
       duration,
       easing,
-      onStart,
       onEnd,
       delay,
     });
@@ -66,8 +64,8 @@ export const Motion = withMotionVariation(
     useImperativeHandle(
       innerRef,
       () => ({
-        start: (startOption: AnimationOptions) => {
-          startAnimation(startOption);
+        start: () => {
+          startAnimation();
         },
         pause: stopAnimation,
         stop: () => {},

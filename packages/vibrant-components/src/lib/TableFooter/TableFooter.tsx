@@ -30,7 +30,7 @@ export const TableFooter = withTableFooterVariation(
     const [currentPage, setCurrentPage] = useControllableState({
       value: page,
       defaultValue: 1,
-      onChange: onPageChange,
+      onValueChange: onPageChange,
     });
 
     const selectPageSizeOption = (pageSize: number) => {

@@ -53,7 +53,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
   const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
     defaultValue: new Set<Data[RowKey]>(),
-    onChange: (value: Set<Data[RowKey]>) => onSelectionChange?.([...value]),
+    onValueChange: (value: Set<Data[RowKey]>) => onSelectionChange?.([...value]),
   });
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));

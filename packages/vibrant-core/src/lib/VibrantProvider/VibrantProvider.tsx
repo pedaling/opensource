@@ -7,6 +7,7 @@ import { SafeAreaProvider } from '../SafeAreaProvider';
 import { StackedPortalProvider } from '../StackedPortalProvider';
 import { ThemeProvider } from '../ThemeProvider';
 import type { ThemeProviderProps } from '../ThemeProvider';
+import { WindowDimensionsProvider } from '../WindowDimensionsProvider';
 
 export type VibrantProviderProps = Partial<ConfigProviderProps & ThemeProviderProps> & {
   children: ReactElementChild;
@@ -34,7 +35,9 @@ export const VibrantProvider: FC<VibrantProviderProps> = ({
             bottom: portalBottomPriorityOrder,
           }}
         >
-          <PortalRootProvider zIndex={portalRootZIndex}>{children}</PortalRootProvider>
+          <PortalRootProvider zIndex={portalRootZIndex}>
+            <WindowDimensionsProvider>{children}</WindowDimensionsProvider>
+          </PortalRootProvider>
         </StackedPortalProvider>
       </ThemeProvider>
     </SafeAreaProvider>

@@ -17,7 +17,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
+  z-index: 100;
 }
 
 .emotion-1 {
@@ -164,7 +164,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   margin-top: auto;
   margin-bottom: 0;
   padding-top: 24px;
-  padding-bottom: 20px;
+  padding-bottom: max(var(--safe-area-inset-bottom, 0px), 20px);
   width: 100%;
   max-width: 446px;
   max-height: 648px;
@@ -346,6 +346,25 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   }
 }
 
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -354,7 +373,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
     <div
       class="emotion-1"
       data-testid="backdrop"
-      style="opacity: 1; position: fixed;"
+      style="position: fixed;"
     >
       <div
         class="emotion-2"
@@ -416,6 +435,10 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
       </div>
     </div>
   </div>
+  <div
+    class="emotion-14"
+    id="portal-root"
+  />
 </div>
 `;
 
@@ -436,7 +459,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
+  z-index: 100;
 }
 
 .emotion-1 {
@@ -583,7 +606,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   margin-top: auto;
   margin-bottom: 0;
   padding-top: 24px;
-  padding-bottom: 20px;
+  padding-bottom: max(var(--safe-area-inset-bottom, 0px), 20px);
   width: 100%;
   max-width: 446px;
   max-height: 648px;
@@ -765,6 +788,25 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   }
 }
 
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -773,7 +815,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
     <div
       class="emotion-1"
       data-testid="backdrop"
-      style="opacity: 1; position: fixed; overflow: auto;"
+      style="position: fixed; overflow: auto;"
     >
       <div
         class="emotion-2"
@@ -835,5 +877,9 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
       </div>
     </div>
   </div>
+  <div
+    class="emotion-14"
+    id="portal-root"
+  />
 </div>
 `;
