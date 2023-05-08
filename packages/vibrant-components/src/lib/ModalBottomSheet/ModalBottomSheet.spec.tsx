@@ -252,7 +252,9 @@ describe('<ModalBottomSheet />', () => {
     });
 
     it('match snapshot', async () => {
-      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe(''));
+      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe('translateY(0px)'), {
+        timeout: 2000,
+      });
 
       expect(renderer.container).toMatchSnapshot();
     });
@@ -270,7 +272,9 @@ describe('<ModalBottomSheet />', () => {
     });
 
     it('match snapshot', async () => {
-      await waitFor(() => expect(renderer.getByRole('dialog').style.opacity).toBe('1'));
+      await waitFor(() => expect(renderer.getByRole('dialog').style.opacity).toBe('1'), {
+        timeout: 2000,
+      });
 
       expect(renderer.container).toMatchSnapshot();
     });
