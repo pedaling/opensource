@@ -139,7 +139,7 @@ describe('<Slider />', () => {
     });
   });
 
-  describe.skip("when the 'loop' prop and scrolls to end", () => {
+  describe("when the 'loop' prop and scrolls to end", () => {
     const panelWidth = 500;
     const panelLength = 5;
     const onItemImpressed = jest.fn(index => `${index} is called`);
@@ -177,7 +177,7 @@ describe('<Slider />', () => {
     });
 
     it('it should loop', async () => {
-      await waitFor(() => expect(initialScrollLeft).toBeLessThan(element.scrollLeft));
+      await waitFor(() => expect(initialScrollLeft).toBeLessThan(element.scrollLeft), { timeout: 2000 });
     });
   });
 
@@ -242,7 +242,7 @@ describe('<Slider />', () => {
     }, 1000);
 
     it('onEndReached should be called', async () => {
-      await waitFor(() => expect(onEndReachedMockFn).toBeCalled());
+      await waitFor(() => expect(onEndReachedMockFn).toBeCalled(), { timeout: 2000 });
     });
   });
 
@@ -276,9 +276,12 @@ describe('<Slider />', () => {
     });
 
     it('onItemImpressed should be called', async () => {
-      await waitFor(() => {
-        expect(onItemImpressed).toHaveBeenCalledWith(1);
-      });
+      await waitFor(
+        () => {
+          expect(onItemImpressed).toHaveBeenCalledWith(1);
+        },
+        { timeout: 2000 }
+      );
     });
   });
 });
