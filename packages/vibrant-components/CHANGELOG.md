@@ -2,6 +2,29 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.58.0...vibrant-components-0.58.1) (2023-05-04)
+
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.57.1...vibrant-components-0.58.0) (2023-05-04)
+
+
+### Bug Fixes
+
+* useWindowDimensions훅을 최상위뷰의 width, height를 리턴하게 변경한다 ([#700](https://github.com/pedaling/opensource/issues/700)) ([ea7e39e](https://github.com/pedaling/opensource/commit/ea7e39e5e942a1708949ebc23be6bdbd7992ccd4))
+
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.57.0...vibrant-components-0.57.1) (2023-05-03)
+
+
+### Performance Improvements
+
+* Motion의 사용성을 개선한다 ([#699](https://github.com/pedaling/opensource/issues/699)) ([a25a734](https://github.com/pedaling/opensource/commit/a25a7344c1fa5d682e6f6d7031584d90bc5d3ed2))
+
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.56.0...vibrant-components-0.57.0) (2023-05-02)
+
+
+### Features
+
+* Motion 컴포넌트를 motion 라이브러리를 사용해서 구현한다  ([#692](https://github.com/pedaling/opensource/issues/692)) ([b997bbc](https://github.com/pedaling/opensource/commit/b997bbcf9bb314b02b90e4de93da98e619b819a9))
+
 ## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.55.0...vibrant-components-0.56.0) (2023-04-26)
 
 ## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.54.2...vibrant-components-0.55.0) (2023-04-25)

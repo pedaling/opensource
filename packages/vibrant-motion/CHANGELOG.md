@@ -2,6 +2,29 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.58.0...vibrant-motion-0.58.1) (2023-05-04)
+
+
+### Bug Fixes
+
+* 앱에서 motion 네이티브 빌드파일을 보도록 수정한다 ([#701](https://github.com/pedaling/opensource/issues/701)) ([3215ae8](https://github.com/pedaling/opensource/commit/3215ae8be1f5c79960ac5972e679366ae7a27093))
+
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.57.1...vibrant-motion-0.58.0) (2023-05-04)
+
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.57.0...vibrant-motion-0.57.1) (2023-05-03)
+
+
+### Performance Improvements
+
+* Motion의 사용성을 개선한다 ([#699](https://github.com/pedaling/opensource/issues/699)) ([a25a734](https://github.com/pedaling/opensource/commit/a25a7344c1fa5d682e6f6d7031584d90bc5d3ed2))
+
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.56.0...vibrant-motion-0.57.0) (2023-05-02)
+
+
+### Features
+
+* Motion 컴포넌트를 motion 라이브러리를 사용해서 구현한다  ([#692](https://github.com/pedaling/opensource/issues/692)) ([b997bbc](https://github.com/pedaling/opensource/commit/b997bbcf9bb314b02b90e4de93da98e619b819a9))
+
 ## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.55.0...vibrant-motion-0.56.0) (2023-04-26)
 
 ## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.54.2...vibrant-motion-0.55.0) (2023-04-25)

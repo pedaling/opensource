@@ -2,12 +2,12 @@ import type { FC } from 'react';
 import type { ReactElementChild } from '../../types';
 import { ConfigProvider } from '../ConfigProvider';
 import type { ConfigProviderProps } from '../ConfigProvider';
-import { NativeBreakpointProvider } from '../NativeBreakpointProvider';
 import { PortalRootProvider } from '../PortalRoot';
 import { SafeAreaProvider } from '../SafeAreaProvider';
 import { StackedPortalProvider } from '../StackedPortalProvider';
 import { ThemeProvider } from '../ThemeProvider';
 import type { ThemeProviderProps } from '../ThemeProvider';
+import { WindowDimensionsProvider } from '../WindowDimensionsProvider';
 
 export type VibrantProviderProps = Partial<ConfigProviderProps & ThemeProviderProps> & {
   children: ReactElementChild;
@@ -36,7 +36,7 @@ export const VibrantProvider: FC<VibrantProviderProps> = ({
           }}
         >
           <PortalRootProvider zIndex={portalRootZIndex}>
-            <NativeBreakpointProvider>{children}</NativeBreakpointProvider>
+            <WindowDimensionsProvider>{children}</WindowDimensionsProvider>
           </PortalRootProvider>
         </StackedPortalProvider>
       </ThemeProvider>

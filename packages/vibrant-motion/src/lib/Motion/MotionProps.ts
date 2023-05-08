@@ -3,10 +3,11 @@ import type { AllSystemProps } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
-import type { Animation, AnimationResult } from '../types';
+import type { Animation } from '../types';
+import { handleTransformStyle } from '../utils/handleTransformStyle';
 
 export type MotionRefValue = {
-  start: (options?: { reverse?: boolean; reset?: boolean }) => void;
+  start: () => void;
   pause: () => void;
   stop: () => void;
   resume: () => void;
@@ -15,15 +16,14 @@ export type MotionRefValue = {
 type WithMotion<Style> = { [key in keyof Style]?: Animation<Style[key]> };
 
 export type MotionProps = {
-  ref?: Ref<any>;
+  ref?: Ref<MotionRefValue>;
   children: ReactElement;
   duration?: number;
   loop?: boolean | 'reverse';
   delay?: number;
-  animation: WithMotion<AllSystemProps & TransformMotionProps>;
+  animation: WithMotion<Omit<AllSystemProps, 'transform'> & TransformMotionProps>;
   easing?: keyof EasingDictionary;
-  onStart?: (e: AnimationResult) => void;
-  onEnd?: (e: AnimationResult) => void;
+  onEnd?: () => void;
 };
 
 export const withMotionVariation = withVariation<MotionProps>('Motion')(
@@ -43,8 +43,8 @@ export const withMotionVariation = withVariation<MotionProps>('Motion')(
     ) as { from: Record<keyof Omit<MotionProps, 'base'>, any>; to: Record<keyof Omit<MotionProps, 'base'>, any> };
 
     return {
-      from,
-      to,
+      from: handleTransformStyle(from),
+      to: handleTransformStyle(to),
       ...restProps,
     };
   },
