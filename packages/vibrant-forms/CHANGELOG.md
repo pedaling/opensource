@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.58.1...vibrant-forms-0.59.0) (2023-05-09)
+
+
+### Features
+
+* Transition 컴포넌트를 css transition 컴포넌트로 구현한다 ([#698](https://github.com/pedaling/opensource/issues/698)) ([b192366](https://github.com/pedaling/opensource/commit/b1923663a2702737849b3f9802613b423a023230))
+
 ### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.58.0...vibrant-forms-0.58.1) (2023-05-04)
 
 ## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.57.1...vibrant-forms-0.58.0) (2023-05-04)
