@@ -14,6 +14,7 @@ export const TableRow = withTableRowVariation(
     selected,
     indeterminate,
     onSelectionChange,
+    onExpandChange,
     expandable,
     expanded = false,
     renderExpanded,
@@ -23,6 +24,7 @@ export const TableRow = withTableRowVariation(
     header,
     children,
     disabled = false,
+    isRenderedWithoutRow = false,
   }) => {
     const [isExpanded, setIsExpanded] = useState(expanded);
     const [rowRect, setRowRect] = useState<Rect>();
@@ -54,6 +56,66 @@ export const TableRow = withTableRowVariation(
 
       updateRowRect();
     }, [overlaid]);
+
+    if (isRenderedWithoutRow && !header) {
+      return (
+        <>
+          <TableRowProvider selected={selected ?? false} bottomBordered={!isExpanded}>
+            {selectable && (
+              <TableCellComponent
+                renderCell={() => (
+                  <Checkbox
+                    size="sm"
+                    defaultValue={selected}
+                    indeterminate={indeterminate}
+                    onValueChange={onSelectionChange}
+                    disabled={disabled}
+                  />
+                )}
+                width={52}
+              />
+            )}
+            {expandable && (
+              <TableCellComponent
+                renderCell={() => (
+                  <IconButton
+                    size="sm"
+                    IconComponent={isExpanded ? Icon.ChevronDown.Regular : Icon.ChevronRight.Regular}
+                    onClick={() => {
+                      setIsExpanded(!isExpanded);
+
+                      onExpandChange?.();
+                    }}
+                    disabled={disabled}
+                  />
+                )}
+                width={48}
+              />
+            )}
+            {children}
+          </TableRowProvider>
+          {overlaid && rowRect && (
+            <Box
+              as="td"
+              colSpan={getColumnsCount()}
+              position="absolute"
+              top={0}
+              left={52}
+              right={0}
+              height={rowRect.height}
+              py={12}
+              px={16}
+              backgroundColor="surface2"
+              borderBottomStyle="solid"
+              borderBottomColor="outline1"
+              borderBottomWidth={1}
+            >
+              {renderOverlay?.()}
+            </Box>
+          )}
+        </>
+      );
+    }
 
     return (
       <>
