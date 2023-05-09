@@ -101,7 +101,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
 
   const tableData = useMemo(() => {
     if (loading) {
-      return Array.from({ length: 4 }, (_, rowIndex) => rowIndex);
+      return Array.from({ length: 4 }, (_, rowIndex) => ({ [rowKey]: rowIndex })) as Data[];
     }
 
     const resultData = [...data];
