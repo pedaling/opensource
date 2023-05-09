@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { ReactElement } from 'react';
-import { Children, isValidElement, useState } from 'react';
+import { Children, isValidElement, useMemo, useState } from 'react';
 import { TableVirtuoso } from 'react-virtuoso';
 import { Box, Image } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
@@ -39,11 +38,9 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
   height = 500,
 }: VirtualizedTableProps<Data, RowKey>) => {
   const columns =
-    (
-      Children.toArray(children).filter(child => isValidElement(child)) as unknown as ReactElement<
-        TableColumnProps<Data>
-      >[]
-    ).map(({ props, key }) => ({ ...props, key: key as string })) ?? [];
+    Children.toArray(children)
+      .filter(isValidElement<TableColumnProps<Data>>)
+      .map(({ props, key }) => ({ ...props, key: key as string })) ?? [];
 
   const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
     defaultValue: new Set<Data[RowKey]>(),
@@ -102,7 +99,11 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
     return columnsNum;
   };
 
-  const rowData = (() => {
+  const tableData = useMemo(() => {
+    if (loading) {
+      return Array.from({ length: 4 }, (_, rowIndex) => rowIndex);
+    }
+
     const resultData = [...data];
 
     let count = 1;
@@ -116,12 +117,18 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
     });
 
     return resultData;
-  })();
+  }, [data, expandedKeys, loading, rowKey]);
 
   const renderItemContent = (index: number, item: Data) => {
     if (loading) {
-      return Array.from({ length: 3 }, (_, rowIndex) => (
-        <TableRow key={rowIndex} disabled={true} selectable={selectable} expandable={isDefined(renderExpanded)}>
+      return Array.from({ length: 1 }, (_, rowIndex) => (
+        <TableRow
+          key={rowIndex}
+          disabled={true}
+          selectable={selectable}
+          expandable={isDefined(renderExpanded)}
+          isRenderedWithoutRow={true}
+        >
           {Array.from({ length: 4 }, (_, columnIndex) => (
             <TableDataCell
               key={columnIndex}
@@ -134,7 +141,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
       ));
     }
 
-    if (index >= 1 && rowData[index - 1][rowKey] === item[rowKey]) {
+    if (index >= 1 && tableData[index - 1][rowKey] === item[rowKey]) {
       return (
         <Box
           as="td"
@@ -223,7 +230,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
   return (
     <TableVirtuoso
       style={{ height, border: '1px solid #00000026' }}
-      data={rowData}
+      data={tableData}
       components={{
         Table: ({ style, ...props }) => (
           <table {...props} style={{ ...style, width: '100%', tableLayout }} data-testid={testId} />
@@ -234,7 +241,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
           header={true}
           selectable={selectable}
           selected={selectedRowKeys.size !== 0}
-          expanded={!loading && rowData.length === 0}
+          expanded={!loading && tableData.length === 0}
           renderExpanded={() => (
             <VStack alignHorizontal="center" mt={32} mb={64}>
               {isDefined(emptyImage) && <Image src={emptyImage} alt="" width={124} height={124} />}
@@ -249,14 +256,14 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
                   key={text}
                   size="md"
                   color="onViewInformative"
-                  onClick={() => onClick(rowData.filter(row => selectedRowKeys.has(row[rowKey])))}
+                  onClick={() => onClick(tableData.filter(row => selectedRowKeys.has(row[rowKey])))}
                 >
                   {text}
                 </GhostButton>
               ))}
             </HStack>
           )}
-          indeterminate={selectedRowKeys.size !== rowData.length}
+          indeterminate={selectedRowKeys.size !== tableData.length}
           onSelectionChange={handleToggleAllCheckbox}
           disabled={loading}
         >
