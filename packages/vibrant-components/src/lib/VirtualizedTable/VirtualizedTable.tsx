@@ -101,7 +101,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
 
   const tableData = useMemo(() => {
     if (loading) {
-      return Array.from({ length: 4 }, (_, rowIndex) => ({ [rowKey]: rowIndex })) as Data[];
+      return Array.from({ length: Math.floor(height / 45) }, (_, rowIndex) => ({ [rowKey]: rowIndex })) as Data[];
     }
 
     const resultData = [...data];
@@ -117,13 +117,12 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
     });
 
     return resultData;
-  }, [data, expandedKeys, loading, rowKey]);
+  }, [data, expandedKeys, height, loading, rowKey]);
 
   const renderItemContent = (index: number, item: Data) => {
     if (loading) {
-      return Array.from({ length: 1 }, (_, rowIndex) => (
+      return (
         <TableRow
-          key={rowIndex}
           disabled={true}
           selectable={selectable}
           expandable={isDefined(renderExpanded)}
@@ -134,11 +133,11 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
               key={columnIndex}
               disabled={true}
               alignHorizontal="start"
-              renderCell={() => <Skeleton width={rowIndex === 1 ? 80 : 104} height={18} />}
+              renderCell={() => <Skeleton width={104} height={18} />}
             />
           ))}
         </TableRow>
-      ));
+      );
     }
 
     if (index >= 1 && tableData[index - 1][rowKey] === item[rowKey]) {

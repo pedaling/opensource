@@ -23,5 +23,5 @@ export type VirtualizedTableProps<Data extends Record<string, any>, RowKey exten
   expandedRowKeys?: Data[RowKey][];
   tableLayout?: 'auto' | 'fixed';
   testId?: string;
-  height?: number | string;
+  height?: number;
 };
