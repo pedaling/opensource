@@ -17,7 +17,7 @@ export const FlatList = withFlatListVariation(
     data,
     renderItem,
     keyExtractor,
-    columns = 1,
+    columns,
     maxRows,
     onItemImpressed,
     onEndReached,
@@ -77,15 +77,17 @@ export const FlatList = withFlatListVariation(
 
     const getResponsiveMarginRight = (index: number) =>
       responsiveColumns.map((column, breakPointIndex) =>
-        index % column === column - 1 ? 0 : responsiveColumnSpacing[breakPointIndex]
+        isDefined(column) ? (index % column === column - 1 ? 0 : responsiveColumnSpacing[breakPointIndex]) : 0
       );
     const getResponsiveMarginTop = (index: number) =>
-      responsiveColumns.map((column, breakPointIndex) => (index < column ? 0 : responsiveRowSpacing[breakPointIndex]));
+      responsiveColumns.map((column, breakPointIndex) =>
+        isDefined(column) ? (index < column ? 0 : responsiveRowSpacing[breakPointIndex]) : 0
+      );
 
     const getResponsiveDisplay = (index: number) =>
       isDefined(responsiveMaxRows)
         ? responsiveColumns.map((column, breakPointIndex) =>
-            index < column * responsiveMaxRows[breakPointIndex] ? 'flex' : 'none'
+            isDefined(column) ? (index < column * responsiveMaxRows[breakPointIndex] ? 'flex' : 'none') : 'none'
           )
         : undefined;
     const currentColumn = getResponsiveValue(columns);
@@ -146,7 +148,9 @@ export const FlatList = withFlatListVariation(
         })}
         renderItem={(itemInfo: { item: any; index: number }) => (
           <FlatListItem
-            flex={horizontal ? undefined : transformResponsiveValue(columns, column => 1 / column)}
+            flex={
+              horizontal ? undefined : isDefined(columns) ? transformResponsiveValue(columns, column => 1 / column) : 1
+            }
             flexShrink={horizontal ? 0 : 1}
             width={computedColumnWidth}
             display={getResponsiveDisplay(itemInfo.index)}

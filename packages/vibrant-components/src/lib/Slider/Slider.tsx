@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useMemo, useState } from 'react';
 import { Box, FlatList, useResponsiveValue } from '@vibrant-ui/core';
 import { withSliderVariation } from './SliderProps';
@@ -41,7 +40,7 @@ export const Slider = withSliderVariation(
         (sliderWidth - computedPaddingX - computedSpacing * (currentPanelsPerView - 1)) /
         Math.max(1, currentPanelsPerView)
       );
-    }, [computedPaddingX, computedSpacing, currentPanelsPerView, panelWidth, sliderWidth]);
+    }, [computedPaddingX, computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, sliderWidth]);
 
     return (
       <Box data-testid={testId} px={px} width={width} onLayout={({ width }) => setSliderWidth(width)}>
