@@ -47,7 +47,7 @@ export const TableFieldFilter = <Operator extends string>({
           size="md"
           onClick={open}
           selected={active}
-          endIcon={<Icon.ArrowTriangleDown.Fill size={16} />}
+          endIcon={<Icon.ArrowTriangleDown.Fill />}
         >
           {label}
         </FilterChip>
