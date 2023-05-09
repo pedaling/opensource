@@ -21,6 +21,11 @@ const positionProp = createSystemProp({
   },
 });
 
+const snapAlignmentProp = createSystemProp({
+  property: 'snapAlignment',
+  styleProperty: 'scrollSnapAlign',
+});
+
 const topProp = createSystemProp({
   property: 'top',
 });
@@ -41,4 +46,12 @@ const zIndexProp = createSystemProp({
   property: 'zIndex',
 });
 
-export const positionSystemProps = [positionProp, topProp, rightProp, bottomProp, leftProp, zIndexProp];
+export const positionSystemProps = [
+  positionProp,
+  topProp,
+  rightProp,
+  bottomProp,
+  leftProp,
+  zIndexProp,
+  snapAlignmentProp,
+];

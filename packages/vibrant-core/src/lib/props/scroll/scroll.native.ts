@@ -10,6 +10,11 @@ const horizontalProp = createSystemProp({
   }),
 });
 
+const scrollSnapProp = createSystemProp({
+  property: 'scrollSnap',
+  disabled: true,
+});
+
 const hideScrollProp = createSystemProp({
   property: 'hideScroll',
   transform: value => ({
@@ -20,4 +25,4 @@ const hideScrollProp = createSystemProp({
   }),
 });
 
-export const scrollSystemProps = [hideScrollProp, horizontalProp];
+export const scrollSystemProps = [hideScrollProp, horizontalProp, scrollSnapProp];
