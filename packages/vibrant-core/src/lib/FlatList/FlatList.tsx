@@ -195,11 +195,15 @@ export const FlatList = withFlatListVariation(
     }, [boundedBuffer, columnWidth, data.length, getResponsiveValue, loop]);
 
     useEffect(() => {
+      if (!horizontal) {
+        return;
+      }
+
       containerRef.current?.scrollTo({
         left: buffedInitialIndex * getResponsiveValue(columnWidth ?? 0),
         behavior: 'auto',
       });
-    }, [buffedInitialIndex, columnWidth, getResponsiveValue, scrollToTargetIndex]);
+    }, [buffedInitialIndex, columnWidth, getResponsiveValue, horizontal, scrollToTargetIndex]);
 
     useEffect(() => {
       if (!horizontal) {
