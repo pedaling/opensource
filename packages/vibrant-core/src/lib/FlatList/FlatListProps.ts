@@ -16,7 +16,7 @@ export type FlatListProps<Data> = {
   onEndReached?: () => void;
   snap?: boolean;
   loop?: boolean;
-  initialIndex?: number; // web only
+  initialIndex?: number;
   snapAlignment?: 'center' | 'end' | 'start';
   hideScroll?: boolean;
 } & Either<

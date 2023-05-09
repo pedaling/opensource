@@ -46,12 +46,18 @@ const data = [
   },
 ];
 
+type Item = {
+  id: string;
+  image: string;
+  color: string;
+};
+
 export default {
   title: 'Slider',
   component: Slider,
   args: {
     data,
-    keyExtractor: ({ item }) => `${item.id}`,
+    keyExtractor: (item, index) => `${item.id} + ${index}`,
     renderItem: ({ item: { id, color } }) => (
       <Box height={240} width="100%" backgroundColor={color} alignItems="center" justifyContent="center">
         <Body level={1} weight="bold">
@@ -69,7 +75,7 @@ export const WithPanelWidthSlider: ComponentStory<typeof Slider> = () => (
     data={data}
     snap={true}
     panelWidth={300}
-    keyExtractor={({ item }) => item.id}
+    keyExtractor={(item, index) => `${item.id} + ${index}`}
     renderItem={({ item: { id, color } }) => (
       <Box height={240} width="100%" backgroundColor={color} alignItems="center" justifyContent="center">
         <Body level={1} weight="bold">
@@ -86,7 +92,7 @@ export const LoopSlider: ComponentStory<typeof Slider> = () => (
     snap={true}
     loop={true}
     panelsPerView={1}
-    keyExtractor={({ item }) => item.id}
+    keyExtractor={(item, index) => `${item.id} + ${index}`}
     renderItem={({ item: { id, color } }) => (
       <Box height={240} width="100%" backgroundColor={color} alignItems="center" justifyContent="center">
         <Body level={1} weight="bold">
@@ -102,7 +108,7 @@ export const WithInitialIndex: ComponentStory<typeof Slider> = () => (
     data={data}
     initialIndex={2}
     panelsPerView={1}
-    keyExtractor={({ item }) => item.id}
+    keyExtractor={(item, index) => `${item.id} + ${index}`}
     renderItem={({ item: { id, color } }) => (
       <Box height={240} width="100%" backgroundColor={color} alignItems="center" justifyContent="center">
         <Body level={1} weight="bold">

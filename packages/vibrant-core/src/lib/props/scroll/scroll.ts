@@ -8,9 +8,7 @@ const horizontalProp = createSystemProp({
 
 const scrollSnapProp = createSystemProp({
   property: 'scrollSnap',
-  transform: (value: boolean) => ({
-    scrollSnapType: value ? 'x mandatory' : 'none',
-  }),
+  styleProperty: 'scrollSnapType',
 });
 
 const hideScrollProp = createSystemProp({

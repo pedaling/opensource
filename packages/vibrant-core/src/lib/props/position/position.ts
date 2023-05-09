@@ -23,7 +23,7 @@ const positionProp = createSystemProp({
 
 const snapAlignmentProp = createSystemProp({
   property: 'snapAlignment',
-  transform: (value: 'center' | 'end' | 'start') => ({ scrollSnapAlign: value }),
+  styleProperty: 'scrollSnapAlign',
 });
 
 const topProp = createSystemProp({

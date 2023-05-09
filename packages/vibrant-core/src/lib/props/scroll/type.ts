@@ -1,7 +1,7 @@
 import type { ResponsiveValue } from '../../../types';
 
 export type ScrollSystemProps = {
-  scrollSnap?: ResponsiveValue<boolean>;
+  scrollSnap?: ResponsiveValue<string>;
   horizontal?: ResponsiveValue<boolean>;
   hideScroll?: ResponsiveValue<boolean>;
 };

@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import type { ReactElement } from 'react';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { isDefined } from '@vibrant-ui/utils';
@@ -251,7 +252,7 @@ export const FlatList = withFlatListVariation(
         width="100%"
         flexDirection="row"
         flexWrap={horizontal ? 'nowrap' : 'wrap'}
-        scrollSnap={snap}
+        scrollSnap={snap ? 'x mandatory' : 'none'}
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}
