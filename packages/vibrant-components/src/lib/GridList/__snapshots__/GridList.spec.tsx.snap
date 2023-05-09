@@ -23,6 +23,7 @@ exports[`<GridList /> when the 'breakpoints' prop provided other responsive prop
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  scroll-snap-type: none;
   -webkit-column-gap: 0;
   column-gap: 0;
   row-gap: 0;
