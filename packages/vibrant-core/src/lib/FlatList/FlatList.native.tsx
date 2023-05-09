@@ -103,6 +103,28 @@ export const FlatList = withFlatListVariation(
       [boundedBuffer, computedColumnWidth, computedSpacing, data.length, scrollToIndex]
     );
 
+    const handleOnScroll = useCallback(
+      (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
+
+        if (newPage < 0 || newPage >= buffedData.length) {
+          return;
+        }
+
+        currentIndexRef.current = newPage;
+      },
+      [buffedData.length, computedColumnWidth, computedSpacing]
+    );
+
+    const handleScrollEnd = useCallback(
+      (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        if (loop) {
+          handleLoop(event);
+        }
+      },
+      [handleLoop, loop]
+    );
+
     return (
       <NativeFlatList
         ref={ref}
@@ -136,23 +158,13 @@ export const FlatList = withFlatListVariation(
           </FlatListItem>
         )}
         onViewableItemsChanged={isDefined(onItemImpressed) ? handleViewableItemChange : undefined}
-        keyExtractor={(item: any, index: number) => `${keyExtractor(item, index)}-${index}`}
+        keyExtractor={(item: any, index: number) =>
+          horizontal ? `${keyExtractor(item, index)}-${index}` : keyExtractor(item, index)
+        }
         numColumns={currentColumn}
         onEndReached={onEndReached}
-        onScroll={event => {
-          const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
-
-          if (newPage < 0 || newPage >= buffedData.length) {
-            return;
-          }
-
-          currentIndexRef.current = newPage;
-        }}
-        onMomentumScrollEnd={event => {
-          if (loop) {
-            handleLoop(event);
-          }
-        }}
+        onScroll={handleOnScroll}
+        onMomentumScrollEnd={handleScrollEnd}
         {...props}
       />
     );

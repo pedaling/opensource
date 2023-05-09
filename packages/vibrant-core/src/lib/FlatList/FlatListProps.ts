@@ -21,7 +21,7 @@ export type FlatListProps<Data> = {
   hideScroll?: boolean;
 } & Either<
   {
-    horizontal: false;
+    horizontal?: false;
     columns: ResponsiveValue<number>;
     columnWidth?: never;
   },

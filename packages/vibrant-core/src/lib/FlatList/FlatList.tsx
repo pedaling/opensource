@@ -22,7 +22,7 @@ export const FlatList = withFlatListVariation(
     data,
     renderItem,
     keyExtractor,
-    columns = 1,
+    columns,
     columnWidth,
     maxRows,
     columnSpacing = 0,
@@ -45,7 +45,7 @@ export const FlatList = withFlatListVariation(
 
     const getResponsiveDisplay = useCallback(
       (index: number) =>
-        isDefined(maxRows)
+        isDefined(maxRows) && isDefined(columns)
           ? getPaddedResponsiveArray(breakpoints, columns).map((column, breakPointIndex) =>
               index < column * getPaddedResponsiveArray(breakpoints, maxRows)[breakPointIndex] ? 'flex' : 'none'
             )
@@ -56,7 +56,7 @@ export const FlatList = withFlatListVariation(
     const { width } = columnWidth
       ? { width: columnWidth }
       : calculateResponsiveValues({ columns, columnSpacing }, value => ({
-          width: `calc((100% - ${(value.columns - 1) * value.columnSpacing}px) / ${value.columns})`,
+          width: `calc((100% - ${((value.columns ?? 1) - 1) * value.columnSpacing}px) / ${value.columns})`,
         }));
 
     const itemRefs = useRef<HTMLElement[]>([]);
