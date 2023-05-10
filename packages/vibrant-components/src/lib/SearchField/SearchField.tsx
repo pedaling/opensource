@@ -19,7 +19,7 @@ export const SearchField = withSearchFieldVariation(
     onFocus,
     onBlur,
     innerRef,
-    testId = 'text-field',
+    testId = 'search-field',
     ...restProps
   }) => {
     const inputRef = useRef<TextInputRef | null>(null);

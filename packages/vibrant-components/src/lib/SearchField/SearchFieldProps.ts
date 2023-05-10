@@ -1,5 +1,5 @@
 import type { ForwardedRef } from 'react';
-import type { ReactElementChild, ResponsiveValue, TextInputProps } from '@vibrant-ui/core';
+import type { ResponsiveValue, TextInputProps } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseInputProps } from '../../types';
 
@@ -19,7 +19,6 @@ export type SearchFieldProps = BaseInputProps<string> &
     testId?: string;
     onFocus?: () => void;
     onBlur?: () => void;
-    renderStart?: () => ReactElementChild;
   };
 
 export const withSearchFieldVariation = withVariation<SearchFieldProps>('SearchField')();
