@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useRef, useState } from 'react';
 import { Linking, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -16,7 +17,6 @@ import VSCode from './icons/vscode.svg';
 import YouTube from './icons/youtube.svg';
 
 export const App = () => {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   const [whatsNextYCoord, setWhatsNextYCoord] = useState<number>(0);
   const scrollViewRef = useRef<ScrollView | null>(null);
 
