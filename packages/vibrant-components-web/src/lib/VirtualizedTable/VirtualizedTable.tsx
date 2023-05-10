@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Children, isValidElement, useMemo, useState } from 'react';
 import { TableVirtuoso } from 'react-virtuoso';
+import type { SortDirection, TableColumnProps } from '@vibrant-ui/components';
+import {
+  Body,
+  GhostButton,
+  HStack,
+  Paper,
+  Skeleton,
+  TableDataCell,
+  TableHeaderCell,
+  TableRow,
+  VStack,
+} from '@vibrant-ui/components';
 import { Box, Image } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
-import { Body } from '../Body';
-import { GhostButton } from '../GhostButton';
-import { HStack } from '../HStack';
-import { Paper } from '../Paper';
-import { Skeleton } from '../Skeleton';
-import type { TableColumnProps } from '../Table/TableColumn/TableColumnProps';
-import { TableDataCell } from '../Table/TableDataCell';
-import { TableHeaderCell } from '../Table/TableHeaderCell';
-import { TableRow } from '../Table/TableRow';
-import type { SortDirection } from '../Table/TableSortIcon';
-import { VStack } from '../VStack';
 import type { VirtualizedTableProps } from './VirtualizedTableProps';
 
 const getCellKey = (key: any, rowIndex: number) => `${key}:${rowIndex}`;
