@@ -19,7 +19,7 @@ export type TableRowProps = {
   children?: ReactElementChildren;
   onClick?: () => void;
   disabled?: boolean;
-  isRenderedWithoutRow?: boolean;
+  shouldRenderRow?: boolean;
 };
 
 export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(

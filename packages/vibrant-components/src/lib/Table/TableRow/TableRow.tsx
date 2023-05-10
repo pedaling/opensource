@@ -24,7 +24,7 @@ export const TableRow = withTableRowVariation(
     header,
     children,
     disabled = false,
-    isRenderedWithoutRow = false,
+    shouldRenderRow = true,
   }) => {
     const [isExpanded, setIsExpanded] = useState(expanded);
     const [rowRect, setRowRect] = useState<Rect>();
@@ -57,7 +57,7 @@ export const TableRow = withTableRowVariation(
       updateRowRect();
     }, [overlaid]);
 
-    if (isRenderedWithoutRow && !header) {
+    if (!shouldRenderRow) {
       return (
         <>
           <TableRowProvider selected={selected ?? false} bottomBordered={!isExpanded}>

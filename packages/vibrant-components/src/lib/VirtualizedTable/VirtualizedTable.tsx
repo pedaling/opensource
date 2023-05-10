@@ -126,7 +126,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
           disabled={true}
           selectable={selectable}
           expandable={isDefined(renderExpanded)}
-          isRenderedWithoutRow={true}
+          shouldRenderRow={false}
         >
           {Array.from({ length: 4 }, (_, columnIndex) => (
             <TableDataCell
@@ -172,7 +172,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
         )}
         expanded={expandedKeys?.has(item[rowKey])}
         disabled={disabledRowKeys?.includes(item[rowKey])}
-        isRenderedWithoutRow={true}
+        shouldRenderRow={false}
       >
         {columns.map(
           ({
