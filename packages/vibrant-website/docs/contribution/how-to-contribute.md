@@ -111,14 +111,6 @@ Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 �
 • 이슈가 담당자 확인 후 해결될 시에는 이슈의 라벨이 추가되는 방식으로 업데이트 됩니다.
 
 
-## 환경 세팅하기
-
-```bash
-git clone https://github.com/pedaling/opensource
-cd opensource
-yarn install
-```
-
 ## 개발자 워크플로우
 
 컴포넌트 개발 및 수정은 Storybook을 통해 이루어지며, 다음 명령어로 실행 가능합니다.
