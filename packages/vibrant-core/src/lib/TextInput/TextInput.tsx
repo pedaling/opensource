@@ -16,6 +16,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
   (
     {
       type,
+      enterKeyType,
       defaultValue,
       pattern,
       hidden,
@@ -51,6 +52,10 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         return 'url';
       }
 
+      if (type === 'search') {
+        return 'search';
+      }
+
       return 'text';
     }, [type]);
 
@@ -78,6 +83,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         ref={innerRef}
         type={type === 'number' ? 'text' : type}
         value={value}
+        enterKeyHint={enterKeyType}
         inputMode={inputMode}
         autoCapitalize={autoCapitalize}
         autoComplete={HTMLAutoCompleteOptions[autoComplete]}

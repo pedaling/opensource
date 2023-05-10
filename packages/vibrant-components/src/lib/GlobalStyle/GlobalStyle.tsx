@@ -109,6 +109,10 @@ const style = css`
   *:focus {
     outline: 0;
   }
+
+  input[type='search'] {
+    appearance: none;
+  }
 `;
 
 export const GlobalStyle: FC = () => <Global styles={style} />;

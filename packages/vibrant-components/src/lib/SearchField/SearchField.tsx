@@ -1,68 +1,115 @@
 import { useEffect, useRef, useState } from 'react';
 import type { TextInputRef } from '@vibrant-ui/core';
-import { Box, TextInput } from '@vibrant-ui/core';
+import { TextInput } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import { Pressable } from '../Pressable';
+import { FieldLayout } from '../FieldLayout';
 import { withSearchFieldVariation } from './SearchFieldProps';
 
 export const SearchField = withSearchFieldVariation(
-  ({ defaultValue, onValueChange, kind = 'default', testId = 'search-field', ...restProps }) => {
+  ({
+    size,
+    state,
+    label,
+    placeholder,
+    helperText,
+    disabled,
+    defaultValue,
+    onValueChange,
+    clearable = false,
+    onFocus,
+    onBlur,
+    innerRef,
+    testId = 'text-field',
+    ...restProps
+  }) => {
+    const inputRef = useRef<TextInputRef | null>(null);
+
+    const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState(defaultValue ?? '');
-    const inputRef = useRef<TextInputRef>(null);
+
+    const hasValue = value.length > 0;
+    const onClearButtonClick = () => {
+      setValue('');
+
+      inputRef.current?.focus();
+
+      setIsFocused(true);
+
+      onValueChange?.({ value: '', prevent: () => {} });
+    };
 
     useEffect(() => {
       setValue(defaultValue ?? '');
     }, [defaultValue]);
 
     return (
-      <Box position="relative" width="100%" data-testid={testId}>
-        <TextInput
-          ref={inputRef}
-          type="text"
-          py={9}
-          pl={16}
-          pr={48}
-          backgroundColor={kind === 'default' ? 'surface1' : 'transparent'}
-          typography="body1"
-          color="onView1"
-          placeholderColor="onView3"
-          defaultValue={value}
-          onValueChange={({ value, prevent }) => {
-            let isPrevented = false;
+      <FieldLayout
+        testId={testId}
+        size={size}
+        label={label}
+        helperText={helperText}
+        state={state}
+        focused={isFocused}
+        filled={value.length > 0}
+        disabled={disabled}
+        renderStart={() => <Icon.Search.Thin size={size === 'sm' ? 16 : 20} fill="onView2" />}
+        showClearButton={clearable && hasValue}
+        onClearButtonClick={onClearButtonClick}
+        onLabelClick={() => inputRef.current?.focus()}
+        renderField={style => (
+          <TextInput
+            ref={node => {
+              inputRef.current = node;
 
-            onValueChange?.({
-              value,
-              prevent: () => {
-                isPrevented = true;
+              if (!innerRef) {
+                return;
+              }
 
-                prevent();
-              },
-            });
+              if (typeof innerRef === 'function') {
+                innerRef(node);
+              }
 
-            if (!isPrevented) {
-              setValue(value);
-            }
-          }}
-          {...restProps}
-        />
-        <Box
-          as="span"
-          position="absolute"
-          top={9}
-          right={16}
-          zIndex={1}
-          cursor="text"
-          onClick={() => inputRef.current?.focus()}
-        >
-          {value.length > 0 ? (
-            <Pressable onClick={() => inputRef.current?.clear()}>
-              <Icon.CloseCircle.Fill size={20} fill="onView2" />
-            </Pressable>
-          ) : (
-            <Icon.Search.Thin size={20} fill="onView1" />
-          )}
-        </Box>
-      </Box>
+              if ('current' in innerRef) {
+                innerRef.current = node;
+              }
+            }}
+            type="search"
+            enterKeyType="search"
+            defaultValue={value}
+            placeholder={!label || isFocused || value ? placeholder : ''}
+            placeholderColor="onView3"
+            disabled={disabled}
+            onFocus={() => {
+              onFocus?.();
+
+              setIsFocused(true);
+            }}
+            onBlur={() => {
+              onBlur?.();
+
+              setIsFocused(false);
+            }}
+            onValueChange={({ value, prevent }) => {
+              let isPrevented = false;
+
+              onValueChange?.({
+                value,
+                prevent: () => {
+                  isPrevented = true;
+
+                  prevent();
+                },
+              });
+
+              if (!isPrevented) {
+                setValue(value);
+              }
+            }}
+            {...style}
+            {...restProps}
+          />
+        )}
+      />
     );
   }
 );
