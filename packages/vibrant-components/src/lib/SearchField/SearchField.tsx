@@ -28,7 +28,8 @@ export const SearchField = withSearchFieldVariation(
     const [value, setValue] = useState(defaultValue ?? '');
 
     const hasValue = value.length > 0;
-    const onClearButtonClick = () => {
+
+    const clear = () => {
       setValue('');
 
       inputRef.current?.focus();
@@ -54,7 +55,7 @@ export const SearchField = withSearchFieldVariation(
         disabled={disabled}
         renderStart={() => <Icon.Search.Thin size={size === 'sm' ? 16 : 20} fill="onView2" />}
         showClearButton={clearable && hasValue}
-        onClearButtonClick={onClearButtonClick}
+        onClearButtonClick={clear}
         onLabelClick={() => inputRef.current?.focus()}
         renderField={style => (
           <TextInput
