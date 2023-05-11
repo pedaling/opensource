@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 import type { EasingFunction } from 'react-native';
 import type { AnimatableValue, EasingFunctionFactory } from 'react-native-reanimated';
 import { Easing, runOnJS, useAnimatedStyle, withTiming } from 'react-native-reanimated';
@@ -28,6 +28,26 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
   const {
     theme: { colors },
   } = useCurrentTheme();
+
+  const responsiveAnimation: AllSystemProps & TransformMotionProps = useMemo(
+    () =>
+      Object.entries(animation).reduce(
+        (acc, [key, val]) => ({
+          ...acc,
+          [key]:
+            key === 'transform'
+              ? Object.fromEntries(
+                  Object.entries(val).map(([transformKey, transformValue]) => [
+                    transformKey,
+                    getResponsiveValue(transformValue),
+                  ])
+                )
+              : getResponsiveValue(val),
+        }),
+        {}
+      ),
+    [animation, getResponsiveValue]
+  );
   const isStarted = useRef(false);
   const initialAnimation = useRef(true);
   const onStartCallback = useCallback(() => {
@@ -61,7 +81,7 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
       'worklet';
 
       return withTiming(
-        getResponsiveValue(value),
+        value,
         {
           duration,
           easing: convertEasing[easing],
@@ -73,12 +93,12 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
         }
       );
     },
-    [duration, easing, getResponsiveValue, onEndCallback]
+    [duration, easing, onEndCallback]
   );
   const transition = useAnimatedStyle(() => {
     runOnJS(onStartCallback)();
 
-    return Object.entries(animation).reduce((acc, [key, val], i) => {
+    return Object.entries(responsiveAnimation).reduce((acc, [key, val], i) => {
       const value = key.match(/color/i)
         ? timingAnimation(colors[val as ColorToken], i, 0)
         : key === 'transform'
@@ -87,10 +107,9 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
           }))
         : timingAnimation(val, i, 0);
 
-      return {
-        ...acc,
+      return Object.assign({}, acc, {
         [key]: value,
-      };
+      });
     }, {});
   }, [JSON.stringify(animation)]);
 

@@ -12,6 +12,7 @@ export const Backdrop = withBackdropVariation(
     color = 'dim',
     transitionDuration = 0,
     onClick,
+    onDismiss,
     scrollable,
     testId = 'backdrop',
     ...restProps
@@ -35,16 +36,24 @@ export const Backdrop = withBackdropVariation(
     }
 
     return (
-      <Transition animation={{ opacity: open ? 1 : 0 }} duration={transitionDuration} onEnd={unmount}>
-        <PortalBox
-          zIndex={zIndex}
-          top={0}
-          right={0}
-          bottom={0}
-          left={0}
-          backgroundColor={color}
-          scrollable={scrollable}
-          data-testid={testId}
+      <PortalBox
+        zIndex={zIndex}
+        top={0}
+        right={0}
+        bottom={0}
+        left={0}
+        backgroundColor={color}
+        scrollable={scrollable}
+        data-testid={testId}
+      >
+        <Transition
+          animation={{ opacity: open ? 1 : 0 }}
+          duration={transitionDuration}
+          onEnd={() => {
+            unmount();
+
+            onDismiss?.();
+          }}
         >
           <KeyboardAvoidingBox>
             <Box flex={1} {...restProps}>
@@ -61,8 +70,8 @@ export const Backdrop = withBackdropVariation(
               {children}
             </Box>
           </KeyboardAvoidingBox>
-        </PortalBox>
-      </Transition>
+        </Transition>
+      </PortalBox>
     );
   }
 );
