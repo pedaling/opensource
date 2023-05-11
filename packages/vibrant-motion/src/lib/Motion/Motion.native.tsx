@@ -43,10 +43,9 @@ export const Motion = withMotionVariation(
               return { [key]: interpolate(progress.value, [0, 1], value) };
             });
 
-            return {
-              ...acc,
+            return Object.assign({}, acc, {
               [key]: transform,
-            };
+            });
           }
 
           const value = key.match(/color/i)
