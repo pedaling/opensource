@@ -4,7 +4,7 @@ import { VibrantProvider } from '@vibrant-ui/core';
 import { NativeApp } from './NativeApp';
 import { VibrantApp } from './VibrantApp';
 
-//Update this constant to inspect vibrant or native app
+// Update this constant to inspect vibrant or native app
 const IS_NATIVE = true;
 
 export const App = () => (

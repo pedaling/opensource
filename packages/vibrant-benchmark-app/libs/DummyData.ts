@@ -5,7 +5,7 @@ type CardData = {
   image: string;
 };
 
-export const CardData: CardData[] = [
+export const cardData: CardData[] = [
   {
     title: '목 안 아프고 노래하기! 나쁜 노래 습관 고치고 편안하게 노래하는 법',
     category: '음악',
@@ -27,9 +27,14 @@ export const CardData: CardData[] = [
   },
   {
     title: '리더를 위한 비즈니스 영어 읽기, GOOGLE 에디션',
-
-    category: '음악',
-    creator: '그레이스 킴',
+    category: '언어',
+    creator: '지원 킴',
     image: '	https://cdn.class101.net/images/82914115-3901-43b0-807c-e96a375494d9/2048xauto.webp',
+  },
+  {
+    title: '이탈리아 현지 미슐랭 요리사에게 배우는 파스타, 뇨끼, 리조또! 프리미 피아띠 정복하기',
+    category: '요리 · 음료',
+    creator: '김밀란',
+    image: 'https://cdn.class101.net/images/4721b28c-b625-4039-9583-f792e2d4461d/1080xauto.webp',
   },
 ];
