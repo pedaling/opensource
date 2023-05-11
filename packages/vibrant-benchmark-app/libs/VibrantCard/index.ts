@@ -1,1 +1,0 @@
-export { VibrantCard } from './VibrantCard';
