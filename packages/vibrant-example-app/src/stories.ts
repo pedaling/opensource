@@ -46,7 +46,6 @@ export const stories = [
   require('../../vibrant-components/src/lib/Ratio/Ratio.stories.tsx'),
   require('../../vibrant-components/src/lib/SafeAreaView/SafeAreaView.stories.tsx'),
   require('../../vibrant-components/src/lib/ScrollDetector/ScrollDetector.stories.tsx'),
-  require('../../vibrant-components/src/lib/SearchField/SearchField.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectField/SelectField.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectOptionGroup/SelectOptionGroup.stories.tsx'),
   require('../../vibrant-components/src/lib/SelectOptionItem/SelectOptionItem.stories.tsx'),

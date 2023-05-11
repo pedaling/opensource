@@ -12,7 +12,6 @@ export { GhostButton } from './lib/GhostButton';
 export { HStack } from './lib/HStack';
 export { Paper } from './lib/Paper';
 export { Paragraph } from './lib/Paragraph';
-export { SearchField } from './lib/SearchField';
 export { SelectField } from './lib/SelectField';
 export type { SelectFieldProps } from './lib/SelectField';
 export { Space } from './lib/Space';
