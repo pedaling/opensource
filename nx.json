@@ -80,6 +80,5 @@
     "build-storybook": {
       "inputs": ["default", "^production", "{workspaceRoot}/.storybook/**/*"]
     }
-  },
-  "defaultProject": "vibrant-benchmark-app"
+  }
 }
