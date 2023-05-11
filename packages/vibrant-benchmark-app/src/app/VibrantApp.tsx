@@ -1,8 +1,12 @@
 import React from 'react';
-import { Title, VStack } from '@vibrant-ui/components';
+import { ContentArea, SafeAreaView, Title, VStack } from '@vibrant-ui/components';
 
 export const VibrantApp = () => (
-  <VStack>
-    <Title level={3}>Vibrant App</Title>
-  </VStack>
+  <ContentArea>
+    <SafeAreaView>
+      <VStack>
+        <Title level={3}>Vibrant App</Title>
+      </VStack>
+    </SafeAreaView>
+  </ContentArea>
 );
