@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { VStack } from '@vibrant-ui/components';
 
 type Data = {
