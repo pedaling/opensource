@@ -7,4 +7,5 @@ export type PositionSystemProps = {
   bottom?: ResponsiveValue<number | string>;
   left?: ResponsiveValue<number | string>;
   zIndex?: ResponsiveValue<number>;
+  snapAlignment?: ResponsiveValue<'center' | 'end' | 'start'>;
 };

@@ -6,6 +6,11 @@ const horizontalProp = createSystemProp({
   transform: (value: boolean) => (value ? { flexDirection: 'row' } : { flexDirection: 'column' }),
 });
 
+const scrollSnapProp = createSystemProp({
+  property: 'scrollSnap',
+  styleProperty: 'scrollSnapType',
+});
+
 const hideScrollProp = createSystemProp({
   property: 'hideScroll',
   transform: (value: boolean) =>
@@ -20,4 +25,4 @@ const hideScrollProp = createSystemProp({
       : {},
 });
 
-export const scrollSystemProps = [hideScrollProp, horizontalProp];
+export const scrollSystemProps = [hideScrollProp, horizontalProp, scrollSnapProp];

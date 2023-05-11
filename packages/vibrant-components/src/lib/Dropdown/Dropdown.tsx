@@ -18,6 +18,7 @@ import {
   flipPosition,
   getElementRect,
   getOffsetByPosition,
+  isDefined,
   useControllableState,
 } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
@@ -153,8 +154,6 @@ export const Dropdown = withDropdownVariation(
           );
 
           setOffset({ x: offsetX, y: offsetY });
-
-          setVisible(true);
         }
 
         setContentHeight(height);
@@ -169,19 +168,25 @@ export const Dropdown = withDropdownVariation(
     useEffect(() => {
       if (!isOpen) {
         setVisible(false);
-
-        setOffset({});
       }
     }, [isOpen]);
 
     useEffect(() => {
-      if (contentHeight !== undefined) {
+      if (isDefined(offset?.x) && isDefined(offset?.y)) {
         setVisible(true);
       }
-    }, [contentHeight]);
+    }, [offset]);
+
+    useEffect(() => {
+      if (isMobile && isDefined(contentHeight)) {
+        setVisible(true);
+      }
+    }, [contentHeight, isMobile]);
 
     useEffect(() => {
       if (!visible) {
+        setOffset({});
+
         setContentHeight(undefined);
       }
     }, [visible]);
@@ -194,8 +199,12 @@ export const Dropdown = withDropdownVariation(
             <Transition
               animation={{
                 opacity: visible ? 1 : 0,
-                x: offset.x,
-                y: offset.y,
+                ...(visible
+                  ? {
+                      x: offset.x,
+                      y: offset.y,
+                    }
+                  : {}),
               }}
               style={{
                 x: offset.x,
@@ -242,10 +251,9 @@ export const Dropdown = withDropdownVariation(
             <Backdrop open={isOpen} zIndex={zIndex.dropdown} onClick={closeDropdown} transitionDuration={200}>
               <Transition
                 animation={{
-                  y: visible ? 0 : containerHeight,
+                  y: visible ? 0 : containerHeight ?? viewportHeight,
                 }}
                 duration={200}
-                style={{ y: viewportHeight }}
               >
                 <Box
                   mt="auto"

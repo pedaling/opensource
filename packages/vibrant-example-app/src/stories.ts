@@ -57,6 +57,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/Skeleton/SkeletonField/SkeletonField.stories.tsx'),
   require('../../vibrant-components/src/lib/Skeleton/SkeletonImage/SkeletonImage.stories.tsx'),
   require('../../vibrant-components/src/lib/Skeleton/SkeletonText/SkeletonText.stories.tsx'),
+  require('../../vibrant-components/src/lib/Slider/Slider.stories.tsx'),
   require('../../vibrant-components/src/lib/Space/Space.stories.tsx'),
   require('../../vibrant-components/src/lib/Spinner/Spinner.stories.tsx'),
   require('../../vibrant-components/src/lib/Stack/Stack.stories.tsx'),
