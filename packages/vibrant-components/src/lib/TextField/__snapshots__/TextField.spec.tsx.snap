@@ -264,11 +264,11 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
       >
         <div
           class="emotion-4"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="emotion-5"
-            style="top: 15px; font-size: 0.875rem; line-height: 1.125rem;"
+            style="top: 15px; font-size: 0.875rem; line-height: 1.125rem; transition-property: top, fontSize, lineHeight; transition-duration: 100ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             label
           </span>
@@ -567,11 +567,11 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
       >
         <div
           class="emotion-4"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="emotion-5"
-            style="top: 9px; font-size: 0.875rem; line-height: 1.125rem;"
+            style="top: 9px; font-size: 0.875rem; line-height: 1.125rem; transition-property: top, fontSize, lineHeight; transition-duration: 100ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             label
           </span>
@@ -870,11 +870,11 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
       >
         <div
           class="emotion-4"
-          tabindex="0"
+          tabindex="-1"
         >
           <span
             class="emotion-5"
-            style="top: 6px; font-size: 0.75rem; line-height: 1rem;"
+            style="top: 6px; font-size: 0.75rem; line-height: 1rem; transition-property: top, fontSize, lineHeight; transition-duration: 100ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             label
           </span>

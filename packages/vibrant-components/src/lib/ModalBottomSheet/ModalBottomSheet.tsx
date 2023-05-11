@@ -44,7 +44,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     const [isOpen, setIsOpen] = useControllableState<boolean>({
       value: open,
       defaultValue: defaultOpen,
-      onChange: (value: boolean) => {
+      onValueChange: (value: boolean) => {
         if (!value) {
           onClose?.();
         }
@@ -102,12 +102,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       }
     }, [containerHeight]);
 
-    useEffect(() => {
-      if (!visible) {
-        setContainerHeight(undefined);
-      }
-    }, [visible]);
-
     return (
       <>
         {opener}
@@ -120,6 +114,11 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
             scrollable={!isMobile}
             pt={[120, 40]}
             pb={[0, 40]}
+            onDismiss={() => {
+              if (!visible) {
+                setContainerHeight(undefined);
+              }
+            }}
           >
             <Transition
               animation={{

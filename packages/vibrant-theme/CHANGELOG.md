@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.58.1...vibrant-theme-0.59.0) (2023-05-09)
+
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.58.0...vibrant-theme-0.58.1) (2023-05-04)
+
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.57.1...vibrant-theme-0.58.0) (2023-05-04)
+
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.57.0...vibrant-theme-0.57.1) (2023-05-03)
+
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.56.0...vibrant-theme-0.57.0) (2023-05-02)
+
+## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.55.0...vibrant-theme-0.56.0) (2023-04-26)
+
+## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.54.2...vibrant-theme-0.55.0) (2023-04-25)
+
+### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.54.1...vibrant-theme-0.54.2) (2023-04-17)
+
+### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.54.0...vibrant-theme-0.54.1) (2023-04-13)
+
 ## [0.54.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.53.7...vibrant-theme-0.54.0) (2023-04-12)
 
 ### [0.53.7](https://github.com/pedaling/opensource/compare/vibrant-theme-0.53.6...vibrant-theme-0.53.7) (2023-04-11)

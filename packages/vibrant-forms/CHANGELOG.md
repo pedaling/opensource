@@ -2,6 +2,34 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.58.1...vibrant-forms-0.59.0) (2023-05-09)
+
+
+### Features
+
+* Transition 컴포넌트를 css transition 컴포넌트로 구현한다 ([#698](https://github.com/pedaling/opensource/issues/698)) ([b192366](https://github.com/pedaling/opensource/commit/b1923663a2702737849b3f9802613b423a023230))
+
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.58.0...vibrant-forms-0.58.1) (2023-05-04)
+
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.57.1...vibrant-forms-0.58.0) (2023-05-04)
+
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.57.0...vibrant-forms-0.57.1) (2023-05-03)
+
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.56.0...vibrant-forms-0.57.0) (2023-05-02)
+
+## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.55.0...vibrant-forms-0.56.0) (2023-04-26)
+
+## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.54.2...vibrant-forms-0.55.0) (2023-04-25)
+
+
+### Bug Fixes
+
+* add tab-index prop to pressable ([#684](https://github.com/pedaling/opensource/issues/684)) ([7c8a0be](https://github.com/pedaling/opensource/commit/7c8a0bedff10933c0f2d5e9025911aa2933138a6))
+
+### [0.54.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.54.1...vibrant-forms-0.54.2) (2023-04-17)
+
+### [0.54.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.54.0...vibrant-forms-0.54.1) (2023-04-13)
+
 ## [0.54.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.53.7...vibrant-forms-0.54.0) (2023-04-12)
 
 ### [0.53.7](https://github.com/pedaling/opensource/compare/vibrant-forms-0.53.6...vibrant-forms-0.53.7) (2023-04-11)

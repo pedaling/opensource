@@ -1,6 +1,6 @@
 import { fireEvent, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Box, PortalRootProvider } from '@vibrant-ui/core';
+import { Box, PortalRootProvider, VibrantProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { BrowserTesting, createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Pressable } from '../Pressable';
@@ -244,11 +244,17 @@ describe('<ModalBottomSheet />', () => {
     beforeEach(async () => {
       await BrowserTesting.resize(639, 768);
 
-      renderer = render(<ModalBottomSheet open={true} renderContents={() => null} />);
+      renderer = render(
+        <VibrantProvider>
+          <ModalBottomSheet open={true} renderContents={() => null} />
+        </VibrantProvider>
+      );
     });
 
     it('match snapshot', async () => {
-      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe(''));
+      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe('translateY(0px)'), {
+        timeout: 2000,
+      });
 
       expect(renderer.container).toMatchSnapshot();
     });
@@ -258,11 +264,17 @@ describe('<ModalBottomSheet />', () => {
     beforeEach(async () => {
       await BrowserTesting.resize(1024, 768);
 
-      renderer = render(<ModalBottomSheet open={true} renderContents={() => null} />);
+      renderer = render(
+        <VibrantProvider>
+          <ModalBottomSheet open={true} renderContents={() => null} />
+        </VibrantProvider>
+      );
     });
 
     it('match snapshot', async () => {
-      await waitFor(() => expect(renderer.getByRole('dialog').style.opacity).toBe('1'));
+      await waitFor(() => expect(renderer.getByRole('dialog').style.opacity).toBe('1'), {
+        timeout: 2000,
+      });
 
       expect(renderer.container).toMatchSnapshot();
     });

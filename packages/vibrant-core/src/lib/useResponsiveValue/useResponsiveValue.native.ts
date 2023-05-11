@@ -1,32 +1,35 @@
 import { useCallback, useMemo } from 'react';
-import { useWindowDimensions } from 'react-native';
 import type { ResponsiveValue } from '../../types';
 import { useCurrentTheme } from '../ThemeProvider';
+import { useWindowDimensions } from '../WindowDimensionsProvider';
 import type { UseResponsiveValueProps } from './type';
 
 export const useResponsiveValue = ({ useRootBreakPoints = false }: UseResponsiveValueProps = {}) => {
   const { width } = useWindowDimensions();
-  const {
-    theme: { breakpoints },
-  } = useCurrentTheme({ root: useRootBreakPoints });
 
-  const currentIndex = useMemo(() => {
+  const {
+    theme: { breakpoints: rootBreakpoint },
+  } = useCurrentTheme({ root: true });
+
+  const {
+    theme: { breakpoints: currentBreakpoint },
+  } = useCurrentTheme({ root: false });
+
+  const breakpointIndex = useMemo(() => {
+    const breakpoints = useRootBreakPoints ? rootBreakpoint : currentBreakpoint;
+
     const index = breakpoints.findIndex(breakpoint => breakpoint >= width);
 
-    if (index === -1) {
-      return breakpoints.length;
-    }
-
-    return index;
-  }, [breakpoints, width]);
+    return index === -1 ? breakpoints.length : index;
+  }, [currentBreakpoint, rootBreakpoint, useRootBreakPoints, width]);
 
   const getResponsiveValue = useCallback(
     (responsiveValue: ResponsiveValue<any>) =>
       Array.isArray(responsiveValue)
-        ? responsiveValue[Math.min(currentIndex, responsiveValue.length - 1)]
+        ? responsiveValue[Math.min(breakpointIndex, responsiveValue.length - 1)]
         : responsiveValue,
-    [currentIndex]
+    [breakpointIndex]
   ) as <Value>(responsiveValue: ResponsiveValue<Value>) => Value;
 
-  return { getResponsiveValue, breakpointIndex: currentIndex };
+  return { getResponsiveValue, breakpointIndex };
 };

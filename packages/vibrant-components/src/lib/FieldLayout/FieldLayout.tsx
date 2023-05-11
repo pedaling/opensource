@@ -58,7 +58,7 @@ export const FieldLayout = withFieldLayoutVariation(
       >
         <VStack flexShrink={0}>{renderStart?.()}</VStack>
         <Box width="100%" height="100%" cursor={cursor}>
-          <PressableBox cursor={cursor} onClick={onLabelClick}>
+          <PressableBox cursor={cursor} onClick={onLabelClick} tabIndex={-1}>
             <Transition
               animation={{
                 top: labelTop,

@@ -19,12 +19,12 @@ export const MountMotion = withMountMotionVariation(
     return (
       <Motion
         animation={mount ? mountAnimation : unmountAnimation}
-        onEnd={event => {
+        onEnd={() => {
           if (!mount) {
             setIsMounted(false);
           }
 
-          onEnd?.(event);
+          onEnd?.();
         }}
         {...restProps}
       />

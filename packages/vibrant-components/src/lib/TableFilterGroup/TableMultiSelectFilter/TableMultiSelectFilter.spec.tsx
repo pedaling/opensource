@@ -67,7 +67,7 @@ describe('<TableMultiSelectFilter />', () => {
           ]}
           defaultValue={{
             value: ['1', '2'],
-            operator: 'equals',
+            operator: 'contains',
           }}
         />
       );

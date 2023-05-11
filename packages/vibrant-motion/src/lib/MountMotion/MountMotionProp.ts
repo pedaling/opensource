@@ -1,7 +1,7 @@
 import { withVariation } from '@vibrant-ui/core';
 import type { MotionProps } from '../Motion/MotionProps';
 
-type MountMotionProps = Pick<MotionProps, 'children' | 'duration' | 'easing' | 'onEnd' | 'onStart'> & {
+type MountMotionProps = Pick<MotionProps, 'children' | 'duration' | 'easing' | 'onEnd'> & {
   mount?: boolean;
   mountAnimation?: MotionProps['animation'];
   unmountAnimation?: MotionProps['animation'];

@@ -109,3 +109,36 @@ Vibrant 에 기여하기 위한 PR 을 생성하기 위한 브랜치 작업은 �
 • 직접 PR 을 생성하여 기여하고자 하는 경우에는, `For Your Own Contribution with PR` 에 안내된 대로 RFC (Request for Comments) 를 작성하고, 헤당 페이지 링크를 기입합니다.
 
 • 이슈가 담당자 확인 후 해결될 시에는 이슈의 라벨이 추가되는 방식으로 업데이트 됩니다.
+
+
+## 개발자 워크플로우
+
+컴포넌트 개발 및 수정은 Storybook을 통해 이루어지며, 다음 명령어로 실행 가능합니다.
+
+```bash
+yarn start-storybook
+```
+
+### Native App 개발
+
+스토리북 네이티브를 테스트하기 위해서는 앱 실행이 필요합니다.
+
+```bash
+yarn vibrant-app
+# press 'a' to android simulator
+# press 'i' to ios simulator
+```
+
+`a`키나 `i`키를 통해 시뮬레이터를 실행한 다음, 스토리북 웹에서 플랫폼 선택을 통해 네이티브 컴포넌트를 테스트할 수 있습니다.
+
+![Storybook Platform Select](/img/docs/contribution-stoorybook-platform.png)
+
+**스토리북의 Controls panel과 선택된 스토리가 앱과 동기화됩니다**
+
+### 문서 사이트 개발
+
+```bash
+yarn vibrant-docs
+```
+
+명령어를 통해 문서 사이트를 개발할 수 있습니다.

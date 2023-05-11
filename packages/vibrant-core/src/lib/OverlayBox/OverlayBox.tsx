@@ -6,7 +6,7 @@ import { Box } from '../Box';
 import { PortalBox } from '../PortalBox';
 import { PressableBox } from '../PressableBox';
 import { useLockBodyScroll } from '../useLockBodyScroll';
-import { useWindowDimensions } from '../useWindowDimensions';
+import { useWindowDimensions } from '../WindowDimensionsProvider';
 import { withOverlayBoxVariation } from './OverlayBoxProps';
 
 export const OverlayBox = withOverlayBoxVariation(

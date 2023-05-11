@@ -45,16 +45,12 @@ export const ko: Translation['tableFilterGroup'] = {
   multiSelectFilter: {
     reset: '초기화',
     filterLabel: {
-      equals: '{options}',
-      notEquals: '{options} 같지 않음',
-      empty: '비어있음',
-      notEmpty: '비어있지 않음',
+      contains: '{options}',
+      notContains: '{options}',
     },
     operators: {
-      equals: '같다',
-      notEquals: '같지 않다',
-      empty: '비어있다',
-      notEmpty: '비어있지 않다',
+      contains: '포함한다',
+      notContains: '포함하지 않는다',
     },
   },
 };

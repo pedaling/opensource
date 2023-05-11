@@ -2,17 +2,17 @@ import type { ResponsiveValue } from '@vibrant-ui/core';
 import type { ColorToken, OpacityToken } from '@vibrant-ui/theme';
 
 export const getOpacity = ({
-  disabled,
-  isFocused,
-  isActivated,
-  isHovered,
+  disabled = false,
+  isFocused = false,
+  isActivated = false,
+  isHovered = false,
   interactions,
   overlayColor,
 }: {
-  disabled: boolean;
-  isFocused: boolean;
-  isHovered: boolean;
-  isActivated: boolean;
+  disabled?: boolean;
+  isFocused?: boolean;
+  isHovered?: boolean;
+  isActivated?: boolean;
   overlayColor?: ResponsiveValue<ColorToken>;
   interactions: ('active' | 'focus' | 'hover')[];
 }) => {

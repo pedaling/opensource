@@ -1,24 +1,98 @@
-import type { ComponentClass } from 'react';
-import { useMemo } from 'react';
-import Animated from 'react-native-reanimated';
-import { useTransition } from '../useTransition';
-import { withTransitionVariation } from './TransitionProp';
+import { useCallback, useRef } from 'react';
+import type { EasingFunction } from 'react-native';
+import type { AnimatableValue, EasingFunctionFactory } from 'react-native-reanimated';
+import { Easing, runOnJS, useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import type { AllSystemProps } from '@vibrant-ui/core';
+import { useCurrentTheme, useResponsiveValue } from '@vibrant-ui/core';
+import type { ColorToken } from '@vibrant-ui/theme';
+import type { EasingDictionary } from '../constants';
+import type { TransformMotionProps } from '../props/transform';
+import type { AnimationResult } from '../types';
 
-export const Transition = withTransitionVariation(
-  ({ innerRef, children, style, animation, duration = 500, easing = 'easeOutQuad', onStart, onEnd, ...restProps }) => {
-    const transition = useTransition({
-      animation,
-      duration,
-      easing,
-      onStart,
-      onEnd,
-    });
+type UseTransitionProps = {
+  animation: AllSystemProps & TransformMotionProps;
+  duration: number;
+  easing: keyof EasingDictionary;
+  onStart?: ((e?: AnimationResult<any>) => void) | undefined;
+  onEnd?: ((e?: AnimationResult<any>) => void) | undefined;
+};
 
-    const AnimatedViewComponent = useMemo(
-      () => Animated.createAnimatedComponent(children.type as ComponentClass),
-      [children.type]
-    );
+const convertEasing: Record<keyof EasingDictionary, EasingFunction | EasingFunctionFactory> = {
+  easeInQuad: Easing.in(Easing.ease),
+  easeOutQuad: Easing.out(Easing.ease),
+  linear: Easing.linear,
+};
 
-    return <AnimatedViewComponent ref={innerRef} style={[style, transition]} {...restProps} {...children.props} />;
-  }
-);
+export const useTransition = ({ animation, duration = 200, easing, onStart, onEnd }: UseTransitionProps) => {
+  const { getResponsiveValue } = useResponsiveValue();
+  const {
+    theme: { colors },
+  } = useCurrentTheme();
+  const isStarted = useRef(false);
+  const initialAnimation = useRef(true);
+  const onStartCallback = useCallback(() => {
+    if (initialAnimation.current) {
+      return;
+    }
+
+    if (!isStarted.current) {
+      isStarted.current = true;
+
+      onStart?.();
+    }
+  }, [onStart]);
+
+  const onEndCallback = useCallback(() => {
+    if (initialAnimation.current) {
+      initialAnimation.current = false;
+
+      return;
+    }
+
+    if (isStarted.current) {
+      isStarted.current = false;
+
+      onEnd?.();
+    }
+  }, [onEnd]);
+
+  const timingAnimation = useCallback(
+    (value: AnimatableValue, index: number, j = 0) => {
+      'worklet';
+
+      return withTiming(
+        getResponsiveValue(value),
+        {
+          duration,
+          easing: convertEasing[easing],
+        },
+        () => {
+          if (index === 0 && j === 0) {
+            runOnJS(onEndCallback)();
+          }
+        }
+      );
+    },
+    [duration, easing, getResponsiveValue, onEndCallback]
+  );
+  const transition = useAnimatedStyle(() => {
+    runOnJS(onStartCallback)();
+
+    return Object.entries(animation).reduce((acc, [key, val], i) => {
+      const value = key.match(/color/i)
+        ? timingAnimation(colors[val as ColorToken], i, 0)
+        : key === 'transform'
+        ? Object.entries(val).map(([transformKey, transformValue], j) => ({
+            [transformKey]: timingAnimation(transformValue as AnimatableValue, i, j),
+          }))
+        : timingAnimation(val, i, 0);
+
+      return {
+        ...acc,
+        [key]: value,
+      };
+    }, {});
+  }, [JSON.stringify(animation)]);
+
+  return transition;
+};

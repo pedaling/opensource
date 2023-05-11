@@ -23,9 +23,13 @@
       "@vibrant-ui/core": ["packages/vibrant-core/src/index.ts"],
       "@vibrant-ui/forms": ["packages/vibrant-forms/src/index.ts"],
       "@vibrant-ui/icons": ["packages/vibrant-icons/src/index.ts"],
+      "@vibrant-ui/layouts": ["packages/vibrant-layouts/src/index.ts"],
       "@vibrant-ui/motion": ["packages/vibrant-motion/src/index.ts"],
       "@vibrant-ui/theme": ["packages/vibrant-theme/src/index.ts"],
       "@vibrant-ui/utils": ["packages/vibrant-utils/src/index.ts"],
+      "@vibrant-ui/utils/storybook": [
+        "packages/vibrant-utils/src/storybook.ts"
+      ],
       "@vibrant-ui/utils/testing-native": [
         "packages/vibrant-utils/src/testing-native.ts"
       ],

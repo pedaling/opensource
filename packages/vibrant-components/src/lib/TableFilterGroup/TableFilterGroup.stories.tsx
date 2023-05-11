@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { action } from '@vibrant-ui/utils';
+import { action } from '@vibrant-ui/utils/storybook';
 import { TableFilterGroup } from './TableFilterGroup';
 
 export default {
@@ -33,7 +33,7 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
     <TableFilterGroup.MultiSelectFilter
       dataKey="orderStatus"
       label="주문 상태"
-      defaultValue={{ operator: 'equals', value: ['completed'] }}
+      defaultValue={{ operator: 'contains', value: ['completed'] }}
       options={[
         {
           value: 'completed',
