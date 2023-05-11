@@ -13165,7 +13165,6 @@ __metadata:
     "@kayahr/jest-electron-runner": 29.0.0
     "@mdx-js/react": 1.6.22
     "@nrwl/cli": 15.0.0
-    "@nrwl/detox": 15.0.0
     "@nrwl/devkit": 15.0.0
     "@nrwl/eslint-plugin-nx": 15.0.0
     "@nrwl/expo": 15.0.0
