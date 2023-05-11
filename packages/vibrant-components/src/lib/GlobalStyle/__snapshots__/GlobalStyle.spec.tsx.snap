@@ -107,5 +107,12 @@ NodeList [
     
     *:focus{outline:0;}
   </style>,
+  <style
+    data-emotion="emotion-global"
+    data-s=""
+  >
+    
+    input[type='search']{-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;appearance:none;}
+  </style>,
 ]
 `;
