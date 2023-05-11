@@ -12,6 +12,7 @@ const storybookLibraries = [
   'vibrant-components-web',
   'vibrant-forms',
   'vibrant-icons',
+  'vibrant-layouts',
   'vibrant-motion',
   'vibrant-theme',
 ];
@@ -31,6 +32,9 @@ const config: StorybookViteConfig & {
       disable: true,
     },
     '@vibrant-ui/icons': {
+      disable: true,
+    },
+    '@vibrant-ui/layouts': {
       disable: true,
     },
     '@vibrant-ui/motion': {

@@ -1,0 +1,132 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/vibrant-layouts/src",
+  "projectType": "library",
+  "tags": ["scope:vibrant"],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        },
+        "build-native"
+      ],
+      "options": {
+        "outputPath": "dist/packages/vibrant-layouts",
+        "tsConfig": "packages/vibrant-layouts/tsconfig.lib.json",
+        "project": "packages/vibrant-layouts/package.json",
+        "deleteOutputPath": false,
+        "entryFile": "packages/vibrant-layouts/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "format": ["esm", "cjs"],
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "rollupConfig": "tools/config/rollup-config",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/vibrant-layouts/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ],
+        "disablePreserveModules": true
+      }
+    },
+    "build-native": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/vibrant-layouts",
+        "tsConfig": "packages/vibrant-layouts/tsconfig.lib.json",
+        "moduleSuffixes": [".native", ""],
+        "project": "packages/vibrant-layouts/package.json",
+        "outputFileName": "index.native",
+        "entryFile": "packages/vibrant-layouts/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "forceOutputJsExtension": true,
+        "format": ["cjs"],
+        "rollupConfig": "tools/config/rollup-config",
+        "buildableProjectDepsInPackageJsonType": "dependencies",
+        "compiler": "babel",
+        "disablePreserveModules": true
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["yarn tsc --project ./packages/vibrant-layouts/tsconfig.lib.json"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/vibrant-layouts/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-layouts"],
+      "options": {
+        "jestConfig": "packages/vibrant-layouts/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "storybook": {
+      "executor": "@nrwl/storybook:storybook",
+      "options": {
+        "uiFramework": "@storybook/react",
+        "port": 4400,
+        "config": {
+          "configFolder": "packages/vibrant-layouts/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/vibrant-layouts",
+        "config": {
+          "configFolder": "packages/vibrant-layouts/.storybook"
+        }
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "conventional",
+        "skipCommit": true,
+        "trackDeps": true,
+        "postTargets": ["vibrant-layouts:github", "vibrant-layouts:deploy"]
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    }
+  }
+}
