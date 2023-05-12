@@ -15,7 +15,7 @@ export default {
 export const Basic: ComponentStory<typeof PopoverOpener> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
     <Popover position="bottom" title="Popover" backgroundColor="primary">
-      <PopoverOpener {...props} openToClick={true} openToHover={false}>
+      <PopoverOpener {...props} openInteraction="click">
         <Title level={4}>Click Opener</Title>
       </PopoverOpener>
     </Popover>
@@ -25,7 +25,7 @@ export const Basic: ComponentStory<typeof PopoverOpener> = props => (
 export const OpenToHover: ComponentStory<typeof PopoverOpener> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
     <Popover position="bottom" title="Popover" backgroundColor="primary">
-      <PopoverOpener {...props} openToClick={false} openToHover={true}>
+      <PopoverOpener {...props} openInteraction="hover">
         <FilterChip size="md">Hover At Opener</FilterChip>
       </PopoverOpener>
     </Popover>
@@ -45,7 +45,7 @@ export const NotWrappedWithPopover: ComponentStory<typeof PopoverOpener> = props
         </Paper>
       </Popover>
 
-      <PopoverOpener {...props} popoverId={popoverId} openToClick={true} openToHover={false}>
+      <PopoverOpener {...props} popoverId={popoverId} openInteraction="click">
         <Title level={4}>Click Opener</Title>
       </PopoverOpener>
     </VStack>

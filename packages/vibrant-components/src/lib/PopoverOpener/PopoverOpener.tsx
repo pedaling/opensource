@@ -2,7 +2,7 @@ import { PressableBox, usePopover } from '@vibrant-ui/core';
 import { withPopoverOpenerVariation } from './PopoverOpenerProps';
 
 export const PopoverOpener = withPopoverOpenerVariation(
-  ({ popoverId = '', openToHover = false, openToClick = false, isOpen, open, close, children }) => {
+  ({ popoverId = '', openInteraction, isOpen, open, close, children }) => {
     const { isOpen: registeredIsOpen, open: registeredOpen, close: registeredClose } = usePopover({ id: popoverId });
     const toggleOpener = () => {
       if (popoverId) return registeredIsOpen ? registeredClose?.() : registeredOpen?.();
@@ -22,10 +22,10 @@ export const PopoverOpener = withPopoverOpenerVariation(
 
     return (
       <PressableBox
-        cursor={openToClick ? 'pointer' : 'default'}
-        onClick={() => openToClick && toggleOpener()}
-        onHoverIn={() => openToHover && openOpener()}
-        onHoverOut={() => openToHover && closeOpener()}
+        cursor={openInteraction === 'click' ? 'pointer' : 'default'}
+        onClick={() => openInteraction === 'click' && toggleOpener()}
+        onHoverIn={() => openInteraction === 'hover' && openOpener()}
+        onHoverOut={() => openInteraction === 'hover' && closeOpener()}
         as="label"
       >
         {children}

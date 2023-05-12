@@ -4,6 +4,7 @@ import { withVariation } from '@vibrant-ui/core';
 export type PopoverOpenerProps = {
   popoverId?: string;
   children?: ReactElement;
+  openInteraction: 'click' | 'hover';
 } & (
   | {
       isOpen?: boolean;
@@ -15,7 +16,6 @@ export type PopoverOpenerProps = {
       open?: never;
       close?: never;
     }
-) &
-  ({ openToHover?: false | undefined; openToClick?: true } | { openToHover?: true; openToClick?: false | undefined });
+);
 
 export const withPopoverOpenerVariation = withVariation<PopoverOpenerProps>('PopoverOpene')();
