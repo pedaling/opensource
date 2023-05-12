@@ -1,39 +1,39 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React from 'react';
-import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native';
+import React, { useMemo } from 'react';
+import { SafeAreaView, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
+import { baseTheme } from '@vibrant-ui/theme';
+import { NativeHeroBanner } from '../libs/NativeHeroBanner';
+import { NativeSection } from '../libs/NativeSection';
 
-export const NativeApp = () => (
-  <>
-    <StatusBar barStyle="dark-content" />
-    <SafeAreaView>
-      <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-        <View style={styles.section}>
-          <Text style={styles.textLg}>Hello there,</Text>
-          <Text style={[styles.textXl, styles.appTitleText]} testID="heading">
-            Native APP
-          </Text>
-        </View>
+const names = new Array(10).fill(0).map((_, i) => `이름${i + 1}`);
+
+export const NativeApp = () => {
+  const { width } = useWindowDimensions();
+
+  const style = useMemo(
+    () =>
+      StyleSheet.create({
+        container: {
+          paddingHorizontal: 20,
+          backgroundColor: baseTheme.colors.dark.background,
+        },
+        sectionSpacing: {
+          marginTop: width < 640 ? 40 : 56,
+        },
+      }),
+    [width]
+  );
+
+  return (
+    <SafeAreaView style={style.container}>
+      <ScrollView>
+        <NativeHeroBanner />
+        {names.map(name => (
+          <View key={name} style={style.sectionSpacing}>
+            <NativeSection title={`${name} 위한 추천 클래스`} />
+          </View>
+        ))}
       </ScrollView>
     </SafeAreaView>
-  </>
-);
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: '#ffffff',
-  },
-  textLg: {
-    fontSize: 24,
-  },
-  textXl: {
-    fontSize: 48,
-  },
-  section: {
-    marginVertical: 12,
-    marginHorizontal: 12,
-  },
-  appTitleText: {
-    paddingTop: 12,
-    fontWeight: '500',
-  },
-});
+  );
+};
