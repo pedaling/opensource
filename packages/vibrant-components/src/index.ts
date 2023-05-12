@@ -63,6 +63,7 @@ export { Table, useTable, TableDataCell, TableHeaderCell, TableRow } from './lib
 export type { TableColumnProps, TableProps, SortDirection } from './lib/Table';
 export { TableHeader } from './lib/TableHeader';
 export { TableFooter, tableFooterTranslation } from './lib/TableFooter';
+export { TableSearch } from './lib/TableSearch';
 export { Ratio } from './lib/Ratio';
 export { Skeleton } from './lib/Skeleton';
 export { FilterChip } from './lib/FilterChip';
