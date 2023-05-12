@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from '../Avatar';
+import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
 import { PopoverOpener } from '../PopoverOpener';
 import { VStack } from '../VStack';
@@ -10,14 +11,14 @@ export default {
   title: 'Popover',
   component: Popover,
   args: {
-    position: 'bottom',
+    position: 'top',
   },
 } as ComponentMeta<typeof Popover>;
 
 export const Basic: ComponentStory<typeof Popover> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
     <Popover title="Popover" {...props}>
-      <PopoverOpener openToHover={true}>
+      <PopoverOpener openInteraction="click">
         <Avatar size="lg" src="" alt="" />
       </PopoverOpener>
     </Popover>
@@ -34,8 +35,12 @@ export const WithExternalState: ComponentStory<typeof Popover> = props => {
         title="Popover"
         open={isOpen}
         renderContent={() => (
-          <VStack p={30}>
-            <Avatar size="lg" src="" alt="" />
+          <VStack width={500} py={20}>
+            <Body level={3} color="onView1">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur cum mollitia quae impedit, quia et. Qui
+              voluptates vel ipsam quibusdam libero velit in, dignissimos, voluptate fuga possimus culpa distinctio
+              laboriosam!
+            </Body>
           </VStack>
         )}
       >
