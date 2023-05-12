@@ -4,7 +4,7 @@ import type { ScrollTabPanelProps } from './ScrollTabPanel/ScrollTabPanelProps';
 
 export type ScrollTabGroupLayoutProps = {
   header?: ReactElement;
-  children: ReactElement<ScrollTabPanelProps> | ReactElement<ScrollTabPanelProps>[];
+  children: (ReactElement<ScrollTabPanelProps> | boolean | null)[] | ReactElement<ScrollTabPanelProps>;
   onTabChange?: (_: { id: string; title: string }) => void;
   initialActiveTabId?: string;
   testId?: string;
