@@ -14,7 +14,7 @@ export type TextFieldProps = BaseInputProps<string> &
   Pick<TextInputProps, 'onSubmit'> & {
     size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
     id?: string;
-    type?: Exclude<TextInputType, 'password' | 'search'>;
+    type?: Exclude<TextInputType, 'password'>;
     state?: 'default' | 'error';
     label?: string;
     placeholder?: string;
