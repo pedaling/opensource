@@ -5,7 +5,7 @@ export type TableSearchFieldProps = {
   testId?: string;
   defaultValue?: string;
   placeholder?: string;
-  maxWidth?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;
+  maxWidth?: ResponsiveValue<number | string>;
 };
 
 export const withTableSearchFieldVariation = withVariation<TableSearchFieldProps>('TableSearchField')();

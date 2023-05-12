@@ -8,7 +8,7 @@ export type TableSearchOptionProps = {
     value: string;
   }[];
   defaultOption?: string;
-  width?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;
+  width?: ResponsiveValue<number | string>;
 };
 
 export const withTableSearchOptionVariation = withVariation<TableSearchOptionProps>('TableSearchOption')();
