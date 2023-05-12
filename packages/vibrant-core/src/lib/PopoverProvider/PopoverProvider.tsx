@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 
@@ -11,12 +11,9 @@ type PopoverValue = {
   getIsOpen: (id: string) => boolean | undefined;
   open: (id: string) => void;
   close: (id: string) => void;
-  registerPopover: ({ id }: RegisterPopoverType) => void;
+  registerPopover: (id: string) => void;
   unregisterPopover: (id: string) => void;
-};
-
-type RegisterPopoverType = {
-  id: string;
+  checkIsRegistered: (id: string) => boolean | undefined;
 };
 
 const PopoverContext = createContext<PopoverValue>({
@@ -25,74 +22,95 @@ const PopoverContext = createContext<PopoverValue>({
   close: () => {},
   registerPopover: () => {},
   unregisterPopover: () => {},
+  checkIsRegistered: () => undefined,
 });
 
 export const PopoverProvider: FC<PopoverProviderProps> = ({ children }) => {
   const popovers = useRef(new Map<string, boolean>());
   const getIsOpen = useCallback((id: string) => popovers.current.get(id), []);
-  const open = useCallback((id: string) => {
-    popovers.current.set(id, true);
-  }, []);
-  const close = useCallback((id: string) => {
-    popovers.current.set(id, false);
-  }, []);
+  const [_, setCount] = useState(0);
 
-  const registerPopover = useCallback(({ id }: RegisterPopoverType) => {
-    if (isDefined(popovers.current.get(id)) || !id) {
-      return;
-    }
+  const checkIsRegistered = useCallback((id: string) => popovers.current.get(id) !== undefined, []);
 
-    popovers.current.set(id, false);
-  }, []);
+  const open = useCallback(
+    (id: string) => {
+      if (!checkIsRegistered(id)) return;
 
-  const unregisterPopover = useCallback((id: string) => {
-    if (isDefined(popovers.current.get(id)) || !id) {
-      return;
-    }
+      popovers.current.set(id, true);
 
-    popovers.current.delete(id);
-  }, []);
-
-  const contextValue = useMemo(
-    () => ({
-      getIsOpen,
-      open,
-      close,
-      registerPopover,
-      unregisterPopover,
-    }),
-    [close, getIsOpen, open, registerPopover, unregisterPopover]
+      setCount(count => count + 1);
+    },
+    [checkIsRegistered]
   );
+  const close = useCallback(
+    (id: string) => {
+      if (!checkIsRegistered(id)) return;
+
+      setCount(count => count + 1);
+
+      popovers.current.set(id, false);
+    },
+    [checkIsRegistered]
+  );
+
+  const registerPopover = useCallback(
+    (id: string) => {
+      if (checkIsRegistered(id)) {
+        return;
+      }
+
+      popovers.current.set(id, false);
+    },
+    [checkIsRegistered]
+  );
+
+  const unregisterPopover = useCallback(
+    (id: string) => {
+      if (!checkIsRegistered(id)) {
+        return;
+      }
+
+      popovers.current.delete(id);
+    },
+    [checkIsRegistered]
+  );
+
+  const contextValue = {
+    getIsOpen,
+    open,
+    close,
+    registerPopover,
+    unregisterPopover,
+    checkIsRegistered,
+  };
 
   return <PopoverContext.Provider value={contextValue}>{children}</PopoverContext.Provider>;
 };
 
 export const usePopover = ({ id = '', value }: { id?: string; value?: boolean | undefined }) => {
-  const { getIsOpen, open, close, registerPopover, unregisterPopover } = useContext(PopoverContext);
-  const [isOpen, setIsOpen] = useState<boolean | undefined>(undefined);
+  const { getIsOpen, open, close, registerPopover, unregisterPopover, checkIsRegistered } = useContext(PopoverContext);
+  const [nonRegisteredIsOpen, setNonRegisteredIsOpen] = useState(value);
+
+  const isOpen = checkIsRegistered(id) ? getIsOpen(id) : nonRegisteredIsOpen;
 
   const openPopover = useCallback(() => {
-    if (id) {
-      open(id);
-
-      return setIsOpen(getIsOpen(id));
+    if (id && checkIsRegistered(id)) {
+      return open(id);
     }
 
-    setIsOpen(true);
-  }, [id, setIsOpen, open, getIsOpen]);
+    setNonRegisteredIsOpen(true);
+  }, [checkIsRegistered, id, open]);
 
   const closePopover = useCallback(() => {
-    if (id) {
-      close(id);
-
-      return setIsOpen(getIsOpen(id));
+    if (id && checkIsRegistered(id)) {
+      return close(id);
     }
 
-    setIsOpen(false);
-  }, [close, getIsOpen, id, setIsOpen]);
+    setNonRegisteredIsOpen(false);
+  }, [checkIsRegistered, close, id]);
 
   useEffect(() => {
-    if (id) registerPopover({ id });
+    if (id) registerPopover(id);
 
     return () => {
       if (id) unregisterPopover(id);
@@ -104,6 +122,8 @@ export const usePopover = ({ id = '', value }: { id?: string; value?: boolean | 
       return value ? openPopover() : closePopover();
     }
   }, [closePopover, openPopover, value]);
+
+  useEffect(() => (value ? openPopover() : closePopover()), [closePopover, openPopover, value]);
 
   return {
     isOpen,

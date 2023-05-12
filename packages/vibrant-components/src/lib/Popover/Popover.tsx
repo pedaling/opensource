@@ -163,14 +163,14 @@ export const Popover = withPopoverVariation(
                 <VStack px={12} py={8} ref={popoverRef} width="100%">
                   <HStack width="100%" alignHorizontal="space-between">
                     {isDefined(title) && (
-                      <Body level={2} weight="regular">
+                      <Body level={2} weight="regular" color="onView1">
                         {title}
                       </Body>
                     )}
                     {isDefined(title) && showCloseButton && <Space width={6} />}
                     {showCloseButton && (
                       <VStack>
-                        <IconButton IconComponent={Icon.Close.Thin} size="sm" onClick={closePopover} />
+                        <IconButton IconComponent={Icon.Close.Thin} size="sm" color="onView1" onClick={closePopover} />
                       </VStack>
                     )}
                   </HStack>

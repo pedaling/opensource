@@ -2,7 +2,7 @@ import { PressableBox, usePopover } from '@vibrant-ui/core';
 import { withPopoverOpenerVariation } from './PopoverOpenerProps';
 
 export const PopoverOpener = withPopoverOpenerVariation(
-  ({ popoverId = '', openToHover, openToClick, isOpen, open, close, children }) => {
+  ({ popoverId = '', openToHover = false, openToClick = false, isOpen, open, close, children }) => {
     const { isOpen: registeredIsOpen, open: registeredOpen, close: registeredClose } = usePopover({ id: popoverId });
     const toggleOpener = () => {
       if (popoverId) return registeredIsOpen ? registeredClose?.() : registeredOpen?.();
@@ -19,14 +19,6 @@ export const PopoverOpener = withPopoverOpenerVariation(
 
       return close?.();
     };
-
-    // useEffect(() => {
-    //   const timer = setInterval(() => {
-    //     console.log(registeredIsOpen);
-    //   }, 1000);
-
-    //   return () => clearInterval(timer);
-    // }, [isOpen, registeredIsOpen]);
 
     return (
       <PressableBox
