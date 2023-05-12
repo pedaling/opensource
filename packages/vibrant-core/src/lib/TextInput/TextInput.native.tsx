@@ -33,6 +33,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
   (
     {
       type,
+      enterKeyType,
       defaultValue,
       pattern,
       readOnly = false,
@@ -89,6 +90,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
     return (
       <SystemTextInput
         ref={innerRef}
+        returnKeyType={enterKeyType}
         textContentType={IS_IOS ? IosAutoCompleteOptions[autoComplete] : undefined}
         autoComplete={IS_ANDROID ? AndroidAutoCompleteOptions[autoComplete] : undefined}
         autoCapitalize={autoCapitalize}
