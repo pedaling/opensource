@@ -39,6 +39,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     secondaryButtonOptions,
     subButtonOptions,
     onClose,
+    showCloseButton = true,
     testId = 'modal-bottom-sheet',
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
@@ -158,9 +159,11 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     </Title>
                   ) : null}
 
-                  <HStack ml="auto" mt={[0, title ? 6 : 0]} flexShrink={0} pl={12}>
-                    <IconButton ariaLabel="Close" onClick={closeModal} size="md" IconComponent={Icon.Close.Regular} />
-                  </HStack>
+                  {showCloseButton && (
+                    <HStack ml="auto" mt={[0, title ? 6 : 0]} flexShrink={0} pl={12}>
+                      <IconButton ariaLabel="Close" onClick={closeModal} size="md" IconComponent={Icon.Close.Regular} />
+                    </HStack>
+                  )}
                 </HStack>
                 {subtitle ? (
                   <Body as="p" level={1} mt={[14, 20]} px={[20, 32]} flexShrink={0} whiteSpace="pre-wrap">
