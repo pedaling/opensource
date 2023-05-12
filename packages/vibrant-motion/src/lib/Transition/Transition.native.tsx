@@ -87,10 +87,9 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
           }))
         : timingAnimation(val, i, 0);
 
-      return {
-        ...acc,
-        [key]: value,
-      };
+      return Object.assign({}, acc, {
+        key: value,
+      });
     }, {});
   }, [JSON.stringify(animation)]);
 
