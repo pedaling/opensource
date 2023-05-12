@@ -12,9 +12,9 @@ describe('<FormNumericField />', () => {
 
   let formControl: UseFormReturn;
   let renderer: ReactRenderer;
-  let element: Element;
-  let submit: Element;
-  let testNumber: string;
+  let element: HTMLElement;
+  let submit: HTMLElement;
+  let testNumber: number;
   let name: string;
   const submitHandler = jest.fn<void, [values: any]>();
 
@@ -28,6 +28,8 @@ describe('<FormNumericField />', () => {
 
       name = 'number-test';
 
+      testNumber = 10;
+
       renderer = render(
         <Form formControlMethods={formControl}>
           <FormNumericField data-testid="FormNumericField" name={name} />
@@ -35,18 +37,14 @@ describe('<FormNumericField />', () => {
         </Form>
       );
 
-      element = renderer.getByTestId('FormNumericField');
+      element = (await renderer.findByTestId('FormNumericField')).firstElementChild as HTMLElement;
 
       submit = renderer.getByTestId('submit');
     });
 
     describe('when text typed', () => {
       beforeEach(async () => {
-        testNumber = '3';
-
-        await waitFor(() => userEvent.type(element, testNumber));
-
-        renderer.debug();
+        await waitFor(() => userEvent.type(element, testNumber.toString()));
       });
 
       it('value is changed', () => {
@@ -56,9 +54,9 @@ describe('<FormNumericField />', () => {
 
     describe('when submit clicked', () => {
       beforeEach(async () => {
-        testNumber = 'test2';
+        testNumber = 2;
 
-        await waitFor(() => userEvent.type(element, testNumber));
+        await waitFor(() => userEvent.type(element, testNumber.toString()));
 
         await waitFor(() => userEvent.click(submit));
       });
