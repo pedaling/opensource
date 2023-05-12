@@ -52,10 +52,9 @@ export const Motion = withMotionVariation(
             ? interpolateColor(progress.value, [0, 1], styleWithTransform[key], 'RGB')
             : interpolate(progress.value, [0, 1], styleWithTransform[key]);
 
-          return {
-            ...acc,
+          return Object.assign({}, acc, {
             [key]: value,
-          };
+          });
         }, {}),
       [styleWithTransform]
     );
