@@ -9,12 +9,14 @@ import { Popover } from './Popover';
 export default {
   title: 'Popover',
   component: Popover,
-  args: {},
+  args: {
+    position: 'bottom',
+  },
 } as ComponentMeta<typeof Popover>;
 
-export const Basic: ComponentStory<typeof Popover> = () => (
+export const Basic: ComponentStory<typeof Popover> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
-    <Popover position="bottom" title="Popover" backgroundColor="informative">
+    <Popover title="Popover" {...props}>
       <PopoverOpener openToHover={true}>
         <Avatar size="lg" src="" alt="" />
       </PopoverOpener>
@@ -22,16 +24,15 @@ export const Basic: ComponentStory<typeof Popover> = () => (
   </VStack>
 );
 
-export const WithExternalState: ComponentStory<typeof Popover> = () => {
+export const WithExternalState: ComponentStory<typeof Popover> = props => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
       <Popover
-        position="bottom"
+        {...props}
         title="Popover"
         open={isOpen}
-        backgroundColor="informative"
         renderContent={() => (
           <VStack p={30}>
             <Avatar size="lg" src="" alt="" />

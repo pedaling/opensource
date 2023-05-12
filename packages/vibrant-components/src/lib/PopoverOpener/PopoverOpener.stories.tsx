@@ -1,4 +1,4 @@
-import type { ComponentMeta } from '@storybook/react';
+import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FilterChip } from '../FilterChip';
 import { Paper } from '../Paper';
 import { Popover } from '../Popover';
@@ -12,27 +12,27 @@ export default {
   args: {},
 } as ComponentMeta<typeof PopoverOpener>;
 
-export const Basic = () => (
+export const Basic: ComponentStory<typeof PopoverOpener> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
     <Popover position="bottom" title="Popover" backgroundColor="primary">
-      <PopoverOpener openToClick={true}>
+      <PopoverOpener {...props} openToClick={true} openToHover={false}>
         <Title level={4}>Click Opener</Title>
       </PopoverOpener>
     </Popover>
   </VStack>
 );
 
-export const OpenToHover = () => (
+export const OpenToHover: ComponentStory<typeof PopoverOpener> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
     <Popover position="bottom" title="Popover" backgroundColor="primary">
-      <PopoverOpener openToHover={true}>
+      <PopoverOpener {...props} openToClick={false} openToHover={true}>
         <FilterChip size="md">Hover At Opener</FilterChip>
       </PopoverOpener>
     </Popover>
   </VStack>
 );
 
-export const NotWrappedWithPopover = () => {
+export const NotWrappedWithPopover: ComponentStory<typeof PopoverOpener> = props => {
   const popoverId = 'temp-id';
 
   return (
@@ -45,7 +45,7 @@ export const NotWrappedWithPopover = () => {
         </Paper>
       </Popover>
 
-      <PopoverOpener popoverId={popoverId} openToClick={true} openToHover={false}>
+      <PopoverOpener {...props} popoverId={popoverId} openToClick={true} openToHover={false}>
         <Title level={4}>Click Opener</Title>
       </PopoverOpener>
     </VStack>

@@ -6,9 +6,9 @@ export type PopoverOpenerProps = {
   children?: ReactElement;
 } & (
   | {
-      isOpen: boolean;
-      open: () => void;
-      close: () => void;
+      isOpen?: boolean;
+      open?: () => void;
+      close?: () => void;
     }
   | {
       isOpen?: never;
@@ -16,6 +16,6 @@ export type PopoverOpenerProps = {
       close?: never;
     }
 ) &
-  ({ openToHover?: never | false; openToClick?: true } | { openToHover?: true; openToClick?: never | false });
+  ({ openToHover?: false | undefined; openToClick?: true } | { openToHover?: true; openToClick?: false | undefined });
 
 export const withPopoverOpenerVariation = withVariation<PopoverOpenerProps>('PopoverOpene')();
