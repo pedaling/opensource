@@ -1,4 +1,4 @@
-import { cloneElement, useEffect, useRef } from 'react';
+import { cloneElement, useCallback, useEffect, useRef } from 'react';
 import { useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
@@ -46,7 +46,7 @@ export const Popover = withPopoverVariation(
     const childWidth = childRef?.current?.offsetWidth ?? 0;
     const childHeight = childRef?.current?.offsetHeight ?? 0;
 
-    const calculatePopoverPosition = () => {
+    const calculatePopoverPosition = useCallback(() => {
       if (position.includes('top'))
         return {
           x: childWidth / 2 - popoverWidth / 2,
@@ -70,9 +70,9 @@ export const Popover = withPopoverVariation(
           x: childWidth + arrowHeight + computedOffset,
           y: childHeight / 2 - popoverHeight / 2,
         };
-    };
+    }, [arrowHeight, childHeight, childWidth, computedOffset, popoverHeight, popoverWidth, position]);
 
-    const calculateArrowPosition = () => {
+    const calculateArrowPosition = useCallback(() => {
       switch (position) {
         case 'top':
           return {
@@ -146,7 +146,7 @@ export const Popover = withPopoverVariation(
             top: popoverHeight - arrowHeight * 2 - arrowOffset + 2,
           };
       }
-    };
+    }, [arrowHeight, arrowOffset, popoverHeight, popoverWidth, position]);
 
     useEffect(() => (isOpen ? onOpen?.() : onClose?.()), [isOpen, onClose, onOpen]);
 
