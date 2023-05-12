@@ -7,32 +7,37 @@ import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Form, useForm } from '../Form';
 import { FormNumericField } from './FormNumericField';
 
+type FormValues = {
+  numberField: number;
+};
 describe('<FormNumericField />', () => {
   const { render } = createReactRenderer();
 
-  let formControl: UseFormReturn;
+  let formControl: UseFormReturn<FormValues>;
   let renderer: ReactRenderer;
   let element: HTMLElement;
   let submit: HTMLElement;
   let testNumber: number;
-  let name: string;
+  let initialNumber: number;
   const submitHandler = jest.fn<void, [values: any]>();
 
   describe('when FormNumericField rendered', () => {
     beforeEach(async () => {
       formControl = renderHook(() =>
-        useForm({
-          defaultValues: {},
+        useForm<FormValues>({
+          defaultValues: {
+            numberField: 0,
+          },
         })
       ).result.current;
 
-      name = 'number-test';
-
       testNumber = 10;
+
+      initialNumber = 0;
 
       renderer = render(
         <Form formControlMethods={formControl}>
-          <FormNumericField data-testid="FormNumericField" name={name} />
+          <FormNumericField data-testid="FormNumericField" name="numberField" />
           <Pressable data-testid="submit" onClick={formControl.handleSubmit(submitHandler)} />
         </Form>
       );
@@ -40,6 +45,18 @@ describe('<FormNumericField />', () => {
       element = (await renderer.findByTestId('FormNumericField')).firstElementChild as HTMLElement;
 
       submit = renderer.getByTestId('submit');
+
+      formControl.watch('numberField');
+    });
+
+    describe('when default value is set as 0', () => {
+      it('value should be 0', async () => {
+        expect(formControl.getValues('numberField')).toEqual(initialNumber);
+      });
+
+      it('dirty is not set', async () => {
+        expect(formControl.formState.isDirty).toBe(false);
+      });
     });
 
     describe('when text typed', () => {
@@ -48,7 +65,21 @@ describe('<FormNumericField />', () => {
       });
 
       it('value is changed', () => {
-        expect(formControl.getValues(name)).toEqual(testNumber);
+        expect(formControl.getValues('numberField')).toEqual(testNumber);
+      });
+
+      it('watch is executed', () => {
+        expect(formControl.watch('numberField')).toEqual(testNumber);
+      });
+    });
+
+    describe('when reset executed', () => {
+      beforeEach(async () => {
+        await waitFor(() => formControl.reset({ numberField: initialNumber }));
+      });
+
+      it('value is set as defaultValue', () => {
+        expect(formControl.getValues('numberField')).toEqual(initialNumber);
       });
     });
 
@@ -66,7 +97,7 @@ describe('<FormNumericField />', () => {
       });
 
       it('submit handler got values', () => {
-        expect(submitHandler.mock.lastCall[0]).toEqual({ [name]: testNumber });
+        expect(submitHandler.mock.lastCall[0]).toEqual({ numberField: testNumber });
       });
     });
   });
