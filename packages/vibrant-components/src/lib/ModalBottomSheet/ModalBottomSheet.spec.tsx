@@ -65,6 +65,22 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
+  describe('when showCloseButton is false', () => {
+    beforeEach(() => {
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={false}
+          renderOpener={({ open }) => <Pressable data-testid="opener" onClick={open} />}
+          showCloseButton={false}
+        />
+      );
+    });
+
+    it('should not found CloseButton', () => {
+      expect(renderer.queryByRole('button', { name: 'Close' })).toBeFalsy();
+    });
+  });
+
   describe('when renderContents is provided', () => {
     beforeEach(() => {
       renderer = render(<ModalBottomSheet open={true} renderContents={() => <Box data-testid="contents" />} />);
