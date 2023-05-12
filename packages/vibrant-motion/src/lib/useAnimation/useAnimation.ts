@@ -5,7 +5,7 @@ import type { AnimationResult } from '../types';
 /* eslint-disable @typescript-eslint/naming-convention */
 export type UseAnimationProps = {
   duration?: number;
-  loop?: boolean | 'reverse';
+  loop?: boolean;
   easing: keyof EasingDictionary;
   onStart?: ((e?: AnimationResult<any>) => void) | undefined;
   onEnd?: ((e?: AnimationResult<any>) => void) | undefined;

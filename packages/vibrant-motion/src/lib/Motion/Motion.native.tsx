@@ -12,7 +12,7 @@ export const Motion = withMotionVariation(
     const { interpolation } = useInterpolation(transformMotionProps);
     const { getResponsiveValue } = useResponsiveValue();
     const { progress, startAnimation, stopAnimation, resumeAnimation } = useAnimation({
-      loop,
+      loop: Boolean(loop),
       duration,
       easing,
       onEnd,
@@ -78,7 +78,7 @@ export const Motion = withMotionVariation(
         return;
       }
 
-      startAnimation({ reverse: loop === 'reverse' });
+      startAnimation();
     }, [innerRef, loop, startAnimation]);
 
     const AnimatedViewComponent = useMemo(
