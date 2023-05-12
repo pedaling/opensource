@@ -30,11 +30,11 @@ export const CardNumberField = withCardNumberFieldVariation(
       const newCardNumberOnlyNumber = newCardNumber.match(/\d/g) ?? [];
       const totalLength = newCardNumberOnlyNumber.length;
 
-      const a = [...gaps, maxLength];
-      const newCardNumberWithDash = a.reduce((acc, breakPoint, index) => {
+      const breakPoints = [...gaps, maxLength];
+      const newCardNumberWithDash = breakPoints.reduce((acc, breakPoint, index) => {
         const endIndex = Math.min(breakPoint, totalLength);
 
-        const group = newCardNumberOnlyNumber.slice(a[index - 1], endIndex).join('');
+        const group = newCardNumberOnlyNumber.slice(breakPoints[index - 1], endIndex).join('');
 
         if (group) {
           if (acc) {
