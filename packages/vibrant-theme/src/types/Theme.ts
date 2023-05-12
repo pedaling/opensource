@@ -25,6 +25,7 @@ export type Theme = {
     floatingActionButton: number;
     modalBottomSheet: number;
     toast: number;
+    popover: number;
   };
   mode: ThemeMode;
 };
@@ -48,5 +49,6 @@ export type CurrentTheme = {
     floatingActionButton: number;
     modalBottomSheet: number;
     toast: number;
+    popover: number;
   };
 };

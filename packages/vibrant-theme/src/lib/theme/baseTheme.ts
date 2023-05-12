@@ -140,6 +140,7 @@ export const baseTheme: Theme = {
     floatingActionButton: 1,
     modalBottomSheet: 2,
     toast: 4,
+    popover: 4,
   },
   mode: 'light',
 };

@@ -76,3 +76,5 @@ export type { CustomizationProviderProps, Configurations } from './lib/Customiza
 export { Radio, useRadio } from './lib/Radio';
 export { RadioGroupField } from './lib/RadioGroupField';
 export { Slider } from './lib/Slider';
+export { Popover } from './lib/Popover';
+export { PopoverOpener } from './lib/PopoverOpener';
