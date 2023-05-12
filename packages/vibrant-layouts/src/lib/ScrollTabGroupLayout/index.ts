@@ -1,0 +1,1 @@
+export { ScrollTabGroupLayout } from './ScrollTabGroupLayout';
