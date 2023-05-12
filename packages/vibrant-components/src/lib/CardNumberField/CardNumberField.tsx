@@ -36,15 +36,7 @@ export const CardNumberField = withCardNumberFieldVariation(
 
         const group = newCardNumberOnlyNumber.slice(breakPoints[index - 1], endIndex).join('');
 
-        if (group) {
-          if (acc) {
-            return acc + separator + group;
-          }
-
-          return acc + group;
-        }
-
-        return acc;
+        return acc && group ? acc + separator + group : acc + group;
       }, '');
 
       setValue(newCardNumberWithDash);
