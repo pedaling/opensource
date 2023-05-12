@@ -1,12 +1,11 @@
 import type { ReactElement } from 'react';
 import { withVariation } from '@vibrant-ui/core';
 
-export type ScrollTabGroupLayoutItemProps = {
+export type ScrollTabPanelProps = {
   title: string;
   tabId: string;
   onTabSelected?: () => void;
   renderContent: () => ReactElement;
   testId?: string;
 };
-export const withScrollTabGroupLayoutItemVariation =
-  withVariation<ScrollTabGroupLayoutItemProps>('ScrollTabGroupLayoutItem')();
+export const withScrollTabPanelVariation = withVariation<ScrollTabPanelProps>('ScrollTabPanel')();
