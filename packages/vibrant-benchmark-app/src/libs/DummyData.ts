@@ -29,7 +29,7 @@ export const cardData: CardData[] = [
     title: '리더를 위한 비즈니스 영어 읽기, GOOGLE 에디션',
     category: '언어',
     creator: '지원 킴',
-    image: '	https://cdn.class101.net/images/82914115-3901-43b0-807c-e96a375494d9/2048xauto.webp',
+    image: 'https://cdn.class101.net/images/82914115-3901-43b0-807c-e96a375494d9/2048xauto.webp',
   },
   {
     title: '이탈리아 현지 미슐랭 요리사에게 배우는 파스타, 뇨끼, 리조또! 프리미 피아띠 정복하기',
