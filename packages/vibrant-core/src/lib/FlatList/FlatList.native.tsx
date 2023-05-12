@@ -26,6 +26,7 @@ export const FlatList = withFlatListVariation(
     horizontal = false,
     snap = false,
     loop,
+    px,
     snapAlignment,
     initialIndex = 0,
     rowSpacing = 0,
@@ -131,7 +132,7 @@ export const FlatList = withFlatListVariation(
       <NativeFlatList
         ref={ref}
         key={currentColumn}
-        style={{ width: '100%' }}
+        style={{ width: '100%', px }}
         horizontal={horizontal}
         initialNumToRender={buffedData.length}
         initialScrollIndex={buffedInitialIndex}

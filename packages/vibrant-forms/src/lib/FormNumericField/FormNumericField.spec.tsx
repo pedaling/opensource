@@ -68,7 +68,7 @@ describe('<FormNumericField />', () => {
         expect(formControl.getValues('numberField')).toEqual(testNumber);
       });
 
-      it('watch is executed', () => {
+      it('watching value should be same with the updated number', () => {
         expect(formControl.watch('numberField')).toEqual(testNumber);
       });
     });
