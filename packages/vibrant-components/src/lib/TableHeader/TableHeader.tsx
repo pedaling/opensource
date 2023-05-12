@@ -6,20 +6,10 @@ import { TableHeaderButton } from './TableHeaderButton';
 import type { TableHeaderProps } from './TableHeaderProps';
 
 export const TableHeader = ({ children, testId = 'table-header' }: TableHeaderProps) => {
-  const buttons: ReactElement[] = [];
-  const search: ReactElement[] = [];
-
   const childArray = Children.toArray(children) as ReactElement[];
 
-  childArray.forEach(child => {
-    if (child.type === TableSearch) {
-      search.push(child);
-    }
-
-    if (child.type === TableHeaderButton) {
-      buttons.push(child);
-    }
-  });
+  const buttons = childArray.filter(child => child.type === TableHeaderButton);
+  const search = childArray.filter(child => child.type === TableSearch);
 
   return (
     <HStack width="100%" alignVertical="center" spacing={8} data-testid={testId}>
