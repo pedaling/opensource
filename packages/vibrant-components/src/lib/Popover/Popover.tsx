@@ -50,24 +50,24 @@ export const Popover = withPopoverVariation(
       if (position.includes('top'))
         return {
           x: childWidth / 2 - popoverWidth / 2,
-          y: childHeight + arrowHeight + computedOffset,
+          y: -popoverHeight - arrowHeight - computedOffset,
         };
 
       if (position.includes('bottom'))
         return {
           x: childWidth / 2 - popoverWidth / 2,
-          y: -popoverHeight - arrowHeight - computedOffset,
+          y: childHeight + arrowHeight + computedOffset,
         };
 
       if (position.includes('left'))
         return {
-          x: childWidth + arrowHeight + computedOffset,
+          x: -popoverWidth - arrowHeight - computedOffset,
           y: childHeight / 2 - popoverHeight / 2,
         };
 
       if (position.includes('right'))
         return {
-          x: -popoverWidth - arrowHeight - computedOffset,
+          x: childWidth + arrowHeight + computedOffset,
           y: childHeight / 2 - popoverHeight / 2,
         };
     };
@@ -77,72 +77,72 @@ export const Popover = withPopoverVariation(
         case 'top':
           return {
             left: popoverWidth / 2 - arrowHeight,
-            top: -arrowHeight + 2,
+            top: popoverHeight - arrowHeight + 2,
           };
 
         case 'topStart':
           return {
             left: arrowHeight + arrowOffset,
-            top: -arrowHeight + 2,
+            top: popoverHeight - arrowHeight + 2,
           };
 
         case 'topEnd':
           return {
             left: popoverWidth - arrowHeight * 3 - arrowOffset,
-            top: -arrowHeight + 2,
+            top: popoverHeight - arrowHeight + 2,
           };
 
         case 'bottom':
           return {
             left: popoverWidth / 2 - arrowHeight,
-            top: popoverHeight - arrowHeight + 2,
+            top: -arrowHeight + 2,
           };
 
         case 'bottomStart':
           return {
             left: arrowHeight + arrowOffset,
-            top: popoverHeight - arrowHeight + 2,
+            top: -arrowHeight + 2,
           };
 
         case 'bottomEnd':
           return {
             left: popoverWidth - arrowHeight * 3 - arrowOffset,
-            top: popoverHeight - arrowHeight + 2,
+            top: -arrowHeight + 2,
           };
 
         case 'left':
           return {
-            left: -arrowHeight + 2,
+            left: popoverWidth - arrowHeight + 2,
             top: popoverHeight / 2 - arrowHeight + 2,
           };
 
         case 'leftStart':
           return {
-            left: -arrowHeight + 2,
+            left: popoverWidth - arrowHeight + 2,
             top: arrowOffset + 2,
           };
 
         case 'leftEnd':
           return {
-            left: -arrowHeight + 2,
+            left: popoverWidth - arrowHeight + 2,
             top: popoverHeight - arrowHeight * 2 - arrowOffset + 2,
           };
 
         case 'right':
           return {
-            left: popoverWidth - arrowHeight + 2,
+            left: -arrowHeight + 2,
             top: popoverHeight / 2 - arrowHeight + 2,
           };
 
         case 'rightStart':
           return {
-            left: popoverWidth - arrowHeight + 2,
+            left: -arrowHeight + 2,
             top: arrowOffset + 2,
           };
 
         case 'rightEnd':
           return {
-            left: popoverWidth - arrowHeight + 2,
+            left: -arrowHeight + 2,
             top: popoverHeight - arrowHeight * 2 - arrowOffset + 2,
           };
       }
