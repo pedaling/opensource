@@ -35,9 +35,13 @@ export const TextField = withTextFieldVariation(
 
     const hasValue = value.length > 0;
     const onClearButtonClick = () => {
+      setValue('');
+
       inputRef.current?.focus();
 
-      inputRef.current?.clear();
+      setIsFocused(true);
+
+      onValueChange?.({ value: '', prevent: () => {} });
     };
 
     useEffect(() => {

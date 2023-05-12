@@ -4,7 +4,7 @@ import { SafeAreaView, VStack } from '@vibrant-ui/components';
 import { VibrantHeroBanner } from '../libs/VibrantHeroBanner';
 import { VibrantListSection } from '../libs/VibrantListSection/VibrantListSection';
 
-const names = ['루', '앤', '오션', '히로', '미아', '제다이', '제리안', '랄프', '녹', '볼더'];
+const names = new Array(10).fill(0).map((_, i) => `이름${i + 1}`);
 
 export const VibrantApp = () => (
   <SafeAreaView>
