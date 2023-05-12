@@ -16,6 +16,10 @@ export const ViewableScrollTabPanel = withViewableScrollTabPanelVariation(
 
     const ref = useComposedRef(innerRefCallback, inViewRef);
 
-    return <Box ref={ref}>{children}</Box>;
+    return (
+      <Box ref={ref} role="tabpanel">
+        {children}
+      </Box>
+    );
   }
 );

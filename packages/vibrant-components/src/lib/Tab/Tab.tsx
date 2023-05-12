@@ -18,6 +18,7 @@ export const Tab = withTabVariation(
     ...restProps
   }) => (
     <PressableBox
+      role="tab"
       as="button"
       borderWidth={0}
       ref={innerRef}
