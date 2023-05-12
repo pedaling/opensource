@@ -1,4 +1,4 @@
-import { Box } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { NotificationBadge } from '../NotificationBadge';
 import { Title } from '../Title';
@@ -17,7 +17,7 @@ export const Tab = withTabVariation(
     testId = 'tab',
     ...restProps
   }) => (
-    <Box
+    <PressableBox
       as="button"
       borderWidth={0}
       ref={innerRef}
@@ -55,6 +55,6 @@ export const Tab = withTabVariation(
           <NotificationBadge kind="dot" size="sm" />
         </Box>
       )}
-    </Box>
+    </PressableBox>
   )
 );
