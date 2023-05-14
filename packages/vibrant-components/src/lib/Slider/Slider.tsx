@@ -43,7 +43,7 @@ export const Slider = withSliderVariation(
     }, [computedPaddingX, computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, sliderWidth]);
 
     return (
-      <Box data-testid={testId} width={width} onLayout={({ width }) => setSliderWidth(width)}>
+      <Box data-testid={testId} px={px} width={width} onLayout={({ width }) => setSliderWidth(width)}>
         {computedPanelWidth !== undefined ? (
           <FlatList
             testId="slider-container"
@@ -59,7 +59,6 @@ export const Slider = withSliderVariation(
             keyExtractor={keyExtractor}
             onEndReached={onEndReached}
             onItemImpressed={onItemImpressed}
-            px={px}
           />
         ) : null}
       </Box>
