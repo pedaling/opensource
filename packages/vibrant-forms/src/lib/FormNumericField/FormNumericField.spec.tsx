@@ -74,10 +74,6 @@ describe('<FormNumericField />', () => {
       it.skip('watching value should be same with the updated number', async () => {
         expect(watchingNumber).toEqual(testNumber);
       });
-
-      it.skip('dirty is set', async () => {
-        await waitFor(() => expect(formControl.formState.isDirty).toEqual(true));
-      });
     });
 
     describe('when reset executed', () => {
