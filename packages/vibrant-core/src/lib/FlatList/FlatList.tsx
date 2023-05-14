@@ -32,7 +32,6 @@ export const FlatList = withFlatListVariation(
     horizontal = false,
     snap,
     loop,
-    px,
     snapAlignment,
     initialIndex = 0,
     hideScroll = true,
@@ -263,7 +262,6 @@ export const FlatList = withFlatListVariation(
         data-testid={testId}
         hideScroll={hideScroll}
         ref={containerRef}
-        px={px}
         {...props}
       >
         {memoizedFlatListItems}
