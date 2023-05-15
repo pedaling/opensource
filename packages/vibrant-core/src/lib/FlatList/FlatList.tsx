@@ -200,10 +200,12 @@ export const FlatList = withFlatListVariation(
       }
 
       containerRef.current?.scrollTo({
-        left: buffedInitialIndex * getResponsiveValue(columnWidth ?? 0),
+        left:
+          buffedInitialIndex * getResponsiveValue(columnWidth ?? 0) +
+          getResponsiveValue(columnSpacing) * buffedInitialIndex,
         behavior: 'auto',
       });
-    }, [buffedInitialIndex, columnWidth, getResponsiveValue, horizontal, scrollToTargetIndex]);
+    }, [buffedInitialIndex, columnSpacing, columnWidth, getResponsiveValue, horizontal]);
 
     useEffect(() => {
       if (!horizontal) {
