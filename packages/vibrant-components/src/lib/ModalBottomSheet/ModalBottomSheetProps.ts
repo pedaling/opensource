@@ -15,6 +15,8 @@ export type ModalBottomSheetProps = Either<
   testId?: string;
   renderContents?: (_: { close: () => void }) => ReactElementChild;
   onClose?: () => void;
+  showCloseButton?: boolean;
+  dimClosable?: boolean;
 } & (
     | {
         primaryButtonOptions: ButtonOptions;
