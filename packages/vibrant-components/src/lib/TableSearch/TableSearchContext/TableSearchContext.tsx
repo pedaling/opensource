@@ -1,46 +1,42 @@
-import type { FC, ReactElement } from 'react';
+import type { FC, ReactElement, RefObject } from 'react';
 import { createContext, useContext } from 'react';
+import type { TextInputRef } from '@vibrant-ui/core';
 
 type TableSearchContextValue = {
-  isFocus: boolean;
-  initIsFocus: () => void;
+  searchFieldRef: RefObject<TextInputRef> | null;
   onSubmit?: (value: string) => void;
   onOptionChange?: (value?: string) => void;
 };
 
 const TableSearchContext = createContext<TableSearchContextValue>({
-  isFocus: false,
-  initIsFocus: () => {},
+  searchFieldRef: null,
   onSubmit: () => {},
   onOptionChange: () => {},
 });
 
 type TableSearchProviderProps = {
   children: ReactElement | ReactElement[];
-  isFocus: boolean;
-  initIsFocus: () => void;
+  searchFieldRef: RefObject<TextInputRef> | null;
   onSubmit?: (value: string) => void;
   onOptionChange?: (value?: string) => void;
 };
 
 export const TableSearchProvider: FC<TableSearchProviderProps> = ({
   children,
-  initIsFocus,
-  isFocus,
+  searchFieldRef,
   onOptionChange,
   onSubmit,
 }) => (
-  <TableSearchContext.Provider value={{ initIsFocus, isFocus, onOptionChange, onSubmit }}>
+  <TableSearchContext.Provider value={{ searchFieldRef, onOptionChange, onSubmit }}>
     {children}
   </TableSearchContext.Provider>
 );
 
 export const useTableSearch = () => {
-  const { initIsFocus, isFocus, onOptionChange, onSubmit } = useContext(TableSearchContext);
+  const { searchFieldRef, onOptionChange, onSubmit } = useContext(TableSearchContext);
 
   return {
-    initIsFocus,
-    isFocus,
+    searchFieldRef,
     onOptionChange,
     onSubmit,
   };

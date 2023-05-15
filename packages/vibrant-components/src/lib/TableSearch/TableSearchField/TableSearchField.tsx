@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react';
-import type { TextInputRef } from '@vibrant-ui/core';
 import { Box } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { TextField } from '../../TextField';
@@ -8,20 +6,7 @@ import { withTableSearchFieldVariation } from './TableSearchFieldProps';
 
 export const TableSearchField = withTableSearchFieldVariation(
   ({ maxWidth, testId = 'table-search-field', ...restProps }) => {
-    const searchFieldRef = useRef<TextInputRef>(null);
-    const { isFocus, initIsFocus, onSubmit } = useTableSearch();
-
-    useEffect(() => {
-      if (!searchFieldRef.current) {
-        return;
-      }
-
-      if (isFocus) {
-        searchFieldRef.current?.focus();
-
-        initIsFocus?.();
-      }
-    }, [initIsFocus, isFocus]);
+    const { searchFieldRef, onSubmit } = useTableSearch();
 
     return (
       <Box width="100%" maxWidth={maxWidth} data-testid={testId}>
