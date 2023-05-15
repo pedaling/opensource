@@ -91,6 +91,8 @@ export const usePopover = ({ id = '', value }: { id?: string; value?: boolean | 
   const { getIsOpen, open, close, registerPopover, unregisterPopover, checkIsRegistered } = useContext(PopoverContext);
   const [nonRegisteredIsOpen, setNonRegisteredIsOpen] = useState(value);
 
+  if (checkIsRegistered(id) === undefined) throw Error('Provider cannot be found');
+
   const isOpen = checkIsRegistered(id) ? getIsOpen(id) : nonRegisteredIsOpen;
 
   const openPopover = useCallback(() => {
@@ -122,8 +124,6 @@ export const usePopover = ({ id = '', value }: { id?: string; value?: boolean | 
       return value ? openPopover() : closePopover();
     }
   }, [closePopover, openPopover, value]);
-
-  useEffect(() => (value ? openPopover() : closePopover()), [closePopover, openPopover, value]);
 
   return {
     isOpen,
