@@ -27,6 +27,7 @@ export const withTabGroupVariation = withVariation<TabGroupProps>('TabGroup')(
         overflowX: 'auto',
         width: 'auto',
         isScrollable: true,
+        tabSpacing: [20, 20, 28],
       },
       fullWidth: {
         tabFlexGrow: 1,
@@ -36,6 +37,7 @@ export const withTabGroupVariation = withVariation<TabGroupProps>('TabGroup')(
         BoxComponent: Box,
         width: '100%',
         isScrollable: false,
+        tabSpacing: 0,
       },
     } as const,
   })
