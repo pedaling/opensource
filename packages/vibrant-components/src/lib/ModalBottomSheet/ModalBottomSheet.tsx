@@ -40,6 +40,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     subButtonOptions,
     onClose,
     showCloseButton = true,
+    dimClosable = true,
     testId = 'modal-bottom-sheet',
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
@@ -111,7 +112,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
             open={isOpen}
             zIndex={zIndex.modalBottomSheet}
             transitionDuration={200}
-            onClick={closeModal}
+            onClick={dimClosable ? closeModal : undefined}
             scrollable={!isMobile}
             pt={[120, 40]}
             pb={[0, 40]}
