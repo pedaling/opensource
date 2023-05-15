@@ -40,45 +40,63 @@ export const Popover = withPopoverVariation(
     const popoverRef = useRef<HTMLElement>(null);
     const childRef = useRef<HTMLElement>(null);
 
+    const arrowHeight = Math.sqrt(ARROW_SQUARE_SIZE * ARROW_SQUARE_SIZE * 2) / 2;
+
     const popoverWidth = popoverRef?.current?.offsetWidth ?? 0;
     const popoverHeight = popoverRef?.current?.offsetHeight ?? 0;
-    const arrowHeight = Math.sqrt(ARROW_SQUARE_SIZE * ARROW_SQUARE_SIZE * 2) / 2;
+    const halfPopoverWidth = popoverWidth / 2;
+    const halfPopoverHeight = popoverHeight / 2;
+
     const childWidth = childRef?.current?.offsetWidth ?? 0;
     const childHeight = childRef?.current?.offsetHeight ?? 0;
+    const halfChildWidth = childWidth / 2;
+    const halfChildHeight = childHeight / 2;
 
     const calculatePopoverPosition = useCallback(() => {
       if (position.includes('top'))
         return {
-          x: childWidth / 2 - popoverWidth / 2,
+          x: halfChildWidth - halfPopoverWidth,
           y: -popoverHeight - arrowHeight - computedOffset,
         };
 
       if (position.includes('bottom'))
         return {
-          x: childWidth / 2 - popoverWidth / 2,
+          x: halfChildWidth - halfPopoverWidth,
           y: childHeight + arrowHeight + computedOffset,
         };
 
       if (position.includes('left'))
         return {
           x: -popoverWidth - arrowHeight - computedOffset,
-          y: childHeight / 2 - popoverHeight / 2,
+          y: halfChildHeight - halfPopoverHeight,
         };
 
       if (position.includes('right'))
         return {
           x: childWidth + arrowHeight + computedOffset,
-          y: childHeight / 2 - popoverHeight / 2,
+          y: halfChildHeight - halfPopoverHeight,
         };
 
       return { x: 0, y: 0 };
-    }, [arrowHeight, childHeight, childWidth, computedOffset, popoverHeight, popoverWidth, position]);
+    }, [
+      arrowHeight,
+      childHeight,
+      childWidth,
+      computedOffset,
+      halfChildHeight,
+      halfChildWidth,
+      halfPopoverHeight,
+      halfPopoverWidth,
+      popoverHeight,
+      popoverWidth,
+      position,
+    ]);
 
     const calculateArrowPosition = useCallback(() => {
       switch (position) {
         case 'top':
           return {
-            left: popoverWidth / 2 - arrowHeight,
+            left: halfPopoverWidth - arrowHeight,
             top: popoverHeight - arrowHeight + 2,
           };
 
@@ -96,7 +114,7 @@ export const Popover = withPopoverVariation(
 
         case 'bottom':
           return {
-            left: popoverWidth / 2 - arrowHeight,
+            left: halfPopoverWidth - arrowHeight,
             top: -arrowHeight + 2,
           };
 
@@ -115,7 +133,7 @@ export const Popover = withPopoverVariation(
         case 'left':
           return {
             left: popoverWidth - arrowHeight + 2,
-            top: popoverHeight / 2 - arrowHeight + 2,
+            top: halfPopoverHeight - arrowHeight + 2,
           };
 
         case 'leftStart':
@@ -133,7 +151,7 @@ export const Popover = withPopoverVariation(
         case 'right':
           return {
             left: -arrowHeight + 2,
-            top: popoverHeight / 2 - arrowHeight + 2,
+            top: halfPopoverHeight - arrowHeight + 2,
           };
 
         case 'rightStart':
@@ -148,7 +166,7 @@ export const Popover = withPopoverVariation(
             top: popoverHeight - arrowHeight * 2 - arrowOffset + 2,
           };
       }
-    }, [arrowHeight, arrowOffset, popoverHeight, popoverWidth, position]);
+    }, [arrowHeight, arrowOffset, halfPopoverHeight, halfPopoverWidth, popoverHeight, popoverWidth, position]);
 
     useEffect(() => (isOpen ? onOpen?.() : onClose?.()), [isOpen, onClose, onOpen]);
 
