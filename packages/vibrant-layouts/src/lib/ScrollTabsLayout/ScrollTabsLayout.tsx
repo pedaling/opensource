@@ -15,14 +15,14 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     const elementChildren = Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>);
     const tabs = elementChildren.map(({ props }) => props) ?? [];
 
-    const [tabStates, setTabStates] = useState(new Array(tabs.length).fill(false));
-    const activeTabIndex = tabStates.findIndex(state => state === true);
+    const [tabViewableStates, setTabViewableStates] = useState(new Array(tabs.length).fill(false));
+    const activeTabIndex = tabViewableStates.findIndex(state => state === true);
 
     const [tabsHeight, setTabsHeight] = useState(0);
     const tabItemElementsRef = useRef<(HTMLElement | null)[]>(new Array(tabs.length).fill(null));
 
     const handleTabStateChange = (index: number, viewable: boolean) => {
-      setTabStates(value => [...value.slice(0, index), viewable, ...value.slice(index + 1)]);
+      setTabViewableStates(value => [...value.slice(0, index), viewable, ...value.slice(index + 1)]);
     };
 
     const handleContainerLayoutChange = useCallback(({ height }: LayoutEvent) => {

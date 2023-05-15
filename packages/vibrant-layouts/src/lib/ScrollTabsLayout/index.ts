@@ -1,1 +1,1 @@
-export { ScrollTabGroupLayout } from './ScrollTabsLayout';
+export { ScrollTabsLayout } from './ScrollTabsLayout';
