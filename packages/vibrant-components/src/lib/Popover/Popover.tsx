@@ -70,6 +70,8 @@ export const Popover = withPopoverVariation(
           x: childWidth + arrowHeight + computedOffset,
           y: childHeight / 2 - popoverHeight / 2,
         };
+
+      return { x: 0, y: 0 };
     }, [arrowHeight, childHeight, childWidth, computedOffset, popoverHeight, popoverWidth, position]);
 
     const calculateArrowPosition = useCallback(() => {
