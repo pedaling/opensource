@@ -5,11 +5,12 @@ import { Box } from '@vibrant-ui/core';
 import { getElementRect } from '@vibrant-ui/utils';
 import type { LayoutEvent } from '@vibrant-ui/utils';
 import type { ScrollTabPanelProps } from './ScrollTabPanel';
+import { ScrollTabPanel } from './ScrollTabPanel';
 import type { ScrollTabsLayoutProps } from './ScrollTabsLayoutProps';
-import { withScrollTabGroupLayoutVariation } from './ScrollTabsLayoutProps';
+import { withScrollTabsLayoutVariation } from './ScrollTabsLayoutProps';
 import { ViewableScrollTabPanel } from './ViewableScrollTabPanel';
 
-export const ScrollTabGroupLayout = withScrollTabGroupLayoutVariation(
+export const ScrollTabsLayout = withScrollTabsLayoutVariation(
   ({ testId, header, children, onTabChange, TabsContainerComponent, tabSpacing, ...props }) => {
     const elementChildren = Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>);
     const tabs = elementChildren.map(({ props }) => props) ?? [];
@@ -77,3 +78,5 @@ export const ScrollTabGroupLayout = withScrollTabGroupLayoutVariation(
 ) as ComponentWithRef<ScrollTabsLayoutProps> & {
   Item: ComponentWithRef<ScrollTabPanelProps>;
 };
+
+ScrollTabsLayout.Item = ScrollTabPanel;

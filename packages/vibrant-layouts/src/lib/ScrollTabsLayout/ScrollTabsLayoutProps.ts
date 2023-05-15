@@ -10,7 +10,7 @@ export type ScrollTabsLayoutProps = {
   testId?: string;
 };
 
-export const withScrollTabGroupLayoutVariation = withVariation<ScrollTabsLayoutProps>('ScrollTabGroupLayout')(
+export const withScrollTabsLayoutVariation = withVariation<ScrollTabsLayoutProps>('ScrollTabGroupLayout')(
   propVariant({
     props: [
       {

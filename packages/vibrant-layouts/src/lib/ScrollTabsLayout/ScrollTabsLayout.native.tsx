@@ -2,11 +2,14 @@ import type { ReactElement } from 'react';
 import { Children, isValidElement, useRef, useState } from 'react';
 import { FlatList } from 'react-native';
 import { Tab } from '@vibrant-ui/components';
+import type { ComponentWithRef } from '@vibrant-ui/core';
 import { Box, isNative } from '@vibrant-ui/core';
 import type { ScrollTabPanelProps } from './ScrollTabPanel';
-import { withScrollTabGroupLayoutVariation } from './ScrollTabsLayoutProps';
+import { ScrollTabPanel } from './ScrollTabPanel';
+import type { ScrollTabsLayoutProps } from './ScrollTabsLayoutProps';
+import { withScrollTabsLayoutVariation } from './ScrollTabsLayoutProps';
 
-export const ScrollTabGroupLayout = withScrollTabGroupLayoutVariation(
+export const ScrollTabsLayout = withScrollTabsLayoutVariation(
   ({ header, children, onTabChange, TabsContainerComponent, tabSpacing, ...props }) => {
     const elementChildren = Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>);
     const tabs = elementChildren.map(({ props }) => props) ?? [];
@@ -122,4 +125,8 @@ export const ScrollTabGroupLayout = withScrollTabGroupLayoutVariation(
       />
     );
   }
-);
+) as ComponentWithRef<ScrollTabsLayoutProps> & {
+  Item: ComponentWithRef<ScrollTabPanelProps>;
+};
+
+ScrollTabsLayout.Item = ScrollTabPanel;
