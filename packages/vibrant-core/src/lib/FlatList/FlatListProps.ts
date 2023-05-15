@@ -6,7 +6,6 @@ import { withVariation } from '../withVariation';
 export type FlatListProps<Data> = {
   id?: string;
   testId?: string;
-  px?: ResponsiveValue<number>;
   data: Data[];
   renderItem: (_: { item: Data; index: number }) => ReactElement | null;
   keyExtractor: (item: Data, index: number) => string;

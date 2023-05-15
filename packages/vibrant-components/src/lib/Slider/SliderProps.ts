@@ -11,6 +11,7 @@ export type SliderProps<Data> = {
   onItemImpressed?: (item: Data, index: number | null) => void;
   width?: ResponsiveValue<number>;
   spacing?: ResponsiveValue<number>;
+  px?: ResponsiveValue<number>;
   loop?: boolean;
   snap?: boolean;
   initialIndex?: number;
