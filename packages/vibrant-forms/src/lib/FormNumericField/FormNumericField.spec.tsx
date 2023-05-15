@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import type { UseFormReturn } from 'react-hook-form';
 import { renderHook, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -10,36 +11,48 @@ import { FormNumericField } from './FormNumericField';
 type FormValues = {
   numberField: number;
 };
+
 describe('<FormNumericField />', () => {
   const { render } = createReactRenderer();
 
-  let formControl: UseFormReturn<FormValues>;
   let renderer: ReactRenderer;
   let element: HTMLElement;
   let submit: HTMLElement;
   let testNumber: number;
   let initialNumber: number;
-  let watchingNumber: number;
+  let formResult: {
+    current: UseFormReturn<FormValues, any>;
+  };
+  let isDirty: boolean;
+
   const submitHandler = jest.fn<void, [values: any]>();
 
   describe('when FormNumericField rendered', () => {
     beforeEach(async () => {
-      formControl = renderHook(() =>
-        useForm<FormValues>({
+      initialNumber = 0;
+
+      const { result } = renderHook(() => {
+        const form = useForm<FormValues>({
           defaultValues: {
-            numberField: 0,
+            numberField: initialNumber,
           },
-        })
-      ).result.current;
+        });
+
+        useEffect(() => {
+          isDirty = form.formState.isDirty;
+        }, [form.formState.isDirty]);
+
+        return form;
+      });
+
+      formResult = result;
 
       testNumber = 10;
 
-      initialNumber = 0;
-
       renderer = render(
-        <Form formControlMethods={formControl}>
+        <Form formControlMethods={formResult.current}>
           <FormNumericField data-testid="FormNumericField" name="numberField" />
-          <Pressable data-testid="submit" onClick={formControl.handleSubmit(submitHandler)} />
+          <Pressable data-testid="submit" onClick={formResult.current.handleSubmit(submitHandler)} />
         </Form>
       );
 
@@ -48,48 +61,38 @@ describe('<FormNumericField />', () => {
       submit = renderer.getByTestId('submit');
     });
 
-    describe('when default value is set as 0', () => {
-      it('value should be 0', async () => {
-        expect(formControl.getValues('numberField')).toEqual(initialNumber);
-      });
-
-      it('dirty is not set', async () => {
-        expect(formControl.formState.isDirty).toEqual(false);
-      });
-    });
-
     describe('when text typed', () => {
       beforeEach(async () => {
-        await waitFor(() => userEvent.dblClick(element));
+        await waitFor(() => userEvent.type(element, testNumber.toString()));
 
-        await waitFor(() => userEvent.keyboard(testNumber.toString()));
-
-        await waitFor(() => userEvent.click(element));
+        await waitFor(() => userEvent.click(submit));
       });
 
       it('value is changed', () => {
-        expect(formControl.getValues('numberField')).toEqual(testNumber);
+        expect(formResult.current.getValues('numberField')).toEqual(testNumber);
       });
 
-      it.skip('watching value should be same with the updated number', async () => {
-        expect(watchingNumber).toEqual(testNumber);
+      it('dirty is set', async () => {
+        await waitFor(() => expect(isDirty).toEqual(true));
+      });
+
+      it('watching value should be same with the updated number', async () => {
+        await waitFor(() => expect(formResult.current.watch('numberField')).toEqual(testNumber));
       });
     });
 
-    describe('when reset executed', () => {
-      beforeEach(async () => {
-        await waitFor(() => formControl.reset({ numberField: initialNumber }));
+    describe('when default value is set as 0', () => {
+      it('value should be 0', async () => {
+        expect(formResult.current.getValues('numberField')).toEqual(initialNumber);
       });
 
-      it('value is set as defaultValue', () => {
-        expect(formControl.getValues('numberField')).toEqual(initialNumber);
+      it('dirty is not set', async () => {
+        expect(isDirty).toEqual(false);
       });
     });
 
     describe('when submit clicked', () => {
       beforeEach(async () => {
-        testNumber = 2;
-
         await waitFor(() => userEvent.type(element, testNumber.toString()));
 
         await waitFor(() => userEvent.click(submit));
