@@ -1,3 +1,4 @@
+import { fireEvent, waitFor } from '@testing-library/react';
 import { Title } from '@vibrant-ui/components';
 import { Box } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -8,7 +9,7 @@ describe('<ScrollTabsLayout />', () => {
   const { render } = createReactRenderer();
   let renderer: ReactRenderer;
 
-  describe('when onTabChange provided', () => {
+  describe('when the first tab clicked', () => {
     let mockOnTabChange: jest.Mock<any, any>;
 
     beforeEach(() => {
@@ -28,14 +29,44 @@ describe('<ScrollTabsLayout />', () => {
           </ScrollTabsLayout.Item>
         </ScrollTabsLayout>
       );
+
+      const element = renderer.getByRole('tab', { name: 'Third Tab' });
+
+      fireEvent.click(element);
     });
 
-    describe('after first tab clicked', () => {
-      beforeEach(() => {});
+    it('The first tab should be active', async () => {});
 
-      it('onTabChange should be called with clicked tab id and title', () => {
-        expect(renderer.getByRole('link').getAttribute('href')).toBe('https://www.vibrant-design.com');
-      });
+    it('onTabChange should be called with clicked tab id and title', async () => {
+      await waitFor(() => expect(mockOnTabChange).toBeCalledWith({ id: 'first', title: 'First Tab' }));
     });
+
+    it('window should be scrolled into first tab element aligned top with tabs', async () => {});
+  });
+
+  describe('when window scrolled into second tab', () => {
+    beforeEach(() => {
+      renderer = render(
+        <ScrollTabsLayout>
+          <ScrollTabsLayout.Item tabId="first" title="First Tab">
+            <Box height={500}>
+              <Title level={3}>First Page</Title>
+            </Box>
+          </ScrollTabsLayout.Item>
+          <ScrollTabsLayout.Item tabId="second" title="Second Tab">
+            <Box width="100%" height={500}>
+              <Title level={3}>Second Page</Title>
+            </Box>
+          </ScrollTabsLayout.Item>
+          <ScrollTabsLayout.Item tabId="third" title="Third Tab">
+            <Box width="100%" height={500}>
+              <Title level={3}>Third Page</Title>
+            </Box>
+          </ScrollTabsLayout.Item>
+        </ScrollTabsLayout>
+      );
+    });
+
+    it('The second tab should be active', async () => {});
   });
 });
