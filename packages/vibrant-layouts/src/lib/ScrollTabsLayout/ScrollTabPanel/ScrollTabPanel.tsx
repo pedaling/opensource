@@ -1,3 +1,3 @@
 import { withScrollTabPanelVariation } from './ScrollTabPanelProps';
 
-export const ScrollTabPanel = withScrollTabPanelVariation(({ renderContent }) => <>{renderContent()}</>);
+export const ScrollTabPanel = withScrollTabPanelVariation(({ children }) => children);

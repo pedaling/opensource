@@ -5,7 +5,7 @@ export type ScrollTabPanelProps = {
   title: string;
   tabId: string;
   onTabSelected?: () => void;
-  renderContent: () => ReactElement;
+  children: ReactElement;
   testId?: string;
 };
 export const withScrollTabPanelVariation = withVariation<ScrollTabPanelProps>('ScrollTabPanel')();
