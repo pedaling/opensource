@@ -88,7 +88,9 @@ export const FlatList = withFlatListVariation(
         const targetItem = itemRefs.current[index];
 
         const calculatedScrollPositionX = (() => {
-          if (snap) {
+          if (!snap) {
+            return targetItem.offsetLeft - calculatedPaddingX;
+          } else {
             const clientWidth = containerRef.current?.clientWidth ?? 0;
 
             switch (snapAlignment) {
@@ -100,8 +102,6 @@ export const FlatList = withFlatListVariation(
               default:
                 return targetItem.offsetLeft - calculatedPaddingX;
             }
-          } else {
-            return targetItem.offsetLeft - calculatedPaddingX;
           }
         })();
 
