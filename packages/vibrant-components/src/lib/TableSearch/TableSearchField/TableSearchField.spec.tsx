@@ -18,12 +18,16 @@ describe('<TableSearchField />', () => {
   });
 
   describe('when maxWidth is set', () => {
+    let element: HTMLElement;
+
     beforeEach(async () => {
       renderer = render(<TableSearchField maxWidth={1200} />);
+
+      element = await renderer.findByTestId('table-search-field');
     });
 
     it('match snapshot', () => {
-      expect(renderer.container).toMatchSnapshot();
+      expect(element).toHaveStyleRule('max-width', '1200px');
     });
   });
 });

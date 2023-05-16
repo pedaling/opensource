@@ -9,7 +9,7 @@ export const TableSearchOption = withTableSearchOptionVariation(
     const { onOptionChange } = useTableSearch();
 
     useEffect(() => {
-      onOptionChange?.(options[0].value);
+      onOptionChange?.(options[0]?.value);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -19,7 +19,7 @@ export const TableSearchOption = withTableSearchOptionVariation(
           placeholder=""
           size="md"
           options={options}
-          defaultValue={defaultOption ?? options[0].value}
+          defaultValue={defaultOption ?? options[0]?.value}
           onValueChange={onOptionChange}
         />
       </Box>

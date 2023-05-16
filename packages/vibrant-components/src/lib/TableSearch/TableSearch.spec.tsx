@@ -40,7 +40,7 @@ describe('<TableSearch />', () => {
   });
 
   describe('when options change', () => {
-    let searchField: HTMLInputElement;
+    let searchField: HTMLElement;
 
     beforeEach(async () => {
       renderer = render(
@@ -54,7 +54,7 @@ describe('<TableSearch />', () => {
 
       await waitFor(() => userEvent.click(selectField.children[1]));
 
-      searchField = (await renderer.findByTestId('table-search-field')) as HTMLInputElement;
+      searchField = await renderer.findByRole('searchbox');
     });
 
     it('TableSearch.Field is focused', () => {
