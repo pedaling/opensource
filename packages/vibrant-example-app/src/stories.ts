@@ -79,6 +79,7 @@ export const stories = [
   require('../../vibrant-components/src/lib/TableFooter/TableFooter.stories.tsx'),
   require('../../vibrant-components/src/lib/TableHeader/TableHeader.stories.tsx'),
   require('../../vibrant-components/src/lib/TableHeader/TableHeaderButton/TableHeaderButton.stories.tsx'),
+  require('../../vibrant-components/src/lib/TableSearch/TableSearch.stories'),
   require('../../vibrant-components/src/lib/TextField/TextField.stories.tsx'),
   require('../../vibrant-components/src/lib/Title/Title.stories.tsx'),
   require('../../vibrant-components/src/lib/Toast/Toast.stories.tsx'),
