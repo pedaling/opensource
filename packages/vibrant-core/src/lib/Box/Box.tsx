@@ -1,7 +1,7 @@
 import type { ComponentType, FC, ReactElement } from 'react';
-import { createElement, forwardRef, useCallback } from 'react';
+import { createElement, forwardRef } from 'react';
 import styled from '@emotion/styled';
-import { useLayoutEvent } from '@vibrant-ui/utils';
+import { useComposedRef, useLayoutEvent } from '@vibrant-ui/utils';
 import { OnColorContainer } from '../OnColorContainer';
 import type { BoxElements, BoxProps } from './BoxProps';
 import { interpolation, shouldForwardProp } from './BoxProps';
@@ -9,27 +9,24 @@ import { interpolation, shouldForwardProp } from './BoxProps';
 export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps>(
     (
-      { as, base, onLayout, ariaLabel, ariaChecked, ariaLabelledBy, ariaCurrent, backgroundColor, ...restProps },
+      {
+        as,
+        base,
+        onLayout,
+        ariaLabel,
+        ariaChecked,
+        ariaLabelledBy,
+        ariaCurrent,
+        ariaSelected,
+        backgroundColor,
+        ...restProps
+      },
       ref
     ) => {
       const Component = base ? (base as ComponentType<any>) : undefined;
 
       const { ref: layoutEventRef } = useLayoutEvent(onLayout);
-
-      const composeRef = useCallback(
-        (node: HTMLDivElement) => {
-          if (ref) {
-            if (typeof ref === 'function') {
-              ref(node);
-            } else {
-              ref.current = node;
-            }
-          }
-
-          layoutEventRef(node);
-        },
-        [ref, layoutEventRef]
-      );
+      const composeRef = useComposedRef(ref, layoutEventRef);
 
       if (Component) {
         return (
@@ -53,6 +50,7 @@ export const Box = styled(
             'aria-checked': ariaChecked,
             'aria-labelledby': ariaLabelledBy,
             'aria-current': ariaCurrent,
+            'aria-selected': ariaSelected,
             ...restProps,
           })}
         </OnColorContainer>
