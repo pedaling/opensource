@@ -59,7 +59,16 @@ export default {
     data,
     keyExtractor: (item, index) => `${item.id} + ${index}`,
     renderItem: ({ item: { id, color } }) => (
-      <Box height={240} width="100%" backgroundColor={color} alignItems="center" justifyContent="center">
+      <Box
+        borderColor="outline2"
+        borderWidth={1}
+        borderStyle="solid"
+        height={240}
+        width="100%"
+        backgroundColor={color}
+        alignItems="center"
+        justifyContent="center"
+      >
         <Body level={1} weight="bold">
           {id}
         </Body>
