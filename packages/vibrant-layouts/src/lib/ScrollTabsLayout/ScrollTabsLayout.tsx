@@ -11,7 +11,7 @@ import { withScrollTabsLayoutVariation } from './ScrollTabsLayoutProps';
 import { ViewableScrollTabPanel } from './ViewableScrollTabPanel';
 
 export const ScrollTabsLayout = withScrollTabsLayoutVariation(
-  ({ testId, header, children, onTabChange, TabsContainerComponent, tabSpacing, ...props }) => {
+  ({ testId = 'scroll-tabs-layout', header, children, onTabChange, TabsContainerComponent, tabSpacing, ...props }) => {
     const elementChildren = Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>);
     const tabs = elementChildren.map(({ props }) => props) ?? [];
 
@@ -44,7 +44,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
           onLayout={handleContainerLayoutChange}
         >
           {tabs?.map(({ title, tabId }, tabIndex) => (
-            <TabsContainerComponent key={tabId} mr={tabIndex !== tabs.length - 1 ? tabSpacing : 0} {...props}>
+            <TabsContainerComponent key={tabId} {...props}>
               <Tab
                 id={tabId}
                 title={title}
@@ -65,9 +65,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
             ref={ref => (tabItemElementsRef.current[index] = ref)}
             key={child.props.tabId}
             offsetTop={tabsHeight}
-            onViewableChange={viewable => {
-              handleTabStateChange(index, viewable);
-            }}
+            onViewableChange={viewable => handleTabStateChange(index, viewable)}
           >
             {child}
           </ViewableScrollTabPanel>

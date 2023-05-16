@@ -25,14 +25,12 @@ export const withScrollTabsLayoutVariation = withVariation<ScrollTabsLayoutProps
         TabsContainerComponent: ScrollBox,
         hideScroll: true,
         horizontal: true,
-        tabSpacing: [20, 20, 28],
       },
       fullWidth: {
         flexGrow: 1,
         flexShrink: 0,
         overflow: 'hidden',
         TabsContainerComponent: Box,
-        tabSpacing: 0,
       },
     } as const,
   })
