@@ -11,8 +11,6 @@ import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
-const SCROLL_ACCELERATION = 1.2;
-
 const LOOP_BUFFER = 3;
 // When looping, FlatList will get buffer data at the front and end respectively to make scrolling auto behavior smoothly.
 
@@ -64,6 +62,7 @@ export const FlatList = withFlatListVariation(
 
     const isDragging = useRef(false);
     const startX = useRef(0);
+    const startScrollLeft = useRef(0);
 
     const boundedBuffer = Math.min(LOOP_BUFFER, data.length);
     const buffedData = useMemo(
@@ -138,9 +137,11 @@ export const FlatList = withFlatListVariation(
       const container = containerRef.current;
 
       if (container) {
-        const pageX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
+        const pageX = event instanceof MouseEvent ? event.clientX : event.touches[0].clientX;
 
         startX.current = pageX - container.offsetLeft;
+
+        startScrollLeft.current = container.scrollLeft;
       }
     }, []);
 
@@ -152,26 +153,26 @@ export const FlatList = withFlatListVariation(
           event.preventDefault();
 
           const computedColumnWidth = getResponsiveValue(columnWidth) ?? container.clientWidth;
-          const currentX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
+          const currentX = event instanceof MouseEvent ? event.clientX : event.touches[0].clientX;
 
-          const updatedScrollLeft = container.scrollLeft + (startX.current - currentX) * SCROLL_ACCELERATION;
+          const updatedScrollLeft = startScrollLeft.current - (currentX - startX.current);
 
-          container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
+          container.scrollLeft = updatedScrollLeft;
 
           const nextIndex = Math.round(updatedScrollLeft / computedColumnWidth);
 
           currentIndexRef.current = nextIndex;
-
-          if (snap) {
-            scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
-          }
         }
       },
-      [columnWidth, getResponsiveValue, isDragging, scrollToTargetIndex, snap, startX]
+      [columnWidth, getResponsiveValue]
     );
 
     const handleMouseUp = useCallback(() => {
       isDragging.current = false;
+
+      if (snap) {
+        scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
+      }
 
       if (loop && containerRef.current) {
         const computedColumnWidth = getResponsiveValue(columnWidth) ?? containerRef.current.clientWidth;
@@ -192,7 +193,7 @@ export const FlatList = withFlatListVariation(
           }, 600);
         }
       }
-    }, [boundedBuffer, columnWidth, data.length, getResponsiveValue, loop]);
+    }, [boundedBuffer, columnWidth, data.length, getResponsiveValue, loop, scrollToTargetIndex, snap]);
 
     useEffect(() => {
       if (!horizontal) {
@@ -258,7 +259,6 @@ export const FlatList = withFlatListVariation(
         width="100%"
         flexDirection="row"
         flexWrap={horizontal ? 'nowrap' : 'wrap'}
-        scrollSnap={snap ? 'x mandatory' : 'none'}
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}

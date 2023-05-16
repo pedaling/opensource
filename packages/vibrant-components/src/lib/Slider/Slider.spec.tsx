@@ -130,10 +130,6 @@ describe('<Slider />', () => {
       panel = element.firstElementChild as HTMLElement;
     });
 
-    it('it should have snap style in Slider container', () => {
-      expect(element).toHaveStyleRule('scroll-snap-type', 'x mandatory');
-    });
-
     it('children should have default snap alignment', () => {
       expect(panel).toHaveStyleRule('scroll-snap-align', 'start');
     });
