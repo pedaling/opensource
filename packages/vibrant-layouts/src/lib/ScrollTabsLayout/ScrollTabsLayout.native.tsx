@@ -113,7 +113,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
             </Box>
           );
         }}
-        ListHeaderComponent={header}
+        ListHeaderComponent={<>{header}</>}
       />
     );
   }
