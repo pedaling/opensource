@@ -35,8 +35,11 @@ export const Slider = withSliderVariation(
         return getResponsiveValue(panelWidth);
       }
 
-      return (sliderWidth - computedSpacing * (currentPanelsPerView - 1)) / Math.max(1, currentPanelsPerView);
-    }, [computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, sliderWidth]);
+      return (
+        (sliderWidth - getResponsiveValue(px) * 2 - computedSpacing * (currentPanelsPerView - 1)) /
+        Math.max(1, currentPanelsPerView)
+      );
+    }, [computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, px, sliderWidth]);
 
     return (
       <Box data-testid={testId} width={width} onLayout={({ width }) => setSliderWidth(width)}>
