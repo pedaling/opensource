@@ -96,12 +96,12 @@ export const FlatList = withFlatListVariation(
 
           switch (snapAlignment) {
             case 'center':
-              return targetItem.offsetLeft - clientWidth / 2 + targetItem.clientWidth / 2 - calculatedPaddingX;
+              return targetItem.offsetLeft - clientWidth / 2 + targetItem.clientWidth / 2;
             case 'end':
-              return targetItem.offsetLeft + targetItem.clientWidth - clientWidth - calculatedPaddingX;
+              return targetItem.offsetLeft + targetItem.clientWidth - clientWidth;
             case 'start':
             default:
-              return targetItem.offsetLeft - calculatedPaddingX;
+              return targetItem.offsetLeft + (index === 0 ? -calculatedPaddingX : 0);
           }
         })();
 
