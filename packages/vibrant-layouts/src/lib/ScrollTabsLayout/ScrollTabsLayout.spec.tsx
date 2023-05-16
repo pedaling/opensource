@@ -30,7 +30,7 @@ describe('<ScrollTabsLayout />', () => {
         </ScrollTabsLayout>
       );
 
-      const element = renderer.getByRole('tab', { name: 'Second Tab' });
+      const element = renderer.getByRole('tab', { name: 'First Tab' });
 
       fireEvent.click(element);
     });
