@@ -25,12 +25,13 @@ export const FlatList = withFlatListVariation(
     maxRows,
     columnSpacing = 0,
     rowSpacing = 0,
+    px = 0,
     onEndReached,
     onItemImpressed,
     horizontal = false,
     snap,
     loop,
-    snapAlignment,
+    snapAlignment = 'start',
     initialIndex = 0,
     hideScroll = true,
     ...props
@@ -56,6 +57,8 @@ export const FlatList = withFlatListVariation(
       : calculateResponsiveValues({ columns, columnSpacing }, value => ({
           width: `calc((100% - ${((value.columns ?? 1) - 1) * value.columnSpacing}px) / ${value.columns})`,
         }));
+
+    const calculatedPaddingX = getResponsiveValue(px);
 
     const itemRefs = useRef<HTMLElement[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -84,12 +87,30 @@ export const FlatList = withFlatListVariation(
 
         const targetItem = itemRefs.current[index];
 
+        const calculatedScrollPositionX = (() => {
+          if (snap) {
+            const clientWidth = containerRef.current?.clientWidth ?? 0;
+
+            switch (snapAlignment) {
+              case 'center':
+                return targetItem.offsetLeft - clientWidth / 2 + targetItem.clientWidth / 2 - calculatedPaddingX;
+              case 'end':
+                return targetItem.offsetLeft + targetItem.clientWidth - clientWidth - calculatedPaddingX;
+              case 'start':
+              default:
+                return targetItem.offsetLeft - calculatedPaddingX;
+            }
+          } else {
+            return targetItem.offsetLeft - calculatedPaddingX;
+          }
+        })();
+
         containerRef.current?.scrollTo({
-          left: targetItem.offsetLeft,
+          left: calculatedScrollPositionX,
           behavior: animation ? 'smooth' : 'auto',
         });
       },
-      [buffedData.length]
+      [buffedData.length, calculatedPaddingX, snap, snapAlignment]
     );
 
     const memoizedFlatListItems = useMemo(
@@ -98,7 +119,6 @@ export const FlatList = withFlatListVariation(
           <FlatListItem
             key={`${keyExtractor(item, index)}-${index}`}
             ref={handleItemRef?.(index)}
-            snapAlignment={snapAlignment}
             width={width}
             flexShrink={horizontal ? 0 : 1}
             display={getResponsiveDisplay(index)}
@@ -126,7 +146,6 @@ export const FlatList = withFlatListVariation(
         onEndReached,
         onItemImpressed,
         renderItem,
-        snapAlignment,
         width,
       ]
     );
@@ -203,10 +222,11 @@ export const FlatList = withFlatListVariation(
       containerRef.current?.scrollTo({
         left:
           buffedInitialIndex * getResponsiveValue(columnWidth ?? 0) +
-          getResponsiveValue(columnSpacing) * buffedInitialIndex,
+          getResponsiveValue(columnSpacing) * buffedInitialIndex -
+          calculatedPaddingX,
         behavior: 'auto',
       });
-    }, [buffedInitialIndex, columnSpacing, columnWidth, getResponsiveValue, horizontal]);
+    }, [buffedInitialIndex, calculatedPaddingX, columnSpacing, columnWidth, getResponsiveValue, horizontal]);
 
     useEffect(() => {
       if (!horizontal) {
@@ -255,6 +275,7 @@ export const FlatList = withFlatListVariation(
     return (
       <ScrollBox
         as="ul"
+        px={px}
         display="flex"
         width="100%"
         flexDirection="row"

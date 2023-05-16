@@ -129,10 +129,6 @@ describe('<Slider />', () => {
 
       panel = element.firstElementChild as HTMLElement;
     });
-
-    it('children should have default snap alignment', () => {
-      expect(panel).toHaveStyleRule('scroll-snap-align', 'start');
-    });
   });
 
   describe("when the 'loop' prop and scrolls to end", () => {
