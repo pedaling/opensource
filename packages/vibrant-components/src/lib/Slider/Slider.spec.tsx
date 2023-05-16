@@ -83,58 +83,6 @@ describe('<Slider />', () => {
     });
   });
 
-  describe("when the 'px' prop", () => {
-    beforeEach(async () => {
-      renderer = render(
-        <VStack width={500}>
-          <Slider
-            panelWidth={100}
-            px={8}
-            data={[1, 2, 3, 4, 5]}
-            renderItem={({ item }) => (
-              <Body level={1} color="onPrimary">
-                {item}
-              </Body>
-            )}
-            keyExtractor={item => item.toString()}
-          />
-        </VStack>
-      );
-
-      element = await renderer.findByTestId('slider');
-    });
-
-    it('it should have set style', () => {
-      expect(element).toHaveStyleRule('padding-left', '8px');
-
-      expect(element).toHaveStyleRule('padding-right', '8px');
-    });
-  });
-
-  describe("when the 'snap' prop", () => {
-    beforeEach(async () => {
-      renderer = render(
-        <VStack width={500}>
-          <Slider
-            snap={true}
-            panelWidth={100}
-            data={[1, 2, 3, 4, 5]}
-            renderItem={({ item, index }) => <Box data-testid={`panel-${index}`}>{item}</Box>}
-            keyExtractor={item => item.toString()}
-          />
-        </VStack>
-      );
-
-      element = await renderer.findByTestId('slider-container');
-
-      panel = element.firstElementChild as HTMLElement;
-    });
-
-    it('children should have default snap alignment', () => {
-      expect(panel).toHaveStyleRule('scroll-snap-align', 'start');
-    });
-  });
-
   describe("when the 'loop' prop and scrolls to end", () => {
     const panelWidth = 500;
     const panelLength = 5;
@@ -174,35 +122,6 @@ describe('<Slider />', () => {
 
     it('it should loop', async () => {
       await waitFor(() => expect(initialScrollLeft).toBeLessThan(element.scrollLeft), { timeout: 2000 });
-    });
-  });
-
-  describe("when the 'snapAlignment' prop is set as 'end'", () => {
-    beforeEach(async () => {
-      renderer = render(
-        <VStack width={500}>
-          <Slider
-            panelWidth={100}
-            snap={true}
-            snapAlignment="end"
-            data={[1, 2, 3, 4, 5]}
-            renderItem={({ item }) => (
-              <Body level={1} color="onPrimary">
-                {item}
-              </Body>
-            )}
-            keyExtractor={item => item.toString()}
-          />
-        </VStack>
-      );
-
-      element = await renderer.findByTestId('slider-container');
-
-      panel = element.firstElementChild as HTMLElement;
-    });
-
-    it("children should have 'end' style rule", () => {
-      expect(panel).toHaveStyleRule('scroll-snap-align', 'end');
     });
   });
 

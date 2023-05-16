@@ -18,6 +18,8 @@ exports[`<GridList /> when the 'breakpoints' prop provided other responsive prop
   box-sizing: border-box;
   position: relative;
   overflow: auto;
+  padding-left: 0;
+  padding-right: 0;
   width: 100%;
   -webkit-box-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
