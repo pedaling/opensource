@@ -15,6 +15,7 @@ export const Tab = withTabVariation(
     id,
     onClick,
     testId = 'tab',
+    active,
     ...restProps
   }) => (
     <PressableBox
@@ -33,7 +34,9 @@ export const Tab = withTabVariation(
       onClick={() => onClick?.(id)}
       pt={12}
       pb={10}
+      px={10}
       backgroundColor="inherit"
+      ariaSelected={active}
       data-testid={testId}
       {...restProps}
     >

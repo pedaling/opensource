@@ -34,6 +34,8 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   align-items: center;
   padding-top: 12px;
   padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .emotion-1 {

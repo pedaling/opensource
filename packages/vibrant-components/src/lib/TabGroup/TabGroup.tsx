@@ -53,7 +53,6 @@ export const TabGroup = withTabGroupVariation(
     children,
     isScrollable,
     testId = 'tab-group',
-    tabSpacing,
     ...restProps
   }) => {
     const tabElements = (Children.toArray(children).filter(child => isValidElement(child)) as typeof children) ?? [];
@@ -192,7 +191,6 @@ export const TabGroup = withTabGroupVariation(
               >
                 <Box
                   as="li"
-                  mr={index !== tabElements.length - 1 ? tabSpacing : 0}
                   flexGrow={tabFlexGrow}
                   flexShrink={tabFlexShrink}
                   flexBasis={tabFlexBasis}
@@ -209,7 +207,6 @@ export const TabGroup = withTabGroupVariation(
               <Box
                 as="li"
                 key={element.props.id}
-                mr={index !== tabElements.length - 1 ? tabSpacing : 0}
                 flexGrow={tabFlexGrow}
                 flexShrink={tabFlexShrink}
                 flexBasis={tabFlexBasis}
