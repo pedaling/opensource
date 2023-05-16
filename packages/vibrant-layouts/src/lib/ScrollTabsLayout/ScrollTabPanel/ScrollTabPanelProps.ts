@@ -4,7 +4,6 @@ import { withVariation } from '@vibrant-ui/core';
 export type ScrollTabPanelProps = {
   title: string;
   tabId: string;
-  onTabSelected?: () => void;
   children: ReactElementChild;
 };
 export const withScrollTabPanelVariation = withVariation<ScrollTabPanelProps>('ScrollTabPanel')();
