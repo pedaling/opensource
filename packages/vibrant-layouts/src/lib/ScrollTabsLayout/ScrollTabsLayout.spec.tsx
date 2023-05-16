@@ -30,43 +30,17 @@ describe('<ScrollTabsLayout />', () => {
         </ScrollTabsLayout>
       );
 
-      const element = renderer.getByRole('tab', { name: 'Third Tab' });
+      const element = renderer.getByRole('tab', { name: 'Second Tab' });
 
       fireEvent.click(element);
     });
 
-    it('The first tab should be active', async () => {});
+    it('The first tab should be active', async () => {
+      await waitFor(() => expect(renderer.getByRole('tab', { name: 'First Tab', selected: true })).toBeTruthy());
+    });
 
     it('onTabChange should be called with clicked tab id and title', async () => {
       await waitFor(() => expect(mockOnTabChange).toBeCalledWith({ id: 'first', title: 'First Tab' }));
     });
-
-    it('window should be scrolled into first tab element aligned top with tabs', async () => {});
-  });
-
-  describe('when window scrolled into second tab', () => {
-    beforeEach(() => {
-      renderer = render(
-        <ScrollTabsLayout>
-          <ScrollTabsLayout.Item tabId="first" title="First Tab">
-            <Box height={500}>
-              <Title level={3}>First Page</Title>
-            </Box>
-          </ScrollTabsLayout.Item>
-          <ScrollTabsLayout.Item tabId="second" title="Second Tab">
-            <Box width="100%" height={500}>
-              <Title level={3}>Second Page</Title>
-            </Box>
-          </ScrollTabsLayout.Item>
-          <ScrollTabsLayout.Item tabId="third" title="Third Tab">
-            <Box width="100%" height={500}>
-              <Title level={3}>Third Page</Title>
-            </Box>
-          </ScrollTabsLayout.Item>
-        </ScrollTabsLayout>
-      );
-    });
-
-    it('The second tab should be active', async () => {});
   });
 });
