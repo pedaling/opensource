@@ -25,6 +25,7 @@ export const Slider = withSliderVariation(
     const [sliderWidth, setSliderWidth] = useState<number | undefined>(undefined);
     const computedSpacing = spacing ? getResponsiveValue(spacing) : 0;
     const currentPanelsPerView = Math.min(data.length, getResponsiveValue(panelsPerView));
+    const calculatedPaddingX = getResponsiveValue(px);
 
     const computedPanelWidth = useMemo(() => {
       if (!sliderWidth) {
@@ -36,10 +37,10 @@ export const Slider = withSliderVariation(
       }
 
       return (
-        (sliderWidth - getResponsiveValue(px) * 2 - computedSpacing * (currentPanelsPerView - 1)) /
+        (sliderWidth - calculatedPaddingX * 2 - computedSpacing * (currentPanelsPerView - 1)) /
         Math.max(1, currentPanelsPerView)
       );
-    }, [computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, px, sliderWidth]);
+    }, [calculatedPaddingX, computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, sliderWidth]);
 
     return (
       <Box data-testid={testId} width={width} onLayout={({ width }) => setSliderWidth(width)}>
