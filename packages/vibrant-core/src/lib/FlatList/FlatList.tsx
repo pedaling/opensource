@@ -90,18 +90,18 @@ export const FlatList = withFlatListVariation(
         const calculatedScrollPositionX = (() => {
           if (!snap) {
             return targetItem.offsetLeft - calculatedPaddingX;
-          } else {
-            const clientWidth = containerRef.current?.clientWidth ?? 0;
+          }
 
-            switch (snapAlignment) {
-              case 'center':
-                return targetItem.offsetLeft - clientWidth / 2 + targetItem.clientWidth / 2 - calculatedPaddingX;
-              case 'end':
-                return targetItem.offsetLeft + targetItem.clientWidth - clientWidth - calculatedPaddingX;
-              case 'start':
-              default:
-                return targetItem.offsetLeft - calculatedPaddingX;
-            }
+          const clientWidth = containerRef.current?.clientWidth ?? 0;
+
+          switch (snapAlignment) {
+            case 'center':
+              return targetItem.offsetLeft - clientWidth / 2 + targetItem.clientWidth / 2 - calculatedPaddingX;
+            case 'end':
+              return targetItem.offsetLeft + targetItem.clientWidth - clientWidth - calculatedPaddingX;
+            case 'start':
+            default:
+              return targetItem.offsetLeft - calculatedPaddingX;
           }
         })();
 
