@@ -1,5 +1,6 @@
 export const stories = [
   require('../../vibrant-components-web/src/lib/CSSTransition/CSSTransition.stories.tsx'),
+  require('../../vibrant-components-web/src/lib/VirtualizedTable/VirtualizedTable.stories.tsx'),
   require('../../vibrant-components/src/docs/Palettes.stories.tsx'),
   require('../../vibrant-components/src/lib/Avatar/Avatar.stories.tsx'),
   require('../../vibrant-components/src/lib/Backdrop/Backdrop.stories.tsx'),
