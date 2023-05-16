@@ -9,7 +9,18 @@ import { interpolation, shouldForwardProp } from './BoxProps';
 export const Box = styled(
   forwardRef<HTMLDivElement, BoxProps>(
     (
-      { as, base, onLayout, ariaLabel, ariaChecked, ariaLabelledBy, ariaCurrent, backgroundColor, ...restProps },
+      {
+        as,
+        base,
+        onLayout,
+        ariaLabel,
+        ariaChecked,
+        ariaLabelledBy,
+        ariaCurrent,
+        ariaSelected,
+        backgroundColor,
+        ...restProps
+      },
       ref
     ) => {
       const Component = base ? (base as ComponentType<any>) : undefined;
@@ -53,6 +64,7 @@ export const Box = styled(
             'aria-checked': ariaChecked,
             'aria-labelledby': ariaLabelledBy,
             'aria-current': ariaCurrent,
+            'aria-selected': ariaSelected,
             ...restProps,
           })}
         </OnColorContainer>
