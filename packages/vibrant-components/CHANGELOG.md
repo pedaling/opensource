@@ -2,6 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.59.0...vibrant-components-0.60.0) (2023-05-16)
+
+
+### Features
+
+*  ModalBottomSheet의 dim영역을 클릭했을 때 모달을 닫는 동작의 여부를 지정할 수 있게 한다 ([#721](https://github.com/pedaling/opensource/issues/721)) ([be49409](https://github.com/pedaling/opensource/commit/be4940909941f6137ee9505297913e8ce794f67a))
+* add endIcon into FilterChip ([#706](https://github.com/pedaling/opensource/issues/706)) ([5ca97de](https://github.com/pedaling/opensource/commit/5ca97dea6443ab47c7444ae42803d8a19ef05af4))
+* add Slider component ([#670](https://github.com/pedaling/opensource/issues/670)) ([16c0ad7](https://github.com/pedaling/opensource/commit/16c0ad7e9a5cf04786a541e81ab9532b9c8f9b8d))
+* add Slider documentation ([#708](https://github.com/pedaling/opensource/issues/708)) ([b41f66a](https://github.com/pedaling/opensource/commit/b41f66a6b09127d6cfb04d4a4f07e46531d696a0))
+* add TableSearch component ([#719](https://github.com/pedaling/opensource/issues/719)) ([67002c4](https://github.com/pedaling/opensource/commit/67002c42bd0bee2bae2357a8dfeebd5eecf56a2f))
+* create CardNumberField component [VR-77, COM-4027] ([#543](https://github.com/pedaling/opensource/issues/543)) ([6bc321d](https://github.com/pedaling/opensource/commit/6bc321d2ad12d6f3eb3dfa73aab3e34ed4d41904))
+* ModalBottomSheet 컴포넌트에 닫기 버튼 노출여부를 지정하는 속성을 추가한다 ([#717](https://github.com/pedaling/opensource/issues/717)) ([2f948f0](https://github.com/pedaling/opensource/commit/2f948f08530c1a62442cc7bbb49c50f41f929599))
+* set avatar image loading method to eager ([#707](https://github.com/pedaling/opensource/issues/707)) ([b8990a1](https://github.com/pedaling/opensource/commit/b8990a172fd963d7747b1b33edfa56b5333e9587))
+* virtualized table 을 구현한다. ([#703](https://github.com/pedaling/opensource/issues/703)) ([eaca33d](https://github.com/pedaling/opensource/commit/eaca33d93228d402446cfb44dc03038e6d1e51db))
+
+
+### Bug Fixes
+
+* create new SearchField ([#712](https://github.com/pedaling/opensource/issues/712)) ([22ddaa5](https://github.com/pedaling/opensource/commit/22ddaa5b610a64dc01aab681e6d1289b54f9ecc5))
+* slow mouse interaction ([#723](https://github.com/pedaling/opensource/issues/723)) ([4e2926c](https://github.com/pedaling/opensource/commit/4e2926c666c3767f39ec93f0146a562355ecae7f))
+* virtualized table 을 web component 로 이동한다. ([#710](https://github.com/pedaling/opensource/issues/710)) ([4c4f88d](https://github.com/pedaling/opensource/commit/4c4f88df2474fe379f76fadd01f3d13c1f51fd9a))
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.58.1...vibrant-components-0.59.0) (2023-05-09)
 
 

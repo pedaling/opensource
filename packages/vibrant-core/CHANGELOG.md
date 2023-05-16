@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.59.0...vibrant-core-0.60.0) (2023-05-16)
+
+
+### Features
+
+* add Slider component ([#670](https://github.com/pedaling/opensource/issues/670)) ([16c0ad7](https://github.com/pedaling/opensource/commit/16c0ad7e9a5cf04786a541e81ab9532b9c8f9b8d))
+
+
+### Bug Fixes
+
+* create new SearchField ([#712](https://github.com/pedaling/opensource/issues/712)) ([22ddaa5](https://github.com/pedaling/opensource/commit/22ddaa5b610a64dc01aab681e6d1289b54f9ecc5))
+* initial index spacing issue ([#722](https://github.com/pedaling/opensource/issues/722)) ([4a12615](https://github.com/pedaling/opensource/commit/4a126150af342bf723c3c8e344f2146442dee61e))
+* remove circular dependency ([#724](https://github.com/pedaling/opensource/issues/724)) ([c7848f6](https://github.com/pedaling/opensource/commit/c7848f6a7ab81dded416704cfe9db64fd23d1f40))
+* slow mouse interaction ([#723](https://github.com/pedaling/opensource/issues/723)) ([4e2926c](https://github.com/pedaling/opensource/commit/4e2926c666c3767f39ec93f0146a562355ecae7f))
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.58.1...vibrant-core-0.59.0) (2023-05-09)
 
 ### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.58.0...vibrant-core-0.58.1) (2023-05-04)

@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/motion",
-  "version": "0.59.0",
+  "version": "0.60.0",
   "private": false,
   "sideEffects": false,
   "react-native": "index.native.js",

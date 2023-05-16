@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.59.0...vibrant-forms-0.60.0) (2023-05-16)
+
+
+### Features
+
+* add FormNumericField ([#714](https://github.com/pedaling/opensource/issues/714)) ([4bdccc0](https://github.com/pedaling/opensource/commit/4bdccc05a0449f2bf7076580c4960f2f6507ec44))
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.58.1...vibrant-forms-0.59.0) (2023-05-09)
 
 

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.59.0...vibrant-components-web-0.60.0) (2023-05-16)
+
+
+### Bug Fixes
+
+* virtualized table 을 web component 로 이동한다. ([#710](https://github.com/pedaling/opensource/issues/710)) ([4c4f88d](https://github.com/pedaling/opensource/commit/4c4f88df2474fe379f76fadd01f3d13c1f51fd9a))
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.58.1...vibrant-components-web-0.59.0) (2023-05-09)
 
 ### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.58.0...vibrant-components-web-0.58.1) (2023-05-04)
