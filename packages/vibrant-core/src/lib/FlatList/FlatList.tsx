@@ -219,14 +219,8 @@ export const FlatList = withFlatListVariation(
         return;
       }
 
-      containerRef.current?.scrollTo({
-        left:
-          buffedInitialIndex * getResponsiveValue(columnWidth ?? 0) +
-          getResponsiveValue(columnSpacing) * buffedInitialIndex -
-          calculatedPaddingX,
-        behavior: 'auto',
-      });
-    }, [buffedInitialIndex, calculatedPaddingX, columnSpacing, columnWidth, getResponsiveValue, horizontal]);
+      scrollToTargetIndex({ index: buffedInitialIndex, animation: false });
+    }, [buffedInitialIndex, horizontal, scrollToTargetIndex]);
 
     useEffect(() => {
       if (!horizontal) {
