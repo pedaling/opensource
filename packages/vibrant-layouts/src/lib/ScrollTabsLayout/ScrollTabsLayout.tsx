@@ -11,7 +11,17 @@ import { withScrollTabsLayoutVariation } from './ScrollTabsLayoutProps';
 import { ViewableScrollTabPanel } from './ViewableScrollTabPanel';
 
 export const ScrollTabsLayout = withScrollTabsLayoutVariation(
-  ({ testId = 'scroll-tabs-layout', header, children, onTabChange, TabsContainerComponent, tabSpacing, ...props }) => {
+  ({
+    testId = 'scroll-tabs-layout',
+    header,
+    children,
+    onTabChange,
+    TabsComponent,
+    tabFlexGrow,
+    tabFlexShrink,
+    tabsScrollHorizontal,
+    tabOverflow,
+  }) => {
     const elementChildren = Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>);
     const tabs = elementChildren.map(({ props }) => props) ?? [];
 
@@ -32,7 +42,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     return (
       <VStack width="100%" data-testid={testId}>
         {header}
-        <Box
+        <TabsComponent
           role="tablist"
           width="100%"
           position="web_sticky"
@@ -42,9 +52,11 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
           zIndex={1}
           backgroundColor="background"
           onLayout={handleContainerLayoutChange}
+          horizontal={tabsScrollHorizontal}
+          overflow={tabOverflow}
         >
           {tabs?.map(({ title, tabId }, tabIndex) => (
-            <TabsContainerComponent key={tabId} {...props}>
+            <Box key={tabId} flexGrow={tabFlexGrow} flexShrink={tabFlexShrink}>
               <Tab
                 id={tabId}
                 title={title}
@@ -57,9 +69,9 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
                   onTabChange?.({ id: tabId, title });
                 }}
               />
-            </TabsContainerComponent>
+            </Box>
           ))}
-        </Box>
+        </TabsComponent>
         {elementChildren.map((child, index) => (
           <ViewableScrollTabPanel
             ref={ref => (tabItemElementsRef.current[index] = ref)}

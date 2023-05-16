@@ -20,17 +20,18 @@ export const withScrollTabsLayoutVariation = withVariation<ScrollTabsLayoutProps
     ],
     variants: {
       fitContent: {
-        flexGrow: 0,
-        flexShrink: 0,
-        TabsContainerComponent: ScrollBox,
-        hideScroll: true,
-        horizontal: true,
+        tabFlexGrow: 0,
+        tabFlexShrink: 0,
+        TabsComponent: ScrollBox,
+        tabOverflow: undefined,
+        tabsScrollHorizontal: true,
       },
       fullWidth: {
-        flexGrow: 1,
-        flexShrink: 0,
-        overflow: 'hidden',
-        TabsContainerComponent: Box,
+        tabFlexGrow: 1,
+        tabFlexShrink: 0,
+        TabsComponent: Box,
+        tabOverflow: 'hidden',
+        tabsScrollHorizontal: undefined,
       },
     } as const,
   })
