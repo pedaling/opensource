@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
-import { PortalBox, useResponsiveValue, useSafeArea, useStackedPortal } from '@vibrant-ui/core';
+import { PortalBox, useResponsiveValue, useSafeArea, useStackedPortal, useWindowDimensions } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { addStyleValues, isDefined } from '@vibrant-ui/utils';
 import { withStackedPortalVariation } from './StackedPortalProps';
@@ -21,6 +21,7 @@ export const StackedPortal = withStackedPortalVariation(
     ...restProps
   }) => {
     const { generateStyle } = useSafeArea();
+    const { height: viewportHeight } = useWindowDimensions();
 
     const { getResponsiveValue } = useResponsiveValue();
 
@@ -88,8 +89,9 @@ export const StackedPortal = withStackedPortalVariation(
     return duration ? (
       <Transition
         animation={{
-          [currentPosition]: addStyleValues(offset ?? 0, hidden ? -height : 0),
+          ...(height !== 0 ? { [currentPosition]: addStyleValues(offset ?? 0, hidden ? -height : 0) } : {}),
         }}
+        style={{ [currentPosition]: hidden ? -viewportHeight : 0 }}
         duration={duration}
       >
         <PortalBox ref={innerRef} hidden={!isDefined(offset)} onLayout={handleLayout} {...restProps}>
