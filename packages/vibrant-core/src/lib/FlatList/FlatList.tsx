@@ -98,10 +98,10 @@ export const FlatList = withFlatListVariation(
             case 'center':
               return targetItem.offsetLeft - clientWidth / 2 + targetItem.clientWidth / 2;
             case 'end':
-              return targetItem.offsetLeft + targetItem.clientWidth - clientWidth;
+              return targetItem.offsetLeft + targetItem.clientWidth - clientWidth + calculatedPaddingX;
             case 'start':
             default:
-              return targetItem.offsetLeft + (index === 0 ? -calculatedPaddingX : 0);
+              return targetItem.offsetLeft - calculatedPaddingX;
           }
         })();
 
