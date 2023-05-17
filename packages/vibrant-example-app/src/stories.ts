@@ -107,6 +107,7 @@ export const stories = [
   require('../../vibrant-forms/src/lib/Form/Form.stories.tsx'),
   require('../../vibrant-forms/src/lib/FormTextField/FormTextField.stories.tsx'),
   require('../../vibrant-icons/src/lib/Icon/Icon.stories.tsx'),
+  require('../../vibrant-layouts/src/lib/ScrollTabsLayout/ScrollTabsLayout.stories.tsx'),
   require('../../vibrant-motion/src/lib/Motion/Motion.stories.tsx'),
   require('../../vibrant-motion/src/lib/MountMotion/MountMotion.stories.tsx'),
   require('../../vibrant-motion/src/lib/Transition/Transition.stories.tsx'),

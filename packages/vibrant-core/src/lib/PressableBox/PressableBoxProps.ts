@@ -31,7 +31,6 @@ type SystemProps = BackgroundSystemProps &
 export type PressableBoxProps = {
   ref?: Ref<any>;
   disabled?: boolean;
-  ariaLabel?: string;
   onClick?: () => void;
   onFocusIn?: () => void;
   onFocusOut?: () => void;
@@ -41,6 +40,8 @@ export type PressableBoxProps = {
   onHoverOut?: () => void;
   children?: ReactElementChild | ReactElementChild[];
   role?: string;
+  ariaLabel?: string;
+  ariaSelected?: boolean;
   ariaChecked?: boolean;
   ariaLabelledBy?: string;
   as?: BoxElements;
