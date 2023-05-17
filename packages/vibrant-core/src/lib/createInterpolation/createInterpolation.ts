@@ -57,7 +57,18 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
 
 const mergeResponsiveValue = (original: Record<string, any>[], next: Record<string, any>[]) => {
   next.forEach((value, index) => {
-    original[index] = { ...(original[index] ?? {}), ...value };
+    original[index] = {
+      ...(original[index] ?? {}),
+      ...value,
+      ...(value['props'] || original[index]?.['props']
+        ? {
+            props: {
+              ...(original[index]?.['props'] ?? {}),
+              ...(value['props'] ?? {}),
+            },
+          }
+        : {}),
+    };
   });
 
   return original;
