@@ -12,7 +12,17 @@ import type { ScrollTabsLayoutProps } from './ScrollTabsLayoutProps';
 import { withScrollTabsLayoutVariation } from './ScrollTabsLayoutProps';
 
 export const ScrollTabsLayout = withScrollTabsLayoutVariation(
-  ({ header, children, onTabChange, TabsComponent, tabFlexGrow, tabFlexShrink, tabsScrollHorizontal, tabOverflow }) => {
+  ({
+    header,
+    children,
+    onTabChange,
+    TabsComponent,
+    tabFlexGrow,
+    tabFlexShrink,
+    tabsScrollHorizontal,
+    tabOverflow,
+    tabsHideScroll,
+  }) => {
     const { width } = useWindowDimensions();
     const elementChildren = useMemo(
       () => Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>),
@@ -55,6 +65,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
               backgroundColor="background"
               horizontal={tabsScrollHorizontal}
               overflow={tabOverflow}
+              hideScroll={tabsHideScroll}
             >
               {tabs?.map(({ title, tabId }, tabIndex) => (
                 <Box key={tabId} flexGrow={tabFlexGrow} flexShrink={tabFlexShrink}>
@@ -96,6 +107,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
         tabFlexShrink,
         tabOverflow,
         tabs,
+        tabsHideScroll,
         tabsScrollHorizontal,
         width,
       ]

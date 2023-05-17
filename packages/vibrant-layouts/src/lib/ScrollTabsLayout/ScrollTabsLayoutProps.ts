@@ -25,6 +25,7 @@ export const withScrollTabsLayoutVariation = withVariation<ScrollTabsLayoutProps
         TabsComponent: ScrollBox,
         tabOverflow: undefined,
         tabsScrollHorizontal: true,
+        tabsHideScroll: true,
       },
       fullWidth: {
         tabFlexGrow: 1,
@@ -32,6 +33,7 @@ export const withScrollTabsLayoutVariation = withVariation<ScrollTabsLayoutProps
         TabsComponent: Box,
         tabOverflow: 'hidden',
         tabsScrollHorizontal: undefined,
+        tabsHideScroll: undefined,
       },
     } as const,
   })

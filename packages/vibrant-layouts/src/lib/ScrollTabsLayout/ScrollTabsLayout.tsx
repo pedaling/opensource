@@ -21,6 +21,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     tabFlexShrink,
     tabsScrollHorizontal,
     tabOverflow,
+    tabsHideScroll,
   }) => {
     const elementChildren = Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>);
     const tabs = elementChildren.map(({ props }) => props) ?? [];
@@ -54,6 +55,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
           onLayout={handleContainerLayoutChange}
           horizontal={tabsScrollHorizontal}
           overflow={tabOverflow}
+          hideScroll={tabsHideScroll}
         >
           {tabs?.map(({ title, tabId }, tabIndex) => (
             <Box key={tabId} flexGrow={tabFlexGrow} flexShrink={tabFlexShrink}>
