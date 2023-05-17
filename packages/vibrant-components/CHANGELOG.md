@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.0...vibrant-components-0.60.1) (2023-05-17)
+
+
+### Features
+
+* ScrollTabsLayout 컴포넌트를 구현한다  ([#720](https://github.com/pedaling/opensource/issues/720)) ([49d0dc5](https://github.com/pedaling/opensource/commit/49d0dc577b93c023d8fde3766dbadc95525be6a3))
+
+
+### Bug Fixes
+
+* considering px in Slider panel width ([#727](https://github.com/pedaling/opensource/issues/727)) ([108a49f](https://github.com/pedaling/opensource/commit/108a49fc48348ffe8cbd2cc25b00af5e0fc1cc31))
+* slider padding issue ([#725](https://github.com/pedaling/opensource/issues/725)) ([ce9691a](https://github.com/pedaling/opensource/commit/ce9691a517efe0db2f81351cc93f34552698674d))
+* StackedPortal 애니메이션 시 hidden일 때 초기에 잠깐 노출되는 버그를 수정한다 ([#730](https://github.com/pedaling/opensource/issues/730)) ([a8c1c64](https://github.com/pedaling/opensource/commit/a8c1c642617c3f64d99b064c871ea09892c41d9c))
+
 ## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.59.0...vibrant-components-0.60.0) (2023-05-16)
 
 

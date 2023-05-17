@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.0...vibrant-core-0.60.1) (2023-05-17)
+
+
+### Features
+
+* ScrollTabsLayout 컴포넌트를 구현한다  ([#720](https://github.com/pedaling/opensource/issues/720)) ([49d0dc5](https://github.com/pedaling/opensource/commit/49d0dc577b93c023d8fde3766dbadc95525be6a3))
+
+
+### Bug Fixes
+
+* considering px in Slider panel width ([#727](https://github.com/pedaling/opensource/issues/727)) ([108a49f](https://github.com/pedaling/opensource/commit/108a49fc48348ffe8cbd2cc25b00af5e0fc1cc31))
+* paddingX calculation in Slider ([#728](https://github.com/pedaling/opensource/issues/728)) ([fb4e33d](https://github.com/pedaling/opensource/commit/fb4e33d370561fcfe08c004bbcbe829aaf5fe6a8))
+* slider padding issue ([#725](https://github.com/pedaling/opensource/issues/725)) ([ce9691a](https://github.com/pedaling/opensource/commit/ce9691a517efe0db2f81351cc93f34552698674d))
+* when initialIndex is set, snap alignment not working ([#726](https://github.com/pedaling/opensource/issues/726)) ([53a340b](https://github.com/pedaling/opensource/commit/53a340b61359df022f41ac75deb9a2c7ae4fc54f))
+
 ## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.59.0...vibrant-core-0.60.0) (2023-05-16)
 
 
