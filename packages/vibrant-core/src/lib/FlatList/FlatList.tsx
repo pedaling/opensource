@@ -101,7 +101,7 @@ export const FlatList = withFlatListVariation(
               return targetItem.offsetLeft + targetItem.clientWidth - clientWidth + calculatedPaddingX;
             case 'start':
             default:
-              return targetItem.offsetLeft + (index === 0 ? -calculatedPaddingX : 0) - calculatedPaddingX;
+              return targetItem.offsetLeft - calculatedPaddingX;
           }
         })();
 
