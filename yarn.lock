@@ -13288,7 +13288,7 @@ __metadata:
     react-native-screens: 3.20.0
     react-native-shadow-2: 6.0.6
     react-native-storybook-loader: 2.0.5
-    react-native-svg: 13.2.0
+    react-native-svg: 12.3.0
     react-native-svg-transformer: 1.0.0
     react-native-tab-view: 3.3.4
     react-native-uuid: 2.0.1
@@ -14791,7 +14791,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-select@npm:^4.1.3":
+"css-select@npm:^4.1.3, css-select@npm:^4.2.1":
   version: 4.3.0
   resolution: "css-select@npm:4.3.0"
   dependencies:
@@ -14838,7 +14838,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-tree@npm:^1.1.2, css-tree@npm:^1.1.3":
+"css-tree@npm:^1.0.0-alpha.39, css-tree@npm:^1.1.2, css-tree@npm:^1.1.3":
   version: 1.1.3
   resolution: "css-tree@npm:1.1.3"
   dependencies:
@@ -29819,16 +29819,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-svg@npm:13.2.0":
-  version: 13.2.0
-  resolution: "react-native-svg@npm:13.2.0"
+"react-native-svg@npm:12.3.0":
+  version: 12.3.0
+  resolution: "react-native-svg@npm:12.3.0"
   dependencies:
-    css-select: ^5.1.0
-    css-tree: ^1.1.3
+    css-select: ^4.2.1
+    css-tree: ^1.0.0-alpha.39
   peerDependencies:
     react: "*"
-    react-native: "*"
-  checksum: 5e02d60478d360b62fd7fb1fcce6094af01798326a7df5cdc735eb74bf8305cbf31c4d61b409bc6109e707175268f67319945dc752e0ce11ae0fd6ad793dd02b
+    react-native: ">=0.50.0"
+  checksum: 9bed890d030819ed650fdc84ae8127f78f72a28d81a160dd574729b81f237c85be6a5ff4a0951b4dd28bd2836189f18afffef1fd6447fb3b6537c7ecd23f08c2
   languageName: node
   linkType: hard
 
