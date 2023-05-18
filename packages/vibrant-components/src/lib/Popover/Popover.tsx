@@ -136,7 +136,7 @@ export const Popover = withPopoverVariation(
             top: halfPopoverHeight - arrowHeight + 2,
           };
 
-        case 'leftStart':
+        case 'left-start':
           return {
             left: popoverWidth - arrowHeight + 2,
             top: arrowOffset + 2,
