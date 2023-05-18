@@ -21,6 +21,8 @@ export const TableFieldFilter = <Operator extends string>({
   onOpen,
   field,
   minWidth,
+  maxWidth,
+  lineLimit,
   testId,
 }: TableFieldFilterProps<Operator>) => {
   const {
@@ -47,6 +49,8 @@ export const TableFieldFilter = <Operator extends string>({
           size="md"
           onClick={open}
           selected={active}
+          maxWidth={maxWidth}
+          lineLimit={lineLimit}
           endIcon={<Icon.ArrowTriangleDown.Fill />}
         >
           {label}
