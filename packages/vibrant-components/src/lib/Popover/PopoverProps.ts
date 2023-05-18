@@ -2,11 +2,12 @@ import type { ReactElement } from 'react';
 import type { ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken } from '@vibrant-ui/theme';
+import type { Position } from '@vibrant-ui/utils';
 
 export type PopoverProps = {
   title?: string;
   renderContent?: () => ReactElement;
-  position: PopoverPositionType;
+  position: Position;
   showCloseButton?: boolean;
   backgroundColor?: BaseColorToken;
   maxWidth?: ResponsiveValue<number | `${number}%`>;
@@ -18,20 +19,6 @@ export type PopoverProps = {
   popoverId?: string;
 } & ({ title: string; renderContent?: () => ReactElement } | { title?: string; renderContent: () => ReactElement }) &
   PopoverArrowType;
-
-type PopoverPositionType =
-  | 'bottom'
-  | 'bottomEnd'
-  | 'bottomStart'
-  | 'left'
-  | 'leftEnd'
-  | 'leftStart'
-  | 'right'
-  | 'rightEnd'
-  | 'rightStart'
-  | 'top'
-  | 'topEnd'
-  | 'topStart';
 
 type PopoverArrowType =
   | {

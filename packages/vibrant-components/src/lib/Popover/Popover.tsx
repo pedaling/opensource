@@ -100,13 +100,13 @@ export const Popover = withPopoverVariation(
             top: popoverHeight - arrowHeight + 2,
           };
 
-        case 'topStart':
+        case 'top-start':
           return {
             left: arrowHeight + arrowOffset,
             top: popoverHeight - arrowHeight + 2,
           };
 
-        case 'topEnd':
+        case 'top-end':
           return {
             left: popoverWidth - arrowHeight * 3 - arrowOffset,
             top: popoverHeight - arrowHeight + 2,
@@ -118,13 +118,13 @@ export const Popover = withPopoverVariation(
             top: -arrowHeight + 2,
           };
 
-        case 'bottomStart':
+        case 'bottom-start':
           return {
             left: arrowHeight + arrowOffset,
             top: -arrowHeight + 2,
           };
 
-        case 'bottomEnd':
+        case 'bottom-end':
           return {
             left: popoverWidth - arrowHeight * 3 - arrowOffset,
             top: -arrowHeight + 2,
@@ -142,7 +142,7 @@ export const Popover = withPopoverVariation(
             top: arrowOffset + 2,
           };
 
-        case 'leftEnd':
+        case 'left-end':
           return {
             left: popoverWidth - arrowHeight + 2,
             top: popoverHeight - arrowHeight * 2 - arrowOffset + 2,
@@ -154,13 +154,13 @@ export const Popover = withPopoverVariation(
             top: halfPopoverHeight - arrowHeight + 2,
           };
 
-        case 'rightStart':
+        case 'right-start':
           return {
             left: -arrowHeight + 2,
             top: arrowOffset + 2,
           };
 
-        case 'rightEnd':
+        case 'right-end':
           return {
             left: -arrowHeight + 2,
             top: popoverHeight - arrowHeight * 2 - arrowOffset + 2,
