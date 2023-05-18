@@ -1,5 +1,5 @@
 import validate from 'card-validator';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Icon } from '@vibrant-ui/icons';
 import { MountMotion } from '@vibrant-ui/motion';
 import { useCustomization } from '../CustomizationProvider';
@@ -26,22 +26,31 @@ export const CardNumberField = withCardNumberFieldVariation(
     const CardIcon = cardIconMap?.[cardType] ?? null;
     const gaps: number[] = card?.gaps ?? DEFAULT_GAPS;
 
-    const onCardNumberChange = (newCardNumber: string) => {
-      const newCardNumberOnlyNumber = newCardNumber.match(/\d/g) ?? [];
-      const totalLength = newCardNumberOnlyNumber.length;
-
-      const breakPoints = [...gaps, maxLength];
-      const newCardNumberWithDash = breakPoints.reduce((acc, breakPoint, index) => {
-        const endIndex = Math.min(breakPoint, totalLength);
-
-        const group = newCardNumberOnlyNumber.slice(breakPoints[index - 1], endIndex).join('');
-
-        return acc && group ? acc + separator + group : acc + group;
-      }, '');
-
-      setValue(newCardNumberWithDash);
-    };
     const maxLength = card?.lengths ? Math.max(...card.lengths) + gaps.length : 19;
+    const onCardNumberChange = useCallback(
+      (newCardNumber: string) => {
+        const newCardNumberOnlyNumber = newCardNumber.match(/\d/g) ?? [];
+        const totalLength = newCardNumberOnlyNumber.length;
+
+        const breakPoints = [...gaps, maxLength];
+        const newCardNumberWithDash = breakPoints.reduce((acc, breakPoint, index) => {
+          const endIndex = Math.min(breakPoint, totalLength);
+
+          const group = newCardNumberOnlyNumber.slice(breakPoints[index - 1], endIndex).join('');
+
+          return acc && group ? acc + separator + group : acc + group;
+        }, '');
+
+        setValue(newCardNumberWithDash);
+      },
+      [gaps, maxLength, separator]
+    );
+
+    useEffect(() => {
+      if (defaultValue) {
+        onCardNumberChange(defaultValue);
+      }
+    }, [defaultValue, onCardNumberChange]);
 
     const mountAnimation = {
       opacity: {
@@ -77,7 +86,7 @@ export const CardNumberField = withCardNumberFieldVariation(
         renderEnd={() => (
           <HStack alignVertical="center" spacing={12}>
             <VStack>
-              {CardIcon && (
+              {Boolean(value) && CardIcon && (
                 <MountMotion
                   mountAnimation={mountAnimation}
                   unmountAnimation={unmountAnimation}

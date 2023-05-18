@@ -9,6 +9,9 @@ export default {
   component: FormCardNumberField,
   args: {
     name: 'test',
+    label: '카드번호',
+    helperText: '카드번호를 입력해주세요',
+    separator: '-',
   },
 } as ComponentMeta<typeof FormCardNumberField>;
 const generateCardComponentMock =

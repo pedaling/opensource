@@ -40,9 +40,9 @@ describe('<FormCardNumberField />', () => {
       submit = renderer.getByTestId('submit');
     });
 
-    describe('when text typed', () => {
+    describe('when number typed', () => {
       beforeEach(async () => {
-        text = 'test';
+        text = '12345';
 
         await waitFor(() => userEvent.type(element, text));
       });
@@ -52,9 +52,21 @@ describe('<FormCardNumberField />', () => {
       });
     });
 
+    describe('when text typed', () => {
+      beforeEach(async () => {
+        text = 'text';
+
+        await waitFor(() => userEvent.type(element, text));
+      });
+
+      it('value is not changed', () => {
+        expect(formControl.getValues(name)).toEqual(undefined);
+      });
+    });
+
     describe('when submit clicked', () => {
       beforeEach(async () => {
-        text = 'test2';
+        text = '12345';
 
         await waitFor(() => userEvent.type(element, text));
 
