@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.1...vibrant-components-0.60.2) (2023-05-18)
+
+
+### Features
+
+* FormCardNumberField를 개발한다. [COM-4216] ([#731](https://github.com/pedaling/opensource/issues/731)) ([87c10f4](https://github.com/pedaling/opensource/commit/87c10f4693354a84d362e7b831d8d11a84cdc9e8))
+
 ### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.0...vibrant-components-0.60.1) (2023-05-17)
 
 
