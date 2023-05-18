@@ -23,6 +23,8 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
       value: [],
       operator: operators[0],
     },
+    maxWidth,
+    lineLimit,
     testId = 'table-multi-select-filter',
   }) => {
     const [selectedValues, setSelectedValues] = useState<Option['value'][]>(defaultValue?.value);
@@ -120,6 +122,8 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
             </VStack>
           )
         }
+        maxWidth={maxWidth}
+        lineLimit={lineLimit}
       />
     );
   }

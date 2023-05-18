@@ -20,6 +20,8 @@ export const TableStringFilter = withTableStringFilterVariation(
       value: '',
       operator: operators[0],
     },
+    maxWidth,
+    lineLimit,
     testId = 'table-string-filter',
   }) => {
     const [inputValue, setInputValue] = useState<string>(defaultValue?.value);
@@ -112,6 +114,8 @@ export const TableStringFilter = withTableStringFilterVariation(
             </Box>
           )
         }
+        maxWidth={maxWidth}
+        lineLimit={lineLimit}
       />
     );
   }
