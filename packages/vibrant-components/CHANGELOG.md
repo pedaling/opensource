@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.2...vibrant-components-0.60.3) (2023-05-19)
+
+
+### Features
+
+* table filter에 maxWidth, lineLimit Prop을 추가합니다 ([#734](https://github.com/pedaling/opensource/issues/734)) ([4b7a82d](https://github.com/pedaling/opensource/commit/4b7a82d4a36d206890d00b52e1ac8701609f7219))
+
+
+### Bug Fixes
+
+* set TableSearchOption storybook option args ([#736](https://github.com/pedaling/opensource/issues/736)) ([c9e2f68](https://github.com/pedaling/opensource/commit/c9e2f682ab13191fde36bc548083cd66c8abdfbd))
+
 ### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.1...vibrant-components-0.60.2) (2023-05-18)
 
 
