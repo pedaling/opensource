@@ -123,7 +123,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
             renderOverlay={() => (
               <HStack alignVertical="center" height="100%" spacing={12}>
                 {selectedRowKeys.size > 0 ? (
-                  <Body level={2}>
+                  <Body level={2} weight="medium">
                     {tableTranslation.numberOfSelected.replace('{count}', selectedRowKeys.size.toString())}
                   </Body>
                 ) : null}
