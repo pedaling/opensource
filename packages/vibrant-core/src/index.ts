@@ -75,6 +75,7 @@ export { PortalRootProvider, usePortalRoot } from './lib/PortalRoot';
 export { platform } from './lib/platform';
 export { OverlayBox } from './lib/OverlayBox';
 export type { Platform } from './lib/platform';
+export { PopoverProvider, usePopover } from './lib/PopoverProvider';
 export { useStackedPortal, useStackedOffset } from './lib/StackedPortalProvider';
 export { useLockBodyScroll } from './lib/useLockBodyScroll';
 export { PageScroll, useScroll } from './lib/PageScroll';
