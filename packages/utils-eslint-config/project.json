@@ -1,11 +1,12 @@
 {
+  "name": "utils-eslint-config",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/utils-eslint-config/src",
   "projectType": "library",
   "tags": ["scope:eslint-config"],
   "targets": {
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/shared-utils-eslint-config",
@@ -18,18 +19,20 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/utils-eslint-config/tsconfig.lib.json"]
+        "commands": [
+          "yarn tsc --project ./packages/utils-eslint-config/tsconfig.lib.json"
+        ]
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/utils-eslint-config/**/*.{ts,tsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/utils-eslint-config"],
       "options": {
         "jestConfig": "packages/utils-eslint-config/jest.config.ts",
@@ -42,7 +45,10 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["utils-eslint-config:github", "utils-eslint-config:deploy"]
+        "postTargets": [
+          "utils-eslint-config:github",
+          "utils-eslint-config:deploy"
+        ]
       }
     },
     "github": {

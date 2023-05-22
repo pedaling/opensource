@@ -1,9 +1,14 @@
 {
   "root": true,
-  "extends": ["@class101/eslint-config"],
+  "extends": [
+    "@class101/eslint-config",
+    "plugin:storybook/recommended"
+  ],
   "overrides": [
     {
-      "files": ["*.mdx"],
+      "files": [
+        "*.mdx"
+      ],
       "parser": "eslint-mdx",
       "settings": {
         "mdx/code-blocks": true
@@ -25,7 +30,9 @@
       }
     },
     {
-      "files": ["*.json"],
+      "files": [
+        "*.json"
+      ],
       "rules": {
         "@typescript-eslint/no-unused-expressions": "off",
         "quotes": "off"
