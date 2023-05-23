@@ -2792,7 +2792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/babel-plugin@npm:^11.10.5":
+"@emotion/babel-plugin@npm:^11.10.0":
   version: 11.11.0
   resolution: "@emotion/babel-plugin@npm:11.11.0"
   dependencies:
@@ -2824,7 +2824,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/cache@npm:^11.10.5":
+"@emotion/cache@npm:^11.10.0":
   version: 11.11.0
   resolution: "@emotion/cache@npm:11.11.0"
   dependencies:
@@ -2925,14 +2925,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:11.10.5":
-  version: 11.10.5
-  resolution: "@emotion/react@npm:11.10.5"
+"@emotion/react@npm:11.10.4":
+  version: 11.10.4
+  resolution: "@emotion/react@npm:11.10.4"
   dependencies:
     "@babel/runtime": ^7.18.3
-    "@emotion/babel-plugin": ^11.10.5
-    "@emotion/cache": ^11.10.5
-    "@emotion/serialize": ^1.1.1
+    "@emotion/babel-plugin": ^11.10.0
+    "@emotion/cache": ^11.10.0
+    "@emotion/serialize": ^1.1.0
     "@emotion/use-insertion-effect-with-fallbacks": ^1.0.0
     "@emotion/utils": ^1.2.0
     "@emotion/weak-memoize": ^0.3.0
@@ -2945,11 +2945,11 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 32b67b28e9b6d6c53b970072680697f04c2521441050bdeb19a1a7f0164af549b4dad39ff375eda1b6a3cf1cc86ba2c6fa55460ec040e6ebbca3e9ec58353cf7
+  checksum: 7555f6a1840c71d841386be2ec98ebfd6399923bd6a61247c7b07283f9a056f57e83c4fdd9ea7a7fcc3d88e5e04bb03168b4f0557934bcd501c88af4db16e1e0
   languageName: node
   linkType: hard
 
-"@emotion/serialize@npm:^1.1.1, @emotion/serialize@npm:^1.1.2":
+"@emotion/serialize@npm:^1.1.0, @emotion/serialize@npm:^1.1.2":
   version: 1.1.2
   resolution: "@emotion/serialize@npm:1.1.2"
   dependencies:
@@ -2969,14 +2969,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:11.10.5":
-  version: 11.10.5
-  resolution: "@emotion/styled@npm:11.10.5"
+"@emotion/styled@npm:11.10.4":
+  version: 11.10.4
+  resolution: "@emotion/styled@npm:11.10.4"
   dependencies:
     "@babel/runtime": ^7.18.3
-    "@emotion/babel-plugin": ^11.10.5
+    "@emotion/babel-plugin": ^11.10.0
     "@emotion/is-prop-valid": ^1.2.0
-    "@emotion/serialize": ^1.1.1
+    "@emotion/serialize": ^1.1.0
     "@emotion/use-insertion-effect-with-fallbacks": ^1.0.0
     "@emotion/utils": ^1.2.0
   peerDependencies:
@@ -2988,7 +2988,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 1cec5f6aeb227a7255141031e8594f38ad83902413472aae0a46c27e5f9769c01e23c1ad39adee408d8a2168a697464314d1a0c4f50b31a5d25ea506b2d7bbc8
+  checksum: d56cbf48f30c5a36d618adf2c4d7d9440b5059373a96964fa2a6e832ce9b9ae8cee11b5292b444264b3acbfdd6a8f6c9050e197a35c8dea7e9b9cc78f55ac31c
   languageName: node
   linkType: hard
 
@@ -9979,13 +9979,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.4.4":
-  version: 29.4.4
-  resolution: "@types/jest@npm:29.4.4"
+"@types/jest@npm:28.1.8":
+  version: 28.1.8
+  resolution: "@types/jest@npm:28.1.8"
   dependencies:
-    expect: ^29.0.0
-    pretty-format: ^29.0.0
-  checksum: 754c21d996c3457c761e55c4076a2dd14d82e6290c3f57122db17aa07ef59c12af7df50a82a06845ef9ba1fbf75bb024a1fed68426514618856bda7fb90eb773
+    expect: ^28.0.0
+    pretty-format: ^28.0.0
+  checksum: d4cd36158a3ae1d4b42cc48a77c95de74bc56b84cf81e09af3ee0399c34f4a7da8ab9e787570f10004bd642f9e781b0033c37327fbbf4a8e4b6e37e8ee3693a7
   languageName: node
   linkType: hard
 
@@ -10118,10 +10118,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.14.4":
-  version: 18.14.4
-  resolution: "@types/node@npm:18.14.4"
-  checksum: 3f2f625777747b9f87e793eea5a8bbf1ac2c828846bda5811d07a457d55cfe6762239779759de61e7b7e917632b9ceee3f7ffd2a024117e7ec364dc1b4eb8d55
+"@types/node@npm:18.7.18":
+  version: 18.7.18
+  resolution: "@types/node@npm:18.7.18"
+  checksum: 8aec61f0f96e2a69ce51f1f40f949ca578bbb4fe05d7c0b8ce3aeeb848e90f755837f17f6ac132ca404d974fe9b2974150ad3b4984fc9dc7c3ceddb10bae0167
   languageName: node
   linkType: hard
 
@@ -10223,12 +10223,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.0.9":
-  version: 18.0.9
-  resolution: "@types/react-dom@npm:18.0.9"
+"@types/react-dom@npm:18.0.6":
+  version: 18.0.6
+  resolution: "@types/react-dom@npm:18.0.6"
   dependencies:
     "@types/react": "*"
-  checksum: e744e3feba25fc43733289d4df4d9c0e59fcca7f34e8c89d75f81a339accb2bd70236d69382d47d2c0ad06a1529b2e56aa6171fe175854d60e07156ddceedfcb
+  checksum: db571047af1a567631758700b9f7d143e566df939cfe5fbf7535347cc0c726a1cdbb5e3f8566d076e54cf708b6c1166689de194a9ba09ee35efc9e1d45911685
   languageName: node
   linkType: hard
 
@@ -10241,12 +10241,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:0.71.7":
-  version: 0.71.7
-  resolution: "@types/react-native@npm:0.71.7"
+"@types/react-native@npm:0.70.4":
+  version: 0.70.4
+  resolution: "@types/react-native@npm:0.70.4"
   dependencies:
     "@types/react": "*"
-  checksum: 9eb66b280e1b8261d895539031e84fc40a06f5c58ebf52a83622ffb9054e82f4d8ad8dfb5203ae83149a228a56d9e57653b168a895c358df5b4e6a8b55cb9e92
+  checksum: b75c2322b6bbd9b5b599af76c6d53596f91dda1b4a3311c169043459e9be925d1438a3ff591d4064cec33a1990193cc48cc0bac33dfb07756fb5bbcc269987cc
   languageName: node
   linkType: hard
 
@@ -10314,14 +10314,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.0.28":
-  version: 18.0.28
-  resolution: "@types/react@npm:18.0.28"
+"@types/react@npm:18.0.20":
+  version: 18.0.20
+  resolution: "@types/react@npm:18.0.20"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: e752df961105e5127652460504785897ca6e77259e0da8f233f694f9e8f451cde7fa0709d4456ade0ff600c8ce909cfe29f9b08b9c247fa9b734e126ec53edd7
+  checksum: f67f5b16efd89e237bf0e40d133218c398cf2a2f81166ce1e9fa32d0df6b869106740983396c51df9708a1b79b2a9d725eda1230cc3064c92d86d9ea6a4b714c
   languageName: node
   linkType: hard
 
@@ -14084,8 +14084,8 @@ __metadata:
     "@emotion/cache": 11.9.3
     "@emotion/jest": 11.9.3
     "@emotion/native": 11.9.3
-    "@emotion/react": 11.10.5
-    "@emotion/styled": 11.10.5
+    "@emotion/react": 11.10.4
+    "@emotion/styled": 11.10.4
     "@expo/cli": 0.3.2
     "@expo/metro-config": 0.7.1
     "@expo/webpack-config": 0.17.4
@@ -14139,11 +14139,11 @@ __metadata:
     "@testing-library/react": 13.4.0
     "@testing-library/react-native": 11.2.0
     "@testing-library/user-event": 14.2.1
-    "@types/jest": 29.4.4
-    "@types/node": 18.14.4
-    "@types/react": 18.0.28
-    "@types/react-dom": 18.0.9
-    "@types/react-native": 0.71.7
+    "@types/jest": 28.1.8
+    "@types/node": 18.7.18
+    "@types/react": 18.0.20
+    "@types/react-dom": 18.0.6
+    "@types/react-native": 0.70.4
     "@types/react-test-renderer": 18.0.0
     "@types/uuid": 8.3.4
     "@typescript-eslint/eslint-plugin": 5.59.6
@@ -18606,7 +18606,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expect@npm:^28.1.3":
+"expect@npm:^28.0.0, expect@npm:^28.1.3":
   version: 28.1.3
   resolution: "expect@npm:28.1.3"
   dependencies:
@@ -31233,7 +31233,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^28.1.1, pretty-format@npm:^28.1.3":
+"pretty-format@npm:^28.0.0, pretty-format@npm:^28.1.1, pretty-format@npm:^28.1.3":
   version: 28.1.3
   resolution: "pretty-format@npm:28.1.3"
   dependencies:
