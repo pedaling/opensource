@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.3...vibrant-core-0.61.0) (2023-05-23)
+
+
+### Features
+
+* Popover 컴포넌트 추가 ([#718](https://github.com/pedaling/opensource/issues/718)) ([98a8f81](https://github.com/pedaling/opensource/commit/98a8f81d774a02465db37cb4dce377aa793b619f))
+
 ### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.2...vibrant-core-0.60.3) (2023-05-19)
 
 ### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.1...vibrant-core-0.60.2) (2023-05-18)
