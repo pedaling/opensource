@@ -69,7 +69,7 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
           <HStack spacing={15}>
             <Title level={7}>control box</Title>
             <Body level={2}>{`[type: ${drawerType}]`}</Body>
-            <Body level={2}>{`[direction: ${drawerDir}]`}</Body>
+            <Body level={2}>{`[placement: ${drawerDir}]`}</Body>
           </HStack>
           <HStack alignVertical="center" spacing={10}>
             <ContainedButton kind="tertiary" size="md" onClick={() => setIsPanelOpen(true)}>
