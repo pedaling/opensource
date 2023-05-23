@@ -36,7 +36,7 @@ export const Basic: ComponentStory<typeof Drawer> = () => (
           <HStack spacing={10} width="100%">
             <Paper width={400} height={295} minWidth={400} backgroundColor="error">
               <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                <Body level={1}>400px - 295px</Body>
+                <Body level={1}>400px - 295px(set minWidth)</Body>
               </VStack>
             </Paper>
             <Paper width="100%" height={295} backgroundColor="success">
