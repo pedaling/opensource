@@ -82,7 +82,7 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
               Change Type
             </ContainedButton>
             <ContainedButton kind="tertiary" size="md" onClick={changeDirection}>
-              Change Direction
+              Change Placement
             </ContainedButton>
             <ContainedButton kind="tertiary" size="md" onClick={() => setIsPanelOpen(prev => !prev)}>
               ACTION
