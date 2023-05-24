@@ -5306,6 +5306,172 @@ exports[`<Icon /> when CheckCircle.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when CheckShield.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="checkshield-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="m400.7 98.12-159.94-60-.7-.26-.7.26-160.06 60-1.3.49v181.43c0 .46 1.47 46.27 40.67 81.45 38.72 34.74 119.61 79.81 120.42 80.26l.97.54.97-.54c.78-.44 79.08-44.19 120.28-80.24 40.22-35.19 40.68-81.05 40.68-81.51V98.62l-1.3-.49Zm-58.05 95.68-96.52 96.52-22.27 22.28-1.49 1.48-1.49-1.48-83.53-83.53-1.48-1.49 1.48-1.49 29.7-29.7 1.49-1.48 1.49 1.48 53.09 53.09 87.6-87.61 1.49-1.48 1.49 1.48 28.95 28.95 1.48 1.49-1.48 1.49Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when CheckShield.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="checkshield-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M239.09 441.75c-.82-.45-81.71-45.52-120.42-80.26C79.48 326.32 78.01 280.5 78 280.04V98.62l1.3-.49 160.06-60.01.7-.26.7.26 159.94 60 1.3.49v181.38c0 .46-.47 46.32-40.68 81.51-41.21 36.05-119.5 79.8-120.28 80.24l-.97.54-.97-.54ZM122 278.88c.28 3.38 3.16 29.31 26.05 49.86 24.53 22.01 71.7 50.78 91.95 62.76 23.93-14.19 66.73-40.69 92.34-63.11 23.57-20.62 25.52-46.13 25.66-48.97V129.1L240.05 84.85 122 129.11v149.77Z"
+    />
+    <path
+      class="emotion-1"
+      d="m221.79 309.01-79.55-79.55-1.41-1.42 1.41-1.41 28.29-28.29 1.41-1.4 1.42 1.4 50.56 50.56 83.43-83.44 1.42-1.41 1.41 1.41 27.58 27.58 1.41 1.41-1.41 1.42-91.93 91.92-21.21 21.22-1.41 1.41-1.42-1.41z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when CheckShield.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="checkshield-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M240.06 436.56c-11.12-6.26-82.61-46.98-118.06-78.79-37.51-33.66-38.99-77.4-39-77.83V102.08l157.06-58.87L397 102.09v177.92c0 .44-.54 44.12-38.98 77.74-37.71 33-107.06 72.65-117.97 78.82Zm-1.07-356.65L117 125.64v153.54c.25 3.12 3.07 31.16 27.72 53.29 25.32 22.71 74 52.28 93.75 63.94l1.53.89 1.53-.91c23.88-14.13 67.87-41.28 94.11-64.25 25.16-22.02 27.21-49.44 27.36-52.48V125.64L241.11 79.91l-1.06-.39-1.06.39ZM147.9 228.05 171.95 204l49.86 49.85 2.12 2.13 2.12-2.13 82.73-82.73 23.34 23.34-108.89 108.89-75.32-75.31Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when CheckboxIndeterminate.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -5799,6 +5965,168 @@ exports[`<Icon /> when CheckboxOn.Thin Icon rendered match snapshot 1`] = `
       clip-rule="evenodd"
       d="M1.5 7.9c0-2.24 0-3.36.436-4.216a4 4 0 0 1 1.748-1.748C4.54 1.5 5.66 1.5 7.9 1.5h8.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748c.436.856.436 1.976.436 4.216v8.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748c-.856.436-1.976.436-4.216.436H7.9c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C1.5 19.46 1.5 18.34 1.5 16.1V7.9Zm9.664 9 7.56-7.6a.24.24 0 0 0 0-.35l-1.401-1.4c-.1-.1-.25-.1-.35 0l-6.01 6-3.605-3.6c-.1-.1-.25-.1-.35 0l-1.402 1.4c-.1.1-.1.25 0 .35l5.207 5.2c.1.1.25.1.35 0Z"
       fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when CheckerBoardShield.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="checkerboardshield-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="m400.7 98.12-159.94-60-.7-.26-.7.26-160.06 60-1.3.49v181.43c0 .46 1.47 46.27 40.67 81.45 38.72 34.74 119.61 79.81 120.42 80.26l.97.54.97-.54c.78-.44 79.08-44.19 120.28-80.24 40.22-35.19 40.68-81.05 40.68-81.51V98.62l-1.3-.49ZM148.05 328.74c-22.89-20.55-25.77-46.48-26.05-49.86V230h118l.04-145.14 117.95 44.25v100.87l-118 .02.05 161.47-.05.03c-20.25-11.98-67.42-40.75-91.95-62.76Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when CheckerBoardShield.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="checkerboardshield-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="m400.7 98.12-159.94-60-.7-.26-.7.26-160.06 60-1.3.49v181.43c0 .46 1.47 46.27 40.67 81.45 38.72 34.74 119.61 79.81 120.42 80.26l.97.54.97-.54c.78-.44 79.08-44.19 120.28-80.24 40.22-35.19 40.68-81.05 40.68-81.51V98.62l-1.3-.49ZM148.05 328.74c-22.89-20.55-25.77-46.48-26.05-49.86V230h118l.04-145.14 117.95 44.25v100.87l-118 .02.05 161.47-.05.03c-20.25-11.98-67.42-40.75-91.95-62.76Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when CheckerBoardShield.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="checkerboardshield-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M240.06 43.21 83 102.08v177.85c.01.43 1.49 44.18 39 77.83 35.45 31.81 106.94 72.54 118.06 78.79 10.91-6.17 80.26-45.82 117.97-78.82 38.44-33.62 38.98-77.31 38.98-77.74V102.08L240.06 43.21Zm-95.34 289.26c-24.65-22.13-27.47-50.18-27.71-53.29V230h123.02l.02-150.48 1.05.39 121.89 45.73V230H240.02l-.03 167.3-1.53-.89c-19.75-11.66-68.44-41.24-93.75-63.94Z"
     />
   </svg>
 </div>
@@ -9987,6 +10315,168 @@ exports[`<Icon /> when Download.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="M21.75 17H20.5c-.15 0-.25.1-.25.25v3H3.75v-3c0-.15-.1-.25-.25-.25H2.25c-.15 0-.25.1-.25.25v4.5c0 .15.1.25.25.25h19.5c.15 0 .25-.1.25-.25v-4.5c0-.15-.1-.25-.25-.25Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Drm.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="drm-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M153.36 214.76c1.58 6.13 2.38 14.48 2.38 24.8v.2c0 10.73-.8 19.38-2.38 25.7-1.54 6.21-3.78 10.67-6.66 13.28-2.83 2.56-6.39 3.86-10.56 3.86h-3.96V198h3.96c4.18 0 7.62 1.25 10.53 3.82 2.9 2.58 5.15 6.93 6.69 12.93Zm71.33-18.63h-6.56v38.78h6.56c3.84 0 6.59-1.46 8.42-4.46 1.91-3.13 2.88-8.14 2.88-14.88v-.2c0-6.67-.98-11.65-2.91-14.78-1.86-3-4.6-4.46-8.39-4.46ZM422 58v364H58V58h364ZM184.71 239.57c0-16.1-1.73-29.57-5.15-40.03-3.45-10.56-8.59-18.55-15.3-23.74-6.73-5.2-15.07-7.83-24.81-7.83h-35.86v144.69h35.86c9.74 0 18.1-2.75 24.83-8.19 6.7-5.41 11.84-13.63 15.29-24.42 3.41-10.69 5.15-24.25 5.15-40.28v-.2Zm82.91 73.09-17.18-59.43c4.55-3.47 8.14-8.57 10.7-15.19 2.64-6.85 3.99-15.1 3.99-24.54v-.2c0-9.57-1.36-17.82-4.03-24.55-2.71-6.8-6.84-12.03-12.28-15.53-5.43-3.49-12.27-5.26-20.34-5.26h-38.86v144.69h28.51v-51.84h5.32l14.06 51.84h30.11Zm108.89-144.69h-35.99l-16.02 90.07-15.95-90.07h-36.07v144.69h25.11v-87.24l15.84 87.24h22.22l15.67-86.92v86.92h25.19V167.97Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Drm.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="drm-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M58 422V58h364v364H58Zm320-44V102H102v276h276Zm-262-71.92V174.54h32.6c8.85 0 16.44 2.4 22.55 7.12 6.1 4.72 10.77 11.97 13.91 21.58 3.11 9.51 4.68 21.76 4.68 36.39v.18c0 14.58-1.58 26.9-4.68 36.62-3.13 9.81-7.81 17.28-13.9 22.2-6.12 4.94-13.71 7.45-22.57 7.45h-32.6Zm29.58-27.31c3.79 0 7.02-1.18 9.6-3.51 2.62-2.37 4.65-6.43 6.05-12.07 1.43-5.75 2.16-13.61 2.16-23.37v-.18c0-9.39-.73-16.98-2.16-22.55-1.4-5.46-3.45-9.42-6.08-11.76-2.65-2.33-5.77-3.47-9.57-3.47h-3.6v76.91h3.6Zm92.16 27.31-12.78-47.13h-4.84v47.13H194.2V174.54h35.33c7.34 0 13.56 1.61 18.49 4.78 4.94 3.18 8.7 7.93 11.16 14.12 2.43 6.12 3.66 13.62 3.66 22.32v.18c0 8.58-1.22 16.08-3.62 22.31-2.32 6.01-5.59 10.65-9.72 13.81l15.62 54.02h-27.38Zm-11.66-70.67c3.49 0 5.99-1.33 7.66-4.05 1.74-2.85 2.62-7.4 2.62-13.53v-.18c0-6.07-.89-10.59-2.65-13.43-1.69-2.73-4.18-4.06-7.62-4.06h-5.96v35.25h5.96Zm138.02 70.67V174.54h-32.72l-14.56 81.88-14.5-81.88h-32.79v131.53h22.83v-79.31l14.4 79.31h20.2l14.25-79.02v79.02h22.9Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Drm.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="drm-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M63 417V63h354v354H63Zm34-34h286V97H97v286Zm246.21-78.92v-84.92h-2.6l-15.31 84.92h-16.86l-15.41-84.92h-2.65v84.92h-18.83V176.55h29.12l15.08 85.19h2.18l15.15-85.19h29.04v127.53h-18.9Zm-103.93 0-12.78-47.13h-8.38v47.13h-21.91V176.55h33.33c6.95 0 12.81 1.5 17.41 4.46 4.59 2.95 8.08 7.39 10.38 13.17 2.34 5.87 3.52 13.12 3.52 21.58v.18c0 8.33-1.17 15.59-3.49 21.59-2.29 5.92-5.52 10.4-9.6 13.33l-.58.41 15.26 52.81h-23.18Zm-21.15-66.67h7.97c4.18 0 7.33-1.69 9.36-5.01 1.93-3.17 2.91-8.07 2.91-14.57v-.18c0-6.45-.99-11.32-2.95-14.48-2.05-3.32-5.19-5.01-9.33-5.01h-7.97v39.25Zm-100.12 66.67V176.55h30.6c8.4 0 15.57 2.25 21.33 6.7 5.77 4.46 10.22 11.4 13.23 20.61 3.04 9.32 4.58 21.35 4.58 35.78v.18c0 14.37-1.54 26.48-4.59 36.01-3.01 9.43-7.47 16.58-13.25 21.25-5.75 4.65-12.92 7-21.31 7H118Zm21.98-23.31h5.6c4.3 0 7.98-1.35 10.94-4.03 2.92-2.64 5.15-7.04 6.65-13.07 1.47-5.91 2.22-13.93 2.22-23.85v-.18c0-9.56-.75-17.31-2.23-23.05-1.5-5.85-3.75-10.14-6.69-12.75-2.98-2.64-6.65-3.98-10.9-3.98h-5.6v80.91Z"
     />
   </svg>
 </div>
@@ -17113,6 +17603,168 @@ exports[`<Icon /> when MoreVertical.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="M12 6.6a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Zm0 7a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Zm0 7a1.6 1.6 0 1 0 0-3.2 1.6 1.6 0 0 0 0 3.2Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when MusicNote.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="musicnote-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M170 437c-45.22 0-82-36.78-82-82s36.78-82 82-82c13.25 0 26.32 3.23 38 9.35V72.29l151.68-24.27 2.32-.37V147.7l-110 17.6v189.69c0 45.22-36.78 82-82 82Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when MusicNote.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="musicnote-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M170 437c-45.22 0-82-36.78-82-82s36.78-82 82-82c13.25 0 26.32 3.23 38 9.35V72.29l151.68-24.27 2.32-.37V147.7l-110 17.6v189.69c0 45.22-36.78 82-82 82Zm0-120c-20.95 0-38 17.05-38 38s17.05 38 38 38 38-17.05 38-38-17.05-38-38-38Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when MusicNote.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="musicnote-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M170 432.01c-42.46 0-77-34.54-77-77s34.54-77 77-77c13.52 0 26.83 3.56 38.49 10.33l4.51 2.6V76.57l144-23.04v89.92l-107.47 17.18-2.53.41V355c0 42.46-34.54 77-77 77Zm0-120c-23.71 0-43 19.29-43 43s19.29 43 43 43 43-19.29 43-43-19.29-43-43-43Z"
     />
   </svg>
 </div>
