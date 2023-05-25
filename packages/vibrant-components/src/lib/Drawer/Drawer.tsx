@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
-import { Children, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Children, useCallback, useEffect, useRef, useState } from 'react';
+import { Box, PressableBox, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
@@ -25,6 +25,26 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
   const [drawerType, setDrawerType] = useState<'modal' | 'overlay' | 'standard'>(type);
   const [drawerDir, setDrawerDir] = useState<'bottom' | 'left' | 'right' | 'top'>(placement);
   /* Control Box Method End*/
+
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  const onKeydown = useCallback((e: KeyboardEvent) => {
+    e.preventDefault();
+
+    if (e.code === 'Escape') {
+      closePanel();
+    }
+  }, []);
+
+  useEffect(() => {
+    const currentDrawerRef = drawerRef.current;
+
+    currentDrawerRef?.addEventListener('keydown', onKeydown);
+
+    return () => currentDrawerRef?.removeEventListener('keydown', onKeydown);
+  }, [onKeydown]);
+
+  const closePanel = () => setIsPanelOpen(false);
 
   const isStandardType = drawerType === 'standard';
 
@@ -63,7 +83,7 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
       type={drawerType}
       isOpen={isPanelOpen}
     >
-      <Box width="100%" height="100%" p={10} data-testid={testId} tabIndex={0}>
+      <Box width="100%" height="100%" p={10} data-testid={testId} tabIndex={0} ref={drawerRef}>
         {/* Control Box */}
         <VStack spacing={8}>
           <HStack spacing={15}>
@@ -97,7 +117,7 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
               {drawerDir === 'right' && (
                 <HStack width="100%">
                   <Transition animation={{ width: isPanelOpen ? `calc(100% - ${defaultSize}px` : '100%' }}>
-                    <Box>{contents}</Box>
+                    <ScrollBox>{contents}</ScrollBox>
                   </Transition>
                   {panel}
                 </HStack>
@@ -105,30 +125,35 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
               {drawerDir === 'left' && (
                 <HStack width="100%">
                   {panel}
-                  <Transition animation={{ width: isPanelOpen ? `calc(100% - ${defaultSize}px` : '100%' }}>
-                    <Box>{contents}</Box>
+                  <Transition
+                    animation={{
+                      width: isPanelOpen ? `calc(100% - ${defaultSize}px` : '100%',
+                      x: isPanelOpen ? defaultSize : 0,
+                    }}
+                  >
+                    <ScrollBox>{contents}</ScrollBox>
                   </Transition>
                 </HStack>
               )}
               {drawerDir === 'top' && (
                 <VStack width="100%" height="100%">
                   {panel}
-                  <Box>{contents}</Box>
+                  <ScrollBox>{contents}</ScrollBox>
                 </VStack>
               )}
               {drawerDir === 'bottom' && (
                 <VStack width="100%" height="100%">
-                  <Box>{contents}</Box>
+                  <ScrollBox>{contents}</ScrollBox>
                   {panel}
                 </VStack>
               )}
             </>
           ) : (
             <Box width="100%" height="100%" position="relative" data-testid="atom-1">
-              <Box width="100%">{contents}</Box>
+              <ScrollBox width="100%">{contents}</ScrollBox>
               {hasDim && (
                 <Transition animation={{ opacity: isPanelOpen ? 1 : 0 }} duration={200}>
-                  <Box
+                  <PressableBox
                     width="100%"
                     height="100%"
                     backgroundColor="dim"
@@ -137,6 +162,8 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
                     left={0}
                     zIndex={2}
                     opacity={0}
+                    onClick={closePanel}
+                    cursor="default"
                   />
                 </Transition>
               )}
