@@ -1,7 +1,7 @@
 /* eslint-disable max-lines */
 import type { ReactElement } from 'react';
 import { Children } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { Divider } from '../../Divider';
 import { VStack } from '../../VStack';
@@ -25,14 +25,12 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
 
   const isStandardType = type === 'standard';
 
-  const isDim = type === 'modal';
-
   const panelContent = isVertical ? (
-    <Box width={defaultSize} data-testid={testId} flexGrow={1}>
+    <Box width={defaultSize} data-testid={testId} flexGrow={1} height="100%">
       <VStack height="100%" alignVertical="space-between">
         <Box width="100%" overflow="hidden">
           {header}
-          {contents}
+          <ScrollBox>{contents}</ScrollBox>
         </Box>
         <Box width="100%">{footer}</Box>
       </VStack>
@@ -42,7 +40,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
       <VStack height="100%" alignVertical="space-between">
         <Box width="100%" overflow="hidden">
           {header}
-          {contents}
+          <ScrollBox>{contents}</ScrollBox>
         </Box>
         <Box width="100%">{footer}</Box>
       </VStack>
@@ -52,42 +50,40 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   return isStandardType ? (
     <>
       {placement === 'right' && (
-        <>
+        <Box position="absolute" top={0} right={0} height="100%">
           <Box flex={0}>
             <Divider direction="vertical" kind="default" />
           </Box>
           <Transition
             animation={{
-              width: isOpen ? defaultSize : 0,
               x: isOpen ? -defaultSize : 0,
             }}
             duration={animationDuration}
             easing="easeOutQuad"
           >
-            <Box width={defaultSize} right={-defaultSize}>
+            <Box width={defaultSize} right={-defaultSize} height="100%">
               {panelContent}
             </Box>
           </Transition>
-        </>
+        </Box>
       )}
       {placement === 'left' && (
-        <>
+        <Box position="absolute" top={0} left={0} height="100%">
           <Transition
             animation={{
-              width: isOpen ? defaultSize : 0,
               x: isOpen ? defaultSize : 0,
             }}
             duration={animationDuration}
             easing="easeOutQuad"
           >
-            <Box width={defaultSize} left={-defaultSize}>
+            <Box width={defaultSize} left={-defaultSize} height="100%">
               {panelContent}
             </Box>
           </Transition>
           <Box flex={0}>
             <Divider direction="vertical" kind="default" />
           </Box>
-        </>
+        </Box>
       )}
       {placement === 'top' && (
         <>
@@ -139,7 +135,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             top={0}
             right={-defaultSize}
             zIndex={3}
-            elevationLevel={isDim ? undefined : 3}
+            elevationLevel={3}
           >
             {panelContent}
           </Box>
@@ -154,7 +150,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             top={0}
             left={-defaultSize}
             zIndex={3}
-            elevationLevel={isDim ? undefined : 3}
+            elevationLevel={3}
           >
             {panelContent}
           </Box>
@@ -169,7 +165,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             top={-defaultSize}
             left={0}
             zIndex={3}
-            elevationLevel={isDim ? undefined : 3}
+            elevationLevel={3}
           >
             {panelContent}
           </Box>
@@ -184,7 +180,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             bottom={-defaultSize}
             left={0}
             zIndex={3}
-            elevationLevel={isDim ? undefined : 3}
+            elevationLevel={3}
           >
             {panelContent}
           </Box>
