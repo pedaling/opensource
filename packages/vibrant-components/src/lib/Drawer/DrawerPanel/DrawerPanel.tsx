@@ -116,14 +116,11 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
           <Transition
             animation={{
               height: isOpen ? defaultSize : 0,
-              y: isOpen ? -defaultSize : 0,
             }}
             duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
-            <Box height={defaultSize} bottom={-defaultSize}>
-              {panelContent}
-            </Box>
+            <Box height={defaultSize}>{panelContent}</Box>
           </Transition>
         </>
       )}
