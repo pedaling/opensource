@@ -1,6 +1,6 @@
 /* eslint-disable max-lines */
 import type { ReactElement } from 'react';
-import { Children } from 'react';
+import { Children, useEffect } from 'react';
 import { Box, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { Divider } from '../../Divider';
@@ -10,7 +10,7 @@ import { DrawerFooter } from '../DrawerFooter/DrawerFooter';
 import { DrawerHeader } from '../DrawerHeader';
 import { withDrawerPanelVariation } from './DrawerPanelProps';
 
-const animationDuration = 200;
+const ANIMATE_DURATION = 200;
 
 export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', children, defaultSize }) => {
   const childArray = Children.toArray(children) as ReactElement[];
@@ -19,7 +19,11 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   const footer = childArray.filter(child => child.type === DrawerFooter);
   const contents = childArray.filter(child => child.type !== DrawerHeader && child.type !== DrawerFooter);
 
-  const { placement, type, isOpen } = useDrawer();
+  const { placement, type, isOpen, updatePanelSize } = useDrawer();
+
+  useEffect(() => {
+    updatePanelSize(defaultSize);
+  }, [defaultSize, updatePanelSize]);
 
   const isVertical = placement === 'left' || placement === 'right';
 
@@ -58,7 +62,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             animation={{
               x: isOpen ? -defaultSize : 0,
             }}
-            duration={animationDuration}
+            duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
             <Box width={defaultSize} right={-defaultSize} height="100%">
@@ -73,7 +77,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             animation={{
               x: isOpen ? defaultSize : 0,
             }}
-            duration={animationDuration}
+            duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
             <Box width={defaultSize} left={-defaultSize} height="100%">
@@ -92,7 +96,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
               height: isOpen ? defaultSize : 0,
               y: isOpen ? defaultSize : 0,
             }}
-            duration={animationDuration}
+            duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
             <Box height={defaultSize} top={-defaultSize}>
@@ -114,7 +118,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
               height: isOpen ? defaultSize : 0,
               y: isOpen ? -defaultSize : 0,
             }}
-            duration={animationDuration}
+            duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
             <Box height={defaultSize} bottom={-defaultSize}>
@@ -127,7 +131,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   ) : (
     <>
       {placement === 'right' && (
-        <Transition animation={{ x: isOpen ? -defaultSize : 0 }} duration={animationDuration} easing="easeOutQuad">
+        <Transition animation={{ x: isOpen ? -defaultSize : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             height="100%"
             backgroundColor="surface2"
@@ -142,7 +146,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Transition>
       )}
       {placement === 'left' && (
-        <Transition animation={{ x: isOpen ? defaultSize : 0 }} duration={animationDuration} easing="easeOutQuad">
+        <Transition animation={{ x: isOpen ? defaultSize : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             height="100%"
             backgroundColor="surface2"
@@ -157,7 +161,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Transition>
       )}
       {placement === 'top' && (
-        <Transition animation={{ y: isOpen ? defaultSize : 0 }} duration={animationDuration} easing="easeOutQuad">
+        <Transition animation={{ y: isOpen ? defaultSize : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             width="100%"
             backgroundColor="surface2"
@@ -172,7 +176,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Transition>
       )}
       {placement === 'bottom' && (
-        <Transition animation={{ y: isOpen ? -defaultSize : 0 }} duration={animationDuration} easing="easeOutQuad">
+        <Transition animation={{ y: isOpen ? -defaultSize : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             width="100%"
             backgroundColor="surface2"

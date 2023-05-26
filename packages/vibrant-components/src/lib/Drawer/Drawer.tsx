@@ -14,13 +14,23 @@ import { DrawerHeader } from './DrawerHeader';
 import { DrawerPanel } from './DrawerPanel';
 import type { DrawerProps } from './DrawerProps';
 
-export const Drawer = ({ testId = 'drawer', children, type, placement, open = false }: DrawerProps) => {
+export const Drawer = ({
+  testId = 'drawer',
+  children,
+  type = 'modal',
+  placement,
+  open = false,
+  onOpen,
+  onClose,
+}: DrawerProps) => {
   const childArray = Children.toArray(children) as ReactElement[];
 
   const contents = childArray.filter(child => child.type !== DrawerPanel);
   const panel = childArray.filter(child => child.type === DrawerPanel);
 
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(open);
+  const [panelSize, setPanelSize] = useState<number>(0);
+
   /* Control Box Method */
   const [drawerType, setDrawerType] = useState<'modal' | 'overlay' | 'standard'>(type);
   const [drawerDir, setDrawerDir] = useState<'bottom' | 'left' | 'right' | 'top'>(placement);
@@ -43,6 +53,14 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
 
     return () => currentDrawerRef?.removeEventListener('keydown', onKeydown);
   }, [onKeydown]);
+
+  useEffect(() => {
+    if (isPanelOpen) {
+      onOpen?.();
+    } else {
+      onClose?.();
+    }
+  }, [isPanelOpen, onClose, onOpen]);
 
   const closePanel = () => setIsPanelOpen(false);
 
@@ -74,14 +92,13 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
   };
   /* Control Box Method End */
 
-  const defaultSize = 320;
-
   return (
     <DrawerProvider
       togglePanel={() => setIsPanelOpen(prev => !prev)}
       placement={drawerDir}
       type={drawerType}
       isOpen={isPanelOpen}
+      updatePanelSize={size => setPanelSize(size)}
     >
       <Box width="100%" height="100%" p={10} data-testid={testId} tabIndex={0} ref={drawerRef}>
         {/* Control Box */}
@@ -116,7 +133,7 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
             <>
               {drawerDir === 'right' && (
                 <HStack width="100%">
-                  <Transition animation={{ width: isPanelOpen ? `calc(100% - ${defaultSize}px` : '100%' }}>
+                  <Transition animation={{ width: isPanelOpen ? `calc(100% - ${panelSize}px` : '100%' }}>
                     <ScrollBox>{contents}</ScrollBox>
                   </Transition>
                   {panel}
@@ -127,8 +144,8 @@ export const Drawer = ({ testId = 'drawer', children, type, placement, open = fa
                   {panel}
                   <Transition
                     animation={{
-                      width: isPanelOpen ? `calc(100% - ${defaultSize}px` : '100%',
-                      x: isPanelOpen ? defaultSize : 0,
+                      width: isPanelOpen ? `calc(100% - ${panelSize}px` : '100%',
+                      x: isPanelOpen ? panelSize : 0,
                     }}
                   >
                     <ScrollBox>{contents}</ScrollBox>
