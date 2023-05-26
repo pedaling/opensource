@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import { Children, useCallback, useEffect, useRef, useState } from 'react';
+import type { LayoutEvent } from '@vibrant-ui/core';
 import { Box, PressableBox, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { Body } from '../Body';
@@ -30,6 +31,7 @@ export const Drawer = ({
 
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(open);
   const [panelSize, setPanelSize] = useState<number>(0);
+  const [shrankWidth, setShrankWidth] = useState<number>(0);
 
   const drawerRef = useRef<HTMLDivElement>(null);
 
@@ -59,11 +61,13 @@ export const Drawer = ({
 
   const closePanel = () => setIsPanelOpen(false);
 
+  const onContainerLayout = ({ width }: LayoutEvent) => {
+    setShrankWidth(width - panelSize);
+  };
+
   // const isStandardType = type === 'standard';
 
   // const hasDim = type === 'modal';
-
-  const panelWidth = (drawerRef.current?.clientWidth ?? 0) - panelSize;
 
   /* Control Box Method */
   const [drawerType, setDrawerType] = useState<'modal' | 'overlay' | 'standard'>(type);
@@ -102,7 +106,7 @@ export const Drawer = ({
       isOpen={isPanelOpen}
       updatePanelSize={size => setPanelSize(size)}
     >
-      <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef}>
+      <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef} onLayout={onContainerLayout}>
         {/* Control Box */}
         <VStack spacing={8}>
           <HStack spacing={15}>
@@ -135,7 +139,7 @@ export const Drawer = ({
             <>
               {drawerDir === 'right' && (
                 <HStack width="100%">
-                  <Transition animation={{ width: isPanelOpen ? panelWidth : '100%' }}>
+                  <Transition animation={{ width: isPanelOpen ? shrankWidth : '100%' }}>
                     <ScrollBox>{contents}</ScrollBox>
                   </Transition>
                   {panel}
@@ -146,7 +150,7 @@ export const Drawer = ({
                   {panel}
                   <Transition
                     animation={{
-                      width: isPanelOpen ? panelWidth : '100%',
+                      width: isPanelOpen ? shrankWidth : '100%',
                       x: isPanelOpen ? panelSize : 0,
                     }}
                   >

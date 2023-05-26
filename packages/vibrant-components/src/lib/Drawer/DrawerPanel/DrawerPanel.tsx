@@ -1,4 +1,3 @@
-/* eslint-disable max-lines */
 import type { ReactElement } from 'react';
 import { Children, useEffect } from 'react';
 import { Box, ScrollBox } from '@vibrant-ui/core';
