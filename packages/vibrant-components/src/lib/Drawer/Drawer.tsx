@@ -68,6 +68,8 @@ export const Drawer = ({
 
   const hasDim = drawerType === 'modal';
 
+  const panelWidth = (drawerRef.current?.clientWidth ?? 0) - panelSize;
+
   /* Control Box Method */
   const changeType = () => {
     if (drawerType === 'standard') {
@@ -100,7 +102,7 @@ export const Drawer = ({
       isOpen={isPanelOpen}
       updatePanelSize={size => setPanelSize(size)}
     >
-      <Box width="100%" height="100%" p={10} data-testid={testId} tabIndex={0} ref={drawerRef}>
+      <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef}>
         {/* Control Box */}
         <VStack spacing={8}>
           <HStack spacing={15}>
@@ -133,7 +135,7 @@ export const Drawer = ({
             <>
               {drawerDir === 'right' && (
                 <HStack width="100%">
-                  <Transition animation={{ width: isPanelOpen ? `calc(100% - ${panelSize}px` : '100%' }}>
+                  <Transition animation={{ width: isPanelOpen ? panelWidth : '100%' }}>
                     <ScrollBox>{contents}</ScrollBox>
                   </Transition>
                   {panel}
@@ -144,7 +146,7 @@ export const Drawer = ({
                   {panel}
                   <Transition
                     animation={{
-                      width: isPanelOpen ? `calc(100% - ${panelSize}px` : '100%',
+                      width: isPanelOpen ? panelWidth : '100%',
                       x: isPanelOpen ? panelSize : 0,
                     }}
                   >
