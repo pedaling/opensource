@@ -31,11 +31,6 @@ export const Drawer = ({
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(open);
   const [panelSize, setPanelSize] = useState<number>(0);
 
-  /* Control Box Method */
-  const [drawerType, setDrawerType] = useState<'modal' | 'overlay' | 'standard'>(type);
-  const [drawerDir, setDrawerDir] = useState<'bottom' | 'left' | 'right' | 'top'>(placement);
-  /* Control Box Method End*/
-
   const drawerRef = useRef<HTMLDivElement>(null);
 
   const onKeydown = useCallback((e: KeyboardEvent) => {
@@ -64,13 +59,18 @@ export const Drawer = ({
 
   const closePanel = () => setIsPanelOpen(false);
 
-  const isStandardType = drawerType === 'standard';
+  // const isStandardType = type === 'standard';
 
-  const hasDim = drawerType === 'modal';
+  // const hasDim = type === 'modal';
 
   const panelWidth = (drawerRef.current?.clientWidth ?? 0) - panelSize;
 
   /* Control Box Method */
+  const [drawerType, setDrawerType] = useState<'modal' | 'overlay' | 'standard'>(type);
+  const [drawerDir, setDrawerDir] = useState<'bottom' | 'left' | 'right' | 'top'>(placement);
+  const isStandardType = drawerType === 'standard';
+  const hasDim = drawerType === 'modal';
+
   const changeType = () => {
     if (drawerType === 'standard') {
       setDrawerType('overlay');
