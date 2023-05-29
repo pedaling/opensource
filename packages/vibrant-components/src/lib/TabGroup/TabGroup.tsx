@@ -196,6 +196,7 @@ export const TabGroup = withTabGroupVariation(
                   flexBasis={tabFlexBasis}
                   hidden={element.props.hidden}
                   ref={setTabRef(element.props.id)}
+                  mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
                 >
                   {cloneElement(element, {
                     active: element.props.id === tabId,
@@ -212,6 +213,7 @@ export const TabGroup = withTabGroupVariation(
                 flexBasis={tabFlexBasis}
                 hidden={element.props.hidden}
                 ref={setTabRef(element.props.id)}
+                mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
               >
                 {cloneElement(element, {
                   active: element.props.id === tabId,
