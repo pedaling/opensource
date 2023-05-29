@@ -1,11 +1,13 @@
 import type { ReactElement } from 'react';
 import { Box, ScrollBox, propVariant, withVariation } from '@vibrant-ui/core';
 import type { ScrollTabPanelProps } from './ScrollTabPanel/ScrollTabPanelProps';
+import type { ScrollTabsHeaderProps } from './ScrollTabsHeader/ScrollTabsHeaderProps';
 
 export type ScrollTabsLayoutProps = {
   type?: 'fitContent' | 'fullWidth';
-  header?: ReactElement;
-  children: (ReactElement<ScrollTabPanelProps> | boolean | null)[] | ReactElement<ScrollTabPanelProps>;
+  children:
+    | (ReactElement<ScrollTabPanelProps | ScrollTabsHeaderProps> | boolean | null)[]
+    | ReactElement<ScrollTabPanelProps | ScrollTabsHeaderProps>;
   onTabChange?: (_: { id: string; title: string }) => void;
   testId?: string;
 };

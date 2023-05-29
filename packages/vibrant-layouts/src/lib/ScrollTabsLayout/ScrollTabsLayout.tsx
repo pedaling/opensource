@@ -6,6 +6,8 @@ import { getElementRect } from '@vibrant-ui/utils';
 import type { LayoutEvent } from '@vibrant-ui/utils';
 import type { ScrollTabPanelProps } from './ScrollTabPanel';
 import { ScrollTabPanel } from './ScrollTabPanel';
+import { ScrollTabsHeader } from './ScrollTabsHeader';
+import type { ScrollTabsHeaderProps } from './ScrollTabsHeader/ScrollTabsHeaderProps';
 import type { ScrollTabsLayoutProps } from './ScrollTabsLayoutProps';
 import { withScrollTabsLayoutVariation } from './ScrollTabsLayoutProps';
 import { ViewableScrollTabPanel } from './ViewableScrollTabPanel';
@@ -13,7 +15,6 @@ import { ViewableScrollTabPanel } from './ViewableScrollTabPanel';
 export const ScrollTabsLayout = withScrollTabsLayoutVariation(
   ({
     testId = 'scroll-tabs-layout',
-    header,
     children,
     onTabChange,
     TabsComponent,
@@ -23,14 +24,18 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     tabOverflow,
     tabsHideScroll,
   }) => {
-    const elementChildren = Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>);
-    const tabs = elementChildren.map(({ props }) => props) ?? [];
+    const headerElement = Children.toArray(children)
+      .filter(isValidElement)
+      .find(child => child.type === ScrollTabsHeader);
+    const tabElements = Children.toArray(children)
+      .filter(isValidElement<ScrollTabPanelProps>)
+      .filter(child => child.type === ScrollTabPanel);
 
-    const [tabViewableStates, setTabViewableStates] = useState(new Array(tabs.length).fill(false));
+    const [tabViewableStates, setTabViewableStates] = useState(new Array(tabElements.length).fill(false));
     const activeTabIndex = tabViewableStates.findIndex(state => state === true);
 
     const [tabsHeight, setTabsHeight] = useState(0);
-    const tabItemElementsRef = useRef<(HTMLElement | null)[]>(new Array(tabs.length).fill(null));
+    const tabElementsRef = useRef<(HTMLElement | null)[]>(new Array(tabElements.length).fill(null));
 
     const handleTabStateChange = (index: number, viewable: boolean) => {
       setTabViewableStates(value => [...value.slice(0, index), viewable, ...value.slice(index + 1)]);
@@ -42,7 +47,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
 
     return (
       <VStack width="100%" data-testid={testId}>
-        {header}
+        {headerElement}
         <TabsComponent
           role="tablist"
           width="100%"
@@ -57,19 +62,19 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
           overflow={tabOverflow}
           hideScroll={tabsHideScroll}
         >
-          {tabs?.map(({ title, tabId }, tabIndex) => (
+          {tabElements.map(({ props: { tabId, title } }, tabIndex) => (
             <Box
               key={tabId}
               flexGrow={tabFlexGrow}
               flexShrink={tabFlexShrink}
-              mr={tabIndex !== tabs.length - 1 ? [20, 20, 28] : 0}
+              mr={tabIndex !== tabElements.length - 1 ? [20, 20, 28] : 0}
             >
               <Tab
                 id={tabId}
                 title={title}
                 active={activeTabIndex === tabIndex}
                 onClick={async () => {
-                  const { y } = await getElementRect(tabItemElementsRef.current[tabIndex]);
+                  const { y } = await getElementRect(tabElementsRef.current[tabIndex]);
 
                   window.scrollTo({ top: y + window.scrollY - (tabsHeight - 1) });
 
@@ -79,9 +84,9 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
             </Box>
           ))}
         </TabsComponent>
-        {elementChildren.map((child, index) => (
+        {tabElements.map((child, index) => (
           <ViewableScrollTabPanel
-            ref={ref => (tabItemElementsRef.current[index] = ref)}
+            ref={ref => (tabElementsRef.current[index] = ref)}
             key={child.props.tabId}
             offsetTop={tabsHeight}
             onViewableChange={viewable => handleTabStateChange(index, viewable)}
@@ -93,7 +98,10 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     );
   }
 ) as ComponentWithRef<ScrollTabsLayoutProps> & {
+  Header: ComponentWithRef<ScrollTabsHeaderProps>;
   Item: ComponentWithRef<ScrollTabPanelProps>;
 };
+
+ScrollTabsLayout.Header = ScrollTabsHeader;
 
 ScrollTabsLayout.Item = ScrollTabPanel;

@@ -1,5 +1,5 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Body, HStack, Paper, Title } from '@vibrant-ui/components';
+import { HStack, Paper, Title } from '@vibrant-ui/components';
 import { ScrollTabsLayout } from './ScrollTabsLayout';
 
 export default {
@@ -11,32 +11,31 @@ export default {
 } as ComponentMeta<typeof ScrollTabsLayout>;
 
 export const Basic: ComponentStory<typeof ScrollTabsLayout> = props => (
-  <ScrollTabsLayout
-    header={
-      <Paper height={200} backgroundColor="surface1">
-        <Body level={2}>Header</Body>
+  <ScrollTabsLayout {...props}>
+    <ScrollTabsLayout.Header>
+      <Paper height={200} p={20} backgroundColor="primaryContainer">
+        <Title level={4}>Header</Title>
       </Paper>
-    }
-    {...props}
-  >
+    </ScrollTabsLayout.Header>
+
     <ScrollTabsLayout.Item tabId="first" title="First Tab">
       <HStack height={500}>
-        <Paper backgroundColor="primary" width="100%" pt={44}>
-          <Title level={3}>First Page</Title>
+        <Paper backgroundColor="error" width="100%" p={20}>
+          <Title level={4}>First Page</Title>
         </Paper>
       </HStack>
     </ScrollTabsLayout.Item>
     <ScrollTabsLayout.Item tabId="second" title="Second Tab">
       <HStack width="100%" height={500}>
-        <Paper backgroundColor="warning" width="100%" pt={44}>
-          <Title level={3}>Second Page</Title>
+        <Paper backgroundColor="success" width="100%" p={20}>
+          <Title level={4}>Second Page</Title>
         </Paper>
       </HStack>
     </ScrollTabsLayout.Item>
     <ScrollTabsLayout.Item tabId="third" title="Third Tab">
       <HStack width="100%" height={500}>
-        <Paper backgroundColor="informative" width="100%" pt={44}>
-          <Title level={3}>Third Page</Title>
+        <Paper backgroundColor="informative" width="100%" p={20}>
+          <Title level={4}>Third Page</Title>
         </Paper>
       </HStack>
     </ScrollTabsLayout.Item>
