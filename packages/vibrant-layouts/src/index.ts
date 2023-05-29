@@ -1,1 +1,1 @@
-export default {};
+export { ScrollTabsLayout } from './lib/ScrollTabsLayout';
