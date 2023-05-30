@@ -5,15 +5,15 @@ import { FlatList } from 'react-native';
 import { Tab } from '@vibrant-ui/components';
 import type { ComponentWithRef } from '@vibrant-ui/core';
 import { Box, useWindowDimensions } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
 import type { ScrollTabPanelProps } from './ScrollTabPanel';
 import { ScrollTabPanel } from './ScrollTabPanel';
+import { ScrollTabsHeader } from './ScrollTabsHeader';
+import type { ScrollTabsHeaderProps } from './ScrollTabsHeader/ScrollTabsHeaderProps';
 import type { ScrollTabsLayoutProps } from './ScrollTabsLayoutProps';
 import { withScrollTabsLayoutVariation } from './ScrollTabsLayoutProps';
 
 export const ScrollTabsLayout = withScrollTabsLayoutVariation(
   ({
-    header,
     children,
     onTabChange,
     TabsComponent,
@@ -24,13 +24,22 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     tabsHideScroll,
   }) => {
     const { width } = useWindowDimensions();
-    const elementChildren = useMemo(
-      () => Children.toArray(children).filter(isValidElement<ScrollTabPanelProps>),
+    const headerElement = useMemo(
+      () =>
+        Children.toArray(children)
+          .filter(isValidElement)
+          .find(child => child.type === ScrollTabsHeader) ?? null,
       [children]
     );
-    const tabs = useMemo(() => elementChildren.map(({ props }) => props) ?? [], [elementChildren]);
+    const tabElements = useMemo(
+      () =>
+        Children.toArray(children)
+          .filter(isValidElement<ScrollTabPanelProps>)
+          .filter(child => child.type === ScrollTabPanel) ?? [],
+      [children]
+    );
 
-    const [tabScrolledStates, setTabScrolledStates] = useState(new Array(tabs.length).fill(false));
+    const [tabScrolledStates, setTabScrolledStates] = useState(new Array(tabElements.length).fill(false));
     const activeTabIndex = tabScrolledStates.reduce(
       (prevActiveIndex, state, index) => (state ? index : prevActiveIndex),
       0
@@ -39,7 +48,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     const flatListRef = useRef<any>();
     const flatListPositionRef = useRef<number>(0);
     const tabsHeightRef = useRef<number>(0);
-    const tabPanelPositionsRef = useRef<number[]>(new Array(tabs.length).fill(0));
+    const tabPanelPositionsRef = useRef<number[]>(new Array(tabElements.length).fill(0));
 
     const keyExtractor = useCallback((item: ReactElement<ScrollTabPanelProps> | string) => {
       if (typeof item === 'string') {
@@ -58,7 +67,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
               width={width}
               flexGrow={0}
               flexDirection="row"
-              px={20}
+              px={[20, 20, 0]}
               onLayout={({ height }) => {
                 tabsHeightRef.current = height;
               }}
@@ -67,8 +76,13 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
               overflow={tabOverflow}
               hideScroll={tabsHideScroll}
             >
-              {tabs?.map(({ title, tabId }, tabIndex) => (
-                <Box key={tabId} flexGrow={tabFlexGrow} flexShrink={tabFlexShrink}>
+              {tabElements?.map(({ props: { tabId, title } }, tabIndex) => (
+                <Box
+                  key={tabId}
+                  flexGrow={tabFlexGrow}
+                  flexShrink={tabFlexShrink}
+                  mr={tabIndex !== tabElements.length - 1 ? [20, 20, 28] : 0}
+                >
                   <Tab
                     key={tabId}
                     id={tabId}
@@ -103,23 +117,25 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
         TabsComponent,
         activeTabIndex,
         onTabChange,
+        tabElements,
         tabFlexGrow,
         tabFlexShrink,
         tabOverflow,
-        tabs,
         tabsHideScroll,
         tabsScrollHorizontal,
         width,
       ]
     );
 
-    const data = useMemo(() => ['sticky_header', ...elementChildren], [elementChildren]);
-    const stickyHeaderIndices = useMemo(() => [isDefined(header) ? 1 : 0], [header]);
+    const data = useMemo(() => ['sticky_header', ...tabElements], [tabElements]);
+    const stickyHeaderIndices = useMemo(() => [headerElement ? 1 : 0], [headerElement]);
 
     const handleScroll = useCallback(
       ({
         nativeEvent: {
           contentOffset: { y: currentPosition },
+          contentSize,
+          layoutMeasurement,
         },
       }: NativeSyntheticEvent<NativeScrollEvent>) => {
         const currentTabIndex = tabPanelPositionsRef.current.reduce(
@@ -135,8 +151,12 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
           true,
           ...new Array(tabScrolledStates.length - 1 - currentTabIndex).fill(false),
         ]);
+
+        if (layoutMeasurement.height + currentPosition >= contentSize.height) {
+          setTabScrolledStates(new Array(tabElements.length).fill(true));
+        }
       },
-      [tabScrolledStates.length]
+      [tabElements.length, tabScrolledStates.length]
     );
 
     const handleLayoutChange = useCallback(({ nativeEvent: { layout } }: LayoutChangeEvent) => {
@@ -154,12 +174,15 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
         keyExtractor={keyExtractor}
         onScroll={handleScroll}
         renderItem={renderItem}
-        ListHeaderComponent={header}
+        ListHeaderComponent={headerElement}
       />
     );
   }
 ) as ComponentWithRef<ScrollTabsLayoutProps> & {
+  Header: ComponentWithRef<ScrollTabsHeaderProps>;
   Item: ComponentWithRef<ScrollTabPanelProps>;
 };
+
+ScrollTabsLayout.Header = ScrollTabsHeader;
 
 ScrollTabsLayout.Item = ScrollTabPanel;
