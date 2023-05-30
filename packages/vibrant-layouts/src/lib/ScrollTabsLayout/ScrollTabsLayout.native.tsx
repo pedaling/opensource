@@ -67,7 +67,7 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
               width={width}
               flexGrow={0}
               flexDirection="row"
-              px={20}
+              px={[20, 20, 0]}
               onLayout={({ height }) => {
                 tabsHeightRef.current = height;
               }}
@@ -77,7 +77,12 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
               hideScroll={tabsHideScroll}
             >
               {tabElements?.map(({ props: { tabId, title } }, tabIndex) => (
-                <Box key={tabId} flexGrow={tabFlexGrow} flexShrink={tabFlexShrink}>
+                <Box
+                  key={tabId}
+                  flexGrow={tabFlexGrow}
+                  flexShrink={tabFlexShrink}
+                  mr={tabIndex !== tabElements.length - 1 ? [20, 20, 28] : 0}
+                >
                   <Tab
                     key={tabId}
                     id={tabId}
