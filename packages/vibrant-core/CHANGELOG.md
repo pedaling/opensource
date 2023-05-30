@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.62.0...vibrant-core-0.62.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* props 객체가 덮어씌워지지 않고 병합되도록 하고 ScrollTabsLayout에 hideScroll을 적용한다 ([#729](https://github.com/pedaling/opensource/issues/729)) ([1492165](https://github.com/pedaling/opensource/commit/149216509ee6cf0caca671a216589915a44d7f9f))
+
 ## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.61.0...vibrant-core-0.62.0) (2023-05-24)
 
 ## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.3...vibrant-core-0.61.0) (2023-05-23)

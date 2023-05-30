@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.62.0...vibrant-icons-0.62.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* clipPath를 사용하는 아이콘은 교체한다 ([#750](https://github.com/pedaling/opensource/issues/750)) ([6903d08](https://github.com/pedaling/opensource/commit/6903d086df0cee4148a35ddcc8a1c66a2bc61481))
+
 ## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.61.0...vibrant-icons-0.62.0) (2023-05-24)
 
 

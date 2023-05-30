@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.62.0...vibrant-components-0.62.1) (2023-05-30)
+
+
+### Features
+
+* add Drawer ([#742](https://github.com/pedaling/opensource/issues/742)) ([9fa5e34](https://github.com/pedaling/opensource/commit/9fa5e343d03fbbd364303e556c20482f98806607))
+* customization context's card icon map size prop to optional ([#746](https://github.com/pedaling/opensource/issues/746)) ([6fdcebe](https://github.com/pedaling/opensource/commit/6fdcebeb44a8ae323b28b74868eef41532ef5c68))
+
 ## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.61.0...vibrant-components-0.62.0) (2023-05-24)
 
 ## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.3...vibrant-components-0.61.0) (2023-05-23)

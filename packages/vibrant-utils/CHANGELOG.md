@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.62.0...vibrant-utils-0.62.1) (2023-05-30)
+
+
+### Features
+
+* add useEscapeEvent hook ([#748](https://github.com/pedaling/opensource/issues/748)) ([902d9c2](https://github.com/pedaling/opensource/commit/902d9c236ad4a72f9a327f633a8360250749f7f4))
+
 ## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.61.0...vibrant-utils-0.62.0) (2023-05-24)
 
 ## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.60.3...vibrant-utils-0.61.0) (2023-05-23)
