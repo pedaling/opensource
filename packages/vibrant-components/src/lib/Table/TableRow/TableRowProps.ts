@@ -10,6 +10,7 @@ export type TableRowProps = {
   selected?: boolean;
   indeterminate?: boolean;
   onSelectionChange?: CheckboxProps['onValueChange'];
+  onExpandChange?: () => void;
   expandable?: boolean;
   expanded?: boolean;
   renderExpanded?: () => ReactElementChild;
@@ -18,6 +19,7 @@ export type TableRowProps = {
   children?: ReactElementChildren;
   onClick?: () => void;
   disabled?: boolean;
+  shouldRenderRow?: boolean;
 };
 
 export const withTableRowVariation = withVariation<TableRowProps>('TableRow')(

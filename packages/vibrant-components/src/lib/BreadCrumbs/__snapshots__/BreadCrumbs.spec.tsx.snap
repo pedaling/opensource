@@ -238,7 +238,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
         >
           <span
             class="emotion-4"
-            style="opacity: 1;"
+            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             <span
               class="emotion-5"
@@ -279,7 +279,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
         >
           <span
             class="emotion-4"
-            style="opacity: 1;"
+            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             <span
               class="emotion-5"
@@ -320,7 +320,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
         >
           <span
             class="emotion-4"
-            style="opacity: 1;"
+            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             <span
               class="emotion-23"

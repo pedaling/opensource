@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.61.0...vibrant-components-web-0.62.0) (2023-05-24)
+
+## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.60.3...vibrant-components-web-0.61.0) (2023-05-23)
+
+### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.60.2...vibrant-components-web-0.60.3) (2023-05-19)
+
+### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.60.1...vibrant-components-web-0.60.2) (2023-05-18)
+
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.60.0...vibrant-components-web-0.60.1) (2023-05-17)
+
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.59.0...vibrant-components-web-0.60.0) (2023-05-16)
+
+
+### Bug Fixes
+
+* virtualized table 을 web component 로 이동한다. ([#710](https://github.com/pedaling/opensource/issues/710)) ([4c4f88d](https://github.com/pedaling/opensource/commit/4c4f88df2474fe379f76fadd01f3d13c1f51fd9a))
+
+## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.58.1...vibrant-components-web-0.59.0) (2023-05-09)
+
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.58.0...vibrant-components-web-0.58.1) (2023-05-04)
+
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.57.1...vibrant-components-web-0.58.0) (2023-05-04)
+
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.57.0...vibrant-components-web-0.57.1) (2023-05-03)
+
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.56.0...vibrant-components-web-0.57.0) (2023-05-02)
+
 ## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.55.0...vibrant-components-web-0.56.0) (2023-04-26)
 
 ## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.54.2...vibrant-components-web-0.55.0) (2023-04-25)

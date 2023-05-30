@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
 import { Children, isValidElement, useState } from 'react';
-import { Box, Image, ScrollBox } from '@vibrant-ui/core';
+import { Box, Image, ScrollBox, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { GhostButton } from '../GhostButton';
@@ -84,6 +84,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     }
   };
 
+  const {
+    translations: { table: tableTranslation },
+  } = useConfig();
+
   return (
     <ScrollBox
       horizontal={true}
@@ -115,19 +119,26 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                 <Body level={1}>{emptyText}</Body>
               </VStack>
             )}
-            overlaid={selectable && selectButtons && selectedRowKeys.size > 0}
+            overlaid={selectable && selectedRowKeys.size > 0}
             renderOverlay={() => (
               <HStack alignVertical="center" height="100%" spacing={12}>
-                {selectButtons?.map(({ text, onClick }) => (
-                  <GhostButton
-                    key={text}
-                    size="md"
-                    color="onViewInformative"
-                    onClick={() => onClick(data.filter(row => selectedRowKeys.has(row[rowKey])))}
-                  >
-                    {text}
-                  </GhostButton>
-                ))}
+                {selectedRowKeys.size > 0 ? (
+                  <Body level={2} weight="medium">
+                    {tableTranslation.numberOfSelected.replace('{count}', selectedRowKeys.size.toString())}
+                  </Body>
+                ) : null}
+                <HStack alignVertical="center" height="100%" spacing={12}>
+                  {selectButtons?.map(({ text, onClick }) => (
+                    <GhostButton
+                      key={text}
+                      size="md"
+                      color="onViewInformative"
+                      onClick={() => onClick(data.filter(row => selectedRowKeys.has(row[rowKey])))}
+                    >
+                      {text}
+                    </GhostButton>
+                  ))}
+                </HStack>
               </HStack>
             )}
             indeterminate={selectedRowKeys.size !== data.length}

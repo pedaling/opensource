@@ -19,6 +19,7 @@ export const withTabVariation = withVariation<TabProps>('Tab')(
       {
         name: 'active',
         default: false,
+        keep: true,
       },
     ],
     variants: {

@@ -85,12 +85,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  margin-right: 20px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -98,20 +97,6 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-@media screen and (min-width: 1024px) {
-  .emotion-3 {
-    margin-right: 28px;
-  }
 }
 
 .emotion-4 {
@@ -119,32 +104,24 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
+  background-color: inherit;
   border-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  padding: 0;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: #0c0c0c;
-  cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -155,7 +132,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   align-items: center;
   padding-top: 12px;
   padding-bottom: 10px;
-  background-color: inherit;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .emotion-5 {
@@ -180,32 +158,24 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
+  background-color: inherit;
   border-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  padding: 0;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -216,7 +186,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   align-items: center;
   padding-top: 12px;
   padding-bottom: 10px;
-  background-color: inherit;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .emotion-8 {
@@ -244,12 +215,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  margin-right: 20px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -257,50 +227,28 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   -webkit-flex-basis: auto;
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-@media screen and (min-width: 1024px) {
-  .emotion-9 {
-    margin-right: 28px;
-  }
 }
 
 .emotion-10 {
   display: none;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
+  background-color: inherit;
   border-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  padding: 0;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -311,41 +259,8 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
   align-items: center;
   padding-top: 12px;
   padding-bottom: 10px;
-  background-color: inherit;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  margin-right: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .emotion-16 {
@@ -397,8 +312,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
         class="emotion-3"
       >
         <button
+          aria-selected="true"
           class="emotion-4"
           data-testid="tab1"
+          role="tab"
+          type="button"
         >
           <h3
             class="emotion-5"
@@ -412,8 +330,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
         class="emotion-3"
       >
         <button
+          aria-selected="false"
           class="emotion-7"
           data-testid="tab2"
+          role="tab"
+          type="button"
         >
           <h3
             class="emotion-8"
@@ -427,8 +348,11 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
         class="emotion-9"
       >
         <button
+          aria-selected="false"
           class="emotion-10"
           data-testid="hidden-tab"
+          role="tab"
+          type="button"
         >
           <h3
             class="emotion-8"
@@ -439,11 +363,14 @@ exports[`<TabGroup /> when TabGroup rendered match snapshot 1`] = `
         </button>
       </li>
       <li
-        class="emotion-12"
+        class="emotion-3"
       >
         <button
+          aria-selected="false"
           class="emotion-7"
           data-testid="tab3"
+          role="tab"
+          type="button"
         >
           <h3
             class="emotion-8"

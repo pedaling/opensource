@@ -145,6 +145,7 @@ export type BoxProps<
   ariaChecked?: boolean;
   ariaLabelledBy?: string;
   ariaCurrent?: 'date' | 'location' | 'page' | 'step' | 'time' | 'true';
+  ariaSelected?: boolean;
   onLayout?: (layoutEvent: LayoutEvent) => void;
 } & DistributiveOmit<
     ComponentProps<BaseComponent> extends undefined

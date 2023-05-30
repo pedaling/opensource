@@ -1,5 +1,6 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TableDateFilter, TableFilterGroup, TableMultiSelectFilter, TableStringFilter } from '../TableFilterGroup';
+import { TableSearch } from '../TableSearch/TableSearch';
 import { VStack } from '../VStack';
 import { TableHeader } from './TableHeader';
 
@@ -45,7 +46,7 @@ export const withFilterGroup: ComponentStory<typeof TableHeader> = props => (
       <TableMultiSelectFilter
         dataKey="orderStatus"
         label="주문 상태"
-        defaultValue={{ operator: 'equals', value: ['completed'] }}
+        defaultValue={{ operator: 'contains', value: ['completed'] }}
         options={[
           {
             value: 'completed',
@@ -63,5 +64,27 @@ export const withFilterGroup: ComponentStory<typeof TableHeader> = props => (
       />
       <TableStringFilter dataKey="class" label="수강 중인 클래스" />
     </TableFilterGroup>
+  </VStack>
+);
+
+export const withSearch: ComponentStory<typeof TableHeader> = props => (
+  <VStack width="100%" spacing={16}>
+    <TableHeader {...props}>
+      <TableSearch>
+        <TableSearch.Option
+          options={[
+            { label: 'id', value: 'id' },
+            { label: 'title', value: 'title' },
+            { label: 'content', value: 'content' },
+            { label: 'author', value: 'author' },
+            { label: 'createdAt', value: 'createdAt' },
+          ]}
+        />
+        <TableSearch.Field />
+      </TableSearch>
+      <TableHeader.Button kind="tertiary">다운로드</TableHeader.Button>
+      <TableHeader.Button kind="tertiary">새로고침</TableHeader.Button>
+      <TableHeader.Button kind="primary">추가</TableHeader.Button>
+    </TableHeader>
   </VStack>
 );

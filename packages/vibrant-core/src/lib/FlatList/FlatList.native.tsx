@@ -1,13 +1,16 @@
-import type { ViewToken } from 'react-native';
+import { useCallback, useMemo, useRef } from 'react';
+import type { NativeScrollEvent, NativeSyntheticEvent, ViewToken } from 'react-native';
 import { FlatList as NativeFlatList } from 'react-native';
 import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
-import { Box } from '../Box';
 import { getPaddedResponsiveArray } from '../getPaddedResponsiveArray';
 import { useCurrentTheme } from '../ThemeProvider';
 import { transformResponsiveValue } from '../transformResponsiveValue';
 import { useResponsiveValue } from '../useResponsiveValue';
 import { FlatListItem } from './FlatListItem';
 import { withFlatListVariation } from './FlatListProps';
+
+const LOOP_BUFFER = 3;
+// When looping, FlatList will get buffer data at the front and end respectively to make scrolling auto behavior smoothly.
 
 export const FlatList = withFlatListVariation(
   ({
@@ -19,13 +22,21 @@ export const FlatList = withFlatListVariation(
     onItemImpressed,
     onEndReached,
     columnSpacing = 0,
+    columnWidth,
+    horizontal = false,
+    snap = false,
+    loop,
+    snapAlignment,
+    initialIndex = 0,
     rowSpacing = 0,
     ...props
   }) => {
     const {
       theme: { breakpoints },
     } = useCurrentTheme();
+
     const { getResponsiveValue } = useResponsiveValue();
+
     const handleViewableItemChange = useCallbackRef<
       (info: { viewableItems: ViewToken[]; changed: ViewToken[] }) => void
     >(({ changed }) =>
@@ -37,29 +48,113 @@ export const FlatList = withFlatListVariation(
     const responsiveRowSpacing = getPaddedResponsiveArray(breakpoints, rowSpacing);
     const responsiveMaxRows = isDefined(maxRows) ? getPaddedResponsiveArray(breakpoints, maxRows) : undefined;
 
+    const computedColumnWidth = getResponsiveValue(columnWidth ?? 0);
+    const computedSpacing = getResponsiveValue(columnSpacing ?? 0);
+
+    const boundedBuffer = Math.min(LOOP_BUFFER, data.length);
+
+    const buffedData = useMemo(
+      () => (loop ? [...data.slice(-boundedBuffer), ...data, ...data.slice(0, boundedBuffer)] : data),
+      [boundedBuffer, data, loop]
+    );
+    const ref = useRef<NativeFlatList<{ index: number }>>(null);
+    const buffedInitialIndex = Math.min(initialIndex + (loop ? boundedBuffer : 0), buffedData.length - 1);
+    const currentIndexRef = useRef(buffedInitialIndex);
+
+    const scrollToIndex = useCallback(
+      ({ index, animated = true }: { index: number; animated?: boolean }) => {
+        if (index < 0 || index > data.length + (loop ? boundedBuffer : 0)) {
+          return;
+        }
+
+        ref.current?.scrollToIndex({ index, animated });
+      },
+      [boundedBuffer, data.length, loop]
+    );
+
+    const getResponsiveMarginLeft = (index: number) =>
+      responsiveColumns.map((_, breakPointIndex) => (index > 0 ? responsiveColumnSpacing[breakPointIndex] : 0));
+
     const getResponsiveMarginRight = (index: number) =>
       responsiveColumns.map((column, breakPointIndex) =>
-        index % column === column - 1 ? 0 : responsiveColumnSpacing[breakPointIndex]
+        isDefined(column) ? (index % column === column - 1 ? 0 : responsiveColumnSpacing[breakPointIndex]) : 0
       );
     const getResponsiveMarginTop = (index: number) =>
-      responsiveColumns.map((column, breakPointIndex) => (index < column ? 0 : responsiveRowSpacing[breakPointIndex]));
+      responsiveColumns.map((column, breakPointIndex) =>
+        isDefined(column) ? (index < column ? 0 : responsiveRowSpacing[breakPointIndex]) : 0
+      );
+
     const getResponsiveDisplay = (index: number) =>
       isDefined(responsiveMaxRows)
         ? responsiveColumns.map((column, breakPointIndex) =>
-            index < column * responsiveMaxRows[breakPointIndex] ? 'flex' : 'none'
+            isDefined(column) ? (index < column * responsiveMaxRows[breakPointIndex] ? 'flex' : 'none') : 'none'
           )
         : undefined;
     const currentColumn = getResponsiveValue(columns);
 
+    const handleLoop = useCallback(
+      (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
+
+        if (newPage < boundedBuffer) {
+          scrollToIndex({ index: boundedBuffer + data.length - 1, animated: false });
+        } else if (newPage >= boundedBuffer + data.length) {
+          scrollToIndex({ index: boundedBuffer, animated: false });
+        }
+      },
+      [boundedBuffer, computedColumnWidth, computedSpacing, data.length, scrollToIndex]
+    );
+
+    const handleOnScroll = useCallback(
+      (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        const newPage = Math.floor(event.nativeEvent.contentOffset.x / (computedColumnWidth + computedSpacing));
+
+        if (newPage < 0 || newPage >= buffedData.length) {
+          return;
+        }
+
+        currentIndexRef.current = newPage;
+      },
+      [buffedData.length, computedColumnWidth, computedSpacing]
+    );
+
+    const handleScrollEnd = useCallback(
+      (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        if (loop) {
+          handleLoop(event);
+        }
+      },
+      [handleLoop, loop]
+    );
+
     return (
-      <Box
+      <NativeFlatList
+        ref={ref}
         key={currentColumn}
-        base={NativeFlatList}
-        data={data}
+        style={{ width: '100%' }}
+        horizontal={horizontal}
+        initialNumToRender={buffedData.length}
+        initialScrollIndex={buffedInitialIndex}
+        pagingEnabled={true}
+        data={buffedData}
+        decelerationRate={snap ? 'fast' : undefined}
+        snapToAlignment={snap ? snapAlignment : undefined}
+        snapToInterval={snap ? computedColumnWidth + computedSpacing : undefined}
+        showsHorizontalScrollIndicator={false}
+        getItemLayout={(_, index) => ({
+          length: computedColumnWidth + computedSpacing,
+          offset: (computedColumnWidth + computedSpacing) * index,
+          index,
+        })}
         renderItem={(itemInfo: { item: any; index: number }) => (
           <FlatListItem
-            flex={transformResponsiveValue(columns, column => 1 / column)}
+            flex={
+              horizontal ? undefined : isDefined(columns) ? transformResponsiveValue(columns, column => 1 / column) : 1
+            }
+            flexShrink={horizontal ? 0 : 1}
+            width={computedColumnWidth}
             display={getResponsiveDisplay(itemInfo.index)}
+            ml={horizontal ? getResponsiveMarginLeft(itemInfo.index) : undefined}
             mr={getResponsiveMarginRight(itemInfo.index)}
             mt={getResponsiveMarginTop(itemInfo.index)}
           >
@@ -67,10 +162,13 @@ export const FlatList = withFlatListVariation(
           </FlatListItem>
         )}
         onViewableItemsChanged={isDefined(onItemImpressed) ? handleViewableItemChange : undefined}
-        keyExtractor={keyExtractor}
+        keyExtractor={(item: any, index: number) =>
+          horizontal ? `${keyExtractor(item, index)}-${index}` : keyExtractor(item, index)
+        }
         numColumns={currentColumn}
         onEndReached={onEndReached}
-        width="100%"
+        onScroll={handleOnScroll}
+        onMomentumScrollEnd={handleScrollEnd}
         {...props}
       />
     );

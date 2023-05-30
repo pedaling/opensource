@@ -11,6 +11,7 @@ type BackdropProps = {
   children: ReactElement;
   scrollable?: boolean;
   onClick?: () => void;
+  onDismiss?: () => void;
   testId?: string;
 } & Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'>;
 

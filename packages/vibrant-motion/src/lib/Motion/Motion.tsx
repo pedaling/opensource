@@ -1,81 +1,69 @@
-import { useEffect, useImperativeHandle, useMemo } from 'react';
-import { useSpring } from '@react-spring/core';
+import type { AnimationControls } from 'motion';
+import { animate } from 'motion';
+import { cloneElement, useImperativeHandle, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { useObjectMemo, useSafeDeps } from '@vibrant-ui/utils';
-import { easings } from '../constants';
-import { env } from '../constants/env';
-import { transformMotionProps } from '../props/transform';
-import type { AnimationResult } from '../types';
-import { useReactSpring } from '../useReactSpring';
-import { withTransformStyle } from '../withTransformStyle';
+import { useCallbackRef, useComposedRef, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
+import { timingFunctions } from '../constants/timingFunctions';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, loop, from, to, delay, easing = 'easeOutQuad', onStart, onEnd }) => {
-    const { interpolation } = useInterpolation(transformMotionProps);
-    const { animated } = useReactSpring();
-    const onEndRef = useSafeDeps(onEnd);
-
-    const AnimatedComponent = useMemo(
-      () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
-      [animated, children.type]
-    );
+  ({ innerRef, children, duration, from, to, loop, delay, easing = 'easeOutQuad', onEnd }) => {
+    const { interpolation } = useInterpolation();
+    const elementRef = useRef();
+    const animationRef = useRef<AnimationControls>();
+    const ref = useComposedRef(innerRef, elementRef);
     const { getResponsiveValue } = useResponsiveValue();
 
-    const [fromStyle, toStyle] = useObjectMemo(
-      useMemo(
-        () => [
-          interpolation(
-            Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
-          ),
-          interpolation(Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)]))),
-        ],
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [JSON.stringify(from), JSON.stringify(to), getResponsiveValue, interpolation]
-      )
+    const getResponsiveValueRef = useCallbackRef(getResponsiveValue);
+    const interpolationRef = useCallbackRef(interpolation);
+    const onEndRef = useCallbackRef(onEnd);
+
+    const keyframes = useMemo(
+      () => {
+        const fromStyle = interpolation(
+          Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
+        );
+
+        const toStyle = interpolation(
+          Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)]))
+        );
+
+        return Object.fromEntries(
+          Object.entries(fromStyle).map(([property]) => [property, [fromStyle[property], toStyle[property]]])
+        );
+      },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [JSON.stringify(from), JSON.stringify(to), getResponsiveValueRef, interpolationRef]
     );
 
-    const option = useMemo(
-      () => ({
-        from: fromStyle,
-        to: toStyle,
-        config: {
-          duration,
-          easing: easing && easings[easing],
-        },
-        loop,
-        delay,
-        onStart,
-        onRest: (result: AnimationResult) => {
-          onEndRef.current?.(result);
-        },
-      }),
-      [delay, duration, easing, fromStyle, loop, onEndRef, onStart, toStyle]
-    );
+    useIsomorphicLayoutEffect(() => {
+      if (!elementRef.current) {
+        return;
+      }
 
-    const [styles, springApi] = useSpring(() => ({
-      from,
-    }));
+      animationRef.current = animate(elementRef.current, keyframes, {
+        duration: duration ? duration / 1000 : undefined,
+        repeat: loop ? Infinity : 0,
+        easing: timingFunctions[easing],
+        delay: delay ? delay / 1000 : undefined,
+      });
+
+      animationRef.current.finished.then(() => onEndRef?.());
+    }, [delay, duration, easing, innerRef, keyframes, loop, onEndRef]);
 
     useImperativeHandle(
       innerRef,
       () => ({
-        start: (startOption = {}) => springApi.start({ ...option, ...startOption }),
-        pause: () => springApi.pause(),
-        stop: () => springApi.stop(),
-        resume: () => springApi.resume(),
+        start: () => animationRef.current?.play(),
+        pause: () => animationRef.current?.pause(),
+        stop: () => animationRef.current?.stop(),
+        resume: () => animationRef.current?.play(),
       }),
-      [option, springApi]
+      []
     );
 
-    useEffect(() => {
-      if (innerRef) {
-        return;
-      }
-
-      springApi.start(option);
-    }, [innerRef, option, springApi]);
-
-    return <AnimatedComponent style={withTransformStyle(env === 'test' ? option.to : styles)} {...children.props} />;
+    return cloneElement(children, {
+      ref,
+    });
   }
 );

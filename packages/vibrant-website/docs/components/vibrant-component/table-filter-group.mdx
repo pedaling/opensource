@@ -106,6 +106,8 @@ import { TableFilterGroup } from '@vibrant-ui/components';
 | placeholder  | `string`                                            |                                                                               | StringFilter의 텍스트 입력 필드의 placeholder를 지정합니다.                                            |
 | operators    | `StringFilterOperator[]`                            | [ `equals `, `notEquals `, `contains `, `notContains `, `empty `, `notEmpty`] | StringFilter의 조건을 지정합니다.                                                                      |
 | defaultValue | `{ value: string, operator: StringFilterOperator }` |                                                                               | StringFilter의 기본 값을 지정합니다. operator가 `empty`, `notEmpty`일 경우 value를 지정할 수 없습니다. |
+| maxWidth     | `number` \| `string`                                |                                                                               | StringFilter의 최대 가로 크기를 설정합니다.                                                            |
+| lineLimit    | `number`                                            |                                                                               | StringFilter의 텍스트의 최대 줄 수를 설정합니다.                                                       |
 
 ```jsx live
 <TableFilterGroup initialFilterDataKeys={['location']}>
@@ -131,6 +133,8 @@ import { TableFilterGroup } from '@vibrant-ui/components';
 | placeholder  | `string`                                          |                                                                                                       | DateFilter의 텍스트 입력 필드의 placeholder를 지정합니다.                                            |
 | operators    | `DateFilterOperator[]`                            | [`equals`, `notEquals`, `before`, `after`, `onOrBefore`, `onOrAfter`, `between`, `empty`, `notEmpty`] | DateFilter의 조건을 지정합니다.                                                                      |
 | defaultValue | `{ value: Date[], operator: DateFilterOperator }` |                                                                                                       | DateFilter의 기본 값을 지정합니다. operator가 `empty`, `notEmpty`일 경우 value를 지정할 수 없습니다. |
+| maxWidth     | `number` \| `string`                              |                                                                                                       | DateFilter의 최대 가로 크기를 설정합니다.                                                            |
+| lineLimit    | `number`                                          |                                                                                                       | DateFilter의 텍스트의 최대 줄 수를 설정합니다.                                                       |
 
 ```jsx live
 <TableFilterGroup initialFilterDataKeys={['period']}>
@@ -153,6 +157,8 @@ import { TableFilterGroup } from '@vibrant-ui/components';
 | options      | `{ label: string, value: string }[]`                       |                                              | MultiSelectFilter의 옵션 목록을 지정합니다.                                                                |
 | operators    | `MultiSelectFilterOperator[]`                              | [`equals`, `notEquals`, `empty`, `notEmpty`] | MultiSelectField의 조건을 지정합니다.                                                                      |
 | defaultValue | `{ value: string[], operator: MultiSelectFilterOperator }` |                                              | MultiSelectField의 기본 값을 지정합니다. operator가 `empty`, `notEmpty`일 경우 value를 지정할 수 없습니다. |
+| maxWidth     | `number` \| `string`                                       |                                              | MultiSelectField의 최대 가로 크기를 설정합니다.                                                            |
+| lineLimit    | `number`                                                   |                                              | MultiSelectField의 텍스트의 최대 줄 수를 설정합니다.                                                       |
 
 ```jsx live
 <TableFilterGroup initialFilterDataKeys={['orderStatus']}>

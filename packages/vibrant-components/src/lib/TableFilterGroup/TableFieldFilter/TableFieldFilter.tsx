@@ -1,4 +1,5 @@
 import { useConfig } from '@vibrant-ui/core';
+import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
 import { Dropdown } from '../../Dropdown';
 import { FilterChip } from '../../FilterChip';
@@ -20,6 +21,8 @@ export const TableFieldFilter = <Operator extends string>({
   onOpen,
   field,
   minWidth,
+  maxWidth,
+  lineLimit,
   testId,
 }: TableFieldFilterProps<Operator>) => {
   const {
@@ -41,7 +44,15 @@ export const TableFieldFilter = <Operator extends string>({
       onOpen={onOpen}
       onClose={onClose}
       renderOpener={({ open }) => (
-        <FilterChip testId={testId} size="md" onClick={open} selected={active}>
+        <FilterChip
+          testId={testId}
+          size="md"
+          onClick={open}
+          selected={active}
+          maxWidth={maxWidth}
+          lineLimit={lineLimit}
+          endIcon={<Icon.ArrowTriangleDown.Fill />}
+        >
           {label}
         </FilterChip>
       )}

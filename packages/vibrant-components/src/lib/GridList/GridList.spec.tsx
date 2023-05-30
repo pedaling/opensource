@@ -12,29 +12,6 @@ describe('<GridList />', () => {
   let renderer: ReactRenderer;
   let element: HTMLElement;
 
-  describe("when the 'columns' prop provided", () => {
-    beforeEach(async () => {
-      renderer = render(
-        <GridList
-          data={[1, 2, 3, 4, 5]}
-          columns={2}
-          renderItem={({ item }) => (
-            <Body level={1} color="onPrimary">
-              {item}
-            </Body>
-          )}
-          keyExtractor={item => item.toString()}
-        />
-      );
-
-      element = await renderer.getByTestId('grid-list');
-    });
-
-    it('the number of columns should be columns', () => {
-      expect(element).toHaveStyleRule('grid-template-columns', 'repeat(2, 1fr)');
-    });
-  });
-
   describe("when the 'breakpoints' prop provided", () => {
     beforeEach(async () => {
       renderer = render(

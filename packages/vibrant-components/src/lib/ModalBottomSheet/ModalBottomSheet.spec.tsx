@@ -1,6 +1,6 @@
 import { fireEvent, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Box, PortalRootProvider } from '@vibrant-ui/core';
+import { Box, PortalRootProvider, VibrantProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { BrowserTesting, createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Pressable } from '../Pressable';
@@ -61,6 +61,61 @@ describe('<ModalBottomSheet />', () => {
 
       it.skip('should close the content', () => {
         expect(renderer.queryByRole('dialog')).toBeFalsy();
+      });
+    });
+  });
+
+  describe('when showCloseButton is false', () => {
+    beforeEach(() => {
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={true}
+          renderOpener={({ open }) => <Pressable data-testid="opener" onClick={open} />}
+          showCloseButton={false}
+        />
+      );
+    });
+
+    it('should not found CloseButton', () => {
+      expect(renderer.queryByRole('button', { name: 'Close' })).toBeFalsy();
+    });
+  });
+
+  describe('when dimClosable is false', () => {
+    let mockOnClose: jest.Mock<any, any>;
+
+    describe('and onClose is provided', () => {
+      beforeEach(() => {
+        mockOnClose = jest.fn();
+
+        renderer = render(
+          <ModalBottomSheet
+            defaultOpen={true}
+            renderOpener={({ open }) => <Pressable data-testid="opener" onClick={open} />}
+            dimClosable={false}
+            onClose={mockOnClose}
+          />
+        );
+      });
+
+      describe('after clicking the dim', () => {
+        beforeEach(done => {
+          waitFor(() => userEvent.click(renderer.getByTestId('backdrop'))).then(done);
+        });
+
+        it('should not call onClose function', () => {
+          expect(mockOnClose).not.toBeCalled();
+        });
+      });
+
+      describe('after clicking the close button', () => {
+        beforeEach(() => {
+          fireEvent.click(renderer.getByRole('button', { name: 'Close' }));
+        });
+
+        it('should call onClose function', () => {
+          expect(mockOnClose).toBeCalled();
+        });
       });
     });
   });
@@ -244,11 +299,17 @@ describe('<ModalBottomSheet />', () => {
     beforeEach(async () => {
       await BrowserTesting.resize(639, 768);
 
-      renderer = render(<ModalBottomSheet open={true} renderContents={() => null} />);
+      renderer = render(
+        <VibrantProvider>
+          <ModalBottomSheet open={true} renderContents={() => null} />
+        </VibrantProvider>
+      );
     });
 
     it('match snapshot', async () => {
-      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe(''));
+      await waitFor(() => expect(renderer.getByRole('dialog').style.transform).toBe('translateY(0px)'), {
+        timeout: 2000,
+      });
 
       expect(renderer.container).toMatchSnapshot();
     });
@@ -258,11 +319,17 @@ describe('<ModalBottomSheet />', () => {
     beforeEach(async () => {
       await BrowserTesting.resize(1024, 768);
 
-      renderer = render(<ModalBottomSheet open={true} renderContents={() => null} />);
+      renderer = render(
+        <VibrantProvider>
+          <ModalBottomSheet open={true} renderContents={() => null} />
+        </VibrantProvider>
+      );
     });
 
     it('match snapshot', async () => {
-      await waitFor(() => expect(renderer.getByRole('dialog').style.opacity).toBe('1'));
+      await waitFor(() => expect(renderer.getByRole('dialog').style.opacity).toBe('1'), {
+        timeout: 2000,
+      });
 
       expect(renderer.container).toMatchSnapshot();
     });

@@ -20,6 +20,7 @@ export const Avatar = withAvatarVariation(({ testId, src, alt, size, placeholder
       height={size}
       borderRadius="50%"
       onError={handleError}
+      loading="eager"
     />
   );
 });

@@ -2,6 +2,33 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.61.0...vibrant-icons-0.62.0) (2023-05-24)
+
+
+### Features
+
+* **icon:** Add icons ([#743](https://github.com/pedaling/opensource/issues/743)) ([270f805](https://github.com/pedaling/opensource/commit/270f805d7ccda9d317a413b512a85db67db65a5a))
+
+## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.3...vibrant-icons-0.61.0) (2023-05-23)
+
+### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.2...vibrant-icons-0.60.3) (2023-05-19)
+
+### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.1...vibrant-icons-0.60.2) (2023-05-18)
+
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.0...vibrant-icons-0.60.1) (2023-05-17)
+
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.59.0...vibrant-icons-0.60.0) (2023-05-16)
+
+## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.58.1...vibrant-icons-0.59.0) (2023-05-09)
+
+### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.58.0...vibrant-icons-0.58.1) (2023-05-04)
+
+## [0.58.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.57.1...vibrant-icons-0.58.0) (2023-05-04)
+
+### [0.57.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.57.0...vibrant-icons-0.57.1) (2023-05-03)
+
+## [0.57.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.56.0...vibrant-icons-0.57.0) (2023-05-02)
+
 ## [0.56.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.55.0...vibrant-icons-0.56.0) (2023-04-26)
 
 ## [0.55.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.54.2...vibrant-icons-0.55.0) (2023-04-25)

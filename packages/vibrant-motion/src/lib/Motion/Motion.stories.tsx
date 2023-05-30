@@ -43,12 +43,6 @@ export const WithRef: ComponentStory<typeof Motion> = props => {
       <PressableBox as="button" onClick={() => motionRef.current?.start()}>
         <Text>Start</Text>
       </PressableBox>
-      <PressableBox as="button" onClick={() => motionRef.current?.start({ reverse: true })}>
-        <Text>Start (Reverse)</Text>
-      </PressableBox>
-      <PressableBox as="button" onClick={() => motionRef.current?.start({ reset: false })}>
-        <Text>Start (with No Reset)</Text>
-      </PressableBox>
       <PressableBox as="button" onClick={() => motionRef.current?.pause()}>
         <Text>Pause</Text>
       </PressableBox>

@@ -34,7 +34,8 @@ export const Box = styled(
         ariaLabel,
         ariaLabelledBy,
         ariaChecked,
-        ariaCurrent: _,
+        ariaSelected,
+        ariaCurrent: _ariaCurrent,
         ...restProps
       },
       ref
@@ -61,7 +62,9 @@ export const Box = styled(
             accessibilityRole={role}
             accessibilityLabel={ariaLabel}
             accessibilityLabelledBy={ariaLabelledBy}
-            {...(isDefined(ariaChecked) ? { accessibilityState: { checked: ariaChecked } } : {})}
+            {...(isDefined(ariaChecked) || isDefined(ariaSelected)
+              ? { accessibilityState: { checked: ariaChecked, selected: ariaSelected } }
+              : {})}
             collapsable={ref ? false : undefined}
             {...(base ? { as } : {})}
             {...restProps}
