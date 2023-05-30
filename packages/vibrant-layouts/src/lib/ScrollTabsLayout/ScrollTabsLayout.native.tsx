@@ -134,6 +134,8 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
       ({
         nativeEvent: {
           contentOffset: { y: currentPosition },
+          contentSize,
+          layoutMeasurement,
         },
       }: NativeSyntheticEvent<NativeScrollEvent>) => {
         const currentTabIndex = tabPanelPositionsRef.current.reduce(
@@ -149,8 +151,12 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
           true,
           ...new Array(tabScrolledStates.length - 1 - currentTabIndex).fill(false),
         ]);
+
+        if (layoutMeasurement.height + currentPosition >= contentSize.height) {
+          setTabScrolledStates(new Array(tabElements.length).fill(true));
+        }
       },
-      [tabScrolledStates.length]
+      [tabElements.length, tabScrolledStates.length]
     );
 
     const handleLayoutChange = useCallback(({ nativeEvent: { layout } }: LayoutChangeEvent) => {

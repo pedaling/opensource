@@ -1,8 +1,8 @@
-import { Children, isValidElement, useCallback, useRef, useState } from 'react';
+import { Children, isValidElement, useCallback, useMemo, useRef, useState } from 'react';
 import { Tab, VStack } from '@vibrant-ui/components';
 import type { ComponentWithRef } from '@vibrant-ui/core';
 import { Box } from '@vibrant-ui/core';
-import { getElementRect } from '@vibrant-ui/utils';
+import { getElementRect, useInView } from '@vibrant-ui/utils';
 import type { LayoutEvent } from '@vibrant-ui/utils';
 import type { ScrollTabPanelProps } from './ScrollTabPanel';
 import { ScrollTabPanel } from './ScrollTabPanel';
@@ -32,18 +32,34 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
       .filter(child => child.type === ScrollTabPanel);
 
     const [tabViewableStates, setTabViewableStates] = useState(new Array(tabElements.length).fill(false));
-    const activeTabIndex = tabViewableStates.findIndex(state => state === true);
+    const [isEndReached, setIsEndReached] = useState(false);
+    const activeTabIndex = isEndReached
+      ? tabViewableStates.length - 1
+      : tabViewableStates.findIndex(state => state === true);
 
     const [tabsHeight, setTabsHeight] = useState(0);
     const tabElementsRef = useRef<(HTMLElement | null)[]>(new Array(tabElements.length).fill(null));
 
-    const handleTabStateChange = (index: number, viewable: boolean) => {
+    const handleTabStateChange = useCallback((index: number, viewable: boolean) => {
       setTabViewableStates(value => [...value.slice(0, index), viewable, ...value.slice(index + 1)]);
-    };
+    }, []);
 
     const handleContainerLayoutChange = useCallback(({ height }: LayoutEvent) => {
       setTabsHeight(height);
     }, []);
+
+    const lastTabPanelInViewOptions = useMemo(
+      () => ({
+        initialInView: false,
+        onChange: (viewable: boolean) => {
+          setIsEndReached(viewable);
+        },
+        options: { threshold: 0.9 },
+      }),
+      []
+    );
+
+    const { ref: lastTabPanelRef } = useInView(lastTabPanelInViewOptions);
 
     return (
       <VStack width="100%" data-testid={testId}>
@@ -86,10 +102,16 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
         </TabsComponent>
         {tabElements.map((child, index) => (
           <ViewableScrollTabPanel
-            ref={ref => (tabElementsRef.current[index] = ref)}
+            ref={ref => {
+              tabElementsRef.current[index] = ref;
+
+              lastTabPanelRef(ref);
+            }}
             key={child.props.tabId}
             offsetTop={tabsHeight}
-            onViewableChange={viewable => handleTabStateChange(index, viewable)}
+            onViewableChange={viewable => {
+              handleTabStateChange(index, viewable);
+            }}
           >
             {child}
           </ViewableScrollTabPanel>
