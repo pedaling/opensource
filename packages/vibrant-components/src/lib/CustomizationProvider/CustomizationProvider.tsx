@@ -7,7 +7,7 @@ export type Configurations = {
     placeholder: string;
   };
   cardNumberField?: {
-    cardIconMap: Record<string, ComponentType<{ size: ResponsiveValue<number> }>>;
+    cardIconMap: Record<string, ComponentType<{ size?: ResponsiveValue<number> }>>;
   };
 };
 
