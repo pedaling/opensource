@@ -1,1 +1,1 @@
-export {} from './DrawerFooter';
+export { DrawerFooter } from './DrawerFooter';
