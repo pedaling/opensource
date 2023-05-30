@@ -28,11 +28,6 @@ export const Basic: ComponentStory<typeof Drawer> = props => (
         </VStack>
       </Paper>
       <HStack spacing={10} width="100%">
-        <Paper width={300} height={600} backgroundColor="warning">
-          <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-            <Body level={1}>300px - 600px</Body>
-          </VStack>
-        </Paper>
         <VStack spacing={10} width="100%">
           <Paper width="100%" height={295} backgroundColor="primary">
             <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
