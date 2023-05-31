@@ -1,26 +1,19 @@
 {
+  "name": "vibrant-example-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-example-app/src",
   "projectType": "application",
   "targets": {
     "start": {
-      "executor": "@nrwl/expo:start",
+      "executor": "@nx/expo:start",
       "options": {
         "port": 8081
       },
       "dependsOn": [
         {
-          "target": "load-story",
-          "projects": "self"
+          "target": "load-story"
         }
       ]
-    },
-    "web": {
-      "executor": "@nrwl/expo:start",
-      "options": {
-        "port": 8081,
-        "webpack": true
-      }
     },
     "serve": {
       "executor": "nx:run-commands",
@@ -29,13 +22,13 @@
       }
     },
     "run-ios": {
-      "executor": "@nrwl/expo:run",
+      "executor": "@nx/expo:run",
       "options": {
         "platform": "ios"
       }
     },
     "run-android": {
-      "executor": "@nrwl/expo:run",
+      "executor": "@nx/expo:run",
       "options": {
         "platform": "android"
       }
@@ -51,87 +44,90 @@
       }
     },
     "build": {
-      "executor": "@nrwl/expo:build",
+      "executor": "@nx/expo:build",
       "options": {
         "profile": "preview"
       },
       "dependsOn": [
         {
-          "target": "load-story",
-          "projects": "self"
+          "target": "load-story"
         }
       ]
     },
     "update": {
-      "executor": "@nrwl/expo:update",
+      "executor": "@nx/expo:update",
       "options": {
         "branch": "preview",
         "auto": true
       },
       "dependsOn": [
         {
-          "target": "load-story",
-          "projects": "self"
+          "target": "load-story"
         }
       ]
     },
     "build-list": {
-      "executor": "@nrwl/expo:build-list",
+      "executor": "@nx/expo:build-list",
       "options": {}
     },
     "download": {
-      "executor": "@nrwl/expo:download",
+      "executor": "@nx/expo:download",
       "options": {
         "output": "packages/vibrant-example-app/dist"
       }
     },
-    "build-status": {
-      "executor": "@nrwl/expo:build-web",
-      "options": {}
-    },
     "sync-deps": {
-      "executor": "@nrwl/expo:sync-deps",
+      "executor": "@nx/expo:sync-deps",
       "options": {}
     },
     "ensure-symlink": {
-      "executor": "@nrwl/expo:ensure-symlink",
-      "options": {}
-    },
-    "publish": {
-      "executor": "@nrwl/expo:publish",
-      "options": {}
-    },
-    "publish-set": {
-      "executor": "@nrwl/expo:publish-set",
-      "options": {}
-    },
-    "rollback": {
-      "executor": "@nrwl/expo:rollback",
-      "options": {}
-    },
-    "eject": {
-      "executor": "@nrwl/expo:eject",
+      "executor": "@nx/expo:ensure-symlink",
       "options": {}
     },
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/vibrant-example-app/tsconfig.app.json"]
+        "commands": [
+          "yarn tsc --project ./packages/vibrant-example-app/tsconfig.app.json"
+        ]
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/vibrant-example-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "packages/vibrant-example-app/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/vibrant-example-app"],
       "options": {
         "jestConfig": "packages/vibrant-example-app/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "prebuild": {
+      "executor": "@nx/expo:prebuild",
+      "options": {}
+    },
+    "install": {
+      "executor": "@nx/expo:install",
+      "options": {}
+    },
+    "export": {
+      "executor": "@nx/expo:export",
+      "options": {
+        "platform": "all",
+        "outputDir": "../../dist/packages/vibrant-example-app"
+      }
+    },
+    "export-web": {
+      "executor": "@nx/expo:export",
+      "options": {
+        "bundler": "metro"
       }
     }
   },

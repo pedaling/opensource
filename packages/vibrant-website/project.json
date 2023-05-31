@@ -1,4 +1,5 @@
 {
+  "name": "vibrant-website",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-website/src",
   "projectType": "application",
@@ -13,7 +14,9 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/vibrant-website/tsconfig.json"]
+        "commands": [
+          "yarn tsc --project ./packages/vibrant-website/tsconfig.json"
+        ]
       }
     },
     "serve": {
@@ -24,10 +27,12 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/vibrant-website/**/*.{ts,tsx,js,jsx,mdx}"]
+        "lintFilePatterns": [
+          "packages/vibrant-website/**/*.{ts,tsx,js,jsx,mdx}"
+        ]
       }
     }
   }

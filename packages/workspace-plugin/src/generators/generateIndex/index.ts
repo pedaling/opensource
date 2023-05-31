@@ -1,6 +1,5 @@
 /* eslint-disable no-console,max-lines */
-import type { Tree } from '@nrwl/devkit';
-import { removeExt } from '@nrwl/workspace/src/utils/runtime-lint-utils';
+import type { Tree } from '@nx/devkit';
 
 type Schema = {
   sourceDirectory: string;
@@ -14,7 +13,7 @@ export default async function generateIndex(host: Tree, schema: Schema) {
 
   const source = files
     .filter(file => file !== outIndexFile.split('/').pop())
-    .map(removeExt)
+    .map(file => file.replace(/(?<!(^|\/))\.[^/.]+$/, ''))
     .map(file => `export *${wildcardAlias ? ` as ${file}` : ''} from "./${file}";`)
     .join('\n');
 
