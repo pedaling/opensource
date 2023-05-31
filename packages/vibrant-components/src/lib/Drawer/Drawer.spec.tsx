@@ -1,10 +1,8 @@
+import { Box } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
-import { HStack } from '../HStack';
-import { Paper } from '../Paper';
-import { VStack } from '../VStack';
 import { Drawer } from './Drawer';
 
 describe('<Drawer />', () => {
@@ -19,28 +17,59 @@ describe('<Drawer />', () => {
     beforeEach(async () => {
       placementRightRenderer = render(
         <Drawer type="standard" placement="right" open={true}>
-          <VStack spacing={10} width="100%">
-            <Paper width="100%" height={295} backgroundColor="primary">
-              <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch" width="100%">
+            <Box
+              width="100%"
+              height={295}
+              backgroundColor="primary"
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              alignContent="center"
+            >
+              <Body level={1}>100% - 295px</Body>
+            </Box>
+
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch" width="100%">
+              <Box
+                width={400}
+                height={295}
+                minWidth={400}
+                backgroundColor="error"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
+                <Body level={1}>400px - 295px(set minWidth)</Body>
+              </Box>
+
+              <Box
+                width="100%"
+                height={295}
+                backgroundColor="success"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
                 <Body level={1}>100% - 295px</Body>
-              </VStack>
-            </Paper>
-            <HStack spacing={10} width="100%">
-              <Paper width={400} height={295} minWidth={400} backgroundColor="error">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>400px - 295px(set minWidth)</Body>
-                </VStack>
-              </Paper>
-              <Paper width="100%" height={295} backgroundColor="success">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>100% - 295px</Body>
-                </VStack>
-              </Paper>
-            </HStack>
-          </VStack>
+              </Box>
+            </Box>
+          </Box>
           <Drawer.Panel defaultSize={320}>
             <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
-            <VStack spacing={30} p={8}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              width="100%"
+              p={8}
+            >
               <Body level={2}>
                 Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa
                 tempore magnam, ex doloribus.
@@ -48,7 +77,7 @@ describe('<Drawer />', () => {
               <Body level={3}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
               </Body>
-            </VStack>
+            </Box>
             <Drawer.Footer>
               <ContainedButton kind="primary" size="md" full={true}>
                 confirm
@@ -60,28 +89,59 @@ describe('<Drawer />', () => {
 
       placementLeftRenderer = render(
         <Drawer type="standard" placement="left" open={true}>
-          <VStack spacing={10} width="100%">
-            <Paper width="100%" height={295} backgroundColor="primary">
-              <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch" width="100%">
+            <Box
+              width="100%"
+              height={295}
+              backgroundColor="primary"
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              alignContent="center"
+            >
+              <Body level={1}>100% - 295px</Body>
+            </Box>
+
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch" width="100%">
+              <Box
+                width={400}
+                height={295}
+                minWidth={400}
+                backgroundColor="error"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
+                <Body level={1}>400px - 295px(set minWidth)</Body>
+              </Box>
+
+              <Box
+                width="100%"
+                height={295}
+                backgroundColor="success"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
                 <Body level={1}>100% - 295px</Body>
-              </VStack>
-            </Paper>
-            <HStack spacing={10} width="100%">
-              <Paper width={400} height={295} minWidth={400} backgroundColor="error">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>400px - 295px(set minWidth)</Body>
-                </VStack>
-              </Paper>
-              <Paper width="100%" height={295} backgroundColor="success">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>100% - 295px</Body>
-                </VStack>
-              </Paper>
-            </HStack>
-          </VStack>
+              </Box>
+            </Box>
+          </Box>
           <Drawer.Panel defaultSize={320}>
             <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
-            <VStack spacing={30} p={8}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              width="100%"
+              p={8}
+            >
               <Body level={2}>
                 Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa
                 tempore magnam, ex doloribus.
@@ -89,7 +149,7 @@ describe('<Drawer />', () => {
               <Body level={3}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
               </Body>
-            </VStack>
+            </Box>
             <Drawer.Footer>
               <ContainedButton kind="primary" size="md" full={true}>
                 confirm
@@ -101,28 +161,59 @@ describe('<Drawer />', () => {
 
       placementTopRenderer = render(
         <Drawer type="standard" placement="top" open={true}>
-          <VStack spacing={10} width="100%">
-            <Paper width="100%" height={295} backgroundColor="primary">
-              <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch" width="100%">
+            <Box
+              width="100%"
+              height={295}
+              backgroundColor="primary"
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              alignContent="center"
+            >
+              <Body level={1}>100% - 295px</Body>
+            </Box>
+
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch" width="100%">
+              <Box
+                width={400}
+                height={295}
+                minWidth={400}
+                backgroundColor="error"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
+                <Body level={1}>400px - 295px(set minWidth)</Body>
+              </Box>
+
+              <Box
+                width="100%"
+                height={295}
+                backgroundColor="success"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
                 <Body level={1}>100% - 295px</Body>
-              </VStack>
-            </Paper>
-            <HStack spacing={10} width="100%">
-              <Paper width={400} height={295} minWidth={400} backgroundColor="error">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>400px - 295px(set minWidth)</Body>
-                </VStack>
-              </Paper>
-              <Paper width="100%" height={295} backgroundColor="success">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>100% - 295px</Body>
-                </VStack>
-              </Paper>
-            </HStack>
-          </VStack>
+              </Box>
+            </Box>
+          </Box>
           <Drawer.Panel defaultSize={320}>
             <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
-            <VStack spacing={30} p={8}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              width="100%"
+              p={8}
+            >
               <Body level={2}>
                 Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa
                 tempore magnam, ex doloribus.
@@ -130,7 +221,7 @@ describe('<Drawer />', () => {
               <Body level={3}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
               </Body>
-            </VStack>
+            </Box>
             <Drawer.Footer>
               <ContainedButton kind="primary" size="md" full={true}>
                 confirm
@@ -142,28 +233,58 @@ describe('<Drawer />', () => {
 
       placementBottomRenderer = render(
         <Drawer type="standard" placement="bottom" open={true}>
-          <VStack spacing={10} width="100%">
-            <Paper width="100%" height={295} backgroundColor="primary">
-              <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch" width="100%">
+            <Box
+              width="100%"
+              height={295}
+              backgroundColor="primary"
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              alignContent="center"
+            >
+              <Body level={1}>100% - 295px</Body>
+            </Box>
+
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch" width="100%">
+              <Box
+                width={400}
+                height={295}
+                minWidth={400}
+                backgroundColor="error"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignContent="center"
+              >
+                <Body level={1}>400px - 295px(set minWidth)</Body>
+              </Box>
+
+              <Box
+                width="100%"
+                height={295}
+                backgroundColor="success"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
                 <Body level={1}>100% - 295px</Body>
-              </VStack>
-            </Paper>
-            <HStack spacing={10} width="100%">
-              <Paper width={400} height={295} minWidth={400} backgroundColor="error">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>400px - 295px(set minWidth)</Body>
-                </VStack>
-              </Paper>
-              <Paper width="100%" height={295} backgroundColor="success">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>100% - 295px</Body>
-                </VStack>
-              </Paper>
-            </HStack>
-          </VStack>
+              </Box>
+            </Box>
+          </Box>
           <Drawer.Panel defaultSize={320}>
             <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
-            <VStack spacing={30} p={8}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              width="100%"
+              p={8}
+            >
               <Body level={2}>
                 Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa
                 tempore magnam, ex doloribus.
@@ -171,7 +292,7 @@ describe('<Drawer />', () => {
               <Body level={3}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
               </Body>
-            </VStack>
+            </Box>
             <Drawer.Footer>
               <ContainedButton kind="primary" size="md" full={true}>
                 confirm
@@ -201,28 +322,59 @@ describe('<Drawer />', () => {
     beforeEach(async () => {
       typeStandardRenderer = render(
         <Drawer type="standard" placement="right" open={true}>
-          <VStack spacing={10} width="100%">
-            <Paper width="100%" height={295} backgroundColor="primary">
-              <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch" width="100%">
+            <Box
+              width="100%"
+              height={295}
+              backgroundColor="primary"
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              alignContent="center"
+            >
+              <Body level={1}>100% - 295px</Body>
+            </Box>
+
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch" width="100%">
+              <Box
+                width={400}
+                height={295}
+                minWidth={400}
+                backgroundColor="error"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
+                <Body level={1}>400px - 295px(set minWidth)</Body>
+              </Box>
+
+              <Box
+                width="100%"
+                height={295}
+                backgroundColor="success"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
                 <Body level={1}>100% - 295px</Body>
-              </VStack>
-            </Paper>
-            <HStack spacing={10} width="100%">
-              <Paper width={400} height={295} minWidth={400} backgroundColor="error">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>400px - 295px(set minWidth)</Body>
-                </VStack>
-              </Paper>
-              <Paper width="100%" height={295} backgroundColor="success">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>100% - 295px</Body>
-                </VStack>
-              </Paper>
-            </HStack>
-          </VStack>
+              </Box>
+            </Box>
+          </Box>
           <Drawer.Panel defaultSize={320}>
             <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
-            <VStack spacing={30} p={8}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              width="100%"
+              p={8}
+            >
               <Body level={2}>
                 Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa
                 tempore magnam, ex doloribus.
@@ -230,7 +382,7 @@ describe('<Drawer />', () => {
               <Body level={3}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
               </Body>
-            </VStack>
+            </Box>
             <Drawer.Footer>
               <ContainedButton kind="primary" size="md" full={true}>
                 confirm
@@ -242,28 +394,59 @@ describe('<Drawer />', () => {
 
       typeOverlayRenderer = render(
         <Drawer type="overlay" placement="right" open={true}>
-          <VStack spacing={10} width="100%">
-            <Paper width="100%" height={295} backgroundColor="primary">
-              <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch" width="100%">
+            <Box
+              width="100%"
+              height={295}
+              backgroundColor="primary"
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              alignContent="center"
+            >
+              <Body level={1}>100% - 295px</Body>
+            </Box>
+
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch" width="100%">
+              <Box
+                width={400}
+                height={295}
+                minWidth={400}
+                backgroundColor="error"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
+                <Body level={1}>400px - 295px(set minWidth)</Body>
+              </Box>
+
+              <Box
+                width="100%"
+                height={295}
+                backgroundColor="success"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
                 <Body level={1}>100% - 295px</Body>
-              </VStack>
-            </Paper>
-            <HStack spacing={10} width="100%">
-              <Paper width={400} height={295} minWidth={400} backgroundColor="error">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>400px - 295px(set minWidth)</Body>
-                </VStack>
-              </Paper>
-              <Paper width="100%" height={295} backgroundColor="success">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>100% - 295px</Body>
-                </VStack>
-              </Paper>
-            </HStack>
-          </VStack>
+              </Box>
+            </Box>
+          </Box>
           <Drawer.Panel defaultSize={320}>
             <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
-            <VStack spacing={30} p={8}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              width="100%"
+              p={8}
+            >
               <Body level={2}>
                 Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa
                 tempore magnam, ex doloribus.
@@ -271,7 +454,7 @@ describe('<Drawer />', () => {
               <Body level={3}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
               </Body>
-            </VStack>
+            </Box>
             <Drawer.Footer>
               <ContainedButton kind="primary" size="md" full={true}>
                 confirm
@@ -283,28 +466,59 @@ describe('<Drawer />', () => {
 
       typeModalRenderer = render(
         <Drawer type="modal" placement="right" open={true}>
-          <VStack spacing={10} width="100%">
-            <Paper width="100%" height={295} backgroundColor="primary">
-              <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch" width="100%">
+            <Box
+              width="100%"
+              height={295}
+              backgroundColor="primary"
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              alignContent="center"
+            >
+              <Body level={1}>100% - 295px</Body>
+            </Box>
+
+            <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch" width="100%">
+              <Box
+                width={400}
+                height={295}
+                minWidth={400}
+                backgroundColor="error"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
+                <Body level={1}>400px - 295px(set minWidth)</Body>
+              </Box>
+
+              <Box
+                width="100%"
+                height={295}
+                backgroundColor="success"
+                display="flex"
+                flexDirection="column"
+                justifyContent="flex-start"
+                alignItems="stretch"
+                alignContent="center"
+              >
                 <Body level={1}>100% - 295px</Body>
-              </VStack>
-            </Paper>
-            <HStack spacing={10} width="100%">
-              <Paper width={400} height={295} minWidth={400} backgroundColor="error">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>400px - 295px(set minWidth)</Body>
-                </VStack>
-              </Paper>
-              <Paper width="100%" height={295} backgroundColor="success">
-                <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-                  <Body level={1}>100% - 295px</Body>
-                </VStack>
-              </Paper>
-            </HStack>
-          </VStack>
+              </Box>
+            </Box>
+          </Box>
           <Drawer.Panel defaultSize={320}>
             <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
-            <VStack spacing={30} p={8}>
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="stretch"
+              width="100%"
+              p={8}
+            >
               <Body level={2}>
                 Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa
                 tempore magnam, ex doloribus.
@@ -312,7 +526,7 @@ describe('<Drawer />', () => {
               <Body level={3}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
               </Body>
-            </VStack>
+            </Box>
             <Drawer.Footer>
               <ContainedButton kind="primary" size="md" full={true}>
                 confirm

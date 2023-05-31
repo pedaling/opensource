@@ -1,6 +1,6 @@
+import { Box } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
-import { HStack } from '../../HStack';
 import { Title } from '../../Title';
 import { DrawerHeader } from './DrawerHeader';
 
@@ -23,10 +23,10 @@ describe('<DrawerHeader />', () => {
     beforeEach(async () => {
       renderer = render(
         <DrawerHeader closable={true}>
-          <HStack>
+          <Box display="flex" flexDirection="row" justifyContent="flex-start" alignItems="stretch">
             <Title level={3}>DrawerHeader custom title</Title>
             <Title level={3}>DrawerHeader custom subtitle</Title>
-          </HStack>
+          </Box>
         </DrawerHeader>
       );
     });

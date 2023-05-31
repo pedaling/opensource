@@ -1,7 +1,7 @@
+import { Box } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Body } from '../../Body';
-import { VStack } from '../../VStack';
 import { DrawerFooter } from './DrawerFooter';
 
 describe('<DrawerFooter />', () => {
@@ -13,9 +13,9 @@ describe('<DrawerFooter />', () => {
     beforeEach(async () => {
       renderer = render(
         <DrawerFooter>
-          <VStack>
+          <Box display="flex" flexDirection="column" justifyContent="flex-start" alignItems="stretch">
             <Body level={3}>Drawer Footer test</Body>
-          </VStack>
+          </Box>
         </DrawerFooter>
       );
     });
