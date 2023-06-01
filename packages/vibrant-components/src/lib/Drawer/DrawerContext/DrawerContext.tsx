@@ -6,7 +6,8 @@ type DrawerContextValue = {
   type: 'modal' | 'overlay' | 'standard';
   placement: 'bottom' | 'left' | 'right' | 'top';
   isOpen: boolean;
-  updatePanelSize: (panelSize: number) => void;
+  deliverPanelSize: (panelSize: number) => void;
+  containerSize: number;
 };
 
 const DrawerContext = createContext<DrawerContextValue>({
@@ -14,7 +15,8 @@ const DrawerContext = createContext<DrawerContextValue>({
   type: 'standard',
   placement: 'right',
   isOpen: false,
-  updatePanelSize: () => {},
+  deliverPanelSize: () => {},
+  containerSize: 0,
 });
 
 type DrawerProviderProps = {
@@ -23,7 +25,8 @@ type DrawerProviderProps = {
   type: 'modal' | 'overlay' | 'standard';
   placement: 'bottom' | 'left' | 'right' | 'top';
   isOpen: boolean;
-  updatePanelSize: (panelSize: number) => void;
+  deliverPanelSize: (panelSize: number) => void;
+  containerSize: number;
 };
 
 export const DrawerProvider: FC<DrawerProviderProps> = ({
@@ -32,21 +35,23 @@ export const DrawerProvider: FC<DrawerProviderProps> = ({
   type,
   placement,
   isOpen,
-  updatePanelSize,
+  deliverPanelSize,
+  containerSize,
 }) => (
-  <DrawerContext.Provider value={{ togglePanel, type, placement, isOpen, updatePanelSize }}>
+  <DrawerContext.Provider value={{ togglePanel, type, placement, isOpen, deliverPanelSize, containerSize }}>
     {children}
   </DrawerContext.Provider>
 );
 
 export const useDrawer = () => {
-  const { togglePanel, type, placement, isOpen, updatePanelSize } = useContext(DrawerContext);
+  const { togglePanel, type, placement, isOpen, deliverPanelSize, containerSize } = useContext(DrawerContext);
 
   return {
     togglePanel,
     type,
     placement,
     isOpen,
-    updatePanelSize,
+    deliverPanelSize,
+    containerSize,
   };
 };

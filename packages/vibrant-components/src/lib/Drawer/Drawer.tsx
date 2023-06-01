@@ -1,19 +1,19 @@
 import type { ReactElement } from 'react';
-import { Children, useCallback, useEffect, useRef, useState } from 'react';
+import { Children, useEffect, useState } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
 import { Box, PressableBox, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
-import { Body } from '../Body';
-import { ContainedButton } from '../ContainedButton';
+import { useEscapeEvent } from '@vibrant-ui/utils';
 import { HStack } from '../HStack';
 import { Space } from '../Space';
-import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { DrawerProvider } from './DrawerContext';
 import { DrawerFooter } from './DrawerFooter/DrawerFooter';
 import { DrawerHeader } from './DrawerHeader';
 import { DrawerPanel } from './DrawerPanel';
 import type { DrawerProps } from './DrawerProps';
+
+const ANIMATE_DURATION = 200;
 
 export const Drawer = ({
   testId = 'drawer',
@@ -30,26 +30,12 @@ export const Drawer = ({
   const panel = childArray.filter(child => child.type === DrawerPanel);
 
   const [isPanelOpen, setIsPanelOpen] = useState<boolean>(open);
-  const [panelSize, setPanelSize] = useState<number>(0);
-  const [shrankWidth, setShrankWidth] = useState<number>(0);
+  const [panelSizePixel, setPanelSizePixel] = useState<number>(0);
+  const [containerSize, setContainerSize] = useState<number>(0);
 
-  const drawerRef = useRef<HTMLDivElement>(null);
+  const closePanel = () => setIsPanelOpen(false);
 
-  const onKeydown = useCallback((e: KeyboardEvent) => {
-    e.preventDefault();
-
-    if (e.code === 'Escape') {
-      closePanel();
-    }
-  }, []);
-
-  useEffect(() => {
-    const currentDrawerRef = drawerRef.current;
-
-    currentDrawerRef?.addEventListener('keydown', onKeydown);
-
-    return () => currentDrawerRef?.removeEventListener('keydown', onKeydown);
-  }, [onKeydown]);
+  const { ref: drawerRef } = useEscapeEvent(closePanel);
 
   useEffect(() => {
     if (isPanelOpen) {
@@ -59,123 +45,84 @@ export const Drawer = ({
     }
   }, [isPanelOpen, onClose, onOpen]);
 
-  const closePanel = () => setIsPanelOpen(false);
+  const onContainerLayout = ({ width, height }: LayoutEvent) => {
+    const isVertical = placement === 'left' || placement === 'right';
 
-  const onContainerLayout = ({ width }: LayoutEvent) => {
-    setShrankWidth(width - panelSize);
+    setContainerSize(isVertical ? width : height);
   };
 
-  // const isStandardType = type === 'standard';
+  const isStandardType = type === 'standard';
 
-  // const hasDim = type === 'modal';
-
-  /* Control Box Method */
-  const [drawerType, setDrawerType] = useState<'modal' | 'overlay' | 'standard'>(type);
-  const [drawerDir, setDrawerDir] = useState<'bottom' | 'left' | 'right' | 'top'>(placement);
-  const isStandardType = drawerType === 'standard';
-  const hasDim = drawerType === 'modal';
-
-  const changeType = () => {
-    if (drawerType === 'standard') {
-      setDrawerType('overlay');
-    } else if (drawerType === 'overlay') {
-      setDrawerType('modal');
-    } else {
-      setDrawerType('standard');
-    }
-  };
-
-  const changeDirection = () => {
-    if (drawerDir === 'right') {
-      setDrawerDir('bottom');
-    } else if (drawerDir === 'bottom') {
-      setDrawerDir('left');
-    } else if (drawerDir === 'left') {
-      setDrawerDir('top');
-    } else {
-      setDrawerDir('right');
-    }
-  };
-  /* Control Box Method End */
+  const hasDim = type === 'modal';
 
   return (
     <DrawerProvider
       togglePanel={() => setIsPanelOpen(prev => !prev)}
-      placement={drawerDir}
-      type={drawerType}
+      placement={placement}
+      type={type}
       isOpen={isPanelOpen}
-      updatePanelSize={size => setPanelSize(size)}
+      containerSize={containerSize}
+      deliverPanelSize={panelSize => setPanelSizePixel(panelSize)}
     >
-      <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef} onLayout={onContainerLayout}>
-        {/* Control Box */}
-        <VStack spacing={8}>
-          <HStack spacing={15}>
-            <Title level={7}>control box</Title>
-            <Body level={2}>{`[type: ${drawerType}]`}</Body>
-            <Body level={2}>{`[placement: ${drawerDir}]`}</Body>
-          </HStack>
-          <HStack alignVertical="center" spacing={10}>
-            <ContainedButton kind="tertiary" size="md" onClick={() => setIsPanelOpen(true)}>
-              OPEN
-            </ContainedButton>
-            <ContainedButton kind="tertiary" size="md" onClick={() => setIsPanelOpen(false)}>
-              CLOSE
-            </ContainedButton>
-            <ContainedButton kind="tertiary" size="md" onClick={changeType}>
-              Change Type
-            </ContainedButton>
-            <ContainedButton kind="tertiary" size="md" onClick={changeDirection}>
-              Change Placement
-            </ContainedButton>
-            <ContainedButton kind="tertiary" size="md" onClick={() => setIsPanelOpen(prev => !prev)}>
-              ACTION
-            </ContainedButton>
-          </HStack>
-        </VStack>
-        {/* Control Box End */}
+      <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef}>
         <Space height={10} />
         <Box overflow="hidden">
           {isStandardType ? (
             <>
-              {drawerDir === 'right' && (
-                <HStack width="100%">
-                  <Transition animation={{ width: isPanelOpen ? shrankWidth : '100%' }}>
+              {placement === 'right' && (
+                <HStack width="100%" onLayout={onContainerLayout}>
+                  <Transition
+                    duration={ANIMATE_DURATION}
+                    animation={{ width: isPanelOpen ? containerSize - panelSizePixel : '100%' }}
+                  >
                     <ScrollBox>{contents}</ScrollBox>
                   </Transition>
                   {panel}
                 </HStack>
               )}
-              {drawerDir === 'left' && (
-                <HStack width="100%">
+              {placement === 'left' && (
+                <HStack width="100%" onLayout={onContainerLayout}>
                   {panel}
                   <Transition
+                    duration={ANIMATE_DURATION}
                     animation={{
-                      width: isPanelOpen ? shrankWidth : '100%',
-                      x: isPanelOpen ? panelSize : 0,
+                      width: isPanelOpen ? containerSize - panelSizePixel : '100%',
+                      x: isPanelOpen ? panelSizePixel : 0,
                     }}
                   >
                     <ScrollBox>{contents}</ScrollBox>
                   </Transition>
                 </HStack>
               )}
-              {drawerDir === 'top' && (
+              {placement === 'top' && (
                 <VStack width="100%" height="100%">
                   {panel}
-                  <ScrollBox>{contents}</ScrollBox>
+                  <Transition
+                    duration={ANIMATE_DURATION}
+                    animation={{
+                      y: isPanelOpen ? panelSizePixel : 0,
+                    }}
+                  >
+                    <ScrollBox onLayout={onContainerLayout} top={-panelSizePixel}>
+                      {contents}
+                    </ScrollBox>
+                  </Transition>
                 </VStack>
               )}
-              {drawerDir === 'bottom' && (
+              {placement === 'bottom' && (
                 <VStack width="100%" height="100%">
-                  <ScrollBox>{contents}</ScrollBox>
+                  <ScrollBox onLayout={onContainerLayout}>{contents}</ScrollBox>
                   {panel}
                 </VStack>
               )}
             </>
           ) : (
-            <Box width="100%" height="100%" position="relative" data-testid="atom-1">
-              <ScrollBox width="100%">{contents}</ScrollBox>
+            <Box width="100%" height="100%" position="relative">
+              <ScrollBox width="100%" onLayout={onContainerLayout}>
+                {contents}
+              </ScrollBox>
               {hasDim && (
-                <Transition animation={{ opacity: isPanelOpen ? 1 : 0 }} duration={200}>
+                <Transition animation={{ opacity: isPanelOpen ? 1 : 0 }} duration={ANIMATE_DURATION}>
                   <PressableBox
                     width="100%"
                     height="100%"
