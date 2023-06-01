@@ -8,19 +8,14 @@ import { Paper } from '../Paper';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { Drawer } from './Drawer';
-
 export default {
   title: 'Drawer',
   component: Drawer,
-  args: {
-    type: 'standard',
-    placement: 'right',
-    open: true,
-  },
+  args: {},
 } as ComponentMeta<typeof Drawer>;
 
-export const Basic: ComponentStory<typeof Drawer> = props => (
-  <Drawer {...props}>
+export const Basic: ComponentStory<typeof Drawer> = () => (
+  <Drawer type="standard" placement="right" open={false}>
     <VStack spacing={10}>
       <Paper width="100%" height={100} backgroundColor="informative">
         <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
@@ -28,6 +23,11 @@ export const Basic: ComponentStory<typeof Drawer> = props => (
         </VStack>
       </Paper>
       <HStack spacing={10} width="100%">
+        <Paper width={300} height={600} backgroundColor="warning">
+          <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
+            <Body level={1}>300px - 600px</Body>
+          </VStack>
+        </Paper>
         <VStack spacing={10} width="100%">
           <Paper width="100%" height={295} backgroundColor="primary">
             <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
@@ -278,12 +278,12 @@ export const WithChildScroll: ComponentStory<typeof Drawer> = props => (
       </VStack>
     </Paper>
     <HStack spacing={10} width="100%">
-      <Paper width={300} backgroundColor="warning">
+      <Paper width={300} height={600} backgroundColor="warning">
         <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-          <Body level={1}>300px - auto</Body>
+          <Body level={1}>300px - 600px</Body>
         </VStack>
       </Paper>
-      <Drawer {...props}>
+      <Drawer type="overlay" placement="right" open={false}>
         <VStack spacing={10} width="100%" maxHeight={800}>
           <Paper width="100%" height={295} backgroundColor="primary">
             <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
