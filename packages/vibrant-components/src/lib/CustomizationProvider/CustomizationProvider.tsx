@@ -7,7 +7,7 @@ export type Configurations = {
     placeholder: string;
   };
   cardNumberField?: {
-    cardIconMap: Record<string, ComponentType<{ size: ResponsiveValue<number> }>>;
+    cardIconMap: Record<string, ComponentType<{ size?: ResponsiveValue<number> }>>;
   };
 };
 
@@ -15,7 +15,7 @@ type CustomizationContextValue = Configurations;
 
 const CustomizationContext = createContext<CustomizationContextValue>({
   avatar: {
-    placeholder: 'https://cdn.class101.net/images/e1cba897-73d1-43de-864b-c36cefdea670/200x200.png',
+    placeholder: 'https://cdn.class101.net/images/2483a7e5-8c20-4ac7-a209-805b4482664d',
   },
   cardNumberField: {
     cardIconMap: {},

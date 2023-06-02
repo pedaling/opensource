@@ -2,6 +2,30 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.62.0...vibrant-icons-0.62.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* clipPath를 사용하는 아이콘은 교체한다 ([#750](https://github.com/pedaling/opensource/issues/750)) ([6903d08](https://github.com/pedaling/opensource/commit/6903d086df0cee4148a35ddcc8a1c66a2bc61481))
+
+## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.61.0...vibrant-icons-0.62.0) (2023-05-24)
+
+
+### Features
+
+* **icon:** Add icons ([#743](https://github.com/pedaling/opensource/issues/743)) ([270f805](https://github.com/pedaling/opensource/commit/270f805d7ccda9d317a413b512a85db67db65a5a))
+
+## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.3...vibrant-icons-0.61.0) (2023-05-23)
+
+### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.2...vibrant-icons-0.60.3) (2023-05-19)
+
+### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.1...vibrant-icons-0.60.2) (2023-05-18)
+
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.60.0...vibrant-icons-0.60.1) (2023-05-17)
+
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.59.0...vibrant-icons-0.60.0) (2023-05-16)
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.58.1...vibrant-icons-0.59.0) (2023-05-09)
 
 ### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.58.0...vibrant-icons-0.58.1) (2023-05-04)

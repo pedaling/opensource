@@ -1,5 +1,4 @@
 {
-  "cli": "nx",
   "id": "generate-index",
   "type": "object",
   "properties": {

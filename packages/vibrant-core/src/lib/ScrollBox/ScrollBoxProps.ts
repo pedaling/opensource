@@ -1,7 +1,7 @@
 import type { Ref } from 'react';
 import type { ScrollViewProps } from 'react-native';
 import type { ReactElementChildren, ResponsiveValue } from '../../types';
-import type { BoxElements } from '../Box';
+import type { BoxElements, LayoutEvent } from '../Box';
 import { createInterpolation } from '../createInterpolation';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { injectContext } from '../injectContext';
@@ -64,6 +64,7 @@ export type ScrollBoxProps = {
   as?: BoxElements;
   children: ReactElementChildren;
   scrollEnabled?: ResponsiveValue<boolean>;
+  onLayout?: (layoutEvent: LayoutEvent) => void;
 } & SystemProps &
   Pick<ScrollViewProps, 'keyboardShouldPersistTaps'>;
 

@@ -2,6 +2,56 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.62.0...vibrant-core-0.62.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* props 객체가 덮어씌워지지 않고 병합되도록 하고 ScrollTabsLayout에 hideScroll을 적용한다 ([#729](https://github.com/pedaling/opensource/issues/729)) ([1492165](https://github.com/pedaling/opensource/commit/149216509ee6cf0caca671a216589915a44d7f9f))
+
+## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.61.0...vibrant-core-0.62.0) (2023-05-24)
+
+## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.3...vibrant-core-0.61.0) (2023-05-23)
+
+
+### Features
+
+* Popover 컴포넌트 추가 ([#718](https://github.com/pedaling/opensource/issues/718)) ([98a8f81](https://github.com/pedaling/opensource/commit/98a8f81d774a02465db37cb4dce377aa793b619f))
+
+### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.2...vibrant-core-0.60.3) (2023-05-19)
+
+### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.1...vibrant-core-0.60.2) (2023-05-18)
+
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.60.0...vibrant-core-0.60.1) (2023-05-17)
+
+
+### Features
+
+* ScrollTabsLayout 컴포넌트를 구현한다  ([#720](https://github.com/pedaling/opensource/issues/720)) ([49d0dc5](https://github.com/pedaling/opensource/commit/49d0dc577b93c023d8fde3766dbadc95525be6a3))
+
+
+### Bug Fixes
+
+* considering px in Slider panel width ([#727](https://github.com/pedaling/opensource/issues/727)) ([108a49f](https://github.com/pedaling/opensource/commit/108a49fc48348ffe8cbd2cc25b00af5e0fc1cc31))
+* paddingX calculation in Slider ([#728](https://github.com/pedaling/opensource/issues/728)) ([fb4e33d](https://github.com/pedaling/opensource/commit/fb4e33d370561fcfe08c004bbcbe829aaf5fe6a8))
+* slider padding issue ([#725](https://github.com/pedaling/opensource/issues/725)) ([ce9691a](https://github.com/pedaling/opensource/commit/ce9691a517efe0db2f81351cc93f34552698674d))
+* when initialIndex is set, snap alignment not working ([#726](https://github.com/pedaling/opensource/issues/726)) ([53a340b](https://github.com/pedaling/opensource/commit/53a340b61359df022f41ac75deb9a2c7ae4fc54f))
+
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.59.0...vibrant-core-0.60.0) (2023-05-16)
+
+
+### Features
+
+* add Slider component ([#670](https://github.com/pedaling/opensource/issues/670)) ([16c0ad7](https://github.com/pedaling/opensource/commit/16c0ad7e9a5cf04786a541e81ab9532b9c8f9b8d))
+
+
+### Bug Fixes
+
+* create new SearchField ([#712](https://github.com/pedaling/opensource/issues/712)) ([22ddaa5](https://github.com/pedaling/opensource/commit/22ddaa5b610a64dc01aab681e6d1289b54f9ecc5))
+* initial index spacing issue ([#722](https://github.com/pedaling/opensource/issues/722)) ([4a12615](https://github.com/pedaling/opensource/commit/4a126150af342bf723c3c8e344f2146442dee61e))
+* remove circular dependency ([#724](https://github.com/pedaling/opensource/issues/724)) ([c7848f6](https://github.com/pedaling/opensource/commit/c7848f6a7ab81dded416704cfe9db64fd23d1f40))
+* slow mouse interaction ([#723](https://github.com/pedaling/opensource/issues/723)) ([4e2926c](https://github.com/pedaling/opensource/commit/4e2926c666c3767f39ec93f0146a562355ecae7f))
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.58.1...vibrant-core-0.59.0) (2023-05-09)
 
 ### [0.58.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.58.0...vibrant-core-0.58.1) (2023-05-04)

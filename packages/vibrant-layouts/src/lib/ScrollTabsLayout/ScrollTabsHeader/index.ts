@@ -1,0 +1,1 @@
+export { ScrollTabsHeader } from './ScrollTabsHeader';

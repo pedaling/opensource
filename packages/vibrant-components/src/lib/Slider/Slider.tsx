@@ -11,7 +11,7 @@ export const Slider = withSliderVariation(
     onItemImpressed,
     width = '100%',
     spacing,
-    px,
+    px = 0,
     initialIndex = 0,
     loop = false,
     snap = false,
@@ -24,8 +24,8 @@ export const Slider = withSliderVariation(
 
     const [sliderWidth, setSliderWidth] = useState<number | undefined>(undefined);
     const computedSpacing = spacing ? getResponsiveValue(spacing) : 0;
-    const computedPaddingX = px ? getResponsiveValue(px) : 0;
     const currentPanelsPerView = Math.min(data.length, getResponsiveValue(panelsPerView));
+    const calculatedPaddingX = getResponsiveValue(px);
 
     const computedPanelWidth = useMemo(() => {
       if (!sliderWidth) {
@@ -37,13 +37,13 @@ export const Slider = withSliderVariation(
       }
 
       return (
-        (sliderWidth - computedPaddingX - computedSpacing * (currentPanelsPerView - 1)) /
+        (sliderWidth - calculatedPaddingX * 2 - computedSpacing * (currentPanelsPerView - 1)) /
         Math.max(1, currentPanelsPerView)
       );
-    }, [computedPaddingX, computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, sliderWidth]);
+    }, [calculatedPaddingX, computedSpacing, currentPanelsPerView, getResponsiveValue, panelWidth, sliderWidth]);
 
     return (
-      <Box data-testid={testId} px={px} width={width} onLayout={({ width }) => setSliderWidth(width)}>
+      <Box data-testid={testId} width={width} onLayout={({ width }) => setSliderWidth(width)}>
         {computedPanelWidth !== undefined ? (
           <FlatList
             testId="slider-container"
@@ -54,6 +54,7 @@ export const Slider = withSliderVariation(
             data={data}
             snap={snap}
             loop={loop}
+            px={px}
             snapAlignment={snapAlignment}
             renderItem={renderItem}
             keyExtractor={keyExtractor}

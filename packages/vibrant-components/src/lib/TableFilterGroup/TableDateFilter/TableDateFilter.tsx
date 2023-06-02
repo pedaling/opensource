@@ -21,6 +21,8 @@ export const TableDateFilter = withTableDateFilterVariation(
       value: [],
       operator: operators[0],
     },
+    maxWidth,
+    lineLimit,
     testId = 'table-date-filter',
   }) => {
     const [value, setValue] = useState<Date[]>(defaultValue?.value);
@@ -138,6 +140,8 @@ export const TableDateFilter = withTableDateFilterVariation(
             </Box>
           )
         }
+        maxWidth={maxWidth}
+        lineLimit={lineLimit}
       />
     );
   }

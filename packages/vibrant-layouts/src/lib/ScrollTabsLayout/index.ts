@@ -1,0 +1,1 @@
+export { ScrollTabsLayout } from './ScrollTabsLayout';

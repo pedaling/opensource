@@ -1,3 +1,4 @@
+import type { ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { DateFilterOperator, TableFilterRefValue } from '../types';
 
@@ -11,6 +12,8 @@ export type TableDateFilterProps = {
     value: Date[];
     operator: DateFilterOperator;
   };
+  maxWidth?: ResponsiveValue<number | string>;
+  lineLimit?: ResponsiveValue<number>;
   testId?: string;
 };
 

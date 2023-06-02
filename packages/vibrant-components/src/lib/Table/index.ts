@@ -7,3 +7,4 @@ export { TableDataCell } from './TableDataCell';
 export { TableHeaderCell } from './TableHeaderCell';
 export type { SortDirection } from './TableSortIcon';
 export { TableSortIcon } from './TableSortIcon';
+export * as tableTranslation from './translation';

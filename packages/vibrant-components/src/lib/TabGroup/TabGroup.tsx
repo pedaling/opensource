@@ -1,6 +1,6 @@
 import type { ForwardedRef, FunctionComponentElement, MouseEventHandler } from 'react';
 import { Children, cloneElement, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
-import { useResponsiveValue } from '@vibrant-ui/core';
+import { Box, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { useInView, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
 import { Divider } from '../Divider';
@@ -189,37 +189,37 @@ export const TabGroup = withTabGroupVariation(
                     : { threshold: 0.99, rootMargin: '0px -40px 0px -40px', root: tabGroupRef.current }
                 }
               >
-                <HStack
+                <Box
                   as="li"
-                  mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
                   flexGrow={tabFlexGrow}
                   flexShrink={tabFlexShrink}
                   flexBasis={tabFlexBasis}
                   hidden={element.props.hidden}
                   ref={setTabRef(element.props.id)}
+                  mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
                 >
                   {cloneElement(element, {
                     active: element.props.id === tabId,
                     onClick: onTabChange,
                   })}
-                </HStack>
+                </Box>
               </InView>
             ) : (
-              <HStack
+              <Box
                 as="li"
                 key={element.props.id}
-                mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
                 flexGrow={tabFlexGrow}
                 flexShrink={tabFlexShrink}
                 flexBasis={tabFlexBasis}
                 hidden={element.props.hidden}
                 ref={setTabRef(element.props.id)}
+                mr={index !== tabElements.length - 1 ? [20, 20, 28] : 0}
               >
                 {cloneElement(element, {
                   active: element.props.id === tabId,
                   onClick: onTabChange,
                 })}
-              </HStack>
+              </Box>
             )
           )}
           <Space width={[20, 20, 0]} />

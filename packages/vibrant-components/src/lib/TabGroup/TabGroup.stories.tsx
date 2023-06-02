@@ -11,7 +11,15 @@ export default {
   },
 } as ComponentMeta<typeof TabGroup>;
 
-export const Basic: ComponentStory<typeof TabGroup> = props => {
+export const Basic: ComponentStory<typeof TabGroup> = props => (
+  <TabGroup {...props}>
+    {Array.from({ length: 3 }, (_, index) => (
+      <Tab key={index} title={`Tab${index + 1}`} id={`tab${index + 1}`} />
+    ))}
+  </TabGroup>
+);
+
+export const WithManyItems: ComponentStory<typeof TabGroup> = props => {
   const [tabLength, setTabLength] = useState(1);
 
   useEffect(() => {
