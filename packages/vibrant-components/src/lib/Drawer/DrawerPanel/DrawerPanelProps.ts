@@ -4,10 +4,12 @@ import { withVariation } from '@vibrant-ui/core';
 
 export type PercentWidth = `${number}%`;
 
+export type DefaultPanelSizeType = PercentWidth | number | 'auto';
+
 export type DrawerPanelProps = {
   children: ReactElement[];
   testId?: string;
-  defaultSize?: ResponsiveValue<PercentWidth | number | 'auto'>;
+  defaultSize?: ResponsiveValue<DefaultPanelSizeType>;
 };
 
 export const withDrawerPanelVariation = withVariation<DrawerPanelProps>('DrawerPanel')();

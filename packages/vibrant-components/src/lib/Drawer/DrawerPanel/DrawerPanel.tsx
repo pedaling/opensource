@@ -8,7 +8,7 @@ import { VStack } from '../../VStack';
 import { useDrawer } from '../DrawerContext';
 import { DrawerFooter } from '../DrawerFooter/DrawerFooter';
 import { DrawerHeader } from '../DrawerHeader';
-import type { PercentWidth } from './DrawerPanelProps';
+import type { DefaultPanelSizeType } from './DrawerPanelProps';
 import { withDrawerPanelVariation } from './DrawerPanelProps';
 
 const ANIMATE_DURATION = 200;
@@ -35,28 +35,22 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
     deliverPanelSize(currentPanelSize);
   };
 
-  const convertPercentToNumber = (percent: PercentWidth, value: number) => {
-    const ratio = parseInt(percent) * 0.01;
+  const trimPanelSize = (size: DefaultPanelSizeType, value: number) => {
+    if (typeof size === 'string' && size !== 'auto') {
+      const ratio = parseInt(size) * 0.01;
 
-    return Number((ratio * value).toFixed(1));
+      return Number((ratio * value).toFixed(1));
+    }
+
+    return value;
   };
 
   const panelSize = useMemo(() => {
-    if (typeof defaultSize === 'object') {
-      return (defaultSize as (PercentWidth | number | 'auto')[]).map(size => {
-        if (typeof size === 'string' && size !== 'auto') {
-          return convertPercentToNumber(size, containerSize);
-        }
-
-        return size;
-      });
+    if (Array.isArray(defaultSize)) {
+      return (defaultSize as DefaultPanelSizeType[]).map(size => trimPanelSize(size, containerSize));
     }
 
-    if (typeof defaultSize === 'string' && defaultSize !== 'auto') {
-      return convertPercentToNumber(defaultSize, containerSize);
-    }
-
-    return defaultSize;
+    return trimPanelSize(defaultSize, containerSize);
   }, [containerSize, defaultSize]);
 
   const panelContent = isVertical ? (
