@@ -2,6 +2,78 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.62.0...vibrant-components-0.62.1) (2023-05-30)
+
+
+### Features
+
+* add Drawer ([#742](https://github.com/pedaling/opensource/issues/742)) ([9fa5e34](https://github.com/pedaling/opensource/commit/9fa5e343d03fbbd364303e556c20482f98806607))
+* customization context's card icon map size prop to optional ([#746](https://github.com/pedaling/opensource/issues/746)) ([6fdcebe](https://github.com/pedaling/opensource/commit/6fdcebeb44a8ae323b28b74868eef41532ef5c68))
+
+## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.61.0...vibrant-components-0.62.0) (2023-05-24)
+
+## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.3...vibrant-components-0.61.0) (2023-05-23)
+
+
+### Features
+
+* Popover 컴포넌트 추가 ([#718](https://github.com/pedaling/opensource/issues/718)) ([98a8f81](https://github.com/pedaling/opensource/commit/98a8f81d774a02465db37cb4dce377aa793b619f))
+
+### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.2...vibrant-components-0.60.3) (2023-05-19)
+
+
+### Features
+
+* table filter에 maxWidth, lineLimit Prop을 추가합니다 ([#734](https://github.com/pedaling/opensource/issues/734)) ([4b7a82d](https://github.com/pedaling/opensource/commit/4b7a82d4a36d206890d00b52e1ac8701609f7219))
+
+
+### Bug Fixes
+
+* set TableSearchOption storybook option args ([#736](https://github.com/pedaling/opensource/issues/736)) ([c9e2f68](https://github.com/pedaling/opensource/commit/c9e2f682ab13191fde36bc548083cd66c8abdfbd))
+
+### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.1...vibrant-components-0.60.2) (2023-05-18)
+
+
+### Features
+
+* FormCardNumberField를 개발한다. [COM-4216] ([#731](https://github.com/pedaling/opensource/issues/731)) ([87c10f4](https://github.com/pedaling/opensource/commit/87c10f4693354a84d362e7b831d8d11a84cdc9e8))
+
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.60.0...vibrant-components-0.60.1) (2023-05-17)
+
+
+### Features
+
+* ScrollTabsLayout 컴포넌트를 구현한다  ([#720](https://github.com/pedaling/opensource/issues/720)) ([49d0dc5](https://github.com/pedaling/opensource/commit/49d0dc577b93c023d8fde3766dbadc95525be6a3))
+
+
+### Bug Fixes
+
+* considering px in Slider panel width ([#727](https://github.com/pedaling/opensource/issues/727)) ([108a49f](https://github.com/pedaling/opensource/commit/108a49fc48348ffe8cbd2cc25b00af5e0fc1cc31))
+* slider padding issue ([#725](https://github.com/pedaling/opensource/issues/725)) ([ce9691a](https://github.com/pedaling/opensource/commit/ce9691a517efe0db2f81351cc93f34552698674d))
+* StackedPortal 애니메이션 시 hidden일 때 초기에 잠깐 노출되는 버그를 수정한다 ([#730](https://github.com/pedaling/opensource/issues/730)) ([a8c1c64](https://github.com/pedaling/opensource/commit/a8c1c642617c3f64d99b064c871ea09892c41d9c))
+
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.59.0...vibrant-components-0.60.0) (2023-05-16)
+
+
+### Features
+
+*  ModalBottomSheet의 dim영역을 클릭했을 때 모달을 닫는 동작의 여부를 지정할 수 있게 한다 ([#721](https://github.com/pedaling/opensource/issues/721)) ([be49409](https://github.com/pedaling/opensource/commit/be4940909941f6137ee9505297913e8ce794f67a))
+* add endIcon into FilterChip ([#706](https://github.com/pedaling/opensource/issues/706)) ([5ca97de](https://github.com/pedaling/opensource/commit/5ca97dea6443ab47c7444ae42803d8a19ef05af4))
+* add Slider component ([#670](https://github.com/pedaling/opensource/issues/670)) ([16c0ad7](https://github.com/pedaling/opensource/commit/16c0ad7e9a5cf04786a541e81ab9532b9c8f9b8d))
+* add Slider documentation ([#708](https://github.com/pedaling/opensource/issues/708)) ([b41f66a](https://github.com/pedaling/opensource/commit/b41f66a6b09127d6cfb04d4a4f07e46531d696a0))
+* add TableSearch component ([#719](https://github.com/pedaling/opensource/issues/719)) ([67002c4](https://github.com/pedaling/opensource/commit/67002c42bd0bee2bae2357a8dfeebd5eecf56a2f))
+* create CardNumberField component [VR-77, COM-4027] ([#543](https://github.com/pedaling/opensource/issues/543)) ([6bc321d](https://github.com/pedaling/opensource/commit/6bc321d2ad12d6f3eb3dfa73aab3e34ed4d41904))
+* ModalBottomSheet 컴포넌트에 닫기 버튼 노출여부를 지정하는 속성을 추가한다 ([#717](https://github.com/pedaling/opensource/issues/717)) ([2f948f0](https://github.com/pedaling/opensource/commit/2f948f08530c1a62442cc7bbb49c50f41f929599))
+* set avatar image loading method to eager ([#707](https://github.com/pedaling/opensource/issues/707)) ([b8990a1](https://github.com/pedaling/opensource/commit/b8990a172fd963d7747b1b33edfa56b5333e9587))
+* virtualized table 을 구현한다. ([#703](https://github.com/pedaling/opensource/issues/703)) ([eaca33d](https://github.com/pedaling/opensource/commit/eaca33d93228d402446cfb44dc03038e6d1e51db))
+
+
+### Bug Fixes
+
+* create new SearchField ([#712](https://github.com/pedaling/opensource/issues/712)) ([22ddaa5](https://github.com/pedaling/opensource/commit/22ddaa5b610a64dc01aab681e6d1289b54f9ecc5))
+* slow mouse interaction ([#723](https://github.com/pedaling/opensource/issues/723)) ([4e2926c](https://github.com/pedaling/opensource/commit/4e2926c666c3767f39ec93f0146a562355ecae7f))
+* virtualized table 을 web component 로 이동한다. ([#710](https://github.com/pedaling/opensource/issues/710)) ([4c4f88d](https://github.com/pedaling/opensource/commit/4c4f88df2474fe379f76fadd01f3d13c1f51fd9a))
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.58.1...vibrant-components-0.59.0) (2023-05-09)
 
 

@@ -1,3 +1,4 @@
+import type { ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { MultiSelectFilterOperator, Option, TableFilterRefValue } from '../types';
 
@@ -11,6 +12,8 @@ export type TableMultiSelectFilterProps = {
     value: Option['value'][];
     operator: MultiSelectFilterOperator;
   };
+  maxWidth?: ResponsiveValue<number | string>;
+  lineLimit?: ResponsiveValue<number>;
   testId?: string;
 };
 

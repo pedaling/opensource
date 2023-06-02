@@ -4,6 +4,7 @@ packages/vibrant-core/ @pedaling/team-design-system
 packages/vibrant-forms/ @pedaling/team-design-system
 packages/vibrant-example-app/ @pedaling/team-design-system
 packages/vibrant-icons/ @pedaling/team-design-system
+packages/vibrant-layouts/ @pedaling/team-design-system
 packages/vibrant-motion/ @pedaling/team-design-system
 packages/vibrant-theme/ @pedaling/team-design-system
 packages/vibrant-utils/ @pedaling/team-design-system

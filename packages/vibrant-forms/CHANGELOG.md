@@ -2,6 +2,30 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.62.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.62.0...vibrant-forms-0.62.1) (2023-05-30)
+
+## [0.62.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.61.0...vibrant-forms-0.62.0) (2023-05-24)
+
+## [0.61.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.60.3...vibrant-forms-0.61.0) (2023-05-23)
+
+### [0.60.3](https://github.com/pedaling/opensource/compare/vibrant-forms-0.60.2...vibrant-forms-0.60.3) (2023-05-19)
+
+### [0.60.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.60.1...vibrant-forms-0.60.2) (2023-05-18)
+
+
+### Features
+
+* FormCardNumberField를 개발한다. [COM-4216] ([#731](https://github.com/pedaling/opensource/issues/731)) ([87c10f4](https://github.com/pedaling/opensource/commit/87c10f4693354a84d362e7b831d8d11a84cdc9e8))
+
+### [0.60.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.60.0...vibrant-forms-0.60.1) (2023-05-17)
+
+## [0.60.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.59.0...vibrant-forms-0.60.0) (2023-05-16)
+
+
+### Features
+
+* add FormNumericField ([#714](https://github.com/pedaling/opensource/issues/714)) ([4bdccc0](https://github.com/pedaling/opensource/commit/4bdccc05a0449f2bf7076580c4960f2f6507ec44))
+
 ## [0.59.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.58.1...vibrant-forms-0.59.0) (2023-05-09)
 
 

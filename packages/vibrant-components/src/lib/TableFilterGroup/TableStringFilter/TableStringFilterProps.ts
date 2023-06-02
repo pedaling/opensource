@@ -1,3 +1,4 @@
+import type { ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { StringFilterOperator, TableFilterRefValue } from '../types';
 
@@ -11,6 +12,8 @@ export type TableStringFilterProps = {
     value: string;
     operator: StringFilterOperator;
   };
+  maxWidth?: ResponsiveValue<number | string>;
+  lineLimit?: ResponsiveValue<number>;
   testId?: string;
 };
 

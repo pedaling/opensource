@@ -1,16 +1,17 @@
 {
+  "name": "vibrant-core",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-core/src",
   "projectType": "library",
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "dependsOn": [
         {
           "target": "build",
-          "projects": "dependencies"
+          "dependencies": true
         },
         "build-native"
       ],
@@ -57,18 +58,20 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/vibrant-core/tsconfig.lib.json"]
+        "commands": [
+          "yarn tsc --project ./packages/vibrant-core/tsconfig.lib.json"
+        ]
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/vibrant-core/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/vibrant-core"],
       "options": {
         "jestConfig": "packages/vibrant-core/jest.config.ts",
@@ -76,13 +79,10 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/vibrant-core/.storybook"
-        }
+        "configDir": "packages/vibrant-core/.storybook"
       },
       "configurations": {
         "ci": {
@@ -91,14 +91,11 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/vibrant-core",
-        "config": {
-          "configFolder": "packages/vibrant-core/.storybook"
-        }
+        "configDir": "packages/vibrant-core/.storybook",
+        "outputDir": "dist/storybook/vibrant-core"
       },
       "configurations": {
         "ci": {

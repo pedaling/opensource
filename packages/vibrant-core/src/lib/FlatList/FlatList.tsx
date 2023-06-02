@@ -11,8 +11,6 @@ import { FlatListItem } from './FlatListItem';
 import type { FlatListProps } from './FlatListProps';
 import { withFlatListVariation } from './FlatListProps';
 
-const SCROLL_ACCELERATION = 1.2;
-
 const LOOP_BUFFER = 3;
 // When looping, FlatList will get buffer data at the front and end respectively to make scrolling auto behavior smoothly.
 
@@ -27,12 +25,13 @@ export const FlatList = withFlatListVariation(
     maxRows,
     columnSpacing = 0,
     rowSpacing = 0,
+    px = 0,
     onEndReached,
     onItemImpressed,
     horizontal = false,
     snap,
     loop,
-    snapAlignment,
+    snapAlignment = 'start',
     initialIndex = 0,
     hideScroll = true,
     ...props
@@ -59,11 +58,14 @@ export const FlatList = withFlatListVariation(
           width: `calc((100% - ${((value.columns ?? 1) - 1) * value.columnSpacing}px) / ${value.columns})`,
         }));
 
+    const calculatedPaddingX = getResponsiveValue(px);
+
     const itemRefs = useRef<HTMLElement[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
 
     const isDragging = useRef(false);
     const startX = useRef(0);
+    const startScrollLeft = useRef(0);
 
     const boundedBuffer = Math.min(LOOP_BUFFER, data.length);
     const buffedData = useMemo(
@@ -85,12 +87,30 @@ export const FlatList = withFlatListVariation(
 
         const targetItem = itemRefs.current[index];
 
+        const calculatedScrollPositionX = (() => {
+          if (!snap) {
+            return targetItem.offsetLeft - calculatedPaddingX;
+          }
+
+          const clientWidth = containerRef.current?.clientWidth ?? 0;
+
+          switch (snapAlignment) {
+            case 'center':
+              return targetItem.offsetLeft - clientWidth / 2 + targetItem.clientWidth / 2;
+            case 'end':
+              return targetItem.offsetLeft + targetItem.clientWidth - clientWidth + calculatedPaddingX;
+            case 'start':
+            default:
+              return targetItem.offsetLeft - calculatedPaddingX;
+          }
+        })();
+
         containerRef.current?.scrollTo({
-          left: targetItem.offsetLeft,
+          left: calculatedScrollPositionX,
           behavior: animation ? 'smooth' : 'auto',
         });
       },
-      [buffedData.length]
+      [buffedData.length, calculatedPaddingX, snap, snapAlignment]
     );
 
     const memoizedFlatListItems = useMemo(
@@ -99,7 +119,6 @@ export const FlatList = withFlatListVariation(
           <FlatListItem
             key={`${keyExtractor(item, index)}-${index}`}
             ref={handleItemRef?.(index)}
-            snapAlignment={snapAlignment}
             width={width}
             flexShrink={horizontal ? 0 : 1}
             display={getResponsiveDisplay(index)}
@@ -127,7 +146,6 @@ export const FlatList = withFlatListVariation(
         onEndReached,
         onItemImpressed,
         renderItem,
-        snapAlignment,
         width,
       ]
     );
@@ -138,9 +156,11 @@ export const FlatList = withFlatListVariation(
       const container = containerRef.current;
 
       if (container) {
-        const pageX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
+        const pageX = event instanceof MouseEvent ? event.clientX : event.touches[0].clientX;
 
         startX.current = pageX - container.offsetLeft;
+
+        startScrollLeft.current = container.scrollLeft;
       }
     }, []);
 
@@ -152,26 +172,26 @@ export const FlatList = withFlatListVariation(
           event.preventDefault();
 
           const computedColumnWidth = getResponsiveValue(columnWidth) ?? container.clientWidth;
-          const currentX = event instanceof MouseEvent ? event.pageX : event.touches[0].pageX;
+          const currentX = event instanceof MouseEvent ? event.clientX : event.touches[0].clientX;
 
-          const updatedScrollLeft = container.scrollLeft + (startX.current - currentX) * SCROLL_ACCELERATION;
+          const updatedScrollLeft = startScrollLeft.current - (currentX - startX.current);
 
-          container.scrollTo({ left: updatedScrollLeft, behavior: 'smooth' });
+          container.scrollLeft = updatedScrollLeft;
 
           const nextIndex = Math.round(updatedScrollLeft / computedColumnWidth);
 
           currentIndexRef.current = nextIndex;
-
-          if (snap) {
-            scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
-          }
         }
       },
-      [columnWidth, getResponsiveValue, isDragging, scrollToTargetIndex, snap, startX]
+      [columnWidth, getResponsiveValue]
     );
 
     const handleMouseUp = useCallback(() => {
       isDragging.current = false;
+
+      if (snap) {
+        scrollToTargetIndex({ index: currentIndexRef.current, animation: true });
+      }
 
       if (loop && containerRef.current) {
         const computedColumnWidth = getResponsiveValue(columnWidth) ?? containerRef.current.clientWidth;
@@ -192,18 +212,15 @@ export const FlatList = withFlatListVariation(
           }, 600);
         }
       }
-    }, [boundedBuffer, columnWidth, data.length, getResponsiveValue, loop]);
+    }, [boundedBuffer, columnWidth, data.length, getResponsiveValue, loop, scrollToTargetIndex, snap]);
 
     useEffect(() => {
       if (!horizontal) {
         return;
       }
 
-      containerRef.current?.scrollTo({
-        left: buffedInitialIndex * getResponsiveValue(columnWidth ?? 0),
-        behavior: 'auto',
-      });
-    }, [buffedInitialIndex, columnWidth, getResponsiveValue, horizontal, scrollToTargetIndex]);
+      scrollToTargetIndex({ index: buffedInitialIndex, animation: false });
+    }, [buffedInitialIndex, horizontal, scrollToTargetIndex]);
 
     useEffect(() => {
       if (!horizontal) {
@@ -252,11 +269,11 @@ export const FlatList = withFlatListVariation(
     return (
       <ScrollBox
         as="ul"
+        px={px}
         display="flex"
         width="100%"
         flexDirection="row"
         flexWrap={horizontal ? 'nowrap' : 'wrap'}
-        scrollSnap={snap ? 'x mandatory' : 'none'}
         columnGap={columnSpacing}
         rowGap={rowSpacing}
         data-testid={testId}

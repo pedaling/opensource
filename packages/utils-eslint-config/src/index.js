@@ -9,8 +9,8 @@ const unusedImportsRules = require('./rules/unused-imports');
 
 /** @type {import('eslint').ESLint.ConfigData} */
 const eslintConfig = {
-  extends: ['plugin:@nrwl/nx/javascript', 'prettier'],
-  plugins: ['@nrwl/nx', 'prettier', 'react', 'react-hooks', 'import', 'unused-imports'],
+  extends: ['plugin:@nx/javascript', 'prettier'],
+  plugins: ['@nx', 'prettier', 'react', 'react-hooks', 'import', 'unused-imports'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -30,7 +30,7 @@ const eslintConfig = {
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
-      extends: ['plugin:@nrwl/nx/typescript'],
+      extends: ['plugin:@nx/typescript'],
       rules: {
         ...typescriptRules,
       },

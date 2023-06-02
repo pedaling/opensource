@@ -2,24 +2,20 @@ import * as path from 'path';
 import type { InlineConfig } from 'vite';
 import { mergeConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import type { StorybookViteConfig } from '@storybook/builder-vite';
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
-
 const storybookLibraries = [
   'vibrant-core',
   'vibrant-components',
   'vibrant-components-web',
   'vibrant-forms',
   'vibrant-icons',
+  'vibrant-layouts',
   'vibrant-motion',
   'vibrant-theme',
 ];
-
-const config: StorybookViteConfig & {
-  previewHead?: (head: string) => string;
-  env?: (config: Record<string, any>, context: { configType: 'DEVELOPMENT' | 'PRODUCTION' }) => Record<string, any>;
-} = {
+const config: StorybookConfig = {
   refs: {
     '@vibrant-ui/core': {
       disable: true,
@@ -31,6 +27,9 @@ const config: StorybookViteConfig & {
       disable: true,
     },
     '@vibrant-ui/icons': {
+      disable: true,
+    },
+    '@vibrant-ui/layouts': {
       disable: true,
     },
     '@vibrant-ui/motion': {
@@ -55,7 +54,6 @@ const config: StorybookViteConfig & {
     '@storybook/addon-measure',
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
-    'storybook-addon-performance/register',
     '@storybook/native-addon/dist/register.js',
   ].filter(Boolean),
   typescript: {
@@ -88,7 +86,11 @@ const config: StorybookViteConfig & {
             }
           } else if (
             filteredValue.every(
-              ({ value }) => typeof value === 'string' && value[0] !== '"' && !['true', 'false'].includes(value) && !prop.name.includes('RadiusLevel')
+              ({ value }) =>
+                typeof value === 'string' &&
+                value[0] !== '"' &&
+                !['true', 'false'].includes(value) &&
+                !prop.name.includes('RadiusLevel')
             )
           ) {
             return false;
@@ -110,9 +112,7 @@ const config: StorybookViteConfig & {
       },
     },
   },
-  core: {
-    builder: '@storybook/builder-vite',
-  },
+  core: {},
   previewHead: head => `
     ${head}
     <link
@@ -158,11 +158,18 @@ const config: StorybookViteConfig & {
       return {
         ...config,
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        STORYBOOK_NATIVE_LOCAL_EMULATOR: !process.env.DISABLE_SIMULATOR,
+        STORYBOOK_NATIVE_LOCAL_EMULATOR: process.env.DISABLE_SIMULATOR ?? 'true',
       };
     }
 
     return config;
+  },
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
   },
 };
 

@@ -1,0 +1,20 @@
+{
+  "name": "@vibrant-ui/layouts",
+  "version": "0.3.1",
+  "private": false,
+  "sideEffects": false,
+  "react-native": "index.native.js",
+  "peerDependencies": {
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-native": "^0.63.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "storybook": {
+    "url": "https://main--62cbb96b6c756c24b7a273a7.chromatic.com/"
+  }
+}

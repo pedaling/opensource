@@ -6,32 +6,24 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
   -webkit-align-content: stretch;
   -ms-flex-line-pack: stretch;
   align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   box-sizing: border-box;
   position: relative;
+  cursor: pointer;
+  background-color: inherit;
   border-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
+  padding: 0;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
@@ -42,7 +34,6 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   align-items: center;
   padding-top: 12px;
   padding-bottom: 10px;
-  background-color: inherit;
 }
 
 .emotion-1 {
@@ -66,6 +57,8 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
   <button
     class="emotion-0"
     data-testid="tab"
+    role="tab"
+    type="button"
   >
     <h3
       class="emotion-1"

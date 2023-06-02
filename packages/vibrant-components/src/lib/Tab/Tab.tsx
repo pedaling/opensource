@@ -1,4 +1,4 @@
-import { Box } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { NotificationBadge } from '../NotificationBadge';
 import { Title } from '../Title';
@@ -15,17 +15,15 @@ export const Tab = withTabVariation(
     id,
     onClick,
     testId = 'tab',
+    active,
     ...restProps
   }) => (
-    <Box
+    <PressableBox
+      role="tab"
       as="button"
       borderWidth={0}
       ref={innerRef}
-      flexShrink={0}
-      flexGrow={1}
-      flexBasis="auto"
       flexDirection="row"
-      display="inline-flex"
       borderBottomWidth={2}
       borderBottomStyle="solid"
       borderBottomColor={borderBottomColor}
@@ -37,6 +35,7 @@ export const Tab = withTabVariation(
       pt={12}
       pb={10}
       backgroundColor="inherit"
+      ariaSelected={active}
       data-testid={testId}
       {...restProps}
     >
@@ -55,6 +54,6 @@ export const Tab = withTabVariation(
           <NotificationBadge kind="dot" size="sm" />
         </Box>
       )}
-    </Box>
+    </PressableBox>
   )
 );

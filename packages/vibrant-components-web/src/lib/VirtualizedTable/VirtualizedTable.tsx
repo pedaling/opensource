@@ -13,7 +13,7 @@ import {
   TableRow,
   VStack,
 } from '@vibrant-ui/components';
-import { Box, Image } from '@vibrant-ui/core';
+import { Box, Image, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import type { VirtualizedTableProps } from './VirtualizedTableProps';
 
@@ -227,6 +227,10 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
     );
   };
 
+  const {
+    translations: { table: tableTranslation },
+  } = useConfig();
+
   return (
     <TableVirtuoso
       style={{ height, border: '1px solid #00000026' }}
@@ -248,19 +252,26 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
               <Body level={1}>{emptyText}</Body>
             </VStack>
           )}
-          overlaid={selectable && selectButtons && selectedRowKeys.size > 0}
+          overlaid={selectable && selectedRowKeys.size > 0}
           renderOverlay={() => (
             <HStack alignVertical="center" height="100%" spacing={12}>
-              {selectButtons?.map(({ text, onClick }) => (
-                <GhostButton
-                  key={text}
-                  size="md"
-                  color="onViewInformative"
-                  onClick={() => onClick(tableData.filter(row => selectedRowKeys.has(row[rowKey])))}
-                >
-                  {text}
-                </GhostButton>
-              ))}
+              {selectedRowKeys.size > 0 ? (
+                <Body level={2} weight="medium">
+                  {tableTranslation.numberOfSelected.replace('{count}', selectedRowKeys.size.toString())}
+                </Body>
+              ) : null}
+              <HStack alignVertical="center" height="100%" spacing={12}>
+                {selectButtons?.map(({ text, onClick }) => (
+                  <GhostButton
+                    key={text}
+                    size="md"
+                    color="onViewInformative"
+                    onClick={() => onClick(data.filter(row => selectedRowKeys.has(row[rowKey])))}
+                  >
+                    {text}
+                  </GhostButton>
+                ))}
+              </HStack>
             </HStack>
           )}
           indeterminate={selectedRowKeys.size !== tableData.length}

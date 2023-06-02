@@ -47,7 +47,9 @@ export const systemPropNames = systemProps
   .filter(systemProp => !systemProp.disabled)
   .map(systemProp => systemProp.propName);
 
-export type TextInputType = 'email' | 'number' | 'password' | 'text' | 'url';
+export type TextInputType = 'email' | 'number' | 'password' | 'search' | 'text' | 'url';
+
+export type EnterKeyType = 'done' | 'go' | 'next' | 'search' | 'send';
 
 export type TextInputRef = {
   focus: () => void;
@@ -168,6 +170,7 @@ export type TextInputProps = SystemProps &
         pattern?: never;
       }
   ) & {
+    enterKeyType?: EnterKeyType;
     defaultValue?: string;
     placeholder?: string;
     maxLength?: number;

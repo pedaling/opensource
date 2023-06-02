@@ -2,16 +2,20 @@
   "version": 2,
   "outputCapture": "direct-nodejs",
   "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
   "type": "object",
   "properties": {
     "coverageReporter": {
       "type": "string",
-      "enum": ["lcov"]
+      "enum": [
+        "lcov"
+      ]
     },
     "outputPath": {
       "type": "string"
     }
   },
-  "required": ["coverageReporter", "outputPath"]
+  "required": [
+    "coverageReporter",
+    "outputPath"
+  ]
 }

@@ -11,6 +11,7 @@ export type FlatListProps<Data> = {
   keyExtractor: (item: Data, index: number) => string;
   maxRows?: ResponsiveValue<number>;
   columnSpacing?: ResponsiveValue<number>;
+  px?: ResponsiveValue<number>;
   rowSpacing?: ResponsiveValue<number>;
   onItemImpressed?: (item: Data, index: number | null) => void;
   onEndReached?: () => void;

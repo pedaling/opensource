@@ -67,7 +67,7 @@ describe('<Avatar />', () => {
   });
 
   describe('when invalid src provided', () => {
-    const defaultPlaceholder = 'https://cdn.class101.net/images/e1cba897-73d1-43de-864b-c36cefdea670/200x200.png';
+    const defaultPlaceholder = 'https://cdn.class101.net/images/2483a7e5-8c20-4ac7-a209-805b4482664d';
 
     beforeEach(() => {
       renderer = render(
@@ -99,7 +99,7 @@ describe('<Avatar />', () => {
   });
 
   describe('when placeholder provided and invalid src provided', () => {
-    const placeholder = 'https://cdn.class101.net/images/e1cba897-73d1-43de-864b-c36cefdea670/100x100.png';
+    const placeholder = 'https://cdn.class101.net/images/2483a7e5-8c20-4ac7-a209-805b4482664d';
 
     beforeEach(() => {
       renderer = render(<Avatar size="md" src="" alt="" placeholder={placeholder} />);

@@ -65,6 +65,61 @@ describe('<ModalBottomSheet />', () => {
     });
   });
 
+  describe('when showCloseButton is false', () => {
+    beforeEach(() => {
+      renderer = render(
+        <ModalBottomSheet
+          defaultOpen={true}
+          renderOpener={({ open }) => <Pressable data-testid="opener" onClick={open} />}
+          showCloseButton={false}
+        />
+      );
+    });
+
+    it('should not found CloseButton', () => {
+      expect(renderer.queryByRole('button', { name: 'Close' })).toBeFalsy();
+    });
+  });
+
+  describe('when dimClosable is false', () => {
+    let mockOnClose: jest.Mock<any, any>;
+
+    describe('and onClose is provided', () => {
+      beforeEach(() => {
+        mockOnClose = jest.fn();
+
+        renderer = render(
+          <ModalBottomSheet
+            defaultOpen={true}
+            renderOpener={({ open }) => <Pressable data-testid="opener" onClick={open} />}
+            dimClosable={false}
+            onClose={mockOnClose}
+          />
+        );
+      });
+
+      describe('after clicking the dim', () => {
+        beforeEach(done => {
+          waitFor(() => userEvent.click(renderer.getByTestId('backdrop'))).then(done);
+        });
+
+        it('should not call onClose function', () => {
+          expect(mockOnClose).not.toBeCalled();
+        });
+      });
+
+      describe('after clicking the close button', () => {
+        beforeEach(() => {
+          fireEvent.click(renderer.getByRole('button', { name: 'Close' }));
+        });
+
+        it('should call onClose function', () => {
+          expect(mockOnClose).toBeCalled();
+        });
+      });
+    });
+  });
+
   describe('when renderContents is provided', () => {
     beforeEach(() => {
       renderer = render(<ModalBottomSheet open={true} renderContents={() => <Box data-testid="contents" />} />);
