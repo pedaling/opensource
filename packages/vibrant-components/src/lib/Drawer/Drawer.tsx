@@ -62,6 +62,7 @@ export const Drawer = ({
       type={type}
       isOpen={isPanelOpen}
       containerSize={containerSize}
+      panelSizePixel={panelSizePixel}
       deliverPanelSize={panelSize => setPanelSizePixel(panelSize)}
     >
       <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef}>

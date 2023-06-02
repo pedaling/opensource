@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { Children, useMemo, useState } from 'react';
+import { Children, useMemo } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
 import { Box } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
@@ -20,8 +20,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   const footer = childArray.filter(child => child.type === DrawerFooter);
   const contents = childArray.filter(child => child.type !== DrawerHeader && child.type !== DrawerFooter);
 
-  const [translateValue, setTranslateValue] = useState<number>(0);
-  const { placement, type, isOpen, containerSize, deliverPanelSize } = useDrawer();
+  const { placement, type, isOpen, containerSize, deliverPanelSize, panelSizePixel } = useDrawer();
 
   const isVertical = placement === 'left' || placement === 'right';
 
@@ -29,8 +28,6 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
 
   const onPanelLayout = ({ width, height }: LayoutEvent) => {
     const currentPanelSize = isVertical ? width : height;
-
-    setTranslateValue(currentPanelSize);
 
     deliverPanelSize(currentPanelSize);
   };
@@ -84,12 +81,12 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
           </Box>
           <Transition
             animation={{
-              x: isOpen ? -translateValue : 0,
+              x: isOpen ? -panelSizePixel : 0,
             }}
             duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
-            <Box width={panelSize} right={-translateValue} height="100%">
+            <Box width={panelSize} right={-panelSizePixel} height="100%">
               {panelContent}
             </Box>
           </Transition>
@@ -99,12 +96,12 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         <Box position="absolute" top={0} left={0} height="100%">
           <Transition
             animation={{
-              x: isOpen ? translateValue : 0,
+              x: isOpen ? panelSizePixel : 0,
             }}
             duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
-            <Box width={panelSize} left={-translateValue} height="100%">
+            <Box width={panelSize} left={-panelSizePixel} height="100%">
               {panelContent}
             </Box>
           </Transition>
@@ -117,12 +114,12 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         <>
           <Transition
             animation={{
-              y: isOpen ? translateValue : 0,
+              y: isOpen ? panelSizePixel : 0,
             }}
             duration={ANIMATE_DURATION}
             easing="easeOutQuad"
           >
-            <Box height={panelSize} top={-translateValue}>
+            <Box height={panelSize} top={-panelSizePixel}>
               {panelContent}
             </Box>
           </Transition>
@@ -151,13 +148,13 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   ) : (
     <>
       {placement === 'right' && (
-        <Transition animation={{ x: isOpen ? -translateValue : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
+        <Transition animation={{ x: isOpen ? -panelSizePixel : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             height="100%"
             backgroundColor="surface2"
             position="absolute"
             top={0}
-            right={-translateValue}
+            right={-panelSizePixel}
             zIndex={3}
             elevationLevel={3}
           >
@@ -166,13 +163,13 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Transition>
       )}
       {placement === 'left' && (
-        <Transition animation={{ x: isOpen ? translateValue : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
+        <Transition animation={{ x: isOpen ? panelSizePixel : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             height="100%"
             backgroundColor="surface2"
             position="absolute"
             top={0}
-            left={-translateValue}
+            left={-panelSizePixel}
             zIndex={3}
             elevationLevel={3}
           >
@@ -181,12 +178,12 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Transition>
       )}
       {placement === 'top' && (
-        <Transition animation={{ y: isOpen ? translateValue : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
+        <Transition animation={{ y: isOpen ? panelSizePixel : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             width="100%"
             backgroundColor="surface2"
             position="absolute"
-            top={-translateValue}
+            top={-panelSizePixel}
             left={0}
             zIndex={3}
             elevationLevel={3}
@@ -196,12 +193,12 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Transition>
       )}
       {placement === 'bottom' && (
-        <Transition animation={{ y: isOpen ? -translateValue : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
+        <Transition animation={{ y: isOpen ? -panelSizePixel : 0 }} duration={ANIMATE_DURATION} easing="easeOutQuad">
           <Box
             width="100%"
             backgroundColor="surface2"
             position="absolute"
-            bottom={-translateValue}
+            bottom={-panelSizePixel}
             left={0}
             zIndex={3}
             elevationLevel={3}
