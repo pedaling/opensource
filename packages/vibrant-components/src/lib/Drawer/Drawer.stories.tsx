@@ -12,11 +12,15 @@ import { Drawer } from './Drawer';
 export default {
   title: 'Drawer',
   component: Drawer,
-  args: {},
+  args: {
+    type: 'standard',
+    placement: 'right',
+    open: true,
+  },
 } as ComponentMeta<typeof Drawer>;
 
-export const Basic: ComponentStory<typeof Drawer> = () => (
-  <Drawer type="standard" placement="right" open={false}>
+export const Basic: ComponentStory<typeof Drawer> = props => (
+  <Drawer {...props}>
     <VStack spacing={10}>
       <Paper width="100%" height={100} backgroundColor="informative">
         <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
@@ -62,10 +66,8 @@ export const Basic: ComponentStory<typeof Drawer> = () => (
         </Paper>
       </HStack>
     </VStack>
-    <Drawer.Panel defaultSize={320}>
-      <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit">
-        <Title level={5}>This is Child Component for DrawerHeader</Title>
-      </Drawer.Header>
+    <Drawer.Panel defaultSize={['30%', '70%']}>
+      <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
       <VStack spacing={30} p={8}>
         <Body level={2}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
@@ -98,8 +100,8 @@ export const Basic: ComponentStory<typeof Drawer> = () => (
   </Drawer>
 );
 
-export const withScroll: ComponentStory<typeof Drawer> = () => (
-  <Drawer type="standard" placement="right" open={false}>
+export const WithScroll: ComponentStory<typeof Drawer> = props => (
+  <Drawer {...props}>
     <VStack spacing={10} maxHeight="1150px">
       <Box>
         <Paper width="100%" height={100} backgroundColor="informative">
@@ -237,8 +239,8 @@ export const withScroll: ComponentStory<typeof Drawer> = () => (
         </Paper>
       </HStack>
     </VStack>
-    <Drawer.Panel defaultSize={320}>
-      <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit">
+    <Drawer.Panel>
+      <Drawer.Header closable={true}>
         <Title level={5}>This is Child Component for DrawerHeader</Title>
       </Drawer.Header>
       <VStack spacing={30} p={8}>
@@ -273,7 +275,7 @@ export const withScroll: ComponentStory<typeof Drawer> = () => (
   </Drawer>
 );
 
-export const overlayScroll: ComponentStory<typeof Drawer> = () => (
+export const WithChildScroll: ComponentStory<typeof Drawer> = props => (
   <VStack spacing={10} width="100%">
     <Paper width="100%" height={100} backgroundColor="informative">
       <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
@@ -281,12 +283,12 @@ export const overlayScroll: ComponentStory<typeof Drawer> = () => (
       </VStack>
     </Paper>
     <HStack spacing={10} width="100%">
-      <Paper width={300} height={600} backgroundColor="warning">
+      <Paper width={300} backgroundColor="warning">
         <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
-          <Body level={1}>300px - 600px</Body>
+          <Body level={1}>300px - auto</Body>
         </VStack>
       </Paper>
-      <Drawer type="overlay" placement="right" open={false}>
+      <Drawer {...props}>
         <VStack spacing={10} width="100%" maxHeight={800}>
           <Paper width="100%" height={295} backgroundColor="primary">
             <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
@@ -405,10 +407,8 @@ export const overlayScroll: ComponentStory<typeof Drawer> = () => (
             </Paper>
           </HStack>
         </VStack>
-        <Drawer.Panel defaultSize={320}>
-          <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit">
-            <Title level={5}>This is Child Component for DrawerHeader</Title>
-          </Drawer.Header>
+        <Drawer.Panel>
+          <Drawer.Header closable={false} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
           <VStack spacing={30} p={8}>
             <Body level={2}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi
@@ -459,8 +459,8 @@ export const overlayScroll: ComponentStory<typeof Drawer> = () => (
   </VStack>
 );
 
-export const panelContentOverflow: ComponentStory<typeof Drawer> = () => (
-  <Drawer type="standard" placement="right" open={false}>
+export const PanelSizeAuto: ComponentStory<typeof Drawer> = props => (
+  <Drawer {...props}>
     <VStack spacing={10}>
       <Paper width="100%" height={100} backgroundColor="informative">
         <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
@@ -506,58 +506,28 @@ export const panelContentOverflow: ComponentStory<typeof Drawer> = () => (
         </Paper>
       </HStack>
     </VStack>
-    <Drawer.Panel defaultSize={320}>
-      <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit">
+    <Drawer.Panel defaultSize="auto">
+      <Drawer.Header>
         <Title level={5}>This is Child Component for DrawerHeader</Title>
       </Drawer.Header>
       <VStack spacing={30} p={8}>
         <Body level={2}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? ex doloribus.
         </Body>
         <Body level={3}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? ex doloribus.
         </Body>
         <Body level={4}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? ex doloribus.
         </Body>
         <Body level={5}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? ex doloribus.
         </Body>
         <Body level={2}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? ex doloribus.
         </Body>
         <Body level={3}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-        </Body>
-        <Body level={4}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-        </Body>
-        <Body level={5}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-        </Body>
-        <Body level={2}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-        </Body>
-        <Body level={3}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-        </Body>
-        <Body level={4}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-        </Body>
-        <Body level={5}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
-          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? ex doloribus.
         </Body>
       </VStack>
       <Drawer.Footer>
