@@ -75,7 +75,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   return isStandardType ? (
     <>
       {placement === 'right' && (
-        <Box position="absolute" top={0} right={0} height="100%">
+        <Box position="absolute" top={0} right={0} height="100%" flexDirection="row">
           <Box flex={0}>
             <Divider direction="vertical" kind="default" />
           </Box>
@@ -93,7 +93,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Box>
       )}
       {placement === 'left' && (
-        <Box position="absolute" top={0} left={0} height="100%">
+        <Box position="absolute" top={0} left={0} height="100%" flexDirection="row">
           <Transition
             animation={{
               x: isOpen ? panelSizePixel : 0,
@@ -156,7 +156,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             top={0}
             right={-panelSizePixel}
             zIndex={3}
-            elevationLevel={3}
+            elevationLevel={isOpen ? 3 : undefined}
           >
             {panelContent}
           </Box>
@@ -171,7 +171,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             top={0}
             left={-panelSizePixel}
             zIndex={3}
-            elevationLevel={3}
+            elevationLevel={isOpen ? 3 : undefined}
           >
             {panelContent}
           </Box>
@@ -186,7 +186,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             top={-panelSizePixel}
             left={0}
             zIndex={3}
-            elevationLevel={3}
+            elevationLevel={isOpen ? 3 : undefined}
           >
             {panelContent}
           </Box>
@@ -201,7 +201,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
             bottom={-panelSizePixel}
             left={0}
             zIndex={3}
-            elevationLevel={3}
+            elevationLevel={isOpen ? 3 : undefined}
           >
             {panelContent}
           </Box>
