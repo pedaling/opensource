@@ -7,6 +7,8 @@ import type { ComponentWithRef } from '@vibrant-ui/core';
 import { Box, useWindowDimensions } from '@vibrant-ui/core';
 import type { ScrollTabPanelProps } from './ScrollTabPanel';
 import { ScrollTabPanel } from './ScrollTabPanel';
+import { ScrollTabsFooter } from './ScrollTabsFooter';
+import type { ScrollTabsFooterProps } from './ScrollTabsFooter/ScrollTabsFooterProps';
 import { ScrollTabsHeader } from './ScrollTabsHeader';
 import type { ScrollTabsHeaderProps } from './ScrollTabsHeader/ScrollTabsHeaderProps';
 import type { ScrollTabsLayoutProps } from './ScrollTabsLayoutProps';
@@ -28,14 +30,21 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
       () =>
         Children.toArray(children)
           .filter(isValidElement)
-          .find(child => child.type === ScrollTabsHeader) ?? null,
+          .find(child => child.type === ScrollTabsHeader),
+      [children]
+    );
+    const footerElement = useMemo(
+      () =>
+        Children.toArray(children)
+          .filter(isValidElement)
+          .find(child => child.type === ScrollTabsFooter),
       [children]
     );
     const tabElements = useMemo(
       () =>
         Children.toArray(children)
           .filter(isValidElement<ScrollTabPanelProps>)
-          .filter(child => child.type === ScrollTabPanel) ?? [],
+          .filter(child => child.type === ScrollTabPanel),
       [children]
     );
 
@@ -175,14 +184,18 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
         onScroll={handleScroll}
         renderItem={renderItem}
         ListHeaderComponent={headerElement}
+        ListFooterComponent={footerElement}
       />
     );
   }
 ) as ComponentWithRef<ScrollTabsLayoutProps> & {
   Header: ComponentWithRef<ScrollTabsHeaderProps>;
+  Footer: ComponentWithRef<ScrollTabsFooterProps>;
   Item: ComponentWithRef<ScrollTabPanelProps>;
 };
 
 ScrollTabsLayout.Header = ScrollTabsHeader;
+
+ScrollTabsLayout.Footer = ScrollTabsFooter;
 
 ScrollTabsLayout.Item = ScrollTabPanel;
