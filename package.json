@@ -62,6 +62,7 @@
     "@storybook/addon-viewport": "7.0.12",
     "@storybook/core-server": "7.0.12",
     "@storybook/native": "2.2.8",
+    "@storybook/native-addon": "2.2.8",
     "@storybook/native-dev-middleware": "2.2.8",
     "@storybook/react": "7.0.12",
     "@storybook/react-vite": "7.0.12",
