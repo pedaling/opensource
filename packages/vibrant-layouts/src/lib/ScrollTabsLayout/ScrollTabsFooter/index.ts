@@ -1,0 +1,1 @@
+export { ScrollTabsFooter } from './ScrollTabsFooter';

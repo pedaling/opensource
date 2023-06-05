@@ -6,6 +6,8 @@ import { getElementRect, useInView } from '@vibrant-ui/utils';
 import type { LayoutEvent } from '@vibrant-ui/utils';
 import type { ScrollTabPanelProps } from './ScrollTabPanel';
 import { ScrollTabPanel } from './ScrollTabPanel';
+import { ScrollTabsFooter } from './ScrollTabsFooter';
+import type { ScrollTabsFooterProps } from './ScrollTabsFooter/ScrollTabsFooterProps';
 import { ScrollTabsHeader } from './ScrollTabsHeader';
 import type { ScrollTabsHeaderProps } from './ScrollTabsHeader/ScrollTabsHeaderProps';
 import type { ScrollTabsLayoutProps } from './ScrollTabsLayoutProps';
@@ -27,6 +29,9 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
     const headerElement = Children.toArray(children)
       .filter(isValidElement)
       .find(child => child.type === ScrollTabsHeader);
+    const footerElement = Children.toArray(children)
+      .filter(isValidElement)
+      .find(child => child.type === ScrollTabsFooter);
     const tabElements = Children.toArray(children)
       .filter(isValidElement<ScrollTabPanelProps>)
       .filter(child => child.type === ScrollTabPanel);
@@ -116,14 +121,18 @@ export const ScrollTabsLayout = withScrollTabsLayoutVariation(
             {child}
           </ViewableScrollTabPanel>
         ))}
+        {footerElement}
       </VStack>
     );
   }
 ) as ComponentWithRef<ScrollTabsLayoutProps> & {
   Header: ComponentWithRef<ScrollTabsHeaderProps>;
+  Footer: ComponentWithRef<ScrollTabsFooterProps>;
   Item: ComponentWithRef<ScrollTabPanelProps>;
 };
 
 ScrollTabsLayout.Header = ScrollTabsHeader;
+
+ScrollTabsLayout.Footer = ScrollTabsFooter;
 
 ScrollTabsLayout.Item = ScrollTabPanel;
