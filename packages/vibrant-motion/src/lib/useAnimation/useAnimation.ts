@@ -2,7 +2,6 @@ import { useSharedValue } from 'react-native-reanimated';
 import type { EasingDictionary } from '../constants';
 import type { AnimationResult } from '../types';
 
-/* eslint-disable @typescript-eslint/naming-convention */
 export type UseAnimationProps = {
   duration?: number;
   loop?: boolean;
@@ -17,9 +16,9 @@ export type AnimationOptions = {
   reset?: boolean;
 };
 
-export const useAnimation = (props: UseAnimationProps) => {
+export const useAnimation = (_: UseAnimationProps) => {
   const progress = useSharedValue(0);
-  const startAnimation = (options?: AnimationOptions) => {};
+  const startAnimation = (_?: AnimationOptions) => {};
 
   return {
     progress,
