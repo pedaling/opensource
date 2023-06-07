@@ -2,7 +2,7 @@ import * as path from 'path';
 import type { InlineConfig } from 'vite';
 import { mergeConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import type { StorybookConfig } from '@storybook/react-vite';
+import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
 const storybookLibraries = [
@@ -15,7 +15,11 @@ const storybookLibraries = [
   'vibrant-motion',
   'vibrant-theme',
 ];
-const config: StorybookConfig = {
+
+const config: StorybookViteConfig & {
+  previewHead?: (head: string) => string;
+  env?: (config: Record<string, any>, context: { configType: 'DEVELOPMENT' | 'PRODUCTION' }) => Record<string, any>;
+} = {
   refs: {
     '@vibrant-ui/core': {
       disable: true,
@@ -112,7 +116,9 @@ const config: StorybookConfig = {
       },
     },
   },
-  core: {},
+  core: {
+    builder: '@storybook/builder-vite',
+  },
   previewHead: head => `
     ${head}
     <link
@@ -163,13 +169,6 @@ const config: StorybookConfig = {
     }
 
     return config;
-  },
-  framework: {
-    name: '@storybook/react-vite',
-    options: {},
-  },
-  docs: {
-    autodocs: true,
   },
 };
 
