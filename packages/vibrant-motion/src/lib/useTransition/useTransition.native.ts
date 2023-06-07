@@ -3,7 +3,7 @@ import type { EasingFunction } from 'react-native';
 import type { AnimatableValue, EasingFunctionFactory } from 'react-native-reanimated';
 import { Easing, runOnJS, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import type { AllSystemProps } from '@vibrant-ui/core';
-import { useCurrentTheme, useResponsiveValue } from '@vibrant-ui/core';
+import { useCurrentTheme, useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import type { ColorToken } from '@vibrant-ui/theme';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
@@ -28,10 +28,11 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
   const {
     theme: { colors },
   } = useCurrentTheme();
+  const { interpolation } = useInterpolation();
 
   const responsiveAnimation: AllSystemProps & TransformMotionProps = useMemo(
     () =>
-      Object.entries(animation).reduce(
+      Object.entries(interpolation(animation)).reduce(
         (acc, [key, val]) => ({
           ...acc,
           [key]:
@@ -46,7 +47,7 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
         }),
         {}
       ),
-    [animation, getResponsiveValue]
+    [animation, getResponsiveValue, interpolation]
   );
   const isStarted = useRef(false);
   const initialAnimation = useRef(true);
@@ -111,7 +112,7 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
         [key]: value,
       });
     }, {});
-  }, [JSON.stringify(animation)]);
+  }, [JSON.stringify(responsiveAnimation)]);
 
   return transition;
 };
