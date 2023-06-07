@@ -1,12 +1,11 @@
 {
-  "name": "vibrant-components",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-components/src",
   "projectType": "library",
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nx/rollup:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-components",
@@ -31,20 +30,18 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/vibrant-components/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/vibrant-components/tsconfig.lib.json"]
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/vibrant-components/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/vibrant-components"],
       "options": {
         "jestConfig": "packages/vibrant-components/jest.config.ts",
@@ -52,10 +49,13 @@
       }
     },
     "storybook": {
-      "executor": "@nx/storybook:storybook",
+      "executor": "@nrwl/storybook:storybook",
       "options": {
+        "uiFramework": "@storybook/react",
         "port": 4400,
-        "configDir": "packages/vibrant-components/.storybook"
+        "config": {
+          "configFolder": "packages/vibrant-components/.storybook"
+        }
       },
       "configurations": {
         "ci": {
@@ -64,11 +64,14 @@
       }
     },
     "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "configDir": "packages/vibrant-components/.storybook",
-        "outputDir": "dist/storybook/vibrant-components"
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/vibrant-components",
+        "config": {
+          "configFolder": "packages/vibrant-components/.storybook"
+        }
       },
       "configurations": {
         "ci": {
@@ -82,10 +85,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": [
-          "vibrant-components:github",
-          "vibrant-components:deploy"
-        ]
+        "postTargets": ["vibrant-components:github", "vibrant-components:deploy"]
       }
     },
     "github": {

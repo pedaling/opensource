@@ -1,11 +1,10 @@
 {
-  "name": "workspace-plugin",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/workspace-plugin/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
+      "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/workspace-plugin",
@@ -37,7 +36,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
@@ -49,7 +48,7 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/workspace-plugin"],
       "options": {
         "jestConfig": "packages/workspace-plugin/jest.config.ts",

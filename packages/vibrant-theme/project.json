@@ -1,12 +1,11 @@
 {
-  "name": "vibrant-theme",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-theme/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/rollup:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-theme",
@@ -31,20 +30,18 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/vibrant-theme/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/vibrant-theme/tsconfig.lib.json"]
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/vibrant-theme/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/vibrant-theme"],
       "options": {
         "jestConfig": "packages/vibrant-theme/jest.config.ts",

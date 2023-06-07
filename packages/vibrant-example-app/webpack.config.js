@@ -1,5 +1,5 @@
 const createExpoWebpackConfigAsync = require('@expo/webpack-config');
-const { withNxWebpack } = require('@nx/expo');
+const { withNxWebpack } = require('@nrwl/expo');
 
 module.exports = async function (env, argv) {
   let config = await createExpoWebpackConfigAsync(env, argv);

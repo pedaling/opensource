@@ -1,17 +1,16 @@
 {
-  "name": "vibrant-motion",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-motion/src",
   "projectType": "library",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nx/rollup:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "dependsOn": [
         {
           "target": "build",
-          "dependencies": true
+          "projects": "dependencies"
         },
         "build-native"
       ],
@@ -24,7 +23,7 @@
         "external": ["react/jsx-runtime"],
         "generateExportsField": true,
         "format": ["esm", "cjs"],
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "buildableProjectDepsInPackageJsonType": "dependencies",
         "compiler": "babel",
         "assets": [
@@ -37,7 +36,7 @@
       }
     },
     "build-native": {
-      "executor": "@nx/rollup:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-motion",
@@ -58,20 +57,18 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": [
-          "yarn tsc --project ./packages/vibrant-motion/tsconfig.lib.json"
-        ]
+        "commands": ["yarn tsc --project ./packages/vibrant-motion/tsconfig.lib.json"]
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/vibrant-motion/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/vibrant-motion"],
       "options": {
         "jestConfig": "packages/vibrant-motion/jest.config.ts",
@@ -79,10 +76,13 @@
       }
     },
     "storybook": {
-      "executor": "@nx/storybook:storybook",
+      "executor": "@nrwl/storybook:storybook",
       "options": {
+        "uiFramework": "@storybook/react",
         "port": 4400,
-        "configDir": "packages/vibrant-motion/.storybook"
+        "config": {
+          "configFolder": "packages/vibrant-motion/.storybook"
+        }
       },
       "configurations": {
         "ci": {
@@ -91,11 +91,14 @@
       }
     },
     "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "configDir": "packages/vibrant-motion/.storybook",
-        "outputDir": "dist/storybook/vibrant-motion"
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/vibrant-motion",
+        "config": {
+          "configFolder": "packages/vibrant-motion/.storybook"
+        }
       },
       "configurations": {
         "ci": {

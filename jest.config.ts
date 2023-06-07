@@ -1,4 +1,4 @@
-import { getJestProjects } from '@nx/jest';
+import { getJestProjects } from '@nrwl/jest';
 
 const projects = getJestProjects()
   .filter(project => !(project.includes('vibrant-core') || project.includes('vibrant-icons')))

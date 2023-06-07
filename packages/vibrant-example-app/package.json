@@ -9,6 +9,7 @@
     "@emotion/react": "*",
     "@emotion/styled": "*",
     "@expo/metro-config": "*",
+    "@nrwl/expo": "*",
     "@storybook/builder-vite": "*",
     "@storybook/react": "*",
     "@testing-library/jest-native": "*",
@@ -37,8 +38,7 @@
     "react-native-svg": "*",
     "react-native-uuid": "*",
     "react-native-web": "*",
-    "uuid": "*",
-    "@nx/expo": "*"
+    "uuid": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && cp yarn.lock ./packages/vibrant-example-app/",

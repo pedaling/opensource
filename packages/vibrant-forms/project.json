@@ -1,12 +1,11 @@
 {
-  "name": "vibrant-forms",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-forms/src",
   "projectType": "library",
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nx/web:rollup",
+      "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-forms",
@@ -28,7 +27,7 @@
       }
     },
     "typecheck": {
-      "executor": "nx:run-commands",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
           "yarn tsc --project ./packages/vibrant-forms/tsconfig.lib.json"
@@ -36,14 +35,14 @@
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/vibrant-forms/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
+      "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/packages/vibrant-forms"],
       "options": {
         "jestConfig": "packages/vibrant-forms/jest.config.ts",
@@ -51,10 +50,13 @@
       }
     },
     "storybook": {
-      "executor": "@nx/storybook:storybook",
+      "executor": "@nrwl/storybook:storybook",
       "options": {
+        "uiFramework": "@storybook/react",
         "port": 4400,
-        "configDir": "packages/vibrant-forms/.storybook"
+        "config": {
+          "configFolder": "packages/vibrant-forms/.storybook"
+        }
       },
       "configurations": {
         "ci": {
@@ -63,11 +65,14 @@
       }
     },
     "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
+      "executor": "@nrwl/storybook:build",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "configDir": "packages/vibrant-forms/.storybook",
-        "outputDir": "dist/storybook/vibrant-forms"
+        "uiFramework": "@storybook/react",
+        "outputPath": "dist/storybook/vibrant-forms",
+        "config": {
+          "configFolder": "packages/vibrant-forms/.storybook"
+        }
       },
       "configurations": {
         "ci": {
@@ -81,7 +86,10 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-forms:github", "vibrant-forms:deploy"]
+        "postTargets": [
+          "vibrant-forms:github",
+          "vibrant-forms:deploy"
+        ]
       }
     },
     "github": {

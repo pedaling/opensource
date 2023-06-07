@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as glob from 'glob';
-import type { ExecutorContext } from '@nx/devkit';
+import type { ExecutorContext } from '@nrwl/devkit';
 import type { MergeCoverageExecutorSchema } from './schema';
 
 async function lcovExecutor(options: MergeCoverageExecutorSchema, context: ExecutorContext) {

@@ -1,5 +1,5 @@
-const expoPreset = require("jest-expo/jest-preset");
-const nxPreset = require("@nx/jest/preset").default;
+const expoPreset = require('jest-expo/jest-preset');
+const nxPreset = require('@nrwl/jest/preset').default;
 
 module.exports = {
   ...nxPreset,
