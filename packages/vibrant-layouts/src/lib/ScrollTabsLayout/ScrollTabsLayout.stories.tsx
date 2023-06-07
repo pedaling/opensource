@@ -39,5 +39,11 @@ export const Basic: ComponentStory<typeof ScrollTabsLayout> = props => (
         </Paper>
       </HStack>
     </ScrollTabsLayout.Item>
+
+    <ScrollTabsLayout.Footer>
+      <Paper height={200} p={20} backgroundColor="informativeContainer">
+        <Title level={4}>Footer</Title>
+      </Paper>
+    </ScrollTabsLayout.Footer>
   </ScrollTabsLayout>
 );

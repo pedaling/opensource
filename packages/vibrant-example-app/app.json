@@ -28,8 +28,7 @@
       "package": "net.pedaling.vibrantExample"
     },
     "web": {
-      "favicon": "./assets/favicon.png",
-      "bundler": "metro"
+      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {

@@ -2,11 +2,11 @@ import type { RefObject } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
 type UseEscapeEventResult = {
-  ref: RefObject<HTMLElement | undefined>;
+  ref: RefObject<HTMLElement>;
 };
 
 export const useEscapeEvent = (callback: () => void): UseEscapeEventResult => {
-  const ref = useRef<HTMLElement>();
+  const ref = useRef<HTMLElement>(null);
 
   const onKeydown = useCallback(
     (e: KeyboardEvent) => {
