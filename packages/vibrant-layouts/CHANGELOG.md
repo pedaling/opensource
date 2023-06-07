@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.4.2](https://github.com/pedaling/opensource/compare/vibrant-layouts-0.4.1...vibrant-layouts-0.4.2) (2023-06-07)
+
 ### [0.3.1](https://github.com/pedaling/opensource/compare/vibrant-layouts-0.3.0...vibrant-layouts-0.3.1) (2023-05-30)
 
 
