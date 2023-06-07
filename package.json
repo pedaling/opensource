@@ -152,6 +152,7 @@
     "@expo/webpack-config": "0.17.4",
     "@mdx-js/react": "1.6.22",
     "@nrwl/rollup": "15.0.0",
+    "@nx/rollup": "16.2.1",
     "@storybook/native-components": "2.2.8",
     "@swc/helpers": "0.5.1",
     "babel-plugin-tsconfig-paths": "1.0.3",
