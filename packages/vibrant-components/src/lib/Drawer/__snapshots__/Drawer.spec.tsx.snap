@@ -19,6 +19,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .emotion-1 {
@@ -37,7 +38,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .emotion-2 {
@@ -51,20 +53,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  overflow: auto;
   width: 100%;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 .emotion-3 {
@@ -83,7 +78,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-4 {
@@ -101,58 +95,16 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
+  position: absolute;
+  height: 100%;
+  background-color: #ffffff;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
 .emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #ff5d00;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-6 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -168,119 +120,15 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   flex-direction: row;
   box-sizing: border-box;
   position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 400px;
-  height: 295px;
-  min-width: 400px;
-  background-color: #e30f32;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #078641;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: 320px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   height: 100%;
 }
 
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-flex: 0;
-  -ms-flex: 0;
-  flex: 0;
-}
-
-.emotion-14 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -313,52 +161,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   margin-right: 0;
 }
 
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 320px;
-  right: -320px;
-  height: 100%;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 320px;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 100%;
-}
-
-.emotion-17 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -384,7 +187,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   align-items: stretch;
 }
 
-.emotion-18 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -404,256 +207,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   overflow: hidden;
 }
 
-.emotion-19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.emotion-20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-21 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-.emotion-22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.emotion-23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: inherit;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
-}
-
-.emotion-26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-27 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-width: 0;
-  border-color: #00000026;
-  border-style: solid;
-  width: 100%;
-  height: 0;
-  border-top-width: 1px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.emotion-29 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-  padding: 8px;
-}
-
-.emotion-30 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-31 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-32 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -672,7 +226,28 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   width: 100%;
 }
 
-.emotion-35 {
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 99;
+}
+
+.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -698,11 +273,11 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  width: 100%;
+  width: auto;
   border-radius: 2px;
 }
 
-.emotion-36 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -726,7 +301,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   background-color: #ffffff;
 }
 
-.emotion-37 {
+.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -744,13 +319,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   position: relative;
   width: 100%;
   height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
-.emotion-38 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -777,7 +352,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   align-items: center;
 }
 
-.emotion-39 {
+.emotion-17 {
   text-align: left;
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
@@ -803,181 +378,71 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
       >
         <div
           class="emotion-3"
-          style="width: 0px; transition-property: width; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        >
-          <div
-            class="emotion-4"
-          >
-            <div
-              class="emotion-5"
-            >
-              <span
-                class="emotion-6"
-                data-testid="body"
-              >
-                100% - 295px
-              </span>
-            </div>
-            <div
-              class="emotion-7"
-            >
-              <div
-                class="emotion-8"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  400px - 295px(set minWidth)
-                </span>
-              </div>
-              <div
-                class="emotion-10"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  100% - 295px
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        />
+      </div>
+      <div
+        class="emotion-4"
+        style="transform: translateX(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      >
         <div
-          class="emotion-12"
+          class="emotion-5"
+          data-testid="drawer-panel"
         >
           <div
-            class="emotion-13"
-          >
-            <div
-              class="emotion-14"
-              kind="default"
-            />
-          </div>
+            class="emotion-6"
+            kind="default"
+          />
           <div
-            class="emotion-15"
-            style="transform: translateX(-320px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            class="emotion-7"
           >
             <div
-              class="emotion-16"
-              data-testid="drawer-panel"
+              class="emotion-8"
             >
               <div
-                class="emotion-17"
+                class="emotion-3"
               >
                 <div
-                  class="emotion-18"
-                >
-                  <div
-                    class="emotion-19"
-                    data-testid="drawer-header"
-                  >
-                    <div
-                      class="emotion-20"
-                    >
-                      <h2
-                        class="emotion-21"
-                      >
-                        Lorem ipsum dolor sit amet, con secte tur adipiscing elit
-                      </h2>
-                      <div
-                        class="emotion-22"
-                      >
-                        <button
-                          class="emotion-23"
-                          data-testid="icon-button"
-                          type="button"
-                        >
-                          <span
-                            class="emotion-24"
-                            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                          >
-                            <svg
-                              class="emotion-25"
-                              data-testid="close-thin"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                class="emotion-26"
-                                d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="emotion-27"
-                    kind="default"
-                  />
-                  <div
-                    class="emotion-3"
-                  >
-                    <div
-                      class="emotion-29"
-                    >
-                      <span
-                        class="emotion-30"
-                        data-testid="body"
-                      >
-                        Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-                      </span>
-                      <span
-                        class="emotion-31"
-                        data-testid="body"
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="emotion-32"
-                >
-                  <div
-                    class="emotion-27"
-                    kind="default"
-                  />
-                  <div
-                    class="emotion-19"
-                    data-testid="drawer-footer"
-                  >
-                    <button
-                      class="emotion-35"
-                      data-testid="contained-button"
-                      type="button"
-                    >
-                      <span
-                        class="emotion-36"
-                        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                      />
-                      <span
-                        class="emotion-37"
-                        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                      >
-                        <span
-                          class="emotion-38"
-                          data-testid="content-box"
-                        >
-                          <span
-                            class="emotion-39"
-                            data-testid="button-text"
-                          >
-                            confirm
-                          </span>
-                        </span>
-                      </span>
-                    </button>
-                  </div>
-                </div>
+                  class="emotion-3"
+                />
               </div>
             </div>
+            <div
+              class="emotion-11"
+            />
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="emotion-12"
+  >
+    <button
+      class="emotion-13"
+      data-testid="contained-button"
+      type="button"
+    >
+      <span
+        class="emotion-14"
+        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      />
+      <span
+        class="emotion-15"
+        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      >
+        <span
+          class="emotion-16"
+          data-testid="content-box"
+        >
+          <span
+            class="emotion-17"
+            data-testid="button-text"
+          >
+            OPEN
+          </span>
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -1001,6 +466,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .emotion-1 {
@@ -1019,7 +485,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .emotion-2 {
@@ -1033,20 +500,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  overflow: auto;
   width: 100%;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 .emotion-3 {
@@ -1064,10 +524,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  position: relative;
 }
 
 .emotion-4 {
@@ -1085,10 +542,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: relative;
-  width: 320px;
-  left: -320px;
+  position: absolute;
   height: 100%;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
 .emotion-5 {
@@ -1102,9 +562,9 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   box-sizing: border-box;
   position: relative;
   width: 320px;
@@ -1116,477 +576,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
 }
 
 .emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-10 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: inherit;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-width: 0;
-  border-color: #00000026;
-  border-style: solid;
-  width: 100%;
-  height: 0;
-  border-top-width: 1px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.emotion-17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-  padding: 8px;
-}
-
-.emotion-19 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-20 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.emotion-27 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-28 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-.emotion-29 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-flex: 0;
-  -ms-flex: 0;
-  flex: 0;
-}
-
-.emotion-30 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1619,7 +608,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   margin-right: 0;
 }
 
-.emotion-32 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1635,25 +624,24 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  width: 100%;
 }
 
-.emotion-33 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -1663,29 +651,128 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   box-sizing: border-box;
   position: relative;
   width: 100%;
-  height: 295px;
+  overflow: hidden;
+}
+
+.emotion-11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 99;
+}
+
+.emotion-13 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
   background-color: #ff5d00;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
+  border-width: 0;
+  padding: 0;
+  overflow: hidden;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+  z-index: 0;
+  width: auto;
+  border-radius: 2px;
 }
 
-.emotion-34 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 400;
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #ffffff;
 }
 
-.emotion-35 {
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1701,74 +788,27 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   flex-direction: row;
   box-sizing: border-box;
   position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
+  opacity: 1;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-.emotion-36 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 400px;
-  height: 295px;
-  min-width: 400px;
-  background-color: #e30f32;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-38 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #078641;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+.emotion-17 {
+  text-align: left;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  text-fill-color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 <div>
@@ -1785,181 +825,71 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
       >
         <div
           class="emotion-3"
-        >
-          <div
-            class="emotion-4"
-            style="transform: translateX(320px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-          >
-            <div
-              class="emotion-5"
-              data-testid="drawer-panel"
-            >
-              <div
-                class="emotion-6"
-              >
-                <div
-                  class="emotion-7"
-                >
-                  <div
-                    class="emotion-8"
-                    data-testid="drawer-header"
-                  >
-                    <div
-                      class="emotion-9"
-                    >
-                      <h2
-                        class="emotion-10"
-                      >
-                        Lorem ipsum dolor sit amet, con secte tur adipiscing elit
-                      </h2>
-                      <div
-                        class="emotion-11"
-                      >
-                        <button
-                          class="emotion-12"
-                          data-testid="icon-button"
-                          type="button"
-                        >
-                          <span
-                            class="emotion-13"
-                            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                          >
-                            <svg
-                              class="emotion-14"
-                              data-testid="close-thin"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                class="emotion-15"
-                                d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="emotion-16"
-                    kind="default"
-                  />
-                  <div
-                    class="emotion-17"
-                  >
-                    <div
-                      class="emotion-18"
-                    >
-                      <span
-                        class="emotion-19"
-                        data-testid="body"
-                      >
-                        Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-                      </span>
-                      <span
-                        class="emotion-20"
-                        data-testid="body"
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="emotion-21"
-                >
-                  <div
-                    class="emotion-16"
-                    kind="default"
-                  />
-                  <div
-                    class="emotion-8"
-                    data-testid="drawer-footer"
-                  >
-                    <button
-                      class="emotion-24"
-                      data-testid="contained-button"
-                      type="button"
-                    >
-                      <span
-                        class="emotion-25"
-                        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                      />
-                      <span
-                        class="emotion-26"
-                        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                      >
-                        <span
-                          class="emotion-27"
-                          data-testid="content-box"
-                        >
-                          <span
-                            class="emotion-28"
-                            data-testid="button-text"
-                          >
-                            confirm
-                          </span>
-                        </span>
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="emotion-29"
-          >
-            <div
-              class="emotion-30"
-              kind="default"
-            />
-          </div>
-        </div>
+        />
+      </div>
+      <div
+        class="emotion-4"
+        style="transform: translateX(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      >
         <div
-          class="emotion-17"
-          style="width: 0px; transform: translateX(0px); transition-property: width, transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+          class="emotion-5"
+          data-testid="drawer-panel"
         >
           <div
-            class="emotion-32"
+            class="emotion-6"
+            kind="default"
+          />
+          <div
+            class="emotion-7"
           >
             <div
-              class="emotion-33"
+              class="emotion-8"
             >
-              <span
-                class="emotion-34"
-                data-testid="body"
+              <div
+                class="emotion-3"
               >
-                100% - 295px
-              </span>
+                <div
+                  class="emotion-3"
+                />
+              </div>
             </div>
             <div
-              class="emotion-35"
-            >
-              <div
-                class="emotion-36"
-              >
-                <span
-                  class="emotion-34"
-                  data-testid="body"
-                >
-                  400px - 295px(set minWidth)
-                </span>
-              </div>
-              <div
-                class="emotion-38"
-              >
-                <span
-                  class="emotion-34"
-                  data-testid="body"
-                >
-                  100% - 295px
-                </span>
-              </div>
-            </div>
+              class="emotion-11"
+            />
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="emotion-12"
+  >
+    <button
+      class="emotion-13"
+      data-testid="contained-button"
+      type="button"
+    >
+      <span
+        class="emotion-14"
+        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      />
+      <span
+        class="emotion-15"
+        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      >
+        <span
+          class="emotion-16"
+          data-testid="content-box"
+        >
+          <span
+            class="emotion-17"
+            data-testid="button-text"
+          >
+            OPEN
+          </span>
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -1983,6 +913,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .emotion-1 {
@@ -2001,7 +932,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .emotion-2 {
@@ -2020,16 +952,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  overflow: auto;
   width: 100%;
-  height: 100%;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 .emotion-3 {
@@ -2048,8 +972,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  height: 320px;
-  top: -320px;
 }
 
 .emotion-4 {
@@ -2067,9 +989,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: relative;
-  height: 320px;
+  position: absolute;
   width: 100%;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
 .emotion-5 {
@@ -2088,205 +1014,11 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+  height: 320px;
+  width: 100%;
 }
 
 .emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-9 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-.emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: inherit;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2319,7 +1051,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   margin-bottom: 0;
 }
 
-.emotion-16 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2335,58 +1067,37 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow: auto;
-}
-
-.emotion-17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
+  height: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
   width: 100%;
-  padding: 8px;
+  overflow: hidden;
 }
 
-.emotion-18 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-19 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-20 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2405,7 +1116,28 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   width: 100%;
 }
 
-.emotion-23 {
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 99;
+}
+
+.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2431,11 +1163,11 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  width: 100%;
+  width: auto;
   border-radius: 2px;
 }
 
-.emotion-24 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2459,7 +1191,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   background-color: #ffffff;
 }
 
-.emotion-25 {
+.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2477,13 +1209,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   position: relative;
   width: 100%;
   height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
-.emotion-26 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2510,7 +1242,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   align-items: center;
 }
 
-.emotion-27 {
+.emotion-17 {
   text-align: left;
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
@@ -2520,179 +1252,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   font-weight: 700;
   margin-left: 4px;
   margin-right: 4px;
-}
-
-.emotion-28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-flex: 0;
-  -ms-flex: 0;
-  flex: 0;
-}
-
-.emotion-31 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-32 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #ff5d00;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-33 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-.emotion-34 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-35 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 400px;
-  height: 295px;
-  min-width: 400px;
-  background-color: #e30f32;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-37 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #078641;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 <div>
@@ -2709,176 +1268,71 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
       >
         <div
           class="emotion-3"
-          style="height: 320px; transform: translateY(320px); transition-property: height, transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        >
-          <div
-            class="emotion-4"
-            data-testid="drawer-panel"
-          >
-            <div
-              class="emotion-5"
-            >
-              <div
-                class="emotion-6"
-              >
-                <div
-                  class="emotion-7"
-                  data-testid="drawer-header"
-                >
-                  <div
-                    class="emotion-8"
-                  >
-                    <h2
-                      class="emotion-9"
-                    >
-                      Lorem ipsum dolor sit amet, con secte tur adipiscing elit
-                    </h2>
-                    <div
-                      class="emotion-10"
-                    >
-                      <button
-                        class="emotion-11"
-                        data-testid="icon-button"
-                        type="button"
-                      >
-                        <span
-                          class="emotion-12"
-                          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                        >
-                          <svg
-                            class="emotion-13"
-                            data-testid="close-thin"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              class="emotion-14"
-                              d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="emotion-15"
-                  kind="default"
-                />
-                <div
-                  class="emotion-16"
-                >
-                  <div
-                    class="emotion-17"
-                  >
-                    <span
-                      class="emotion-18"
-                      data-testid="body"
-                    >
-                      Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-                    </span>
-                    <span
-                      class="emotion-19"
-                      data-testid="body"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="emotion-20"
-              >
-                <div
-                  class="emotion-15"
-                  kind="default"
-                />
-                <div
-                  class="emotion-7"
-                  data-testid="drawer-footer"
-                >
-                  <button
-                    class="emotion-23"
-                    data-testid="contained-button"
-                    type="button"
-                  >
-                    <span
-                      class="emotion-24"
-                      style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    />
-                    <span
-                      class="emotion-25"
-                      style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    >
-                      <span
-                        class="emotion-26"
-                        data-testid="content-box"
-                      >
-                        <span
-                          class="emotion-27"
-                          data-testid="button-text"
-                        >
-                          confirm
-                        </span>
-                      </span>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        />
+      </div>
+      <div
+        class="emotion-4"
+        style="transform: translateY(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      >
         <div
-          class="emotion-28"
+          class="emotion-5"
+          data-testid="drawer-panel"
         >
           <div
-            class="emotion-15"
+            class="emotion-6"
             kind="default"
           />
-        </div>
-        <div
-          class="emotion-16"
-        >
           <div
-            class="emotion-31"
+            class="emotion-7"
           >
             <div
-              class="emotion-32"
+              class="emotion-8"
             >
-              <span
-                class="emotion-33"
-                data-testid="body"
+              <div
+                class="emotion-3"
               >
-                100% - 295px
-              </span>
+                <div
+                  class="emotion-3"
+                />
+              </div>
             </div>
             <div
-              class="emotion-34"
-            >
-              <div
-                class="emotion-35"
-              >
-                <span
-                  class="emotion-33"
-                  data-testid="body"
-                >
-                  400px - 295px(set minWidth)
-                </span>
-              </div>
-              <div
-                class="emotion-37"
-              >
-                <span
-                  class="emotion-33"
-                  data-testid="body"
-                >
-                  100% - 295px
-                </span>
-              </div>
-            </div>
+              class="emotion-11"
+            />
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="emotion-12"
+  >
+    <button
+      class="emotion-13"
+      data-testid="contained-button"
+      type="button"
+    >
+      <span
+        class="emotion-14"
+        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      />
+      <span
+        class="emotion-15"
+        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      >
+        <span
+          class="emotion-16"
+          data-testid="content-box"
+        >
+          <span
+            class="emotion-17"
+            data-testid="button-text"
+          >
+            OPEN
+          </span>
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -2902,6 +1356,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   position: relative;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .emotion-1 {
@@ -2920,7 +1375,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 .emotion-2 {
@@ -2939,16 +1395,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  overflow: auto;
   width: 100%;
-  height: 100%;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 .emotion-3 {
@@ -2967,7 +1415,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  overflow: auto;
 }
 
 .emotion-4 {
@@ -2985,16 +1432,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+  position: absolute;
   width: 100%;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
 .emotion-5 {
@@ -3002,9 +1446,9 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
@@ -3013,133 +1457,11 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  height: 320px;
   width: 100%;
-  height: 295px;
-  background-color: #ff5d00;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 .emotion-6 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 400px;
-  height: 295px;
-  min-width: 400px;
-  background-color: #e30f32;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-}
-
-.emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #078641;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-flex: 0;
-  -ms-flex: 0;
-  flex: 0;
-}
-
-.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3172,46 +1494,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   margin-bottom: 0;
 }
 
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  height: 320px;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  height: 320px;
-  width: 100%;
-}
-
-.emotion-16 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3237,7 +1520,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   align-items: stretch;
 }
 
-.emotion-17 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3257,223 +1540,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   overflow: hidden;
 }
 
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.emotion-19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-20 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-.emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.emotion-22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: inherit;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.emotion-23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-  padding: 8px;
-}
-
-.emotion-29 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-30 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-31 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3492,7 +1559,28 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   width: 100%;
 }
 
-.emotion-34 {
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 99;
+}
+
+.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3518,11 +1606,11 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  width: 100%;
+  width: auto;
   border-radius: 2px;
 }
 
-.emotion-35 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3546,7 +1634,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   background-color: #ffffff;
 }
 
-.emotion-36 {
+.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3564,13 +1652,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   position: relative;
   width: 100%;
   height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
 }
 
-.emotion-37 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3597,7 +1685,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   align-items: center;
 }
 
-.emotion-38 {
+.emotion-17 {
   text-align: left;
   color: #ffffff;
   -webkit-text-fill-color: #ffffff;
@@ -3623,2971 +1711,71 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
       >
         <div
           class="emotion-3"
-        >
-          <div
-            class="emotion-4"
-          >
-            <div
-              class="emotion-5"
-            >
-              <span
-                class="emotion-6"
-                data-testid="body"
-              >
-                100% - 295px
-              </span>
-            </div>
-            <div
-              class="emotion-7"
-            >
-              <div
-                class="emotion-8"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  400px - 295px(set minWidth)
-                </span>
-              </div>
-              <div
-                class="emotion-10"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  100% - 295px
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+        />
+      </div>
+      <div
+        class="emotion-4"
+        style="transform: translateY(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      >
         <div
-          class="emotion-12"
+          class="emotion-5"
+          data-testid="drawer-panel"
         >
           <div
-            class="emotion-13"
+            class="emotion-6"
             kind="default"
           />
-        </div>
-        <div
-          class="emotion-14"
-          style="height: 320px; transition-property: height; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        >
           <div
-            class="emotion-15"
-            data-testid="drawer-panel"
+            class="emotion-7"
           >
             <div
-              class="emotion-16"
+              class="emotion-8"
             >
               <div
-                class="emotion-17"
+                class="emotion-3"
               >
-                <div
-                  class="emotion-18"
-                  data-testid="drawer-header"
-                >
-                  <div
-                    class="emotion-19"
-                  >
-                    <h2
-                      class="emotion-20"
-                    >
-                      Lorem ipsum dolor sit amet, con secte tur adipiscing elit
-                    </h2>
-                    <div
-                      class="emotion-21"
-                    >
-                      <button
-                        class="emotion-22"
-                        data-testid="icon-button"
-                        type="button"
-                      >
-                        <span
-                          class="emotion-23"
-                          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                        >
-                          <svg
-                            class="emotion-24"
-                            data-testid="close-thin"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              class="emotion-25"
-                              d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="emotion-13"
-                  kind="default"
-                />
                 <div
                   class="emotion-3"
-                >
-                  <div
-                    class="emotion-28"
-                  >
-                    <span
-                      class="emotion-29"
-                      data-testid="body"
-                    >
-                      Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-                    </span>
-                    <span
-                      class="emotion-30"
-                      data-testid="body"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="emotion-31"
-              >
-                <div
-                  class="emotion-13"
-                  kind="default"
                 />
-                <div
-                  class="emotion-18"
-                  data-testid="drawer-footer"
-                >
-                  <button
-                    class="emotion-34"
-                    data-testid="contained-button"
-                    type="button"
-                  >
-                    <span
-                      class="emotion-35"
-                      style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    />
-                    <span
-                      class="emotion-36"
-                      style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    >
-                      <span
-                        class="emotion-37"
-                        data-testid="content-box"
-                      >
-                        <span
-                          class="emotion-38"
-                          data-testid="button-text"
-                        >
-                          confirm
-                        </span>
-                      </span>
-                    </span>
-                  </button>
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Drawer /> when Drawer is rendering each placement match snapshot 5`] = `
-.emotion-0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.emotion-1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #ff5d00;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-6 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 400px;
-  height: 295px;
-  min-width: 400px;
-  background-color: #e30f32;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #078641;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-flex: 0;
-  -ms-flex: 0;
-  flex: 0;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-width: 0;
-  border-color: #00000026;
-  border-style: solid;
-  width: 0;
-  border-right-width: 1px;
-  height: 100%;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 320px;
-  right: -320px;
-  height: 100%;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 320px;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 100%;
-}
-
-.emotion-17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.emotion-19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.emotion-20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-21 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-.emotion-22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.emotion-23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: inherit;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
-}
-
-.emotion-26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-27 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-width: 0;
-  border-color: #00000026;
-  border-style: solid;
-  width: 100%;
-  height: 0;
-  border-top-width: 1px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.emotion-29 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-  padding: 8px;
-}
-
-.emotion-30 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-31 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-32 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-
-.emotion-35 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.emotion-36 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-37 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.emotion-38 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-39 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-<div>
-  <div
-    class="emotion-0"
-    data-testid="drawer"
-    tabindex="0"
-  >
-    <div
-      class="emotion-1"
-    >
-      <div
-        class="emotion-2"
-      >
-        <div
-          class="emotion-3"
-          style="width: 0px; transition-property: width; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        >
-          <div
-            class="emotion-4"
-          >
             <div
-              class="emotion-5"
-            >
-              <span
-                class="emotion-6"
-                data-testid="body"
-              >
-                100% - 295px
-              </span>
-            </div>
-            <div
-              class="emotion-7"
-            >
-              <div
-                class="emotion-8"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  400px - 295px(set minWidth)
-                </span>
-              </div>
-              <div
-                class="emotion-10"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  100% - 295px
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="emotion-12"
-        >
-          <div
-            class="emotion-13"
-          >
-            <div
-              class="emotion-14"
-              kind="default"
+              class="emotion-11"
             />
           </div>
-          <div
-            class="emotion-15"
-            style="transform: translateX(-320px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-          >
-            <div
-              class="emotion-16"
-              data-testid="drawer-panel"
-            >
-              <div
-                class="emotion-17"
-              >
-                <div
-                  class="emotion-18"
-                >
-                  <div
-                    class="emotion-19"
-                    data-testid="drawer-header"
-                  >
-                    <div
-                      class="emotion-20"
-                    >
-                      <h2
-                        class="emotion-21"
-                      >
-                        Lorem ipsum dolor sit amet, con secte tur adipiscing elit
-                      </h2>
-                      <div
-                        class="emotion-22"
-                      >
-                        <button
-                          class="emotion-23"
-                          data-testid="icon-button"
-                          type="button"
-                        >
-                          <span
-                            class="emotion-24"
-                            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                          >
-                            <svg
-                              class="emotion-25"
-                              data-testid="close-thin"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                class="emotion-26"
-                                d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-                              />
-                            </svg>
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="emotion-27"
-                    kind="default"
-                  />
-                  <div
-                    class="emotion-3"
-                  >
-                    <div
-                      class="emotion-29"
-                    >
-                      <span
-                        class="emotion-30"
-                        data-testid="body"
-                      >
-                        Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-                      </span>
-                      <span
-                        class="emotion-31"
-                        data-testid="body"
-                      >
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="emotion-32"
-                >
-                  <div
-                    class="emotion-27"
-                    kind="default"
-                  />
-                  <div
-                    class="emotion-19"
-                    data-testid="drawer-footer"
-                  >
-                    <button
-                      class="emotion-35"
-                      data-testid="contained-button"
-                      type="button"
-                    >
-                      <span
-                        class="emotion-36"
-                        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                      />
-                      <span
-                        class="emotion-37"
-                        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                      >
-                        <span
-                          class="emotion-38"
-                          data-testid="content-box"
-                        >
-                          <span
-                            class="emotion-39"
-                            data-testid="button-text"
-                          >
-                            confirm
-                          </span>
-                        </span>
-                      </span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-`;
-
-exports[`<Drawer /> when Drawer is rendering each placement match snapshot 6`] = `
-.emotion-0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.emotion-1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: auto;
-  width: 100%;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #ff5d00;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-6 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 400px;
-  height: 295px;
-  min-width: 400px;
-  background-color: #e30f32;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #078641;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  height: 100%;
-  background-color: #ffffff;
-  top: 0;
-  right: -320px;
-  z-index: 3;
-  box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 320px;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 100%;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.emotion-17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-18 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-.emotion-19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.emotion-20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: inherit;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
-}
-
-.emotion-23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-width: 0;
-  border-color: #00000026;
-  border-style: solid;
-  width: 100%;
-  height: 0;
-  border-top-width: 1px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-  padding: 8px;
-}
-
-.emotion-27 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-28 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-29 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-
-.emotion-32 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.emotion-33 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-34 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.emotion-35 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-36 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-<div>
   <div
-    class="emotion-0"
-    data-testid="drawer"
-    tabindex="0"
+    class="emotion-12"
   >
-    <div
-      class="emotion-1"
+    <button
+      class="emotion-13"
+      data-testid="contained-button"
+      type="button"
     >
-      <div
-        class="emotion-0"
-        data-testid="atom-1"
+      <span
+        class="emotion-14"
+        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      />
+      <span
+        class="emotion-15"
+        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
       >
-        <div
-          class="emotion-3"
+        <span
+          class="emotion-16"
+          data-testid="content-box"
         >
-          <div
-            class="emotion-4"
+          <span
+            class="emotion-17"
+            data-testid="button-text"
           >
-            <div
-              class="emotion-5"
-            >
-              <span
-                class="emotion-6"
-                data-testid="body"
-              >
-                100% - 295px
-              </span>
-            </div>
-            <div
-              class="emotion-7"
-            >
-              <div
-                class="emotion-8"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  400px - 295px(set minWidth)
-                </span>
-              </div>
-              <div
-                class="emotion-10"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  100% - 295px
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="emotion-12"
-          style="transform: translateX(-320px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        >
-          <div
-            class="emotion-13"
-            data-testid="drawer-panel"
-          >
-            <div
-              class="emotion-14"
-            >
-              <div
-                class="emotion-15"
-              >
-                <div
-                  class="emotion-16"
-                  data-testid="drawer-header"
-                >
-                  <div
-                    class="emotion-17"
-                  >
-                    <h2
-                      class="emotion-18"
-                    >
-                      Lorem ipsum dolor sit amet, con secte tur adipiscing elit
-                    </h2>
-                    <div
-                      class="emotion-19"
-                    >
-                      <button
-                        class="emotion-20"
-                        data-testid="icon-button"
-                        type="button"
-                      >
-                        <span
-                          class="emotion-21"
-                          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                        >
-                          <svg
-                            class="emotion-22"
-                            data-testid="close-thin"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              class="emotion-23"
-                              d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="emotion-24"
-                  kind="default"
-                />
-                <div
-                  class="emotion-25"
-                >
-                  <div
-                    class="emotion-26"
-                  >
-                    <span
-                      class="emotion-27"
-                      data-testid="body"
-                    >
-                      Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-                    </span>
-                    <span
-                      class="emotion-28"
-                      data-testid="body"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="emotion-29"
-              >
-                <div
-                  class="emotion-24"
-                  kind="default"
-                />
-                <div
-                  class="emotion-16"
-                  data-testid="drawer-footer"
-                >
-                  <button
-                    class="emotion-32"
-                    data-testid="contained-button"
-                    type="button"
-                  >
-                    <span
-                      class="emotion-33"
-                      style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    />
-                    <span
-                      class="emotion-34"
-                      style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    >
-                      <span
-                        class="emotion-35"
-                        data-testid="content-box"
-                      >
-                        <span
-                          class="emotion-36"
-                          data-testid="button-text"
-                        >
-                          confirm
-                        </span>
-                      </span>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`<Drawer /> when Drawer is rendering each placement match snapshot 7`] = `
-.emotion-0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.emotion-1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-}
-
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: auto;
-  width: 100%;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #ff5d00;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-6 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  font-weight: 400;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 400px;
-  height: 295px;
-  min-width: 400px;
-  background-color: #e30f32;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 295px;
-  background-color: #078641;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  cursor: default;
-  width: 100%;
-  height: 100%;
-  background-color: #000000b2;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  opacity: 0;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  height: 100%;
-  background-color: #ffffff;
-  top: 0;
-  right: -320px;
-  z-index: 3;
-  box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 320px;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  height: 100%;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.emotion-17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-}
-
-.emotion-19 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-weight: 700;
-  font-size: 1rem;
-  line-height: 1.25rem;
-  word-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-}
-
-.emotion-20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: inherit;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  border-radius: 2px;
-}
-
-.emotion-22 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
-}
-
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  border-width: 0;
-  border-color: #00000026;
-  border-style: solid;
-  width: 100%;
-  height: 0;
-  border-top-width: 1px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.emotion-26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  overflow: auto;
-}
-
-.emotion-27 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  width: 100%;
-  padding: 8px;
-}
-
-.emotion-28 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-29 {
-  text-align: left;
-  color: #0c0c0c;
-  -webkit-text-fill-color: #0c0c0c;
-  text-fill-color: #0c0c0c;
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-weight: 400;
-}
-
-.emotion-30 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-
-.emotion-33 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.emotion-34 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-35 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.emotion-36 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-37 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
-<div>
-  <div
-    class="emotion-0"
-    data-testid="drawer"
-    tabindex="0"
-  >
-    <div
-      class="emotion-1"
-    >
-      <div
-        class="emotion-0"
-        data-testid="atom-1"
-      >
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-4"
-          >
-            <div
-              class="emotion-5"
-            >
-              <span
-                class="emotion-6"
-                data-testid="body"
-              >
-                100% - 295px
-              </span>
-            </div>
-            <div
-              class="emotion-7"
-            >
-              <div
-                class="emotion-8"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  400px - 295px(set minWidth)
-                </span>
-              </div>
-              <div
-                class="emotion-10"
-              >
-                <span
-                  class="emotion-6"
-                  data-testid="body"
-                >
-                  100% - 295px
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="emotion-12"
-          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-          tabindex="0"
-        />
-        <div
-          class="emotion-13"
-          style="transform: translateX(-320px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        >
-          <div
-            class="emotion-14"
-            data-testid="drawer-panel"
-          >
-            <div
-              class="emotion-15"
-            >
-              <div
-                class="emotion-16"
-              >
-                <div
-                  class="emotion-17"
-                  data-testid="drawer-header"
-                >
-                  <div
-                    class="emotion-18"
-                  >
-                    <h2
-                      class="emotion-19"
-                    >
-                      Lorem ipsum dolor sit amet, con secte tur adipiscing elit
-                    </h2>
-                    <div
-                      class="emotion-20"
-                    >
-                      <button
-                        class="emotion-21"
-                        data-testid="icon-button"
-                        type="button"
-                      >
-                        <span
-                          class="emotion-22"
-                          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                        >
-                          <svg
-                            class="emotion-23"
-                            data-testid="close-thin"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              class="emotion-24"
-                              d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-                            />
-                          </svg>
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  class="emotion-25"
-                  kind="default"
-                />
-                <div
-                  class="emotion-26"
-                >
-                  <div
-                    class="emotion-27"
-                  >
-                    <span
-                      class="emotion-28"
-                      data-testid="body"
-                    >
-                      Excepturi assumenda tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
-                    </span>
-                    <span
-                      class="emotion-29"
-                      data-testid="body"
-                    >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit?
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="emotion-30"
-              >
-                <div
-                  class="emotion-25"
-                  kind="default"
-                />
-                <div
-                  class="emotion-17"
-                  data-testid="drawer-footer"
-                >
-                  <button
-                    class="emotion-33"
-                    data-testid="contained-button"
-                    type="button"
-                  >
-                    <span
-                      class="emotion-34"
-                      style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    />
-                    <span
-                      class="emotion-35"
-                      style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-                    >
-                      <span
-                        class="emotion-36"
-                        data-testid="content-box"
-                      >
-                        <span
-                          class="emotion-37"
-                          data-testid="button-text"
-                        >
-                          confirm
-                        </span>
-                      </span>
-                    </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            OPEN
+          </span>
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
