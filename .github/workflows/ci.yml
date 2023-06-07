@@ -47,7 +47,7 @@ jobs:
       - name: Typecheck Affected Project
         run: yarn nx affected --target=typecheck --parallel=1
       - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@master
+        uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           git-commit: ${{ steps.setSHAs.outputs.head }}
