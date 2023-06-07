@@ -5697,15 +5697,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/rollup@npm:16.2.1":
-  version: 16.2.1
-  resolution: "@nrwl/rollup@npm:16.2.1"
-  dependencies:
-    "@nx/rollup": 16.2.1
-  checksum: 1be539cc78713a7b19c88b0d7136a554e7b70be0a9e980314c0c38d493c8b49c0b9403a53a5d8e8e244672dc18ae16a0fff4d7c0bb9ee3226f9107fbd39c9fa3
-  languageName: node
-  linkType: hard
-
 "@nrwl/storybook@npm:16.2.1":
   version: 16.2.1
   resolution: "@nrwl/storybook@npm:16.2.1"
@@ -6107,34 +6098,6 @@ __metadata:
     file-loader: ^6.2.0
     minimatch: 3.0.5
   checksum: e5c75da8008c0f34f3f1b7e7cd2bba8dbc5a253f16ec5a85138bff7aed54ef3ecaa90d19a08dc59ec55cd9d7dea12353bed18f7c9cca879f0a0c90af4e96eae4
-  languageName: node
-  linkType: hard
-
-"@nx/rollup@npm:16.2.1":
-  version: 16.2.1
-  resolution: "@nx/rollup@npm:16.2.1"
-  dependencies:
-    "@nrwl/rollup": 16.2.1
-    "@nx/devkit": 16.2.1
-    "@nx/js": 16.2.1
-    "@rollup/plugin-babel": ^5.3.0
-    "@rollup/plugin-commonjs": ^20.0.0
-    "@rollup/plugin-image": ^2.1.0
-    "@rollup/plugin-json": ^4.1.0
-    "@rollup/plugin-node-resolve": ^13.0.4
-    autoprefixer: ^10.4.9
-    babel-plugin-transform-async-to-promises: ^0.8.15
-    chalk: ^4.1.0
-    dotenv: ~10.0.0
-    postcss: ^8.4.14
-    rollup: ^2.56.2
-    rollup-plugin-copy: ^3.4.0
-    rollup-plugin-peer-deps-external: ^2.2.4
-    rollup-plugin-postcss: ^4.0.1
-    rollup-plugin-typescript2: 0.34.1
-    rxjs: ^7.8.0
-    tslib: ^2.3.0
-  checksum: 089e45c11be50255bfd409060e7d5069c36f94d948fb11c7f8a8473739917994a4c2d54a34820db3d0bd30332081aecc406823e0faca25b66e6252887ded8989
   languageName: node
   linkType: hard
 
@@ -14278,7 +14241,6 @@ __metadata:
     "@nx/plugin": 16.2.1
     "@nx/react": 16.2.1
     "@nx/react-native": 16.2.1
-    "@nx/rollup": 16.2.1
     "@nx/storybook": 16.2.1
     "@nx/web": 16.2.1
     "@nx/workspace": 16.2.1
@@ -33819,22 +33781,6 @@ __metadata:
     rollup: ">=1.26.3"
     typescript: ">=2.4.0"
   checksum: ceebc686195f8140ee64b89cbd3a284bda50435081bea8f55f404ea293c02ec9787e9147e33f8e078b2c4772d9f198e66f900f54ca77ccda63db9ec2511db665
-  languageName: node
-  linkType: hard
-
-"rollup-plugin-typescript2@npm:0.34.1":
-  version: 0.34.1
-  resolution: "rollup-plugin-typescript2@npm:0.34.1"
-  dependencies:
-    "@rollup/pluginutils": ^4.1.2
-    find-cache-dir: ^3.3.2
-    fs-extra: ^10.0.0
-    semver: ^7.3.7
-    tslib: ^2.4.0
-  peerDependencies:
-    rollup: ">=1.26.3"
-    typescript: ">=2.4.0"
-  checksum: 107e66b9ab1aaf4b237564e500ea9de9f2d3f0a81be5139dc753fc76bbf00a1a2230eb1ec59145d2dfc4c4da9be8211f1f3e1370007efe1e24ce45a00905e558
   languageName: node
   linkType: hard
 

@@ -6,7 +6,7 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "dependsOn": [
         {
@@ -37,7 +37,7 @@
       }
     },
     "build-native": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-layouts",
