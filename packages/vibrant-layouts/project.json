@@ -1,4 +1,5 @@
 {
+  "name": "vibrant-layouts",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-layouts/src",
   "projectType": "library",
@@ -10,7 +11,7 @@
       "dependsOn": [
         {
           "target": "build",
-          "projects": "dependencies"
+          "dependencies": true
         },
         "build-native"
       ],
@@ -57,18 +58,20 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/vibrant-layouts/tsconfig.lib.json"]
+        "commands": [
+          "yarn tsc --project ./packages/vibrant-layouts/tsconfig.lib.json"
+        ]
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/vibrant-layouts/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/vibrant-layouts"],
       "options": {
         "jestConfig": "packages/vibrant-layouts/jest.config.ts",
@@ -76,13 +79,10 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/vibrant-layouts/.storybook"
-        }
+        "configDir": "packages/vibrant-layouts/.storybook"
       },
       "configurations": {
         "ci": {
@@ -91,14 +91,11 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/vibrant-layouts",
-        "config": {
-          "configFolder": "packages/vibrant-layouts/.storybook"
-        }
+        "configDir": "packages/vibrant-layouts/.storybook",
+        "outputDir": "dist/storybook/vibrant-layouts"
       },
       "configurations": {
         "ci": {

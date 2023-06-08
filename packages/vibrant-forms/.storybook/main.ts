@@ -1,7 +1,7 @@
-import type { StorybookViteConfig } from '@storybook/builder-vite';
+import type { StorybookConfig } from '@storybook/react-vite';
 import rootConfig from '../../../.storybook/main';
 
-const config: StorybookViteConfig = {
+const config: StorybookConfig = {
   ...rootConfig,
   stories: ['../src/**/*.stories.tsx'],
 };
