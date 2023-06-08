@@ -1,4 +1,5 @@
 {
+  "name": "vibrant-icons",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-icons/src",
   "projectType": "library",
@@ -30,18 +31,20 @@
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
-        "commands": ["yarn tsc --project ./packages/vibrant-icons/tsconfig.lib.json"]
+        "commands": [
+          "yarn tsc --project ./packages/vibrant-icons/tsconfig.lib.json"
+        ]
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["packages/vibrant-icons/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/packages/vibrant-icons"],
       "options": {
         "jestConfig": "packages/vibrant-icons/jest.config.ts",
@@ -49,13 +52,10 @@
       }
     },
     "storybook": {
-      "executor": "@nrwl/storybook:storybook",
+      "executor": "@nx/storybook:storybook",
       "options": {
-        "uiFramework": "@storybook/react",
         "port": 4400,
-        "config": {
-          "configFolder": "packages/vibrant-icons/.storybook"
-        }
+        "configDir": "packages/vibrant-icons/.storybook"
       },
       "configurations": {
         "ci": {
@@ -64,14 +64,11 @@
       }
     },
     "build-storybook": {
-      "executor": "@nrwl/storybook:build",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/storybook:build",
+      "outputs": ["{options.outputDir}"],
       "options": {
-        "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/vibrant-icons",
-        "config": {
-          "configFolder": "packages/vibrant-icons/.storybook"
-        }
+        "configDir": "packages/vibrant-icons/.storybook",
+        "outputDir": "dist/storybook/vibrant-icons"
       },
       "configurations": {
         "ci": {
