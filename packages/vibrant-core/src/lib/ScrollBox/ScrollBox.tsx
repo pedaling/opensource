@@ -6,11 +6,17 @@ import type { ScrollBoxProps } from './ScrollBoxProps';
 import { interpolation, shouldForwardProp } from './ScrollBoxProps';
 
 const SystemScrollBox = styled(
-  forwardRef<any, ScrollBoxProps>(({ as = 'div', ...restProps }, ref) =>
-    createElement(as, {
-      ref,
-      ...restProps,
-    })
+  forwardRef<any, ScrollBoxProps>(
+    ({ as = 'div', ariaChecked, ariaCurrent, ariaLabel, ariaLabelledBy, ariaSelected, ...restProps }, ref) =>
+      createElement(as, {
+        ref,
+        'aria-label': ariaLabel,
+        'aria-checked': ariaChecked,
+        'aria-labelledby': ariaLabelledBy,
+        'aria-current': ariaCurrent,
+        'aria-selected': ariaSelected,
+        ...restProps,
+      })
   ),
   {
     shouldForwardProp,
