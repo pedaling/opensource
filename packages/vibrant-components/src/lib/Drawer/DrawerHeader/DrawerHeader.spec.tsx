@@ -41,8 +41,8 @@ describe('<DrawerHeader />', () => {
       renderer = render(<DrawerHeader title="DrawerHeader test" closable={true} />);
     });
 
-    it('match snapshot', () => {
-      expect(renderer.container).toMatchSnapshot();
+    it('should render close button', () => {
+      expect(renderer.getByRole('button', { name: 'close-button' })).toBeTruthy();
     });
   });
 });

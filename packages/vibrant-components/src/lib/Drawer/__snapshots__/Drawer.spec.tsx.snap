@@ -226,144 +226,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   width: 100%;
 }
 
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  z-index: 99;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: auto;
-  border-radius: 2px;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-17 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
 <div>
   <div
     class="emotion-0"
@@ -374,6 +236,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
       class="emotion-1"
     >
       <div
+        aria-label="drawer-content-container"
         class="emotion-2"
       >
         <div
@@ -413,36 +276,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-12"
-  >
-    <button
-      class="emotion-13"
-      data-testid="contained-button"
-      type="button"
-    >
-      <span
-        class="emotion-14"
-        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      />
-      <span
-        class="emotion-15"
-        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      >
-        <span
-          class="emotion-16"
-          data-testid="content-box"
-        >
-          <span
-            class="emotion-17"
-            data-testid="button-text"
-          >
-            OPEN
-          </span>
-        </span>
-      </span>
-    </button>
   </div>
 </div>
 `;
@@ -673,144 +506,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   width: 100%;
 }
 
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  z-index: 99;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: auto;
-  border-radius: 2px;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-17 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
 <div>
   <div
     class="emotion-0"
@@ -821,6 +516,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
       class="emotion-1"
     >
       <div
+        aria-label="drawer-content-container"
         class="emotion-2"
       >
         <div
@@ -860,36 +556,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-12"
-  >
-    <button
-      class="emotion-13"
-      data-testid="contained-button"
-      type="button"
-    >
-      <span
-        class="emotion-14"
-        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      />
-      <span
-        class="emotion-15"
-        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      >
-        <span
-          class="emotion-16"
-          data-testid="content-box"
-        >
-          <span
-            class="emotion-17"
-            data-testid="button-text"
-          >
-            OPEN
-          </span>
-        </span>
-      </span>
-    </button>
   </div>
 </div>
 `;
@@ -1116,144 +782,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   width: 100%;
 }
 
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  z-index: 99;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: auto;
-  border-radius: 2px;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-17 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
 <div>
   <div
     class="emotion-0"
@@ -1264,6 +792,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
       class="emotion-1"
     >
       <div
+        aria-label="drawer-content-container"
         class="emotion-2"
       >
         <div
@@ -1303,36 +832,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-12"
-  >
-    <button
-      class="emotion-13"
-      data-testid="contained-button"
-      type="button"
-    >
-      <span
-        class="emotion-14"
-        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      />
-      <span
-        class="emotion-15"
-        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      >
-        <span
-          class="emotion-16"
-          data-testid="content-box"
-        >
-          <span
-            class="emotion-17"
-            data-testid="button-text"
-          >
-            OPEN
-          </span>
-        </span>
-      </span>
-    </button>
   </div>
 </div>
 `;
@@ -1559,144 +1058,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   width: 100%;
 }
 
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  z-index: 99;
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  cursor: pointer;
-  background-color: #ff5d00;
-  border-width: 0;
-  padding: 0;
-  overflow: hidden;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  z-index: 0;
-  width: auto;
-  border-radius: 2px;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #ffffff;
-}
-
-.emotion-15 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: auto;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-}
-
-.emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  box-sizing: border-box;
-  position: relative;
-  opacity: 1;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-17 {
-  text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 700;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-
 <div>
   <div
     class="emotion-0"
@@ -1707,6 +1068,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
       class="emotion-1"
     >
       <div
+        aria-label="drawer-content-container"
         class="emotion-2"
       >
         <div
@@ -1746,36 +1108,6 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-12"
-  >
-    <button
-      class="emotion-13"
-      data-testid="contained-button"
-      type="button"
-    >
-      <span
-        class="emotion-14"
-        style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      />
-      <span
-        class="emotion-15"
-        style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-      >
-        <span
-          class="emotion-16"
-          data-testid="content-box"
-        >
-          <span
-            class="emotion-17"
-            data-testid="button-text"
-          >
-            OPEN
-          </span>
-        </span>
-      </span>
-    </button>
   </div>
 </div>
 `;

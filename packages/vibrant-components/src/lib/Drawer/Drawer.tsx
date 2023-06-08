@@ -73,7 +73,7 @@ export const Drawer = ({
                   duration={ANIMATE_DURATION}
                   animation={{ width: isPanelOpen ? containerSize - panelSizePixel : '100%' }}
                 >
-                  <Box>{contents}</Box>
+                  <ScrollBox ariaLabel="drawer-content-container">{contents}</ScrollBox>
                 </Transition>
                 {panel}
               </HStack>
@@ -88,7 +88,7 @@ export const Drawer = ({
                     x: isPanelOpen ? panelSizePixel : 0,
                   }}
                 >
-                  <ScrollBox>{contents}</ScrollBox>
+                  <ScrollBox ariaLabel="drawer-content-container">{contents}</ScrollBox>
                 </Transition>
               </HStack>
             )}
@@ -101,7 +101,7 @@ export const Drawer = ({
                     y: isPanelOpen ? panelSizePixel : 0,
                   }}
                 >
-                  <ScrollBox onLayout={onContainerLayout} top={-panelSizePixel}>
+                  <ScrollBox ariaLabel="drawer-content-container" onLayout={onContainerLayout} top={-panelSizePixel}>
                     {contents}
                   </ScrollBox>
                 </Transition>
@@ -109,14 +109,16 @@ export const Drawer = ({
             )}
             {placement === 'bottom' && (
               <VStack width="100%" height="100%">
-                <ScrollBox onLayout={onContainerLayout}>{contents}</ScrollBox>
+                <ScrollBox ariaLabel="drawer-content-container" onLayout={onContainerLayout}>
+                  {contents}
+                </ScrollBox>
                 {panel}
               </VStack>
             )}
           </>
         ) : (
           <Box width="100%" height="100%" position="relative">
-            <ScrollBox width="100%" onLayout={onContainerLayout}>
+            <ScrollBox ariaLabel="drawer-content-container" width="100%" onLayout={onContainerLayout}>
               {contents}
             </ScrollBox>
             {hasDim && (
@@ -132,6 +134,7 @@ export const Drawer = ({
                   opacity={0}
                   onClick={closePanel}
                   cursor="default"
+                  ariaLabel="dim-background"
                 />
               </Transition>
             )}

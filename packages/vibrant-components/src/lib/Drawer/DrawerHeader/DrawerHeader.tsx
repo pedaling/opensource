@@ -31,7 +31,13 @@ export const DrawerHeader = withDrawerHeaderVariation(
             )}
             {closable && (
               <Box py={2}>
-                <IconButton IconComponent={Icon.Close.Thin} size="sm" color="onView1" onClick={togglePanel} />
+                <IconButton
+                  IconComponent={Icon.Close.Thin}
+                  size="sm"
+                  color="onView1"
+                  onClick={togglePanel}
+                  ariaLabel="close-button"
+                />
               </Box>
             )}
           </HStack>
