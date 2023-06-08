@@ -5,6 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import type { StorybookViteConfig } from '@storybook/builder-vite';
 
 const IS_NATIVE = process.env['STORYBOOK_REACT_NATIVE'] === 'true';
+
 const storybookLibraries = [
   'vibrant-core',
   'vibrant-components',
@@ -58,6 +59,7 @@ const config: StorybookViteConfig & {
     '@storybook/addon-measure',
     '@storybook/addon-toolbars',
     '@storybook/addon-viewport',
+    'storybook-addon-performance/register',
     '@storybook/native-addon/dist/register.js',
   ].filter(Boolean),
   typescript: {
@@ -90,11 +92,7 @@ const config: StorybookViteConfig & {
             }
           } else if (
             filteredValue.every(
-              ({ value }) =>
-                typeof value === 'string' &&
-                value[0] !== '"' &&
-                !['true', 'false'].includes(value) &&
-                !prop.name.includes('RadiusLevel')
+              ({ value }) => typeof value === 'string' && value[0] !== '"' && !['true', 'false'].includes(value) && !prop.name.includes('RadiusLevel')
             )
           ) {
             return false;
@@ -164,7 +162,7 @@ const config: StorybookViteConfig & {
       return {
         ...config,
         // eslint-disable-next-line @typescript-eslint/naming-convention
-        STORYBOOK_NATIVE_LOCAL_EMULATOR: process.env.DISABLE_SIMULATOR ?? 'true',
+        STORYBOOK_NATIVE_LOCAL_EMULATOR: !process.env.DISABLE_SIMULATOR,
       };
     }
 

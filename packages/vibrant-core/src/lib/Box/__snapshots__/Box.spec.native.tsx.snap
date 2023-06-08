@@ -3,7 +3,7 @@
 exports[`Native <Box /> as prop when empty box created match snapshot 1`] = `
 <View
   style={
-    {
+    Object {
       "alignContent": "stretch",
       "boxSizing": "border-box",
       "display": "flex",
@@ -31,7 +31,7 @@ exports[`Native <Box /> base prop when Pressable box created match snapshot 1`] 
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    {
+    Object {
       "alignContent": "stretch",
       "boxSizing": "border-box",
       "display": "flex",
@@ -46,7 +46,7 @@ exports[`Native <Box /> base prop when Pressable box created match snapshot 1`] 
 exports[`Native <Box /> default style when styled box created match snapshot 1`] = `
 <View
   style={
-    {
+    Object {
       "alignContent": "stretch",
       "boxSizing": "border-box",
       "display": "flex",

@@ -1,5 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
   "$id": "GenerateStoryImport",
   "title": "",
   "type": "object",
@@ -13,8 +14,5 @@
       "description": "glob pattern stories"
     }
   },
-  "required": [
-    "outputFile",
-    "stories"
-  ]
+  "required": ["outputFile", "stories"]
 }
