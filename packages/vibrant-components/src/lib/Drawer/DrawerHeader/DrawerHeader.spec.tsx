@@ -42,7 +42,7 @@ describe('<DrawerHeader />', () => {
     });
 
     it('should render close button', () => {
-      expect(renderer.getByRole('button', { name: 'close-button' })).toBeTruthy();
+      expect(renderer.getByRole('button', { name: '닫기' })).toBeTruthy();
     });
   });
 });

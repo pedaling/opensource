@@ -253,7 +253,7 @@ exports[`<DrawerHeader /> when children is set match snapshot 1`] = `
         class="emotion-5"
       >
         <button
-          aria-label="close-button"
+          aria-label="닫기"
           class="emotion-6"
           data-testid="icon-button"
           type="button"

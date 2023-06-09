@@ -1,3 +1,4 @@
+import { waitFor } from '@testing-library/react';
 import { Box } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -58,6 +59,52 @@ describe('<Drawer />', () => {
       expect(placementTopRenderer.container).toMatchSnapshot();
 
       expect(placementBottomRenderer.container).toMatchSnapshot();
+    });
+  });
+
+  describe('when Drawer type is standard', () => {
+    let renderer: ReactRenderer;
+    let container: HTMLElement;
+    let computedStyle: CSSStyleDeclaration;
+
+    beforeEach(async () => {
+      renderer = render(
+        <Box width={880}>
+          <Drawer type="standard" placement="right" open={true}>
+            <Box />
+            <Drawer.Panel defaultSize={400}>
+              <Box />
+            </Drawer.Panel>
+          </Drawer>
+        </Box>
+      );
+
+      container = renderer.getByTestId('drawer-content-container');
+
+      computedStyle = getComputedStyle(container);
+    });
+
+    it('content size is shrink', async () => {
+      await waitFor(() => expect(computedStyle.width).toEqual('480px'));
+    });
+  });
+
+  describe('when Drawer type is modal', () => {
+    let renderer: ReactRenderer;
+
+    beforeEach(async () => {
+      renderer = render(
+        <Drawer type="modal" placement="right" open={true}>
+          <Box />
+          <Drawer.Panel defaultSize={320}>
+            <Box />
+          </Drawer.Panel>
+        </Drawer>
+      );
+    });
+
+    it('dim element is activate', () => {
+      expect(renderer.getByTestId('dim-background')).toHaveStyleRule('background-color', '#000000b2');
     });
   });
 });

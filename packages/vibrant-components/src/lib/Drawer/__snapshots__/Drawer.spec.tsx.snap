@@ -236,8 +236,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
       class="emotion-1"
     >
       <div
-        aria-label="drawer-content-container"
         class="emotion-2"
+        data-testid="drawer-content-container"
       >
         <div
           class="emotion-3"
@@ -516,8 +516,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
       class="emotion-1"
     >
       <div
-        aria-label="drawer-content-container"
         class="emotion-2"
+        data-testid="drawer-content-container"
       >
         <div
           class="emotion-3"
@@ -792,8 +792,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
       class="emotion-1"
     >
       <div
-        aria-label="drawer-content-container"
         class="emotion-2"
+        data-testid="drawer-content-container"
       >
         <div
           class="emotion-3"
@@ -1068,8 +1068,8 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
       class="emotion-1"
     >
       <div
-        aria-label="drawer-content-container"
         class="emotion-2"
+        data-testid="drawer-content-container"
       >
         <div
           class="emotion-3"

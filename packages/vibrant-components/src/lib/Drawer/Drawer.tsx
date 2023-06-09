@@ -73,7 +73,7 @@ export const Drawer = ({
                   duration={ANIMATE_DURATION}
                   animation={{ width: isPanelOpen ? containerSize - panelSizePixel : '100%' }}
                 >
-                  <ScrollBox ariaLabel="drawer-content-container">{contents}</ScrollBox>
+                  <ScrollBox data-testid="drawer-content-container">{contents}</ScrollBox>
                 </Transition>
                 {panel}
               </HStack>
@@ -88,7 +88,7 @@ export const Drawer = ({
                     x: isPanelOpen ? panelSizePixel : 0,
                   }}
                 >
-                  <ScrollBox ariaLabel="drawer-content-container">{contents}</ScrollBox>
+                  <ScrollBox data-testid="drawer-content-container">{contents}</ScrollBox>
                 </Transition>
               </HStack>
             )}
@@ -101,7 +101,7 @@ export const Drawer = ({
                     y: isPanelOpen ? panelSizePixel : 0,
                   }}
                 >
-                  <ScrollBox ariaLabel="drawer-content-container" onLayout={onContainerLayout} top={-panelSizePixel}>
+                  <ScrollBox data-testid="drawer-content-container" onLayout={onContainerLayout} top={-panelSizePixel}>
                     {contents}
                   </ScrollBox>
                 </Transition>
@@ -109,7 +109,7 @@ export const Drawer = ({
             )}
             {placement === 'bottom' && (
               <VStack width="100%" height="100%">
-                <ScrollBox ariaLabel="drawer-content-container" onLayout={onContainerLayout}>
+                <ScrollBox data-testid="drawer-content-container" onLayout={onContainerLayout}>
                   {contents}
                 </ScrollBox>
                 {panel}
@@ -118,7 +118,7 @@ export const Drawer = ({
           </>
         ) : (
           <Box width="100%" height="100%" position="relative">
-            <ScrollBox ariaLabel="drawer-content-container" width="100%" onLayout={onContainerLayout}>
+            <ScrollBox data-testid="drawer-content-container" width="100%" onLayout={onContainerLayout}>
               {contents}
             </ScrollBox>
             {hasDim && (
@@ -134,7 +134,7 @@ export const Drawer = ({
                   opacity={0}
                   onClick={closePanel}
                   cursor="default"
-                  ariaLabel="dim-background"
+                  data-testid="dim-background"
                 />
               </Transition>
             )}

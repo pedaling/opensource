@@ -122,6 +122,11 @@ export type Translation = {
       };
     };
   };
+  drawer: {
+    drawerHeader: {
+      ariaLabel: string;
+    };
+  };
 };
 
 export type DependencyName = keyof Dependencies;
@@ -208,6 +213,11 @@ const ConfigContext = createContext<ConfigContextValue>({
           contains: '포함한다',
           notContains: '포함하지 않는다',
         },
+      },
+    },
+    drawer: {
+      drawerHeader: {
+        ariaLabel: '닫기',
       },
     },
   },

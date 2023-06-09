@@ -81,3 +81,4 @@ export { RadioGroupField } from './lib/RadioGroupField';
 export { Slider } from './lib/Slider';
 export { Popover } from './lib/Popover';
 export { PopoverOpener } from './lib/PopoverOpener';
+export { Drawer, DrawerTranslation } from './lib/Drawer';
