@@ -66,7 +66,13 @@ export type ScrollBoxProps = {
   scrollEnabled?: ResponsiveValue<boolean>;
   onLayout?: (layoutEvent: LayoutEvent) => void;
 } & SystemProps &
-  Pick<ScrollViewProps, 'keyboardShouldPersistTaps'>;
+  Pick<ScrollViewProps, 'keyboardShouldPersistTaps'> & {
+    ariaLabel?: string;
+    ariaChecked?: boolean;
+    ariaLabelledBy?: string;
+    ariaCurrent?: 'date' | 'location' | 'page' | 'step' | 'time' | 'true';
+    ariaSelected?: boolean;
+  };
 
 export const interpolation = injectContext(
   createInterpolation(systemProps, {
