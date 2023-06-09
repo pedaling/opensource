@@ -3,7 +3,7 @@ import type { ResponsiveValue } from '../../types';
 import type { BorderSystemProps, MediaSystemProps, SizingSystemProps } from '../props';
 import { withVariation } from '../withVariation';
 
-type ImageProps = {
+export type ImageProps = {
   src: ResponsiveValue<ImageRequireSource | string>;
   ref?: any;
   alt?: string;
