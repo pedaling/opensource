@@ -27,8 +27,7 @@ export const Basic: ComponentStory<typeof Transition> = props => (
   </Transition>
 );
 
-export const withAction: ComponentStory<typeof Transition> = props => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+export const WithAction: ComponentStory<typeof Transition> = props => {
   const [isTransition, setTransition] = useState(false);
 
   return (
