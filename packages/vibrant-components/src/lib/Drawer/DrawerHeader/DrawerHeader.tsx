@@ -1,4 +1,4 @@
-import { Box, Text } from '@vibrant-ui/core';
+import { Box, Text, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Divider } from '../../Divider';
 import { HStack } from '../../HStack';
@@ -8,6 +8,11 @@ import { withDrawerHeaderVariation } from './DrawerHeaderProps';
 
 export const DrawerHeader = withDrawerHeaderVariation(
   ({ testId = 'drawer-header', children, title, closable = false }) => {
+    const {
+      translations: {
+        drawer: { drawerHeader },
+      },
+    } = useConfig();
     const { togglePanel } = useDrawer();
 
     return (
@@ -31,7 +36,13 @@ export const DrawerHeader = withDrawerHeaderVariation(
             )}
             {closable && (
               <Box py={2}>
-                <IconButton IconComponent={Icon.Close.Thin} size="sm" color="onView1" onClick={togglePanel} />
+                <IconButton
+                  IconComponent={Icon.Close.Thin}
+                  size="sm"
+                  color="onView1"
+                  onClick={togglePanel}
+                  ariaLabel={drawerHeader.ariaLabel}
+                />
               </Box>
             )}
           </HStack>

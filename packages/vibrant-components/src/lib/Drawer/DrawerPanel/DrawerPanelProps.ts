@@ -7,7 +7,7 @@ export type PercentWidth = `${number}%`;
 export type DefaultPanelSizeType = PercentWidth | number | 'auto';
 
 export type DrawerPanelProps = {
-  children: ReactElement[];
+  children: ReactElement | ReactElement[];
   testId?: string;
   defaultSize?: ResponsiveValue<DefaultPanelSizeType>;
 };

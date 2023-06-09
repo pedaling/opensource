@@ -26,6 +26,10 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
 
   const isStandardType = type === 'standard';
 
+  const isStandardLeft = isStandardType && placement === 'left';
+
+  const isStandardTop = isStandardType && placement === 'top';
+
   const onPanelLayout = ({ width, height }: LayoutEvent) => {
     const currentPanelSize = isVertical ? width : height;
 
@@ -39,7 +43,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
       return Number((ratio * value).toFixed(1));
     }
 
-    return value;
+    return size;
   };
 
   const panelSize = useMemo(() => {
@@ -51,7 +55,8 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   }, [containerSize, defaultSize]);
 
   const panelContent = isVertical ? (
-    <Box width={panelSize} data-testid={testId} flexGrow={1} height="100%" onLayout={onPanelLayout}>
+    <Box width={panelSize} data-testid={testId} flexGrow={1} height="100%" onLayout={onPanelLayout} flexDirection="row">
+      {!isStandardLeft && <Divider direction="vertical" kind="default" />}
       <VStack height="100%" alignVertical="space-between">
         <Box width="100%" overflow="hidden">
           {header}
@@ -59,9 +64,11 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Box>
         <Box width="100%">{footer}</Box>
       </VStack>
+      {isStandardLeft && <Divider direction="vertical" kind="default" />}
     </Box>
   ) : (
-    <Box height={panelSize} width="100%" data-testid={testId} onLayout={onPanelLayout}>
+    <Box height={panelSize} width="100%" data-testid={testId} onLayout={onPanelLayout} flexDirection="column">
+      {!isStandardTop && <Divider direction="horizontal" kind="default" />}
       <VStack height="100%" alignVertical="space-between">
         <Box width="100%" overflow="hidden">
           {header}
@@ -69,6 +76,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
         </Box>
         <Box width="100%">{footer}</Box>
       </VStack>
+      {isStandardTop && <Divider direction="horizontal" kind="default" />}
     </Box>
   );
 
@@ -76,9 +84,6 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
     <>
       {placement === 'right' && (
         <Box position="absolute" top={0} right={0} height="100%" flexDirection="row">
-          <Box flex={0}>
-            <Divider direction="vertical" kind="default" />
-          </Box>
           <Transition
             animation={{
               x: isOpen ? -panelSizePixel : 0,
@@ -105,44 +110,31 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
               {panelContent}
             </Box>
           </Transition>
-          <Box flex={0}>
-            <Divider direction="vertical" kind="default" />
-          </Box>
         </Box>
       )}
       {placement === 'top' && (
-        <>
-          <Transition
-            animation={{
-              y: isOpen ? panelSizePixel : 0,
-            }}
-            duration={ANIMATE_DURATION}
-            easing="easeOutQuad"
-          >
-            <Box height={panelSize} top={-panelSizePixel}>
-              {panelContent}
-            </Box>
-          </Transition>
-          <Box flex={0}>
-            <Divider direction="horizontal" kind="default" />
+        <Transition
+          animation={{
+            y: isOpen ? panelSizePixel : 0,
+          }}
+          duration={ANIMATE_DURATION}
+          easing="easeOutQuad"
+        >
+          <Box height={panelSize} top={-panelSizePixel}>
+            {panelContent}
           </Box>
-        </>
+        </Transition>
       )}
       {placement === 'bottom' && (
-        <>
-          <Box flex={0}>
-            <Divider direction="horizontal" kind="default" />
-          </Box>
-          <Transition
-            animation={{
-              height: isOpen ? panelSize : 0,
-            }}
-            duration={ANIMATE_DURATION}
-            easing="easeOutQuad"
-          >
-            <Box height={panelSize}>{panelContent}</Box>
-          </Transition>
-        </>
+        <Transition
+          animation={{
+            height: isOpen ? panelSize : 0,
+          }}
+          duration={ANIMATE_DURATION}
+          easing="easeOutQuad"
+        >
+          <Box height={panelSize}>{panelContent}</Box>
+        </Transition>
       )}
     </>
   ) : (

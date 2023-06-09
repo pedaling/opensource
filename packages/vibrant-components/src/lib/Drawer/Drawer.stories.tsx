@@ -66,7 +66,7 @@ export const Basic: ComponentStory<typeof Drawer> = props => (
         </Paper>
       </HStack>
     </VStack>
-    <Drawer.Panel defaultSize={['30%', '70%']}>
+    <Drawer.Panel defaultSize={['30%', '25%']}>
       <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
       <VStack spacing={30} p={8}>
         <Body level={2}>

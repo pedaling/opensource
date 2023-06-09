@@ -5,7 +5,6 @@ import { Box, PressableBox, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { useEscapeEvent } from '@vibrant-ui/utils';
 import { HStack } from '../HStack';
-import { Space } from '../Space';
 import { VStack } from '../VStack';
 import { DrawerProvider } from './DrawerContext';
 import { DrawerFooter } from './DrawerFooter/DrawerFooter';
@@ -65,83 +64,83 @@ export const Drawer = ({
       panelSizePixel={panelSizePixel}
       deliverPanelSize={panelSize => setPanelSizePixel(panelSize)}
     >
-      <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef}>
-        <Space height={10} />
-        <Box overflow="hidden">
-          {isStandardType ? (
-            <>
-              {placement === 'right' && (
-                <HStack width="100%" onLayout={onContainerLayout}>
-                  <Transition
-                    duration={ANIMATE_DURATION}
-                    animation={{ width: isPanelOpen ? containerSize - panelSizePixel : '100%' }}
-                  >
-                    <ScrollBox>{contents}</ScrollBox>
-                  </Transition>
-                  {panel}
-                </HStack>
-              )}
-              {placement === 'left' && (
-                <HStack width="100%" onLayout={onContainerLayout}>
-                  {panel}
-                  <Transition
-                    duration={ANIMATE_DURATION}
-                    animation={{
-                      width: isPanelOpen ? containerSize - panelSizePixel : '100%',
-                      x: isPanelOpen ? panelSizePixel : 0,
-                    }}
-                  >
-                    <ScrollBox>{contents}</ScrollBox>
-                  </Transition>
-                </HStack>
-              )}
-              {placement === 'top' && (
-                <VStack width="100%" height="100%">
-                  {panel}
-                  <Transition
-                    duration={ANIMATE_DURATION}
-                    animation={{
-                      y: isPanelOpen ? panelSizePixel : 0,
-                    }}
-                  >
-                    <ScrollBox onLayout={onContainerLayout} top={-panelSizePixel}>
-                      {contents}
-                    </ScrollBox>
-                  </Transition>
-                </VStack>
-              )}
-              {placement === 'bottom' && (
-                <VStack width="100%" height="100%">
-                  <ScrollBox onLayout={onContainerLayout}>{contents}</ScrollBox>
-                  {panel}
-                </VStack>
-              )}
-            </>
-          ) : (
-            <Box width="100%" height="100%" position="relative">
-              <ScrollBox width="100%" onLayout={onContainerLayout}>
-                {contents}
-              </ScrollBox>
-              {hasDim && (
-                <Transition animation={{ opacity: isPanelOpen ? 1 : 0 }} duration={ANIMATE_DURATION}>
-                  <PressableBox
-                    width="100%"
-                    height="100%"
-                    backgroundColor="dim"
-                    position="absolute"
-                    top={0}
-                    left={0}
-                    zIndex={2}
-                    opacity={0}
-                    onClick={closePanel}
-                    cursor="default"
-                  />
+      <Box width="100%" height="100%" data-testid={testId} tabIndex={0} ref={drawerRef} overflow="hidden">
+        {isStandardType ? (
+          <>
+            {placement === 'right' && (
+              <HStack width="100%" onLayout={onContainerLayout}>
+                <Transition
+                  duration={ANIMATE_DURATION}
+                  animation={{ width: isPanelOpen ? containerSize - panelSizePixel : '100%' }}
+                >
+                  <ScrollBox data-testid="drawer-content-container">{contents}</ScrollBox>
                 </Transition>
-              )}
-              {panel}
-            </Box>
-          )}
-        </Box>
+                {panel}
+              </HStack>
+            )}
+            {placement === 'left' && (
+              <HStack width="100%" onLayout={onContainerLayout}>
+                {panel}
+                <Transition
+                  duration={ANIMATE_DURATION}
+                  animation={{
+                    width: isPanelOpen ? containerSize - panelSizePixel : '100%',
+                    x: isPanelOpen ? panelSizePixel : 0,
+                  }}
+                >
+                  <ScrollBox data-testid="drawer-content-container">{contents}</ScrollBox>
+                </Transition>
+              </HStack>
+            )}
+            {placement === 'top' && (
+              <VStack width="100%" height="100%">
+                {panel}
+                <Transition
+                  duration={ANIMATE_DURATION}
+                  animation={{
+                    y: isPanelOpen ? panelSizePixel : 0,
+                  }}
+                >
+                  <ScrollBox data-testid="drawer-content-container" onLayout={onContainerLayout} top={-panelSizePixel}>
+                    {contents}
+                  </ScrollBox>
+                </Transition>
+              </VStack>
+            )}
+            {placement === 'bottom' && (
+              <VStack width="100%" height="100%">
+                <ScrollBox data-testid="drawer-content-container" onLayout={onContainerLayout}>
+                  {contents}
+                </ScrollBox>
+                {panel}
+              </VStack>
+            )}
+          </>
+        ) : (
+          <Box width="100%" height="100%" position="relative">
+            <ScrollBox data-testid="drawer-content-container" width="100%" onLayout={onContainerLayout}>
+              {contents}
+            </ScrollBox>
+            {hasDim && (
+              <Transition animation={{ opacity: isPanelOpen ? 1 : 0 }} duration={ANIMATE_DURATION}>
+                <PressableBox
+                  width="100%"
+                  height="100%"
+                  backgroundColor="dim"
+                  position="absolute"
+                  top={0}
+                  left={0}
+                  zIndex={2}
+                  opacity={0}
+                  onClick={closePanel}
+                  cursor="default"
+                  data-testid="dim-background"
+                />
+              </Transition>
+            )}
+            {panel}
+          </Box>
+        )}
       </Box>
     </DrawerProvider>
   );
