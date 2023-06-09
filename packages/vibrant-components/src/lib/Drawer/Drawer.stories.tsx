@@ -21,7 +21,7 @@ export default {
 
 export const Basic: ComponentStory<typeof Drawer> = props => (
   <Drawer {...props}>
-    <VStack spacing={10} width={700}>
+    <VStack spacing={10}>
       <Paper width="100%" height={100} backgroundColor="informative">
         <VStack alignContent="center" alignVertical="center" alignHorizontal="center">
           <Body level={1}>100% - 100px</Body>
