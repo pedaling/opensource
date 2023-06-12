@@ -81,6 +81,7 @@ export { useLockBodyScroll } from './lib/useLockBodyScroll';
 export { PageScroll, useScroll } from './lib/PageScroll';
 export type { EventListenerCallback, ScrollDirection } from './lib/PageScroll';
 export { Image } from './lib/Image';
+export type { ImageProps } from './lib/Image';
 export { TabView } from './lib/TabView';
 export { TabViewItem } from './lib/TabViewItem';
 export { FlatList } from './lib/FlatList';

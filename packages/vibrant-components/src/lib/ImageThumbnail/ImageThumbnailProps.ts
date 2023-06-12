@@ -1,16 +1,10 @@
-import type { ResponsiveValue } from '@vibrant-ui/core';
+import type { ImageProps, ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
-import type { BorderRadiusLevel } from '@vibrant-ui/theme';
 
 export type ImageThumbnailProps = {
-  width?: ResponsiveValue<number | string>;
-  borderRadius?: ResponsiveValue<BorderRadiusLevel>;
-  src: ResponsiveValue<string>;
-  loading?: 'eager' | 'lazy';
   dim?: ResponsiveValue<boolean>;
   aspectRatio: number;
-  alt?: string;
   testId?: string;
-};
+} & Pick<ImageProps, 'alt' | 'borderRadiusLevel' | 'loading' | 'objectFit' | 'sizes' | 'src' | 'width'>;
 
 export const withImageThumbnailVariation = withVariation<ImageThumbnailProps>('ImageThumbnail')();
