@@ -3,10 +3,10 @@ import type { EasingFunction } from 'react-native';
 import type { AnimatableValue, EasingFunctionFactory } from 'react-native-reanimated';
 import { Easing, runOnJS, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import type { AllSystemProps } from '@vibrant-ui/core';
-import { useCurrentTheme, useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import type { ColorToken } from '@vibrant-ui/theme';
+import { useInterpolation } from '@vibrant-ui/core';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
+import { transformMotionProps } from '../props/transform';
 import type { AnimationResult } from '../types';
 
 type UseTransitionProps = {
@@ -24,30 +24,11 @@ const convertEasing: Record<keyof EasingDictionary, EasingFunction | EasingFunct
 };
 
 export const useTransition = ({ animation, duration = 200, easing, onStart, onEnd }: UseTransitionProps) => {
-  const { getResponsiveValue } = useResponsiveValue();
-  const {
-    theme: { colors },
-  } = useCurrentTheme();
-  const { interpolation } = useInterpolation();
+  const { interpolation } = useInterpolation(transformMotionProps);
 
-  const responsiveAnimation: AllSystemProps & TransformMotionProps = useMemo(
-    () =>
-      Object.entries(interpolation(animation)).reduce(
-        (acc, [key, val]) => ({
-          ...acc,
-          [key]:
-            key === 'transform'
-              ? Object.fromEntries(
-                  Object.entries(val).map(([transformKey, transformValue]) => [
-                    transformKey,
-                    getResponsiveValue(transformValue),
-                  ])
-                )
-              : getResponsiveValue(val),
-        }),
-        {}
-      ),
-    [animation, getResponsiveValue, interpolation]
+  const animationStyle: AllSystemProps & TransformMotionProps = useMemo(
+    () => interpolation(animation),
+    [animation, interpolation]
   );
   const isStarted = useRef(false);
   const initialAnimation = useRef(true);
@@ -78,7 +59,7 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
   }, [onEnd]);
 
   const timingAnimation = useCallback(
-    (value: AnimatableValue, index: number, j = 0) => {
+    (value: AnimatableValue, callbackFlag: boolean) => {
       'worklet';
 
       return withTiming(
@@ -88,7 +69,7 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
           easing: convertEasing[easing],
         },
         () => {
-          if (index === 0 && j === 0) {
+          if (callbackFlag) {
             runOnJS(onEndCallback)();
           }
         }
@@ -99,20 +80,24 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
   const transition = useAnimatedStyle(() => {
     runOnJS(onStartCallback)();
 
-    return Object.entries(responsiveAnimation).reduce((acc, [key, val], i) => {
-      const value = key.match(/color/i)
-        ? timingAnimation(colors[val as ColorToken], i, 0)
-        : key === 'transform'
-        ? Object.entries(val).map(([transformKey, transformValue], j) => ({
-            [transformKey]: timingAnimation(transformValue as AnimatableValue, i, j),
-          }))
-        : timingAnimation(val, i, 0);
+    return Object.entries(animationStyle).reduce((acc, [key, val], i) => {
+      const value =
+        key === 'transform'
+          ? val.map((transformStyle: Record<string, any>, j: number) =>
+              Object.fromEntries(
+                Object.entries(transformStyle).map(([transformKey, transformValue]) => [
+                  transformKey,
+                  timingAnimation(transformValue, i === 0 && j === 0),
+                ])
+              )
+            )
+          : timingAnimation(val, i === 0);
 
       return Object.assign({}, acc, {
         [key]: value,
       });
     }, {});
-  }, [JSON.stringify(responsiveAnimation)]);
+  }, [JSON.stringify(animationStyle)]);
 
   return transition;
 };

@@ -1,7 +1,7 @@
 import type { ComponentClass } from 'react';
 import { useEffect, useImperativeHandle, useMemo } from 'react';
 import Animated, { interpolate, interpolateColor, useAnimatedStyle } from 'react-native-reanimated';
-import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
+import { useInterpolation } from '@vibrant-ui/core';
 import { transformMotionProps } from '../props/transform';
 import { useMotion } from '../useMotion';
 import { withTransformStyle } from '../withTransformStyle';
@@ -10,7 +10,6 @@ import { withMotionVariation } from './MotionProps';
 export const Motion = withMotionVariation(
   ({ innerRef, children, duration, loop, from, to, delay = 0, easing = 'easeOutQuad', onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
-    const { getResponsiveValue } = useResponsiveValue();
     const { progress, startAnimation, stopAnimation, resumeAnimation } = useMotion({
       loop: Boolean(loop),
       duration,
@@ -23,15 +22,32 @@ export const Motion = withMotionVariation(
       const interpolationTo = interpolation(to);
 
       return withTransformStyle(
-        Object.keys(interpolationTo).reduce<Record<string, [number, number]>>(
-          (acc, key) => ({
+        Object.keys(interpolationTo).reduce<Record<string, [number, number]>>((acc, key) => {
+          if (key === 'transform') {
+            const value = interpolationFrom[key];
+            const transformValue = value.map((transformStyle: Record<string, any>) =>
+              Object.fromEntries(
+                Object.entries(transformStyle).map(([transformKey], i) => [
+                  transformKey,
+                  [interpolationFrom[key][i][transformKey], interpolationTo[key][i][transformKey]],
+                ])
+              )
+            );
+
+            return {
+              ...acc,
+              [key]: transformValue,
+            };
+          }
+
+          return {
             ...acc,
-            [key]: [getResponsiveValue(interpolationFrom[key]), getResponsiveValue(interpolationTo[key])],
-          }),
-          {}
-        )
+            [key]: [interpolationFrom[key], interpolationTo[key]],
+          };
+        }, {})
       );
-    }, [from, getResponsiveValue, interpolation, to]);
+    }, [from, interpolation, to]);
+
     const style = useAnimatedStyle(
       () =>
         Object.keys(styleWithTransform).reduce((acc, key) => {

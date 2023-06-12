@@ -9,9 +9,7 @@ export default {
   args: {
     animation: {
       top: [0, 10, 20],
-      transform: {
-        translateX: 50,
-      },
+      x: 50,
       opacity: 1,
       backgroundColor: 'primary',
     },
@@ -38,9 +36,7 @@ export const WithAction: ComponentStory<typeof Transition> = props => {
           ? {
               animation: {
                 top: [100, 200, 300],
-                transform: {
-                  translateX: 0,
-                },
+                x: 0,
                 opacity: 0.5,
                 backgroundColor: 'black',
               },
