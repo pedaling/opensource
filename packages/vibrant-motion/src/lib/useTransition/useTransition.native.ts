@@ -97,7 +97,7 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
         [key]: value,
       });
     }, {});
-  }, [JSON.stringify(animationStyle)]);
+  }, [animation]);
 
   return transition;
 };
