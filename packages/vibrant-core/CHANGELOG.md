@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.63.12](https://github.com/pedaling/opensource/compare/vibrant-core-0.63.11...vibrant-core-0.63.12) (2023-06-12)
+
+
+### Features
+
+* ImageThumbnail에 sizes 속성을 추가한다 ([#769](https://github.com/pedaling/opensource/issues/769)) ([7a41694](https://github.com/pedaling/opensource/commit/7a4169467d2a88a0ae586c0b04d211810b43ede8))
+* scrollbox에 aria속성 추가 ([#768](https://github.com/pedaling/opensource/issues/768)) ([ac2ea51](https://github.com/pedaling/opensource/commit/ac2ea51392989946e3b54c332d2ecd438a318d14))
+
 ### [0.63.11](https://github.com/pedaling/opensource/compare/vibrant-core-0.63.10...vibrant-core-0.63.11) (2023-06-08)
 
 ### [0.63.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.63.2...vibrant-core-0.63.3) (2023-06-07)
