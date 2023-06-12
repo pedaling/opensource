@@ -33,7 +33,7 @@ describe('propVariant', () => {
       });
 
       it('should return variants value by received prop value', () => {
-        expect(propVariantFn({ size: 'sm' })).toStrictEqual({ width: [10] });
+        expect(propVariantFn({ size: 'sm' })).toStrictEqual({ width: 10 });
 
         expect(propVariantFn({ size: ['sm', 'md'] })).toStrictEqual({
           width: [10, 20],
