@@ -1,69 +1,74 @@
+import type { ComponentClass } from 'react';
 import { useEffect, useImperativeHandle, useMemo } from 'react';
-import { useSpring } from '@react-spring/core';
+import Animated, { interpolate, interpolateColor, useAnimatedStyle } from 'react-native-reanimated';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
-import { useObjectMemo, useSafeDeps } from '@vibrant-ui/utils';
-import { easings } from '../constants';
-import { env } from '../constants/env';
 import { transformMotionProps } from '../props/transform';
-import { useReactSpring } from '../useReactSpring';
+import { useMotion } from '../useMotion';
 import { withTransformStyle } from '../withTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, loop, from, to, delay, easing = 'easeOutQuad', onEnd }) => {
+  ({ innerRef, children, duration, loop, from, to, delay = 0, easing = 'easeOutQuad', onEnd }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
-    const { animated } = useReactSpring();
-    const onEndRef = useSafeDeps(onEnd);
-
-    const AnimatedComponent = useMemo(
-      () => (typeof children.type === 'string' ? animated[children.type as 'div'] : animated(children.type)),
-      [animated, children.type]
-    );
     const { getResponsiveValue } = useResponsiveValue();
+    const { progress, startAnimation, stopAnimation, resumeAnimation } = useMotion({
+      loop: Boolean(loop),
+      duration,
+      easing,
+      onEnd,
+      delay,
+    });
+    const styleWithTransform = useMemo(() => {
+      const interpolationFrom = interpolation(from);
+      const interpolationTo = interpolation(to);
 
-    const [fromStyle, toStyle] = useObjectMemo(
-      useMemo(
-        () => [
-          interpolation(
-            Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
-          ),
-          interpolation(Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)]))),
-        ],
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        [JSON.stringify(from), JSON.stringify(to), getResponsiveValue, interpolation]
-      )
+      return withTransformStyle(
+        Object.keys(interpolationTo).reduce<Record<string, [number, number]>>(
+          (acc, key) => ({
+            ...acc,
+            [key]: [getResponsiveValue(interpolationFrom[key]), getResponsiveValue(interpolationTo[key])],
+          }),
+          {}
+        )
+      );
+    }, [from, getResponsiveValue, interpolation, to]);
+    const style = useAnimatedStyle(
+      () =>
+        Object.keys(styleWithTransform).reduce((acc, key) => {
+          if (key === 'transform') {
+            const transform = styleWithTransform['transform']?.map((transformStyle: Record<string, any>) => {
+              const [[key, value]] = Object.entries(transformStyle) as [string, [number, number]][];
+
+              return { [key]: interpolate(progress.value, [0, 1], value) };
+            });
+
+            return Object.assign({}, acc, {
+              [key]: transform,
+            });
+          }
+
+          const value = key.match(/color/i)
+            ? interpolateColor(progress.value, [0, 1], styleWithTransform[key], 'RGB')
+            : interpolate(progress.value, [0, 1], styleWithTransform[key]);
+
+          return Object.assign({}, acc, {
+            [key]: value,
+          });
+        }, {}),
+      [styleWithTransform]
     );
-
-    const option = useMemo(
-      () => ({
-        from: fromStyle,
-        to: toStyle,
-        config: {
-          duration,
-          easing: easing && easings[easing],
-        },
-        loop,
-        delay,
-        onRest: () => {
-          onEndRef.current?.();
-        },
-      }),
-      [delay, duration, easing, fromStyle, loop, onEndRef, toStyle]
-    );
-
-    const [styles, springApi] = useSpring(() => ({
-      from,
-    }));
 
     useImperativeHandle(
       innerRef,
       () => ({
-        start: (startOption = {}) => springApi.start({ ...option, ...startOption }),
-        pause: () => springApi.pause(),
-        stop: () => springApi.stop(),
-        resume: () => springApi.resume(),
+        start: () => {
+          startAnimation();
+        },
+        pause: stopAnimation,
+        stop: () => {},
+        resume: resumeAnimation,
       }),
-      [option, springApi]
+      [resumeAnimation, startAnimation, stopAnimation]
     );
 
     useEffect(() => {
@@ -71,9 +76,14 @@ export const Motion = withMotionVariation(
         return;
       }
 
-      springApi.start(option);
-    }, [innerRef, option, springApi]);
+      startAnimation();
+    }, [innerRef, loop, startAnimation]);
 
-    return <AnimatedComponent style={withTransformStyle(env === 'test' ? option.to : styles)} {...children.props} />;
+    const AnimatedViewComponent = useMemo(
+      () => Animated.createAnimatedComponent(children.type as ComponentClass),
+      [children.type]
+    );
+
+    return <AnimatedViewComponent {...children.props} style={style}></AnimatedViewComponent>;
   }
 );
