@@ -80,18 +80,18 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
   const transition = useAnimatedStyle(() => {
     runOnJS(onStartCallback)();
 
-    return Object.entries(animationStyle).reduce((acc, [key, val], i) => {
+    return Object.entries(animationStyle).reduce((acc, [key, val], styleIndex) => {
       const value =
         key === 'transform'
-          ? val.map((transformStyle: Record<string, any>, j: number) =>
+          ? val.map((transformStyle: Record<string, any>, transformIndex: number) =>
               Object.fromEntries(
                 Object.entries(transformStyle).map(([transformKey, transformValue]) => [
                   transformKey,
-                  timingAnimation(transformValue, i === 0 && j === 0),
+                  timingAnimation(transformValue, styleIndex === 0 && transformIndex === 0),
                 ])
               )
             )
-          : timingAnimation(val, i === 0);
+          : timingAnimation(val, styleIndex === 0);
 
       return Object.assign({}, acc, {
         [key]: value,
