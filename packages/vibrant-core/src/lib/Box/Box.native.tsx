@@ -52,26 +52,30 @@ export const Box = styled(
           }
         : undefined;
 
-      return (
-        <OnColorContainer backgroundColor={backgroundColor}>
-          <Component
-            ref={ref}
-            style={restStyle}
-            onLayout={handleLayout}
-            nativeID={id}
-            accessibilityRole={role}
-            accessibilityLabel={ariaLabel}
-            accessibilityLabelledBy={ariaLabelledBy}
-            {...(isDefined(ariaChecked) || isDefined(ariaSelected)
-              ? { accessibilityState: { checked: ariaChecked, selected: ariaSelected } }
-              : {})}
-            collapsable={ref ? false : undefined}
-            {...(base ? { as } : {})}
-            {...restProps}
-            {...props}
-          />
-        </OnColorContainer>
+      const element = (
+        <Component
+          ref={ref}
+          style={restStyle}
+          onLayout={handleLayout}
+          nativeID={id}
+          accessibilityRole={role}
+          accessibilityLabel={ariaLabel}
+          accessibilityLabelledBy={ariaLabelledBy}
+          {...(isDefined(ariaChecked) || isDefined(ariaSelected)
+            ? { accessibilityState: { checked: ariaChecked, selected: ariaSelected } }
+            : {})}
+          collapsable={ref ? false : undefined}
+          {...(base ? { as } : {})}
+          {...restProps}
+          {...props}
+        />
       );
+
+      if (backgroundColor) {
+        return <OnColorContainer backgroundColor={backgroundColor}>{element}</OnColorContainer>;
+      }
+
+      return element;
     }
   ),
   {
