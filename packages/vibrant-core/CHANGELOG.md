@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.64.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.63.13...vibrant-core-0.64.0) (2023-06-15)
+
+
+### Features
+
+* Image 컴포넌트에서 dependecy Image 컴포넌트에 속성을 그대로 전달하도록 구현을 수정한다. ([#693](https://github.com/pedaling/opensource/issues/693)) ([6f50e20](https://github.com/pedaling/opensource/commit/6f50e2050e34c6a790ab75d7d33fc1526e759725))
+
+
+### Performance Improvements
+
+* wrap OnColorContainer only when backgroundColor prop defined ([#772](https://github.com/pedaling/opensource/issues/772)) ([7c35159](https://github.com/pedaling/opensource/commit/7c351598b0032351f4d321fb950b7be54a384ef4))
+
 ### [0.63.13](https://github.com/pedaling/opensource/compare/vibrant-core-0.63.12...vibrant-core-0.63.13) (2023-06-12)
 
 ### [0.63.12](https://github.com/pedaling/opensource/compare/vibrant-core-0.63.11...vibrant-core-0.63.12) (2023-06-12)
