@@ -23,38 +23,25 @@ export const Box = styled(
       },
       ref
     ) => {
-      const Component = base ? (base as ComponentType<any>) : undefined;
-
       const { ref: layoutEventRef } = useLayoutEvent(onLayout);
       const composeRef = useComposedRef(ref, layoutEventRef);
 
-      if (Component) {
-        return (
-          <OnColorContainer backgroundColor={backgroundColor}>
-            <Component
-              ref={composeRef}
-              {...(as ? { as } : {})}
-              aria-label={ariaLabel}
-              aria-current={ariaCurrent}
-              {...restProps}
-            />
-          </OnColorContainer>
-        );
+      const element = createElement(base ?? as ?? 'div', {
+        ref: composeRef,
+        ...(base && as ? { as } : {}),
+        'aria-label': ariaLabel,
+        'aria-checked': ariaChecked,
+        'aria-labelledby': ariaLabelledBy,
+        'aria-current': ariaCurrent,
+        'aria-selected': ariaSelected,
+        ...restProps,
+      });
+
+      if (backgroundColor) {
+        return <OnColorContainer backgroundColor={backgroundColor}>{element}</OnColorContainer>;
       }
 
-      return (
-        <OnColorContainer backgroundColor={backgroundColor}>
-          {createElement(as ?? 'div', {
-            ref: composeRef,
-            'aria-label': ariaLabel,
-            'aria-checked': ariaChecked,
-            'aria-labelledby': ariaLabelledBy,
-            'aria-current': ariaCurrent,
-            'aria-selected': ariaSelected,
-            ...restProps,
-          })}
-        </OnColorContainer>
-      );
+      return element;
     }
   ),
   {
