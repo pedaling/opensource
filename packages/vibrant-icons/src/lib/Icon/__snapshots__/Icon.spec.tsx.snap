@@ -14134,7 +14134,7 @@ exports[`<Icon /> when Laptop.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M20.5 2.5h-17C2.65 2.5 2 3.15 2 4v13h20V4c0-.85-.65-1.5-1.5-1.5Zm2.25 16h-8c-.15 0-.25.1-.25.25 0 .4-.35.75-.75.75h-3.5c-.4 0-.75-.35-.75-.75 0-.15-.1-.25-.25-.25h-8c-.15 0-.25.1-.25.25V20c0 .85.65 1.5 1.5 1.5h19c.85 0 1.5-.65 1.5-1.5v-1.25c0-.15-.1-.25-.25-.25Z"
+      d="M50 412c-23.16 0-42-18.84-42-42v-12h145.39l.53 1.2c3.67 8.38 11.94 13.8 21.08 13.8h130c9.14 0 17.42-5.42 21.08-13.8l.53-1.2H472v12c0 23.16-18.84 42-42 42H50Zm-2-70V110c0-23.16 18.84-42 42-42h300c23.16 0 42 18.84 42 42v232H48Z"
     />
   </svg>
 </div>
@@ -14188,7 +14188,7 @@ exports[`<Icon /> when Laptop.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M19.5 5v9.5h-15V5h15Zm1-2.5h-17C2.65 2.5 2 3.15 2 4v13h20V4c0-.85-.65-1.5-1.5-1.5Zm2.25 16h-8c-.15 0-.25.1-.25.25 0 .4-.35.75-.75.75h-3.5c-.4 0-.75-.35-.75-.75 0-.15-.1-.25-.25-.25h-8c-.15 0-.25.1-.25.25V20c0 .85.65 1.5 1.5 1.5h19c.85 0 1.5-.65 1.5-1.5v-1.25c0-.15-.1-.25-.25-.25Z"
+      d="M50 412c-23.16 0-42-18.84-42-42v-12h145.39l.53 1.2c3.67 8.38 11.94 13.8 21.08 13.8h130c9.14 0 17.42-5.42 21.08-13.8l.53-1.2H472v12c0 23.16-18.84 42-42 42H50Zm-2-70V110c0-23.16 18.84-42 42-42h300c23.16 0 42 18.84 42 42v232H48Zm340-44V112H92v186h296Z"
     />
   </svg>
 </div>
@@ -14242,7 +14242,7 @@ exports[`<Icon /> when Laptop.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M22.75 18.5h-8c-.15 0-.25.1-.25.25 0 .4-.35.75-.75.75h-3.5c-.4 0-.75-.35-.75-.75 0-.15-.1-.25-.25-.25h-8c-.15 0-.25.1-.25.25V20c0 .85.65 1.5 1.5 1.5h19c.85 0 1.5-.65 1.5-1.5v-1.25c0-.15-.1-.25-.25-.25Zm-2.5-14.25v11H3.75v-11h16.5Zm.25-1.75h-17C2.65 2.5 2 3.15 2 4v13h20V4c0-.85-.65-1.5-1.5-1.5Z"
+      d="M427 110c0-20.4-16.6-37-37-37H90c-20.4 0-37 16.6-37 37v227h374V110Zm-34 193H87V107h306v196Zm74 60v7c0 20.4-16.6 37-37 37H50c-20.4 0-37-16.6-37-37v-7h137.2c4.82 9.18 14.34 15 24.8 15h130c10.46 0 19.99-5.82 24.8-15H467Z"
     />
   </svg>
 </div>
@@ -16960,7 +16960,7 @@ exports[`<Icon /> when Mobile.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M18.5 2h-13C4.65 2 4 2.65 4 3.5v17c0 .85.65 1.5 1.5 1.5h13c.85 0 1.5-.65 1.5-1.5v-17c0-.85-.65-1.5-1.5-1.5ZM14 17.75c0 .15-.1.25-.25.25h-3.5c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h3.5c.15 0 .25.1.25.25v2Z"
+      d="M140 452c-23.16 0-42-18.84-42-42V70c0-23.16 18.84-42 42-42h200c23.16 0 42 18.84 42 42v340c0 23.16-18.84 42-42 42H140Zm130-330c12.13 0 22-9.87 22-22s-9.87-22-22-22h-60c-12.13 0-22 9.87-22 22s9.87 22 22 22h60Z"
     />
   </svg>
 </div>
@@ -17014,11 +17014,7 @@ exports[`<Icon /> when Mobile.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M17.5 4.5v15h-11v-15h11Zm1-2.5h-13C4.65 2 4 2.65 4 3.5v17c0 .85.65 1.5 1.5 1.5h13c.85 0 1.5-.65 1.5-1.5v-17c0-.85-.65-1.5-1.5-1.5Z"
-    />
-    <path
-      class="emotion-1"
-      d="M13.75 18h-3.5c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h3.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25Z"
+      d="M140 452c-23.16 0-42-18.84-42-42V70c0-23.16 18.84-42 42-42h200c23.16 0 42 18.84 42 42v340c0 23.16-18.84 42-42 42H140Zm198-44V72H142v336h196Zm-68-276c12.13 0 22-9.87 22-22s-9.87-22-22-22h-60c-12.13 0-22 9.87-22 22s9.87 22 22 22h60Z"
     />
   </svg>
 </div>
@@ -17072,11 +17068,7 @@ exports[`<Icon /> when Mobile.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M18.25 20.25H5.75V3.75h12.5v16.5ZM18.5 2h-13C4.65 2 4 2.65 4 3.5v17c0 .85.65 1.5 1.5 1.5h13c.85 0 1.5-.65 1.5-1.5v-17c0-.85-.65-1.5-1.5-1.5Z"
-    />
-    <path
-      class="emotion-1"
-      d="M13.75 18h-3.5c-.15 0-.25-.1-.25-.25V16.5c0-.15.1-.25.25-.25h3.5c.15 0 .25.1.25.25v1.25c0 .15-.1.25-.25.25Z"
+      d="M140 447c-20.4 0-37-16.6-37-37V70c0-20.4 16.6-37 37-37h200c20.4 0 37 16.6 37 37v340c0 20.4-16.6 37-37 37H140Zm-3-34h206V67H137v346Zm133-286c9.38 0 17-7.62 17-17s-7.62-17-17-17h-60c-9.38 0-17 7.62-17 17s7.62 17 17 17h60Z"
     />
   </svg>
 </div>
@@ -17130,7 +17122,7 @@ exports[`<Icon /> when Monitor.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M21.75 2H2.25C2.1 2 2 2.1 2 2.25v14.5c0 .15.1.25.25.25h8.5v2.5h-3.5c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h9.5c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25h-3.5V17h8.5c.15 0 .25-.1.25-.25V2.25c0-.15-.1-.25-.25-.25Z"
+      d="M162.5 422v-44H198v-26H80c-23.16 0-42-18.84-42-42V100c0-23.16 18.84-42 42-42h320c23.16 0 42 18.84 42 42v210c0 23.16-18.84 42-42 42H282v26h34.5v44h-154Z"
     />
   </svg>
 </div>
@@ -17184,7 +17176,7 @@ exports[`<Icon /> when Monitor.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M21.75 2H2.25C2.1 2 2 2.1 2 2.25v14.5c0 .15.1.25.25.25h8.5v2.5h-3.5c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h9.5c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25h-3.5V17h8.5c.15 0 .25-.1.25-.25V2.25c0-.15-.1-.25-.25-.25ZM19.5 14.5h-15v-10h15v10Z"
+      d="M162.5 422v-44H198v-26H80c-23.16 0-42-18.84-42-42V100c0-23.16 18.84-42 42-42h320c23.16 0 42 18.84 42 42v210c0 23.16-18.84 42-42 42H282v26h34.5v44h-154ZM398 308V102H82v206h316Z"
     />
   </svg>
 </div>
@@ -17238,7 +17230,7 @@ exports[`<Icon /> when Monitor.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M21.75 2H2.25C2.1 2 2 2.1 2 2.25v14.5c0 .15.1.25.25.25h8.9v3.25h-3.9c-.15 0-.25.1-.25.25v1.25c0 .15.1.25.25.25h9.5c.15 0 .25-.1.25-.25V20.5c0-.15-.1-.25-.25-.25h-3.9V17h8.85c.15 0 .25-.1.25-.25V2.25C22 2.1 21.9 2 21.75 2Zm-1.5 13.25H3.75V3.75h16.5v11.5Z"
+      d="M167.51 417v-34H203v-36H80c-20.4 0-37-16.6-37-37V100c0-20.4 16.6-37 37-37h320c20.4 0 37 16.6 37 37v210c0 20.4-16.6 37-37 37H277v36h34.51v34h-144ZM77 313h326V97H77v216Z"
     />
   </svg>
 </div>
@@ -27794,6 +27786,168 @@ exports[`<Icon /> when Subtitle.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when Tablet.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="tablet-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M410 78H70c-23.16 0-42 18.84-42 42v240c0 23.16 18.84 42 42 42h340c23.16 0 42-18.84 42-42V120c0-23.16-18.84-42-42-42ZM300 352H180c-12.13 0-22-9.87-22-22s9.87-22 22-22h120c12.13 0 22 9.87 22 22s-9.87 22-22 22Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Tablet.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="tablet-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M158 320c0-12.13 9.87-22 22-22h120c12.13 0 22 9.87 22 22s-9.87 22-22 22H180c-12.13 0-22-9.87-22-22Zm294-200v240c0 23.16-18.84 42-42 42H70c-23.16 0-42-18.84-42-42V120c0-23.16 18.84-42 42-42h340c23.16 0 42 18.84 42 42Zm-44 2H72v236h336V122Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Tablet.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="tablet-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M410 83H70c-20.4 0-37 16.6-37 37v240c0 20.4 16.6 37 37 37h340c20.4 0 37-16.6 37-37V120c0-20.4-16.6-37-37-37Zm3 280H67V117h346v246Zm-250-43c0-9.38 7.62-17 17-17h120c9.38 0 17 7.62 17 17s-7.62 17-17 17H180c-9.38 0-17-7.62-17-17Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when TalkHelp.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -29615,6 +29769,168 @@ exports[`<Icon /> when Trash.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="m19.25 6.5-1 13.75H5.8L4.75 6.5c0-.15-.1-.25-.25-.25H3.25c-.15 0-.25.1-.25.25l1.15 15.25c0 .15.1.25.25.25h15.2c.15 0 .25-.1.25-.25L21 6.5c0-.15-.1-.25-.25-.25H19.5c-.15 0-.25.1-.25.25Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Tv.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="tv-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M410 68H70c-23.16 0-42 18.84-42 42v220c0 23.16 18.84 42 42 42h67.5v40h204v-40H410c23.16 0 42-18.84 42-42V110c0-23.16-18.84-42-42-42Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Tv.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="tv-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M410 68H70c-23.16 0-42 18.84-42 42v220c0 23.16 18.84 42 42 42h67.5v40h204v-40H410c23.16 0 42-18.84 42-42V110c0-23.16-18.84-42-42-42Zm-2 260H72V112h336v216Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Tv.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="tv-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M142.51 407v-40H70c-20.4 0-37-16.6-37-37V110c0-20.4 16.6-37 37-37h340c20.4 0 37 16.6 37 37v220c0 20.4-16.6 37-37 37h-73.49v40h-194ZM67 333h346V107H67v226Z"
     />
   </svg>
 </div>
