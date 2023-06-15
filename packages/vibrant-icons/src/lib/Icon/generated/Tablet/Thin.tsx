@@ -4,11 +4,11 @@ import type { IconComponent, IconProps } from '../../IconProp';
 export const Thin: IconComponent<IconProps, 'Thin'> = ({
   size = 24,
   fill = 'onColor',
-  testId = 'monitor-thin',
+  testId = 'tablet-thin',
   ...props
 }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M167.51 417v-34H203v-36H80c-20.4 0-37-16.6-37-37V100c0-20.4 16.6-37 37-37h320c20.4 0 37 16.6 37 37v210c0 20.4-16.6 37-37 37H277v36h34.51v34h-144ZM77 313h326V97H77v216Z" />
+    <Svg.Path d="M410 83H70c-20.4 0-37 16.6-37 37v240c0 20.4 16.6 37 37 37h340c20.4 0 37-16.6 37-37V120c0-20.4-16.6-37-37-37Zm3 280H67V117h346v246Zm-250-43c0-9.38 7.62-17 17-17h120c9.38 0 17 7.62 17 17s-7.62 17-17 17H180c-9.38 0-17-7.62-17-17Z" />
   </Svg>
 );
 

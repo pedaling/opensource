@@ -8,7 +8,7 @@ export const Regular: IconComponent<IconProps, 'Regular'> = ({
   ...props
 }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M21.75 2H2.25C2.1 2 2 2.1 2 2.25v14.5c0 .15.1.25.25.25h8.5v2.5h-3.5c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h9.5c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25h-3.5V17h8.5c.15 0 .25-.1.25-.25V2.25c0-.15-.1-.25-.25-.25ZM19.5 14.5h-15v-10h15v10Z" />
+    <Svg.Path d="M162.5 422v-44H198v-26H80c-23.16 0-42-18.84-42-42V100c0-23.16 18.84-42 42-42h320c23.16 0 42 18.84 42 42v210c0 23.16-18.84 42-42 42H282v26h34.5v44h-154ZM398 308V102H82v206h316Z" />
   </Svg>
 );
 
