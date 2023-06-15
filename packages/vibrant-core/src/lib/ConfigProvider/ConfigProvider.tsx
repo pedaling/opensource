@@ -3,6 +3,7 @@ import { createContext, useContext, useMemo } from 'react';
 import type { ImageRequireSource, PressableProps } from 'react-native';
 import * as ReactSpring from 'react-spring';
 import type { ReactElementChild, ResponsiveValue } from '../../types';
+import type { BorderSystemProps, DisplaySystemProps, MediaSystemProps, SizingSystemProps } from '../props';
 
 export type Dependencies = {
   nativeLinearGradient?: ComponentType<{
@@ -19,15 +20,20 @@ export type Dependencies = {
     }[];
   }>;
   reactSpringModule?: any;
-  image?: ComponentType<{
-    src: ImageRequireSource | string;
-    alt?: string;
-    ref?: any;
-    sizes?: ResponsiveValue<number>;
-    draggable?: boolean;
-    loading?: 'eager' | 'lazy';
-    onError?: () => void;
-  }>;
+  image?: ComponentType<
+    {
+      src: ImageRequireSource | string;
+      alt?: string;
+      ref?: any;
+      sizes?: ResponsiveValue<number>;
+      draggable?: boolean;
+      loading?: 'eager' | 'lazy';
+      onError?: () => void;
+    } & SizingSystemProps &
+      MediaSystemProps &
+      BorderSystemProps &
+      Pick<DisplaySystemProps, 'display'>
+  >;
   link?: ComponentType<
     {
       className?: string;

@@ -3,7 +3,6 @@ import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Box } from '../Box';
 import { ConfigProvider } from '../ConfigProvider';
 import { Image } from '../Image';
-import { Text } from '../Text';
 import { ThemeProvider } from '../ThemeProvider';
 
 describe('<Image />', () => {
@@ -127,25 +126,29 @@ describe('<Image />', () => {
   });
 
   describe('with dependencies', () => {
-    describe('when injected component is Box', () => {
+    describe('when injected component exists', () => {
+      const testSrc = 'https://cdn.class101.net/images/58037c45-3716-4eb0-9991-d68b4489215d';
+
       beforeEach(() => {
         renderer = render(
           <ConfigProvider
             dependencies={{
-              image: ({ src }) => (
-                <Box>
-                  <Text data-testid="image-text">{src}</Text>
-                </Box>
+              image: ({ src, alt = '', width = '100%', height = '100%' }) => (
+                <Box as="img" width={width} height={height} src={src as string} alt={alt} />
               ),
             }}
           >
-            <Image draggable={true} src="sample-image-src" />
+            <Image draggable={true} src={testSrc} width={200} height={200} />
           </ConfigProvider>
         );
       });
 
       it('it should be rendered with injected image component', () => {
-        expect(renderer.getByTestId('image-text').textContent).toEqual('sample-image-src');
+        expect(renderer.getByRole('img')).toHaveProperty('src', testSrc);
+      });
+
+      it('it should have styles passed by Image props', () => {
+        expect(renderer.getByRole('img')).toHaveStyle({ width: '200px', height: '200px' });
       });
     });
   });

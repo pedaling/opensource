@@ -1,3 +1,5 @@
+import type { ResponsiveValue } from '../../../types';
+
 export type MediaSystemProps = {
-  objectFit?: 'contain' | 'cover' | 'fill' | 'none';
+  objectFit?: ResponsiveValue<'contain' | 'cover' | 'fill' | 'none'>;
 };
