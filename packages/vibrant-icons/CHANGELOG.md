@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.3](https://github.com/pedaling/opensource/compare/vibrant-icons-0.64.2...vibrant-icons-0.64.3) (2023-06-16)
+
+
+### Features
+
+* **icon:** Add icons for login devices ([#773](https://github.com/pedaling/opensource/issues/773)) ([723bf8a](https://github.com/pedaling/opensource/commit/723bf8a45eff8f3ad9b9742d228ecaf7c7bed89f))
+
 ### [0.64.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.64.1...vibrant-icons-0.64.2) (2023-06-16)
 
 ### [0.64.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.64.0...vibrant-icons-0.64.1) (2023-06-16)
