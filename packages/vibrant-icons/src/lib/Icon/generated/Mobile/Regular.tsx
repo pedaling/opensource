@@ -7,8 +7,23 @@ export const Regular: IconComponent<IconProps, 'Regular'> = ({
   testId = 'mobile-regular',
   ...props
 }) => (
-  <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M140 452c-23.16 0-42-18.84-42-42V70c0-23.16 18.84-42 42-42h200c23.16 0 42 18.84 42 42v340c0 23.16-18.84 42-42 42H140Zm198-44V72H142v336h196Zm-68-276c12.13 0 22-9.87 22-22s-9.87-22-22-22h-60c-12.13 0-22 9.87-22 22s9.87 22 22 22h60Z" />
+  <Svg
+    id="Layer_1"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 24 24"
+    style={{
+      enableBackground: 'new 0 0 24 24',
+    }}
+    xmlSpace="preserve"
+    width={size}
+    height={size}
+    fill={fill}
+    data-testid={testId}
+    {...props}
+  >
+    <Svg.Path d="M7,22.6c-1.2,0-2.1-0.9-2.1-2.1v-17c0-1.2,0.9-2.1,2.1-2.1h10c1.2,0,2.1,0.9,2.1,2.1v17c0,1.2-0.9,2.1-2.1,2.1H7z  M16.9,20.4V3.6H7.1v16.8H16.9z M13.5,6.6c0.6,0,1.1-0.5,1.1-1.1s-0.5-1.1-1.1-1.1h-3c-0.6,0-1.1,0.5-1.1,1.1s0.5,1.1,1.1,1.1H13.5z " />
   </Svg>
 );
 

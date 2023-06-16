@@ -7,8 +7,23 @@ export const Fill: IconComponent<IconProps, 'Fill'> = ({
   testId = 'laptop-fill',
   ...props
 }) => (
-  <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M50 412c-23.16 0-42-18.84-42-42v-12h145.39l.53 1.2c3.67 8.38 11.94 13.8 21.08 13.8h130c9.14 0 17.42-5.42 21.08-13.8l.53-1.2H472v12c0 23.16-18.84 42-42 42H50Zm-2-70V110c0-23.16 18.84-42 42-42h300c23.16 0 42 18.84 42 42v232H48Z" />
+  <Svg
+    id="Layer_1"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 24 24"
+    style={{
+      enableBackground: 'new 0 0 24 24',
+    }}
+    xmlSpace="preserve"
+    width={size}
+    height={size}
+    fill={fill}
+    data-testid={testId}
+    {...props}
+  >
+    <Svg.Path d="M2.5,20.6c-1.2,0-2.1-0.9-2.1-2.1v-0.6h7.3l0,0.1c0.2,0.4,0.6,0.7,1.1,0.7h6.5c0.5,0,0.9-0.3,1.1-0.7l0-0.1h7.3v0.6 c0,1.2-0.9,2.1-2.1,2.1H2.5z M2.4,17.1V5.5c0-1.2,0.9-2.1,2.1-2.1h15c1.2,0,2.1,0.9,2.1,2.1v11.6H2.4z" />
   </Svg>
 );
 

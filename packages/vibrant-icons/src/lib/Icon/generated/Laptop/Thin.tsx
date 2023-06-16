@@ -7,8 +7,23 @@ export const Thin: IconComponent<IconProps, 'Thin'> = ({
   testId = 'laptop-thin',
   ...props
 }) => (
-  <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M427 110c0-20.4-16.6-37-37-37H90c-20.4 0-37 16.6-37 37v227h374V110Zm-34 193H87V107h306v196Zm74 60v7c0 20.4-16.6 37-37 37H50c-20.4 0-37-16.6-37-37v-7h137.2c4.82 9.18 14.34 15 24.8 15h130c10.46 0 19.99-5.82 24.8-15H467Z" />
+  <Svg
+    id="Layer_1"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 24 24"
+    style={{
+      enableBackground: 'new 0 0 24 24',
+    }}
+    xmlSpace="preserve"
+    width={size}
+    height={size}
+    fill={fill}
+    data-testid={testId}
+    {...props}
+  >
+    <Svg.Path d="M21.4,5.5c0-1-0.8-1.8-1.9-1.8h-15c-1,0-1.8,0.8-1.8,1.8v11.4h18.7V5.5z M19.6,15.1H4.3V5.3h15.3V15.1z M23.4,18.1v0.4 c0,1-0.8,1.9-1.9,1.9h-19c-1,0-1.9-0.8-1.9-1.9v-0.4h6.9c0.2,0.5,0.7,0.8,1.2,0.8h6.5c0.5,0,1-0.3,1.2-0.8H23.4z" />
   </Svg>
 );
 

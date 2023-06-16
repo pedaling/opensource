@@ -7,8 +7,23 @@ export const Regular: IconComponent<IconProps, 'Regular'> = ({
   testId = 'tv-regular',
   ...props
 }) => (
-  <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M410 68H70c-23.16 0-42 18.84-42 42v220c0 23.16 18.84 42 42 42h67.5v40h204v-40H410c23.16 0 42-18.84 42-42V110c0-23.16-18.84-42-42-42Zm-2 260H72V112h336v216Z" />
+  <Svg
+    id="Layer_1"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 24 24"
+    style={{
+      enableBackground: 'new 0 0 24 24',
+    }}
+    xmlSpace="preserve"
+    width={size}
+    height={size}
+    fill={fill}
+    data-testid={testId}
+    {...props}
+  >
+    <Svg.Path d="M20.5,3.4h-17c-1.2,0-2.1,0.9-2.1,2.1v11c0,1.2,0.9,2.1,2.1,2.1h3.4v2h10.2v-2h3.4c1.2,0,2.1-0.9,2.1-2.1v-11 C22.6,4.3,21.7,3.4,20.5,3.4z M20.4,16.4H3.6V5.6h16.8V16.4z" />
   </Svg>
 );
 

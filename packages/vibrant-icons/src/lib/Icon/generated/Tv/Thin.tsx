@@ -7,8 +7,23 @@ export const Thin: IconComponent<IconProps, 'Thin'> = ({
   testId = 'tv-thin',
   ...props
 }) => (
-  <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M142.51 407v-40H70c-20.4 0-37-16.6-37-37V110c0-20.4 16.6-37 37-37h340c20.4 0 37 16.6 37 37v220c0 20.4-16.6 37-37 37h-73.49v40h-194ZM67 333h346V107H67v226Z" />
+  <Svg
+    id="Layer_1"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 24 24"
+    style={{
+      enableBackground: 'new 0 0 24 24',
+    }}
+    xmlSpace="preserve"
+    width={size}
+    height={size}
+    fill={fill}
+    data-testid={testId}
+    {...props}
+  >
+    <Svg.Path d="M7.1,20.4v-2H3.5c-1,0-1.9-0.8-1.9-1.9v-11c0-1,0.8-1.8,1.9-1.8h17c1,0,1.9,0.8,1.9,1.8v11c0,1-0.8,1.9-1.9,1.9h-3.7v2H7.1 L7.1,20.4z M3.3,16.6h17.3V5.3H3.3V16.6z" />
   </Svg>
 );
 
