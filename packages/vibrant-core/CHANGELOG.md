@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.64.3...vibrant-core-0.64.4) (2023-06-16)
+
+
+### Reverts
+
+* Revert "feature: Transition animation by react-native-reanimated" (#776) ([53c4ae8](https://github.com/pedaling/opensource/commit/53c4ae88227d28374a5a1ea5b8f9851db317d0c3)), closes [#776](https://github.com/pedaling/opensource/issues/776) [#676](https://github.com/pedaling/opensource/issues/676)
+
 ### [0.64.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.64.2...vibrant-core-0.64.3) (2023-06-16)
 
 ### [0.64.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.64.1...vibrant-core-0.64.2) (2023-06-16)
