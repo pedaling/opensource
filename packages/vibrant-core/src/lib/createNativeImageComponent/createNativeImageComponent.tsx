@@ -1,6 +1,9 @@
 import type { ComponentType } from 'react';
 import { forwardRef } from 'react';
 import type { ImageRequireSource } from 'react-native';
+import { Box } from '../Box';
+import type { MediaSystemProps } from '../props';
+import { useResponsiveValue } from '../useResponsiveValue';
 
 type ImageComponentType = ComponentType<{
   source?: ImageRequireSource | { uri?: string };
@@ -10,8 +13,7 @@ type ImageComponentType = ComponentType<{
 type ImageProps = {
   ref?: any;
   src: ImageRequireSource | string;
-  objectFit?: 'contain' | 'cover' | 'fill' | 'none';
-};
+} & MediaSystemProps;
 
 const ObjectFitResizeModeMap = {
   contain: 'contain',
@@ -21,11 +23,17 @@ const ObjectFitResizeModeMap = {
 } as const;
 
 export const createNativeImageComponent = (ImageComponent: ImageComponentType) =>
-  forwardRef<any, ImageProps>(({ src, objectFit, ...restProps }, ref) => (
-    <ImageComponent
-      ref={ref}
-      source={typeof src === 'string' ? { uri: src } : src}
-      resizeMode={objectFit ? ObjectFitResizeModeMap[objectFit] : undefined}
-      {...restProps}
-    />
-  ));
+  forwardRef<any, ImageProps>(({ src, objectFit, ...restProps }, ref) => {
+    // TODO: react-native 0.71로 버전 업 시 objectFit을 resizeMode로 변환하지 않습니다
+    const { getResponsiveValue } = useResponsiveValue();
+
+    return (
+      <Box
+        base={ImageComponent}
+        ref={ref}
+        source={typeof src === 'string' ? { uri: src } : src}
+        resizeMode={objectFit ? ObjectFitResizeModeMap[getResponsiveValue(objectFit)] : undefined}
+        {...restProps}
+      />
+    );
+  });
