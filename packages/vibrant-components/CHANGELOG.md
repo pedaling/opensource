@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.64.0...vibrant-components-0.64.1) (2023-06-16)
+
+
+### Features
+
+* Transition animation by react-native-reanimated ([#676](https://github.com/pedaling/opensource/issues/676)) ([add0b34](https://github.com/pedaling/opensource/commit/add0b340f49263ec4a071053b392a1d8accd3593))
+
 ## [0.64.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.63.13...vibrant-components-0.64.0) (2023-06-15)
 
 ### [0.63.13](https://github.com/pedaling/opensource/compare/vibrant-components-0.63.12...vibrant-components-0.63.13) (2023-06-12)
