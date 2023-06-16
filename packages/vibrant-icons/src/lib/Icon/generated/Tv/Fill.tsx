@@ -4,11 +4,11 @@ import type { IconComponent, IconProps } from '../../IconProp';
 export const Fill: IconComponent<IconProps, 'Fill'> = ({
   size = 24,
   fill = 'onColor',
-  testId = 'mobile-fill',
+  testId = 'tv-fill',
   ...props
 }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M7,22.6c-1.2,0-2.1-0.9-2.1-2.1v-17c0-1.2,0.9-2.1,2.1-2.1h10c1.2,0,2.1,0.9,2.1,2.1v17c0,1.2-0.9,2.1-2.1,2.1H7z M13.5,6.1 c0.6,0,1.1-0.5,1.1-1.1s-0.5-1.1-1.1-1.1h-3C9.9,3.9,9.4,4.4,9.4,5s0.5,1.1,1.1,1.1H13.5z" />
+    <Svg.Path d="M20.5,3.4h-17c-1.2,0-2.1,0.9-2.1,2.1v11c0,1.2,0.9,2.1,2.1,2.1h3.4v2h10.2v-2h3.4c1.2,0,2.1-0.9,2.1-2.1v-11 C22.6,4.3,21.7,3.4,20.5,3.4z" />
   </Svg>
 );
 
