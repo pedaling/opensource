@@ -14130,12 +14130,7 @@ exports[`<Icon /> when Laptop.Fill Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="laptop-fill"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -14189,12 +14184,7 @@ exports[`<Icon /> when Laptop.Regular Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="laptop-regular"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -14248,12 +14238,7 @@ exports[`<Icon /> when Laptop.Thin Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="laptop-thin"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -16971,12 +16956,7 @@ exports[`<Icon /> when Mobile.Fill Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="mobile-fill"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -17030,12 +17010,7 @@ exports[`<Icon /> when Mobile.Regular Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="mobile-regular"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -17089,12 +17064,7 @@ exports[`<Icon /> when Mobile.Thin Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="mobile-thin"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -17148,12 +17118,7 @@ exports[`<Icon /> when Monitor.Fill Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="monitor-fill"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -17207,12 +17172,7 @@ exports[`<Icon /> when Monitor.Regular Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="monitor-regular"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -17266,12 +17226,7 @@ exports[`<Icon /> when Monitor.Thin Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="monitor-thin"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -27875,12 +27830,7 @@ exports[`<Icon /> when Tablet.Fill Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="tablet-fill"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -27934,12 +27884,7 @@ exports[`<Icon /> when Tablet.Regular Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="tablet-regular"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -27993,12 +27938,7 @@ exports[`<Icon /> when Tablet.Thin Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="tablet-thin"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -29878,12 +29818,7 @@ exports[`<Icon /> when Tv.Fill Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="tv-fill"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -29937,12 +29872,7 @@ exports[`<Icon /> when Tv.Regular Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="tv-regular"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
@@ -29996,12 +29926,7 @@ exports[`<Icon /> when Tv.Thin Icon rendered match snapshot 1`] = `
   <svg
     class="emotion-0"
     data-testid="tv-thin"
-    id="Layer_1"
     viewBox="0 0 24 24"
-    x="0px"
-    xml:space="preserve"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    y="0px"
   >
     <path
       class="emotion-1"
