@@ -373,7 +373,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
     <div
       class="emotion-1"
       data-testid="backdrop"
-      style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1); position: fixed;"
+      style="position: fixed;"
     >
       <div
         class="emotion-2"
@@ -815,7 +815,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
     <div
       class="emotion-1"
       data-testid="backdrop"
-      style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1); position: fixed; overflow: auto;"
+      style="position: fixed; overflow: auto;"
     >
       <div
         class="emotion-2"
