@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Box, KeyboardAvoidingBox, PortalBox } from '@vibrant-ui/core';
-import { Motion } from '@vibrant-ui/motion';
+import { Transition } from '@vibrant-ui/motion';
 import { Pressable } from '../Pressable';
 import { withBackdropVariation } from './BackdropProps';
 
@@ -36,13 +36,8 @@ export const Backdrop = withBackdropVariation(
     }
 
     return (
-      <Motion
-        animation={{
-          opacity: {
-            from: open ? 0 : 1,
-            to: open ? 1 : 0,
-          },
-        }}
+      <Transition
+        animation={{ opacity: open ? 1 : 0 }}
         duration={transitionDuration}
         onEnd={() => {
           unmount();
@@ -76,7 +71,7 @@ export const Backdrop = withBackdropVariation(
             </Box>
           </KeyboardAvoidingBox>
         </PortalBox>
-      </Motion>
+      </Transition>
     );
   }
 );
