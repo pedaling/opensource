@@ -52,12 +52,13 @@ export const propVariant =
 
       const value = prevProps[prop.name] ?? prop.default;
 
-      responsiveProps[prop.name] = shouldHandleResponsive ? toResponsiveValue(value, maxLength) : value;
+      responsiveProps[prop.name] =
+        shouldHandleResponsive && maxLength > 1 ? toResponsiveValue(value, maxLength) : value;
     }
 
     let variantProps;
 
-    if (shouldHandleResponsive) {
+    if (shouldHandleResponsive && maxLength > 1) {
       variantProps = Array(maxLength)
         .fill(null)
         .map(
