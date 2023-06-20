@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.64.6...vibrant-core-0.64.7) (2023-06-20)
+
+
+### Performance Improvements
+
+* memoize Box component ([#778](https://github.com/pedaling/opensource/issues/778)) ([527c3e3](https://github.com/pedaling/opensource/commit/527c3e347e371922e69e7f1920ff57ca98064b72))
+
 ### [0.64.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.64.5...vibrant-core-0.64.6) (2023-06-20)
 
 

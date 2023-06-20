@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.7](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.6...vibrant-motion-0.64.7) (2023-06-20)
+
+
+### Bug Fixes
+
+* react-native-reanimated를 peerDependency에 둔다 ([#781](https://github.com/pedaling/opensource/issues/781)) ([39b2c31](https://github.com/pedaling/opensource/commit/39b2c316401ccfacc9eba3bac28e1bfe75630e46))
+
 ### [0.64.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.5...vibrant-motion-0.64.6) (2023-06-20)
 
 
