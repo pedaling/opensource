@@ -1,5 +1,5 @@
 import type { ComponentType } from 'react';
-import { forwardRef } from 'react';
+import { forwardRef, memo } from 'react';
 import type { LayoutChangeEvent } from 'react-native';
 import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
 import styled from '@emotion/native';
@@ -20,67 +20,69 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
   }
 };
 
-export const Box = styled(
-  forwardRef<HTMLDivElement, BoxProps & { style: any }>(
-    (
-      {
-        as,
-        base,
-        style,
-        onLayout,
-        backgroundColor,
-        id,
-        role,
-        ariaLabel,
-        ariaLabelledBy,
-        ariaChecked,
-        ariaSelected,
-        ariaCurrent: _ariaCurrent,
-        ...restProps
-      },
-      ref
-    ) => {
-      const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
+export const Box = memo(
+  styled(
+    forwardRef<HTMLDivElement, BoxProps & { style: any }>(
+      (
+        {
+          as,
+          base,
+          style,
+          onLayout,
+          backgroundColor,
+          id,
+          role,
+          ariaLabel,
+          ariaLabelledBy,
+          ariaChecked,
+          ariaSelected,
+          ariaCurrent: _ariaCurrent,
+          ...restProps
+        },
+        ref
+      ) => {
+        const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
 
-      const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
+        const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
 
-      const handleLayout = onLayout
-        ? async (event: LayoutChangeEvent) => {
-            const layout = await getElementPosition(event.currentTarget);
+        const handleLayout = onLayout
+          ? async (event: LayoutChangeEvent) => {
+              const layout = await getElementPosition(event.currentTarget);
 
-            onLayout(layout);
-          }
-        : undefined;
+              onLayout(layout);
+            }
+          : undefined;
 
-      const element = (
-        <Component
-          ref={ref}
-          style={restStyle}
-          onLayout={handleLayout}
-          nativeID={id}
-          accessibilityRole={role}
-          accessibilityLabel={ariaLabel}
-          accessibilityLabelledBy={ariaLabelledBy}
-          {...(isDefined(ariaChecked) || isDefined(ariaSelected)
-            ? { accessibilityState: { checked: ariaChecked, selected: ariaSelected } }
-            : {})}
-          collapsable={ref ? false : undefined}
-          {...(base ? { as } : {})}
-          {...restProps}
-          {...props}
-        />
-      );
+        const element = (
+          <Component
+            ref={ref}
+            style={restStyle}
+            onLayout={handleLayout}
+            nativeID={id}
+            accessibilityRole={role}
+            accessibilityLabel={ariaLabel}
+            accessibilityLabelledBy={ariaLabelledBy}
+            {...(isDefined(ariaChecked) || isDefined(ariaSelected)
+              ? { accessibilityState: { checked: ariaChecked, selected: ariaSelected } }
+              : {})}
+            collapsable={ref ? false : undefined}
+            {...(base ? { as } : {})}
+            {...restProps}
+            {...props}
+          />
+        );
 
-      if (backgroundColor) {
-        return <OnColorContainer backgroundColor={backgroundColor}>{element}</OnColorContainer>;
+        if (backgroundColor) {
+          return <OnColorContainer backgroundColor={backgroundColor}>{element}</OnColorContainer>;
+        }
+
+        return element;
       }
-
-      return element;
+    ),
+    {
+      shouldForwardProp,
     }
-  ),
-  {
-    shouldForwardProp,
-  }
-)(interpolation);
+  )(interpolation)
+);
 
 Box.displayName = 'Box';
