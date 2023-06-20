@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.5...vibrant-motion-0.64.6) (2023-06-20)
+
+
+### Bug Fixes
+
+* react-native 빌드 결과물을 cjs로 지정한다 ([#780](https://github.com/pedaling/opensource/issues/780)) ([759ab98](https://github.com/pedaling/opensource/commit/759ab98a5ddf3efdd9566e9dbbba0c9b375fb7aa))
+
 ### [0.64.5](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.4...vibrant-motion-0.64.5) (2023-06-19)
 
 ### [0.64.4](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.3...vibrant-motion-0.64.4) (2023-06-16)
