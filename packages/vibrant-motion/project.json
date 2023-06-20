@@ -47,7 +47,6 @@
         "outputFileName": "index.native",
         "entryFile": "packages/vibrant-motion/src/index.ts",
         "external": ["react/jsx-runtime"],
-        "forceOutputJsExtension": true,
         "format": ["cjs"],
         "rollupConfig": "tools/config/rollup-config",
         "buildableProjectDepsInPackageJsonType": "dependencies",
