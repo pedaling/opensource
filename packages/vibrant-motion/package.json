@@ -7,7 +7,7 @@
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
-    "react-native": "^0.63.0",
+    "react-native": "^0.71.0",
     "react-native-reanimated": "~2.14.4"
   },
   "dependencies": {},
