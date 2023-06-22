@@ -22,7 +22,6 @@
         "deleteOutputPath": false,
         "entryFile": "packages/vibrant-motion/src/index.ts",
         "external": ["react/jsx-runtime"],
-        "generateExportsField": true,
         "format": ["esm", "cjs"],
         "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "buildableProjectDepsInPackageJsonType": "dependencies",
