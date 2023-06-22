@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.8](https://github.com/pedaling/opensource/compare/vibrant-core-0.64.7...vibrant-core-0.64.8) (2023-06-22)
+
+
+### Bug Fixes
+
+* @vibrant/motion 라이브러리가 exports 필드를 생성하지 않도록 한다 ([#782](https://github.com/pedaling/opensource/issues/782)) ([bfd2cf6](https://github.com/pedaling/opensource/commit/bfd2cf65057c3d4cedc4717e1a055eb089c40053))
+
 ### [0.64.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.64.6...vibrant-core-0.64.7) (2023-06-20)
 
 

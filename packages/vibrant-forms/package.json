@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/forms",
-  "version": "0.64.7",
+  "version": "0.64.8",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
