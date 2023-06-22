@@ -3,7 +3,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
-import * as ReactSpring from '@react-spring/native';
 import { ToastProvider } from '@vibrant-ui/components';
 import type { Dependencies } from '@vibrant-ui/core';
 import { Box, PageScroll, PopoverProvider, VibrantProvider, createShadowsComponent } from '@vibrant-ui/core';
@@ -14,7 +13,6 @@ import { useStorybookInformation } from './useStorybookInformation';
 const dependencies: Dependencies = {
   nativeLinearGradient: LinearGradient,
   nativeShadows: createShadowsComponent(Shadow),
-  reactSpringModule: ReactSpring,
 };
 
 const App = () => {

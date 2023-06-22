@@ -1,7 +1,6 @@
 import type { ComponentType, FC, ReactNode } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 import type { ImageRequireSource, PressableProps } from 'react-native';
-import * as ReactSpring from 'react-spring';
 import type { ReactElementChild, ResponsiveValue } from '../../types';
 import type { BorderSystemProps, MediaSystemProps, SizingSystemProps } from '../props';
 
@@ -19,7 +18,6 @@ export type Dependencies = {
       offset?: any;
     }[];
   }>;
-  reactSpringModule?: any;
   image?: ComponentType<
     {
       src: ImageRequireSource | string;
@@ -143,9 +141,7 @@ type ConfigContextValue = {
 };
 
 const ConfigContext = createContext<ConfigContextValue>({
-  dependencies: {
-    reactSpringModule: ReactSpring,
-  },
+  dependencies: {},
   translations: {
     datePicker: {
       ariaLabel: '날짜 선택',
