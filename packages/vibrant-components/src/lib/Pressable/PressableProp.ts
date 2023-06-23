@@ -1,4 +1,4 @@
-import type { ReactElement, Ref } from 'react';
+import type { Ref } from 'react';
 import type {
   BackgroundSystemProps,
   BorderSystemProps,
@@ -8,6 +8,7 @@ import type {
   InteractionSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
+  ReactElementChildren,
   ResponsiveValue,
   SizingSystemProps,
   SpacingSystemProps,
@@ -17,7 +18,7 @@ import type { ColorToken } from '@vibrant-ui/theme';
 
 export type PressableProps = BackgroundSystemProps &
   BorderSystemProps &
-  Pick<FlexboxSystemProps, 'alignItems' | 'flexBasis' | 'flexGrow' | 'flexShrink' | 'justifyContent'> &
+  FlexboxSystemProps &
   OverflowSystemProps &
   PositionSystemProps &
   SpacingSystemProps &
@@ -26,7 +27,7 @@ export type PressableProps = BackgroundSystemProps &
   Pick<InteractionSystemProps, 'hitSlop'> & {
     ref?: Ref<any>;
     disabled?: boolean;
-    children?: ReactElement;
+    children?: ReactElementChildren;
     cursor?: 'default' | 'pointer';
     ariaLabel?: string;
     onClick?: () => void;
