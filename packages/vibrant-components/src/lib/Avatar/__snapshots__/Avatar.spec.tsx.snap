@@ -19,7 +19,7 @@ exports[`<Avatar /> when size is lg match snapshot 1`] = `
   position: relative;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 22px;
 }
 
 <div>
@@ -53,7 +53,7 @@ exports[`<Avatar /> when size is md match snapshot 1`] = `
   position: relative;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 15px;
 }
 
 <div>
@@ -87,7 +87,7 @@ exports[`<Avatar /> when size is sm match snapshot 1`] = `
   position: relative;
   width: 24px;
   height: 24px;
-  border-radius: 50%;
+  border-radius: 12px;
 }
 
 <div>
@@ -121,7 +121,7 @@ exports[`<Avatar /> when size is xs match snapshot 1`] = `
   position: relative;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
+  border-radius: 8px;
 }
 
 <div>
