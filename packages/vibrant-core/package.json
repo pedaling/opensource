@@ -7,7 +7,7 @@
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
-    "react-native": "^0.63.0"
+    "react-native": "^0.71.0"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
