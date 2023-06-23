@@ -36,7 +36,7 @@ export const ContainedButton = withContainedButtonVariation(
       alignItems="center"
       justifyContent="center"
       opacity={loading ? 0 : 1}
-      gap={contentsSpacing}
+      columnGap={contentsSpacing}
     >
       {IconComponent && <IconComponent size={iconSize} testId="icon-box" mx={2} />}
       {Boolean(children) && (

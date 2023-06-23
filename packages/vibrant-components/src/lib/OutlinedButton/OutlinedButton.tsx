@@ -41,7 +41,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
       alignItems="center"
       justifyContent="center"
       opacity={loading ? 0 : 1}
-      gap={contentsSpacing}
+      columnGap={contentsSpacing}
     >
       {IconComponent && <IconComponent size={iconSize} mx={2} />}
       {Boolean(children) && (
