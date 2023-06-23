@@ -37,7 +37,7 @@ exports[`Native <Box /> base prop when Pressable box created match snapshot 1`] 
   accessible={true}
   collapsable={false}
   focusable={true}
-  nativeID="component"
+  id="component"
   onBlur={[Function]}
   onClick={[Function]}
   onFocus={[Function]}

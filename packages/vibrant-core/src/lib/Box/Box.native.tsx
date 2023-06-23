@@ -56,10 +56,10 @@ export const Box = memo(
         const element = (
           <Component
             ref={ref}
+            id={id}
+            role={role}
             style={restStyle}
             onLayout={handleLayout}
-            nativeID={id}
-            accessibilityRole={role}
             accessibilityLabel={ariaLabel}
             accessibilityLabelledBy={ariaLabelledBy}
             {...(isDefined(ariaChecked) || isDefined(ariaSelected)

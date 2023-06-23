@@ -1,4 +1,5 @@
 import type { ComponentType, Ref } from 'react';
+import type { Role } from 'react-native';
 import type { DistributiveOmit, LayoutEvent } from '@vibrant-ui/utils';
 import type { ReactElementChildren } from '../../types';
 import { createInterpolation } from '../createInterpolation';
@@ -140,7 +141,7 @@ export type BoxProps<
   as?: ElementName;
   base?: BaseComponent;
   id?: string;
-  role?: string;
+  role?: Role;
   ariaLabel?: string;
   ariaChecked?: boolean;
   ariaLabelledBy?: string;
