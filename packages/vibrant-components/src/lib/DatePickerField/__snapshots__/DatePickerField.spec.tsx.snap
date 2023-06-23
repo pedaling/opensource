@@ -76,6 +76,11 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   align-items: stretch;
   z-index: 0;
   height: 100%;
+  padding-left: 15px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -83,31 +88,6 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
 }
 
 .emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: 100%;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  padding-left: 15px;
-}
-
-.emotion-5 {
   text-align: left;
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
@@ -122,7 +102,7 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   font-weight: 400;
 }
 
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -150,7 +130,7 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   align-items: stretch;
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -177,7 +157,7 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   padding-right: 15px;
 }
 
-.emotion-8 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -198,7 +178,7 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   fill: #5b5b5b;
 }
 
-.emotion-9 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -231,39 +211,35 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
         <button
           class="emotion-3"
           data-testid="pressable"
+          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           type="button"
         >
           <span
             class="emotion-4"
-            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            data-testid="body"
           >
-            <span
-              class="emotion-5"
-              data-testid="body"
-            >
-              label
-            </span>
+            label
           </span>
         </button>
         <div
-          class="emotion-6"
+          class="emotion-5"
         >
           <button
             aria-label="날짜 선택"
-            class="emotion-7"
+            class="emotion-6"
             type="button"
           >
             <svg
-              class="emotion-8"
+              class="emotion-7"
               data-testid="calendar-thin"
               viewBox="0 0 24 24"
             >
               <path
-                class="emotion-9"
+                class="emotion-8"
                 d="M17.25 13.5h-3.5c-.15 0-.25.1-.25.25v3.5c0 .15.1.25.25.25h3.5c.15 0 .25-.1.25-.25v-3.5c0-.15-.1-.25-.25-.25Z"
               />
               <path
-                class="emotion-9"
+                class="emotion-8"
                 d="M21.75 4h-4.6V2.25C17.1 2.1 17 2 16.9 2h-1.25c-.15 0-.25.1-.25.25V4H8.6V2.25c0-.15-.1-.25-.2-.25H7.15c-.15 0-.25.1-.25.25V4H2.25C2.1 4 2 4.1 2 4.25v17.5c0 .15.1.25.25.25h19.5c.15 0 .25-.1.25-.25V4.25c0-.15-.1-.25-.25-.25Zm-1.5 16.25H3.75V5.75h3.1V7.5c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V5.75h6.75V7.5c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V5.75h3.1v14.5h.05Z"
               />
             </svg>
@@ -351,6 +327,11 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   align-items: stretch;
   z-index: 0;
   height: 100%;
+  padding-left: 9px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -358,31 +339,6 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
 }
 
 .emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: 100%;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  padding-left: 9px;
-}
-
-.emotion-5 {
   text-align: left;
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
@@ -397,7 +353,7 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   font-weight: 400;
 }
 
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -425,7 +381,7 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   align-items: stretch;
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -452,7 +408,7 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   padding-right: 9px;
 }
 
-.emotion-8 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -473,7 +429,7 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   fill: #5b5b5b;
 }
 
-.emotion-9 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -506,39 +462,35 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
         <button
           class="emotion-3"
           data-testid="pressable"
+          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           type="button"
         >
           <span
             class="emotion-4"
-            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            data-testid="body"
           >
-            <span
-              class="emotion-5"
-              data-testid="body"
-            >
-              label
-            </span>
+            label
           </span>
         </button>
         <div
-          class="emotion-6"
+          class="emotion-5"
         >
           <button
             aria-label="날짜 선택"
-            class="emotion-7"
+            class="emotion-6"
             type="button"
           >
             <svg
-              class="emotion-8"
+              class="emotion-7"
               data-testid="calendar-thin"
               viewBox="0 0 24 24"
             >
               <path
-                class="emotion-9"
+                class="emotion-8"
                 d="M17.25 13.5h-3.5c-.15 0-.25.1-.25.25v3.5c0 .15.1.25.25.25h3.5c.15 0 .25-.1.25-.25v-3.5c0-.15-.1-.25-.25-.25Z"
               />
               <path
-                class="emotion-9"
+                class="emotion-8"
                 d="M21.75 4h-4.6V2.25C17.1 2.1 17 2 16.9 2h-1.25c-.15 0-.25.1-.25.25V4H8.6V2.25c0-.15-.1-.25-.2-.25H7.15c-.15 0-.25.1-.25.25V4H2.25C2.1 4 2 4.1 2 4.25v17.5c0 .15.1.25.25.25h19.5c.15 0 .25-.1.25-.25V4.25c0-.15-.1-.25-.25-.25Zm-1.5 16.25H3.75V5.75h3.1V7.5c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V5.75h6.75V7.5c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V5.75h3.1v14.5h.05Z"
               />
             </svg>
@@ -626,6 +578,11 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   align-items: stretch;
   z-index: 0;
   height: 100%;
+  padding-left: 7px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -633,31 +590,6 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
 }
 
 .emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: 100%;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  padding-left: 7px;
-}
-
-.emotion-5 {
   text-align: left;
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
@@ -672,7 +604,7 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   font-weight: 400;
 }
 
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -700,7 +632,7 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   align-items: stretch;
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -727,7 +659,7 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   padding-right: 7px;
 }
 
-.emotion-8 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -748,7 +680,7 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   fill: #5b5b5b;
 }
 
-.emotion-9 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -781,39 +713,35 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
         <button
           class="emotion-3"
           data-testid="pressable"
+          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           type="button"
         >
           <span
             class="emotion-4"
-            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            data-testid="body"
           >
-            <span
-              class="emotion-5"
-              data-testid="body"
-            >
-              label
-            </span>
+            label
           </span>
         </button>
         <div
-          class="emotion-6"
+          class="emotion-5"
         >
           <button
             aria-label="날짜 선택"
-            class="emotion-7"
+            class="emotion-6"
             type="button"
           >
             <svg
-              class="emotion-8"
+              class="emotion-7"
               data-testid="calendar-thin"
               viewBox="0 0 24 24"
             >
               <path
-                class="emotion-9"
+                class="emotion-8"
                 d="M17.25 13.5h-3.5c-.15 0-.25.1-.25.25v3.5c0 .15.1.25.25.25h3.5c.15 0 .25-.1.25-.25v-3.5c0-.15-.1-.25-.25-.25Z"
               />
               <path
-                class="emotion-9"
+                class="emotion-8"
                 d="M21.75 4h-4.6V2.25C17.1 2.1 17 2 16.9 2h-1.25c-.15 0-.25.1-.25.25V4H8.6V2.25c0-.15-.1-.25-.2-.25H7.15c-.15 0-.25.1-.25.25V4H2.25C2.1 4 2 4.1 2 4.25v17.5c0 .15.1.25.25.25h19.5c.15 0 .25-.1.25-.25V4.25c0-.15-.1-.25-.25-.25Zm-1.5 16.25H3.75V5.75h3.1V7.5c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V5.75h6.75V7.5c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V5.75h3.1v14.5h.05Z"
               />
             </svg>

@@ -20,7 +20,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   cursor: pointer;
   background-color: #0000000d;
   border-width: 0;
-  padding: 0;
+  padding: 7px;
   overflow: hidden;
   -webkit-align-items: stretch;
   -webkit-box-align: stretch;
@@ -70,33 +70,12 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: auto;
-  height: auto;
-  padding: 7px;
-}
-
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
   width: 16px;
   height: 16px;
   fill: #0c0c0c;
 }
 
-.emotion-4 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -118,27 +97,23 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   <button
     class="emotion-0"
     data-testid="operatorButton"
+    style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
     type="button"
   >
     <span
       class="emotion-1"
       style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
     />
-    <span
+    <svg
       class="emotion-2"
-      style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+      data-testid="add-regular"
+      viewBox="0 0 24 24"
     >
-      <svg
+      <path
         class="emotion-3"
-        data-testid="add-regular"
-        viewBox="0 0 24 24"
-      >
-        <path
-          class="emotion-4"
-          d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
-        />
-      </svg>
-    </span>
+        d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
+      />
+    </svg>
   </button>
 </div>
 `;

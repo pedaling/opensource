@@ -139,26 +139,6 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
@@ -176,7 +156,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-6 {
+  .emotion-5 {
     margin-bottom: auto;
     padding-top: 36px;
     padding-bottom: 36px;
@@ -187,7 +167,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   }
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -216,13 +196,13 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-7 {
+  .emotion-6 {
     padding-left: 32px;
     padding-right: 32px;
   }
 }
 
-.emotion-8 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -251,7 +231,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   align-items: stretch;
 }
 
-.emotion-9 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -280,7 +260,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   border-radius: 2px;
 }
 
-.emotion-11 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -301,7 +281,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   fill: #0c0c0c;
 }
 
-.emotion-12 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -319,7 +299,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   position: relative;
 }
 
-.emotion-13 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -340,13 +320,13 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-13 {
+  .emotion-11 {
     overflow: hidden;
     margin-top: 24px;
   }
 }
 
-.emotion-14 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -384,51 +364,43 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
           <div
             class="emotion-4"
             data-testid="pressable"
+            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
             tabindex="0"
-          >
-            <span
-              class="emotion-5"
-              style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-            />
-          </div>
+          />
           <div
-            class="emotion-6"
+            class="emotion-5"
             data-testid="modal-bottom-sheet"
             role="dialog"
             style="transform: translateY(0px); transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1); transition-property: transform;"
           >
             <div
-              class="emotion-7"
+              class="emotion-6"
             >
               <div
-                class="emotion-8"
+                class="emotion-7"
               >
                 <button
                   aria-label="Close"
-                  class="emotion-9"
+                  class="emotion-8"
                   data-testid="icon-button"
+                  style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
                   type="button"
                 >
-                  <span
-                    class="emotion-5"
-                    style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+                  <svg
+                    class="emotion-9"
+                    data-testid="close-regular"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      class="emotion-11"
-                      data-testid="close-regular"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        class="emotion-12"
-                        d="m13.75 12 6.35-6.35c.1-.1.1-.25 0-.35l-1.4-1.4c-.1-.1-.25-.1-.35 0L12 10.25l-6.35-6.4c-.1-.1-.25-.1-.35 0l-1.4 1.4c-.1.1-.1.25 0 .35l6.35 6.4-6.4 6.35c-.1.1-.1.25 0 .35l1.4 1.4c.1.1.25.1.35 0l6.4-6.35 6.35 6.35c.1.1.25.1.35 0l1.4-1.4c.1-.1.1-.25 0-.35L13.75 12Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      class="emotion-10"
+                      d="m13.75 12 6.35-6.35c.1-.1.1-.25 0-.35l-1.4-1.4c-.1-.1-.25-.1-.35 0L12 10.25l-6.35-6.4c-.1-.1-.25-.1-.35 0l-1.4 1.4c-.1.1-.1.25 0 .35l6.35 6.4-6.4 6.35c-.1.1-.1.25 0 .35l1.4 1.4c.1.1.25.1.35 0l6.4-6.35 6.35 6.35c.1.1.25.1.35 0l1.4-1.4c.1-.1.1-.25 0-.35L13.75 12Z"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
             <div
-              class="emotion-13"
+              class="emotion-11"
             />
           </div>
         </div>
@@ -436,7 +408,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
     </div>
   </div>
   <div
-    class="emotion-14"
+    class="emotion-12"
     id="portal-root"
   />
 </div>
@@ -581,26 +553,6 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: auto;
@@ -618,7 +570,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-6 {
+  .emotion-5 {
     margin-bottom: auto;
     padding-top: 36px;
     padding-bottom: 36px;
@@ -629,7 +581,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   }
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -658,13 +610,13 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-7 {
+  .emotion-6 {
     padding-left: 32px;
     padding-right: 32px;
   }
 }
 
-.emotion-8 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -693,7 +645,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   align-items: stretch;
 }
 
-.emotion-9 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -722,7 +674,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   border-radius: 2px;
 }
 
-.emotion-11 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -743,7 +695,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   fill: #0c0c0c;
 }
 
-.emotion-12 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -761,7 +713,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   position: relative;
 }
 
-.emotion-13 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -782,13 +734,13 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
 }
 
 @media screen and (min-width: 640px) {
-  .emotion-13 {
+  .emotion-11 {
     overflow: hidden;
     margin-top: 24px;
   }
 }
 
-.emotion-14 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -826,51 +778,43 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
           <div
             class="emotion-4"
             data-testid="pressable"
+            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
             tabindex="0"
-          >
-            <span
-              class="emotion-5"
-              style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-            />
-          </div>
+          />
           <div
-            class="emotion-6"
+            class="emotion-5"
             data-testid="modal-bottom-sheet"
             role="dialog"
             style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           >
             <div
-              class="emotion-7"
+              class="emotion-6"
             >
               <div
-                class="emotion-8"
+                class="emotion-7"
               >
                 <button
                   aria-label="Close"
-                  class="emotion-9"
+                  class="emotion-8"
                   data-testid="icon-button"
+                  style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
                   type="button"
                 >
-                  <span
-                    class="emotion-5"
-                    style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+                  <svg
+                    class="emotion-9"
+                    data-testid="close-regular"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      class="emotion-11"
-                      data-testid="close-regular"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        class="emotion-12"
-                        d="m13.75 12 6.35-6.35c.1-.1.1-.25 0-.35l-1.4-1.4c-.1-.1-.25-.1-.35 0L12 10.25l-6.35-6.4c-.1-.1-.25-.1-.35 0l-1.4 1.4c-.1.1-.1.25 0 .35l6.35 6.4-6.4 6.35c-.1.1-.1.25 0 .35l1.4 1.4c.1.1.25.1.35 0l6.4-6.35 6.35 6.35c.1.1.25.1.35 0l1.4-1.4c.1-.1.1-.25 0-.35L13.75 12Z"
-                      />
-                    </svg>
-                  </span>
+                    <path
+                      class="emotion-10"
+                      d="m13.75 12 6.35-6.35c.1-.1.1-.25 0-.35l-1.4-1.4c-.1-.1-.25-.1-.35 0L12 10.25l-6.35-6.4c-.1-.1-.25-.1-.35 0l-1.4 1.4c-.1.1-.1.25 0 .35l6.35 6.4-6.4 6.35c-.1.1-.1.25 0 .35l1.4 1.4c.1.1.25.1.35 0l6.4-6.35 6.35 6.35c.1.1.25.1.35 0l1.4-1.4c.1-.1.1-.25 0-.35L13.75 12Z"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
             <div
-              class="emotion-13"
+              class="emotion-11"
             />
           </div>
         </div>
@@ -878,7 +822,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
     </div>
   </div>
   <div
-    class="emotion-14"
+    class="emotion-12"
     id="portal-root"
   />
 </div>

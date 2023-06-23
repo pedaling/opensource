@@ -86,26 +86,6 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
 }
 
 .emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: auto;
-  height: auto;
-}
-
-.emotion-5 {
   text-align: left;
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
@@ -120,7 +100,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
   font-weight: 400;
 }
 
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -139,7 +119,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
   width: 4px;
 }
 
-.emotion-7 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -165,7 +145,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
   align-items: center;
 }
 
-.emotion-9 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -186,7 +166,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
   fill: #5b5b5b;
 }
 
-.emotion-10 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -204,7 +184,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
   position: relative;
 }
 
-.emotion-23 {
+.emotion-20 {
   text-align: left;
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
@@ -234,100 +214,88 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
         <button
           class="emotion-3"
           data-testid="BreadCrumb"
+          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           type="button"
         >
           <span
             class="emotion-4"
-            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            data-testid="breadcrumb-text"
           >
-            <span
-              class="emotion-5"
-              data-testid="breadcrumb-text"
-            >
-              BreadCrumb1
-            </span>
+            BreadCrumb1
           </span>
         </button>
         <div
-          class="emotion-6"
+          class="emotion-5"
         />
       </li>
       <li
-        class="emotion-7"
+        class="emotion-6"
       >
         <div
           class="emotion-0"
         >
           <svg
-            class="emotion-9"
+            class="emotion-8"
             data-testid="separator"
             viewBox="0 0 24 24"
           >
             <path
-              class="emotion-10"
+              class="emotion-9"
               d="m15.955 11.525-8.2 8.2c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l9.25-9.25c.1-.1.1-.25 0-.35l-9.25-9.3c-.1-.1-.25-.1-.35 0l-.9.9c-.1.1-.1.25 0 .35l8.2 8.2Z"
             />
           </svg>
         </div>
         <div
-          class="emotion-6"
+          class="emotion-5"
         />
         <button
           class="emotion-3"
           data-testid="BreadCrumb"
+          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           type="button"
         >
           <span
             class="emotion-4"
-            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            data-testid="breadcrumb-text"
           >
-            <span
-              class="emotion-5"
-              data-testid="breadcrumb-text"
-            >
-              BreadCrumb2
-            </span>
+            BreadCrumb2
           </span>
         </button>
         <div
-          class="emotion-6"
+          class="emotion-5"
         />
       </li>
       <li
-        class="emotion-7"
+        class="emotion-6"
       >
         <div
           class="emotion-0"
         >
           <svg
-            class="emotion-9"
+            class="emotion-8"
             data-testid="separator"
             viewBox="0 0 24 24"
           >
             <path
-              class="emotion-10"
+              class="emotion-9"
               d="m15.955 11.525-8.2 8.2c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l9.25-9.25c.1-.1.1-.25 0-.35l-9.25-9.3c-.1-.1-.25-.1-.35 0l-.9.9c-.1.1-.1.25 0 .35l8.2 8.2Z"
             />
           </svg>
         </div>
         <div
-          class="emotion-6"
+          class="emotion-5"
         />
         <button
           class="emotion-3"
           data-testid="BreadCrumb"
+          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           type="button"
         >
           <span
-            class="emotion-4"
-            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            class="emotion-20"
+            data-testid="breadcrumb-text"
           >
-            <span
-              class="emotion-23"
-              data-testid="breadcrumb-text"
-            >
-              BreadCrumb3
-            </span>
+            BreadCrumb3
           </span>
         </button>
       </li>

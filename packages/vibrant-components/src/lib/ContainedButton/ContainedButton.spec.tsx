@@ -167,9 +167,9 @@ describe('<ContainedButton />', () => {
         });
 
         it('basic layout should be set', () => {
-          expect(element.children[1]).toHaveStyleRule('padding-left', paddingLeft);
+          expect(element).toHaveStyleRule('padding-left', paddingLeft);
 
-          expect(element.children[1]).toHaveStyleRule('padding-right', paddingRight);
+          expect(element).toHaveStyleRule('padding-right', paddingRight);
 
           expect(element).toHaveStyleRule('border-radius', '2px');
 
