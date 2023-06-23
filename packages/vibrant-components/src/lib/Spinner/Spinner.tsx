@@ -1,13 +1,13 @@
 import { Box, useCurrentTheme } from '@vibrant-ui/core';
 import { Motion } from '@vibrant-ui/motion';
+import { get } from '@vibrant-ui/utils';
 import { withSpinnerVariation } from './SpinnerProps';
 
 export const Spinner = withSpinnerVariation(({ borderWidth, borderRadius, testId = 'spinner', ...restProps }) => {
-  const {
-    theme: { colors },
-  } = useCurrentTheme();
-
-  const hexBorderColor = `${colors.onView1}3d`;
+  const { theme } = useCurrentTheme();
+  const { colors } = theme;
+  const onColorHex = get(theme, colors.onColor.replace('$', ''), colors.onColor);
+  const borderColorHex = `${onColorHex}3d`;
 
   return (
     <Box as="span" data-testid={testId} {...restProps}>
@@ -35,7 +35,7 @@ export const Spinner = withSpinnerVariation(({ borderWidth, borderRadius, testId
           bottom={0}
           borderStyle="solid"
           borderWidth={borderWidth}
-          borderColor={hexBorderColor}
+          borderColor={borderColorHex}
           borderTopColor="onColor"
           borderRadius={borderRadius}
         />
