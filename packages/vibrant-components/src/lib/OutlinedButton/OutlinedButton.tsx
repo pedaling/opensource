@@ -1,5 +1,4 @@
-import { Text } from '@vibrant-ui/core';
-import { HStack } from '../HStack';
+import { Box, Text } from '@vibrant-ui/core';
 import { Pressable } from '../Pressable';
 import { Spinner } from '../Spinner';
 import { withOutlinedButtonVariation } from './OutlinedButtonProps';
@@ -38,12 +37,13 @@ export const OutlinedButton = withOutlinedButtonVariation(
       borderRadiusLevel={1}
       disabled={loading || disabled}
     >
-      <HStack
+      <Box
         as="span"
         opacity={loading ? 0 : 1}
-        columnGap={contentsSpacing}
-        alignVertical="center"
-        alignHorizontal="center"
+        flexDirection="row"
+        gap={contentsSpacing}
+        alignItems="center"
+        justifyContent="center"
       >
         {IconComponent && <IconComponent size={iconSize} mx={2} />}
         {Boolean(children) && (
@@ -52,13 +52,13 @@ export const OutlinedButton = withOutlinedButtonVariation(
           </Text>
         )}
         {DisclosureIconComponent && <DisclosureIconComponent size={disclosureSize} ml={2} />}
-      </HStack>
+      </Box>
 
       {loading && (
-        <HStack
+        <Box
           as="span"
-          alignVertical="center"
-          alignHorizontal="center"
+          alignItems="center"
+          justifyContent="center"
           position="absolute"
           top={0}
           left={0}
@@ -66,7 +66,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
           bottom={0}
         >
           <Spinner size={spinnerSize} />
-        </HStack>
+        </Box>
       )}
     </Pressable>
   )

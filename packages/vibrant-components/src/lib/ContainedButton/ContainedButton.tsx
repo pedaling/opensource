@@ -1,5 +1,4 @@
-import { Text } from '@vibrant-ui/core';
-import { HStack } from '../HStack';
+import { Box, Text } from '@vibrant-ui/core';
 import { Pressable } from '../Pressable';
 import { Spinner } from '../Spinner';
 import { withContainedButtonVariation } from './ContainedButtonProps';
@@ -33,12 +32,13 @@ export const ContainedButton = withContainedButtonVariation(
       borderRadiusLevel={1}
       disabled={loading || disabled}
     >
-      <HStack
+      <Box
         as="span"
         opacity={loading ? 0 : 1}
-        columnGap={contentsSpacing}
-        alignVertical="center"
-        alignHorizontal="center"
+        flexDirection="row"
+        gap={contentsSpacing}
+        alignItems="center"
+        justifyContent="center"
       >
         {IconComponent && <IconComponent size={iconSize} testId="icon-box" mx={2} />}
         {Boolean(children) && (
@@ -47,14 +47,14 @@ export const ContainedButton = withContainedButtonVariation(
           </Text>
         )}
         {DisclosureIconComponent && <DisclosureIconComponent testId="disclosure-box" size={disclosureSize} ml={2} />}
-      </HStack>
+      </Box>
 
       {loading && (
-        <HStack
+        <Box
           data-testid="loading-box"
           as="span"
-          alignVertical="center"
-          alignHorizontal="center"
+          alignItems="center"
+          justifyContent="center"
           position="absolute"
           top={0}
           left={0}
@@ -62,7 +62,7 @@ export const ContainedButton = withContainedButtonVariation(
           bottom={0}
         >
           <Spinner size={spinnerSize} />
-        </HStack>
+        </Box>
       )}
     </Pressable>
   )
