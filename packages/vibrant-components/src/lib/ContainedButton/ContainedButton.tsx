@@ -32,19 +32,22 @@ export const ContainedButton = withContainedButtonVariation(
       overlayColor={onColor}
       borderRadiusLevel={1}
       disabled={loading || disabled}
-      flexDirection="row"
-      alignItems="center"
-      justifyContent="center"
-      opacity={loading ? 0 : 1}
-      columnGap={contentsSpacing}
     >
-      {IconComponent && <IconComponent size={iconSize} testId="icon-box" mx={2} />}
-      {Boolean(children) && (
-        <Text data-testid="button-text" typography={typography} fontWeight="bold" mx={4}>
-          {children}
-        </Text>
-      )}
-      {DisclosureIconComponent && <DisclosureIconComponent testId="disclosure-box" size={disclosureSize} ml={2} />}
+      <HStack
+        as="span"
+        opacity={loading ? 0 : 1}
+        columnGap={contentsSpacing}
+        alignVertical="center"
+        alignHorizontal="center"
+      >
+        {IconComponent && <IconComponent size={iconSize} testId="icon-box" mx={2} />}
+        {Boolean(children) && (
+          <Text data-testid="button-text" typography={typography} fontWeight="bold" mx={4}>
+            {children}
+          </Text>
+        )}
+        {DisclosureIconComponent && <DisclosureIconComponent testId="disclosure-box" size={disclosureSize} ml={2} />}
+      </HStack>
 
       {loading && (
         <HStack

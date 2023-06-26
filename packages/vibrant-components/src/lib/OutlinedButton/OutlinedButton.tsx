@@ -37,19 +37,22 @@ export const OutlinedButton = withOutlinedButtonVariation(
       borderStyle="solid"
       borderRadiusLevel={1}
       disabled={loading || disabled}
-      flexDirection="row"
-      alignItems="center"
-      justifyContent="center"
-      opacity={loading ? 0 : 1}
-      columnGap={contentsSpacing}
     >
-      {IconComponent && <IconComponent size={iconSize} mx={2} />}
-      {Boolean(children) && (
-        <Text typography={typography} fontWeight="bold" mx={4}>
-          {children}
-        </Text>
-      )}
-      {DisclosureIconComponent && <DisclosureIconComponent size={disclosureSize} ml={2} />}
+      <HStack
+        as="span"
+        opacity={loading ? 0 : 1}
+        columnGap={contentsSpacing}
+        alignVertical="center"
+        alignHorizontal="center"
+      >
+        {IconComponent && <IconComponent size={iconSize} mx={2} />}
+        {Boolean(children) && (
+          <Text typography={typography} fontWeight="bold" mx={4}>
+            {children}
+          </Text>
+        )}
+        {DisclosureIconComponent && <DisclosureIconComponent size={disclosureSize} ml={2} />}
+      </HStack>
 
       {loading && (
         <HStack
