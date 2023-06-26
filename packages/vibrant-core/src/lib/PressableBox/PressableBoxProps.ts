@@ -1,4 +1,5 @@
 import type { Ref } from 'react';
+import type { Role } from 'react-native';
 import type { ReactElementChild } from '../../types';
 import type { BoxElements } from '../Box';
 import type {
@@ -39,7 +40,7 @@ export type PressableBoxProps = {
   onHoverIn?: () => void;
   onHoverOut?: () => void;
   children?: ReactElementChild | ReactElementChild[];
-  role?: string;
+  role?: Role;
   ariaLabel?: string;
   ariaSelected?: boolean;
   ariaChecked?: boolean;

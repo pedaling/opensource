@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.9](https://github.com/pedaling/opensource/compare/vibrant-components-0.64.8...vibrant-components-0.64.9) (2023-06-23)
+
+
+### Bug Fixes
+
+* **vibrant-components:** avatar가 네이티브에서 동작하지 않는 버그를 수정한다 ([#785](https://github.com/pedaling/opensource/issues/785)) ([7b1f97d](https://github.com/pedaling/opensource/commit/7b1f97dd3e223414a58495d8095fe7dc8abdd26a))
+
+### [0.64.8](https://github.com/pedaling/opensource/compare/vibrant-components-0.64.7...vibrant-components-0.64.8) (2023-06-22)
+
+### [0.64.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.64.6...vibrant-components-0.64.7) (2023-06-20)
+
+### [0.64.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.64.5...vibrant-components-0.64.6) (2023-06-20)
+
 ### [0.64.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.64.4...vibrant-components-0.64.5) (2023-06-19)
 
 ### [0.64.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.64.3...vibrant-components-0.64.4) (2023-06-16)

@@ -2,6 +2,29 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.64.9](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.8...vibrant-motion-0.64.9) (2023-06-23)
+
+### [0.64.8](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.7...vibrant-motion-0.64.8) (2023-06-22)
+
+
+### Bug Fixes
+
+* @vibrant/motion 라이브러리가 exports 필드를 생성하지 않도록 한다 ([#782](https://github.com/pedaling/opensource/issues/782)) ([bfd2cf6](https://github.com/pedaling/opensource/commit/bfd2cf65057c3d4cedc4717e1a055eb089c40053))
+
+### [0.64.7](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.6...vibrant-motion-0.64.7) (2023-06-20)
+
+
+### Bug Fixes
+
+* react-native-reanimated를 peerDependency에 둔다 ([#781](https://github.com/pedaling/opensource/issues/781)) ([39b2c31](https://github.com/pedaling/opensource/commit/39b2c316401ccfacc9eba3bac28e1bfe75630e46))
+
+### [0.64.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.5...vibrant-motion-0.64.6) (2023-06-20)
+
+
+### Bug Fixes
+
+* react-native 빌드 결과물을 cjs로 지정한다 ([#780](https://github.com/pedaling/opensource/issues/780)) ([759ab98](https://github.com/pedaling/opensource/commit/759ab98a5ddf3efdd9566e9dbbba0c9b375fb7aa))
+
 ### [0.64.5](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.4...vibrant-motion-0.64.5) (2023-06-19)
 
 ### [0.64.4](https://github.com/pedaling/opensource/compare/vibrant-motion-0.64.3...vibrant-motion-0.64.4) (2023-06-16)
