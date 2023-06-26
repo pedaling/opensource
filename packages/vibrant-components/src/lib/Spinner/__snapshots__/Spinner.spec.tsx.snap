@@ -16,15 +16,11 @@ exports[`<Spinner /> when Spinner rendered match snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   border-style: solid;
   border-width: 3px;
   border-color: #0c0c0c3d;
