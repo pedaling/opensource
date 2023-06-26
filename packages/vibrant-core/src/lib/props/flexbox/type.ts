@@ -63,6 +63,7 @@ export type FlexboxSystemProps = {
     | 'stretch'
   >;
   order?: ResponsiveValue<number>;
+  gap?: ResponsiveValue<number>;
   rowGap?: ResponsiveValue<number>;
   columnGap?: ResponsiveValue<number>;
 };
