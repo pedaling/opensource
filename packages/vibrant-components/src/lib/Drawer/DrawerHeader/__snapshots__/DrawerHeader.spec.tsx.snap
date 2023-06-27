@@ -149,8 +149,9 @@ exports[`<DrawerHeader /> when children is set match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: auto;
-  height: auto;
+  width: 16px;
+  height: 16px;
+  fill: #0c0c0c;
 }
 
 .emotion-8 {
@@ -169,30 +170,9 @@ exports[`<DrawerHeader /> when children is set match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
 }
 
 .emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-flex-shrink: 1;
-  -ms-flex-negative: 1;
-  flex-shrink: 1;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -256,29 +236,25 @@ exports[`<DrawerHeader /> when children is set match snapshot 1`] = `
           aria-label="닫기"
           class="emotion-6"
           data-testid="icon-button"
+          style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
           type="button"
         >
-          <span
+          <svg
             class="emotion-7"
-            style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+            data-testid="close-thin"
+            viewBox="0 0 24 24"
           >
-            <svg
+            <path
               class="emotion-8"
-              data-testid="close-thin"
-              viewBox="0 0 24 24"
-            >
-              <path
-                class="emotion-9"
-                d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
-              />
-            </svg>
-          </span>
+              d="m13.25 12 6.6-6.6c.1-.1.1-.25 0-.35l-.85-.9c-.1-.1-.25-.1-.35 0L12 10.75l-6.6-6.6c-.1-.1-.25-.1-.35 0l-.9.85c-.1.1-.1.25 0 .35l6.6 6.65-6.6 6.6c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l6.6-6.6 6.6 6.6c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-6.6-6.6Z"
+            />
+          </svg>
         </button>
       </div>
     </div>
   </div>
   <div
-    class="emotion-10"
+    class="emotion-9"
     kind="default"
   />
 </div>
