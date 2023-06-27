@@ -291,7 +291,9 @@ describe('<ContainedButton />', () => {
       });
 
       it(`spinner size should be ${spinnerSize}`, () => {
-        expect(renderer.getByTestId('loading-box').firstElementChild?.clientHeight).toBe(spinnerSize);
+        expect(getComputedStyle(renderer.getByTestId('loading-box').firstElementChild as Element).height).toBe(
+          `${spinnerSize}px`
+        );
       });
     });
   });

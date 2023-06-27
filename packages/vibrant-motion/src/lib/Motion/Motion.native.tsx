@@ -53,9 +53,15 @@ export const Motion = withMotionVariation(
         Object.keys(styleWithTransform).reduce((acc, key) => {
           if (key === 'transform') {
             const transform = styleWithTransform['transform']?.map((transformStyle: Record<string, any>) => {
-              const [[key, value]] = Object.entries(transformStyle) as [string, [number, number]][];
+              const [[key, values]] = Object.entries(transformStyle) as [string, [number | string, number | string]][];
+              const suffix = key === 'rotate' && typeof values[0] === 'string' ? 'deg' : '';
+              const styleValues = (suffix ? values.map(a => parseInt(a as string)) : values) as [number, number];
 
-              return { [key]: interpolate(progress.value, [0, 1], value) };
+              const interpolatedValue = suffix
+                ? interpolate(progress.value, [0, 1], styleValues) + suffix
+                : interpolate(progress.value, [0, 1], styleValues);
+
+              return { [key]: interpolatedValue };
             });
 
             return Object.assign({}, acc, {
