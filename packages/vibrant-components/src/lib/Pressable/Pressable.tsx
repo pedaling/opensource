@@ -40,9 +40,8 @@ export const Pressable = withPressableVariation(
     const Component = (isDefined(href) ? Link : PressableBox) as ComponentWithRef<LinkProps | PressableBoxProps>;
 
     return (
-      <Transition animation={{ opacity: textOpacity }} duration={200}>
+      <Transition ref={innerRef} animation={{ opacity: textOpacity }} duration={200}>
         <Component
-          ref={innerRef}
           data-testid={testId}
           position="relative"
           overflow="hidden"
