@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.65.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.3...vibrant-components-0.65.4) (2023-07-03)
+
+
+### Bug Fixes
+
+* src가 빈문자열인 경우 바로 placeholder를 보여주게 수정한다 ([#792](https://github.com/pedaling/opensource/issues/792)) ([3262ec6](https://github.com/pedaling/opensource/commit/3262ec6959874417b491fb4d18a62967d052a07c))
+
 ### [0.65.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.2...vibrant-components-0.65.3) (2023-06-28)
 
 
