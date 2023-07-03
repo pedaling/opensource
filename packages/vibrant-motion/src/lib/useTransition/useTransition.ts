@@ -7,7 +7,6 @@ export type UseTransitionProps = {
   animation: AllSystemProps & TransformMotionProps;
   duration: number;
   easing: keyof EasingDictionary;
-  onStart?: ((e?: AnimationResult<any>) => void) | undefined;
   onEnd?: ((e?: AnimationResult<any>) => void) | undefined;
 };
 

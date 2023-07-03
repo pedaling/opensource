@@ -1,9 +1,10 @@
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import type { EasingFunction } from 'react-native';
 import type { AnimatableValue, EasingFunctionFactory } from 'react-native-reanimated';
 import { Easing, runOnJS, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import type { AllSystemProps } from '@vibrant-ui/core';
 import { useInterpolation } from '@vibrant-ui/core';
+import { useCallbackRef } from '@vibrant-ui/utils';
 import type { EasingDictionary } from '../constants';
 import type { TransformMotionProps } from '../props/transform';
 import { transformMotionProps } from '../props/transform';
@@ -13,7 +14,6 @@ type UseTransitionProps = {
   animation: AllSystemProps & TransformMotionProps;
   duration: number;
   easing: keyof EasingDictionary;
-  onStart?: ((e?: AnimationResult<any>) => void) | undefined;
   onEnd?: ((e?: AnimationResult<any>) => void) | undefined;
 };
 
@@ -23,40 +23,30 @@ const convertEasing: Record<keyof EasingDictionary, EasingFunction | EasingFunct
   linear: Easing.linear,
 };
 
-export const useTransition = ({ animation, duration = 200, easing, onStart, onEnd }: UseTransitionProps) => {
+export const useTransition = ({ animation, duration = 200, easing, onEnd }: UseTransitionProps) => {
   const { interpolation } = useInterpolation(transformMotionProps);
 
   const animationStyle: AllSystemProps & TransformMotionProps = useMemo(
     () => interpolation(animation),
     [animation, interpolation]
   );
-  const isStarted = useRef(false);
-  const initialAnimation = useRef(true);
-  const onStartCallback = useCallback(() => {
-    if (initialAnimation.current) {
-      return;
-    }
 
+  const onEndRef = useCallbackRef(onEnd);
+  const isStarted = useRef(false);
+
+  const onStartCallback = useCallback(() => {
     if (!isStarted.current) {
       isStarted.current = true;
-
-      onStart?.();
     }
-  }, [onStart]);
+  }, []);
 
   const onEndCallback = useCallback(() => {
-    if (initialAnimation.current) {
-      initialAnimation.current = false;
-
-      return;
-    }
-
     if (isStarted.current) {
       isStarted.current = false;
 
-      onEnd?.();
+      onEndRef?.();
     }
-  }, [onEnd]);
+  }, [onEndRef]);
 
   const timingAnimation = useCallback(
     (value: AnimatableValue, callbackFlag: boolean) => {
@@ -98,6 +88,15 @@ export const useTransition = ({ animation, duration = 200, easing, onStart, onEn
       });
     }, {});
   }, [animation]);
+
+  useEffect(
+    () => () => {
+      if (isStarted.current) {
+        onEndRef();
+      }
+    },
+    [onEndRef]
+  );
 
   return transition;
 };
