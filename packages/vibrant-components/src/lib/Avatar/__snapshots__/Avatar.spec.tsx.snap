@@ -29,7 +29,7 @@ exports[`<Avatar /> when size is lg match snapshot 1`] = `
     data-testid="image"
     draggable="false"
     loading="eager"
-    src=""
+    src="https://cdn.class101.net/images/2483a7e5-8c20-4ac7-a209-805b4482664d"
   />
 </div>
 `;
@@ -63,7 +63,7 @@ exports[`<Avatar /> when size is md match snapshot 1`] = `
     data-testid="image"
     draggable="false"
     loading="eager"
-    src=""
+    src="https://cdn.class101.net/images/2483a7e5-8c20-4ac7-a209-805b4482664d"
   />
 </div>
 `;
@@ -97,7 +97,7 @@ exports[`<Avatar /> when size is sm match snapshot 1`] = `
     data-testid="image"
     draggable="false"
     loading="eager"
-    src=""
+    src="https://cdn.class101.net/images/2483a7e5-8c20-4ac7-a209-805b4482664d"
   />
 </div>
 `;
@@ -131,7 +131,7 @@ exports[`<Avatar /> when size is xs match snapshot 1`] = `
     data-testid="image"
     draggable="false"
     loading="eager"
-    src=""
+    src="https://cdn.class101.net/images/2483a7e5-8c20-4ac7-a209-805b4482664d"
   />
 </div>
 `;
