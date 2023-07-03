@@ -1,5 +1,4 @@
 import { Box, Image } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
 import { Ratio } from '../Ratio';
 import { withImageThumbnailVariation } from './ImageThumbnailProps';
 
@@ -19,7 +18,7 @@ export const ImageThumbnail = withImageThumbnailVariation(
       ratio={aspectRatio}
       width={width}
       borderRadiusLevel={borderRadiusLevel}
-      overflow={isDefined(borderRadiusLevel) ? 'hidden' : 'visible'}
+      overflow="hidden"
     >
       {dim && (
         <Box
