@@ -672,6 +672,978 @@ exports[`<Icon /> when AlertCircle.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when AlignHorizontalCenter.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalcenter-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M11.1504 22.5999v-3.25H7.25039c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h3.90001v-2.3H4.00039c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h7.15001v-3.25h1.7v3.25h7.15c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1h-7.15v2.3h3.9c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1h-3.9v3.25h-1.7Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalCenter.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalcenter-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M11.1504 22.5999v-3.25H7.25039c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h3.90001v-2.3H4.00039c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h7.15001v-3.25h1.7v3.25h7.15c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1h-7.15v2.3h3.9c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1h-3.9v3.25h-1.7Zm4.5-5.45v-1.8H8.35039v1.8h7.30001Zm3.25-8.5v-1.8H5.10039v1.8H18.9004Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalCenter.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalcenter-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M11.4004 22.3499v-3.25H7.25039c-.469 0-.85-.381-.85-.85v-4c0-.469.381-.85.85-.85h4.15001v-2.8H4.00039c-.469 0-.85-.381-.85-.85v-4c0-.469.381-.85.85-.85h7.40001v-3.25h1.2v3.25h7.4c.469 0 .85.381.85.85v4c0 .469-.381.85-.85.85h-7.4v2.8h4.15c.469 0 .85.381.85.85v4c0 .469-.381.85-.85.85h-4.15v3.25h-1.2Zm-3.30001-4.95h7.80001v-2.3H8.10039v2.3Zm-3.25-8.5H19.1504v-2.3H4.85039v2.3Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalLeft.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalleft-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M1.40039 22.5999v-21.2h1.7v21.2h-1.7Zm4.6-3.25c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h9.00001c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H6.00039Zm0-8.5c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1H21.0004c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H6.00039Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalLeft.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalleft-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M1.40039 22.5999v-21.2h1.7v21.2h-1.7Zm4.6-3.25c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h9.00001c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H6.00039Zm7.90001-2.2v-1.8H7.10039v1.8h6.80001Zm-7.90001-6.3c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1H21.0004c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H6.00039Zm13.90001-2.2v-1.8H7.10039v1.8H19.9004Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalLeft.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalleft-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M1.65039 22.3499v-20.7h1.2v20.7h-1.2Zm4.35-3.25c-.469 0-.85-.381-.85-.85v-4c0-.469.381-.85.85-.85h9.00001c.469 0 .85.381.85.85v4c0 .469-.381.85-.85.85H6.00039Zm.85-1.7h7.30001v-2.3H6.85039v2.3Zm-.85-6.8c-.469 0-.85-.381-.85-.85v-4c0-.469.381-.85.85-.85H21.0004c.469 0 .85.381.85.85v4c0 .469-.381.85-.85.85H6.00039Zm.85-1.7H20.1504v-2.3H6.85039v2.3Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalRight.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalright-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M9.00039 19.3499c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h9.00001c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H9.00039ZM3.00039 10.8499c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1H18.0004c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H3.00039ZM22.6004 1.3999h-1.7v21.2h1.7v-21.2Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalRight.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalright-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M9.00039 19.3499c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1h9.00001c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H9.00039Zm7.90001-2.2v-1.8h-6.8v1.8h6.8ZM3.00039 10.8499c-.6065 0-1.1-.4935-1.1-1.1v-4c0-.6065.4935-1.1 1.1-1.1H18.0004c.6065 0 1.1.4935 1.1 1.1v4c0 .6065-.4935 1.1-1.1 1.1H3.00039Zm13.90001-2.2v-1.8H4.10039v1.8H16.9004ZM22.6004 1.3999h-1.7v21.2h1.7v-21.2Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignHorizontalRight.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignhorizontalright-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M21.1504 22.3499v-20.7h1.2v20.7h-1.2Zm-12.15001-3.25c-.469 0-.85-.381-.85-.85v-4c0-.469.381-.85.85-.85h9.00001c.469 0 .85.381.85.85v4c0 .469-.381.85-.85.85H9.00039Zm.85-1.7h7.30001v-2.3H9.85039v2.3Zm-6.85-6.8c-.469 0-.85-.381-.85-.85v-4c0-.469.381-.85.85-.85H18.0004c.469 0 .85.381.85.85v4c0 .469-.381.85-.85.85H3.00039Zm.85-1.7H17.1504v-2.3H3.85039v2.3Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalBottom.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticalbottom-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M14.2504 18.5999c-.6065 0-1.1-.4935-1.1-1.1v-8.5c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v8.5c0 .6065-.4935 1.1-1.1 1.1h-4ZM5.75039 18.5999c-.6065 0-1.1-.4935-1.1-1.1v-14c0-.6065.4935-1.1 1.1-1.1h4c.60651 0 1.10001.4935 1.10001 1.1v14c0 .6065-.4935 1.1-1.10001 1.1h-4ZM23.1004 20.3999H.900391v1.7H23.1004v-1.7Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalBottom.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticalbottom-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M14.2504 18.5999c-.6065 0-1.1-.4935-1.1-1.1v-8.5c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v8.5c0 .6065-.4935 1.1-1.1 1.1h-4Zm2.9-2.2v-6.3h-1.8v6.3h1.8ZM5.75039 18.5999c-.6065 0-1.1-.4935-1.1-1.1v-14c0-.6065.4935-1.1 1.1-1.1h4c.60651 0 1.10001.4935 1.10001 1.1v14c0 .6065-.4935 1.1-1.10001 1.1h-4Zm2.9-2.2v-11.8h-1.8v11.8h1.8ZM23.1004 20.3999H.900391v1.7H23.1004v-1.7Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalBottom.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticalbottom-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M1.15039 21.8499v-1.2H22.8504v1.2H1.15039Zm13.10001-3.5c-.469 0-.85-.381-.85-.85v-8.5c0-.469.381-.85.85-.85h4c.469 0 .85.381.85.85v8.5c0 .469-.381.85-.85.85h-4Zm.85-1.7h2.3v-6.8h-2.3v6.8Zm-9.35001 1.7c-.469 0-.85-.381-.85-.85v-14c0-.469.381-.85.85-.85h4c.46901 0 .85001.381.85001.85v14c0 .469-.381.85-.85001.85h-4Zm.85-1.7h2.3v-12.3h-2.3v12.3Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalCenter.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticalcenter-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M5.7502 21.0999c-.6065 0-1.1-.4935-1.1-1.1v-7.15H.950195v-1.7H4.6502v-7.15c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v7.15h2.3v-3.9c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v3.9h3.8v1.7h-3.8v3.9c0 .6065-.4935 1.1-1.1 1.1h-4c-.6065 0-1.1-.4935-1.1-1.1v-3.9h-2.3v7.15c0 .6065-.4935 1.1-1.1 1.1h-4Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalCenter.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticalcenter-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M5.7502 21.0999c-.6065 0-1.1-.4935-1.1-1.1v-7.15H.950195v-1.7H4.6502v-7.15c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v7.15h2.3v-3.9c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v3.9h3.8v1.7h-3.8v3.9c0 .6065-.4935 1.1-1.1 1.1h-4c-.6065 0-1.1-.4935-1.1-1.1v-3.9h-2.3v7.15c0 .6065-.4935 1.1-1.1 1.1h-4Zm2.9-2.2v-13.8h-1.8v13.8h1.8Zm8.5-3.25v-7.3h-1.8v7.3h1.8Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalCenter.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticalcenter-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M5.7502 20.8499c-.469 0-.85-.381-.85-.85v-7.4h-3.7v-1.2h3.7v-7.4c0-.469.381-.85.85-.85h4c.469 0 .85.381.85.85v7.4h2.8v-4.15c0-.469.381-.85.85-.85h4c.469 0 .85.381.85.85v4.15h3.8v1.2h-3.8v4.15c0 .469-.381.85-.85.85h-4c-.469 0-.85-.381-.85-.85v-4.15h-2.8v7.4c0 .469-.381.85-.85.85h-4Zm.85-1.7h2.3v-14.3h-2.3v14.3Zm8.5-3.25h2.3v-7.8h-2.3v7.8Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalTop.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticaltop-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M14.2504 16.0999c-.6065 0-1.1-.4935-1.1-1.1v-8.5c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v8.5c0 .6065-.4935 1.1-1.1 1.1h-4ZM5.75039 21.5999c-.6065 0-1.1-.4935-1.1-1.1v-14c0-.6065.4935-1.1 1.1-1.1h4c.60651 0 1.10001.4935 1.10001 1.1v14c0 .6065-.4935 1.1-1.10001 1.1h-4ZM23.1004 1.8999H.900391v1.7H23.1004v-1.7Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalTop.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticaltop-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M14.2504 16.0999c-.6065 0-1.1-.4935-1.1-1.1v-8.5c0-.6065.4935-1.1 1.1-1.1h4c.6065 0 1.1.4935 1.1 1.1v8.5c0 .6065-.4935 1.1-1.1 1.1h-4Zm2.9-2.2v-6.3h-1.8v6.3h1.8ZM5.75039 21.5999c-.6065 0-1.1-.4935-1.1-1.1v-14c0-.6065.4935-1.1 1.1-1.1h4c.60651 0 1.10001.4935 1.10001 1.1v14c0 .6065-.4935 1.1-1.10001 1.1h-4Zm2.9-2.2v-11.8h-1.8v11.8h1.8ZM23.1004 1.8999H.900391v1.7H23.1004v-1.7Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlignVerticalTop.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alignverticaltop-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M5.75039 21.3499c-.469 0-.85-.381-.85-.85v-14c0-.469.381-.85.85-.85h4c.46901 0 .85001.381.85001.85v14c0 .469-.381.85-.85001.85h-4Zm.85-1.7h2.3v-12.3h-2.3v12.3Zm7.65001-3.8c-.469 0-.85-.381-.85-.85v-8.5c0-.469.381-.85.85-.85h4c.469 0 .85.381.85.85v8.5c0 .469-.381.85-.85.85h-4Zm.85-1.7h2.3v-6.8h-2.3v6.8Zm-13.95001-10.8v-1.2H22.8504v1.2H1.15039Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when Analysis.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
