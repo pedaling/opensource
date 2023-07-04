@@ -143,7 +143,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   margin-right: auto;
   margin-top: auto;
   margin-bottom: 0;
-  padding-top: 24px;
+  padding-top: 20px;
   padding-bottom: max(var(--safe-area-inset-bottom, 0px), 20px);
   width: 100%;
   max-width: 446px;
@@ -158,8 +158,8 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
 @media screen and (min-width: 640px) {
   .emotion-5 {
     margin-bottom: auto;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 28px;
+    padding-bottom: 28px;
     max-width: 480px;
     max-height: unset;
     border-bottom-left-radius: 20px;
@@ -220,7 +220,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   position: relative;
   margin-left: auto;
   margin-top: 0;
-  padding-left: 12px;
+  padding-left: 6px;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
@@ -316,7 +316,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   overflow: auto;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 640px) {
@@ -557,7 +557,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   margin-right: auto;
   margin-top: auto;
   margin-bottom: 0;
-  padding-top: 24px;
+  padding-top: 20px;
   padding-bottom: max(var(--safe-area-inset-bottom, 0px), 20px);
   width: 100%;
   max-width: 446px;
@@ -572,8 +572,8 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
 @media screen and (min-width: 640px) {
   .emotion-5 {
     margin-bottom: auto;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    padding-top: 28px;
+    padding-bottom: 28px;
     max-width: 480px;
     max-height: unset;
     border-bottom-left-radius: 20px;
@@ -634,7 +634,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   position: relative;
   margin-left: auto;
   margin-top: 0;
-  padding-left: 12px;
+  padding-left: 6px;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
@@ -730,7 +730,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   box-sizing: border-box;
   position: relative;
   overflow: auto;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 640px) {

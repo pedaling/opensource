@@ -21,7 +21,6 @@ import { ContainedButton } from '../ContainedButton';
 import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
 import { IconButton } from '../IconButton';
-import { Space } from '../Space';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { withModalBottomSheetVariation } from './ModalBottomSheetProps';
@@ -65,6 +64,8 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
 
     const isMobile = breakpointIndex === 0;
+
+    const contentMarginTop = title || subtitle || showCloseButton ? [20, 24] : 0;
 
     const {
       theme: { zIndex },
@@ -140,8 +141,8 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 mx="auto"
                 mt="auto"
                 mb={[0, 'auto']}
-                pt={[24, 36]}
-                pb={[bottomSheetPaddingBottom ?? 20, 36]}
+                pt={[20, 28]}
+                pb={[bottomSheetPaddingBottom ?? 20, 28]}
                 width="100%"
                 maxWidth={[446, 480, desktopModalWidth]}
                 maxHeight={[viewportHeight - 120, 'unset']}
@@ -161,7 +162,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   ) : null}
 
                   {showCloseButton && (
-                    <HStack ml="auto" mt={[0, title ? 6 : 0]} flexShrink={0} pl={12}>
+                    <HStack ml="auto" mt={[0, title ? 6 : 0]} flexShrink={0} pl={6}>
                       <IconButton ariaLabel="Close" onClick={closeModal} size="md" IconComponent={Icon.Close.Regular} />
                     </HStack>
                   )}
@@ -172,16 +173,14 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   </Body>
                 ) : null}
 
-                {renderContents ? (
-                  <ScrollBox mt={[16, 24]} scrollEnabled={[true, false]}>
+                {renderContents && (
+                  <ScrollBox mt={contentMarginTop} scrollEnabled={[true, false]}>
                     {renderContents({ close: closeModal })}
                   </ScrollBox>
-                ) : (
-                  <Space height={8} />
                 )}
 
                 {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
-                  <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0}>
+                  <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0}>
                     <ContainedButton
                       kind="primary"
                       size="xl"
@@ -195,7 +194,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   </VStack>
                 )}
                 {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
-                  <HStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
+                  <HStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
                     <ContainedButton
                       kind="tertiary"
                       size="xl"
@@ -219,7 +218,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   </HStack>
                 )}
                 {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
-                  <VStack px={[20, 32]} mt={[16, 24]} flexShrink={0} width="100%" spacing={16}>
+                  <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={16}>
                     <ContainedButton
                       kind="primary"
                       size="xl"
