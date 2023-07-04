@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box, useCurrentTheme } from '@vibrant-ui/core';
+import { Box, Text, useCurrentTheme } from '@vibrant-ui/core';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
 import { HStack } from '../HStack';
@@ -21,6 +21,11 @@ export default {
       <Pressable backgroundColor="primary" onClick={open} p={20}>
         <Body level={1}>Click Me</Body>
       </Pressable>
+    ),
+    renderContents: () => (
+      <Box width="100%" height={100} backgroundColor="primary" alignItems="center" justifyContent="center">
+        <Text>Content</Text>
+      </Box>
     ),
   },
 } as ComponentMeta<typeof ModalBottomSheet>;
