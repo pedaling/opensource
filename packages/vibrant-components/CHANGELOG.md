@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.65.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.5...vibrant-components-0.65.6) (2023-07-05)
+
+
+### Features
+
+* 모바싯 padding 및 간격을 수정한다 ([#795](https://github.com/pedaling/opensource/issues/795)) ([63cec41](https://github.com/pedaling/opensource/commit/63cec41a7934b31efdbb03b3b88db1254c393266))
+
 ### [0.65.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.4...vibrant-components-0.65.5) (2023-07-04)
 
 ### [0.65.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.3...vibrant-components-0.65.4) (2023-07-03)
