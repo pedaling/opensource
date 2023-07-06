@@ -11,6 +11,7 @@ export const IconButton = withIconButtonVariation(
       buttonType={type}
       interactions={['focus', 'active']}
       borderRadiusLevel={1}
+      hitSlop={8}
     >
       <IconComponent size={iconSize} fill={color} />
     </Pressable>
