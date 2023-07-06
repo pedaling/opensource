@@ -29,7 +29,7 @@ export const withIconButtonVariation = withVariation<IconButtonProps>('IconButto
     variants: {
       sm: {
         iconSize: 16,
-        hitSlop: 8,
+        hitSlop: 12,
       },
       md: {
         iconSize: 24,
