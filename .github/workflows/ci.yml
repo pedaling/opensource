@@ -59,13 +59,15 @@ jobs:
       - run: yarn
       - name: Setup Node
         uses: actions/setup-node@v3
-        with: 
+        with:
           node-version: 16
       - name: Publish to Chromatic
         if: github.ref != 'refs/heads/main'
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
       - name: Publish to Chromatic and auto accept changes
         if: github.ref == 'refs/heads/main'
         uses: chromaui/action@v1
