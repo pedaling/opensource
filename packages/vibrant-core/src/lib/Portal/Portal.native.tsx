@@ -49,7 +49,12 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
     return (
       <FullWindowOverlay>
         <View pointerEvents="box-none" style={{ position: 'absolute', width, height, top, bottom, left, right }}>
-          <ViewComponent ref={innerRef} {...restProps} style={style} contentContainerStyle={{ flexGrow: 1 }}>
+          <ViewComponent
+            ref={innerRef}
+            {...restProps}
+            style={style}
+            {...(scrollable ? { contentContainerStyle: { flexGrow: 1 } } : {})}
+          >
             {children}
           </ViewComponent>
         </View>
@@ -58,7 +63,12 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
   }
 
   return createPortal(
-    <ViewComponent ref={innerRef} {...restProps} style={{ ...style, position: 'absolute' }}>
+    <ViewComponent
+      ref={innerRef}
+      {...restProps}
+      style={{ ...style, position: 'absolute' }}
+      {...(scrollable ? { contentContainerStyle: { flexGrow: 1 } } : {})}
+    >
       {children}
     </ViewComponent>,
     container
