@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.65.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.65.6...vibrant-core-0.65.7) (2023-07-07)
+
+
+### Bug Fixes
+
+* 안드로이드/ 태블릿 뷰에서 모달이 위쪽으로 align되는 이슈를 수정한다 ([#799](https://github.com/pedaling/opensource/issues/799)) ([4884eae](https://github.com/pedaling/opensource/commit/4884eaec36604d47a22dbaecd89df77f67965c25))
+
 ### [0.65.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.65.5...vibrant-core-0.65.6) (2023-07-05)
 
 ### [0.65.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.65.4...vibrant-core-0.65.5) (2023-07-04)

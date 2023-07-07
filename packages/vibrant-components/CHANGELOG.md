@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.65.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.6...vibrant-components-0.65.7) (2023-07-07)
+
+
+### Features
+
+* add sm size IconButton hitslop ([#798](https://github.com/pedaling/opensource/issues/798)) ([ae00c1c](https://github.com/pedaling/opensource/commit/ae00c1c790b797109b78e72409ebf048ca40903f))
+
 ### [0.65.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.5...vibrant-components-0.65.6) (2023-07-05)
 
 
