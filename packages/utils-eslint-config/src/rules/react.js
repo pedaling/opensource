@@ -15,6 +15,7 @@ const reactRules = {
   'react/sort-comp': ['off'],
   'react/state-in-constructor': ['off'],
   'react/static-property-placement': ['off'],
+  'react/self-closing-comp': ['error'],
 };
 
 module.exports = reactRules;
