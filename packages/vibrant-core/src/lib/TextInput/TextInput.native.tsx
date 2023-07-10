@@ -47,6 +47,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       onKeyPress,
       onValueChange,
       onSubmit,
+      textAlignVertical = 'top',
       ...restProps
     },
     ref
@@ -98,6 +99,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         value={value}
         editable={!readOnly && !disabled}
         secureTextEntry={type === 'password'}
+        textAlignVertical={textAlignVertical}
         onFocus={() => {
           setIsFocused(true);
 
