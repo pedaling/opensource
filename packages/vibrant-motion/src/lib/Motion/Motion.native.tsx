@@ -106,6 +106,6 @@ export const Motion = withMotionVariation(
       [children.type]
     );
 
-    return <AnimatedViewComponent {...children.props} style={style}></AnimatedViewComponent>;
+    return <AnimatedViewComponent {...children.props} style={style} />;
   }
 );
