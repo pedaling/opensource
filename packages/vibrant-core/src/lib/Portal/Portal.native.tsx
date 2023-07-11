@@ -15,8 +15,6 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
 
   const [container, setContainer] = useState<Element | number | null>(null);
 
-  const { top, right, bottom, left } = style;
-
   useEffect(() => {
     let containerIndex: number | null = null;
 
@@ -48,11 +46,11 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
   if (platform === 'ios') {
     return (
       <FullWindowOverlay>
-        <View pointerEvents="box-none" style={{ position: 'absolute', width, height, top, bottom, left, right }}>
+        <View pointerEvents="box-none" style={{ position: 'absolute', width, height, top: 0, left: 0, right: 0 }}>
           <ViewComponent
             ref={innerRef}
             {...restProps}
-            style={style}
+            style={{ ...style, position: 'absolute' }}
             {...(scrollable ? { contentContainerStyle: { flexGrow: 1 } } : {})}
           >
             {children}
