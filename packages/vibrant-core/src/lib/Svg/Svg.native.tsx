@@ -37,7 +37,7 @@ const Path: FC<PathProps> = props => <Box base={RNPath} {...props} />;
 const Stop: FC<StopProps> = props => <Box base={RNStop} {...props} />;
 
 export const Svg: SvgComponentType = ({ width, height, ...restProps }) => (
-  <Box base={RNSvg} width={width || 'auto'} height={height || 'auto'} {...restProps}></Box>
+  <Box base={RNSvg} width={width || 'auto'} height={height || 'auto'} {...restProps} />
 );
 
 Svg.ClipPath = ClipPath;

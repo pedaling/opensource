@@ -23,7 +23,7 @@ export const Basic: ComponentStory<typeof Pressable> = props => (
     borderStyle="solid"
     borderColor="primary"
     {...props}
-  ></Pressable>
+  />
 );
 
 export const withHref: ComponentStory<typeof Pressable> = props => (
