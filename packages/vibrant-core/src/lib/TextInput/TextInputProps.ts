@@ -196,6 +196,11 @@ export type TextInputProps = SystemProps &
       target?: HTMLInputElement | null;
     }) => void;
     onSubmit?: (value: string) => void;
+    /**
+     * Vertically align text when `multiline` is set to true.
+     * on Android only.
+     */
+    textAlignVertical?: 'auto' | 'bottom' | 'center' | 'top';
   };
 
 export const interpolation = injectContext(
