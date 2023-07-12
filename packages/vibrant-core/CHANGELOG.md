@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.67.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.66.0...vibrant-core-0.67.0) (2023-07-12)
+
+
+### Features
+
+* Add boxSizing 'content-box' value ([#804](https://github.com/pedaling/opensource/issues/804)) ([d7df2f8](https://github.com/pedaling/opensource/commit/d7df2f85405bd30e7f0ce0c51d25797faff8d36f))
+
 ### [0.65.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.65.6...vibrant-core-0.65.7) (2023-07-07)
 
 
