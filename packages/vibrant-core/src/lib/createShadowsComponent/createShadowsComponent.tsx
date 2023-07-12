@@ -13,7 +13,7 @@ type ShadowComponentType = ComponentType<{
 
 type ShadowsProps = {
   shadows: {
-    starColor?: string;
+    startColor?: string;
     offset?: [number, number];
     distance?: number;
   }[];
