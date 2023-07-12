@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.67.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.67.0...vibrant-components-0.67.1) (2023-07-12)
+
+
+### Bug Fixes
+
+* update elevation level of toast ([#806](https://github.com/pedaling/opensource/issues/806)) ([bde3cf7](https://github.com/pedaling/opensource/commit/bde3cf7db9b513cf164510fe3c4df5ab70d770b9))
+
 ## [0.67.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.66.0...vibrant-components-0.67.0) (2023-07-12)
 
 ### [0.65.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.65.6...vibrant-components-0.65.7) (2023-07-07)
