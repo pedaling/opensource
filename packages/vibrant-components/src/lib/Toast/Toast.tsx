@@ -11,7 +11,7 @@ export const Toast = withToastVariation(
     <HStack ref={innerRef} {...restProps} px={20} width="100%" alignHorizontal="center" data-testid={testId}>
       <Paper
         borderRadiusLevel={1}
-        elevationLevel={4}
+        elevationLevel={1}
         backgroundColor="inverseSurface"
         maxWidth={816}
         width={['100%', 'auto']}
