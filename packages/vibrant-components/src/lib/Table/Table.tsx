@@ -57,17 +57,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   });
 
   useEffect(() => {
-    const newSelectedRowKeys = new Set<Data[RowKey]>();
-
-    data.forEach(val => {
-      const key = val[rowKey];
-
-      if (selectedRowKeys.has(key)) {
-        newSelectedRowKeys.add(key);
-      }
-    });
-
-    setSelectedRowKeys(newSelectedRowKeys);
+    setSelectedRowKeys(new Set(data.filter(row => selectedRowKeys.has(row[rowKey])).map(row => row[rowKey])));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, rowKey]);
 
