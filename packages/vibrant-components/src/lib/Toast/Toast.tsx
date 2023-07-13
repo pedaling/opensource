@@ -14,6 +14,7 @@ export const Toast = withToastVariation(
         elevationLevel={1}
         backgroundColor="inverseSurface"
         maxWidth={816}
+        pointerEvents="auto"
         width={['100%', 'auto']}
       >
         <HStack px={16} py={12} alignVertical="center" width={['100%', 'auto']}>
