@@ -64,6 +64,7 @@ export const ToastRenderer = () => {
       right={0}
       zIndex={zIndex.toast}
       safeAreaMode="margin"
+      pointerEvents="none"
     >
       {() => (
         <Transition
