@@ -66,6 +66,7 @@ jobs:
         uses: chromaui/action@v1
         with:
           projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+          onlyChanged: true
         env:
           NODE_OPTIONS: --max-old-space-size=8192
       - name: Publish to Chromatic and auto accept changes
