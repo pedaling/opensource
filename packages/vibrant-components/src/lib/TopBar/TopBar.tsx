@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { isValidElement, useState } from 'react';
 import { Box, useCurrentTheme } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { HStack } from '../HStack';
@@ -48,22 +48,28 @@ export const TopBar = withTopBarVariation(
               </HStack>
             </Box>
           )}
-          <Title
-            data-testid="top-bar-title"
-            as={titleAs}
-            level={titleLevel}
-            flex={1}
-            alignSelf="center"
-            textAlign={titleCentered ? 'center' : 'left'}
-            lineLimit={1}
-            visibility={
-              titleCentered && (renderLeft || renderRight) && !isDefined(leftSideWidth) && !isDefined(rightSideWidth)
-                ? 'hidden'
-                : 'visible'
-            }
-          >
-            {title}
-          </Title>
+          {isValidElement(title) ? (
+            <Box data-testId="top-bar-element-title" width="100%" flex={1} flexShrink={0} justifyContent="center">
+              {title}
+            </Box>
+          ) : (
+            <Title
+              data-testid="top-bar-text-title"
+              as={titleAs}
+              level={titleLevel}
+              flex={1}
+              alignSelf="center"
+              textAlign={titleCentered ? 'center' : 'left'}
+              lineLimit={1}
+              visibility={
+                titleCentered && (renderLeft || renderRight) && !isDefined(leftSideWidth) && !isDefined(rightSideWidth)
+                  ? 'hidden'
+                  : 'visible'
+              }
+            >
+              {title}
+            </Title>
+          )}
           {(titleCentered || renderRight) && (
             <Box data-testid="top-bar-right-area" flexShrink={0} flexBasis={sideWidth} alignItems="flex-end">
               <HStack
