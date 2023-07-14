@@ -49,7 +49,7 @@ describe('<TopBar />', () => {
       });
 
       it("its as should be default value 'h1'", () => {
-        expect(renderer.getByTestId('top-bar-title').tagName).toEqual('H1');
+        expect(renderer.getByTestId('top-bar-text-title').tagName).toEqual('H1');
       });
     });
 
@@ -59,7 +59,7 @@ describe('<TopBar />', () => {
       });
 
       it('its as should be set', () => {
-        expect(renderer.getByTestId('top-bar-title').tagName).toEqual('H3');
+        expect(renderer.getByTestId('top-bar-text-title').tagName).toEqual('H3');
       });
     });
   });
@@ -90,6 +90,28 @@ describe('<TopBar />', () => {
 
       it('width of left and right area should be same', () => {
         expect(topBarRightSide.clientWidth - topBarLeftSide.clientWidth).toEqual(0);
+      });
+    });
+  });
+
+  describe("when 'title' props", () => {
+    describe('is text', () => {
+      beforeEach(() => {
+        renderer = render(<TopBar title="My Liked Class" />);
+      });
+
+      it('render title with Title component', () => {
+        expect(renderer.queryByTestId('top-bar-text-title')).toBeTruthy();
+      });
+    });
+
+    describe('is element', () => {
+      beforeEach(() => {
+        renderer = render(<TopBar title={<Icon.Home.Regular size={24} />} />);
+      });
+
+      it('render title with Box component', () => {
+        expect(renderer.queryByTestId('top-bar-element-title')).toBeTruthy();
       });
     });
   });
