@@ -136,7 +136,7 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
   const addRow = () => {
     setData(prev => [
       ...prev,
-      createData(String(index.current), index.current, index.current, index.current, index.curernt),
+      createData(String(index.current), index.current, index.current, index.current, index.current),
     ]);
 
     index.current += 1;
