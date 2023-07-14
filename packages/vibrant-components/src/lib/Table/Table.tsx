@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
-import { Children, isValidElement, useState } from 'react';
+import { Children, isValidElement, useEffect, useState } from 'react';
 import { Box, Image, ScrollBox, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
@@ -55,6 +55,12 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     defaultValue: new Set<Data[RowKey]>(),
     onValueChange: (value: Set<Data[RowKey]>) => onSelectionChange?.([...value]),
   });
+
+  useEffect(() => {
+    setSelectedRowKeys(new Set(data.filter(row => selectedRowKeys.has(row[rowKey])).map(row => row[rowKey])));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, rowKey]);
+
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
 

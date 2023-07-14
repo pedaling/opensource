@@ -1,9 +1,13 @@
+/* eslint-disable max-lines */
 import type { ComponentProps, FC } from 'react';
+import { useRef, useState } from 'react';
 import type { ComponentStory } from '@storybook/react';
 import { Box, ConfigProvider } from '@vibrant-ui/core';
 import { action } from '@vibrant-ui/utils/storybook';
 import { Callout } from '../Callout';
+import { ContainedButton } from '../ContainedButton';
 import { OutlinedButton } from '../OutlinedButton';
+import { VStack } from '../VStack';
 import { Table } from './Table';
 import { tableTranslation } from '.';
 
@@ -121,6 +125,71 @@ export const SelectableTable: FC<ComponentProps<typeof Table> & { locale?: 'en' 
     </ConfigProvider>
   </Box>
 );
+
+export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { locale?: 'en' | 'ja' | 'ko' }> = ({
+  locale = 'ko',
+  ...props
+}) => {
+  const [data, setData] = useState(rows);
+  const index = useRef<number>(1);
+
+  const addRow = () => {
+    setData(prev => [
+      ...prev,
+      createData(String(index.current), index.current, index.current, index.current, index.current),
+    ]);
+
+    index.current += 1;
+
+    index.current %= 3;
+  };
+
+  const deleteRow = (data: Data) => () => {
+    const corresRowKey = data[props.rowKey];
+
+    setData(prev => prev.filter(row => row[props.rowKey] !== corresRowKey));
+  };
+
+  return (
+    <VStack>
+      <ContainedButton kind="primary" size="md" onClick={addRow}>
+        Append Data
+      </ContainedButton>
+      <Box p={20} width="100%">
+        <ConfigProvider translations={{ table: tableTranslation[locale] }}>
+          <Table expandedRowKeys={['Eclair']} {...props} data={data}>
+            <Table.Column<Data>
+              key="name"
+              dataKey="name"
+              renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
+            />
+            <Table.Column<Data>
+              key="calories"
+              dataKey="calories"
+              title="calories"
+              sortable={true}
+              defaultSortDirection="asc"
+              formatData={({ calories }) => `${calories} kcal`}
+            />
+            <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
+            <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" />
+            <Table.Column<Data> key="protein" dataKey="protein" title="protein" />
+            <Table.Column<Data>
+              key="Edit"
+              title=""
+              width={120}
+              renderDataCell={row => (
+                <OutlinedButton onClick={deleteRow(row)} size="sm">
+                  삭제
+                </OutlinedButton>
+              )}
+            />
+          </Table>
+        </ConfigProvider>
+      </Box>
+    </VStack>
+  );
+};
 
 export const cellSelectable: ComponentStory<typeof Table> = props => (
   <Box p={20} width="100%">
