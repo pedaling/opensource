@@ -238,7 +238,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         size="md"
                         onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
                         disabled={subButtonOptions.disabled}
-                        IconComponent={primaryButtonOptions.IconComponent}
+                        IconComponent={subButtonOptions.IconComponent}
                       >
                         {subButtonOptions.text}
                       </GhostButton>
