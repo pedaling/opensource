@@ -1,5 +1,6 @@
 import type { ReactElementChild } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 import type { Either } from '@vibrant-ui/utils';
 
 export type ModalBottomSheetProps = Either<
@@ -26,7 +27,7 @@ export type ModalBottomSheetProps = Either<
     | {
         primaryButtonOptions: ButtonOptions;
         secondaryButtonOptions?: never;
-        subButtonOptions?: Omit<ButtonOptions, 'loading'>;
+        subButtonOptions?: Omit<ButtonOptions, 'kind' | 'loading'>;
       }
     | {
         primaryButtonOptions?: never;
@@ -36,9 +37,11 @@ export type ModalBottomSheetProps = Either<
   );
 
 export type ButtonOptions = {
+  kind?: 'primary' | 'secondary' | 'tertiary';
   text: string;
   disabled?: boolean;
   loading?: boolean;
+  IconComponent?: IconComponent<IconProps, 'Fill' | 'Regular'>;
   onClick?: (_: { close: () => void }) => void;
 };
 
