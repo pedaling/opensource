@@ -208,12 +208,13 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       {secondaryButtonOptions.text}
                     </ContainedButton>
                     <ContainedButton
-                      kind="primary"
+                      kind={primaryButtonOptions.kind ?? 'primary'}
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                       loading={primaryButtonOptions.loading}
+                      IconComponent={primaryButtonOptions.IconComponent}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -222,12 +223,13 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={16}>
                     <ContainedButton
-                      kind="primary"
+                      kind={primaryButtonOptions.kind ?? 'primary'}
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                       loading={primaryButtonOptions.loading}
+                      IconComponent={primaryButtonOptions.IconComponent}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -236,6 +238,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         size="md"
                         onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
                         disabled={subButtonOptions.disabled}
+                        IconComponent={primaryButtonOptions.IconComponent}
                       >
                         {subButtonOptions.text}
                       </GhostButton>
