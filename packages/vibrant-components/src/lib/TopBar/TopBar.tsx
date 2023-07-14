@@ -49,7 +49,18 @@ export const TopBar = withTopBarVariation(
             </Box>
           )}
           {isValidElement(title) ? (
-            <Box data-testId="top-bar-element-title" width="100%" flex={1} flexShrink={0} justifyContent="center">
+            <Box
+              data-testId="top-bar-element-title"
+              width="100%"
+              flex={1}
+              flexShrink={0}
+              justifyContent="center"
+              visibility={
+                titleCentered && (renderLeft || renderRight) && !isDefined(leftSideWidth) && !isDefined(rightSideWidth)
+                  ? 'hidden'
+                  : 'visible'
+              }
+            >
               {title}
             </Box>
           ) : (
