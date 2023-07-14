@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.67.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.67.1...vibrant-components-0.67.2) (2023-07-14)
+
+
+### Bug Fixes
+
+* Delete selectedRow when the key does not exist in data ([#810](https://github.com/pedaling/opensource/issues/810)) ([34bde70](https://github.com/pedaling/opensource/commit/34bde708cf20677c59715dc93b88e813f7c11606))
+* Make area behind the toast is clickable ([#808](https://github.com/pedaling/opensource/issues/808)) ([45adf16](https://github.com/pedaling/opensource/commit/45adf1666c2f23e284ef68d2379e9330dccb21f3))
+* Topbar component의 title이 element 일 때 중앙 정렬되어 보입니다 ([#811](https://github.com/pedaling/opensource/issues/811)) ([5b8c31a](https://github.com/pedaling/opensource/commit/5b8c31a6d2c7e1acbfdf537e4e61173c1210c78b))
+
 ### [0.67.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.67.0...vibrant-components-0.67.1) (2023-07-12)
 
 
