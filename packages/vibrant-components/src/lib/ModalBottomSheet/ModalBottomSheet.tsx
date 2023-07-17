@@ -182,12 +182,13 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0}>
                     <ContainedButton
-                      kind="primary"
+                      kind={primaryButtonOptions.kind ?? 'primary'}
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                       loading={primaryButtonOptions.loading}
+                      IconComponent={primaryButtonOptions.IconComponent}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -196,22 +197,24 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
                   <HStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
                     <ContainedButton
-                      kind="tertiary"
+                      kind={secondaryButtonOptions.kind ?? 'tertiary'}
                       size="xl"
                       onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={secondaryButtonOptions.disabled}
                       loading={secondaryButtonOptions.loading}
+                      IconComponent={secondaryButtonOptions.IconComponent}
                     >
                       {secondaryButtonOptions.text}
                     </ContainedButton>
                     <ContainedButton
-                      kind="primary"
+                      kind={primaryButtonOptions.kind ?? 'primary'}
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                       loading={primaryButtonOptions.loading}
+                      IconComponent={primaryButtonOptions.IconComponent}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -220,12 +223,13 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={16}>
                     <ContainedButton
-                      kind="primary"
+                      kind={primaryButtonOptions.kind ?? 'primary'}
                       size="xl"
                       onClick={() => primaryButtonOptions.onClick?.({ close: closeModal })}
                       full={true}
                       disabled={primaryButtonOptions.disabled}
                       loading={primaryButtonOptions.loading}
+                      IconComponent={primaryButtonOptions.IconComponent}
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
@@ -234,6 +238,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         size="md"
                         onClick={() => subButtonOptions.onClick?.({ close: closeModal })}
                         disabled={subButtonOptions.disabled}
+                        IconComponent={subButtonOptions.IconComponent}
                       >
                         {subButtonOptions.text}
                       </GhostButton>

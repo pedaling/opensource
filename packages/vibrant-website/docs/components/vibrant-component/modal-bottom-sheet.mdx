@@ -41,9 +41,9 @@ import { ModalBottomSheet } from '@vibrant-ui/components';
 | size                                | `lg` \| `md`                                                      | `md`    | PC 뷰에서 모달의 너비를 설정합니다.                               |
 | renderContents                      | `(_: { close: () => void }) => ReactElementChild`                 |         | 내부 컨텐츠를 설정합니다.                                         |
 | onClose                             | `() => void`                                                      |         | 컨텐츠 바깥 영역이 클릭되거나 닫기 버튼이 클릭됐을 때 호출됩니다. |
-| [primaryButtonOptions](#cta-버튼)   | `{ text: string, disabled: boolean, onClick: () => void }`        |         | 렌더할 Primary 버튼의 속성을 지정합니다.                          |
-| [secondaryButtonOptions](#cta-버튼) | `{ text: string, disabled: boolean, onClick: () => void }`        |         | 렌더할 Secondary 버튼의 속성을 지정합니다.                        |
-| [subButtonOptions](#cta-버튼)       | `{ text: string, disabled: boolean, onClick: () => void }`        |         | 렌더할 Sub 버튼의 속성을 지정합니다.                              |
+| [primaryButtonOptions](#cta-버튼)   | `{ text: string, disabled: boolean, onClick: () => void, kind: "primary" \| "secondary" \| "tertiary", IconComponent: IconComponent<IconProps, 'Fill' \| 'Regular'>  }`        |  {kind: 'primary'}       | 렌더할 Primary 버튼의 속성을 지정합니다.                          |
+| [secondaryButtonOptions](#cta-버튼) | `{ text: string, disabled: boolean, onClick: () => void, kind: "primary" \| "secondary" \| "tertiary", IconComponent: IconComponent<IconProps, 'Fill' \| 'Regular'> }`        |    {kind: 'secondary'}      | 렌더할 Secondary 버튼의 속성을 지정합니다.                        |
+| [subButtonOptions](#cta-버튼)       | `{ text: string, disabled: boolean, onClick: () => void, IconComponent: IconComponent<IconProps, 'Fill' \| 'Regular'> }`        |         | 렌더할 Sub 버튼의 속성을 지정합니다.                              |
 
 ## Usage
 
