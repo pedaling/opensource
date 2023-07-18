@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.67.2...vibrant-components-0.68.0) (2023-07-18)
+
+
+### Bug Fixes
+
+* "ModalBottomSheet" 버튼 속성에 kind와 IconComponent를 추가합니다 ([#814](https://github.com/pedaling/opensource/issues/814)) ([2efaf20](https://github.com/pedaling/opensource/commit/2efaf201344555f47c2d1d8c9c87a4ac7a00b20a))
+
 ### [0.67.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.67.1...vibrant-components-0.67.2) (2023-07-14)
 
 
