@@ -195,18 +195,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   </VStack>
                 )}
                 {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
-                  <HStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
-                    <ContainedButton
-                      kind={secondaryButtonOptions.kind ?? 'tertiary'}
-                      size="xl"
-                      onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
-                      full={true}
-                      disabled={secondaryButtonOptions.disabled}
-                      loading={secondaryButtonOptions.loading}
-                      IconComponent={secondaryButtonOptions.IconComponent}
-                    >
-                      {secondaryButtonOptions.text}
-                    </ContainedButton>
+                  <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={8}>
                     <ContainedButton
                       kind={primaryButtonOptions.kind ?? 'primary'}
                       size="xl"
@@ -218,7 +207,18 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
-                  </HStack>
+                    <ContainedButton
+                      kind={secondaryButtonOptions.kind ?? 'tertiary'}
+                      size="xl"
+                      onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={secondaryButtonOptions.disabled}
+                      loading={secondaryButtonOptions.loading}
+                      IconComponent={secondaryButtonOptions.IconComponent}
+                    >
+                      {secondaryButtonOptions.text}
+                    </ContainedButton>
+                  </VStack>
                 )}
                 {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={16}>
