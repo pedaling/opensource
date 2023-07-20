@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.69.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.68.0...vibrant-components-0.69.0) (2023-07-20)
+
+
+### Features
+
+* "ModalBottonSheet"가 primary+secondary 인 경우 버튼 정렬을 vertical 로 변경 ([#815](https://github.com/pedaling/opensource/issues/815)) ([c2edc04](https://github.com/pedaling/opensource/commit/c2edc04621a4ac1b5d2fb738feff69dffc94be42))
+
 ## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.67.2...vibrant-components-0.68.0) (2023-07-18)
 
 
