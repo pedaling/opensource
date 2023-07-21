@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Box } from '@vibrant-ui/core';
+import { Box, PressableBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
-import { Pressable } from '../Pressable';
 import { withSwitchVariation } from './SwitchProps';
 
 export const Switch = withSwitchVariation(
@@ -15,6 +14,7 @@ export const Switch = withSwitchVariation(
     height,
     disabled,
     width,
+    id,
     testId = 'switch',
   }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
@@ -37,19 +37,23 @@ export const Switch = withSwitchVariation(
         }}
         duration={200}
       >
-        <Pressable
+        <PressableBox
+          id={id}
+          as="button"
+          role="switch"
+          ariaChecked={isChecked}
           width={width}
           height={height}
           borderRadius={borderRadius}
           p={3}
           onClick={toggleChecked}
           disabled={disabled}
-          testId={testId}
+          data-testid={testId}
         >
           <Transition animation={{ x: isChecked ? roundSize : 0 }} duration={200}>
             <Box width={roundSize} height={roundSize} borderRadius={roundRadius} backgroundColor="white" />
           </Transition>
-        </Pressable>
+        </PressableBox>
       </Transition>
     );
   }
