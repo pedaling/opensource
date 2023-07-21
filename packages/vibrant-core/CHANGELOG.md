@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.69.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.69.0...vibrant-core-0.69.1) (2023-07-21)
+
+
+### Bug Fixes
+
+* Solve the problem that can not touch the button of Toast in React Native ([#818](https://github.com/pedaling/opensource/issues/818)) ([73a202c](https://github.com/pedaling/opensource/commit/73a202ceb20a9f2dd2093737c460356f4771ade9))
+
 ## [0.69.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.68.0...vibrant-core-0.69.0) (2023-07-20)
 
 ## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.67.2...vibrant-core-0.68.0) (2023-07-18)
