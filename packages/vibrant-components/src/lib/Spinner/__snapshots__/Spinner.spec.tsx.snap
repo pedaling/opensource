@@ -23,8 +23,10 @@ exports[`<Spinner /> when Spinner rendered match snapshot 1`] = `
   transform: rotate(360deg);
   border-style: solid;
   border-width: 3px;
-  border-color: #0c0c0c3d;
   border-top-color: #0c0c0c;
+  border-left-color: #0c0c0c3d;
+  border-right-color: #0c0c0c3d;
+  border-bottom-color: #0c0c0c3d;
   border-radius: 8px;
   width: 16px;
   height: 16px;
