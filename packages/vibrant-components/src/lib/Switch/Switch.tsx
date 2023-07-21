@@ -14,6 +14,7 @@ export const Switch = withSwitchVariation(
     height,
     disabled,
     width,
+    id,
     testId = 'switch',
   }) => {
     const [isChecked, setIsChecked] = useState(defaultValue);
@@ -37,6 +38,7 @@ export const Switch = withSwitchVariation(
         duration={200}
       >
         <PressableBox
+          id={id}
           as="button"
           role="switch"
           ariaChecked={isChecked}

@@ -40,6 +40,7 @@ export type PressableBoxProps = {
   onHoverIn?: () => void;
   onHoverOut?: () => void;
   children?: ReactElementChild | ReactElementChild[];
+  id?: string;
   role?: Role;
   ariaLabel?: string;
   ariaSelected?: boolean;
