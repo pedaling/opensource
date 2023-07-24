@@ -18,9 +18,9 @@ export default {
 export const Basic: ComponentStory<typeof PopoverOpener> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
     <Popover position="top" title="Popover" backgroundColor="primary">
-      <PopoverOpener {...props}>
+      <Popover.Opener {...props}>
         <Title level={4}>Opener</Title>
-      </PopoverOpener>
+      </Popover.Opener>
     </Popover>
   </VStack>
 );
@@ -40,9 +40,9 @@ export const NotWrappedWithPopover: ComponentStory<typeof PopoverOpener> = props
         </VStack>
       </Popover>
 
-      <PopoverOpener {...props} popoverId={popoverId}>
+      <Popover.Opener {...props} popoverId={popoverId}>
         <Title level={4}>Opener</Title>
-      </PopoverOpener>
+      </Popover.Opener>
     </VStack>
   );
 };
@@ -76,23 +76,23 @@ export const MultiplePopoverWithMulitpleOpener: ComponentStory<typeof PopoverOpe
       </HStack>
 
       <HStack spacing={100}>
-        <PopoverOpener {...props} popoverId={firstPopoverId}>
+        <Popover.Opener {...props} popoverId={firstPopoverId}>
           <Title level={4} color="primary">
             First Opener
           </Title>
-        </PopoverOpener>
+        </Popover.Opener>
 
-        <PopoverOpener {...props} popoverId={secondPopoverId}>
+        <Popover.Opener {...props} popoverId={secondPopoverId}>
           <Title level={4} color="informative">
             Second Opener
           </Title>
-        </PopoverOpener>
+        </Popover.Opener>
 
-        <PopoverOpener {...props} popoverId={secondPopoverId}>
+        <Popover.Opener {...props} popoverId={secondPopoverId}>
           <Title level={4} color="informative">
             Another Second Opener
           </Title>
-        </PopoverOpener>
+        </Popover.Opener>
       </HStack>
     </VStack>
   );
@@ -165,11 +165,11 @@ export const MultiplePopoverWithSingleOpener: ComponentStory<typeof PopoverOpene
       </VStack>
 
       <HStack spacing={100}>
-        <PopoverOpener {...props} isOpen={firstIsOpen || secondIsOpen || thirdIsOpen} open={openAll} close={closeAll}>
+        <Popover.Opener {...props} isOpen={firstIsOpen || secondIsOpen || thirdIsOpen} open={openAll} close={closeAll}>
           <Title level={4} color="onView1">
             All Opener
           </Title>
-        </PopoverOpener>
+        </Popover.Opener>
       </HStack>
     </VStack>
   );

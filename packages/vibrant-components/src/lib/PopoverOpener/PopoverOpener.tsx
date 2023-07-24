@@ -33,3 +33,5 @@ export const PopoverOpener = withPopoverOpenerVariation(
     );
   }
 );
+
+PopoverOpener.displayName = 'PopoverOpener';
