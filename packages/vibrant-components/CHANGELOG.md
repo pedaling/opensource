@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.69.1...vibrant-components-0.69.2) (2023-07-24)
+
+
+### Bug Fixes
+
+* 스위치가 보이지 않는 이슈를 해결한다. ([#819](https://github.com/pedaling/opensource/issues/819)) ([862c860](https://github.com/pedaling/opensource/commit/862c860b33d265f036773a800bd26b78fe6c5d1f))
+
 ### [0.69.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.69.0...vibrant-components-0.69.1) (2023-07-21)
 
 
