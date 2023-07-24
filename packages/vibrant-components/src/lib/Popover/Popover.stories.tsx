@@ -35,7 +35,7 @@ export const WithExternalState: ComponentStory<typeof Popover> = props => {
         open={isOpen}
         renderContent={() => (
           <VStack width={500} py={20}>
-            <Body level={3} color="onView1">
+            <Body level={3} color="onColor">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur cum mollitia quae impedit, quia et. Qui
               voluptates vel ipsam quibusdam libero velit in, dignissimos, voluptate fuga possimus culpa distinctio
               laboriosam!
