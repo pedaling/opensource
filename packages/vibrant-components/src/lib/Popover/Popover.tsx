@@ -303,7 +303,7 @@ export const Popover = ({
           </VStack>
         </Transition>
       </VStack>
-      <VStack ref={childRef} zIndex={zIndex.popover + 1}>
+      <VStack ref={childRef}>
         {children && cloneElement(children, { isOpen, open: openPopover, close: closePopover })}
       </VStack>
     </VStack>
