@@ -3,7 +3,6 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from '../Avatar';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
-import { PopoverOpener } from '../PopoverOpener';
 import { VStack } from '../VStack';
 import { Popover } from './Popover';
 
@@ -18,9 +17,9 @@ export default {
 export const Basic: ComponentStory<typeof Popover> = props => (
   <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
     <Popover title="Popover" {...props}>
-      <PopoverOpener openInteraction="click">
+      <Popover.Opener openInteraction="click">
         <Avatar size="lg" src="" alt="" />
-      </PopoverOpener>
+      </Popover.Opener>
     </Popover>
   </VStack>
 );
