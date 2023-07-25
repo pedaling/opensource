@@ -176,7 +176,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: arrowOffset + 2 - 2,
+            top: arrowOffset - 2,
           });
         }
 
