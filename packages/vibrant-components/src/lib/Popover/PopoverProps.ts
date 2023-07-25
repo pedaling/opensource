@@ -16,6 +16,7 @@ export type PopoverProps = {
   onOpen?: () => void;
   children?: ReactElement;
   popoverId?: string;
+  zIndex?: ResponsiveValue<number>;
 } & ({ title: string; renderContent?: () => ReactElement } | { title?: string; renderContent: () => ReactElement }) &
   PopoverArrowType;
 
