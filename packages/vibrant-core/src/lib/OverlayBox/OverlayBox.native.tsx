@@ -43,7 +43,7 @@ export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, 
   );
 
   if (!targetRect || !open) {
-    return null;
+    return children;
   }
 
   return (
