@@ -37,6 +37,7 @@ export const Popover = ({
     theme: { zIndex: themeZIndex },
   } = useCurrentTheme();
   const { getResponsiveValue } = useResponsiveValue();
+  const [positionValue, setPositionValue] = useState<Position>(position);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
   const [arrowPosition, setArrowPosition] = useState({
     left: 0,
@@ -176,7 +177,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: arrowOffset + 2 - 2,
+            top: arrowOffset - 2,
           });
         }
 
@@ -219,7 +220,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: arrowOffset + 2,
+            top: arrowOffset - 2,
           });
         }
 
@@ -231,7 +232,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: popoverHeight - arrowHeight * 2 - arrowOffset + 2,
+            top: popoverHeight - arrowHeight * 2 - arrowOffset,
           });
         }
       }
@@ -252,11 +253,93 @@ export const Popover = ({
     ]
   );
 
-  useEffect(() => (isOpen ? handleOpen?.() : handleClose?.()), [isOpen, handleOpen, handleClose]);
+  const handlePopoverPositionChange = useCallback(() => {
+    if (!popoverRef.current || !childRef.current) return;
+
+    const {
+      x: popoverX,
+      y: popoverY,
+      width: popoverWidth,
+      height: popoverHeight,
+    } = popoverRef.current.getBoundingClientRect();
+    const { x: childX, y: childY, width: childWidth, height: childHeight } = childRef.current.getBoundingClientRect();
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+
+    if (position !== positionValue) {
+      if (position.includes('top') && childY - computedOffset - popoverHeight > 0) {
+        setPositionValue(position);
+      }
+
+      if (position.includes('bottom') && childY + childHeight + computedOffset + popoverHeight < windowHeight) {
+        setPositionValue(position);
+      }
+
+      if (position.includes('left') && childX - computedOffset - popoverWidth > 0) {
+        setPositionValue(position);
+      }
+
+      if (position.includes('right') && childX + childWidth + computedOffset + popoverWidth < windowWidth) {
+        setPositionValue(position);
+      }
+    }
+
+    if (
+      positionValue.includes('top') &&
+      popoverY < 0 &&
+      childY + childHeight + computedOffset + popoverHeight < windowHeight
+    ) {
+      setPositionValue(positionValue.replace('top', 'bottom') as Position);
+    }
+
+    if (
+      positionValue.includes('bottom') &&
+      popoverY + popoverHeight >= windowHeight &&
+      childY - computedOffset - popoverHeight > 0
+    ) {
+      setPositionValue(positionValue.replace('bottom', 'top') as Position);
+    }
+
+    if (
+      positionValue.includes('left') &&
+      popoverX < 0 &&
+      childX + childWidth + computedOffset + popoverWidth < windowWidth
+    ) {
+      setPositionValue(positionValue.replace('left', 'right') as Position);
+    }
+
+    if (
+      positionValue.includes('right') &&
+      popoverX + popoverWidth >= windowWidth &&
+      childX - computedOffset - popoverWidth > 0
+    ) {
+      setPositionValue(positionValue.replace('right', 'left') as Position);
+    }
+  }, [computedOffset, position, positionValue]);
 
   useEffect(() => {
-    calcuratePositionValue(position);
-  }, [calcuratePositionValue, position]);
+    handlePopoverPositionChange();
+
+    window.addEventListener('resize', handlePopoverPositionChange);
+
+    return () => window.removeEventListener('resize', handlePopoverPositionChange);
+  }, [handlePopoverPositionChange]);
+
+  useEffect(() => {
+    if (isOpen) {
+      handleOpen?.();
+
+      handlePopoverPositionChange();
+    } else handleClose?.();
+  }, [isOpen, handleOpen, handleClose, handlePopoverPositionChange]);
+
+  useEffect(() => {
+    setPositionValue(position);
+  }, [position]);
+
+  useEffect(() => {
+    calcuratePositionValue(positionValue);
+  }, [calcuratePositionValue, positionValue]);
 
   return (
     <VStack>
