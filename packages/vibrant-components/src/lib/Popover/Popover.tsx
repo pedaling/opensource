@@ -219,7 +219,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: arrowOffset + 2,
+            top: arrowOffset - 2,
           });
         }
 
