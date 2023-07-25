@@ -277,6 +277,8 @@ export const Popover = ({
       if (position.includes('right') && childX + childWidth + computedOffset + popoverWidth < windowWidth) {
         setPositionValue(position);
       }
+
+      return;
     }
 
     if (
