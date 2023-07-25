@@ -341,6 +341,10 @@ export const Popover = ({
     calcuratePositionValue(positionValue);
   }, [calcuratePositionValue, positionValue]);
 
+  useEffect(() => {
+    calcuratePositionValue(position);
+  }, [calcuratePositionValue, position]);
+
   return (
     <VStack>
       <VStack zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0} position="absolute">
@@ -350,7 +354,7 @@ export const Popover = ({
               <VStack px={12} py={8} ref={popoverRef} width="100%">
                 <HStack width="100%" alignHorizontal="space-between">
                   {isDefined(title) && (
-                    <Body level={2} weight="regular" color="onColor" wordBreak={maxWidth ? 'break-word' : 'normal'}>
+                    <Body level={2} weight="regular" wordBreak={maxWidth ? 'break-word' : 'normal'}>
                       {title}
                     </Body>
                   )}
