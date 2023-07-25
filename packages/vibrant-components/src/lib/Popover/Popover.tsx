@@ -256,13 +256,8 @@ export const Popover = ({
   const handlePopoverPositionChange = useCallback(() => {
     if (!popoverRef.current || !childRef.current) return;
 
-    const {
-      x: popoverX,
-      y: popoverY,
-      width: popoverWidth,
-      height: popoverHeight,
-    } = popoverRef.current.getBoundingClientRect();
-    const { x: childX, y: childY, width: childWidth, height: childHeight } = childRef.current.getBoundingClientRect();
+    const { x: popoverX, y: popoverY } = popoverRef.current.getBoundingClientRect();
+    const { x: childX, y: childY } = childRef.current.getBoundingClientRect();
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
@@ -315,7 +310,7 @@ export const Popover = ({
     ) {
       setPositionValue(positionValue.replace('right', 'left') as Position);
     }
-  }, [computedOffset, position, positionValue]);
+  }, [childHeight, childWidth, computedOffset, popoverHeight, popoverWidth, position, positionValue]);
 
   useEffect(() => {
     handlePopoverPositionChange();
