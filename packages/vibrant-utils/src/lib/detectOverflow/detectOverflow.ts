@@ -10,7 +10,7 @@ export const detectOverflow = ({
 }) => {
   const top = -targetRect.y;
   const bottom = targetRect.y + targetRect.height - viewport.height;
-  const left = -targetRect.y;
+  const left = -targetRect.x;
   const right = targetRect.x + targetRect.width - viewport.width;
 
   return {
