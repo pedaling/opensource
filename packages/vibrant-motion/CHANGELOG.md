@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.70.0...vibrant-motion-0.70.1) (2023-07-26)
+
+
+### Reverts
+
+* Revert "chore: react-native, expo, reanimated, etc (#816)" (#826) ([2fa3ff3](https://github.com/pedaling/opensource/commit/2fa3ff3a41529cad575c0bfed662f097c137a513)), closes [#816](https://github.com/pedaling/opensource/issues/816) [#826](https://github.com/pedaling/opensource/issues/826)
+
 ## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.69.2...vibrant-motion-0.70.0) (2023-07-24)
 
 ### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.69.1...vibrant-motion-0.69.2) (2023-07-24)
