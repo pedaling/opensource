@@ -216,54 +216,58 @@ export const Dropdown = withDropdownVariation(
         <Box ref={openerRef}>{opener}</Box>
         {!isMobile && (
           <ThemeProvider theme={rootThemeMode}>
-            <Transition
-              animation={{
-                opacity: visible ? 1 : 0,
-                ...(visible
-                  ? {
-                      x: offset.x,
-                      y: offset.y,
-                    }
-                  : {}),
-              }}
-              style={{
-                x: offset.x,
-                y: offset.y,
-              }}
-              duration={200}
-            >
+            {isOpen && (
               <OverlayBox
                 open={isOpen}
                 onDismiss={closeDropdown}
                 targetRef={customOpenerRef.current ? customOpenerRef : openerRef}
                 zIndex={zIndex.dropdown}
               >
-                <Box
-                  backgroundColor="surface2"
-                  py={CONTENT_PADDING}
-                  elevationLevel={4}
-                  borderRadiusLevel={1}
-                  minWidth={[280, 280, 240]}
+                <Transition
+                  animation={{
+                    opacity: visible ? 1 : 0,
+                    ...(visible
+                      ? {
+                          x: offset.x,
+                          y: offset.y,
+                        }
+                      : {}),
+                  }}
+                  style={{
+                    x: offset.x,
+                    y: offset.y,
+                  }}
+                  duration={200}
                 >
-                  <Transition
-                    animation={
-                      visible
-                        ? {
-                            height: contentHeight,
-                          }
-                        : {}
-                    }
-                    duration={200}
-                  >
-                    <Box overflow="hidden" height={contentHeight}>
-                      <Box onLayout={handleContentResize} flexShrink={0} data-testid={testId}>
-                        {renderContents({ close: closeDropdown })}
-                      </Box>
+                  <Box>
+                    <Box
+                      backgroundColor="surface2"
+                      py={CONTENT_PADDING}
+                      elevationLevel={4}
+                      borderRadiusLevel={1}
+                      minWidth={[280, 280, 240]}
+                    >
+                      <Transition
+                        animation={
+                          visible
+                            ? {
+                                height: contentHeight,
+                              }
+                            : {}
+                        }
+                        duration={200}
+                      >
+                        <Box overflow="hidden" height={contentHeight}>
+                          <Box onLayout={handleContentResize} flexShrink={0} data-testid={testId}>
+                            {renderContents({ close: closeDropdown })}
+                          </Box>
+                        </Box>
+                      </Transition>
                     </Box>
-                  </Transition>
-                </Box>
+                  </Box>
+                </Transition>
               </OverlayBox>
-            </Transition>
+            )}
           </ThemeProvider>
         )}
         {isMobile && (
