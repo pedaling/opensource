@@ -1,3 +1,4 @@
+import type { Align, Side } from 'packages/vibrant-utils/src/types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
@@ -28,12 +29,22 @@ import { withDropdownVariation } from './DropdownProps';
 const CONTENT_PADDING = 20;
 const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
 
+const getCrossSides = (side: Side): Side[] => {
+  if (side === 'top' || side === 'bottom') {
+    return ['left', 'right'];
+  }
+
+  return ['top', 'bottom'];
+};
+
 const getOffsetAvoidingOverflowByPosition = (
   openerRect: Rect,
   targetRect: Rect,
   position: Position,
   spacing?: number
 ) => {
+  const [side, alignment] = position.split('-') as [Side, Align | undefined];
+
   const { x, y } = getOffsetByPosition({
     referenceRect: openerRect,
     targetRect,
@@ -42,36 +53,45 @@ const getOffsetAvoidingOverflowByPosition = (
   });
 
   const viewport = getWindowDimensions();
-  const isOverflowing = detectOverflow({
+  const overflow = detectOverflow({
     viewport,
     targetRect: { ...targetRect, x: openerRect.x + x, y: openerRect.y + y },
   });
 
-  if (!isOverflowing) {
+  let nextSide = side;
+  let nextAligns = [alignment];
+
+  if (Object.values(overflow).every(value => value <= 0)) {
     return { x, y };
   }
 
-  const { x: flippedX, y: flippedY } = getOffsetByPosition({
-    referenceRect: openerRect,
-    targetRect,
-    position: flipPosition(position),
-    spacing,
-  });
-
-  if (
-    !detectOverflow({
-      viewport,
-      targetRect: {
-        ...targetRect,
-        x: openerRect.x + flippedX,
-        y: openerRect.y + flippedY,
-      },
-    })
-  ) {
-    return { x: flippedX, y: flippedY };
+  if (overflow[side] > 0) {
+    nextSide = flipPosition(side) as Side;
   }
 
-  return { x, y };
+  if (getCrossSides(side).some(crossSide => overflow[crossSide] > 0)) {
+    nextAligns = ['start', undefined, 'end'].filter(align => align !== alignment) as (Align | undefined)[];
+  }
+
+  const offset = nextAligns
+    .map(align =>
+      getOffsetByPosition({
+        referenceRect: openerRect,
+        targetRect,
+        position: (align !== undefined ? [nextSide, align].join('-') : nextSide) as Position,
+        spacing,
+      })
+    )
+    .find(({ x, y }) => {
+      const overflow = detectOverflow({
+        viewport,
+        targetRect: { ...targetRect, x: openerRect.x + x, y: openerRect.y + y },
+      });
+
+      return Object.values(overflow).every(value => value <= 0);
+    });
+
+  return offset ? offset : { x, y };
 };
 
 export const Dropdown = withDropdownVariation(
