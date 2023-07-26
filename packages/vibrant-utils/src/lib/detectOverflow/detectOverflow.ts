@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import type { Rect } from '../../types';
 
 export const detectOverflow = ({
@@ -6,8 +7,16 @@ export const detectOverflow = ({
 }: {
   viewport: Pick<Rect, 'height' | 'width'>;
   targetRect: Rect;
-}) =>
-  targetRect.x < 0 ||
-  targetRect.x + targetRect.width > viewport.width ||
-  targetRect.y < 0 ||
-  targetRect.y + targetRect.height > viewport.height;
+}) => {
+  const top = -targetRect.y;
+  const bottom = targetRect.y + targetRect.height - viewport.height;
+  const left = -targetRect.y;
+  const right = targetRect.x + targetRect.width - viewport.width;
+
+  return {
+    top,
+    bottom,
+    left,
+    right,
+  };
+};
