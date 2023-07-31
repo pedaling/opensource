@@ -31,10 +31,10 @@ export type BorderSystemProps = {
   borderBottomLeftRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
   borderBottomRightRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
   rounded?: ResponsiveValue<Rounded>;
-  roundedTopLeft?: ResponsiveValue<BorderRadiusLevel>;
-  roundedTopRight?: ResponsiveValue<BorderRadiusLevel>;
-  roundedBottomLeft?: ResponsiveValue<BorderRadiusLevel>;
-  roundedBottomRight?: ResponsiveValue<BorderRadiusLevel>;
+  roundedTopLeft?: ResponsiveValue<Rounded>;
+  roundedTopRight?: ResponsiveValue<Rounded>;
+  roundedBottomLeft?: ResponsiveValue<Rounded>;
+  roundedBottomRight?: ResponsiveValue<Rounded>;
   borderCollapse?: ResponsiveValue<'collapse' | 'separate'>;
   outlineWidth?: ResponsiveValue<number>;
   outlineStyle?: ResponsiveValue<'none' | 'solid'>;
