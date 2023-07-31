@@ -1,4 +1,3 @@
-import { isNative } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
@@ -11,7 +10,7 @@ export const Toast = withToastVariation(
   ({ innerRef, IconComponent, color, title, buttonText, onButtonClick, testId = 'toast', ...restProps }) => (
     <HStack ref={innerRef} {...restProps} px={20} width="100%" alignHorizontal="center" data-testid={testId}>
       <Paper
-        elevationLevel={isNative ? undefined : 1}
+        elevationLevel={1}
         borderRadiusLevel={1}
         backgroundColor="inverseSurface"
         maxWidth={816}
