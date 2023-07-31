@@ -64,13 +64,12 @@ export const DateInput = withDateInputVariation(
           height={height}
           rounded="sm"
           flexShrink={0}
-          alignItems="center"
+          overflow="hidden"
           {...restProps}
         >
           <Pressable
             ref={composeRef}
             pl={px}
-            height="100%"
             justifyContent="center"
             flexGrow={1}
             disabled={disabled}
@@ -93,7 +92,7 @@ export const DateInput = withDateInputVariation(
               </Body>
             </>
           </Pressable>
-          <HStack spacing={iconSpacing} pl={iconSpacing} height="100%">
+          <HStack spacing={iconSpacing} pl={iconSpacing}>
             {!disabled && value ? (
               <PressableBox as="button" onClick={onClear} hitSlop={hitSlop} justifyContent="center">
                 <Icon.CloseCircle.Fill size={iconSize} fill="onView2" />
