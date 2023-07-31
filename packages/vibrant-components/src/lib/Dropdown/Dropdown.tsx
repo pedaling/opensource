@@ -2,7 +2,8 @@ import type { Align, Side } from 'packages/vibrant-utils/src/types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
-  OverlayBox,
+  PortalBox,
+  PressableBox,
   ScrollBox,
   ThemeProvider,
   getWindowDimensions,
@@ -173,7 +174,7 @@ export const Dropdown = withDropdownVariation(
             spacing
           );
 
-          setOffset({ x: offsetX, y: offsetY });
+          setOffset({ x: openerRect.x + offsetX, y: openerRect.y + offsetY });
         }
 
         setContentHeight(height);
@@ -217,12 +218,17 @@ export const Dropdown = withDropdownVariation(
         {!isMobile && (
           <ThemeProvider theme={rootThemeMode}>
             {isOpen && (
-              <OverlayBox
-                open={isOpen}
-                onDismiss={closeDropdown}
-                targetRef={customOpenerRef.current ? customOpenerRef : openerRef}
-                zIndex={zIndex.dropdown}
-              >
+              <PortalBox zIndex={zIndex.dropdown} top={0} right={0} bottom={0} left={0}>
+                <PressableBox
+                  as="div"
+                  position="absolute"
+                  cursor="default"
+                  top={0}
+                  right={0}
+                  bottom={0}
+                  left={0}
+                  onClick={closeDropdown}
+                />
                 <Transition
                   animation={{
                     opacity: visible ? 1 : 0,
@@ -239,7 +245,7 @@ export const Dropdown = withDropdownVariation(
                   }}
                   duration={200}
                 >
-                  <Box>
+                  <Box alignSelf="flex-start">
                     <Box
                       backgroundColor="surface2"
                       py={CONTENT_PADDING}
@@ -266,7 +272,7 @@ export const Dropdown = withDropdownVariation(
                     </Box>
                   </Box>
                 </Transition>
-              </OverlayBox>
+              </PortalBox>
             )}
           </ThemeProvider>
         )}
