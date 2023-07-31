@@ -116,7 +116,7 @@ export const Calendar = withCalendarVariation(
         backgroundColor="surface2"
         width={320}
         elevationLevel={2}
-        borderRadiusLevel={1}
+        rounded="sm"
         testId={testId}
         {...restProps}
       >

@@ -15,7 +15,7 @@ export default {
 export const Basic: ComponentStory<typeof Paper> = props => <Paper {...props} m={20} width={200} height={200} />;
 
 export const BackgroundColor: ComponentStory<typeof Paper> = () => (
-  <Paper m={20} width={200} height={200} backgroundColor="primary" borderRadiusLevel={1} />
+  <Paper m={20} width={200} height={200} backgroundColor="primary" rounded="sm" />
 );
 
 export const BackgroundGradient: ComponentStory<typeof Paper> = () => (

@@ -57,8 +57,12 @@ type PaperProps = Pick<BorderSystemProps, 'borderColor' | 'borderStyle' | 'borde
       | 'borderBottomRightRadiusLevel'
       | 'borderTopLeftRadiusLevel'
       | 'borderTopRightRadiusLevel'
+      | 'roundedBottomLeftProp'
+      | 'roundedBottomRightProp'
+      | 'roundedTopLeftProp'
+      | 'roundedTopRightProp'
     >,
-    Pick<BorderSystemProps, 'borderRadiusLevel'>
+    Pick<BorderSystemProps, 'borderRadiusLevel' | 'rounded'>
   >;
 
 export const withPaperVariation = withVariation<PaperProps>('Paper')();

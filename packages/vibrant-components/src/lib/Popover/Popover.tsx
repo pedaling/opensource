@@ -263,7 +263,7 @@ export const Popover = ({
       <VStack zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0} position="absolute">
         <Transition animation={{ opacity: isOpen ? 1 : 0, ...popoverPosition }} duration={200} easing="easeOutQuad">
           <VStack maxWidth={maxWidth} position="relative" width="100%">
-            <Paper backgroundColor={backgroundColor} borderRadiusLevel={1}>
+            <Paper backgroundColor={backgroundColor} rounded="sm">
               <VStack px={12} py={8} ref={popoverRef} width="100%">
                 <HStack width="100%" alignHorizontal="space-between">
                   {isDefined(title) && (

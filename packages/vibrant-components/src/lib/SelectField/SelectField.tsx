@@ -205,7 +205,7 @@ export const SelectField = withSelectFieldVariation(
           borderWidth={1}
           borderStyle="solid"
           borderColor={borderColor}
-          borderRadius={2}
+          rounded="sm"
           cursor={disabled ? 'default' : 'pointer'}
           onPressIn={() => (isOpened ? close() : open(-1))}
           {...restProps}

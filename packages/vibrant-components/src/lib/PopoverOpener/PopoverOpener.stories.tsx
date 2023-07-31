@@ -32,7 +32,7 @@ export const NotWrappedWithPopover: ComponentStory<typeof PopoverOpener> = props
     <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center" spacing={100}>
       <Popover popoverId={popoverId} position="top" title="Popover" backgroundColor="primary">
         <VStack>
-          <Paper backgroundColor="primary" p={10} borderRadiusLevel={2}>
+          <Paper backgroundColor="primary" p={10} rounded="lg">
             <Title level={4} color="onView1">
               Anchor
             </Title>
@@ -56,7 +56,7 @@ export const MultiplePopoverWithMulitpleOpener: ComponentStory<typeof PopoverOpe
       <HStack spacing={100}>
         <Popover popoverId={firstPopoverId} position="left" title="Popover" backgroundColor="primary">
           <VStack>
-            <Paper backgroundColor="primary" p={10} borderRadiusLevel={2}>
+            <Paper backgroundColor="primary" p={10} rounded="lg">
               <Title level={4} color="onView1">
                 Anchor
               </Title>
@@ -66,7 +66,7 @@ export const MultiplePopoverWithMulitpleOpener: ComponentStory<typeof PopoverOpe
 
         <Popover popoverId={secondPopoverId} position="right" title="Popover" backgroundColor="informative">
           <VStack>
-            <Paper backgroundColor="informative" p={10} borderRadiusLevel={2}>
+            <Paper backgroundColor="informative" p={10} rounded="lg">
               <Title level={4} color="onView1">
                 Anchor2
               </Title>
@@ -124,7 +124,7 @@ export const MultiplePopoverWithSingleOpener: ComponentStory<typeof PopoverOpene
       <VStack spacing={5}>
         <HStack spacing={5}>
           <Popover position="left" title="Popover" backgroundColor="error" open={firstIsOpen}>
-            <Paper backgroundColor="error" borderRadiusLevel={2} width={100} height={100}>
+            <Paper backgroundColor="error" rounded="lg" width={100} height={100}>
               <VStack alignHorizontal="center" alignVertical="center" width="100%" height="100%">
                 <Title level={4} color="onView1">
                   Anchor
@@ -133,7 +133,7 @@ export const MultiplePopoverWithSingleOpener: ComponentStory<typeof PopoverOpene
             </Paper>
           </Popover>
           <Popover position="top" title="Popover" backgroundColor="primary" open={secondIsOpen}>
-            <Paper backgroundColor="primary" borderRadiusLevel={2} width={100} height={100}>
+            <Paper backgroundColor="primary" rounded="lg" width={100} height={100}>
               <VStack alignHorizontal="center" alignVertical="center" width="100%" height="100%">
                 <Title level={4} color="onView1">
                   Anchor2
@@ -144,7 +144,7 @@ export const MultiplePopoverWithSingleOpener: ComponentStory<typeof PopoverOpene
         </HStack>
         <HStack spacing={5}>
           <Popover position="bottom" title="Popover" backgroundColor="success" open={thirdIsOpen}>
-            <Paper backgroundColor="success" p={10} borderRadiusLevel={2} width={100} height={100}>
+            <Paper backgroundColor="success" p={10} rounded="lg" width={100} height={100}>
               <VStack alignHorizontal="center" alignVertical="center" width="100%" height="100%">
                 <Title level={4} color="onView1">
                   Anchor3
@@ -153,7 +153,7 @@ export const MultiplePopoverWithSingleOpener: ComponentStory<typeof PopoverOpene
             </Paper>
           </Popover>
           <Popover position="right" title="Popover" backgroundColor="informative" open={thirdIsOpen}>
-            <Paper backgroundColor="informative" p={10} borderRadiusLevel={2} width={100} height={100}>
+            <Paper backgroundColor="informative" p={10} rounded="lg" width={100} height={100}>
               <VStack alignHorizontal="center" alignVertical="center" width="100%" height="100%">
                 <Title level={4} color="onView1">
                   Anchor4

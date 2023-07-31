@@ -62,7 +62,7 @@ export const DateInput = withDateInputVariation(
           borderStyle="solid"
           borderColor={(isFocused || calendarOpened) && state !== 'error' ? 'outlineNeutral' : borderColor}
           height={height}
-          borderRadius={2}
+          rounded="sm"
           flexShrink={0}
           alignItems="center"
           {...restProps}

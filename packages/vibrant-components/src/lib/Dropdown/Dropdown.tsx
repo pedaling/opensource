@@ -249,7 +249,7 @@ export const Dropdown = withDropdownVariation(
                     backgroundColor="surface2"
                     py={CONTENT_PADDING}
                     elevationLevel={4}
-                    borderRadiusLevel={1}
+                    rounded="sm"
                     minWidth={[280, 280, 240]}
                   >
                     <Transition
