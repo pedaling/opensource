@@ -2,7 +2,8 @@ import type { Align, Side } from 'packages/vibrant-utils/src/types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
-  OverlayBox,
+  PortalBox,
+  PressableBox,
   ScrollBox,
   ThemeProvider,
   getWindowDimensions,
@@ -173,7 +174,7 @@ export const Dropdown = withDropdownVariation(
             spacing
           );
 
-          setOffset({ x: offsetX, y: offsetY });
+          setOffset({ x: openerRect.x + offsetX, y: openerRect.y + offsetY });
         }
 
         setContentHeight(height);
@@ -214,60 +215,63 @@ export const Dropdown = withDropdownVariation(
     return (
       <>
         <Box ref={openerRef}>{opener}</Box>
-        {!isMobile && (
+        {!isMobile && isOpen && (
           <ThemeProvider theme={rootThemeMode}>
-            {isOpen && (
-              <OverlayBox
-                open={isOpen}
-                onDismiss={closeDropdown}
-                targetRef={customOpenerRef.current ? customOpenerRef : openerRef}
-                zIndex={zIndex.dropdown}
+            <PortalBox zIndex={zIndex.dropdown} top={0} right={0} bottom={0} left={0}>
+              <PressableBox
+                as="div"
+                position="absolute"
+                cursor="default"
+                top={0}
+                right={0}
+                bottom={0}
+                left={0}
+                onClick={closeDropdown}
+              />
+              <Transition
+                animation={{
+                  opacity: visible ? 1 : 0,
+                  ...(visible
+                    ? {
+                        x: offset.x,
+                        y: offset.y,
+                      }
+                    : {}),
+                }}
+                style={{
+                  x: offset.x,
+                  y: offset.y,
+                }}
+                duration={200}
               >
-                <Transition
-                  animation={{
-                    opacity: visible ? 1 : 0,
-                    ...(visible
-                      ? {
-                          x: offset.x,
-                          y: offset.y,
-                        }
-                      : {}),
-                  }}
-                  style={{
-                    x: offset.x,
-                    y: offset.y,
-                  }}
-                  duration={200}
-                >
-                  <Box>
-                    <Box
-                      backgroundColor="surface2"
-                      py={CONTENT_PADDING}
-                      elevationLevel={4}
-                      borderRadiusLevel={1}
-                      minWidth={[280, 280, 240]}
+                <Box alignSelf="flex-start">
+                  <Box
+                    backgroundColor="surface2"
+                    py={CONTENT_PADDING}
+                    elevationLevel={4}
+                    borderRadiusLevel={1}
+                    minWidth={[280, 280, 240]}
+                  >
+                    <Transition
+                      animation={
+                        visible
+                          ? {
+                              height: contentHeight,
+                            }
+                          : {}
+                      }
+                      duration={200}
                     >
-                      <Transition
-                        animation={
-                          visible
-                            ? {
-                                height: contentHeight,
-                              }
-                            : {}
-                        }
-                        duration={200}
-                      >
-                        <Box overflow="hidden" height={contentHeight}>
-                          <Box onLayout={handleContentResize} flexShrink={0} data-testid={testId}>
-                            {renderContents({ close: closeDropdown })}
-                          </Box>
+                      <Box overflow="hidden" height={contentHeight}>
+                        <Box onLayout={handleContentResize} flexShrink={0} data-testid={testId}>
+                          {renderContents({ close: closeDropdown })}
                         </Box>
-                      </Transition>
-                    </Box>
+                      </Box>
+                    </Transition>
                   </Box>
-                </Transition>
-              </OverlayBox>
-            )}
+                </Box>
+              </Transition>
+            </PortalBox>
           </ThemeProvider>
         )}
         {isMobile && (
