@@ -1,8 +1,8 @@
 import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
-import { Box, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
+import { Box, getWindowDimensions, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
-import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
+import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
 import type { Position } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
@@ -53,18 +53,16 @@ export const Popover = ({
 
   const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
 
-  const popoverWidth = popoverRef?.current?.offsetWidth ?? 0;
-  const popoverHeight = popoverRef?.current?.offsetHeight ?? 0;
-  const halfPopoverWidth = popoverWidth / 2;
-  const halfPopoverHeight = popoverHeight / 2;
-
-  const childWidth = childRef?.current?.offsetWidth ?? 0;
-  const childHeight = childRef?.current?.offsetHeight ?? 0;
-  const halfChildWidth = childWidth / 2;
-  const halfChildHeight = childHeight / 2;
-
   const calcuratePositionValue = useCallback(
-    (position: Position) => {
+    async (position: Position) => {
+      const { width: popoverWidth, height: popoverHeight } = await getElementRect(popoverRef.current);
+      const { width: childWidth, height: childHeight } = await getElementRect(childRef.current);
+
+      const halfPopoverWidth = popoverWidth / 2;
+      const halfPopoverHeight = popoverHeight / 2;
+      const halfChildWidth = childWidth / 2;
+      const halfChildHeight = childHeight / 2;
+
       if (position.includes('top')) {
         setArrowStyle({
           borderRightColor: backgroundColor,
@@ -237,29 +235,20 @@ export const Popover = ({
         }
       }
     },
-    [
-      arrowHeight,
-      arrowOffset,
-      backgroundColor,
-      childHeight,
-      childWidth,
-      computedOffset,
-      halfChildHeight,
-      halfChildWidth,
-      halfPopoverHeight,
-      halfPopoverWidth,
-      popoverHeight,
-      popoverWidth,
-    ]
+    [arrowHeight, arrowOffset, backgroundColor, computedOffset]
   );
 
-  const handlePopoverPositionChange = useCallback(() => {
+  const handlePopoverPositionChange = useCallback(async () => {
     if (!popoverRef.current || !childRef.current) return;
 
-    const { x: popoverX, y: popoverY } = popoverRef.current.getBoundingClientRect();
-    const { x: childX, y: childY } = childRef.current.getBoundingClientRect();
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
+    const {
+      x: popoverX,
+      y: popoverY,
+      width: popoverWidth,
+      height: popoverHeight,
+    } = await getElementRect(popoverRef.current);
+    const { x: childX, y: childY, width: childWidth, height: childHeight } = await getElementRect(childRef.current);
+    const { width: windowWidth, height: windowHeight } = getWindowDimensions();
 
     if (position !== positionValue) {
       if (position.includes('top') && childY - computedOffset - popoverHeight > 0) {
@@ -312,7 +301,7 @@ export const Popover = ({
     ) {
       setPositionValue(positionValue.replace('right', 'left') as Position);
     }
-  }, [childHeight, childWidth, computedOffset, popoverHeight, popoverWidth, position, positionValue]);
+  }, [computedOffset, position, positionValue]);
 
   useEffect(() => {
     handlePopoverPositionChange();
