@@ -51,6 +51,7 @@ export const Popover = ({
   const handleOpen = useCallbackRef(onOpen);
   const handleClose = useCallbackRef(onClose);
 
+  const { width: windowWidth, height: windowHeight } = getWindowDimensions();
   const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
 
   const calcuratePositionValue = useCallback(
@@ -248,7 +249,6 @@ export const Popover = ({
       height: popoverHeight,
     } = await getElementRect(popoverRef.current);
     const { x: childX, y: childY, width: childWidth, height: childHeight } = await getElementRect(childRef.current);
-    const { width: windowWidth, height: windowHeight } = getWindowDimensions();
 
     if (position !== positionValue) {
       if (position.includes('top') && childY - computedOffset - popoverHeight > 0) {
@@ -301,15 +301,11 @@ export const Popover = ({
     ) {
       setPositionValue(positionValue.replace('right', 'left') as Position);
     }
-  }, [computedOffset, position, positionValue]);
+  }, [computedOffset, position, positionValue, windowHeight, windowWidth]);
 
   useEffect(() => {
     handlePopoverPositionChange();
-
-    window.addEventListener('resize', handlePopoverPositionChange);
-
-    return () => window.removeEventListener('resize', handlePopoverPositionChange);
-  }, [handlePopoverPositionChange]);
+  }, [handlePopoverPositionChange, windowWidth, windowHeight]);
 
   useEffect(() => {
     if (isOpen) {
