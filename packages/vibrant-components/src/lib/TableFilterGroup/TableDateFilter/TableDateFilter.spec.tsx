@@ -198,7 +198,7 @@ describe('<TableDateFilter />', () => {
     beforeEach(() => {
       renderer = render(
         <TableFilterGroup initialFilterDataKeys={['createdAt']}>
-          <TableDateFilter dataKey="createdAt" label="생성일" operators={['before', 'between']} defaultValue={} />
+          <TableDateFilter dataKey="createdAt" label="생성일" operators={['before', 'between']} />
         </TableFilterGroup>
       );
 
