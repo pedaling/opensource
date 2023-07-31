@@ -61,7 +61,7 @@ exports[`<RangePickerField /> when size is lg match snapshot 1`] = `
   border-style: solid;
   border-color: #00000026;
   height: 50px;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -332,7 +332,7 @@ exports[`<RangePickerField /> when size is md match snapshot 1`] = `
   border-style: solid;
   border-color: #00000026;
   height: 38px;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -603,7 +603,7 @@ exports[`<RangePickerField /> when size is sm match snapshot 1`] = `
   border-style: solid;
   border-color: #00000026;
   height: 30px;
-  border-radius: 2px;
+  border-radius: 4px;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
