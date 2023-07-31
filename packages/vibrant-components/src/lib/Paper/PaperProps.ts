@@ -57,10 +57,10 @@ type PaperProps = Pick<BorderSystemProps, 'borderColor' | 'borderStyle' | 'borde
       | 'borderBottomRightRadiusLevel'
       | 'borderTopLeftRadiusLevel'
       | 'borderTopRightRadiusLevel'
-      | 'roundedBottomLeftProp'
-      | 'roundedBottomRightProp'
-      | 'roundedTopLeftProp'
-      | 'roundedTopRightProp'
+      | 'roundedBottomLeft'
+      | 'roundedBottomRight'
+      | 'roundedTopLeft'
+      | 'roundedTopRight'
     >,
     Pick<BorderSystemProps, 'borderRadiusLevel' | 'rounded'>
   >;
