@@ -1,4 +1,4 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import { ConfigProvider, PortalRootProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -198,7 +198,7 @@ describe('<TableDateFilter />', () => {
     beforeEach(() => {
       renderer = render(
         <TableFilterGroup initialFilterDataKeys={['createdAt']}>
-          <TableDateFilter dataKey="createdAt" label="생성일" operators={['before', 'between']} />
+          <TableDateFilter dataKey="createdAt" label="생성일" operators={['before', 'between']} defaultValue={} />
         </TableFilterGroup>
       );
 
@@ -218,6 +218,10 @@ describe('<TableDateFilter />', () => {
         const element = await renderer.findByRole('button', {
           name: TableFilterGroupTranslation.dateFilter.operators.before,
         });
+
+        fireEvent.click(element);
+
+        await waitForElementToBeRemoved(renderer.queryByTestId('calendar'));
 
         fireEvent.click(element);
       });
