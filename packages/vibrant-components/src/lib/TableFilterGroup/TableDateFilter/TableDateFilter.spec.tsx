@@ -1,4 +1,4 @@
-import { fireEvent, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 import { ConfigProvider, PortalRootProvider } from '@vibrant-ui/core';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
@@ -220,19 +220,15 @@ describe('<TableDateFilter />', () => {
         });
 
         fireEvent.click(element);
-
-        await waitForElementToBeRemoved(renderer.queryByTestId('calendar'));
-
-        fireEvent.click(element);
       });
 
       it('should render only provided operator options', async () => {
         await waitFor(() => {
-          expect(renderer.queryAllByText(TableFilterGroupTranslation.dateFilter.operators.equals)[1]).toBeFalsy();
+          expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.equals)).toBeFalsy();
 
           expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.notEquals)).toBeFalsy();
 
-          expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.before)).toBeTruthy();
+          expect(renderer.queryAllByText(TableFilterGroupTranslation.dateFilter.operators.before)[1]).toBeTruthy();
 
           expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.after)).toBeFalsy();
 
