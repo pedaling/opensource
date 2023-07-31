@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.1...vibrant-components-0.70.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* Dropdown이 열렸을 때 특정 영역 클릭 시 닫히지 않는 오류를 수정한다. ([#829](https://github.com/pedaling/opensource/issues/829)) ([14afe00](https://github.com/pedaling/opensource/commit/14afe00900537871d7ee0c9bb527779010b3ce2f))
+* remove elevation level in toast component ([#827](https://github.com/pedaling/opensource/issues/827)) ([a22f9b1](https://github.com/pedaling/opensource/commit/a22f9b13bddbe88968f622b55ea6c5b32fb9f3cf))
+
 ### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.0...vibrant-components-0.70.1) (2023-07-26)
 
 
