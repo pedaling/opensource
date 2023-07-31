@@ -224,11 +224,11 @@ describe('<TableDateFilter />', () => {
 
       it('should render only provided operator options', async () => {
         await waitFor(() => {
-          expect(renderer.queryAllByText(TableFilterGroupTranslation.dateFilter.operators.equals)[1]).toBeFalsy();
+          expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.equals)).toBeFalsy();
 
           expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.notEquals)).toBeFalsy();
 
-          expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.before)).toBeTruthy();
+          expect(renderer.queryAllByText(TableFilterGroupTranslation.dateFilter.operators.before)[1]).toBeTruthy();
 
           expect(renderer.queryByText(TableFilterGroupTranslation.dateFilter.operators.after)).toBeFalsy();
 
