@@ -66,6 +66,7 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
       ref={innerRef}
       {...restProps}
       style={{ ...style, position: 'absolute' }}
+      pointerEvents="auto"
       {...(scrollable ? { contentContainerStyle: { flexGrow: 1 } } : {})}
     >
       {children}
