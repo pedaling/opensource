@@ -11,7 +11,7 @@ title: Paper
   width={200}
   height={200}
   backgroundColor="primary"
-  borderRadiusLevel={1}
+  rounded="sm"
 />
 ```
 
@@ -24,7 +24,8 @@ import { Paper } from '@vibrant-ui/components';
 ## Properties
 
 [DisplaySystemProps](/docs/system-props/display), [SpacingSystemProps](/docs/system-props/spacing), [InteractionSystemProps](/docs/system-props/interaction), [PositionSystemProps](/docs/system-props/position),
-Pick< [FlexboxSystemProps](/docs/system-props/flexbox), 'flexBasis' | 'flexGrow' | 'flexShrink'>, Pick< [ElevationSystemProps](/docs/system-props/elevation), 'elevationLevel'>, [OverflowSystemProps](/docs/system-props/overflow), [SizingSystemProps](/docs/system-props/overflow), Pick< [BorderSystemProps](/docs/system-props/border), 'borderBottomLeftRadiusLevel' | 'borderBottomRightRadiusLevel' | 'borderTopLeftRadiusLevel' | 'borderTopRightRadiusLevel' | 'borderRadiusLevel'>,
+Pick< [FlexboxSystemProps](/docs/system-props/flexbox), 'flexBasis' | 'flexGrow' | 'flexShrink'>, Pick< [ElevationSystemProps](/docs/system-props/elevation), 'elevationLevel'>, [OverflowSystemProps](/docs/system-props/overflow), [SizingSystemProps](/docs/system-props/overflow), 
+Pick< [BorderSystemProps](/docs/system-props/border), 'borderBottomLeftRadiusLevel' | 'borderBottomRightRadiusLevel' | 'borderTopLeftRadiusLevel' | 'borderTopRightRadiusLevel' | 'borderRadiusLevel' | 'roundedBottomLeftProp' | 'roundedBottomRightProp' | 'roundedTopLeftProp' | 'roundedTopRightProp'>,
 Pick< [BackgroundSystemProps](/docs/system-props/background), 'backgroundColor' | 'gradient' >
 
 | Prop     | Type                | Default | Description               |
@@ -52,14 +53,14 @@ Pick< [BackgroundSystemProps](/docs/system-props/background), 'backgroundColor' 
 
 ### Border Radius
 
-`borderBottomLeftRadiusLevel`, `borderBottomRightRadiusLevel`, `borderTopLeftRadiusLevel` , `borderTopRightRadiusLevel` 또는 `borderRadiusLevel` 속성을 통해 theme에 정의된 테두리 경계의 꼭짓점을 둥글기를 설정합니다.
+`roundedBottomLeft`, `roundedBottomRight`, `roundedTopLeft` , `roundedTopRight` 또는 `rounded` 속성을 통해 theme에 정의된 테두리 경계의 꼭짓점을 둥글기를 설정합니다.
 
 ```jsx live
 <Paper
-  borderTopLeftRadiusLevel={0}
-  borderTopRightRadiusLevel={2}
-  borderBottomLeftRadiusLevel={3}
-  borderBottomRightRadiusLevel={4}
+  roundedTopLeft="sm"
+  roundedTopRight="md"
+  roundedBottomLeft="xl"
+  roundedBottomRight="xxl"
   width={200}
   height={200}
   backgroundColor="informative"

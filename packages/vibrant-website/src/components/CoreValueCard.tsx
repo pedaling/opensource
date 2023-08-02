@@ -9,7 +9,7 @@ type CoreValueCardProps = {
 
 export const CoreValueCard = ({ content, coreValueEmoji, title }: CoreValueCardProps) => (
   <VStack spacing={32} alignHorizontal="center" p={24}>
-    <Paper width={150} height={150} borderRadiusLevel={4} backgroundColor="informativeContainer">
+    <Paper width={150} height={150} rounded="xxl" backgroundColor="informativeContainer">
       <HStack height="100%" alignHorizontal="center" alignVertical="center">
         <Display level={3}>{coreValueEmoji}</Display>
       </HStack>

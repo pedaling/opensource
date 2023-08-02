@@ -147,10 +147,10 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 maxWidth={[446, 480, desktopModalWidth]}
                 maxHeight={[viewportHeight - 120, 'unset']}
                 backgroundColor="surface2"
-                borderTopLeftRadiusLevel={4}
-                borderTopRightRadiusLevel={4}
-                borderBottomLeftRadiusLevel={[0, 4]}
-                borderBottomRightRadiusLevel={[0, 4]}
+                roundedTopLeft="xxl"
+                roundedTopRight="xxl"
+                roundedBottomLeft={['none', 'xxl']}
+                roundedBottomRight={['none', 'xxl']}
                 onLayout={handleContainerResize}
                 data-testid={testId}
               >

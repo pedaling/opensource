@@ -41,11 +41,8 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   border-style: solid;
   border-color: #00000026;
   height: 50px;
-  border-radius: 2px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
   background-color: #ffffff;
 }
 
@@ -75,7 +72,6 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  height: 100%;
   padding-left: 15px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -119,7 +115,6 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   padding-left: 12px;
-  height: 100%;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
@@ -292,11 +287,8 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   border-style: solid;
   border-color: #00000026;
   height: 38px;
-  border-radius: 2px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
   background-color: #ffffff;
 }
 
@@ -326,7 +318,6 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  height: 100%;
   padding-left: 9px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -370,7 +361,6 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   padding-left: 8px;
-  height: 100%;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
@@ -543,11 +533,8 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   border-style: solid;
   border-color: #00000026;
   height: 30px;
-  border-radius: 2px;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
   background-color: #ffffff;
 }
 
@@ -577,7 +564,6 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  height: 100%;
   padding-left: 7px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -621,7 +607,6 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   padding-left: 6px;
-  height: 100%;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;

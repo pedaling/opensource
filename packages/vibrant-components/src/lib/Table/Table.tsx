@@ -102,7 +102,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       borderStyle="solid"
       width="100%"
       borderBottomWidth={0}
-      borderRadiusLevel={1}
+      rounded="sm"
       data-testid={testId}
     >
       <Box

@@ -9,7 +9,7 @@ export default {
     width: '100%',
     maxWidth: 200,
     height: 200,
-    borderRadiusLevel: 2,
+    rounded: 'sm',
   },
 } as ComponentMeta<typeof Skeleton>;
 

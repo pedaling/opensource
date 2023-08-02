@@ -40,7 +40,7 @@ const RadioButton = ({ value, label }: { value: string; label: string }) => {
       disabled={isDisabled}
       backgroundColor={isChecked ? 'primary' : 'background'}
       p={10}
-      borderRadiusLevel={2}
+      rounded="lg"
     >
       <>
         <Box

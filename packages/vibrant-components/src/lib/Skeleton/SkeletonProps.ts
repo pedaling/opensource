@@ -1,7 +1,7 @@
 import type { BorderSystemProps, ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 
-export type SkeletonProps = Pick<BorderSystemProps, 'borderRadiusLevel'> & {
+export type SkeletonProps = Pick<BorderSystemProps, 'borderRadiusLevel' | 'rounded'> & {
   width: ResponsiveValue<number | 'auto' | `${number}%`>;
   height: ResponsiveValue<number | 'auto' | `${number}%`>;
   maxWidth?: ResponsiveValue<number | `${number}%`>;

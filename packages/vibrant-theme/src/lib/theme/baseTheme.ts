@@ -133,6 +133,13 @@ export const baseTheme: Theme = {
     3: 16,
     4: 20,
     5: 10000,
+    none: 0,
+    sm: 4,
+    md: 8,
+    lg: 12,
+    xl: 16,
+    xxl: 20,
+    full: 10000,
   },
   zIndex: {
     bottomBar: 1,
