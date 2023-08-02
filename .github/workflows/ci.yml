@@ -75,6 +75,8 @@ jobs:
         with:
           projectToken: ${{ secrets.CHROMATIC_TOKEN }}
           autoAcceptChanges: true
+        env:
+          NODE_OPTIONS: --max-old-space-size=8192
 
   # expo:
   #   runs-on: ubuntu-latest
