@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.3...vibrant-core-0.71.0) (2023-08-03)
+
+
+### Features
+
+* borderRadiusLevel의 토큰을 변경한다 ([#822](https://github.com/pedaling/opensource/issues/822)) ([0029723](https://github.com/pedaling/opensource/commit/00297237d20ceb90deb6020d9766a6430036d8ea))
+
 ### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.2...vibrant-core-0.70.3) (2023-08-01)
 
 
