@@ -128,7 +128,7 @@ export const baseTheme: Theme = {
   },
   borderRadius: {
     0: 0,
-    1: 2,
+    1: 4,
     2: 12,
     3: 16,
     4: 20,
