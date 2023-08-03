@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.71.0...vibrant-theme-0.71.1) (2023-08-03)
+
+
+### Features
+
+* baseTheme에서 borderRadiusLevel 1 값을 2px -> 4px로 수정한다. ([#833](https://github.com/pedaling/opensource/issues/833)) ([583967c](https://github.com/pedaling/opensource/commit/583967c0fdc5d56bf0b03e6d91bcc76cbb85c00f))
+
 ## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.3...vibrant-theme-0.71.0) (2023-08-03)
 
 
