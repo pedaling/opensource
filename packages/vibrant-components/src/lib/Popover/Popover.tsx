@@ -2,7 +2,7 @@ import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
 import { Box, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
-import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
+import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
 import type { Position } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
@@ -52,18 +52,21 @@ export const Popover = ({
 
   const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
 
-  const popoverWidth = popoverRef?.current?.offsetWidth ?? 0;
-  const popoverHeight = popoverRef?.current?.offsetHeight ?? 0;
-  const halfPopoverWidth = popoverWidth / 2;
-  const halfPopoverHeight = popoverHeight / 2;
-
-  const childWidth = childRef?.current?.offsetWidth ?? 0;
-  const childHeight = childRef?.current?.offsetHeight ?? 0;
-  const halfChildWidth = childWidth / 2;
-  const halfChildHeight = childHeight / 2;
-
   const calcuratePositionValue = useCallback(
-    (position: Position) => {
+    async (position: Position) => {
+      const { width: popoverWidth, height: popoverHeight } = await getElementRect(popoverRef.current);
+      const { width: childWidth, height: childHeight } = await getElementRect(childRef.current);
+
+      const halfPopoverWidth = popoverWidth / 2;
+      const halfPopoverHeight = popoverHeight / 2;
+      const halfChildWidth = childWidth / 2;
+      const halfChildHeight = childHeight / 2;
+
+      const arrowLeftMaxDistance = arrowHeight;
+      const arrowRightMaxDistance = popoverWidth - arrowHeight * 3 - 3;
+      const arrowTopMaxDistance = arrowHeight;
+      const arrowBottomMaxDistance = popoverHeight - arrowHeight * 3 - 3;
+
       if (position.includes('top')) {
         setArrowStyle({
           borderRightColor: backgroundColor,
@@ -89,7 +92,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: arrowHeight + arrowOffset,
+            left: Math.min(arrowLeftMaxDistance + arrowOffset, arrowRightMaxDistance),
             top: popoverHeight - arrowHeight - 2,
           });
         }
@@ -101,7 +104,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: popoverWidth - arrowHeight * 3 - arrowOffset,
+            left: Math.max(arrowRightMaxDistance - arrowOffset, arrowLeftMaxDistance),
             top: popoverHeight - arrowHeight - 2,
           });
         }
@@ -121,7 +124,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: halfPopoverWidth - arrowHeight,
-            top: -arrowHeight - 1,
+            top: -arrowHeight,
           });
         }
 
@@ -132,8 +135,8 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: arrowHeight + arrowOffset,
-            top: -arrowHeight - 1,
+            left: Math.min(arrowLeftMaxDistance + arrowOffset, arrowRightMaxDistance),
+            top: -arrowHeight,
           });
         }
 
@@ -144,8 +147,8 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: popoverWidth - arrowHeight * 3 - arrowOffset,
-            top: -arrowHeight - 1,
+            left: Math.max(arrowRightMaxDistance - arrowOffset, arrowLeftMaxDistance),
+            top: -arrowHeight,
           });
         }
       }
@@ -176,7 +179,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: arrowOffset - 2,
+            top: Math.min(arrowTopMaxDistance + arrowOffset, arrowBottomMaxDistance),
           });
         }
 
@@ -188,7 +191,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: popoverHeight - arrowHeight * 2 - arrowOffset,
+            top: Math.max(arrowBottomMaxDistance - arrowOffset, arrowTopMaxDistance),
           });
         }
       }
@@ -219,7 +222,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: arrowOffset - 2,
+            top: Math.min(arrowTopMaxDistance + arrowOffset, arrowBottomMaxDistance),
           });
         }
 
@@ -231,25 +234,13 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: popoverHeight - arrowHeight * 2 - arrowOffset,
+            top: Math.max(arrowBottomMaxDistance - arrowOffset, arrowTopMaxDistance),
           });
         }
       }
     },
-    [
-      arrowHeight,
-      arrowOffset,
-      backgroundColor,
-      childHeight,
-      childWidth,
-      computedOffset,
-      halfChildHeight,
-      halfChildWidth,
-      halfPopoverHeight,
-      halfPopoverWidth,
-      popoverHeight,
-      popoverWidth,
-    ]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [arrowHeight, arrowOffset, backgroundColor, computedOffset, title]
   );
 
   useEffect(() => (isOpen ? handleOpen?.() : handleClose?.()), [isOpen, handleOpen, handleClose]);
@@ -260,16 +251,33 @@ export const Popover = ({
 
   return (
     <VStack>
-      <VStack zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0} position="absolute">
+      <VStack position="absolute">
         <Transition animation={{ opacity: isOpen ? 1 : 0, ...popoverPosition }} duration={200} easing="easeOutQuad">
-          <VStack maxWidth={maxWidth} position="relative" width="100%">
-            <Paper backgroundColor={backgroundColor} rounded="sm">
+          <VStack
+            zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0}
+            maxWidth={maxWidth}
+            position="relative"
+            width="100%"
+          >
+            <Paper backgroundColor={backgroundColor} borderRadiusLevel={1}>
               <VStack px={12} py={8} ref={popoverRef} width="100%">
                 <HStack width="100%" alignHorizontal="space-between">
                   {isDefined(title) && (
-                    <Body level={2} weight="regular" wordBreak={maxWidth ? 'break-word' : 'normal'}>
-                      {title}
-                    </Body>
+                    <HStack flex={1} overflow="hidden" flexGrow={1}>
+                      <Body
+                        level={2}
+                        weight="regular"
+                        {...(maxWidth
+                          ? {
+                              wordBreak: 'keep-all',
+                              wordWrap: 'break-word',
+                              maxWidth: '-webkit-fill-available',
+                            }
+                          : { whiteSpace: 'nowrap' })}
+                      >
+                        {title}
+                      </Body>
+                    </HStack>
                   )}
                   {isDefined(title) && showCloseButton && <Space width={6} />}
                   {showCloseButton && (
