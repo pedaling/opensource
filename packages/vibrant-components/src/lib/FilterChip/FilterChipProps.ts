@@ -81,12 +81,12 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
 
       if (selected) {
         return {
-          color: 'onPrimaryContainer',
+          color: 'onView1',
           borderWidth: 1,
           borderStyle: 'solid',
-          borderColor: 'outlinePrimary',
-          backgroundColor: 'primaryContainer',
-          overlayColor: 'onPrimaryContainer',
+          borderColor: 'outlineNeutral',
+          backgroundColor: 'surface1',
+          overlayColor: 'onView1',
           interactions: ['hover', 'focus', 'active'],
         } as const;
       }

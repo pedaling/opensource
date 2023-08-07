@@ -1,6 +1,5 @@
 import type { ReactElement } from 'react';
 import type { ResponsiveValue } from '@vibrant-ui/core';
-import { withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken } from '@vibrant-ui/theme';
 import type { Position } from '@vibrant-ui/utils';
 
@@ -17,6 +16,7 @@ export type PopoverProps = {
   onOpen?: () => void;
   children?: ReactElement;
   popoverId?: string;
+  zIndex?: ResponsiveValue<number>;
 } & ({ title: string; renderContent?: () => ReactElement } | { title?: string; renderContent: () => ReactElement }) &
   PopoverArrowType;
 
@@ -29,5 +29,3 @@ type PopoverArrowType =
       showArrow?: true;
       arrowOffset?: number;
     };
-
-export const withPopoverVariation = withVariation<PopoverProps>('Popover')();

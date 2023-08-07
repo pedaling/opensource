@@ -2,6 +2,34 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.71.0...vibrant-theme-0.71.1) (2023-08-03)
+
+
+### Features
+
+* baseTheme에서 borderRadiusLevel 1 값을 2px -> 4px로 수정한다. ([#833](https://github.com/pedaling/opensource/issues/833)) ([583967c](https://github.com/pedaling/opensource/commit/583967c0fdc5d56bf0b03e6d91bcc76cbb85c00f))
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.3...vibrant-theme-0.71.0) (2023-08-03)
+
+
+### Features
+
+* borderRadiusLevel의 토큰을 변경한다 ([#822](https://github.com/pedaling/opensource/issues/822)) ([0029723](https://github.com/pedaling/opensource/commit/00297237d20ceb90deb6020d9766a6430036d8ea))
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.2...vibrant-theme-0.70.3) (2023-08-01)
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.1...vibrant-theme-0.70.2) (2023-07-31)
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.0...vibrant-theme-0.70.1) (2023-07-26)
+
+## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.69.2...vibrant-theme-0.70.0) (2023-07-24)
+
+### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.69.1...vibrant-theme-0.69.2) (2023-07-24)
+
+### [0.69.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.69.0...vibrant-theme-0.69.1) (2023-07-21)
+
+## [0.69.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.68.0...vibrant-theme-0.69.0) (2023-07-20)
+
 ## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.67.2...vibrant-theme-0.68.0) (2023-07-18)
 
 ### [0.67.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.67.1...vibrant-theme-0.67.2) (2023-07-14)

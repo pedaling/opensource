@@ -29,7 +29,7 @@ export const ContainedButton = withContainedButtonVariation(
       buttonType={type}
       interactions={['hover', 'focus', 'active']}
       overlayColor={onColor}
-      borderRadiusLevel={1}
+      rounded="sm"
       disabled={loading || disabled}
     >
       <Box

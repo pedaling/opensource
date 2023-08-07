@@ -2,6 +2,44 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.71.0...vibrant-core-0.71.1) (2023-08-03)
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.3...vibrant-core-0.71.0) (2023-08-03)
+
+
+### Features
+
+* borderRadiusLevel의 토큰을 변경한다 ([#822](https://github.com/pedaling/opensource/issues/822)) ([0029723](https://github.com/pedaling/opensource/commit/00297237d20ceb90deb6020d9766a6430036d8ea))
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.2...vibrant-core-0.70.3) (2023-08-01)
+
+
+### Bug Fixes
+
+* Sovle the problem that can not touch the button of Toast in Android React Native ([#831](https://github.com/pedaling/opensource/issues/831)) ([0a27b31](https://github.com/pedaling/opensource/commit/0a27b311dc7486ce1db52656cc48e0868136b504))
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.1...vibrant-core-0.70.2) (2023-07-31)
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.0...vibrant-core-0.70.1) (2023-07-26)
+
+## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.69.2...vibrant-core-0.70.0) (2023-07-24)
+
+### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.69.1...vibrant-core-0.69.2) (2023-07-24)
+
+
+### Bug Fixes
+
+* 스위치가 보이지 않는 이슈를 해결한다. ([#819](https://github.com/pedaling/opensource/issues/819)) ([862c860](https://github.com/pedaling/opensource/commit/862c860b33d265f036773a800bd26b78fe6c5d1f))
+
+### [0.69.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.69.0...vibrant-core-0.69.1) (2023-07-21)
+
+
+### Bug Fixes
+
+* Solve the problem that can not touch the button of Toast in React Native ([#818](https://github.com/pedaling/opensource/issues/818)) ([73a202c](https://github.com/pedaling/opensource/commit/73a202ceb20a9f2dd2093737c460356f4771ade9))
+
+## [0.69.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.68.0...vibrant-core-0.69.0) (2023-07-20)
+
 ## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.67.2...vibrant-core-0.68.0) (2023-07-18)
 
 ### [0.67.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.67.1...vibrant-core-0.67.2) (2023-07-14)

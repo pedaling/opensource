@@ -11,14 +11,9 @@ export type UseMotionProps = {
   delay: number;
 };
 
-export type AnimationOptions = {
-  reverse?: boolean;
-  reset?: boolean;
-};
-
 export const useMotion = (_: UseMotionProps) => {
   const progress = useSharedValue(0);
-  const startAnimation = (_?: AnimationOptions) => {};
+  const startAnimation = () => {};
 
   return {
     progress,

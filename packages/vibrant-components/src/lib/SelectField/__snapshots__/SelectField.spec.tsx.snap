@@ -71,7 +71,7 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
   border-width: 1px;
   border-style: solid;
   border-color: #00000026;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
 }
 
@@ -280,7 +280,7 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
   border-width: 1px;
   border-style: solid;
   border-color: #00000026;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
 }
 
@@ -489,7 +489,7 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   border-width: 1px;
   border-style: solid;
   border-color: #00000026;
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
 }
 

@@ -14,6 +14,7 @@ export type {
   GradientKind,
   ThemeColors,
   BorderRadiusLevel,
+  Rounded,
   TypographyKind,
   TypographyWeight,
   OpacityToken,

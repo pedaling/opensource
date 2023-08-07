@@ -2,6 +2,60 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.71.0...vibrant-components-0.71.1) (2023-08-03)
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.3...vibrant-components-0.71.0) (2023-08-03)
+
+
+### Features
+
+* borderRadiusLevel의 토큰을 변경한다 ([#822](https://github.com/pedaling/opensource/issues/822)) ([0029723](https://github.com/pedaling/opensource/commit/00297237d20ceb90deb6020d9766a6430036d8ea))
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.2...vibrant-components-0.70.3) (2023-08-01)
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.1...vibrant-components-0.70.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* Dropdown이 열렸을 때 특정 영역 클릭 시 닫히지 않는 오류를 수정한다. ([#829](https://github.com/pedaling/opensource/issues/829)) ([14afe00](https://github.com/pedaling/opensource/commit/14afe00900537871d7ee0c9bb527779010b3ce2f))
+* remove elevation level in toast component ([#827](https://github.com/pedaling/opensource/issues/827)) ([a22f9b1](https://github.com/pedaling/opensource/commit/a22f9b13bddbe88968f622b55ea6c5b32fb9f3cf))
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.0...vibrant-components-0.70.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* Dropdown에서 오버플로우시 위치를 결정하는 로직을 수정한다 ([#824](https://github.com/pedaling/opensource/issues/824)) ([9bda4c6](https://github.com/pedaling/opensource/commit/9bda4c613ed6d74e68e1a88c1622cc16cb6ed6cc))
+
+
+### Reverts
+
+* Revert "chore: react-native, expo, reanimated, etc (#816)" (#826) ([2fa3ff3](https://github.com/pedaling/opensource/commit/2fa3ff3a41529cad575c0bfed662f097c137a513)), closes [#816](https://github.com/pedaling/opensource/issues/816) [#826](https://github.com/pedaling/opensource/issues/826)
+
+## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.69.2...vibrant-components-0.70.0) (2023-07-24)
+
+### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.69.1...vibrant-components-0.69.2) (2023-07-24)
+
+
+### Bug Fixes
+
+* 스위치가 보이지 않는 이슈를 해결한다. ([#819](https://github.com/pedaling/opensource/issues/819)) ([862c860](https://github.com/pedaling/opensource/commit/862c860b33d265f036773a800bd26b78fe6c5d1f))
+
+### [0.69.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.69.0...vibrant-components-0.69.1) (2023-07-21)
+
+
+### Features
+
+* change FilterChip selected style ([#817](https://github.com/pedaling/opensource/issues/817)) ([660e573](https://github.com/pedaling/opensource/commit/660e57342c2b8f7a530c150e495eb3782e46ced0))
+
+## [0.69.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.68.0...vibrant-components-0.69.0) (2023-07-20)
+
+
+### Features
+
+* "ModalBottonSheet"가 primary+secondary 인 경우 버튼 정렬을 vertical 로 변경 ([#815](https://github.com/pedaling/opensource/issues/815)) ([c2edc04](https://github.com/pedaling/opensource/commit/c2edc04621a4ac1b5d2fb738feff69dffc94be42))
+
 ## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.67.2...vibrant-components-0.68.0) (2023-07-18)
 
 

@@ -50,6 +50,7 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
           <ViewComponent
             ref={innerRef}
             {...restProps}
+            pointerEvents="auto"
             style={{ ...style, position: 'absolute' }}
             {...(scrollable ? { contentContainerStyle: { flexGrow: 1 } } : {})}
           >
@@ -65,6 +66,7 @@ export const Portal = withPortalVariation(({ innerRef, scrollable, children, sty
       ref={innerRef}
       {...restProps}
       style={{ ...style, position: 'absolute' }}
+      pointerEvents="auto"
       {...(scrollable ? { contentContainerStyle: { flexGrow: 1 } } : {})}
     >
       {children}
