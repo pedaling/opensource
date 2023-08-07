@@ -259,7 +259,7 @@ export const Popover = ({
             position="relative"
             width="100%"
           >
-            <Paper backgroundColor={backgroundColor} borderRadiusLevel={1}>
+            <Paper backgroundColor={backgroundColor} rounded="sm">
               <VStack px={12} py={8} ref={popoverRef} width="100%">
                 <HStack width="100%" alignHorizontal="space-between">
                   {isDefined(title) && (
