@@ -85,12 +85,6 @@ const borderBottomRightRadiusProp = createSystemProp({
   property: 'borderBottomRightRadius',
 });
 
-const borderRadiusLevelProp = createSystemProp({
-  property: 'borderRadiusLevel',
-  styleProperty: 'borderRadius',
-  scale: 'borderRadius',
-});
-
 const borderTopLeftRadiusLevelProp = createSystemProp({
   property: 'borderTopLeftRadiusLevel',
   styleProperty: 'borderTopLeftRadius',
@@ -188,7 +182,6 @@ export const borderSystemProps = [
   borderTopRightRadiusProp,
   borderBottomLeftRadiusProp,
   borderBottomRightRadiusProp,
-  borderRadiusLevelProp,
   borderTopLeftRadiusLevelProp,
   borderTopRightRadiusLevelProp,
   borderBottomLeftRadiusLevelProp,
