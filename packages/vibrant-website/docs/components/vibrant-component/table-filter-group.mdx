@@ -20,7 +20,7 @@ title: TableFilterGroup
 
 ```jsx live
 <TableFilterGroup
-  initialFilterDataKeys={['id', 'orderStatus']}
+  initialFilterDataKeys={['id']}
 >
   <TableFilterGroup.StringFilter
     dataKey="id"
@@ -28,14 +28,6 @@ title: TableFilterGroup
     defaultValue={{
       value: 'loulee',
       operator: 'equals',
-    }}
-  />
-  <TableFilterGroup.StringFilter
-    dataKey="location"
-    label="장소"
-    defaultValue={{
-      value: 'Seoul',
-      operator: 'contains',
     }}
   />
   <TableFilterGroup.DateFilter
@@ -46,8 +38,8 @@ title: TableFilterGroup
     dataKey="orderStatus"
     label="주문 상태"
     defaultValue={{
-      operator: 'equals',
-      value: ['completed'],
+      operator: 'contains',
+      value: ['completed', 'canceled'],
     }}
     options={[
       {
@@ -63,10 +55,6 @@ title: TableFilterGroup
         label: '배송 준비중',
       },
     ]}
-  />
-  <TableFilterGroup.StringFilter
-    dataKey="class"
-    label="수강 중인 클래스"
   />
 </TableFilterGroup>
 ```
@@ -166,7 +154,7 @@ import { TableFilterGroup } from '@vibrant-ui/components';
     dataKey="orderStatus"
     label="주문 상태"
     defaultValue={{
-      operator: 'equals',
+      operator: 'contains',
       value: ['completed', 'canceled'],
     }}
     options={[
