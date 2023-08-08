@@ -127,12 +127,6 @@ export const baseTheme: Theme = {
     },
   },
   borderRadius: {
-    0: 0,
-    1: 4,
-    2: 12,
-    3: 16,
-    4: 20,
-    5: 10000,
     none: 0,
     sm: 4,
     md: 8,

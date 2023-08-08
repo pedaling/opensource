@@ -51,18 +51,8 @@ type PaperProps = Pick<BorderSystemProps, 'borderColor' | 'borderStyle' | 'borde
     children?: ReactElementChild;
     testId?: string;
   } & Either<
-    Pick<
-      BorderSystemProps,
-      | 'borderBottomLeftRadiusLevel'
-      | 'borderBottomRightRadiusLevel'
-      | 'borderTopLeftRadiusLevel'
-      | 'borderTopRightRadiusLevel'
-      | 'roundedBottomLeft'
-      | 'roundedBottomRight'
-      | 'roundedTopLeft'
-      | 'roundedTopRight'
-    >,
-    Pick<BorderSystemProps, 'borderRadiusLevel' | 'rounded'>
+    Pick<BorderSystemProps, 'roundedBottomLeft' | 'roundedBottomRight' | 'roundedTopLeft' | 'roundedTopRight'>,
+    Pick<BorderSystemProps, 'rounded'>
   >;
 
 export const withPaperVariation = withVariation<PaperProps>('Paper')();
