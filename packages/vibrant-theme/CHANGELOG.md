@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.72.0...vibrant-theme-0.73.0) (2023-08-08)
+
+
+### Features
+
+* remove borderRadiusLevel system prop ([#838](https://github.com/pedaling/opensource/issues/838)) ([07326be](https://github.com/pedaling/opensource/commit/07326beabc1b219e532b507dab2628dd5254334b))
+
 ### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.71.2...vibrant-theme-0.71.3) (2023-08-07)
 
 ### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.71.0...vibrant-theme-0.71.1) (2023-08-03)
