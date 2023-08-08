@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.73.0...vibrant-core-0.73.1) (2023-08-08)
+
+
+### Bug Fixes
+
+* RN에서 useWindowDimension이 네이티브로 동작되게 한다 ([#841](https://github.com/pedaling/opensource/issues/841)) ([dcc24d5](https://github.com/pedaling/opensource/commit/dcc24d59860272587d44e5fabb0cf618ac46ac95))
+
 ## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.72.0...vibrant-core-0.73.0) (2023-08-08)
 
 
