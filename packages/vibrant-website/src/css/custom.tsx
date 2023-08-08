@@ -15,11 +15,14 @@ const style = theme => css`
     --ifm-pre-background: ${theme.colors.background};
     --ifm-code-font-size: 80%;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --ifm-table-stripe-background: rgba(0, 0, 0, 0);
   }
   /* If you have a different syntax highlighting theme for dark mode. */
   [data-theme='dark'] {
     /* Color which works with dark mode syntax highlighting theme */
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-table-stripe-background: var(--ifm-pre-background);
+    --ifm-table-background: var(--ifm-pre-background);
   }
 
   .docusaurus-highlight-code-line {
