@@ -85,32 +85,32 @@ const borderBottomRightRadiusProp = createSystemProp({
   property: 'borderBottomRightRadius',
 });
 
-const borderRadiusLevelProp = createSystemProp({
-  property: 'borderRadiusLevel',
+const roundedProp = createSystemProp({
+  property: 'rounded',
   styleProperty: 'borderRadius',
   scale: 'borderRadius',
 });
 
-const borderTopLeftRadiusLevelProp = createSystemProp({
-  property: 'borderTopLeftRadiusLevel',
+const roundedTopLeftProp = createSystemProp({
+  property: 'roundedTopLeft',
   styleProperty: 'borderTopLeftRadius',
   scale: 'borderRadius',
 });
 
-const borderTopRightRadiusLevelProp = createSystemProp({
-  property: 'borderTopRightRadiusLevel',
+const roundedTopRightProp = createSystemProp({
+  property: 'roundedTopRight',
   styleProperty: 'borderTopRightRadius',
   scale: 'borderRadius',
 });
 
-const borderBottomLeftRadiusLevelProp = createSystemProp({
-  property: 'borderBottomLeftRadiusLevel',
+const roundedBottomLeftProp = createSystemProp({
+  property: 'roundedBottomLeft',
   styleProperty: 'borderBottomLeftRadius',
   scale: 'borderRadius',
 });
 
-const borderBottomRightRadiusLevelProp = createSystemProp({
-  property: 'borderBottomRightRadiusLevel',
+const roundedBottomRightProp = createSystemProp({
+  property: 'roundedBottomRight',
   styleProperty: 'borderBottomRightRadius',
   scale: 'borderRadius',
 });
@@ -157,11 +157,11 @@ export const borderSystemProps = [
   borderTopRightRadiusProp,
   borderBottomLeftRadiusProp,
   borderBottomRightRadiusProp,
-  borderRadiusLevelProp,
-  borderTopLeftRadiusLevelProp,
-  borderTopRightRadiusLevelProp,
-  borderBottomLeftRadiusLevelProp,
-  borderBottomRightRadiusLevelProp,
+  roundedProp,
+  roundedTopLeftProp,
+  roundedTopRightProp,
+  roundedBottomLeftProp,
+  roundedBottomRightProp,
   borderCollapseProp,
   outlineWidthProp,
   outlineStyleProp,

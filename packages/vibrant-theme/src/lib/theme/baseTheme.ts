@@ -48,16 +48,16 @@ export const baseTheme: Theme = {
       lineHeight: '3.125rem',
     },
     title1: {
-      fontSize: '2.125rem',
-      lineHeight: '2.75rem',
+      fontSize: '2rem',
+      lineHeight: '2.5rem',
     },
     title2: {
       fontSize: '1.75rem',
-      lineHeight: '2.5rem',
+      lineHeight: '2.25rem',
     },
     title3: {
-      fontSize: '1.625rem',
-      lineHeight: '2.25rem',
+      fontSize: '1.5rem',
+      lineHeight: '2rem',
     },
     title4: {
       fontSize: '1.25rem',
@@ -127,12 +127,13 @@ export const baseTheme: Theme = {
     },
   },
   borderRadius: {
-    0: 0,
-    1: 2,
-    2: 12,
-    3: 16,
-    4: 20,
-    5: 10000,
+    none: 0,
+    sm: 4,
+    md: 8,
+    lg: 12,
+    xl: 16,
+    xxl: 20,
+    full: 10000,
   },
   zIndex: {
     bottomBar: 1,

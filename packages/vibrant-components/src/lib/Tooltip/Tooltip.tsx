@@ -22,12 +22,12 @@ const getOffsetAvoidingOverflowByPosition = (
 
   const viewport = getWindowDimensions();
 
-  const isOverflowing = detectOverflow({
+  const overflow = detectOverflow({
     viewport,
     targetRect: { ...targetRect, x: openerRect.x + x, y: openerRect.y + y },
   });
 
-  if (!isOverflowing) {
+  if (Object.values(overflow).every(value => value <= 0)) {
     return {
       x: x + openerRect.x,
       y: y + openerRect.y,
@@ -42,14 +42,16 @@ const getOffsetAvoidingOverflowByPosition = (
   });
 
   if (
-    !detectOverflow({
-      viewport,
-      targetRect: {
-        ...targetRect,
-        x: openerRect.x + flippedX,
-        y: openerRect.y + flippedY,
-      },
-    })
+    Object.values(
+      detectOverflow({
+        viewport,
+        targetRect: {
+          ...targetRect,
+          x: openerRect.x + flippedX,
+          y: openerRect.y + flippedY,
+        },
+      })
+    ).every(value => value <= 0)
   ) {
     return {
       x: openerRect.x + flippedX,

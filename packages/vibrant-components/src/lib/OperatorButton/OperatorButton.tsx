@@ -6,7 +6,7 @@ export const OperatorButton = withOperationButtonVariation(
     <Pressable
       p={7}
       borderWidth={0}
-      borderRadius={2}
+      rounded="sm"
       backgroundColor={backgroundColor}
       overlayColor="onView1"
       interactions={['hover', 'focus', 'active']}

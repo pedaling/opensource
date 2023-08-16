@@ -171,7 +171,7 @@ describe('<ContainedButton />', () => {
 
           expect(element).toHaveStyleRule('padding-right', paddingRight);
 
-          expect(element).toHaveStyleRule('border-radius', '2px');
+          expect(element).toHaveStyleRule('border-radius', '4px');
 
           expect(element.clientHeight).toBe(height);
 

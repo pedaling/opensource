@@ -22,7 +22,7 @@ export const SkeletonText = withSkeletonTextVariation(({ lines = 1, typography, 
           height={lineHeight}
           alignVertical="center"
         >
-          <Box backgroundColor="disable" height={fontSize} borderRadiusLevel={1} />
+          <Box backgroundColor="disable" height={fontSize} rounded="sm" />
         </VStack>
       ))}
     </VStack>

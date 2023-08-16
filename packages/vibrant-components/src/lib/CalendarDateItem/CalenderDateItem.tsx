@@ -56,15 +56,7 @@ export const CalenderDateItem = withCalendarDateItemVariation(
             {date.getDate()}
           </Body>
           {today && (
-            <Box
-              position="absolute"
-              width={4}
-              height={4}
-              borderRadius={2}
-              bottom={8}
-              left={18}
-              backgroundColor="primary"
-            />
+            <Box position="absolute" width={4} height={4} rounded="sm" bottom={8} left={18} backgroundColor="primary" />
           )}
         </Box>
       </>

@@ -11,7 +11,7 @@ import {
   withTiming,
 } from 'react-native-reanimated';
 import type { EasingDictionary } from '../constants';
-import type { AnimationOptions, UseMotionProps } from './useMotion';
+import type { UseMotionProps } from './useMotion';
 
 const convertEasing: Record<keyof EasingDictionary, EasingFunction | EasingFunctionFactory> = {
   easeInQuad: Easing.in(Easing.ease),
@@ -25,41 +25,35 @@ export const useMotion = ({ duration, loop, delay, easing, onStart, onEnd }: Use
   const onEndRef = useRef(onEnd);
   const isAnimated = useSharedValue(false);
   const target = useSharedValue(1);
-  const startAnimation = useWorkletCallback(
-    (options: AnimationOptions = {}) => {
-      const { reverse = false, reset = true } = options;
-      const [from, to] = reverse ? [1, 0] : [0, 1];
+  const startAnimation = useWorkletCallback(() => {
+    const [from, to] = [0, 1];
 
-      if (target.value !== to) {
-        target.value = to;
+    if (target.value !== to) {
+      target.value = to;
+    }
+
+    if (!isAnimated.value && onStartRef.current) {
+      runOnJS(onStartRef.current)();
+
+      isAnimated.value = true;
+    }
+
+    if (loop) {
+      progress.value = withDelay(delay, withRepeat(withTiming(to, { duration, easing: convertEasing[easing] }), -1));
+
+      return;
+    }
+
+    progress.value = from;
+
+    progress.value = withTiming(to, { duration, easing: Easing.ease }, finished => {
+      if (finished && onEndRef.current) {
+        runOnJS(onEndRef.current)();
+
+        isAnimated.value = false;
       }
-
-      if (!isAnimated.value && onStartRef.current) {
-        runOnJS(onStartRef.current)();
-
-        isAnimated.value = true;
-      }
-
-      if (loop) {
-        progress.value = withDelay(delay, withRepeat(withTiming(to, { duration, easing: convertEasing[easing] }), -1));
-
-        return;
-      }
-
-      if (reset) {
-        progress.value = from;
-      }
-
-      progress.value = withTiming(to, { duration, easing: Easing.ease }, finished => {
-        if (finished && onEndRef.current) {
-          runOnJS(onEndRef.current)();
-
-          isAnimated.value = false;
-        }
-      });
-    },
-    [duration, easing, loop, progress]
-  );
+    });
+  }, [duration, easing, loop, progress]);
 
   const stopAnimation = useWorkletCallback(() => {
     progress.value = progress.value.valueOf();

@@ -54,7 +54,7 @@ export const FieldLayout = withFieldLayoutVariation(
         borderStyle="solid"
         borderColor={borderColor}
         backgroundColor={backgroundColor}
-        borderRadiusLevel={1}
+        rounded="sm"
       >
         <VStack flexShrink={0}>{renderStart?.()}</VStack>
         <Box width="100%" height="100%" cursor={cursor}>

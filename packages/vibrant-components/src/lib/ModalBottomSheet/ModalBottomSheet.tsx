@@ -147,10 +147,10 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 maxWidth={[446, 480, desktopModalWidth]}
                 maxHeight={[viewportHeight - 120, 'unset']}
                 backgroundColor="surface2"
-                borderTopLeftRadiusLevel={4}
-                borderTopRightRadiusLevel={4}
-                borderBottomLeftRadiusLevel={[0, 4]}
-                borderBottomRightRadiusLevel={[0, 4]}
+                roundedTopLeft="xxl"
+                roundedTopRight="xxl"
+                roundedBottomLeft={['none', 'xxl']}
+                roundedBottomRight={['none', 'xxl']}
                 onLayout={handleContainerResize}
                 data-testid={testId}
               >
@@ -195,18 +195,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   </VStack>
                 )}
                 {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && !isDefined(subButtonOptions) && (
-                  <HStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={[8, 16]}>
-                    <ContainedButton
-                      kind={secondaryButtonOptions.kind ?? 'tertiary'}
-                      size="xl"
-                      onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
-                      full={true}
-                      disabled={secondaryButtonOptions.disabled}
-                      loading={secondaryButtonOptions.loading}
-                      IconComponent={secondaryButtonOptions.IconComponent}
-                    >
-                      {secondaryButtonOptions.text}
-                    </ContainedButton>
+                  <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={8}>
                     <ContainedButton
                       kind={primaryButtonOptions.kind ?? 'primary'}
                       size="xl"
@@ -218,7 +207,18 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
-                  </HStack>
+                    <ContainedButton
+                      kind={secondaryButtonOptions.kind ?? 'tertiary'}
+                      size="xl"
+                      onClick={() => secondaryButtonOptions.onClick?.({ close: closeModal })}
+                      full={true}
+                      disabled={secondaryButtonOptions.disabled}
+                      loading={secondaryButtonOptions.loading}
+                      IconComponent={secondaryButtonOptions.IconComponent}
+                    >
+                      {secondaryButtonOptions.text}
+                    </ContainedButton>
+                  </VStack>
                 )}
                 {isDefined(primaryButtonOptions) && !isDefined(secondaryButtonOptions) && isDefined(subButtonOptions) && (
                   <VStack px={[20, 32]} mt={[20, 24]} flexShrink={0} width="100%" spacing={16}>

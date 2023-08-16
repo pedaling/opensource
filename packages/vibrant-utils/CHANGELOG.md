@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.73.0...vibrant-utils-0.73.1) (2023-08-08)
+
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.72.0...vibrant-utils-0.73.0) (2023-08-08)
+
+### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-utils-0.71.2...vibrant-utils-0.71.3) (2023-08-07)
+
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.71.0...vibrant-utils-0.71.1) (2023-08-03)
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.70.3...vibrant-utils-0.71.0) (2023-08-03)
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-utils-0.70.2...vibrant-utils-0.70.3) (2023-08-01)
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.70.1...vibrant-utils-0.70.2) (2023-07-31)
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.70.0...vibrant-utils-0.70.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* Dropdown에서 오버플로우시 위치를 결정하는 로직을 수정한다 ([#824](https://github.com/pedaling/opensource/issues/824)) ([9bda4c6](https://github.com/pedaling/opensource/commit/9bda4c613ed6d74e68e1a88c1622cc16cb6ed6cc))
+
+## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.69.2...vibrant-utils-0.70.0) (2023-07-24)
+
+### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.69.1...vibrant-utils-0.69.2) (2023-07-24)
+
+### [0.69.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.69.0...vibrant-utils-0.69.1) (2023-07-21)
+
+## [0.69.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.68.0...vibrant-utils-0.69.0) (2023-07-20)
+
+## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.67.2...vibrant-utils-0.68.0) (2023-07-18)
+
 ### [0.67.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.67.1...vibrant-utils-0.67.2) (2023-07-14)
 
 ### [0.67.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.67.0...vibrant-utils-0.67.1) (2023-07-12)

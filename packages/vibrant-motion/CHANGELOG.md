@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.73.0...vibrant-motion-0.73.1) (2023-08-08)
+
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.72.0...vibrant-motion-0.73.0) (2023-08-08)
+
+### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-motion-0.71.2...vibrant-motion-0.71.3) (2023-08-07)
+
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.71.0...vibrant-motion-0.71.1) (2023-08-03)
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.70.3...vibrant-motion-0.71.0) (2023-08-03)
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-motion-0.70.2...vibrant-motion-0.70.3) (2023-08-01)
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.70.1...vibrant-motion-0.70.2) (2023-07-31)
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.70.0...vibrant-motion-0.70.1) (2023-07-26)
+
+
+### Reverts
+
+* Revert "chore: react-native, expo, reanimated, etc (#816)" (#826) ([2fa3ff3](https://github.com/pedaling/opensource/commit/2fa3ff3a41529cad575c0bfed662f097c137a513)), closes [#816](https://github.com/pedaling/opensource/issues/816) [#826](https://github.com/pedaling/opensource/issues/826)
+
+## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.69.2...vibrant-motion-0.70.0) (2023-07-24)
+
+### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.69.1...vibrant-motion-0.69.2) (2023-07-24)
+
+### [0.69.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.69.0...vibrant-motion-0.69.1) (2023-07-21)
+
+## [0.69.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.68.0...vibrant-motion-0.69.0) (2023-07-20)
+
+## [0.68.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.67.2...vibrant-motion-0.68.0) (2023-07-18)
+
 ### [0.67.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.67.1...vibrant-motion-0.67.2) (2023-07-14)
 
 ### [0.67.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.67.0...vibrant-motion-0.67.1) (2023-07-12)
