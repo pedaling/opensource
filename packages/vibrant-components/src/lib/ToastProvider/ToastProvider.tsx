@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useRef, useState } from 'react';
+import { createContext, useContext, useMemo, useRef, useState } from 'react';
 import type { FC } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import type { DistributiveOmit } from '@vibrant-ui/utils';
@@ -16,34 +16,38 @@ type ToastProps = ToastComponentProps & {
 };
 
 const ToastPropsContext = createContext<ToastProps | undefined>(undefined);
-const ToastActionContext = createContext<(props?: DistributiveOmit<ToastProps, 'id'>) => void>(() => {});
+const ToastActionContext = createContext<{
+  showToast: (props: DistributiveOmit<ToastProps, 'id'>) => void;
+  closeToast: () => void;
+}>({ showToast: () => {}, closeToast: () => {} });
 
 export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
   const [toastProps, setToastProps] = useState<ToastProps | undefined>(undefined);
-
   const lastIdRef = useRef(0);
 
-  const toastAction = useCallback((props?: DistributiveOmit<ToastProps, 'id'>) => {
-    lastIdRef.current++;
+  const toastAction = useMemo(
+    () => ({
+      showToast: (props: DistributiveOmit<ToastProps, 'id'>) => {
+        lastIdRef.current++;
 
-    if (!props) {
-      setToastProps(undefined);
+        setToastProps({ ...props, id: lastIdRef.current });
 
-      return;
-    }
+        if (props.duration === 0) {
+          return;
+        }
 
-    setToastProps({ ...props, id: lastIdRef.current });
+        const timer = setTimeout(() => {
+          setToastProps(undefined);
+        }, (props.duration ?? DURATION) + 500);
 
-    if (props.duration === 0) {
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      setToastProps(undefined);
-    }, (props.duration ?? DURATION) + 500);
-
-    return () => clearTimeout(timer);
-  }, []);
+        return () => clearTimeout(timer);
+      },
+      closeToast: () => {
+        setToastProps(undefined);
+      },
+    }),
+    []
+  );
 
   return (
     <ToastActionContext.Provider value={toastAction}>
@@ -61,14 +65,7 @@ export const useToastProps = () => {
 };
 
 export const useToastAction = () => {
-  const setToastProps = useContext(ToastActionContext);
+  const toastAction = useContext(ToastActionContext);
 
-  const closeToast = useCallback(() => {
-    setToastProps(undefined);
-  }, [setToastProps]);
-
-  return {
-    showToast: setToastProps,
-    closeToast,
-  };
+  return toastAction;
 };
