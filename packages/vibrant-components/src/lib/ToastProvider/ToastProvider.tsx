@@ -60,7 +60,7 @@ export const useToastProps = () => {
   };
 };
 
-export const useToast = () => {
+export const useToastAction = () => {
   const setToastProps = useContext(ToastActionContext);
 
   const closeToast = useCallback(() => {

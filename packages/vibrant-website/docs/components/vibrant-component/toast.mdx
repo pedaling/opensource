@@ -25,18 +25,18 @@ Toast 를 사용하기 위해서는 상위 컴포넌트를 [ToastProvider](../vi
 
 `<ToastRenderer />` 는 Toast 를 사용하려고 하는 프로젝트 상단에 `<ToastProvider />` 처럼 추가해주어야 정상적으로 Toast 가 훅을 통해 마운트 될 수 있습니다.
 
-Toast 는 `useToast` 훅을 통해 반환된 함수 `showToast` 를 사용해 Toast 를 마운트 시킬 수 있습니다.
+Toast 는 `useToastAction` 훅을 통해 반환된 함수 `showToast` 를 사용해 Toast 를 마운트 시킬 수 있습니다.
 
 `showToast` 에 전달한 `props` 속성을 반영한 Toast 가 생성되며, Toast 를 렌더링 하려는 컴포넌트, 페이지 내에 `<ToastRenderer />` 컴포넌트를 삽입해야 합니다.
 
 ```jsx
 import {
   ToastRenderer,
-  useToast,
+  useToastAction,
 } from '@vibrant-ui/components';
 
 const ContentWithToast = (props) => {
-  const { showToast } = useToast();
+  const { showToast } = useToastAction();
 
   return (
     <VStack mt={200} height="100%" width="100%" flex={1}>
