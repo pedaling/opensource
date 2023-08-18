@@ -18,8 +18,8 @@ const elevationLevelProp = createSystemProp({
   property: 'elevationLevel',
   scale: 'elevation',
   shouldInterpolation: 'after',
-  transform: (value: Shadow[]) => ({
-    boxShadow: [value],
+  transform: ({ boxShadow }: { boxShadow: Shadow[] }) => ({
+    boxShadow: [boxShadow],
   }),
 });
 
@@ -30,4 +30,9 @@ const boxShadowProp = createSystemProp({
   }),
 });
 
-export const elevationSystemProps = [elevationLevelProp, boxShadowProp];
+const nativeShadowProp = createSystemProp({
+  property: 'nativeShadow',
+  disabled: true,
+});
+
+export const elevationSystemProps = [elevationLevelProp, boxShadowProp, nativeShadowProp];
