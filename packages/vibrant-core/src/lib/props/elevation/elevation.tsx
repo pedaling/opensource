@@ -1,8 +1,8 @@
-import type { Shadow } from '@vibrant-ui/theme';
+import type { BoxShadow } from '@vibrant-ui/theme';
 import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
 
-function getBoxShadowValue({ color, offsetX = 0, offsetY = 0, blurRadius = 0, spreadRadius = 0 }: Shadow) {
+function getBoxShadowValue({ color, offsetX = 0, offsetY = 0, blurRadius = 0, spreadRadius = 0 }: BoxShadow) {
   return [offsetX, offsetY, blurRadius, spreadRadius, color]
     .reduce((style: string, value) => {
       if (!isDefined(value)) {
@@ -18,16 +18,21 @@ const elevationLevelProp = createSystemProp({
   property: 'elevationLevel',
   scale: 'elevation',
   shouldInterpolation: 'after',
-  transform: (value: Shadow[]) => ({
-    boxShadow: [value],
+  transform: ({ boxShadow }: { boxShadow: BoxShadow[] }) => ({
+    boxShadow: [boxShadow],
   }),
 });
 
 const boxShadowProp = createSystemProp({
   property: 'boxShadow',
-  transform: (shadows: Shadow | Shadow[]) => ({
+  transform: (shadows: BoxShadow | BoxShadow[]) => ({
     boxShadow: Array.isArray(shadows) ? shadows.map(getBoxShadowValue).join(', ') : getBoxShadowValue(shadows),
   }),
 });
 
-export const elevationSystemProps = [elevationLevelProp, boxShadowProp];
+const nativeShadowProp = createSystemProp({
+  property: 'nativeShadow',
+  disabled: true,
+});
+
+export const elevationSystemProps = [elevationLevelProp, boxShadowProp, nativeShadowProp];

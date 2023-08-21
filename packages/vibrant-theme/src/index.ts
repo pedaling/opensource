@@ -17,7 +17,8 @@ export type {
   TypographyKind,
   TypographyWeight,
   OpacityToken,
-  Shadow,
+  BoxShadow,
+  NativeShadow,
   ElevationLevel,
 } from './types';
 export { baseColorTokens, onColorTokens, colorTokens, BaseColorOnColorMap } from './types';
