@@ -64,8 +64,4 @@ export const useToastProps = () => {
   };
 };
 
-export const useToastAction = () => {
-  const toastAction = useContext(ToastActionContext);
-
-  return toastAction;
-};
+export const useToastAction = () => useContext(ToastActionContext);
