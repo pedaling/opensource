@@ -1,7 +1,7 @@
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { PressableBox, Text } from '@vibrant-ui/core';
 import { Paper } from '../Paper';
-import { useToast } from '../ToastProvider';
+import { useToastAction } from '../ToastProvider';
 import { ToastRenderer } from '../ToastRenderer';
 import { VStack } from '../VStack';
 import { Toast } from './Toast';
@@ -19,7 +19,7 @@ export default {
 export const Basic: ComponentStory<typeof Toast> = props => <Toast {...props} />;
 
 export const ToastWithAnimation: ComponentStory<typeof Toast> = props => {
-  const { showToast, closeToast } = useToast();
+  const { showToast, closeToast } = useToastAction();
 
   return (
     <VStack mt={200} height="100%" width="100%">

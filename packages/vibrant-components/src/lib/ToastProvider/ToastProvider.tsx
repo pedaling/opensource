@@ -15,32 +15,20 @@ type ToastProps = ToastComponentProps & {
   duration?: number;
 };
 
-type ToastContextValue = {
-  toastProps: ToastProps | undefined;
-  setToastProps: (props?: DistributiveOmit<ToastProps, 'id'>) => void;
-};
-
-const ToastContext = createContext<ToastContextValue>({
-  toastProps: undefined,
-  setToastProps: () => {},
-});
+const ToastPropsContext = createContext<ToastProps | undefined>(undefined);
+const ToastActionContext = createContext<{
+  showToast: (props: DistributiveOmit<ToastProps, 'id'>) => void;
+  closeToast: () => void;
+}>({ showToast: () => {}, closeToast: () => {} });
 
 export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
   const [toastProps, setToastProps] = useState<ToastProps | undefined>(undefined);
-
   const lastIdRef = useRef(0);
 
-  const contextValue = useMemo<ToastContextValue>(
+  const toastAction = useMemo(
     () => ({
-      toastProps,
-      setToastProps: props => {
+      showToast: (props: DistributiveOmit<ToastProps, 'id'>) => {
         lastIdRef.current++;
-
-        if (!props) {
-          setToastProps(undefined);
-
-          return;
-        }
 
         setToastProps({ ...props, id: lastIdRef.current });
 
@@ -54,28 +42,26 @@ export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
 
         return () => clearTimeout(timer);
       },
+      closeToast: () => {
+        setToastProps(undefined);
+      },
     }),
-    [toastProps]
+    []
   );
 
-  return <ToastContext.Provider value={contextValue}>{children}</ToastContext.Provider>;
+  return (
+    <ToastActionContext.Provider value={toastAction}>
+      <ToastPropsContext.Provider value={toastProps}>{children}</ToastPropsContext.Provider>
+    </ToastActionContext.Provider>
+  );
 };
 
 export const useToastProps = () => {
-  const { toastProps } = useContext(ToastContext);
+  const toastProps = useContext(ToastPropsContext);
 
   return {
     toastProps,
   };
 };
 
-export const useToast = () => {
-  const { setToastProps } = useContext(ToastContext);
-
-  return {
-    showToast: (props: DistributiveOmit<ToastProps, 'id'>) => setToastProps(props),
-    closeToast: () => {
-      setToastProps(undefined);
-    },
-  };
-};
+export const useToastAction = () => useContext(ToastActionContext);
