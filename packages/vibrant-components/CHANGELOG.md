@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.73.1...vibrant-components-0.74.0) (2023-08-21)
+
+
+### Features
+
+*  typography title1,2,3 토큰의 값을 수정한다 ([#842](https://github.com/pedaling/opensource/issues/842)) ([dd01a81](https://github.com/pedaling/opensource/commit/dd01a819429307a337cdb3e0e7c56f2bf84609d3))
+
+
+### Bug Fixes
+
+* showToast, closeToast 함수 레퍼런스가 유지되도록 한다 ([#844](https://github.com/pedaling/opensource/issues/844)) ([26cb041](https://github.com/pedaling/opensource/commit/26cb0417d58864a64eeef02f2416a001e9c3bab0))
+
 ### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.73.0...vibrant-components-0.73.1) (2023-08-08)
 
 ## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.72.0...vibrant-components-0.73.0) (2023-08-08)

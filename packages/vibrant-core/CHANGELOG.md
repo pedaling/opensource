@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.73.1...vibrant-core-0.74.0) (2023-08-21)
+
+
+### Features
+
+* seperate native shadow theme value ([#846](https://github.com/pedaling/opensource/issues/846)) ([5ca7d9c](https://github.com/pedaling/opensource/commit/5ca7d9c2c7f814db359362520ebdf21929b1485d))
+
+
+### Bug Fixes
+
+* pass onClick prop to onClick instead of onPress in native Link ([#845](https://github.com/pedaling/opensource/issues/845)) ([09b5654](https://github.com/pedaling/opensource/commit/09b56540b3479bd10f758cb5bb79c68ecbe51475))
+
 ### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.73.0...vibrant-core-0.73.1) (2023-08-08)
 
 
