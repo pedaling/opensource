@@ -2,7 +2,7 @@ import type { BoxShadow } from '@vibrant-ui/theme';
 import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
 
-function getBoxShadowValue({ color, offsetX = 0, offsetY = 0, blurRadius = 0, spreadRadius = 0 }: Shadow) {
+function getBoxShadowValue({ color, offsetX = 0, offsetY = 0, blurRadius = 0, spreadRadius = 0 }: BoxShadow) {
   return [offsetX, offsetY, blurRadius, spreadRadius, color]
     .reduce((style: string, value) => {
       if (!isDefined(value)) {
