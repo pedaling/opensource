@@ -1,4 +1,4 @@
-import type { Shadow } from '@vibrant-ui/theme';
+import type { BoxShadow } from '@vibrant-ui/theme';
 import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
 
@@ -18,14 +18,14 @@ const elevationLevelProp = createSystemProp({
   property: 'elevationLevel',
   scale: 'elevation',
   shouldInterpolation: 'after',
-  transform: ({ boxShadow }: { boxShadow: Shadow[] }) => ({
+  transform: ({ boxShadow }: { boxShadow: BoxShadow[] }) => ({
     boxShadow: [boxShadow],
   }),
 });
 
 const boxShadowProp = createSystemProp({
   property: 'boxShadow',
-  transform: (shadows: Shadow | Shadow[]) => ({
+  transform: (shadows: BoxShadow | BoxShadow[]) => ({
     boxShadow: Array.isArray(shadows) ? shadows.map(getBoxShadowValue).join(', ') : getBoxShadowValue(shadows),
   }),
 });
