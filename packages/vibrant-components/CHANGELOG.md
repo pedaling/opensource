@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.1...vibrant-components-0.75.2) (2023-08-28)
+
+
+### Reverts
+
+* Revert "Chore/rn/expo/etc" (#849) ([1ccb637](https://github.com/pedaling/opensource/commit/1ccb63725704cf74cb0600e310004fac816d5bb8)), closes [#849](https://github.com/pedaling/opensource/issues/849) [#839](https://github.com/pedaling/opensource/issues/839)
+
 ### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.0...vibrant-components-0.75.1) (2023-08-25)
 
 ## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.74.0...vibrant-components-0.75.0) (2023-08-22)
