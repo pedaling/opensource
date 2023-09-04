@@ -1,6 +1,6 @@
 import type { ComponentType, FC, ReactNode } from 'react';
 import { createContext, useContext, useMemo } from 'react';
-import type { ImageRequireSource, PressableProps } from 'react-native';
+import type { ImageRequireSource } from 'react-native';
 import type { ReactElementChild, ResponsiveValue } from '../../types';
 import type { BorderSystemProps, MediaSystemProps, SizingSystemProps } from '../props';
 
@@ -32,23 +32,21 @@ export type Dependencies = {
       MediaSystemProps &
       BorderSystemProps
   >;
-  link?: ComponentType<
-    {
-      className?: string;
-      href: string;
-      ref?: any;
-      target?: string;
-      rel?: string;
-      onClick?: () => void;
-      onMouseEnter?: () => void;
-      onMouseLeave?: () => void;
-      onMouseDown?: () => void;
-      onMouseUp?: () => void;
-      onFocus?: () => void;
-      onBlur?: () => void;
-      children?: ReactNode;
-    } & PressableProps
-  >;
+  link?: ComponentType<{
+    className?: string;
+    href: string;
+    ref?: any;
+    target?: string;
+    rel?: string;
+    onClick?: () => void;
+    onMouseEnter?: () => void;
+    onMouseLeave?: () => void;
+    onMouseDown?: () => void;
+    onMouseUp?: () => void;
+    onFocus?: () => void;
+    onBlur?: () => void;
+    children?: ReactNode;
+  }>;
 };
 
 export type Translation = {

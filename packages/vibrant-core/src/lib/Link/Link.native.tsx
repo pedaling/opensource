@@ -23,7 +23,7 @@ export const Link = withLinkVariation(({ innerRef, isExternal: _, href, onClick,
         base={link}
         href={href}
         ref={innerRef}
-        onPress={onClick}
+        onClick={onClick}
         onFocus={onFocusIn}
         onBlur={onFocusOut}
         {...props}

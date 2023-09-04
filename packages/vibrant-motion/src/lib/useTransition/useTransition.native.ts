@@ -33,12 +33,7 @@ export const useTransition = ({ animation, duration = 200, easing, onEnd }: UseT
 
   const onEndRef = useCallbackRef(onEnd);
   const isStarted = useRef(false);
-
-  const onStartCallback = useCallback(() => {
-    if (!isStarted.current) {
-      isStarted.current = true;
-    }
-  }, []);
+  const endCallbackTimerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const onEndCallback = useCallback(() => {
     if (isStarted.current) {
@@ -47,6 +42,16 @@ export const useTransition = ({ animation, duration = 200, easing, onEnd }: UseT
       onEndRef?.();
     }
   }, [onEndRef]);
+
+  const onStartCallback = useCallback(() => {
+    if (!isStarted.current) {
+      isStarted.current = true;
+
+      endCallbackTimerRef.current = setTimeout(() => {
+        onEndCallback();
+      }, duration);
+    }
+  }, [duration, onEndCallback]);
 
   const timingAnimation = useCallback(
     (value: AnimatableValue, callbackFlag: boolean) => {
@@ -91,6 +96,8 @@ export const useTransition = ({ animation, duration = 200, easing, onEnd }: UseT
 
   useEffect(
     () => () => {
+      clearTimeout(endCallbackTimerRef.current);
+
       if (isStarted.current) {
         onEndRef();
       }

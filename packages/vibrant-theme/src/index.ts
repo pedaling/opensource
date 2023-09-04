@@ -13,12 +13,12 @@ export type {
   AnyGradient,
   GradientKind,
   ThemeColors,
-  BorderRadiusLevel,
   Rounded,
   TypographyKind,
   TypographyWeight,
   OpacityToken,
-  Shadow,
+  BoxShadow,
+  NativeShadow,
   ElevationLevel,
 } from './types';
 export { baseColorTokens, onColorTokens, colorTokens, BaseColorOnColorMap } from './types';
