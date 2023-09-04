@@ -13,7 +13,7 @@ export const Text: FC<TextProps> = styled(
     return (
       <RNText
         ref={ref}
-        style={visibility === 'hidden' ? { opacity: 0 } : restStyle}
+        style={visibility === 'hidden' ? { ...restStyle, opacity: 0 } : restStyle}
         children={typeof children === 'string' ? nl2br(children) : children}
         {...restProps}
         {...props}
