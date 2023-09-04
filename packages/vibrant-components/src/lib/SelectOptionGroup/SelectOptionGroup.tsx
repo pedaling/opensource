@@ -53,7 +53,7 @@ export const SelectOptionGroup = withSelectOptionGroupVariation(
         backgroundColor="surface3"
         borderWidth={1}
         borderStyle="solid"
-        borderRadius={2}
+        rounded="sm"
         hideScroll={true}
         data-testid={testId}
         {...restProps}

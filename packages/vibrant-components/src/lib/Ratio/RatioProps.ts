@@ -9,7 +9,7 @@ import type {
 import { propVariant, withVariation } from '@vibrant-ui/core';
 
 export type RatioProps = Pick<SizingSystemProps, 'maxWidth' | 'minWidth' | 'width'> &
-  Pick<BorderSystemProps, 'borderRadiusLevel'> &
+  Pick<BorderSystemProps, 'rounded'> &
   OverflowSystemProps & {
     ratio: ResponsiveValue<number>;
     children: ReactElementChildren;

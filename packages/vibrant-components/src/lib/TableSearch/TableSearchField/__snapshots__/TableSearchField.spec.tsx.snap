@@ -75,7 +75,7 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
   border-style: solid;
   border-color: #00000026;
   background-color: #ffffff;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .emotion-3 {

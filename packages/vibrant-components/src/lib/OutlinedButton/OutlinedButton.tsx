@@ -34,7 +34,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
       borderColor={borderColor}
       borderWidth={1}
       borderStyle="solid"
-      borderRadiusLevel={1}
+      rounded="sm"
       disabled={loading || disabled}
     >
       <Box

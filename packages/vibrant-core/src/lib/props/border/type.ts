@@ -1,4 +1,4 @@
-import type { BorderRadiusLevel } from '@vibrant-ui/theme';
+import type { Rounded } from 'packages/vibrant-theme/src/types/BorderRadius';
 import type { ResponsiveValue } from '../../../types';
 
 type BorderStyle = 'dashed' | 'none' | 'solid';
@@ -24,11 +24,11 @@ export type BorderSystemProps = {
   borderTopRightRadius?: ResponsiveValue<number | string>;
   borderBottomLeftRadius?: ResponsiveValue<number | string>;
   borderBottomRightRadius?: ResponsiveValue<number | string>;
-  borderRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
-  borderTopLeftRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
-  borderTopRightRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
-  borderBottomLeftRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
-  borderBottomRightRadiusLevel?: ResponsiveValue<BorderRadiusLevel>;
+  rounded?: ResponsiveValue<Rounded>;
+  roundedTopLeft?: ResponsiveValue<Rounded>;
+  roundedTopRight?: ResponsiveValue<Rounded>;
+  roundedBottomLeft?: ResponsiveValue<Rounded>;
+  roundedBottomRight?: ResponsiveValue<Rounded>;
   borderCollapse?: ResponsiveValue<'collapse' | 'separate'>;
   outlineWidth?: ResponsiveValue<number>;
   outlineStyle?: ResponsiveValue<'none' | 'solid'>;

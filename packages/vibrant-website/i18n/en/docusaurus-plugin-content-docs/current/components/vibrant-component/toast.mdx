@@ -30,18 +30,18 @@ Follow how to use guide in [ToastProvider](../vibrant-core/toast-provider) first
 
 Note that the position of `<ToastRenderer />` in component code doesn't matter becuase Toast's position is set by the viewport.
 
-Toast is mounted by the hook which is returned by `useToast` hook.
+Toast is mounted by the hook which is returned by `useToastAction` hook.
 
 Toast is generated with the properties that were passed by through `showToast` parameters.
 
 ```jsx
 import {
   ToastRenderer,
-  useToast,
+  useToastAction,
 } from '@vibrant-ui/components';
 
 const ContentWithToast = (props) => {
-  const { showToast } = useToast();
+  const { showToast } = useToastAction();
 
   return (
     <VStack mt={200} height="100%" width="100%" flex={1}>

@@ -16,10 +16,8 @@ export const Spinner = withSpinnerVariation(({ borderWidth, borderRadius, testId
         transform={{ rotate: '360deg' }}
         borderStyle="solid"
         borderWidth={borderWidth}
-        borderTopColor={onColorHex}
-        borderLeftColor={borderColorHex}
-        borderRightColor={borderColorHex}
-        borderBottomColor={borderColorHex}
+        borderColor={borderColorHex}
+        borderTopColor="onColor"
         borderRadius={borderRadius}
         data-testid={testId}
         {...restProps}

@@ -2,6 +2,30 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.75.1...vibrant-forms-0.75.2) (2023-08-28)
+
+### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.75.0...vibrant-forms-0.75.1) (2023-08-25)
+
+## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.74.0...vibrant-forms-0.75.0) (2023-08-22)
+
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.73.1...vibrant-forms-0.74.0) (2023-08-21)
+
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.73.0...vibrant-forms-0.73.1) (2023-08-08)
+
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.72.0...vibrant-forms-0.73.0) (2023-08-08)
+
+### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-forms-0.71.2...vibrant-forms-0.71.3) (2023-08-07)
+
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.71.0...vibrant-forms-0.71.1) (2023-08-03)
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.70.3...vibrant-forms-0.71.0) (2023-08-03)
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-forms-0.70.2...vibrant-forms-0.70.3) (2023-08-01)
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.70.1...vibrant-forms-0.70.2) (2023-07-31)
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-forms-0.70.0...vibrant-forms-0.70.1) (2023-07-26)
+
 ## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-forms-0.69.2...vibrant-forms-0.70.0) (2023-07-24)
 
 ### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-forms-0.69.1...vibrant-forms-0.69.2) (2023-07-24)

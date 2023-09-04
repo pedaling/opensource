@@ -23,7 +23,7 @@ export const Callout = withCalloutVariation(
       backgroundColor={backgroundColor}
       borderWidth={1}
       borderColor="outline1"
-      borderRadius={2}
+      rounded="sm"
       p={15}
       data-testid={testId}
     >

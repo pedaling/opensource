@@ -257,7 +257,7 @@ exports[`<ModalBottomSheet /> given mobile viewport width match snapshot 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .emotion-9 {
@@ -671,7 +671,7 @@ exports[`<ModalBottomSheet /> given viewport width larger than mobile match snap
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .emotion-9 {

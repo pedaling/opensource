@@ -4,6 +4,6 @@ export { colorTokens, onColorTokens, baseColorTokens, BaseColorOnColorMap } from
 export type { ThemeMode } from './Mode';
 export type { Opacity, OpacityToken } from './Opacity';
 export type { LinearGradient, AnyGradient, Gradient, GradientKind } from './Gradient';
-export type { BorderRadiusLevel } from './BorderRadius';
+export type { Rounded } from './BorderRadius';
 export type { TypographyKind, TypographyWeight } from './Typography';
-export type { Shadow, ElevationLevel } from './Elevation';
+export type { BoxShadow, NativeShadow, ElevationLevel } from './Elevation';

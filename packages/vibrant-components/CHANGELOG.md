@@ -2,6 +2,71 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.1...vibrant-components-0.75.2) (2023-08-28)
+
+
+### Reverts
+
+* Revert "Chore/rn/expo/etc" (#849) ([1ccb637](https://github.com/pedaling/opensource/commit/1ccb63725704cf74cb0600e310004fac816d5bb8)), closes [#849](https://github.com/pedaling/opensource/issues/849) [#839](https://github.com/pedaling/opensource/issues/839)
+
+### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.0...vibrant-components-0.75.1) (2023-08-25)
+
+## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.74.0...vibrant-components-0.75.0) (2023-08-22)
+
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.73.1...vibrant-components-0.74.0) (2023-08-21)
+
+
+### Features
+
+*  typography title1,2,3 토큰의 값을 수정한다 ([#842](https://github.com/pedaling/opensource/issues/842)) ([dd01a81](https://github.com/pedaling/opensource/commit/dd01a819429307a337cdb3e0e7c56f2bf84609d3))
+
+
+### Bug Fixes
+
+* showToast, closeToast 함수 레퍼런스가 유지되도록 한다 ([#844](https://github.com/pedaling/opensource/issues/844)) ([26cb041](https://github.com/pedaling/opensource/commit/26cb0417d58864a64eeef02f2416a001e9c3bab0))
+
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.73.0...vibrant-components-0.73.1) (2023-08-08)
+
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.72.0...vibrant-components-0.73.0) (2023-08-08)
+
+
+### Features
+
+* remove borderRadiusLevel system prop ([#838](https://github.com/pedaling/opensource/issues/838)) ([07326be](https://github.com/pedaling/opensource/commit/07326beabc1b219e532b507dab2628dd5254334b))
+
+### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.71.2...vibrant-components-0.71.3) (2023-08-07)
+
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.71.0...vibrant-components-0.71.1) (2023-08-03)
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.3...vibrant-components-0.71.0) (2023-08-03)
+
+
+### Features
+
+* borderRadiusLevel의 토큰을 변경한다 ([#822](https://github.com/pedaling/opensource/issues/822)) ([0029723](https://github.com/pedaling/opensource/commit/00297237d20ceb90deb6020d9766a6430036d8ea))
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.2...vibrant-components-0.70.3) (2023-08-01)
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.1...vibrant-components-0.70.2) (2023-07-31)
+
+
+### Bug Fixes
+
+* Dropdown이 열렸을 때 특정 영역 클릭 시 닫히지 않는 오류를 수정한다. ([#829](https://github.com/pedaling/opensource/issues/829)) ([14afe00](https://github.com/pedaling/opensource/commit/14afe00900537871d7ee0c9bb527779010b3ce2f))
+* remove elevation level in toast component ([#827](https://github.com/pedaling/opensource/issues/827)) ([a22f9b1](https://github.com/pedaling/opensource/commit/a22f9b13bddbe88968f622b55ea6c5b32fb9f3cf))
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.0...vibrant-components-0.70.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* Dropdown에서 오버플로우시 위치를 결정하는 로직을 수정한다 ([#824](https://github.com/pedaling/opensource/issues/824)) ([9bda4c6](https://github.com/pedaling/opensource/commit/9bda4c613ed6d74e68e1a88c1622cc16cb6ed6cc))
+
+
+### Reverts
+
+* Revert "chore: react-native, expo, reanimated, etc (#816)" (#826) ([2fa3ff3](https://github.com/pedaling/opensource/commit/2fa3ff3a41529cad575c0bfed662f097c137a513)), closes [#816](https://github.com/pedaling/opensource/issues/816) [#826](https://github.com/pedaling/opensource/issues/826)
+
 ## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.69.2...vibrant-components-0.70.0) (2023-07-24)
 
 ### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.69.1...vibrant-components-0.69.2) (2023-07-24)

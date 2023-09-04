@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import type { GestureResponderEvent } from 'react-native';
 import { View } from 'react-native';
+import type { GestureResponderEvent } from 'react-native';
 import type { Rect } from '@vibrant-ui/utils';
 import { getElementRect } from '@vibrant-ui/utils';
 import { Box } from '../Box';
@@ -42,7 +42,7 @@ export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, 
     [onDismiss, targetRect]
   );
 
-  if (!targetRect || !open) {
+  if (!open) {
     return null;
   }
 
@@ -52,10 +52,11 @@ export const OverlayBox = withOverlayBoxVariation(({ open, innerRef, onDismiss, 
       <Box
         base={View}
         position="absolute"
-        top={targetRect.y}
-        left={targetRect.x}
-        width={targetRect.width}
-        height={targetRect.height}
+        top={targetRect?.y ?? 0}
+        left={targetRect?.x ?? 0}
+        width={targetRect?.width ?? 0}
+        height={targetRect?.height ?? 0}
+        opacity={targetRect ? 1 : 0}
         onTouchEnd={handleTargetTouchEnd}
       >
         <Box position="relative" width="100%" height="100%">

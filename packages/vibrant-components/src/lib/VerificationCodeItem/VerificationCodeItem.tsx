@@ -13,7 +13,7 @@ export const VerificationCodeItem = withVerificationCodeItemVariation(
       height={60}
       borderWidth={1}
       borderStyle="solid"
-      borderRadius={2}
+      rounded="sm"
       cursor="text"
       backgroundColor="surface2"
       {...restProps}

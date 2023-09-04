@@ -2,6 +2,51 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.75.1...vibrant-theme-0.75.2) (2023-08-28)
+
+### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.75.0...vibrant-theme-0.75.1) (2023-08-25)
+
+## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.74.0...vibrant-theme-0.75.0) (2023-08-22)
+
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.73.1...vibrant-theme-0.74.0) (2023-08-21)
+
+
+### Features
+
+*  typography title1,2,3 토큰의 값을 수정한다 ([#842](https://github.com/pedaling/opensource/issues/842)) ([dd01a81](https://github.com/pedaling/opensource/commit/dd01a819429307a337cdb3e0e7c56f2bf84609d3))
+* seperate native shadow theme value ([#846](https://github.com/pedaling/opensource/issues/846)) ([5ca7d9c](https://github.com/pedaling/opensource/commit/5ca7d9c2c7f814db359362520ebdf21929b1485d))
+
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.73.0...vibrant-theme-0.73.1) (2023-08-08)
+
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.72.0...vibrant-theme-0.73.0) (2023-08-08)
+
+
+### Features
+
+* remove borderRadiusLevel system prop ([#838](https://github.com/pedaling/opensource/issues/838)) ([07326be](https://github.com/pedaling/opensource/commit/07326beabc1b219e532b507dab2628dd5254334b))
+
+### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.71.2...vibrant-theme-0.71.3) (2023-08-07)
+
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.71.0...vibrant-theme-0.71.1) (2023-08-03)
+
+
+### Features
+
+* baseTheme에서 borderRadiusLevel 1 값을 2px -> 4px로 수정한다. ([#833](https://github.com/pedaling/opensource/issues/833)) ([583967c](https://github.com/pedaling/opensource/commit/583967c0fdc5d56bf0b03e6d91bcc76cbb85c00f))
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.3...vibrant-theme-0.71.0) (2023-08-03)
+
+
+### Features
+
+* borderRadiusLevel의 토큰을 변경한다 ([#822](https://github.com/pedaling/opensource/issues/822)) ([0029723](https://github.com/pedaling/opensource/commit/00297237d20ceb90deb6020d9766a6430036d8ea))
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.2...vibrant-theme-0.70.3) (2023-08-01)
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.1...vibrant-theme-0.70.2) (2023-07-31)
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.70.0...vibrant-theme-0.70.1) (2023-07-26)
+
 ## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.69.2...vibrant-theme-0.70.0) (2023-07-24)
 
 ### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.69.1...vibrant-theme-0.69.2) (2023-07-24)

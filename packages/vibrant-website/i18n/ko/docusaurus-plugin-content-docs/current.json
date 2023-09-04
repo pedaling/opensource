@@ -28,7 +28,7 @@
     "description": "The label for category @vibrant-ui/motion in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.Core Components": {
-    "message": "코어 컴포넌트",
+    "message": "@vibrant-ui/core",
     "description": "The label for category Core Components in sidebar mainSidebar"
   },
   "sidebar.mainSidebar.category.Migration Guide": {

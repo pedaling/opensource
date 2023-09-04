@@ -5,6 +5,6 @@ export type ImageThumbnailProps = {
   dim?: ResponsiveValue<boolean>;
   aspectRatio: number;
   testId?: string;
-} & Pick<ImageProps, 'alt' | 'borderRadiusLevel' | 'loading' | 'objectFit' | 'sizes' | 'src' | 'width'>;
+} & Pick<ImageProps, 'alt' | 'loading' | 'objectFit' | 'rounded' | 'sizes' | 'src' | 'width'>;
 
 export const withImageThumbnailVariation = withVariation<ImageThumbnailProps>('ImageThumbnail')();

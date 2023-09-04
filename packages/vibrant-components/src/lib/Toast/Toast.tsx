@@ -10,8 +10,8 @@ export const Toast = withToastVariation(
   ({ innerRef, IconComponent, color, title, buttonText, onButtonClick, testId = 'toast', ...restProps }) => (
     <HStack ref={innerRef} {...restProps} px={20} width="100%" alignHorizontal="center" data-testid={testId}>
       <Paper
-        borderRadiusLevel={1}
         elevationLevel={1}
+        rounded="sm"
         backgroundColor="inverseSurface"
         maxWidth={816}
         pointerEvents="auto"

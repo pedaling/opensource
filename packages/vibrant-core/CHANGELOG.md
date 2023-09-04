@@ -2,6 +2,60 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.75.1...vibrant-core-0.75.2) (2023-08-28)
+
+### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.75.0...vibrant-core-0.75.1) (2023-08-25)
+
+## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.74.0...vibrant-core-0.75.0) (2023-08-22)
+
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.73.1...vibrant-core-0.74.0) (2023-08-21)
+
+
+### Features
+
+* seperate native shadow theme value ([#846](https://github.com/pedaling/opensource/issues/846)) ([5ca7d9c](https://github.com/pedaling/opensource/commit/5ca7d9c2c7f814db359362520ebdf21929b1485d))
+
+
+### Bug Fixes
+
+* pass onClick prop to onClick instead of onPress in native Link ([#845](https://github.com/pedaling/opensource/issues/845)) ([09b5654](https://github.com/pedaling/opensource/commit/09b56540b3479bd10f758cb5bb79c68ecbe51475))
+
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.73.0...vibrant-core-0.73.1) (2023-08-08)
+
+
+### Bug Fixes
+
+* RN에서 useWindowDimension이 네이티브로 동작되게 한다 ([#841](https://github.com/pedaling/opensource/issues/841)) ([dcc24d5](https://github.com/pedaling/opensource/commit/dcc24d59860272587d44e5fabb0cf618ac46ac95))
+
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.72.0...vibrant-core-0.73.0) (2023-08-08)
+
+
+### Features
+
+* remove borderRadiusLevel system prop ([#838](https://github.com/pedaling/opensource/issues/838)) ([07326be](https://github.com/pedaling/opensource/commit/07326beabc1b219e532b507dab2628dd5254334b))
+
+### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.71.2...vibrant-core-0.71.3) (2023-08-07)
+
+### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.71.0...vibrant-core-0.71.1) (2023-08-03)
+
+## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.3...vibrant-core-0.71.0) (2023-08-03)
+
+
+### Features
+
+* borderRadiusLevel의 토큰을 변경한다 ([#822](https://github.com/pedaling/opensource/issues/822)) ([0029723](https://github.com/pedaling/opensource/commit/00297237d20ceb90deb6020d9766a6430036d8ea))
+
+### [0.70.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.2...vibrant-core-0.70.3) (2023-08-01)
+
+
+### Bug Fixes
+
+* Sovle the problem that can not touch the button of Toast in Android React Native ([#831](https://github.com/pedaling/opensource/issues/831)) ([0a27b31](https://github.com/pedaling/opensource/commit/0a27b311dc7486ce1db52656cc48e0868136b504))
+
+### [0.70.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.1...vibrant-core-0.70.2) (2023-07-31)
+
+### [0.70.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.70.0...vibrant-core-0.70.1) (2023-07-26)
+
 ## [0.70.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.69.2...vibrant-core-0.70.0) (2023-07-24)
 
 ### [0.69.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.69.1...vibrant-core-0.69.2) (2023-07-24)

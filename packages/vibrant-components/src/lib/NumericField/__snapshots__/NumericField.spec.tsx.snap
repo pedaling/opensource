@@ -47,7 +47,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   text-align: center;
   border-color: #00000026;
   border-style: solid;
-  border-radius: 2px;
+  border-radius: 4px;
   -moz-appearance: textfield;
 }
 
@@ -132,7 +132,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   z-index: 0;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .emotion-4 {
