@@ -9,6 +9,7 @@ export type PasswordFieldProps = {
   placeholder?: string;
   helperText?: string;
   autoFocus?: boolean;
+  maxLength?: number;
   tabIndex?: number;
   defaultValue?: string;
   onValueChange?: (value: string) => void;
