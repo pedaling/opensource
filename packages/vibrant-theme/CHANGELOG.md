@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.75.1...vibrant-theme-0.75.2) (2023-08-28)
+
+### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.75.0...vibrant-theme-0.75.1) (2023-08-25)
+
+## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.74.0...vibrant-theme-0.75.0) (2023-08-22)
+
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.73.1...vibrant-theme-0.74.0) (2023-08-21)
+
+
+### Features
+
+*  typography title1,2,3 토큰의 값을 수정한다 ([#842](https://github.com/pedaling/opensource/issues/842)) ([dd01a81](https://github.com/pedaling/opensource/commit/dd01a819429307a337cdb3e0e7c56f2bf84609d3))
+* seperate native shadow theme value ([#846](https://github.com/pedaling/opensource/issues/846)) ([5ca7d9c](https://github.com/pedaling/opensource/commit/5ca7d9c2c7f814db359362520ebdf21929b1485d))
+
 ### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.73.0...vibrant-theme-0.73.1) (2023-08-08)
 
 ## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.72.0...vibrant-theme-0.73.0) (2023-08-08)

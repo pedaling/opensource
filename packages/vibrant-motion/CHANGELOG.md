@@ -2,6 +2,24 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-motion-0.75.1...vibrant-motion-0.75.2) (2023-08-28)
+
+
+### Reverts
+
+* Revert "Chore/rn/expo/etc" (#849) ([1ccb637](https://github.com/pedaling/opensource/commit/1ccb63725704cf74cb0600e310004fac816d5bb8)), closes [#849](https://github.com/pedaling/opensource/issues/849) [#839](https://github.com/pedaling/opensource/issues/839)
+
+### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.75.0...vibrant-motion-0.75.1) (2023-08-25)
+
+
+### Bug Fixes
+
+* transition onEnd Callback ([#848](https://github.com/pedaling/opensource/issues/848)) ([f992521](https://github.com/pedaling/opensource/commit/f992521a111770c25fcc272d83e103f337205210))
+
+## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.74.0...vibrant-motion-0.75.0) (2023-08-22)
+
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.73.1...vibrant-motion-0.74.0) (2023-08-21)
+
 ### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.73.0...vibrant-motion-0.73.1) (2023-08-08)
 
 ## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.72.0...vibrant-motion-0.73.0) (2023-08-08)
