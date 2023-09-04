@@ -8,12 +8,12 @@ import { interpolation, shouldForwardProp } from './TextProps';
 
 export const Text: FC<TextProps> = styled(
   forwardRef<unknown, TextProps & { style?: any }>(({ style, children, ...restProps }, ref) => {
-    const { props, ...restStyle } = StyleSheet.flatten(style);
+    const { props, visibility, ...restStyle } = StyleSheet.flatten(style);
 
     return (
       <RNText
         ref={ref}
-        style={restStyle}
+        style={visibility === 'hidden' ? { display: 'none' } : restStyle}
         children={typeof children === 'string' ? nl2br(children) : children}
         {...restProps}
         {...props}
