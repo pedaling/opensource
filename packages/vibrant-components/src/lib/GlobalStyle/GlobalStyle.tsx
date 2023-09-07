@@ -118,14 +118,16 @@ const style = css`
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
-    background-clip: text;
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
   }
 
   input:autofill,
   input:autofill:hover,
   input:autofill:focus,
   input:autofill:active {
-    background-clip: text;
+    -webkit-transition-delay: 9999s;
+    transition-delay: 9999s;
   }
 `;
 
