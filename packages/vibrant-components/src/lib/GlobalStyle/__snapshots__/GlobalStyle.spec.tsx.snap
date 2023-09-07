@@ -119,14 +119,14 @@ NodeList [
     data-s=""
   >
     
-    input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{-webkit-background-clip:text;background-clip:text;}
+    input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{-webkit-transition-delay:9999s;transition-delay:9999s;}
   </style>,
   <style
     data-emotion="emotion-global"
     data-s=""
   >
     
-    input:autofill,input:autofill:hover,input:autofill:focus,input:autofill:active{-webkit-background-clip:text;background-clip:text;}
+    input:autofill,input:autofill:hover,input:autofill:focus,input:autofill:active{-webkit-transition-delay:9999s;transition-delay:9999s;}
   </style>,
 ]
 `;
