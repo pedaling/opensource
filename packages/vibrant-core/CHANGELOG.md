@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.79.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.79.0...vibrant-core-0.79.1) (2023-09-18)
+
+
+### Features
+
+* add writingMode prop, and display web_block ([#856](https://github.com/pedaling/opensource/issues/856)) ([027f400](https://github.com/pedaling/opensource/commit/027f400e0da1b89433f2039f4a32603ad9f86d2d))
+
 ## [0.79.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.78.1...vibrant-core-0.79.0) (2023-09-11)
 
 ### [0.78.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.78.0...vibrant-core-0.78.1) (2023-09-11)

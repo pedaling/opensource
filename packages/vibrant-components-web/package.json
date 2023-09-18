@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/components-web",
-  "version": "0.78.0",
+  "version": "0.79.1",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
