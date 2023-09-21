@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.80.0-0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.79.1...vibrant-motion-0.80.0-0) (2023-09-21)
+
+
+### Features
+
+* allow string types for motion x, y values ([#857](https://github.com/pedaling/opensource/issues/857)) ([ed494e1](https://github.com/pedaling/opensource/commit/ed494e1eafe90f3f2053df3d8eef9f633c30fb3d))
+
 ### [0.79.1](https://github.com/pedaling/opensource/compare/vibrant-motion-0.79.0...vibrant-motion-0.79.1) (2023-09-18)
 
 ## [0.79.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.78.1...vibrant-motion-0.79.0) (2023-09-11)
