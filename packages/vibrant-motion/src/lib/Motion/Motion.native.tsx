@@ -57,6 +57,10 @@ export const Motion = withMotionVariation(
               const suffix = key === 'rotate' && typeof values[0] === 'string' ? 'deg' : '';
               const styleValues = (suffix ? values.map(a => parseInt(a as string)) : values) as [number, number];
 
+              if ((key === 'translateX' || key === 'translateY') && values.some(value => typeof value === 'string')) {
+                throw new Error(`The ${key} property does not support string values. Please use numbers instead.`);
+              }
+
               const interpolatedValue = suffix
                 ? interpolate(progress.value, [0, 1], styleValues) + suffix
                 : interpolate(progress.value, [0, 1], styleValues);
