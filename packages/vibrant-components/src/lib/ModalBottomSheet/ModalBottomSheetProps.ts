@@ -1,3 +1,4 @@
+import type { Ref } from 'react';
 import type { ReactElementChild } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
@@ -18,6 +19,7 @@ export type ModalBottomSheetProps = Either<
   onClose?: () => void;
   showCloseButton?: boolean;
   dimClosable?: boolean;
+  scrollBoxRef?: Ref<any>;
 } & (
     | {
         primaryButtonOptions: ButtonOptions;
