@@ -41,6 +41,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     showCloseButton = true,
     dimClosable = true,
     testId = 'modal-bottom-sheet',
+    scrollBoxRef,
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
       value: open,
@@ -174,7 +175,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 ) : null}
 
                 {renderContents && (
-                  <ScrollBox mt={contentMarginTop} scrollEnabled={[true, false]}>
+                  <ScrollBox mt={contentMarginTop} scrollEnabled={[true, false]} ref={scrollBoxRef}>
                     {renderContents({ close: closeModal })}
                   </ScrollBox>
                 )}
