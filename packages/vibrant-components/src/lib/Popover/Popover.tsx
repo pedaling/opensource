@@ -1,12 +1,12 @@
 import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
-import { Box, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
+import { Box, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
 import type { Position } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
-import { IconButton } from '../IconButton/IconButton';
+import { IconButton } from '../IconButton';
 import { Paper } from '../Paper';
 import { PopoverOpener } from '../PopoverOpener/PopoverOpener';
 import { Space } from '../Space';
@@ -260,10 +260,18 @@ export const Popover = ({
             width="100%"
           >
             <Paper backgroundColor={backgroundColor} rounded="sm">
-              <VStack px={12} py={8} ref={popoverRef} width="100%">
-                <HStack width="100%" alignHorizontal="space-between">
+              <VStack px={12} py={8} ref={popoverRef} width="100%" height="100%">
+                <HStack flex={1} alignHorizontal="space-between" onLayout={() => calcuratePositionValue(position)}>
                   {isDefined(title) && (
-                    <HStack flex={1} overflow="hidden" flexGrow={1}>
+                    <HStack
+                      {...(!isNative
+                        ? {
+                            flex: 1,
+                            flexGrow: 1,
+                            overflow: 'hidden',
+                          }
+                        : {})}
+                    >
                       <Body
                         level={2}
                         weight="regular"
@@ -271,7 +279,7 @@ export const Popover = ({
                           ? {
                               wordBreak: 'keep-all',
                               wordWrap: 'break-word',
-                              maxWidth: '-webkit-fill-available',
+                              ...(!isNative ? { maxWidth: '-webkit-fill-available' } : {}),
                             }
                           : { whiteSpace: 'nowrap' })}
                       >
