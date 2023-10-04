@@ -2,6 +2,40 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.1...vibrant-components-0.75.2) (2023-08-28)
+
+
+### Reverts
+
+* Revert "Chore/rn/expo/etc" (#849) ([1ccb637](https://github.com/pedaling/opensource/commit/1ccb63725704cf74cb0600e310004fac816d5bb8)), closes [#849](https://github.com/pedaling/opensource/issues/849) [#839](https://github.com/pedaling/opensource/issues/839)
+
+### [0.75.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.0...vibrant-components-0.75.1) (2023-08-25)
+
+## [0.75.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.74.0...vibrant-components-0.75.0) (2023-08-22)
+
+## [0.74.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.73.1...vibrant-components-0.74.0) (2023-08-21)
+
+
+### Features
+
+*  typography title1,2,3 토큰의 값을 수정한다 ([#842](https://github.com/pedaling/opensource/issues/842)) ([dd01a81](https://github.com/pedaling/opensource/commit/dd01a819429307a337cdb3e0e7c56f2bf84609d3))
+
+
+### Bug Fixes
+
+* showToast, closeToast 함수 레퍼런스가 유지되도록 한다 ([#844](https://github.com/pedaling/opensource/issues/844)) ([26cb041](https://github.com/pedaling/opensource/commit/26cb0417d58864a64eeef02f2416a001e9c3bab0))
+
+### [0.73.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.73.0...vibrant-components-0.73.1) (2023-08-08)
+
+## [0.73.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.72.0...vibrant-components-0.73.0) (2023-08-08)
+
+
+### Features
+
+* remove borderRadiusLevel system prop ([#838](https://github.com/pedaling/opensource/issues/838)) ([07326be](https://github.com/pedaling/opensource/commit/07326beabc1b219e532b507dab2628dd5254334b))
+
+### [0.71.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.71.2...vibrant-components-0.71.3) (2023-08-07)
+
 ### [0.71.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.71.0...vibrant-components-0.71.1) (2023-08-03)
 
 ## [0.71.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.70.3...vibrant-components-0.71.0) (2023-08-03)

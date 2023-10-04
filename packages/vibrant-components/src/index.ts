@@ -49,7 +49,7 @@ export type { PasswordFieldProps } from './lib/PasswordField';
 export { SafeAreaView } from './lib/SafeAreaView';
 export { Callout } from './lib/Callout';
 export { Toast } from './lib/Toast';
-export { ToastProvider, useToast } from './lib/ToastProvider';
+export { ToastProvider, useToastAction } from './lib/ToastProvider';
 export { ToastRenderer } from './lib/ToastRenderer';
 export { ModalBottomSheet } from './lib/ModalBottomSheet';
 export type { ModalBottomSheetProps } from './lib/ModalBottomSheet';

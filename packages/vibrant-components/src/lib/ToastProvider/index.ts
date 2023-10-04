@@ -1,1 +1,1 @@
-export { ToastProvider, useToast, useToastProps } from './ToastProvider';
+export { ToastProvider, useToastAction, useToastProps } from './ToastProvider';
