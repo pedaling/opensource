@@ -37,6 +37,10 @@ export const Drawer = ({
   const { ref: drawerRef } = useEscapeEvent(closePanel);
 
   useEffect(() => {
+    setIsPanelOpen(open);
+  }, [open]);
+
+  useEffect(() => {
     if (isPanelOpen) {
       onOpen?.();
     } else {
