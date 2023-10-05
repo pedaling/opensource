@@ -7,6 +7,7 @@ export type DrawerProps = {
   type?: 'modal' | 'overlay' | 'standard';
   placement: 'bottom' | 'left' | 'right' | 'top';
   open?: boolean;
+  defaultOpen?: boolean;
   onOpen?: () => void;
   onClose?: () => void;
 };
