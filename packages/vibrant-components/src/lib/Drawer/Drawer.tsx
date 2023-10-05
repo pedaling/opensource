@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { Children, useEffect, useState } from 'react';
+import { Children, useState } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
 import { Box, PressableBox, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
@@ -44,14 +44,6 @@ export const Drawer = ({
   const closePanel = () => setIsPanelOpen(false);
 
   const { ref: drawerRef } = useEscapeEvent(closePanel);
-
-  useEffect(() => {
-    if (isPanelOpen) {
-      onOpen?.();
-    } else {
-      onClose?.();
-    }
-  }, [isPanelOpen, onClose, onOpen]);
 
   const onContainerLayout = ({ width, height }: LayoutEvent) => {
     const isVertical = placement === 'left' || placement === 'right';
