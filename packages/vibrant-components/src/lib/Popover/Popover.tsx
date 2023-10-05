@@ -66,6 +66,7 @@ export const Popover = ({
       const arrowRightMaxDistance = popoverWidth - arrowHeight * 3 - 3;
       const arrowTopMaxDistance = arrowHeight;
       const arrowBottomMaxDistance = popoverHeight - arrowHeight * 3 - 3;
+      const positiveArrowOffset = Math.max(arrowOffset, 0);
 
       if (position.includes('top')) {
         setArrowStyle({
@@ -92,7 +93,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: Math.min(arrowLeftMaxDistance + arrowOffset, arrowRightMaxDistance),
+            left: Math.min(arrowLeftMaxDistance + positiveArrowOffset, arrowRightMaxDistance),
             top: popoverHeight - arrowHeight - 2,
           });
         }
@@ -104,7 +105,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: Math.max(arrowRightMaxDistance - arrowOffset, arrowLeftMaxDistance),
+            left: Math.max(arrowRightMaxDistance - positiveArrowOffset, arrowLeftMaxDistance),
             top: popoverHeight - arrowHeight - 2,
           });
         }
@@ -135,7 +136,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: Math.min(arrowLeftMaxDistance + arrowOffset, arrowRightMaxDistance),
+            left: Math.min(arrowLeftMaxDistance + positiveArrowOffset, arrowRightMaxDistance),
             top: -arrowHeight,
           });
         }
@@ -147,7 +148,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: Math.max(arrowRightMaxDistance - arrowOffset, arrowLeftMaxDistance),
+            left: Math.max(arrowRightMaxDistance - positiveArrowOffset, arrowLeftMaxDistance),
             top: -arrowHeight,
           });
         }
@@ -179,7 +180,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: Math.min(arrowTopMaxDistance + arrowOffset, arrowBottomMaxDistance),
+            top: Math.min(arrowTopMaxDistance + positiveArrowOffset, arrowBottomMaxDistance),
           });
         }
 
@@ -191,7 +192,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: Math.max(arrowBottomMaxDistance - arrowOffset, arrowTopMaxDistance),
+            top: Math.max(arrowBottomMaxDistance - positiveArrowOffset, arrowTopMaxDistance),
           });
         }
       }
@@ -222,7 +223,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: Math.min(arrowTopMaxDistance + arrowOffset, arrowBottomMaxDistance),
+            top: Math.min(arrowTopMaxDistance + positiveArrowOffset, arrowBottomMaxDistance),
           });
         }
 
@@ -234,7 +235,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: Math.max(arrowBottomMaxDistance - arrowOffset, arrowTopMaxDistance),
+            top: Math.max(arrowBottomMaxDistance - positiveArrowOffset, arrowTopMaxDistance),
           });
         }
       }
