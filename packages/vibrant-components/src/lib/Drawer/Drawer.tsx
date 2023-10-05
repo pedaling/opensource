@@ -19,8 +19,8 @@ export const Drawer = ({
   children,
   type = 'modal',
   placement,
-  open = false,
-  defaultOpen = false,
+  open,
+  defaultOpen,
   onOpen,
   onClose,
 }: DrawerProps) => {
