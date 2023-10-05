@@ -264,15 +264,7 @@ export const Popover = ({
               <VStack px={12} py={8} ref={popoverRef} width="100%" height="100%">
                 <HStack flex={1} alignHorizontal="space-between" onLayout={() => calcuratePositionValue(position)}>
                   {isDefined(title) && (
-                    <HStack
-                      {...(!isNative
-                        ? {
-                            flex: 1,
-                            flexGrow: 1,
-                            overflow: 'hidden',
-                          }
-                        : {})}
-                    >
+                    <HStack overflow={isNative ? 'visible' : 'hidden'}>
                       <Body
                         level={2}
                         weight="regular"
