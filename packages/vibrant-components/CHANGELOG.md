@@ -2,6 +2,21 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.82.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.81.0...vibrant-components-0.82.0) (2023-10-06)
+
+
+### Features
+
+* modalBottomSheet을 숨길 수 있는 prop 추가 ([#862](https://github.com/pedaling/opensource/issues/862)) ([b202d0c](https://github.com/pedaling/opensource/commit/b202d0ca0db305893f9b357fb71ba84778321382))
+
+
+### Bug Fixes
+
+* correct that the status value of the drawer is not updated ([#859](https://github.com/pedaling/opensource/issues/859)) ([a6f5488](https://github.com/pedaling/opensource/commit/a6f548869a5a007602902aaa94b95d72cccc9fba))
+* corrects errors that dim does not disappear. ([#861](https://github.com/pedaling/opensource/issues/861)) ([442e052](https://github.com/pedaling/opensource/commit/442e0526d1882c52a117e79598b6134e23ac16f7))
+* Drawer내에서 중복된 로직을 제거합니다. ([#860](https://github.com/pedaling/opensource/issues/860)) ([567cd36](https://github.com/pedaling/opensource/commit/567cd361cbae41797ed18115500e24f4c3b7055b))
+* popover qa issues ([#834](https://github.com/pedaling/opensource/issues/834)) ([fb46c0e](https://github.com/pedaling/opensource/commit/fb46c0ed0819e11acf038f47ae55b3ecd35ac88a))
+
 ## [0.80.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.79.2...vibrant-components-0.80.0) (2023-09-21)
 
 ### [0.79.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.80.0-0...vibrant-components-0.79.2) (2023-09-21)
