@@ -15,6 +15,7 @@ export const Backdrop = withBackdropVariation(
     onDismiss,
     scrollable,
     testId = 'backdrop',
+    display,
     ...restProps
   }) => {
     const [isMount, setIsMount] = useState(open);
@@ -54,6 +55,7 @@ export const Backdrop = withBackdropVariation(
           backgroundColor={color}
           scrollable={scrollable}
           data-testid={testId}
+          display={display}
         >
           <KeyboardAvoidingBox>
             <Box flex={1} {...restProps}>
