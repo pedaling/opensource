@@ -42,6 +42,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     dimClosable = true,
     testId = 'modal-bottom-sheet',
     scrollBoxRef,
+    dangerouslyHideOverlayOnIos,
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
       value: open,
@@ -123,6 +124,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                 setContainerHeight(undefined);
               }
             }}
+            display={dangerouslyHideOverlayOnIos ? 'none' : 'flex'}
           >
             <Transition
               animation={{

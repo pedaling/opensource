@@ -20,6 +20,7 @@ export type ModalBottomSheetProps = Either<
   showCloseButton?: boolean;
   dimClosable?: boolean;
   scrollBoxRef?: Ref<any>;
+  dangerouslyHideOverlayOnIos?: boolean;
 } & (
     | {
         primaryButtonOptions: ButtonOptions;

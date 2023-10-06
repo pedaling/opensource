@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import type { ResponsiveValue, SpacingSystemProps } from '@vibrant-ui/core';
+import type { DisplaySystemProps, ResponsiveValue, SpacingSystemProps } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 import type { ColorToken } from '@vibrant-ui/theme';
 
@@ -13,6 +13,7 @@ type BackdropProps = {
   onClick?: () => void;
   onDismiss?: () => void;
   testId?: string;
-} & Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'>;
+} & Pick<SpacingSystemProps, 'p' | 'pb' | 'pl' | 'pr' | 'pt' | 'px' | 'py'> &
+  Pick<DisplaySystemProps, 'display'>;
 
 export const withBackdropVariation = withVariation<BackdropProps>('Backdrop')();
