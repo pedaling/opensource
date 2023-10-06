@@ -14,8 +14,8 @@ export default {
   component: Drawer,
   args: {
     type: 'standard',
-    placement: 'right',
-    open: true,
+    placement: 'left',
+    defaultOpen: true,
   },
 } as ComponentMeta<typeof Drawer>;
 

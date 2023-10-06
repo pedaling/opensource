@@ -55,4 +55,15 @@ const tableLayoutProp = createSystemProp({
   property: 'tableLayout',
 });
 
-export const displaySystemProps = [displayProp, visibilityProp, opacityProp, hiddenProp, tableLayoutProp];
+const writingModeProp = createSystemProp({
+  property: 'writingMode',
+});
+
+export const displaySystemProps = [
+  displayProp,
+  visibilityProp,
+  opacityProp,
+  hiddenProp,
+  tableLayoutProp,
+  writingModeProp,
+];

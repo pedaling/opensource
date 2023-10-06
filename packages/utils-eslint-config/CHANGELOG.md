@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.77.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.76.2...utils-eslint-config-0.77.0) (2023-09-21)
+
+### [0.76.2](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.77.0-0...utils-eslint-config-0.76.2) (2023-09-21)
+
+## [0.77.0-0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.76.1...utils-eslint-config-0.77.0-0) (2023-09-21)
+
+### [0.76.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.76.0...utils-eslint-config-0.76.1) (2023-09-18)
+
+## [0.78.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.77.1...utils-eslint-config-0.78.0) (2023-09-11)
+
+### [0.77.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.77.0...utils-eslint-config-0.77.1) (2023-09-11)
+
+## [0.76.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.75.2...utils-eslint-config-0.76.0) (2023-09-06)
+
 ### [0.75.2](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.75.1...utils-eslint-config-0.75.2) (2023-08-28)
 
 ### [0.75.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.75.0...utils-eslint-config-0.75.1) (2023-08-25)

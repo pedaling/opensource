@@ -2,6 +2,25 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.80.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.79.2...vibrant-components-0.80.0) (2023-09-21)
+
+### [0.79.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.80.0-0...vibrant-components-0.79.2) (2023-09-21)
+
+## [0.80.0-0](https://github.com/pedaling/opensource/compare/vibrant-components-0.79.1...vibrant-components-0.80.0-0) (2023-09-21)
+
+### [0.79.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.79.0...vibrant-components-0.79.1) (2023-09-18)
+
+## [0.78.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.77.1...vibrant-components-0.78.0) (2023-09-11)
+
+### [0.77.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.77.0...vibrant-components-0.77.1) (2023-09-11)
+
+## [0.76.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.2...vibrant-components-0.76.0) (2023-09-06)
+
+
+### Features
+
+* Add max length to passwordField ([#851](https://github.com/pedaling/opensource/issues/851)) ([03690dd](https://github.com/pedaling/opensource/commit/03690dd57f47c9878b0112dcffc7ac533bf4c461))
+
 ### [0.75.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.75.1...vibrant-components-0.75.2) (2023-08-28)
 
 

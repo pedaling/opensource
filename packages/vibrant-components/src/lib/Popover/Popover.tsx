@@ -1,12 +1,12 @@
 import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
-import { Box, getWindowDimensions, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
+import { Box, getWindowDimensions, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
 import type { Position } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
-import { IconButton } from '../IconButton/IconButton';
+import { IconButton } from '../IconButton';
 import { Paper } from '../Paper';
 import { PopoverOpener } from '../PopoverOpener/PopoverOpener';
 import { Space } from '../Space';
@@ -64,6 +64,12 @@ export const Popover = ({
       const halfChildWidth = childWidth / 2;
       const halfChildHeight = childHeight / 2;
 
+      const arrowLeftMaxDistance = arrowHeight;
+      const arrowRightMaxDistance = popoverWidth - arrowHeight * 3 - 3;
+      const arrowTopMaxDistance = arrowHeight;
+      const arrowBottomMaxDistance = popoverHeight - arrowHeight * 3 - 3;
+      const positiveArrowOffset = Math.max(arrowOffset, 0);
+
       if (position.includes('top')) {
         setArrowStyle({
           borderRightColor: backgroundColor,
@@ -89,7 +95,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: arrowHeight + arrowOffset,
+            left: Math.min(arrowLeftMaxDistance + positiveArrowOffset, arrowRightMaxDistance),
             top: popoverHeight - arrowHeight - 2,
           });
         }
@@ -101,7 +107,7 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: popoverWidth - arrowHeight * 3 - arrowOffset,
+            left: Math.max(arrowRightMaxDistance - positiveArrowOffset, arrowLeftMaxDistance),
             top: popoverHeight - arrowHeight - 2,
           });
         }
@@ -121,7 +127,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: halfPopoverWidth - arrowHeight,
-            top: -arrowHeight - 1,
+            top: -arrowHeight,
           });
         }
 
@@ -132,8 +138,8 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: arrowHeight + arrowOffset,
-            top: -arrowHeight - 1,
+            left: Math.min(arrowLeftMaxDistance + positiveArrowOffset, arrowRightMaxDistance),
+            top: -arrowHeight,
           });
         }
 
@@ -144,8 +150,8 @@ export const Popover = ({
           });
 
           setArrowPosition({
-            left: popoverWidth - arrowHeight * 3 - arrowOffset,
-            top: -arrowHeight - 1,
+            left: Math.max(arrowRightMaxDistance - positiveArrowOffset, arrowLeftMaxDistance),
+            top: -arrowHeight,
           });
         }
       }
@@ -176,7 +182,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: arrowOffset - 2,
+            top: Math.min(arrowTopMaxDistance + positiveArrowOffset, arrowBottomMaxDistance),
           });
         }
 
@@ -188,7 +194,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: popoverWidth - arrowHeight - 2,
-            top: popoverHeight - arrowHeight * 2 - arrowOffset,
+            top: Math.max(arrowBottomMaxDistance - positiveArrowOffset, arrowTopMaxDistance),
           });
         }
       }
@@ -219,7 +225,7 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: arrowOffset - 2,
+            top: Math.min(arrowTopMaxDistance + positiveArrowOffset, arrowBottomMaxDistance),
           });
         }
 
@@ -231,12 +237,13 @@ export const Popover = ({
 
           setArrowPosition({
             left: -arrowHeight - 1,
-            top: popoverHeight - arrowHeight * 2 - arrowOffset,
+            top: Math.max(arrowBottomMaxDistance - positiveArrowOffset, arrowTopMaxDistance),
           });
         }
       }
     },
-    [arrowHeight, arrowOffset, backgroundColor, computedOffset]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [arrowHeight, arrowOffset, backgroundColor, computedOffset, title]
   );
 
   const handlePopoverPositionChange = useCallback(async () => {
@@ -329,16 +336,33 @@ export const Popover = ({
 
   return (
     <VStack>
-      <VStack zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0} position="absolute">
+      <VStack position="absolute">
         <Transition animation={{ opacity: isOpen ? 1 : 0, ...popoverPosition }} duration={200} easing="easeOutQuad">
-          <VStack maxWidth={maxWidth} position="relative" width="100%">
+          <VStack
+            zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0}
+            maxWidth={maxWidth}
+            position="relative"
+            width="100%"
+          >
             <Paper backgroundColor={backgroundColor} rounded="sm">
-              <VStack px={12} py={8} ref={popoverRef} width="100%">
-                <HStack width="100%" alignHorizontal="space-between">
+              <VStack px={12} py={8} ref={popoverRef} width="100%" height="100%">
+                <HStack flex={1} alignHorizontal="space-between" onLayout={() => calcuratePositionValue(position)}>
                   {isDefined(title) && (
-                    <Body level={2} weight="regular" wordBreak={maxWidth ? 'break-word' : 'normal'}>
-                      {title}
-                    </Body>
+                    <HStack overflow={isNative ? 'visible' : 'hidden'}>
+                      <Body
+                        level={2}
+                        weight="regular"
+                        {...(maxWidth
+                          ? {
+                              wordBreak: 'keep-all',
+                              wordWrap: 'break-word',
+                              ...(!isNative ? { maxWidth: '-webkit-fill-available' } : {}),
+                            }
+                          : { whiteSpace: 'nowrap' })}
+                      >
+                        {title}
+                      </Body>
+                    </HStack>
                   )}
                   {isDefined(title) && showCloseButton && <Space width={6} />}
                   {showCloseButton && (

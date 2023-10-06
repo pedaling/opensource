@@ -1,6 +1,6 @@
 {
   "name": "@class101/workspace-plugin",
-  "version": "0.57.2",
+  "version": "0.59.0",
   "main": "src/index.js",
   "generators": "./generators.json",
   "executors": "./executors.json"

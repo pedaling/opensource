@@ -1,9 +1,9 @@
 import type { ReactElement } from 'react';
-import { Children, useEffect, useState } from 'react';
+import { Children, useState } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
 import { Box, PressableBox, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
-import { useEscapeEvent } from '@vibrant-ui/utils';
+import { useControllableState, useEscapeEvent } from '@vibrant-ui/utils';
 import { HStack } from '../HStack';
 import { VStack } from '../VStack';
 import { DrawerProvider } from './DrawerContext';
@@ -19,30 +19,31 @@ export const Drawer = ({
   children,
   type = 'modal',
   placement,
-  open = false,
+  open,
+  defaultOpen,
   onOpen,
   onClose,
 }: DrawerProps) => {
   const childArray = Children.toArray(children) as ReactElement[];
-
   const contents = childArray.filter(child => child.type !== DrawerPanel);
   const panel = childArray.filter(child => child.type === DrawerPanel);
-
-  const [isPanelOpen, setIsPanelOpen] = useState<boolean>(open);
+  const [isPanelOpen, setIsPanelOpen] = useControllableState<boolean>({
+    value: open,
+    defaultValue: defaultOpen,
+    onValueChange: (value: boolean) => {
+      if (value) {
+        onOpen?.();
+      } else {
+        onClose?.();
+      }
+    },
+  });
   const [panelSizePixel, setPanelSizePixel] = useState<number>(0);
   const [containerSize, setContainerSize] = useState<number>(0);
 
   const closePanel = () => setIsPanelOpen(false);
 
   const { ref: drawerRef } = useEscapeEvent(closePanel);
-
-  useEffect(() => {
-    if (isPanelOpen) {
-      onOpen?.();
-    } else {
-      onClose?.();
-    }
-  }, [isPanelOpen, onClose, onOpen]);
 
   const onContainerLayout = ({ width, height }: LayoutEvent) => {
     const isVertical = placement === 'left' || placement === 'right';
@@ -56,7 +57,7 @@ export const Drawer = ({
 
   return (
     <DrawerProvider
-      togglePanel={() => setIsPanelOpen(prev => !prev)}
+      togglePanel={() => setIsPanelOpen(!isPanelOpen)}
       placement={placement}
       type={type}
       isOpen={isPanelOpen}
