@@ -4,4 +4,16 @@ const gridTemplateColumnsProp = createSystemProp({
   property: 'gridTemplateColumns',
 });
 
-export const gridSystemProps = [gridTemplateColumnsProp];
+const gridTemplateRowsProp = createSystemProp({
+  property: 'gridTemplateRows',
+});
+
+const gridColumnProp = createSystemProp({
+  property: 'gridColumn',
+});
+
+const gridRowProp = createSystemProp({
+  property: 'gridRow',
+});
+
+export const gridSystemProps = [gridTemplateColumnsProp, gridTemplateRowsProp, gridColumnProp, gridRowProp];
