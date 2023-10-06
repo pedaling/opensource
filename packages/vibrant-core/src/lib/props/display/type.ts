@@ -4,10 +4,10 @@ import type { ResponsiveValue } from '../../../types';
 export type DisplaySystemProps = {
   display?: ResponsiveValue<
     | 'flex'
-    | 'grid'
     | 'inline-flex'
     | 'none'
     | 'web_block'
+    | 'web_grid'
     | 'web_table-cell'
     | 'web_table-row-group'
     | 'web_table-row'
