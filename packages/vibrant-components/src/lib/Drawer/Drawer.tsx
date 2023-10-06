@@ -53,7 +53,7 @@ export const Drawer = ({
 
   const isStandardType = type === 'standard';
 
-  const hasDim = type === 'modal';
+  const hasDim = type === 'modal' && isPanelOpen;
 
   return (
     <DrawerProvider
