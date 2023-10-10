@@ -63,7 +63,7 @@ jobs:
           node-version: 16
       - name: Publish to Chromatic
         if: github.ref != 'refs/heads/main'
-        uses: chromaui/action@v1
+        uses: chromaui/action@807600692d28833b717c155e15ed20905cdc865c
         with:
           projectToken: ${{ secrets.CHROMATIC_TOKEN }}
           onlyChanged: true
@@ -71,7 +71,7 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=8192
       - name: Publish to Chromatic and auto accept changes
         if: github.ref == 'refs/heads/main'
-        uses: chromaui/action@v1
+        uses: chromaui/action@807600692d28833b717c155e15ed20905cdc865c
         with:
           projectToken: ${{ secrets.CHROMATIC_TOKEN }}
           autoAcceptChanges: true
