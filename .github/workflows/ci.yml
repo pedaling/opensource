@@ -55,10 +55,10 @@ jobs:
   chromatic:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
       - run: yarn
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d
         with:
           node-version: 16
       - name: Publish to Chromatic
