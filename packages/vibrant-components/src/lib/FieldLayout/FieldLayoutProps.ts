@@ -111,7 +111,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     variants: ({ state, focused }) => {
       if (state === 'error') {
         return {
-          borderColor: 'error',
+          borderColor: 'onViewError',
         };
       }
 

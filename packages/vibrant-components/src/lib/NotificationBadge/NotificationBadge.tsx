@@ -5,7 +5,7 @@ import { withNotificationBadgeVariation } from './NotificationBadgeProps';
 export const NotificationBadge = withNotificationBadgeVariation(({ kind, count, testId, ...props }) => (
   <Box
     display="inline-flex"
-    backgroundColor="error"
+    backgroundColor="onViewError"
     whiteSpace="nowrap"
     alignItems="center"
     justifyContent="center"
