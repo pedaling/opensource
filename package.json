@@ -91,7 +91,7 @@
     "babel-plugin-react-native-web": "0.18.1",
     "babel-plugin-transform-node-env-inline": "0.4.3",
     "babel-preset-expo": "9.3.2",
-    "chromatic": "6.7.0",
+    "chromatic": "7.2.3",
     "css-loader": "^6.4.0",
     "eas-cli": "3.12.1",
     "electron": "20.1.1",
