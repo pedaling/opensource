@@ -27,7 +27,7 @@ export const withSelectOptionGroupVariation = withVariation<SelectOptionGroupPro
         borderColor: 'outlineNeutral',
       },
       error: {
-        borderColor: 'error',
+        borderColor: 'onViewError',
       },
     },
   })
