@@ -20,7 +20,7 @@ exports[`<NotificationBadge /> when NotificationBadge with dot rendered match sn
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  background-color: #e30f32;
+  background-color: #fb1239;
   white-space: nowrap;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -65,7 +65,7 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  background-color: #e30f32;
+  background-color: #fb1239;
   white-space: nowrap;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -85,9 +85,9 @@ exports[`<NotificationBadge /> when NotificationBadge with number rendered match
 
 .emotion-1 {
   text-align: left;
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-fill-color: #ffffff;
+  color: #0c0c0c;
+  -webkit-text-fill-color: #0c0c0c;
+  text-fill-color: #0c0c0c;
   font-size: 0.625rem;
   line-height: 0.75rem;
   font-weight: 500;

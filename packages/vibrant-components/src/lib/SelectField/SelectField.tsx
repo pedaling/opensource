@@ -51,7 +51,7 @@ export const SelectField = withSelectFieldVariation(
       }
 
       if (state === 'error') {
-        return 'error';
+        return 'onViewError';
       }
 
       return 'onView2';
@@ -65,7 +65,7 @@ export const SelectField = withSelectFieldVariation(
       }
 
       if (state === 'error') {
-        return 'error';
+        return 'onViewError';
       }
 
       return isOpened ? 'outlineNeutral' : 'outline1';
@@ -258,7 +258,7 @@ export const SelectField = withSelectFieldVariation(
             </Box>
             <Icon.ArrowTriangleDown.Thin
               size={iconSize}
-              fill={disabled ? 'onView3' : state === 'error' ? 'error' : 'onView1'}
+              fill={disabled ? 'onView3' : state === 'error' ? 'onViewError' : 'onView1'}
             />
           </HStack>
         </PressableBox>
@@ -293,7 +293,7 @@ export const SelectField = withSelectFieldVariation(
         {Boolean(helperText) && (
           <Body
             level={helperTextBodyLevel}
-            color={state === 'error' ? 'error' : 'onView2'}
+            color={state === 'error' ? 'onViewError' : 'onView2'}
             wordBreak="keep-all"
             wordWrap="break-word"
             mt={helperTextSpacing}

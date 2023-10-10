@@ -100,7 +100,7 @@ export const VerificationCodeField = withVerificationCodeFieldVariation(
             </HStack>
           </HStack>
           {state === 'error' && errorMessage ? (
-            <Body level={4} color="error" textAlign="center">
+            <Body level={4} color="onViewError" textAlign="center">
               {errorMessage}
             </Body>
           ) : null}

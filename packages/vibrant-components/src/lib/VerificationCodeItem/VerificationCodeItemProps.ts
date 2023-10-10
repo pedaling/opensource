@@ -36,7 +36,7 @@ export const withVerificationCodeItemVariation = withVariation<VerificationCodeI
       },
     ],
     variants: ({ state, borderColor }) => ({
-      borderColor: state === 'error' ? 'error' : borderColor,
+      borderColor: state === 'error' ? 'onViewError' : borderColor,
     }),
   })
 );

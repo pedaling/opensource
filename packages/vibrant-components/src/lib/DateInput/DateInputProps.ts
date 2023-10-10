@@ -80,9 +80,9 @@ export const withDateInputVariation = withVariation<DateInputProps>('DateInput')
       },
       error: {
         color: 'onView1',
-        labelColor: 'error',
+        labelColor: 'onViewError',
         borderColor: 'outlineError',
-        helperColor: 'error',
+        helperColor: 'onViewError',
       },
     } as const,
   }),
