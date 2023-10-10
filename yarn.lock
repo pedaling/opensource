@@ -10470,7 +10470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/webpack-env@npm:^1.16.0, @types/webpack-env@npm:^1.17.0":
+"@types/webpack-env@npm:^1.16.0":
   version: 1.18.0
   resolution: "@types/webpack-env@npm:1.18.0"
   checksum: ecf4daa31cb37d474ac0ce058d83a3cadeb9881ca8107ae93c2299eaa9954943aae09b43e143c62ccbe4288a14db00c918c9debd707afe17c3998f873eaabc59
@@ -13945,16 +13945,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:6.7.0":
-  version: 6.7.0
-  resolution: "chromatic@npm:6.7.0"
-  dependencies:
-    "@types/webpack-env": ^1.17.0
+"chromatic@npm:7.2.3":
+  version: 7.2.3
+  resolution: "chromatic@npm:7.2.3"
   bin:
-    chroma: bin/main.cjs
-    chromatic: bin/main.cjs
-    chromatic-cli: bin/main.cjs
-  checksum: 0e5ebc9d8c4f4d54a0dd256f7c509b375d76bfec08a78ca5cb7a18cea04d8c88071768a7d108b21f620143f7381819d66c32b8cc3828f9a2a04c032e3a460b57
+    chroma: dist/bin.js
+    chromatic: dist/bin.js
+    chromatic-cli: dist/bin.js
+  checksum: 841962ec63e7de86957bc39bf1b743cd36d2bdf467c754f6669e4df067f57224f501a75ad6129e943605f32bf2b5b57190a478be5454ae92d0847998eb94399f
   languageName: node
   linkType: hard
 
@@ -14100,7 +14098,7 @@ __metadata:
     babel-plugin-tsconfig-paths: 1.0.3
     babel-preset-expo: 9.3.2
     card-validator: 8.1.1
-    chromatic: 6.7.0
+    chromatic: 7.2.3
     clsx: 1.1.1
     core-js: 3.23.4
     css-loader: ^6.4.0
