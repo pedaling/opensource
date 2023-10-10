@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.83.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.82.0...vibrant-core-0.83.0) (2023-10-10)
+
+
+### Features
+
+* add gridTemplateRows, gridColumn, gridRow prop ([#863](https://github.com/pedaling/opensource/issues/863)) ([c0452da](https://github.com/pedaling/opensource/commit/c0452da492c85a2e9321ba78962a22fbbcf51ed9))
+
 ## [0.82.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.81.0...vibrant-core-0.82.0) (2023-10-06)
 
 ## [0.80.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.79.2...vibrant-core-0.80.0) (2023-09-21)
