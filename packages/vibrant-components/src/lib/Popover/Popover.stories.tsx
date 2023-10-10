@@ -38,7 +38,7 @@ export const WithExternalState: ComponentStory<typeof Popover> = props => {
             <Body level={3} color="onColor">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur cum mollitia quae impedit, quia et. Qui
               voluptates vel ipsam quibusdam libero velit in, dignissimos, voluptate fuga possimus culpa distinctio
-              laboriosam!
+              laboriosam
             </Body>
           </VStack>
         )}
