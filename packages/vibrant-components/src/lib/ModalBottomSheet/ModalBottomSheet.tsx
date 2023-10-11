@@ -14,7 +14,7 @@ import {
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import type { LayoutEvent } from '@vibrant-ui/utils';
-import { isDefined, useControllableState } from '@vibrant-ui/utils';
+import { isDefined, useBackHandler, useControllableState } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
@@ -81,6 +81,14 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     );
 
     useLockBodyScroll(isOpen || visible);
+
+    const backHandler = useCallback(() => {
+      setIsOpen(false);
+
+      return isOpen;
+    }, [isOpen, setIsOpen]);
+
+    useBackHandler(backHandler);
 
     const opener = useMemo(
       () => renderOpener?.({ open: () => setIsOpen(!isOpen), isOpen }),
