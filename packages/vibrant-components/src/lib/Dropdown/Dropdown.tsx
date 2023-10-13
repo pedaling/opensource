@@ -21,6 +21,7 @@ import {
   getElementRect,
   getOffsetByPosition,
   isDefined,
+  useBackHandler,
   useControllableState,
 } from '@vibrant-ui/utils';
 import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
@@ -137,6 +138,18 @@ export const Dropdown = withDropdownVariation(
       }),
       [rootMode]
     );
+
+    const backHandler = useCallback(() => {
+      if (!isMobile) {
+        return false;
+      }
+
+      setIsOpen(false);
+
+      return isOpen;
+    }, [isMobile, isOpen, setIsOpen]);
+
+    useBackHandler(backHandler);
 
     useLockBodyScroll(isOpen || visible);
 
