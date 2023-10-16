@@ -34,6 +34,7 @@ export * as Calendar from './Calendar';
 export * as Camera from './Camera';
 export * as Caption from './Caption';
 export * as Cart from './Cart';
+export * as CashCircle from './CashCircle';
 export * as Check from './Check';
 export * as CheckCircle from './CheckCircle';
 export * as CheckShield from './CheckShield';
