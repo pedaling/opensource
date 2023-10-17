@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.84.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.83.0...vibrant-icons-0.84.0) (2023-10-17)
+
+
+### Features
+
+* add cash circle icons ([#869](https://github.com/pedaling/opensource/issues/869)) ([1f98e9d](https://github.com/pedaling/opensource/commit/1f98e9d625eaad614a41ce6e34bc43b614eaa64f))
+* add infinity icon ([#870](https://github.com/pedaling/opensource/issues/870)) ([8e91129](https://github.com/pedaling/opensource/commit/8e9112912c2dffa27807f6f736264de8f4280efd))
+
 ## [0.83.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.82.0...vibrant-icons-0.83.0) (2023-10-10)
 
 ## [0.82.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.81.0...vibrant-icons-0.82.0) (2023-10-06)

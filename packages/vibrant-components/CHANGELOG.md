@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.84.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.83.0...vibrant-components-0.84.0) (2023-10-17)
+
+
+### Bug Fixes
+
+* error 컬러 코드를 변경한다 ([#864](https://github.com/pedaling/opensource/issues/864)) ([d7d0f6c](https://github.com/pedaling/opensource/commit/d7d0f6ce57a4226214123841949de0c2405d8e4d))
+
 ## [0.83.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.82.0...vibrant-components-0.83.0) (2023-10-10)
 
 ## [0.82.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.81.0...vibrant-components-0.82.0) (2023-10-06)
