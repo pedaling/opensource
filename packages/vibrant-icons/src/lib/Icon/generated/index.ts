@@ -88,6 +88,7 @@ export * as Heart from './Heart';
 export * as HelpCircle from './HelpCircle';
 export * as Home from './Home';
 export * as Hot from './Hot';
+export * as Infinity from './Infinity';
 export * as InfoCircle from './InfoCircle';
 export * as InstagramCircle from './InstagramCircle';
 export * as Laptop from './Laptop';
