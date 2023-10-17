@@ -14860,6 +14860,111 @@ exports[`<Icon /> when Hot.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when Infinity.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="add-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M18.1649 17.3504C15.9149 17.3504 14.4299 15.8854 12.9899 14.4704L11.9999 13.4954L11.0099 14.4704C9.5699 15.8854 8.0799 17.3504 5.8349 17.3504C2.8399 17.3504 0.399902 14.9504 0.399902 12.0004C0.399902 9.05039 2.8399 6.65039 5.8349 6.65039C8.0899 6.65039 9.5849 8.12039 11.0249 9.54539L11.9999 10.5054L12.9749 9.54539C14.4199 8.12039 15.9099 6.65039 18.1649 6.65039C21.1599 6.65039 23.5999 9.05039 23.5999 12.0004C23.5999 14.9504 21.1599 17.3504 18.1649 17.3504ZM14.5299 12.9004C15.9449 14.2954 16.8799 15.1504 18.1649 15.1504C19.9499 15.1504 21.3999 13.7354 21.3999 12.0004C21.3999 10.2654 19.9499 8.85039 18.1649 8.85039C16.8749 8.85039 15.9399 9.71039 14.5149 11.1154L13.6149 12.0004L14.5299 12.9004ZM5.8349 8.85039C4.0499 8.85039 2.5999 10.2654 2.5999 12.0004C2.5999 13.7354 4.0499 15.1504 5.8349 15.1504C7.1149 15.1504 8.0499 14.2954 9.4699 12.9004L10.3849 12.0004L9.4849 11.1154C8.0649 9.71039 7.1249 8.85039 5.8349 8.85039Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Infinity.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="add-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M18.1649 17.3504C15.9149 17.3504 14.4299 15.8854 12.9899 14.4704L11.9999 13.4954L11.0099 14.4704C9.5699 15.8854 8.0799 17.3504 5.8349 17.3504C2.8399 17.3504 0.399902 14.9504 0.399902 12.0004C0.399902 9.05039 2.8399 6.65039 5.8349 6.65039C8.0899 6.65039 9.5849 8.12039 11.0249 9.54539L11.9999 10.5054L12.9749 9.54539C14.4199 8.12039 15.9099 6.65039 18.1649 6.65039C21.1599 6.65039 23.5999 9.05039 23.5999 12.0004C23.5999 14.9504 21.1599 17.3504 18.1649 17.3504ZM14.5299 12.9004C15.9449 14.2954 16.8799 15.1504 18.1649 15.1504C19.9499 15.1504 21.3999 13.7354 21.3999 12.0004C21.3999 10.2654 19.9499 8.85039 18.1649 8.85039C16.8749 8.85039 15.9399 9.71039 14.5149 11.1154L13.6149 12.0004L14.5299 12.9004ZM5.8349 8.85039C4.0499 8.85039 2.5999 10.2654 2.5999 12.0004C2.5999 13.7354 4.0499 15.1504 5.8349 15.1504C7.1149 15.1504 8.0499 14.2954 9.4699 12.9004L10.3849 12.0004L9.4849 11.1154C8.0649 9.71039 7.1249 8.85039 5.8349 8.85039Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Infinity.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="add-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      d="M18.1649 17.1004C16.0199 17.1004 14.6349 15.7354 13.1649 14.2904L11.9999 13.1454L10.8349 14.2904C9.3649 15.7354 7.9799 17.1004 5.8349 17.1004C2.9749 17.1004 0.649902 14.8104 0.649902 12.0004C0.649902 9.19039 2.9749 6.90039 5.8349 6.90039C7.9899 6.90039 9.3799 8.27039 10.8499 9.72539L11.9999 10.8554L13.1499 9.72539C14.6199 8.27539 16.0149 6.90039 18.1649 6.90039C21.0249 6.90039 23.3499 9.19039 23.3499 12.0004C23.3499 14.8104 21.0249 17.1004 18.1649 17.1004ZM18.1649 8.60039C16.7799 8.60039 15.8099 9.48539 14.3399 10.9354L13.2599 12.0004L14.3549 13.0804C15.8149 14.5204 16.7849 15.4004 18.1649 15.4004C20.0849 15.4004 21.6499 13.8754 21.6499 12.0004C21.6499 10.1254 20.0849 8.60039 18.1649 8.60039ZM5.8349 8.60039C3.9149 8.60039 2.3499 10.1254 2.3499 12.0004C2.3499 13.8754 3.9149 15.4004 5.8349 15.4004C7.2149 15.4004 8.1799 14.5204 9.6449 13.0804L10.7399 12.0004L9.6599 10.9354C8.1949 9.48539 7.2249 8.60039 5.8349 8.60039Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when InfoCircle.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
