@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.84.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.84.0...vibrant-icons-0.84.1) (2023-10-17)
+
+
+### Bug Fixes
+
+* infinity icon ([#871](https://github.com/pedaling/opensource/issues/871)) ([2ac2d82](https://github.com/pedaling/opensource/commit/2ac2d825369d0695016c13c400082a30b6298926))
+
 ## [0.84.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.83.0...vibrant-icons-0.84.0) (2023-10-17)
 
 
