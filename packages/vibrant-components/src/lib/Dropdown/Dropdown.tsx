@@ -142,6 +142,7 @@ export const Dropdown = withDropdownVariation(
       }),
       [rootMode]
     );
+    const { getResponsiveValue } = useResponsiveValue();
 
     const backHandler = useCallback(() => {
       if (!isMobile) {
@@ -185,7 +186,7 @@ export const Dropdown = withDropdownVariation(
               x: left,
               y: top,
               width,
-              height: height + CONTENT_PADDING * 2,
+              height: height + (py ? getResponsiveValue(py) : CONTENT_PADDING) * 2,
             },
             position,
             spacing
@@ -196,7 +197,7 @@ export const Dropdown = withDropdownVariation(
 
         setContentHeight(height);
       },
-      [isMobile, position, spacing]
+      [isMobile, position, spacing, getResponsiveValue, py]
     );
 
     const handleContainerResize = useCallback(({ height }: LayoutEvent) => {
