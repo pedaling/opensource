@@ -28,7 +28,7 @@ import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { withDropdownVariation } from './DropdownProps';
 
-const CONTENT_PADDING = 20;
+const CONTENT_PADDING = 12;
 const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
 
 const getCrossSides = (side: Side): Side[] => {
@@ -107,6 +107,10 @@ export const Dropdown = withDropdownVariation(
     onClose,
     onOpen,
     testId = 'dropdown',
+    py,
+    pb,
+    pt,
+    width,
   }) => {
     const openerRef = useRef<HTMLElement>(null);
     const customOpenerRef = useRef<HTMLElement>(null);
@@ -260,10 +264,13 @@ export const Dropdown = withDropdownVariation(
                 <Box alignSelf="flex-start">
                   <Box
                     backgroundColor="surface2"
-                    py={CONTENT_PADDING}
+                    py={py ? py : CONTENT_PADDING}
                     elevationLevel={4}
-                    rounded="sm"
+                    rounded="md"
                     minWidth={[280, 280, 240]}
+                    {...(pb ? { pb } : {})}
+                    {...(pt ? { pt } : {})}
+                    {...(width ? { width } : {})}
                   >
                     <Transition
                       animation={
