@@ -268,9 +268,9 @@ export const Dropdown = withDropdownVariation(
                     elevationLevel={4}
                     rounded="md"
                     minWidth={[280, 280, 240]}
-                    {...(pb ? { pb } : {})}
-                    {...(pt ? { pt } : {})}
-                    {...(width ? { width } : {})}
+                    pb={pb}
+                    pt={pt}
+                    width={width}
                   >
                     <Transition
                       animation={
