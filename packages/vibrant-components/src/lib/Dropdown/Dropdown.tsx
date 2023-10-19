@@ -28,7 +28,7 @@ import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { withDropdownVariation } from './DropdownProps';
 
-const CONTENT_PADDING = 20;
+const CONTENT_PADDING = 12;
 const BOTTOM_SHEET_MIN_TOP_MARGIN = 120;
 
 const getCrossSides = (side: Side): Side[] => {
@@ -107,6 +107,10 @@ export const Dropdown = withDropdownVariation(
     onClose,
     onOpen,
     testId = 'dropdown',
+    py,
+    pb,
+    pt,
+    width,
   }) => {
     const openerRef = useRef<HTMLElement>(null);
     const customOpenerRef = useRef<HTMLElement>(null);
@@ -126,7 +130,7 @@ export const Dropdown = withDropdownVariation(
       edges: ['bottom'],
       minInsets: { bottom: 20 },
     });
-    const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
+    const { breakpointIndex, getResponsiveValue } = useResponsiveValue({ useRootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
     const {
       theme: { zIndex },
@@ -181,7 +185,7 @@ export const Dropdown = withDropdownVariation(
               x: left,
               y: top,
               width,
-              height: height + CONTENT_PADDING * 2,
+              height: height + (py ? getResponsiveValue(py) : CONTENT_PADDING) * 2,
             },
             position,
             spacing
@@ -192,7 +196,7 @@ export const Dropdown = withDropdownVariation(
 
         setContentHeight(height);
       },
-      [isMobile, position, spacing]
+      [getResponsiveValue, isMobile, position, py, spacing]
     );
 
     const handleContainerResize = useCallback(({ height }: LayoutEvent) => {
@@ -260,10 +264,13 @@ export const Dropdown = withDropdownVariation(
                 <Box alignSelf="flex-start">
                   <Box
                     backgroundColor="surface2"
-                    py={CONTENT_PADDING}
+                    py={py ? py : CONTENT_PADDING}
                     elevationLevel={4}
-                    rounded="sm"
+                    rounded="md"
                     minWidth={[280, 280, 240]}
+                    pb={pb}
+                    pt={pt}
+                    width={width}
                   >
                     <Transition
                       animation={

@@ -60,6 +60,7 @@ export default {
     ),
     position: 'bottom',
     spacing: 8,
+    py: 12,
   },
 } as ComponentMeta<typeof Dropdown>;
 
@@ -146,7 +147,9 @@ export const WithModalBottomSheet: ComponentStory<typeof Dropdown> = ({ open: _,
                 setModalOpen(true);
               }}
             >
-              <Body level={1}>Close</Body>
+              <Body px={10} level={1}>
+                Close
+              </Body>
             </Pressable>
           )}
         />
