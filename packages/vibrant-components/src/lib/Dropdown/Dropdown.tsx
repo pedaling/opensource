@@ -130,7 +130,7 @@ export const Dropdown = withDropdownVariation(
       edges: ['bottom'],
       minInsets: { bottom: 20 },
     });
-    const { breakpointIndex } = useResponsiveValue({ useRootBreakPoints: true });
+    const { breakpointIndex, getResponsiveValue } = useResponsiveValue({ useRootBreakPoints: true });
     const isMobile = breakpointIndex === 0;
     const {
       theme: { zIndex },
@@ -142,7 +142,6 @@ export const Dropdown = withDropdownVariation(
       }),
       [rootMode]
     );
-    const { getResponsiveValue } = useResponsiveValue();
 
     const backHandler = useCallback(() => {
       if (!isMobile) {
@@ -197,7 +196,7 @@ export const Dropdown = withDropdownVariation(
 
         setContentHeight(height);
       },
-      [isMobile, position, spacing, getResponsiveValue, py]
+      [getResponsiveValue, isMobile, position, py, spacing]
     );
 
     const handleContainerResize = useCallback(({ height }: LayoutEvent) => {
