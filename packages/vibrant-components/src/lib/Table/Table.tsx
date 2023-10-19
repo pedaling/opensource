@@ -155,7 +155,8 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
               <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
             )}
             {!loading
-              ? columns.map(
+              ? data.length > 0 &&
+                columns.map(
                   ({
                     key,
                     dataKey,
