@@ -1,32 +1,37 @@
+import { css } from '@emotion/css';
 import { createSystemProp } from '../../createSystemProp';
 
 const placeholderColorProp = createSystemProp({
   property: 'placeholderColor',
   scale: 'colors',
-  transform: value => ({
-    '&::placeholder': {
-      color: value,
-      textFillColor: value,
-    },
-  }),
+  generateClassName: value => [
+    css({
+      '&::placeholder': {
+        color: value,
+        textFillColor: value,
+      },
+    }),
+  ],
 });
 
 const hideInputSpinButtonProp = createSystemProp({
   property: 'hideInputSpinButton',
-  transform: (value: boolean) =>
+  generateClassName: (value: boolean) =>
     value
-      ? {
-          '&::-webkit-outer-spin-button': {
-            WebkitAppearance: 'none',
-            margin: 0,
-          },
-          '&::-webkit-inner-spin-button': {
-            WebkitAppearance: 'none',
-            margin: 0,
-          },
-          MozAppearance: 'textfield',
-        }
-      : {},
+      ? [
+          css({
+            '&::-webkit-outer-spin-button': {
+              WebkitAppearance: 'none',
+              margin: 0,
+            },
+            '&::-webkit-inner-spin-button': {
+              WebkitAppearance: 'none',
+              margin: 0,
+            },
+            MozAppearance: 'textfield',
+          }),
+        ]
+      : [],
 });
 
 const textAlignProp = createSystemProp({

@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { createSystemProp } from '../../createSystemProp';
 
 const marginProp = createSystemProp({
@@ -27,18 +28,26 @@ const marginRightProp = createSystemProp({
 
 const marginVerticalProp = createSystemProp({
   property: 'my',
-  transform: value => ({
-    marginTop: value,
-    marginBottom: value,
-  }),
+  generateClassName: value => [
+    css({
+      marginTop: value,
+    }),
+    css({
+      marginBottom: value,
+    }),
+  ],
 });
 
 const marginHorizontalProp = createSystemProp({
   property: 'mx',
-  transform: value => ({
-    marginLeft: value,
-    marginRight: value,
-  }),
+  generateClassName: value => [
+    css({
+      marginLeft: value,
+    }),
+    css({
+      marginRight: value,
+    }),
+  ],
 });
 
 const paddingProp = createSystemProp({
@@ -68,18 +77,26 @@ const paddingRightProp = createSystemProp({
 
 const paddingVerticalProp = createSystemProp({
   property: 'py',
-  transform: value => ({
-    paddingTop: value,
-    paddingBottom: value,
-  }),
+  generateClassName: value => [
+    css({
+      paddingTop: value,
+    }),
+    css({
+      paddingBottom: value,
+    }),
+  ],
 });
 
 const paddingHorizontalProp = createSystemProp({
   property: 'px',
-  transform: value => ({
-    paddingLeft: value,
-    paddingRight: value,
-  }),
+  generateClassName: value => [
+    css({
+      paddingLeft: value,
+    }),
+    css({
+      paddingRight: value,
+    }),
+  ],
 });
 
 export const spacingSystemProps = [

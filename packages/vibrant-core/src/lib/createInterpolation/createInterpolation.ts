@@ -68,6 +68,7 @@ const mergeResponsiveValue = (original: Record<string, any>[], next: Record<stri
             },
           }
         : {}),
+      className: [original[index]?.['className'], value['className']].filter(isDefined).join(' '),
     };
   });
 

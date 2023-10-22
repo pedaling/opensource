@@ -13,6 +13,7 @@ export type SystemPropConfig = {
   shouldInterpolation?: 'after' | 'before' | false;
   disabled?: boolean;
   transform?: (value: any) => Record<string, any> | undefined;
+  generateClassName?: (value: any) => string[];
 };
 
 export type SystemProp = {

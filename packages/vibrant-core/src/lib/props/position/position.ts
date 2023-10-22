@@ -1,23 +1,30 @@
+import { css } from '@emotion/css';
 import { createSystemProp } from '../../createSystemProp';
 
 const positionProp = createSystemProp({
   property: 'position',
-  transform: (value: 'absolute' | 'fixed' | 'relative' | 'web_static' | 'web_sticky') => {
+  generateClassName: (value: 'absolute' | 'fixed' | 'relative' | 'web_static' | 'web_sticky') => {
     if (value === 'web_sticky') {
-      return {
-        position: 'sticky',
-      };
+      return [
+        css({
+          position: 'sticky',
+        }),
+      ];
     }
 
     if (value === 'web_static') {
-      return {
-        position: 'static',
-      };
+      return [
+        css({
+          position: 'static',
+        }),
+      ];
     }
 
-    return {
-      position: value,
-    };
+    return [
+      css({
+        position: value,
+      }),
+    ];
   },
 });
 

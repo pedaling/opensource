@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { createSystemProp } from '../../createSystemProp';
 
 const typographyProp = createSystemProp({
@@ -31,7 +32,9 @@ const fontStyleProp = createSystemProp({
 
 const lineHeightProp = createSystemProp({
   property: 'lineHeight',
-  transform: (value: number | string) => ({ lineHeight: typeof value === 'number' ? `${value}px` : value }),
+  generateClassName: (value: number | string) => [
+    css({ lineHeight: typeof value === 'number' ? `${value}px` : value }),
+  ],
 });
 
 export const typographySystemProps = [

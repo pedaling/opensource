@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import type { BoxShadow } from '@vibrant-ui/theme';
 import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
@@ -25,9 +26,11 @@ const elevationLevelProp = createSystemProp({
 
 const boxShadowProp = createSystemProp({
   property: 'boxShadow',
-  transform: (shadows: BoxShadow | BoxShadow[]) => ({
-    boxShadow: Array.isArray(shadows) ? shadows.map(getBoxShadowValue).join(', ') : getBoxShadowValue(shadows),
-  }),
+  generateClassName: (shadows: BoxShadow | BoxShadow[]) => [
+    css({
+      boxShadow: Array.isArray(shadows) ? shadows.map(getBoxShadowValue).join(', ') : getBoxShadowValue(shadows),
+    }),
+  ],
 });
 
 const nativeShadowProp = createSystemProp({

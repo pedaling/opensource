@@ -1,7 +1,13 @@
+import { css } from '@emotion/css';
 import { createSystemProp } from '../../createSystemProp';
 
 const widthProp = createSystemProp({
   property: 'width',
+  generateClassName: (value: number) => [
+    css({
+      width: value,
+    }),
+  ],
 });
 
 const minWidthProp = createSystemProp({
@@ -14,6 +20,11 @@ const maxWidthProp = createSystemProp({
 
 const heightProp = createSystemProp({
   property: 'height',
+  generateClassName: (value: number) => [
+    css({
+      height: value,
+    }),
+  ],
 });
 
 const minHeightProp = createSystemProp({
@@ -30,9 +41,11 @@ const boxSizingProp = createSystemProp({
 
 const aspectRatioProp = createSystemProp({
   property: 'aspectRatio',
-  transform: (value: number) => ({
-    aspectRatio: value ? value.toString() : value,
-  }),
+  generateClassName: (value: number) => [
+    css({
+      aspectRatio: value ? value.toString() : value,
+    }),
+  ],
 });
 
 export const sizingSystemProps = [

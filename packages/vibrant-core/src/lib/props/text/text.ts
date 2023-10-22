@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { createSystemProp } from '../../createSystemProp';
 
 const letterSpacingProp = createSystemProp({
@@ -30,13 +31,15 @@ const overflowWrapProp = createSystemProp({
 
 const lineLimitProp = createSystemProp({
   property: 'lineLimit',
-  transform: (value: number) => ({
-    display: '-webkit-box',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: value,
-  }),
+  generateClassName: (value: number) => [
+    css({
+      display: '-webkit-box',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      WebkitBoxOrient: 'vertical',
+      WebkitLineClamp: value,
+    }),
+  ],
 });
 
 const textDecorationLineProp = createSystemProp({

@@ -1,8 +1,9 @@
+import { css } from '@emotion/css';
 import { get, isDefined, isRecord } from '@vibrant-ui/utils';
 import type { SystemProp, SystemPropConfig, SystemPropThemeScale } from './type';
 
 export const createSystemProp = (config: SystemPropConfig): SystemProp => {
-  const { property, styleProperty, scale, disabled, shouldInterpolation, transform } = config;
+  const { property, styleProperty, scale, disabled, shouldInterpolation } = config;
 
   if (disabled) {
     return Object.assign(() => [], { propName: property, disabled: true });
@@ -28,10 +29,20 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
             result = interpolation(result);
           }
 
-          if (isDefined(transform)) {
-            result = transform(result) ?? {};
+          if ('transform' in config && isDefined(config.transform)) {
+            result = config.transform(result) ?? {};
+          } else if ('generateClassName' in config && isDefined(config.generateClassName)) {
+            const newClassNames = config.generateClassName?.(result) ?? [];
+
+            result = {
+              className: [result.className, ...newClassNames].filter(isDefined).join(' '),
+            };
           } else {
-            result = { [targetProperty]: result };
+            const newClassName = css({ [targetProperty]: result });
+
+            result = {
+              className: [result.className, newClassName].filter(isDefined).join(' '),
+            };
           }
 
           if (shouldInterpolation === 'after' && isRecord(result)) {

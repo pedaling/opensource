@@ -1,32 +1,49 @@
+import { css } from '@emotion/css';
 import { createSystemProp } from '../../createSystemProp';
 
 const displayProp = createSystemProp({
   property: 'display',
-  transform: (value = 'flex') => {
+  generateClassName: (value = 'flex') => {
     if (value === 'none') {
-      return { display: 'none' };
+      return [css({ display: 'none' })];
     }
 
     if (value === 'inline-flex') {
-      return {
-        display: 'flex',
-        alignSelf: 'flex-start',
-        alignContent: 'stretch',
-        flexShrink: 1,
-      };
+      return [
+        css({
+          display: 'flex',
+        }),
+        css({
+          alignSelf: 'flex-start',
+        }),
+        css({
+          alignContent: 'stretch',
+        }),
+        css({
+          flexShrink: 1,
+        }),
+      ];
     }
 
     if (value === 'flex') {
-      return {
-        display: 'flex',
-        alignContent: 'stretch',
-        flexShrink: 1,
-      };
+      return [
+        css({
+          display: 'flex',
+        }),
+        css({
+          alignContent: 'stretch',
+        }),
+        css({
+          flexShrink: 1,
+        }),
+      ];
     }
 
-    return {
-      display: value.replace('web_', ''),
-    };
+    return [
+      css({
+        display: value.replace('web_', ''),
+      }),
+    ];
   },
 });
 
@@ -41,14 +58,17 @@ const opacityProp = createSystemProp({
 
 const hiddenProp = createSystemProp({
   property: 'hidden',
-  transform: (hidden: boolean) =>
-    hidden
-      ? {
-          display: 'none',
-        }
-      : {
-          display: 'flex',
-        },
+  generateClassName: (hidden: boolean) => [
+    css(
+      hidden
+        ? {
+            display: 'none',
+          }
+        : {
+            display: 'flex',
+          }
+    ),
+  ],
 });
 
 const tableLayoutProp = createSystemProp({

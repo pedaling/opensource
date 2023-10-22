@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
 
@@ -11,15 +12,17 @@ function getTransformValue(value: number | string) {
 
 const transformProp = createSystemProp({
   property: 'transform',
-  transform: value => {
+  generateClassName: value => {
     const style = Object.keys(value)
       .filter(key => isDefined(value[key]))
       .reduce((style, key) => `${style} ${key}(${getTransformValue(value[key])})`, '')
       .trim();
 
-    return {
-      transform: style,
-    };
+    return [
+      css({
+        transform: style,
+      }),
+    ];
   },
 });
 
