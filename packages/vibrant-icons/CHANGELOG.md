@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.84.2](https://github.com/pedaling/opensource/compare/vibrant-icons-0.84.1...vibrant-icons-0.84.2) (2023-10-24)
+
+
+### Features
+
+* add py, pt, pb, width as optional props to Dropdown Comopnent ([#872](https://github.com/pedaling/opensource/issues/872)) ([64d9b9d](https://github.com/pedaling/opensource/commit/64d9b9d72579d4da4af0a16e7b28ddd6f82aae73))
+
 ### [0.84.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.84.0...vibrant-icons-0.84.1) (2023-10-17)
 
 
