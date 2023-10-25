@@ -3,7 +3,17 @@ import { Ratio } from '../Ratio';
 import { withImageThumbnailVariation } from './ImageThumbnailProps';
 
 export const ImageThumbnail = withImageThumbnailVariation(
-  ({ src, alt = '', aspectRatio, dim = true, loading, width = '100%', testId = 'image-thumbnail', ...props }) => (
+  ({
+    src,
+    alt = '',
+    aspectRatio,
+    dim = true,
+    loading,
+    width = '100%',
+    testId = 'image-thumbnail',
+    sizes,
+    ...props
+  }) => (
     <Ratio data-testid={testId} ratio={aspectRatio} width={width} overflow="hidden" {...props}>
       {dim && (
         <Box
@@ -15,7 +25,15 @@ export const ImageThumbnail = withImageThumbnailVariation(
           backgroundColor="surface1"
         />
       )}
-      <Image data-testid={`${testId}-content`} width="100%" height="100%" src={src} alt={alt} loading={loading} />
+      <Image
+        data-testid={`${testId}-content`}
+        width="100%"
+        height="100%"
+        src={src}
+        alt={alt}
+        loading={loading}
+        sizes={sizes}
+      />
     </Ratio>
   )
 );
