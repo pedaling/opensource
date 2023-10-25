@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.84.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.84.2...vibrant-components-0.84.3) (2023-10-25)
+
+
+### Bug Fixes
+
+* ImageThumbnail 컴포넌트에서 sizes 속성이 Image 컴포넌트에 전달되게 한다 ([#878](https://github.com/pedaling/opensource/issues/878)) ([4035003](https://github.com/pedaling/opensource/commit/4035003084456489be86373b5834d3669cbb3fa8))
+
 ### [0.84.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.84.1...vibrant-components-0.84.2) (2023-10-24)
 
 
