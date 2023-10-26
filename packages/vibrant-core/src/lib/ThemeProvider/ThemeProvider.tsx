@@ -13,11 +13,27 @@ export type ThemeProviderProps = {
 
 type ThemeContextValue = {
   rootTheme: Theme;
+  currentTheme: CurrentTheme;
+  rootCurrentTheme: CurrentTheme;
   theme: Theme;
 };
 
 const ThemeContext = createContext<ThemeContextValue>({
   rootTheme: baseTheme,
+  currentTheme: {
+    ...baseTheme,
+    colors: baseTheme.colors[baseTheme.mode],
+    elevation: baseTheme.elevation[baseTheme.mode],
+    gradient: baseTheme.gradient[baseTheme.mode],
+    opacity: baseTheme.opacity[baseTheme.mode],
+  },
+  rootCurrentTheme: {
+    ...baseTheme,
+    colors: baseTheme.colors[baseTheme.mode],
+    elevation: baseTheme.elevation[baseTheme.mode],
+    gradient: baseTheme.gradient[baseTheme.mode],
+    opacity: baseTheme.opacity[baseTheme.mode],
+  },
   theme: baseTheme,
 });
 
@@ -62,12 +78,36 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
     [JSON.stringify(parentTheme), JSON.stringify(theme)]
   );
 
+  const currentTheme = useMemo(
+    () => ({
+      ...mergedTheme,
+      colors: mergedTheme.colors[mergedTheme.mode],
+      elevation: mergedTheme.elevation[mergedTheme.mode],
+      gradient: mergedTheme.gradient[mergedTheme.mode],
+      opacity: mergedTheme.opacity[mergedTheme.mode],
+    }),
+    [mergedTheme]
+  );
+
+  const rootCurrentTheme = useMemo(
+    () => ({
+      ...rootTheme,
+      colors: rootTheme.colors[rootTheme.mode],
+      elevation: rootTheme.elevation[rootTheme.mode],
+      gradient: rootTheme.gradient[rootTheme.mode],
+      opacity: rootTheme.opacity[rootTheme.mode],
+    }),
+    [rootTheme]
+  );
+
   const contextValue: ThemeContextValue = useMemo(
     () => ({
       rootTheme: root ? mergedTheme : rootTheme,
       theme: mergedTheme,
+      currentTheme,
+      rootCurrentTheme,
     }),
-    [mergedTheme, root, rootTheme]
+    [currentTheme, mergedTheme, root, rootCurrentTheme, rootTheme]
   );
 
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
@@ -76,23 +116,10 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
 ThemeProvider.displayName = 'ThemeProvider';
 
 export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentTheme } => {
-  const { rootTheme, theme } = useContext(ThemeContext);
-
-  const currentTheme = root ? rootTheme : theme;
-
-  const currentThemeValues = useMemo(
-    () => ({
-      ...currentTheme,
-      colors: currentTheme.colors[currentTheme.mode],
-      elevation: currentTheme.elevation[currentTheme.mode],
-      gradient: currentTheme.gradient[currentTheme.mode],
-      opacity: currentTheme.opacity[currentTheme.mode],
-    }),
-    [currentTheme]
-  );
+  const { currentTheme, rootCurrentTheme } = useContext(ThemeContext);
 
   return {
-    theme: currentThemeValues,
+    theme: root ? rootCurrentTheme : currentTheme,
   };
 };
 

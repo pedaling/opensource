@@ -1,13 +1,14 @@
 import type { ComponentType } from 'react';
-import { forwardRef, memo } from 'react';
-import type { LayoutChangeEvent } from 'react-native';
+import { forwardRef, useMemo } from 'react';
 import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native';
-import styled from '@emotion/native';
+import type { CurrentTheme } from '@vibrant-ui/theme';
 import { isDefined } from '@vibrant-ui/utils';
-import { getElementPosition } from '../getElementPosition';
+import type { SystemProp } from '../createSystemProp';
 import { OnColorContainer } from '../OnColorContainer';
+import { useCurrentTheme } from '../ThemeProvider';
+import { useResponsiveValue } from '../useResponsiveValue';
 import type { BoxProps } from './BoxProps';
-import { interpolation, shouldForwardProp } from './BoxProps';
+import { systemProps } from './BoxProps';
 
 const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
   switch (as) {
@@ -20,69 +21,86 @@ const transformAs = (as: keyof JSX.IntrinsicElements): ComponentType => {
   }
 };
 
-export const Box = memo(
-  styled(
-    forwardRef<HTMLDivElement, BoxProps & { style: any }>(
-      (
-        {
-          as,
-          base,
-          style,
-          onLayout,
-          backgroundColor,
-          id,
-          role,
-          ariaLabel,
-          ariaLabelledBy,
-          ariaChecked,
-          ariaSelected,
-          ariaCurrent: _ariaCurrent,
-          ...restProps
-        },
-        ref
-      ) => {
-        const { BaseComponent, props, ...restStyle } = StyleSheet.flatten(style);
+const systemPropsMap = systemProps
+  .filter(props => !props.disabled)
+  .reduce((acc, props) => {
+    acc[props.propName] = props;
 
-        const Component = BaseComponent ?? base ?? transformAs(as ?? 'div');
+    return acc;
+  }, {} as Record<string, SystemProp>);
 
-        const handleLayout = onLayout
-          ? async (event: LayoutChangeEvent) => {
-              const layout = await getElementPosition(event.currentTarget);
+const interpolation = (props: BoxProps, theme: CurrentTheme): Record<string, any>[] => {
+  const styles = Object.keys(props).reduce((acc, propName) => {
+    const systemProp = systemPropsMap[propName];
 
-              onLayout(layout);
-            }
-          : undefined;
+    if (!systemProp) {
+      return acc;
+    }
 
-        const element = (
-          <Component
-            ref={ref}
-            id={id}
-            role={role}
-            style={restStyle}
-            onLayout={handleLayout}
-            accessibilityLabel={ariaLabel}
-            accessibilityLabelledBy={ariaLabelledBy}
-            {...(isDefined(ariaChecked) || isDefined(ariaSelected)
-              ? { accessibilityState: { checked: ariaChecked, selected: ariaSelected } }
-              : {})}
-            collapsable={ref ? false : undefined}
-            {...(base ? { as } : {})}
-            {...restProps}
-            {...props}
-          />
-        );
+    const nextProps = systemProp((props as any)[propName], theme, props => interpolation(props, theme));
 
-        if (backgroundColor) {
-          return <OnColorContainer backgroundColor={backgroundColor}>{element}</OnColorContainer>;
+    if (isDefined(nextProps)) {
+      for (let i = 0; i < nextProps.length; i++) {
+        if (!isDefined(acc[i])) {
+          acc[i] = {};
         }
 
-        return element;
+        Object.assign(acc[i], nextProps[i]);
       }
-    ),
-    {
-      shouldForwardProp,
     }
-  )(interpolation)
-);
+
+    return acc;
+  }, [] as Record<string, any>[]);
+
+  return styles;
+};
+
+export const Box = forwardRef<HTMLDivElement, BoxProps & { style: any }>((props, ref) => {
+  const { theme } = useCurrentTheme();
+  const { breakpointIndex } = useResponsiveValue();
+  const [systemProps, restProps] = useMemo(() => {
+    const systemProps: Record<string, any> = {};
+    const restProps: Record<string, any> = {};
+
+    for (const propName in props) {
+      const systemProp = systemPropsMap[propName];
+
+      if (!systemProp) {
+        restProps[propName] = (props as any)[propName];
+
+        continue;
+      }
+
+      systemProps[propName] = (props as any)[propName];
+    }
+
+    return [systemProps, restProps];
+  }, [props]);
+
+  const styles = useMemo(
+    () => interpolation(systemProps, theme),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [JSON.stringify(systemProps), theme.colors.onColor, theme.mode]
+  );
+
+  const {
+    BaseComponents,
+    props: p,
+    ...style
+  } = useMemo(
+    () => StyleSheet.flatten([props.style, ...styles.filter((_, index) => breakpointIndex >= index)]),
+    [breakpointIndex, props.style, styles]
+  );
+
+  const Component = BaseComponents ?? props.base ?? (transformAs(props.as ?? 'div') as any);
+
+  const element = <Component ref={ref} {...restProps} {...p} style={style} />;
+
+  if (props.backgroundColor) {
+    return <OnColorContainer backgroundColor={props.backgroundColor}>{element}</OnColorContainer>;
+  }
+
+  return element;
+});
 
 Box.displayName = 'Box';

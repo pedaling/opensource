@@ -68,7 +68,7 @@ export type SystemProps = BackgroundSystemProps &
   MediaSystemProps &
   GridSystemProps;
 
-const systemProps = [
+export const systemProps = [
   ...backgroundSystemProps,
   ...borderSystemProps,
   ...colorSystemProps,

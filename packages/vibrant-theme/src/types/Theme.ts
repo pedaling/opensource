@@ -31,6 +31,7 @@ export type Theme = {
 };
 
 export type CurrentTheme = {
+  mode: ThemeMode;
   breakpoints: number[];
   contentArea: {
     maxWidth: number;
