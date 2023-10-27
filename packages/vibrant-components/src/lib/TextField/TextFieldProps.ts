@@ -1,4 +1,4 @@
-import type { ForwardedRef } from 'react';
+import type { ForwardedRef, ReactElement } from 'react';
 import type {
   AutoCapitalizeOption,
   AutoCompleteOption,
@@ -18,7 +18,7 @@ export type TextFieldProps = BaseInputProps<string> &
     state?: 'default' | 'error';
     label?: string;
     placeholder?: string;
-    helperText?: string;
+    helperText?: ReactElement | string;
     autoFocus?: boolean;
     maxLength?: number;
     autoComplete?: AutoCompleteOption;
