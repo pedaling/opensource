@@ -39,7 +39,7 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   height: 50px;
   border-radius: 4px;
   overflow: hidden;
@@ -285,7 +285,7 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   height: 38px;
   border-radius: 4px;
   overflow: hidden;
@@ -531,7 +531,7 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   height: 30px;
   border-radius: 4px;
   overflow: hidden;

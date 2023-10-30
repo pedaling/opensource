@@ -100,7 +100,7 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   height: 38px;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -427,7 +427,7 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   padding-right: 9px;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   border-radius: 4px;
   background-color: #ffffff;
 }
