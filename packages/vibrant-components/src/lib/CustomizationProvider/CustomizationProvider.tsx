@@ -1,13 +1,14 @@
 import type { ComponentType, FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
-import type { ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
+import type { ReactElementChild } from '@vibrant-ui/core';
+import type { IconProps } from '@vibrant-ui/icons';
 
 export type Configurations = {
   avatar?: {
     placeholder: string;
   };
   cardNumberField?: {
-    cardIconMap: Record<string, ComponentType<{ size?: ResponsiveValue<number> }>>;
+    cardIconMap: Record<string, ComponentType<{ size?: IconProps['size'] }>>;
   };
 };
 
