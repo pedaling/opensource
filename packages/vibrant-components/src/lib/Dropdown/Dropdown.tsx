@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import type { Align, Side } from 'packages/vibrant-utils/src/types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -264,7 +265,7 @@ export const Dropdown = withDropdownVariation(
                 <Box alignSelf="flex-start">
                   <Box
                     backgroundColor="surface2"
-                    py={py ? py : CONTENT_PADDING}
+                    py={py !== undefined ? py : CONTENT_PADDING}
                     elevationLevel={4}
                     rounded="md"
                     minWidth={[280, 280, 240]}
