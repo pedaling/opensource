@@ -54,7 +54,7 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
   height: 50px;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -357,7 +357,7 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
   height: 38px;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -660,7 +660,7 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
   height: 30px;
   border-width: 1px;
   border-style: solid;
-  border-color: #00000026;
+  border-color: #0000001a;
   background-color: #ffffff;
   border-radius: 4px;
 }

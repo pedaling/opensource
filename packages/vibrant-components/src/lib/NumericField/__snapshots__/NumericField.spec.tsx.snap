@@ -45,7 +45,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   padding-right: 38px;
   height: 100%;
   text-align: center;
-  border-color: #00000026;
+  border-color: #0000001a;
   border-style: solid;
   border-radius: 4px;
   -moz-appearance: textfield;

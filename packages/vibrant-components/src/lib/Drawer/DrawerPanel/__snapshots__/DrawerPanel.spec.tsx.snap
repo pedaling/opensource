@@ -91,7 +91,7 @@ exports[`<DrawerPanel /> when component is rendering match snapshot 1`] = `
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   border-width: 0;
-  border-color: #00000026;
+  border-color: #0000001a;
   border-style: solid;
   width: 0;
   border-right-width: 1px;
