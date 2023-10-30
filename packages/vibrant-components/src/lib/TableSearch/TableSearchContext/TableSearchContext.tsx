@@ -6,12 +6,14 @@ type TableSearchContextValue = {
   searchFieldRef: RefObject<TextInputRef> | null;
   onSubmit?: (value: string) => void;
   onOptionChange?: (value?: string) => void;
+  onTextChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
 };
 
 const TableSearchContext = createContext<TableSearchContextValue>({
   searchFieldRef: null,
   onSubmit: () => {},
   onOptionChange: () => {},
+  onTextChange: () => {},
 });
 
 type TableSearchProviderProps = {
@@ -19,25 +21,28 @@ type TableSearchProviderProps = {
   searchFieldRef: RefObject<TextInputRef> | null;
   onSubmit?: (value: string) => void;
   onOptionChange?: (value?: string) => void;
+  onTextChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
 };
 
 export const TableSearchProvider: FC<TableSearchProviderProps> = ({
   children,
   searchFieldRef,
   onOptionChange,
+  onTextChange,
   onSubmit,
 }) => (
-  <TableSearchContext.Provider value={{ searchFieldRef, onOptionChange, onSubmit }}>
+  <TableSearchContext.Provider value={{ searchFieldRef, onOptionChange, onSubmit, onTextChange }}>
     {children}
   </TableSearchContext.Provider>
 );
 
 export const useTableSearch = () => {
-  const { searchFieldRef, onOptionChange, onSubmit } = useContext(TableSearchContext);
+  const { searchFieldRef, onOptionChange, onSubmit, onTextChange } = useContext(TableSearchContext);
 
   return {
     searchFieldRef,
     onOptionChange,
+    onTextChange,
     onSubmit,
   };
 };

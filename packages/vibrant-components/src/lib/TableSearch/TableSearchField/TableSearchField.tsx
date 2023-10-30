@@ -6,7 +6,7 @@ import { withTableSearchFieldVariation } from './TableSearchFieldProps';
 
 export const TableSearchField = withTableSearchFieldVariation(
   ({ maxWidth, testId = 'table-search-field', ...restProps }) => {
-    const { searchFieldRef, onSubmit } = useTableSearch();
+    const { searchFieldRef, onSubmit, onTextChange } = useTableSearch();
 
     return (
       <Box width="100%" maxWidth={maxWidth} data-testid={testId}>
@@ -17,6 +17,7 @@ export const TableSearchField = withTableSearchFieldVariation(
           clearable={true}
           renderStart={() => <Icon.Search.Thin size={20} fill="onView2" />}
           onSubmit={onSubmit}
+          onValueChange={onTextChange}
           {...restProps}
         />
       </Box>
