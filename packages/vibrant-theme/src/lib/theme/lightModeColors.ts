@@ -30,7 +30,7 @@ export const lightModeColors: Colors = {
   surface3: palettes.globalWhite,
   surface4: palettes.neutral['80'],
   disable: palettes.blackAlpha['10'],
-  outline1: palettes.blackAlpha['15'],
+  outline1: palettes.blackAlpha['10'],
   outline2: palettes.blackAlpha['5'],
   outlineNeutral: palettes.neutral['5'],
   outlineDisable: palettes.blackAlpha['5'],
@@ -51,6 +51,6 @@ export const lightModeColors: Colors = {
   inverseSurface: palettes.neutral['15'],
   onInverseSurface: palettes.neutral['95'],
   dim: palettes.blackAlpha['70'],
-  overlay: palettes.whiteAlpha['80'],
+  overlay: palettes.blackAlpha['5'],
   onColor: '$colors.onView1',
 };
