@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.84.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.84.3...vibrant-components-0.84.4) (2023-10-30)
+
+
+### Bug Fixes
+
+* helper text 의 type을 수정한다. ([#880](https://github.com/pedaling/opensource/issues/880)) ([0b1049d](https://github.com/pedaling/opensource/commit/0b1049d163204abfbe536069f0f0b4b427b174c6))
+
 ### [0.84.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.84.2...vibrant-components-0.84.3) (2023-10-25)
 
 
