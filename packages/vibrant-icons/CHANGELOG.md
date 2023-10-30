@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.85.0...vibrant-icons-0.85.1) (2023-10-30)
+
+
+### Features
+
+* 아이콘 size가 string 값을 받을 수 있게한다 ([#884](https://github.com/pedaling/opensource/issues/884)) ([17cb70d](https://github.com/pedaling/opensource/commit/17cb70d9cbcc5507c5733456e352947a2e7cd403))
+
 ## [0.85.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.84.4...vibrant-icons-0.85.0) (2023-10-30)
 
 ### [0.84.4](https://github.com/pedaling/opensource/compare/vibrant-icons-0.84.3...vibrant-icons-0.84.4) (2023-10-30)

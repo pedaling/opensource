@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.0...vibrant-components-0.85.1) (2023-10-30)
+
+
+### Features
+
+* **toast:** Add close param ([#882](https://github.com/pedaling/opensource/issues/882)) ([4177648](https://github.com/pedaling/opensource/commit/4177648b76730d221ca480d117a77386e0a43524))
+* 아이콘 size가 string 값을 받을 수 있게한다 ([#884](https://github.com/pedaling/opensource/issues/884)) ([17cb70d](https://github.com/pedaling/opensource/commit/17cb70d9cbcc5507c5733456e352947a2e7cd403))
+
 ## [0.85.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.84.4...vibrant-components-0.85.0) (2023-10-30)
 
 ### [0.84.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.84.3...vibrant-components-0.84.4) (2023-10-30)
