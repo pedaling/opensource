@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.1...vibrant-components-0.85.2) (2023-10-30)
+
+
+### Bug Fixes
+
+* cardNumberField iconMap 타입 수정 ([#886](https://github.com/pedaling/opensource/issues/886)) ([b433530](https://github.com/pedaling/opensource/commit/b4335309a11aab816d0c4333a0e3930dfe0cf651))
+
 ### [0.85.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.0...vibrant-components-0.85.1) (2023-10-30)
 
 
