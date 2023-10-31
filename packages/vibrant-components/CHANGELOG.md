@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.2...vibrant-components-0.85.3) (2023-10-31)
+
+
+### Features
+
+* table search can detect text values on change ([#888](https://github.com/pedaling/opensource/issues/888)) ([b0b2d79](https://github.com/pedaling/opensource/commit/b0b2d79000e3705a1f617e4567b650787a20bc32))
+
 ### [0.85.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.1...vibrant-components-0.85.2) (2023-10-30)
 
 
