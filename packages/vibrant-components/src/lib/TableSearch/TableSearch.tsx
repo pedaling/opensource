@@ -6,7 +6,7 @@ import { TableSearchField } from './TableSearchField';
 import { TableSearchOption } from './TableSearchOption';
 import type { TableSearchProps } from './TableSearchProps';
 
-export const TableSearch = ({ children, testId = 'table-search', onSubmit }: TableSearchProps) => {
+export const TableSearch = ({ children, testId = 'table-search', onSubmit, onTextChange }: TableSearchProps) => {
   const [optionValue, setOptionValue] = useState<string>();
   const searchFieldRef = useRef<TextInputRef>(null);
 
@@ -21,7 +21,12 @@ export const TableSearch = ({ children, testId = 'table-search', onSubmit }: Tab
   };
 
   return (
-    <TableSearchProvider searchFieldRef={searchFieldRef} onOptionChange={changeOption} onSubmit={submit}>
+    <TableSearchProvider
+      searchFieldRef={searchFieldRef}
+      onOptionChange={changeOption}
+      onSubmit={submit}
+      onTextChange={onTextChange}
+    >
       <HStack width="100%" alignVertical="center" spacing={4} data-testid={testId}>
         {children}
       </HStack>

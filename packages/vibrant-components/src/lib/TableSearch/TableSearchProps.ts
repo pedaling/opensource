@@ -5,6 +5,7 @@ export type TableSearchProps = {
   children: ReactElement | ReactElement[];
   testId?: string;
   onSubmit?: (fieldValue: string, optionValue?: string) => void;
+  onTextChange?: ({ value, prevent }: { value: string; prevent: () => void }) => void;
 };
 
 export const withTableSearchVariation = withVariation<TableSearchProps>('TableSearch')();
