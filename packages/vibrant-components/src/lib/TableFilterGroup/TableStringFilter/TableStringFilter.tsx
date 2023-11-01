@@ -24,9 +24,8 @@ export const TableStringFilter = withTableStringFilterVariation(
     lineLimit,
     testId = 'table-string-filter',
   }) => {
-    const [inputValue, setInputValue] = useState<string>(defaultValue?.value);
     const [operator, setOperator] = useState<StringFilterOperator>(defaultValue?.operator);
-    const [value, setValue] = useState<string>(inputValue);
+    const [value, setValue] = useState<string>(defaultValue?.value);
     const { updateFilter } = useTableFilterGroup();
     const handleFilterChange = useCallbackRef(updateFilter);
     const filedRef = useRef<TextInputRef | null>();
@@ -43,8 +42,6 @@ export const TableStringFilter = withTableStringFilterVariation(
       innerRef,
       () => ({
         reset: () => {
-          setInputValue(defaultValue?.value);
-
           setValue(defaultValue?.value);
 
           setOperator(defaultValue?.operator);
@@ -77,14 +74,10 @@ export const TableStringFilter = withTableStringFilterVariation(
         active={isStringFilterValid({ value, operator })}
         onClose={() => {
           if (isValueRequiredOperator(operator)) {
-            setInputValue('');
-
             setValue('');
 
             return;
           }
-
-          setInputValue(value);
         }}
         operatorOptions={operators.map(operator => ({ operator, label: operatorsTranslation[operator] }))}
         selectedOperator={operator}
@@ -99,16 +92,9 @@ export const TableStringFilter = withTableStringFilterVariation(
                 autoFocus={true}
                 placeholder={placeholder}
                 clearable={true}
-                defaultValue={inputValue}
+                defaultValue={value}
                 onValueChange={({ value: newValue }) => {
-                  if (!newValue) {
-                    setValue(newValue);
-                  }
-
-                  setInputValue(newValue);
-                }}
-                onSubmit={() => {
-                  setValue(inputValue);
+                  setValue(newValue);
                 }}
               />
             </Box>
