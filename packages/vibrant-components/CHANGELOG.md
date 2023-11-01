@@ -2,6 +2,23 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.4...vibrant-components-0.85.5) (2023-11-01)
+
+
+### Features
+
+* table filter group can detect value stringfilter on change ([#891](https://github.com/pedaling/opensource/issues/891)) ([a9cdf04](https://github.com/pedaling/opensource/commit/a9cdf041dd0cfbc6c5de02d87dcb4afa443f638f))
+
+
+### Bug Fixes
+
+* Dropdown issue that py value is not applied when the value is 0 ([#883](https://github.com/pedaling/opensource/issues/883)) ([c85ca23](https://github.com/pedaling/opensource/commit/c85ca231776880db7c6412679ce0d7c1a56641a0))
+
+
+### Reverts
+
+* Revert "fix: helper text 의 type을 수정한다." (#889) ([c582e81](https://github.com/pedaling/opensource/commit/c582e81d02f03a7af705c5b34616fe132fdfa27c)), closes [#889](https://github.com/pedaling/opensource/issues/889) [#880](https://github.com/pedaling/opensource/issues/880)
+
 ### [0.85.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.3...vibrant-components-0.85.4) (2023-10-31)
 
 ### [0.85.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.2...vibrant-components-0.85.3) (2023-10-31)
