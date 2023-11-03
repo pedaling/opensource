@@ -1,5 +1,5 @@
 import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
-import { Box, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
+import { Box, getWindowDimensions, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
@@ -43,13 +43,20 @@ export const Popover = ({
     top: 0,
   });
   const [arrowStyle, setArrowStyle] = useState({});
+  const { width: viewportWidth } = getWindowDimensions();
   const computedOffset = getResponsiveValue(offset);
+  const computedMaxWidth = getResponsiveValue(maxWidth);
 
   const popoverRef = useRef<HTMLElement>(null);
   const childRef = useRef<HTMLElement>(null);
   const handleOpen = useCallbackRef(onOpen);
   const handleClose = useCallbackRef(onClose);
 
+  const popoverWidth = computedMaxWidth
+    ? typeof computedMaxWidth === 'number'
+      ? Math.min(viewportWidth, computedMaxWidth)
+      : computedMaxWidth
+    : '100%';
   const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
 
   const calcuratePositionValue = useCallback(
@@ -252,9 +259,9 @@ export const Popover = ({
 
   return (
     <VStack>
-      <VStack position="fixed">
+      <VStack position="absolute">
         <Transition animation={{ opacity: isOpen ? 1 : 0, ...popoverPosition }} duration={200} easing="easeOutQuad">
-          <VStack zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0} maxWidth={maxWidth} width="100%">
+          <VStack zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0} width={popoverWidth}>
             <Paper backgroundColor={backgroundColor} rounded="sm">
               <VStack px={12} py={8} ref={popoverRef} width="100%" height="100%">
                 <HStack flex={1} alignHorizontal="space-between">
