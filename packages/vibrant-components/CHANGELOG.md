@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.6...vibrant-components-0.85.7) (2023-11-06)
+
+
+### Bug Fixes
+
+* DateInput component의 컬러코드 오류를 수정한다. ([#893](https://github.com/pedaling/opensource/issues/893)) ([264fcb2](https://github.com/pedaling/opensource/commit/264fcb2039e0ff0dff40888d7ed0327dfc534760))
+
 ### [0.85.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.5...vibrant-components-0.85.6) (2023-11-06)
 
 
