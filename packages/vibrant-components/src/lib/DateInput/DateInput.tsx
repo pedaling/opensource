@@ -73,6 +73,7 @@ export const DateInput = withDateInputVariation(
             justifyContent="center"
             flexGrow={1}
             disabled={disabled}
+            backgroundColor="transparent"
             onClick={onFocus}
             onBlur={() => setIsFocused(false)}
             onFocus={() => {
