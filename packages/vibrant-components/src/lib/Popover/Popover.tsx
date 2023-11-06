@@ -1,5 +1,5 @@
 import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
-import { Box, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
+import { Box, getWindowDimensions, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
@@ -37,6 +37,7 @@ export const Popover = ({
     theme: { zIndex: themeZIndex },
   } = useCurrentTheme();
   const { getResponsiveValue } = useResponsiveValue();
+  const [positionValue, setPositionValue] = useState<Position>(position);
   const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
   const [arrowPosition, setArrowPosition] = useState({
     left: 0,
@@ -50,6 +51,7 @@ export const Popover = ({
   const handleOpen = useCallbackRef(onOpen);
   const handleClose = useCallbackRef(onClose);
 
+  const { width: windowWidth, height: windowHeight } = getWindowDimensions();
   const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
 
   const calcuratePositionValue = useCallback(
@@ -244,7 +246,89 @@ export const Popover = ({
     [arrowHeight, arrowOffset, backgroundColor, computedOffset, title]
   );
 
-  useEffect(() => (isOpen ? handleOpen?.() : handleClose?.()), [isOpen, handleOpen, handleClose]);
+  const handlePopoverPositionChange = useCallback(async () => {
+    if (!popoverRef.current || !childRef.current) return;
+
+    const {
+      x: popoverX,
+      y: popoverY,
+      width: popoverWidth,
+      height: popoverHeight,
+    } = await getElementRect(popoverRef.current);
+    const { x: childX, y: childY, width: childWidth, height: childHeight } = await getElementRect(childRef.current);
+
+    if (position !== positionValue) {
+      if (position.includes('top') && childY - computedOffset - popoverHeight > 0) {
+        setPositionValue(position);
+      }
+
+      if (position.includes('bottom') && childY + childHeight + computedOffset + popoverHeight < windowHeight) {
+        setPositionValue(position);
+      }
+
+      if (position.includes('left') && childX - computedOffset - popoverWidth > 0) {
+        setPositionValue(position);
+      }
+
+      if (position.includes('right') && childX + childWidth + computedOffset + popoverWidth < windowWidth) {
+        setPositionValue(position);
+      }
+
+      return;
+    }
+
+    if (
+      positionValue.includes('top') &&
+      popoverY < 0 &&
+      childY + childHeight + computedOffset + popoverHeight < windowHeight
+    ) {
+      setPositionValue(positionValue.replace('top', 'bottom') as Position);
+    }
+
+    if (
+      positionValue.includes('bottom') &&
+      popoverY + popoverHeight >= windowHeight &&
+      childY - computedOffset - popoverHeight > 0
+    ) {
+      setPositionValue(positionValue.replace('bottom', 'top') as Position);
+    }
+
+    if (
+      positionValue.includes('left') &&
+      popoverX < 0 &&
+      childX + childWidth + computedOffset + popoverWidth < windowWidth
+    ) {
+      setPositionValue(positionValue.replace('left', 'right') as Position);
+    }
+
+    if (
+      positionValue.includes('right') &&
+      popoverX + popoverWidth >= windowWidth &&
+      childX - computedOffset - popoverWidth > 0
+    ) {
+      setPositionValue(positionValue.replace('right', 'left') as Position);
+    }
+  }, [computedOffset, position, positionValue, windowHeight, windowWidth]);
+
+  useEffect(() => {
+    handlePopoverPositionChange();
+  }, [handlePopoverPositionChange, windowWidth, windowHeight]);
+
+  useEffect(() => {
+    if (isOpen) {
+      handleOpen?.();
+
+      handlePopoverPositionChange();
+    } else handleClose?.();
+  }, [isOpen, handleOpen, handleClose, handlePopoverPositionChange]);
+
+  useEffect(() => {
+    setPositionValue(position);
+  }, [position]);
+
+  useEffect(() => {
+    calcuratePositionValue(positionValue);
+  }, [calcuratePositionValue, positionValue]);
 
   useEffect(() => {
     calcuratePositionValue(position);
