@@ -83,7 +83,7 @@ exports[`<RangePickerField /> when size is lg match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: inherit;
+  background-color: #00000000;
   border-width: 0;
   padding: 0;
   overflow: hidden;
@@ -349,7 +349,7 @@ exports[`<RangePickerField /> when size is md match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: inherit;
+  background-color: #00000000;
   border-width: 0;
   padding: 0;
   overflow: hidden;
@@ -615,7 +615,7 @@ exports[`<RangePickerField /> when size is sm match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: inherit;
+  background-color: #00000000;
   border-width: 0;
   padding: 0;
   overflow: hidden;
