@@ -67,31 +67,33 @@ export const DateInput = withDateInputVariation(
           overflow="hidden"
           {...restProps}
         >
-          <Pressable
-            ref={composeRef}
-            pl={px}
-            justifyContent="center"
-            flexGrow={1}
-            disabled={disabled}
-            onClick={onFocus}
-            onBlur={() => setIsFocused(false)}
-            onFocus={() => {
-              setIsFocused(true);
+          <Box width="100%">
+            <Pressable
+              ref={composeRef}
+              pl={px}
+              justifyContent="center"
+              flexGrow={1}
+              disabled={disabled}
+              onClick={onFocus}
+              onBlur={() => setIsFocused(false)}
+              onFocus={() => {
+                setIsFocused(true);
 
-              onFocus?.();
-            }}
-          >
-            <>
-              {value && label ? (
-                <Body level={6} color={labelColor} mb={labelSpacing}>
-                  {label}
+                onFocus?.();
+              }}
+            >
+              <>
+                {value && label ? (
+                  <Body level={6} color={labelColor} mb={labelSpacing}>
+                    {label}
+                  </Body>
+                ) : null}
+                <Body level={bodyLevel} lineLimit={1} color={value ? color : label ? labelColor : 'onView3'}>
+                  {value || label || placeholder}
                 </Body>
-              ) : null}
-              <Body level={bodyLevel} lineLimit={1} color={value ? color : label ? labelColor : 'onView3'}>
-                {value || label || placeholder}
-              </Body>
-            </>
-          </Pressable>
+              </>
+            </Pressable>
+          </Box>
           <HStack spacing={iconSpacing} pl={iconSpacing}>
             {!disabled && value ? (
               <PressableBox as="button" onClick={onClear} hitSlop={hitSlop} justifyContent="center">
