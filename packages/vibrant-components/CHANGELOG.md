@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.5...vibrant-components-0.85.6) (2023-11-06)
+
+
+### Bug Fixes
+
+* popover maxWidth 동작하지 않는 이슈 수정 ([#892](https://github.com/pedaling/opensource/issues/892)) ([b16230a](https://github.com/pedaling/opensource/commit/b16230aba1dfcd7c2e2651ae38bf2c86ed7e3ed3))
+
 ### [0.85.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.4...vibrant-components-0.85.5) (2023-11-01)
 
 
