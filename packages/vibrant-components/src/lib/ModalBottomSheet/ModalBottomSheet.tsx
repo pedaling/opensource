@@ -167,7 +167,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               >
                 <HStack px={[20, 32]} flexShrink={0}>
                   {title ? (
-                    <Title as="h2" level={[4, 3]}>
+                    <Title as="h2" level={[4, 3]} flexShrink={1}>
                       {title}
                     </Title>
                   ) : null}
