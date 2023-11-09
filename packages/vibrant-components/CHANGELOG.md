@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.9](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.8...vibrant-components-0.85.9) (2023-11-09)
+
+
+### Bug Fixes
+
+* 앱 ModalBottomSheet에서 title 영역이 shrink 되지않는 문제를 해결한다 ([#897](https://github.com/pedaling/opensource/issues/897)) ([ad077ff](https://github.com/pedaling/opensource/commit/ad077ff33f6532c7d59a6cfab4946c8d6e51263f))
+
 ### [0.85.8](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.7...vibrant-components-0.85.8) (2023-11-07)
 
 ### [0.85.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.6...vibrant-components-0.85.7) (2023-11-06)
