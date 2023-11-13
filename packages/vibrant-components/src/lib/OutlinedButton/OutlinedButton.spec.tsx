@@ -40,7 +40,7 @@ describe('<OutlinedButton />', () => {
       });
 
       it('should have bold font weight', async () => {
-        expect(subject()).toHaveStyleRule('font-weight', '700');
+        expect(subject()).toHaveStyleRule('font-weight', '500');
       });
 
       it('should not have font weight in media query', async () => {
@@ -56,7 +56,7 @@ describe('<OutlinedButton />', () => {
       });
 
       it('should have bold font weight', async () => {
-        expect(subject()).toHaveStyleRule('font-weight', '700');
+        expect(subject()).toHaveStyleRule('font-weight', '500');
       });
 
       it('should not have font weight in media query', async () => {
