@@ -8,6 +8,7 @@ export default {
   args: {
     title: '타이틀을 입력하세요',
     kind: 'warning',
+    contents: '콘텐츠를 입력하세요',
     buttonText: 'Action',
     onButtonClick: () => {},
   },

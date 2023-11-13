@@ -44,7 +44,7 @@ export const withCalloutVariation = withVariation<CalloutProps>('Callout')(
       error: {
         backgroundColor: 'errorContainer',
         fontColor: 'onViewError',
-        IconComponent: Icon.Alert,
+        IconComponent: Icon.AlertCircle,
       },
       warning: {
         backgroundColor: 'warningContainer',
