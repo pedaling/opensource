@@ -2,6 +2,16 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.10](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.9...vibrant-components-0.85.10) (2023-11-13)
+
+
+### Features
+
+* add Paragraph level 4 ([#898](https://github.com/pedaling/opensource/issues/898)) ([d31bdc0](https://github.com/pedaling/opensource/commit/d31bdc0ffed7f45624b522f7e82a0d022cf826a9))
+* update callout layout and typography ([#899](https://github.com/pedaling/opensource/issues/899)) ([e61ce4b](https://github.com/pedaling/opensource/commit/e61ce4b9d77f31d76e6d566ea8622f70e85cc9cf))
+* update Contained/OutlinedButton to have specified font-weight by size ([#901](https://github.com/pedaling/opensource/issues/901)) ([4b049e4](https://github.com/pedaling/opensource/commit/4b049e42d60161be284880d7b7925c38083dabdc))
+* update TableHeader and TableDataCell font-weight ([#900](https://github.com/pedaling/opensource/issues/900)) ([3b8977b](https://github.com/pedaling/opensource/commit/3b8977bfe9410d6fc793950e1137baa63804619a))
+
 ### [0.85.9](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.8...vibrant-components-0.85.9) (2023-11-09)
 
 

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.10](https://github.com/pedaling/opensource/compare/vibrant-theme-0.85.9...vibrant-theme-0.85.10) (2023-11-13)
+
+
+### Features
+
+* add Paragraph level 4 ([#898](https://github.com/pedaling/opensource/issues/898)) ([d31bdc0](https://github.com/pedaling/opensource/commit/d31bdc0ffed7f45624b522f7e82a0d022cf826a9))
+
 ### [0.85.9](https://github.com/pedaling/opensource/compare/vibrant-theme-0.85.8...vibrant-theme-0.85.9) (2023-11-09)
 
 ### [0.85.8](https://github.com/pedaling/opensource/compare/vibrant-theme-0.85.7...vibrant-theme-0.85.8) (2023-11-07)
