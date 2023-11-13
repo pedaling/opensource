@@ -3,7 +3,7 @@ import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { TypographyWeight } from '@vibrant-ui/theme';
 
 export type ParagraphProps = Omit<TextProps, keyof PositionSystemProps | keyof TypographySystemProps> & {
-  level: ResponsiveValue<1 | 2 | 3>;
+  level: ResponsiveValue<1 | 2 | 3 | 4>;
   weight?: ResponsiveValue<TypographyWeight>;
   testId?: string;
 };
