@@ -19,6 +19,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
     disclosureSize,
     children,
     contentsSpacing,
+    weight,
     testId = 'outlined-button',
     ...restProps
   }) => (
@@ -47,7 +48,7 @@ export const OutlinedButton = withOutlinedButtonVariation(
       >
         {IconComponent && <IconComponent size={iconSize} mx={2} />}
         {Boolean(children) && (
-          <Text typography={typography} fontWeight="bold" mx={4}>
+          <Text typography={typography} fontWeight={weight} mx={4}>
             {children}
           </Text>
         )}

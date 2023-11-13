@@ -18,6 +18,7 @@ export const ContainedButton = withContainedButtonVariation(
     disclosureSize,
     contentsSpacing,
     children,
+    weight,
     testId = 'contained-button',
     ...restProps
   }) => (
@@ -42,7 +43,7 @@ export const ContainedButton = withContainedButtonVariation(
       >
         {IconComponent && <IconComponent size={iconSize} testId="icon-box" mx={2} />}
         {Boolean(children) && (
-          <Text data-testid="button-text" typography={typography} fontWeight="bold" mx={4}>
+          <Text data-testid="button-text" typography={typography} fontWeight={weight} mx={4}>
             {children}
           </Text>
         )}

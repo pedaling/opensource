@@ -38,6 +38,7 @@ export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('O
         iconSize: 16,
         disclosureSize: 16,
         contentsSpacing: 0,
+        weight: 'medium',
       },
       md: {
         typography: 'body2',
@@ -47,6 +48,7 @@ export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('O
         iconSize: 18,
         disclosureSize: 16,
         contentsSpacing: 0,
+        weight: 'medium',
       },
       lg: {
         typography: 'body2',
@@ -56,6 +58,7 @@ export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('O
         iconSize: 18,
         disclosureSize: 16,
         contentsSpacing: 0,
+        weight: 'bold',
       },
       xl: {
         typography: 'body1',
@@ -65,6 +68,7 @@ export const withOutlinedButtonVariation = withVariation<OutlinedButtonProps>('O
         iconSize: 20,
         disclosureSize: 18,
         contentsSpacing: 2,
+        weight: 'bold',
       },
     } as const,
   }),
