@@ -8,7 +8,7 @@ exports[`<OutlinedButton /> match snapshot 1`] = `
   text-fill-color: #0c0c0c;
   font-size: 0.75rem;
   line-height: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-left: 4px;
   margin-right: 4px;
 }
@@ -17,6 +17,12 @@ exports[`<OutlinedButton /> match snapshot 1`] = `
   .emotion-0 {
     font-size: 0.875rem;
     line-height: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .emotion-0 {
+    font-weight: 700;
   }
 }
 
