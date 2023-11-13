@@ -1,6 +1,7 @@
-import { Box, Text } from '@vibrant-ui/core';
-import { ContainedButton } from '../ContainedButton';
+import { Box } from '@vibrant-ui/core';
 import { HStack } from '../HStack';
+import { OutlinedButton } from '../OutlinedButton';
+import { Paragraph } from '../Paragraph';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { withCalloutVariation } from './CalloutProps';
@@ -24,41 +25,34 @@ export const Callout = withCalloutVariation(
       borderWidth={1}
       borderColor="outline1"
       rounded="sm"
-      p={15}
+      px={16}
+      py={8}
       data-testid={testId}
     >
-      <HStack spacing={6}>
-        <Box mt={1}>
-          <IconComponent.Fill fill={fontColor} size={16} />
+      <HStack spacing={12}>
+        <Box py={8}>
+          <IconComponent.Fill fill={fontColor} size={14} />
         </Box>
-        <Title level={7} weight="bold" color={fontColor} overflowWrap="anywhere">
-          {title}
-        </Title>
-      </HStack>
-      <VStack mt={8}>
-        {contents ? (
-          <Text
-            color="onView1"
-            mb={contents ? 2 : 0}
-            lineHeight={18}
-            fontSize={14}
-            fontWeight="regular"
-            flex={1}
-            overflowWrap="anywhere"
-          >
-            {contents}
-          </Text>
-        ) : (
-          renderContents?.()
-        )}
-      </VStack>
-      {buttonText ? (
-        <VStack alignHorizontal="end" mt={12}>
-          <ContainedButton onClick={onButtonClick} size="md" kind="tertiary">
-            {buttonText}
-          </ContainedButton>
+        <VStack py={6} spacing={8}>
+          <Title level={7} weight="bold" color="onView1" overflowWrap="anywhere">
+            {title}
+          </Title>
+          {contents ? (
+            <Paragraph level={4} color="onView1" overflowWrap="anywhere">
+              {contents}
+            </Paragraph>
+          ) : (
+            renderContents?.()
+          )}
+          {buttonText ? (
+            <VStack alignHorizontal="start">
+              <OutlinedButton onClick={onButtonClick} size="sm">
+                {buttonText}
+              </OutlinedButton>
+            </VStack>
+          ) : null}
         </VStack>
-      ) : null}
+      </HStack>
     </Box>
   )
 );
