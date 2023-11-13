@@ -80,7 +80,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
               <>
                 <Body
                   level={2}
-                  weight="bold"
+                  weight="medium"
                   minWidth={0}
                   lineLimit={lineLimit}
                   wordBreak={wordBreak}
