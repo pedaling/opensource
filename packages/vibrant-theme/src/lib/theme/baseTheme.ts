@@ -111,6 +111,10 @@ export const baseTheme: Theme = {
       fontSize: '1rem',
       lineHeight: '1.75rem',
     },
+    paragraph4: {
+      fontSize: '0.875rem',
+      lineHeight: '1.5rem',
+    },
   },
   typographyWeight: {
     regular: {

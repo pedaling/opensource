@@ -14,6 +14,7 @@ export type TypographyKind =
   | 'paragraph1'
   | 'paragraph2'
   | 'paragraph3'
+  | 'paragraph4'
   | 'title1'
   | 'title2'
   | 'title3'
