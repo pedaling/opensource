@@ -1,6 +1,5 @@
 import type { FC } from 'react';
 import type { ReactElementChild } from '../../types';
-import { AnimationProvider } from '../AnimationProvider';
 import { ConfigProvider } from '../ConfigProvider';
 import type { ConfigProviderProps } from '../ConfigProvider';
 import { PortalRootProvider } from '../PortalRoot';
@@ -29,20 +28,18 @@ export const VibrantProvider: FC<VibrantProviderProps> = ({
 }) => (
   <ConfigProvider dependencies={dependencies} translations={translations}>
     <SafeAreaProvider>
-      <AnimationProvider>
-        <ThemeProvider theme={theme ?? {}} root={root}>
-          <StackedPortalProvider
-            priorityOrder={{
-              top: portalTopPriorityOrder,
-              bottom: portalBottomPriorityOrder,
-            }}
-          >
-            <PortalRootProvider zIndex={portalRootZIndex}>
-              <WindowDimensionsProvider>{children}</WindowDimensionsProvider>
-            </PortalRootProvider>
-          </StackedPortalProvider>
-        </ThemeProvider>
-      </AnimationProvider>
+      <ThemeProvider theme={theme ?? {}} root={root}>
+        <StackedPortalProvider
+          priorityOrder={{
+            top: portalTopPriorityOrder,
+            bottom: portalBottomPriorityOrder,
+          }}
+        >
+          <PortalRootProvider zIndex={portalRootZIndex}>
+            <WindowDimensionsProvider>{children}</WindowDimensionsProvider>
+          </PortalRootProvider>
+        </StackedPortalProvider>
+      </ThemeProvider>
     </SafeAreaProvider>
   </ConfigProvider>
 );

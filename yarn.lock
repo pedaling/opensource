@@ -2903,15 +2903,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@egjs/hammerjs@npm:^2.0.17":
-  version: 2.0.17
-  resolution: "@egjs/hammerjs@npm:2.0.17"
-  dependencies:
-    "@types/hammerjs": ^2.0.36
-  checksum: 8945137cec5837edd70af3f2e0ea621543eb0aa3b667e6269ec6485350f4d120c2434b37c7c30b1cf42a65275dd61c1f24626749c616696d3956ac0c008c4766
-  languageName: node
-  linkType: hard
-
 "@electron/get@npm:^1.14.1":
   version: 1.14.1
   resolution: "@electron/get@npm:1.14.1"
@@ -9845,13 +9836,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hammerjs@npm:^2.0.36":
-  version: 2.0.41
-  resolution: "@types/hammerjs@npm:2.0.41"
-  checksum: d16fbd688fc9b18cc270abe8dea8d4c50ef7bd8375e593d92c233d299387933a6b003c8db69819344833052458bc5f9ef1b472001277a49f095928d184356006
-  languageName: node
-  linkType: hard
-
 "@types/hast@npm:^2.0.0":
   version: 2.3.4
   resolution: "@types/hast@npm:2.3.4"
@@ -14150,7 +14134,6 @@ __metadata:
     react-hook-form: 7.38.0
     react-native: 0.71.2
     react-native-config: 1.5.0
-    react-native-gesture-handler: ~2.9.0
     react-native-linear-gradient-degree: 0.0.1
     react-native-pager-view: 5.4.24
     react-native-reanimated: 3.4.2
@@ -32053,22 +32036,6 @@ __metadata:
     react-native-windows:
       optional: true
   checksum: febe1c137425c9df95f39eea6b1b6035dd4c971dd6205a8e630ceaa4845fe7426224566836203491c1add9bb0ceaa16462dca071cd3ad0fdd6f7c7b80f2bebaf
-  languageName: node
-  linkType: hard
-
-"react-native-gesture-handler@npm:~2.9.0":
-  version: 2.9.0
-  resolution: "react-native-gesture-handler@npm:2.9.0"
-  dependencies:
-    "@egjs/hammerjs": ^2.0.17
-    hoist-non-react-statics: ^3.3.0
-    invariant: ^2.2.4
-    lodash: ^4.17.21
-    prop-types: ^15.7.2
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 6bfdd9d23486193424dcfb0073dd821a216c2783dde746d73a3441e920602343f09efa10261c6f09fcbcb645d029a95305c86f61997053c01ad89751c8c6d236
   languageName: node
   linkType: hard
 
