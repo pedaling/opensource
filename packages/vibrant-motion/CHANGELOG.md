@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.11](https://github.com/pedaling/opensource/compare/vibrant-motion-0.85.10...vibrant-motion-0.85.11) (2023-11-16)
+
+
+### Bug Fixes
+
+* react-native-gesture-handler를 제거한다 ([#902](https://github.com/pedaling/opensource/issues/902)) ([6a7f9d2](https://github.com/pedaling/opensource/commit/6a7f9d2aece642752ea12a0fc68ec1c9dd6b6214))
+
 ### [0.85.10](https://github.com/pedaling/opensource/compare/vibrant-motion-0.85.9...vibrant-motion-0.85.10) (2023-11-13)
 
 ### [0.85.9](https://github.com/pedaling/opensource/compare/vibrant-motion-0.85.8...vibrant-motion-0.85.9) (2023-11-09)

@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/layouts",
-  "version": "0.85.10",
+  "version": "0.85.11",
   "private": false,
   "sideEffects": false,
   "react-native": "index.native",
