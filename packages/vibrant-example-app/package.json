@@ -28,7 +28,6 @@
     "expo-updates": "*",
     "react": "*",
     "react-native": "*",
-    "react-native-gesture-handler": "*",
     "react-native-linear-gradient-degree": "*",
     "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
