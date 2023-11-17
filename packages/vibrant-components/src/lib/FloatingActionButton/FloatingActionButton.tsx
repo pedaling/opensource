@@ -46,9 +46,8 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
         {...offsetProps}
       >
         {({ layoutStyle }) => (
-          <Box elevationLevel={1} borderRadius={25} {...layoutStyle}>
+          <Box ref={innerRef} elevationLevel={1} borderRadius={25} {...layoutStyle}>
             <Pressable
-              ref={innerRef}
               width="100%"
               height="100%"
               borderRadius={25}
