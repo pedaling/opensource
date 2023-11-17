@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { transformResponsiveValue, useCurrentTheme, useWindowDimensions } from '@vibrant-ui/core';
+import { Box, transformResponsiveValue, useCurrentTheme, useWindowDimensions } from '@vibrant-ui/core';
 import { Pressable } from '../Pressable';
 import { StackedPortal } from '../StackedPortal';
 import { withFloatingActionButtonVariation } from './FloatingActionButtonProps';
@@ -46,20 +46,22 @@ export const FloatingActionButton = withFloatingActionButtonVariation(
         {...offsetProps}
       >
         {({ layoutStyle }) => (
-          <Pressable
-            ref={innerRef}
-            borderRadius={25}
-            backgroundColor="surface2"
-            elevationLevel={1}
-            alignItems="center"
-            justifyContent="center"
-            overlayColor="onView1"
-            interactions={['hover', 'focus', 'active']}
-            {...restProps}
-            {...layoutStyle}
-          >
-            <IconComponent size={20} />
-          </Pressable>
+          <Box elevationLevel={1} borderRadius={25} {...layoutStyle}>
+            <Pressable
+              ref={innerRef}
+              width="100%"
+              height="100%"
+              borderRadius={25}
+              backgroundColor="surface2"
+              alignItems="center"
+              justifyContent="center"
+              overlayColor="onView1"
+              interactions={['hover', 'focus', 'active']}
+              {...restProps}
+            >
+              <IconComponent size={20} />
+            </Pressable>
+          </Box>
         )}
       </StackedPortal>
     );
