@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.11...vibrant-components-0.85.12) (2023-11-17)
+
+
+### Bug Fixes
+
+* contents area of CallOut Component ([#903](https://github.com/pedaling/opensource/issues/903)) ([b59cd4e](https://github.com/pedaling/opensource/commit/b59cd4e4d58296bdaade95841ce206a0ca5bd281))
+* Pressable에서 elevationLevel을 받을 수 없게 한다 ([#904](https://github.com/pedaling/opensource/issues/904)) ([d3b6177](https://github.com/pedaling/opensource/commit/d3b6177b283dada6e30495dd05d2389aea00dd83))
+
 ### [0.85.11](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.10...vibrant-components-0.85.11) (2023-11-16)
 
 ### [0.85.10](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.9...vibrant-components-0.85.10) (2023-11-13)
