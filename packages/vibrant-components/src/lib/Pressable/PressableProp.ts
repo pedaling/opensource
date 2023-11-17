@@ -3,7 +3,6 @@ import type {
   BackgroundSystemProps,
   BorderSystemProps,
   BoxElements,
-  ElevationSystemProps,
   FlexboxSystemProps,
   InteractionSystemProps,
   OverflowSystemProps,
@@ -23,7 +22,6 @@ export type PressableProps = BackgroundSystemProps &
   PositionSystemProps &
   SpacingSystemProps &
   SizingSystemProps &
-  ElevationSystemProps &
   Pick<InteractionSystemProps, 'hitSlop'> & {
     ref?: Ref<any>;
     disabled?: boolean;
