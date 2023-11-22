@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.13](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.12...vibrant-components-0.85.13) (2023-11-22)
+
+
+### Features
+
+* 모바싯이 열려있을 때 esc를 누르면 닫히도록 한다 ([#906](https://github.com/pedaling/opensource/issues/906)) ([c364f9d](https://github.com/pedaling/opensource/commit/c364f9d3bfd489fa7946a4a170ad8c3f39a22d28))
+
 ### [0.85.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.11...vibrant-components-0.85.12) (2023-11-17)
 
 
