@@ -115,6 +115,22 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       }
     }, [containerHeight]);
 
+    useEffect(() => {
+      if (typeof window === 'undefined' || !isOpen || (!dimClosable && !showCloseButton)) {
+        return;
+      }
+
+      const onKeydown = (e: KeyboardEvent) => {
+        if (e.code === 'Escape') {
+          closeModal();
+        }
+      };
+
+      window.addEventListener('keydown', onKeydown);
+
+      return () => window.removeEventListener('keydown', onKeydown);
+    }, [closeModal, isOpen, dimClosable, showCloseButton]);
+
     return (
       <>
         {opener}
