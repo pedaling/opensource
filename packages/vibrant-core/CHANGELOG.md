@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.86.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.85.14...vibrant-core-0.86.0) (2023-11-23)
+
+
+### Bug Fixes
+
+* react-native useWindowDimensions 호출 횟수를 줄인다 ([#908](https://github.com/pedaling/opensource/issues/908)) ([166376f](https://github.com/pedaling/opensource/commit/166376f52214f4bbf711c6d97cbc9bd249c9df29))
+
 ### [0.85.14](https://github.com/pedaling/opensource/compare/vibrant-core-0.85.13...vibrant-core-0.85.14) (2023-11-23)
 
 ### [0.85.13](https://github.com/pedaling/opensource/compare/vibrant-core-0.85.12...vibrant-core-0.85.13) (2023-11-22)
