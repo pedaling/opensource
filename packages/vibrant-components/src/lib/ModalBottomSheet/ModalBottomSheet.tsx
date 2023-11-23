@@ -116,7 +116,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     }, [containerHeight]);
 
     useEffect(() => {
-      if (typeof window === 'undefined' || !isOpen || (!dimClosable && !showCloseButton)) {
+      if (typeof window === 'undefined' || isNative || !isOpen || (!dimClosable && !showCloseButton)) {
         return;
       }
 
