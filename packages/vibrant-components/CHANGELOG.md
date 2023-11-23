@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.85.14](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.13...vibrant-components-0.85.14) (2023-11-23)
+
+
+### Bug Fixes
+
+* 모바싯을 native에서 여는 경우 window객체 접근을 막는다 ([#907](https://github.com/pedaling/opensource/issues/907)) ([4f73876](https://github.com/pedaling/opensource/commit/4f73876ac23d47b3d5251023783b93fb885704a9))
+
 ### [0.85.13](https://github.com/pedaling/opensource/compare/vibrant-components-0.85.12...vibrant-components-0.85.13) (2023-11-22)
 
 
