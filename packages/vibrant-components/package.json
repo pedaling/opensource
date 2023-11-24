@@ -16,6 +16,9 @@
       "optional": true
     }
   },
+  "devDependencies": {
+    "@storybook/csf": "0.0.2--canary.4566f4d.1"
+  },
   "storybook": {
     "url": "https://main--62cbb96b6c756c24b7a273a7.chromatic.com/"
   }

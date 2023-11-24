@@ -7,18 +7,20 @@
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
-    "react-native": "^0.71.0"
+    "react-dom": "18.2.0",
+    "react-native-linear-gradient-degree": "0.0.1",
+    "react-native-svg": "13.4.0",
+    "react-native-tab-view": "3.3.4",
+    "react-native": "^0.71.0",
+    "react-native-safe-area-context": "^3.3.2 || ^4.3.1",
+    "react-native-screens": "3.22.1",
+    "@emotion/native": "^11.5.0"
   },
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@emotion/is-prop-valid": "^1.1.3",
-    "@emotion/memoize": "^0.7.4",
-    "@emotion/native": "^11.5.0",
-    "react-native-safe-area-context": "^3.3.2 || ^4.3.1"
-  },
-  "devDependencies": {
-    "@emotion/native": "^11.5.0"
+    "@emotion/memoize": "^0.7.4"
   },
   "peerDependenciesMeta": {
     "@types/react": {

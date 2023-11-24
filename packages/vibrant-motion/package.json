@@ -8,10 +8,13 @@
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
     "react-native": "^0.71.0",
-    "react-native-reanimated": "~3.3.0"
+    "react-native-reanimated": "~3.3.0",
+    "motion": "10.15.5"
   },
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@storybook/csf": "0.0.2--canary.4566f4d.1"
+  },
   "peerDependenciesMeta": {
     "@types/react": {
       "optional": true

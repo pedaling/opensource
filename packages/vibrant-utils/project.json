@@ -16,7 +16,7 @@
         "external": ["react/jsx-runtime"],
         "generateExportsField": true,
         "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "peerDependencies",
+        "buildableProjectDepsInPackageJsonType": "dependencies",
         "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",
         "assets": [
