@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.86.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.86.0...vibrant-utils-0.86.1) (2023-11-24)
+
+
+### Bug Fixes
+
+* vibrant-utils의 디펜던시를 peerDependency로 둔다 ([0161463](https://github.com/pedaling/opensource/commit/0161463a293ea406381daaad8019def487a62add))
+
 ## [0.86.0](https://github.com/pedaling/opensource/compare/vibrant-utils-0.85.14...vibrant-utils-0.86.0) (2023-11-23)
 
 ### [0.85.14](https://github.com/pedaling/opensource/compare/vibrant-utils-0.85.13...vibrant-utils-0.85.14) (2023-11-23)
