@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.86.2](https://github.com/pedaling/opensource/compare/vibrant-utils-0.86.1...vibrant-utils-0.86.2) (2023-11-24)
+
+
+### Bug Fixes
+
+* dependency 정리 ([9f2fba1](https://github.com/pedaling/opensource/commit/9f2fba16a579d9cbc8ab2376588e1c9b8d06cf4a))
+
 ### [0.86.1](https://github.com/pedaling/opensource/compare/vibrant-utils-0.86.0...vibrant-utils-0.86.1) (2023-11-24)
 
 
