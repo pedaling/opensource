@@ -1,115 +1,123 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import type { ComponentClass } from 'react';
-import { useEffect, useImperativeHandle, useMemo } from 'react';
-import Animated, { interpolate, interpolateColor, useAnimatedStyle } from 'react-native-reanimated';
+import { useEffect, useMemo, useRef } from 'react';
+import { Animated } from 'react-native';
 import { useInterpolation } from '@vibrant-ui/core';
+import { useSafeDeps } from '@vibrant-ui/utils';
+import { NATIVE_SUPPORT_ANIMATION_PROPERTIES, easings } from '../constants';
 import { transformMotionProps } from '../props/transform';
-import { useMotion } from '../useMotion';
-import { withTransformStyle } from '../withTransformStyle';
+import { handleTransformStyle } from '../utils/handleTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
-  ({ innerRef, children, duration, loop, from, to, delay = 0, easing = 'easeOutQuad', onEnd }) => {
+  ({
+    innerRef,
+    children,
+    duration,
+    loop,
+    from,
+    to,
+    delay = 0,
+    easing = 'easeOutQuad',
+    onEnd,
+    style = {},
+    ...restProps
+  }) => {
     const { interpolation } = useInterpolation(transformMotionProps);
-    const { progress, startAnimation, stopAnimation, resumeAnimation } = useMotion({
-      loop: Boolean(loop),
-      duration,
-      easing,
-      onEnd,
-      delay,
-    });
-    const styleWithTransform = useMemo(() => {
-      const interpolationFrom = interpolation(from);
-      const interpolationTo = interpolation(to);
+    const onEndRef = useSafeDeps(onEnd);
 
-      return withTransformStyle(
-        Object.keys(interpolationTo).reduce<Record<string, [number, number]>>((acc, key) => {
-          if (key === 'transform') {
-            const value = interpolationFrom[key];
-            const transformValue = value.map((transformStyle: Record<string, any>) =>
-              Object.fromEntries(
-                Object.entries(transformStyle).map(([transformKey], i) => [
-                  transformKey,
-                  [interpolationFrom[key][i][transformKey], interpolationTo[key][i][transformKey]],
-                ])
-              )
-            );
+    const useNativeDriver = useRef(true);
 
-            return {
-              ...acc,
-              [key]: transformValue,
-            };
-          }
+    const interpolatedAnimations = useMemo(() => {
+      const fromStyle = interpolation(from);
+      const toStyle = interpolation(to);
 
-          return {
-            ...acc,
-            [key]: [interpolationFrom[key], interpolationTo[key]],
-          };
-        }, {})
+      return Object.fromEntries(
+        Object.entries(fromStyle).map(([property]) => [property, [fromStyle[property], toStyle[property]]] as const)
       );
-    }, [from, interpolation, to]);
+    }, [JSON.stringify(from), JSON.stringify(to), interpolation]);
 
-    const style = useAnimatedStyle(
+    const animatedValue = useMemo(() => new Animated.Value(0), []);
+
+    const interpolatedAnimationsKey = JSON.stringify(interpolatedAnimations);
+
+    const animatedStyle = useMemo(
       () =>
-        Object.keys(styleWithTransform).reduce((acc, key) => {
-          if (key === 'transform') {
-            const transform = styleWithTransform['transform']?.map((transformStyle: Record<string, any>) => {
-              const [[key, values]] = Object.entries(transformStyle) as [string, [number | string, number | string]][];
-              const suffix = key === 'rotate' && typeof values[0] === 'string' ? 'deg' : '';
-              const styleValues = (suffix ? values.map(a => parseInt(a as string)) : values) as [number, number];
+        Object.fromEntries(
+          Object.keys(interpolatedAnimations).map(key => {
+            const value = interpolatedAnimations[key];
 
-              if ((key === 'translateX' || key === 'translateY') && values.some(value => typeof value === 'string')) {
-                throw new Error(`The ${key} property does not support string values. Please use numbers instead.`);
-              }
+            if (!NATIVE_SUPPORT_ANIMATION_PROPERTIES.includes(key)) {
+              useNativeDriver.current = false;
+            }
 
-              const interpolatedValue = suffix
-                ? interpolate(progress.value, [0, 1], styleValues) + suffix
-                : interpolate(progress.value, [0, 1], styleValues);
+            if (key === 'transform' && Array.isArray(value[0])) {
+              const [transformFrom, transformTo] = value;
 
-              return { [key]: interpolatedValue };
-            });
+              return [
+                key,
+                transformFrom.map((transformStyle, index) =>
+                  Object.fromEntries(
+                    Object.entries(transformStyle).map(([transformKey, transformValue]) => [
+                      transformKey,
+                      animatedValue.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [transformValue, transformTo[index][transformKey]],
+                      }),
+                    ])
+                  )
+                ),
+              ];
+            }
 
-            return Object.assign({}, acc, {
-              [key]: transform,
-            });
-          }
-
-          const value = key.match(/color/i)
-            ? interpolateColor(progress.value, [0, 1], styleWithTransform[key], 'RGB')
-            : interpolate(progress.value, [0, 1], styleWithTransform[key]);
-
-          return Object.assign({}, acc, {
-            [key]: value,
-          });
-        }, {}),
-      [styleWithTransform]
-    );
-
-    useImperativeHandle(
-      innerRef,
-      () => ({
-        start: () => {
-          startAnimation();
-        },
-        pause: stopAnimation,
-        stop: () => {},
-        resume: resumeAnimation,
-      }),
-      [resumeAnimation, startAnimation, stopAnimation]
+            return [
+              key,
+              animatedValue.interpolate({
+                inputRange: [0, 1],
+                outputRange: [...value],
+              }),
+            ];
+          })
+        ),
+      [interpolatedAnimationsKey]
     );
 
     useEffect(() => {
-      if (innerRef) {
+      if (Object.keys(interpolatedAnimations).length === 0) {
         return;
       }
 
-      startAnimation();
-    }, [innerRef, loop, startAnimation]);
+      const animation = Animated.loop(
+        Animated.timing(animatedValue, {
+          toValue: 1,
+          duration,
+          easing: easings[easing],
+          delay,
+          useNativeDriver: useNativeDriver.current,
+        }),
+        {
+          iterations: loop ? -1 : 1,
+        }
+      );
+
+      animation.start(() => {
+        onEndRef.current?.();
+      });
+
+      return () => {
+        animation.stop();
+      };
+    }, [delay, duration, easing, interpolatedAnimationsKey]);
 
     const AnimatedViewComponent = useMemo(
       () => Animated.createAnimatedComponent(children.type as ComponentClass),
       [children.type]
     );
 
-    return <AnimatedViewComponent {...children.props} style={style} />;
+    const currentStyle = useMemo(() => interpolation(handleTransformStyle(style)), [style, interpolation]);
+
+    return (
+      <AnimatedViewComponent ref={innerRef} style={[currentStyle, animatedStyle]} {...restProps} {...children.props} />
+    );
   }
 );
