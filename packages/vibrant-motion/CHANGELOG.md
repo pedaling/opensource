@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.86.4](https://github.com/pedaling/opensource/compare/vibrant-motion-0.86.3...vibrant-motion-0.86.4) (2023-12-03)
+
+
+### Features
+
+* react-native-reanimated 대신 기본 react-native Animation을 사용한다 ([#911](https://github.com/pedaling/opensource/issues/911)) ([30384e7](https://github.com/pedaling/opensource/commit/30384e7f3b175d7cb78609e6849c73f6975447a7))
+
 ### [0.86.3](https://github.com/pedaling/opensource/compare/vibrant-motion-0.86.2...vibrant-motion-0.86.3) (2023-11-27)
 
 
