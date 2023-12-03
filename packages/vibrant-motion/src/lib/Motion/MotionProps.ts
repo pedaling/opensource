@@ -23,6 +23,7 @@ export type MotionProps = {
   delay?: number;
   animation: WithMotion<Omit<AllSystemProps, 'transform'> & TransformMotionProps>;
   easing?: keyof EasingDictionary;
+  style?: any;
   onEnd?: () => void;
 };
 

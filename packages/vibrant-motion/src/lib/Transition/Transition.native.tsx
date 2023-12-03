@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import type { ComponentClass } from 'react';
 import { useEffect, useMemo, useRef } from 'react';
 import { Animated } from 'react-native';
 import { useInterpolation } from '@vibrant-ui/core';
 import { useSafeDeps } from '@vibrant-ui/utils';
-import { easings } from '../constants';
+import { NATIVE_SUPPORT_ANIMATION_PROPERTIES, easings } from '../constants';
 import { transformMotionProps } from '../props/transform';
 import { handleTransformStyle } from '../utils/handleTransformStyle';
 import { withTransitionVariation } from './TransitionProp';
@@ -13,15 +14,17 @@ export const Transition = withTransitionVariation(
     const { interpolation } = useInterpolation(transformMotionProps);
     const reverse = useRef(false);
     const isFirstRender = useRef(true);
-    const useNativeDriver = useRef(true);
     const onEndRef = useSafeDeps(onEnd);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const interpolatedAnimation = useMemo(() => interpolation(animation), [JSON.stringify(animation), interpolation]);
 
+    const useNativeDriver = useRef(true);
+
     const previousAnimation = useRef<Record<string, any>>({});
 
-    const animatedValues = useRef<Record<string, Animated.Value>>({});
+    const animatedValue = useMemo(() => new Animated.Value(0), []);
+    const interpolatedAnimationKey = JSON.stringify(interpolatedAnimation);
 
     const animatedStyle = useMemo(
       () =>
@@ -30,7 +33,7 @@ export const Transition = withTransitionVariation(
             const value = interpolatedAnimation[key];
             const previousValue = previousAnimation.current[key];
 
-            if (!['transform', 'opacity'].includes(key)) {
+            if (!NATIVE_SUPPORT_ANIMATION_PROPERTIES.includes(key)) {
               useNativeDriver.current = false;
             }
 
@@ -39,73 +42,62 @@ export const Transition = withTransitionVariation(
                 key,
                 value.map((transformStyle, index) =>
                   Object.fromEntries(
-                    Object.entries(transformStyle).map(([transformKey, transformValue]) => {
-                      if (!animatedValues.current[`transform.${key}`]) {
-                        animatedValues.current[`transform.${key}`] = new Animated.Value(reverse.current ? 1 : 0);
-                      }
-
-                      const animatedValue = animatedValues.current[`transform.${key}`];
-
-                      return [
-                        transformKey,
-                        animatedValue.interpolate({
-                          inputRange: [0, 1],
-                          outputRange: reverse.current
-                            ? [previousValue?.[index]?.[transformKey] ?? transformValue, transformValue]
-                            : [transformValue, previousValue?.[index]?.[transformKey] ?? transformValue],
-                        }),
-                      ];
-                    })
+                    Object.entries(transformStyle).map(([transformKey, transformValue]) => [
+                      transformKey,
+                      animatedValue.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: reverse.current
+                          ? [transformValue, previousValue?.[index]?.[transformKey] ?? transformValue]
+                          : [previousValue?.[index]?.[transformKey] ?? transformValue, transformValue],
+                      }),
+                    ])
                   )
                 ),
               ];
             }
 
-            if (!animatedValues.current[key]) {
-              animatedValues.current[key] = new Animated.Value(reverse.current ? 1 : 0);
-            }
-
-            const animatedValue = animatedValues.current[key];
-
             return [
               key,
               animatedValue.interpolate({
                 inputRange: [0, 1],
-                outputRange: reverse.current ? [previousValue ?? value, value] : [value, previousValue ?? value],
+                outputRange: reverse.current ? [value, previousValue ?? value] : [previousValue ?? value, value],
               }),
             ];
           })
         ),
-      [animatedValues, interpolatedAnimation]
+      [interpolatedAnimationKey]
     );
 
     useEffect(() => {
-      if (isFirstRender.current) {
-        isFirstRender.current = false;
+      previousAnimation.current = interpolatedAnimation;
 
+      if (Object.keys(interpolatedAnimation).length === 0) {
         return;
       }
 
-      previousAnimation.current = interpolatedAnimation;
+      if (!isFirstRender.current) {
+        const animation = Animated.timing(animatedValue, {
+          toValue: reverse.current ? 0 : 1,
+          duration,
+          easing: easings[easing],
+          useNativeDriver: useNativeDriver.current,
+        });
 
-      Animated.parallel(
-        Object.values(animatedValues.current).map(animatedValue =>
-          Animated.timing(animatedValue, {
-            toValue: reverse.current ? 1 : 0,
-            duration,
-            easing: easings[easing],
-            useNativeDriver: useNativeDriver.current,
-          })
-        ),
-        {
-          stopTogether: false,
-        }
-      ).start(() => {
-        onEndRef.current?.();
-      });
+        reverse.current = !reverse.current;
 
-      reverse.current = !reverse.current;
-    }, [duration, easing, interpolatedAnimation, animatedStyle, onEndRef]);
+        animation.start(() => {
+          onEndRef.current?.();
+        });
+
+        return () => {
+          animation.stop();
+        };
+      } else {
+        isFirstRender.current = false;
+      }
+
+      return;
+    }, [interpolatedAnimationKey, animatedStyle, onEndRef]);
 
     const AnimatedViewComponent = useMemo(
       () => Animated.createAnimatedComponent(children.type as ComponentClass),

@@ -29,7 +29,6 @@
     "react": "*",
     "react-native": "*",
     "react-native-linear-gradient-degree": "*",
-    "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
     "react-native-screens": "*",
     "react-native-shadow-2": "*",
