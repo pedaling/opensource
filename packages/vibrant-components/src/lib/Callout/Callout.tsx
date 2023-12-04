@@ -34,7 +34,7 @@ export const Callout = withCalloutVariation(
           <IconComponent.Fill fill={fontColor} size={14} />
         </Box>
         <VStack py={6} spacing={8} width="100%">
-          <Title level={7} weight="bold" color="onView1" overflowWrap="anywhere">
+          <Title level={7} weight="medium" color="onView1" overflowWrap="anywhere">
             {title}
           </Title>
           {contents ? (
