@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.87.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.86.5...vibrant-components-0.87.0) (2023-12-05)
+
+
+### Bug Fixes
+
+* pressable의 overlayColor가 children 위에 보이도록 수정 ([#913](https://github.com/pedaling/opensource/issues/913)) ([7973a6e](https://github.com/pedaling/opensource/commit/7973a6e61130150100c0f325cc13229cfa39ef74))
+
 ### [0.86.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.86.4...vibrant-components-0.86.5) (2023-12-04)
 
 
