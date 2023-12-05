@@ -1,9 +1,9 @@
-import type { ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
+import type { ReactElementChildren, ResponsiveValue } from '@vibrant-ui/core';
 import { withVariation } from '@vibrant-ui/core';
 
 export type ContentAreaProps = {
   padding?: ResponsiveValue<boolean>;
-  children: ReactElementChild;
+  children: ReactElementChildren;
   testId?: string;
 };
 
