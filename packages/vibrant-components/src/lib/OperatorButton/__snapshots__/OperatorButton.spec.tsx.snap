@@ -90,6 +90,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   top: 0;
   bottom: 0;
   background-color: #0c0c0c;
+  pointer-events: none;
 }
 
 <div>
