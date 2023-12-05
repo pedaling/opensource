@@ -69,21 +69,21 @@ export const Pressable = withPressableVariation(
           {...(isDefined(href) ? { href } : { as, buttonType })}
           {...restProps}
         >
+          {children as ReactElementChild}
           {overlayColor && (
             <Transition animation={{ opacity: overlayOpacity }} duration={200}>
               <Box
                 as="span"
                 position="absolute"
-                zIndex={-1}
                 left={0}
                 right={0}
                 top={0}
                 bottom={0}
                 backgroundColor={overlayColor}
+                pointerEvents="none"
               />
             </Transition>
           )}
-          {children as ReactElementChild}
         </Component>
       </Transition>
     );
