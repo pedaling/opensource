@@ -150,13 +150,10 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #0c0c0c;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  fill: #0c0c0c;
 }
 
 .emotion-5 {
@@ -175,9 +172,6 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: 16px;
-  height: 16px;
-  fill: #0c0c0c;
 }
 
 .emotion-6 {
@@ -195,7 +189,12 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #0c0c0c;
 }
 
 .emotion-7 {
@@ -240,20 +239,20 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
         style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
         type="button"
       >
-        <span
-          class="emotion-4"
-          style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        />
         <svg
-          class="emotion-5"
+          class="emotion-4"
           data-testid="minus-regular"
           viewBox="0 0 24 24"
         >
           <path
-            class="emotion-6"
+            class="emotion-5"
             d="M21.25 13.25H2.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h18.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25Z"
           />
         </svg>
+        <span
+          class="emotion-6"
+          style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+        />
       </button>
     </div>
     <div
@@ -265,20 +264,20 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
         style="opacity: 1; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
         type="button"
       >
-        <span
-          class="emotion-4"
-          style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
-        />
         <svg
-          class="emotion-5"
+          class="emotion-4"
           data-testid="add-regular"
           viewBox="0 0 24 24"
         >
           <path
-            class="emotion-6"
+            class="emotion-5"
             d="M21.25 10.75h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v8h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25Z"
           />
         </svg>
+        <span
+          class="emotion-6"
+          style="opacity: 0; transition-property: opacity; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
+        />
       </button>
     </div>
   </div>
