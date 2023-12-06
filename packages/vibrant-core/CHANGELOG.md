@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.87.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.87.0...vibrant-core-0.87.1) (2023-12-06)
+
+
+### Bug Fixes
+
+* transform scale 사용 시 값 뒤에 px이 붙는 이슈를 수정한다 ([#915](https://github.com/pedaling/opensource/issues/915)) ([196d38d](https://github.com/pedaling/opensource/commit/196d38d1d8fd8cef07330b37f662ac5c434bad98))
+
 ## [0.87.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.86.5...vibrant-core-0.87.0) (2023-12-05)
 
 ### [0.86.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.86.4...vibrant-core-0.86.5) (2023-12-04)
