@@ -247,21 +247,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   overflow: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 .emotion-10::-webkit-scrollbar {
   display: none;
 }
 
-.emotion-13 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -323,15 +315,11 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
                 >
                   <div
                     class="emotion-3"
-                  >
-                    <div
-                      class="emotion-3"
-                    />
-                  </div>
+                  />
                 </div>
               </div>
               <div
-                class="emotion-13"
+                class="emotion-12"
               />
             </div>
           </div>
@@ -589,21 +577,13 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   overflow: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
 }
 
 .emotion-10::-webkit-scrollbar {
   display: none;
 }
 
-.emotion-13 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -665,15 +645,11 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
                 >
                   <div
                     class="emotion-3"
-                  >
-                    <div
-                      class="emotion-3"
-                    />
-                  </div>
+                  />
                 </div>
               </div>
               <div
-                class="emotion-13"
+                class="emotion-12"
               />
             </div>
           </div>
