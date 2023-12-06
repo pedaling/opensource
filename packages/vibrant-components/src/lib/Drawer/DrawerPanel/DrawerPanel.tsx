@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { Children, useMemo } from 'react';
-import { LayoutEvent, ScrollBox } from '@vibrant-ui/core';
-import { Box } from '@vibrant-ui/core';
+import type { LayoutEvent } from '@vibrant-ui/core';
+import { Box, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { Divider } from '../../Divider';
 import { VStack } from '../../VStack';
