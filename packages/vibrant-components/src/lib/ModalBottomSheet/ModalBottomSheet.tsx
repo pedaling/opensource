@@ -110,10 +110,10 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     }, [isOpen]);
 
     useEffect(() => {
-      if (containerHeight !== undefined) {
+      if (isOpen && containerHeight !== undefined) {
         setVisible(true);
       }
-    }, [containerHeight]);
+    }, [containerHeight, isOpen]);
 
     useEffect(() => {
       if (typeof window === 'undefined' || isNative || !isOpen || (!dimClosable && !showCloseButton)) {

@@ -84,10 +84,48 @@ export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = () => {
           title="클래스 완강을 축하합니다"
           subtitle="클래스메이트님을 위해 축하 선물을 준비했어요!"
           open={open}
+          renderContents={({ close }) => (
+            <ContainedButton kind="primary" size="lg" onClick={() => setOpen(false)}>
+              확인
+            </ContainedButton>
+          )}
           onClose={() => setOpen(false)}
         />
       </Box>
     </>
+  );
+};
+
+export const MultipleModal: ComponentStory<typeof ModalBottomSheet> = () => {
+  const [opened, setOpened] = useState(false);
+
+  return (
+    <VStack mt={36}>
+      <ContainedButton kind="primary" size="lg" onClick={() => setOpened(true)}>
+        열기
+      </ContainedButton>
+      <ModalBottomSheet
+        title="첫번째 모달"
+        subtitle="첫번째 모달입니다."
+        renderContents={() => (
+          <ContainedButton
+            kind="primary"
+            size="lg"
+            onClick={() => {
+              setOpened(false);
+
+              setTimeout(() => {
+                setOpened(true);
+              }, 100);
+            }}
+          >
+            닫기 및 다시 열기
+          </ContainedButton>
+        )}
+        open={opened}
+        onClose={() => setOpened(false)}
+      />
+    </VStack>
   );
 };
 

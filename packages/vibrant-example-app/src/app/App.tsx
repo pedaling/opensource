@@ -35,19 +35,19 @@ const App = () => {
       theme={{
         typographyWeight: {
           regular: {
-            fontFamily: 'Pretendard-Regular',
+            // fontFamily: 'Pretendard-Regular',
             fontWeight: '400',
           },
           medium: {
-            fontFamily: 'Pretendard-Medium',
+            // fontFamily: 'Pretendard-Medium',
             fontWeight: '500',
           },
           bold: {
-            fontFamily: 'Pretendard-Bold',
+            // fontFamily: 'Pretendard-Bold',
             fontWeight: '700',
           },
           extraBold: {
-            fontFamily: 'Pretendard-ExtraBold',
+            // fontFamily: 'Pretendard-ExtraBold',
             fontWeight: '800',
           },
         },
