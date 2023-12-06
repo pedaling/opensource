@@ -1,8 +1,8 @@
 import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
 
-function getTransformValue(value: number | string) {
-  if (typeof value === 'number') {
+function getTransformValue(key: string, value: number | string) {
+  if (typeof value === 'number' && key !== 'scale' && key !== 'scaleX' && key !== 'scaleY') {
     return `${value}px`;
   }
 
@@ -14,7 +14,7 @@ const transformProp = createSystemProp({
   transform: value => {
     const style = Object.keys(value)
       .filter(key => isDefined(value[key]))
-      .reduce((style, key) => `${style} ${key}(${getTransformValue(value[key])})`, '')
+      .reduce((style, key) => `${style} ${key}(${getTransformValue(key, value[key])})`, '')
       .trim();
 
     return {
