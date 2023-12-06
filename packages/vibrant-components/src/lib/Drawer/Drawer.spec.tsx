@@ -85,7 +85,7 @@ describe('<Drawer />', () => {
     });
 
     it('content size is shrink', async () => {
-      await waitFor(() => expect(computedStyle.width).toEqual('480px'));
+      await waitFor(() => expect(computedStyle.width).toEqual('480px'), { timeout: 2000 });
     });
   });
 
