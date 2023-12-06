@@ -162,9 +162,42 @@ exports[`<DrawerPanel /> when component is rendering match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
 }
 
-.emotion-8 {
+.emotion-6::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -209,12 +242,16 @@ exports[`<DrawerPanel /> when component is rendering match snapshot 1`] = `
               class="emotion-6"
             >
               <div
-                class="emotion-6"
-              />
+                class="emotion-7"
+              >
+                <div
+                  class="emotion-7"
+                />
+              </div>
             </div>
           </div>
           <div
-            class="emotion-8"
+            class="emotion-9"
           />
         </div>
       </div>
