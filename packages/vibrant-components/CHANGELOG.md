@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.87.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.2...vibrant-components-0.87.3) (2023-12-07)
+
+
+### Bug Fixes
+
+* 이미지썸네일 aspectRatio를 responsiveValue로 변경한다 ([#918](https://github.com/pedaling/opensource/issues/918)) ([42c55c0](https://github.com/pedaling/opensource/commit/42c55c0214ad51eed2ee2eb7c76020b0915afef9))
+
 ### [0.87.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.1...vibrant-components-0.87.2) (2023-12-07)
 
 
