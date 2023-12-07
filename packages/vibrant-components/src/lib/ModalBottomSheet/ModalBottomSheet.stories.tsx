@@ -85,7 +85,7 @@ export const ControlledOpen: ComponentStory<typeof ModalBottomSheet> = () => {
           subtitle="클래스메이트님을 위해 축하 선물을 준비했어요!"
           open={open}
           renderContents={({ close }) => (
-            <ContainedButton kind="primary" size="lg" onClick={() => setOpen(false)}>
+            <ContainedButton kind="primary" size="lg" onClick={close}>
               확인
             </ContainedButton>
           )}
