@@ -3,7 +3,7 @@ import { withVariation } from '@vibrant-ui/core';
 
 export type ImageThumbnailProps = {
   dim?: ResponsiveValue<boolean>;
-  aspectRatio: number;
+  aspectRatio: ResponsiveValue<number>;
   testId?: string;
 } & Pick<ImageProps, 'alt' | 'loading' | 'objectFit' | 'rounded' | 'sizes' | 'src' | 'width'>;
 
