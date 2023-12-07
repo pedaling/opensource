@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.87.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.1...vibrant-components-0.87.2) (2023-12-07)
+
+
+### Bug Fixes
+
+* modal이 닫히는 중에 열릴 때 동작되도록 한다 ([6f3759f](https://github.com/pedaling/opensource/commit/6f3759ff8dba4208d8f17c3bc817e7c9468041c5))
+
 ### [0.87.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.0...vibrant-components-0.87.1) (2023-12-06)
 
 ## [0.87.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.86.5...vibrant-components-0.87.0) (2023-12-05)
