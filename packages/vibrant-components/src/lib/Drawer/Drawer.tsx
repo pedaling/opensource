@@ -13,6 +13,7 @@ import { DrawerPanel } from './DrawerPanel';
 import type { DrawerProps } from './DrawerProps';
 
 const ANIMATE_DURATION = 200;
+const DIM_Z_INDEX = 2;
 
 export const Drawer = ({
   testId = 'drawer',
@@ -76,12 +77,16 @@ export const Drawer = ({
                 >
                   <ScrollBox data-testid="drawer-content-container">{contents}</ScrollBox>
                 </Transition>
-                {panel}
+                <Box position="fixed" height="100%" width="100%">
+                  {panel}
+                </Box>
               </HStack>
             )}
             {placement === 'left' && (
               <HStack width="100%" onLayout={onContainerLayout}>
-                {panel}
+                <Box position="fixed" height="100%" width="100%">
+                  {panel}
+                </Box>
                 <Transition
                   duration={ANIMATE_DURATION}
                   animation={{
@@ -131,7 +136,7 @@ export const Drawer = ({
                   position="absolute"
                   top={0}
                   left={0}
-                  zIndex={2}
+                  zIndex={DIM_Z_INDEX}
                   opacity={0}
                   onClick={closePanel}
                   cursor="default"
@@ -139,7 +144,9 @@ export const Drawer = ({
                 />
               </Transition>
             )}
-            {panel}
+            <Box position="fixed" width="100%" height="100%" zIndex={DIM_Z_INDEX + 1}>
+              {panel}
+            </Box>
           </Box>
         )}
       </Box>

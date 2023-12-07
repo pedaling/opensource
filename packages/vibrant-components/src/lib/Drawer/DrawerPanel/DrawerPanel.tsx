@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { Children, useMemo } from 'react';
 import type { LayoutEvent } from '@vibrant-ui/core';
-import { Box } from '@vibrant-ui/core';
+import { Box, ScrollBox } from '@vibrant-ui/core';
 import { Transition } from '@vibrant-ui/motion';
 import { Divider } from '../../Divider';
 import { VStack } from '../../VStack';
@@ -60,7 +60,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
       <VStack height="100%" alignVertical="space-between">
         <Box width="100%" overflow="hidden">
           {header}
-          <Box>{contents}</Box>
+          <ScrollBox hideScroll={true}>{contents}</ScrollBox>
         </Box>
         <Box width="100%">{footer}</Box>
       </VStack>

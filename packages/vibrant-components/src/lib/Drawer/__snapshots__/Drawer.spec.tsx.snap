@@ -95,6 +95,27 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
   position: absolute;
   height: 100%;
   background-color: #ffffff;
@@ -104,7 +125,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -128,7 +149,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   height: 100%;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -161,7 +182,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   margin-right: 0;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -187,7 +208,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   align-items: stretch;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -207,7 +228,32 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   overflow: hidden;
 }
 
-.emotion-11 {
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emotion-10::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -245,33 +291,37 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
       </div>
       <div
         class="emotion-4"
-        style="transform: translateX(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
       >
         <div
           class="emotion-5"
-          data-testid="drawer-panel"
+          style="transform: translateX(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
         >
           <div
             class="emotion-6"
-            kind="default"
-          />
-          <div
-            class="emotion-7"
+            data-testid="drawer-panel"
           >
+            <div
+              class="emotion-7"
+              kind="default"
+            />
             <div
               class="emotion-8"
             >
               <div
-                class="emotion-3"
+                class="emotion-9"
               >
                 <div
-                  class="emotion-3"
-                />
+                  class="emotion-10"
+                >
+                  <div
+                    class="emotion-3"
+                  />
+                </div>
               </div>
+              <div
+                class="emotion-12"
+              />
             </div>
-            <div
-              class="emotion-11"
-            />
           </div>
         </div>
       </div>
@@ -375,6 +425,27 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
   position: absolute;
   height: 100%;
   background-color: #ffffff;
@@ -384,7 +455,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -408,7 +479,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   height: 100%;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -441,7 +512,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   margin-right: 0;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -467,7 +538,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   align-items: stretch;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -487,7 +558,32 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   overflow: hidden;
 }
 
-.emotion-11 {
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emotion-10::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -525,33 +621,37 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
       </div>
       <div
         class="emotion-4"
-        style="transform: translateX(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
       >
         <div
           class="emotion-5"
-          data-testid="drawer-panel"
+          style="transform: translateX(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
         >
           <div
             class="emotion-6"
-            kind="default"
-          />
-          <div
-            class="emotion-7"
+            data-testid="drawer-panel"
           >
+            <div
+              class="emotion-7"
+              kind="default"
+            />
             <div
               class="emotion-8"
             >
               <div
-                class="emotion-3"
+                class="emotion-9"
               >
                 <div
-                  class="emotion-3"
-                />
+                  class="emotion-10"
+                >
+                  <div
+                    class="emotion-3"
+                  />
+                </div>
               </div>
+              <div
+                class="emotion-12"
+              />
             </div>
-            <div
-              class="emotion-11"
-            />
           </div>
         </div>
       </div>
@@ -655,6 +755,27 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
   position: absolute;
   width: 100%;
   background-color: #ffffff;
@@ -664,7 +785,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -684,7 +805,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   width: 100%;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -717,7 +838,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   margin-bottom: 0;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -743,7 +864,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   align-items: stretch;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -763,7 +884,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   overflow: hidden;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -801,33 +922,37 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
       </div>
       <div
         class="emotion-4"
-        style="transform: translateY(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
       >
         <div
           class="emotion-5"
-          data-testid="drawer-panel"
+          style="transform: translateY(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
         >
           <div
             class="emotion-6"
-            kind="default"
-          />
-          <div
-            class="emotion-7"
+            data-testid="drawer-panel"
           >
+            <div
+              class="emotion-7"
+              kind="default"
+            />
             <div
               class="emotion-8"
             >
               <div
-                class="emotion-3"
+                class="emotion-9"
               >
                 <div
                   class="emotion-3"
-                />
+                >
+                  <div
+                    class="emotion-3"
+                  />
+                </div>
               </div>
+              <div
+                class="emotion-12"
+              />
             </div>
-            <div
-              class="emotion-11"
-            />
           </div>
         </div>
       </div>
@@ -931,6 +1056,27 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   -ms-flex-direction: column;
   flex-direction: column;
   box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
   position: absolute;
   width: 100%;
   background-color: #ffffff;
@@ -940,7 +1086,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   box-shadow: 0px 0px 1px 0px #00000014,0px 10px 25px 4px #0000000f;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -960,7 +1106,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   width: 100%;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -993,7 +1139,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   margin-bottom: 0;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1019,7 +1165,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   align-items: stretch;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1039,7 +1185,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   overflow: hidden;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1077,33 +1223,37 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
       </div>
       <div
         class="emotion-4"
-        style="transform: translateY(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
       >
         <div
           class="emotion-5"
-          data-testid="drawer-panel"
+          style="transform: translateY(0px); transition-property: transform; transition-duration: 200ms; transition-timing-function: cubic-bezier(0.5, 1, 0.89, 1);"
         >
           <div
             class="emotion-6"
-            kind="default"
-          />
-          <div
-            class="emotion-7"
+            data-testid="drawer-panel"
           >
+            <div
+              class="emotion-7"
+              kind="default"
+            />
             <div
               class="emotion-8"
             >
               <div
-                class="emotion-3"
+                class="emotion-9"
               >
                 <div
                   class="emotion-3"
-                />
+                >
+                  <div
+                    class="emotion-3"
+                  />
+                </div>
               </div>
+              <div
+                class="emotion-12"
+              />
             </div>
-            <div
-              class="emotion-11"
-            />
           </div>
         </div>
       </div>

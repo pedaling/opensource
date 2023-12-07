@@ -69,6 +69,10 @@ export const Basic: ComponentStory<typeof Drawer> = props => (
     <Drawer.Panel defaultSize={['30%', '25%']}>
       <Drawer.Header closable={true} title="Lorem ipsum dolor sit amet, con secte tur adipiscing elit" />
       <VStack spacing={30} p={8}>
+        <Body level={1}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
+          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+        </Body>
         <Body level={2}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
           tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
@@ -82,6 +86,10 @@ export const Basic: ComponentStory<typeof Drawer> = props => (
           tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
         </Body>
         <Body level={5}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
+          tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
+        </Body>
+        <Body level={6}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur vitae repellendus odit? Excepturi assumenda
           tempore quae unde nobis molestias eaque nostrum? A sapiente sequi soluta ipsa tempore magnam, ex doloribus.
         </Body>
