@@ -96,7 +96,9 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   flex-direction: column;
   box-sizing: border-box;
   position: fixed;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
   z-index: 3;
 }
@@ -426,7 +428,9 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   flex-direction: column;
   box-sizing: border-box;
   position: fixed;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
   z-index: 3;
 }
@@ -756,7 +760,9 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   flex-direction: column;
   box-sizing: border-box;
   position: fixed;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
   z-index: 3;
 }
@@ -1057,7 +1063,9 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   flex-direction: column;
   box-sizing: border-box;
   position: fixed;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
   z-index: 3;
 }
