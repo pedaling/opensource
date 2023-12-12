@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.87.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.3...vibrant-components-0.87.4) (2023-12-12)
+
+
+### Bug Fixes
+
+* Drawer 컴포넌트의 동작을 수정합니다. ([#919](https://github.com/pedaling/opensource/issues/919)) ([cd5100e](https://github.com/pedaling/opensource/commit/cd5100e5f0ef2810dbd4e0920b59a475a7682ba7))
+
 ### [0.87.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.2...vibrant-components-0.87.3) (2023-12-07)
 
 
