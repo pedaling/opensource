@@ -57,7 +57,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   const panelContent = isVertical ? (
     <Box width={panelSize} data-testid={testId} flexGrow={1} height="100%" onLayout={onPanelLayout} flexDirection="row">
       {!isStandardLeft && <Divider direction="vertical" kind="default" />}
-      <VStack height="100%" alignVertical="space-between">
+      <VStack height="100%" width="100%" alignVertical="space-between">
         <Box width="100%" overflow="hidden">
           {header}
           <ScrollBox hideScroll={true}>{contents}</ScrollBox>
@@ -69,7 +69,7 @@ export const DrawerPanel = withDrawerPanelVariation(({ testId = 'drawer-panel', 
   ) : (
     <Box height={panelSize} width="100%" data-testid={testId} onLayout={onPanelLayout} flexDirection="column">
       {!isStandardTop && <Divider direction="horizontal" kind="default" />}
-      <VStack height="100%" alignVertical="space-between">
+      <VStack height="100%" width="100%" alignVertical="space-between">
         <Box width="100%" overflow="hidden">
           {header}
           <Box>{contents}</Box>
