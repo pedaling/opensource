@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.87.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.4...vibrant-components-0.87.5) (2023-12-12)
+
+
+### Bug Fixes
+
+* update drawer panel width ([#920](https://github.com/pedaling/opensource/issues/920)) ([41673aa](https://github.com/pedaling/opensource/commit/41673aa28df6acb47d75b867635e150ade756523))
+
 ### [0.87.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.3...vibrant-components-0.87.4) (2023-12-12)
 
 
