@@ -13,6 +13,7 @@ import { DrawerPanel } from './DrawerPanel';
 import type { DrawerProps } from './DrawerProps';
 
 const ANIMATE_DURATION = 200;
+const DIM_Z_INDEX = 2;
 
 export const Drawer = ({
   testId = 'drawer',
@@ -139,6 +140,7 @@ export const Drawer = ({
                   position="absolute"
                   top={0}
                   left={0}
+                  zIndex={DIM_Z_INDEX}
                   opacity={0}
                   onClick={closePanel}
                   cursor="default"
@@ -146,7 +148,7 @@ export const Drawer = ({
                 />
               </Transition>
             )}
-            <Box position="fixed" width="fit-content" height="100%">
+            <Box position="fixed" width="fit-content" height="100%" zIndex={DIM_Z_INDEX + 1}>
               {panel}
             </Box>
           </Box>
