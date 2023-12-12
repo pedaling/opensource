@@ -42,7 +42,11 @@ export const Drawer = ({
   const [panelSizePixel, setPanelSizePixel] = useState<number>(0);
   const [containerSize, setContainerSize] = useState<number>(0);
 
-  const closePanel = () => setIsPanelOpen(false);
+  const closePanel = () => {
+    onClose?.();
+
+    return setIsPanelOpen(false);
+  };
 
   const { ref: drawerRef } = useEscapeEvent(closePanel);
 
@@ -144,7 +148,7 @@ export const Drawer = ({
                 />
               </Transition>
             )}
-            <Box position="fixed" width="100%" height="100%" zIndex={DIM_Z_INDEX + 1}>
+            <Box position="fixed" width="fit-content" height="100%" zIndex={DIM_Z_INDEX + 1}>
               {panel}
             </Box>
           </Box>

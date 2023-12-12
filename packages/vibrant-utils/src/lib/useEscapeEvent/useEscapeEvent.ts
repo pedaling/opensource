@@ -10,8 +10,6 @@ export const useEscapeEvent = (callback: () => void): UseEscapeEventResult => {
 
   const onKeydown = useCallback(
     (e: KeyboardEvent) => {
-      e.preventDefault();
-
       if (e.code === 'Escape') {
         callback();
       }
