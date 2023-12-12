@@ -117,6 +117,7 @@ exports[`<DrawerPanel /> when component is rendering match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
