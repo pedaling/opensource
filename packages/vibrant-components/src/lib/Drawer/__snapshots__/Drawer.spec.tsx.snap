@@ -201,6 +201,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
@@ -533,6 +534,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
@@ -861,6 +863,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
@@ -1164,6 +1167,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   box-sizing: border-box;
   position: relative;
   height: 100%;
+  width: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
