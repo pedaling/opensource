@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.87.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.5...vibrant-components-0.87.6) (2023-12-14)
+
+
+### Bug Fixes
+
+* fix native Skeleton.Button crash ([#921](https://github.com/pedaling/opensource/issues/921)) ([747150c](https://github.com/pedaling/opensource/commit/747150cd18204b2e1fcb1cd3a47f966d0061b271))
+
 ### [0.87.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.87.4...vibrant-components-0.87.5) (2023-12-12)
 
 
