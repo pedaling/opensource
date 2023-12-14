@@ -1,4 +1,5 @@
 import { Box, transformResponsiveValue, useCurrentTheme } from '@vibrant-ui/core';
+import { convertRemToPixels } from '@vibrant-ui/utils';
 import { withSkeletonButtonVariation } from './SkeletonButtonProps';
 
 export const SkeletonButton = withSkeletonButtonVariation(({ typography, py, width }) => {
@@ -8,7 +9,9 @@ export const SkeletonButton = withSkeletonButtonVariation(({ typography, py, wid
 
   return (
     <Box backgroundColor="disable" rounded="sm" py={py} width={width}>
-      <Box height={transformResponsiveValue(typography, value => themeTypography[value].lineHeight)} />
+      <Box
+        height={transformResponsiveValue(typography, value => convertRemToPixels(themeTypography[value].lineHeight))}
+      />
     </Box>
   );
 });
