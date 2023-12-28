@@ -30,7 +30,7 @@ const boxSizingProp = createSystemProp({
 
 const aspectRatioProp = createSystemProp({
   property: 'aspectRatio',
-  transform: (value: number) => ({
+  transform: (value: number | string) => ({
     aspectRatio: value ? value.toString() : value,
   }),
 });
