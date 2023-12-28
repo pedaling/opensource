@@ -8,5 +8,5 @@ export type SizingSystemProps = {
   minHeight?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content'>;
   maxHeight?: ResponsiveValue<number | string | 'auto' | 'fit-content' | 'max-content' | 'min-content' | 'none'>;
   boxSizing?: 'border-box' | 'content-box';
-  aspectRatio?: ResponsiveValue<number>;
+  aspectRatio?: ResponsiveValue<number | string>;
 };
