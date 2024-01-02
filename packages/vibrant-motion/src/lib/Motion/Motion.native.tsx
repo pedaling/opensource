@@ -5,7 +5,6 @@ import { Animated } from 'react-native';
 import { useInterpolation } from '@vibrant-ui/core';
 import { useSafeDeps } from '@vibrant-ui/utils';
 import { NATIVE_SUPPORT_ANIMATION_PROPERTIES, easings } from '../constants';
-import { transformMotionProps } from '../props/transform';
 import { handleTransformStyle } from '../utils/handleTransformStyle';
 import { withMotionVariation } from './MotionProps';
 
@@ -23,7 +22,7 @@ export const Motion = withMotionVariation(
     style = {},
     ...restProps
   }) => {
-    const { interpolation } = useInterpolation(transformMotionProps);
+    const { interpolation } = useInterpolation();
     const onEndRef = useSafeDeps(onEnd);
 
     const useNativeDriver = useRef(true);
