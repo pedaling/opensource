@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.88.0](https://github.com/pedaling/opensource/compare/vibrant-motion-0.87.7...vibrant-motion-0.88.0) (2024-01-03)
+
+
+### Features
+
+* Motion/Transition 컴포넌트에서 scale 애니메이션을 사용 가능하게 한다. ([#923](https://github.com/pedaling/opensource/issues/923)) ([29a820e](https://github.com/pedaling/opensource/commit/29a820ecface361128c921f138412aeb88455dd7))
+
 ### [0.87.7](https://github.com/pedaling/opensource/compare/vibrant-motion-0.87.6...vibrant-motion-0.87.7) (2023-12-28)
 
 ### [0.87.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.87.5...vibrant-motion-0.87.6) (2023-12-14)
