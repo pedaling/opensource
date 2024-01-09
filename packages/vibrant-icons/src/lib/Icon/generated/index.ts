@@ -166,6 +166,7 @@ export * as Serious from './Serious';
 export * as Share from './Share';
 export * as Sheild from './Sheild';
 export * as ShippingTruck from './ShippingTruck';
+export * as SlowMotion from './SlowMotion';
 export * as Smile from './Smile';
 export * as Sorting from './Sorting';
 export * as Star from './Star';
