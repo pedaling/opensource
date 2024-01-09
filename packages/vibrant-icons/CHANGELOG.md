@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.88.1](https://github.com/pedaling/opensource/compare/vibrant-icons-0.88.0...vibrant-icons-0.88.1) (2024-01-09)
+
+
+### Features
+
+* add SlowMotion icons ([#924](https://github.com/pedaling/opensource/issues/924)) ([45fbb28](https://github.com/pedaling/opensource/commit/45fbb2867850c003abdac6fa49058e2f8efa43ce))
+
 ## [0.88.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.87.7...vibrant-icons-0.88.0) (2024-01-03)
 
 ### [0.87.7](https://github.com/pedaling/opensource/compare/vibrant-icons-0.87.6...vibrant-icons-0.87.7) (2023-12-28)

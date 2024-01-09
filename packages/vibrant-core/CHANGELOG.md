@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.88.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.88.0...vibrant-core-0.88.1) (2024-01-09)
+
+
+### Features
+
+* scroll-snap-stop 스타일을 추가한다 ([#925](https://github.com/pedaling/opensource/issues/925)) ([a83b4dc](https://github.com/pedaling/opensource/commit/a83b4dc2735703ff504fa51b9ce15f4c3dad6f4a))
+
 ## [0.88.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.87.7...vibrant-core-0.88.0) (2024-01-03)
 
 ### [0.87.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.87.6...vibrant-core-0.87.7) (2023-12-28)
