@@ -27,6 +27,7 @@ import {
   flexboxSystemProps,
   overflowSystemProps,
   positionSystemProps,
+  scrollItemSystemProps,
   scrollSystemProps,
   sizingSystemProps,
   spacingSystemProps,
@@ -57,7 +58,7 @@ const systemProps = [
   ...spacingSystemProps,
   ...sizingSystemProps,
   ...transformSystemProps,
-  ...scrollSystemProps,
+  ...scrollItemSystemProps,
 ];
 
 const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
