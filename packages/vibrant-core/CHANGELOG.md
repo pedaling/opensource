@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.88.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.88.1...vibrant-core-0.88.2) (2024-01-10)
+
+
+### Features
+
+* snapAlignment, scrollSnapStop 시스템 속성을 scroll item 시스템 속성으로 분리하고 Box에서 사용가능하게 한다 ([#926](https://github.com/pedaling/opensource/issues/926)) ([9b0cc3e](https://github.com/pedaling/opensource/commit/9b0cc3ebacf0d8f2ba42519a04eabf82c43b67e2))
+
 ### [0.88.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.88.0...vibrant-core-0.88.1) (2024-01-09)
 
 
