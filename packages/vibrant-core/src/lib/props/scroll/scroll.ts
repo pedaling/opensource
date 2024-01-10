@@ -35,6 +35,6 @@ const scrollSnapStopProp = createSystemProp({
   styleProperty: 'scrollSnapStop',
 });
 
-export const scrollSystemProps = [hideScrollProp, horizontalProp, scrollSnapProp, scrollSnapStopProp];
+export const scrollSystemProps = [hideScrollProp, horizontalProp, scrollSnapProp];
 
 export const scrollItemSystemProps = [scrollSnapStopProp, snapAlignmentProp];
