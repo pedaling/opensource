@@ -19,6 +19,7 @@ import type {
   OverflowSystemProps,
   PositionSystemProps,
   PseudoClassSystemProps,
+  ScrollItemSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
   SvgSystemProps,
@@ -40,6 +41,7 @@ import {
   overflowSystemProps,
   positionSystemProps,
   pseudoClassSystemProps,
+  scrollItemSystemProps,
   sizingSystemProps,
   spacingSystemProps,
   svgSystemProps,
@@ -66,7 +68,8 @@ export type SystemProps = BackgroundSystemProps &
   TypographySystemProps &
   TransformSystemProps &
   MediaSystemProps &
-  GridSystemProps;
+  GridSystemProps &
+  ScrollItemSystemProps;
 
 const systemProps = [
   ...backgroundSystemProps,
@@ -88,6 +91,7 @@ const systemProps = [
   ...transformSystemProps,
   ...mediaSystemProps,
   ...gridSystemProps,
+  ...scrollItemSystemProps,
 ];
 
 const systemPropNames = systemProps

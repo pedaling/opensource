@@ -42,6 +42,7 @@ export type {
   AllSystemProps,
   HitSlopRect,
   ScrollSystemProps,
+  ScrollItemSystemProps,
 } from './lib/props';
 export { propVariant } from './lib/propVariant';
 export { WindowDimensionsProvider, useWindowDimensions } from './lib/WindowDimensionsProvider';

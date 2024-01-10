@@ -40,3 +40,5 @@ export type { GridSystemProps } from './grid';
 export { gridSystemProps } from './grid';
 export type { ScrollSystemProps } from './scroll';
 export { scrollSystemProps } from './scroll';
+export type { ScrollItemSystemProps } from './scrollItem';
+export { scrollItemSystemProps } from './scrollItem';

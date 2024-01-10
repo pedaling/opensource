@@ -13,6 +13,7 @@ import type {
   DisplaySystemProps,
   FlexboxSystemProps,
   PositionSystemProps,
+  ScrollItemSystemProps,
   ScrollSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
@@ -26,6 +27,7 @@ import {
   flexboxSystemProps,
   overflowSystemProps,
   positionSystemProps,
+  scrollItemSystemProps,
   scrollSystemProps,
   sizingSystemProps,
   spacingSystemProps,
@@ -41,7 +43,8 @@ type SystemProps = BackgroundSystemProps &
   SizingSystemProps &
   SpacingSystemProps &
   TransformSystemProps &
-  ScrollSystemProps;
+  ScrollSystemProps &
+  ScrollItemSystemProps;
 
 const systemProps = [
   ...scrollSystemProps,
@@ -55,6 +58,7 @@ const systemProps = [
   ...spacingSystemProps,
   ...sizingSystemProps,
   ...transformSystemProps,
+  ...scrollItemSystemProps,
 ];
 
 const systemPropNames = systemProps.filter(systemProp => !systemProp.disabled).map(systemProp => systemProp.propName);
