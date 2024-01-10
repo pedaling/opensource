@@ -11,6 +11,4 @@ export default {
   },
 } as ComponentMeta<typeof Box>;
 
-export const Basic: ComponentStory<typeof Box> = props => (
-  <Box {...props} snapAlignment="center" scrollSnapStop="always" />
-);
+export const Basic: ComponentStory<typeof Box> = props => <Box {...props} />;
