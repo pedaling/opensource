@@ -5,8 +5,3 @@ export type ScrollSystemProps = {
   horizontal?: ResponsiveValue<boolean>;
   hideScroll?: ResponsiveValue<boolean>;
 };
-
-export type ScrollItemSystemProps = {
-  scrollSnapStop?: ResponsiveValue<string>;
-  snapAlignment?: ResponsiveValue<'center' | 'end' | 'start'>;
-};

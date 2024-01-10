@@ -42,17 +42,4 @@ const zIndexProp = createSystemProp({
   property: 'zIndex',
 });
 
-const snapAlignmentProp = createSystemProp({
-  property: 'snapAlignment',
-  disabled: true,
-});
-
-export const positionSystemProps = [
-  positionProp,
-  topProp,
-  rightProp,
-  bottomProp,
-  leftProp,
-  zIndexProp,
-  snapAlignmentProp,
-];
+export const positionSystemProps = [positionProp, topProp, rightProp, bottomProp, leftProp, zIndexProp];

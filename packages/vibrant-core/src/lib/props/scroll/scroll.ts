@@ -25,16 +25,4 @@ const hideScrollProp = createSystemProp({
       : {},
 });
 
-const snapAlignmentProp = createSystemProp({
-  property: 'snapAlignment',
-  styleProperty: 'scrollSnapAlign',
-});
-
-const scrollSnapStopProp = createSystemProp({
-  property: 'scrollSnapStop',
-  styleProperty: 'scrollSnapStop',
-});
-
 export const scrollSystemProps = [hideScrollProp, horizontalProp, scrollSnapProp];
-
-export const scrollItemSystemProps = [scrollSnapStopProp, snapAlignmentProp];

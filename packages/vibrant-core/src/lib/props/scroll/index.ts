@@ -1,2 +1,2 @@
-export { scrollSystemProps, scrollItemSystemProps } from './scroll';
-export type { ScrollSystemProps, ScrollItemSystemProps } from './type';
+export { scrollSystemProps } from './scroll';
+export type { ScrollSystemProps } from './type';
