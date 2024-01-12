@@ -83,6 +83,7 @@ export * as Gift from './Gift';
 export * as GridRectangle1x2 from './GridRectangle1x2';
 export * as GridSqaure2x2 from './GridSqaure2x2';
 export * as Groove from './Groove';
+export * as Handle from './Handle';
 export * as Hashtag from './Hashtag';
 export * as Heart from './Heart';
 export * as HelpCircle from './HelpCircle';
