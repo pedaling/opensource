@@ -1,4 +1,5 @@
 import { createSystemProp } from '../../createSystemProp';
+import type { TextShadow } from './type';
 
 const letterSpacingProp = createSystemProp({
   property: 'letterSpacing',
@@ -46,6 +47,15 @@ const textDecorationLineProp = createSystemProp({
   property: 'textDecorationLine',
 });
 
+const textShadowProp = createSystemProp({
+  property: 'textShadow',
+  transform: ({ color, offsetX, offsetY, blurRadius }: TextShadow) => ({
+    textShadowColor: color,
+    textShadowOffset: { width: offsetX, height: offsetY },
+    textShadowRadius: blurRadius,
+  }),
+});
+
 export const textSystemProps = [
   letterSpacingProp,
   textAlignProp,
@@ -56,4 +66,5 @@ export const textSystemProps = [
   lineLimitProp,
   overflowWrapProp,
   textDecorationLineProp,
+  textShadowProp,
 ];

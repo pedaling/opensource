@@ -1,4 +1,18 @@
+import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
+import type { TextShadow } from './type';
+
+function getTextShadowValue({ color, offsetX = 0, offsetY = 0, blurRadius = 0 }: BoxShadow) {
+  return [offsetX, offsetY, blurRadius, color]
+    .reduce((style: string, value) => {
+      if (!isDefined(value)) {
+        return style;
+      }
+
+      return `${style} ${value}${typeof value === 'number' ? 'px' : ''}`;
+    }, '')
+    .trim();
+}
 
 const letterSpacingProp = createSystemProp({
   property: 'letterSpacing',
@@ -43,6 +57,13 @@ const textDecorationLineProp = createSystemProp({
   property: 'textDecorationLine',
 });
 
+const textShadowProp = createSystemProp({
+  property: 'textShadow',
+  transform: (textShadow: TextShadow) => ({
+    textShadow: getTextShadowValue(textShadow),
+  }),
+});
+
 export const textSystemProps = [
   letterSpacingProp,
   textAlignProp,
@@ -53,4 +74,5 @@ export const textSystemProps = [
   lineLimitProp,
   overflowWrapProp,
   textDecorationLineProp,
+  textShadowProp,
 ];

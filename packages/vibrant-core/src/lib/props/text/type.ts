@@ -1,5 +1,12 @@
 import type { ResponsiveValue } from '../../../types';
 
+export type TextShadow = {
+  color?: string;
+  offsetX: number;
+  offsetY: number;
+  blurRadius?: number;
+};
+
 export type TextSystemProps = {
   letterSpacing?: ResponsiveValue<number | string>;
   textAlign?: ResponsiveValue<'center' | 'end' | 'justify' | 'left' | 'match-parent' | 'right' | 'start'>;
@@ -10,4 +17,5 @@ export type TextSystemProps = {
   overflowWrap?: ResponsiveValue<'anywhere' | 'break-word' | 'normal'>;
   textDecorationLine?: ResponsiveValue<'line-through' | 'none' | 'underline line-through' | 'underline'>;
   lineLimit?: ResponsiveValue<number>;
+  textShadow?: ResponsiveValue<TextShadow>;
 };
