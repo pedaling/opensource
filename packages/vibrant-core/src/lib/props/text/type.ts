@@ -2,8 +2,8 @@ import type { ResponsiveValue } from '../../../types';
 
 export type TextShadow = {
   color?: string;
-  offsetX: number;
-  offsetY: number;
+  offsetX?: number;
+  offsetY?: number;
   blurRadius?: number;
 };
 
