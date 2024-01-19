@@ -2,7 +2,7 @@ import { isDefined } from '@vibrant-ui/utils';
 import { createSystemProp } from '../../createSystemProp';
 import type { TextShadow } from './type';
 
-function getTextShadowValue({ color, offsetX = 0, offsetY = 0, blurRadius = 0 }: BoxShadow) {
+function getTextShadowValue({ color, offsetX = 0, offsetY = 0, blurRadius = 0 }: TextShadow) {
   return [offsetX, offsetY, blurRadius, color]
     .reduce((style: string, value) => {
       if (!isDefined(value)) {
