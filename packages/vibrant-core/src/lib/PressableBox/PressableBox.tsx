@@ -33,8 +33,8 @@ export const PressableBox = withPressableBoxVariation(
 
         onClick?.();
       }}
-      onMouseEnter={() => onHoverIn?.()}
-      onMouseLeave={() => onHoverOut?.()}
+      onPointerOver={() => onHoverIn?.()}
+      onPointerOut={() => onHoverOut?.()}
       onFocus={() => onFocusIn?.()}
       onBlur={() => onFocusOut?.()}
       onMouseDown={() => onPressIn?.()}
