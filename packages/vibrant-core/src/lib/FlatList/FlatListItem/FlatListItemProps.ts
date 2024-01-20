@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import type {
   DisplaySystemProps,
   FlexboxSystemProps,
-  PositionSystemProps,
+  ScrollItemSystemProps,
   SizingSystemProps,
   SpacingSystemProps,
 } from '@vibrant-ui/core';
@@ -16,6 +16,6 @@ export type FlatListItemProps = {
   Pick<FlexboxSystemProps, 'flex' | 'flexShrink'> &
   Pick<DisplaySystemProps, 'display'> &
   Pick<SizingSystemProps, 'width'> &
-  Pick<PositionSystemProps, 'snapAlignment'>;
+  Pick<ScrollItemSystemProps, 'snapAlignment'>;
 
 export const withFlatListItemVariation = withVariation<FlatListItemProps>('FlatListItem')();
