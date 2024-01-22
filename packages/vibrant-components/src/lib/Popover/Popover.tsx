@@ -59,7 +59,7 @@ export const Popover = ({
     : '100%';
   const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
 
-  const calcuratePositionValue = useCallback(
+  const calculatePositionValue = useCallback(
     async (position: Position) => {
       const { width: popoverWidth, height: popoverHeight } = await getElementRect(popoverRef.current);
       const { width: childWidth, height: childHeight } = await getElementRect(childRef.current);
@@ -254,14 +254,22 @@ export const Popover = ({
   useEffect(() => (isOpen ? handleOpen?.() : handleClose?.()), [isOpen, handleOpen, handleClose]);
 
   useEffect(() => {
-    calcuratePositionValue(position);
-  }, [calcuratePositionValue, position]);
+    calculatePositionValue(position);
+  }, [calculatePositionValue, position]);
+
+  const containerZIndex = isOpen ? zIndex ?? themeZIndex.popover : 0;
 
   return (
-    <VStack>
-      <VStack position="absolute">
+    <VStack zIndex={containerZIndex}>
+      <VStack position="absolute" zIndex={containerZIndex}>
         <Transition animation={{ opacity: isOpen ? 1 : 0, ...popoverPosition }} duration={200} easing="easeOutQuad">
-          <VStack zIndex={isOpen ? zIndex ?? themeZIndex.popover : 0} width={popoverWidth}>
+          <VStack
+            zIndex={containerZIndex}
+            width={popoverWidth}
+            onLayout={() => {
+              calculatePositionValue(position);
+            }}
+          >
             <Paper backgroundColor={backgroundColor} rounded="sm">
               <VStack px={12} py={8} ref={popoverRef} width="100%" height="100%">
                 <HStack flex={1} alignHorizontal="space-between">
