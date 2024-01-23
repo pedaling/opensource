@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.90.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.90.1...vibrant-components-0.90.2) (2024-01-23)
+
+
+### Bug Fixes
+
+* 팝오버가 처음 나타날 때 이상한 위치로 가는 문제를 수정하고 삼각형이 잘 보이게 한다 ([#931](https://github.com/pedaling/opensource/issues/931)) ([e704f8b](https://github.com/pedaling/opensource/commit/e704f8b227265aff544bdee1132cf075f22dd2c3))
+
 ### [0.90.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.90.0...vibrant-components-0.90.1) (2024-01-22)
 
 
