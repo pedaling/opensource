@@ -47,6 +47,7 @@ export const colorTokens = [
   'inverseSurface',
   'onInverseSurface',
   'dim',
+  'inverseDim',
   'overlay',
   'onColor',
   'transparent',
@@ -70,7 +71,7 @@ export const baseColorTokens = colorTokens.filter(
   (token): token is BaseColorToken =>
     !token.startsWith('on') &&
     !token.startsWith('outline') &&
-    !['dim', 'overlay', 'transparent', 'white', 'black'].includes(token)
+    !['overlay', 'transparent', 'white', 'black'].includes(token)
 );
 export const onColorTokens = colorTokens.filter(
   (token): token is OnColorToken => token.startsWith('on') && token !== 'onColor'
@@ -96,4 +97,5 @@ export const BaseColorOnColorMap: { [color in BaseColorToken]: OnColorToken } = 
   inverseSurface: 'onInverseSurface',
   transparent: 'onView1',
   dim: 'onView1',
+  inverseDim: 'onView1',
 };

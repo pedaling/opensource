@@ -51,6 +51,7 @@ export const darkModeColors: Colors = {
   inverseSurface: palettes.neutral['95'],
   onInverseSurface: palettes.neutral['5'],
   dim: palettes.blackAlpha['80'],
+  inverseDim: palettes.blackAlpha['20'],
   overlay: palettes.whiteAlpha['10'],
   onColor: '$colors.onView1',
 };
