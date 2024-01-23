@@ -42,7 +42,6 @@ export const Popover = ({
     left: 0,
     top: 0,
   });
-  const [arrowStyle, setArrowStyle] = useState({});
   const { width: viewportWidth } = getWindowDimensions();
   const computedOffset = getResponsiveValue(offset);
   const computedMaxWidth = getResponsiveValue(maxWidth);
@@ -76,11 +75,6 @@ export const Popover = ({
       const positiveArrowOffset = Math.max(arrowOffset, 0);
 
       if (position.includes('top')) {
-        setArrowStyle({
-          borderRightColor: backgroundColor,
-          borderBottomColor: backgroundColor,
-        });
-
         if (position === 'top') {
           setPopoverPosition({
             x: halfChildWidth - halfPopoverWidth,
@@ -119,11 +113,6 @@ export const Popover = ({
       }
 
       if (position.includes('bottom')) {
-        setArrowStyle({
-          borderTopColor: backgroundColor,
-          borderLeftColor: backgroundColor,
-        });
-
         if (position === 'bottom') {
           setPopoverPosition({
             x: halfChildWidth - halfPopoverWidth,
@@ -162,11 +151,6 @@ export const Popover = ({
       }
 
       if (position.includes('left')) {
-        setArrowStyle({
-          borderTopColor: backgroundColor,
-          borderRightColor: backgroundColor,
-        });
-
         if (position === 'left') {
           setPopoverPosition({
             x: -popoverWidth - arrowHeight - computedOffset,
@@ -205,11 +189,6 @@ export const Popover = ({
       }
 
       if (position.includes('right')) {
-        setArrowStyle({
-          borderBottomColor: backgroundColor,
-          borderLeftColor: backgroundColor,
-        });
-
         if (position === 'right') {
           setPopoverPosition({
             x: childWidth + arrowHeight + computedOffset,
@@ -262,7 +241,14 @@ export const Popover = ({
   return (
     <VStack zIndex={containerZIndex}>
       <VStack position="absolute" zIndex={containerZIndex}>
-        <Transition animation={{ opacity: isOpen ? 1 : 0, ...popoverPosition }} duration={200} easing="easeOutQuad">
+        <Transition
+          animation={{
+            opacity: isOpen && popoverPosition.x !== 0 && popoverPosition.y !== 0 ? 1 : 0,
+            ...popoverPosition,
+          }}
+          duration={200}
+          easing="easeOutQuad"
+        >
           <VStack
             zIndex={containerZIndex}
             width={popoverWidth}
@@ -303,21 +289,16 @@ export const Popover = ({
             </Paper>
 
             {showArrow && (
-              <Transition
-                animation={{
+              <Box
+                position="absolute"
+                borderWidth={ARROW_TRIANGLE_SIZE}
+                borderStyle="solid"
+                borderColor={backgroundColor}
+                transform={{
                   rotate: '45deg',
-                  ...arrowPosition,
                 }}
-                duration={0}
-              >
-                <Box
-                  position="absolute"
-                  borderWidth={ARROW_TRIANGLE_SIZE}
-                  borderStyle="solid"
-                  borderColor="transparent"
-                  {...arrowStyle}
-                />
-              </Transition>
+                {...arrowPosition}
+              />
             )}
           </VStack>
         </Transition>
