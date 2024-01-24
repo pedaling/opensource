@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.91.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.90.2...vibrant-theme-0.91.0) (2024-01-24)
+
+
+### Features
+
+* add inverseDim color token ([#932](https://github.com/pedaling/opensource/issues/932)) ([6f3ed5f](https://github.com/pedaling/opensource/commit/6f3ed5f1f816827090bcb1ad65d3b40edfdc1c8b))
+
 ### [0.90.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.90.1...vibrant-theme-0.90.2) (2024-01-23)
 
 ### [0.90.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.90.0...vibrant-theme-0.90.1) (2024-01-22)
