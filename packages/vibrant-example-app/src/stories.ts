@@ -109,6 +109,7 @@ export const stories = [
   require('../../vibrant-core/src/lib/PortalBox/PortalBox.stories.tsx'),
   require('../../vibrant-core/src/lib/PressableBox/PressableBox.stories.tsx'),
   require('../../vibrant-core/src/lib/ScrollBox/ScrollBox.stories.tsx'),
+  require('../../vibrant-core/src/lib/Svg/Svg.stories.tsx'),
   require('../../vibrant-core/src/lib/TabView/TabView.stories.tsx'),
   require('../../vibrant-core/src/lib/TabViewItem/TabViewItem.stories.tsx'),
   require('../../vibrant-core/src/lib/Text/Text.stories.tsx'),
