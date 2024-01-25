@@ -103,6 +103,7 @@ export type BoxElements =
   | 'article'
   | 'aside'
   | 'button'
+  | 'circle'
   | 'clipPath'
   | 'defs'
   | 'div'

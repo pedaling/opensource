@@ -2,6 +2,7 @@
 import type { FC } from 'react';
 import { Box } from '../Box';
 import type {
+  CircleProps,
   ClipPathProps,
   DefsProps,
   GProps,
@@ -26,6 +27,8 @@ const Path: FC<PathProps> = props => <Box as="path" {...props} />;
 
 const Stop: FC<StopProps> = props => <Box as="stop" {...props} />;
 
+const Circle: FC<CircleProps> = props => <Box as="circle" {...props} />;
+
 export const Svg: SvgComponentType = ({ width, height, ...restProps }) => (
   <Box as="svg" width={width || 'auto'} height={height || 'auto'} {...restProps} />
 );
@@ -43,3 +46,5 @@ Svg.Mask = Mask;
 Svg.Path = Path;
 
 Svg.Stop = Stop;
+
+Svg.Circle = Circle;
