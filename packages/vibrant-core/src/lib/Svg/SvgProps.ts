@@ -3,6 +3,21 @@ import type { FC } from 'react';
 import type { ReactElementChild } from '../../types';
 import type { SizingSystemProps, SvgSystemProps } from '../props';
 
+type StrokeProps = {
+  strokeWidth?: number;
+  strokeOpacity?: number;
+  strokeDasharray?: number;
+  strokeDashoffset?: number;
+  strokeLinecap?: 'round' | 'square';
+};
+
+export type CircleProps = SvgSystemProps &
+  StrokeProps & {
+    cx?: number | string;
+    cy?: number | string;
+    r?: number | string;
+  };
+
 export type ClipPathProps = {
   id?: string;
   children?: ReactElementChild | ReactElementChild[];
@@ -27,7 +42,7 @@ export type MaskProps = {
   children?: ReactElementChild | ReactElementChild[];
 };
 
-export type PathProps = {
+export type PathProps = StrokeProps & {
   d?: string;
   fillRule?: 'evenodd' | 'nonzero';
   clipRule?: 'evenodd' | 'nonzero';
@@ -53,4 +68,5 @@ export type SvgComponentType = FC<SvgProps> & {
   Mask: FC<MaskProps>;
   Path: FC<PathProps>;
   Stop: FC<StopProps>;
+  Circle: FC<CircleProps>;
 };

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { FC } from 'react';
 import {
+  Circle as RNCircle,
   ClipPath as RNClipPath,
   Defs as RNDefs,
   G as RNG,
@@ -12,6 +13,7 @@ import {
 } from 'react-native-svg';
 import { Box } from '../Box';
 import type {
+  CircleProps,
   ClipPathProps,
   DefsProps,
   GProps,
@@ -36,6 +38,8 @@ const Path: FC<PathProps> = props => <Box base={RNPath} {...props} />;
 
 const Stop: FC<StopProps> = props => <Box base={RNStop} {...props} />;
 
+const Circle: FC<CircleProps> = props => <Box base={RNCircle} {...props} />;
+
 export const Svg: SvgComponentType = ({ width, height, ...restProps }) => (
   <Box base={RNSvg} width={width || 'auto'} height={height || 'auto'} {...restProps} />
 );
@@ -53,3 +57,5 @@ Svg.Mask = Mask;
 Svg.Path = Path;
 
 Svg.Stop = Stop;
+
+Svg.Circle = Circle;
