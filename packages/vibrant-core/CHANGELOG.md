@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.92.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.91.0...vibrant-core-0.92.0) (2024-01-29)
+
+
+### Features
+
+* Svg.Circle 컴포넌트를 제공한다 ([#933](https://github.com/pedaling/opensource/issues/933)) ([9fba7b4](https://github.com/pedaling/opensource/commit/9fba7b4b39d5bfaf818b746d55609d407d3d71eb))
+
 ## [0.91.0](https://github.com/pedaling/opensource/compare/vibrant-core-0.90.2...vibrant-core-0.91.0) (2024-01-24)
 
 ### [0.90.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.90.1...vibrant-core-0.90.2) (2024-01-23)
