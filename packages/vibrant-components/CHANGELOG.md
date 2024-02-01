@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.0...vibrant-components-0.92.1) (2024-02-01)
+
+
+### Bug Fixes
+
+* popover가 특정 위치에서 안보이는 문제를 수정한다 ([#935](https://github.com/pedaling/opensource/issues/935)) ([304d49c](https://github.com/pedaling/opensource/commit/304d49cab816a03f46aad730d01b0612fac05a53))
+
 ## [0.92.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.91.0...vibrant-components-0.92.0) (2024-01-29)
 
 ## [0.91.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.90.2...vibrant-components-0.91.0) (2024-01-24)
