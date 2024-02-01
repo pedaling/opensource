@@ -1,7 +1,6 @@
 import { Box, PressableBox, Text } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
-import { Body } from '../Body';
 import { VStack } from '../VStack';
 import { withFieldLayoutVariation } from './FieldLayoutProps';
 
@@ -34,8 +33,8 @@ export const FieldLayout = withFieldLayoutVariation(
     prefixText,
     suffixText,
     testId = 'field-layout',
-    bodyLevel,
-    helperTextBodyLevel,
+    typography,
+    helperTextTypography,
     helperTextSpacing,
     height,
     spacing,
@@ -72,8 +71,8 @@ export const FieldLayout = withFieldLayoutVariation(
             </Transition>
           </PressableBox>
           <Box flexDirection="row" alignItems="baseline">
-            <Body
-              level={bodyLevel}
+            <Text
+              typography={typography}
               color="onView2"
               hidden={!prefixText || (!shrink && Boolean(label))}
               flexShrink={0}
@@ -82,12 +81,12 @@ export const FieldLayout = withFieldLayoutVariation(
               pb={pb}
             >
               {prefixText}
-            </Body>
+            </Text>
 
-            {renderField({ height: height - 2, color: valueColor, pt, pl, pr, pb, typography: `body${bodyLevel}` })}
+            {renderField({ height: height - 2, color: valueColor, pt, pl, pr, pb, typography })}
 
-            <Body
-              level={bodyLevel}
+            <Text
+              typography={typography}
               color="onView2"
               hidden={!suffixText || (!shrink && Boolean(label))}
               flexShrink={0}
@@ -96,7 +95,7 @@ export const FieldLayout = withFieldLayoutVariation(
               pb={pb}
             >
               {suffixText}
-            </Body>
+            </Text>
           </Box>
         </Box>
         {showClearButton && (
@@ -107,9 +106,9 @@ export const FieldLayout = withFieldLayoutVariation(
         <VStack flexShrink={0}>{renderEnd?.()}</VStack>
       </Box>
       {Boolean(helperText) && (
-        <Body level={helperTextBodyLevel} color={helperTextColor}>
+        <Text typography={helperTextTypography} color={helperTextColor}>
           {helperText}
-        </Body>
+        </Text>
       )}
     </VStack>
   )
