@@ -243,7 +243,7 @@ export const Popover = ({
       <VStack position="absolute" zIndex={containerZIndex}>
         <Transition
           animation={{
-            opacity: isOpen && popoverPosition.x !== 0 && popoverPosition.y !== 0 ? 1 : 0,
+            opacity: isOpen && (popoverPosition.x !== 0 || popoverPosition.y !== 0) ? 1 : 0,
             ...popoverPosition,
           }}
           duration={200}
