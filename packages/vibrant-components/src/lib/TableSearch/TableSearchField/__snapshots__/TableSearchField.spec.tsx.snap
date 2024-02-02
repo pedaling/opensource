@@ -226,6 +226,8 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   display: none;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -233,9 +235,6 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
   padding-top: 9px;
   padding-left: 8px;
   padding-bottom: 9px;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
 }
 
 .emotion-11 {
@@ -294,6 +293,8 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   display: none;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -301,9 +302,6 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
   padding-top: 9px;
   padding-right: 9px;
   padding-bottom: 9px;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
 }
 
 <div>
@@ -349,7 +347,6 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
           >
             <span
               class="emotion-10"
-              data-testid="body"
             />
             <input
               autocapitalize="none"
@@ -361,7 +358,6 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
             />
             <span
               class="emotion-12"
-              data-testid="body"
             />
           </div>
         </div>
