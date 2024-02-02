@@ -1,4 +1,4 @@
-import { cloneElement, useEffect, useMemo, useRef, useState } from 'react';
+import { cloneElement, useEffect, useMemo, useRef } from 'react';
 import { useInterpolation, useResponsiveValue } from '@vibrant-ui/core';
 import { useCallbackRef, useComposedRef } from '@vibrant-ui/utils';
 import { timingFunctions } from '../constants/timingFunctions';
@@ -7,16 +7,16 @@ import { withTransitionVariation } from './TransitionProp';
 
 export const Transition = withTransitionVariation(
   ({ innerRef, children, style = {}, animation, duration = 200, easing = 'easeOutQuad', onEnd }) => {
-    const { interpolation } = useInterpolation();
+    const { useInterpolateStyle } = useInterpolation();
 
     const elementRef = useRef<HTMLElement>(null);
     const composedRef = useComposedRef(innerRef, elementRef);
-    const interpolationRef = useCallbackRef(interpolation);
     const { getResponsiveValue } = useResponsiveValue();
     const onEndRef = useCallbackRef(onEnd);
-    const [animationStyle, setAnimationStyle] = useState(
-      interpolation(
-        Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
+    const animationStyle = useInterpolateStyle(
+      useMemo(
+        () => Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)])),
+        [animation, getResponsiveValue]
       )
     );
 
@@ -32,18 +32,7 @@ export const Transition = withTransitionVariation(
       return () => element.removeEventListener('transitionend', onEndRef);
     }, [onEndRef]);
 
-    useEffect(() => {
-      requestAnimationFrame(() =>
-        setAnimationStyle(
-          interpolationRef(
-            Object.fromEntries(Object.entries(animation).map(([key, value]) => [key, getResponsiveValue(value)]))
-          )
-        )
-      );
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [JSON.stringify(animation), interpolationRef]);
-
-    const currentStyle = useMemo(() => interpolation(handleTransformStyle(style)), [style, interpolation]);
+    const currentStyle = useInterpolateStyle(handleTransformStyle(style));
     const properties = Object.keys(animationStyle).join(',');
 
     return cloneElement(children, {

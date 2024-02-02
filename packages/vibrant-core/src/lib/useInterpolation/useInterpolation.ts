@@ -1,20 +1,19 @@
-import { useMemo } from 'react';
+import { useCallback } from 'react';
 import { createInterpolation } from '../createInterpolation';
-import type { SystemProp } from '../createSystemProp';
 import { allSystemProps } from '../props';
 import { useCurrentTheme } from '../ThemeProvider';
-import { useResponsiveValue } from '../useResponsiveValue';
 
-export const useInterpolation = (additionalSystemProps: SystemProp[] = []) => {
+const interpolation = createInterpolation(allSystemProps);
+
+export const useInterpolation = () => {
   const { theme } = useCurrentTheme();
-  const { breakpointIndex } = useResponsiveValue();
 
-  const interpolation = useMemo(
-    () => createInterpolation([...allSystemProps, ...additionalSystemProps])({ theme, breakpointIndex }),
-    [additionalSystemProps, breakpointIndex, theme]
+  const useInterpolateStyle = useCallback(
+    (style: Record<string, any>) => interpolation({ theme, props: style }),
+    [theme]
   );
 
   return {
-    interpolation,
+    useInterpolateStyle,
   };
 };

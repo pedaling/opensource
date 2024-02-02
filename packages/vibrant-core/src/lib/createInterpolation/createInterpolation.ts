@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import type { CurrentTheme } from '@vibrant-ui/theme';
 import { isDefined, isRecord } from '@vibrant-ui/utils';
 import type { SystemProp } from '../createSystemProp';
@@ -47,12 +48,11 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
     return result;
   };
 
-  return ({ theme, breakpointIndex }: { theme: CurrentTheme; breakpointIndex: number }) =>
-    (props: Record<string, any>) => {
-      const interpolationResult = childInterpolation({ ...defaultProps, ...props }, theme);
+  return ({ theme, props }: { theme: CurrentTheme; props: Record<string, any> }) => {
+    const interpolationResult = useMemo(() => childInterpolation({ ...defaultProps, ...props }, theme), [props, theme]);
 
-      return useBuildStyle({ styleObjects: interpolationResult, theme, breakpointIndex });
-    };
+    return useBuildStyle({ styleObjects: interpolationResult, theme });
+  };
 };
 
 const mergeResponsiveValue = (original: Record<string, any>[], next: Record<string, any>[]) => {

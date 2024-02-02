@@ -10,13 +10,13 @@ import { withTransitionVariation } from './TransitionProp';
 
 export const Transition = withTransitionVariation(
   ({ innerRef, children, style = {}, animation, duration = 500, easing = 'easeOutQuad', onEnd, ...restProps }) => {
-    const { interpolation } = useInterpolation();
+    const { useInterpolateStyle } = useInterpolation();
     const reverse = useRef(false);
     const isFirstRender = useRef(true);
     const onEndRef = useSafeDeps(onEnd);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    const interpolatedAnimation = useMemo(() => interpolation(animation), [JSON.stringify(animation), interpolation]);
+    const interpolatedAnimation = useInterpolateStyle(useMemo(() => animation, [JSON.stringify(animation)]));
 
     const useNativeDriver = useRef(true);
 
@@ -103,7 +103,7 @@ export const Transition = withTransitionVariation(
       [children.type]
     );
 
-    const currentStyle = useMemo(() => interpolation(handleTransformStyle(style)), [style, interpolation]);
+    const currentStyle = useInterpolateStyle(handleTransformStyle(style));
 
     return (
       <AnimatedViewComponent ref={innerRef} style={[currentStyle, animatedStyle]} {...restProps} {...children.props} />

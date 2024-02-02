@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { createElement } from 'react';
 import { storyNameFromExport } from '@storybook/csf';
-import { Title } from '@vibrant-ui/components';
+import { Box } from '@vibrant-ui/core';
 import { stories } from '../stories';
 
 type ComponentMeta = {
@@ -65,7 +65,7 @@ export const StoryView: FC<StoryViewProps> = ({ componentName, storyName, compon
   const StoryComponent = componentStories[componentName]?.[storyName];
 
   if (!StoryComponent) {
-    return <Title level={2}>Story Not Found</Title>;
+    return <Box width={[200, 300]} height={200} backgroundColor="primary" />;
   }
 
   return <StoryComponent {...componentProps} />;
