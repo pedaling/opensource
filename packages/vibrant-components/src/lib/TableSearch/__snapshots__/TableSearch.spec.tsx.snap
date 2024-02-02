@@ -253,6 +253,8 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   display: none;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -260,9 +262,6 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   padding-top: 9px;
   padding-left: 8px;
   padding-bottom: 9px;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
 }
 
 .emotion-12 {
@@ -321,6 +320,8 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   color: #5b5b5b;
   -webkit-text-fill-color: #5b5b5b;
   text-fill-color: #5b5b5b;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   display: none;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
@@ -328,9 +329,6 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   padding-top: 9px;
   padding-right: 9px;
   padding-bottom: 9px;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  font-weight: 400;
 }
 
 .emotion-15 {
@@ -539,7 +537,6 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
             >
               <span
                 class="emotion-11"
-                data-testid="body"
               />
               <input
                 autocapitalize="none"
@@ -551,7 +548,6 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
               />
               <span
                 class="emotion-13"
-                data-testid="body"
               />
             </div>
           </div>
