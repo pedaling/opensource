@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.1...vibrant-components-0.92.2) (2024-02-02)
+
+
+### Bug Fixes
+
+* fix TextField error when responsive size prop passed ([#936](https://github.com/pedaling/opensource/issues/936)) ([0fa50d2](https://github.com/pedaling/opensource/commit/0fa50d22aabd6b3677876d8225d38e26993b1ee1))
+
 ### [0.92.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.0...vibrant-components-0.92.1) (2024-02-01)
 
 
