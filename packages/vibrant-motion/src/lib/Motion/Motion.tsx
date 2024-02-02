@@ -8,32 +8,35 @@ import { withMotionVariation } from './MotionProps';
 
 export const Motion = withMotionVariation(
   ({ innerRef, children, duration, from, to, loop, delay, easing = 'easeOutQuad', onEnd }) => {
-    const { interpolation } = useInterpolation();
+    const { useInterpolateStyle } = useInterpolation();
     const elementRef = useRef();
     const animationRef = useRef<AnimationControls>();
     const ref = useComposedRef(innerRef, elementRef);
     const { getResponsiveValue } = useResponsiveValue();
 
-    const getResponsiveValueRef = useCallbackRef(getResponsiveValue);
-    const interpolationRef = useCallbackRef(interpolation);
     const onEndRef = useCallbackRef(onEnd);
 
+    const fromStyle = useInterpolateStyle(
+      useMemo(
+        () => Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)])),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [JSON.stringify(from), getResponsiveValue]
+      )
+    );
+    const toStyle = useInterpolateStyle(
+      useMemo(
+        () => Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)])),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [getResponsiveValue, JSON.stringify(to)]
+      )
+    );
+
     const keyframes = useMemo(
-      () => {
-        const fromStyle = interpolation(
-          Object.fromEntries(Object.entries(from).map(([key, value]) => [key, getResponsiveValue(value)]))
-        );
-
-        const toStyle = interpolation(
-          Object.fromEntries(Object.entries(to).map(([key, value]) => [key, getResponsiveValue(value)]))
-        );
-
-        return Object.fromEntries(
+      () =>
+        Object.fromEntries(
           Object.entries(fromStyle).map(([property]) => [property, [fromStyle[property], toStyle[property]]])
-        );
-      },
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      [JSON.stringify(from), JSON.stringify(to), getResponsiveValueRef, interpolationRef]
+        ),
+      [fromStyle, toStyle]
     );
 
     useIsomorphicLayoutEffect(() => {

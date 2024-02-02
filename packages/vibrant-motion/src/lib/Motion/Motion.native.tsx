@@ -22,19 +22,20 @@ export const Motion = withMotionVariation(
     style = {},
     ...restProps
   }) => {
-    const { interpolation } = useInterpolation();
+    const { useInterpolateStyle } = useInterpolation();
     const onEndRef = useSafeDeps(onEnd);
 
     const useNativeDriver = useRef(true);
+    const fromStyle = useInterpolateStyle(from);
+    const toStyle = useInterpolateStyle(to);
 
-    const interpolatedAnimations = useMemo(() => {
-      const fromStyle = interpolation(from);
-      const toStyle = interpolation(to);
-
-      return Object.fromEntries(
-        Object.entries(fromStyle).map(([property]) => [property, [fromStyle[property], toStyle[property]]] as const)
-      );
-    }, [JSON.stringify(from), JSON.stringify(to), interpolation]);
+    const interpolatedAnimations = useMemo(
+      () =>
+        Object.fromEntries(
+          Object.entries(fromStyle).map(([property]) => [property, [fromStyle[property], toStyle[property]]] as const)
+        ),
+      [JSON.stringify(from), JSON.stringify(to)]
+    );
 
     const animatedValue = useMemo(() => new Animated.Value(0), []);
 
@@ -113,7 +114,7 @@ export const Motion = withMotionVariation(
       [children.type]
     );
 
-    const currentStyle = useMemo(() => interpolation(handleTransformStyle(style)), [style, interpolation]);
+    const currentStyle = useInterpolateStyle(handleTransformStyle(style));
 
     return (
       <AnimatedViewComponent ref={innerRef} style={[currentStyle, animatedStyle]} {...restProps} {...children.props} />
