@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.3](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.2...vibrant-core-0.92.3) (2024-02-06)
+
+
+### Bug Fixes
+
+* breakpointIndex가 바뀔 때 반응형을 사용하는 컴포넌트만 리랜더링 되도록 한다 ([#937](https://github.com/pedaling/opensource/issues/937)) ([3c85844](https://github.com/pedaling/opensource/commit/3c85844a3f6c969cf7b9ce870293c99952a22a10))
+
 ### [0.92.2](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.1...vibrant-core-0.92.2) (2024-02-02)
 
 ### [0.92.1](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.0...vibrant-core-0.92.1) (2024-02-01)
