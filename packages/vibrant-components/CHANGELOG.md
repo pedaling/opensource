@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.3...vibrant-components-0.92.4) (2024-02-13)
+
+
+### Bug Fixes
+
+* 탭그룹 네이티브에서는 scrollTo 동작을 하지 않게 수정한다 ([#938](https://github.com/pedaling/opensource/issues/938)) ([fc677c4](https://github.com/pedaling/opensource/commit/fc677c43e3505137eaed5d03198e6516421fa340))
+
 ### [0.92.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.2...vibrant-components-0.92.3) (2024-02-06)
 
 ### [0.92.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.1...vibrant-components-0.92.2) (2024-02-02)
