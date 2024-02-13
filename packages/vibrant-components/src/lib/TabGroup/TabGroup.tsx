@@ -63,7 +63,7 @@ export const TabGroup = withTabGroupVariation(
     const tabInViewRefs = useRef<boolean[]>(new Array(Children.count(children)).fill(false));
 
     const { breakpointIndex } = useResponsiveValue();
-    const isLaptop = breakpointIndex > 1;
+    const isLaptop = breakpointIndex > 1 && !isNative;
 
     const setTabRef = (id: string) => (node: HTMLElement | null) => {
       if (!node) {
@@ -74,7 +74,7 @@ export const TabGroup = withTabGroupVariation(
     };
 
     useEffect(() => {
-      if (!tabRefs.current[tabId] || !tabGroupRef.current || isNative) {
+      if (!tabRefs.current[tabId] || !tabGroupRef.current || !isLaptop) {
         return;
       }
 
@@ -89,7 +89,7 @@ export const TabGroup = withTabGroupVariation(
           tabRefs.current[tabId].offsetWidth / 2,
         behavior: 'smooth',
       });
-    }, [tabId]);
+    }, [isLaptop, tabId]);
 
     useIsomorphicLayoutEffect(() => {
       tabInViewRefs.current = new Array(Children.count(children)).fill(false);
