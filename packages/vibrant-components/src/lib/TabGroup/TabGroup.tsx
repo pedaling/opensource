@@ -1,6 +1,6 @@
 import type { ForwardedRef, FunctionComponentElement, MouseEventHandler } from 'react';
 import { Children, cloneElement, isValidElement, useCallback, useEffect, useRef, useState } from 'react';
-import { Box, useResponsiveValue } from '@vibrant-ui/core';
+import { Box, isNative, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { useInView, useIsomorphicLayoutEffect } from '@vibrant-ui/utils';
 import { Divider } from '../Divider';
@@ -74,7 +74,7 @@ export const TabGroup = withTabGroupVariation(
     };
 
     useEffect(() => {
-      if (!tabRefs.current[tabId] || !tabGroupRef.current) {
+      if (!tabRefs.current[tabId] || !tabGroupRef.current || isNative) {
         return;
       }
 
