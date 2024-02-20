@@ -82,3 +82,5 @@ export { Slider } from './lib/Slider';
 export { Popover } from './lib/Popover';
 export { PopoverOpener } from './lib/PopoverOpener';
 export { Drawer, DrawerTranslation } from './lib/Drawer';
+export { NotificationBadge } from './lib/NotificationBadge';
+export type { NotificationBadgeProps } from './lib/NotificationBadge';
