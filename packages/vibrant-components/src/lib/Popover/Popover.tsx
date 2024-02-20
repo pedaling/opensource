@@ -60,7 +60,7 @@ export const Popover = ({
 
   const calculatePositionValue = useCallback(
     async (position: Position) => {
-      const { width: popoverWidth, height: popoverHeight } = await getElementRect(popoverRef.current);
+      const { width: popoverWidth = 0, height: popoverHeight = 0 } = await getElementRect(popoverRef.current);
       const { width: childWidth, height: childHeight } = await getElementRect(childRef.current);
 
       const halfPopoverWidth = popoverWidth / 2;
