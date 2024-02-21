@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.4...vibrant-components-0.92.5) (2024-02-21)
+
+
+### Features
+
+* notificationBadge를 사용할수있게 export에 추가한다 ([#939](https://github.com/pedaling/opensource/issues/939)) ([21c136b](https://github.com/pedaling/opensource/commit/21c136be627fcdb0bcf1be1075380d2be1336e37))
+
 ### [0.92.4](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.3...vibrant-components-0.92.4) (2024-02-13)
 
 
