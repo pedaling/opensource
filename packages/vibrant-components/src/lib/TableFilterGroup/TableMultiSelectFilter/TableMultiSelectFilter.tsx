@@ -1,4 +1,4 @@
-import { useEffect, useImperativeHandle, useState } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Box, useConfig } from '@vibrant-ui/core';
 import { useCallbackRef } from '@vibrant-ui/utils';
 import { CheckboxGroupField } from '../../CheckboxGroupField';
@@ -9,7 +9,7 @@ import { VStack } from '../../VStack';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { MultiSelectFilterOperator, Option } from '../types';
-import { isMultiSelectFilterValid, isValueRequiredOperator } from '../utils';
+import { isMultiSelectFilterValid, isValuelessOperator } from '../utils';
 import { withTableMultiSelectFilterVariation } from './TableMultiSelectFilterProps';
 
 export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
@@ -31,6 +31,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator);
     const { updateFilter } = useTableFilterGroup();
     const handleFilterChange = useCallbackRef(updateFilter);
+    const isMountedRef = useRef(false);
 
     const {
       translations: {
@@ -61,7 +62,11 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
     );
 
     useEffect(() => {
-      handleFilterChange();
+      if (isMountedRef.current) {
+        handleFilterChange();
+      }
+
+      isMountedRef.current = true;
     }, [selectedValues, operator, handleFilterChange]);
 
     return (
@@ -81,7 +86,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
         }
         active={isMultiSelectFilterValid({ value: selectedValues, operator })}
         onClose={() => {
-          if (isValueRequiredOperator(operator)) {
+          if (isValuelessOperator(operator)) {
             setSelectedValues([]);
           }
         }}
@@ -91,7 +96,7 @@ export const TableMultiSelectFilter = withTableMultiSelectFilterVariation(
           setOperator(operatorOption);
         }}
         field={
-          !isValueRequiredOperator(operator) && (
+          !isValuelessOperator(operator) && (
             <VStack>
               <Box px={20}>
                 <CheckboxGroupField

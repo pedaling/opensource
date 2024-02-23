@@ -6,7 +6,7 @@ import { TextField } from '../../TextField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { StringFilterOperator } from '../types';
-import { isStringFilterValid, isValueRequiredOperator } from '../utils';
+import { isStringFilterValid, isValuelessOperator } from '../utils';
 import { withTableStringFilterVariation } from './TableStringFilterProps';
 
 export const TableStringFilter = withTableStringFilterVariation(
@@ -28,7 +28,8 @@ export const TableStringFilter = withTableStringFilterVariation(
     const [value, setValue] = useState<string>(defaultValue?.value);
     const { updateFilter } = useTableFilterGroup();
     const handleFilterChange = useCallbackRef(updateFilter);
-    const filedRef = useRef<TextInputRef | null>();
+    const fieldRef = useRef<TextInputRef | null>();
+    const isMountedRef = useRef(false);
 
     const {
       translations: {
@@ -53,11 +54,15 @@ export const TableStringFilter = withTableStringFilterVariation(
     );
 
     useEffect(() => {
-      handleFilterChange();
+      if (isMountedRef.current) {
+        handleFilterChange();
+      }
+
+      isMountedRef.current = true;
     }, [value, operator, handleFilterChange]);
 
     useEffect(() => {
-      filedRef.current?.focus();
+      fieldRef.current?.focus();
     }, [operator]);
 
     return (
@@ -65,7 +70,7 @@ export const TableStringFilter = withTableStringFilterVariation(
         dataKey={dataKey}
         testId={testId}
         label={label.concat(
-          isValueRequiredOperator(operator)
+          isValuelessOperator(operator)
             ? `: ${filterLabelTranslation[operator as 'empty' | 'notEmpty']}`
             : value
             ? `: ${value}`
@@ -73,7 +78,7 @@ export const TableStringFilter = withTableStringFilterVariation(
         )}
         active={isStringFilterValid({ value, operator })}
         onClose={() => {
-          if (isValueRequiredOperator(operator)) {
+          if (isValuelessOperator(operator)) {
             setValue('');
 
             return;
@@ -85,10 +90,10 @@ export const TableStringFilter = withTableStringFilterVariation(
           setOperator(operatorOption);
         }}
         field={
-          !isValueRequiredOperator(operator) && (
+          !isValuelessOperator(operator) && (
             <Box px={20}>
               <TextField
-                ref={filedRef}
+                ref={fieldRef}
                 autoFocus={true}
                 placeholder={placeholder}
                 clearable={true}

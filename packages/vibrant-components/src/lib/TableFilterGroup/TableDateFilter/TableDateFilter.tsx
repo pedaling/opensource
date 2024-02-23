@@ -7,7 +7,7 @@ import { RangePickerField } from '../../RangePickerField';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { DateFilterOperator } from '../types';
-import { isDateFilterValid, isValueRequiredOperator } from '../utils';
+import { isDateFilterValid, isValuelessOperator } from '../utils';
 import { withTableDateFilterVariation } from './TableDateFilterProps';
 
 export const TableDateFilter = withTableDateFilterVariation(
@@ -35,6 +35,7 @@ export const TableDateFilter = withTableDateFilterVariation(
     const prevOperatorRef = useRef<DateFilterOperator | undefined>();
     const [fieldAutoFocus, setFieldAutoFocus] = useState(false);
     const fieldRef = useRef<DatePickerFieldRefValue | null>(null);
+    const isMountedRef = useRef(false);
 
     const {
       translations: {
@@ -59,7 +60,11 @@ export const TableDateFilter = withTableDateFilterVariation(
     );
 
     useEffect(() => {
-      handleFilterChange();
+      if (isMountedRef.current) {
+        handleFilterChange();
+      }
+
+      isMountedRef.current = true;
     }, [operator, value, handleFilterChange]);
 
     useEffect(() => {
@@ -93,7 +98,7 @@ export const TableDateFilter = withTableDateFilterVariation(
         minWidth={operator === 'between' ? 320 : 'auto'}
         active={isDateFilterValid({ value, operator })}
         onClose={() => {
-          if (isValueRequiredOperator(operator)) {
+          if (isValuelessOperator(operator)) {
             setValue([]);
           }
 
@@ -110,7 +115,7 @@ export const TableDateFilter = withTableDateFilterVariation(
           }
         }}
         field={
-          !isValueRequiredOperator(operator) && (
+          !isValuelessOperator(operator) && (
             <Box px={20}>
               {operator === 'between' ? (
                 <RangePickerField
