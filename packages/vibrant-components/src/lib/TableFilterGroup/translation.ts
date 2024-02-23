@@ -53,4 +53,19 @@ export const ko: Translation['tableFilterGroup'] = {
       notContains: '포함하지 않는다',
     },
   },
+  radioFilter: {
+    reset: '선택 해제',
+    filterLabel: {
+      equals: '{option}',
+      notEquals: '{option} 같지 않음',
+      empty: '비어있음',
+      notEmpty: '비어있지 않음',
+    },
+    operators: {
+      equals: '같다',
+      notEquals: '같지 않다',
+      empty: '비어있다',
+      notEmpty: '비어있지 않다',
+    },
+  },
 };

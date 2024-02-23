@@ -36,6 +36,14 @@ export type MultiSelectFilter = {
   type: 'multiSelect';
 };
 
+export type RadioFilterOperator = 'empty' | 'equals' | 'notEmpty' | 'notEquals';
+
+export type RadioFilter = {
+  value?: Option['value'];
+  operator: RadioFilterOperator;
+  type: 'radio';
+};
+
 export type TableFilterRefValue = {
   reset: () => void;
   value: Filter;

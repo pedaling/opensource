@@ -123,6 +123,21 @@ export type Translation = {
         notContains: string;
       };
     };
+    radioFilter: {
+      reset: string;
+      filterLabel: {
+        equals: string;
+        notEquals: string;
+        empty: string;
+        notEmpty: string;
+      };
+      operators: {
+        equals: string;
+        notEquals: string;
+        empty: string;
+        notEmpty: string;
+      };
+    };
   };
   drawer: {
     drawerHeader: {
@@ -212,6 +227,21 @@ const ConfigContext = createContext<ConfigContextValue>({
         operators: {
           contains: '포함한다',
           notContains: '포함하지 않는다',
+        },
+      },
+      radioFilter: {
+        reset: '선택 해제',
+        filterLabel: {
+          equals: '{option}',
+          notEquals: '{option} 같지 않음',
+          empty: '비어있음',
+          notEmpty: '비어있지 않음',
+        },
+        operators: {
+          equals: '같다',
+          notEquals: '같지 않다',
+          empty: '비어있다',
+          notEmpty: '비어있지 않다',
         },
       },
     },
