@@ -64,7 +64,7 @@ describe('<RangePickerField />', () => {
         fireEvent.click(secondDayButtonElement);
       });
 
-      it('the start is set to 15th 00:00, and the end is set to 16th 23:59, triggering the OnValue function.', async () => {
+      it('the start is set to 15th 00:00, and the end is set to 16th 23:59, triggering the onValueChange function.', async () => {
         const startDate = new Date();
         const endDate = new Date();
 
