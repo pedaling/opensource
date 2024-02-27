@@ -70,17 +70,19 @@ export const RangePickerField = withRangePickerFieldVariation(
           return;
         }
 
+        const endOfEndDate = new Date(new Date(endDate).setHours(23, 59, 59, 999));
+
         let isPrevented = false;
 
         onValueChangeRef.current?.({
-          value: { start: startDate, end: endDate },
+          value: { start: startDate, end: endOfEndDate },
           prevent: () => {
             isPrevented = true;
           },
         });
 
         if (!isPrevented) {
-          setValue({ start: startDate, end: endDate });
+          setValue({ start: startDate, end: endOfEndDate });
         }
 
         setIsCalendarOpened(false);
