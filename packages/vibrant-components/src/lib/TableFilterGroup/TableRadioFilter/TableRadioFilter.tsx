@@ -27,7 +27,7 @@ export const TableRadioFilter = withTableRadioFilterVariation(
     lineLimit,
     testId,
   }) => {
-    const [value, setValue] = useState<Option['value'] | undefined>(defaultValue?.value);
+    const [value, setValue] = useState<Option['value']>(defaultValue?.value ?? '');
     const [operator, setOperator] = useState<RadioFilterOperator>(defaultValue?.operator);
     const { updateFilter } = useTableFilterGroup();
     const handleFilterChange = useCallbackRef(updateFilter);
@@ -45,7 +45,7 @@ export const TableRadioFilter = withTableRadioFilterVariation(
       innerRef,
       () => ({
         reset: () => {
-          setValue(defaultValue?.value);
+          setValue(defaultValue?.value ?? '');
 
           setOperator(defaultValue?.operator);
         },
@@ -71,13 +71,13 @@ export const TableRadioFilter = withTableRadioFilterVariation(
           isValuelessOperator(operator)
             ? `: ${filterLabelTranslation[operator as 'empty' | 'notEmpty']}`
             : value
-            ? `: ${options.find(option => option.value === value)?.label}`
-            : ''
+              ? `: ${options.find(option => option.value === value)?.label}`
+              : ''
         )}
         active={isRadioFilterValid({ value, operator })}
         onClose={() => {
           if (isValuelessOperator(operator)) {
-            setValue(undefined);
+            setValue('');
           }
         }}
         operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
@@ -100,7 +100,7 @@ export const TableRadioFilter = withTableRadioFilterVariation(
                   <Space height={16} />
                   <Divider direction="horizontal" />
                   <Box px={20} pt={20}>
-                    <GhostButton size="md" onClick={() => setValue(undefined)}>
+                    <GhostButton size="md" onClick={() => setValue('')}>
                       {resetTranslation}
                     </GhostButton>
                   </Box>
