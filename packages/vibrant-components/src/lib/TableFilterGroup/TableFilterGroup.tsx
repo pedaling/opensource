@@ -1,7 +1,8 @@
-import { Children, Fragment, cloneElement, isValidElement, useRef, useState } from 'react';
+import { Children, Fragment, cloneElement, isValidElement, useEffect, useRef, useState } from 'react';
 import type { ComponentWithRef } from '@vibrant-ui/core';
 import { ScrollBox, useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
+import { useCallbackRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { Dropdown } from '../Dropdown';
 import { GhostButton } from '../GhostButton';
@@ -28,12 +29,10 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
         tableFilterGroup: { add, initialize },
       },
     } = useConfig();
-
     const filterReferences = useRef<Record<string, TableFilterRefValue>>({});
-
     const [currentFilterDataKeys, setCurrentFilterDataKeys] = useState<string[]>(initialFilterDataKeys);
-
     const [isChanged, setIsChanged] = useState(false);
+    const isMountedRef = useRef(false);
 
     const filterElements =
       Children.toArray(children).filter(
@@ -43,52 +42,36 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
     const isAvailableFilterExist =
       filterElements.filter(element => !currentFilterDataKeys.includes(element.props.dataKey)).length !== 0;
 
-    function checkInitialButtonState() {
-      if ([...initialFilterDataKeys].sort().join(',') !== [...currentFilterDataKeys].sort().join(',')) {
+    const checkInitialButtonState = useCallbackRef((filterDateKeys: string[]) => {
+      if ([...initialFilterDataKeys].sort().join(',') !== [...filterDateKeys].sort().join(',')) {
         setIsChanged(true);
 
         return;
       }
 
       setIsChanged(
-        !currentFilterDataKeys
-          .map(key => filterReferences.current[key].isDefaultState)
-          .every(isDefault => isDefault === true)
+        !filterDateKeys.map(key => filterReferences.current[key].isDefaultState).every(isDefault => isDefault === true)
       );
-    }
+    });
+
+    const handleFilterChange = useCallbackRef(onFilterChange);
 
     const addFilter = (filterDataKey: string) => {
       setCurrentFilterDataKeys([...currentFilterDataKeys, filterDataKey]);
-
-      onFilterChange?.(
-        currentFilterDataKeys
-          .filter(key => filterReferences.current[key])
-          .map(key => filterReferences.current[key].value)
-      );
-
-      checkInitialButtonState();
     };
 
     const updateFilter = () => {
-      onFilterChange?.(
+      handleFilterChange(
         currentFilterDataKeys
           .filter(key => filterReferences.current[key])
           .map(key => filterReferences.current[key].value)
       );
 
-      checkInitialButtonState();
+      checkInitialButtonState(currentFilterDataKeys);
     };
 
     const deleteFilter = (filterDataKey: string) => {
       setCurrentFilterDataKeys([...currentFilterDataKeys.filter(key => key !== filterDataKey)]);
-
-      onFilterChange?.(
-        currentFilterDataKeys
-          .filter(key => filterReferences.current[key])
-          .map(key => filterReferences.current[key].value)
-      );
-
-      checkInitialButtonState();
     };
 
     const onInitialize = () => {
@@ -97,11 +80,21 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
       });
 
       setCurrentFilterDataKeys(initialFilterDataKeys);
-
-      onFilterChange?.(currentFilterDataKeys.map(key => filterReferences.current[key].value));
-
-      checkInitialButtonState();
     };
+
+    useEffect(() => {
+      if (isMountedRef.current) {
+        handleFilterChange(
+          currentFilterDataKeys
+            .filter(key => filterReferences.current[key])
+            .map(key => filterReferences.current[key].value)
+        );
+
+        checkInitialButtonState(currentFilterDataKeys);
+      }
+
+      isMountedRef.current = true;
+    }, [checkInitialButtonState, currentFilterDataKeys, handleFilterChange]);
 
     return (
       <TableFilterGroupProvider
