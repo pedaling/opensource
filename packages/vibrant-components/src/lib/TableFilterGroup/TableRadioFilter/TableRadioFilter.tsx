@@ -71,8 +71,8 @@ export const TableRadioFilter = withTableRadioFilterVariation(
           isValuelessOperator(operator)
             ? `: ${filterLabelTranslation[operator as 'empty' | 'notEmpty']}`
             : value
-              ? `: ${options.find(option => option.value === value)?.label}`
-              : ''
+            ? `: ${options.find(option => option.value === value)?.label}`
+            : ''
         )}
         active={isRadioFilterValid({ value, operator })}
         onClose={() => {
