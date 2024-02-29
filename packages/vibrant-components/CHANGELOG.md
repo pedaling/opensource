@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.5...vibrant-components-0.92.6) (2024-02-29)
+
+
+### Bug Fixes
+
+* set endDate to last time of day in RangeDatePicker ([#940](https://github.com/pedaling/opensource/issues/940)) ([fe7dd51](https://github.com/pedaling/opensource/commit/fe7dd514c98e22721df78b8654918744660fac17))
+
 ### [0.92.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.4...vibrant-components-0.92.5) (2024-02-21)
 
 
