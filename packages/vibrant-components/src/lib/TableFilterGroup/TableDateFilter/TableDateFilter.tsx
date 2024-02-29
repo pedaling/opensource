@@ -137,8 +137,6 @@ export const TableDateFilter = withTableDateFilterVariation(
                   autoFocus={fieldAutoFocus}
                   onValueChange={({ value: newValue }) => {
                     setValue(newValue ? [newValue] : []);
-
-                    updateFilter();
                   }}
                 />
               )}
