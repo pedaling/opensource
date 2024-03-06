@@ -13,7 +13,7 @@ export type TableHeaderCellProps = {
   title?: TextChildren;
   description?: ReactElementChild | string;
   sortable?: boolean;
-  defaultSortDirection?: SortDirection;
+  sortDirection?: SortDirection;
   onSort?: (sortDirection: SortDirection) => void;
   renderCell?: () => ReactElementChildren;
   alignVertical?: 'center' | 'end' | 'start';
