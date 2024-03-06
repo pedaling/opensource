@@ -36,12 +36,12 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     alignHorizontal = 'center',
     alignVertical = 'center',
     sortable,
-    defaultSortDirection = 'none',
+    sortDirection = 'none',
     onSort,
     width,
   }) => {
     const handleSortButtonClick = () => {
-      const nextSortDirection = getNextSortDirection(defaultSortDirection);
+      const nextSortDirection = getNextSortDirection(sortDirection);
 
       onSort?.(nextSortDirection);
     };
@@ -90,7 +90,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
             )}
             {sortable && (
               <Box ml={4}>
-                <TableSortIcon sortDirection={defaultSortDirection} />
+                <TableSortIcon sortDirection={sortDirection} />
               </Box>
             )}
           </HStack>
