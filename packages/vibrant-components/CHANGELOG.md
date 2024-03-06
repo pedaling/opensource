@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.6...vibrant-components-0.92.7) (2024-03-06)
+
+
+### Features
+
+* **ModalBottomSheet:** Add Full size ([#944](https://github.com/pedaling/opensource/issues/944)) ([94034b2](https://github.com/pedaling/opensource/commit/94034b2830a32ab1d308edfe9a125141c13a4e97))
+
 ### [0.92.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.5...vibrant-components-0.92.6) (2024-02-29)
 
 
