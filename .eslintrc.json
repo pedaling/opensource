@@ -2,9 +2,15 @@
   "root": true,
   "extends": [
     "@class101/eslint-config",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:@nx/javascript"
   ],
+  "plugins" :["@nx"],
   "overrides": [
+    {
+      "files" :["*.ts","*.tsx"],
+      "extends": ["plugin:@nx/typescript"]
+    },
     {
       "files": [
         "*.mdx"
