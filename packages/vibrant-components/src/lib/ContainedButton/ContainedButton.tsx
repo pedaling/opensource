@@ -20,6 +20,7 @@ export const ContainedButton = withContainedButtonVariation(
     children,
     weight,
     testId = 'contained-button',
+    minHeight,
     ...restProps
   }) => (
     <Pressable
@@ -32,15 +33,10 @@ export const ContainedButton = withContainedButtonVariation(
       overlayColor={onColor}
       rounded="sm"
       disabled={loading || disabled}
+      minHeight={minHeight}
+      justifyContent="center"
     >
-      <Box
-        as="span"
-        opacity={loading ? 0 : 1}
-        flexDirection="row"
-        gap={contentsSpacing}
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Box as="span" opacity={loading ? 0 : 1} flexDirection="row" gap={contentsSpacing} alignItems="center">
         {IconComponent && <IconComponent size={iconSize} testId="icon-box" mx={2} />}
         {Boolean(children) && (
           <Text data-testid="button-text" typography={typography} fontWeight={weight} mx={4}>

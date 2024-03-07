@@ -8,6 +8,7 @@ export const sizeVariation = {
     disclosureSize: 12,
     contentsSpacing: 0,
     weight: 'medium',
+    minHeight: 30,
   },
   md: {
     typography: 'body2',
@@ -18,6 +19,7 @@ export const sizeVariation = {
     disclosureSize: 14,
     contentsSpacing: 0,
     weight: 'medium',
+    minHeight: 38,
   },
   lg: {
     typography: 'body2',
@@ -28,6 +30,7 @@ export const sizeVariation = {
     disclosureSize: 16,
     contentsSpacing: 0,
     weight: 'bold',
+    minHeight: 44,
   },
   xl: {
     typography: 'body1',
