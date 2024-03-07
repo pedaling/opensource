@@ -21,9 +21,9 @@ export const Image = withImageVariation(
     if (ImageComponent) {
       return (
         <>
-          {imageProps.map(({ src, display }) => (
+          {imageProps.map(({ src, display }, index) => (
             <ImageComponent
-              key={src}
+              key={`${src}_${index}`}
               data-testid={testId}
               ref={innerRef}
               loading={loading}
@@ -41,12 +41,12 @@ export const Image = withImageVariation(
 
     return (
       <>
-        {imageProps.map(({ src, display }) => (
+        {imageProps.map(({ src, display }, index) => (
           <Box
+            key={`${src}_${index}`}
             as="img"
             data-testid={testId}
             ref={innerRef}
-            key={src}
             loading={loading}
             alt={alt}
             src={src}
