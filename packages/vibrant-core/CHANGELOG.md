@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.8](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.7...vibrant-core-0.92.8) (2024-03-07)
+
+
+### Bug Fixes
+
+* 이미지 key가 중복되는 문제를 해결한다 ([#946](https://github.com/pedaling/opensource/issues/946)) ([482d296](https://github.com/pedaling/opensource/commit/482d296606743433ce3db66299b7686e09c664de))
+
 ### [0.92.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.6...vibrant-core-0.92.7) (2024-03-06)
 
 ### [0.92.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.5...vibrant-core-0.92.6) (2024-02-29)
