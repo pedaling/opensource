@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.9](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.8...vibrant-core-0.92.9) (2024-03-11)
+
+
+### Bug Fixes
+
+* set gap in ScrollBox contentContainerStyle ([#948](https://github.com/pedaling/opensource/issues/948)) ([dba4930](https://github.com/pedaling/opensource/commit/dba4930d0642cb8bbc4c00d7f2994090f6b07146))
+
 ### [0.92.8](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.7...vibrant-core-0.92.8) (2024-03-07)
 
 
