@@ -1,12 +1,15 @@
 import type { DateFilterOperator, MultiSelectFilterOperator, Option, StringFilterOperator } from '../types';
 
-export const isValueRequiredOperator = (op: string) => op === 'empty' || op === 'notEmpty';
+export const isValuelessOperator = (op: string) => op === 'empty' || op === 'notEmpty';
 
 export const isStringFilterValid = (filter: { value: string; operator: StringFilterOperator }) =>
-  Boolean(filter.value) || isValueRequiredOperator(filter.operator);
+  Boolean(filter.value) || isValuelessOperator(filter.operator);
+
+export const isRadioFilterValid = (filter: { value: string | undefined; operator: StringFilterOperator }) =>
+  Boolean(filter.value) || isValuelessOperator(filter.operator);
 
 export const isDateFilterValid = (filter: { value: Date[]; operator: DateFilterOperator }) => {
-  if (isValueRequiredOperator(filter.operator)) return true;
+  if (isValuelessOperator(filter.operator)) return true;
 
   if (filter.operator === 'between') return filter.value.length >= 2;
 
@@ -14,4 +17,4 @@ export const isDateFilterValid = (filter: { value: Date[]; operator: DateFilterO
 };
 
 export const isMultiSelectFilterValid = (filter: { value: Option['value'][]; operator: MultiSelectFilterOperator }) =>
-  Boolean(filter.value.length > 0) || isValueRequiredOperator(filter.operator);
+  Boolean(filter.value.length > 0) || isValuelessOperator(filter.operator);
