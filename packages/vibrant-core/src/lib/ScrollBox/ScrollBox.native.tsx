@@ -47,6 +47,9 @@ export const ScrollBox = styled(
         paddingTop,
         paddingVertical,
         paddingHorizontal,
+        gap,
+        rowGap,
+        columnGap,
         ...restStyle
       } = StyleSheet.flatten(style);
 
@@ -68,6 +71,9 @@ export const ScrollBox = styled(
             paddingTop,
             paddingVertical,
             paddingHorizontal,
+            gap,
+            rowGap,
+            columnGap,
           }}
           access={true}
           accessibilityLabel={ariaLabel}
