@@ -69,11 +69,11 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     }
   }, [columns, sortBy.dataKey]);
 
-  useEffect(() => {
-    if (sortBy?.dataKey) {
-      onSort?.(sortBy);
-    }
-  }, [onSort, sortBy]);
+  const handleChangeSort = (sortBy: TableSortBy<Data>) => {
+    setSortBy(sortBy);
+
+    onSort?.(sortBy);
+  };
 
   const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
     defaultValue: new Set<Data[RowKey]>(),
@@ -202,7 +202,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   overflowWrap={overflowWrap?.header}
                   renderCell={renderHeader}
                   sortDirection={sortBy.dataKey === dataKey ? sortBy.direction : 'none'}
-                  onSort={(sortDirection: SortDirection) => setSortBy({ dataKey, direction: sortDirection })}
+                  onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
                 />
               )
             )}
