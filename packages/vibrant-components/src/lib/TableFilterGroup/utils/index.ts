@@ -6,9 +6,13 @@ export const isStringFilterValid = (filter: { value: string; operator: StringFil
   Boolean(filter.value) || isValueRequiredOperator(filter.operator);
 
 export const isDateFilterValid = (filter: { value: Date[]; operator: DateFilterOperator }) => {
-  if (isValueRequiredOperator(filter.operator)) return true;
+  if (isValueRequiredOperator(filter.operator)) {
+    return true;
+  }
 
-  if (filter.operator === 'between') return filter.value.length >= 2;
+  if (filter.operator === 'between') {
+    return filter.value.length >= 2;
+  }
 
   return filter.value.length >= 1;
 };

@@ -93,9 +93,13 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
   const getColumnsCount = () => {
     let columnsNum = columns.length;
 
-    if (selectable) columnsNum += 1;
+    if (selectable) {
+      columnsNum += 1;
+    }
 
-    if (renderExpanded) columnsNum += 1;
+    if (renderExpanded) {
+      columnsNum += 1;
+    }
 
     return columnsNum;
   };

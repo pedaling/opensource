@@ -5,17 +5,23 @@ export const PopoverOpener = withPopoverOpenerVariation(
   ({ popoverId = '', openInteraction, isOpen, open, close, children }) => {
     const { isOpen: registeredIsOpen, open: registeredOpen, close: registeredClose } = usePopover({ id: popoverId });
     const toggleOpener = () => {
-      if (popoverId) return registeredIsOpen ? registeredClose?.() : registeredOpen?.();
+      if (popoverId) {
+        return registeredIsOpen ? registeredClose?.() : registeredOpen?.();
+      }
 
       return isOpen ? close?.() : open?.();
     };
     const openOpener = () => {
-      if (popoverId) return registeredOpen?.();
+      if (popoverId) {
+        return registeredOpen?.();
+      }
 
       return open?.();
     };
     const closeOpener = () => {
-      if (popoverId) return registeredClose?.();
+      if (popoverId) {
+        return registeredClose?.();
+      }
 
       return close?.();
     };
