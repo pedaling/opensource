@@ -76,7 +76,7 @@ export const Basic: ComponentStory<typeof Table> = props => (
         title="fat"
         description="abc"
         sortable={true}
-        defaultSortDirection="asc"
+        sortDirection="asc"
         formatData={({ fat }) => `${fat} kcal`}
       />
       <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" />
@@ -109,7 +109,7 @@ export const SelectableTable: FC<ComponentProps<typeof Table> & { locale?: 'en' 
           dataKey="calories"
           title="calories"
           sortable={true}
-          defaultSortDirection="asc"
+          sortDirection="asc"
           formatData={({ calories }) => `${calories} kcal`}
         />
         <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
@@ -168,7 +168,7 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
               dataKey="calories"
               title="calories"
               sortable={true}
-              defaultSortDirection="asc"
+              sortDirection="asc"
               formatData={({ calories }) => `${calories} kcal`}
             />
             <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />

@@ -59,12 +59,12 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   });
 
   useEffect(() => {
-    const defaultSort = columns.find(column => column.defaultSortDirection && column.defaultSortDirection !== 'none');
+    const defaultSort = columns.find(column => column.sortDirection && column.sortDirection !== 'none');
 
     if (defaultSort && defaultSort.dataKey !== sortBy.dataKey) {
       setSortBy({
         dataKey: defaultSort.dataKey,
-        direction: defaultSort.defaultSortDirection ?? 'none',
+        direction: defaultSort.sortDirection ?? 'none',
       });
     }
   }, [columns, sortBy.dataKey]);
