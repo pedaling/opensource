@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.10](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.9...vibrant-components-0.92.10) (2024-03-14)
+
+
+### Bug Fixes
+
+* table headers depend only on columns ([#945](https://github.com/pedaling/opensource/issues/945)) ([4714a09](https://github.com/pedaling/opensource/commit/4714a098a85f799373e8b9b151430cd62b689b9c))
+
 ### [0.92.9](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.8...vibrant-components-0.92.9) (2024-03-11)
 
 ### [0.92.8](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.7...vibrant-components-0.92.8) (2024-03-07)
