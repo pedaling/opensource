@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Box, PressableBox } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../../Body';
@@ -37,22 +36,12 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     alignHorizontal = 'center',
     alignVertical = 'center',
     sortable,
-    defaultSortDirection,
+    sortDirection = 'none',
     onSort,
     width,
   }) => {
-    const [sortDirection, setSortDirection] = useState<SortDirection>(defaultSortDirection ?? 'none');
-
-    useEffect(() => {
-      if (defaultSortDirection) {
-        setSortDirection(defaultSortDirection);
-      }
-    }, [defaultSortDirection]);
-
     const handleSortButtonClick = () => {
       const nextSortDirection = getNextSortDirection(sortDirection);
-
-      setSortDirection(nextSortDirection);
 
       onSort?.(nextSortDirection);
     };

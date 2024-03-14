@@ -86,7 +86,7 @@ export const Basic: ComponentStory<typeof VirtualizedTable> = props => (
         title="fat"
         description="abc"
         sortable={true}
-        defaultSortDirection="asc"
+        sortDirection="asc"
         width={120}
         formatData={({ fat }) => `${fat} kcal`}
       />
@@ -121,7 +121,7 @@ export const RowSelectable: FC<ComponentProps<typeof VirtualizedTable> & { local
           dataKey="calories"
           title="calories"
           sortable={true}
-          defaultSortDirection="asc"
+          sortDirection="asc"
           formatData={({ calories }) => `${calories} kcal`}
         />
         <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
