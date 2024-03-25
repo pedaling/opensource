@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.11](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.10...vibrant-icons-0.92.11) (2024-03-25)
+
+
+### Features
+
+* heart, bookmark 아이콘을 변경한다 ([#950](https://github.com/pedaling/opensource/issues/950)) ([a1d6cb7](https://github.com/pedaling/opensource/commit/a1d6cb7a40293ac6b7d6fecafcfed4ffb078fe34))
+
 ### [0.92.10](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.9...vibrant-icons-0.92.10) (2024-03-14)
 
 ### [0.92.9](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.8...vibrant-icons-0.92.9) (2024-03-11)
