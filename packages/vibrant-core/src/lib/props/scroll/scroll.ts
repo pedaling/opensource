@@ -11,6 +11,26 @@ const scrollSnapProp = createSystemProp({
   styleProperty: 'scrollSnapType',
 });
 
+const scrollPaddingTopProp = createSystemProp({
+  property: 'scrollPaddingTop',
+  styleProperty: 'scrollPaddingTop',
+});
+
+const scrollPaddingLeftProp = createSystemProp({
+  property: 'scrollPaddingLeft',
+  styleProperty: 'scrollPaddingLeft',
+});
+
+const scrollPaddingRightProp = createSystemProp({
+  property: 'scrollPaddingRight',
+  styleProperty: 'scrollPaddingRight',
+});
+
+const scrollPaddingBottomProp = createSystemProp({
+  property: 'scrollPaddingBottom',
+  styleProperty: 'scrollPaddingBottom',
+});
+
 const hideScrollProp = createSystemProp({
   property: 'hideScroll',
   transform: (value: boolean) =>
@@ -25,4 +45,12 @@ const hideScrollProp = createSystemProp({
       : {},
 });
 
-export const scrollSystemProps = [hideScrollProp, horizontalProp, scrollSnapProp];
+export const scrollSystemProps = [
+  hideScrollProp,
+  horizontalProp,
+  scrollSnapProp,
+  scrollPaddingTopProp,
+  scrollPaddingLeftProp,
+  scrollPaddingRightProp,
+  scrollPaddingBottomProp,
+];
