@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.13](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.12...vibrant-core-0.92.13) (2024-04-24)
+
+
+### Bug Fixes
+
+* scroll padding props 타입 변경 ([#952](https://github.com/pedaling/opensource/issues/952)) ([3ace571](https://github.com/pedaling/opensource/commit/3ace571dd573bab8b7b6977c3c4d1cde4fac2305))
+
 ### [0.92.12](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.11...vibrant-core-0.92.12) (2024-04-19)
 
 
