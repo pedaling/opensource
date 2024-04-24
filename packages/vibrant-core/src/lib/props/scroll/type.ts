@@ -4,8 +4,8 @@ export type ScrollSystemProps = {
   scrollSnap?: ResponsiveValue<string>;
   horizontal?: ResponsiveValue<boolean>;
   hideScroll?: ResponsiveValue<boolean>;
-  scrollPaddingTop?: ResponsiveValue<string>;
-  scrollPaddingLeft?: ResponsiveValue<string>;
-  scrollPaddingRight?: ResponsiveValue<string>;
-  scrollPaddingBottom?: ResponsiveValue<string>;
+  scrollPaddingTop?: ResponsiveValue<number | string>;
+  scrollPaddingLeft?: ResponsiveValue<number | string>;
+  scrollPaddingRight?: ResponsiveValue<number | string>;
+  scrollPaddingBottom?: ResponsiveValue<number | string>;
 };
