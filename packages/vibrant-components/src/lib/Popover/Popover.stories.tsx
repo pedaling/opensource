@@ -24,6 +24,16 @@ export const Basic: ComponentStory<typeof Popover> = props => (
   </VStack>
 );
 
+export const WithDefaultOpen: ComponentStory<typeof Popover> = props => (
+  <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
+    <Popover title="Popover" {...props} open={true}>
+      <Popover.Opener openInteraction="click">
+        <Avatar size="lg" src="" alt="" />
+      </Popover.Opener>
+    </Popover>
+  </VStack>
+);
+
 export const WithExternalState: ComponentStory<typeof Popover> = props => {
   const [isOpen, setIsOpen] = useState(false);
 
