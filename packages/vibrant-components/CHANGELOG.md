@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.15](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.14...vibrant-components-0.92.15) (2024-05-27)
+
+
+### Bug Fixes
+
+* 팝오버의 포지션 값에 애니메이션이 적용되지 않게 수정한다 ([#954](https://github.com/pedaling/opensource/issues/954)) ([f35c119](https://github.com/pedaling/opensource/commit/f35c119e573a9d28a6f5cfbffbbe099f565fe3bf))
+
 ### [0.92.14](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.13...vibrant-components-0.92.14) (2024-05-27)
 
 
