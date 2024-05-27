@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.13](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.12...vibrant-core-0.92.13) (2024-04-24)
+
+
+### Bug Fixes
+
+* scroll padding props 타입 변경 ([#952](https://github.com/pedaling/opensource/issues/952)) ([3ace571](https://github.com/pedaling/opensource/commit/3ace571dd573bab8b7b6977c3c4d1cde4fac2305))
+
+### [0.92.12](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.11...vibrant-core-0.92.12) (2024-04-19)
+
+
+### Features
+
+* scrollPadding 관련 스타일을 추가한다 ([#951](https://github.com/pedaling/opensource/issues/951)) ([2c39124](https://github.com/pedaling/opensource/commit/2c391240087464e726cce2e8a0bbde9463274cdb))
+
+### [0.92.11](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.10...vibrant-core-0.92.11) (2024-03-25)
+
 ### [0.92.10](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.9...vibrant-core-0.92.10) (2024-03-14)
 
 ### [0.92.9](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.8...vibrant-core-0.92.9) (2024-03-11)
