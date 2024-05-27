@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.14](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.13...vibrant-components-0.92.14) (2024-05-27)
+
+
+### Bug Fixes
+
+* 드롭다운이 정상적으로 동작하도록 수정한다 ([#953](https://github.com/pedaling/opensource/issues/953)) ([0a792e0](https://github.com/pedaling/opensource/commit/0a792e09aca8619000914875fe1577f1c57dbf5c))
+
 ### [0.92.13](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.12...vibrant-components-0.92.13) (2024-04-24)
 
 ### [0.92.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.11...vibrant-components-0.92.12) (2024-04-19)
