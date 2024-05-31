@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { KeyboardTypeOptions, TextInputProps as RNTextInputProps } from 'react-native';
-import { TextInput as RNTextInput, StyleSheet } from 'react-native';
+import { TextInput as RNTextInput, StyleSheet,  NativeSyntheticEvent, TextInputKeyPressEventData } from 'react-native';
 import styled from '@emotion/native';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import { platform } from '../platform';
@@ -110,8 +110,8 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
           onBlur?.();
         }}
-        onKeyPress={event => onKeyPress?.({ key: event.nativeEvent.key, prevent: () => event.preventDefault() })}
-        onChangeText={value => {
+        onKeyPress={(event: NativeSyntheticEvent<TextInputKeyPressEventData>) => onKeyPress?.({ key: event.nativeEvent.key, prevent: () => event.preventDefault() })}
+        onChangeText={(value: string) => {
           const replacedValue = replaceValue({ pattern, value });
 
           let isPrevented = false;

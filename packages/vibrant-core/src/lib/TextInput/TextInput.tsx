@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState, KeyboardEvent, FormEvent } from 'react';
 import styled from '@emotion/styled';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
@@ -97,7 +97,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
           onBlur?.();
         }}
-        onKeyDown={event => {
+        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
           const { key } = event.nativeEvent;
 
           if (key === 'Enter') {
@@ -108,7 +108,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
 
           onKeyPress?.({ key, prevent: () => event.preventDefault() });
         }}
-        onInput={event => {
+        onInput={(event: FormEvent<HTMLInputElement>) => {
           const replacedValue = replaceValue({
             pattern: type === 'number' ? /\d/ : pattern,
             value: event.currentTarget.value,
