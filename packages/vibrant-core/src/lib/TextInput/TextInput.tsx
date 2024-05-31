@@ -1,4 +1,5 @@
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState, KeyboardEvent, FormEvent } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import type { FormEvent, KeyboardEvent } from 'react';
 import styled from '@emotion/styled';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
