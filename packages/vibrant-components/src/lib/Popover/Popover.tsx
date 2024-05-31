@@ -244,8 +244,8 @@ export const Popover = ({
         <Transition
           animation={{
             opacity: isOpen && (popoverPosition.x !== 0 || popoverPosition.y !== 0) ? 1 : 0,
-            ...popoverPosition,
           }}
+          style={popoverPosition}
           duration={200}
           easing="easeOutQuad"
         >
