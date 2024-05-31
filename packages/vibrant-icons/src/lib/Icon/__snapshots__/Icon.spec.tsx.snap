@@ -26954,7 +26954,6 @@ exports[`<Icon /> when School.Fill Icon rendered match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  stroke: #0c0c0c;
 }
 
 <div>
