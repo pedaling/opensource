@@ -45,7 +45,7 @@ describe.skip('createInterpolation', () => {
     theme,
     breakpointIndex: 0,
   });
-
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   let props: Record<string, any>;
 
   describe('when prop is 1 depth object', () => {
