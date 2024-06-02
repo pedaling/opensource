@@ -12,6 +12,7 @@ export type ImageProps = {
   draggable?: boolean;
   testId?: string;
   onError?: () => void;
+  onLoad?: () => void;
 } & SizingSystemProps &
   MediaSystemProps &
   BorderSystemProps;

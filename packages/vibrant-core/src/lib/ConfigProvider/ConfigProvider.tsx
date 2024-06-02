@@ -28,6 +28,7 @@ export type Dependencies = {
       draggable?: boolean;
       loading?: 'eager' | 'lazy';
       onError?: () => void;
+      onLoad?: () => void;
     } & SizingSystemProps &
       MediaSystemProps &
       BorderSystemProps
