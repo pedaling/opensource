@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.15...vibrant-core-0.92.16) (2024-06-03)
+
+
+### Features
+
+* school, toteBagPlay 아이콘을 추가한다. ([#955](https://github.com/pedaling/opensource/issues/955)) ([300747d](https://github.com/pedaling/opensource/commit/300747d9a1f1100d573959d0de8142607a090fbf))
+
 ### [0.92.15](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.14...vibrant-core-0.92.15) (2024-05-27)
 
 ### [0.92.14](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.13...vibrant-core-0.92.14) (2024-05-27)
