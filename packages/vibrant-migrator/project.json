@@ -1,0 +1,69 @@
+{
+  "name": "vibrant-migrator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/vibrant-migrator/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/vibrant-migrator",
+        "main": "packages/vibrant-migrator/src/index.ts",
+        "tsConfig": "packages/vibrant-migrator/tsconfig.lib.json",
+        "assets": ["packages/vibrant-migrator/*.md", "packages/vibrant-migrator/bin/*"]
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": ["yarn tsc --project ./packages/vibrant-migrator/tsconfig.lib.json"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/vibrant-migrator/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/vibrant-migrator/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "dependsOn": ["build-native"],
+      "options": {
+        "preset": "conventional",
+        "skipCommit": true,
+        "trackDeps": true,
+        "postTargets": ["vibrant-migrator:github", "vibrant-migrator:deploy"]
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    }
+  },
+  "tags": []
+}

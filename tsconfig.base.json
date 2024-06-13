@@ -24,6 +24,7 @@
       "@vibrant-ui/forms": ["packages/vibrant-forms/src/index.ts"],
       "@vibrant-ui/icons": ["packages/vibrant-icons/src/index.ts"],
       "@vibrant-ui/layouts": ["packages/vibrant-layouts/src/index.ts"],
+      "@vibrant-ui/migrator": ["packages/vibrant-migrator/src/index.ts"],
       "@vibrant-ui/motion": ["packages/vibrant-motion/src/index.ts"],
       "@vibrant-ui/theme": ["packages/vibrant-theme/src/index.ts"],
       "@vibrant-ui/utils": ["packages/vibrant-utils/src/index.ts"],

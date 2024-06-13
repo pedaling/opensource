@@ -6,19 +6,8 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "build-native",
-          "typecheck"
-        ],
-        "accessToken": "ZDlmMzIwMjgtZThjZS00MWExLThlZTgtMGEyMGQyMzUyMmFifHJlYWQ=",
-        "parallel": 3
-      }
+      "runner": "nx/tasks-runners/default",
+      "options": {}
     }
   },
   "workspaceLayout": {
