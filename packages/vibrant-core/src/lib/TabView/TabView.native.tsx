@@ -9,12 +9,10 @@ export const TabView = withTabViewVariation(({ children, onTabChange, renderTobB
   const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [routes] = useState(
-    childrenElement.map(element => ({
-      key: element.props.tabId,
-      title: element.props.title,
-    }))
-  );
+  const routes = childrenElement.map(element => ({
+    key: element.props.tabId,
+    title: element.props.title,
+  }));
 
   const handleTabChange = (index: number) => {
     const currentTab = childrenElement.find((_, index) => index === currentIndex);
