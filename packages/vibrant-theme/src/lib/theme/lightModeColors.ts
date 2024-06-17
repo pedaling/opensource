@@ -25,7 +25,7 @@ export const lightModeColors: Colors = {
   onWarning: palettes.yellow['5'],
   warningContainer: palettes.yellow['95'],
   onWarningContainer: palettes.yellow['55'],
-  surface1: palettes.blackAlpha['5'],
+  surface1: palettes.blackAlpha['3'],
   surface2: palettes.globalWhite,
   surface3: palettes.globalWhite,
   surface4: palettes.neutral['80'],

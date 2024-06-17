@@ -89,7 +89,7 @@ export const LightThemeKindVariations: KindVariation[] = [
   },
   {
     kind: 'tertiary',
-    backgroundColor: '#0000000d',
+    backgroundColor: '#00000008',
     contentColor: '#0c0c0c',
     hoverOpacity: 0.025,
     focusedOpacity: 0.075,
@@ -116,7 +116,7 @@ export const DarkThemeKindVariations: KindVariation[] = [
   },
   {
     kind: 'tertiary',
-    backgroundColor: '#ffffff1a',
+    backgroundColor: '#ffffff0d',
     contentColor: '#f3f3f3',
     hoverOpacity: 0.75,
     focusedOpacity: 0.125,

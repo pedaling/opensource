@@ -50,7 +50,7 @@ export const TopBar = withTopBarVariation(
           )}
           {isValidElement(title) ? (
             <Box
-              data-testId="top-bar-element-title"
+              data-testid="top-bar-element-title"
               width="100%"
               flex={1}
               flexShrink={0}
