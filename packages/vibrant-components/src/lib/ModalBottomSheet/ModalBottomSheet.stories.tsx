@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Box, Text, useCurrentTheme } from '@vibrant-ui/core';
+import { Box, useCurrentTheme } from '@vibrant-ui/core';
+import { Icon } from '@vibrant-ui/icons';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
 import { HStack } from '../HStack';
@@ -9,7 +10,7 @@ import { Pressable } from '../Pressable';
 import { SelectField } from '../SelectField';
 import { TextField } from '../TextField';
 import { VStack } from '../VStack';
-import { ModalBottomSheet } from './ModalBottomSheet';
+import { ModalBottomSheet } from './index';
 
 export default {
   title: 'ModalBottomSheet',
@@ -23,9 +24,24 @@ export default {
       </Pressable>
     ),
     renderContents: () => (
-      <Box width="100%" height={100} backgroundColor="primary" alignItems="center" justifyContent="center">
-        <Text>Content</Text>
-      </Box>
+      <VStack px={30}>
+        <ModalBottomSheet.Menu
+          icon={<Icon.PlayCircle.Thin />}
+          title="화질"
+          rightContents={() => <Icon.ChevronRight.Fill />}
+        />
+        <ModalBottomSheet.Menu
+          icon={<Icon.PlayNext.Thin />}
+          title="자동재생"
+          rightContents={() => <Icon.ChevronRight.Fill />}
+        />
+        <ModalBottomSheet.Menu
+          icon={<Icon.Subtitle.Thin />}
+          title="자막"
+          rightContents={() => <Icon.ChevronRight.Fill />}
+        />
+        <ModalBottomSheet.Menu title="기타" rightContents={() => <Icon.ChevronRight.Fill />} />
+      </VStack>
     ),
   },
 } as ComponentMeta<typeof ModalBottomSheet>;
