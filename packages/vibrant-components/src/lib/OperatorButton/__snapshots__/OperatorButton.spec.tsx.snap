@@ -18,7 +18,7 @@ exports[`<OperatorButton /> when OperatorButton rendered match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: #0000000d;
+  background-color: #00000008;
   border-width: 0;
   padding: 7px;
   overflow: hidden;
