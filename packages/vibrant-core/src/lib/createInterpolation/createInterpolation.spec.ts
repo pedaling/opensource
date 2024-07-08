@@ -40,11 +40,7 @@ const pseudoHoverProp = createSystemProp({
 
 describe('createInterpolation', () => {
   const { theme } = useCurrentTheme();
-
-  const interpolation = createInterpolation([widthProp, heightProp, marginProp, pseudoHoverProp])({
-    theme,
-    breakpointIndex: 0,
-  });
+  const interpolation = createInterpolation([widthProp, heightProp, marginProp, pseudoHoverProp]);
 
   let props: Record<string, any>;
 
@@ -55,7 +51,7 @@ describe('createInterpolation', () => {
       });
 
       it('systemProp return value is merged by media query key', () => {
-        expect(interpolation(props)).toStrictEqual({
+        expect(interpolation({ theme, props })).toStrictEqual({
           width: 100,
           height: 100,
           '@media screen and (min-width: 640px)': {
@@ -72,7 +68,7 @@ describe('createInterpolation', () => {
       });
 
       it('should removed non-systemProp key', () => {
-        expect(interpolation(props)).toStrictEqual({ width: 100 });
+        expect(interpolation({ theme, props })).toStrictEqual({ width: 100 });
       });
     });
 
@@ -82,7 +78,7 @@ describe('createInterpolation', () => {
       });
 
       it('should return empty object', () => {
-        expect(interpolation(props)).toStrictEqual({});
+        expect(interpolation({ theme, props })).toStrictEqual({});
       });
     });
 
@@ -92,7 +88,7 @@ describe('createInterpolation', () => {
       });
 
       it('should return empty object', () => {
-        expect(interpolation(props)).toStrictEqual({});
+        expect(interpolation({ theme, props })).toStrictEqual({});
       });
     });
   });
@@ -103,7 +99,7 @@ describe('createInterpolation', () => {
     });
 
     it('should return return value of all nested systemProp', () => {
-      expect(interpolation(props)).toStrictEqual({
+      expect(interpolation({ theme, props })).toStrictEqual({
         '&:hover': { margin: 3 },
       });
     });
