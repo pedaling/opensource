@@ -2,6 +2,28 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.71.16](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.15...workspace-plugin-0.71.16) (2024-06-03)
+
+### [0.71.15](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.14...workspace-plugin-0.71.15) (2024-05-27)
+
+### [0.71.14](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.13...workspace-plugin-0.71.14) (2024-05-27)
+
+### [0.71.13](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.12...workspace-plugin-0.71.13) (2024-04-24)
+
+### [0.71.12](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.11...workspace-plugin-0.71.12) (2024-04-19)
+
+### [0.71.11](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.10...workspace-plugin-0.71.11) (2024-03-25)
+
+### [0.71.10](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.9...workspace-plugin-0.71.10) (2024-03-14)
+
+### [0.71.9](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.8...workspace-plugin-0.71.9) (2024-03-11)
+
+### [0.71.8](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.7...workspace-plugin-0.71.8) (2024-03-07)
+
+### [0.71.7](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.6...workspace-plugin-0.71.7) (2024-03-06)
+
+### [0.71.6](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.5...workspace-plugin-0.71.6) (2024-02-29)
+
 ### [0.71.5](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.4...workspace-plugin-0.71.5) (2024-02-21)
 
 ### [0.71.4](https://github.com/pedaling/opensource/compare/workspace-plugin-0.71.3...workspace-plugin-0.71.4) (2024-02-13)

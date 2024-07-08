@@ -10,6 +10,8 @@ export type UseTableResult<Data extends Record<string, any>, RowKey extends keyo
   };
 };
 
+export type TableSortBy<Data> = { dataKey?: keyof Data; direction: SortDirection };
+
 export type TableProps<Data extends Record<string, any>, RowKey extends keyof Data> = {
   data: Data[];
   rowKey: RowKey;
@@ -22,7 +24,7 @@ export type TableProps<Data extends Record<string, any>, RowKey extends keyof Da
   onRow?: {
     onClick: (row: Data) => void;
   };
-  onSort?: ({ dataKey, direction }: { dataKey?: keyof Data; direction: SortDirection }) => void;
+  onSort?: (sortBy: TableSortBy<Data>) => void;
   emptyText?: TextChildren;
   emptyImage?: string;
   disabledRowKeys?: Data[RowKey][];

@@ -2,6 +2,38 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.15...vibrant-icons-0.92.16) (2024-06-03)
+
+
+### Features
+
+* school, toteBagPlay 아이콘을 추가한다. ([#955](https://github.com/pedaling/opensource/issues/955)) ([300747d](https://github.com/pedaling/opensource/commit/300747d9a1f1100d573959d0de8142607a090fbf))
+
+### [0.92.15](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.14...vibrant-icons-0.92.15) (2024-05-27)
+
+### [0.92.14](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.13...vibrant-icons-0.92.14) (2024-05-27)
+
+### [0.92.13](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.12...vibrant-icons-0.92.13) (2024-04-24)
+
+### [0.92.12](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.11...vibrant-icons-0.92.12) (2024-04-19)
+
+### [0.92.11](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.10...vibrant-icons-0.92.11) (2024-03-25)
+
+
+### Features
+
+* heart, bookmark 아이콘을 변경한다 ([#950](https://github.com/pedaling/opensource/issues/950)) ([a1d6cb7](https://github.com/pedaling/opensource/commit/a1d6cb7a40293ac6b7d6fecafcfed4ffb078fe34))
+
+### [0.92.10](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.9...vibrant-icons-0.92.10) (2024-03-14)
+
+### [0.92.9](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.8...vibrant-icons-0.92.9) (2024-03-11)
+
+### [0.92.8](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.7...vibrant-icons-0.92.8) (2024-03-07)
+
+### [0.92.7](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.6...vibrant-icons-0.92.7) (2024-03-06)
+
+### [0.92.6](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.5...vibrant-icons-0.92.6) (2024-02-29)
+
 ### [0.92.5](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.4...vibrant-icons-0.92.5) (2024-02-21)
 
 ### [0.92.4](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.3...vibrant-icons-0.92.4) (2024-02-13)

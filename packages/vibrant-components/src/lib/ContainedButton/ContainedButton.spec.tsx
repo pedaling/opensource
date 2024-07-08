@@ -44,7 +44,7 @@ describe('<ContainedButton />', () => {
           expect(renderer.queryByTestId('button-text')).toHaveStyleRule('color', contentColor);
         });
 
-        describe(`and button clicked`, () => {
+        describe('and button clicked', () => {
           beforeEach(() => {
             fireEvent.click(element);
           });
@@ -58,7 +58,7 @@ describe('<ContainedButton />', () => {
           });
         });
 
-        describe(`and mouse hovered`, () => {
+        describe('and mouse hovered', () => {
           beforeEach(() => {
             fireEvent.mouseOver(element);
           });
@@ -72,7 +72,7 @@ describe('<ContainedButton />', () => {
           });
         });
 
-        describe(`and focused`, () => {
+        describe('and focused', () => {
           beforeEach(() => {
             fireEvent.focusIn(element);
           });
@@ -109,7 +109,7 @@ describe('<ContainedButton />', () => {
           expect(renderer.queryByTestId('button-text')).toHaveStyleRule('color', contentColor);
         });
 
-        describe(`and button clicked`, () => {
+        describe('and button clicked', () => {
           beforeEach(() => {
             fireEvent.click(element);
           });
@@ -123,7 +123,7 @@ describe('<ContainedButton />', () => {
           });
         });
 
-        describe(`and mouse hovered`, () => {
+        describe('and mouse hovered', () => {
           beforeEach(() => {
             fireEvent.mouseOver(element);
           });
@@ -137,7 +137,7 @@ describe('<ContainedButton />', () => {
           });
         });
 
-        describe(`and focused`, () => {
+        describe('and focused', () => {
           beforeEach(() => {
             fireEvent.focusIn(element);
           });
@@ -206,7 +206,7 @@ describe('<ContainedButton />', () => {
       });
     });
 
-    describe(`and button clicked`, () => {
+    describe('and button clicked', () => {
       beforeEach(() => {
         fireEvent.click(element);
       });

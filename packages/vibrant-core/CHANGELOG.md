@@ -2,6 +2,58 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.15...vibrant-core-0.92.16) (2024-06-03)
+
+
+### Features
+
+* school, toteBagPlay 아이콘을 추가한다. ([#955](https://github.com/pedaling/opensource/issues/955)) ([300747d](https://github.com/pedaling/opensource/commit/300747d9a1f1100d573959d0de8142607a090fbf))
+
+### [0.92.15](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.14...vibrant-core-0.92.15) (2024-05-27)
+
+### [0.92.14](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.13...vibrant-core-0.92.14) (2024-05-27)
+
+### [0.92.13](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.12...vibrant-core-0.92.13) (2024-04-24)
+
+
+### Bug Fixes
+
+* scroll padding props 타입 변경 ([#952](https://github.com/pedaling/opensource/issues/952)) ([3ace571](https://github.com/pedaling/opensource/commit/3ace571dd573bab8b7b6977c3c4d1cde4fac2305))
+
+### [0.92.12](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.11...vibrant-core-0.92.12) (2024-04-19)
+
+
+### Features
+
+* scrollPadding 관련 스타일을 추가한다 ([#951](https://github.com/pedaling/opensource/issues/951)) ([2c39124](https://github.com/pedaling/opensource/commit/2c391240087464e726cce2e8a0bbde9463274cdb))
+
+### [0.92.11](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.10...vibrant-core-0.92.11) (2024-03-25)
+
+### [0.92.10](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.9...vibrant-core-0.92.10) (2024-03-14)
+
+### [0.92.9](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.8...vibrant-core-0.92.9) (2024-03-11)
+
+
+### Bug Fixes
+
+* set gap in ScrollBox contentContainerStyle ([#948](https://github.com/pedaling/opensource/issues/948)) ([dba4930](https://github.com/pedaling/opensource/commit/dba4930d0642cb8bbc4c00d7f2994090f6b07146))
+
+### [0.92.8](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.7...vibrant-core-0.92.8) (2024-03-07)
+
+
+### Bug Fixes
+
+* 이미지 key가 중복되는 문제를 해결한다 ([#946](https://github.com/pedaling/opensource/issues/946)) ([482d296](https://github.com/pedaling/opensource/commit/482d296606743433ce3db66299b7686e09c664de))
+
+### [0.92.7](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.6...vibrant-core-0.92.7) (2024-03-06)
+
+### [0.92.6](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.5...vibrant-core-0.92.6) (2024-02-29)
+
+
+### Bug Fixes
+
+* set endDate to last time of day in RangeDatePicker ([#940](https://github.com/pedaling/opensource/issues/940)) ([fe7dd51](https://github.com/pedaling/opensource/commit/fe7dd514c98e22721df78b8654918744660fac17))
+
 ### [0.92.5](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.4...vibrant-core-0.92.5) (2024-02-21)
 
 ### [0.92.4](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.3...vibrant-core-0.92.4) (2024-02-13)

@@ -6,6 +6,11 @@ import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Tab } from '../Tab';
 import { TabGroup } from './TabGroup';
 
+jest.mock('@vibrant-ui/core', () => ({
+  ...jest.requireActual('@vibrant-ui/core'),
+  useResponsiveValue: jest.fn().mockReturnValue({ breakpointIndex: 2 }),
+}));
+
 describe('<TabGroup />', () => {
   const { render } = createReactRenderer();
 

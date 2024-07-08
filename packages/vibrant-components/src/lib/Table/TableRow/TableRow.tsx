@@ -32,9 +32,13 @@ export const TableRow = withTableRowVariation(
     const getColumnsCount = () => {
       let columnsNum = Children.count(children);
 
-      if (selectable) columnsNum += 1;
+      if (selectable) {
+        columnsNum += 1;
+      }
 
-      if (expandable) columnsNum += 1;
+      if (expandable) {
+        columnsNum += 1;
+      }
 
       return columnsNum;
     };
