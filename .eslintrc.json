@@ -1,9 +1,12 @@
 {
   "root": true,
   "extends": [
+    "plugin:@nx/typescript",
+    "plugin:@nx/javascript",
     "@class101/eslint-config",
     "plugin:storybook/recommended"
   ],
+  "plugins" :["@nx"],
   "overrides": [
     {
       "files": [

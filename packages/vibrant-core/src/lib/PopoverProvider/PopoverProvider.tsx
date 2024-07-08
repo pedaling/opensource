@@ -34,7 +34,9 @@ export const PopoverProvider: FC<PopoverProviderProps> = ({ children }) => {
 
   const open = useCallback(
     (id: string) => {
-      if (!checkIsRegistered(id)) return;
+      if (!checkIsRegistered(id)) {
+        return;
+      }
 
       popovers.current.set(id, true);
 
@@ -44,7 +46,9 @@ export const PopoverProvider: FC<PopoverProviderProps> = ({ children }) => {
   );
   const close = useCallback(
     (id: string) => {
-      if (!checkIsRegistered(id)) return;
+      if (!checkIsRegistered(id)) {
+        return;
+      }
 
       setCount(count => count + 1);
 
@@ -91,7 +95,9 @@ export const usePopover = ({ id = '', value }: { id?: string; value?: boolean | 
   const { getIsOpen, open, close, registerPopover, unregisterPopover, checkIsRegistered } = useContext(PopoverContext);
   const [nonRegisteredIsOpen, setNonRegisteredIsOpen] = useState(value);
 
-  if (checkIsRegistered(id) === undefined) throw Error('Provider cannot be found');
+  if (checkIsRegistered(id) === undefined) {
+    throw Error('Provider cannot be found');
+  }
 
   const isOpen = checkIsRegistered(id) ? getIsOpen(id) : nonRegisteredIsOpen;
 
@@ -112,10 +118,14 @@ export const usePopover = ({ id = '', value }: { id?: string; value?: boolean | 
   }, [checkIsRegistered, close, id]);
 
   useEffect(() => {
-    if (id) registerPopover(id);
+    if (id) {
+      registerPopover(id);
+    }
 
     return () => {
-      if (id) unregisterPopover(id);
+      if (id) {
+        unregisterPopover(id);
+      }
     };
   }, [id, registerPopover, unregisterPopover]);
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
-import { Children, isValidElement, useEffect, useState } from 'react';
+import { Children, isValidElement, useEffect, useMemo, useState } from 'react';
 import { Box, Image, ScrollBox, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
@@ -13,7 +13,7 @@ import { TableColumn } from './TableColumn';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import { TableDataCell } from './TableDataCell';
 import { TableHeaderCell } from './TableHeaderCell';
-import type { TableProps, UseTableResult } from './TableProps';
+import type { TableProps, TableSortBy, UseTableResult } from './TableProps';
 import { TableRow } from './TableRow';
 import type { SortDirection } from './TableSortIcon';
 
@@ -44,12 +44,36 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   tableLayout,
   testId = 'table',
 }: TableProps<Data, RowKey>) => {
-  const columns =
-    (
-      Children.toArray(children).filter(child => isValidElement(child)) as unknown as ReactElement<
-        TableColumnProps<Data>
-      >[]
-    ).map(({ props, key }) => ({ ...props, key: key as string })) ?? [];
+  const columns = useMemo(
+    () =>
+      (
+        Children.toArray(children).filter(child => isValidElement(child)) as unknown as ReactElement<
+          TableColumnProps<Data>
+        >[]
+      ).map(({ props, key }) => ({ ...props, key: key as string })) ?? [],
+    [children]
+  );
+
+  const [sortBy, setSortBy] = useState<TableSortBy<Data>>({
+    direction: 'none',
+  });
+
+  useEffect(() => {
+    const defaultSort = columns.find(column => column.sortDirection && column.sortDirection !== 'none');
+
+    if (defaultSort && defaultSort.dataKey !== sortBy.dataKey) {
+      setSortBy({
+        dataKey: defaultSort.dataKey,
+        direction: defaultSort.sortDirection ?? 'none',
+      });
+    }
+  }, [columns, sortBy.dataKey]);
+
+  const handleChangeSort = (sortBy: TableSortBy<Data>) => {
+    setSortBy(sortBy);
+
+    onSort?.(sortBy);
+  };
 
   const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
     defaultValue: new Set<Data[RowKey]>(),
@@ -154,43 +178,34 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
             {isDefined(renderExpanded) && (
               <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
             )}
-            {!loading
-              ? data.length > 0 &&
-                columns.map(
-                  ({
-                    key,
-                    dataKey,
-                    alignHorizontal,
-                    alignVertical,
-                    renderHeader,
-                    lineLimit,
-                    wordBreak,
-                    whiteSpace,
-                    overflowWrap,
-                    ...column
-                  }: TableColumnProps<Data>) => (
-                    <TableHeaderCell
-                      key={key}
-                      {...column}
-                      alignVertical={alignVertical?.header}
-                      alignHorizontal={alignHorizontal?.header}
-                      lineLimit={lineLimit?.header}
-                      wordBreak={wordBreak?.header}
-                      whiteSpace={whiteSpace?.header}
-                      overflowWrap={overflowWrap?.header}
-                      renderCell={renderHeader}
-                      onSort={(sortDirection: SortDirection) => onSort?.({ dataKey, direction: sortDirection })}
-                    />
-                  )
-                )
-              : Array.from({ length: 4 }, (_, columnIndex) => (
-                  <TableDataCell
-                    key={columnIndex}
-                    disabled={true}
-                    alignHorizontal="start"
-                    renderCell={() => <Skeleton width={80} height={18} />}
-                  />
-                ))}
+            {columns.map(
+              ({
+                key,
+                dataKey,
+                alignHorizontal,
+                alignVertical,
+                renderHeader,
+                lineLimit,
+                wordBreak,
+                whiteSpace,
+                overflowWrap,
+                ...column
+              }: TableColumnProps<Data>) => (
+                <TableHeaderCell
+                  key={key}
+                  {...column}
+                  alignVertical={alignVertical?.header}
+                  alignHorizontal={alignHorizontal?.header}
+                  lineLimit={lineLimit?.header}
+                  wordBreak={wordBreak?.header}
+                  whiteSpace={whiteSpace?.header}
+                  overflowWrap={overflowWrap?.header}
+                  renderCell={renderHeader}
+                  sortDirection={sortBy.dataKey === dataKey ? sortBy.direction : 'none'}
+                  onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
+                />
+              )
+            )}
           </TableRow>
         </Box>
         <Box as="tbody" display="web_table-row-group" height="100%">

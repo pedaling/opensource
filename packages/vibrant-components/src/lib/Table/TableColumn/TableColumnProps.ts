@@ -19,7 +19,7 @@ export type TableColumnProps<Data extends Record<string, any>> = {
     onCopy?: (row: Data) => void;
   };
   sortable?: boolean;
-  defaultSortDirection?: SortDirection;
+  sortDirection?: SortDirection;
 } & Either<
   {
     title?: TextChildren;

@@ -2,6 +2,58 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.15...vibrant-components-0.92.16) (2024-06-03)
+
+
+### Features
+
+* school, toteBagPlay 아이콘을 추가한다. ([#955](https://github.com/pedaling/opensource/issues/955)) ([300747d](https://github.com/pedaling/opensource/commit/300747d9a1f1100d573959d0de8142607a090fbf))
+
+### [0.92.15](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.14...vibrant-components-0.92.15) (2024-05-27)
+
+
+### Bug Fixes
+
+* 팝오버의 포지션 값에 애니메이션이 적용되지 않게 수정한다 ([#954](https://github.com/pedaling/opensource/issues/954)) ([f35c119](https://github.com/pedaling/opensource/commit/f35c119e573a9d28a6f5cfbffbbe099f565fe3bf))
+
+### [0.92.14](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.13...vibrant-components-0.92.14) (2024-05-27)
+
+
+### Bug Fixes
+
+* 드롭다운이 정상적으로 동작하도록 수정한다 ([#953](https://github.com/pedaling/opensource/issues/953)) ([0a792e0](https://github.com/pedaling/opensource/commit/0a792e09aca8619000914875fe1577f1c57dbf5c))
+
+### [0.92.13](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.12...vibrant-components-0.92.13) (2024-04-24)
+
+### [0.92.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.11...vibrant-components-0.92.12) (2024-04-19)
+
+### [0.92.11](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.10...vibrant-components-0.92.11) (2024-03-25)
+
+### [0.92.10](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.9...vibrant-components-0.92.10) (2024-03-14)
+
+
+### Bug Fixes
+
+* table headers depend only on columns ([#945](https://github.com/pedaling/opensource/issues/945)) ([4714a09](https://github.com/pedaling/opensource/commit/4714a098a85f799373e8b9b151430cd62b689b9c))
+
+### [0.92.9](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.8...vibrant-components-0.92.9) (2024-03-11)
+
+### [0.92.8](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.7...vibrant-components-0.92.8) (2024-03-07)
+
+### [0.92.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.6...vibrant-components-0.92.7) (2024-03-06)
+
+
+### Features
+
+* **ModalBottomSheet:** Add Full size ([#944](https://github.com/pedaling/opensource/issues/944)) ([94034b2](https://github.com/pedaling/opensource/commit/94034b2830a32ab1d308edfe9a125141c13a4e97))
+
+### [0.92.6](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.5...vibrant-components-0.92.6) (2024-02-29)
+
+
+### Bug Fixes
+
+* set endDate to last time of day in RangeDatePicker ([#940](https://github.com/pedaling/opensource/issues/940)) ([fe7dd51](https://github.com/pedaling/opensource/commit/fe7dd514c98e22721df78b8654918744660fac17))
+
 ### [0.92.5](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.4...vibrant-components-0.92.5) (2024-02-21)
 
 

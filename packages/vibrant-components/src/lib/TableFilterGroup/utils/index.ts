@@ -9,9 +9,13 @@ export const isRadioFilterValid = (filter: { value: string | undefined; operator
   Boolean(filter.value) || isValuelessOperator(filter.operator);
 
 export const isDateFilterValid = (filter: { value: Date[]; operator: DateFilterOperator }) => {
-  if (isValuelessOperator(filter.operator)) return true;
+  if (isValueRequiredOperator(filter.operator)) {
+    return true;
+  }
 
-  if (filter.operator === 'between') return filter.value.length >= 2;
+  if (filter.operator === 'between') {
+    return filter.value.length >= 2;
+  }
 
   return filter.value.length >= 1;
 };

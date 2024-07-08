@@ -39,7 +39,9 @@ describe('<BreadCrumbs />', () => {
 
     it('non last BreadCrumb should have onView2 color', () => {
       breadcrumbTexts.forEach((text, idx, arr) => {
-        if (idx === arr.length - 1) return;
+        if (idx === arr.length - 1) {
+          return;
+        }
 
         expect(text).toHaveStyleRule('color', lightModeColors.onView2);
       });

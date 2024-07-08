@@ -3,8 +3,7 @@ import type { Align, Side } from 'packages/vibrant-utils/src/types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
-  PortalBox,
-  PressableBox,
+  OverlayBox,
   ScrollBox,
   ThemeProvider,
   getWindowDimensions,
@@ -192,7 +191,7 @@ export const Dropdown = withDropdownVariation(
             spacing
           );
 
-          setOffset({ x: openerRect.x + offsetX, y: openerRect.y + offsetY });
+          setOffset({ x: offsetX, y: offsetY });
         }
 
         setContentHeight(height);
@@ -235,32 +234,19 @@ export const Dropdown = withDropdownVariation(
         <Box ref={openerRef}>{opener}</Box>
         {!isMobile && isOpen && (
           <ThemeProvider theme={rootThemeMode}>
-            <PortalBox zIndex={zIndex.dropdown} top={0} right={0} bottom={0} left={0}>
-              <PressableBox
-                as="div"
-                position="absolute"
-                cursor="default"
-                top={0}
-                right={0}
-                bottom={0}
-                left={0}
-                onClick={closeDropdown}
-              />
-              <Transition
-                animation={{
-                  opacity: visible ? 1 : 0,
-                  ...(visible
-                    ? {
-                        x: offset.x,
-                        y: offset.y,
-                      }
-                    : {}),
-                }}
-                style={{
-                  x: offset.x,
-                  y: offset.y,
-                }}
-                duration={200}
+            <Transition
+              animation={{
+                opacity: visible ? 1 : 0,
+              }}
+              duration={200}
+            >
+              <OverlayBox
+                open={isOpen}
+                onDismiss={closeDropdown}
+                targetRef={customOpenerRef.current ? customOpenerRef : openerRef}
+                zIndex={zIndex.dropdown}
+                top={offset.y}
+                left={offset.x}
               >
                 <Box alignSelf="flex-start">
                   <Box
@@ -291,8 +277,8 @@ export const Dropdown = withDropdownVariation(
                     </Transition>
                   </Box>
                 </Box>
-              </Transition>
-            </PortalBox>
+              </OverlayBox>
+            </Transition>
           </ThemeProvider>
         )}
         {isMobile && (

@@ -211,6 +211,25 @@ exports[`<RangePickerField /> when size is lg match snapshot 1`] = `
   position: relative;
 }
 
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -263,6 +282,10 @@ exports[`<RangePickerField /> when size is lg match snapshot 1`] = `
       </div>
     </div>
   </div>
+  <div
+    class="emotion-10"
+    id="portal-root"
+  />
 </div>
 `;
 
@@ -477,6 +500,25 @@ exports[`<RangePickerField /> when size is md match snapshot 1`] = `
   position: relative;
 }
 
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -529,6 +571,10 @@ exports[`<RangePickerField /> when size is md match snapshot 1`] = `
       </div>
     </div>
   </div>
+  <div
+    class="emotion-10"
+    id="portal-root"
+  />
 </div>
 `;
 
@@ -743,6 +789,25 @@ exports[`<RangePickerField /> when size is sm match snapshot 1`] = `
   position: relative;
 }
 
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -795,5 +860,9 @@ exports[`<RangePickerField /> when size is sm match snapshot 1`] = `
       </div>
     </div>
   </div>
+  <div
+    class="emotion-10"
+    id="portal-root"
+  />
 </div>
 `;
