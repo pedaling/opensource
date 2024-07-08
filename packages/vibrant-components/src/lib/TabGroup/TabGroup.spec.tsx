@@ -1,8 +1,9 @@
 import { waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import * as VibrantCore from '@vibrant-ui/core';
 import { baseTheme } from '@vibrant-ui/theme';
 import type { ReactRenderer } from '@vibrant-ui/utils/testing-web';
-import { BrowserTesting, createReactRenderer } from '@vibrant-ui/utils/testing-web';
+import { createReactRenderer } from '@vibrant-ui/utils/testing-web';
 import { Tab } from '../Tab';
 import { TabGroup } from './TabGroup';
 
@@ -72,7 +73,9 @@ describe('<TabGroup />', () => {
     const mockTabChange = jest.fn(() => {});
 
     beforeEach(async () => {
-      await BrowserTesting.resize(800, 768);
+      (jest.spyOn(VibrantCore, 'useResponsiveValue') as jest.SpyInstance<{ breakpointIndex: number }>).mockReturnValue({
+        breakpointIndex: 1,
+      });
 
       renderer = render(
         <TabGroup data-testid="tabGroup" tabId="tab1" type="fullWidth" onTabChange={mockTabChange}>
@@ -91,7 +94,9 @@ describe('<TabGroup />', () => {
     const mockTabChange = jest.fn(() => {});
 
     beforeEach(async () => {
-      await BrowserTesting.resize(2000, 768);
+      (jest.spyOn(VibrantCore, 'useResponsiveValue') as jest.SpyInstance<{ breakpointIndex: number }>).mockReturnValue({
+        breakpointIndex: 2,
+      });
 
       renderer = render(
         <TabGroup data-testid="tabGroup" tabId="tab1" type="fullWidth" onTabChange={mockTabChange}>
