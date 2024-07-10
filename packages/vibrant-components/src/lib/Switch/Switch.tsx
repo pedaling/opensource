@@ -33,7 +33,7 @@ export const Switch = withSwitchVariation(
       <Transition
         animation={{
           opacity,
-          backgroundColor: isChecked ? 'informative' : 'surface4',
+          backgroundColor: isChecked ? 'primary' : 'surface4',
         }}
         duration={200}
       >
