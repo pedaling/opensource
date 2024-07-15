@@ -1,8 +1,9 @@
 import type { ReactElement } from 'react';
 import { propVariant, withVariation } from '@vibrant-ui/core';
+import type { IconComponent, IconProps } from '@vibrant-ui/icons';
 
 export type ModalBottomSheetMenuProps = {
-  icon?: ReactElement;
+  IconComponent?: IconComponent<IconProps, 'Fill' | 'Regular' | 'Thin'>;
   title: string;
   onClick?: () => void;
   rightContents?: () => ReactElement;
