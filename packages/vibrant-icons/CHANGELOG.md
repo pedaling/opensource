@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.17](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.16...vibrant-icons-0.92.17) (2024-07-16)
+
+
+### Features
+
+* 스쿨 아이콘을 svg를 변경한다 ([#961](https://github.com/pedaling/opensource/issues/961)) ([c66efe1](https://github.com/pedaling/opensource/commit/c66efe1d9ff49ba3559969886a2788bbaa41fd6f))
+* 아이콘을 추가한다 ([#962](https://github.com/pedaling/opensource/issues/962)) ([246edf1](https://github.com/pedaling/opensource/commit/246edf10b13c908ba85c9c810737be35a424da2a))
+
 ### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.15...vibrant-icons-0.92.16) (2024-06-03)
 
 

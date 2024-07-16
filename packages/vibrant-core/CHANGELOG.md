@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.17](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.16...vibrant-core-0.92.17) (2024-07-16)
+
+
+### Bug Fixes
+
+* createInterpolation test ([#960](https://github.com/pedaling/opensource/issues/960)) ([3c18a58](https://github.com/pedaling/opensource/commit/3c18a58fd11397c3fb4cc0c61e9f0c71be016699))
+* tabview crash when change childrenElement  ([#949](https://github.com/pedaling/opensource/issues/949)) ([c2aba3d](https://github.com/pedaling/opensource/commit/c2aba3d06950f8a6e29287021f08a427252271a9))
+
 ### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-core-0.92.15...vibrant-core-0.92.16) (2024-06-03)
 
 

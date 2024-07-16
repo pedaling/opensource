@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/icons",
-  "version": "0.92.16",
+  "version": "0.92.17",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {

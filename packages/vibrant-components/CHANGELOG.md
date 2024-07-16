@@ -2,6 +2,19 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.17](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.16...vibrant-components-0.92.17) (2024-07-16)
+
+
+### Features
+
+* change Switch color to primary ([#958](https://github.com/pedaling/opensource/issues/958)) ([7641a2a](https://github.com/pedaling/opensource/commit/7641a2ae7c7ee218bd8783d5434e7aecf3dcecdf))
+* update color system ([#957](https://github.com/pedaling/opensource/issues/957)) ([a310e7f](https://github.com/pedaling/opensource/commit/a310e7f271852142fd780129b9e30a171795b865))
+
+
+### Bug Fixes
+
+* tabview crash when change childrenElement  ([#949](https://github.com/pedaling/opensource/issues/949)) ([c2aba3d](https://github.com/pedaling/opensource/commit/c2aba3d06950f8a6e29287021f08a427252271a9))
+
 ### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.15...vibrant-components-0.92.16) (2024-06-03)
 
 
