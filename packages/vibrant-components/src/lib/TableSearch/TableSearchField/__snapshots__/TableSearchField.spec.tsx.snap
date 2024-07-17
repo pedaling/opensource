@@ -73,7 +73,7 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
   height: 38px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -122,7 +122,7 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
   position: relative;
   width: 20px;
   height: 20px;
-  fill: #5b5b5b;
+  fill: #373737cc;
 }
 
 .emotion-5 {
@@ -185,9 +185,9 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
 
 .emotion-8 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   position: absolute;
   z-index: 1;
   left: 8px;
@@ -223,9 +223,9 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
 
 .emotion-10 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;
@@ -290,9 +290,9 @@ exports[`<TableSearchField /> when maxWidth is default match snapshot 1`] = `
 
 .emotion-12 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;

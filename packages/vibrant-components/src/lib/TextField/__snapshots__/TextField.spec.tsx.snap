@@ -54,7 +54,7 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
   height: 50px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -127,9 +127,9 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
 
 .emotion-5 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   position: absolute;
   z-index: 1;
   left: 15px;
@@ -165,9 +165,9 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
 
 .emotion-7 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;
@@ -232,9 +232,9 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
 
 .emotion-9 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;
@@ -353,7 +353,7 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
   height: 38px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -426,9 +426,9 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
 
 .emotion-5 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   position: absolute;
   z-index: 1;
   left: 9px;
@@ -464,9 +464,9 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
 
 .emotion-7 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;
@@ -531,9 +531,9 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
 
 .emotion-9 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;
@@ -652,7 +652,7 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
   height: 30px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -725,9 +725,9 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
 
 .emotion-5 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   position: absolute;
   z-index: 1;
   left: 7px;
@@ -763,9 +763,9 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
 
 .emotion-7 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.75rem;
   line-height: 1rem;
   display: none;
@@ -830,9 +830,9 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
 
 .emotion-9 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.75rem;
   line-height: 1rem;
   display: none;

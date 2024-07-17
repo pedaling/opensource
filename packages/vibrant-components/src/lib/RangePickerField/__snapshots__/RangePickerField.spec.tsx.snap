@@ -59,7 +59,7 @@ exports[`<RangePickerField /> when size is lg match snapshot 1`] = `
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   height: 50px;
   border-radius: 4px;
   overflow: hidden;
@@ -105,9 +105,9 @@ exports[`<RangePickerField /> when size is lg match snapshot 1`] = `
 
 .emotion-4 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -190,7 +190,7 @@ exports[`<RangePickerField /> when size is lg match snapshot 1`] = `
   position: relative;
   width: 20px;
   height: 20px;
-  fill: #5b5b5b;
+  fill: #373737cc;
 }
 
 .emotion-8 {
@@ -348,7 +348,7 @@ exports[`<RangePickerField /> when size is md match snapshot 1`] = `
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   height: 38px;
   border-radius: 4px;
   overflow: hidden;
@@ -394,9 +394,9 @@ exports[`<RangePickerField /> when size is md match snapshot 1`] = `
 
 .emotion-4 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -479,7 +479,7 @@ exports[`<RangePickerField /> when size is md match snapshot 1`] = `
   position: relative;
   width: 20px;
   height: 20px;
-  fill: #5b5b5b;
+  fill: #373737cc;
 }
 
 .emotion-8 {
@@ -637,7 +637,7 @@ exports[`<RangePickerField /> when size is sm match snapshot 1`] = `
   width: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   height: 30px;
   border-radius: 4px;
   overflow: hidden;
@@ -683,9 +683,9 @@ exports[`<RangePickerField /> when size is sm match snapshot 1`] = `
 
 .emotion-4 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -768,7 +768,7 @@ exports[`<RangePickerField /> when size is sm match snapshot 1`] = `
   position: relative;
   width: 16px;
   height: 16px;
-  fill: #5b5b5b;
+  fill: #373737cc;
 }
 
 .emotion-8 {
