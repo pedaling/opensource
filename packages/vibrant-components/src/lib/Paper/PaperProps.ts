@@ -8,7 +8,7 @@ import type {
   InteractionSystemProps,
   OverflowSystemProps,
   PositionSystemProps,
-  ReactElementChild,
+  ReactElementChildren,
   ResponsiveValue,
   SizingSystemProps,
   SpacingSystemProps,
@@ -48,7 +48,7 @@ type PaperProps = Pick<BorderSystemProps, 'borderColor' | 'borderStyle' | 'borde
     ref?: Ref<any>;
     id?: string;
     as?: BoxElements;
-    children?: ReactElementChild;
+    children?: ReactElementChildren;
     testId?: string;
   } & Either<
     Pick<BorderSystemProps, 'roundedBottomLeft' | 'roundedBottomRight' | 'roundedTopLeft' | 'roundedTopRight'>,
