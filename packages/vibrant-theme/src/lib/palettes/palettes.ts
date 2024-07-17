@@ -180,6 +180,7 @@ export const palettes = {
 
   whiteAlpha: {
     5: '#ffffff0d',
+    8: '#ffffff14',
     10: '#ffffff1a',
     15: '#ffffff26',
     20: '#ffffff33',
