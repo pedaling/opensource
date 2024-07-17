@@ -70,7 +70,7 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
   padding-right: 15px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-radius: 4px;
   background-color: #ffffff;
 }
@@ -127,9 +127,9 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
 
 .emotion-5 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -279,7 +279,7 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
   padding-right: 9px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-radius: 4px;
   background-color: #ffffff;
 }
@@ -336,9 +336,9 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
 
 .emotion-5 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -488,7 +488,7 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   padding-right: 7px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-radius: 4px;
   background-color: #ffffff;
 }
@@ -545,9 +545,9 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
 
 .emotion-5 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -100,7 +100,7 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   height: 38px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   background-color: #ffffff;
   border-radius: 4px;
 }
@@ -149,7 +149,7 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   position: relative;
   width: 20px;
   height: 20px;
-  fill: #5b5b5b;
+  fill: #373737cc;
 }
 
 .emotion-6 {
@@ -212,9 +212,9 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
 
 .emotion-9 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   position: absolute;
   z-index: 1;
   left: 8px;
@@ -250,9 +250,9 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
 
 .emotion-11 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;
@@ -317,9 +317,9 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
 
 .emotion-13 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 0.875rem;
   line-height: 1.125rem;
   display: none;
@@ -425,7 +425,7 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
   padding-right: 9px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-radius: 4px;
   background-color: #ffffff;
 }

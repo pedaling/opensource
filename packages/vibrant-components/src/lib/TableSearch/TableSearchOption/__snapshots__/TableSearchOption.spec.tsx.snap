@@ -89,7 +89,7 @@ exports[`<TableSearchOption /> when width is 1200px match snapshot 1`] = `
   padding-right: 9px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-radius: 4px;
   background-color: #ffffff;
 }
@@ -325,7 +325,7 @@ exports[`<TableSearchOption /> when width is default match snapshot 1`] = `
   padding-right: 9px;
   border-width: 1px;
   border-style: solid;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-radius: 4px;
   background-color: #ffffff;
 }

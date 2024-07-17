@@ -38,9 +38,9 @@ exports[`<Tab /> when Tab rendered match snapshot 1`] = `
 
 .emotion-1 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 700;

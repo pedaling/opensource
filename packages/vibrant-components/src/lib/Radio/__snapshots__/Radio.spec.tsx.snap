@@ -98,7 +98,7 @@ exports[`<Radio /> when size is md match snapshot 1`] = `
   position: relative;
   width: 24px;
   height: 24px;
-  fill: #0000001a;
+  fill: #0000000d;
 }
 
 <div>
@@ -233,7 +233,7 @@ exports[`<Radio /> when size is sm match snapshot 1`] = `
   position: relative;
   width: 20px;
   height: 20px;
-  fill: #0000001a;
+  fill: #0000000d;
 }
 
 <div>
