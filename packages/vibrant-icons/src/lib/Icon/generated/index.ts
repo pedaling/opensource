@@ -126,6 +126,7 @@ export * as Paper3 from './Paper3';
 export * as Pause from './Pause';
 export * as PauseCircle from './PauseCircle';
 export * as Person from './Person';
+export * as Person2 from './Person2';
 export * as Phone from './Phone';
 export * as Photo from './Photo';
 export * as PhotoAdd from './PhotoAdd';
