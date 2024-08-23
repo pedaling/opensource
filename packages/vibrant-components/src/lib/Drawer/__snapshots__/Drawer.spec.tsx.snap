@@ -175,7 +175,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 1`] =
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   border-width: 0;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-style: solid;
   width: 0;
   border-right-width: 1px;
@@ -508,7 +508,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 2`] =
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   border-width: 0;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-style: solid;
   width: 0;
   border-right-width: 1px;
@@ -837,7 +837,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 3`] =
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   border-width: 0;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-style: solid;
   width: 100%;
   height: 0;
@@ -1141,7 +1141,7 @@ exports[`<Drawer /> when Drawer is rendering each placement match snapshot 4`] =
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
   border-width: 0;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-style: solid;
   width: 100%;
   height: 0;

@@ -7428,6 +7428,182 @@ exports[`<Icon /> when ChevronDown.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when ChevronDownCircle.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevrondowncircle-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M11.9999 0.899902C14.9649 0.899902 17.7519 2.0544 19.8484 4.1509C21.9454 6.2479 23.0999 9.0349 23.0999 11.9999C23.0999 14.9649 21.9449 17.7519 19.8484 19.8484C17.7519 21.9454 14.9649 23.0999 11.9999 23.0999C9.0349 23.0999 6.2474 21.9449 4.1509 19.8484C2.0544 17.7519 0.899902 14.9649 0.899902 11.9999C0.899902 9.0349 2.0544 6.2479 4.1509 4.1509C6.2479 2.0544 9.0349 0.899902 11.9999 0.899902ZM6.02984 10.4142C5.9517 10.4923 5.9517 10.619 6.02984 10.6971L11.8582 16.5235C11.9363 16.6015 12.0629 16.6015 12.141 16.5235L17.9697 10.6969C18.0479 10.6188 18.0479 10.4922 17.9697 10.4141L16.6966 9.14135C16.6185 9.06328 16.4919 9.06327 16.4138 9.14134L11.9996 13.5538L7.58575 9.14151C7.50765 9.06344 7.38105 9.06344 7.30295 9.14151L6.02984 10.4142Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronDownCircle.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevrondowncircle-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M6.0414 10.4143C5.96326 10.4924 5.96326 10.6191 6.0414 10.6972L11.8698 16.5236C11.9479 16.6016 12.0745 16.6016 12.1526 16.5236L17.9813 10.697C18.0594 10.6189 18.0594 10.4923 17.9813 10.4141L16.8082 9.24144C16.7301 9.16337 16.6035 9.16337 16.5254 9.24144L12.0113 13.7537L7.49746 9.24145C7.41936 9.16337 7.29277 9.16337 7.21467 9.24145L6.0414 10.4143Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M11.9999 23.1004C18.1304 23.1004 23.0999 18.1309 23.0999 12.0004C23.0999 5.8699 18.1304 0.899902 11.9999 0.899902C5.8694 0.899902 0.899902 5.8694 0.899902 11.9999C0.899902 18.1304 5.8694 23.1004 11.9999 23.1004ZM11.9999 3.1004C16.9074 3.1004 20.8999 7.0929 20.8999 12.0004C20.8999 16.9079 16.9074 20.8999 11.9999 20.8999C7.0924 20.8999 3.0999 16.9074 3.0999 11.9999C3.0999 7.0924 7.0924 3.1004 11.9999 3.1004Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronDownCircle.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevrondowncircle-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M6.35092 10.5611C6.27281 10.6392 6.27282 10.7658 6.35095 10.8439L11.8591 16.35C11.9372 16.428 12.0638 16.428 12.1419 16.35L17.6495 10.8441C17.7276 10.766 17.7276 10.6393 17.6495 10.5612L16.7299 9.64153C16.6518 9.56344 16.5252 9.56342 16.4471 9.6415L12 14.0868L7.55339 9.64138C7.47529 9.5633 7.34867 9.5633 7.27057 9.6414L6.35092 10.5611Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M11.9999 22.8499C17.9924 22.8499 22.8499 17.9924 22.8499 11.9999C22.8499 6.0074 17.9924 1.1499 11.9999 1.1499C6.0074 1.1499 1.1499 6.0074 1.1499 11.9999C1.1499 17.9924 6.0074 22.8499 11.9999 22.8499ZM11.9999 2.8499C17.0454 2.8499 21.1499 6.9544 21.1499 11.9999C21.1499 17.0454 17.0454 21.1499 11.9999 21.1499C6.9544 21.1499 2.8499 17.0454 2.8499 11.9999C2.8499 6.9544 6.9544 2.8499 11.9999 2.8499Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when ChevronLeft.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -7585,6 +7761,182 @@ exports[`<Icon /> when ChevronLeft.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="m8.05 12 8.2-8.2c.1-.1.1-.25 0-.35l-.9-.9a.427.427 0 0 0-.35 0L5.75 11.8c-.1.1-.1.25 0 .35l9.25 9.3c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35L8.05 12Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronLeftCircle.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronleftcircle-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M23.1001 11.9999C23.1001 14.9649 21.9456 17.7519 19.8491 19.8484C17.7521 21.9454 14.9651 23.0999 12.0001 23.0999C9.03515 23.0999 6.24815 21.9449 4.15165 19.8484C2.05465 17.7519 0.900146 14.9649 0.900146 11.9999C0.900146 9.0349 2.05515 6.2474 4.15165 4.1509C6.24815 2.0544 9.03515 0.899902 12.0001 0.899902C14.9651 0.899902 17.7521 2.0544 19.8491 4.1509C21.9456 6.2479 23.1001 9.0349 23.1001 11.9999ZM13.3858 6.02984C13.3077 5.9517 13.181 5.9517 13.1029 6.02984L7.27658 11.8582C7.19851 11.9363 7.19851 12.0629 7.27658 12.141L13.1031 17.9697C13.1812 18.0479 13.3079 18.0479 13.386 17.9697L14.6587 16.6966C14.7368 16.6185 14.7368 16.4919 14.6587 16.4138L10.2462 11.9996L14.6585 7.58575C14.7366 7.50765 14.7366 7.38105 14.6585 7.30295L13.3858 6.02984Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronLeftCircle.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronleftcircle-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M13.5863 6.03163C13.5082 5.95349 13.3815 5.95349 13.3034 6.03163L7.47709 11.86C7.39901 11.9381 7.39901 12.0647 7.47708 12.1428L13.3036 17.9715C13.3817 18.0497 13.5084 18.0497 13.5865 17.9715L14.7592 16.7984C14.8373 16.7203 14.8373 16.5937 14.7592 16.5156L10.2469 12.0016L14.7592 7.4877C14.8373 7.4096 14.8373 7.283 14.7592 7.2049L13.5863 6.03163Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M0.900146 11.9999C0.900146 18.1304 5.86965 23.0999 12.0001 23.0999C18.1306 23.0999 23.1006 18.1304 23.1006 11.9999C23.1006 5.8694 18.1311 0.899902 12.0006 0.899902C5.87015 0.899902 0.900146 5.8694 0.900146 11.9999ZM20.9001 11.9999C20.9001 16.9074 16.9076 20.8999 12.0001 20.8999C7.09265 20.8999 3.10065 16.9074 3.10065 11.9999C3.10065 7.0924 7.09315 3.0999 12.0006 3.0999C16.9081 3.0999 20.9001 7.0924 20.9001 11.9999Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronLeftCircle.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronleftcircle-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M13.689 6.35092C13.6109 6.27281 13.4842 6.27282 13.4061 6.35095L7.90009 11.8591C7.82202 11.9372 7.82202 12.0638 7.90009 12.1419L13.406 17.6495C13.4841 17.7276 13.6107 17.7276 13.6889 17.6495L14.6085 16.7299C14.6866 16.6518 14.6866 16.5252 14.6085 16.4471L10.1632 12L14.6087 7.55339C14.6868 7.47529 14.6867 7.34867 14.6086 7.27057L13.689 6.35092Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M1.15015 11.9999C1.15015 17.9924 6.00764 22.8499 12.0001 22.8499C17.9926 22.8499 22.8501 17.9924 22.8501 11.9999C22.8501 6.0074 17.9926 1.1499 12.0001 1.1499C6.00764 1.1499 1.15015 6.0074 1.15015 11.9999ZM21.1501 11.9999C21.1501 17.0454 17.0456 21.1499 12.0001 21.1499C6.95465 21.1499 2.85015 17.0454 2.85015 11.9999C2.85015 6.9544 6.95465 2.8499 12.0001 2.8499C17.0456 2.8499 21.1501 6.9544 21.1501 11.9999Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>
@@ -7752,6 +8104,182 @@ exports[`<Icon /> when ChevronRight.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when ChevronRightCircle.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronrightcircle-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M0.899902 11.9999C0.899902 9.0349 2.0544 6.2479 4.1509 4.1514C6.2479 2.0544 9.0349 0.899902 11.9999 0.899902C14.9649 0.899902 17.7519 2.0549 19.8484 4.1514C21.9454 6.2479 23.0999 9.0349 23.0999 11.9999C23.0999 14.9649 21.9449 17.7524 19.8484 19.8489C17.7519 21.9454 14.9649 23.0999 11.9999 23.0999C9.0349 23.0999 6.2479 21.9454 4.1509 19.8489C2.0544 17.7519 0.899902 14.9649 0.899902 11.9999ZM10.6142 17.97C10.6923 18.0481 10.819 18.0481 10.8971 17.97L16.7235 12.1416C16.8015 12.0635 16.8015 11.9369 16.7235 11.8588L10.8969 6.03008C10.8188 5.95194 10.6922 5.95194 10.6141 6.03007L9.34135 7.30319C9.26328 7.38128 9.26327 7.50788 9.34134 7.58598L13.7538 12.0002L9.34151 16.4141C9.26344 16.4922 9.26344 16.6188 9.34151 16.6968L10.6142 17.97Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronRightCircle.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronrightcircle-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.4142 17.9682C10.4923 18.0463 10.619 18.0463 10.6971 17.9682L16.5235 12.1398C16.6015 12.0617 16.6015 11.9351 16.5235 11.857L10.6969 6.02829C10.6188 5.95015 10.4922 5.95015 10.4141 6.02829L9.24135 7.2014C9.16327 7.27949 9.16327 7.40609 9.24134 7.48419L13.7536 11.9982L9.24135 16.5121C9.16328 16.5902 9.16328 16.7168 9.24135 16.7949L10.4142 17.9682Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M23.1004 11.9999C23.1004 5.8694 18.1309 0.899902 12.0004 0.899902C5.8699 0.899902 0.899902 5.8694 0.899902 11.9999C0.899902 18.1304 5.8694 23.0999 11.9999 23.0999C18.1304 23.0999 23.1004 18.1304 23.1004 11.9999ZM3.1004 11.9999C3.1004 7.0924 7.0929 3.0999 12.0004 3.0999C16.9079 3.0999 20.8999 7.0924 20.8999 11.9999C20.8999 16.9074 16.9074 20.8999 11.9999 20.8999C7.0924 20.8999 3.1004 16.9074 3.1004 11.9999Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronRightCircle.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronrightcircle-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.3111 17.6489C10.3892 17.727 10.5158 17.727 10.5939 17.6489L16.1 12.1407C16.178 12.0626 16.178 11.936 16.1 11.8579L10.5941 6.35029C10.516 6.27216 10.3893 6.27215 10.3112 6.35027L9.39153 7.26993C9.31344 7.34802 9.31342 7.47464 9.3915 7.55275L13.8368 11.9998L9.39138 16.4464C9.3133 16.5245 9.3133 16.6511 9.3914 16.7292L10.3111 17.6489Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M22.8499 11.9999C22.8499 6.0074 17.9924 1.1499 11.9999 1.1499C6.0074 1.1499 1.1499 6.0074 1.1499 11.9999C1.1499 17.9924 6.0074 22.8499 11.9999 22.8499C17.9924 22.8499 22.8499 17.9924 22.8499 11.9999ZM2.8499 11.9999C2.8499 6.9544 6.9544 2.8499 11.9999 2.8499C17.0454 2.8499 21.1499 6.9544 21.1499 11.9999C21.1499 17.0454 17.0454 21.1499 11.9999 21.1499C6.9544 21.1499 2.8499 17.0454 2.8499 11.9999Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when ChevronUp.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -7909,6 +8437,182 @@ exports[`<Icon /> when ChevronUp.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="m12 8.045 8.2 8.2c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35l-9.25-9.25c-.1-.1-.25-.1-.35 0l-9.25 9.25c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l8.15-8.2Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronUpCircle.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronupcircle-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M12.0001 23.0999C9.03515 23.0999 6.24815 21.9454 4.15165 19.8489C2.05465 17.7519 0.900146 14.9649 0.900146 11.9999C0.900146 9.0349 2.05515 6.2479 4.15165 4.1514C6.24815 2.0544 9.03515 0.899902 12.0001 0.899902C14.9651 0.899902 17.7526 2.0549 19.8491 4.1514C21.9456 6.2479 23.1001 9.0349 23.1001 11.9999C23.1001 14.9649 21.9456 17.7519 19.8491 19.8489C17.7521 21.9454 14.9651 23.0999 12.0001 23.0999ZM17.9702 13.7856C18.0483 13.7075 18.0483 13.5808 17.9702 13.5027L12.1418 7.67634C12.0637 7.59827 11.9371 7.59827 11.859 7.67634L6.03032 13.5029C5.95218 13.581 5.95218 13.7076 6.03032 13.7857L7.30343 15.0585C7.38153 15.1365 7.50812 15.1365 7.58622 15.0585L12.0004 10.646L16.4143 15.0583C16.4924 15.1364 16.619 15.1364 16.6971 15.0583L17.9702 13.7856Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronUpCircle.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronupcircle-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M17.9684 14.0856C18.0466 14.0075 18.0466 13.8808 17.9684 13.8027L12.14 7.97635C12.0619 7.89828 11.9353 7.89828 11.8572 7.97635L6.02853 13.8029C5.95039 13.881 5.95039 14.0077 6.02853 14.0858L7.20164 15.2585C7.27974 15.3365 7.40633 15.3365 7.48443 15.2585L11.9985 10.7462L16.5123 15.2585C16.5904 15.3365 16.717 15.3365 16.7951 15.2585L17.9684 14.0856Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M12.0001 0.899902C5.86965 0.899902 0.900146 5.8694 0.900146 11.9999C0.900146 18.1304 5.86965 23.1004 12.0001 23.1004C18.1306 23.1004 23.1001 18.1309 23.1001 12.0004C23.1001 5.8699 18.1306 0.899902 12.0001 0.899902ZM12.0001 20.8999C7.09265 20.8999 3.10015 16.9074 3.10015 11.9999C3.10015 7.0924 7.09265 3.1004 12.0001 3.1004C16.9076 3.1004 20.9001 7.0929 20.9001 12.0004C20.9001 16.9079 16.9076 20.8999 12.0001 20.8999Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when ChevronUpCircle.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="chevronupcircle-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M17.6491 13.9388C17.7272 13.8606 17.7272 13.734 17.6491 13.6559L12.1409 8.14984C12.0628 8.07177 11.9362 8.07178 11.8581 8.14985L6.35053 13.6557C6.27241 13.7338 6.2724 13.8605 6.35051 13.9386L7.27017 14.8583C7.34827 14.9364 7.47488 14.9364 7.55299 14.8583L12 10.413L16.4467 14.8584C16.5248 14.9365 16.6514 14.9365 16.7295 14.8584L17.6491 13.9388Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M12.0001 1.1499C6.00764 1.1499 1.15015 6.0074 1.15015 11.9999C1.15015 17.9924 6.00764 22.8499 12.0001 22.8499C17.9926 22.8499 22.8501 17.9924 22.8501 11.9999C22.8501 6.0074 17.9926 1.1499 12.0001 1.1499ZM12.0001 21.1499C6.95465 21.1499 2.85015 17.0454 2.85015 11.9999C2.85015 6.9544 6.95465 2.8499 12.0001 2.8499C17.0456 2.8499 21.1501 6.9544 21.1501 11.9999C21.1501 17.0454 17.0456 21.1499 12.0001 21.1499Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>
@@ -26964,7 +27668,9 @@ exports[`<Icon /> when School.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="m17.65 9.5v.85h.85 3.4999v10.6504h-20v-10.6504h3.5001.85v-.85-3.87464l5.6499-3.47692 5.6501 3.47693zm-5.65 2.85c1.8502 0 3.35-1.4998 3.35-3.35 0-1.85015-1.4998-3.35-3.35-3.35s-3.35 1.49985-3.35 3.35c0 1.8502 1.4998 3.35 3.35 3.35z"
+      clip-rule="evenodd"
+      d="M1.6499 9.49982C1.37376 9.49982 1.1499 9.72368 1.1499 9.99982V21.3502C1.1499 21.6264 1.37376 21.8502 1.6499 21.8502H22.3499C22.626 21.8502 22.8499 21.6264 22.8499 21.3502V9.99982C22.8499 9.72368 22.626 9.49982 22.3499 9.49982H18.5V5.42961C18.5 5.25598 18.4099 5.09478 18.262 5.00378L12.262 1.31147C12.1012 1.21258 11.8986 1.21258 11.7379 1.31148L5.73795 5.00378C5.59008 5.09478 5.5 5.25598 5.5 5.42961V9.49982H1.6499ZM14.375 9.375C14.375 10.6867 13.3117 11.75 12 11.75C10.6883 11.75 9.625 10.6867 9.625 9.375C9.625 8.06332 10.6883 7 12 7C13.3117 7 14.375 8.06332 14.375 9.375Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>
@@ -27016,20 +27722,16 @@ exports[`<Icon /> when School.Regular Icon rendered match snapshot 1`] = `
     data-testid="school-regular"
     viewBox="0 0 24 24"
   >
-    <g
+    <path
       class="emotion-1"
-    >
-      <path
-        class="emotion-1"
-        d="m12 11.75c1.3117 0 2.375-1.0633 2.375-2.375 0-1.31168-1.0633-2.375-2.375-2.375s-2.375 1.06332-2.375 2.375c0 1.3117 1.0633 2.375 2.375 2.375z"
-      />
-      <path
-        class="emotion-1"
-        clip-rule="evenodd"
-        d="m5.25 9.15039v-3.7151c0-.1766.09316-.34011.2451-.43014l6.2499-3.70371c.1572-.09314.3526-.09314.5098 0l6.2501 3.70371c.1519.09003.2451.25354.2451.43014v3.7151h3.5999c.2761 0 .5.22386.5.5v11.70001c0 .2761-.2239.5-.5.5h-20.7c-.27614 0-.5-.2239-.5-.5v-11.70001c0-.27614.22386-.5.5-.5zm2.2-2.74644 4.5499-2.69629 4.5501 2.69631v4.94643h4.0999v8.3h-17.3v-8.3h4.1001z"
-        fill-rule="evenodd"
-      />
-    </g>
+      clip-rule="evenodd"
+      d="M5.25 9.15025V5.43515C5.25 5.25854 5.34316 5.09504 5.4951 5.005L11.745 1.3013C11.9022 1.20816 12.0976 1.20816 12.2548 1.3013L18.5049 5.005C18.6568 5.09504 18.75 5.25854 18.75 5.43515V9.15025H22.3499C22.626 9.15025 22.8499 9.3741 22.8499 9.65025V21.3502C22.8499 21.6264 22.626 21.8502 22.3499 21.8502H1.6499C1.37376 21.8502 1.1499 21.6264 1.1499 21.3502V9.65025C1.1499 9.3741 1.37376 9.15025 1.6499 9.15025H5.25ZM7.45 6.40381L11.9999 3.70752L16.55 6.40383V11.3502H20.6499V19.6502H3.3499V11.3502H7.45V6.40381Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M12 11.7499C13.3117 11.7499 14.375 10.6865 14.375 9.37486C14.375 8.06318 13.3117 6.99986 12 6.99986C10.6883 6.99986 9.625 8.06318 9.625 9.37486C9.625 10.6865 10.6883 11.7499 12 11.7499Z"
+    />
   </svg>
 </div>
 `;
@@ -27080,20 +27782,16 @@ exports[`<Icon /> when School.Thin Icon rendered match snapshot 1`] = `
     data-testid="school-thin"
     viewBox="0 0 24 24"
   >
-    <g
+    <path
       class="emotion-1"
-    >
-      <path
-        class="emotion-1"
-        d="m12 11.75c1.2426 0 2.25-1.0074 2.25-2.25 0-1.24264-1.0074-2.25-2.25-2.25s-2.25 1.00736-2.25 2.25c0 1.2426 1.0074 2.25 2.25 2.25z"
-      />
-      <path
-        class="emotion-1"
-        clip-rule="evenodd"
-        d="m18.5 9.5h3.75c.2761 0 .5.22386.5.5v11.3504c0 .2761-.2239.5-.5.5h-20.5c-.27614 0-.5-.2239-.5-.5v-11.3504c0-.27614.22386-.5.5-.5h3.75v-4.07021c0-.17363.09008-.33483.23795-.42583l5.99995-3.69231c.1607-.09889.3633-.09889.5241 0l6 3.69231c.1479.091.238.2522.238.42583zm2.55 1.7v8.9504h-18.1v-8.9504h4.25v-5.09966l4.7999-2.95384 4.8001 2.95385v5.09965z"
-        fill-rule="evenodd"
-      />
-    </g>
+      d="M12 11.75C13.2426 11.75 14.25 10.7426 14.25 9.5C14.25 8.25736 13.2426 7.25 12 7.25C10.7574 7.25 9.75 8.25736 9.75 9.5C9.75 10.7426 10.7574 11.75 12 11.75Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M18.5 9.5H22.25C22.5261 9.5 22.75 9.72386 22.75 10V21.3504C22.75 21.6265 22.5261 21.8504 22.25 21.8504H1.75C1.47386 21.8504 1.25 21.6265 1.25 21.3504V10C1.25 9.72386 1.47386 9.5 1.75 9.5H5.5V5.42979C5.5 5.25616 5.59008 5.09496 5.73795 5.00396L11.7379 1.31165C11.8986 1.21276 12.1012 1.21276 12.262 1.31165L18.262 5.00396C18.4099 5.09496 18.5 5.25616 18.5 5.42979V9.5ZM21.05 11.2V20.1504H2.95V11.2H7.2V6.10034L11.9999 3.1465L16.8 6.10035V11.2H21.05Z"
+      fill-rule="evenodd"
+    />
   </svg>
 </div>
 `;
@@ -28749,6 +29447,196 @@ exports[`<Icon /> when Sorting.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="m7.2 21.9 4.75-4.75c.1-.1.1-.25 0-.35l-.9-.9c-.1-.1-.25-.1-.35 0l-2.8 2.8v-16c0-.15-.1-.25-.25-.25H6.4c-.15 0-.25.1-.25.25v16l-2.8-2.8c-.1-.1-.25-.1-.35 0l-.9.9c-.1.1-.1.25 0 .35l4.75 4.75c.05.15.25.15.35 0Zm9.6-19.8-4.75 4.75c-.1.1-.1.25 0 .35l.9.9c.1.1.25.1.35 0l2.8-2.8v16c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25v-16l2.8 2.8c.1.1.25.1.35 0l.9-.9c.1-.1.1-.25 0-.35L17.15 2.1c-.05-.15-.25-.15-.35 0Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Sparkle.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="sparkle-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M5.27683 2.7476C5.47657 3.73103 6.74484 5.16095 7.50688 5.44852C7.63606 5.49727 7.75 5.61193 7.75 5.75C7.75 5.88807 7.63606 6.00273 7.50688 6.05148C6.74484 6.33905 5.47657 7.76897 5.27683 8.7524C5.24935 8.88771 5.13807 9 5 9C4.86193 9 4.75065 8.88771 4.72317 8.7524C4.52343 7.76897 3.25516 6.33905 2.49312 6.05148C2.36394 6.00273 2.25 5.88807 2.25 5.75C2.25 5.61193 2.36394 5.49727 2.49312 5.44852C3.25516 5.16095 4.52343 3.73103 4.72317 2.7476C4.75065 2.61229 4.86193 2.5 5 2.5C5.13807 2.5 5.24935 2.61229 5.27683 2.7476Z"
+    />
+    <path
+      class="emotion-1"
+      d="M5.26112 14.7497C5.42591 16.6105 7.38631 18.2904 8.75124 18.4819C8.88797 18.501 9 18.6119 9 18.75C9 18.8881 8.88797 18.999 8.75124 19.0181C7.38631 19.2096 5.42591 20.8895 5.26112 22.7503C5.24894 22.8878 5.13807 23 5 23C4.86193 23 4.75106 22.8878 4.73888 22.7503C4.57409 20.8895 2.61369 19.2096 1.24876 19.0181C1.11203 18.999 1 18.8881 1 18.75C1 18.6119 1.11203 18.501 1.24876 18.4819C2.61369 18.2904 4.57409 16.6105 4.73888 14.7497C4.75106 14.6122 4.86193 14.5 5 14.5C5.13807 14.5 5.24894 14.6122 5.26112 14.7497Z"
+    />
+    <path
+      class="emotion-1"
+      d="M15.0041 1.24987C15.1624 6.12169 19.898 11.0057 23.2511 11.2411C23.3888 11.2508 23.5 11.3619 23.5 11.5V12.0339C23.5 12.158 23.4103 12.2624 23.2884 12.2859C19.9335 12.9302 15.1634 17.3756 15.0041 22.2498C14.9996 22.3878 14.8881 22.5 14.75 22.5H14.25C14.1119 22.5 14.0004 22.3878 13.9959 22.2498C13.8366 17.3756 9.06653 12.9302 5.7116 12.2859C5.58973 12.2624 5.5 12.158 5.5 12.0339V11.5C5.5 11.3619 5.6112 11.2508 5.74893 11.2411C9.10197 11.0057 13.8376 6.12169 13.9959 1.24987C14.0004 1.11187 14.1119 1 14.25 1H14.75C14.8881 1 14.9996 1.11187 15.0041 1.24987Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Sparkle.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="sparkle-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M5.27683 2.7476C5.47657 3.73103 6.74484 5.16095 7.50688 5.44852C7.63606 5.49727 7.75 5.61193 7.75 5.75C7.75 5.88807 7.63606 6.00273 7.50688 6.05148C6.74484 6.33905 5.47657 7.76897 5.27683 8.7524C5.24935 8.88771 5.13807 9 5 9C4.86193 9 4.75065 8.88771 4.72317 8.7524C4.52343 7.76897 3.25516 6.33905 2.49312 6.05148C2.36394 6.00273 2.25 5.88807 2.25 5.75C2.25 5.61193 2.36394 5.49727 2.49312 5.44852C3.25516 5.16095 4.52343 3.73103 4.72317 2.7476C4.75065 2.61229 4.86193 2.5 5 2.5C5.13807 2.5 5.24935 2.61229 5.27683 2.7476Z"
+    />
+    <path
+      class="emotion-1"
+      d="M5.26112 14.7497C5.42591 16.6105 7.38631 18.2904 8.75124 18.4819C8.88797 18.501 9 18.6119 9 18.75C9 18.8881 8.88797 18.999 8.75124 19.0181C7.38631 19.2096 5.42591 20.8895 5.26112 22.7503C5.24894 22.8878 5.13807 23 5 23C4.86193 23 4.75106 22.8878 4.73888 22.7503C4.57409 20.8895 2.61369 19.2096 1.24876 19.0181C1.11203 18.999 1 18.8881 1 18.75C1 18.6119 1.11203 18.501 1.24876 18.4819C2.61369 18.2904 4.57409 16.6105 4.73888 14.7497C4.75106 14.6122 4.86193 14.5 5 14.5C5.13807 14.5 5.24894 14.6122 5.26112 14.7497Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M13.7661 2.93543C13.6562 3.39992 13.5101 3.85949 13.3331 4.30995C12.2392 7.09476 9.96594 9.53155 7.77972 10.6301C7.61893 10.7109 7.45863 10.7844 7.29929 10.8503C6.82486 11.0466 6.35906 11.1752 5.9152 11.2258C5.85942 11.2321 5.80399 11.2373 5.74893 11.2411C5.6112 11.2508 5.5 11.3619 5.5 11.5V12.0339C5.5 12.158 5.58973 12.2624 5.7116 12.2859C5.74886 12.293 5.7863 12.3006 5.8239 12.3087C6.26959 12.4046 6.73863 12.5657 7.2173 12.7843C7.38831 12.8625 7.56056 12.9479 7.7334 13.0404C9.93146 14.216 12.2266 16.5224 13.3297 19.2382C13.5057 19.6717 13.6514 20.1156 13.7615 20.567C13.8934 21.1079 13.9742 21.6595 13.9948 22.2168C13.9952 22.2278 13.9955 22.2388 13.9959 22.2498C14.0004 22.3878 14.1119 22.5 14.25 22.5H14.75C14.8881 22.5 14.9996 22.3878 15.0041 22.2498C15.0045 22.2388 15.0048 22.2278 15.0052 22.2168C15.0258 21.6595 15.1066 21.1079 15.2385 20.567C15.3486 20.1156 15.4943 19.6717 15.6703 19.2382C16.7733 16.5224 19.0685 14.216 21.2666 13.0404C21.4394 12.9479 21.6117 12.8625 21.7827 12.7843C22.2614 12.5657 22.7304 12.4046 23.1761 12.3087C23.2137 12.3006 23.2511 12.293 23.2884 12.2859C23.4103 12.2624 23.5 12.158 23.5 12.0339V11.5C23.5 11.3619 23.3888 11.2508 23.2511 11.2411C23.196 11.2373 23.1406 11.2321 23.0848 11.2258C22.6409 11.1752 22.1751 11.0466 21.7007 10.8503C21.5414 10.7844 21.3811 10.7109 21.2203 10.6301C19.0341 9.53155 16.7608 7.09476 15.6669 4.30995C15.4899 3.85949 15.3438 3.39992 15.2339 2.93543C15.1047 2.38903 15.0255 1.83583 15.0052 1.28266C15.0048 1.27173 15.0044 1.2608 15.0041 1.24987C14.9996 1.11187 14.8881 1 14.75 1H14.25C14.1119 1 14.0004 1.11187 13.9959 1.24987C13.9956 1.2608 13.9952 1.27173 13.9948 1.28266C13.9745 1.83583 13.8953 2.38903 13.7661 2.93543ZM14.5 6.9449C15.0193 7.85274 15.6256 8.69003 16.272 9.43075C17.058 10.3313 17.9831 11.1779 18.9862 11.8598C18.0245 12.5219 17.115 13.3243 16.3175 14.2045C15.6554 14.9353 15.0324 15.7617 14.5 16.6636C13.9676 15.7617 13.3446 14.9353 12.6825 14.2045C11.885 13.3243 10.9755 12.5219 10.0138 11.8598C11.0169 11.1779 11.942 10.3313 12.728 9.43075C13.3744 8.69003 13.9807 7.85274 14.5 6.9449Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Sparkle.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="sparkle-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M5.27683 2.7476C5.47657 3.73103 6.74484 5.16095 7.50688 5.44852C7.63606 5.49727 7.75 5.61193 7.75 5.75C7.75 5.88807 7.63606 6.00273 7.50688 6.05148C6.74484 6.33905 5.47657 7.76897 5.27683 8.7524C5.24935 8.88771 5.13807 9 5 9C4.86193 9 4.75065 8.88771 4.72317 8.7524C4.52343 7.76897 3.25516 6.33905 2.49312 6.05148C2.36394 6.00273 2.25 5.88807 2.25 5.75C2.25 5.61193 2.36394 5.49727 2.49312 5.44852C3.25516 5.16095 4.52343 3.73103 4.72317 2.7476C4.75065 2.61229 4.86193 2.5 5 2.5C5.13807 2.5 5.24935 2.61229 5.27683 2.7476Z"
+    />
+    <path
+      class="emotion-1"
+      d="M5.26112 14.7497C5.42591 16.6105 7.38631 18.2904 8.75124 18.4819C8.88797 18.501 9 18.6119 9 18.75C9 18.8881 8.88797 18.999 8.75124 19.0181C7.38631 19.2096 5.42591 20.8895 5.26112 22.7503C5.24894 22.8878 5.13807 23 5 23C4.86193 23 4.75106 22.8878 4.73888 22.7503C4.57409 20.8895 2.61369 19.2096 1.24876 19.0181C1.11203 18.999 1 18.8881 1 18.75C1 18.6119 1.11203 18.501 1.24876 18.4819C2.61369 18.2904 4.57409 16.6105 4.73888 14.7497C4.75106 14.6122 4.86193 14.5 5 14.5C5.13807 14.5 5.24894 14.6122 5.26112 14.7497Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M13.865 2.46205C13.797 2.83719 13.7045 3.21007 13.5902 3.57854C12.5561 6.91321 9.74192 9.88584 7.20255 10.8895C7.08461 10.9361 6.96727 10.9784 6.85072 11.0164C6.53148 11.1204 6.21822 11.1913 5.9152 11.2258C5.85942 11.2321 5.80399 11.2373 5.74893 11.2411C5.6112 11.2508 5.5 11.3619 5.5 11.5V12.0339C5.5 12.158 5.58973 12.2624 5.7116 12.2859C5.74886 12.293 5.7863 12.3006 5.8239 12.3087C6.13021 12.3746 6.44756 12.4713 6.77147 12.5963C6.8973 12.6449 7.02413 12.6977 7.15169 12.7547C9.70294 13.894 12.5464 16.6838 13.5887 19.9527C13.7025 20.3097 13.7948 20.6724 13.863 21.0393C13.9351 21.4277 13.9801 21.8208 13.9948 22.2168C13.9952 22.2278 13.9955 22.2388 13.9959 22.2498C14.0004 22.3878 14.1119 22.5 14.25 22.5H14.75C14.8881 22.5 14.9996 22.3878 15.0041 22.2498C15.0045 22.2388 15.0048 22.2278 15.0052 22.2168C15.0199 21.8208 15.0649 21.4277 15.137 21.0393C15.2052 20.6724 15.2975 20.3097 15.4113 19.9527C16.4536 16.6838 19.2971 13.894 21.8483 12.7547C21.9759 12.6977 22.1027 12.6449 22.2285 12.5963C22.5524 12.4713 22.8698 12.3746 23.1761 12.3087C23.2137 12.3006 23.2511 12.293 23.2884 12.2859C23.4103 12.2624 23.5 12.158 23.5 12.0339V11.5C23.5 11.3619 23.3888 11.2508 23.2511 11.2411C23.196 11.2373 23.1406 11.2321 23.0848 11.2258C22.7818 11.1913 22.4685 11.1204 22.1493 11.0164C22.0327 10.9784 21.9154 10.9361 21.7975 10.8895C19.2581 9.88584 16.4439 6.91321 15.4098 3.57854C15.2955 3.21007 15.203 2.83719 15.135 2.46205C15.064 2.07055 15.0197 1.6766 15.0052 1.28266C15.0048 1.27173 15.0044 1.2608 15.0041 1.24987C14.9996 1.11187 14.8881 1 14.75 1H14.25C14.1119 1 14.0004 1.11187 13.9959 1.24987C13.9956 1.2608 13.9952 1.27173 13.9948 1.28266C13.9803 1.6766 13.936 2.07055 13.865 2.46205ZM14.5 5.98987C15.0759 7.15048 15.8096 8.21649 16.6111 9.13485C17.5338 10.192 18.6377 11.1552 19.8171 11.8556C18.6802 12.5537 17.5898 13.4705 16.651 14.5067C15.8357 15.4066 15.0865 16.4497 14.5 17.5959C13.9135 16.4497 13.1643 15.4066 12.349 14.5067C11.4102 13.4705 10.3198 12.5537 9.18289 11.8556C10.3623 11.1552 11.4662 10.192 12.3889 9.13485C13.1904 8.21649 13.9241 7.15048 14.5 5.98987Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>

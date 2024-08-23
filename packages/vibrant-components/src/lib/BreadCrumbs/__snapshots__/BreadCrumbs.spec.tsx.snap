@@ -87,9 +87,9 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
 
 .emotion-4 {
   text-align: left;
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -163,7 +163,7 @@ exports[`<BreadCrumbs /> when BreadCrumbs with 3 items rendered match snapshot 1
   position: relative;
   width: 12px;
   height: 12px;
-  fill: #5b5b5b;
+  fill: #373737cc;
 }
 
 .emotion-9 {

@@ -45,7 +45,7 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
   padding-right: 38px;
   height: 100%;
   text-align: center;
-  border-color: #0000001a;
+  border-color: #0000000d;
   border-style: solid;
   border-radius: 4px;
   -moz-appearance: textfield;
@@ -62,27 +62,27 @@ exports[`<NumericField /> when NumericField rendered match snapshot 1`] = `
 }
 
 .emotion-1::-webkit-input-placeholder {
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
 }
 
 .emotion-1::-moz-placeholder {
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
 }
 
 .emotion-1:-ms-input-placeholder {
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
 }
 
 .emotion-1::placeholder {
-  color: #5b5b5b;
-  -webkit-text-fill-color: #5b5b5b;
-  text-fill-color: #5b5b5b;
+  color: #373737cc;
+  -webkit-text-fill-color: #373737cc;
+  text-fill-color: #373737cc;
 }
 
 .emotion-2 {

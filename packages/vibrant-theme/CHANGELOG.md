@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.18](https://github.com/pedaling/opensource/compare/vibrant-theme-0.92.17...vibrant-theme-0.92.18) (2024-07-17)
+
+
+### Features
+
+* 컬러토근 변경사항을 반영한다 ([#963](https://github.com/pedaling/opensource/issues/963)) ([aa48d1d](https://github.com/pedaling/opensource/commit/aa48d1dc7dae434271cf8cbcf7b7cf5578c482bf))
+
+### [0.92.17](https://github.com/pedaling/opensource/compare/vibrant-theme-0.92.16...vibrant-theme-0.92.17) (2024-07-16)
+
+
+### Features
+
+* update color system ([#957](https://github.com/pedaling/opensource/issues/957)) ([a310e7f](https://github.com/pedaling/opensource/commit/a310e7f271852142fd780129b9e30a171795b865))
+
 ### [0.92.16](https://github.com/pedaling/opensource/compare/vibrant-theme-0.92.15...vibrant-theme-0.92.16) (2024-06-03)
 
 ### [0.92.15](https://github.com/pedaling/opensource/compare/vibrant-theme-0.92.14...vibrant-theme-0.92.15) (2024-05-27)
