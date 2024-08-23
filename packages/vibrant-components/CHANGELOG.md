@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.92.19](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.18...vibrant-components-0.92.19) (2024-08-23)
+
+
+### Features
+
+* modalbottomsheet menu ([#959](https://github.com/pedaling/opensource/issues/959)) ([e2d69b6](https://github.com/pedaling/opensource/commit/e2d69b696407a1155511dc2eca7858e20606c353))
+
 ### [0.92.18](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.17...vibrant-components-0.92.18) (2024-07-17)
 
 
