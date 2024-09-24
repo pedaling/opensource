@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/components",
-  "version": "0.92.19",
+  "version": "0.92.20",
   "private": false,
   "sideEffects": false,
   "peerDependencies": {
