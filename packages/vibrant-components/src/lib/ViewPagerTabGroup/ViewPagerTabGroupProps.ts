@@ -7,6 +7,7 @@ export type ViewPagerTabGroupProps = {
   tabSpacing?: number;
   onTabChange?: () => void;
   testId?: string;
+  initialIndex?: number;
 };
 
 export const withViewPagerTabGroupVariation = withVariation<ViewPagerTabGroupProps>('ViewPagerTabGroup')();
