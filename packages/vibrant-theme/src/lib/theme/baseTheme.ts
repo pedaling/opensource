@@ -101,19 +101,19 @@ export const baseTheme: Theme = {
     },
     paragraph1: {
       fontSize: '1.25rem',
-      lineHeight: '1.875rem',
+      lineHeight: '1.75rem',
     },
     paragraph2: {
       fontSize: '1.125rem',
-      lineHeight: '1.875rem',
+      lineHeight: '1.625rem',
     },
     paragraph3: {
-      fontSize: '1rem',
-      lineHeight: '1.75rem',
+      fontSize: '0.9375rem',
+      lineHeight: '1.3125rem',
     },
     paragraph4: {
       fontSize: '0.875rem',
-      lineHeight: '1.5rem',
+      lineHeight: '1.25rem',
     },
   },
   typographyWeight: {
