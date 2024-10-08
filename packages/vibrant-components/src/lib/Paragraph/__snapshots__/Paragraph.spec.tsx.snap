@@ -6,8 +6,8 @@ exports[`<Paragraph /> when Paragraph with level 3 rendered match snapshot 1`] =
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
   text-fill-color: #0c0c0c;
-  font-size: 1rem;
-  line-height: 1.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.3125rem;
   font-weight: 400;
 }
 
