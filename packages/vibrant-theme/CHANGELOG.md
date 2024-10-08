@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.93.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.92.20...vibrant-theme-0.93.0) (2024-10-08)
+
+
+### Bug Fixes
+
+* paragraph 스타일을 수정한다 ([#967](https://github.com/pedaling/opensource/issues/967)) ([46dd80d](https://github.com/pedaling/opensource/commit/46dd80d24c5f3e3d31c4ff385fe12f3180064ea5))
+
 ### [0.92.20](https://github.com/pedaling/opensource/compare/vibrant-theme-0.92.19...vibrant-theme-0.92.20) (2024-09-24)
 
 
