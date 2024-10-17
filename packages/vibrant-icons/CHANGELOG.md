@@ -2,6 +2,17 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.93.0](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.20...vibrant-icons-0.93.0) (2024-10-08)
+
+### [0.92.20](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.19...vibrant-icons-0.92.20) (2024-09-24)
+
+### [0.92.19](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.18...vibrant-icons-0.92.19) (2024-08-23)
+
+
+### Features
+
+* add person2 icons ([#964](https://github.com/pedaling/opensource/issues/964)) ([8881c8c](https://github.com/pedaling/opensource/commit/8881c8c6a3fad0a0f969fb1fe96334e23742dd4e))
+
 ### [0.92.18](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.17...vibrant-icons-0.92.18) (2024-07-17)
 
 ### [0.92.17](https://github.com/pedaling/opensource/compare/vibrant-icons-0.92.16...vibrant-icons-0.92.17) (2024-07-16)

@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.93.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.20...vibrant-components-0.93.0) (2024-10-08)
+
+
+### Bug Fixes
+
+* paragraph 스타일을 수정한다 ([#967](https://github.com/pedaling/opensource/issues/967)) ([46dd80d](https://github.com/pedaling/opensource/commit/46dd80d24c5f3e3d31c4ff385fe12f3180064ea5))
+
+### [0.92.20](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.19...vibrant-components-0.92.20) (2024-09-24)
+
+### [0.92.19](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.18...vibrant-components-0.92.19) (2024-08-23)
+
+
+### Features
+
+* modalbottomsheet menu ([#959](https://github.com/pedaling/opensource/issues/959)) ([e2d69b6](https://github.com/pedaling/opensource/commit/e2d69b696407a1155511dc2eca7858e20606c353))
+
 ### [0.92.18](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.17...vibrant-components-0.92.18) (2024-07-17)
 
 
