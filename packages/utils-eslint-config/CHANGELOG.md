@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.90.1](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.90.0...utils-eslint-config-0.90.1) (2024-10-18)
+
+
+### Features
+
+* expression 간의 padding추가 룰을 제거한다 ([#968](https://github.com/pedaling/opensource/issues/968)) ([a4f7e0d](https://github.com/pedaling/opensource/commit/a4f7e0d2c61b97eb22cbdfaf52b99a9d24469760))
+
 ## [0.90.0](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.89.20...utils-eslint-config-0.90.0) (2024-10-08)
 
 ### [0.89.20](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.89.19...utils-eslint-config-0.89.20) (2024-09-24)
