@@ -74,6 +74,7 @@ export const CardNumberField = withCardNumberFieldVariation(
           onValueChange?.({ value, prevent });
 
           onCardNumberChange(value);
+
           if (value.length > 0) {
             setShowLockIcon(true);
           } else {
