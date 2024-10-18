@@ -105,6 +105,7 @@ export const TableDateFilter = withTableDateFilterVariation(
           setOperator(operatorOption);
 
           setFieldAutoFocus(false);
+
           if (operatorOption === 'between' || operator === 'between') {
             setValue([]);
           }
