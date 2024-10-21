@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.93.2](https://github.com/pedaling/opensource/compare/vibrant-theme-0.93.1...vibrant-theme-0.93.2) (2024-10-21)
+
+
+### Features
+
+* 새로운 컬러 토큰을 추가한다 ([#970](https://github.com/pedaling/opensource/issues/970)) ([9b5ef1b](https://github.com/pedaling/opensource/commit/9b5ef1becf0bb432fb680b2eff8f8ab665be77a3))
+
 ### [0.93.1](https://github.com/pedaling/opensource/compare/vibrant-theme-0.93.0...vibrant-theme-0.93.1) (2024-10-18)
 
 ## [0.93.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.92.20...vibrant-theme-0.93.0) (2024-10-08)

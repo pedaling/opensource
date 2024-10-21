@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.93.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.93.1...vibrant-components-0.93.2) (2024-10-21)
+
+
+### Features
+
+* 아이콘 변경사항을 적용한다 ([#969](https://github.com/pedaling/opensource/issues/969)) ([5aca93d](https://github.com/pedaling/opensource/commit/5aca93db2a1a6e7c90a76dc8d8ea39fa935146a1))
+
 ### [0.93.1](https://github.com/pedaling/opensource/compare/vibrant-components-0.93.0...vibrant-components-0.93.1) (2024-10-18)
 
 ## [0.93.0](https://github.com/pedaling/opensource/compare/vibrant-components-0.92.20...vibrant-components-0.93.0) (2024-10-08)
