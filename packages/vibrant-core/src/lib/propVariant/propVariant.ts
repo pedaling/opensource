@@ -73,6 +73,7 @@ export const propVariant =
           for (const key of Object.keys(prevProp)) {
             prevProp[key].push(prevProp[key]);
           }
+
           for (const key of Object.keys(currentProp)) {
             if (!prevProp[key]) {
               prevProp[key] = [currentProp[key]];
