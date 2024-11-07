@@ -50,5 +50,20 @@ export const Basic: ComponentStory<typeof TableFilterGroup> = props => (
       ]}
     />
     <TableFilterGroup.StringFilter dataKey="class" label="수강 중인 클래스" />
+    <TableFilterGroup.RadioFilter
+      dataKey="hidden"
+      label="숨김 여부"
+      operators={['equals']}
+      options={[
+        {
+          value: 'true',
+          label: '숨김',
+        },
+        {
+          value: 'false',
+          label: '숨기지 않음',
+        },
+      ]}
+    />
   </TableFilterGroup>
 );
