@@ -81,11 +81,11 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
 
       if (selected) {
         return {
-          color: 'onView1',
+          color: 'onInverseSurface',
           borderWidth: 1,
           borderStyle: 'solid',
           borderColor: 'outlineNeutral',
-          backgroundColor: 'surface1',
+          backgroundColor: 'inverseSurface',
           overlayColor: 'onView1',
           interactions: ['hover', 'focus', 'active'],
         } as const;
