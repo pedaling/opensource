@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+### [0.93.3](https://github.com/pedaling/opensource/compare/vibrant-components-0.93.2...vibrant-components-0.93.3) (2024-11-10)
+
+
+### Features
+
+* **vibrant-components:** update FilterChip selected background color ([#971](https://github.com/pedaling/opensource/issues/971)) ([e7f4837](https://github.com/pedaling/opensource/commit/e7f48379641dc63af1bd3cead112a851ccbdf139))
+
 ### [0.93.2](https://github.com/pedaling/opensource/compare/vibrant-components-0.93.1...vibrant-components-0.93.2) (2024-10-21)
 
 
