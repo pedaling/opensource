@@ -6,6 +6,7 @@ type Schema = {
   outIndexFile: string;
   wildcardAlias?: boolean;
 };
+
 export default async function generateIndex(host: Tree, schema: Schema) {
   const { sourceDirectory, outIndexFile, wildcardAlias = false } = schema;
 
