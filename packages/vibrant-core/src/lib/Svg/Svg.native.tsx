@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { FC } from 'react';
+import { type FC, memo } from 'react';
 import {
   Circle as RNCircle,
   ClipPath as RNClipPath,
@@ -22,40 +22,52 @@ import type {
   PathProps,
   StopProps,
   SvgComponentType,
+  SvgProps,
 } from './SvgProps';
 
-const ClipPath: FC<ClipPathProps> = props => <Box base={RNClipPath} {...props} />;
+const ClipPath: FC<ClipPathProps> = memo(props => <Box base={RNClipPath} {...props} />);
 
-const Defs: FC<DefsProps> = props => <Box base={RNDefs} {...props} />;
+ClipPath.displayName = 'ClipPath';
 
-const G: FC<GProps> = props => <Box base={RNG} {...props} />;
+const Defs: FC<DefsProps> = memo(props => <Box base={RNDefs} {...props} />);
 
-const LinearGradient: FC<LinearGradientProps> = props => <Box base={RNLinearGradient} {...props} />;
+Defs.displayName = 'Defs';
 
-const Mask: FC<MaskProps> = props => <Box base={RNMask} {...props} />;
+const G: FC<GProps> = memo(props => <Box base={RNG} {...props} />);
 
-const Path: FC<PathProps> = props => <Box base={RNPath} {...props} />;
+G.displayName = 'G';
 
-const Stop: FC<StopProps> = props => <Box base={RNStop} {...props} />;
+const LinearGradient: FC<LinearGradientProps> = memo(props => <Box base={RNLinearGradient} {...props} />);
 
-const Circle: FC<CircleProps> = props => <Box base={RNCircle} {...props} />;
+LinearGradient.displayName = 'LinearGradient';
 
-export const Svg: SvgComponentType = ({ width, height, ...restProps }) => (
+const Mask: FC<MaskProps> = memo(props => <Box base={RNMask} {...props} />);
+
+Mask.displayName = 'Mask';
+
+const Path: FC<PathProps> = memo(props => <Box base={RNPath} {...props} />);
+
+Path.displayName = 'Path';
+
+const Stop: FC<StopProps> = memo(props => <Box base={RNStop} {...props} />);
+
+Stop.displayName = 'Stop';
+
+const Circle: FC<CircleProps> = memo(props => <Box base={RNCircle} {...props} />);
+
+Circle.displayName = 'Circle';
+
+const SvgFc: FC<SvgProps> = memo(({ width, height, ...restProps }) => (
   <Box base={RNSvg} width={width || 'auto'} height={height || 'auto'} {...restProps} />
-);
+));
 
-Svg.ClipPath = ClipPath;
-
-Svg.Defs = Defs;
-
-Svg.G = G;
-
-Svg.LinearGradient = LinearGradient;
-
-Svg.Mask = Mask;
-
-Svg.Path = Path;
-
-Svg.Stop = Stop;
-
-Svg.Circle = Circle;
+export const Svg: SvgComponentType = Object.assign(SvgFc, {
+  ClipPath,
+  Defs,
+  G,
+  LinearGradient,
+  Mask,
+  Path,
+  Stop,
+  Circle,
+});

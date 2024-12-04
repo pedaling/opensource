@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Fill: IconComponent<IconProps, 'Fill'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'dollarcircle-fill',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'dollarcircle-fill', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M19.8484 4.1509C17.7519 2.0544 14.9649.899902 11.9999.899902S6.2479 2.0544 4.1509 4.1509C2.0544 6.2479.899902 9.0349.899902 11.9999S2.0544 17.7519 4.1509 19.8484s4.884 3.2515 7.849 3.2515 5.752-1.1545 7.8485-3.2515c2.0965-2.0965 3.2515-4.8835 3.2515-7.8485s-1.1545-5.752-3.2515-7.849Zm-3.512 9.7545c0 .8905-.3075 1.6655-.8885 2.242-.5615.556-1.381.928-2.375 1.0785v1.7585h-2.145v-1.7525c-1.977-.283-3.1625-1.3975-3.2595-3.069l-.007-.126-.006-.116h2.589l.03.1675c.1135.588.82.9845 1.7565.9845s1.5375-.373 1.5375-.951v-.0075c0-.428-.245-.7075-1.538-.9595l-1.0325-.1955c-2.0545-.381-3.141-1.42-3.141-3.006v-.007c0-1.655 1.174-2.8785 3.0715-3.2125V5.0144h2.145v1.717c1.8575.3025 2.9665 1.4045 3.0475 3.035l.0125.262h-2.596l-.017-.1765c-.0685-.592-.6725-.976-1.538-.976s-1.363.3515-1.363.8955v.007c0 .5405.5865.761 1.467.9255l1.0335.195c2.225.429 3.2175 1.354 3.2175 2.999v.007l-.001.0005Z" />
   </Svg>
 );
 
-Fill.iconType = 'Fill';
+export const Fill: IconComponent<IconProps, 'Fill'> = Object.assign(memo(Icon), {
+  iconType: 'Fill' as const,
+});
+Fill.displayName = 'DollarCircleFill';

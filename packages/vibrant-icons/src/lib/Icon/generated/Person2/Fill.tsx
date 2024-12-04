@@ -1,12 +1,8 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Fill: IconComponent<IconProps, 'Fill'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'person2-fill',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'person2-fill', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M6.85 0C4.37853 0 2.375 2.00353 2.375 4.475C2.375 6.94647 4.37853 8.95 6.85 8.95C9.32147 8.95 11.325 6.94647 11.325 4.475C11.325 2.00353 9.32147 0 6.85 0Z" />
     <Svg.Path d="M16.6 3C14.4047 3 12.625 4.77967 12.625 6.975C12.625 9.17033 14.4047 10.95 16.6 10.95C18.7953 10.95 20.575 9.17033 20.575 6.975C20.575 4.77967 18.7953 3 16.6 3Z" />
@@ -14,4 +10,7 @@ export const Fill: IconComponent<IconProps, 'Fill'> = ({
   </Svg>
 );
 
-Fill.iconType = 'Fill';
+export const Fill: IconComponent<IconProps, 'Fill'> = Object.assign(memo(Icon), {
+  iconType: 'Fill' as const,
+});
+Fill.displayName = 'Person2Fill';

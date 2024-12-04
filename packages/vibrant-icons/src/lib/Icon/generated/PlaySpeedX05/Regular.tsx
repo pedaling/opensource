@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Regular: IconComponent<IconProps, 'Regular'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'playspeedx05-regular',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'playspeedx05-regular', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="m10.444 5.7499-3.33551-3.336L8.66399.858398 12 4.1939 15.336.858398 16.8915 2.4139l-3.3355 3.336 3.3355 3.3355-1.556 1.556L12 7.3059l-3.33551 3.3355-1.556-1.556L10.444 5.7499Zm1.5975 13.8955c-.5815 0-1.0545.473-1.0545 1.0545s.463 1.06 1.0545 1.06c.5915 0 1.06-.4655 1.06-1.06s-.4655-1.0545-1.06-1.0545Zm5.6505-3.2225c-.7445 0-1.378.29-1.723.7815l.1415-1.7825h3.667v-1.6145H14.466l-.3405 4.719h1.7925l.014-.027c.0785-.151.201-.288.356-.396.217-.159.4945-.243.803-.243.7135 0 1.212.472 1.212 1.1475v.011c0 .685-.4985 1.1635-1.212 1.1635-.587 0-1.066-.3325-1.1925-.8285l-.021-.074h-1.879l.0085.1445c.0435.6645.361 1.265.8935 1.69.559.4465 1.3165.6825 2.191.6825 1.8965 0 3.1705-1.1315 3.1705-2.816v-.0105c0-1.4765-1.0805-2.5475-2.569-2.5475h-.001Zm-7.124 1.3015v.011c0 2.5055-1.29101 4.062-3.36951 4.062s-3.375-1.5565-3.375-4.062v-.011c0-2.5025 1.293-4.0565 3.375-4.0565s3.36951 1.5545 3.36951 4.0565Zm-2.09251 0c0-1.5575-.4535-2.415-1.2765-2.415s-1.282.88-1.282 2.415v.011c0 1.5385.4675 2.4205 1.282 2.4205s1.2765-.8595 1.2765-2.4205v-.011Z" />
   </Svg>
 );
 
-Regular.iconType = 'Regular';
+export const Regular: IconComponent<IconProps, 'Regular'> = Object.assign(memo(Icon), {
+  iconType: 'Regular' as const,
+});
+Regular.displayName = 'PlaySpeedX05Regular';

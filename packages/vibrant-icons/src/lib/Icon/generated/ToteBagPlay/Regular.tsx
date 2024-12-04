@@ -1,12 +1,8 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Regular: IconComponent<IconProps, 'Regular'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'totebagplay-regular',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'totebagplay-regular', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.G>
       <Svg.Path d="m9.5 10.8.2 6.7 6.05-3.25z" />
@@ -19,4 +15,7 @@ export const Regular: IconComponent<IconProps, 'Regular'> = ({
   </Svg>
 );
 
-Regular.iconType = 'Regular';
+export const Regular: IconComponent<IconProps, 'Regular'> = Object.assign(memo(Icon), {
+  iconType: 'Regular' as const,
+});
+Regular.displayName = 'ToteBagPlayRegular';

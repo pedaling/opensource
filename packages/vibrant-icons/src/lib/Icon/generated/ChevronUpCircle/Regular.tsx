@@ -1,12 +1,8 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Regular: IconComponent<IconProps, 'Regular'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'chevronupcircle-regular',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'chevronupcircle-regular', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M17.9684 14.0856C18.0466 14.0075 18.0466 13.8808 17.9684 13.8027L12.14 7.97635C12.0619 7.89828 11.9353 7.89828 11.8572 7.97635L6.02853 13.8029C5.95039 13.881 5.95039 14.0077 6.02853 14.0858L7.20164 15.2585C7.27974 15.3365 7.40633 15.3365 7.48443 15.2585L11.9985 10.7462L16.5123 15.2585C16.5904 15.3365 16.717 15.3365 16.7951 15.2585L17.9684 14.0856Z" />
     <Svg.Path
@@ -17,4 +13,7 @@ export const Regular: IconComponent<IconProps, 'Regular'> = ({
   </Svg>
 );
 
-Regular.iconType = 'Regular';
+export const Regular: IconComponent<IconProps, 'Regular'> = Object.assign(memo(Icon), {
+  iconType: 'Regular' as const,
+});
+Regular.displayName = 'ChevronUpCircleRegular';

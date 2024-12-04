@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { FC } from 'react';
+import { type FC, memo } from 'react';
 import { Box } from '../Box';
 import type {
   CircleProps,
@@ -11,40 +11,52 @@ import type {
   PathProps,
   StopProps,
   SvgComponentType,
+  SvgProps,
 } from './SvgProps';
 
-const ClipPath: FC<ClipPathProps> = props => <Box as="clipPath" {...props} />;
+const ClipPath: FC<ClipPathProps> = memo(props => <Box as="clipPath" {...props} />);
 
-const Defs: FC<DefsProps> = props => <Box as="defs" {...props} />;
+ClipPath.displayName = 'ClipPath';
 
-const G: FC<GProps> = props => <Box as="g" {...props} />;
+const Defs: FC<DefsProps> = memo(props => <Box as="defs" {...props} />);
+
+Defs.displayName = 'Defs';
+
+const G: FC<GProps> = memo(props => <Box as="g" {...props} />);
+
+G.displayName = 'G';
 
 const LinearGradient: FC<LinearGradientProps> = props => <Box as="linearGradient" {...props} />;
 
-const Mask: FC<MaskProps> = props => <Box as="mask" {...props} />;
+LinearGradient.displayName = 'LinearGradient';
 
-const Path: FC<PathProps> = props => <Box as="path" {...props} />;
+const Mask: FC<MaskProps> = memo(props => <Box as="mask" {...props} />);
 
-const Stop: FC<StopProps> = props => <Box as="stop" {...props} />;
+Mask.displayName = 'Mask';
 
-const Circle: FC<CircleProps> = props => <Box as="circle" {...props} />;
+const Path: FC<PathProps> = memo(props => <Box as="path" {...props} />);
 
-export const Svg: SvgComponentType = ({ width, height, ...restProps }) => (
-  <Box as="svg" width={width || 'auto'} height={height || 'auto'} {...restProps} />
-);
+Path.displayName = 'Path';
 
-Svg.ClipPath = ClipPath;
+const Stop: FC<StopProps> = memo(props => <Box as="stop" {...props} />);
 
-Svg.Defs = Defs;
+Stop.displayName = 'Stop';
 
-Svg.G = G;
+const Circle: FC<CircleProps> = memo(props => <Box as="circle" {...props} />);
 
-Svg.LinearGradient = LinearGradient;
+Circle.displayName = 'Circle';
 
-Svg.Mask = Mask;
+const SvgFc: FC<SvgProps> = memo(props => <Box as="svg" {...props} />);
 
-Svg.Path = Path;
+SvgFc.displayName = 'Svg';
 
-Svg.Stop = Stop;
-
-Svg.Circle = Circle;
+export const Svg: SvgComponentType = Object.assign(SvgFc, {
+  ClipPath,
+  Defs,
+  G,
+  LinearGradient,
+  Mask,
+  Path,
+  Stop,
+  Circle,
+});

@@ -1,12 +1,8 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Thin: IconComponent<IconProps, 'Thin'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'searchtext-thin',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'searchtext-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M13.8 4.8499C13.9105 4.8499 14 4.76036 14 4.6499V3.3499C14 3.23945 13.9105 3.1499 13.8 3.1499H2.2C2.08954 3.1499 2 3.23945 2 3.3499V4.6499C2 4.76036 2.08954 4.8499 2.2 4.8499H13.8Z" />
     <Svg.Path
@@ -19,4 +15,7 @@ export const Thin: IconComponent<IconProps, 'Thin'> = ({
   </Svg>
 );
 
-Thin.iconType = 'Thin';
+export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
+  iconType: 'Thin' as const,
+});
+Thin.displayName = 'SearchTextThin';

@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Thin: IconComponent<IconProps, 'Thin'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'drm-thin',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'drm-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M63 417V63h354v354H63Zm34-34h286V97H97v286Zm246.21-78.92v-84.92h-2.6l-15.31 84.92h-16.86l-15.41-84.92h-2.65v84.92h-18.83V176.55h29.12l15.08 85.19h2.18l15.15-85.19h29.04v127.53h-18.9Zm-103.93 0-12.78-47.13h-8.38v47.13h-21.91V176.55h33.33c6.95 0 12.81 1.5 17.41 4.46 4.59 2.95 8.08 7.39 10.38 13.17 2.34 5.87 3.52 13.12 3.52 21.58v.18c0 8.33-1.17 15.59-3.49 21.59-2.29 5.92-5.52 10.4-9.6 13.33l-.58.41 15.26 52.81h-23.18Zm-21.15-66.67h7.97c4.18 0 7.33-1.69 9.36-5.01 1.93-3.17 2.91-8.07 2.91-14.57v-.18c0-6.45-.99-11.32-2.95-14.48-2.05-3.32-5.19-5.01-9.33-5.01h-7.97v39.25Zm-100.12 66.67V176.55h30.6c8.4 0 15.57 2.25 21.33 6.7 5.77 4.46 10.22 11.4 13.23 20.61 3.04 9.32 4.58 21.35 4.58 35.78v.18c0 14.37-1.54 26.48-4.59 36.01-3.01 9.43-7.47 16.58-13.25 21.25-5.75 4.65-12.92 7-21.31 7H118Zm21.98-23.31h5.6c4.3 0 7.98-1.35 10.94-4.03 2.92-2.64 5.15-7.04 6.65-13.07 1.47-5.91 2.22-13.93 2.22-23.85v-.18c0-9.56-.75-17.31-2.23-23.05-1.5-5.85-3.75-10.14-6.69-12.75-2.98-2.64-6.65-3.98-10.9-3.98h-5.6v80.91Z" />
   </Svg>
 );
 
-Thin.iconType = 'Thin';
+export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
+  iconType: 'Thin' as const,
+});
+Thin.displayName = 'DrmThin';

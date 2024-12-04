@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Regular: IconComponent<IconProps, 'Regular'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'dollarcircle-regular',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'dollarcircle-regular', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M11.9999 23.0999c-2.965 0-5.752-1.1545-7.849-3.2515C2.0544 17.7519.899902 14.9649.899902 11.9999S2.0544 6.2479 4.1509 4.1509c2.097-2.0965 4.884-3.250998 7.849-3.250998S17.7519 2.0544 19.8484 4.1509s3.2515 4.884 3.2515 7.849-1.1545 5.752-3.2515 7.8485c-2.0965 2.0965-4.8835 3.2515-7.8485 3.2515Zm0-20c-4.9075 0-8.9 3.9925-8.9 8.9 0 4.9075 3.9925 8.9 8.9 8.9 4.9075 0 8.9-3.9925 8.9-8.9 0-4.9075-3.9925-8.9-8.9-8.9Zm-.975 15.25v-1.593c-1.797-.2575-2.875-1.2705-2.9635-2.79l-.006-.1145-.0055-.1055h2.354l.027.152c.1035.5345.7455.895 1.5965.895s1.398-.339 1.398-.8645v-.0065c0-.389-.223-.6435-1.3985-.8725l-.9385-.178c-1.868-.346-2.8555-1.291-2.8555-2.7325v-.006c0-1.5045 1.0675-2.617 2.792-2.9205V5.6499h1.95v1.5605c1.6885.275 2.6965 1.2765 2.7705 2.7595l.0115.2385h-2.36l-.0155-.1605c-.062-.5385-.611-.887-1.3985-.887-.7875 0-1.239.3195-1.239.814v.006c0 .4915.5335.6915 1.3335.8415l.9395.1775c2.023.39 2.925 1.231 2.925 2.7265v.006c0 .8095-.2795 1.514-.808 2.0385-.5105.5055-1.2555.8435-2.159.9805v1.5985h-1.95Z" />
   </Svg>
 );
 
-Regular.iconType = 'Regular';
+export const Regular: IconComponent<IconProps, 'Regular'> = Object.assign(memo(Icon), {
+  iconType: 'Regular' as const,
+});
+Regular.displayName = 'DollarCircleRegular';

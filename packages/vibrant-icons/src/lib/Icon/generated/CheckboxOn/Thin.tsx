@@ -1,12 +1,8 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Thin: IconComponent<IconProps, 'Thin'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'checkboxon-thin',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'checkboxon-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path
       fillRule="evenodd"
@@ -16,4 +12,7 @@ export const Thin: IconComponent<IconProps, 'Thin'> = ({
   </Svg>
 );
 
-Thin.iconType = 'Thin';
+export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
+  iconType: 'Thin' as const,
+});
+Thin.displayName = 'CheckboxOnThin';

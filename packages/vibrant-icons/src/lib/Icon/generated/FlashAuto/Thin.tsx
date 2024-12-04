@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Thin: IconComponent<IconProps, 'Thin'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'flashauto-thin',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'flashauto-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M10.445 10.62h5l-4.66 7.115V13.63a.25.25 0 0 0-.25-.25h-5l4.66-7.115v4.105a.25.25 0 0 0 .25.25ZM11.69.985a.24.24 0 0 0-.205.115l-8.93 13.645a.25.25 0 0 0 .205.385h6.295v7.635a.25.25 0 0 0 .255.25.24.24 0 0 0 .205-.115l8.93-13.645a.25.25 0 0 0-.205-.385h-6.295V1.235a.25.25 0 0 0-.255-.25Zm7.69 19.24h-.39l-.57.035-.5.035c-.273.01-.536.102-.755.265a.73.73 0 0 0-.275.595.695.695 0 0 0 .13.425c.086.12.206.213.345.265.16.06.33.091.5.09.251.004.5-.052.725-.165a1.22 1.22 0 0 0 .5-.445c.12-.188.182-.407.18-.63v-2.14a.86.86 0 0 0-.125-.5.76.76 0 0 0-.36-.3 1.38 1.38 0 0 0-.57-.105 1.499 1.499 0 0 0-.535.09 1 1 0 0 0-.38.255.84.84 0 0 0-.19.39h-1.715a2 2 0 0 1 .405-1.05c.252-.33.589-.587.975-.74a3.84 3.84 0 0 1 1.5-.27 3.9 3.9 0 0 1 1.4.24 2.2 2.2 0 0 1 1 .74c.268.368.406.815.39 1.27v4.47H19.35v-.92h-.05a1.875 1.875 0 0 1-1.08.915c-.278.09-.568.134-.86.13-.39.007-.777-.07-1.135-.225a1.775 1.775 0 0 1-.785-.67 2 2 0 0 1-.285-1.085 1.695 1.695 0 0 1 .685-1.5 3.5 3.5 0 0 1 1.78-.545l.68-.035.74-.035h.31l.03 1.15Z" />
   </Svg>
 );
 
-Thin.iconType = 'Thin';
+export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
+  iconType: 'Thin' as const,
+});
+Thin.displayName = 'FlashAutoThin';

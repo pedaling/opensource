@@ -1,12 +1,8 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Thin: IconComponent<IconProps, 'Thin'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'chevronupcircle-thin',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'chevronupcircle-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M17.6491 13.9388C17.7272 13.8606 17.7272 13.734 17.6491 13.6559L12.1409 8.14984C12.0628 8.07177 11.9362 8.07178 11.8581 8.14985L6.35053 13.6557C6.27241 13.7338 6.2724 13.8605 6.35051 13.9386L7.27017 14.8583C7.34827 14.9364 7.47488 14.9364 7.55299 14.8583L12 10.413L16.4467 14.8584C16.5248 14.9365 16.6514 14.9365 16.7295 14.8584L17.6491 13.9388Z" />
     <Svg.Path
@@ -17,4 +13,7 @@ export const Thin: IconComponent<IconProps, 'Thin'> = ({
   </Svg>
 );
 
-Thin.iconType = 'Thin';
+export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
+  iconType: 'Thin' as const,
+});
+Thin.displayName = 'ChevronUpCircleThin';

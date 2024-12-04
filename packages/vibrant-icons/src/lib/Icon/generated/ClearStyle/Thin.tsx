@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Thin: IconComponent<IconProps, 'Thin'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'clearstyle-thin',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'clearstyle-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M22.646 21.7273C22.7241 21.6492 22.7241 21.5226 22.646 21.4445L12.9494 11.7479V5.55038H18.4494V7.15088C18.4494 7.26134 18.539 7.35088 18.6494 7.35088H20.1494C20.2599 7.35088 20.3494 7.26134 20.3494 7.15088V3.84988C20.3494 3.73942 20.2599 3.64988 20.1494 3.64988H4.85144L2.55536 1.35333C2.47726 1.27521 2.35061 1.27521 2.2725 1.35332L1.35286 2.27296C1.27475 2.35106 1.27475 2.4777 1.35286 2.5558L21.444 22.6465C21.5221 22.7246 21.6487 22.7246 21.7268 22.6465L22.646 21.7273ZM11.0494 9.84838L6.75194 5.55088H11.0494V9.84838ZM14.3994 20.3504C14.5099 20.3504 14.5994 20.2608 14.5994 20.1504V18.6499C14.5994 18.5394 14.5099 18.4499 14.3994 18.4499H12.9494V17.4009L11.0494 15.5009V18.4499H9.59944C9.48898 18.4499 9.39944 18.5394 9.39944 18.6499V20.1504C9.39944 20.2608 9.48898 20.3504 9.59944 20.3504H14.3994Z" />
   </Svg>
 );
 
-Thin.iconType = 'Thin';
+export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
+  iconType: 'Thin' as const,
+});
+Thin.displayName = 'ClearStyleThin';

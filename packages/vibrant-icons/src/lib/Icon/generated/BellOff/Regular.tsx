@@ -1,12 +1,8 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Regular: IconComponent<IconProps, 'Regular'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'belloff-regular',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'belloff-regular', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M12.0051 23C10.9006 23 10.0051 22.1046 10.0051 21C10.0051 19.8954 10.9006 19 12.0051 19C13.1097 19 14.0051 19.8954 14.0051 21C14.0051 22.1046 13.1097 23 12.0051 23Z" />
     <Svg.Path d="M7.00515 12.25V15H9.75515L12.2551 17.5H3.25515C3.10515 17.5 3.00515 17.4 3.00515 17.25V15.25C3.00515 15.1 3.10515 15 3.25515 15H4.50515V9.75L7.00515 12.25Z" />
@@ -14,4 +10,7 @@ export const Regular: IconComponent<IconProps, 'Regular'> = ({
   </Svg>
 );
 
-Regular.iconType = 'Regular';
+export const Regular: IconComponent<IconProps, 'Regular'> = Object.assign(memo(Icon), {
+  iconType: 'Regular' as const,
+});
+Regular.displayName = 'BellOffRegular';
