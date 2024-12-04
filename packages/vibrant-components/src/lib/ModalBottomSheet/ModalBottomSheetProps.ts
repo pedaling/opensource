@@ -21,6 +21,20 @@ export type ModalBottomSheetProps = Either<
   dimClosable?: boolean;
   scrollBoxRef?: Ref<any>;
   dangerouslyHideOverlayOnIos?: boolean;
+  /**
+   * This value is used for both opening and closing the modal animation duration.
+   */
+  transitionDuration?: number;
+  /**
+   * The threshold to close the modal by swiping down on native platforms. The value is a ratio of the modal height.
+   * @default 0.5
+   */
+  native_swipeToCloseThreshold?: number;
+  /**
+   * The velocity to close the modal by swiping down on native platforms. The value is dp per second.
+   * @default 100
+   */
+  native_swipeToCloseVelocity?: number;
 } & (
     | {
         primaryButtonOptions: ButtonOptions;

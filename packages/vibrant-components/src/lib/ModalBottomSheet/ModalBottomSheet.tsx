@@ -42,6 +42,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     dimClosable = true,
     testId = 'modal-bottom-sheet',
     scrollBoxRef,
+    transitionDuration = 200,
     dangerouslyHideOverlayOnIos,
   }) => {
     const [isOpen, setIsOpen] = useControllableState<boolean>({
@@ -138,7 +139,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
           <Backdrop
             open={isOpen}
             zIndex={zIndex.modalBottomSheet}
-            transitionDuration={200}
+            transitionDuration={transitionDuration}
             onClick={dimClosable ? closeModal : undefined}
             scrollable={!isMobile}
             pt={[120, 40]}
@@ -160,7 +161,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       opacity: isOpen ? 1 : 0,
                     }),
               }}
-              duration={200}
+              duration={transitionDuration}
               style={{ y: isMobile ? viewportHeight : undefined }}
             >
               <Box
