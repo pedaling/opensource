@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Regular: IconComponent<IconProps, 'Regular'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'replay-regular',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'replay-regular', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M12.0001 23.0999C8.04605 23.0999 4.36005 20.9709 2.38105 17.5429L2.33105 17.4564L4.23655 16.3564L4.28655 16.4429C5.87405 19.1919 8.83005 20.8999 12.0006 20.8999C16.9081 20.8999 20.9006 16.9074 20.9006 11.9999C20.9006 7.0924 16.9076 3.0999 12.0001 3.0999C9.72406 3.0999 7.56505 3.9559 5.90705 5.5129L7.47204 6.6092C7.53844 6.65572 7.5248 6.75776 7.44851 6.7852L2.55336 8.54595C2.48835 8.56933 2.41978 8.52132 2.41951 8.45223L2.39978 3.25032C2.39948 3.16926 2.4907 3.12153 2.55712 3.16801L4.07455 4.2299C6.15255 2.1129 9.03555 0.899902 12.0001 0.899902C18.1206 0.899902 23.1001 5.8794 23.1001 11.9999C23.1001 18.1204 18.1206 23.0999 12.0001 23.0999ZM9.40006 7.99985C9.40006 7.92162 9.48584 7.87369 9.55247 7.91469L16.0527 11.9147C16.1162 11.9538 16.1162 12.046 16.0527 12.0851L9.55247 16.0851C9.48584 16.1261 9.40006 16.0782 9.40006 15.9999V7.99985Z" />
   </Svg>
 );
 
-Regular.iconType = 'Regular';
+export const Regular: IconComponent<IconProps, 'Regular'> = Object.assign(memo(Icon), {
+  iconType: 'Regular' as const,
+});
+Regular.displayName = 'ReplayRegular';

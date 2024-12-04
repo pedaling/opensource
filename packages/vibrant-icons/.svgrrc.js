@@ -44,20 +44,20 @@ function template({ componentName, jsx, ...restProps }, { tpl, options }) {
   const { filePath } = options.state;
 
   const testId = filePath.split('/icons/')[1].split('/')[0].toLowerCase() + '-' + fileName.toLowerCase();
-
-  const nl = '\n';
+  const displayName = filePath.split('/icons/')[1].split('/')[0] + fileName;
 
   return tpl`
-  import { FC } from 'react';
+  import { FC, memo } from 'react';
   import type { IconProps, IconComponent } from '../../IconProp';
   import { Svg } from '@vibrant-ui/core';
-  ${nl}
-  export const ${componentNameWithPropType} = ({ size = 24, fill = 'onColor', testId='${testId}', ...props }) => (
+
+  const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId='${testId}', ...props }) => (
     ${jsx}
   );
-  ${nl}
-  ${fileName}.iconType = '${fileName}';
-    `;
+
+  export const ${componentNameWithPropType} = Object.assign(memo(Icon), { iconType: '${fileName}' as const });
+  ${fileName}.displayName = '${displayName}';
+  `;
 }
 
 function indexTemplate(filePaths) {

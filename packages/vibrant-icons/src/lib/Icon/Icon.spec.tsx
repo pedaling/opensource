@@ -17,7 +17,7 @@ describe('<Icon />', () => {
   describe.each(
     Object.keys(Icon).flatMap(icon =>
       Object.keys(Icon[icon as IconName])
-        .filter(weight => typeof Icon[icon as IconName][weight as IconWeight] === 'function')
+        .filter(weight => Icon[icon as IconName][weight as IconWeight]?.iconType)
         .map(weight => [icon as IconName, weight as IconWeight] as const)
     )
   )('when %s.%s Icon rendered', (icon, weight) => {

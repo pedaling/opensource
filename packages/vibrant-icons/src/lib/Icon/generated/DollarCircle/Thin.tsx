@@ -1,15 +1,14 @@
+import type { FC } from 'react';
+import { memo } from 'react';
 import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
-
-export const Thin: IconComponent<IconProps, 'Thin'> = ({
-  size = 24,
-  fill = 'onColor',
-  testId = 'dollarcircle-thin',
-  ...props
-}) => (
+const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'dollarcircle-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path d="M11.9999 22.8499c-2.898 0-5.623-1.129-7.6725-3.1775-2.049-2.0495-3.1775-4.774-3.1775-7.6725 0-2.8985 1.129-5.623 3.1775-7.6725 2.0495-2.0485 4.7745-3.1775 7.6725-3.1775 2.898 0 5.623 1.129 7.6725 3.1775 2.049 2.0495 3.1775 4.774 3.1775 7.6725 0 2.8985-1.129 5.623-3.1775 7.6725-2.0495 2.049-4.774 3.1775-7.6725 3.1775Zm0-20c-5.0455 0-9.15 4.1045-9.15 9.15 0 5.0455 4.1045 9.15 9.15 9.15 5.0455 0 9.15-4.1045 9.15-9.15 0-5.0455-4.1045-9.15-9.15-9.15Zm-.7245 15.25v-1.563l-.131-.0165c-1.7255-.22-2.7285-1.116-2.8295-2.5235h1.882c.1575.6295.883 1.047 1.8305 1.047 1.001 0 1.648-.4375 1.648-1.1145v-.0065c0-.674-.5865-.9205-1.6-1.1185l-.9405-.178c-1.7595-.326-2.652-1.1625-2.652-2.4865v-.0065c0-1.3965 1.022-2.4265 2.666-2.6875l.1265-.02v-1.526h1.45v1.526l.128.019c1.602.2345 2.563 1.15 2.6405 2.5135h-1.8735c-.1125-.6405-.7465-1.0475-1.638-1.0475-.8915 0-1.4895.4175-1.4895 1.064v.0065c0 .7025.739.937 1.5375 1.087l.94.1775c1.907.3675 2.721 1.1095 2.721 2.4805v.0065c0 1.524-1.034 2.538-2.837 2.783l-.13.0175v1.5665h-1.45.001Z" />
   </Svg>
 );
 
-Thin.iconType = 'Thin';
+export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
+  iconType: 'Thin' as const,
+});
+Thin.displayName = 'DollarCircleThin';

@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react';
 import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
+import { ToastProvider, ToastRenderer } from '@vibrant-ui/components';
 import { VibrantProvider } from '@vibrant-ui/core';
 
 export const VibrantProviderWrapper: FC<{ children: ReactNode }> = ({ children }) => {
@@ -8,7 +9,10 @@ export const VibrantProviderWrapper: FC<{ children: ReactNode }> = ({ children }
 
   return (
     <VibrantProvider theme={{ mode: colorMode }}>
-      <>{children}</>
+      <ToastProvider>
+        <>{children}</>
+        <ToastRenderer />
+      </ToastProvider>
     </VibrantProvider>
   );
 };
