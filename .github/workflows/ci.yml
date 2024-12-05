@@ -43,7 +43,9 @@ jobs:
       - name: Test Affected Project
         uses: GabrielBB/xvfb-action@v1
         with:
-          run: yarn nx collect-coverage testing --ci --coverage-reporter=lcov --output-path=coverage/lcov.info
+          run: |
+            yarn nx repair
+            yarn nx collect-coverage testing --ci --coverage-reporter=lcov --output-path=coverage/lcov.info
       - name: Typecheck Affected Project
         run: yarn nx affected --target=typecheck --parallel=1
       - name: Upload coverage to Coveralls
