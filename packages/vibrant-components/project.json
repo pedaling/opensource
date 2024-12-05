@@ -6,8 +6,15 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
+      "dependsOn": [
+        {
+          "target": "build",
+          "dependencies": true
+        },
+        "build-native"
+      ],
       "options": {
         "outputPath": "dist/packages/vibrant-components",
         "tsConfig": "packages/vibrant-components/tsconfig.lib.json",
@@ -15,9 +22,9 @@
         "entryFile": "packages/vibrant-components/src/index.ts",
         "external": ["react/jsx-runtime"],
         "generateExportsField": true,
+        "skipTypeCheck": true,
+        "deleteOutputPath": false,
         "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",
         "assets": [
           {
@@ -28,11 +35,22 @@
         ]
       }
     },
+    "build-native": {
+      "executor": "@nx/rollup:rollup",
+      "options": {
+        "outputPath": "dist/packages/vibrant-components",
+        "outputFileName": "index.native.js",
+        "tsConfig": "packages/vibrant-components/tsconfig.native.json",
+        "main": "packages/vibrant-components/src/index.ts",
+        "skipTypeCheck": true,
+        "format": ["cjs"]
+      }
+    },
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn tsc --project ./packages/vibrant-components/tsconfig.lib.json"
+          "yarn tsc --project ./packages/vibrant-components/tsconfig.json"
         ]
       }
     },

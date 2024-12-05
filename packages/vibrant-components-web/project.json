@@ -6,18 +6,16 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-components-web",
         "tsConfig": "packages/vibrant-components-web/tsconfig.lib.json",
         "project": "packages/vibrant-components-web/package.json",
-        "entryFile": "packages/vibrant-components-web/src/index.ts",
+        "main": "packages/vibrant-components-web/src/index.ts",
+        "skipTypeCheck": true,
         "external": ["react/jsx-runtime"],
         "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "rollupConfig": "tools/config/rollup-config",
-        "compiler": "babel",
         "assets": [
           {
             "glob": "packages/vibrant-components-web/README.md",
@@ -31,7 +29,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn tsc --project ./packages/vibrant-components-web/tsconfig.lib.json"
+          "yarn tsc --project ./packages/vibrant-components-web/tsconfig.json"
         ]
       }
     },
@@ -46,7 +44,7 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["coverage/packages/vibrant-components-web"],
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-components-web"],
       "options": {
         "jestConfig": "packages/vibrant-components-web/jest.config.ts",
         "passWithNoTests": true
