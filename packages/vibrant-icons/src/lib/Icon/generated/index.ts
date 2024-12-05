@@ -171,6 +171,7 @@ export * as Report from './Report';
 export * as RotateClockwise from './RotateClockwise';
 export * as Sad from './Sad';
 export * as School from './School';
+export * as SealCheck from './SealCheck';
 export * as Search from './Search';
 export * as SearchText from './SearchText';
 export * as Send from './Send';
