@@ -112,7 +112,7 @@
     "jest-environment-jsdom": "~28.1.1",
     "jest-expo": "48.0.2",
     "jsonc-eslint-parser": "^2.1.0",
-    "ngx-deploy-npm": "4.1.1",
+    "ngx-deploy-npm": "8.3.0",
     "nx": "19.8.9",
     "prettier": "2.7.1",
     "react-native-config": "1.5.0",
