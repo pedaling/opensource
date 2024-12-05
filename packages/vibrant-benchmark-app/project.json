@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-benchmark-app/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "start": {
       "executor": "@nx/react-native:start",
@@ -23,7 +24,7 @@
     "bundle-ios": {
       "executor": "@nx/react-native:bundle",
       "options": {
-        "entryFile": "src/main.tsx",
+        "main": "src/main.tsx",
         "platform": "ios",
         "bundleOutput": "dist/packages/vibrant-benchmark-app/ios/main.jsbundle"
       }
@@ -43,7 +44,7 @@
     "bundle-android": {
       "executor": "@nx/react-native:bundle",
       "options": {
-        "entryFile": "src/main.tsx",
+        "main": "src/main.tsx",
         "platform": "android",
         "bundleOutput": "dist/packages/vibrant-benchmark-app/android/main.jsbundle"
       }
@@ -73,6 +74,5 @@
         "passWithNoTests": true
       }
     }
-  },
-  "tags": []
+  }
 }

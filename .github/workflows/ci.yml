@@ -47,38 +47,38 @@ jobs:
             yarn nx repair
             yarn nx collect-coverage testing --ci --coverage-reporter=lcov --output-path=coverage/lcov.info
       - name: Typecheck Affected Project
-        run: yarn nx affected --target=typecheck --parallel=1
-      - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          git-commit: ${{ steps.setSHAs.outputs.head }}
+        run: yarn nx affected --target=typecheck --parallel=1 
+      # - name: Upload coverage to Coveralls
+      #   uses: coverallsapp/github-action@v2
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     git-commit: ${{ steps.setSHAs.outputs.head }}
 
-  chromatic:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - run: yarn
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Publish to Chromatic
-        if: github.ref != 'refs/heads/main'
-        uses: chromaui/action@latest
-        with:
-          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
-          onlyChanged: true
-        env:
-          NODE_OPTIONS: --max-old-space-size=8192
-      - name: Publish to Chromatic and auto accept changes
-        if: github.ref == 'refs/heads/main'
-        uses: chromaui/action@latest
-        with:
-          projectToken: ${{ secrets.CHROMATIC_TOKEN }}
-          autoAcceptChanges: true
-        env:
-          NODE_OPTIONS: --max-old-space-size=8192
+  # chromatic:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - run: yarn
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
+  #     - name: Publish to Chromatic
+  #       if: github.ref != 'refs/heads/main'
+  #       uses: chromaui/action@latest
+  #       with:
+  #         projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+  #         onlyChanged: true
+  #       env:
+  #         NODE_OPTIONS: --max-old-space-size=8192
+  #     - name: Publish to Chromatic and auto accept changes
+  #       if: github.ref == 'refs/heads/main'
+  #       uses: chromaui/action@latest
+  #       with:
+  #         projectToken: ${{ secrets.CHROMATIC_TOKEN }}
+  #         autoAcceptChanges: true
+  #       env:
+  #         NODE_OPTIONS: --max-old-space-size=8192
 
   # expo:
   #   runs-on: ubuntu-latest

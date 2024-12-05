@@ -6,7 +6,7 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "dependsOn": [
         {
@@ -20,45 +20,37 @@
         "tsConfig": "packages/vibrant-layouts/tsconfig.lib.json",
         "project": "packages/vibrant-layouts/package.json",
         "deleteOutputPath": false,
-        "entryFile": "packages/vibrant-layouts/src/index.ts",
+        "main": "packages/vibrant-layouts/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "rollupConfig": "tools/config/rollup-config",
-        "compiler": "babel",
         "assets": [
           {
             "glob": "packages/vibrant-layouts/README.md",
             "input": ".",
             "output": "."
           }
-        ],
-        "disablePreserveModules": true
+        ]
       }
     },
     "build-native": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-layouts",
-        "tsConfig": "packages/vibrant-layouts/tsconfig.lib.json",
-        "moduleSuffixes": [".native", ""],
+        "tsConfig": "packages/vibrant-layouts/tsconfig.native.json",
         "project": "packages/vibrant-layouts/package.json",
         "outputFileName": "index.native",
-        "entryFile": "packages/vibrant-layouts/src/index.ts",
+        "main": "packages/vibrant-layouts/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["cjs"],
-        "rollupConfig": "tools/config/rollup-config",
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "compiler": "babel",
-        "disablePreserveModules": true
+        "skipTypeCheck": true
       }
     },
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn tsc --project ./packages/vibrant-layouts/tsconfig.lib.json"
+          "yarn tsc --project ./packages/vibrant-layouts/tsconfig.json"
         ]
       }
     },

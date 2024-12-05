@@ -1,4 +1,4 @@
-import type { Rounded } from 'packages/vibrant-theme/src/types/BorderRadius';
+import type { Rounded } from '@vibrant-ui/theme';
 import type { ResponsiveValue } from '../../../types';
 
 type BorderStyle = 'dashed' | 'none' | 'solid';

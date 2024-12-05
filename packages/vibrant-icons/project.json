@@ -6,19 +6,16 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-icons",
         "tsConfig": "packages/vibrant-icons/tsconfig.lib.json",
         "project": "packages/vibrant-icons/package.json",
-        "entryFile": "packages/vibrant-icons/src/index.ts",
+        "main": "packages/vibrant-icons/src/index.ts",
         "external": ["react/jsx-runtime"],
         "generateExportsField": true,
         "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "rollupConfig": "tools/config/rollup-config",
-        "compiler": "babel",
         "assets": [
           {
             "glob": "packages/vibrant-icons/README.md",
@@ -32,7 +29,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn tsc --project ./packages/vibrant-icons/tsconfig.lib.json"
+          "yarn tsc --project ./packages/vibrant-icons/tsconfig.json"
         ]
       }
     },

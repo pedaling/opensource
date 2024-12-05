@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "dependsOn": [
         {
@@ -20,11 +20,9 @@
         "tsConfig": "packages/vibrant-motion/tsconfig.lib.json",
         "project": "packages/vibrant-motion/package.json",
         "deleteOutputPath": false,
-        "entryFile": "packages/vibrant-motion/src/index.ts",
+        "main": "packages/vibrant-motion/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["esm", "cjs"],
-        "rollupConfig": "@nx/react/plugins/bundle-rollup",
-        "buildableProjectDepsInPackageJsonType": "dependencies",
         "compiler": "babel",
         "assets": [
           {
@@ -36,28 +34,24 @@
       }
     },
     "build-native": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-motion",
-        "tsConfig": "packages/vibrant-motion/tsconfig.lib.json",
-        "moduleSuffixes": [".native", ""],
+        "tsConfig": "packages/vibrant-motion/tsconfig.native.json",
         "project": "packages/vibrant-motion/package.json",
-        "outputFileName": "index.native",
-        "entryFile": "packages/vibrant-motion/src/index.ts",
+        "outputFileName": "index.native.cjs",
+        "main": "packages/vibrant-motion/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["cjs"],
-        "rollupConfig": "tools/config/rollup-config",
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "compiler": "babel",
-        "disablePreserveModules": true
+        "skipTypeCheck": true
       }
     },
     "typecheck": {
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn tsc --project ./packages/vibrant-motion/tsconfig.lib.json"
+          "yarn tsc --project ./packages/vibrant-motion/tsconfig.json"
         ]
       }
     },

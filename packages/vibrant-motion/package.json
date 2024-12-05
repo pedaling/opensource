@@ -7,7 +7,9 @@
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
-    "react-native": "^0.71.0"
+    "react-native": "^0.71.0",
+    "@vibrant-ui/core": "*",
+    "@vibrant-ui/utils": "*"
   },
   "dependencies": {
     "motion": "10.15.5"
