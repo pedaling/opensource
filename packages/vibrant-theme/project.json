@@ -6,18 +6,17 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-theme",
         "tsConfig": "packages/vibrant-theme/tsconfig.lib.json",
         "project": "packages/vibrant-theme/package.json",
-        "entryFile": "packages/vibrant-theme/src/index.ts",
+        "main": "packages/vibrant-theme/src/index.ts",
         "external": ["react/jsx-runtime"],
         "generateExportsField": true,
+        "skipTypeCheck": true,
         "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "rollupConfig": "tools/config/rollup-config",
         "compiler": "babel",
         "assets": [
           {
@@ -32,7 +31,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn tsc --project ./packages/vibrant-theme/tsconfig.lib.json"
+          "yarn tsc --project ./packages/vibrant-theme/tsconfig.json"
         ]
       }
     },

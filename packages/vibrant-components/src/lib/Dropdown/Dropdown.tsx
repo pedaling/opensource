@@ -1,5 +1,4 @@
 /* eslint-disable max-lines */
-import type { Align, Side } from 'packages/vibrant-utils/src/types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   Box,
@@ -24,7 +23,7 @@ import {
   useBackHandler,
   useControllableState,
 } from '@vibrant-ui/utils';
-import type { LayoutEvent, Position, Rect } from '@vibrant-ui/utils';
+import type { Align, LayoutEvent, Position, Rect, Side } from '@vibrant-ui/utils';
 import { Backdrop } from '../Backdrop';
 import { withDropdownVariation } from './DropdownProps';
 

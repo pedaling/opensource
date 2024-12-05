@@ -30,3 +30,4 @@ export { useComposedRef } from './lib/useComposedRef';
 export { useEscapeEvent } from './lib/useEscapeEvent';
 export type { Position } from './types/Position';
 export type { Either } from './types/Either';
+export type { Align, Side } from './types';

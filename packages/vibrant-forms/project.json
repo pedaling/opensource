@@ -6,18 +6,15 @@
   "tags": ["scope:vibrant"],
   "targets": {
     "build": {
-      "executor": "@nrwl/rollup:rollup",
+      "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/vibrant-forms",
         "tsConfig": "packages/vibrant-forms/tsconfig.lib.json",
         "project": "packages/vibrant-forms/package.json",
-        "entryFile": "packages/vibrant-forms/src/index.ts",
+        "main": "packages/vibrant-forms/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["esm", "cjs"],
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "rollupConfig": "tools/config/rollup-config",
-        "compiler": "babel",
         "assets": [
           {
             "glob": "packages/vibrant-forms/README.md",
@@ -31,7 +28,7 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": [
-          "yarn tsc --project ./packages/vibrant-forms/tsconfig.lib.json"
+          "yarn tsc --project ./packages/vibrant-forms/tsconfig.json"
         ]
       }
     },
@@ -44,7 +41,7 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["coverage/packages/vibrant-forms"],
+      "outputs": ["{workspaceRoot}/coverage/packages/vibrant-forms"],
       "options": {
         "jestConfig": "packages/vibrant-forms/jest.config.ts",
         "passWithNoTests": true

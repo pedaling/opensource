@@ -1,5 +1,4 @@
 import type { Ref } from 'react';
-
 import type { ReactElementChildren } from '@vibrant-ui/core';
 import { withVariation } from '../withVariation';
 

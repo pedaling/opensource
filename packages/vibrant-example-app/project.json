@@ -3,6 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/vibrant-example-app/src",
   "projectType": "application",
+  "tags": [],
   "targets": {
     "start": {
       "executor": "@nx/expo:start",
@@ -130,6 +131,5 @@
         "bundler": "metro"
       }
     }
-  },
-  "tags": []
+  }
 }
