@@ -7204,21 +7204,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/devkit@npm:14.4.2":
-  version: 14.4.2
-  resolution: "@nrwl/devkit@npm:14.4.2"
-  dependencies:
-    ejs: ^3.1.7
-    ignore: ^5.0.4
-    rxjs: ^6.5.4
-    semver: 7.3.4
-    tslib: ^2.3.0
-  peerDependencies:
-    nx: ">= 13.10 <= 15"
-  checksum: ed4c619803b211efa9f8f001cb3c4fdb8f2449036ae5e6abbc18a65ecc7b0cc0b82d2ecc2b998478600371023bd83bfff9338a44d0d977dca34031601a1eeb8c
-  languageName: node
-  linkType: hard
-
 "@nrwl/devkit@npm:19.8.9":
   version: 19.8.9
   resolution: "@nrwl/devkit@npm:19.8.9"
@@ -16646,7 +16631,7 @@ __metadata:
     jest-expo: 48.0.2
     jsonc-eslint-parser: ^2.1.0
     motion: 10.15.5
-    ngx-deploy-npm: 4.1.1
+    ngx-deploy-npm: 8.3.0
     nx: 19.8.9
     prettier: 2.7.1
     prism-react-renderer: 1.2.1
@@ -30516,12 +30501,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ngx-deploy-npm@npm:4.1.1":
-  version: 4.1.1
-  resolution: "ngx-deploy-npm@npm:4.1.1"
-  dependencies:
-    "@nrwl/devkit": 14.4.2
-  checksum: d32967423b477eed089f1a0a31fa58c0aa7c4fc10643e204c4c8ebd87fd7e716a8b4259fbc7d920838f706715e265be0a31c9655f45a66116e2b710ed541ab17
+"ngx-deploy-npm@npm:8.3.0":
+  version: 8.3.0
+  resolution: "ngx-deploy-npm@npm:8.3.0"
+  peerDependencies:
+    "@nx/devkit": ">=16.0.0 <=21.0.0"
+    tslib: ^2.3.0
+  checksum: 153b0ef60b74c62e03ac2d7ab5fec322b7295cdc8085476bd115716c57b5bbc082bc9d687b202f25275a0635cedf82fcfbaa442665f87557e069c07fff9dd010
   languageName: node
   linkType: hard
 
@@ -36091,15 +36077,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^6.5.4":
-  version: 6.6.7
-  resolution: "rxjs@npm:6.6.7"
-  dependencies:
-    tslib: ^1.9.0
-  checksum: bc334edef1bb8bbf56590b0b25734ba0deaf8825b703256a93714308ea36dff8a11d25533671adf8e104e5e8f256aa6fdfe39b2e248cdbd7a5f90c260acbbd1b
-  languageName: node
-  linkType: hard
-
 "rxjs@npm:^7.5.4, rxjs@npm:^7.5.5, rxjs@npm:^7.8.0":
   version: 7.8.1
   resolution: "rxjs@npm:7.8.1"
@@ -36450,17 +36427,6 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 692f4900dadb43919614b0df9af23fe05743051cda0d1735b5e4d76f93c9e43a266fae73cfc928f5d1489f022c5c0e65dfd2900fcf5b1839c4e9a239729afa7b
-  languageName: node
-  linkType: hard
-
-"semver@npm:7.3.4":
-  version: 7.3.4
-  resolution: "semver@npm:7.3.4"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 96451bfd7cba9b60ee87571959dc47e87c95b2fe58a9312a926340fee9907fc7bc062c352efdaf5bb24b2dff59c145e14faf7eb9d718a84b4751312531b39f43
   languageName: node
   linkType: hard
 
@@ -39139,7 +39105,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.10.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0, tslib@npm:^1.9.3":
+"tslib@npm:^1.10.0, tslib@npm:^1.8.1, tslib@npm:^1.9.3":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: dbe628ef87f66691d5d2959b3e41b9ca0045c3ee3c7c7b906cc1e328b39f199bb1ad9e671c39025bd56122ac57dfbf7385a94843b1cc07c60a4db74795829acd
