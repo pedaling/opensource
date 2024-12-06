@@ -102,6 +102,7 @@
         "trackDeps": true,
         "postTargets": [
           "vibrant-components:github",
+          "vibrant-components:build",
           "vibrant-components:deploy"
         ]
       }
@@ -115,6 +116,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/vibrant-components"

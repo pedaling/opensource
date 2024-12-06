@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/core",
-  "version": "0.93.3",
+  "version": "0.93.11",
   "private": false,
   "sideEffects": false,
   "react-native": "index.native",

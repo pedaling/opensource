@@ -63,7 +63,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["workspace-plugin:github", "workspace-plugin:deploy"]
+        "postTargets": ["workspace-plugin:github", "workspace-plugin:build", "workspace-plugin:deploy"]
       }
     },
     "github": {
@@ -75,6 +75,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/workspace-plugin"

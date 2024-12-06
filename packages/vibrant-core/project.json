@@ -97,7 +97,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-core:github", "vibrant-core:deploy"]
+        "postTargets": ["vibrant-core:github", "vibrant-core:build", "vibrant-core:deploy"]
       }
     },
     "github": {
@@ -109,6 +109,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/vibrant-core"

@@ -101,7 +101,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-motion:github", "vibrant-motion:deploy"]
+        "postTargets": ["vibrant-motion:github", "vibrant-motion:build", "vibrant-motion:deploy"]
       }
     },
     "github": {
@@ -113,6 +113,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/vibrant-motion"

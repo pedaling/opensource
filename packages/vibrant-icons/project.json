@@ -98,7 +98,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-icons:github", "vibrant-icons:deploy"]
+        "postTargets": ["vibrant-icons:github", "vibrant-icons:build", "vibrant-icons:deploy"]
       }
     },
     "github": {
@@ -110,6 +110,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/vibrant-icons"

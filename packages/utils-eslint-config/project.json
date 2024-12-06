@@ -47,6 +47,7 @@
         "trackDeps": true,
         "postTargets": [
           "utils-eslint-config:github",
+          "utils-eslint-config:build",
           "utils-eslint-config:deploy"
         ]
       }
@@ -60,9 +61,10 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
-        "distFolderPath": "dist/packages/utils-eslint-config"
+        "distFolderPath": "dist/shared-utils-eslint-config"
       }
     }
   }

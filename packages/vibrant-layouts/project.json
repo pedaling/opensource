@@ -100,7 +100,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-layouts:github", "vibrant-layouts:deploy"]
+        "postTargets": ["vibrant-layouts:github", "vibrant-layouts:build", "vibrant-layouts:deploy"]
       }
     },
     "github": {
@@ -112,6 +112,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/vibrant-layouts"

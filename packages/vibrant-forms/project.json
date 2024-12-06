@@ -78,7 +78,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-forms:github", "vibrant-forms:deploy"]
+        "postTargets": ["vibrant-forms:github", "vibrant-forms:build", "vibrant-forms:deploy"]
       }
     },
     "github": {
@@ -90,6 +90,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/vibrant-forms"

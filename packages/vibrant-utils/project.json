@@ -54,7 +54,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-utils:github", "vibrant-utils:deploy"]
+        "postTargets": ["vibrant-utils:github", "vibrant-utils:build", "vibrant-utils:deploy"]
       }
     },
     "github": {
@@ -66,6 +66,7 @@
     },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
+      "dependsOn": ["build"],
       "options": {
         "access": "public",
         "distFolderPath": "dist/packages/vibrant-utils"
