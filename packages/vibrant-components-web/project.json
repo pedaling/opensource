@@ -9,6 +9,7 @@
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-components-web",
         "tsConfig": "packages/vibrant-components-web/tsconfig.lib.json",
         "project": "packages/vibrant-components-web/package.json",
