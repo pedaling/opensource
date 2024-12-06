@@ -1,9 +1,9 @@
 {
   "name": "@vibrant-ui/motion",
-  "version": "0.94.2",
+  "version": "0.94.3",
   "private": false,
   "sideEffects": false,
-  "react-native": "index.native",
+  "react-native": "index.native.cjs",
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",

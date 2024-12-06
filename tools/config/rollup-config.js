@@ -1,11 +1,9 @@
 module.exports = function rollupConfig(config, options) {
   return {
     ...config,
-    output: config.output.map((output) => {
-      return {
-        ...output,
-        interop: 'auto',
-      };
-    }),
-  }
-}
+    output: config.output.map(output => ({
+      ...output,
+      interop: 'auto',
+    })),
+  };
+};

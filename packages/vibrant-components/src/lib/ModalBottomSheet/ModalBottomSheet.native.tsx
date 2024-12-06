@@ -120,11 +120,15 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       () =>
         Gesture.Pan()
           .onChange(event => {
+            'worklet';
+
             if (event.translationY > 0) {
               offset.value = event.translationY;
             }
           })
           .onFinalize(event => {
+            'worklet';
+
             if (
               Math.abs(event.translationX) < 10 &&
               Math.abs(event.translationY) < 10 &&
@@ -153,11 +157,15 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       () =>
         Gesture.Pan()
           .onChange(event => {
+            'worklet';
+
             if (event.translationY > 0) {
               offset.value = event.translationY;
             }
           })
           .onFinalize(event => {
+            'worklet';
+
             if (
               event.translationY > containerHeight * native_swipeToCloseThreshold ||
               event.velocityY > native_swipeToCloseVelocity

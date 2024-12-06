@@ -42,7 +42,7 @@
         "outputPath": "dist/packages/vibrant-motion",
         "tsConfig": "packages/vibrant-motion/tsconfig.native.json",
         "project": "packages/vibrant-motion/package.json",
-        "outputFileName": "index.native.cjs",
+        "outputFileName": "index.native.js",
         "main": "packages/vibrant-motion/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["cjs"],
