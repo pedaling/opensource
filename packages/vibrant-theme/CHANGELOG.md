@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.0](https://github.com/pedaling/opensource/compare/vibrant-theme-0.93.9...vibrant-theme-0.94.0) (2024-12-06)
+
+
+### Features
+
+* add 'interop: auto' to rollup output configuration for proper default export handling ([#980](https://github.com/pedaling/opensource/issues/980)) ([8a7e022](https://github.com/pedaling/opensource/commit/8a7e0229af1678a9c21e4acc22d935cde22943f0))
+
 ## [0.93.13](https://github.com/pedaling/opensource/compare/vibrant-theme-0.93.9...vibrant-theme-0.93.13) (2024-12-06)
 
 ### [0.93.3](https://github.com/pedaling/opensource/compare/vibrant-theme-0.93.2...vibrant-theme-0.93.3) (2024-11-10)
