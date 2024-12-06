@@ -4,24 +4,6 @@
     "appsDir": "packages",
     "libsDir": "packages"
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ],
-    "version": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      },
-      {
-        "target": "version",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "generators": {
     "@nx/react": {
       "application": {
@@ -70,6 +52,9 @@
     },
     "typecheck": {
       "cache": true
+    },
+    "version": {
+      "dependsOn": ["build"]
     }
   },
   "parallel": 3,
