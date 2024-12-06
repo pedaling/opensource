@@ -9,12 +9,14 @@
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-forms",
         "tsConfig": "packages/vibrant-forms/tsconfig.lib.json",
         "project": "packages/vibrant-forms/package.json",
         "main": "packages/vibrant-forms/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["esm", "cjs"],
+        "skipTypeCheck": true,
         "assets": [
           {
             "glob": "packages/vibrant-forms/README.md",

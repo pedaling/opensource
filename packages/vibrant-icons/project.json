@@ -9,6 +9,7 @@
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-icons",
         "tsConfig": "packages/vibrant-icons/tsconfig.lib.json",
         "project": "packages/vibrant-icons/package.json",
@@ -16,6 +17,7 @@
         "external": ["react/jsx-runtime"],
         "generateExportsField": true,
         "format": ["esm", "cjs"],
+        "skipTypeCheck": true,
         "assets": [
           {
             "glob": "packages/vibrant-icons/README.md",

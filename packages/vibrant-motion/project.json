@@ -16,6 +16,7 @@
         "build-native"
       ],
       "options": {
+        "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-motion",
         "tsConfig": "packages/vibrant-motion/tsconfig.lib.json",
         "project": "packages/vibrant-motion/package.json",
@@ -37,6 +38,7 @@
       "executor": "@nx/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-motion",
         "tsConfig": "packages/vibrant-motion/tsconfig.native.json",
         "project": "packages/vibrant-motion/package.json",

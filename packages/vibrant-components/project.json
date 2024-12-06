@@ -16,6 +16,7 @@
         "build-native"
       ],
       "options": {
+        "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-components",
         "tsConfig": "packages/vibrant-components/tsconfig.lib.json",
         "project": "packages/vibrant-components/package.json",
@@ -38,6 +39,7 @@
     "build-native": {
       "executor": "@nx/rollup:rollup",
       "options": {
+        "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-components",
         "outputFileName": "index.native.js",
         "tsConfig": "packages/vibrant-components/tsconfig.native.json",
