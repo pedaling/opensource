@@ -96,7 +96,6 @@
     },
     "version": {
       "executor": "@jscutlery/semver:version",
-      "dependsOn": ["build-native"],
       "options": {
         "preset": "conventional",
         "skipCommit": true,

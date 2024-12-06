@@ -21,6 +21,7 @@ export default async function runExecutor(options: UpdateNativePackageJsonExecut
   await addToStage({
     paths: [nativePackageJsonPath],
     dryRun: false,
+    skipStage: false,
   }).toPromise();
 
   // await commit({
