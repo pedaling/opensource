@@ -97,7 +97,8 @@
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
-        "access": "public"
+        "access": "public",
+        "distFolderPath": "dist/packages/vibrant-components-web"
       }
     },
     "generate-native-package": {
