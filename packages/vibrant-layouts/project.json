@@ -102,7 +102,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-layouts:github", "vibrant-layouts:build", "vibrant-layouts:deploy"]
+        "postTargets": ["vibrant-layouts:github", "vibrant-layouts:build-native", "vibrant-layouts:build", "vibrant-layouts:deploy"]
       }
     },
     "github": {

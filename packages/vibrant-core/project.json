@@ -99,7 +99,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-core:github", "vibrant-core:build", "vibrant-core:deploy"]
+        "postTargets": ["vibrant-core:github", "vibrant-core:build-native", "vibrant-core:build", "vibrant-core:deploy"]
       }
     },
     "github": {
