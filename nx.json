@@ -53,7 +53,7 @@
     "typecheck": {
       "cache": true
     },
-    "version": {
+    "deploy": {
       "dependsOn": ["build"]
     }
   },
