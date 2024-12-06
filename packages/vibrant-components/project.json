@@ -104,8 +104,8 @@
         "trackDeps": true,
         "postTargets": [
           "vibrant-components:github",
-          "vibrant-components:build",
           "vibrant-components:build-native",
+          "vibrant-components:build",
           "vibrant-components:deploy"
         ]
       }

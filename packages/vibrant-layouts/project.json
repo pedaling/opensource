@@ -41,7 +41,7 @@
         "outputPath": "dist/packages/vibrant-layouts",
         "tsConfig": "packages/vibrant-layouts/tsconfig.native.json",
         "project": "packages/vibrant-layouts/package.json",
-        "outputFileName": "index.native",
+        "outputFileName": "index.native.js",
         "main": "packages/vibrant-layouts/src/index.ts",
         "external": ["react/jsx-runtime"],
         "format": ["cjs"],
