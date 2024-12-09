@@ -12,16 +12,16 @@
         {
           "target": "build",
           "dependencies": true
-        },
-        "build-native"
+        }
       ],
       "options": {
         "outputPath": "dist/packages/vibrant-core",
         "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
         "project": "packages/vibrant-core/package.json",
         "main": "packages/vibrant-core/src/index.ts",
-        "deleteOutputPath": false,
         "generateExportsField": true,
+        "deleteOutputPath": false,
+        "reactNativeBuild": true,
         "external": ["react/jsx-runtime"],
         "format": ["esm", "cjs"],
         "rollupConfig": "tools/config/rollup-config",
@@ -33,18 +33,6 @@
             "output": "."
           }
         ]
-      }
-    },
-    "build-native": {
-      "executor": "@nx/rollup:rollup",
-      "options": {
-        "rollupConfig": "tools/config/rollup-config",
-        "outputPath": "dist/packages/vibrant-core",
-        "outputFileName": "index.native.js",
-        "tsConfig": "packages/vibrant-core/tsconfig.native.json",
-        "main": "packages/vibrant-core/src/index.ts",
-        "skipTypeCheck": true,
-        "format": ["cjs"]
       }
     },
     "typecheck": {
@@ -99,7 +87,7 @@
         "preset": "conventional",
         "skipCommit": true,
         "trackDeps": true,
-        "postTargets": ["vibrant-core:github", "vibrant-core:build-native", "vibrant-core:build", "vibrant-core:deploy"]
+        "postTargets": ["vibrant-core:github", "vibrant-core:build", "vibrant-core:deploy"]
       }
     },
     "github": {

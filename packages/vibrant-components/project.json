@@ -12,19 +12,19 @@
         {
           "target": "build",
           "dependencies": true
-        },
-        "build-native"
+        }
       ],
       "options": {
         "rollupConfig": "tools/config/rollup-config",
         "outputPath": "dist/packages/vibrant-components",
         "tsConfig": "packages/vibrant-components/tsconfig.lib.json",
         "project": "packages/vibrant-components/package.json",
-        "entryFile": "packages/vibrant-components/src/index.ts",
+        "main": "packages/vibrant-components/src/index.ts",
         "external": ["react/jsx-runtime"],
+        "deleteOutputPath": false,
+        "reactNativeBuild": true,
         "generateExportsField": true,
         "skipTypeCheck": true,
-        "deleteOutputPath": false,
         "format": ["esm", "cjs"],
         "compiler": "babel",
         "assets": [
@@ -34,18 +34,6 @@
             "output": "."
           }
         ]
-      }
-    },
-    "build-native": {
-      "executor": "@nx/rollup:rollup",
-      "options": {
-        "rollupConfig": "tools/config/rollup-config",
-        "outputPath": "dist/packages/vibrant-components",
-        "outputFileName": "index.native.js",
-        "tsConfig": "packages/vibrant-components/tsconfig.native.json",
-        "main": "packages/vibrant-components/src/index.ts",
-        "skipTypeCheck": true,
-        "format": ["cjs"]
       }
     },
     "typecheck": {
@@ -104,7 +92,6 @@
         "trackDeps": true,
         "postTargets": [
           "vibrant-components:github",
-          "vibrant-components:build-native",
           "vibrant-components:build",
           "vibrant-components:deploy"
         ]
