@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/components",
-  "version": "0.94.3",
+  "version": "0.94.4",
   "private": false,
   "sideEffects": false,
   "react-native": "index.native.cjs",
@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "uuid": "^8.3.2",
-    "@emotion/react": "^11.5.0"
+    "@emotion/react": "^11.5.0",
+    "card-validator": "8.1.1"
   },
   "peerDependenciesMeta": {
     "@types/react": {
