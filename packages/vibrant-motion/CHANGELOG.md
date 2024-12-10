@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.7](https://github.com/pedaling/opensource/compare/vibrant-motion-0.94.6...vibrant-motion-0.94.7) (2024-12-10)
+
+
+### Features
+
+* merge type declaration ([#982](https://github.com/pedaling/opensource/issues/982)) ([f7a70c3](https://github.com/pedaling/opensource/commit/f7a70c3fd7d6745d7e3fd39cca797fcec4af8d95))
+
 ## [0.94.6](https://github.com/pedaling/opensource/compare/vibrant-motion-0.94.5...vibrant-motion-0.94.6) (2024-12-10)
 
 ## [0.94.5](https://github.com/pedaling/opensource/compare/vibrant-motion-0.94.4...vibrant-motion-0.94.5) (2024-12-09)
