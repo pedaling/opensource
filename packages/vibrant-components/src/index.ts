@@ -5,6 +5,7 @@ export { BreadCrumb } from './lib/BreadCrumb';
 export { CardNumberField } from './lib/CardNumberField';
 export type { CardNumberFieldProps } from './lib/CardNumberField';
 export { ContainedButton } from './lib/ContainedButton';
+export type { ContainedButtonProps } from './lib/ContainedButton';
 export { ContentArea } from './lib/ContentArea';
 export { Display } from './lib/Display';
 export { Divider } from './lib/Divider';
@@ -69,6 +70,13 @@ export { Ratio } from './lib/Ratio';
 export { Skeleton } from './lib/Skeleton';
 export { FilterChip } from './lib/FilterChip';
 export { TableFilterGroup, tableFilterGroupTranslation } from './lib/TableFilterGroup';
+export type {
+  DateFilterOperator,
+  Filter,
+  Option,
+  MultiSelectFilterOperator,
+  StringFilterOperator,
+} from './lib/TableFilterGroup';
 export { ImageThumbnail } from './lib/ImageThumbnail';
 export { ViewPagerTabGroup } from './lib/ViewPagerTabGroup';
 export { GridList } from './lib/GridList';
@@ -84,3 +92,4 @@ export { PopoverOpener } from './lib/PopoverOpener';
 export { Drawer, DrawerTranslation } from './lib/Drawer';
 export { NotificationBadge } from './lib/NotificationBadge';
 export type { NotificationBadgeProps } from './lib/NotificationBadge';
+export type { BaseInputProps } from './types';

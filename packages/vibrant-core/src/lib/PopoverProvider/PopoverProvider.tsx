@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
-import type { ReactElementChild } from '@vibrant-ui/core';
 import { isDefined } from '@vibrant-ui/utils';
+import type { ReactElementChild } from '../../types';
 
 type PopoverProviderProps = {
   children: ReactElementChild;

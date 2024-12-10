@@ -3,9 +3,8 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "types": ["node"],
-    "paths": {
-      "@vibrant-ui/core": ["packages/vibrant-core/src/index.ts"]
-    }
+    "declaration": false,
+    "paths": {}
   },
   "files": [
     "../../node_modules/@nx/react/typings/cssmodule.d.ts",

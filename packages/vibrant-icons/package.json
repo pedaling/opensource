@@ -3,6 +3,16 @@
   "version": "0.94.6",
   "private": false,
   "sideEffects": false,
+  "types": "index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "module": "./index.esm.js",
+      "types": "./index.d.ts",
+      "import": "./index.cjs.mjs",
+      "default": "./index.cjs.js"
+    }
+  },
   "peerDependencies": {
     "@types/react": "^17.0.0 || ^18.0.0",
     "react": "^17.0.0 || ^18.0.0",
