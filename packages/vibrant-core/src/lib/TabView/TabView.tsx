@@ -4,8 +4,8 @@ import type { TabViewItemProps } from '../TabViewItem';
 import { withTabViewVariation } from './TabViewProps';
 
 export const TabView = withTabViewVariation(
-  ({ children, testId = 'tab-view', onTabChange, renderTobBarItem, renderTobBarContainer }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+  ({ children, testId = 'tab-view', onTabChange, renderTobBarItem, renderTobBarContainer, initialIndex = 0 }) => {
+    const [currentIndex, setCurrentIndex] = useState(initialIndex);
     const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
 
     const selectedTab = childrenElement.find((_, index) => index === currentIndex);
