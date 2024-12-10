@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.6](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.5...vibrant-icons-0.94.6) (2024-12-10)
+
+
+### Features
+
+* minify svg icons ([#981](https://github.com/pedaling/opensource/issues/981)) ([541238e](https://github.com/pedaling/opensource/commit/541238ed8733dc01601bb9076d2c0fc0942f09b4))
+
 ## [0.94.5](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.4...vibrant-icons-0.94.5) (2024-12-09)
 
 ## [0.94.4](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.3...vibrant-icons-0.94.4) (2024-12-09)
