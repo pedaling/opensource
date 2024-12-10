@@ -15,7 +15,6 @@
         "project": "packages/vibrant-icons/package.json",
         "main": "packages/vibrant-icons/src/index.ts",
         "external": ["react/jsx-runtime"],
-        "generateExportsField": true,
         "format": ["esm", "cjs"],
         "skipTypeCheck": true,
         "assets": [

@@ -23,7 +23,6 @@
         "external": ["react/jsx-runtime"],
         "deleteOutputPath": false,
         "reactNativeBuild": true,
-        "generateExportsField": true,
         "skipTypeCheck": true,
         "format": ["esm", "cjs"],
         "compiler": "babel",

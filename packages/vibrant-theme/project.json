@@ -15,7 +15,6 @@
         "project": "packages/vibrant-theme/package.json",
         "main": "packages/vibrant-theme/src/index.ts",
         "external": ["react/jsx-runtime"],
-        "generateExportsField": true,
         "skipTypeCheck": true,
         "format": ["esm", "cjs"],
         "compiler": "babel",

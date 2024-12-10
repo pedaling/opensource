@@ -1,4 +1,4 @@
-import type { ReactElementChildren } from '@vibrant-ui/core';
+import type { ReactElementChildren } from '../../types';
 import { withVariation } from '../withVariation';
 
 export type KeyboardAvoidingBoxProps = {

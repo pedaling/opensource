@@ -19,7 +19,6 @@
         "tsConfig": "packages/vibrant-core/tsconfig.lib.json",
         "project": "packages/vibrant-core/package.json",
         "main": "packages/vibrant-core/src/index.ts",
-        "generateExportsField": true,
         "deleteOutputPath": false,
         "reactNativeBuild": true,
         "external": ["react/jsx-runtime"],

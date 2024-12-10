@@ -3,6 +3,16 @@
   "version": "0.94.7",
   "private": false,
   "sideEffects": false,
+  "types": "index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "module": "./index.esm.js",
+      "types": "./index.d.ts",
+      "import": "./index.cjs.mjs",
+      "default": "./index.cjs.js"
+    }
+  },
   "peerDependencies": {
     "@emotion/react": "^11.5.0",
     "@types/react": "^17.0.0 || ^18.0.0",
