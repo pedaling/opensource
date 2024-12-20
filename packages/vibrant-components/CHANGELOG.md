@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.8](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.7...vibrant-components-0.94.8) (2024-12-20)
+
+
+### Bug Fixes
+
+* add landscape and portrait orientations to Modal supportedOrient… ([#983](https://github.com/pedaling/opensource/issues/983)) ([81cf858](https://github.com/pedaling/opensource/commit/81cf858b44b846ff96484b2d06ab89e0b05c866c))
+
 ## [0.94.7](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.6...vibrant-components-0.94.7) (2024-12-10)
 
 

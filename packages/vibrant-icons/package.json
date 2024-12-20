@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/icons",
-  "version": "0.94.7",
+  "version": "0.94.8",
   "private": false,
   "sideEffects": false,
   "types": "index.d.ts",
