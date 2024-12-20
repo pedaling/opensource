@@ -213,6 +213,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
           shouldRasterizeIOS={true}
           renderToHardwareTextureAndroid={true}
           hardwareAccelerated={true}
+          supportedOrientations={['portrait', 'landscape']}
         >
           <GestureHandlerRootView style={{ flex: 1 }}>
             <Box alignItems={['stretch', 'center']} flex={1} justifyContent={['flex-end', 'center']}>
