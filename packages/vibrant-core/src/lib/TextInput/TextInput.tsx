@@ -1,6 +1,6 @@
-import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { createElement, forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { FormEvent, KeyboardEvent } from 'react';
-import styled from '@emotion/styled';
+import { css } from '@emotion/css';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
 import { HTMLAutoCompleteOptions, interpolation, replaceValue, systemPropNames } from './TextInputProps';
@@ -8,10 +8,6 @@ import { HTMLAutoCompleteOptions, interpolation, replaceValue, systemPropNames }
 type HTMLInputProps = Exclude<keyof JSX.IntrinsicElements['input'], keyof SystemProps>;
 
 const shouldForwardProp = createShouldForwardProp<HTMLInputProps>(systemPropNames);
-
-const SystemTextInput = styled<'input', HTMLInputProps>('input', {
-  shouldForwardProp,
-})(interpolation);
 
 export const TextInput = forwardRef<TextInputRef, TextInputProps>(
   (
@@ -74,74 +70,94 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       clear: () => {
         setValue('');
 
-        onValueChange?.({ value: '', prevent: () => {}, target: innerRef.current });
+        onValueChange?.({
+          value: '',
+          prevent: () => {},
+          target: innerRef.current,
+        });
       },
       isFocused: () => document.activeElement === innerRef.current,
     }));
 
-    return (
-      <SystemTextInput
-        ref={innerRef}
-        type={type === 'number' ? 'text' : type}
-        value={value}
-        enterKeyHint={enterKeyType}
-        inputMode={inputMode}
-        autoCapitalize={autoCapitalize}
-        autoComplete={HTMLAutoCompleteOptions[autoComplete]}
-        onFocus={() => {
-          setIsFocused(true);
-
-          onFocus?.();
-        }}
-        onBlur={() => {
-          setIsFocused(false);
-
-          onBlur?.();
-        }}
-        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
-          const { key } = event.nativeEvent;
-
-          if (key === 'Enter') {
-            onSubmit?.(value);
-
-            return;
+    const styleProps = interpolation({
+      ...restProps,
+      ...(hidden
+        ? {
+            position: 'absolute',
+            height: 0,
+            opacity: 0,
           }
+        : {}),
+      ...(isFocused ? focusStyle : {}),
+    });
 
-          onKeyPress?.({ key, prevent: () => event.preventDefault() });
-        }}
-        onInput={(event: FormEvent<HTMLInputElement>) => {
-          const replacedValue = replaceValue({
-            pattern: type === 'number' ? /\d/ : pattern,
-            value: event.currentTarget.value,
-          });
+    const classNames = Object.entries(interpolation(styleProps)).map(([key, value]) => css({ [key]: value }));
 
-          let isPrevented = false;
-
-          if (value === replacedValue) {
-            event.preventDefault();
-
-            return;
-          }
-
-          onValueChange?.({
-            value: replacedValue,
-            prevent: () => {
-              isPrevented = true;
-
-              event.preventDefault();
-            },
-            target: innerRef.current,
-          });
-
-          if (!isPrevented) {
-            setValue(replacedValue);
-          }
-        }}
-        {...restProps}
-        {...(isFocused ? focusStyle : {})}
-        {...(hidden ? { position: 'absolute', height: 0, opacity: 0 } : {})}
-      />
+    const domAttributeProps = Object.fromEntries(
+      Object.entries(restProps).filter(([key, _]) => shouldForwardProp(key))
     );
+
+    return createElement('input', {
+      ref: innerRef,
+      type: type === 'number' ? 'text' : type,
+      value,
+      enterKeyHint: enterKeyType,
+      inputMode,
+      autoCapitalize,
+      autoComplete: HTMLAutoCompleteOptions[autoComplete],
+      onFocus: () => {
+        setIsFocused(true);
+
+        onFocus?.();
+      },
+      onBlur: () => {
+        setIsFocused(false);
+
+        onBlur?.();
+      },
+
+      onKeyDown: (event: KeyboardEvent<HTMLInputElement>) => {
+        const { key } = event.nativeEvent;
+
+        if (key === 'Enter') {
+          onSubmit?.(value);
+
+          return;
+        }
+
+        onKeyPress?.({ key, prevent: () => event.preventDefault() });
+      },
+      onInput: (event: FormEvent<HTMLInputElement>) => {
+        const replacedValue = replaceValue({
+          pattern: type === 'number' ? /\d/ : pattern,
+          value: event.currentTarget.value,
+        });
+
+        let isPrevented = false;
+
+        if (value === replacedValue) {
+          event.preventDefault();
+
+          return;
+        }
+
+        onValueChange?.({
+          value: replacedValue,
+          prevent: () => {
+            isPrevented = true;
+
+            event.preventDefault();
+          },
+          target: innerRef.current,
+        });
+
+        if (!isPrevented) {
+          setValue(replacedValue);
+        }
+      },
+      ...domAttributeProps,
+      className: classNames.join(' '),
+    });
   }
 );
 
