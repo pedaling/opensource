@@ -1,6 +1,6 @@
 import { createElement, forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { FormEvent, KeyboardEvent } from 'react';
-import { css } from '@emotion/css';
+import { convertStyleToClassName } from '../convertStyleToClassName';
 import { createShouldForwardProp } from '../createShouldForwardProp';
 import type { SystemProps, TextInputProps, TextInputRef } from './TextInputProps';
 import { HTMLAutoCompleteOptions, interpolation, replaceValue, systemPropNames } from './TextInputProps';
@@ -91,7 +91,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
       ...(isFocused ? focusStyle : {}),
     });
 
-    const classNames = Object.entries(interpolation(styleProps)).map(([key, value]) => css({ [key]: value }));
+    const className = convertStyleToClassName(interpolation(styleProps)).join(' ');
 
     const domAttributeProps = Object.fromEntries(
       Object.entries(restProps).filter(([key, _]) => shouldForwardProp(key))
@@ -156,7 +156,7 @@ export const TextInput = forwardRef<TextInputRef, TextInputProps>(
         }
       },
       ...domAttributeProps,
-      className: classNames.join(' '),
+      className,
     });
   }
 );

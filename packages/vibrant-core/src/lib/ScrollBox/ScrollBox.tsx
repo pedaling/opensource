@@ -1,7 +1,6 @@
 import { createElement, forwardRef } from 'react';
-import { css } from '@emotion/css';
 import { useComposedRef, useLayoutEvent } from '@vibrant-ui/utils';
-import { transformResponsiveValue } from '../transformResponsiveValue';
+import { convertStyleToClassName } from '../convertStyleToClassName';
 import type { ScrollBoxProps } from './ScrollBoxProps';
 import { interpolation, shouldForwardProp } from './ScrollBoxProps';
 
@@ -14,6 +13,7 @@ export const ScrollBox = forwardRef<unknown, ScrollBoxProps>(
       ariaLabel,
       ariaLabelledBy,
       ariaSelected,
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       scrollEnabled = true,
       onLayout,
       ...restProps
@@ -23,17 +23,10 @@ export const ScrollBox = forwardRef<unknown, ScrollBoxProps>(
     const { ref: layoutEventRef } = useLayoutEvent(onLayout);
     const composeRef = useComposedRef(ref, layoutEventRef);
 
-    const className = Object.entries(
-      interpolation({
-        ...restProps,
-        overflow: transformResponsiveValue(scrollEnabled, value => (value ? 'auto' : 'hidden')),
-      })
-    )
-      .map(([key, value]) => css({ [key]: value }))
-      .join(' ');
+    const className = convertStyleToClassName(interpolation(restProps)).join(' ');
 
     const domAttributeProps = Object.fromEntries(
-      Object.entries({ ...restProps }).filter(([key, _]) => shouldForwardProp(key))
+      Object.entries(restProps).filter(([key, _]) => shouldForwardProp(key))
     );
 
     const element = createElement(as, {

@@ -1,0 +1,1 @@
+export { convertStyleToClassName } from './convertStyleToClassName';
