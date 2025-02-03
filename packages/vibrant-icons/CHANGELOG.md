@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.9](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.8...vibrant-icons-0.94.9) (2025-02-03)
+
+
+### Bug Fixes
+
+* 커뮤니티 관련 추가된 아이콘을 vibrant에 반영한다 ([#985](https://github.com/pedaling/opensource/issues/985)) ([1d824f5](https://github.com/pedaling/opensource/commit/1d824f56c1eca1fc80e0a310769535871c0e27e5))
+
 ## [0.94.8](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.7...vibrant-icons-0.94.8) (2024-12-20)
 
 ## [0.94.7](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.6...vibrant-icons-0.94.7) (2024-12-10)
