@@ -236,6 +236,10 @@ export const Popover = ({
     calculatePositionValue(position);
   }, [calculatePositionValue, position]);
 
+  const layoutHandler = useCallback(() => {
+    calculatePositionValue(position);
+  }, [calculatePositionValue, position]);
+
   const containerZIndex = isOpen ? zIndex ?? themeZIndex.popover : 0;
 
   return (
@@ -249,13 +253,7 @@ export const Popover = ({
           duration={200}
           easing="easeOutQuad"
         >
-          <VStack
-            zIndex={containerZIndex}
-            width={popoverWidth}
-            onLayout={() => {
-              calculatePositionValue(position);
-            }}
-          >
+          <VStack zIndex={containerZIndex} width={popoverWidth} onLayout={layoutHandler}>
             <Paper backgroundColor={backgroundColor} rounded="sm">
               <VStack px={12} py={8} ref={popoverRef} width="100%" height="100%">
                 <HStack flex={1} alignHorizontal="space-between">
