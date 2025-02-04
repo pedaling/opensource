@@ -15,4 +15,4 @@ const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'laurel-reg
 export const Regular: IconComponent<IconProps, 'Regular'> = Object.assign(memo(Icon), {
   iconType: 'Regular' as const,
 });
-Regular.displayName = 'laurelRegular';
+Regular.displayName = 'LaurelRegular';
