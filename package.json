@@ -152,6 +152,7 @@
     "card-validator": "8.1.1",
     "clsx": "1.1.1",
     "core-js": "3.23.4",
+    "cypress": "14.0.1",
     "docusaurus-remark-plugin-codetabs": "1.0.0-alpha.3",
     "expo": "^51.0.0",
     "expo-dev-client": "~4.0.29",
