@@ -11,4 +11,4 @@ const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'laurel-fil
 export const Fill: IconComponent<IconProps, 'Fill'> = Object.assign(memo(Icon), {
   iconType: 'Fill' as const,
 });
-Fill.displayName = 'laurelFill';
+Fill.displayName = 'LaurelFill';

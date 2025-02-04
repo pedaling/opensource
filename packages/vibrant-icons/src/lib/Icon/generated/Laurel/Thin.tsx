@@ -15,4 +15,4 @@ const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'laurel-thi
 export const Thin: IconComponent<IconProps, 'Thin'> = Object.assign(memo(Icon), {
   iconType: 'Thin' as const,
 });
-Thin.displayName = 'laurelThin';
+Thin.displayName = 'LaurelThin';
