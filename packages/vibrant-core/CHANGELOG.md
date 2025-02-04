@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.10](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.9...vibrant-core-0.94.10) (2025-02-04)
+
+
+### Features
+
+* vibrant box test ([#989](https://github.com/pedaling/opensource/issues/989)) ([6f89bc2](https://github.com/pedaling/opensource/commit/6f89bc2b28a5dc803c53c74b7eaaca6564d33c2b))
+
 ## [0.94.9](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.8...vibrant-core-0.94.9) (2025-02-03)
 
 ## [0.94.8](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.7...vibrant-core-0.94.8) (2024-12-20)
