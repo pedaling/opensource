@@ -107,6 +107,8 @@ export * as InfoCircle from './InfoCircle';
 export * as InstagramCircle from './InstagramCircle';
 export * as Laptop from './Laptop';
 export * as Laurel from './Laurel';
+export * as LaurelLeft from './LaurelLeft';
+export * as LaurelRight from './LaurelRight';
 export * as Like from './Like';
 export * as Link from './Link';
 export * as LinkOutside from './LinkOutside';

@@ -5,9 +5,9 @@ import type { IconComponent, IconProps } from '../../IconProp';
 const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'documenttext-fill', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path
-      clipRule="evenodd"
-      d="m3.6499.900391c-.13807 0-.25.111929-.25.249999v21.70001c0 .1381.11193.25.25.25h16.7c.1381 0 .25-.1119.25-.25v-15.63751l-6.311-6.312499zm9.75 7.199999v-4.977l4.9765 4.977zm-5 9.00001h7.2v-2.2h-7.2zm0-4h7.2v-2.2h-7.2z"
       fillRule="evenodd"
+      d="M3.65.9a.25.25 0 0 0-.25.25v21.7c0 .138.112.25.25.25h16.7a.25.25 0 0 0 .25-.25V7.213L14.289.9zm9.75 7.2V3.123L18.376 8.1zm-5 9h7.2v-2.2H8.4zm0-4h7.2v-2.2H8.4z"
+      clipRule="evenodd"
     />
   </Svg>
 );

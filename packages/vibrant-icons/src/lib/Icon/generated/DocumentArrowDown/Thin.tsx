@@ -5,11 +5,11 @@ import type { IconComponent, IconProps } from '../../IconProp';
 const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'documentarrowdown-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.G>
-      <Svg.Path d="m16.6 14.95-4.6 4.05-4.59998-4.05 1.09993-1.2 2.74965 2.75.0004-5.75h1.5002l-.0002 5.75 2.7499-2.75z" />
+      <Svg.Path d="M16.6 14.95 12 19l-4.6-4.05 1.1-1.2 2.75 2.75v-5.75h1.5v5.75l2.75-2.75z" />
       <Svg.Path
-        clipRule="evenodd"
-        d="m3.8999 22.8499c-.13807 0-.25-.1119-.25-.25v-21.2c0-.13807.11193-.25.25-.25h10.286l6.164 6.166v15.284c0 .1381-.1119.25-.25.25zm9.581-20h-8.131v18.3h13.3v-13.13l-.17-.17h-4.83v-4.831z"
         fillRule="evenodd"
+        d="M3.9 22.85a.25.25 0 0 1-.25-.25V1.4a.25.25 0 0 1 .25-.25h10.286l6.164 6.166V22.6a.25.25 0 0 1-.25.25zm9.58-20H5.35v18.3h13.3V8.02l-.17-.17h-4.83V3.019z"
+        clipRule="evenodd"
       />
     </Svg.G>
   </Svg>
