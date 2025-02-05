@@ -1,3 +1,4 @@
+import './index.module.css';
 export { Box } from './lib/Box';
 export type { BoxElements, BoxProps, LayoutEvent } from './lib/Box';
 export { Svg } from './lib/Svg';
