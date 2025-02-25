@@ -50,6 +50,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
   }) => {
     const { getResponsiveValue } = useResponsiveValue();
     const { generateStyle } = useSafeArea();
+    const { width: windowWidth, height: windowHeight } = useWindowDimensions();
 
     const [isOpen, setIsOpen] = useControllableState<boolean>({
       value: open,
@@ -92,8 +93,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       edges: ['bottom'],
       minInsets: { bottom: 20 },
     });
-
-    const { height: viewportHeight } = useWindowDimensions();
 
     const contentMarginTop = title || subtitle || showCloseButton ? [20, 24] : 0;
 
@@ -215,7 +214,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
           hardwareAccelerated={true}
           supportedOrientations={['portrait', 'landscape']}
         >
-          <GestureHandlerRootView style={{ flex: 1 }}>
+          <GestureHandlerRootView style={{ flex: 1, position: 'absolute', width: windowWidth, height: windowHeight }}>
             <Box alignItems={['stretch', 'center']} flex={1} justifyContent={['flex-end', 'center']}>
               <GestureDetector gesture={backdropPanGesture}>
                 <Box position="absolute" top={0} right={0} bottom={0} left={0}>
@@ -243,7 +242,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     pb={[bottomSheetPaddingBottom ?? 20, 28]}
                     width="100%"
                     maxWidth={[446, 480, desktopModalWidth]}
-                    maxHeight={[viewportHeight - 120, 'unset']}
+                    maxHeight={[windowHeight - 120, 'unset']}
                     backgroundColor="surface2"
                     roundedTopLeft="xxl"
                     roundedTopRight="xxl"
