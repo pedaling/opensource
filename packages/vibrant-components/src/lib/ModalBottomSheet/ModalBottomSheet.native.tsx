@@ -14,7 +14,7 @@ import Animated, {
 import { enableFreeze } from 'react-native-screens';
 import { Box, ScrollBox, useResponsiveValue, useSafeArea, useWindowDimensions } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
-import type { LayoutEvent } from '@vibrant-ui/utils';
+import { Transition } from '@vibrant-ui/motion';
 import { isDefined, useBackHandler, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
@@ -24,8 +24,6 @@ import { IconButton } from '../IconButton';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
 import { withModalBottomSheetVariation } from './ModalBottomSheetProps';
-
-const AnimatedBox = Animated.createAnimatedComponent(Box);
 
 export const ModalBottomSheet = withModalBottomSheetVariation(
   ({
@@ -45,12 +43,14 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     testId = 'modal-bottom-sheet',
     scrollBoxRef,
     transitionDuration = 300,
-    native_swipeToCloseThreshold = 0.5,
-    native_swipeToCloseVelocity = 100,
+    native_swipeToCloseThreshold = 0.4,
+    native_swipeToCloseVelocity = 200,
   }) => {
     const { getResponsiveValue } = useResponsiveValue();
     const { generateStyle } = useSafeArea();
     const { width: windowWidth, height: windowHeight } = useWindowDimensions();
+    const alignItems: 'center' | 'stretch' = getResponsiveValue(['stretch', 'center']);
+    const justifyContent: 'center' | 'flex-end' = getResponsiveValue(['flex-end', 'center']);
 
     const [isOpen, setIsOpen] = useControllableState<boolean>({
       value: open,
@@ -108,8 +108,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
 
     const offset = useSharedValue<number>(0);
 
-    const [containerHeight, setContainerHeight] = useState<number>(0);
-
     const closeModal = useCallback(() => {
       setIsOpen(false);
       offset.value = 0;
@@ -139,7 +137,10 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               return;
             }
 
-            if (event.translationY > containerHeight / 2) {
+            if (
+              event.translationY > windowHeight * native_swipeToCloseThreshold ||
+              event.velocityY > native_swipeToCloseVelocity
+            ) {
               runOnJS(closeModal)();
 
               return;
@@ -149,7 +150,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               overshootClamping: true,
             });
           }),
-      [closeModal, containerHeight, offset, dimClosable]
+      [offset, dimClosable, windowHeight, native_swipeToCloseThreshold, native_swipeToCloseVelocity, closeModal]
     );
 
     const modalPanGesture = useMemo(
@@ -166,7 +167,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
             'worklet';
 
             if (
-              event.translationY > containerHeight * native_swipeToCloseThreshold ||
+              event.translationY > windowHeight * native_swipeToCloseThreshold ||
               event.velocityY > native_swipeToCloseVelocity
             ) {
               runOnJS(closeModal)();
@@ -178,7 +179,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
               overshootClamping: true,
             });
           }),
-      [closeModal, containerHeight, native_swipeToCloseThreshold, native_swipeToCloseVelocity, offset]
+      [closeModal, windowHeight, native_swipeToCloseThreshold, native_swipeToCloseVelocity, offset]
     );
 
     const backHandler = useCallback(() => {
@@ -188,10 +189,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
     }, [isOpen, setIsOpen]);
 
     useBackHandler(backHandler);
-
-    const handleContainerResize = useCallback(({ height }: LayoutEvent) => {
-      setContainerHeight(height);
-    }, []);
 
     const animatedStyles = useAnimatedStyle(() => ({
       transform: [{ translateY: offset.value }],
@@ -214,30 +211,27 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
           hardwareAccelerated={true}
           supportedOrientations={['portrait', 'landscape']}
         >
-          <GestureHandlerRootView style={{ flex: 1, position: 'absolute', width: windowWidth, height: windowHeight }}>
-            <Box alignItems={['stretch', 'center']} flex={1} justifyContent={['flex-end', 'center']}>
-              <GestureDetector gesture={backdropPanGesture}>
-                <Box position="absolute" top={0} right={0} bottom={0} left={0}>
-                  {isOpen && (
-                    <AnimatedBox
-                      flex={1}
-                      backgroundColor="dim"
-                      entering={FadeIn.duration(transitionDuration)}
-                      exiting={FadeOut.duration(transitionDuration)}
-                    />
-                  )}
-                </Box>
-              </GestureDetector>
-              {isOpen && (
-                <Animated.View
-                  entering={animationIn}
-                  exiting={animationOut}
-                  style={[animatedStyles, { maxHeight: '90%' }]}
-                >
+          <GestureHandlerRootView
+            style={{
+              position: 'absolute',
+              width: windowWidth,
+              height: windowHeight,
+              alignItems,
+              justifyContent,
+            }}
+          >
+            <GestureDetector gesture={backdropPanGesture}>
+              <Transition animation={{ opacity: isOpen ? 1 : 0 }} duration={transitionDuration}>
+                <Box backgroundColor="dim" flex={1} position="absolute" top={0} right={0} bottom={0} left={0} />
+              </Transition>
+            </GestureDetector>
+            {isOpen && (
+              <Animated.View entering={animationIn} exiting={animationOut} style={animatedStyles}>
+                <ScrollBox scrollEnabled={[false, true]} hideScroll={true} flexGrow={0}>
                   <Box
                     mx="auto"
-                    mt="auto"
-                    mb={[0, 'auto']}
+                    mt={['auto', 28]}
+                    mb={[0, bottomSheetPaddingBottom]}
                     pt={[20, 28]}
                     pb={[bottomSheetPaddingBottom ?? 20, 28]}
                     width="100%"
@@ -248,7 +242,6 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     roundedTopRight="xxl"
                     roundedBottomLeft={['none', 'xxl']}
                     roundedBottomRight={['none', 'xxl']}
-                    onLayout={handleContainerResize}
                     data-testid={testId}
                   >
                     <GestureDetector gesture={modalPanGesture}>
@@ -357,9 +350,9 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         </VStack>
                       )}
                   </Box>
-                </Animated.View>
-              )}
-            </Box>
+                </ScrollBox>
+              </Animated.View>
+            )}
           </GestureHandlerRootView>
         </Modal>
       </>

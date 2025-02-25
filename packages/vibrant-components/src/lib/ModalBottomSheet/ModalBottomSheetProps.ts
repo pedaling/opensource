@@ -26,13 +26,13 @@ export type ModalBottomSheetProps = Either<
    */
   transitionDuration?: number;
   /**
-   * The threshold to close the modal by swiping down on native platforms. The value is a ratio of the modal height.
-   * @default 0.5
+   * The threshold to close the modal by swiping down on native platforms. The value is a ratio of the viewport height.
+   * @default 0.4
    */
   native_swipeToCloseThreshold?: number;
   /**
    * The velocity to close the modal by swiping down on native platforms. The value is dp per second.
-   * @default 100
+   * @default 200
    */
   native_swipeToCloseVelocity?: number;
 } & (
