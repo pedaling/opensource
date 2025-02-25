@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.11...vibrant-components-0.94.12) (2025-02-25)
+
+
+### Bug Fixes
+
+* fix the incorrect modal positioning when the device orientation changes ([#993](https://github.com/pedaling/opensource/issues/993)) ([79d6b03](https://github.com/pedaling/opensource/commit/79d6b039fcf7969b8a64156dad806b70489cdb5b))
+
 ## [0.94.11](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.10...vibrant-components-0.94.11) (2025-02-05)
 
 ## [0.94.10](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.9...vibrant-components-0.94.10) (2025-02-04)
