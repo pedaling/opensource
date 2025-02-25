@@ -58,7 +58,7 @@ export const Popover = ({
       : computedMaxWidth
     : '100%';
   const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
-  const rightFixed = fix === 'right';
+  const fixedRight = fix === 'right';
 
   const calculatePositionValue = useCallback(
     async (position: Position) => {
@@ -79,12 +79,12 @@ export const Popover = ({
       if (position.includes('top')) {
         if (position === 'top') {
           setPopoverPosition({
-            x: rightFixed ? 0 : halfChildWidth - halfPopoverWidth,
+            x: fixedRight ? 0 : halfChildWidth - halfPopoverWidth,
             y: -popoverHeight - arrowHeight - computedOffset,
           });
 
           setArrowPosition({
-            left: rightFixed ? arrowRightMaxDistance - positiveArrowOffset : halfPopoverWidth - arrowHeight,
+            left: fixedRight ? arrowRightMaxDistance - positiveArrowOffset : halfPopoverWidth - arrowHeight,
             top: popoverHeight - arrowHeight - 2,
           });
         }
@@ -117,12 +117,12 @@ export const Popover = ({
       if (position.includes('bottom')) {
         if (position === 'bottom') {
           setPopoverPosition({
-            x: rightFixed ? 0 : halfChildWidth - halfPopoverWidth,
+            x: fixedRight ? 0 : halfChildWidth - halfPopoverWidth,
             y: childHeight + arrowHeight + computedOffset,
           });
 
           setArrowPosition({
-            left: rightFixed ? arrowRightMaxDistance - positiveArrowOffset : halfPopoverWidth - arrowHeight,
+            left: fixedRight ? arrowRightMaxDistance - positiveArrowOffset : halfPopoverWidth - arrowHeight,
             top: -arrowHeight,
           });
         }
@@ -246,7 +246,7 @@ export const Popover = ({
 
   return (
     <VStack zIndex={containerZIndex}>
-      <VStack position="absolute" zIndex={containerZIndex} right={rightFixed ? 0 : undefined}>
+      <VStack position="absolute" zIndex={containerZIndex} right={fixedRight ? 0 : undefined}>
         <Transition
           animation={{
             opacity: isOpen && (popoverPosition.x !== 0 || popoverPosition.y !== 0) ? 1 : 0,
