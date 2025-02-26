@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.14](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.13...vibrant-components-0.94.14) (2025-02-26)
+
+
+### Bug Fixes
+
+* fix the incorrect modal positioning ([#996](https://github.com/pedaling/opensource/issues/996)) ([ae762cc](https://github.com/pedaling/opensource/commit/ae762cc17ff0a09dc8b615014e319f8d8bafe20b))
+
 ## [0.94.13](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.12...vibrant-components-0.94.13) (2025-02-26)
 
 

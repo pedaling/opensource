@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/components-web",
-  "version": "0.94.13",
+  "version": "0.94.14",
   "private": false,
   "sideEffects": false,
   "types": "index.d.ts",
