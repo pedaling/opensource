@@ -89,9 +89,12 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       };
     }, [isOpen]);
 
-    const { bottom: bottomSheetPaddingBottom } = generateStyle({
-      edges: ['bottom'],
-      minInsets: { bottom: 20 },
+    const { top: bottomSheetPaddingTop, bottom: bottomSheetPaddingBottom } = generateStyle({
+      edges: ['bottom', 'top'],
+      minInsets: {
+        bottom: 20,
+        top: 20,
+      },
     });
 
     const contentMarginTop = title || subtitle || showCloseButton ? [20, 24] : 0;
@@ -227,11 +230,17 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
             </GestureDetector>
             {isOpen && (
               <Animated.View entering={animationIn} exiting={animationOut} style={animatedStyles}>
-                <ScrollBox scrollEnabled={[false, true]} hideScroll={true} flexGrow={0}>
+                <ScrollBox
+                  scrollEnabled={[false, true]}
+                  hideScroll={true}
+                  flexGrow={0}
+                  pt={bottomSheetPaddingTop}
+                  pb={[0, bottomSheetPaddingBottom]}
+                >
                   <Box
                     mx="auto"
-                    mt={['auto', 28]}
-                    mb={[0, bottomSheetPaddingBottom]}
+                    mt="auto"
+                    mb={[0, 'auto']}
                     pt={[20, 28]}
                     pb={[bottomSheetPaddingBottom ?? 20, 28]}
                     width="100%"
