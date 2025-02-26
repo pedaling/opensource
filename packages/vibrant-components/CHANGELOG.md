@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.13](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.12...vibrant-components-0.94.13) (2025-02-26)
+
+
+### Features
+
+* support scrollable modal ([#994](https://github.com/pedaling/opensource/issues/994)) ([4b194ff](https://github.com/pedaling/opensource/commit/4b194ff391bfe942ad9684ea2e8f99c9fa089a53))
+
 ## [0.94.12](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.11...vibrant-components-0.94.12) (2025-02-25)
 
 
