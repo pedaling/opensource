@@ -242,7 +242,7 @@ export const Popover = ({
 
   const containerZIndex = isOpen ? zIndex ?? themeZIndex.popover : 0;
 
-  const absolutePosition = useMemo(() => {
+  const absolutePositionStyle = useMemo(() => {
     if (position.startsWith('top') || position.startsWith('bottom')) {
       if (position.endsWith('end')) {
         return { right: 0 };
@@ -258,7 +258,7 @@ export const Popover = ({
 
   return (
     <VStack zIndex={containerZIndex}>
-      <VStack position="absolute" zIndex={containerZIndex} {...absolutePosition}>
+      <VStack position="absolute" zIndex={containerZIndex} {...absolutePositionStyle}>
         <Transition
           animation={{
             opacity: isOpen && (popoverPosition.x !== 0 || popoverPosition.y !== 0) ? 1 : 0,
