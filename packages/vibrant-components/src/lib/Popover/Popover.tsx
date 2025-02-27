@@ -1,4 +1,4 @@
-import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
+import { cloneElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, getWindowDimensions, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
@@ -101,7 +101,7 @@ export const Popover = ({
 
         if (position === 'top-end') {
           setPopoverPosition({
-            x: -popoverWidth + childWidth,
+            x: 0,
             y: -popoverHeight - arrowHeight - computedOffset,
           });
 
@@ -139,7 +139,7 @@ export const Popover = ({
 
         if (position === 'bottom-end') {
           setPopoverPosition({
-            x: -popoverWidth + childWidth,
+            x: 0,
             y: childHeight + arrowHeight + computedOffset,
           });
 
@@ -242,9 +242,23 @@ export const Popover = ({
 
   const containerZIndex = isOpen ? zIndex ?? themeZIndex.popover : 0;
 
+  const absolutePosition = useMemo(() => {
+    if (position.startsWith('top') || position.startsWith('bottom')) {
+      if (position.endsWith('end')) {
+        return { right: 0 };
+      }
+
+      if (position.endsWith('start')) {
+        return { left: 0 };
+      }
+    }
+
+    return {};
+  }, [position]);
+
   return (
     <VStack zIndex={containerZIndex}>
-      <VStack position="absolute" zIndex={containerZIndex}>
+      <VStack position="absolute" zIndex={containerZIndex} {...absolutePosition}>
         <Transition
           animation={{
             opacity: isOpen && (popoverPosition.x !== 0 || popoverPosition.y !== 0) ? 1 : 0,
