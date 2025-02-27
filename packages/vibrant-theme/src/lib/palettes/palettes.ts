@@ -179,6 +179,7 @@ export const palettes = {
   },
 
   whiteAlpha: {
+    0: '#ffffff00',
     5: '#ffffff0d',
     8: '#ffffff14',
     10: '#ffffff1a',
@@ -202,6 +203,7 @@ export const palettes = {
   },
 
   blackAlpha: {
+    0: '#00000000',
     3: '#00000008',
     5: '#0000000d',
     10: '#0000001a',
