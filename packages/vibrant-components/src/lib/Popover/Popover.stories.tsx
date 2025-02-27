@@ -3,7 +3,9 @@ import type { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Avatar } from '../Avatar';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
+import { HStack } from '../HStack';
 import { VStack } from '../VStack';
+
 import { Popover } from './Popover';
 
 export default {
@@ -15,12 +17,30 @@ export default {
 } as ComponentMeta<typeof Popover>;
 
 export const Basic: ComponentStory<typeof Popover> = props => (
-  <VStack width="100%" height="100vh" alignVertical="center" alignHorizontal="center">
-    <Popover title="Popover" {...props}>
-      <Popover.Opener openInteraction="click">
-        <Avatar size="lg" src="" alt="" />
-      </Popover.Opener>
-    </Popover>
+  <VStack spacing={20} width="100%" my={20}>
+    <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
+      <Popover title="Popover" {...props}>
+        <Popover.Opener openInteraction="click">
+          <Avatar size="lg" src="" alt="" />
+        </Popover.Opener>
+      </Popover>
+      <HStack flex={1} />
+    </HStack>
+    <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
+      <HStack flex={1} />
+      <Popover title="Popover" {...props}>
+        <Popover.Opener openInteraction="click">
+          <Avatar size="lg" src="" alt="" />
+        </Popover.Opener>
+      </Popover>
+    </HStack>
+    <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
+      <Popover title="Popover" {...props}>
+        <Popover.Opener openInteraction="click">
+          <Avatar size="lg" src="" alt="" />
+        </Popover.Opener>
+      </Popover>
+    </HStack>
   </VStack>
 );
 
