@@ -63,7 +63,7 @@ exports[`<DatePickerField /> when size is lg match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: #00000000;
+  background-color: #ffffff00;
   border-width: 0;
   padding: 0;
   overflow: hidden;
@@ -309,7 +309,7 @@ exports[`<DatePickerField /> when size is md match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: #00000000;
+  background-color: #ffffff00;
   border-width: 0;
   padding: 0;
   overflow: hidden;
@@ -555,7 +555,7 @@ exports[`<DatePickerField /> when size is sm match snapshot 1`] = `
   box-sizing: border-box;
   position: relative;
   cursor: pointer;
-  background-color: #00000000;
+  background-color: #ffffff00;
   border-width: 0;
   padding: 0;
   overflow: hidden;
