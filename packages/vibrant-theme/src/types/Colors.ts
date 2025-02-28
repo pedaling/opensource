@@ -147,45 +147,48 @@ export const BaseColorOnColorMap: { [color in BaseColorToken]: OnColorToken } = 
   disable: 'onView3',
   dim: 'onView1',
   inverseDim: 'onView1',
-  overlay: 'onView1',
-  white: 'black',
-  black: 'white',
   transparent: 'onView1',
 
   //Adaptive Color
   redInverse: 'onInverseSurface',
   redContrast: 'onView1',
   redVibrant: 'onView1',
+  redSoft: 'onView1',
   redMuted: 'onView1',
 
   orangeInverse: 'onInverseSurface',
   orangeContrast: 'onView1',
   orangeVibrant: 'onView1',
+  orangeSoft: 'onView1',
   orangeMuted: 'onView1',
 
   yellowInverse: 'onInverseSurface',
   yellowContrast: 'onView1',
   yellowVibrant: 'onView1',
+  yellowSoft: 'onView1',
   yellowMuted: 'onView1',
 
   greenInverse: 'onInverseSurface',
   greenContrast: 'onView1',
   greenVibrant: 'onView1',
+  greenSoft: 'onView1',
   greenMuted: 'onView1',
 
   blueInverse: 'onInverseSurface',
   blueContrast: 'onView1',
   blueVibrant: 'onView1',
-  blueMuted: 'onView1',
   blueSoft: 'onView1',
+  blueMuted: 'onView1',
 
   violetInverse: 'onInverseSurface',
   violetContrast: 'onView1',
   violetVibrant: 'onView1',
+  violetSoft: 'onView1',
   violetMuted: 'onView1',
 
   magentaInverse: 'onInverseSurface',
   magentaContrast: 'onView1',
   magentaVibrant: 'onView1',
+  magentaSoft: 'onView1',
   magentaMuted: 'onView1',
 };
