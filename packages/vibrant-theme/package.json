@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/theme",
-  "version": "0.94.14",
+  "version": "0.94.15",
   "private": false,
   "sideEffects": false,
   "types": "index.d.ts",

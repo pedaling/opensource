@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.15](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.14...vibrant-components-web-0.94.15) (2025-02-28)
+
 ## [0.94.14](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.13...vibrant-components-web-0.94.14) (2025-02-26)
 
 ## [0.94.13](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.12...vibrant-components-web-0.94.13) (2025-02-26)
