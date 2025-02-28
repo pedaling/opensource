@@ -190,7 +190,7 @@ exports[`<TextField /> when size is lg match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  background-color: #00000000;
+  background-color: #ffffff00;
   border-width: 0;
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
@@ -489,7 +489,7 @@ exports[`<TextField /> when size is md match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  background-color: #00000000;
+  background-color: #ffffff00;
   border-width: 0;
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
@@ -788,7 +788,7 @@ exports[`<TextField /> when size is sm match snapshot 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  background-color: #00000000;
+  background-color: #ffffff00;
   border-width: 0;
   color: #0c0c0c;
   -webkit-text-fill-color: #0c0c0c;
