@@ -1,4 +1,4 @@
-import { cloneElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { cloneElement, useCallback, useEffect, useRef, useState } from 'react';
 import { Box, getWindowDimensions, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
@@ -37,7 +37,7 @@ export const Popover = ({
     theme: { zIndex: themeZIndex },
   } = useCurrentTheme();
   const { getResponsiveValue } = useResponsiveValue();
-  const [popoverPosition, setPopoverPosition] = useState({ x: 0, y: 0 });
+  const [popoverPosition, setPopoverPosition] = useState({ left: 0, top: 0 });
   const [arrowPosition, setArrowPosition] = useState({
     left: 0,
     top: 0,
@@ -77,8 +77,8 @@ export const Popover = ({
       if (position.includes('top')) {
         if (position === 'top') {
           setPopoverPosition({
-            x: halfChildWidth - halfPopoverWidth,
-            y: -popoverHeight - arrowHeight - computedOffset,
+            left: halfChildWidth - halfPopoverWidth,
+            top: -popoverHeight - arrowHeight - computedOffset,
           });
 
           setArrowPosition({
@@ -89,8 +89,8 @@ export const Popover = ({
 
         if (position === 'top-start') {
           setPopoverPosition({
-            x: 0,
-            y: -popoverHeight - arrowHeight - computedOffset,
+            left: 0,
+            top: -popoverHeight - arrowHeight - computedOffset,
           });
 
           setArrowPosition({
@@ -101,8 +101,8 @@ export const Popover = ({
 
         if (position === 'top-end') {
           setPopoverPosition({
-            x: 0,
-            y: -popoverHeight - arrowHeight - computedOffset,
+            left: -popoverWidth + childWidth,
+            top: -popoverHeight - arrowHeight - computedOffset,
           });
 
           setArrowPosition({
@@ -115,8 +115,8 @@ export const Popover = ({
       if (position.includes('bottom')) {
         if (position === 'bottom') {
           setPopoverPosition({
-            x: halfChildWidth - halfPopoverWidth,
-            y: childHeight + arrowHeight + computedOffset,
+            left: halfChildWidth - halfPopoverWidth,
+            top: childHeight + arrowHeight + computedOffset,
           });
 
           setArrowPosition({
@@ -127,8 +127,8 @@ export const Popover = ({
 
         if (position === 'bottom-start') {
           setPopoverPosition({
-            x: 0,
-            y: childHeight + arrowHeight + computedOffset,
+            left: 0,
+            top: childHeight + arrowHeight + computedOffset,
           });
 
           setArrowPosition({
@@ -139,8 +139,8 @@ export const Popover = ({
 
         if (position === 'bottom-end') {
           setPopoverPosition({
-            x: 0,
-            y: childHeight + arrowHeight + computedOffset,
+            left: -popoverWidth + childWidth,
+            top: childHeight + arrowHeight + computedOffset,
           });
 
           setArrowPosition({
@@ -153,8 +153,8 @@ export const Popover = ({
       if (position.includes('left')) {
         if (position === 'left') {
           setPopoverPosition({
-            x: -popoverWidth - arrowHeight - computedOffset,
-            y: halfChildHeight - halfPopoverHeight,
+            left: -popoverWidth - arrowHeight - computedOffset,
+            top: halfChildHeight - halfPopoverHeight,
           });
 
           setArrowPosition({
@@ -165,8 +165,8 @@ export const Popover = ({
 
         if (position === 'left-start') {
           setPopoverPosition({
-            x: -popoverWidth - arrowHeight - computedOffset,
-            y: 0,
+            left: -popoverWidth - arrowHeight - computedOffset,
+            top: 0,
           });
 
           setArrowPosition({
@@ -177,8 +177,8 @@ export const Popover = ({
 
         if (position === 'left-end') {
           setPopoverPosition({
-            x: -popoverWidth - arrowHeight - computedOffset,
-            y: -popoverHeight + childHeight,
+            left: -popoverWidth - arrowHeight - computedOffset,
+            top: -popoverHeight + childHeight,
           });
 
           setArrowPosition({
@@ -191,8 +191,8 @@ export const Popover = ({
       if (position.includes('right')) {
         if (position === 'right') {
           setPopoverPosition({
-            x: childWidth + arrowHeight + computedOffset,
-            y: halfChildHeight - halfPopoverHeight,
+            left: childWidth + arrowHeight + computedOffset,
+            top: halfChildHeight - halfPopoverHeight,
           });
 
           setArrowPosition({
@@ -203,8 +203,8 @@ export const Popover = ({
 
         if (position === 'right-start') {
           setPopoverPosition({
-            x: childWidth + arrowHeight + computedOffset,
-            y: 0,
+            left: childWidth + arrowHeight + computedOffset,
+            top: 0,
           });
 
           setArrowPosition({
@@ -215,8 +215,8 @@ export const Popover = ({
 
         if (position === 'right-end') {
           setPopoverPosition({
-            x: childWidth + arrowHeight + computedOffset,
-            y: -popoverHeight + childHeight,
+            left: childWidth + arrowHeight + computedOffset,
+            top: -popoverHeight + childHeight,
           });
 
           setArrowPosition({
@@ -242,28 +242,13 @@ export const Popover = ({
 
   const containerZIndex = isOpen ? zIndex ?? themeZIndex.popover : 0;
 
-  const absolutePositionStyle = useMemo(() => {
-    if (position.startsWith('top') || position.startsWith('bottom')) {
-      if (position.endsWith('end')) {
-        return { right: 0 };
-      }
-
-      if (position.endsWith('start')) {
-        return { left: 0 };
-      }
-    }
-
-    return {};
-  }, [position]);
-
   return (
     <VStack zIndex={containerZIndex}>
-      <VStack position="absolute" zIndex={containerZIndex} {...absolutePositionStyle}>
+      <VStack position="absolute" zIndex={containerZIndex} {...popoverPosition}>
         <Transition
           animation={{
-            opacity: isOpen && (popoverPosition.x !== 0 || popoverPosition.y !== 0) ? 1 : 0,
+            opacity: isOpen && (popoverPosition.left !== 0 || popoverPosition.top !== 0) ? 1 : 0,
           }}
-          style={popoverPosition}
           duration={200}
           easing="easeOutQuad"
         >
