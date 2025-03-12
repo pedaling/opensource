@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.17](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.16...vibrant-components-0.94.17) (2025-03-12)
+
+
+### Features
+
+* dropdown 애니메이션과 elevation level을 변경한다 ([#997](https://github.com/pedaling/opensource/issues/997)) ([afd8783](https://github.com/pedaling/opensource/commit/afd878307c0a0a139bbff412c70d6ae1dc422cf4))
+
 ## [0.94.16](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.15...vibrant-components-0.94.16) (2025-03-04)
 
 
