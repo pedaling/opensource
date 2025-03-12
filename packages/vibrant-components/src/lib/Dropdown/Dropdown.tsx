@@ -120,6 +120,7 @@ export const Dropdown = withDropdownVariation(
     });
     const [visible, setVisible] = useState(false);
     const [offset, setOffset] = useState<{ x?: number; y?: number }>({});
+    const [direction, setDirection] = useState<'bottom' | 'top'>(position.startsWith('top') ? 'top' : 'bottom');
     const [containerHeight, setContainerHeight] = useState<number>();
     const [contentHeight, setContentHeight] = useState<number>();
 
@@ -191,6 +192,14 @@ export const Dropdown = withDropdownVariation(
           );
 
           setOffset({ x: offsetX, y: offsetY });
+
+          if (offsetY > 0) {
+            setDirection('bottom');
+          }
+
+          if (offsetY < 0) {
+            setDirection('top');
+          }
         }
 
         setContentHeight(height);
@@ -236,8 +245,9 @@ export const Dropdown = withDropdownVariation(
             <Transition
               animation={{
                 opacity: visible ? 1 : 0,
+                scale: visible ? 1 : 0.95,
               }}
-              duration={200}
+              duration={150}
             >
               <OverlayBox
                 open={isOpen}
@@ -251,7 +261,7 @@ export const Dropdown = withDropdownVariation(
                   <Box
                     backgroundColor="surface2"
                     py={isDefined(py) ? py : CONTENT_PADDING}
-                    elevationLevel={4}
+                    elevationLevel={2}
                     rounded="md"
                     minWidth={[280, 280, 240]}
                     pb={pb}
@@ -262,11 +272,14 @@ export const Dropdown = withDropdownVariation(
                       animation={
                         visible
                           ? {
+                              y: direction === 'bottom' ? 0 : 0,
                               height: contentHeight,
                             }
-                          : {}
+                          : {
+                              y: direction === 'bottom' ? -8 : 8,
+                            }
                       }
-                      duration={200}
+                      duration={150}
                     >
                       <Box overflow="hidden" height={contentHeight}>
                         <Box onLayout={handleContentResize} flexShrink={0} data-testid={testId}>
@@ -295,6 +308,7 @@ export const Dropdown = withDropdownVariation(
                   pb={bottomSheetPaddingBottom}
                   width="100%"
                   maxHeight={viewportHeight - BOTTOM_SHEET_MIN_TOP_MARGIN}
+                  elevationLevel={3}
                   backgroundColor="surface2"
                   roundedTopLeft="xxl"
                   roundedTopRight="xxl"
