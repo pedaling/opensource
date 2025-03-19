@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ComponentType, ReactElement } from 'react';
 import type { ReactElementChild, TextChildren } from '@vibrant-ui/core';
