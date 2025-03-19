@@ -2,7 +2,7 @@
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
-import { Children, isValidElement, useEffect, useMemo, useState } from 'react';
+import { Children, isValidElement, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, Image, ScrollBox, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
@@ -109,6 +109,29 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
   };
 
+  const tableRef = useRef<HTMLTableElement>(null);
+
+  // multiCellSelectable일 때, 테이블의 selectstart 이벤트를 막아서 텍스트 드래그 방지
+  useEffect(() => {
+    if (!tableRef.current) {
+      return;
+    }
+
+    const tableEl = tableRef.current;
+
+    const handleSelectStart = (event: Event) => {
+      if (multiCellSelectable) {
+        event.preventDefault();
+      }
+    };
+
+    tableEl.addEventListener('selectstart', handleSelectStart);
+
+    return () => {
+      tableEl.removeEventListener('selectstart', handleSelectStart);
+    };
+  }, [multiCellSelectable]);
+
   const copySelectedCells = () => {
     if (!selectedRange) {
       return;
@@ -181,12 +204,14 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       data-testid={testId}
     >
       <Box
+        ref={tableRef}
         as="table"
         display="web_table"
         borderCollapse="separate"
         tableLayout={tableLayout}
         width="100%"
         height="100%"
+        onCopy={copySelectedCells}
       >
         <Box as="thead" display="web_table-row-group" height="100%">
           <TableRow
@@ -328,10 +353,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         }}
                         onCopy={() => {
                           if (multiCellSelectable) {
-                            copySelectedCells();
-                          } else {
-                            onDataCell?.onCopy?.(row)
+                            return;
                           }
+
+                          onDataCell?.onCopy?.(row);
                         }}
                         alignVertical={alignVertical?.dataCell}
                         alignHorizontal={alignHorizontal?.dataCell}
