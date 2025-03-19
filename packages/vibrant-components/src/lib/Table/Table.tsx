@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
 import { Children, isValidElement, useEffect, useMemo, useState } from 'react';
