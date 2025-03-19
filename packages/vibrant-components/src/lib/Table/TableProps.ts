@@ -13,11 +13,15 @@ export type UseTableResult<Data extends Record<string, any>, RowKey extends keyo
 
 export type TableSortBy<Data> = { dataKey?: keyof Data; direction: SortDirection };
 
+type TableCellRangeElement = { rowIdx: number; colIdx: number };
+export type TableCellRange = { cursor: TableCellRangeElement; anchor: TableCellRangeElement };
+
 export type TableProps<Data extends Record<string, any>, RowKey extends keyof Data> = {
   data: Data[];
   rowKey: RowKey;
   loading?: boolean;
   selectable?: boolean;
+  multiCellSelectable?: boolean;
   selectButtons?: { text: string; onClick: (selectedRows: Data[]) => void }[];
   onSelectionChange?: (selectedRowKeys: Data[RowKey][]) => void;
   renderExpanded?: (row: Data) => ReactElementChild;

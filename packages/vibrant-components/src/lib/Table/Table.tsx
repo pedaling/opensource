@@ -15,7 +15,7 @@ import { TableColumn } from './TableColumn';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import { TableDataCell } from './TableDataCell';
 import { TableHeaderCell } from './TableHeaderCell';
-import type { TableProps, TableSortBy, UseTableResult } from './TableProps';
+import type { TableCellRange, TableProps, TableSortBy, UseTableResult } from './TableProps';
 import { TableRow } from './TableRow';
 import type { SortDirection } from './TableSortIcon';
 
@@ -33,6 +33,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   rowKey,
   loading = false,
   selectable = false,
+  multiCellSelectable = false,
   selectButtons,
   onSelectionChange,
   renderExpanded,
@@ -89,6 +90,53 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
+
+  const [selectedRange, setSelectedRange] = useState<TableCellRange>();
+
+  const isCellInSelectedRange = (rowIdx: number, colIdx: number) => {
+    if (!selectedRange) {
+      return false;
+    }
+
+    const { anchor, cursor } = selectedRange;
+
+    const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
+    const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
+    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
+    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+
+    return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
+  };
+
+  const copySelectedCells = () => {
+    if (!selectedRange) {
+      return;
+    }
+
+    const { anchor, cursor } = selectedRange;
+
+    const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
+    const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
+    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
+    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+
+    const selectedCells = [];
+
+    for (let rowIdx = startRow; rowIdx <= endRow; rowIdx++) {
+      const row = data[rowIdx];
+      const rowCells = columns.slice(startCol, endCol + 1).map(column => {
+        const cellData = column.dataKey ? row[column.dataKey] : null;
+
+        return isDefined(column.formatData) ? column.formatData(row) : cellData;
+      });
+
+      selectedCells.push(rowCells.join('\t'));
+    }
+
+    const clipboardText = selectedCells.join('\n');
+
+    navigator.clipboard.writeText(clipboardText);
+  };
 
   const handleToggleCheckbox = (key: Data[RowKey]) => {
     const newSelectedRowKeys = new Set(selectedRowKeys);
@@ -212,7 +260,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
         </Box>
         <Box as="tbody" display="web_table-row-group" height="100%">
           {!loading
-            ? data.map((row, index) => (
+            ? data.map((row, rowIdx) => (
                 <TableRow
                   key={row[rowKey]}
                   selectable={selectable}
@@ -223,11 +271,12 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                     <Paper backgroundColor="surface1" p={16}>
                       {renderExpanded?.(row)}
                     </Paper>
-                  )}
-                  expanded={expandedRowKeys?.includes(row[rowKey])}
-                  disabled={disabledRowKeys?.includes(row[rowKey])}
-                >
-                  {columns.map(
+                    /* eslint-disable prettier/prettier */
+                    )}
+                    expanded={expandedRowKeys?.includes(row[rowKey])}
+                    disabled={disabledRowKeys?.includes(row[rowKey])}
+                  >
+                    {columns.map(
                     ({
                       key,
                       dataKey,
@@ -243,7 +292,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                       selectable: cellSelectable,
                       width: _,
                       ...column
-                    }: TableColumnProps<Data>) => (
+                    }: TableColumnProps<Data>, colIdx) => (
                       <TableDataCell
                         key={key}
                         onClick={
@@ -252,14 +301,29 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                               ? () => {
                                   onDataCell.onClick?.(row);
 
-                                  setSelectedCellKey(getCellKey(key, index));
+                                  setSelectedCellKey(getCellKey(key, rowIdx));
                                 }
                               : undefined
                             : onRow
                             ? () => onRow.onClick?.(row)
                             : undefined
                         }
-                        onCopy={() => onDataCell?.onCopy?.(row)}
+                        onPressIn={() => {
+                          setSelectedRange({ anchor: { rowIdx, colIdx }, cursor: { rowIdx, colIdx } });
+                        }}
+                        onPressOut={() => {
+                          setSelectedRange(prev => ({
+                            anchor: prev ? prev.anchor : { rowIdx, colIdx },
+                            cursor: { rowIdx, colIdx }
+                          }));
+                        }}
+                        onCopy={() => {
+                          if (multiCellSelectable) {
+                            copySelectedCells();
+                          } else {
+                            onDataCell?.onCopy?.(row)
+                          }
+                        }}
                         alignVertical={alignVertical?.dataCell}
                         alignHorizontal={alignHorizontal?.dataCell}
                         lineLimit={lineLimit?.dataCell}
@@ -267,7 +331,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         whiteSpace={whiteSpace?.dataCell}
                         overflowWrap={overflowWrap?.dataCell}
                         disabled={disabledRowKeys?.includes(row[rowKey])}
-                        selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
+                        selected={cellSelectable && selectedCellKey === getCellKey(key, rowIdx) || multiCellSelectable && isCellInSelectedRange(rowIdx, colIdx)}
                         renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
                         {...column}
                       >

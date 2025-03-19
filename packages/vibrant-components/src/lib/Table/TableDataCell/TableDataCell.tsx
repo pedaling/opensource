@@ -13,6 +13,8 @@ export const TableDataCell = withTableDataCellVariation(
     overflowWrap,
     whiteSpace,
     onClick,
+    onPressIn,
+    onPressOut,
     onCopy,
     renderCell,
     alignHorizontal = 'center',
@@ -43,6 +45,8 @@ export const TableDataCell = withTableDataCellVariation(
         px={16}
         width={width}
         onClick={onClick}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
         disabled={disabled || !isDefined(onClick)}
         cursor={disabled || !isDefined(onClick) ? 'default' : 'pointer'}
         borderBottomStyle="solid"

@@ -11,6 +11,8 @@ export type TableDataCellProps = {
   children?: TextChildren;
   renderCell?: () => ReactElementChildren;
   onClick?: () => void;
+  onPressIn?: () => void;
+  onPressOut?: () => void;
   onCopy?: () => void;
   alignVertical?: 'center' | 'end' | 'start';
   alignHorizontal?: 'center' | 'end' | 'start';
