@@ -159,7 +159,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
     const clipboardText = selectedCells.join('\n');
 
-    navigator.clipboard.writeText(clipboardText);
+    navigator?.clipboard.writeText(clipboardText);
   };
 
   const handleToggleCheckbox = (key: Data[RowKey]) => {
