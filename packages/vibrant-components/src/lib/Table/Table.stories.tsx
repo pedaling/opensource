@@ -145,9 +145,9 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
   };
 
   const deleteRow = (data: Data) => () => {
-    const corresRowKey = data[props.rowKey];
+    const corresRowKey = data[props.rowKey as keyof Data];
 
-    setData(prev => prev.filter(row => row[props.rowKey] !== corresRowKey));
+    setData(prev => prev.filter(row => row[props.rowKey as keyof Data] !== corresRowKey));
   };
 
   return (
@@ -191,7 +191,7 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
   );
 };
 
-export const cellSelectable: ComponentStory<typeof Table> = props => (
+export const CellSelectable: ComponentStory<typeof Table> = props => (
   <Box p={20} width="100%">
     <Table {...props} selectable={false}>
       <Table.Column<Data>
