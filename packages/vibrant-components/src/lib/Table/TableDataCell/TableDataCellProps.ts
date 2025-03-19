@@ -13,6 +13,7 @@ export type TableDataCellProps = {
   onClick?: () => void;
   onPressIn?: () => void;
   onPressOut?: () => void;
+  onHoverIn?: () => void;
   onCopy?: () => void;
   alignVertical?: 'center' | 'end' | 'start';
   alignHorizontal?: 'center' | 'end' | 'start';

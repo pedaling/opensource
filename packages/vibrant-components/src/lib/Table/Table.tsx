@@ -92,6 +92,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
 
   const [selectedRange, setSelectedRange] = useState<TableCellRange>();
+  const [isSelectingRange, setIsSelectingRange] = useState(false);
 
   const isCellInSelectedRange = (rowIdx: number, colIdx: number) => {
     if (!selectedRange) {
@@ -309,9 +310,17 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                             : undefined
                         }
                         onPressIn={() => {
+                          setIsSelectingRange(true);
                           setSelectedRange({ anchor: { rowIdx, colIdx }, cursor: { rowIdx, colIdx } });
                         }}
                         onPressOut={() => {
+                          setIsSelectingRange(false);
+                        }}
+                        onHoverIn={() => {
+                          if (!isSelectingRange) {
+                            return;
+                          }
+
                           setSelectedRange(prev => ({
                             anchor: prev ? prev.anchor : { rowIdx, colIdx },
                             cursor: { rowIdx, colIdx }
