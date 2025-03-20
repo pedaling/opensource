@@ -94,6 +94,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
   const [selectedRange, setSelectedRange] = useState<TableCellRange>();
   const [isSelectingRange, setIsSelectingRange] = useState(false);
+  const [selectingRangeFromCell, setSelectingRangeFromCell] = useState(true);
 
   const isCellInSelectedRange = (rowIdx: number, colIdx: number) => {
     if (!multiCellSelectable || !selectedRange) {
@@ -335,6 +336,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   sortDirection={sortBy.dataKey === dataKey ? sortBy.direction : 'none'}
                   onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
                   onPressIn={() => {
+                    setSelectingRangeFromCell(false);
                     setIsSelectingRange(true);
                     setSelectedRange(prev => ({
                       anchor: isShiftKeyPressed && prev ? prev.anchor : { rowIdx: 0, colIdx },
@@ -351,7 +353,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
                     setSelectedRange(prev => ({
                       anchor: prev ? prev.anchor : { rowIdx: 0, colIdx },
-                      cursor: { rowIdx: data.length - 1, colIdx },
+                      cursor: { rowIdx: selectingRangeFromCell ? 0 : data.length - 1, colIdx },
                     }));
                   }}
                 />
@@ -407,6 +409,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                           }
                         }}
                         onPressIn={() => {
+                          setSelectingRangeFromCell(true);
                           setIsSelectingRange(true);
                           setSelectedRange(prev => ({
                             anchor: isShiftKeyPressed && prev ? prev.anchor : { rowIdx, colIdx },
@@ -423,7 +426,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
                           setSelectedRange(prev => ({
                             anchor: prev ? prev.anchor : { rowIdx, colIdx },
-                            cursor: { rowIdx, colIdx },
+                            cursor: { rowIdx: selectingRangeFromCell ? rowIdx : data.length - 1, colIdx },
                           }));
                         }}
                         onCopy={() => {
