@@ -67,6 +67,7 @@ export const TableDataCell = withTableDataCellVariation(
               borderWidth={1}
               borderStyle="solid"
               borderColor="outlineInformative"
+              backgroundColor="informativeContainer"
               borderLeftWidth={selectedOnEdge?.left ? 1 : 0}
               borderRightWidth={selectedOnEdge?.right ? 1 : 0}
               borderTopWidth={selectedOnEdge?.top ? 1 : 0}
