@@ -14,6 +14,7 @@ import { VStack } from '../VStack';
 import { TableColumn } from './TableColumn';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import { TableDataCell } from './TableDataCell';
+import type { TableDataCellProps } from './TableDataCell/TableDataCellProps';
 import { TableHeaderCell } from './TableHeaderCell';
 import type { TableCellRange, TableProps, TableSortBy, UseTableResult } from './TableProps';
 import { TableRow } from './TableRow';
@@ -95,7 +96,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   const [isSelectingRange, setIsSelectingRange] = useState(false);
 
   const isCellInSelectedRange = (rowIdx: number, colIdx: number) => {
-    if (!selectedRange) {
+    if (!multiCellSelectable || !selectedRange) {
       return false;
     }
 
@@ -107,6 +108,28 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     const endCol = Math.max(anchor.colIdx, cursor.colIdx);
 
     return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
+  };
+
+  const isCellOnEdgeOfSelectedRange = (rowIdx: number, colIdx: number) => {
+    const cellOnEdge: TableDataCellProps['selectedOnEdge'] = { top: true, bottom: true, left: true, right: true };
+
+    if (!multiCellSelectable || !selectedRange) {
+      return cellOnEdge;
+    }
+
+    const { anchor, cursor } = selectedRange;
+
+    const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
+    const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
+    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
+    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+
+    cellOnEdge.top = rowIdx === startRow && colIdx >= startCol && colIdx <= endCol;
+    cellOnEdge.bottom = rowIdx === endRow && colIdx >= startCol && colIdx <= endCol;
+    cellOnEdge.left = colIdx === startCol && rowIdx >= startRow && rowIdx <= endRow;
+    cellOnEdge.right = colIdx === endCol && rowIdx >= startRow && rowIdx <= endRow;
+
+    return cellOnEdge;
   };
 
   const tableRef = useRef<HTMLTableElement>(null);
@@ -392,6 +415,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                           (cellSelectable && selectedCellKey === getCellKey(key, rowIdx)) ||
                           (multiCellSelectable && isCellInSelectedRange(rowIdx, colIdx))
                         }
+                        selectedOnEdge={isCellOnEdgeOfSelectedRange(rowIdx, colIdx)}
                         renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
                         {...column}
                       >

@@ -24,6 +24,7 @@ export const TableDataCell = withTableDataCellVariation(
     color,
     disabled,
     selected,
+    selectedOnEdge,
   }) => {
     const handleCopyEvent = () => {
       if (typeof navigator === 'undefined' || children === undefined || children === null) {
@@ -66,6 +67,10 @@ export const TableDataCell = withTableDataCellVariation(
               borderWidth={1}
               borderStyle="solid"
               borderColor="outlineInformative"
+              borderLeftWidth={selectedOnEdge?.left ? 1 : 0}
+              borderRightWidth={selectedOnEdge?.right ? 1 : 0}
+              borderTopWidth={selectedOnEdge?.top ? 1 : 0}
+              borderBottomWidth={selectedOnEdge?.bottom ? 1 : 0}
             />
           )}
           {rowSelected && (

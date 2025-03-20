@@ -19,6 +19,7 @@ export type TableDataCellProps = {
   alignHorizontal?: 'center' | 'end' | 'start';
   disabled?: boolean;
   selected?: boolean;
+  selectedOnEdge?: { top: boolean; bottom: boolean; left: boolean; right: boolean };
 } & Pick<FlexboxSystemProps, 'flexBasis' | 'flexGrow' | 'flexShrink'> &
   Pick<SizingSystemProps, 'minWidth' | 'width'> &
   Pick<TextProps, 'lineLimit' | 'overflowWrap' | 'whiteSpace' | 'wordBreak'>;
