@@ -42,6 +42,8 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     onPressIn,
     onPressOut,
     onHoverIn,
+    selected,
+    selectedOnEdge,
     width,
   }) => {
     const handleSortButtonClick = () => {
@@ -73,6 +75,23 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         borderBottomWidth={1}
         borderBottomStyle="solid"
       >
+        {selected && (
+          <Box
+            position="absolute"
+            top={0}
+            left={0}
+            bottom={0}
+            right={0}
+            borderWidth={1}
+            borderStyle="solid"
+            borderColor="outlineInformative"
+            backgroundColor="informativeContainer"
+            borderLeftWidth={selectedOnEdge?.left ? 1 : 0}
+            borderRightWidth={selectedOnEdge?.right ? 1 : 0}
+            borderTopWidth={1}
+            borderBottomWidth={0}
+          />
+        )}
         <VStack height="100%" alignVertical={alignVertical}>
           <HStack width="100%" alignVertical="center" alignHorizontal={alignHorizontal}>
             {renderCell ? (

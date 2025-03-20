@@ -16,6 +16,7 @@ import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import { TableDataCell } from './TableDataCell';
 import type { TableDataCellProps } from './TableDataCell/TableDataCellProps';
 import { TableHeaderCell } from './TableHeaderCell';
+import type { TableHeaderCellProps } from './TableHeaderCell/TableHeaderCellProps';
 import type { TableCellRange, TableProps, TableSortBy, UseTableResult } from './TableProps';
 import { TableRow } from './TableRow';
 import type { SortDirection } from './TableSortIcon';
@@ -125,10 +126,28 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     const startCol = Math.min(anchor.colIdx, cursor.colIdx);
     const endCol = Math.max(anchor.colIdx, cursor.colIdx);
 
-    cellOnEdge.top = rowIdx === startRow && colIdx >= startCol && colIdx <= endCol;
+    cellOnEdge.top = rowIdx === startRow && colIdx >= startCol && colIdx <= endCol && selectingRangeFromCell;
     cellOnEdge.bottom = rowIdx === endRow && colIdx >= startCol && colIdx <= endCol;
     cellOnEdge.left = colIdx === startCol && rowIdx >= startRow && rowIdx <= endRow;
     cellOnEdge.right = colIdx === endCol && rowIdx >= startRow && rowIdx <= endRow;
+
+    return cellOnEdge;
+  };
+
+  const isHeaderOnEdgeOfSelectedRange = (colIdx: number) => {
+    const cellOnEdge: TableHeaderCellProps['selectedOnEdge'] = { left: true, right: true };
+
+    if (!multiCellSelectable || !selectedRange) {
+      return cellOnEdge;
+    }
+
+    const { anchor, cursor } = selectedRange;
+
+    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
+    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+
+    cellOnEdge.left = colIdx === startCol;
+    cellOnEdge.right = colIdx === endCol;
 
     return cellOnEdge;
   };
@@ -356,6 +375,8 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                       cursor: { rowIdx: selectingRangeFromCell ? 0 : data.length - 1, colIdx },
                     }));
                   }}
+                  selected={!selectingRangeFromCell && isCellInSelectedRange(0, colIdx)}
+                  selectedOnEdge={isHeaderOnEdgeOfSelectedRange(colIdx)}
                 />
               )
             )}

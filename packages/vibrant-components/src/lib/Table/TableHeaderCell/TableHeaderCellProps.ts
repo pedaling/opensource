@@ -19,6 +19,8 @@ export type TableHeaderCellProps = {
   onPressIn?: () => void;
   onPressOut?: () => void;
   onHoverIn?: () => void;
+  selected?: boolean;
+  selectedOnEdge?: { left: boolean; right: boolean };
   renderCell?: () => ReactElementChildren;
   alignVertical?: 'center' | 'end' | 'start';
   alignHorizontal?: 'center' | 'end' | 'start';
