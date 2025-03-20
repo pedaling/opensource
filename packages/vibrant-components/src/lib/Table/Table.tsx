@@ -322,28 +322,30 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                     <Paper backgroundColor="surface1" p={16}>
                       {renderExpanded?.(row)}
                     </Paper>
-                    /* eslint-disable prettier/prettier */
-                    )}
-                    expanded={expandedRowKeys?.includes(row[rowKey])}
-                    disabled={disabledRowKeys?.includes(row[rowKey])}
-                  >
-                    {columns.map(
-                    ({
-                      key,
-                      dataKey,
-                      alignHorizontal,
-                      alignVertical,
-                      lineLimit,
-                      wordBreak,
-                      whiteSpace,
-                      overflowWrap,
-                      onDataCell,
-                      formatData,
-                      renderDataCell,
-                      selectable: cellSelectable,
-                      width: _,
-                      ...column
-                    }: TableColumnProps<Data>, colIdx) => (
+                  )}
+                  expanded={expandedRowKeys?.includes(row[rowKey])}
+                  disabled={disabledRowKeys?.includes(row[rowKey])}
+                >
+                  {columns.map(
+                    (
+                      {
+                        key,
+                        dataKey,
+                        alignHorizontal,
+                        alignVertical,
+                        lineLimit,
+                        wordBreak,
+                        whiteSpace,
+                        overflowWrap,
+                        onDataCell,
+                        formatData,
+                        renderDataCell,
+                        selectable: cellSelectable,
+                        width: _,
+                        ...column
+                      }: TableColumnProps<Data>,
+                      colIdx
+                    ) => (
                       <TableDataCell
                         key={key}
                         onClick={() => {
@@ -357,8 +359,8 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         onPressIn={() => {
                           setIsSelectingRange(true);
                           setSelectedRange(prev => ({
-                          anchor: isShiftKeyPressed && prev ? prev.anchor : { rowIdx, colIdx },
-                          cursor: { rowIdx, colIdx }
+                            anchor: isShiftKeyPressed && prev ? prev.anchor : { rowIdx, colIdx },
+                            cursor: { rowIdx, colIdx },
                           }));
                         }}
                         onPressOut={() => {
@@ -366,17 +368,17 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         }}
                         onHoverIn={() => {
                           if (!isSelectingRange) {
-                          return;
+                            return;
                           }
 
                           setSelectedRange(prev => ({
-                          anchor: prev ? prev.anchor : { rowIdx, colIdx },
-                          cursor: { rowIdx, colIdx }
+                            anchor: prev ? prev.anchor : { rowIdx, colIdx },
+                            cursor: { rowIdx, colIdx },
                           }));
                         }}
                         onCopy={() => {
                           if (!multiCellSelectable) {
-                          onDataCell?.onCopy?.(row);
+                            onDataCell?.onCopy?.(row);
                           }
                         }}
                         alignVertical={alignVertical?.dataCell}
@@ -392,9 +394,9 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         }
                         renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
                         {...column}
-                        >
+                      >
                         {isDefined(formatData) ? formatData(row) : dataKey ? row[dataKey] : null}
-                        </TableDataCell>
+                      </TableDataCell>
                     )
                   )}
                 </TableRow>
