@@ -93,8 +93,8 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
 
+  const isSelectingRange = useRef(false);
   const [selectedRange, setSelectedRange] = useState<TableCellRange>();
-  const [isSelectingRange, setIsSelectingRange] = useState(false);
   const [selectingRangeFromCell, setSelectingRangeFromCell] = useState(true);
 
   const isCellInSelectedRange = (rowIdx: number, colIdx: number) => {
@@ -357,7 +357,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   multiCellSelectable={multiCellSelectable}
                   onPressIn={() => {
                     setSelectingRangeFromCell(false);
-                    setIsSelectingRange(true);
+                    isSelectingRange.current = true;
                     setSelectedRange(prev => ({
                       anchor:
                         isShiftKeyPressed.current && !selectingRangeFromCell && prev
@@ -367,10 +367,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                     }));
                   }}
                   onPressOut={() => {
-                    setIsSelectingRange(false);
+                    isSelectingRange.current = false;
                   }}
                   onHoverIn={() => {
-                    if (!isSelectingRange) {
+                    if (!isSelectingRange.current) {
                       return;
                     }
 
@@ -435,17 +435,17 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         }}
                         onPressIn={() => {
                           setSelectingRangeFromCell(true);
-                          setIsSelectingRange(true);
+                          isSelectingRange.current = true;
                           setSelectedRange(prev => ({
                             anchor: isShiftKeyPressed.current && prev ? prev.anchor : { rowIdx, colIdx },
                             cursor: { rowIdx, colIdx },
                           }));
                         }}
                         onPressOut={() => {
-                          setIsSelectingRange(false);
+                          isSelectingRange.current = false;
                         }}
                         onHoverIn={() => {
-                          if (!isSelectingRange) {
+                          if (!isSelectingRange.current) {
                             return;
                           }
 
