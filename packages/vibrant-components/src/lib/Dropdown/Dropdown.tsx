@@ -243,10 +243,19 @@ export const Dropdown = withDropdownVariation(
         {!isMobile && isOpen && (
           <ThemeProvider theme={rootThemeMode}>
             <Transition
-              animation={{
-                opacity: visible ? 1 : 0,
-                scale: visible ? 1 : 0.95,
-              }}
+              animation={
+                visible
+                  ? {
+                      opacity: 1,
+                      scale: 1,
+                      y: direction === 'bottom' ? 0 : 0,
+                    }
+                  : {
+                      opacity: 0,
+                      scale: 0.95,
+                      y: direction === 'bottom' ? -8 : 8,
+                    }
+              }
               duration={150}
             >
               <OverlayBox
@@ -272,12 +281,9 @@ export const Dropdown = withDropdownVariation(
                       animation={
                         visible
                           ? {
-                              y: direction === 'bottom' ? 0 : 0,
                               height: contentHeight,
                             }
-                          : {
-                              y: direction === 'bottom' ? -8 : 8,
-                            }
+                          : {}
                       }
                       duration={150}
                     >
