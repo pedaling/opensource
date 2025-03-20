@@ -303,18 +303,21 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
               <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
             )}
             {columns.map(
-              ({
-                key,
-                dataKey,
-                alignHorizontal,
-                alignVertical,
-                renderHeader,
-                lineLimit,
-                wordBreak,
-                whiteSpace,
-                overflowWrap,
-                ...column
-              }: TableColumnProps<Data>) => (
+              (
+                {
+                  key,
+                  dataKey,
+                  alignHorizontal,
+                  alignVertical,
+                  renderHeader,
+                  lineLimit,
+                  wordBreak,
+                  whiteSpace,
+                  overflowWrap,
+                  ...column
+                }: TableColumnProps<Data>,
+                colIdx
+              ) => (
                 <TableHeaderCell
                   key={key}
                   {...column}
@@ -327,6 +330,26 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   renderCell={renderHeader}
                   sortDirection={sortBy.dataKey === dataKey ? sortBy.direction : 'none'}
                   onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
+                  onPressIn={() => {
+                    setIsSelectingRange(true);
+                    setSelectedRange(prev => ({
+                      anchor: isShiftKeyPressed && prev ? prev.anchor : { rowIdx: 0, colIdx },
+                      cursor: { rowIdx: data.length - 1, colIdx },
+                    }));
+                  }}
+                  onPressOut={() => {
+                    setIsSelectingRange(false);
+                  }}
+                  onHoverIn={() => {
+                    if (!isSelectingRange) {
+                      return;
+                    }
+
+                    setSelectedRange(prev => ({
+                      anchor: prev ? prev.anchor : { rowIdx: 0, colIdx },
+                      cursor: { rowIdx: data.length - 1, colIdx },
+                    }));
+                  }}
                 />
               )
             )}
