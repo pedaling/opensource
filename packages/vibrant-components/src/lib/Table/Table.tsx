@@ -175,19 +175,19 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     };
   }, [multiCellSelectable]);
 
-  const [isShiftKeyPressed, setIsShiftKeyPressed] = useState(false);
+  const isShiftKeyPressed = useRef(false);
 
   // Shift 키 누르고 있는 동안에만 range 선택 가능
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Shift') {
-        setIsShiftKeyPressed(true);
+        isShiftKeyPressed.current = true;
       }
     };
 
     const handleKeyUp = (event: KeyboardEvent) => {
       if (event.key === 'Shift') {
-        setIsShiftKeyPressed(false);
+        isShiftKeyPressed.current = false;
       }
     };
 
@@ -360,7 +360,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                     setIsSelectingRange(true);
                     setSelectedRange(prev => ({
                       anchor:
-                        isShiftKeyPressed && !selectingRangeFromCell && prev
+                        isShiftKeyPressed.current && !selectingRangeFromCell && prev
                           ? { rowIdx: 0, colIdx: prev.anchor.colIdx }
                           : { rowIdx: 0, colIdx },
                       cursor: { rowIdx: data.length - 1, colIdx },
@@ -437,7 +437,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                           setSelectingRangeFromCell(true);
                           setIsSelectingRange(true);
                           setSelectedRange(prev => ({
-                            anchor: isShiftKeyPressed && prev ? prev.anchor : { rowIdx, colIdx },
+                            anchor: isShiftKeyPressed.current && prev ? prev.anchor : { rowIdx, colIdx },
                             cursor: { rowIdx, colIdx },
                           }));
                         }}
