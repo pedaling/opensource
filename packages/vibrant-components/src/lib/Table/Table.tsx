@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
 import { Children, isValidElement, useEffect, useMemo, useRef, useState } from 'react';
-import { Box, Image, ScrollBox, useConfig } from '@vibrant-ui/core';
+import { Box, Image, ScrollBox, isNative, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { GhostButton } from '../GhostButton';
@@ -179,6 +179,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
   // Shift 키 누르고 있는 동안에만 range 선택 가능
   useEffect(() => {
+    if (isNative) {
+      return;
+    }
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Shift') {
         isShiftKeyPressed.current = true;
