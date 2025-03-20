@@ -265,6 +265,7 @@ export const MultiCellSelectable: ComponentStory<typeof Table> = props => (
           onClick: action('onDateCellClick'),
           onCopy: action('onDataCellCopy'),
         }}
+        sortable={true}
       />
       <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
       <Table.Column<Data>
