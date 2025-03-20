@@ -354,6 +354,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   renderCell={renderHeader}
                   sortDirection={sortBy.dataKey === dataKey ? sortBy.direction : 'none'}
                   onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
+                  multiCellSelectable={multiCellSelectable}
                   onPressIn={() => {
                     setSelectingRangeFromCell(false);
                     setIsSelectingRange(true);

@@ -36,7 +36,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     alignHorizontal = 'center',
     alignVertical = 'center',
     sortable,
-    selectable,
+    multiCellSelectable,
     sortDirection = 'none',
     onSort,
     onPressIn,
@@ -47,11 +47,6 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     width,
   }) => {
     const handleSortButtonClick = () => {
-      // 선택 가능한 경우 선택 액션이 우선한다. 정렬은 정렬 버튼으로
-      if (selectable) {
-        return;
-      }
-
       const nextSortDirection = getNextSortDirection(sortDirection);
 
       onSort?.(nextSortDirection);
@@ -66,7 +61,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         px={16}
         width={width}
         disabled={!sortable}
-        onClick={handleSortButtonClick}
+        onClick={!multiCellSelectable ? handleSortButtonClick : () => {}}
         onPressIn={onPressIn}
         onPressOut={onPressOut}
         onHoverIn={onHoverIn}
@@ -120,9 +115,9 @@ export const TableHeaderCell = withTableHeaderCellVariation(
               </>
             )}
             {sortable && (
-              <Box ml={4}>
+              <PressableBox ml={4} onClick={handleSortButtonClick}>
                 <TableSortIcon sortDirection={sortDirection} />
-              </Box>
+              </PressableBox>
             )}
           </HStack>
         </VStack>

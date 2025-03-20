@@ -14,6 +14,7 @@ export type TableHeaderCellProps = {
   description?: ReactElementChild | string;
   sortable?: boolean;
   selectable?: boolean;
+  multiCellSelectable?: boolean;
   sortDirection?: SortDirection;
   onSort?: (sortDirection: SortDirection) => void;
   onPressIn?: () => void;
