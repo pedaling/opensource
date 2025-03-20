@@ -194,6 +194,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
     const selectedCells = [];
 
+    const columnNames = columns.slice(startCol, endCol + 1).map(column => column.title || column.dataKey || '');
+
+    selectedCells.push(columnNames.join('\t'));
+
     for (let rowIdx = startRow; rowIdx <= endRow; rowIdx++) {
       const row = data[rowIdx];
       const rowCells = columns.slice(startCol, endCol + 1).map(column => {
