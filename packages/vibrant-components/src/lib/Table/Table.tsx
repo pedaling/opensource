@@ -358,7 +358,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                     setSelectingRangeFromCell(false);
                     setIsSelectingRange(true);
                     setSelectedRange(prev => ({
-                      anchor: isShiftKeyPressed && prev ? prev.anchor : { rowIdx: 0, colIdx },
+                      anchor:
+                        isShiftKeyPressed && !selectingRangeFromCell && prev
+                          ? { rowIdx: 0, colIdx: prev.anchor.colIdx }
+                          : { rowIdx: 0, colIdx },
                       cursor: { rowIdx: data.length - 1, colIdx },
                     }));
                   }}
