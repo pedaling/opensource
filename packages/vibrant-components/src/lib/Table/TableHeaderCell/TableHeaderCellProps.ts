@@ -13,8 +13,15 @@ export type TableHeaderCellProps = {
   title?: TextChildren;
   description?: ReactElementChild | string;
   sortable?: boolean;
+  selectable?: boolean;
+  multiCellSelectable?: boolean;
   sortDirection?: SortDirection;
   onSort?: (sortDirection: SortDirection) => void;
+  onPressIn?: () => void;
+  onPressOut?: () => void;
+  onHoverIn?: () => void;
+  selected?: boolean;
+  selectedOnEdge?: { left: boolean; right: boolean };
   renderCell?: () => ReactElementChildren;
   alignVertical?: 'center' | 'end' | 'start';
   alignHorizontal?: 'center' | 'end' | 'start';

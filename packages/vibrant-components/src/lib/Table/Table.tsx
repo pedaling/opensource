@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
-import { Children, isValidElement, useEffect, useMemo, useState } from 'react';
-import { Box, Image, ScrollBox, useConfig } from '@vibrant-ui/core';
+import { Children, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Box, Image, ScrollBox, isNative, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { GhostButton } from '../GhostButton';
@@ -12,12 +14,82 @@ import { VStack } from '../VStack';
 import { TableColumn } from './TableColumn';
 import type { TableColumnProps } from './TableColumn/TableColumnProps';
 import { TableDataCell } from './TableDataCell';
+import type { TableDataCellProps } from './TableDataCell/TableDataCellProps';
 import { TableHeaderCell } from './TableHeaderCell';
-import type { TableProps, TableSortBy, UseTableResult } from './TableProps';
+import type { TableHeaderCellProps } from './TableHeaderCell/TableHeaderCellProps';
+import type { TableCellRange, TableProps, TableSortBy, UseTableResult } from './TableProps';
 import { TableRow } from './TableRow';
 import type { SortDirection } from './TableSortIcon';
 
 const getCellKey = (key: any, rowIndex: number) => `${key}:${rowIndex}`;
+
+const getCornersFromSelectedRange = (selectedRange: TableCellRange) => {
+  const { anchor, cursor } = selectedRange;
+
+  return {
+    startRow: Math.min(anchor.rowIdx, cursor.rowIdx),
+    endRow: Math.max(anchor.rowIdx, cursor.rowIdx),
+    startCol: Math.min(anchor.colIdx, cursor.colIdx),
+    endCol: Math.max(anchor.colIdx, cursor.colIdx),
+  };
+};
+
+const isCellInSelectedRange = (
+  rowIdx: number,
+  colIdx: number,
+  multiCellSelectable: boolean,
+  selectedRange?: TableCellRange
+) => {
+  if (!multiCellSelectable || !selectedRange) {
+    return false;
+  }
+
+  const { startRow, endRow, startCol, endCol } = getCornersFromSelectedRange(selectedRange);
+
+  return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
+};
+
+const isCellOnEdgeOfSelectedRange = (
+  rowIdx: number,
+  colIdx: number,
+  multiCellSelectable: boolean,
+  selectingRangeFromCell: boolean,
+  selectedRange?: TableCellRange
+) => {
+  const cellOnEdge: TableDataCellProps['selectedOnEdge'] = { top: true, bottom: true, left: true, right: true };
+
+  if (!multiCellSelectable || !selectedRange) {
+    return cellOnEdge;
+  }
+
+  const { startRow, endRow, startCol, endCol } = getCornersFromSelectedRange(selectedRange);
+
+  cellOnEdge.top = rowIdx === startRow && colIdx >= startCol && colIdx <= endCol && selectingRangeFromCell;
+  cellOnEdge.bottom = rowIdx === endRow && colIdx >= startCol && colIdx <= endCol;
+  cellOnEdge.left = colIdx === startCol && rowIdx >= startRow && rowIdx <= endRow;
+  cellOnEdge.right = colIdx === endCol && rowIdx >= startRow && rowIdx <= endRow;
+
+  return cellOnEdge;
+};
+
+const isHeaderOnEdgeOfSelectedRange = (
+  colIdx: number,
+  multiCellSelectable: boolean,
+  selectedRange?: TableCellRange
+) => {
+  const cellOnEdge: TableHeaderCellProps['selectedOnEdge'] = { left: true, right: true };
+
+  if (!multiCellSelectable || !selectedRange) {
+    return cellOnEdge;
+  }
+
+  const { startCol, endCol } = getCornersFromSelectedRange(selectedRange);
+
+  cellOnEdge.left = colIdx === startCol;
+  cellOnEdge.right = colIdx === endCol;
+
+  return cellOnEdge;
+};
 
 export const useTable = <Data extends Record<string, any>, RowKey extends keyof Data>(): UseTableResult<
   Data,
@@ -31,6 +103,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   rowKey,
   loading = false,
   selectable = false,
+  multiCellSelectable = true,
   selectButtons,
   onSelectionChange,
   renderExpanded,
@@ -88,6 +161,91 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
 
+  const isSelectingRange = useRef(false);
+  const [selectedRange, setSelectedRange] = useState<TableCellRange>();
+  const [selectingRangeFromCell, setSelectingRangeFromCell] = useState(true);
+
+  const tableRef = useRef<HTMLTableElement>(null);
+
+  // multiCellSelectable일 때, 테이블의 selectstart 이벤트를 막아서 텍스트 드래그 방지
+  useEffect(() => {
+    if (!tableRef.current) {
+      return;
+    }
+
+    const tableEl = tableRef.current;
+
+    const handleSelectStart = (event: Event) => {
+      if (multiCellSelectable) {
+        event.preventDefault();
+      }
+    };
+
+    tableEl.addEventListener('selectstart', handleSelectStart);
+
+    return () => {
+      tableEl.removeEventListener('selectstart', handleSelectStart);
+    };
+  }, [multiCellSelectable]);
+
+  const isShiftKeyPressed = useRef(false);
+
+  // Shift 키 누르고 있는 동안에만 range 선택 가능
+  useEffect(() => {
+    if (isNative) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Shift') {
+        isShiftKeyPressed.current = true;
+      }
+    };
+
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (event.key === 'Shift') {
+        isShiftKeyPressed.current = false;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
+
+  const copySelectedCells = useCallback(() => {
+    if (!selectedRange) {
+      return;
+    }
+
+    const { startRow, endRow, startCol, endCol } = getCornersFromSelectedRange(selectedRange);
+
+    const selectedCells = [];
+
+    const columnNames = columns.slice(startCol, endCol + 1).map(column => column.title || column.dataKey || '');
+
+    selectedCells.push(columnNames.join('\t'));
+
+    for (let rowIdx = startRow; rowIdx <= endRow; rowIdx++) {
+      const row = data[rowIdx];
+      const rowCells = columns.slice(startCol, endCol + 1).map(column => {
+        const cellData = column.dataKey ? row[column.dataKey] : null;
+
+        return isDefined(column.formatData) ? column.formatData(row) : cellData;
+      });
+
+      selectedCells.push(rowCells.join('\t'));
+    }
+
+    const clipboardText = selectedCells.join('\n');
+
+    navigator?.clipboard.writeText(clipboardText);
+  }, [columns, data, selectedRange]);
+
   const handleToggleCheckbox = (key: Data[RowKey]) => {
     const newSelectedRowKeys = new Set(selectedRowKeys);
 
@@ -130,12 +288,14 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       data-testid={testId}
     >
       <Box
+        ref={tableRef}
         as="table"
         display="web_table"
         borderCollapse="separate"
         tableLayout={tableLayout}
         width="100%"
         height="100%"
+        onCopy={copySelectedCells}
       >
         <Box as="thead" display="web_table-row-group" height="100%">
           <TableRow
@@ -179,18 +339,21 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
               <TableHeaderCell renderCell={() => <Box width={16} height={16} />} width={48} />
             )}
             {columns.map(
-              ({
-                key,
-                dataKey,
-                alignHorizontal,
-                alignVertical,
-                renderHeader,
-                lineLimit,
-                wordBreak,
-                whiteSpace,
-                overflowWrap,
-                ...column
-              }: TableColumnProps<Data>) => (
+              (
+                {
+                  key,
+                  dataKey,
+                  alignHorizontal,
+                  alignVertical,
+                  renderHeader,
+                  lineLimit,
+                  wordBreak,
+                  whiteSpace,
+                  overflowWrap,
+                  ...column
+                }: TableColumnProps<Data>,
+                colIdx
+              ) => (
                 <TableHeaderCell
                   key={key}
                   {...column}
@@ -203,6 +366,35 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   renderCell={renderHeader}
                   sortDirection={sortBy.dataKey === dataKey ? sortBy.direction : 'none'}
                   onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
+                  multiCellSelectable={multiCellSelectable}
+                  onPressIn={() => {
+                    setSelectingRangeFromCell(false);
+                    isSelectingRange.current = true;
+                    setSelectedRange(prev => ({
+                      anchor:
+                        isShiftKeyPressed.current && !selectingRangeFromCell && prev
+                          ? { rowIdx: 0, colIdx: prev.anchor.colIdx }
+                          : { rowIdx: 0, colIdx },
+                      cursor: { rowIdx: data.length - 1, colIdx },
+                    }));
+                  }}
+                  onPressOut={() => {
+                    isSelectingRange.current = false;
+                  }}
+                  onHoverIn={() => {
+                    if (!isSelectingRange.current) {
+                      return;
+                    }
+
+                    setSelectedRange(prev => ({
+                      anchor: prev ? prev.anchor : { rowIdx: 0, colIdx },
+                      cursor: { rowIdx: selectingRangeFromCell ? 0 : data.length - 1, colIdx },
+                    }));
+                  }}
+                  selected={
+                    !selectingRangeFromCell && isCellInSelectedRange(0, colIdx, multiCellSelectable, selectedRange)
+                  }
+                  selectedOnEdge={isHeaderOnEdgeOfSelectedRange(colIdx, multiCellSelectable, selectedRange)}
                 />
               )
             )}
@@ -210,7 +402,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
         </Box>
         <Box as="tbody" display="web_table-row-group" height="100%">
           {!loading
-            ? data.map((row, index) => (
+            ? data.map((row, rowIdx) => (
                 <TableRow
                   key={row[rowKey]}
                   selectable={selectable}
@@ -226,38 +418,61 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   disabled={disabledRowKeys?.includes(row[rowKey])}
                 >
                   {columns.map(
-                    ({
-                      key,
-                      dataKey,
-                      alignHorizontal,
-                      alignVertical,
-                      lineLimit,
-                      wordBreak,
-                      whiteSpace,
-                      overflowWrap,
-                      onDataCell,
-                      formatData,
-                      renderDataCell,
-                      selectable: cellSelectable,
-                      width: _,
-                      ...column
-                    }: TableColumnProps<Data>) => (
+                    (
+                      {
+                        key,
+                        dataKey,
+                        alignHorizontal,
+                        alignVertical,
+                        lineLimit,
+                        wordBreak,
+                        whiteSpace,
+                        overflowWrap,
+                        onDataCell,
+                        formatData,
+                        renderDataCell,
+                        selectable: cellSelectable,
+                        width: _,
+                        ...column
+                      }: TableColumnProps<Data>,
+                      colIdx
+                    ) => (
                       <TableDataCell
                         key={key}
-                        onClick={
-                          isCellClickEnabled
-                            ? onDataCell
-                              ? () => {
-                                  onDataCell.onClick?.(row);
+                        onClick={() => {
+                          if (isCellClickEnabled && onDataCell) {
+                            onDataCell.onClick?.(row);
+                            setSelectedCellKey(getCellKey(key, rowIdx));
+                          } else if (onRow) {
+                            onRow.onClick?.(row);
+                          }
+                        }}
+                        onPressIn={() => {
+                          setSelectingRangeFromCell(true);
+                          isSelectingRange.current = true;
+                          setSelectedRange(prev => ({
+                            anchor: isShiftKeyPressed.current && prev ? prev.anchor : { rowIdx, colIdx },
+                            cursor: { rowIdx, colIdx },
+                          }));
+                        }}
+                        onPressOut={() => {
+                          isSelectingRange.current = false;
+                        }}
+                        onHoverIn={() => {
+                          if (!isSelectingRange.current) {
+                            return;
+                          }
 
-                                  setSelectedCellKey(getCellKey(key, index));
-                                }
-                              : undefined
-                            : onRow
-                            ? () => onRow.onClick?.(row)
-                            : undefined
-                        }
-                        onCopy={() => onDataCell?.onCopy?.(row)}
+                          setSelectedRange(prev => ({
+                            anchor: prev ? prev.anchor : { rowIdx, colIdx },
+                            cursor: { rowIdx: selectingRangeFromCell ? rowIdx : data.length - 1, colIdx },
+                          }));
+                        }}
+                        onCopy={() => {
+                          if (!multiCellSelectable) {
+                            onDataCell?.onCopy?.(row);
+                          }
+                        }}
                         alignVertical={alignVertical?.dataCell}
                         alignHorizontal={alignHorizontal?.dataCell}
                         lineLimit={lineLimit?.dataCell}
@@ -265,7 +480,18 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         whiteSpace={whiteSpace?.dataCell}
                         overflowWrap={overflowWrap?.dataCell}
                         disabled={disabledRowKeys?.includes(row[rowKey])}
-                        selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
+                        selected={
+                          (cellSelectable && selectedCellKey === getCellKey(key, rowIdx)) ||
+                          (multiCellSelectable &&
+                            isCellInSelectedRange(rowIdx, colIdx, multiCellSelectable, selectedRange))
+                        }
+                        selectedOnEdge={isCellOnEdgeOfSelectedRange(
+                          rowIdx,
+                          colIdx,
+                          multiCellSelectable,
+                          selectingRangeFromCell,
+                          selectedRange
+                        )}
                         renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
                         {...column}
                       >

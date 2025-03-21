@@ -13,6 +13,9 @@ export const TableDataCell = withTableDataCellVariation(
     overflowWrap,
     whiteSpace,
     onClick,
+    onPressIn,
+    onPressOut,
+    onHoverIn,
     onCopy,
     renderCell,
     alignHorizontal = 'center',
@@ -21,6 +24,7 @@ export const TableDataCell = withTableDataCellVariation(
     color,
     disabled,
     selected,
+    selectedOnEdge,
   }) => {
     const handleCopyEvent = () => {
       if (typeof navigator === 'undefined' || children === undefined || children === null) {
@@ -43,6 +47,9 @@ export const TableDataCell = withTableDataCellVariation(
         px={16}
         width={width}
         onClick={onClick}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
+        onHoverIn={onHoverIn}
         disabled={disabled || !isDefined(onClick)}
         cursor={disabled || !isDefined(onClick) ? 'default' : 'pointer'}
         borderBottomStyle="solid"
@@ -60,6 +67,11 @@ export const TableDataCell = withTableDataCellVariation(
               borderWidth={1}
               borderStyle="solid"
               borderColor="outlineInformative"
+              backgroundColor="informativeContainer"
+              borderLeftWidth={selectedOnEdge?.left ? 1 : 0}
+              borderRightWidth={selectedOnEdge?.right ? 1 : 0}
+              borderTopWidth={selectedOnEdge?.top ? 1 : 0}
+              borderBottomWidth={selectedOnEdge?.bottom ? 1 : 0}
             />
           )}
           {rowSelected && (

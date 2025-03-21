@@ -145,9 +145,9 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
   };
 
   const deleteRow = (data: Data) => () => {
-    const corresRowKey = data[props.rowKey];
+    const corresRowKey = data[props.rowKey as keyof Data];
 
-    setData(prev => prev.filter(row => row[props.rowKey] !== corresRowKey));
+    setData(prev => prev.filter(row => row[props.rowKey as keyof Data] !== corresRowKey));
   };
 
   return (
@@ -191,7 +191,7 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
   );
 };
 
-export const cellSelectable: ComponentStory<typeof Table> = props => (
+export const CellSelectable: ComponentStory<typeof Table> = props => (
   <Box p={20} width="100%">
     <Table {...props} selectable={false}>
       <Table.Column<Data>
@@ -230,6 +230,57 @@ export const cellSelectable: ComponentStory<typeof Table> = props => (
         dataKey="protein"
         title="protein"
         selectable={true}
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
+      <Table.Column<Data>
+        key="Edit"
+        title=""
+        width={120}
+        renderDataCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
+      />
+    </Table>
+  </Box>
+);
+
+export const MultiCellSelectable: ComponentStory<typeof Table> = props => (
+  <Box p={20} width="100%">
+    <Table {...props} multiCellSelectable={true}>
+      <Table.Column<Data>
+        key="name"
+        dataKey="name"
+        renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
+      <Table.Column<Data>
+        key="calories"
+        dataKey="calories"
+        title="calories"
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+        sortable={true}
+      />
+      <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
+      <Table.Column<Data>
+        key="carbs"
+        dataKey="carbs"
+        title="carbs"
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
+      <Table.Column<Data>
+        key="protein"
+        dataKey="protein"
+        title="protein"
         onDataCell={{
           onClick: action('onDateCellClick'),
           onCopy: action('onDataCellCopy'),
