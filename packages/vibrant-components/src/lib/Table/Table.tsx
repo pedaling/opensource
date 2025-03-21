@@ -127,20 +127,26 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     [children]
   );
 
-  const [sortBy, setSortBy] = useState<TableSortBy<Data>>({
-    direction: 'none',
-  });
+  const [sortBy, setSortBy] = useState<TableSortBy<Data>>();
 
-  useEffect(() => {
-    const defaultSort = columns.find(column => column.sortDirection && column.sortDirection !== 'none');
+  const defaultSortColumn = useMemo(
+    () => columns.find(column => column.sortDirection && column.sortDirection !== 'none'),
+    [columns]
+  );
 
-    if (defaultSort && defaultSort.dataKey !== sortBy.dataKey) {
-      setSortBy({
-        dataKey: defaultSort.dataKey,
-        direction: defaultSort.sortDirection ?? 'none',
-      });
-    }
-  }, [columns, sortBy.dataKey]);
+  const defaultSortBy = useMemo(
+    () => ({
+      dataKey: defaultSortColumn?.dataKey,
+      direction: defaultSortColumn?.sortDirection ?? 'none',
+    }),
+    [defaultSortColumn]
+  );
+
+  // sortBy가 존재하고 columns에 해당 dataKey가 있을 때만 sortBy 적용
+  const finalSortBy = useMemo(
+    () => (sortBy && columns.some(column => column.dataKey === sortBy.dataKey) ? sortBy : defaultSortBy),
+    [columns, defaultSortBy, sortBy]
+  );
 
   const handleChangeSort = (sortBy: TableSortBy<Data>) => {
     setSortBy(sortBy);
@@ -364,7 +370,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   whiteSpace={whiteSpace?.header}
                   overflowWrap={overflowWrap?.header}
                   renderCell={renderHeader}
-                  sortDirection={sortBy.dataKey === dataKey ? sortBy.direction : 'none'}
+                  sortDirection={finalSortBy.dataKey === dataKey ? finalSortBy.direction : 'none'}
                   onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
                   multiCellSelectable={multiCellSelectable}
                   onPressIn={() => {
