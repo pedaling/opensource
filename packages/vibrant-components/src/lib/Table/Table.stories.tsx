@@ -145,9 +145,7 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
   };
 
   const deleteRow = (data: Data) => () => {
-    const corresRowKey = data[props.rowKey as keyof Data];
-
-    setData(prev => prev.filter(row => row[props.rowKey as keyof Data] !== corresRowKey));
+    setData(prev => prev.filter(row => row !== data));
   };
 
   return (
