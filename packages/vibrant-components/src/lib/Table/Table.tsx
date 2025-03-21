@@ -23,6 +23,17 @@ import type { SortDirection } from './TableSortIcon';
 
 const getCellKey = (key: any, rowIndex: number) => `${key}:${rowIndex}`;
 
+const getCornersFromSelectedRange = (selectedRange: TableCellRange) => {
+  const { anchor, cursor } = selectedRange;
+
+  return {
+    startRow: Math.min(anchor.rowIdx, cursor.rowIdx),
+    endRow: Math.max(anchor.rowIdx, cursor.rowIdx),
+    startCol: Math.min(anchor.colIdx, cursor.colIdx),
+    endCol: Math.max(anchor.colIdx, cursor.colIdx),
+  };
+};
+
 const isCellInSelectedRange = (
   rowIdx: number,
   colIdx: number,
@@ -33,12 +44,7 @@ const isCellInSelectedRange = (
     return false;
   }
 
-  const { anchor, cursor } = selectedRange;
-
-  const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
-  const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
-  const startCol = Math.min(anchor.colIdx, cursor.colIdx);
-  const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+  const { startRow, endRow, startCol, endCol } = getCornersFromSelectedRange(selectedRange);
 
   return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
 };
@@ -56,12 +62,7 @@ const isCellOnEdgeOfSelectedRange = (
     return cellOnEdge;
   }
 
-  const { anchor, cursor } = selectedRange;
-
-  const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
-  const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
-  const startCol = Math.min(anchor.colIdx, cursor.colIdx);
-  const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+  const { startRow, endRow, startCol, endCol } = getCornersFromSelectedRange(selectedRange);
 
   cellOnEdge.top = rowIdx === startRow && colIdx >= startCol && colIdx <= endCol && selectingRangeFromCell;
   cellOnEdge.bottom = rowIdx === endRow && colIdx >= startCol && colIdx <= endCol;
@@ -82,10 +83,7 @@ const isHeaderOnEdgeOfSelectedRange = (
     return cellOnEdge;
   }
 
-  const { anchor, cursor } = selectedRange;
-
-  const startCol = Math.min(anchor.colIdx, cursor.colIdx);
-  const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+  const { startCol, endCol } = getCornersFromSelectedRange(selectedRange);
 
   cellOnEdge.left = colIdx === startCol;
   cellOnEdge.right = colIdx === endCol;
@@ -224,12 +222,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
       return;
     }
 
-    const { anchor, cursor } = selectedRange;
-
-    const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
-    const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
-    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
-    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+    const { startRow, endRow, startCol, endCol } = getCornersFromSelectedRange(selectedRange);
 
     const selectedCells = [];
 
