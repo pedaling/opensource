@@ -103,7 +103,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   rowKey,
   loading = false,
   selectable = false,
-  multiCellSelectable = false,
+  multiCellSelectable = true,
   selectButtons,
   onSelectionChange,
   renderExpanded,
