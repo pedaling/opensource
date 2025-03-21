@@ -23,6 +23,76 @@ import type { SortDirection } from './TableSortIcon';
 
 const getCellKey = (key: any, rowIndex: number) => `${key}:${rowIndex}`;
 
+const isCellInSelectedRange = (
+  rowIdx: number,
+  colIdx: number,
+  multiCellSelectable: boolean,
+  selectedRange?: TableCellRange
+) => {
+  if (!multiCellSelectable || !selectedRange) {
+    return false;
+  }
+
+  const { anchor, cursor } = selectedRange;
+
+  const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
+  const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
+  const startCol = Math.min(anchor.colIdx, cursor.colIdx);
+  const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+
+  return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
+};
+
+const isCellOnEdgeOfSelectedRange = (
+  rowIdx: number,
+  colIdx: number,
+  multiCellSelectable: boolean,
+  selectingRangeFromCell: boolean,
+  selectedRange?: TableCellRange
+) => {
+  const cellOnEdge: TableDataCellProps['selectedOnEdge'] = { top: true, bottom: true, left: true, right: true };
+
+  if (!multiCellSelectable || !selectedRange) {
+    return cellOnEdge;
+  }
+
+  const { anchor, cursor } = selectedRange;
+
+  const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
+  const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
+  const startCol = Math.min(anchor.colIdx, cursor.colIdx);
+  const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+
+  cellOnEdge.top = rowIdx === startRow && colIdx >= startCol && colIdx <= endCol && selectingRangeFromCell;
+  cellOnEdge.bottom = rowIdx === endRow && colIdx >= startCol && colIdx <= endCol;
+  cellOnEdge.left = colIdx === startCol && rowIdx >= startRow && rowIdx <= endRow;
+  cellOnEdge.right = colIdx === endCol && rowIdx >= startRow && rowIdx <= endRow;
+
+  return cellOnEdge;
+};
+
+const isHeaderOnEdgeOfSelectedRange = (
+  colIdx: number,
+  multiCellSelectable: boolean,
+  selectedRange?: TableCellRange
+) => {
+  const cellOnEdge: TableHeaderCellProps['selectedOnEdge'] = { left: true, right: true };
+
+  if (!multiCellSelectable || !selectedRange) {
+    return cellOnEdge;
+  }
+
+  const { anchor, cursor } = selectedRange;
+
+  const startCol = Math.min(anchor.colIdx, cursor.colIdx);
+  const endCol = Math.max(anchor.colIdx, cursor.colIdx);
+
+  cellOnEdge.left = colIdx === startCol;
+  cellOnEdge.right = colIdx === endCol;
+
+  return cellOnEdge;
+};
+
 export const useTable = <Data extends Record<string, any>, RowKey extends keyof Data>(): UseTableResult<
   Data,
   RowKey
@@ -96,61 +166,6 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   const isSelectingRange = useRef(false);
   const [selectedRange, setSelectedRange] = useState<TableCellRange>();
   const [selectingRangeFromCell, setSelectingRangeFromCell] = useState(true);
-
-  const isCellInSelectedRange = (rowIdx: number, colIdx: number) => {
-    if (!multiCellSelectable || !selectedRange) {
-      return false;
-    }
-
-    const { anchor, cursor } = selectedRange;
-
-    const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
-    const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
-    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
-    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
-
-    return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
-  };
-
-  const isCellOnEdgeOfSelectedRange = (rowIdx: number, colIdx: number) => {
-    const cellOnEdge: TableDataCellProps['selectedOnEdge'] = { top: true, bottom: true, left: true, right: true };
-
-    if (!multiCellSelectable || !selectedRange) {
-      return cellOnEdge;
-    }
-
-    const { anchor, cursor } = selectedRange;
-
-    const startRow = Math.min(anchor.rowIdx, cursor.rowIdx);
-    const endRow = Math.max(anchor.rowIdx, cursor.rowIdx);
-    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
-    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
-
-    cellOnEdge.top = rowIdx === startRow && colIdx >= startCol && colIdx <= endCol && selectingRangeFromCell;
-    cellOnEdge.bottom = rowIdx === endRow && colIdx >= startCol && colIdx <= endCol;
-    cellOnEdge.left = colIdx === startCol && rowIdx >= startRow && rowIdx <= endRow;
-    cellOnEdge.right = colIdx === endCol && rowIdx >= startRow && rowIdx <= endRow;
-
-    return cellOnEdge;
-  };
-
-  const isHeaderOnEdgeOfSelectedRange = (colIdx: number) => {
-    const cellOnEdge: TableHeaderCellProps['selectedOnEdge'] = { left: true, right: true };
-
-    if (!multiCellSelectable || !selectedRange) {
-      return cellOnEdge;
-    }
-
-    const { anchor, cursor } = selectedRange;
-
-    const startCol = Math.min(anchor.colIdx, cursor.colIdx);
-    const endCol = Math.max(anchor.colIdx, cursor.colIdx);
-
-    cellOnEdge.left = colIdx === startCol;
-    cellOnEdge.right = colIdx === endCol;
-
-    return cellOnEdge;
-  };
 
   const tableRef = useRef<HTMLTableElement>(null);
 
@@ -383,8 +398,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                       cursor: { rowIdx: selectingRangeFromCell ? 0 : data.length - 1, colIdx },
                     }));
                   }}
-                  selected={!selectingRangeFromCell && isCellInSelectedRange(0, colIdx)}
-                  selectedOnEdge={isHeaderOnEdgeOfSelectedRange(colIdx)}
+                  selected={
+                    !selectingRangeFromCell && isCellInSelectedRange(0, colIdx, multiCellSelectable, selectedRange)
+                  }
+                  selectedOnEdge={isHeaderOnEdgeOfSelectedRange(colIdx, multiCellSelectable, selectedRange)}
                 />
               )
             )}
@@ -472,9 +489,16 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                         disabled={disabledRowKeys?.includes(row[rowKey])}
                         selected={
                           (cellSelectable && selectedCellKey === getCellKey(key, rowIdx)) ||
-                          (multiCellSelectable && isCellInSelectedRange(rowIdx, colIdx))
+                          (multiCellSelectable &&
+                            isCellInSelectedRange(rowIdx, colIdx, multiCellSelectable, selectedRange))
                         }
-                        selectedOnEdge={isCellOnEdgeOfSelectedRange(rowIdx, colIdx)}
+                        selectedOnEdge={isCellOnEdgeOfSelectedRange(
+                          rowIdx,
+                          colIdx,
+                          multiCellSelectable,
+                          selectingRangeFromCell,
+                          selectedRange
+                        )}
                         renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
                         {...column}
                       >
