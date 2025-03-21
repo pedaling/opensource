@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/components",
-  "version": "0.94.17",
+  "version": "0.94.18",
   "private": false,
   "sideEffects": false,
   "react-native": "index.native.cjs",

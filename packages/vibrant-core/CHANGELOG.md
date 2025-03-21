@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.18](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.17...vibrant-core-0.94.18) (2025-03-21)
+
+
+### Features
+
+* **vibrant-components:** table multi cells selection and copy ([#1001](https://github.com/pedaling/opensource/issues/1001)) ([a452bff](https://github.com/pedaling/opensource/commit/a452bffd65fd6587c70f169d16d8205a93b768ea))
+
 ## [0.94.17](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.16...vibrant-core-0.94.17) (2025-03-12)
 
 ## [0.94.16](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.15...vibrant-core-0.94.16) (2025-03-04)
