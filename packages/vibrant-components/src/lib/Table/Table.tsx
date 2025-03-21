@@ -2,7 +2,7 @@
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElement } from 'react';
-import { Children, isValidElement, useEffect, useMemo, useRef, useState } from 'react';
+import { Children, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, Image, ScrollBox, isNative, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import { Body } from '../Body';
@@ -217,7 +217,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     };
   }, []);
 
-  const copySelectedCells = () => {
+  const copySelectedCells = useCallback(() => {
     if (!selectedRange) {
       return;
     }
@@ -244,7 +244,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     const clipboardText = selectedCells.join('\n');
 
     navigator?.clipboard.writeText(clipboardText);
-  };
+  }, [columns, data, selectedRange]);
 
   const handleToggleCheckbox = (key: Data[RowKey]) => {
     const newSelectedRowKeys = new Set(selectedRowKeys);
