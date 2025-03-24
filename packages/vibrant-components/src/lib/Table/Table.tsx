@@ -142,7 +142,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     [defaultSortColumn]
   );
 
-  // sortBy가 존재하고 columns에 해당 dataKey가 있을 때만 sortBy 적용
+  // sortBy가 존재하고 columns에 해당 dataKey가 있을 때만 sortBy 적용 (columns 변경에 대비)
   const finalSortBy = useMemo(
     () => (sortBy && columns.some(column => column.dataKey === sortBy.dataKey) ? sortBy : defaultSortBy),
     [columns, defaultSortBy, sortBy]
