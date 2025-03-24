@@ -4,7 +4,7 @@
 import type { ReactElement } from 'react';
 import { Children, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, Image, ScrollBox, isNative, useConfig } from '@vibrant-ui/core';
-import { isDefined, useControllableState } from '@vibrant-ui/utils';
+import { isDefined } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { GhostButton } from '../GhostButton';
 import { HStack } from '../HStack';
@@ -154,15 +154,52 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     onSort?.(sortBy);
   };
 
-  const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
-    defaultValue: new Set<Data[RowKey]>(),
-    onValueChange: (value: Set<Data[RowKey]>) => onSelectionChange?.([...value]),
-  });
+  const [selectedRows, setSelectedRows] = useState(new Set<Data>());
 
+  // 기존 onSelectionChange 동작을 보장하기 위해 rowKey로 호출할 수 있도록 변환
+  const mapRowsToRowKeys = useCallback((rows: Set<Data>) => [...Array(...rows).map(row => row[rowKey])], [rowKey]);
+
+  const handleSetSelectedRows = useCallback(
+    (value: Set<Data>) => {
+      setSelectedRows(value);
+      onSelectionChange?.(mapRowsToRowKeys(value));
+    },
+    [mapRowsToRowKeys, onSelectionChange]
+  );
+
+  // 데이터 변경 시에만 selectedRows 변경 및 onSelectionChange 호출하기 위해 사용
+  const prevData = useRef(data);
+
+  // data가 변경되면 data에 존재하지 않는 row를 selectedRows에서 제거
   useEffect(() => {
-    setSelectedRowKeys(new Set(data.filter(row => selectedRowKeys.has(row[rowKey])).map(row => row[rowKey])));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, rowKey]);
+    if (prevData.current === data) {
+      return;
+    }
+
+    const dataSet = new Set(data);
+    // prevData에서 data에 존재하는 row를 제거하고 남은 row가 제거 대상
+    const toBeRemovedRows = new Set(prevData.current.filter(row => !dataSet.has(row)));
+
+    if (toBeRemovedRows.size > 0) {
+      setSelectedRows(prev => {
+        const newSet = new Set(prev);
+        const sizeBeforeRemove = newSet.size;
+
+        toBeRemovedRows.forEach(row => newSet.delete(row));
+
+        // 선택된 상태에서 제거된 row가 있을 때만 onSelectionChange 호출하고 상태를 변경한다
+        if (sizeBeforeRemove > newSet.size) {
+          onSelectionChange?.(mapRowsToRowKeys(newSet));
+
+          return newSet;
+        }
+
+        return prev;
+      });
+    }
+
+    prevData.current = data;
+  }, [data, mapRowsToRowKeys, onSelectionChange]);
 
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
@@ -252,29 +289,23 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     navigator?.clipboard.writeText(clipboardText);
   }, [columns, data, selectedRange]);
 
-  const handleToggleCheckbox = (key: Data[RowKey]) => {
-    const newSelectedRowKeys = new Set(selectedRowKeys);
+  const handleToggleCheckbox = (key: Data) => {
+    const newSelectedRows = new Set(selectedRows);
 
-    if (newSelectedRowKeys.has(key)) {
-      newSelectedRowKeys.delete(key);
+    if (newSelectedRows.has(key)) {
+      newSelectedRows.delete(key);
     } else {
-      newSelectedRowKeys.add(key);
+      newSelectedRows.add(key);
     }
 
-    setSelectedRowKeys(newSelectedRowKeys);
+    handleSetSelectedRows(newSelectedRows);
   };
 
   const handleToggleAllCheckbox = ({ value }: { value: boolean }) => {
     if (value) {
-      const allRowKeys = new Set<Data[RowKey]>(
-        data
-          .filter(row => (isDefined(disabledRowKeys) ? !disabledRowKeys.includes(row[rowKey]) : true))
-          .map(row => row[rowKey])
-      );
-
-      setSelectedRowKeys(allRowKeys);
+      handleSetSelectedRows(new Set(data.filter(row => !disabledRowKeys?.includes(row[rowKey]))));
     } else {
-      setSelectedRowKeys(new Set());
+      handleSetSelectedRows(new Set());
     }
   };
 
@@ -307,7 +338,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
           <TableRow
             header={true}
             selectable={selectable}
-            selected={selectedRowKeys.size !== 0}
+            selected={selectedRows.size !== 0}
             expanded={!loading && data.length === 0}
             renderExpanded={() => (
               <VStack alignHorizontal="center" mt={32} mb={64}>
@@ -315,12 +346,12 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                 <Body level={1}>{emptyText}</Body>
               </VStack>
             )}
-            overlaid={selectable && selectedRowKeys.size > 0}
+            overlaid={selectable && selectedRows.size > 0}
             renderOverlay={() => (
               <HStack alignVertical="center" height="100%" spacing={12}>
-                {selectedRowKeys.size > 0 ? (
+                {selectedRows.size > 0 ? (
                   <Body level={2} weight="medium">
-                    {tableTranslation.numberOfSelected.replace('{count}', selectedRowKeys.size.toString())}
+                    {tableTranslation.numberOfSelected.replace('{count}', selectedRows.size.toString())}
                   </Body>
                 ) : null}
                 <HStack alignVertical="center" height="100%" spacing={12}>
@@ -329,7 +360,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                       key={text}
                       size="md"
                       color="onViewInformative"
-                      onClick={() => onClick(data.filter(row => selectedRowKeys.has(row[rowKey])))}
+                      onClick={() => onClick(data.filter(row => selectedRows.has(row[rowKey])))}
                     >
                       {text}
                     </GhostButton>
@@ -337,7 +368,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                 </HStack>
               </HStack>
             )}
-            indeterminate={selectedRowKeys.size !== data.length}
+            indeterminate={selectedRows.size !== data.length}
             onSelectionChange={handleToggleAllCheckbox}
             disabled={loading}
           >
@@ -410,10 +441,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
           {!loading
             ? data.map((row, rowIdx) => (
                 <TableRow
-                  key={row[rowKey]}
+                  key={rowKey ? row[rowKey] : rowIdx}
                   selectable={selectable}
-                  selected={selectedRowKeys.has(row[rowKey])}
-                  onSelectionChange={() => handleToggleCheckbox(row[rowKey])}
+                  selected={selectedRows.has(row)}
+                  onSelectionChange={() => handleToggleCheckbox(row)}
                   expandable={isDefined(renderExpanded)}
                   renderExpanded={() => (
                     <Paper backgroundColor="surface1" p={16}>
