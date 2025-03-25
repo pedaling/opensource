@@ -20,9 +20,6 @@ export default {
       },
     },
   },
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
 } as ComponentMeta<typeof MountMotion>;
 
 export const Basic: ComponentStory<typeof MountMotion> = props => {
