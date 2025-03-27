@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.19](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.18...vibrant-components-0.94.19) (2025-03-27)
+
+
+### Features
+
+* Enable disabled prop support for PasswordField component ([#1005](https://github.com/pedaling/opensource/issues/1005)) ([e018025](https://github.com/pedaling/opensource/commit/e018025bb6c52c1a4d3861ea7cd4265cc26df608))
+
+
+### Bug Fixes
+
+* **vibrant-components:** fix table sort and selection error ([#1003](https://github.com/pedaling/opensource/issues/1003)) ([8dbf7d6](https://github.com/pedaling/opensource/commit/8dbf7d6b98a6825968de03a50ec789f6621f2b5a))
+
 ## [0.94.18](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.17...vibrant-components-0.94.18) (2025-03-21)
 
 
