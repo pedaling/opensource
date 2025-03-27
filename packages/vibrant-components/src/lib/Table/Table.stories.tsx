@@ -145,9 +145,7 @@ export const SelectableInteractiveTable: FC<ComponentProps<typeof Table> & { loc
   };
 
   const deleteRow = (data: Data) => () => {
-    const corresRowKey = data[props.rowKey as keyof Data];
-
-    setData(prev => prev.filter(row => row[props.rowKey as keyof Data] !== corresRowKey));
+    setData(prev => prev.filter(row => row !== data));
   };
 
   return (
@@ -266,6 +264,7 @@ export const MultiCellSelectable: ComponentStory<typeof Table> = props => (
           onCopy: action('onDataCellCopy'),
         }}
         sortable={true}
+        sortDirection="asc"
       />
       <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
       <Table.Column<Data>
@@ -276,6 +275,7 @@ export const MultiCellSelectable: ComponentStory<typeof Table> = props => (
           onClick: action('onDateCellClick'),
           onCopy: action('onDataCellCopy'),
         }}
+        sortable={true}
       />
       <Table.Column<Data>
         key="protein"
