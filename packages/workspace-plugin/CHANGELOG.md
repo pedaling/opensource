@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.73.20](https://github.com/pedaling/opensource/compare/workspace-plugin-0.73.19...workspace-plugin-0.73.20) (2025-03-28)
+
 ## [0.73.19](https://github.com/pedaling/opensource/compare/workspace-plugin-0.73.18...workspace-plugin-0.73.19) (2025-03-27)
 
 ## [0.73.18](https://github.com/pedaling/opensource/compare/workspace-plugin-0.73.17...workspace-plugin-0.73.18) (2025-03-21)

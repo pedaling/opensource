@@ -23,7 +23,7 @@ import type { SortDirection } from './TableSortIcon';
 
 const getCellKey = (key: any, rowIndex: number) => `${key}:${rowIndex}`;
 
-const getCornersFromSelectedRange = (selectedRange: TableCellRange) => {
+export const getCornersFromSelectedRange = (selectedRange: TableCellRange) => {
   const { anchor, cursor } = selectedRange;
 
   return {
@@ -34,7 +34,7 @@ const getCornersFromSelectedRange = (selectedRange: TableCellRange) => {
   };
 };
 
-const isCellInSelectedRange = (
+export const isCellInSelectedRange = (
   rowIdx: number,
   colIdx: number,
   multiCellSelectable: boolean,
@@ -49,7 +49,7 @@ const isCellInSelectedRange = (
   return rowIdx >= startRow && rowIdx <= endRow && colIdx >= startCol && colIdx <= endCol;
 };
 
-const isCellOnEdgeOfSelectedRange = (
+export const isCellOnEdgeOfSelectedRange = (
   rowIdx: number,
   colIdx: number,
   multiCellSelectable: boolean,
@@ -72,7 +72,7 @@ const isCellOnEdgeOfSelectedRange = (
   return cellOnEdge;
 };
 
-const isHeaderOnEdgeOfSelectedRange = (
+export const isHeaderOnEdgeOfSelectedRange = (
   colIdx: number,
   multiCellSelectable: boolean,
   selectedRange?: TableCellRange

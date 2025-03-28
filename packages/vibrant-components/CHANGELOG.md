@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.20](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.19...vibrant-components-0.94.20) (2025-03-28)
+
+
+### Features
+
+* **vibrant-components:** add multi cells selection copy on VirtualizedTable ([#1007](https://github.com/pedaling/opensource/issues/1007)) ([b0279ec](https://github.com/pedaling/opensource/commit/b0279ec717d24172a1f60d7865f1dd66a8e24ab0))
+
 ## [0.94.19](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.18...vibrant-components-0.94.19) (2025-03-27)
 
 
