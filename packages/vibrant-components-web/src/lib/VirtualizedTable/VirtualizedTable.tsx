@@ -1,7 +1,8 @@
+/* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Children, isValidElement, useMemo, useState } from 'react';
+import { Children, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TableVirtuoso } from 'react-virtuoso';
-import type { SortDirection, TableColumnProps } from '@vibrant-ui/components';
+import type { SortDirection, TableCellRange, TableColumnProps } from '@vibrant-ui/components';
 import {
   Body,
   GhostButton,
@@ -12,8 +13,12 @@ import {
   TableHeaderCell,
   TableRow,
   VStack,
+  getCornersFromSelectedRange,
+  isCellInSelectedRange,
+  isCellOnEdgeOfSelectedRange,
+  isHeaderOnEdgeOfSelectedRange,
 } from '@vibrant-ui/components';
-import { Box, Image, useConfig } from '@vibrant-ui/core';
+import { Box, Image, isNative, useConfig } from '@vibrant-ui/core';
 import { isDefined, useControllableState } from '@vibrant-ui/utils';
 import type { VirtualizedTableProps } from './VirtualizedTableProps';
 
@@ -24,6 +29,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
   rowKey,
   loading = false,
   selectable = false,
+  multiCellSelectable = true,
   selectButtons,
   onSelectionChange,
   renderExpanded,
@@ -38,10 +44,13 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
   testId = 'table',
   height = 500,
 }: VirtualizedTableProps<Data, RowKey>) => {
-  const columns =
-    Children.toArray(children)
-      .filter(isValidElement<TableColumnProps<Data>>)
-      .map(({ props, key }) => ({ ...props, key: key as string })) ?? [];
+  const columns = useMemo(
+    () =>
+      Children.toArray(children)
+        .filter(isValidElement<TableColumnProps<Data>>)
+        .map(({ props, key }) => ({ ...props, key: key as string })) ?? [],
+    [children]
+  );
 
   const [selectedRowKeys, setSelectedRowKeys] = useControllableState<Set<Data[RowKey]>>({
     defaultValue: new Set<Data[RowKey]>(),
@@ -49,6 +58,62 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
   });
   const [selectedCellKey, setSelectedCellKey] = useState<string>();
   const isCellClickEnabled = columns?.some(column => isDefined(column.onDataCell));
+
+  const isSelectingRange = useRef(false);
+  const [selectedRange, setSelectedRange] = useState<TableCellRange>();
+  const [selectingRangeFromCell, setSelectingRangeFromCell] = useState(true);
+
+  const tableRef = useRef<HTMLTableElement>(null);
+
+  // multiCellSelectable일 때, 테이블의 selectstart 이벤트를 막아서 텍스트 드래그 방지
+  useEffect(() => {
+    if (!tableRef.current) {
+      return;
+    }
+
+    const tableEl = tableRef.current;
+
+    const handleSelectStart = (event: Event) => {
+      if (multiCellSelectable) {
+        event.preventDefault();
+      }
+    };
+
+    tableEl.addEventListener('selectstart', handleSelectStart);
+
+    return () => {
+      tableEl.removeEventListener('selectstart', handleSelectStart);
+    };
+  }, [multiCellSelectable]);
+
+  const isShiftKeyPressed = useRef(false);
+
+  // Shift 키 누르고 있는 동안에만 range 선택 가능
+  useEffect(() => {
+    if (isNative) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Shift') {
+        isShiftKeyPressed.current = true;
+      }
+    };
+
+    const handleKeyUp = (event: KeyboardEvent) => {
+      if (event.key === 'Shift') {
+        isShiftKeyPressed.current = false;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+    };
+  }, []);
 
   const handleToggleCheckbox = (key: Data[RowKey]) => {
     const newSelectedRowKeys = new Set(selectedRowKeys);
@@ -61,6 +126,35 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
 
     setSelectedRowKeys(newSelectedRowKeys);
   };
+
+  const copySelectedCells = useCallback(() => {
+    if (!selectedRange) {
+      return;
+    }
+
+    const { startRow, endRow, startCol, endCol } = getCornersFromSelectedRange(selectedRange);
+
+    const selectedCells = [];
+
+    const columnNames = columns.slice(startCol, endCol + 1).map(column => column.title || column.dataKey || '');
+
+    selectedCells.push(columnNames.join('\t'));
+
+    for (let rowIdx = startRow; rowIdx <= endRow; rowIdx++) {
+      const row = data[rowIdx];
+      const rowCells = columns.slice(startCol, endCol + 1).map(column => {
+        const cellData = column.dataKey ? row[column.dataKey] : null;
+
+        return isDefined(column.formatData) ? column.formatData(row) : cellData;
+      });
+
+      selectedCells.push(rowCells.join('\t'));
+    }
+
+    const clipboardText = selectedCells.join('\n');
+
+    navigator?.clipboard.writeText(clipboardText);
+  }, [columns, data, selectedRange]);
 
   const handleToggleAllCheckbox = ({ value }: { value: boolean }) => {
     if (value) {
@@ -124,7 +218,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
     return resultData;
   }, [data, expandedKeys, height, loading, rowKey]);
 
-  const renderItemContent = (index: number, item: Data) => {
+  const renderItemContent = (rowIdx: number, row: Data) => {
     if (loading) {
       return (
         <TableRow
@@ -145,7 +239,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
       );
     }
 
-    if (index >= 1 && tableData[index - 1][rowKey] === item[rowKey]) {
+    if (rowIdx >= 1 && tableData[rowIdx - 1][rowKey] === row[rowKey]) {
       return (
         <Box
           as="td"
@@ -156,7 +250,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
           borderBottomWidth={1}
         >
           <Paper backgroundColor="surface1" p={16}>
-            {renderExpanded?.(item)}
+            {renderExpanded?.(row)}
           </Paper>
         </Box>
       );
@@ -164,66 +258,99 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
 
     return (
       <TableRow
-        key={item[rowKey]}
+        key={row[rowKey]}
         selectable={selectable}
-        selected={selectedRowKeys.has(item[rowKey])}
-        onSelectionChange={() => handleToggleCheckbox(item[rowKey])}
-        onExpandChange={() => handleExpand(item[rowKey])}
+        selected={selectedRowKeys.has(row[rowKey])}
+        onSelectionChange={() => handleToggleCheckbox(row[rowKey])}
+        onExpandChange={() => handleExpand(row[rowKey])}
         expandable={isDefined(renderExpanded)}
         renderExpanded={() => (
           <Paper backgroundColor="surface1" p={16}>
-            {renderExpanded?.(item)}
+            {renderExpanded?.(row)}
           </Paper>
         )}
-        expanded={expandedKeys?.has(item[rowKey])}
-        disabled={disabledRowKeys?.includes(item[rowKey])}
+        expanded={expandedKeys?.has(row[rowKey])}
+        disabled={disabledRowKeys?.includes(row[rowKey])}
         shouldRenderRow={false}
       >
         {columns.map(
-          ({
-            key,
-            dataKey,
-            alignHorizontal,
-            alignVertical,
-            lineLimit,
-            wordBreak,
-            whiteSpace,
-            overflowWrap,
-            // eslint-disable-next-line max-lines
-            onDataCell,
-            formatData,
-            renderDataCell,
-            selectable: cellSelectable,
-            ...column
-          }: TableColumnProps<Data>) => (
+          (
+            {
+              key,
+              dataKey,
+              alignHorizontal,
+              alignVertical,
+              lineLimit,
+              wordBreak,
+              whiteSpace,
+              overflowWrap,
+              // eslint-disable-next-line max-lines
+              onDataCell,
+              formatData,
+              renderDataCell,
+              selectable: cellSelectable,
+              ...column
+            }: TableColumnProps<Data>,
+            colIdx
+          ) => (
             <TableDataCell
               key={key}
-              onClick={
-                isCellClickEnabled
-                  ? onDataCell
-                    ? () => {
-                        onDataCell.onClick?.(item);
+              onClick={() => {
+                if (isCellClickEnabled && onDataCell) {
+                  onDataCell.onClick?.(row);
+                  setSelectedCellKey(getCellKey(key, rowIdx));
+                } else if (onRow) {
+                  onRow.onClick?.(row);
+                }
+              }}
+              onPressIn={() => {
+                setSelectingRangeFromCell(true);
+                isSelectingRange.current = true;
+                setSelectedRange(prev => ({
+                  anchor: isShiftKeyPressed.current && prev ? prev.anchor : { rowIdx, colIdx },
+                  cursor: { rowIdx, colIdx },
+                }));
+              }}
+              onPressOut={() => {
+                isSelectingRange.current = false;
+              }}
+              onHoverIn={() => {
+                if (!isSelectingRange.current) {
+                  return;
+                }
 
-                        setSelectedCellKey(getCellKey(key, index));
-                      }
-                    : undefined
-                  : onRow
-                  ? () => onRow.onClick?.(item)
-                  : undefined
-              }
-              onCopy={() => onDataCell?.onCopy?.(item)}
+                setSelectedRange(prev => ({
+                  anchor: prev ? prev.anchor : { rowIdx, colIdx },
+                  cursor: { rowIdx: selectingRangeFromCell ? rowIdx : data.length - 1, colIdx },
+                }));
+              }}
+              onCopy={() => {
+                if (!multiCellSelectable) {
+                  onDataCell?.onCopy?.(row);
+                }
+              }}
               alignVertical={alignVertical?.dataCell}
               alignHorizontal={alignHorizontal?.dataCell}
               lineLimit={lineLimit?.dataCell}
               wordBreak={wordBreak?.dataCell}
               whiteSpace={whiteSpace?.dataCell}
               overflowWrap={overflowWrap?.dataCell}
-              disabled={disabledRowKeys?.includes(item[rowKey])}
-              selected={cellSelectable && selectedCellKey === getCellKey(key, index)}
-              renderCell={renderDataCell ? () => renderDataCell?.(item) : undefined}
+              disabled={disabledRowKeys?.includes(row[rowKey])}
+              selected={
+                (cellSelectable && selectedCellKey === getCellKey(key, rowIdx)) ||
+                (multiCellSelectable && isCellInSelectedRange(rowIdx, colIdx, multiCellSelectable, selectedRange))
+              }
+              selectedOnEdge={isCellOnEdgeOfSelectedRange(
+                rowIdx,
+                colIdx,
+                multiCellSelectable,
+                selectingRangeFromCell,
+                selectedRange
+              )}
+              renderCell={renderDataCell ? () => renderDataCell?.(row) : undefined}
               {...column}
             >
-              {isDefined(formatData) ? formatData(item) : dataKey ? item[dataKey] : null}
+              {isDefined(formatData) ? formatData(row) : dataKey ? row[dataKey] : null}
             </TableDataCell>
           )
         )}
@@ -239,6 +366,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
     <TableVirtuoso
       style={{ height, border: '1px solid #00000026' }}
       data={tableData}
+      onCopy={copySelectedCells}
       components={{
         Table: ({ style, ...props }) => (
           <table {...props} style={{ ...style, width: '100%', tableLayout }} data-testid={testId} />
@@ -287,18 +415,21 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
           )}
           {!loading
             ? columns.map(
-                ({
-                  key,
-                  dataKey,
-                  alignHorizontal,
-                  alignVertical,
-                  renderHeader,
-                  lineLimit,
-                  wordBreak,
-                  whiteSpace,
-                  overflowWrap,
-                  ...column
-                }: TableColumnProps<Data>) => (
+                (
+                  {
+                    key,
+                    dataKey,
+                    alignHorizontal,
+                    alignVertical,
+                    renderHeader,
+                    lineLimit,
+                    wordBreak,
+                    whiteSpace,
+                    overflowWrap,
+                    ...column
+                  }: TableColumnProps<Data>,
+                  colIdx
+                ) => (
                   <TableHeaderCell
                     key={key}
                     {...column}
@@ -310,6 +441,35 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
                     overflowWrap={overflowWrap?.header}
                     renderCell={renderHeader}
                     onSort={(sortDirection: SortDirection) => onSort?.({ dataKey, direction: sortDirection })}
+                    multiCellSelectable={multiCellSelectable}
+                    onPressIn={() => {
+                      setSelectingRangeFromCell(false);
+                      isSelectingRange.current = true;
+                      setSelectedRange(prev => ({
+                        anchor:
+                          isShiftKeyPressed.current && !selectingRangeFromCell && prev
+                            ? { rowIdx: 0, colIdx: prev.anchor.colIdx }
+                            : { rowIdx: 0, colIdx },
+                        cursor: { rowIdx: data.length - 1, colIdx },
+                      }));
+                    }}
+                    onPressOut={() => {
+                      isSelectingRange.current = false;
+                    }}
+                    onHoverIn={() => {
+                      if (!isSelectingRange.current) {
+                        return;
+                      }
+
+                      setSelectedRange(prev => ({
+                        anchor: prev ? prev.anchor : { rowIdx: 0, colIdx },
+                        cursor: { rowIdx: selectingRangeFromCell ? 0 : data.length - 1, colIdx },
+                      }));
+                    }}
+                    selected={
+                      !selectingRangeFromCell && isCellInSelectedRange(0, colIdx, multiCellSelectable, selectedRange)
+                    }
+                    selectedOnEdge={isHeaderOnEdgeOfSelectedRange(colIdx, multiCellSelectable, selectedRange)}
                   />
                 )
               )

@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 import type { ComponentProps, FC } from 'react';
 import type { ComponentStory } from '@storybook/react';
 import { Callout, OutlinedButton, Table, tableTranslation } from '@vibrant-ui/components';
@@ -138,7 +139,7 @@ export const RowSelectable: FC<ComponentProps<typeof VirtualizedTable> & { local
   </Box>
 );
 
-export const cellSelectable: ComponentStory<typeof VirtualizedTable> = props => (
+export const CellSelectable: ComponentStory<typeof VirtualizedTable> = props => (
   <Box p={20} width="100%">
     <VirtualizedTable {...props} selectable={false} tableLayout="fixed">
       <Table.Column<Data>
@@ -162,6 +163,70 @@ export const cellSelectable: ComponentStory<typeof VirtualizedTable> = props => 
         }}
       />
       <Table.Column<Data> key="fat" dataKey="fat" title="fat" description="abc" />
+      <Table.Column<Data>
+        key="carbs"
+        dataKey="carbs"
+        title="carbs"
+        selectable={true}
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
+      <Table.Column<Data>
+        key="protein"
+        dataKey="protein"
+        title="protein"
+        selectable={true}
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
+      <Table.Column<Data>
+        key="Edit"
+        title=""
+        width={120}
+        renderDataCell={() => <OutlinedButton size="sm">삭제</OutlinedButton>}
+      />
+    </VirtualizedTable>
+  </Box>
+);
+
+export const MultiCellSelectable: ComponentStory<typeof VirtualizedTable> = props => (
+  <Box p={20} width="100%">
+    <VirtualizedTable {...props} selectable={false} tableLayout="fixed">
+      <Table.Column<Data>
+        key="name"
+        dataKey="name"
+        renderHeader={() => <OutlinedButton size="sm">이름 수정</OutlinedButton>}
+        selectable={true}
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
+      <Table.Column<Data>
+        key="calories"
+        dataKey="calories"
+        title="calories"
+        selectable={true}
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
+      <Table.Column<Data>
+        key="fat"
+        dataKey="fat"
+        title="fat"
+        selectable={true}
+        description="abc"
+        onDataCell={{
+          onClick: action('onDateCellClick'),
+          onCopy: action('onDataCellCopy'),
+        }}
+      />
       <Table.Column<Data>
         key="carbs"
         dataKey="carbs"
