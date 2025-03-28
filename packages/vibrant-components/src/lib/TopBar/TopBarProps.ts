@@ -1,4 +1,4 @@
-import type { ReactElementChild, TextChildren, TextElements } from '@vibrant-ui/core';
+import type { ReactElementChild, ResponsiveValue, TextChildren, TextElements } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
 import type { BaseColorToken } from '@vibrant-ui/theme';
 import type { Either } from '@vibrant-ui/utils';
@@ -8,7 +8,7 @@ export type TopBarProps = {
   title: TextChildren;
   titleAs?: Extract<TextElements, 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'>;
   renderRight?: () => ReactElementChild[];
-  backgroundColor?: BaseColorToken;
+  backgroundColor?: ResponsiveValue<BaseColorToken>;
   testId?: string;
 } & Either<
   {
