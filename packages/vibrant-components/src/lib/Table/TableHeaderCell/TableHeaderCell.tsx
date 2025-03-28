@@ -60,7 +60,6 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         py={12}
         px={16}
         width={width}
-        disabled={!sortable}
         onClick={!multiCellSelectable ? handleSortButtonClick : () => {}}
         onPressIn={onPressIn}
         onPressOut={onPressOut}
