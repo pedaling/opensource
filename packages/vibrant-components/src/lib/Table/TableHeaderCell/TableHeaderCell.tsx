@@ -60,6 +60,7 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         py={12}
         px={16}
         width={width}
+        // 멀티셀 선택 기능을 우선하고, 이 경우 소트는 SortIcon을 클릭해야만 동작
         onClick={!multiCellSelectable ? handleSortButtonClick : () => {}}
         onPressIn={onPressIn}
         onPressOut={onPressOut}
