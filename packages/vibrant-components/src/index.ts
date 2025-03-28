@@ -61,8 +61,19 @@ export { TopBar } from './lib/TopBar';
 export { IconButton } from './lib/IconButton';
 export { Pagination } from './lib/Pagination';
 export { Tooltip } from './lib/Tooltip';
-export { Table, useTable, TableDataCell, TableHeaderCell, TableRow, tableTranslation } from './lib/Table';
-export type { TableColumnProps, TableProps, SortDirection } from './lib/Table';
+export {
+  Table,
+  useTable,
+  TableDataCell,
+  TableHeaderCell,
+  TableRow,
+  tableTranslation,
+  isCellInSelectedRange,
+  isCellOnEdgeOfSelectedRange,
+  isHeaderOnEdgeOfSelectedRange,
+  getCornersFromSelectedRange,
+} from './lib/Table';
+export type { TableColumnProps, TableProps, SortDirection, TableCellRange } from './lib/Table';
 export { TableHeader } from './lib/TableHeader';
 export { TableFooter, tableFooterTranslation } from './lib/TableFooter';
 export { TableSearch } from './lib/TableSearch';
