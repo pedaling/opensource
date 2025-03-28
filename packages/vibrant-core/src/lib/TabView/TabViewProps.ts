@@ -9,6 +9,7 @@ type TabViewProps = {
   renderTobBarContainer: (props: ReactElementChildren) => ReactElement;
   onTabChange?: () => void;
   testId?: string;
+  initialIndex?: number;
 };
 
 export const withTabViewVariation = withVariation<TabViewProps>('TabView')();
