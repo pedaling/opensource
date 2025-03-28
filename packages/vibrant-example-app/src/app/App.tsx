@@ -1,11 +1,9 @@
-import { useFonts } from 'expo-font';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
-import { ToastProvider } from '@vibrant-ui/components';
+import { SafeAreaView, ToastProvider } from '@vibrant-ui/components';
 import type { Dependencies } from '@vibrant-ui/core';
-import { Box, PageScroll, PopoverProvider, VibrantProvider, createShadowsComponent } from '@vibrant-ui/core';
+import { PageScroll, PopoverProvider, VibrantProvider, createShadowsComponent } from '@vibrant-ui/core';
 import { StoryView } from './StoryView';
 import { useAppUpdate } from './useAppUpdate';
 import { useStorybookInformation } from './useStorybookInformation';
@@ -16,17 +14,10 @@ const dependencies: Dependencies = {
 };
 
 const App = () => {
-  const [loaded] = useFonts({
-    'Pretendard-Regular': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.ttf',
-    'Pretendard-Medium': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.ttf',
-    'Pretendard-Bold': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.ttf',
-    'Pretendard-ExtraBold': 'https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.ttf',
-  });
-
   const { story } = useStorybookInformation();
   const { isLastVersion } = useAppUpdate();
 
-  if (!loaded || !story || !isLastVersion) {
+  if (!story || !isLastVersion) {
     return null;
   }
 
@@ -58,9 +49,9 @@ const App = () => {
       <ToastProvider>
         <PopoverProvider>
           <PageScroll>
-            <Box base={SafeAreaView} alignItems="flex-start">
+            <SafeAreaView>
               <StoryView {...story} />
-            </Box>
+            </SafeAreaView>
           </PageScroll>
         </PopoverProvider>
       </ToastProvider>
