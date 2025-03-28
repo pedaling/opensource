@@ -36,8 +36,14 @@ export const TableHeaderCell = withTableHeaderCellVariation(
     alignHorizontal = 'center',
     alignVertical = 'center',
     sortable,
+    multiCellSelectable,
     sortDirection = 'none',
     onSort,
+    onPressIn,
+    onPressOut,
+    onHoverIn,
+    selected,
+    selectedOnEdge,
     width,
   }) => {
     const handleSortButtonClick = () => {
@@ -55,12 +61,32 @@ export const TableHeaderCell = withTableHeaderCellVariation(
         px={16}
         width={width}
         disabled={!sortable}
-        onClick={handleSortButtonClick}
+        onClick={!multiCellSelectable ? handleSortButtonClick : () => {}}
+        onPressIn={onPressIn}
+        onPressOut={onPressOut}
+        onHoverIn={onHoverIn}
         cursor={sortable ? 'pointer' : 'default'}
         borderBottomColor="outline1"
         borderBottomWidth={1}
         borderBottomStyle="solid"
       >
+        {selected && (
+          <Box
+            position="absolute"
+            top={0}
+            left={0}
+            bottom={0}
+            right={0}
+            borderWidth={1}
+            borderStyle="solid"
+            borderColor="outlineInformative"
+            backgroundColor="informativeContainer"
+            borderLeftWidth={selectedOnEdge?.left ? 1 : 0}
+            borderRightWidth={selectedOnEdge?.right ? 1 : 0}
+            borderTopWidth={1}
+            borderBottomWidth={0}
+          />
+        )}
         <VStack height="100%" alignVertical={alignVertical}>
           <HStack width="100%" alignVertical="center" alignHorizontal={alignHorizontal}>
             {renderCell ? (
@@ -89,9 +115,9 @@ export const TableHeaderCell = withTableHeaderCellVariation(
               </>
             )}
             {sortable && (
-              <Box ml={4}>
+              <PressableBox ml={4} onClick={handleSortButtonClick}>
                 <TableSortIcon sortDirection={sortDirection} />
-              </Box>
+              </PressableBox>
             )}
           </HStack>
         </VStack>

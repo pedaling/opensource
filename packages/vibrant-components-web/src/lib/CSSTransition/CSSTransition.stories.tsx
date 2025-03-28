@@ -12,9 +12,6 @@ export default {
     duration: 300,
     easing: 'ease-in-out',
   },
-  parameters: {
-    chromatic: { disableSnapshot: true },
-  },
 } as ComponentMeta<typeof CSSTransition>;
 
 export const Basic: ComponentStory<typeof CSSTransition> = props => {

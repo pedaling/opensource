@@ -13,7 +13,6 @@
     "start-storybook": "start-storybook --port=5004",
     "generate-icons": "nx generate-icons",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic",
     "typecheck": "nx typecheck",
     "vibrant-app": "nx start vibrant-example-app",
     "vibrant-docs": "nx serve vibrant-website"
@@ -90,7 +89,6 @@
     "babel-plugin-react-native-web": "0.18.1",
     "babel-plugin-transform-node-env-inline": "0.4.3",
     "babel-preset-expo": "11.0.15",
-    "chromatic": "6.7.0",
     "css-loader": "^6.4.0",
     "eas-cli": "3.12.1",
     "electron": "20.1.1",

@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/components-web",
-  "version": "0.94.16",
+  "version": "0.94.19",
   "private": false,
   "sideEffects": false,
   "types": "index.d.ts",
@@ -32,6 +32,6 @@
     "@storybook/csf": "0.0.2--canary.4566f4d.1"
   },
   "storybook": {
-    "url": "https://main--62cbb96b6c756c24b7a273a7.chromatic.com/"
+    "url": "https://vibrant-storybook.class101.dev/"
   }
 }

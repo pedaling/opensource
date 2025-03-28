@@ -37,7 +37,11 @@ export const PressableBox = withPressableBoxVariation(
       onMouseLeave={() => onHoverOut?.()}
       onFocus={() => onFocusIn?.()}
       onBlur={() => onFocusOut?.()}
-      onMouseDown={() => onPressIn?.()}
+      onMouseDown={(event: { stopPropagation: () => void }) => {
+        event.stopPropagation();
+
+        onPressIn?.();
+      }}
       onMouseUp={() => {
         onPressOut?.();
 

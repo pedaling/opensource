@@ -2,6 +2,37 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.19](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.18...vibrant-components-0.94.19) (2025-03-27)
+
+
+### Features
+
+* Enable disabled prop support for PasswordField component ([#1005](https://github.com/pedaling/opensource/issues/1005)) ([e018025](https://github.com/pedaling/opensource/commit/e018025bb6c52c1a4d3861ea7cd4265cc26df608))
+
+
+### Bug Fixes
+
+* **vibrant-components:** fix table sort and selection error ([#1003](https://github.com/pedaling/opensource/issues/1003)) ([8dbf7d6](https://github.com/pedaling/opensource/commit/8dbf7d6b98a6825968de03a50ec789f6621f2b5a))
+
+## [0.94.18](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.17...vibrant-components-0.94.18) (2025-03-21)
+
+
+### Features
+
+* **vibrant-components:** table multi cells selection and copy ([#1001](https://github.com/pedaling/opensource/issues/1001)) ([a452bff](https://github.com/pedaling/opensource/commit/a452bffd65fd6587c70f169d16d8205a93b768ea))
+
+
+### Bug Fixes
+
+* dropdown animation을 수정한다 ([#1002](https://github.com/pedaling/opensource/issues/1002)) ([dfc3565](https://github.com/pedaling/opensource/commit/dfc3565fcef4b38e326214e05aca16bc2661b841))
+
+## [0.94.17](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.16...vibrant-components-0.94.17) (2025-03-12)
+
+
+### Features
+
+* dropdown 애니메이션과 elevation level을 변경한다 ([#997](https://github.com/pedaling/opensource/issues/997)) ([afd8783](https://github.com/pedaling/opensource/commit/afd878307c0a0a139bbff412c70d6ae1dc422cf4))
+
 ## [0.94.16](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.15...vibrant-components-0.94.16) (2025-03-04)
 
 

@@ -12,6 +12,7 @@ export const PasswordField = withPasswordFieldVariation(
     label,
     placeholder,
     helperText,
+    disabled,
     defaultValue,
     onValueChange,
     onFocus,
@@ -40,6 +41,7 @@ export const PasswordField = withPasswordFieldVariation(
         state={state}
         focused={isFocused}
         filled={value.length > 0}
+        disabled={disabled}
         onLabelClick={() => inputRef.current?.focus()}
         renderEnd={() => (
           <PressableBox onClick={() => setShowValue(!showValue)}>
@@ -57,6 +59,7 @@ export const PasswordField = withPasswordFieldVariation(
             defaultValue={value}
             placeholder={!label || isFocused || value ? placeholder : ''}
             placeholderColor="onView3"
+            disabled={disabled}
             autoComplete={autoComplete}
             onFocus={() => {
               onFocus?.();

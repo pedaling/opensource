@@ -18,6 +18,7 @@ export type PasswordFieldProps = {
   autoComplete?: Extract<AutoCompleteOption, 'newPassword' | 'password'>;
   testId?: string;
   pattern?: RegExp;
+  disabled?: boolean;
 };
 
 export const withPasswordFieldVariation = withVariation<PasswordFieldProps>('PasswordField')(

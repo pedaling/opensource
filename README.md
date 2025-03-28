@@ -9,6 +9,6 @@ VDS is designed to build effective and high-performance products for CLASS101 us
 ### 📖 Documentation
 - [Installation](https://www.vibrant-design.com/docs/getting-started/installation)
 - [Migration guide from `@class101/ui-system` to Vibrant Design System](https://www.vibrant-design.com/docs/migration/migration-from-ui-system)
-- [Storybook](https://vibrant-storybook.class101.net/)
+- [Storybook](https://vibrant-storybook.class101.dev/)
 
 For full documentation, visit [vibrant-design.com](https://www.vibrant-design.com)
