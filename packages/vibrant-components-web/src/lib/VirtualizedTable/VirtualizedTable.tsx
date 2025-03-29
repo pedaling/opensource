@@ -164,6 +164,9 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
     }
 
     isSelectingRange.current = false;
+    // TODO: workaround for react-virtuoso, 개선 필요
+    // render 후에 focus 가  body로 가는 문제
+    setTimeout(() => tableRef.current?.focus(), 0);
   }, [multiCellSelectable]);
 
   const handleToggleAllCheckbox = ({ value }: { value: boolean }) => {
