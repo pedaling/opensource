@@ -291,6 +291,14 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
     navigator?.clipboard.writeText(clipboardText);
   }, [columns, data, onCopy, selectedRange]);
 
+  const handlePressOut = useCallback(() => {
+    if (!multiCellSelectable) {
+      return;
+    }
+
+    isSelectingRange.current = false;
+  }, [multiCellSelectable]);
+
   const handleToggleCheckbox = (key: Data) => {
     const newSelectedRows = new Set(selectedRows);
 
@@ -407,6 +415,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                   onSort={(sortDirection: SortDirection) => handleChangeSort({ dataKey, direction: sortDirection })}
                   multiCellSelectable={multiCellSelectable}
                   onPressIn={() => {
+                    if (!multiCellSelectable) {
+                      return;
+                    }
+
                     setSelectingRangeFromCell(false);
                     isSelectingRange.current = true;
                     setSelectedRange(prev => ({
@@ -417,11 +429,14 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                       cursor: { rowIdx: data.length - 1, colIdx },
                     }));
                   }}
-                  onPressOut={() => {
-                    isSelectingRange.current = false;
-                  }}
+                  onPressOut={handlePressOut}
                   onHoverIn={() => {
-                    if (!isSelectingRange.current) {
+                    if (!isSelectingRange.current || !multiCellSelectable) {
+                      return;
+                    }
+
+                    // cursor 위치가 같으면 range 선택하지 않음
+                    if (selectedRange?.cursor?.colIdx === colIdx) {
                       return;
                     }
 
@@ -487,6 +502,10 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                           }
                         }}
                         onPressIn={() => {
+                          if (!multiCellSelectable) {
+                            return;
+                          }
+
                           setSelectingRangeFromCell(true);
                           isSelectingRange.current = true;
                           setSelectedRange(prev => ({
@@ -494,11 +513,14 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
                             cursor: { rowIdx, colIdx },
                           }));
                         }}
-                        onPressOut={() => {
-                          isSelectingRange.current = false;
-                        }}
+                        onPressOut={handlePressOut}
                         onHoverIn={() => {
-                          if (!isSelectingRange.current) {
+                          if (!isSelectingRange.current || !multiCellSelectable) {
+                            return;
+                          }
+
+                          // cursor 위치가 같으면 range 선택하지 않음
+                          if (selectedRange?.cursor?.rowIdx === rowIdx && selectedRange?.cursor?.colIdx === colIdx) {
                             return;
                           }
 
