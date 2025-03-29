@@ -30,6 +30,7 @@ export type TableProps<Data extends Record<string, any>, RowKey extends keyof Da
     onClick: (row: Data) => void;
   };
   onSort?: (sortBy: TableSortBy<Data>) => void;
+  onCopy?: (rows: string) => void;
   emptyText?: TextChildren;
   emptyImage?: string;
   disabledRowKeys?: Data[RowKey][];

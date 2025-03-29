@@ -109,6 +109,7 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
   renderExpanded,
   onRow,
   onSort,
+  onCopy,
   emptyText,
   emptyImage,
   children,
@@ -286,8 +287,9 @@ export const Table = <Data extends Record<string, any>, RowKey extends keyof Dat
 
     const clipboardText = selectedCells.join('\n');
 
+    onCopy?.(clipboardText);
     navigator?.clipboard.writeText(clipboardText);
-  }, [columns, data, selectedRange]);
+  }, [columns, data, onCopy, selectedRange]);
 
   const handleToggleCheckbox = (key: Data) => {
     const newSelectedRows = new Set(selectedRows);
