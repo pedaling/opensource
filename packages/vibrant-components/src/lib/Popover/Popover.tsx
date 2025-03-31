@@ -1,8 +1,11 @@
 /* eslint-disable max-lines */
+import type { ReactElement } from 'react';
 import { cloneElement, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, getWindowDimensions, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
+import type { ResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
+import type { BaseColorToken } from '@vibrant-ui/theme';
 import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
 import type { Position } from '@vibrant-ui/utils';
 import { Body } from '../Body';
@@ -13,7 +16,6 @@ import { PopoverOpener } from '../PopoverOpener/PopoverOpener';
 import { Space } from '../Space';
 import { VStack } from '../VStack';
 import type { PopoverProps } from './PopoverProps';
-
 const ARROW_TRIANGLE_SIZE = 5;
 const TRANSITION_DURATION = 200;
 
@@ -201,25 +203,25 @@ const PopoverContent = memo(
     popoverWidth,
     showArrow,
     arrowPosition,
-    isOpen,
+    isOpen = false,
     popoverPosition,
     onLayout,
     containerZIndex,
   }: {
     title?: string;
-    renderContent?: () => React.ReactNode;
+    renderContent?: () => ReactElement;
     showCloseButton: boolean;
-    backgroundColor: string;
-    maxWidth?: number | string;
+    backgroundColor: BaseColorToken;
+    maxWidth?: ResponsiveValue<number | `${number}%`>;
     onClose: () => void;
     popoverRef: React.RefObject<HTMLElement>;
     popoverWidth: number | string;
     showArrow: boolean;
     arrowPosition: ArrowPosition;
-    isOpen: boolean;
+    isOpen?: boolean;
     popoverPosition: PopoverPosition;
     onLayout: () => void;
-    containerZIndex: number;
+    containerZIndex: ResponsiveValue<number>;
   }) => {
     const titleContent = useMemo(() => {
       if (!isDefined(title)) {
@@ -307,134 +309,134 @@ const PopoverContent = memo(
 
 PopoverContent.displayName = 'PopoverContent';
 
-export const Popover = memo(
-  ({
-    popoverId = '',
-    title,
-    renderContent,
-    position,
-    showCloseButton = true,
-    backgroundColor = 'informative',
-    maxWidth,
-    offset = 8,
-    open,
-    showArrow = true,
-    arrowOffset = 8,
-    children,
-    zIndex,
-    onClose,
-    onOpen,
-  }: PopoverProps) => {
-    const { isOpen, open: openPopover, close: closePopover } = usePopover({ id: popoverId, value: open });
-    const {
-      theme: { zIndex: themeZIndex },
-    } = useCurrentTheme();
-    const { getResponsiveValue } = useResponsiveValue();
-    const { width: viewportWidth } = getWindowDimensions();
-    const computedOffset = getResponsiveValue(offset);
-    const computedMaxWidth = getResponsiveValue(maxWidth);
+const PopoverComponent = ({
+  popoverId = '',
+  title,
+  renderContent,
+  position,
+  showCloseButton = true,
+  backgroundColor = 'informative',
+  maxWidth,
+  offset = 8,
+  open,
+  showArrow = true,
+  arrowOffset = 8,
+  children,
+  zIndex,
+  onClose,
+  onOpen,
+}: PopoverProps) => {
+  const { isOpen, open: openPopover, close: closePopover } = usePopover({ id: popoverId, value: open });
+  const {
+    theme: { zIndex: themeZIndex },
+  } = useCurrentTheme();
+  const { getResponsiveValue } = useResponsiveValue();
+  const { width: viewportWidth } = getWindowDimensions();
+  const computedOffset = getResponsiveValue(offset);
+  const computedMaxWidth = getResponsiveValue(maxWidth);
 
-    const [popoverPosition, setPopoverPosition] = useState<PopoverPosition>({ left: 0, top: 0 });
-    const [arrowPosition, setArrowPosition] = useState<ArrowPosition>({ left: 0, top: 0 });
-    const [isVisible, setIsVisible] = useState(false);
+  const [popoverPosition, setPopoverPosition] = useState<PopoverPosition>({ left: 0, top: 0 });
+  const [arrowPosition, setArrowPosition] = useState<ArrowPosition>({ left: 0, top: 0 });
+  const [isVisible, setIsVisible] = useState(false);
 
-    const popoverRef = useRef<HTMLElement>(null);
-    const childRef = useRef<HTMLElement>(null);
-    const handleOpen = useCallbackRef(onOpen);
-    const handleClose = useCallbackRef(onClose);
+  const popoverRef = useRef<HTMLElement>(null);
+  const childRef = useRef<HTMLElement>(null);
+  const handleOpen = useCallbackRef(onOpen);
+  const handleClose = useCallbackRef(onClose);
 
-    const popoverWidth = useMemo(
-      () =>
-        computedMaxWidth
-          ? typeof computedMaxWidth === 'number'
-            ? Math.min(viewportWidth, computedMaxWidth)
-            : computedMaxWidth
-          : '100%',
-      [computedMaxWidth, viewportWidth]
+  const popoverWidth = useMemo(
+    () =>
+      computedMaxWidth
+        ? typeof computedMaxWidth === 'number'
+          ? Math.min(viewportWidth, computedMaxWidth)
+          : computedMaxWidth
+        : '100%',
+    [computedMaxWidth, viewportWidth]
+  );
+
+  const calculatePositionValue = useCallback(async () => {
+    if (!popoverRef.current || !childRef.current) {
+      return;
+    }
+
+    const { width: popoverWidth = 0, height: popoverHeight = 0 } = await getElementRect(popoverRef.current);
+    const { width: childWidth, height: childHeight } = await getElementRect(childRef.current);
+
+    const { popover, arrow } = calculatePositions(
+      position,
+      popoverWidth,
+      popoverHeight,
+      childWidth,
+      childHeight,
+      arrowOffset,
+      computedOffset
     );
 
-    const calculatePositionValue = useCallback(async () => {
-      if (!popoverRef.current || !childRef.current) {
-        return;
-      }
+    setPopoverPosition(popover);
+    setArrowPosition(arrow);
+  }, [position, arrowOffset, computedOffset]);
 
-      const { width: popoverWidth = 0, height: popoverHeight = 0 } = await getElementRect(popoverRef.current);
-      const { width: childWidth, height: childHeight } = await getElementRect(childRef.current);
+  const handleVisibilityChange = useCallback(() => {
+    if (isOpen) {
+      setIsVisible(true);
+      handleOpen?.();
+    } else {
+      handleClose?.();
+      const timer = setTimeout(() => {
+        setPopoverPosition({ left: 0, top: 0 });
+        setIsVisible(false);
+      }, TRANSITION_DURATION);
 
-      const { popover, arrow } = calculatePositions(
-        position,
-        popoverWidth,
-        popoverHeight,
-        childWidth,
-        childHeight,
-        arrowOffset,
-        computedOffset
-      );
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, handleOpen, handleClose]);
 
-      setPopoverPosition(popover);
-      setArrowPosition(arrow);
-    }, [position, arrowOffset, computedOffset]);
+  useEffect(() => {
+    handleVisibilityChange();
+  }, [handleVisibilityChange]);
 
-    const handleVisibilityChange = useCallback(() => {
-      if (isOpen) {
-        setIsVisible(true);
-        handleOpen?.();
-      } else {
-        handleClose?.();
-        const timer = setTimeout(() => {
-          setPopoverPosition({ left: 0, top: 0 });
-          setIsVisible(false);
-        }, TRANSITION_DURATION);
+  useEffect(() => {
+    if (isOpen) {
+      calculatePositionValue();
+    }
+  }, [isOpen, calculatePositionValue]);
 
-        return () => clearTimeout(timer);
-      }
-    }, [isOpen, handleOpen, handleClose]);
+  const containerZIndex = useMemo(
+    () => (isOpen ? zIndex ?? themeZIndex.popover : 0),
+    [isOpen, zIndex, themeZIndex.popover]
+  );
 
-    useEffect(() => {
-      handleVisibilityChange();
-    }, [handleVisibilityChange]);
+  const clonedChildren = useMemo(
+    () => (children ? cloneElement(children, { isOpen, open: openPopover, close: closePopover }) : null),
+    [children, isOpen, openPopover, closePopover]
+  );
 
-    useEffect(() => {
-      if (isOpen) {
-        calculatePositionValue();
-      }
-    }, [isOpen, calculatePositionValue]);
+  return (
+    <VStack zIndex={containerZIndex}>
+      {isVisible && (
+        <PopoverContent
+          title={title}
+          renderContent={renderContent}
+          showCloseButton={showCloseButton}
+          backgroundColor={backgroundColor}
+          maxWidth={maxWidth}
+          onClose={closePopover}
+          popoverRef={popoverRef}
+          popoverWidth={popoverWidth}
+          showArrow={showArrow}
+          arrowPosition={arrowPosition}
+          isOpen={isOpen}
+          popoverPosition={popoverPosition}
+          onLayout={calculatePositionValue}
+          containerZIndex={containerZIndex}
+        />
+      )}
+      <VStack ref={childRef}>{clonedChildren}</VStack>
+    </VStack>
+  );
+};
 
-    const containerZIndex = useMemo(
-      () => (isOpen ? zIndex ?? themeZIndex.popover : 0),
-      [isOpen, zIndex, themeZIndex.popover]
-    );
+PopoverComponent.displayName = 'Popover';
+PopoverComponent.Opener = PopoverOpener;
 
-    const clonedChildren = useMemo(
-      () => (children ? cloneElement(children, { isOpen, open: openPopover, close: closePopover }) : null),
-      [children, isOpen, openPopover, closePopover]
-    );
-
-    return (
-      <VStack zIndex={containerZIndex}>
-        {isVisible && (
-          <PopoverContent
-            title={title}
-            renderContent={renderContent}
-            showCloseButton={showCloseButton}
-            backgroundColor={backgroundColor}
-            maxWidth={maxWidth}
-            onClose={closePopover}
-            popoverRef={popoverRef}
-            popoverWidth={popoverWidth}
-            showArrow={showArrow}
-            arrowPosition={arrowPosition}
-            isOpen={isOpen}
-            popoverPosition={popoverPosition}
-            onLayout={calculatePositionValue}
-            containerZIndex={containerZIndex}
-          />
-        )}
-        <VStack ref={childRef}>{clonedChildren}</VStack>
-      </VStack>
-    );
-  }
-);
-
-Popover.displayName = 'Popover';
-Popover.Opener = PopoverOpener;
+export const Popover = memo(PopoverComponent);
