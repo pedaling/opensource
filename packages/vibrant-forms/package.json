@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/forms",
-  "version": "0.94.21",
+  "version": "0.94.22",
   "private": false,
   "sideEffects": false,
   "types": "index.d.ts",

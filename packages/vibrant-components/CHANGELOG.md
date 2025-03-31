@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.22](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.21...vibrant-components-0.94.22) (2025-03-31)
+
+
+### Bug Fixes
+
+* fix Popover type error ([#1010](https://github.com/pedaling/opensource/issues/1010)) ([4f032d9](https://github.com/pedaling/opensource/commit/4f032d96df5e4fa4e82a293ed3fe7ce44c5b08c8))
+
 ## [0.94.21](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.20...vibrant-components-0.94.21) (2025-03-31)
 
 
