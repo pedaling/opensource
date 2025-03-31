@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.21](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.20...vibrant-components-0.94.21) (2025-03-31)
+
+
+### Features
+
+* topbar backgroundColor 에서 responsiveValue 를 사용할 수 있다 ([#1006](https://github.com/pedaling/opensource/issues/1006)) ([5ee0bf8](https://github.com/pedaling/opensource/commit/5ee0bf8af1a2b1ca12eef4ffbe82e39843885cc4))
+
+
+### Bug Fixes
+
+* popover prevent click blocking on underlying elements ([#1008](https://github.com/pedaling/opensource/issues/1008)) ([3738bdc](https://github.com/pedaling/opensource/commit/3738bdc9ce8c14cabce00c5b6717b0659963720e))
+
 ## [0.94.20](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.19...vibrant-components-0.94.20) (2025-03-28)
 
 
