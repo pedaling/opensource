@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Children, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
