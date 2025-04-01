@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.23](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.22...vibrant-components-0.94.23) (2025-04-01)
+
+
+### Features
+
+* add a resource list component ([#1011](https://github.com/pedaling/opensource/issues/1011)) ([d80eeee](https://github.com/pedaling/opensource/commit/d80eeee9ca19ac078e08cc29dba9d049a407d74b))
+
+
+### Bug Fixes
+
+* **vibrant-components:** table and virtualized-table selection copy ([#1009](https://github.com/pedaling/opensource/issues/1009)) ([2df4fcd](https://github.com/pedaling/opensource/commit/2df4fcdf5c5d97a9e96a66e680b12c19b33b4d95))
+
 ## [0.94.22](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.21...vibrant-components-0.94.22) (2025-03-31)
 
 

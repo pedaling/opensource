@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.24](https://github.com/pedaling/opensource/compare/vibrant-utils-0.94.23...vibrant-utils-0.94.24) (2025-04-01)
+
+
+### Features
+
+* add a resource list component ([#1011](https://github.com/pedaling/opensource/issues/1011)) ([d80eeee](https://github.com/pedaling/opensource/commit/d80eeee9ca19ac078e08cc29dba9d049a407d74b))
+
 ## [0.94.23](https://github.com/pedaling/opensource/compare/vibrant-utils-0.94.22...vibrant-utils-0.94.23) (2025-03-31)
 
 ## [0.94.22](https://github.com/pedaling/opensource/compare/vibrant-utils-0.94.21...vibrant-utils-0.94.22) (2025-03-31)
