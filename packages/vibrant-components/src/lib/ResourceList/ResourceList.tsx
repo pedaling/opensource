@@ -73,4 +73,4 @@ export const ResourceList = memo(ResourceListComponent) as unknown as ComponentW
 };
 
 ResourceList.Item = ResourceItem;
-ResourceList.displayName = 'Popover';
+ResourceList.displayName = 'ResourceList';
