@@ -1,13 +1,12 @@
 /* eslint-disable max-lines */
 import type { ReactElement } from 'react';
-import { cloneElement, memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { cloneElement, memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Box, getWindowDimensions, isNative, useCurrentTheme, usePopover, useResponsiveValue } from '@vibrant-ui/core';
-import type { ResponsiveValue } from '@vibrant-ui/core';
+import type { ComponentWithRef, ResponsiveValue } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { Transition } from '@vibrant-ui/motion';
 import type { BaseColorToken } from '@vibrant-ui/theme';
-import { getElementRect, isDefined, useCallbackRef } from '@vibrant-ui/utils';
-import type { Position } from '@vibrant-ui/utils';
+import { isDefined, useCallbackRef } from '@vibrant-ui/utils';
 import { Body } from '../Body';
 import { HStack } from '../HStack';
 import { IconButton } from '../IconButton';
@@ -16,181 +15,32 @@ import { PopoverOpener } from '../PopoverOpener/PopoverOpener';
 import { Space } from '../Space';
 import { VStack } from '../VStack';
 import type { PopoverProps } from './PopoverProps';
+import type { ArrowPosition, PopoverPosition } from './usePopoverPositioning';
+import { usePopoverPositioning } from './usePopoverPositioning';
+
+// Constants
 const ARROW_TRIANGLE_SIZE = 5;
 const TRANSITION_DURATION = 200;
 
-type PopoverPosition = {
-  left: number;
-  top: number;
+// Props types
+type PopoverContentProps = {
+  title?: string;
+  renderContent?: () => ReactElement;
+  showCloseButton: boolean;
+  backgroundColor: BaseColorToken;
+  maxWidth?: ResponsiveValue<number | `${number}%`>;
+  onClose: () => void;
+  popoverRef: React.RefObject<HTMLElement>;
+  popoverWidth: number | string;
+  showArrow: boolean;
+  arrowPosition: ArrowPosition;
+  isOpen?: boolean;
+  popoverPosition: PopoverPosition;
+  onLayout: () => void;
+  containerZIndex: ResponsiveValue<number>;
 };
 
-type ArrowPosition = {
-  left: number;
-  top: number;
-};
-
-const calculateArrowPositions = (
-  popoverWidth: number,
-  popoverHeight: number
-): {
-  leftMax: number;
-  rightMax: number;
-  topMax: number;
-  bottomMax: number;
-} => {
-  const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
-
-  return {
-    leftMax: arrowHeight,
-    rightMax: popoverWidth - arrowHeight * 3 - 3,
-    topMax: arrowHeight,
-    bottomMax: popoverHeight - arrowHeight * 3 - 3,
-  };
-};
-
-const calculatePositions = (
-  position: Position,
-  popoverWidth: number,
-  popoverHeight: number,
-  childWidth: number,
-  childHeight: number,
-  arrowOffset: number,
-  computedOffset: number
-): { popover: PopoverPosition; arrow: ArrowPosition } => {
-  const halfPopoverWidth = popoverWidth / 2;
-  const halfPopoverHeight = popoverHeight / 2;
-  const halfChildWidth = childWidth / 2;
-  const halfChildHeight = childHeight / 2;
-  const arrowHeight = Math.sqrt(ARROW_TRIANGLE_SIZE * ARROW_TRIANGLE_SIZE * 2) / 2;
-  const positiveArrowOffset = Math.max(arrowOffset, 0);
-  const { leftMax, rightMax, topMax, bottomMax } = calculateArrowPositions(popoverWidth, popoverHeight);
-
-  const positions: Record<Position, { popover: PopoverPosition; arrow: ArrowPosition }> = {
-    top: {
-      popover: {
-        left: halfChildWidth - halfPopoverWidth,
-        top: -popoverHeight - arrowHeight - computedOffset,
-      },
-      arrow: {
-        left: halfPopoverWidth - arrowHeight,
-        top: popoverHeight - arrowHeight - 2,
-      },
-    },
-    'top-start': {
-      popover: {
-        left: 0,
-        top: -popoverHeight - arrowHeight - computedOffset,
-      },
-      arrow: {
-        left: Math.min(leftMax + positiveArrowOffset, rightMax),
-        top: popoverHeight - arrowHeight - 2,
-      },
-    },
-    'top-end': {
-      popover: {
-        left: -popoverWidth + childWidth,
-        top: -popoverHeight - arrowHeight - computedOffset,
-      },
-      arrow: {
-        left: Math.max(rightMax - positiveArrowOffset, leftMax),
-        top: popoverHeight - arrowHeight - 2,
-      },
-    },
-    bottom: {
-      popover: {
-        left: halfChildWidth - halfPopoverWidth,
-        top: childHeight + arrowHeight + computedOffset,
-      },
-      arrow: {
-        left: halfPopoverWidth - arrowHeight,
-        top: -arrowHeight,
-      },
-    },
-    'bottom-start': {
-      popover: {
-        left: 0,
-        top: childHeight + arrowHeight + computedOffset,
-      },
-      arrow: {
-        left: Math.min(leftMax + positiveArrowOffset, rightMax),
-        top: -arrowHeight,
-      },
-    },
-    'bottom-end': {
-      popover: {
-        left: -popoverWidth + childWidth,
-        top: childHeight + arrowHeight + computedOffset,
-      },
-      arrow: {
-        left: Math.max(rightMax - positiveArrowOffset, leftMax),
-        top: -arrowHeight,
-      },
-    },
-    left: {
-      popover: {
-        left: -popoverWidth - arrowHeight - computedOffset,
-        top: halfChildHeight - halfPopoverHeight,
-      },
-      arrow: {
-        left: popoverWidth - arrowHeight - 2,
-        top: halfPopoverHeight - arrowHeight - 2,
-      },
-    },
-    'left-start': {
-      popover: {
-        left: -popoverWidth - arrowHeight - computedOffset,
-        top: 0,
-      },
-      arrow: {
-        left: popoverWidth - arrowHeight - 2,
-        top: Math.min(topMax + positiveArrowOffset, bottomMax),
-      },
-    },
-    'left-end': {
-      popover: {
-        left: -popoverWidth - arrowHeight - computedOffset,
-        top: -popoverHeight + childHeight,
-      },
-      arrow: {
-        left: popoverWidth - arrowHeight - 2,
-        top: Math.max(bottomMax - positiveArrowOffset, topMax),
-      },
-    },
-    right: {
-      popover: {
-        left: childWidth + arrowHeight + computedOffset,
-        top: halfChildHeight - halfPopoverHeight,
-      },
-      arrow: {
-        left: -arrowHeight - 1,
-        top: halfPopoverHeight - arrowHeight - 2,
-      },
-    },
-    'right-start': {
-      popover: {
-        left: childWidth + arrowHeight + computedOffset,
-        top: 0,
-      },
-      arrow: {
-        left: -arrowHeight - 1,
-        top: Math.min(topMax + positiveArrowOffset, bottomMax),
-      },
-    },
-    'right-end': {
-      popover: {
-        left: childWidth + arrowHeight + computedOffset,
-        top: -popoverHeight + childHeight,
-      },
-      arrow: {
-        left: -arrowHeight - 1,
-        top: Math.max(bottomMax - positiveArrowOffset, topMax),
-      },
-    },
-  };
-
-  return positions[position];
-};
-
+// Components
 const PopoverContent = memo(
   ({
     title,
@@ -207,22 +57,7 @@ const PopoverContent = memo(
     popoverPosition,
     onLayout,
     containerZIndex,
-  }: {
-    title?: string;
-    renderContent?: () => ReactElement;
-    showCloseButton: boolean;
-    backgroundColor: BaseColorToken;
-    maxWidth?: ResponsiveValue<number | `${number}%`>;
-    onClose: () => void;
-    popoverRef: React.RefObject<HTMLElement>;
-    popoverWidth: number | string;
-    showArrow: boolean;
-    arrowPosition: ArrowPosition;
-    isOpen?: boolean;
-    popoverPosition: PopoverPosition;
-    onLayout: () => void;
-    containerZIndex: ResponsiveValue<number>;
-  }) => {
+  }: PopoverContentProps) => {
     const titleContent = useMemo(() => {
       if (!isDefined(title)) {
         return null;
@@ -335,12 +170,11 @@ const PopoverComponent = ({
   const computedOffset = getResponsiveValue(offset);
   const computedMaxWidth = getResponsiveValue(maxWidth);
 
-  const [popoverPosition, setPopoverPosition] = useState<PopoverPosition>({ left: 0, top: 0 });
-  const [arrowPosition, setArrowPosition] = useState<ArrowPosition>({ left: 0, top: 0 });
+  const { popoverPosition, arrowPosition, popoverRef, childRef, calculatePositionValue, setPopoverPosition } =
+    usePopoverPositioning(position, arrowOffset, computedOffset);
+
   const [isVisible, setIsVisible] = useState(false);
 
-  const popoverRef = useRef<HTMLElement>(null);
-  const childRef = useRef<HTMLElement>(null);
   const handleOpen = useCallbackRef(onOpen);
   const handleClose = useCallbackRef(onClose);
 
@@ -354,32 +188,12 @@ const PopoverComponent = ({
     [computedMaxWidth, viewportWidth]
   );
 
-  const calculatePositionValue = useCallback(async () => {
-    if (!popoverRef.current || !childRef.current) {
-      return;
-    }
-
-    const { width: popoverWidth = 0, height: popoverHeight = 0 } = await getElementRect(popoverRef.current);
-    const { width: childWidth, height: childHeight } = await getElementRect(childRef.current);
-
-    const { popover, arrow } = calculatePositions(
-      position,
-      popoverWidth,
-      popoverHeight,
-      childWidth,
-      childHeight,
-      arrowOffset,
-      computedOffset
-    );
-
-    setPopoverPosition(popover);
-    setArrowPosition(arrow);
-  }, [position, arrowOffset, computedOffset]);
-
   const handleVisibilityChange = useCallback(() => {
     if (isOpen) {
       setIsVisible(true);
       handleOpen?.();
+
+      return undefined;
     } else {
       handleClose?.();
       const timer = setTimeout(() => {
@@ -389,7 +203,7 @@ const PopoverComponent = ({
 
       return () => clearTimeout(timer);
     }
-  }, [isOpen, handleOpen, handleClose]);
+  }, [isOpen, handleOpen, handleClose, setPopoverPosition]);
 
   useEffect(() => {
     handleVisibilityChange();
@@ -436,7 +250,9 @@ const PopoverComponent = ({
   );
 };
 
-PopoverComponent.displayName = 'Popover';
-PopoverComponent.Opener = PopoverOpener;
+export const Popover = memo(PopoverComponent) as unknown as ComponentWithRef<PopoverProps> & {
+  Opener: typeof PopoverOpener;
+};
 
-export const Popover = memo(PopoverComponent);
+Popover.Opener = PopoverOpener;
+Popover.displayName = 'Popover';
