@@ -12,7 +12,7 @@ export type ResourceItemProps = {
   ImageComponent?: ReactElement<AvatarProps | ImageThumbnailProps>;
   ActionComponent?: ReactElement<ComponentProps<typeof IconButton>>;
 
-  width?: ResponsiveValue<number | `${number}px`>;
+  width?: ResponsiveValue<number | `${number}%`>;
   id?: string;
   onToggleSelect?: (args: { id?: string; selected: boolean }) => void;
 

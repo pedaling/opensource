@@ -20,16 +20,17 @@ type ResourceListProps = {
   | {
       multiSelect?: false;
       onSelect?: (selectedId: string) => void;
+      selectedIds: undefined;
     }
 );
 
-const ResourceListComponent = ({ size, children, multiSelect = false, ...props }: ResourceListProps) => {
-  const initialSelectedIds = multiSelect ? (props as { selectedIds?: string[] }).selectedIds || [] : [];
+const ResourceListComponent = ({ size, children, ...props }: ResourceListProps) => {
+  const initialSelectedIds = props.multiSelect ? props.selectedIds || [] : [];
   const [internalSelectedIds, setInternalSelectedIds] = useState<string[]>(initialSelectedIds);
 
   const handleToggleSelect = (args: { id: string; selected: boolean }) => {
-    if (!multiSelect && (props as { onSelect?: (id: string) => void }).onSelect) {
-      (props as { onSelect: (id: string) => void }).onSelect(args.id);
+    if (!props.multiSelect && props.onSelect) {
+      props.onSelect(args.id);
 
       return;
     }
@@ -40,8 +41,8 @@ const ResourceListComponent = ({ size, children, multiSelect = false, ...props }
 
     setInternalSelectedIds(newSelectedIds);
 
-    if (multiSelect && (props as { onChangeSelectedIds?: (ids: string[]) => void }).onChangeSelectedIds) {
-      (props as { onChangeSelectedIds: (ids: string[]) => void }).onChangeSelectedIds(newSelectedIds);
+    if (props.selectedIds && props.onChangeSelectedIds) {
+      props.onChangeSelectedIds(newSelectedIds);
     }
   };
 
@@ -55,7 +56,7 @@ const ResourceListComponent = ({ size, children, multiSelect = false, ...props }
             return React.cloneElement(child, {
               ...childProps,
               size,
-              selectable: multiSelect,
+              selectable: props.multiSelect,
               selected: internalSelectedIds.includes(childProps.id),
               onToggleSelect: handleToggleSelect,
             });
