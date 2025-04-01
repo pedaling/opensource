@@ -4,8 +4,8 @@ import { Avatar } from '../Avatar';
 import { Body } from '../Body';
 import { ContainedButton } from '../ContainedButton';
 import { HStack } from '../HStack';
+import { Paper } from '../Paper';
 import { VStack } from '../VStack';
-
 import { Popover } from './Popover';
 
 export default {
@@ -17,31 +17,33 @@ export default {
 } as ComponentMeta<typeof Popover>;
 
 export const Basic: ComponentStory<typeof Popover> = props => (
-  <VStack spacing={20} width="100%" my={20}>
-    <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
-      <Popover title="Popover" {...props}>
-        <Popover.Opener openInteraction="click">
-          <Avatar size="lg" src="" alt="" />
-        </Popover.Opener>
-      </Popover>
-      <HStack flex={1} />
-    </HStack>
-    <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
-      <HStack flex={1} />
-      <Popover title="Popover" {...props}>
-        <Popover.Opener openInteraction="click">
-          <Avatar size="lg" src="" alt="" />
-        </Popover.Opener>
-      </Popover>
-    </HStack>
-    <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
-      <Popover title="Popover" {...props}>
-        <Popover.Opener openInteraction="click">
-          <Avatar size="lg" src="" alt="" />
-        </Popover.Opener>
-      </Popover>
-    </HStack>
-  </VStack>
+  <Paper width="80%" backgroundColor="surface1" p={20} mx="auto" my="auto">
+    <VStack spacing={20}>
+      <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
+        <Popover title="Popover" {...props}>
+          <Popover.Opener openInteraction="click">
+            <Avatar size="lg" src="" alt="" />
+          </Popover.Opener>
+        </Popover>
+        <HStack flex={1} />
+      </HStack>
+      <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
+        <HStack flex={1} />
+        <Popover title="Popover" {...props}>
+          <Popover.Opener openInteraction="click">
+            <Avatar size="lg" src="" alt="" />
+          </Popover.Opener>
+        </Popover>
+      </HStack>
+      <HStack width="100%" height={100} alignVertical="center" alignHorizontal="center">
+        <Popover title="Popover" {...props}>
+          <Popover.Opener openInteraction="click">
+            <Avatar size="lg" src="" alt="" />
+          </Popover.Opener>
+        </Popover>
+      </HStack>
+    </VStack>
+  </Paper>
 );
 
 export const WithDefaultOpen: ComponentStory<typeof Popover> = props => (
