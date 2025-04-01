@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Children, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -35,6 +36,7 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
   renderExpanded,
   onRow,
   onSort,
+  onCopy,
   emptyText,
   emptyImage,
   children,
@@ -153,8 +155,20 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
 
     const clipboardText = selectedCells.join('\n');
 
+    onCopy?.(clipboardText);
     navigator?.clipboard.writeText(clipboardText);
-  }, [columns, data, selectedRange]);
+  }, [columns, data, onCopy, selectedRange]);
+
+  const handlePressOut = useCallback(() => {
+    if (!multiCellSelectable) {
+      return;
+    }
+
+    isSelectingRange.current = false;
+    // TODO: workaround for react-virtuoso, 개선 필요
+    // render 후에 focus 가  body로 가는 문제
+    setTimeout(() => tableRef.current?.focus(), 0);
+  }, [multiCellSelectable]);
 
   const handleToggleAllCheckbox = ({ value }: { value: boolean }) => {
     if (value) {
@@ -304,6 +318,10 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
                 }
               }}
               onPressIn={() => {
+                if (!multiCellSelectable) {
+                  return;
+                }
+
                 setSelectingRangeFromCell(true);
                 isSelectingRange.current = true;
                 setSelectedRange(prev => ({
@@ -311,11 +329,14 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
                   cursor: { rowIdx, colIdx },
                 }));
               }}
-              onPressOut={() => {
-                isSelectingRange.current = false;
-              }}
+              onPressOut={handlePressOut}
               onHoverIn={() => {
-                if (!isSelectingRange.current) {
+                if (!isSelectingRange.current || !multiCellSelectable) {
+                  return;
+                }
+
+                // cursor 위치가 같으면 range 선택하지 않음
+                if (selectedRange?.cursor?.rowIdx === rowIdx && selectedRange?.cursor?.colIdx === colIdx) {
                   return;
                 }
 
@@ -369,7 +390,13 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
       onCopy={copySelectedCells}
       components={{
         Table: ({ style, ...props }) => (
-          <table {...props} style={{ ...style, width: '100%', tableLayout }} data-testid={testId} />
+          <table
+            ref={tableRef}
+            tabIndex={0}
+            {...props}
+            style={{ ...style, width: '100%', tableLayout }}
+            data-testid={testId}
+          />
         ),
       }}
       fixedHeaderContent={() => (
@@ -443,6 +470,10 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
                     onSort={(sortDirection: SortDirection) => onSort?.({ dataKey, direction: sortDirection })}
                     multiCellSelectable={multiCellSelectable}
                     onPressIn={() => {
+                      if (!multiCellSelectable) {
+                        return;
+                      }
+
                       setSelectingRangeFromCell(false);
                       isSelectingRange.current = true;
                       setSelectedRange(prev => ({
@@ -453,11 +484,14 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
                         cursor: { rowIdx: data.length - 1, colIdx },
                       }));
                     }}
-                    onPressOut={() => {
-                      isSelectingRange.current = false;
-                    }}
+                    onPressOut={handlePressOut}
                     onHoverIn={() => {
-                      if (!isSelectingRange.current) {
+                      if (!isSelectingRange.current || !multiCellSelectable) {
+                        return;
+                      }
+
+                      // cursor 위치가 같으면 range 선택하지 않음
+                      if (selectedRange?.cursor?.colIdx === colIdx) {
                         return;
                       }
 
