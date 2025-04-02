@@ -25,13 +25,16 @@ export const Link = withLinkVariation(
       <Box
         {...(isDefined(link) ? {} : { as: 'a' })}
         data-testid={testId}
-        base={link}
         ref={innerRef}
         onMouseEnter={onHoverIn}
         onMouseLeave={onHoverOut}
         onFocus={onFocusIn}
         onBlur={onFocusOut}
-        onMouseDown={onPressIn}
+        onMouseDown={(event: { stopPropagation: () => void }) => {
+          // workaround for the virtualized table
+          event.stopPropagation();
+          onPressIn?.();
+        }}
         onMouseUp={() => {
           onPressOut?.();
 
