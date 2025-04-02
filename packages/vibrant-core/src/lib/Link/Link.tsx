@@ -31,7 +31,11 @@ export const Link = withLinkVariation(
         onMouseLeave={onHoverOut}
         onFocus={onFocusIn}
         onBlur={onFocusOut}
-        onMouseDown={onPressIn}
+        onMouseDown={(event?: { stopPropagation: () => void }) => {
+          // workaround for the virtualized table
+          event?.stopPropagation();
+          onPressIn?.();
+        }}
         onMouseUp={() => {
           onPressOut?.();
 
