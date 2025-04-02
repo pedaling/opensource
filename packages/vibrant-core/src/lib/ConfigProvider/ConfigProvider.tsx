@@ -42,7 +42,7 @@ export type Dependencies = {
     onClick?: () => void;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
-    onMouseDown?: () => void;
+    onMouseDown?: (event?: { stopPropagation: () => void }) => void;
     onMouseUp?: () => void;
     onFocus?: () => void;
     onBlur?: () => void;
