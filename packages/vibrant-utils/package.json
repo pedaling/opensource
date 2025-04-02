@@ -1,6 +1,6 @@
 {
   "name": "@vibrant-ui/utils",
-  "version": "0.94.24",
+  "version": "0.94.25",
   "private": false,
   "sideEffects": false,
   "types": "index.d.ts",

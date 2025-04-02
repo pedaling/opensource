@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.24](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.23...vibrant-core-0.94.24) (2025-04-02)
+
+
+### Bug Fixes
+
+* **vibrant-core:** prevent event propagation on mouse down in Link component ([#1012](https://github.com/pedaling/opensource/issues/1012)) ([d1acae4](https://github.com/pedaling/opensource/commit/d1acae44ea6672ffcb3890135dfe36c01f05ab1e))
+
 ## [0.94.23](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.22...vibrant-core-0.94.23) (2025-04-01)
 
 
