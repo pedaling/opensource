@@ -249,6 +249,18 @@ export const MultiCellSelectable: ComponentStory<typeof VirtualizedTable> = prop
         }}
       />
       <Table.Column<Data>
+        key="div_test"
+        title=""
+        width={120}
+        renderDataCell={() => (
+          <Box>
+            <div>
+              &lt;div&gt; <div>test</div>
+            </div>
+          </Box>
+        )}
+      />
+      <Table.Column<Data>
         key="Edit"
         title=""
         width={120}
