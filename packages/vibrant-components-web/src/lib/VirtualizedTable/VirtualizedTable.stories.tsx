@@ -94,6 +94,14 @@ export const Basic: ComponentStory<typeof VirtualizedTable> = props => (
       />
       <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" width={120} />
       <Table.Column<Data> key="protein" dataKey="protein" title="protein" width={120} />
+      {Array.from({ length: 30 }, (_, index) => (
+        <Table.Column<Data>
+          width={120}
+          key={`dynamic-column-${index}`}
+          title={`Column ${index + 1}`}
+          renderDataCell={() => <>_</>}
+        />
+      ))}
       {['Edit', 'Delete'].map(value => (
         <Table.Column<Data>
           key={value}
