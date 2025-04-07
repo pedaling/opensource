@@ -82,6 +82,13 @@ export const Basic: ComponentStory<typeof Table> = props => (
       />
       <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" />
       <Table.Column<Data> key="protein" dataKey="protein" title="protein" />
+      {Array.from({ length: 30 }, (_, index) => (
+        <Table.Column<Data>
+          key={`dynamic-column-${index}`}
+          title={`Column ${index + 1}`}
+          renderDataCell={() => <>_</>}
+        />
+      ))}
       {['Edit', 'Delete'].map(value => (
         <Table.Column<Data>
           key={value}

@@ -94,6 +94,14 @@ export const Basic: ComponentStory<typeof VirtualizedTable> = props => (
       />
       <Table.Column<Data> key="carbs" dataKey="carbs" title="carbs" width={120} />
       <Table.Column<Data> key="protein" dataKey="protein" title="protein" width={120} />
+      {Array.from({ length: 30 }, (_, index) => (
+        <Table.Column<Data>
+          width={120}
+          key={`dynamic-column-${index}`}
+          title={`Column ${index + 1}`}
+          renderDataCell={() => <>_</>}
+        />
+      ))}
       {['Edit', 'Delete'].map(value => (
         <Table.Column<Data>
           key={value}
@@ -247,6 +255,18 @@ export const MultiCellSelectable: ComponentStory<typeof VirtualizedTable> = prop
           onClick: action('onDateCellClick'),
           onCopy: action('onDataCellCopy'),
         }}
+      />
+      <Table.Column<Data>
+        key="div_test"
+        title=""
+        width={120}
+        renderDataCell={() => (
+          <Box>
+            <div>
+              &lt;div&gt; <div>test</div>
+            </div>
+          </Box>
+        )}
       />
       <Table.Column<Data>
         key="Edit"
