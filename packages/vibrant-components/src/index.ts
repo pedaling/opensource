@@ -61,6 +61,7 @@ export { TopBar } from './lib/TopBar';
 export { IconButton } from './lib/IconButton';
 export { Pagination } from './lib/Pagination';
 export { Tooltip } from './lib/Tooltip';
+export { ResourceList } from './lib/ResourceList';
 export {
   Table,
   useTable,

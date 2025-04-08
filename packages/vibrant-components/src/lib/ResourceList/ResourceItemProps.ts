@@ -20,6 +20,7 @@ export type ResourceItemProps = {
   defaultValue?: boolean;
   selected?: boolean;
 };
+
 export const withResourceItemVariation = withVariation<ResourceItemProps>('ResourceItem')(
   propVariant({
     props: [{ name: 'size', responsive: true }],

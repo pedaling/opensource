@@ -15,6 +15,8 @@ import type { TableFilterGroupProps } from './TableFilterGroupProps';
 import { withTableFilterGroupPropsVariation } from './TableFilterGroupProps';
 import type { TableMultiSelectFilterProps } from './TableMultiSelectFilter';
 import { TableMultiSelectFilter } from './TableMultiSelectFilter';
+import type { TableResourceSelectFilterProps } from './TableResourceSelectFilter';
+import { TableResourceSelectFilter } from './TableResourceSelectFilter';
 import type { TableStringFilterProps } from './TableStringFilter';
 import { TableStringFilter } from './TableStringFilter';
 import type { TableFilterRefValue } from './types';
@@ -186,6 +188,7 @@ export const TableFilterGroup = withTableFilterGroupPropsVariation(
   StringFilter: ComponentWithRef<TableStringFilterProps>;
   DateFilter: ComponentWithRef<TableDateFilterProps>;
   MultiSelectFilter: ComponentWithRef<TableMultiSelectFilterProps>;
+  ResourceSelectFilter: ComponentWithRef<TableResourceSelectFilterProps>;
 };
 
 TableFilterGroup.StringFilter = TableStringFilter;
@@ -193,3 +196,5 @@ TableFilterGroup.StringFilter = TableStringFilter;
 TableFilterGroup.DateFilter = TableDateFilter;
 
 TableFilterGroup.MultiSelectFilter = TableMultiSelectFilter;
+
+TableFilterGroup.ResourceSelectFilter = TableResourceSelectFilter;

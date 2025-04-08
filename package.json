@@ -10,7 +10,7 @@
     "lint:all": "nx run-many --target=lint --all",
     "lint:all:fix": "nx run-many --target=lint --all --fix",
     "storybook": "nx storybook",
-    "start-storybook": "start-storybook --port=5004",
+    "start-storybook": "NODE_OPTIONS=\"--openssl-legacy-provider\" start-storybook --port=5004",
     "generate-icons": "nx generate-icons",
     "build-storybook": "build-storybook",
     "typecheck": "nx typecheck",

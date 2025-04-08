@@ -53,4 +53,13 @@ export const ko: Translation['tableFilterGroup'] = {
       notContains: '포함하지 않는다',
     },
   },
+  resourceSelectFilter: {
+    filterLabel: {
+      contains: {
+        overOne: '{firstOption}외 {count}개',
+        one: '{firstOption}',
+      },
+      notContains: '[{options}] 포함하지 않음',
+    },
+  },
 };
