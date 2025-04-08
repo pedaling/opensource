@@ -29,25 +29,31 @@ export const Calendar = withCalendarVariation(
     );
 
     const days = useMemo(() => {
-      const startDate = new Date(new Date(displayMonth).setDate(1));
-      const lastDate = new Date(new Date(displayMonth).setMonth(displayMonth.getMonth(), 0));
+      const firstDayOfMonth = new Date(displayMonth.getFullYear(), displayMonth.getMonth(), 1);
 
-      const previousMonthDays = Array.from({ length: startDate.getDay() })
-        .map(
-          (_, index) =>
-            new Date(displayMonth.getFullYear(), displayMonth.getMonth(), displayMonth.getDate() - (index + 1))
-        )
-        .reverse();
+      // 현재 월의 첫째 날이 속한 주의 첫날(일요일)
+      const firstDayOfWeek = firstDayOfMonth.getDay();
 
-      const currentMonthDays = Array.from({ length: lastDate.getDate() }).map(
-        (_, index) => new Date(displayMonth.getFullYear(), displayMonth.getMonth(), index + 1)
-      );
+      // 시작 날짜 계산 (현재 월의 첫째 날이 속한 주의 일요일)
+      const startDate = new Date(firstDayOfMonth);
 
-      const nextMonthDays = Array.from({ length: 7 - currentMonthDays[currentMonthDays.length - 1].getDay() - 1 }).map(
-        (_, index) => new Date(displayMonth.getFullYear(), displayMonth.getMonth(), lastDate.getDate() + index + 1)
-      );
+      // 현재 월의 첫째 날에서 해당 요일만큼 빼서 일요일로 맞춤
+      startDate.setDate(startDate.getDate() - firstDayOfWeek);
 
-      return previousMonthDays.concat(currentMonthDays).concat(nextMonthDays);
+      // 종료 날짜 계산 (시작 날짜에서 6주 후)
+      const endDate = new Date(startDate);
+
+      endDate.setDate(startDate.getDate() + 41);
+
+      const days = [];
+      const currentDate = new Date(startDate);
+
+      while (currentDate <= endDate) {
+        days.push(new Date(currentDate));
+        currentDate.setDate(currentDate.getDate() + 1);
+      }
+
+      return days;
     }, [displayMonth]);
 
     const moveNextMonth = useCallback(() => {
