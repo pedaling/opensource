@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.25](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.24...vibrant-components-web-0.94.25) (2025-04-08)
+
+
+### Features
+
+* **vibrant-components:** enhance VirtualizedTable with custom cell rendering  ([#1013](https://github.com/pedaling/opensource/issues/1013)) ([67f5dc9](https://github.com/pedaling/opensource/commit/67f5dc9e767cddc22f3b44e7ce16fb835b031129))
+
 ## [0.94.24](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.23...vibrant-components-web-0.94.24) (2025-04-02)
 
 ## [0.94.23](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.22...vibrant-components-web-0.94.23) (2025-04-01)
