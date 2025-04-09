@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
-import { Children, isValidElement, useCallback, useEffect, useMemo, useState } from 'react';
+import { Children, isValidElement, useEffect, useMemo, useState } from 'react';
 import { TabView as RNTabView, SceneMap } from 'react-native-tab-view';
+import { useCallbackRef } from '@vibrant-ui/utils';
 import { Box } from '../Box';
 import type { TabViewItemProps } from '../TabViewItem';
 import { withTabViewVariation } from './TabViewProps';
@@ -8,34 +9,38 @@ import { withTabViewVariation } from './TabViewProps';
 export const TabView = withTabViewVariation(
   ({ children, tabId, onTabChange, renderTobBarContainer, renderTobBarItem }) => {
     const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
-    const tabIds = useMemo(() => childrenElement.map(el => el.props.tabId), [childrenElement]);
-    const [currentIndex, setCurrentIndex] = useState(tabIds.findIndex(id => id === tabId) ?? 0);
+    const [currentIndex, setCurrentIndex] = useState(childrenElement.findIndex(el => el.props.tabId === tabId) ?? 0);
 
     const routes = childrenElement.map(element => ({
       key: element.props.tabId,
       title: element.props.title,
     }));
 
-    const handleTabChange = useCallback(
-      (index: number) => {
-        const currentTab = childrenElement.find((_, i) => i === index);
+    const handleTabChange = (index: number) => {
+      const currentTab = childrenElement.find((_, index) => index === currentIndex);
 
-        currentTab?.props?.onTabSelected?.();
+      currentTab?.props?.onTabSelected?.();
 
-        setCurrentIndex(index);
+      setCurrentIndex(index);
 
-        onTabChange?.();
-      },
-      [childrenElement, onTabChange]
-    );
+      onTabChange?.();
+    };
 
-    useEffect(() => {
-      const tabIndex = childrenElement.findIndex(el => el.props.tabId === tabId);
+    const changeTabById = useCallbackRef((tabId?: string) => {
+      if (!tabId) {
+        return;
+      }
 
-      if (tabIndex > 0) {
+      const tabIndex = childrenElement.findIndex(element => element.props.tabId === tabId);
+
+      if (tabIndex > -1) {
         handleTabChange(tabIndex);
       }
-    }, [tabIds, tabId, handleTabChange, childrenElement]);
+    });
+
+    useEffect(() => {
+      changeTabById(tabId);
+    }, [tabId, changeTabById]);
 
     const renderScene = useMemo(() => {
       const tabObject: { [key: string]: () => ReactElement } = {};
