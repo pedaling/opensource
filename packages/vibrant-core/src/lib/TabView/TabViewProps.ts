@@ -4,6 +4,7 @@ import type { TabViewItemProps } from '../TabViewItem';
 import { withVariation } from '../withVariation';
 
 type TabViewProps = {
+  tabId?: string;
   children: ReactElement<TabViewItemProps> | ReactElement<TabViewItemProps>[];
   renderTobBarItem: (_: { title: string; isSelected: boolean; onClick: () => void; tabId: string }) => ReactElement;
   renderTobBarContainer: (props: ReactElementChildren) => ReactElement;
