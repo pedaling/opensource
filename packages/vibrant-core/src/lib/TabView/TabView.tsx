@@ -7,7 +7,12 @@ import { withTabViewVariation } from './TabViewProps';
 export const TabView = withTabViewVariation(
   ({ children, tabId, testId = 'tab-view', onTabChange, renderTobBarItem, renderTobBarContainer }) => {
     const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
-    const [currentIndex, setCurrentIndex] = useState(childrenElement.findIndex(el => el.props.tabId === tabId) ?? 0);
+    const [currentIndex, setCurrentIndex] = useState(
+      Math.max(
+        childrenElement.findIndex(el => el.props.tabId === tabId),
+        0
+      )
+    );
 
     const selectedTab = childrenElement.find((_, index) => index === currentIndex);
 
