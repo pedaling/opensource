@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.26](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.25...vibrant-core-0.94.26) (2025-04-10)
+
+
+### Features
+
+* add TableResourceSelectFilter ([#1014](https://github.com/pedaling/opensource/issues/1014)) ([7c08852](https://github.com/pedaling/opensource/commit/7c08852d826684d5ac341d491d861718f91df3fb))
+* tabview, ViewPagerTab에서 tabId 로 탭을 변경할 수 있다 ([#1016](https://github.com/pedaling/opensource/issues/1016)) ([4ae0ea9](https://github.com/pedaling/opensource/commit/4ae0ea97b8ca4015a077eadd2adec3f6a9312e03))
+
 ## [0.94.25](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.24...vibrant-core-0.94.25) (2025-04-08)
 
 ## [0.94.24](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.23...vibrant-core-0.94.24) (2025-04-02)
