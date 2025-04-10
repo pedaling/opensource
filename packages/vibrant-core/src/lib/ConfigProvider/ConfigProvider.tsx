@@ -124,6 +124,15 @@ export type Translation = {
         notContains: string;
       };
     };
+    resourceSelectFilter: {
+      filterLabel: {
+        contains: {
+          overOne: string;
+          one: string;
+        };
+        notContains: string;
+      };
+    };
   };
   drawer: {
     drawerHeader: {
@@ -213,6 +222,15 @@ const ConfigContext = createContext<ConfigContextValue>({
         operators: {
           contains: '포함한다',
           notContains: '포함하지 않는다',
+        },
+      },
+      resourceSelectFilter: {
+        filterLabel: {
+          contains: {
+            overOne: '{firstOption}외 {count}개',
+            one: '{firstOption}',
+          },
+          notContains: '[{options}] 포함하지 않음',
         },
       },
     },

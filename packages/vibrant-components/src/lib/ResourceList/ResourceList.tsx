@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useMemo, useState } from 'react';
 import type { ComponentWithRef, ResponsiveValue } from '@vibrant-ui/core';
 import { VStack } from '../VStack';
 import { ResourceItem } from './ResourceItem';
@@ -8,7 +8,7 @@ type ResourceItemProps = {
   [key: string]: any;
 };
 
-type ResourceListProps = {
+export type ResourceListProps = {
   size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
   children: React.ReactElement<ResourceItemProps> | React.ReactElement<ResourceItemProps>[];
 } & (
@@ -20,13 +20,20 @@ type ResourceListProps = {
   | {
       multiSelect?: false;
       onSelect?: (selectedId: string) => void;
-      selectedIds: undefined;
+      selectedIds?: undefined;
     }
 );
 
 const ResourceListComponent = ({ size, children, ...props }: ResourceListProps) => {
-  const initialSelectedIds = props.multiSelect ? props.selectedIds || [] : [];
+  const initialSelectedIds = useMemo(
+    () => (props.multiSelect ? props.selectedIds || [] : []),
+    [props.multiSelect, props.selectedIds]
+  );
   const [internalSelectedIds, setInternalSelectedIds] = useState<string[]>(initialSelectedIds);
+
+  useEffect(() => {
+    setInternalSelectedIds(initialSelectedIds);
+  }, [initialSelectedIds]);
 
   const handleToggleSelect = (args: { id: string; selected: boolean }) => {
     if (!props.multiSelect && props.onSelect) {
