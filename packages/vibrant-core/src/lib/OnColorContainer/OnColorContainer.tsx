@@ -1,4 +1,5 @@
 import type { FC, ReactElement } from 'react';
+import React, { memo, useCallback } from 'react';
 import type { BaseColorToken } from '@vibrant-ui/theme';
 import { BaseColorOnColorMap, baseColorTokens } from '@vibrant-ui/theme';
 import type { ResponsiveValue } from '../../types';
@@ -10,31 +11,33 @@ type OnColorContainerProps = {
   children: ReactElement;
 };
 
-export const OnColorContainer: FC<OnColorContainerProps> = ({ backgroundColor, children }) => {
+export const OnColorContainer: FC<OnColorContainerProps> = memo(({ backgroundColor, children }) => {
   const { getResponsiveValue } = useResponsiveValue();
 
-  const responsiveBackgroundColor = getResponsiveValue(backgroundColor) as BaseColorToken;
+  const getTheme = useCallback(() => {
+    const responsiveBackgroundColor = getResponsiveValue(backgroundColor) as BaseColorToken;
 
-  if (!baseColorTokens.includes(responsiveBackgroundColor)) {
+    if (!baseColorTokens.includes(responsiveBackgroundColor)) {
+      return null;
+    }
+
+    const onColor = BaseColorOnColorMap[responsiveBackgroundColor];
+
+    return {
+      colors: {
+        light: { onColor: `$colors.${onColor}` },
+        dark: { onColor: `$colors.${onColor}` },
+      },
+    };
+  }, [backgroundColor, getResponsiveValue]);
+
+  const theme = getTheme();
+
+  if (!theme) {
     return children;
   }
 
-  const onColor = baseColorTokens.includes(responsiveBackgroundColor)
-    ? BaseColorOnColorMap[responsiveBackgroundColor]
-    : undefined;
-
-  return (
-    <ThemeProvider
-      theme={{
-        colors: {
-          light: { onColor: `$colors.${onColor}` },
-          dark: { onColor: `$colors.${onColor}` },
-        },
-      }}
-    >
-      {children}
-    </ThemeProvider>
-  );
-};
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+});
 
 OnColorContainer.displayName = 'OnColorContainer';

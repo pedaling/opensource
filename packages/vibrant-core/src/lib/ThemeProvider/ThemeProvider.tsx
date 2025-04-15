@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { createContext, useContext, useMemo } from 'react';
+import React, { createContext, memo, useContext, useMemo } from 'react';
 import type { CurrentTheme, Theme, ThemeMode } from '@vibrant-ui/theme';
 import { baseTheme } from '@vibrant-ui/theme';
 import type { DeepPartial } from '@vibrant-ui/utils';
@@ -21,7 +21,7 @@ const ThemeContext = createContext<ThemeContextValue>({
   theme: baseTheme,
 });
 
-export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, children }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = memo(({ theme, root = false, children }) => {
   const { rootTheme, theme: parentTheme } = useContext(ThemeContext);
 
   const mergedTheme = useMemo(
@@ -59,7 +59,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
         },
       } as Theme),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [JSON.stringify(parentTheme), JSON.stringify(theme)]
+    [parentTheme, theme]
   );
 
   const contextValue: ThemeContextValue = useMemo(
@@ -71,7 +71,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ theme, root = false, chi
   );
 
   return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>;
-};
+});
 
 ThemeProvider.displayName = 'ThemeProvider';
 
