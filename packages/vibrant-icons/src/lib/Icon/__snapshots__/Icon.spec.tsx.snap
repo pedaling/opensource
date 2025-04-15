@@ -1644,6 +1644,354 @@ exports[`<Icon /> when AlignVerticalTop.Thin Icon rendered match snapshot 1`] = 
 </div>
 `;
 
+exports[`<Icon /> when AlphabetA.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alphabeta-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M13.6466 2.13505C13.6188 2.05425 13.5429 2 13.4574 2H10.5424C10.457 2 10.381 2.05425 10.3533 2.13505L3.70876 21.485C3.66417 21.6149 3.76064 21.75 3.89791 21.75H5.88014C5.96504 21.75 6.04069 21.6964 6.06883 21.6163L8.00703 16.0999H15.9928L17.931 21.6163C17.9592 21.6964 18.0348 21.75 18.1197 21.75H20.1019C20.2392 21.75 20.3357 21.6149 20.2911 21.485L13.6466 2.13505ZM15.2199 13.8999L11.9999 4.7355L8.78 13.8999H15.2199Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlphabetA.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alphabeta-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M13.6466 2.13505C13.6188 2.05425 13.5429 2 13.4574 2H10.5424C10.457 2 10.381 2.05425 10.3533 2.13505L3.70876 21.485C3.66417 21.6149 3.76064 21.75 3.89791 21.75H5.88014C5.96504 21.75 6.04069 21.6964 6.06883 21.6163L8.00703 16.0999H15.9928L17.931 21.6163C17.9592 21.6964 18.0348 21.75 18.1197 21.75H20.1019C20.2392 21.75 20.3357 21.6149 20.2911 21.485L13.6466 2.13505ZM15.2199 13.8999L11.9999 4.7355L8.78 13.8999H15.2199Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlphabetA.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alphabeta-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M13.4218 2.38405C13.3938 2.30377 13.318 2.25 13.233 2.25H10.767C10.682 2.25 10.6062 2.30377 10.5782 2.38405L3.99377 21.234C3.94836 21.3641 4.04487 21.5 4.18259 21.5H5.65052C5.73519 21.5 5.81069 21.4467 5.83901 21.3669L7.79618 15.8499H16.2038L18.161 21.3669C18.1893 21.4467 18.2648 21.5 18.3495 21.5H19.8174C19.9551 21.5 20.0516 21.3641 20.0062 21.234L13.4218 2.38405ZM15.6007 14.1499L12 4L8.39926 14.1499H15.6007Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlphabetAPoint.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alphabetapoint-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M10.5446 2C10.4592 2 10.3832 2.05425 10.3555 2.13505L3.71095 21.485C3.66637 21.6149 3.76284 21.75 3.90011 21.75H5.88234C5.96724 21.75 6.04289 21.6964 6.07103 21.6163L8.00918 16.1H14.6853C15.3875 15.0569 16.4578 14.2821 17.71 13.9619L13.6488 2.13505C13.621 2.05425 13.5451 2 13.4596 2H10.5446ZM15.2221 13.9L12.0021 4.7355L8.78215 13.9H15.2221Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M19.0021 22C20.659 22 22.0021 20.6569 22.0021 19C22.0021 17.3431 20.659 16 19.0021 16C17.3452 16 16.0021 17.3431 16.0021 19C16.0021 20.6569 17.3452 22 19.0021 22Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlphabetAPoint.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alphabetapoint-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M10.5446 2C10.4592 2 10.3832 2.05425 10.3555 2.13505L3.71095 21.485C3.66637 21.6149 3.76284 21.75 3.90011 21.75H5.88234C5.96724 21.75 6.04289 21.6964 6.07103 21.6163L8.00918 16.1H14.6853C15.3875 15.0569 16.4578 14.2821 17.71 13.9619L13.6488 2.13505C13.621 2.05425 13.5451 2 13.4596 2H10.5446ZM15.2221 13.9L12.0021 4.7355L8.78215 13.9H15.2221Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M19.0021 22C20.659 22 22.0021 20.6569 22.0021 19C22.0021 17.3431 20.659 16 19.0021 16C17.3452 16 16.0021 17.3431 16.0021 19C16.0021 20.6569 17.3452 22 19.0021 22Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when AlphabetAPoint.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="alphabetapoint-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M13.4194 2.38405C13.3913 2.30377 13.3156 2.25 13.2306 2.25H10.7645C10.6795 2.25 10.6038 2.30377 10.5757 2.38405L3.99133 21.234C3.94592 21.3641 4.04243 21.5 4.18014 21.5H5.64807C5.73275 21.5 5.80825 21.4467 5.83656 21.3669L7.79374 15.8499H15.5097C16.0787 15.2203 16.8158 14.7454 17.6502 14.4961L13.4194 2.38405ZM15.5983 14.1499L11.9976 4L8.39682 14.1499H15.5983Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M18.998 22C20.6549 22 21.998 20.6569 21.998 19C21.998 17.3431 20.6549 16 18.998 16C17.3412 16 15.998 17.3431 15.998 19C15.998 20.6569 17.3412 22 18.998 22Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when Analysis.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -4828,7 +5176,9 @@ exports[`<Icon /> when Bold.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M5.25 2.5h7.85c1.7 0 3.05.45 4.05 1.3 1 .9 1.5 1.85 1.5 3.35 0 .75-.15 1.15-.4 1.75s-.6 1.1-1.1 1.5c-.45.4-1.05.7-1.75.9v.1c.9.1 1.65.4 2.3.8s1.15 1 1.5 1.7.55 1.25.55 2.2c0 1.15-.3 1.95-.85 2.75q-.825 1.275-2.4 1.95c-1.05.45-2.25.65-3.7.65H5.25zm2.65 8.1h3.3c1.1 0 2-.1 2.7-.35s1.2-.6 1.55-1.05.5-.85.5-1.55c0-.95-.3-1.45-.85-2-.6-.55-1.4-.8-2.45-.8h-4.7v5.75zm0 8.6h3.7c1.9 0 3.3-.25 4.15-.8.85-.5 1.25-1.1 1.25-2.25 0-.75-.15-1.15-.5-1.65-.3-.55-.8-.95-1.4-1.2-.6-.3-1.35-.4-2.25-.4h-5v6.3z"
+      clip-rule="evenodd"
+      d="M11.9455 2.75H5.25V21.25H13.35C15.1302 21.25 16.2865 20.8342 17.4915 19.964C18.776 19.0363 19.5689 17.551 19.4481 15.5135C19.3942 14.605 19.0247 13.5808 18.4592 12.9524C17.8802 12.3091 16.844 11.696 15.5927 11.4289C16.1178 11.1798 16.6565 10.8437 17.1229 10.4169C17.8745 9.72883 18.45 8.79198 18.45 7.6C18.45 6.1451 17.758 4.88651 16.5687 4.02714C15.4044 3.18592 13.8067 2.75 11.9455 2.75ZM7.45 10.75V4.95H11.9455C13.491 4.95 14.4286 5.25633 15.1142 5.75169C15.7857 6.23691 16.1723 6.91559 16.1723 7.6C16.1723 8.1429 16.0582 8.57632 15.854 8.93361C15.6494 9.29159 15.3457 9.58808 14.9441 9.84366C14.0882 10.3883 12.8392 10.75 11.05 10.75H7.45ZM7.45 19.05V12.95H11.05C13.3951 12.95 14.7303 13.136 15.645 13.6723C16.0897 13.933 16.411 14.2142 16.6213 14.5255C16.8293 14.8334 16.9368 15.1824 16.9368 15.5958C16.9368 16.2838 16.8194 16.781 16.643 17.1616C16.4669 17.5415 16.2251 17.8199 15.9541 18.0622C15.2969 18.6499 14.1092 19.05 13.1641 19.05H7.45Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>
@@ -4882,7 +5232,9 @@ exports[`<Icon /> when Bold.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M5.25 2.5h7.85c1.7 0 3.05.45 4.05 1.3 1 .9 1.5 1.85 1.5 3.35 0 .75-.15 1.15-.4 1.75s-.6 1.1-1.1 1.5c-.45.4-1.05.7-1.75.9v.1c.9.1 1.65.4 2.3.8s1.15 1 1.5 1.7.55 1.25.55 2.2c0 1.15-.3 1.95-.85 2.75q-.825 1.275-2.4 1.95c-1.05.45-2.25.65-3.7.65H5.25zm2.65 8.1h3.3c1.1 0 2-.1 2.7-.35s1.2-.6 1.55-1.05.5-.85.5-1.55c0-.95-.3-1.45-.85-2-.6-.55-1.4-.8-2.45-.8h-4.7v5.75zm0 8.6h3.7c1.9 0 3.3-.25 4.15-.8.85-.5 1.25-1.1 1.25-2.25 0-.75-.15-1.15-.5-1.65-.3-.55-.8-.95-1.4-1.2-.6-.3-1.35-.4-2.25-.4h-5v6.3z"
+      clip-rule="evenodd"
+      d="M11.9455 2.75H5.25V21.25H13.35C15.1302 21.25 16.2865 20.8342 17.4915 19.964C18.776 19.0363 19.5689 17.551 19.4481 15.5135C19.3942 14.605 19.0247 13.5808 18.4592 12.9524C17.8802 12.3091 16.844 11.696 15.5927 11.4289C16.1178 11.1798 16.6565 10.8437 17.1229 10.4169C17.8745 9.72883 18.45 8.79198 18.45 7.6C18.45 6.1451 17.758 4.88651 16.5687 4.02714C15.4044 3.18592 13.8067 2.75 11.9455 2.75ZM7.45 10.75V4.95H11.9455C13.491 4.95 14.4286 5.25633 15.1142 5.75169C15.7857 6.23691 16.1723 6.91559 16.1723 7.6C16.1723 8.1429 16.0582 8.57632 15.854 8.93361C15.6494 9.29159 15.3457 9.58808 14.9441 9.84366C14.0882 10.3883 12.8392 10.75 11.05 10.75H7.45ZM7.45 19.05V12.95H11.05C13.3951 12.95 14.7303 13.136 15.645 13.6723C16.0897 13.933 16.411 14.2142 16.6213 14.5255C16.8293 14.8334 16.9368 15.1824 16.9368 15.5958C16.9368 16.2838 16.8194 16.781 16.643 17.1616C16.4669 17.5415 16.2251 17.8199 15.9541 18.0622C15.2969 18.6499 14.1092 19.05 13.1641 19.05H7.45Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>
@@ -4936,7 +5288,9 @@ exports[`<Icon /> when Bold.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M5.85 2.5H13c1.6 0 2.9.45 3.85 1.3.95.9 1.45 1.85 1.45 3.35 0 .75-.1 1.15-.35 1.75q-.375.9-1.05 1.5t-1.65.9v.1c.85.1 1.55.4 2.2.8.6.4 1.1 1 1.45 1.7s.5 1.25.5 2.2c0 1.15-.25 1.95-.8 2.75-.55.85-1.3 1.5-2.3 1.95s-2.15.65-3.5.65H5.85zm1.75 8.35h3.7c1.4 0 3.05-.2 4.05-1.3.55-.6.8-1.25.8-2.1 0-1.05-.3-1.9-1.2-2.5-.7-.5-1.5-.7-2.35-.7h-5zm0 8.9h3.6c1.45 0 3.05.05 4.35-.7 1.9-1.1 2.15-3.4.9-5.05-.05-.05-.1-.15-.15-.2-.1-.1-.15-.2-.25-.25-.85-.8-2.1-.95-3.25-.95H7.6z"
+      clip-rule="evenodd"
+      d="M5.5 3H11.9455C13.7706 3 15.3123 3.42777 16.4223 4.22978C17.5517 5.04588 18.2 6.23152 18.2 7.6C18.2 9.3538 16.7129 11 15.3501 11.5478C16.5 11.66 17.9415 12.4156 18.5012 13.2567C18.9295 13.9004 19.1473 14.6639 19.1985 15.5283C19.3145 17.484 18.5575 18.8857 17.3451 19.7613C16.1833 20.6004 15.0783 21 13.35 21H5.5V3ZM11.05 11C12.8713 11 14.171 10.632 15.0783 10.0546C15.9338 9.51021 16.4223 8.7587 16.4223 7.6C16.4223 6.81848 15.9822 6.07045 15.2606 5.54905C14.5194 5.01355 13.5249 4.7 11.9455 4.7H7.2V11H11.05ZM7.2 12.7H11.05C13.3925 12.7 14.7918 12.8823 15.7714 13.4566C16.7031 14.0028 17.1868 14.6745 17.1868 15.5958C17.1868 17.0299 16.6969 17.7334 16.1207 18.2486C15.4103 18.8839 14.1598 19.3 13.1641 19.3H7.2V12.7Z"
+      fill-rule="evenodd"
     />
   </svg>
 </div>
@@ -5662,11 +6016,7 @@ exports[`<Icon /> when Caption.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M18.25 2.5h-16c-.15 0-.25.1-.25.25v4.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V5H9v14H7.5c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25H13c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25h-1.5V5H16v2.25c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-4.5c0-.15-.1-.25-.25-.25"
-    />
-    <path
-      class="emotion-1"
-      d="M22.7 12.5h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h2.75v6.25c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V15h2.75c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25"
+      d="M17.7924 21.6004V15.4344H15.1544V13.6499H22.5954V15.4344H19.9579V21.6004H17.7924ZM8.2749 21.3504C8.13683 21.3504 8.0249 21.2385 8.0249 21.1004V19.1999C8.0249 19.0618 8.13683 18.9499 8.2749 18.9499H9.6749V5.05089H4.5499V6.60139C4.5499 6.73946 4.43797 6.85139 4.2999 6.85139H2.3999C2.26183 6.85139 2.1499 6.73946 2.1499 6.60139V2.90039C2.1499 2.76232 2.26183 2.65039 2.3999 2.65039H19.3499C19.488 2.65039 19.5999 2.76232 19.5999 2.90039V6.60139C19.5999 6.73946 19.488 6.85139 19.3499 6.85139H17.4499C17.3118 6.85139 17.1999 6.73946 17.1999 6.60139V5.05089H12.0749V18.9499H13.4749C13.613 18.9499 13.7249 19.0618 13.7249 19.1999V21.1004C13.7249 21.2385 13.613 21.3504 13.4749 21.3504H8.2749Z"
     />
   </svg>
 </div>
@@ -5720,11 +6070,7 @@ exports[`<Icon /> when Caption.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M18.25 2.5h-16c-.15 0-.25.1-.25.25v4.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V5H9v14H7.5c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25H13c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25h-1.5V5H16v2.25c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-4.5c0-.15-.1-.25-.25-.25"
-    />
-    <path
-      class="emotion-1"
-      d="M22.7 12.5h-8c-.15 0-.25.1-.25.25v2c0 .15.1.25.25.25h2.75v6.25c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V15h2.75c.15 0 .25-.1.25-.25v-2c0-.15-.1-.25-.25-.25"
+      d="M17.7924 21.6004V15.4344H15.1544V13.6499H22.5954V15.4344H19.9579V21.6004H17.7924ZM8.2749 21.3504C8.13683 21.3504 8.0249 21.2385 8.0249 21.1004V19.1999C8.0249 19.0618 8.13683 18.9499 8.2749 18.9499H9.6749V5.05089H4.5499V6.60139C4.5499 6.73946 4.43797 6.85139 4.2999 6.85139H2.3999C2.26183 6.85139 2.1499 6.73946 2.1499 6.60139V2.90039C2.1499 2.76232 2.26183 2.65039 2.3999 2.65039H19.3499C19.488 2.65039 19.5999 2.76232 19.5999 2.90039V6.60139C19.5999 6.73946 19.488 6.85139 19.3499 6.85139H17.4499C17.3118 6.85139 17.1999 6.73946 17.1999 6.60139V5.05089H12.0749V18.9499H13.4749C13.613 18.9499 13.7249 19.0618 13.7249 19.1999V21.1004C13.7249 21.2385 13.613 21.3504 13.4749 21.3504H8.2749Z"
     />
   </svg>
 </div>
@@ -5778,11 +6124,7 @@ exports[`<Icon /> when Caption.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M18.25 2.5h-16c-.15 0-.25.1-.25.25v3.5c0 .15.1.25.25.25H3.5c.15 0 .25-.1.25-.25v-2H9.5v15.5H8c-.15 0-.25.1-.25.25v1.25c0 .15.1.25.25.25h4.5c.15 0 .25-.1.25-.25V20c0-.15-.1-.25-.25-.25H11V4.25h5.75v2c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25v-3.5c0-.15-.1-.25-.25-.25"
-    />
-    <path
-      class="emotion-1"
-      d="M22.7 12.75h-8c-.15 0-.25.1-.25.25v1.25c0 .15.1.25.25.25h3.1v6.75c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V14.5h3.1c.15 0 .25-.1.25-.25V13c.05-.15-.05-.25-.2-.25"
+      d="M18.0424 21.3502V15.1842H15.4049V13.8997H22.3459V15.1842H19.7084V21.3502H18.0424ZM8.5249 21.1002C8.38683 21.1002 8.2749 20.9883 8.2749 20.8502V19.4497C8.2749 19.3116 8.38683 19.1997 8.5249 19.1997H9.9249V4.8507H4.2999V6.4012C4.2999 6.53927 4.18797 6.6512 4.0499 6.6512H2.6499C2.51183 6.6512 2.3999 6.53927 2.3999 6.4012V3.2002C2.3999 3.06212 2.51183 2.9502 2.6499 2.9502H19.0999C19.238 2.9502 19.3499 3.06212 19.3499 3.2002V6.4012C19.3499 6.53927 19.238 6.6512 19.0999 6.6512H17.6999C17.5618 6.6512 17.4499 6.53927 17.4499 6.4012V4.8507H11.8244V19.1997H13.2244C13.3625 19.1997 13.4744 19.3116 13.4744 19.4497V20.8502C13.4744 20.9883 13.3625 21.1002 13.2244 21.1002H8.5249Z"
     />
   </svg>
 </div>
@@ -8994,7 +9336,13 @@ exports[`<Icon /> when ClearStyle.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M23 21.727a.2.2 0 0 0 0-.282l-9.8-9.801V5.8h5v1.6c0 .111.089.2.2.2h2a.2.2 0 0 0 .2-.2V3.6a.2.2 0 0 0-.2-.2H4.954L2.555 1a.2.2 0 0 0-.283 0L1 2.272a.2.2 0 0 0 0 .283L21.444 23a.2.2 0 0 0 .283 0zM10.8 9.244 7.354 5.8H10.8zM14.65 20.6a.2.2 0 0 0 .2-.2v-2a.2.2 0 0 0-.2-.2H13.2v-.902l-.03-.03-2.37-2.37V18.2H9.35a.2.2 0 0 0-.2.2v2c0 .11.089.2.2.2z"
+      clip-rule="evenodd"
+      d="M1.22217 2.7778L21.2222 22.7778L22.7778 21.2222L13.2 11.6443V5.0504H18.9493V6.6509C18.9493 6.76136 19.0388 6.8509 19.1493 6.8509H21.1493C21.2598 6.8509 21.3494 6.76136 21.3494 6.6509V2.8499C21.3494 2.73944 21.2598 2.6499 21.1493 2.6499H4.20554L2.7778 1.22217L1.22217 2.7778ZM6.60604 5.0504L10.7993 9.24368V5.0504H6.60604Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M10.7993 18.9499V15.355L13.2 17.7556V18.9499H14.6493C14.7597 18.9499 14.85 19.0394 14.85 19.1499V21.1504C14.85 21.2609 14.7604 21.3504 14.6499 21.3504H9.34998C9.23952 21.3504 9.14929 21.2609 9.14929 21.1504V19.1499C9.14929 19.0394 9.23891 18.9499 9.34937 18.9499H10.7993Z"
     />
   </svg>
 </div>
@@ -9048,7 +9396,13 @@ exports[`<Icon /> when ClearStyle.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M23 21.727a.2.2 0 0 0 0-.282l-9.8-9.801V5.8h5v1.6c0 .111.089.2.2.2h2a.2.2 0 0 0 .2-.2V3.6a.2.2 0 0 0-.2-.2H4.954L2.555 1a.2.2 0 0 0-.283 0L1 2.272a.2.2 0 0 0 0 .283L21.444 23a.2.2 0 0 0 .283 0zM10.8 9.244 7.354 5.8H10.8zM14.65 20.6a.2.2 0 0 0 .2-.2v-2a.2.2 0 0 0-.2-.2H13.2v-.902l-.03-.03-2.37-2.37V18.2H9.35a.2.2 0 0 0-.2.2v2c0 .11.089.2.2.2z"
+      clip-rule="evenodd"
+      d="M1.22217 2.7778L21.2222 22.7778L22.7778 21.2222L13.2 11.6443V5.0504H18.9493V6.6509C18.9493 6.76136 19.0388 6.8509 19.1493 6.8509H21.1493C21.2598 6.8509 21.3494 6.76136 21.3494 6.6509V2.8499C21.3494 2.73944 21.2598 2.6499 21.1493 2.6499H4.20554L2.7778 1.22217L1.22217 2.7778ZM6.60604 5.0504L10.7993 9.24368V5.0504H6.60604Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M10.7993 18.9499V15.355L13.2 17.7556V18.9499H14.6493C14.7597 18.9499 14.85 19.0394 14.85 19.1499V21.1504C14.85 21.2609 14.7604 21.3504 14.6499 21.3504H9.34998C9.23952 21.3504 9.14929 21.2609 9.14929 21.1504V19.1499C9.14929 19.0394 9.23891 18.9499 9.34937 18.9499H10.7993Z"
     />
   </svg>
 </div>
@@ -9102,7 +9456,13 @@ exports[`<Icon /> when ClearStyle.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M22.646 21.727a.2.2 0 0 0 0-.282l-9.697-9.697V5.55h5.5v1.6c0 .111.09.2.2.2h1.5a.2.2 0 0 0 .2-.2v-3.3a.2.2 0 0 0-.2-.2H4.851L2.555 1.353a.2.2 0 0 0-.283 0l-.92.92a.2.2 0 0 0 0 .283l20.092 20.09a.2.2 0 0 0 .283 0zM11.049 9.848 6.752 5.551h4.297zM14.4 20.35a.2.2 0 0 0 .2-.2v-1.5a.2.2 0 0 0-.2-.2h-1.45V17.4l-1.9-1.9v2.95H9.6a.2.2 0 0 0-.2.2v1.5c0 .11.09.2.2.2z"
+      clip-rule="evenodd"
+      d="M4.10198 2.8999L2.60101 1.39893L1.39893 2.60101L21.3989 22.601L22.601 21.3989L12.9536 11.7515V4.8004H19.2036V6.4009C19.2036 6.51136 19.2931 6.6009 19.4036 6.6009H20.9036C21.014 6.6009 21.1036 6.51136 21.1036 6.4009V3.0999C21.1036 3.03915 21.0009 2.98473 20.9316 2.94805C20.875 2.91803 20.8408 2.8999 20.9036 2.8999H4.10198ZM6.00248 4.8004L11.0494 9.8473V4.8004H6.00248Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M11.0494 19.1999V14.6519L12.9536 16.5561V19.1999H14.4036C14.514 19.1999 14.6036 19.2894 14.6036 19.3999V20.9004C14.6036 21.0109 14.514 21.1004 14.4036 21.1004H9.59941C9.48896 21.1004 9.39942 21.0109 9.39942 20.9004V19.3999C9.39942 19.2894 9.48896 19.1999 9.59941 19.1999H11.0494Z"
     />
   </svg>
 </div>
@@ -11996,7 +12356,7 @@ exports[`<Icon /> when Divider.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M20.75 2.5h-2c-.15 0-.25.1-.25.25V6h-13V2.75c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25V8.2c0 .15.15.3.3.3h17.45c.15 0 .3-.15.3-.3V2.75c-.05-.15-.15-.25-.3-.25m-17.5 19h2c.15 0 .25-.1.25-.25V18h13v3.25c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V15.8c0-.15-.15-.3-.3-.3H3.3c-.15 0-.3.15-.3.3v5.45c0 .15.1.25.25.25m19-8.25H1.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h20.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25"
+      d="M19.6499 21.8504V17.6004H4.3499V21.8504H2.1499V15.4004H21.8499V21.8504H19.6499ZM0.899902 13.1004V10.9004H23.0999V13.1004H0.899902ZM2.1499 8.60039V2.15039H4.3499V6.40039H19.6499V2.15039H21.8499V8.60039H2.1499Z"
     />
   </svg>
 </div>
@@ -12050,7 +12410,7 @@ exports[`<Icon /> when Divider.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M20.75 2.5h-2c-.15 0-.25.1-.25.25V6h-13V2.75c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25V8.2c0 .15.15.3.3.3h17.45c.15 0 .3-.15.3-.3V2.75c-.05-.15-.15-.25-.3-.25m-17.5 19h2c.15 0 .25-.1.25-.25V18h13v3.25c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V15.8c0-.15-.15-.3-.3-.3H3.3c-.15 0-.3.15-.3.3v5.45c0 .15.1.25.25.25m19-8.25H1.75c-.15 0-.25-.1-.25-.25v-2c0-.15.1-.25.25-.25h20.5c.15 0 .25.1.25.25v2c0 .15-.1.25-.25.25"
+      d="M19.6499 21.8504V17.6004H4.3499V21.8504H2.1499V15.4004H21.8499V21.8504H19.6499ZM0.899902 13.1004V10.9004H23.0999V13.1004H0.899902ZM2.1499 8.60039V2.15039H4.3499V6.40039H19.6499V2.15039H21.8499V8.60039H2.1499Z"
     />
   </svg>
 </div>
@@ -12104,7 +12464,7 @@ exports[`<Icon /> when Divider.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M20.75 2.5H19.5c-.15 0-.25.1-.25.25v4H4.75v-4c0-.15-.1-.25-.25-.25H3.25c-.15 0-.25.1-.25.25V8.2c0 .15.15.3.3.3h17.45c.15 0 .3-.15.3-.3V2.75c-.05-.15-.15-.25-.3-.25m-17.5 19H4.5c.15 0 .25-.1.25-.25v-4h14.5v4c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V15.8c0-.15-.15-.3-.3-.3H3.3c-.15 0-.3.15-.3.3v5.45c0 .15.1.25.25.25m19.5-8.6H1.25c-.15 0-.25-.1-.25-.25V11.4c0-.15.1-.25.25-.25h21.5c.15 0 .25.1.25.25v1.25c0 .1-.1.25-.25.25"
+      d="M19.8999 21.6004V17.3504H4.0999V21.6004H2.3999V15.6504H21.5999V21.6004H19.8999ZM1.1499 12.8504V11.1504H22.8499V12.8504H1.1499ZM2.3999 8.35039V2.40039H4.0999V6.65039H19.8999V2.40039H21.5999V8.35039H2.3999Z"
     />
   </svg>
 </div>
@@ -16680,6 +17040,364 @@ exports[`<Icon /> when HashtagLock.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when HashtagSeal.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="hashtagseal-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.5 2.25L9.84423 6.90002H15.5942L16.25 2.25H18.5L17.8442 6.90002H21.75L21.625 9.10002H17.534L17.266 11H15.016L15.284 9.10002H9.53397L8.71602 14.9H11.25V17.1H8.40577L7.75 21.75H5.5L6.15577 17.1H2.25L2.375 14.9H6.46602L7.28397 9.10002H3.125L3.25 6.90002H7.59423L8.25 2.25H10.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M16.9671 12.5C17.1364 12.3343 17.221 12.2514 17.3182 12.2203C17.4037 12.1929 17.4957 12.1929 17.5812 12.2203C17.6784 12.2514 17.763 12.3343 17.9323 12.5L18.9738 13.5202L20.4316 13.5353C20.6685 13.5378 20.787 13.539 20.8777 13.5857C20.9576 13.6268 21.0226 13.6918 21.0637 13.7717C21.1104 13.8624 21.1116 13.9809 21.1141 14.2178L21.1292 15.6756L22.1494 16.7171C22.3151 16.8864 22.398 16.971 22.4292 17.0682C22.4566 17.1537 22.4566 17.2457 22.4292 17.3312C22.398 17.4284 22.3151 17.513 22.1494 17.6823L21.1292 18.7238L21.1141 20.1816C21.1116 20.4185 21.1104 20.537 21.0637 20.6277C21.0226 20.7076 20.9576 20.7726 20.8777 20.8137C20.787 20.8604 20.6685 20.8616 20.4316 20.8641L18.9738 20.8792L17.9323 21.8994C17.763 22.0651 17.6784 22.148 17.5812 22.1792C17.4957 22.2066 17.4037 22.2066 17.3182 22.1792C17.221 22.148 17.1364 22.0651 16.9671 21.8994L15.9256 20.8792L14.4678 20.8641C14.2309 20.8616 14.1124 20.8604 14.0217 20.8137C13.9418 20.7726 13.8768 20.7076 13.8357 20.6277C13.789 20.537 13.7878 20.4185 13.7853 20.1816L13.7702 18.7238L12.75 17.6823C12.5843 17.513 12.5014 17.4284 12.4703 17.3312C12.4429 17.2457 12.4429 17.1537 12.4703 17.0682C12.5014 16.971 12.5843 16.8864 12.75 16.7171L13.7702 15.6756L13.7853 14.2178C13.7878 13.9809 13.789 13.8624 13.8357 13.7717C13.8768 13.6918 13.9418 13.6268 14.0217 13.5857C14.1124 13.539 14.2309 13.5378 14.4678 13.5353L15.9256 13.5202L16.9671 12.5Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when HashtagSeal.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="hashtagseal-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.5 2.25L9.84423 6.90002H15.5942L16.25 2.25H18.5L17.8442 6.90002H21.75L21.625 9.10002H17.534L17.266 11H15.016L15.284 9.10002H9.53397L8.71602 14.9H11.25V17.1H8.40577L7.75 21.75H5.5L6.15577 17.1H2.25L2.375 14.9H6.46602L7.28397 9.10002H3.125L3.25 6.90002H7.59423L8.25 2.25H10.5Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M17.3182 12.2203C17.221 12.2514 17.1364 12.3343 16.9671 12.5L15.9256 13.5202L14.4678 13.5353C14.2309 13.5378 14.1124 13.539 14.0217 13.5857C13.9418 13.6268 13.8768 13.6918 13.8357 13.7717C13.789 13.8624 13.7878 13.9809 13.7853 14.2178L13.7702 15.6756L12.75 16.7171C12.5843 16.8864 12.5014 16.971 12.4703 17.0682C12.4429 17.1537 12.4429 17.2457 12.4703 17.3312C12.5014 17.4284 12.5843 17.513 12.75 17.6823L13.7702 18.7238L13.7853 20.1816C13.7878 20.4185 13.789 20.537 13.8357 20.6277C13.8768 20.7076 13.9418 20.7726 14.0217 20.8137C14.1124 20.8604 14.2309 20.8616 14.4678 20.8641L15.9256 20.8792L16.9671 21.8994C17.1364 22.0651 17.221 22.148 17.3182 22.1792C17.4037 22.2066 17.4957 22.2066 17.5812 22.1792C17.6784 22.148 17.763 22.0651 17.9323 21.8994L18.9738 20.8792L20.4316 20.8641C20.6685 20.8616 20.787 20.8604 20.8777 20.8137C20.9576 20.7726 21.0226 20.7076 21.0637 20.6277C21.1104 20.537 21.1116 20.4185 21.1141 20.1816L21.1292 18.7238L22.1494 17.6823C22.3151 17.513 22.398 17.4284 22.4292 17.3312C22.4566 17.2457 22.4566 17.1537 22.4292 17.0682C22.398 16.971 22.3151 16.8864 22.1494 16.7172L21.1292 15.6756L21.1141 14.2178C21.1116 13.9809 21.1104 13.8624 21.0637 13.7717C21.0226 13.6918 20.9576 13.6268 20.8777 13.5857C20.787 13.539 20.6685 13.5378 20.4316 13.5353L18.9738 13.5202L17.9323 12.5C17.763 12.3343 17.6784 12.2514 17.5812 12.2203C17.4957 12.1929 17.4037 12.1929 17.3182 12.2203ZM17.4497 19.4497C18.6923 19.4497 19.6997 18.4423 19.6997 17.1997C19.6997 15.9571 18.6923 14.9497 17.4497 14.9497C16.2071 14.9497 15.1997 15.9571 15.1997 17.1997C15.1997 18.4423 16.2071 19.4497 17.4497 19.4497Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when HashtagSeal.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="hashtagseal-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M17.3182 12.2203C17.221 12.2514 17.1364 12.3343 16.9671 12.5L15.9256 13.5202L14.4678 13.5353C14.2309 13.5378 14.1124 13.539 14.0217 13.5857C13.9418 13.6268 13.8768 13.6918 13.8357 13.7717C13.789 13.8624 13.7878 13.9809 13.7853 14.2178L13.7702 15.6756L12.75 16.7171C12.5843 16.8864 12.5014 16.971 12.4703 17.0682C12.4429 17.1537 12.4429 17.2457 12.4703 17.3312C12.5014 17.4284 12.5843 17.513 12.75 17.6823L13.7702 18.7238L13.7853 20.1816C13.7878 20.4185 13.789 20.537 13.8357 20.6277C13.8768 20.7076 13.9418 20.7726 14.0217 20.8137C14.1124 20.8604 14.2309 20.8616 14.4678 20.8641L15.9256 20.8792L16.9671 21.8994C17.1364 22.0651 17.221 22.148 17.3182 22.1792C17.4037 22.2066 17.4957 22.2066 17.5812 22.1792C17.6784 22.148 17.763 22.0651 17.9323 21.8994L18.9738 20.8792L20.4316 20.8641C20.6685 20.8616 20.787 20.8604 20.8777 20.8137C20.9576 20.7726 21.0226 20.7076 21.0637 20.6277C21.1104 20.537 21.1116 20.4185 21.1141 20.1816L21.1292 18.7238L22.1494 17.6823C22.3151 17.513 22.398 17.4284 22.4292 17.3312C22.4566 17.2457 22.4566 17.1537 22.4292 17.0682C22.398 16.971 22.3151 16.8864 22.1494 16.7172L21.1292 15.6756L21.1141 14.2178C21.1116 13.9809 21.1104 13.8624 21.0637 13.7717C21.0226 13.6918 20.9576 13.6268 20.8777 13.5857C20.787 13.539 20.6685 13.5378 20.4316 13.5353L18.9738 13.5202L17.9323 12.5C17.763 12.3343 17.6784 12.2514 17.5812 12.2203C17.4957 12.1929 17.4037 12.1929 17.3182 12.2203ZM17.4497 19.6997C18.8304 19.6997 19.9497 18.5804 19.9497 17.1997C19.9497 15.819 18.8304 14.6997 17.4497 14.6997C16.069 14.6997 14.9497 15.819 14.9497 17.1997C14.9497 18.5804 16.069 19.6997 17.4497 19.6997Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M10 2.25L9.37179 7.15002H15.8718L16.5 2.25H18.25L17.6218 7.15002H21.75L21.6216 8.85002H17.4038L17.0641 11.5H15.3141L15.6538 8.85002H9.15384L8.34615 15.15H11.75V16.85H8.1282L7.5 21.75H5.75L6.3782 16.85H2.25L2.37845 15.15H6.59615L7.40384 8.85002H3.125L3.25345 7.15002H7.62179L8.25 2.25H10Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when HashtagSealCheck.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="hashtagsealcheck-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.5 2.25L9.84423 6.90002H15.5942L16.25 2.25H18.5L17.8442 6.90002H21.75L21.625 9.10002H17.534L17.266 11H15.016L15.284 9.10002H9.53397L8.71602 14.9H11.25V17.1H8.40577L7.75 21.75H5.5L6.15577 17.1H2.25L2.375 14.9H6.46602L7.28397 9.10002H3.125L3.25 6.90002H7.59423L8.25 2.25H10.5Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M17.3177 12.2198C17.2205 12.2509 17.1359 12.3338 16.9667 12.4996L15.9251 13.5197L14.4673 13.5348C14.2304 13.5373 14.1119 13.5385 14.0212 13.5852C13.9413 13.6263 13.8763 13.6913 13.8352 13.7712C13.7885 13.8619 13.7873 13.9804 13.7848 14.2173L13.7697 15.6751L12.7496 16.7167C12.5838 16.8859 12.5009 16.9705 12.4698 17.0677C12.4424 17.1532 12.4424 17.2452 12.4698 17.3307C12.5009 17.4279 12.5838 17.5125 12.7496 17.6818L13.7697 18.7233L13.7848 20.1812C13.7873 20.4181 13.7885 20.5365 13.8352 20.6272C13.8763 20.7071 13.9413 20.7721 14.0212 20.8132C14.1119 20.8599 14.2304 20.8611 14.4673 20.8636L15.9251 20.8787L16.9667 21.8989C17.1359 22.0647 17.2205 22.1475 17.3177 22.1787C17.4032 22.2061 17.4952 22.2061 17.5807 22.1787C17.6779 22.1475 17.7625 22.0647 17.9318 21.8989L18.9733 20.8787L20.4312 20.8636C20.6681 20.8611 20.7865 20.8599 20.8772 20.8132C20.9571 20.7721 21.0221 20.7071 21.0632 20.6272C21.1099 20.5365 21.1111 20.4181 21.1136 20.1812L21.1287 18.7233L22.1489 17.6818C22.3147 17.5125 22.3975 17.4279 22.4287 17.3307C22.4561 17.2452 22.4561 17.1532 22.4287 17.0677C22.3975 16.9705 22.3146 16.8859 22.1489 16.7167L21.1287 15.6751L21.1136 14.2173C21.1111 13.9804 21.1099 13.8619 21.0632 13.7712C21.0221 13.6913 20.9571 13.6263 20.8772 13.5852C20.7865 13.5385 20.6681 13.5373 20.4312 13.5348L18.9733 13.5197L17.9318 12.4996C17.7625 12.3338 17.6779 12.2509 17.5807 12.2198C17.4952 12.1924 17.4032 12.1924 17.3177 12.2198ZM19.8802 16.5301L18.8195 15.4694L17.0999 17.1891L16.1302 16.2194L15.0695 17.2801L17.0999 19.3104L19.8802 16.5301Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when HashtagSealCheck.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="hashtagsealcheck-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.5 2.25L9.84423 6.90002H15.5942L16.25 2.25H18.5L17.8442 6.90002H21.75L21.625 9.10002H17.534L17.266 11H15.016L15.284 9.10002H9.53397L8.71602 14.9H11.25V17.1H8.40577L7.75 21.75H5.5L6.15577 17.1H2.25L2.375 14.9H6.46602L7.28397 9.10002H3.125L3.25 6.90002H7.59423L8.25 2.25H10.5Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M17.3177 12.2198C17.2205 12.2509 17.1359 12.3338 16.9667 12.4996L15.9251 13.5197L14.4673 13.5348C14.2304 13.5373 14.1119 13.5385 14.0212 13.5852C13.9413 13.6263 13.8763 13.6913 13.8352 13.7712C13.7885 13.8619 13.7873 13.9804 13.7848 14.2173L13.7697 15.6751L12.7496 16.7167C12.5838 16.8859 12.5009 16.9705 12.4698 17.0677C12.4424 17.1532 12.4424 17.2452 12.4698 17.3307C12.5009 17.4279 12.5838 17.5125 12.7496 17.6818L13.7697 18.7233L13.7848 20.1812C13.7873 20.4181 13.7885 20.5365 13.8352 20.6272C13.8763 20.7071 13.9413 20.7721 14.0212 20.8132C14.1119 20.8599 14.2304 20.8611 14.4673 20.8636L15.9251 20.8787L16.9667 21.8989C17.1359 22.0647 17.2205 22.1475 17.3177 22.1787C17.4032 22.2061 17.4952 22.2061 17.5807 22.1787C17.6779 22.1475 17.7625 22.0647 17.9318 21.8989L18.9733 20.8787L20.4312 20.8636C20.6681 20.8611 20.7865 20.8599 20.8772 20.8132C20.9571 20.7721 21.0221 20.7071 21.0632 20.6272C21.1099 20.5365 21.1111 20.4181 21.1136 20.1812L21.1287 18.7233L22.1489 17.6818C22.3147 17.5125 22.3975 17.4279 22.4287 17.3307C22.4561 17.2452 22.4561 17.1532 22.4287 17.0677C22.3975 16.9705 22.3146 16.8859 22.1489 16.7167L21.1287 15.6751L21.1136 14.2173C21.1111 13.9804 21.1099 13.8619 21.0632 13.7712C21.0221 13.6913 20.9571 13.6263 20.8772 13.5852C20.7865 13.5385 20.6681 13.5373 20.4312 13.5348L18.9733 13.5197L17.9318 12.4996C17.7625 12.3338 17.6779 12.2509 17.5807 12.2198C17.4952 12.1924 17.4032 12.1924 17.3177 12.2198ZM19.8802 16.5301L18.8195 15.4694L17.0999 17.1891L16.1302 16.2194L15.0695 17.2801L17.0999 19.3104L19.8802 16.5301Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when HashtagSealCheck.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="hashtagsealcheck-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M17.3177 12.2198C17.2205 12.2509 17.1359 12.3338 16.9667 12.4996L15.9251 13.5197L14.4673 13.5348C14.2304 13.5373 14.1119 13.5385 14.0212 13.5852C13.9413 13.6263 13.8763 13.6913 13.8352 13.7712C13.7885 13.8619 13.7873 13.9804 13.7848 14.2173L13.7697 15.6751L12.7496 16.7167C12.5838 16.8859 12.5009 16.9705 12.4698 17.0677C12.4424 17.1532 12.4424 17.2452 12.4698 17.3307C12.5009 17.4279 12.5838 17.5125 12.7496 17.6818L13.7697 18.7233L13.7848 20.1812C13.7873 20.4181 13.7885 20.5365 13.8352 20.6272C13.8763 20.7071 13.9413 20.7721 14.0212 20.8132C14.1119 20.8599 14.2304 20.8611 14.4673 20.8636L15.9251 20.8787L16.9667 21.8989C17.1359 22.0647 17.2205 22.1475 17.3177 22.1787C17.4032 22.2061 17.4952 22.2061 17.5807 22.1787C17.6779 22.1475 17.7625 22.0647 17.9318 21.8989L18.9733 20.8787L20.4312 20.8636C20.6681 20.8611 20.7865 20.8599 20.8772 20.8132C20.9571 20.7721 21.0221 20.7071 21.0632 20.6272C21.1099 20.5365 21.1111 20.4181 21.1136 20.1812L21.1287 18.7233L22.1489 17.6818C22.3147 17.5125 22.3975 17.4279 22.4287 17.3307C22.4561 17.2452 22.4561 17.1532 22.4287 17.0677C22.3975 16.9705 22.3146 16.8859 22.1489 16.7167L21.1287 15.6751L21.1136 14.2173C21.1111 13.9804 21.1099 13.8619 21.0632 13.7712C21.0221 13.6913 20.9571 13.6263 20.8772 13.5852C20.7865 13.5385 20.6681 13.5373 20.4312 13.5348L18.9733 13.5197L17.9318 12.4996C17.7625 12.3338 17.6779 12.2509 17.5807 12.2198C17.4952 12.1924 17.4032 12.1924 17.3177 12.2198ZM19.8802 16.5301L18.8195 15.4694L17.0999 17.1891L16.1302 16.2194L15.0695 17.2801L17.0999 19.3104L19.8802 16.5301Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M10 2.25L9.37179 7.15002H15.8718L16.5 2.25H18.25L17.6218 7.15002H21.75L21.6216 8.85002H17.4038L17.0641 11.5H15.3141L15.6538 8.85002H9.15384L8.34615 15.15H11.75V16.85H8.1282L7.5 21.75H5.75L6.3782 16.85H2.25L2.37845 15.15H6.59615L7.40384 8.85002H3.125L3.25345 7.15002H7.62179L8.25 2.25H10Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when Heart.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -17845,6 +18563,550 @@ exports[`<Icon /> when InstagramCircle.Thin Icon rendered match snapshot 1`] = `
     <path
       class="emotion-1"
       d="M12 2.75c5.1 0 9.25 4.15 9.25 9.25S17.1 21.25 12 21.25 2.75 17.1 2.75 12 6.9 2.75 12 2.75M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Keyboard.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="keyboard-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M0.899902 3.65088C0.899902 3.51281 1.01183 3.40088 1.1499 3.40088H22.8499C22.988 3.40088 23.0999 3.51281 23.0999 3.65088V20.349C23.0999 20.4871 22.988 20.599 22.8499 20.599H1.1499C1.01183 20.599 0.899902 20.4871 0.899902 20.349V3.65088ZM6.375 7.5H4.625V9.25H6.375V7.5ZM4.625 11.25H6.375V13H4.625V11.25ZM6.375 15H4.625V16.75H6.375V15ZM7.875 7.5H9.625V9.25H7.875V7.5ZM9.625 11.25H7.875V13H9.625V11.25ZM7.875 15H16.125V16.75H7.875V15ZM12.875 7.5H11.125V9.25H12.875V7.5ZM11.125 11.25H12.875V13H11.125V11.25ZM16.125 7.5H14.375V9.25H16.125V7.5ZM14.375 11.25H16.125V13H14.375V11.25ZM19.375 7.5H17.625V9.25H19.375V7.5ZM17.625 11.25H19.375V13H17.625V11.25ZM19.375 15H17.625V16.75H19.375V15Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Keyboard.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="keyboard-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M6.375 7.5H4.625V9.25H6.375V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M4.625 11.25H6.375V13H4.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M6.375 15H4.625V16.75H6.375V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 7.5H9.625V9.25H7.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M9.625 11.25H7.875V13H9.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 15H16.125V16.75H7.875V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M12.875 7.5H11.125V9.25H12.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M11.125 11.25H12.875V13H11.125V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M16.125 7.5H14.375V9.25H16.125V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M14.375 11.25H16.125V13H14.375V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.375 7.5H17.625V9.25H19.375V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M17.625 11.25H19.375V13H17.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.375 15H17.625V16.75H19.375V15Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M23.0999 3.65088C23.0999 3.51281 22.988 3.40088 22.8499 3.40088H1.1499C1.01183 3.40088 0.899902 3.51281 0.899902 3.65088V20.349C0.899902 20.4871 1.01183 20.599 1.1499 20.599H22.8499C22.988 20.599 23.0999 20.4871 23.0999 20.349V3.65088ZM3.0999 18.399V5.60088H20.8999V18.399H3.0999Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Keyboard.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="keyboard-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M6.375 7.5H4.625V9.25H6.375V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M4.625 11.25H6.375V13H4.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M6.375 15H4.625V16.75H6.375V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 7.5H9.625V9.25H7.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M9.625 11.25H7.875V13H9.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 15H16.125V16.75H7.875V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M12.875 7.5H11.125V9.25H12.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M11.125 11.25H12.875V13H11.125V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M16.125 7.5H14.375V9.25H16.125V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M14.375 11.25H16.125V13H14.375V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.375 7.5H17.625V9.25H19.375V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M17.625 11.25H19.375V13H17.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.375 15H17.625V16.75H19.375V15Z"
+    />
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M22.8499 3.90088C22.8499 3.76281 22.738 3.65088 22.5999 3.65088H1.3999C1.26183 3.65088 1.1499 3.76281 1.1499 3.90088V20.099C1.1499 20.2371 1.26183 20.349 1.3999 20.349H22.5999C22.738 20.349 22.8499 20.2371 22.8499 20.099V3.90088ZM2.8499 18.649V5.35088H21.1499V18.649H2.8499Z"
+      fill-rule="evenodd"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when KeyboardArrowDown.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="keyboardarrowdown-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      clip-rule="evenodd"
+      d="M1.1499 3.40088C1.01183 3.40088 0.899902 3.51281 0.899902 3.65088V20.349C0.899902 20.4871 1.01183 20.599 1.1499 20.599H15.25V14.5H23.0999V3.65088C23.0999 3.51281 22.988 3.40088 22.8499 3.40088H1.1499ZM4.625 7.5H6.375V9.25H4.625V7.5ZM6.375 11.25H4.625V13H6.375V11.25ZM4.625 15H6.375V16.75H4.625V15ZM9.625 7.5H7.875V9.25H9.625V7.5ZM7.875 11.25H9.625V13H7.875V11.25ZM13.8 15H7.875V16.75H13.8V15ZM11.125 7.5H12.875V9.25H11.125V7.5ZM12.875 11.25H11.125V13H12.875V11.25ZM14.375 7.5H16.125V9.25H14.375V7.5ZM16.125 11.25H14.375V13H16.125V11.25ZM17.625 7.5H19.375V9.25H17.625V7.5ZM19.375 11.25H17.625V13H19.375V11.25Z"
+      fill-rule="evenodd"
+    />
+    <path
+      class="emotion-1"
+      d="M19.1502 20.25V15.5H20.8502V20.25L22.7119 18.3421L23.7884 19.6579L20.0002 22.8483L16.2119 19.6579L17.2884 18.3421L19.1502 20.25Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when KeyboardArrowDown.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="keyboardarrowdown-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M22.8499 3.40088C22.988 3.40088 23.0999 3.51281 23.0999 3.65088V14H20.8999V5.60088H3.0999V18.399H14.5V20.599H1.1499C1.01183 20.599 0.899902 20.4871 0.899902 20.349V3.65088C0.899902 3.51281 1.01183 3.40088 1.1499 3.40088H22.8499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M4.625 7.5H6.375V9.25H4.625V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M4.625 11.25H6.375V13H4.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M6.375 15H4.625V16.75H6.375V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 7.5H9.625V9.25H7.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M9.625 11.25H7.875V13H9.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 15H16.125V16.75H7.875V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M12.875 7.5H11.125V9.25H12.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M11.125 11.25H12.875V13H11.125V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M16.125 7.5H14.375V9.25H16.125V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M14.375 11.25H16.125V13H14.375V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.375 7.5H17.625V9.25H19.375V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M17.625 11.25H19.375V13H17.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.1502 15V20.25L17.2884 18.3421L16.2119 19.6579L20.0002 22.8483L23.7884 19.6579L22.7119 18.3421L20.8502 20.25V15H19.1502Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when KeyboardArrowDown.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="keyboardarrowdown-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M22.5999 3.65088C22.738 3.65088 22.8499 3.76281 22.8499 3.90088V14H21.1499V5.35088H2.8499V18.649H14.75V20.349H1.3999C1.26183 20.349 1.1499 20.2371 1.1499 20.099V3.90088C1.1499 3.76281 1.26183 3.65088 1.3999 3.65088H22.5999Z"
+    />
+    <path
+      class="emotion-1"
+      d="M4.625 7.5H6.375V9.25H4.625V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M4.625 11.25H6.375V13H4.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M6.375 15H4.625V16.75H6.375V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 7.5H9.625V9.25H7.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M9.625 11.25H7.875V13H9.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M7.875 15H16.125V16.75H7.875V15Z"
+    />
+    <path
+      class="emotion-1"
+      d="M12.875 7.5H11.125V9.25H12.875V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M11.125 11.25H12.875V13H11.125V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M16.125 7.5H14.375V9.25H16.125V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M14.375 11.25H16.125V13H14.375V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.375 7.5H17.625V9.25H19.375V7.5Z"
+    />
+    <path
+      class="emotion-1"
+      d="M17.625 11.25H19.375V13H17.625V11.25Z"
+    />
+    <path
+      class="emotion-1"
+      d="M19.1502 15V20.25L17.2884 18.3421L16.2119 19.6579L20.0002 22.8483L23.7884 19.6579L22.7119 18.3421L20.8502 20.25V15H19.1502Z"
     />
   </svg>
 </div>
@@ -33568,6 +34830,168 @@ exports[`<Icon /> when Store.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when Strikethrogh.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="strikethrogh-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M12 2.4502C8.04467 2.4502 5.44995 5.18815 5.44995 7.7502C5.44995 9.02942 5.94642 10.0777 6.72803 10.8999H2V13.0999H10.9781C11.2492 13.1674 11.5238 13.2277 11.8004 13.2811C13.3218 13.5752 14.6061 13.925 15.4954 14.4423C16.3304 14.928 16.7 15.4801 16.7 16.2502C16.7 17.1501 16.3094 17.907 15.5517 18.4698C14.77 19.0505 13.5524 19.4502 11.9234 19.4502C10.6084 19.4502 9.35747 18.9811 8.44912 18.2579C7.53524 17.5302 7.04995 16.6205 7.04995 15.7502H4.94995C4.94995 17.4242 5.87095 18.8894 7.14106 19.9007C8.41671 20.9164 10.1275 21.5502 11.9234 21.5502C13.8709 21.5502 15.5666 21.0748 16.804 20.1556C18.0655 19.2184 18.8 17.8503 18.8 16.2502C18.8 14.852 18.1635 13.8313 17.2464 13.0999H22V10.8999H10.8979C10.0241 10.6336 9.28592 10.2886 8.72825 9.87344C7.94249 9.28852 7.54995 8.60023 7.54995 7.7502C7.54995 6.5824 8.95523 4.5502 12 4.5502C14.612 4.5502 16.25 6.25505 16.25 7.80599H18.35C18.35 4.74534 15.3879 2.4502 12 2.4502Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Strikethrogh.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="strikethrogh-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M12 2.4502C8.04467 2.4502 5.44995 5.18815 5.44995 7.7502C5.44995 9.02942 5.94642 10.0777 6.72803 10.8999H2V13.0999H10.9781C11.2492 13.1674 11.5238 13.2277 11.8004 13.2811C13.3218 13.5752 14.6061 13.925 15.4954 14.4423C16.3304 14.928 16.7 15.4801 16.7 16.2502C16.7 17.1501 16.3094 17.907 15.5517 18.4698C14.77 19.0505 13.5524 19.4502 11.9234 19.4502C10.6084 19.4502 9.35747 18.9811 8.44912 18.2579C7.53524 17.5302 7.04995 16.6205 7.04995 15.7502H4.94995C4.94995 17.4242 5.87095 18.8894 7.14106 19.9007C8.41671 20.9164 10.1275 21.5502 11.9234 21.5502C13.8709 21.5502 15.5666 21.0748 16.804 20.1556C18.0655 19.2184 18.8 17.8503 18.8 16.2502C18.8 14.852 18.1635 13.8313 17.2464 13.0999H22V10.8999H10.8979C10.0241 10.6336 9.28592 10.2886 8.72825 9.87344C7.94249 9.28852 7.54995 8.60023 7.54995 7.7502C7.54995 6.5824 8.95523 4.5502 12 4.5502C14.612 4.5502 16.25 6.25505 16.25 7.80599H18.35C18.35 4.74534 15.3879 2.4502 12 2.4502Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Strikethrogh.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="strikethrogh-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M12 2.5752C8.09887 2.5752 5.57495 5.27114 5.57495 7.7502C5.57495 9.17268 6.20554 10.3028 7.16837 11.1499H2V12.8499H10.5275C10.9497 12.9711 11.384 13.0733 11.8241 13.1584C13.3467 13.4527 14.6493 13.8055 15.5582 14.3343C16.4194 14.8352 16.825 15.423 16.825 16.2502C16.825 17.1917 16.4139 17.985 15.6263 18.5702C14.8174 19.171 13.5714 19.5752 11.9234 19.5752C10.5797 19.5752 9.30148 19.0963 8.37126 18.3557C7.43617 17.6111 6.92495 16.6683 6.92495 15.7502H6.8499C6.8499 15.7501 6.8499 15.7503 6.8499 15.7502L5.1499 15.7499C5.1499 15.7498 5.1499 15.75 5.1499 15.7499L5.07495 15.7502C5.07495 17.3763 5.97001 18.8085 7.21892 19.8029C8.47271 20.8012 10.1561 21.4252 11.9234 21.4252C13.852 21.4252 15.5192 20.9544 16.7295 20.0552C17.961 19.1404 18.675 17.8087 18.675 16.2502C18.675 14.6632 17.8305 13.5771 16.6779 12.8499H22V11.1499H11.3238C10.2385 10.8672 9.32267 10.4718 8.65361 9.97371C7.84329 9.37051 7.42495 8.64785 7.42495 7.7502C7.42495 6.49941 8.90103 4.4252 12 4.4252C14.6582 4.4252 16.375 6.16519 16.375 7.80599H18.225C18.225 4.8352 15.3417 2.5752 12 2.5752Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when Subtitle.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -34070,6 +35494,714 @@ exports[`<Icon /> when TalkHelp.Thin Icon rendered match snapshot 1`] = `
 </div>
 `;
 
+exports[`<Icon /> when Text.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="text-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.7993 5.0504H5.04993V6.6509C5.04993 6.76136 4.96043 6.8509 4.84998 6.8509H2.84998C2.73952 6.8509 2.6499 6.76136 2.6499 6.6509V2.8499C2.6499 2.73944 2.98952 2.6499 2.84998 2.6499H21.1493C21.2598 2.6499 21.3494 2.73944 21.3494 2.8499V6.6509C21.3494 6.76136 21.2598 6.8509 21.1493 6.8509H19.1493C19.0388 6.8509 18.9493 6.76136 18.9493 6.6509V5.0504H13.2V18.9499H14.6493C14.7597 18.9499 14.85 19.0394 14.85 19.1499V21.1504C14.85 21.2609 14.7604 21.3504 14.6499 21.3504H9.34998C9.23952 21.3504 9.14929 21.2609 9.14929 21.1504V19.1499C9.14929 19.0394 9.23891 18.9499 9.34937 18.9499H10.7993V5.0504Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Text.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="text-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.7993 5.0504H5.04993V6.6509C5.04993 6.76136 4.96043 6.8509 4.84998 6.8509H2.84998C2.73952 6.8509 2.6499 6.76136 2.6499 6.6509V2.8499C2.6499 2.73944 2.98952 2.6499 2.84998 2.6499H21.1493C21.2598 2.6499 21.3494 2.73944 21.3494 2.8499V6.6509C21.3494 6.76136 21.2598 6.8509 21.1493 6.8509H19.1493C19.0388 6.8509 18.9493 6.76136 18.9493 6.6509V5.0504H13.2V18.9499H14.6493C14.7597 18.9499 14.85 19.0394 14.85 19.1499V21.1504C14.85 21.2609 14.7604 21.3504 14.6499 21.3504H9.34998C9.23952 21.3504 9.14929 21.2609 9.14929 21.1504V19.1499C9.14929 19.0394 9.23891 18.9499 9.34937 18.9499H10.7993V5.0504Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when Text.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="text-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M11.0494 4.8004H4.79941V6.4009C4.79941 6.51136 4.70987 6.6009 4.59941 6.6009H3.09941C2.98896 6.6009 2.89941 6.51136 2.89941 6.4009V3.0999C2.89941 2.98945 2.98896 2.8999 3.09941 2.8999H20.9036C20.764 2.8999 21.1036 2.98945 21.1036 3.0999V6.4009C21.1036 6.51136 21.014 6.6009 20.9036 6.6009H19.4036C19.2931 6.6009 19.2036 6.51136 19.2036 6.4009V4.8004H12.9536V19.1999H14.4036C14.514 19.1999 14.6036 19.2894 14.6036 19.3999V20.9004C14.6036 21.0109 14.514 21.1004 14.4036 21.1004H9.59942C9.48896 21.1004 9.39942 21.0109 9.39942 20.9004V19.3999C9.39942 19.2894 9.48896 19.1999 9.59942 19.1999H11.0494V4.8004Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignCenter.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textaligncenter-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M2.1499 15.6004V13.4004H21.8499V15.6004H2.1499ZM6.1499 10.6004V8.4004H17.8499V10.6004H6.1499ZM2.1499 5.60039V3.40039H21.8499V5.60039L2.1499 5.60039Z"
+    />
+    <path
+      class="emotion-1"
+      d="M6.1499 18.4004V20.6004H17.8499V18.4004H6.1499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignCenter.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textaligncenter-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M2.1499 15.6004V13.4004H21.8499V15.6004H2.1499ZM6.1499 10.6004V8.4004H17.8499V10.6004H6.1499ZM2.1499 5.60039V3.40039H21.8499V5.60039L2.1499 5.60039Z"
+    />
+    <path
+      class="emotion-1"
+      d="M6.1499 18.4004V20.6004H17.8499V18.4004H6.1499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignCenter.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textaligncenter-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M17.5999 8.6499H6.3999V10.3499H17.5999V8.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M21.5999 3.6499H2.3999V5.3499H21.5999V3.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M21.5999 13.6499H2.3999V15.3499H21.5999V13.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M17.5999 18.6499H6.3999V20.3499H17.5999V18.6499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignLeft.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textalignleft-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M2.1499 15.6004V13.4004H21.8499V15.6004H2.1499ZM2.1499 10.6004V8.4004H13.8499V10.6004H2.1499ZM2.1499 5.60039V3.40039H21.8499V5.60039L2.1499 5.60039Z"
+    />
+    <path
+      class="emotion-1"
+      d="M2.1499 18.4004V20.6004H13.8499V18.4004H2.1499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignLeft.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textalignleft-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M2.1499 15.6004V13.4004H21.8499V15.6004H2.1499ZM2.1499 10.6004V8.4004H13.8499V10.6004H2.1499ZM2.1499 5.60039V3.40039H21.8499V5.60039L2.1499 5.60039Z"
+    />
+    <path
+      class="emotion-1"
+      d="M2.1499 18.4004V20.6004H13.8499V18.4004H2.1499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignLeft.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textalignleft-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M13.5999 8.6499H2.3999V10.3499H13.5999V8.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M21.5999 3.6499H2.3999V5.3499H21.5999V3.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M21.5999 13.6499H2.3999V15.3499H21.5999V13.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M13.5999 18.6499H2.3999V20.3499H13.5999V18.6499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignRight.Fill Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textalignright-fill"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M21.8499 15.6004V13.4004H2.1499V15.6004H21.8499ZM21.8499 10.6004V8.4004H10.1499V10.6004H21.8499ZM21.8499 5.60039V3.40039H2.1499V5.60039L21.8499 5.60039Z"
+    />
+    <path
+      class="emotion-1"
+      d="M21.8499 18.4004V20.6004H10.1499V18.4004H21.8499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignRight.Regular Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textalignright-regular"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M21.8499 15.6004V13.4004H2.1499V15.6004H21.8499ZM21.8499 10.6004V8.4004H10.1499V10.6004H21.8499ZM21.8499 5.60039V3.40039H2.1499V5.60039L21.8499 5.60039Z"
+    />
+    <path
+      class="emotion-1"
+      d="M21.8499 18.4004V20.6004H10.1499V18.4004H21.8499Z"
+    />
+  </svg>
+</div>
+`;
+
+exports[`<Icon /> when TextAlignRight.Thin Icon rendered match snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  fill: #0c0c0c;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
+<div>
+  <svg
+    class="emotion-0"
+    data-testid="textalignright-thin"
+    viewBox="0 0 24 24"
+  >
+    <path
+      class="emotion-1"
+      d="M10.3999 8.6499H21.5999V10.3499H10.3999V8.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M2.3999 3.6499H21.5999V5.3499H2.3999V3.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M2.3999 13.6499H21.5999V15.3499H2.3999V13.6499Z"
+    />
+    <path
+      class="emotion-1"
+      d="M10.3999 18.6499H21.5999V20.3499H10.3999V18.6499Z"
+    />
+  </svg>
+</div>
+`;
+
 exports[`<Icon /> when TextH1.Fill Icon rendered match snapshot 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -34118,7 +36250,11 @@ exports[`<Icon /> when TextH1.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M14.5 2.5h-2c-.15 0-.25.1-.25.25v8h-8v-8c0-.15-.1-.25-.25-.25H2c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V2.75c0-.15-.1-.25-.25-.25m5.65 12-1.95 1.4c-.05.05-.15 0-.15-.1v-1.7c0-.05 0-.05.05-.1l2-1.5c.05-.05.1-.05.1-.05h1.95c.05 0 .1.05.1.1v8.8c0 .05-.05.1-.1.1h-1.9c-.05 0-.1-.05-.1-.1z"
+      d="M19.9765 22.6505V16.6915L18 18.0165V16.0895L18.044 16.06L20.0405 14.7H22.137V22.6505H19.9765Z"
+    />
+    <path
+      class="emotion-1"
+      d="M13.3005 21V13.1754H4.15V21H1.75V3H4.15V10.7754H13.3V3H15.7V21H13.3005Z"
     />
   </svg>
 </div>
@@ -34172,7 +36308,11 @@ exports[`<Icon /> when TextH1.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M14.5 2.5h-2c-.15 0-.25.1-.25.25v8h-8v-8c0-.15-.1-.25-.25-.25H2c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V2.75c0-.15-.1-.25-.25-.25m5.65 12-1.95 1.4c-.05.05-.15 0-.15-.1v-1.7c0-.05 0-.05.05-.1l2-1.5c.05-.05.1-.05.1-.05h1.95c.05 0 .1.05.1.1v8.8c0 .05-.05.1-.1.1h-1.9c-.05 0-.1-.05-.1-.1z"
+      d="M19.9765 22.6505V16.6915L18 18.0165V16.0895L18.044 16.06L20.0405 14.7H22.137V22.6505H19.9765Z"
+    />
+    <path
+      class="emotion-1"
+      d="M13.3005 21V13.1754H4.15V21H1.75V3H4.15V10.7754H13.3V3H15.7V21H13.3005Z"
     />
   </svg>
 </div>
@@ -34226,7 +36366,11 @@ exports[`<Icon /> when TextH1.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M14.5 2.5h-1.25c-.15 0-.25.1-.25.25v8.4H3.5v-8.4c0-.15-.1-.25-.25-.25H2c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V12.9H13v8.4c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V2.8c0-.2-.1-.3-.25-.3m5.7 11.75-2.05 1.45c-.05.05-.15 0-.15-.1v-1.45c0-.05 0-.05.05-.1l2.1-1.55c.05-.05.1-.05.1-.05h1.6c.05 0 .1.05.1.1v8.8c0 .05-.05.1-.1.1H20.3c-.05 0-.1-.05-.1-.1z"
+      d="M13.549 21V12.9249H3.9V21H2V3H3.9V11.0254H13.5495V3H15.4495V21H13.549Z"
+    />
+    <path
+      class="emotion-1"
+      d="M20.0773 22.5501V16.7345L18.1003 17.9035V16.3726L19.9683 15.1001H21.7373V22.5506L20.0773 22.5501Z"
     />
   </svg>
 </div>
@@ -34280,7 +36424,11 @@ exports[`<Icon /> when TextH2.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M13.75 2.5h-2c-.15 0-.25.1-.25.25v8h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V2.75c0-.15-.1-.25-.25-.25m3.05 17.55c0-.05 0-.1.05-.15l2.8-2.7c1-1 1.2-1.4 1.2-1.95 0-.6-.45-1.05-1.1-1.05-.7 0-1.15.45-1.25 1.15 0 .05-.05.1-.1.1h-1.7c-.05 0-.1-.05-.1-.1.05-1.7 1.35-2.8 3.15-2.8 1.85 0 3.1 1.05 3.1 2.65 0 1.15-.5 1.8-1.85 3.1l-1.6 1.45v.05h3.45c.05 0 .1.05.1.1v1.55c0 .05-.05.1-.1.1h-6c-.05 0-.1-.05-.1-.1v-1.4z"
+      d="M17.413 21.4529V22.75H23.3762V21.1497L20.367 21.218C20.367 21.218 21.4665 20.1811 21.7363 19.907C21.9554 19.6844 22.5309 19.0311 22.7895 18.6736C23.0852 18.2649 23.226 17.6789 23.226 17.1094C23.226 16.6939 23.1036 16.2503 22.9102 15.9296C22.6984 15.5783 22.3087 15.2496 21.86 15.0497C21.4043 14.8517 20.8591 14.75 20.2351 14.75C19.6987 14.75 19.236 14.8271 18.8609 14.9796C18.5327 15.1001 18.2341 15.2894 17.9853 15.5349C17.7365 15.7804 17.5431 16.0764 17.4183 16.4029C17.3096 16.6922 17.2535 16.9831 17.25 17.2706H19.2482C19.2401 17.0205 19.3378 16.771 19.5136 16.5929C19.6894 16.4148 20.0171 16.3188 20.2821 16.3188C20.5471 16.3188 20.7377 16.3744 20.8779 16.4795C21.1688 16.6977 21.2641 16.9529 21.2651 17.2706C21.2661 17.6952 20.9682 18.159 20.6856 18.4596C19.6691 19.5533 17.413 21.4529 17.413 21.4529Z"
+    />
+    <path
+      class="emotion-1"
+      d="M13.3005 21V13.1754H4.15V21H1.75V3H4.15V10.7754H13.3V3H15.7V21H13.3005Z"
     />
   </svg>
 </div>
@@ -34334,7 +36482,11 @@ exports[`<Icon /> when TextH2.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M13.75 2.5h-2c-.15 0-.25.1-.25.25v8h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V2.75c0-.15-.1-.25-.25-.25m3.05 17.55c0-.05 0-.1.05-.15l2.8-2.7c1-1 1.2-1.4 1.2-1.95 0-.6-.45-1.05-1.1-1.05-.7 0-1.15.45-1.25 1.15 0 .05-.05.1-.1.1h-1.7c-.05 0-.1-.05-.1-.1.05-1.7 1.35-2.8 3.15-2.8 1.85 0 3.1 1.05 3.1 2.65 0 1.15-.5 1.8-1.85 3.1l-1.6 1.45v.05h3.45c.05 0 .1.05.1.1v1.55c0 .05-.05.1-.1.1h-6c-.05 0-.1-.05-.1-.1v-1.4z"
+      d="M17.413 21.4529V22.75H23.3762V21.1497L20.367 21.218C20.367 21.218 21.4665 20.1811 21.7363 19.907C21.9554 19.6844 22.5309 19.0311 22.7895 18.6736C23.0852 18.2649 23.226 17.6789 23.226 17.1094C23.226 16.6939 23.1036 16.2503 22.9102 15.9296C22.6984 15.5783 22.3087 15.2496 21.86 15.0497C21.4043 14.8517 20.8591 14.75 20.2351 14.75C19.6987 14.75 19.236 14.8271 18.8609 14.9796C18.5327 15.1001 18.2341 15.2894 17.9853 15.5349C17.7365 15.7804 17.5431 16.0764 17.4183 16.4029C17.3096 16.6922 17.2535 16.9831 17.25 17.2706H19.2482C19.2401 17.0205 19.3378 16.771 19.5136 16.5929C19.6894 16.4148 20.0171 16.3188 20.2821 16.3188C20.5471 16.3188 20.7377 16.3744 20.8779 16.4795C21.1688 16.6977 21.2641 16.9529 21.2651 17.2706C21.2661 17.6952 20.9682 18.159 20.6856 18.4596C19.6691 19.5533 17.413 21.4529 17.413 21.4529Z"
+    />
+    <path
+      class="emotion-1"
+      d="M13.3005 21V13.1754H4.15V21H1.75V3H4.15V10.7754H13.3V3H15.7V21H13.3005Z"
     />
   </svg>
 </div>
@@ -34388,7 +36540,11 @@ exports[`<Icon /> when TextH2.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M13.75 2.5H12.5c-.15 0-.25.1-.25.25v8.4h-9.5v-8.4c0-.15-.1-.25-.25-.25H1.25c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25H2.5c.15 0 .25-.1.25-.25V12.9h9.5v8.4c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V2.8c0-.2-.1-.3-.25-.3m3.15 17.75c0-.05 0-.05.05-.05l2.95-2.9c1.1-1.05 1.3-1.5 1.3-2.1 0-.7-.55-1.25-1.3-1.25-.85 0-1.4.55-1.45 1.3 0 .05-.05.1-.1.1H16.9c-.05 0-.1-.05-.1-.1.05-1.6 1.35-2.75 3.1-2.75 1.8 0 3 1.05 3 2.55 0 1.05-.5 1.75-1.95 3.2l-1.75 1.7V20h3.7c.05 0 .1.05.1.1v1.25c0 .05-.05.1-.1.1H17c-.05 0-.1-.05-.1-.1z"
+      d="M21.4296 17.1934C21.4277 16.5788 20.789 16.1091 20.1878 16.1188C19.8846 16.1139 19.5843 16.2366 19.3713 16.4524C19.117 16.7099 19.0024 17.1179 19.0526 17.4724H17.4538C17.4539 17.2279 17.5163 16.781 17.5914 16.581C17.7043 16.2805 17.8848 15.9651 18.1275 15.7256C18.356 15.5001 18.6285 15.2781 18.9298 15.1675C19.3415 15.0001 19.7938 14.95 20.2351 14.95C20.9643 14.95 21.6391 15.1003 22.1711 15.4955C22.7888 15.9542 23.0623 16.4546 23.0623 17.0706C23.0623 17.4597 22.9637 17.8685 22.8311 18.0928C22.487 18.6751 22.1114 19.1072 21.6633 19.5828C21.0672 20.2156 20.4167 20.8035 19.9197 21.2603H23.1762V22.55H17.613V21.501C17.613 21.501 18.7879 20.5345 19.5076 19.836C20.0184 19.3404 20.3022 19.0469 20.7153 18.6024C21.0333 18.264 21.4306 17.6699 21.4296 17.1934Z"
+    />
+    <path
+      class="emotion-1"
+      d="M13.549 12.9249V21H15.4495V3H13.5495V11.0254H3.9V3H2V21H3.9V12.9249H13.549Z"
     />
   </svg>
 </div>
@@ -34442,7 +36598,11 @@ exports[`<Icon /> when TextH3.Fill Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M13.75 2.5h-2c-.15 0-.25.1-.25.25v8h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V2.75c0-.15-.1-.25-.25-.25m2.7 16.4h1.95c.05.5.55.9 1.3.9s1.25-.45 1.25-1.05c0-.7-.5-1.1-1.4-1.1h-.85v-1.5h.85c.8 0 1.25-.4 1.25-1s-.4-.95-1.1-.95-1.15.4-1.2.95l-1.85-.05c.1-1.55 1.3-2.55 3.05-2.55 1.85 0 3 .9 3 2.3 0 1.1-.75 1.8-1.65 2v.05c1.2.15 1.95.85 1.95 2 0 1.6-1.3 2.65-3.3 2.65-1.9-.05-3.15-1.1-3.25-2.65"
+      d="M13.3005 21V13.1754H4.15V21H1.75V3H4.15V10.7754H13.3V3H15.7V21H13.3005Z"
+    />
+    <path
+      class="emotion-1"
+      d="M17.0999 20.5564C17.2189 22.0349 18.4974 22.9904 20.3574 22.9904C22.3564 22.9904 23.6474 22.0264 23.6474 20.5329V20.5219C23.6474 19.5774 23.0474 18.9124 22.0219 18.6924C22.8349 18.4019 23.3414 17.7399 23.3414 16.9289V16.9179C23.3414 15.6074 22.0934 14.7609 20.3414 14.7609C18.5894 14.7609 17.3884 15.6954 17.2824 17.1419L17.2689 17.3239H19.2549L19.2694 17.1859C19.3189 16.7179 19.7339 16.4269 20.3409 16.4269C20.9479 16.4269 21.3099 16.7104 21.3099 17.1864V17.1974C21.3099 17.6954 20.8814 18.0049 20.1909 18.0049H19.2584V19.5424H20.2014C21.2829 19.5424 21.4444 20.0854 21.4444 20.4089V20.4199C21.4444 20.9174 20.9884 21.2384 20.3519 21.2384C19.7154 21.2384 19.2459 20.9534 19.1829 20.5249L19.1569 20.3844H17.0854L17.0999 20.5564Z"
     />
   </svg>
 </div>
@@ -34496,7 +36656,11 @@ exports[`<Icon /> when TextH3.Regular Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M13.75 2.5h-2c-.15 0-.25.1-.25.25v8h-8v-8c0-.15-.1-.25-.25-.25h-2c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25v-8h8v8c0 .15.1.25.25.25h2c.15 0 .25-.1.25-.25V2.75c0-.15-.1-.25-.25-.25m2.7 16.4h1.95c.05.5.55.9 1.3.9s1.25-.45 1.25-1.05c0-.7-.5-1.1-1.4-1.1h-.85v-1.5h.85c.8 0 1.25-.4 1.25-1s-.4-.95-1.1-.95-1.15.4-1.2.95l-1.85-.05c.1-1.55 1.3-2.55 3.05-2.55 1.85 0 3 .9 3 2.3 0 1.1-.75 1.8-1.65 2v.05c1.2.15 1.95.85 1.95 2 0 1.6-1.3 2.65-3.3 2.65-1.9-.05-3.15-1.1-3.25-2.65"
+      d="M13.3005 21V13.1754H4.15V21H1.75V3H4.15V10.7754H13.3V3H15.7V21H13.3005Z"
+    />
+    <path
+      class="emotion-1"
+      d="M17.0999 20.5564C17.2189 22.0349 18.4974 22.9904 20.3574 22.9904C22.3564 22.9904 23.6474 22.0264 23.6474 20.5329V20.5219C23.6474 19.5774 23.0474 18.9124 22.0219 18.6924C22.8349 18.4019 23.3414 17.7399 23.3414 16.9289V16.9179C23.3414 15.6074 22.0934 14.7609 20.3414 14.7609C18.5894 14.7609 17.3884 15.6954 17.2824 17.1419L17.2689 17.3239H19.2549L19.2694 17.1859C19.3189 16.7179 19.7339 16.4269 20.3409 16.4269C20.9479 16.4269 21.3099 16.7104 21.3099 17.1864V17.1974C21.3099 17.6954 20.8814 18.0049 20.1909 18.0049H19.2584V19.5424H20.2014C21.2829 19.5424 21.4444 20.0854 21.4444 20.4089V20.4199C21.4444 20.9174 20.9884 21.2384 20.3519 21.2384C19.7154 21.2384 19.2459 20.9534 19.1829 20.5249L19.1569 20.3844H17.0854L17.0999 20.5564Z"
     />
   </svg>
 </div>
@@ -34550,7 +36714,11 @@ exports[`<Icon /> when TextH3.Thin Icon rendered match snapshot 1`] = `
   >
     <path
       class="emotion-1"
-      d="M13.75 2.5H12.5c-.15 0-.25.1-.25.25v8.4h-9.5v-8.4c0-.15-.1-.25-.25-.25H1.25c-.15 0-.25.1-.25.25v18.5c0 .15.1.25.25.25H2.5c.15 0 .25-.1.25-.25V12.9h9.5v8.4c0 .15.1.25.25.25h1.25c.15 0 .25-.1.25-.25V2.8c0-.2-.1-.3-.25-.3m2.95 16.45h1.45c.05 0 .1.05.1.1.1.6.7 1 1.55 1 .9 0 1.45-.5 1.45-1.2 0-.85-.6-1.3-1.6-1.3h-.85c-.05 0-.1-.05-.1-.1v-1.1c0-.05.05-.1.1-.1h.8c.85 0 1.45-.5 1.45-1.2s-.5-1.15-1.3-1.15c-.75 0-1.3.4-1.4 1.05 0 .05-.05.1-.1.1h-1.4c-.05 0-.1-.05-.1-.1.15-1.45 1.3-2.4 3-2.4 1.8 0 2.95.9 2.95 2.3 0 1.1-.75 1.8-1.7 2v.05c1.25.1 2.05.85 2.05 2.05 0 1.55-1.3 2.6-3.2 2.6-1.85 0-3.05-1-3.2-2.4-.05-.15 0-.2.05-.2"
+      d="M20.3575 22.7401C18.6805 22.7401 17.5155 21.9171 17.3585 20.6341H18.949C19.065 21.1471 19.618 21.4876 20.352 21.4876C21.155 21.4876 21.6945 21.0581 21.6945 20.4196V20.4091C21.6945 19.6991 21.1505 19.2921 20.2015 19.2921H19.508V18.2551H20.191C21.023 18.2551 21.56 17.8396 21.56 17.1966V17.1861C21.56 16.5636 21.093 16.1766 20.341 16.1766C19.639 16.1766 19.1355 16.5256 19.0335 17.0736H17.539C17.6765 15.7991 18.7415 15.0106 20.341 15.0106C21.9405 15.0106 23.0915 15.7596 23.0915 16.9176V16.9281C23.0915 17.9021 22.3245 18.5744 21.606 18.7184L21.4855 18.7424L21.62 18.7564C22.7495 18.8704 23.397 19.5941 23.397 20.5211V20.5321C23.397 21.1876 23.1195 21.7391 22.5935 22.1281C22.0535 22.5281 21.2805 22.7401 20.3575 22.7401Z"
+    />
+    <path
+      class="emotion-1"
+      d="M13.549 12.9251V21H15.4495V3H13.5495V11.0256H3.9V3H2V21H3.9V12.9251H13.549Z"
     />
   </svg>
 </div>
