@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.28](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.27...vibrant-core-0.94.28) (2025-04-15)
+
+
+### Bug Fixes
+
+* tabview index error ([#1017](https://github.com/pedaling/opensource/issues/1017)) ([78029b3](https://github.com/pedaling/opensource/commit/78029b32b5cb57fbea5f701bdf1a1432f4c5374a))
+
 ## [0.94.27](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.26...vibrant-core-0.94.27) (2025-04-14)
 
 ## [0.94.26](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.25...vibrant-core-0.94.26) (2025-04-10)
