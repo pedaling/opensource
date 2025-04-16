@@ -10,39 +10,35 @@ export const createSystemProp = (config: SystemPropConfig): SystemProp => {
 
   return Object.assign(
     (input: any, theme: Record<SystemPropThemeScale, any>, interpolation: (props: any) => any = props => props) => {
-      const style = () => {
-        if (input === undefined) {
-          return [];
+      if (input === undefined) {
+        return [];
+      }
+
+      const targetProperty = styleProperty ?? property;
+
+      return [input].flat().map(value => {
+        let result = get(theme, `${scale}.${value}`, value);
+
+        if (typeof result === 'string' && result.startsWith('$')) {
+          result = get(theme, result.replace('$', ''), result);
         }
 
-        const targetProperty = styleProperty ?? property;
+        if (shouldInterpolation === 'before' && isRecord(result)) {
+          result = interpolation(result);
+        }
 
-        return [input].flat().map(value => {
-          let result = get(theme, `${scale}.${value}`, value);
+        if (isDefined(transform)) {
+          result = transform(result) ?? {};
+        } else {
+          result = { [targetProperty]: result };
+        }
 
-          if (typeof result === 'string' && result.startsWith('$')) {
-            result = get(theme, result.replace('$', ''), result);
-          }
+        if (shouldInterpolation === 'after' && isRecord(result)) {
+          result = interpolation(result);
+        }
 
-          if (shouldInterpolation === 'before' && isRecord(result)) {
-            result = interpolation(result);
-          }
-
-          if (isDefined(transform)) {
-            result = transform(result) ?? {};
-          } else {
-            result = { [targetProperty]: result };
-          }
-
-          if (shouldInterpolation === 'after' && isRecord(result)) {
-            result = interpolation(result);
-          }
-
-          return result;
-        });
-      };
-
-      return style();
+        return result;
+      });
     },
     {
       propName: property,
