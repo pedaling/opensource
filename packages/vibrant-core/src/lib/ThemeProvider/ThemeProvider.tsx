@@ -80,25 +80,23 @@ export const useCurrentTheme = ({ root } = { root: false }): { theme: CurrentThe
 
   const currentTheme = root ? rootTheme : theme;
 
-  const currentThemeValues = useMemo(
+  return useMemo(
     () => ({
-      ...currentTheme,
-      colors: currentTheme.colors[currentTheme.mode],
-      elevation: currentTheme.elevation[currentTheme.mode],
-      gradient: currentTheme.gradient[currentTheme.mode],
-      opacity: currentTheme.opacity[currentTheme.mode],
+      theme: {
+        ...currentTheme,
+        colors: currentTheme.colors[currentTheme.mode],
+        elevation: currentTheme.elevation[currentTheme.mode],
+        gradient: currentTheme.gradient[currentTheme.mode],
+        opacity: currentTheme.opacity[currentTheme.mode],
+      },
     }),
     [currentTheme]
   );
-
-  return {
-    theme: currentThemeValues,
-  };
 };
 
 export const useCurrentThemeMode = ({ root } = { root: false }): { mode: ThemeMode } => {
   const { rootTheme, theme } = useContext(ThemeContext);
   const currentThemeMode = root ? rootTheme.mode : theme.mode;
 
-  return { mode: currentThemeMode };
+  return useMemo(() => ({ mode: currentThemeMode }), [currentThemeMode]);
 };

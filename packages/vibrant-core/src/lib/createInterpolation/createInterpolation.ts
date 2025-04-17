@@ -5,8 +5,9 @@ import { useBuildStyle } from '../useBuildStyle';
 
 export const createInterpolation = (systemProps: SystemProp[], defaultProps: any = {}) => {
   const cache: Record<string, SystemProp | null> = {};
+
   const enabledSystemProps = systemProps.filter(systemProp => !systemProp.disabled);
-  const enabledSystemPropNames = enabledSystemProps.map(systemProp => systemProp.propName);
+  const enabledSystemPropMap = new Map(enabledSystemProps.map(systemProp => [systemProp.propName, systemProp]));
 
   const childInterpolation = (props: Record<string, any>, theme: CurrentTheme): Record<string, any>[] => {
     let result: Record<string, any>[] = [];
@@ -15,13 +16,12 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
       return [props];
     }
 
-    if (!Object.keys(props).some(key => enabledSystemPropNames.includes(key))) {
-      return [];
-    }
-
     for (const [key, value] of Object.entries(props)) {
-      const matchedSystemProp =
-        cache[key] === undefined ? enabledSystemProps.find(systemProp => systemProp.propName === key) : cache[key];
+      if (!enabledSystemPropMap.has(key)) {
+        continue;
+      }
+
+      const matchedSystemProp = cache[key] === undefined ? enabledSystemPropMap.get(key) : cache[key];
 
       if (!matchedSystemProp) {
         cache[key] = null;
@@ -55,7 +55,9 @@ export const createInterpolation = (systemProps: SystemProp[], defaultProps: any
 };
 
 const mergeResponsiveValue = (original: Record<string, any>[], next: Record<string, any>[]) => {
-  next.forEach((value, index) => {
+  for (let index = 0; index < next.length; index++) {
+    const value = next[index];
+
     original[index] = {
       ...(original[index] ?? {}),
       ...value,
@@ -68,7 +70,7 @@ const mergeResponsiveValue = (original: Record<string, any>[], next: Record<stri
           }
         : {}),
     };
-  });
+  }
 
   return original;
 };
