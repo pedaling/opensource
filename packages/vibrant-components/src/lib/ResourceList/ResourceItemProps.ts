@@ -13,13 +13,19 @@ export type ResourceItemProps = {
   ActionComponent?: ReactElement<ComponentProps<typeof IconButton>>;
 
   width?: ResponsiveValue<number | `${number}%`>;
-  id?: string;
-  onToggleSelect?: (args: { id?: string; selected: boolean }) => void;
-
   selectable?: boolean;
   defaultValue?: boolean;
   selected?: boolean;
-};
+} & (
+  | {
+      id: never;
+      onToggleSelect?: (args: { selected: boolean }) => void;
+    }
+  | {
+      id: string;
+      onToggleSelect?: (args: { id: string; selected: boolean }) => void;
+    }
+);
 
 export const withResourceItemVariation = withVariation<ResourceItemProps>('ResourceItem')(
   propVariant({
