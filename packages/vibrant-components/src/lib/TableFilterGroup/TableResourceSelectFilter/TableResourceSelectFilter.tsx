@@ -1,9 +1,11 @@
+import type { ReactElement } from 'react';
 import React, { Children, useEffect, useImperativeHandle, useMemo, useState } from 'react';
 import { Body, Divider, GhostButton, HStack, TextField, VStack } from '@vibrant-ui/components';
 import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
 import { useCallbackRef } from '@vibrant-ui/utils';
 import { ResourceList } from '../../ResourceList';
+import type { ResourceItemProps } from '../../ResourceList/ResourceItemProps';
 import { useTableFilterGroup } from '../context';
 import { TableFieldFilter } from '../TableFieldFilter';
 import type { Filter, MultiSelectFilterOperator } from '../types';
@@ -22,6 +24,7 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
       value: [],
       operator: operators[0],
     },
+    searchInputProps,
     testId = 'table-resource-select-filter',
     ...resourceListProps
   }) => {
@@ -29,6 +32,7 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator);
     const { updateFilter } = useTableFilterGroup();
     const handleFilterChange = useCallbackRef(updateFilter);
+    const [reorderedChildren, setReorderedChildren] = useState(children);
 
     const {
       translations: {
@@ -67,6 +71,29 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
       [children, value]
     );
 
+    const sortChildren = () => {
+      setReorderedChildren(children => {
+        const childrenArray = Children.map(children, child => child);
+
+        if (!value.length) {
+          return childrenArray;
+        }
+
+        const selectedChildren: ReactElement<ResourceItemProps>[] = [];
+        const unselectedChildren: ReactElement<ResourceItemProps>[] = [];
+
+        childrenArray.forEach(child => {
+          if (React.isValidElement(child) && child.props.id && value.includes(child.props.id)) {
+            selectedChildren.push(child);
+          } else {
+            unselectedChildren.push(child);
+          }
+        });
+
+        return [...selectedChildren, ...unselectedChildren];
+      });
+    };
+
     const filterLabel = useMemo(() => {
       if (!value?.length) {
         return label;
@@ -102,6 +129,7 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
         dataKey={dataKey}
         label={filterLabel}
         active={isMultiSelectFilterValid({ value, operator })}
+        onOpen={sortChildren}
         onClose={handleClose}
         operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
         selectedOperator={operator}
@@ -114,6 +142,7 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
                 placeholder={placeholder}
                 type="search"
                 size="md"
+                {...searchInputProps}
               />
               <ResourceList
                 {...resourceListProps}
@@ -121,7 +150,7 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
                 selectedIds={value}
                 onChangeSelectedIds={setValue}
               >
-                {children}
+                {reorderedChildren}
               </ResourceList>
             </VStack>
             {value.length > 0 && (

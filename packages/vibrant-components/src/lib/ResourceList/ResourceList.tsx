@@ -2,11 +2,7 @@ import React, { memo, useEffect, useMemo, useState } from 'react';
 import type { ComponentWithRef, ResponsiveValue } from '@vibrant-ui/core';
 import { VStack } from '../VStack';
 import { ResourceItem } from './ResourceItem';
-
-type ResourceItemProps = {
-  id: string;
-  [key: string]: any;
-};
+import type { ResourceItemProps } from './ResourceItemProps';
 
 export type ResourceListProps = {
   size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
@@ -63,6 +59,7 @@ const ResourceListComponent = ({ size, children, ...props }: ResourceListProps) 
             return React.cloneElement(child, {
               ...childProps,
               size,
+              id: childProps.id,
               selectable: props.multiSelect,
               selected: internalSelectedIds.includes(childProps.id),
               onToggleSelect: handleToggleSelect,
