@@ -1,6 +1,9 @@
+import { useEffect, useState } from 'react';
 import { action } from '@storybook/addon-actions';
 import type { ComponentStory } from '@storybook/react';
+import { Icon } from '@vibrant-ui/icons';
 import { Avatar } from '../../../lib/Avatar';
+import { IconButton } from '../../IconButton';
 import { ResourceList } from '../../ResourceList';
 import { TableFilterGroup } from '../TableFilterGroup';
 import { TableResourceSelectFilter } from './TableResourceSelectFilter';
@@ -143,3 +146,52 @@ export const WithPreselectedValues: ComponentStory<typeof TableResourceSelectFil
     </TableFilterGroup.ResourceSelectFilter>
   </TableFilterGroup>
 );
+
+export const WithExternalData: ComponentStory<typeof TableResourceSelectFilter> = _args => {
+  const [search, setSearch] = useState('');
+  const [data, setData] = useState<any[]>([]);
+
+  const fetchData = async (_search: string) => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await response.json();
+
+    // search random 10 items
+    setData(data.slice(0, Math.random() * 10));
+  };
+
+  useEffect(() => {
+    fetchData('');
+  }, []);
+
+  return (
+    <TableFilterGroup initialFilterDataKeys={['userId']} onFilterChange={action('filterChange')}>
+      <TableFilterGroup.ResourceSelectFilter
+        dataKey="userId"
+        label="Resource Filter"
+        searchInputProps={{
+          onValueChange: ({ value }) => setSearch(value),
+          renderEnd: () => (
+            <IconButton
+              size="sm"
+              IconComponent={Icon.Add.Regular}
+              onClick={() => {
+                fetchData(search);
+              }}
+            />
+          ),
+        }}
+        size="lg"
+      >
+        {data.map(item => (
+          <ResourceList.Item
+            key={item.id}
+            ImageComponent={<Avatar alt="User 4" size="md" src={`https://i.pravatar.cc/150?u=${item.id}`} />}
+            id={String(item.id)}
+            title={item.name}
+            subtitle={item.email}
+          />
+        ))}
+      </TableFilterGroup.ResourceSelectFilter>
+    </TableFilterGroup>
+  );
+};
