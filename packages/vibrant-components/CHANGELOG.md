@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.31](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.30...vibrant-components-0.94.31) (2025-04-23)
+
+
+### Features
+
+* improve ordering of resource items ([#1022](https://github.com/pedaling/opensource/issues/1022)) ([a44e384](https://github.com/pedaling/opensource/commit/a44e38425d8c4d8782c7a6bdf72bc9fa4700390b))
+
 ## [0.94.30](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.29...vibrant-components-0.94.30) (2025-04-18)
 
 

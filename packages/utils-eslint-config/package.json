@@ -1,6 +1,6 @@
 {
   "name": "@class101/eslint-config",
-  "version": "0.91.30",
+  "version": "0.91.31",
   "private": false,
   "sideEffects": false,
   "main": "src/index.js",
