@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import React, { Children, useEffect, useImperativeHandle, useMemo, useState } from 'react';
+import React, { Children, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import { Body, Divider, GhostButton, HStack, TextField, VStack } from '@vibrant-ui/components';
 import { useConfig } from '@vibrant-ui/core';
 import { Icon } from '@vibrant-ui/icons';
@@ -28,11 +28,12 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
     testId = 'table-resource-select-filter',
     ...resourceListProps
   }) => {
-    const [value, setValue] = useState<string[]>(defaultValue?.value);
+    const [value, setValueState] = useState<string[]>(defaultValue?.value);
     const [operator, setOperator] = useState<MultiSelectFilterOperator>(defaultValue?.operator);
     const { updateFilter } = useTableFilterGroup();
     const handleFilterChange = useCallbackRef(updateFilter);
     const [reorderedChildren, setReorderedChildren] = useState(children);
+    const valueRefForChildrenChange = useRef(defaultValue?.value);
 
     const {
       translations: {
@@ -42,6 +43,11 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
         },
       },
     } = useConfig();
+
+    const setValue = useCallback((value: string[]) => {
+      setValueState(value);
+      valueRefForChildrenChange.current = value;
+    }, []);
 
     useImperativeHandle(
       innerRef,
@@ -53,7 +59,7 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
         value: { value, operator, dataKey, type: 'multiSelect' } as Filter,
         isDefaultState: value === defaultValue?.value && operator === defaultValue?.operator,
       }),
-      [dataKey, defaultValue?.operator, defaultValue?.value, operator, value]
+      [dataKey, defaultValue?.operator, defaultValue?.value, operator, setValue, value]
     );
 
     useEffect(() => {
@@ -62,16 +68,28 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
 
     const selectedItems = useMemo(
       () =>
-        Children.map(children, child => ({
-          id: child.props.id,
-          title: child.props.title,
-        }))
-          .filter(item => item.id && value.includes(item.id))
-          .map(item => item.title),
-      [children, value]
+        Children.map(reorderedChildren, child => child)
+          .filter(item => item.props.id && value.includes(item.props.id))
+          .map(item => item.props.title),
+      [reorderedChildren, value]
     );
 
-    const sortChildren = () => {
+    useEffect(() => {
+      const value = valueRefForChildrenChange.current;
+
+      setReorderedChildren(prevChildren => {
+        const selectedChildren = Children.map(prevChildren, child => child).filter(child =>
+          value.includes(child.props.id)
+        );
+        const newChildren = Children.map(children, child => child).filter(child => !value.includes(child.props.id));
+
+        return [...selectedChildren, ...newChildren];
+      });
+    }, [children]);
+
+    const sortChildren = useCallback(() => {
+      const value = valueRefForChildrenChange.current;
+
       setReorderedChildren(children => {
         const childrenArray = Children.map(children, child => child);
 
@@ -92,7 +110,7 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
 
         return [...selectedChildren, ...unselectedChildren];
       });
-    };
+    }, []);
 
     const filterLabel = useMemo(() => {
       if (!value?.length) {
@@ -113,15 +131,17 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
         .replace('{count}', String(selectedItems.length - 1))}`;
     }, [value, operator, label, filterLabelTranslation, selectedItems]);
 
-    const handleClose = () => {
+    const handleClose = useCallback(() => {
       if (isValueRequiredOperator(operator)) {
         setValue([]);
       }
-    };
 
-    const handleOperatorSelect = (operatorOption: MultiSelectFilterOperator) => {
+      sortChildren();
+    }, [operator, setValue, sortChildren]);
+
+    const handleOperatorSelect = useCallback((operatorOption: MultiSelectFilterOperator) => {
       setOperator(operatorOption);
-    };
+    }, []);
 
     return (
       <TableFieldFilter
@@ -129,7 +149,6 @@ export const TableResourceSelectFilter = withTableResourceSelectFilterVariation(
         dataKey={dataKey}
         label={filterLabel}
         active={isMultiSelectFilterValid({ value, operator })}
-        onOpen={sortChildren}
         onClose={handleClose}
         operatorOptions={operators.map(operator => ({ operator, label: operatorTranslation[operator] }))}
         selectedOperator={operator}
