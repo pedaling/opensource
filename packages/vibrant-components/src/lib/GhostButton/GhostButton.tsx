@@ -31,6 +31,7 @@ export const GhostButton = withGhostButtonVariation(
       data-testid={testId}
       flexDirection="row"
       alignItems="center"
+      backgroundColor="transparent"
     >
       {IconComponent && <IconComponent size={iconSize} fill={color} />}
       <Text
