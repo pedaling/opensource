@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.32](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.31...vibrant-components-0.94.32) (2025-04-28)
+
+
+### Bug Fixes
+
+* 고스트 버튼의 배경색을 transparent로 고정한다 ([#1023](https://github.com/pedaling/opensource/issues/1023)) ([7c05f9c](https://github.com/pedaling/opensource/commit/7c05f9c2090896a6bdc4050bc7f7b665ed6d42ea))
+
 ## [0.94.31](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.30...vibrant-components-0.94.31) (2025-04-23)
 
 
