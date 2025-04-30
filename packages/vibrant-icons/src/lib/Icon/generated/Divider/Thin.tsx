@@ -4,7 +4,7 @@ import { Svg } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '../../IconProp';
 const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'divider-thin', ...props }) => (
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
-    <Svg.Path d="M19.8999 21.6004V17.3504H4.0999V21.6004H2.3999V15.6504H21.5999V21.6004H19.8999ZM1.1499 12.8504V11.1504H22.8499V12.8504H1.1499ZM2.3999 8.35039V2.40039H4.0999V6.65039H19.8999V2.40039H21.5999V8.35039H2.3999Z" />
+    <Svg.Path d="M19.9 21.6v-4.25H4.1v4.25H2.4v-5.95h19.2v5.95zM1.15 12.85v-1.7h21.7v1.7zm1.25-4.5V2.4h1.7v4.25h15.8V2.4h1.7v5.95z" />
   </Svg>
 );
 
