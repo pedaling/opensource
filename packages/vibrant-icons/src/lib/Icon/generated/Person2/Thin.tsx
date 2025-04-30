@@ -6,7 +6,7 @@ const Icon: FC<IconProps> = ({ size = 24, fill = 'onColor', testId = 'person2-th
   <Svg viewBox="0 0 24 24" width={size} height={size} fill={fill} data-testid={testId} {...props}>
     <Svg.Path
       fillRule="evenodd"
-      d="M8 2.15a4.35 4.35 0 1 0 0 8.7 4.35 4.35 0 0 0 0-8.7M5.35 6.5a2.65 2.65 0 1 1 5.3 0 2.65 2.65 0 0 1-5.3 0M17.75 5.15a3.85 3.85 0 1 0 0 7.7 3.85 3.85 0 0 0 0-7.7M15.6 9a2.15 2.15 0 1 1 4.3 0 2.15 2.15 0 0 1-4.3 0"
+      d="M8 2.15a4.35 4.35 0 1 0 0 8.7 4.35 4.35 0 0 0 0-8.7M5.35 6.5a2.65 2.65 0 1 1 5.3 0 2.65 2.65 0 0 1-5.3 0m12.4-1.35a3.85 3.85 0 1 0 0 7.7 3.85 3.85 0 0 0 0-7.7M15.6 9a2.15 2.15 0 1 1 4.3 0 2.15 2.15 0 0 1-4.3 0"
       clipRule="evenodd"
     />
     <Svg.Path

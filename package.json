@@ -11,7 +11,7 @@
     "lint:all:fix": "nx run-many --target=lint --all --fix",
     "storybook": "nx storybook",
     "start-storybook": "NODE_OPTIONS=\"--openssl-legacy-provider\" start-storybook --port=5004",
-    "generate-icons": "nx generate-icons",
+    "generate-icons": "svgo -rf packages/vibrant-icons/assets/icons && nx generate-icons vibrant-icons",
     "build-storybook": "build-storybook",
     "typecheck": "nx typecheck",
     "vibrant-app": "nx start vibrant-example-app",
