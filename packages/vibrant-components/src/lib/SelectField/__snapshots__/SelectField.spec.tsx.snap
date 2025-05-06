@@ -17,6 +17,7 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  width: 100%;
 }
 
 .emotion-1 {
@@ -163,6 +164,24 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
   fill: #0c0c0c;
 }
 
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -199,7 +218,7 @@ exports[`<SelectField /> when size is lg match snapshot 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            class="emotion-0"
+            class="emotion-7"
             d="m7.05 9.4 4.75 7c.1.15.3.15.4 0l4.75-7c.1-.15 0-.4-.2-.4h-9.5c-.2 0-.3.25-.2.4"
           />
         </svg>
@@ -226,6 +245,7 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  width: 100%;
 }
 
 .emotion-1 {
@@ -372,6 +392,24 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
   fill: #0c0c0c;
 }
 
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -408,7 +446,7 @@ exports[`<SelectField /> when size is md match snapshot 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            class="emotion-0"
+            class="emotion-7"
             d="m7.05 9.4 4.75 7c.1.15.3.15.4 0l4.75-7c.1-.15 0-.4-.2-.4h-9.5c-.2 0-.3.25-.2.4"
           />
         </svg>
@@ -435,6 +473,7 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  width: 100%;
 }
 
 .emotion-1 {
@@ -581,6 +620,24 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
   fill: #0c0c0c;
 }
 
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -617,7 +674,7 @@ exports[`<SelectField /> when size is sm match snapshot 1`] = `
           viewBox="0 0 24 24"
         >
           <path
-            class="emotion-0"
+            class="emotion-7"
             d="m7.05 9.4 4.75 7c.1.15.3.15.4 0l4.75-7c.1-.15 0-.4-.2-.4h-9.5c-.2 0-.3.25-.2.4"
           />
         </svg>

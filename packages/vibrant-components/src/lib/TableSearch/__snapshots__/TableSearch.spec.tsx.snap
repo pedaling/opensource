@@ -565,7 +565,7 @@ exports[`<TableSearch /> when component is rendering match snapshot 1`] = `
       data-testid="table-search-option"
     >
       <div
-        class="emotion-6"
+        class="emotion-1"
         data-testid="select-field"
       >
         <input
