@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.33](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.32...vibrant-components-0.94.33) (2025-05-07)
+
+
+### Bug Fixes
+
+* select field container의 width를 100%로 지정한다 ([#1025](https://github.com/pedaling/opensource/issues/1025)) ([4629b29](https://github.com/pedaling/opensource/commit/4629b29a17ab00a9a1bbdb089071be024fd769c9))
+
 ## [0.94.32](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.31...vibrant-components-0.94.32) (2025-04-28)
 
 

@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.33](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.32...vibrant-icons-0.94.33) (2025-05-07)
+
+
+### Features
+
+* compress icons ([#1024](https://github.com/pedaling/opensource/issues/1024)) ([08dd4a8](https://github.com/pedaling/opensource/commit/08dd4a83ec6be1567188c1d4f6c837393c0c19fc))
+
 ## [0.94.32](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.31...vibrant-icons-0.94.32) (2025-04-28)
 
 ## [0.94.31](https://github.com/pedaling/opensource/compare/vibrant-icons-0.94.30...vibrant-icons-0.94.31) (2025-04-23)
