@@ -25,6 +25,7 @@ export type BadgeProps = {
   children: ReactElement | number | string;
   rounded?: ResponsiveValue<Rounded>;
   whiteSpace?: TextSystemProps['whiteSpace'];
+  testId?: string;
 };
 
 export const withBadgeVariation = withVariation<BadgeProps>('Badge')(
