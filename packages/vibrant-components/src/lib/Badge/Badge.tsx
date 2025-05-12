@@ -4,7 +4,7 @@ import { withBadgeVariation } from './BadgeProps';
 
 export const Badge = withBadgeVariation(
   ({ testId = 'badge', iconSize, bodyLevel, color, IconComponent, whiteSpace, children, ...rest }) => (
-    <Box {...rest} data-testid={testId} flexDirection="row" alignItems="center" gap={4}>
+    <Box {...rest} display="inline-flex" data-testid={testId} flexDirection="row" alignItems="center" gap={4}>
       {IconComponent && <IconComponent size={iconSize} fill={color} />}
       <Body level={bodyLevel} weight="medium" color={color} whiteSpace={whiteSpace}>
         {children}

@@ -1,4 +1,5 @@
 export { Body } from './lib/Body';
+export { Badge } from './lib/Badge';
 export { Backdrop } from './lib/Backdrop';
 export { BreadCrumbs } from './lib/BreadCrumbs';
 export { BreadCrumb } from './lib/BreadCrumb';
