@@ -2,7 +2,6 @@ import type { ReactElement } from 'react';
 import type { TextSystemProps } from '@vibrant-ui/core';
 import { type ResponsiveValue, propVariant, withVariation } from '@vibrant-ui/core';
 import type { IconComponent, IconProps } from '@vibrant-ui/icons';
-import type { Rounded } from '@vibrant-ui/theme';
 
 type BadgeKind =
   | 'error'
@@ -23,12 +22,28 @@ export type BadgeProps = {
   size: ResponsiveValue<'lg' | 'md' | 'sm'>;
   IconComponent?: IconComponent<IconProps, 'Fill' | 'Regular' | 'Thin'>;
   children: ReactElement | number | string;
-  rounded?: ResponsiveValue<Rounded>;
+  pill?: boolean;
   whiteSpace?: TextSystemProps['whiteSpace'];
   testId?: string;
 };
 
 export const withBadgeVariation = withVariation<BadgeProps>('Badge')(
+  propVariant({
+    props: [
+      {
+        name: 'pill',
+        default: false,
+      },
+    ],
+    variants: {
+      true: {
+        borderRadius: 100,
+      },
+      false: {
+        borderRadius: 4,
+      },
+    } as const,
+  }),
   propVariant({
     props: [
       {
