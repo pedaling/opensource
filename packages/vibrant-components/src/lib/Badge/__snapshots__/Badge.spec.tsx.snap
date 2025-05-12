@@ -20,6 +20,7 @@ exports[`<Badge /> when size is sm and kind is primary with IconComponent match 
   flex-direction: row;
   box-sizing: border-box;
   position: relative;
+  border-radius: 4px;
   background-color: #ff5d00;
   padding-left: 6px;
   padding-right: 6px;
