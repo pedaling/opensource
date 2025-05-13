@@ -9,7 +9,7 @@ export default {
   args: {
     kind: 'primary',
     size: 'md',
-    rounded: 'sm',
+    pill: true,
     children: 'this is a badge',
     IconComponent: Icon.Pin.Fill,
   },
