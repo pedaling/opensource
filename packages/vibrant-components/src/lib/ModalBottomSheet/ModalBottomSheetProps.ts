@@ -13,7 +13,7 @@ export type ModalBottomSheetProps = Either<
 > & {
   title?: string;
   subtitle?: string;
-  size?: 'full' | 'lg' | 'md';
+  size?: 'full' | 'lg' | 'md' | 'xl';
   testId?: string;
   renderContents?: (_: { close: () => void }) => ReactElementChild;
   onClose?: () => void;
@@ -76,6 +76,9 @@ export const withModalBottomSheetVariation = withVariation<ModalBottomSheetProps
       },
       lg: {
         desktopModalWidth: 760,
+      },
+      xl: {
+        desktopModalWidth: 1132,
       },
       full: {
         desktopModalWidth: '100%',
