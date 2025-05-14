@@ -34,7 +34,7 @@ describe('<Skeleton />', () => {
     it('should render correct number of lines', async () => {
       const lines = await renderer.findAllByRole('generic');
       // VStack + (3 lines * 2 components per line)
-      
+
       expect(lines.length).toBeGreaterThan(3);
     });
 
