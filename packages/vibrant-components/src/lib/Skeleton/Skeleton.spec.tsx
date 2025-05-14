@@ -10,9 +10,7 @@ describe('<Skeleton />', () => {
 
   describe('when basic Skeleton is rendered', () => {
     beforeEach(async () => {
-      renderer = render(
-        <Skeleton data-testid="skeleton" width={100} height={50} rounded="md" />
-      );
+      renderer = render(<Skeleton data-testid="skeleton" width={100} height={50} rounded="md" />);
 
       element = await renderer.findByTestId('skeleton');
     });
@@ -30,14 +28,13 @@ describe('<Skeleton />', () => {
 
   describe('when Skeleton.Text is rendered', () => {
     beforeEach(async () => {
-      renderer = render(
-        <Skeleton.Text data-testid="skeleton-text" lines={3} typography="body1" />
-      );
+      renderer = render(<Skeleton.Text data-testid="skeleton-text" lines={3} typography="body1" />);
     });
 
     it('should render correct number of lines', async () => {
       const lines = await renderer.findAllByRole('generic');
       // VStack + (3 lines * 2 components per line)
+      
       expect(lines.length).toBeGreaterThan(3);
     });
 
@@ -48,9 +45,7 @@ describe('<Skeleton />', () => {
 
   describe('when Skeleton.Avatar is rendered', () => {
     beforeEach(async () => {
-      renderer = render(
-        <Skeleton.Avatar data-testid="skeleton-avatar" size="md" />
-      );
+      renderer = render(<Skeleton.Avatar data-testid="skeleton-avatar" size="md" />);
     });
 
     it('match snapshot', () => {
@@ -60,9 +55,7 @@ describe('<Skeleton />', () => {
 
   describe('when Skeleton.Button is rendered', () => {
     beforeEach(async () => {
-      renderer = render(
-        <Skeleton.Button data-testid="skeleton-button" size="md" />
-      );
+      renderer = render(<Skeleton.Button data-testid="skeleton-button" size="md" />);
     });
 
     it('match snapshot', () => {
@@ -72,13 +65,11 @@ describe('<Skeleton />', () => {
 
   describe('when Skeleton.Image is rendered', () => {
     beforeEach(async () => {
-      renderer = render(
-        <Skeleton.Image data-testid="skeleton-image" width={200} ratio={1.5} />
-      );
+      renderer = render(<Skeleton.Image data-testid="skeleton-image" width={200} ratio={1.5} />);
     });
 
     it('match snapshot', () => {
       expect(renderer.container).toMatchSnapshot();
     });
   });
-}); 
+});
