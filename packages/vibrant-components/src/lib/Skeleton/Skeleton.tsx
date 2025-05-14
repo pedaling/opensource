@@ -16,7 +16,7 @@ import type { SkeletonTextProps } from './SkeletonText';
 import { SkeletonText } from './SkeletonText';
 
 export const Skeleton = withSkeletonVariation(props => (
-  <Box backgroundColor="disable" {...props} />
+  <Box backgroundColor="overlay" {...props} />
 )) as ComponentWithRef<SkeletonProps> & {
   Image: ComponentWithRef<SkeletonImageProps>;
   Button: ComponentWithRef<SkeletonButtonProps>;
