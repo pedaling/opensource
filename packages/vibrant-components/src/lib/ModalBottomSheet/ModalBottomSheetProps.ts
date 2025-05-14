@@ -78,7 +78,7 @@ export const withModalBottomSheetVariation = withVariation<ModalBottomSheetProps
         desktopModalWidth: 760,
       },
       xl: {
-        desktopModalWidth: 1132,
+        desktopModalWidth: 1312,
       },
       full: {
         desktopModalWidth: '100%',
