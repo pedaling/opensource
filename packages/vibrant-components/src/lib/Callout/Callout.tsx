@@ -39,9 +39,7 @@ export const Callout = withCalloutVariation(
             <Title level={7} weight="medium" color="onView1" overflowWrap="anywhere">
               {title}
             </Title>
-          ) : (
-            renderContents?.()
-          )}
+          ) : null}
           {contents ? (
             <Paragraph level={4} color="onView1" overflowWrap="anywhere">
               {contents}
