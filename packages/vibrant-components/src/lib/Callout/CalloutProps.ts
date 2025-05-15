@@ -6,7 +6,7 @@ import type { Either } from '@vibrant-ui/utils';
 export type CalloutType = 'default' | 'error' | 'informative' | 'success' | 'warning';
 
 export type CalloutProps = {
-  title: string;
+  title?: string;
   kind?: CalloutType;
   testId?: string;
 } & (

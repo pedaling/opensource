@@ -1,6 +1,6 @@
 import { Box } from '@vibrant-ui/core';
+import { ContainedButton } from '../ContainedButton';
 import { HStack } from '../HStack';
-import { OutlinedButton } from '../OutlinedButton';
 import { Paragraph } from '../Paragraph';
 import { Title } from '../Title';
 import { VStack } from '../VStack';
@@ -24,8 +24,9 @@ export const Callout = withCalloutVariation(
       backgroundColor={backgroundColor}
       borderWidth={1}
       borderColor="outline1"
-      rounded="sm"
-      px={16}
+      rounded="md"
+      pr={14}
+      pl={16}
       py={8}
       data-testid={testId}
     >
@@ -34,9 +35,11 @@ export const Callout = withCalloutVariation(
           <IconComponent.Fill fill={fontColor} size={14} />
         </Box>
         <VStack py={6} spacing={8} width="100%">
-          <Title level={7} weight="medium" color="onView1" overflowWrap="anywhere">
-            {title}
-          </Title>
+          {title ? (
+            <Title level={7} weight="medium" color="onView1" overflowWrap="anywhere">
+              {title}
+            </Title>
+          ) : null}
           {contents ? (
             <Paragraph level={4} color="onView1" overflowWrap="anywhere">
               {contents}
@@ -46,9 +49,9 @@ export const Callout = withCalloutVariation(
           )}
           {buttonText ? (
             <VStack alignHorizontal="start">
-              <OutlinedButton onClick={onButtonClick} size="sm">
+              <ContainedButton onClick={onButtonClick} size="sm" kind="tertiary">
                 {buttonText}
-              </OutlinedButton>
+              </ContainedButton>
             </VStack>
           ) : null}
         </VStack>
