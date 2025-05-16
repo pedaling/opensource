@@ -2,6 +2,22 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.34](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.33...vibrant-components-0.94.34) (2025-05-16)
+
+
+### Features
+
+* add badge component ([#1027](https://github.com/pedaling/opensource/issues/1027)) ([5bb5edc](https://github.com/pedaling/opensource/commit/5bb5edc9b6f1616d7ca16eb16827d0e011b5fe00))
+* **ModalBottomSheet:** add xl size variant ([#1030](https://github.com/pedaling/opensource/issues/1030)) ([1af160c](https://github.com/pedaling/opensource/commit/1af160c5edfccde7aecaceb81eadb329e9086c3f))
+* **ModalBottomSheet:** update xl size variant ([#1032](https://github.com/pedaling/opensource/issues/1032)) ([f4c1721](https://github.com/pedaling/opensource/commit/f4c172137c2cf4588bc831e61e7b3cb41573bfef))
+
+
+### Bug Fixes
+
+* Badge 컴포넌트에서 rounded 속성을 제거하고 pill 속성을 추가한다 ([#1028](https://github.com/pedaling/opensource/issues/1028)) ([96da530](https://github.com/pedaling/opensource/commit/96da530c7347b99cc699e63e6e59f1ec2bc5ffe6))
+* **Callout:** title 필수 제거 및 디자인 개선 ([#1033](https://github.com/pedaling/opensource/issues/1033)) ([2fd4a00](https://github.com/pedaling/opensource/commit/2fd4a00a424a2986b93e2a04392ba4043fea786c))
+* **Skeleton:** 배경색을 overlay로 한다 ([#1031](https://github.com/pedaling/opensource/issues/1031)) ([4b19a36](https://github.com/pedaling/opensource/commit/4b19a36823dfa41f76b95327ec837e020c1a1b31))
+
 ## [0.94.33](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.32...vibrant-components-0.94.33) (2025-05-07)
 
 
