@@ -1,7 +1,6 @@
 import type { ReactElement, Ref } from 'react';
 import type { ResponsiveValue, TextChildren } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
-import { isDefined } from '@vibrant-ui/utils';
 import type { PressableProps } from '../Pressable';
 
 export type FilterChipProps = {
@@ -32,16 +31,16 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
       },
       { name: 'endIcon', keep: true },
     ],
-    variants: ({ size, startIcon, endIcon }) => {
+    variants: ({ size }) => {
       if (size === 'sm') {
         return {
           bodyLevel: 4,
           iconSize: 14,
           minHeight: 30,
-          pl: isDefined(startIcon) ? 9 : 11,
-          pr: isDefined(endIcon) ? 9 : 11,
-          py: 6,
-          spacing: 4,
+          px: 8,
+          py: 7,
+          spacing: 3,
+          rounded: 'lg',
         } as const;
       }
 
@@ -49,10 +48,9 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
         bodyLevel: 2,
         iconSize: 16,
         minHeight: 38,
-        pl: isDefined(startIcon) ? 11 : 15,
-        pr: isDefined(endIcon) ? 11 : 15,
-        py: 9,
-        spacing: 6,
+        p: 10,
+        spacing: 4,
+        rounded: 'xl',
       } as const;
     },
   }),
@@ -68,23 +66,23 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
         keep: true,
       },
     ],
-    variants: ({ selected, disabled }) => {
+    variants: ({
+      selected,
+      disabled,
+    }: {
+      selected: FilterChipProps['selected'];
+      disabled: FilterChipProps['disabled'];
+    }) => {
       if (disabled) {
         return {
           color: 'onView3',
-          borderWidth: 1,
-          borderStyle: 'solid',
-          borderColor: 'outlineDisable',
-          backgroundColor: selected ? 'disable' : 'transparent',
+          backgroundColor: selected ? 'disable' : 'surface1',
         } as const;
       }
 
       if (selected) {
         return {
           color: 'onInverseSurface',
-          borderWidth: 1,
-          borderStyle: 'solid',
-          borderColor: 'outlineNeutral',
           backgroundColor: 'inverseSurface',
           overlayColor: 'onView1',
           interactions: ['hover', 'focus', 'active'],
@@ -93,10 +91,7 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
 
       return {
         color: 'onView1',
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: 'outline1',
-        backgroundColor: 'background',
+        backgroundColor: 'surface1',
         overlayColor: 'onView1',
         interactions: ['hover', 'focus', 'active'],
       } as const;

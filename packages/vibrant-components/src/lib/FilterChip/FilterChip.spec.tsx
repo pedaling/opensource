@@ -18,5 +18,9 @@ describe('<FilterChip />', () => {
     it('should render link with href attribute', () => {
       expect(renderer.getByRole('link').getAttribute('href')).toBe('https://www.vibrant-design.com');
     });
+
+    it('match snapshot', () => {
+      expect(renderer.container).toMatchSnapshot();
+    });
   });
 });
