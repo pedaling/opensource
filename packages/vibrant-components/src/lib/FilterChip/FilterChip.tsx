@@ -22,14 +22,14 @@ export const FilterChip = withFilterChipVariation(
       testId={testId}
       flexGrow={0}
       flexShrink={0}
-      rounded="xl"
       maxWidth={maxWidth}
       flexDirection="row"
       alignItems="center"
+      alignSelf="flex-start"
       {...props}
     >
       {startIcon && (
-        <Box as="span" mr={spacing}>
+        <Box as="span" mr={spacing} ml={2}>
           {cloneElement(startIcon, { size: iconSize, fill: color })}
         </Box>
       )}
@@ -37,7 +37,7 @@ export const FilterChip = withFilterChipVariation(
         {children}
       </Body>
       {endIcon && (
-        <Box as="span" ml={spacing}>
+        <Box as="span" ml={spacing} mr={2}>
           {cloneElement(endIcon, { size: iconSize, fill: color })}
         </Box>
       )}
