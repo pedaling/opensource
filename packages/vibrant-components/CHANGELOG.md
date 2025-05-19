@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.35](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.34...vibrant-components-0.94.35) (2025-05-19)
+
+
+### Features
+
+* change light mode contrast ([#1035](https://github.com/pedaling/opensource/issues/1035)) ([386ba40](https://github.com/pedaling/opensource/commit/386ba405cf5eb6ac5b680a68be23da4679fcab9d))
+* FilterChip 컴포넌트의 일부 디자인 속성을 변경한다 ([#1029](https://github.com/pedaling/opensource/issues/1029)) ([3b773b7](https://github.com/pedaling/opensource/commit/3b773b7eb9f2770db13c4b67573cbe331e112a9a))
+
 ## [0.94.34](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.33...vibrant-components-0.94.34) (2025-05-16)
 
 

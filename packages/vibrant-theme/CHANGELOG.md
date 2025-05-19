@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.35](https://github.com/pedaling/opensource/compare/vibrant-theme-0.94.34...vibrant-theme-0.94.35) (2025-05-19)
+
+
+### Features
+
+* change light mode contrast ([#1035](https://github.com/pedaling/opensource/issues/1035)) ([386ba40](https://github.com/pedaling/opensource/commit/386ba405cf5eb6ac5b680a68be23da4679fcab9d))
+
 ## [0.94.34](https://github.com/pedaling/opensource/compare/vibrant-theme-0.94.33...vibrant-theme-0.94.34) (2025-05-16)
 
 ## [0.94.33](https://github.com/pedaling/opensource/compare/vibrant-theme-0.94.32...vibrant-theme-0.94.33) (2025-05-07)
