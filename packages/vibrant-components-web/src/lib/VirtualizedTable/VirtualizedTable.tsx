@@ -155,9 +155,11 @@ export const VirtualizedTable = <Data extends Record<string, any>, RowKey extend
 
     const selectedCells = [];
 
-    const columnNames = columns.slice(startCol, endCol + 1).map(column => column.title || column.dataKey || '');
+    if (endRow - startRow + 1 === data.length) {
+      const columnNames = columns.slice(startCol, endCol + 1).map(column => column.title || column.dataKey || '');
 
-    selectedCells.push(columnNames.join('\t'));
+      selectedCells.push(columnNames.join('\t'));
+    }
 
     for (let rowIdx = startRow; rowIdx <= endRow; rowIdx++) {
       const row = data[rowIdx];
