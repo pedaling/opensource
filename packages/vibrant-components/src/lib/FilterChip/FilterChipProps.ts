@@ -48,7 +48,8 @@ export const withFilterChipVariation = withVariation<FilterChipProps>('FilterChi
         bodyLevel: 2,
         iconSize: 16,
         minHeight: 38,
-        p: 10,
+        px: 10,
+        py: 10,
         spacing: 4,
         rounded: 'xl',
       } as const;
