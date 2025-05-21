@@ -72,7 +72,7 @@ export const withBadgeVariation = withVariation<BadgeProps>('Badge')(
         color: 'onSuccess',
       },
       inverse: {
-        backgroundColor: 'inverseBackground',
+        backgroundColor: 'inverseSurface',
         color: 'onInverseSurface',
       },
       error: {
