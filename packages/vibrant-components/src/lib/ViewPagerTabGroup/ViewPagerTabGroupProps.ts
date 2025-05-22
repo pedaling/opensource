@@ -8,6 +8,7 @@ export type ViewPagerTabGroupProps = {
   tabId?: string;
   onTabChange?: () => void;
   testId?: string;
+  native_swipeEnabled?: boolean;
 };
 
 export const withViewPagerTabGroupVariation = withVariation<ViewPagerTabGroupProps>('ViewPagerTabGroup')();

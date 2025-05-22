@@ -11,7 +11,7 @@ import type { ViewPagerTabGroupProps } from './ViewPagerTabGroupProps';
 import { withViewPagerTabGroupVariation } from './ViewPagerTabGroupProps';
 
 export const ViewPagerTabGroup = withViewPagerTabGroupVariation(
-  ({ children, tabId, testId, onTabChange, tabSpacing }) => (
+  ({ children, tabId, testId, onTabChange, tabSpacing, native_swipeEnabled = true }) => (
     <TabView
       tabId={tabId}
       testId={testId}
@@ -29,6 +29,7 @@ export const ViewPagerTabGroup = withViewPagerTabGroupVariation(
         </VStack>
       )}
       onTabChange={onTabChange}
+      native_swipeEnabled={native_swipeEnabled}
     >
       {children}
     </TabView>
