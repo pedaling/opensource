@@ -10,6 +10,7 @@ type TabViewProps = {
   renderTobBarContainer: (props: ReactElementChildren) => ReactElement;
   onTabChange?: () => void;
   testId?: string;
+  native_swipeEnabled?: boolean;
 };
 
 export const withTabViewVariation = withVariation<TabViewProps>('TabView')();

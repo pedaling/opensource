@@ -7,7 +7,7 @@ import type { TabViewItemProps } from '../TabViewItem';
 import { withTabViewVariation } from './TabViewProps';
 
 export const TabView = withTabViewVariation(
-  ({ children, tabId, onTabChange, renderTobBarContainer, renderTobBarItem }) => {
+  ({ children, tabId, onTabChange, renderTobBarContainer, renderTobBarItem, native_swipeEnabled = true }) => {
     const childrenElement = Children.toArray(children).filter(isValidElement<TabViewItemProps>);
     const [currentIndex, setCurrentIndex] = useState(
       Math.max(
@@ -75,6 +75,7 @@ export const TabView = withTabViewVariation(
         navigationState={{ index: currentIndex, routes }}
         renderScene={renderScene}
         onIndexChange={setCurrentIndex}
+        swipeEnabled={native_swipeEnabled}
       />
     );
   }
