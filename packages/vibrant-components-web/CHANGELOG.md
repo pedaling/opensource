@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.36](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.35...vibrant-components-web-0.94.36) (2025-05-22)
+
+
+### Bug Fixes
+
+* **vibrant-component:** ensure column names are only pushed for full data selection in Table ([#1036](https://github.com/pedaling/opensource/issues/1036)) ([6f7dde5](https://github.com/pedaling/opensource/commit/6f7dde5bf504b640788be6d198bb725678681d5d))
+
 ## [0.94.35](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.34...vibrant-components-web-0.94.35) (2025-05-19)
 
 ## [0.94.34](https://github.com/pedaling/opensource/compare/vibrant-components-web-0.94.33...vibrant-components-web-0.94.34) (2025-05-16)

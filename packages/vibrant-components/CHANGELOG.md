@@ -2,6 +2,20 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.36](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.35...vibrant-components-0.94.36) (2025-05-22)
+
+
+### Features
+
+* TabView 컴포넌트에 swipe 사용 여부 기능 추가 ([#1039](https://github.com/pedaling/opensource/issues/1039)) ([56a404d](https://github.com/pedaling/opensource/commit/56a404daf7220c1ccca65b761fae874f20891768))
+
+
+### Bug Fixes
+
+* badge inverse kind의 backgroundColor를 변경한다 ([#1038](https://github.com/pedaling/opensource/issues/1038)) ([deaf79d](https://github.com/pedaling/opensource/commit/deaf79dac39665b4d2192c2fbbe5374e525e4c82))
+* filterChip props에서 순환 참조가 발생하는 문제를 해결한다 ([#1037](https://github.com/pedaling/opensource/issues/1037)) ([6bf4cbb](https://github.com/pedaling/opensource/commit/6bf4cbbf436c5e77a091916f4705f5e12f36de92))
+* **vibrant-component:** ensure column names are only pushed for full data selection in Table ([#1036](https://github.com/pedaling/opensource/issues/1036)) ([6f7dde5](https://github.com/pedaling/opensource/commit/6f7dde5bf504b640788be6d198bb725678681d5d))
+
 ## [0.94.35](https://github.com/pedaling/opensource/compare/vibrant-components-0.94.34...vibrant-components-0.94.35) (2025-05-19)
 
 

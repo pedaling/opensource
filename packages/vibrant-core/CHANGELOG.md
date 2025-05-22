@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.94.36](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.35...vibrant-core-0.94.36) (2025-05-22)
+
+
+### Features
+
+* TabView 컴포넌트에 swipe 사용 여부 기능 추가 ([#1039](https://github.com/pedaling/opensource/issues/1039)) ([56a404d](https://github.com/pedaling/opensource/commit/56a404daf7220c1ccca65b761fae874f20891768))
+
 ## [0.94.35](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.34...vibrant-core-0.94.35) (2025-05-19)
 
 ## [0.94.34](https://github.com/pedaling/opensource/compare/vibrant-core-0.94.33...vibrant-core-0.94.34) (2025-05-16)
