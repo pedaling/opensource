@@ -57,17 +57,17 @@ export type VariantsValue<PropsConfig, Value> = {
     : DeepWritable<IncludeResponsiveProp<PropsConfig> extends true ? ResponsiveValue<Value[key]> : Value[key]>;
 };
 
-type VariantsFnProps<Props, PropsConfig> = PropsConfig extends [infer First, ...infer Rest]
-  ? (First extends { name: keyof Props }
-      ? {
-          [key in First['name']]-?: Exclude<
-            UnResponsiveValue<Props[First['name']]>,
-            First extends { default: any } ? undefined : never
-          >;
-        }
-      : unknown) &
-      VariantsFnProps<Props, Rest>
-  : Record<never, never>;
+type VariantsFnProps<Props, PropsConfig extends readonly AnyPropConfig<Props>[]> = {
+  [K in PropsConfig[number] as K extends { name: infer Name }
+    ? Name extends keyof Props
+      ? Name
+      : never
+    : never]: K extends { name: infer Name }
+    ? Name extends keyof Props
+      ? Exclude<UnResponsiveValue<Props[Name]>, K extends { default: any } ? undefined : never>
+      : never
+    : never;
+};
 
 export type SkipForwards<Props, PropsConfig> = PropsConfig extends [infer First, ...infer Rest]
   ? First extends {
@@ -79,10 +79,11 @@ export type SkipForwards<Props, PropsConfig> = PropsConfig extends [infer First,
     : Props
   : Props;
 
-export type VariantsConfig<Props, PropsConfig, VariantsReturn = Record<string, any>> = PropsConfig extends [
-  infer First,
-  ...infer Rest
-]
+export type VariantsConfig<
+  Props,
+  PropsConfig extends readonly AnyPropConfig<Props>[],
+  VariantsReturn = Record<string, any>
+> = PropsConfig extends readonly [infer First, ...infer Rest]
   ? Rest extends [any]
     ? (props: VariantsFnProps<Props, PropsConfig>) => VariantsReturn
     : First extends { name: keyof Props }

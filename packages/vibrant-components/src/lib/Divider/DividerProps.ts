@@ -62,6 +62,7 @@ export const withDividerVariation = withVariation<DividerProps>('Divider')(
       },
       {
         name: 'size',
+        responsive: true,
       },
       {
         name: 'spacing',

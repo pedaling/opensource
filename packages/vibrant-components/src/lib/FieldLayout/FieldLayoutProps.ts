@@ -43,6 +43,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     variants: {
       lg: {
         height: 50,
+        fieldHeight: 48,
         typography: 'body2',
         helperTextTypography: 'body4',
         helperTextSpacing: 4,
@@ -53,6 +54,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       },
       md: {
         height: 38,
+        fieldHeight: 36,
         typography: 'body2',
         helperTextTypography: 'body4',
         helperTextSpacing: 4,
@@ -63,6 +65,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       },
       sm: {
         height: 30,
+        fieldHeight: 28,
         typography: 'body4',
         helperTextTypography: 'body5',
         helperTextSpacing: 2,

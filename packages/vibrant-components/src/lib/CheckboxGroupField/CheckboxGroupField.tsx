@@ -15,7 +15,7 @@ export const CheckboxGroupField = withCheckboxGroupFieldVariation(
     testId = 'checkbox-group-field',
     onValueChange,
   }) => {
-    const [checkboxValue, setCheckboxValue] = useState(
+    const [checkboxValue, setCheckboxValue] = useState<Record<string, boolean>>(
       () =>
         defaultValue ?? options.reduce((prevValue, currentValue) => ({ ...prevValue, [currentValue.value]: false }), {})
     );

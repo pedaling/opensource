@@ -23,6 +23,10 @@ export const withToastVariation = withVariation<ToastProps>('Toast')(
   propVariant({
     props: [{ name: 'kind', default: 'default' }],
     variants: {
+      default: {
+        IconComponent: undefined,
+        color: 'onColor' as const,
+      },
       error: {
         IconComponent: Icon.AlertCircle.Fill,
         color: 'onViewError' as const,
