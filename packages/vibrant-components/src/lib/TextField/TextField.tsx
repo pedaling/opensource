@@ -8,6 +8,7 @@ export const TextField = withTextFieldVariation(
   ({
     type = 'text',
     size,
+    kind,
     state,
     label,
     placeholder,
@@ -52,6 +53,7 @@ export const TextField = withTextFieldVariation(
       <FieldLayout
         testId={testId}
         size={size}
+        kind={kind}
         label={label}
         helperText={helperText}
         state={state}

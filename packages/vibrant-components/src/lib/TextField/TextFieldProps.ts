@@ -16,6 +16,7 @@ export type TextFieldProps = BaseInputProps<string> &
     id?: string;
     type?: Exclude<TextInputType, 'password'>;
     state?: 'default' | 'error';
+    kind?: 'default' | 'inline' | 'outline';
     label?: string;
     placeholder?: string;
     helperText?: string;
