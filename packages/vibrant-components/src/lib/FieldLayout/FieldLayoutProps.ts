@@ -1,3 +1,4 @@
+/* eslint-disable max-lines */
 /* eslint-disable @typescript-eslint/naming-convention */
 import type { ReactElementChild, ResponsiveValue } from '@vibrant-ui/core';
 import { propVariant, withVariation } from '@vibrant-ui/core';
@@ -6,6 +7,7 @@ import type { OnColorToken, TypographyKind } from '@vibrant-ui/theme';
 type FieldLayoutProps = {
   size?: ResponsiveValue<'lg' | 'md' | 'sm'>;
   state?: 'default' | 'error' | 'success';
+  kind?: 'default' | 'inline' | 'outline';
   label?: string;
   helperText?: string;
   disabled?: boolean;
@@ -167,6 +169,22 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
   propVariant({
     props: [
       {
+        name: 'kind',
+        default: 'default' as const,
+        keep: true,
+      },
+      {
+        name: 'label',
+        keep: true,
+      },
+    ],
+    variants: ({ kind, label }) => ({
+      showLabelInBox: kind === 'outline' ? false : Boolean(label),
+    }),
+  }),
+  propVariant({
+    props: [
+      {
         name: 'prefixText',
         keep: true,
       },
@@ -176,7 +194,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       },
     ],
     variants: ({ prefixText, renderStart }) => ({
-      hasPrefixText: prefixText,
+      hasPrefixText: Boolean(prefixText),
       hasPrefixComponent: renderStart !== undefined,
     }),
   }),
@@ -192,7 +210,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       },
     ],
     variants: ({ suffixText, renderEnd }) => ({
-      hasSuffixText: suffixText,
+      hasSuffixText: Boolean(suffixText),
       hasSuffixComponent: renderEnd !== undefined,
     }),
   }),
@@ -215,12 +233,16 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         name: 'hasSuffixComponent',
         keep: true,
       },
+      {
+        name: 'showLabelInBox',
+        keep: true,
+      },
     ],
-    variants: ({ shrink, size, hasPrefixComponent, hasSuffixComponent }) => {
+    variants: ({ shrink, size, hasPrefixComponent, hasSuffixComponent, showLabelInBox }) => {
       if (size === 'md') {
         return {
           labelTop: shrink ? 3 : 9,
-          labelTypography: shrink ? 'body6' : 'body2',
+          labelTypography: showLabelInBox ? (shrink ? 'body6' : 'body2') : 'body3',
           labelLeft: hasPrefixComponent ? 8 : 9,
           labelRight: hasSuffixComponent ? 8 : 9,
         } as const;
@@ -229,7 +251,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
       if (size === 'sm') {
         return {
           labelTop: shrink ? 0 : 6,
-          labelTypography: shrink ? 'body6' : 'body4',
+          labelTypography: showLabelInBox ? (shrink ? 'body6' : 'body4') : 'body4',
           labelLeft: hasPrefixComponent ? 6 : 7,
           labelRight: hasSuffixComponent ? 6 : 7,
         } as const;
@@ -237,7 +259,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
 
       return {
         labelTop: shrink ? 7 : 15,
-        labelTypography: shrink ? 'body6' : 'body2',
+        labelTypography: showLabelInBox ? (shrink ? 'body6' : 'body2') : 'body3',
         labelLeft: hasPrefixComponent ? 12 : 15,
         labelRight: hasSuffixComponent ? 12 : 15,
       } as const;
@@ -250,7 +272,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         responsive: true,
       },
       {
-        name: 'label',
+        name: 'showLabelInBox',
         keep: true,
       },
       {
@@ -272,7 +294,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     ],
     variants: ({
       size,
-      label,
+      showLabelInBox,
       hasPrefixText,
       hasPrefixComponent,
       hasSuffixComponent,
@@ -281,27 +303,27 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     }) => {
       if (size === 'md') {
         return {
-          pt: label ? 15 : 9,
+          pt: showLabelInBox ? 15 : 9,
           pl: hasPrefixText ? 2 : hasPrefixComponent ? 8 : 9,
           pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 8 : 9,
-          pb: label ? 3 : 9,
+          pb: showLabelInBox ? 3 : 9,
         };
       }
 
       if (size === 'sm') {
         return {
-          pt: label ? 12 : 6,
+          pt: showLabelInBox ? 12 : 6,
           pl: hasPrefixText ? 2 : hasPrefixComponent ? 6 : 7,
           pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 6 : 7,
-          pb: label ? 0 : 6,
+          pb: showLabelInBox ? 0 : 6,
         };
       }
 
       return {
-        pt: label ? 23 : 15,
+        pt: showLabelInBox ? 23 : 15,
         pl: hasPrefixText ? 4 : hasPrefixComponent ? 12 : 15,
         pr: hasSuffixText ? 4 : hasSuffixComponent || showClearButton ? 12 : 15,
-        pb: label ? 7 : 15,
+        pb: showLabelInBox ? 7 : 15,
       };
     },
   })

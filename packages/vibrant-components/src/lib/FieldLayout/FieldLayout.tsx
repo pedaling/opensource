@@ -6,6 +6,7 @@ import { withFieldLayoutVariation } from './FieldLayoutProps';
 
 export const FieldLayout = withFieldLayoutVariation(
   ({
+    showLabelInBox,
     label,
     helperText,
     cursor,
@@ -42,6 +43,11 @@ export const FieldLayout = withFieldLayoutVariation(
     hitSlop,
   }) => (
     <VStack data-testid={testId} width="100%" spacing={helperTextSpacing}>
+      {!showLabelInBox && (
+        <Text typography={labelTypography} color={labelColor} lineLimit={1} fontWeight="medium">
+          {label}
+        </Text>
+      )}
       <Box
         flexDirection="row"
         alignItems="center"
@@ -57,19 +63,28 @@ export const FieldLayout = withFieldLayoutVariation(
       >
         <VStack flexShrink={0}>{renderStart?.()}</VStack>
         <Box width="100%" height="100%" cursor={cursor}>
-          <PressableBox cursor={cursor} onClick={onLabelClick} tabIndex={-1}>
-            <Transition
-              animation={{
-                top: labelTop,
-                typography: labelTypography,
-              }}
-              duration={100}
-            >
-              <Text position="absolute" zIndex={1} left={labelLeft} right={labelRight} color={labelColor} lineLimit={1}>
-                {label}
-              </Text>
-            </Transition>
-          </PressableBox>
+          {showLabelInBox && (
+            <PressableBox cursor={cursor} onClick={onLabelClick} tabIndex={-1}>
+              <Transition
+                animation={{
+                  top: labelTop,
+                  typography: labelTypography,
+                }}
+                duration={100}
+              >
+                <Text
+                  position="absolute"
+                  zIndex={1}
+                  left={labelLeft}
+                  right={labelRight}
+                  color={labelColor}
+                  lineLimit={1}
+                >
+                  {label}
+                </Text>
+              </Transition>
+            </PressableBox>
+          )}
           <Box flexDirection="row" alignItems="baseline">
             <Text
               typography={typography}
