@@ -145,7 +145,7 @@ export const MultipleModal: ComponentStory<typeof ModalBottomSheet> = () => {
   );
 };
 
-export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => (
+export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = props => (
   <HStack mt={200} width="100%" spacing={20}>
     <ModalBottomSheet
       title=""
@@ -167,6 +167,8 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = () => 
       )}
       primaryButtonOptions={{ text: 'primary', disabled: false }}
       secondaryButtonOptions={{ text: 'secondary', disabled: false }}
+      subButtonOptions={{ text: 'sub', disabled: false }}
+      buttonDirection={props.buttonDirection}
     />
     <ModalBottomSheet
       title=""

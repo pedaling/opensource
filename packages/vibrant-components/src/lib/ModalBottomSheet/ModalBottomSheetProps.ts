@@ -35,23 +35,35 @@ export type ModalBottomSheetProps = Either<
    * @default 200
    */
   native_swipeToCloseVelocity?: number;
-} & (
-    | {
-        primaryButtonOptions: ButtonOptions;
-        secondaryButtonOptions?: ButtonOptions;
-        subButtonOptions?: never;
-      }
-    | {
-        primaryButtonOptions: ButtonOptions;
-        secondaryButtonOptions?: never;
-        subButtonOptions?: Omit<ButtonOptions, 'kind' | 'loading'>;
-      }
-    | {
-        primaryButtonOptions?: never;
-        secondaryButtonOptions?: never;
-        subButtonOptions?: never;
-      }
-  );
+} & (NoButtons | PrimaryOnly | PrimarySecondary | SecondaryOnly);
+
+type PrimaryOnly = {
+  primaryButtonOptions: ButtonOptions;
+  secondaryButtonOptions?: never;
+  subButtonOptions?: Omit<ButtonOptions, 'kind' | 'loading'>;
+  buttonDirection?: never;
+};
+
+type SecondaryOnly = {
+  primaryButtonOptions?: never;
+  secondaryButtonOptions: ButtonOptions;
+  subButtonOptions?: Omit<ButtonOptions, 'kind' | 'loading'>;
+  buttonDirection?: never;
+};
+
+type PrimarySecondary = {
+  primaryButtonOptions: ButtonOptions;
+  secondaryButtonOptions: ButtonOptions;
+  subButtonOptions?: Omit<ButtonOptions, 'kind' | 'loading'>;
+  buttonDirection?: 'horizontal' | 'vertical';
+};
+
+type NoButtons = {
+  primaryButtonOptions?: never;
+  secondaryButtonOptions?: never;
+  subButtonOptions?: never;
+  buttonDirection?: never;
+};
 
 export type ButtonOptions = {
   kind?: 'primary' | 'secondary' | 'tertiary';
