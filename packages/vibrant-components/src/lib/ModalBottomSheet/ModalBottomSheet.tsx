@@ -196,7 +196,15 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                   )}
                 </HStack>
                 {subtitle ? (
-                  <Body as="p" level={1} mt={[14, 20]} px={[20, 32]} flexShrink={0} whiteSpace="pre-wrap">
+                  <Body
+                    as="p"
+                    level={1}
+                    mt={[14, 20]}
+                    px={[20, 32]}
+                    flexShrink={0}
+                    whiteSpace="pre-wrap"
+                    color="onView2"
+                  >
                     {subtitle}
                   </Body>
                 ) : null}
