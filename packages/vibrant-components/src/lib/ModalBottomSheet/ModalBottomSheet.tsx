@@ -134,8 +134,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
       return () => window.removeEventListener('keydown', onKeydown);
     }, [closeModal, isOpen, dimClosable, showCloseButton]);
 
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const SubButton = useMemo(
+    const subButton = useMemo(
       () =>
         subButtonOptions ? (
           <Box alignSelf="center" mt={12}>
@@ -248,7 +247,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     >
                       {primaryButtonOptions.text}
                     </ContainedButton>
-                    {isDefined(subButtonOptions) && SubButton}
+                    {isDefined(subButtonOptions) && subButton}
                   </VStack>
                 )}
 
@@ -265,7 +264,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     >
                       {secondaryButtonOptions.text}
                     </ContainedButton>
-                    {isDefined(subButtonOptions) && SubButton}
+                    {isDefined(subButtonOptions) && subButton}
                   </VStack>
                 )}
 
@@ -302,7 +301,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                         {secondaryButtonOptions.text}
                       </ContainedButton>
                     </Stack>
-                    {isDefined(subButtonOptions) && SubButton}
+                    {isDefined(subButtonOptions) && subButton}
                   </VStack>
                 )}
               </Box>
