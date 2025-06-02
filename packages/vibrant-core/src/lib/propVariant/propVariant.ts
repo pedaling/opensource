@@ -21,19 +21,19 @@ const getVariationProps = <Props extends Record<string, any>>(
   return variants[variantKey as string];
 };
 
-export const propVariant =
-  <
+export function propVariant<
     Props extends Record<string, any>,
-    PropsConfig extends AnyPropConfig<Props>[],
+    // eslint-disable-next-line prettier/prettier
+    const PropsConfig extends readonly AnyPropConfig<Props>[],
     Variants extends VariantsConfig<Props, PropsConfig>
   >({
     props,
     variants,
   }: {
-    props: [...PropsConfig];
+    props: readonly [...PropsConfig];
     variants: Variants;
-  }): VariantFn<Props, SkipForwards<Props, PropsConfig> & VariantsReturnProps<PropsConfig, Variants>> =>
-  (prevProps: any) => {
+  }): VariantFn<Props, SkipForwards<Props, PropsConfig> & VariantsReturnProps<PropsConfig, Variants>> {
+  return (prevProps: any) => {
     const shouldHandleResponsive = props.some(config => config.responsive);
     const nextProps = {
       ...prevProps,
@@ -92,4 +92,5 @@ export const propVariant =
       ...nextProps,
       ...variantProps,
     };
-  };
+  }
+}

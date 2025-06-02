@@ -12,6 +12,6 @@ export default {
 
 export const Basic: ComponentStory<typeof FieldLayout> = props => (
   <VStack width="100%" p={20}>
-    <FieldLayout {...props} renderField={() => null} />
+    <FieldLayout {...props} renderField={() => null} size={['sm', 'md']} />
   </VStack>
 );

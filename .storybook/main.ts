@@ -43,14 +43,17 @@ const config: StorybookViteConfig & {
       disable: true,
     },
   },
+
   stories: storybookLibraries.map(name => ({
     directory: `../packages/${name}`,
     files: '**/*.stories.tsx',
     titlePrefix: name,
   })),
+
   features: {
     storyStoreV7: true,
   },
+
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-controls',
@@ -60,6 +63,7 @@ const config: StorybookViteConfig & {
     '@storybook/addon-viewport',
     '@storybook/native-addon/dist/register.js',
   ].filter(Boolean),
+
   typescript: {
     check: true,
     reactDocgen: 'react-docgen-typescript',
@@ -116,9 +120,9 @@ const config: StorybookViteConfig & {
       },
     },
   },
-  core: {
-    builder: '@storybook/builder-vite',
-  },
+
+  core: {},
+
   previewHead: head => `
     ${head}
     <link
@@ -134,6 +138,7 @@ const config: StorybookViteConfig & {
     />
     <link href="https://cdn.class101.net/fonts/pretendard-1.3.0/pretendard-jp-dynamic-subset.css" rel="stylesheet" />
   `,
+
   async viteFinal(viteConfig) {
     return mergeConfig(viteConfig, {
       cacheDir: path.join(
@@ -159,6 +164,7 @@ const config: StorybookViteConfig & {
       plugins: [tsconfigPaths()],
     } as InlineConfig);
   },
+
   env(config, { configType }) {
     if (configType === 'DEVELOPMENT') {
       return {
@@ -169,6 +175,15 @@ const config: StorybookViteConfig & {
     }
 
     return config;
+  },
+
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
+  },
+
+  docs: {
+    autodocs: false,
   },
 };
 

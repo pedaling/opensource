@@ -37,6 +37,7 @@ export const FieldLayout = withFieldLayoutVariation(
     helperTextTypography,
     helperTextSpacing,
     height,
+    fieldHeight,
     spacing,
     iconSize,
     hitSlop,
@@ -83,7 +84,7 @@ export const FieldLayout = withFieldLayoutVariation(
               {prefixText}
             </Text>
 
-            {renderField({ height: height - 2, color: valueColor, pt, pl, pr, pb, typography })}
+            {renderField({ height: fieldHeight, color: valueColor, pt, pl, pr, pb, typography })}
 
             <Text
               typography={typography}
