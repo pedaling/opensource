@@ -167,7 +167,6 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = props 
       )}
       primaryButtonOptions={{ text: 'primary', disabled: false }}
       secondaryButtonOptions={{ text: 'secondary', disabled: false }}
-      subButtonOptions={{ text: 'sub', disabled: false }}
       buttonDirection={props.buttonDirection}
     />
     <ModalBottomSheet
@@ -180,6 +179,19 @@ export const withButtonOptions: ComponentStory<typeof ModalBottomSheet> = props 
       )}
       primaryButtonOptions={{ text: 'primary', disabled: false }}
       subButtonOptions={{ text: 'sub', disabled: false }}
+    />
+    <ModalBottomSheet
+      title=""
+      defaultOpen={false}
+      renderOpener={({ open }) => (
+        <ContainedButton kind="primary" size="md" onClick={open}>
+          Primary + Secondary + Sub
+        </ContainedButton>
+      )}
+      primaryButtonOptions={{ text: 'primary', disabled: false }}
+      secondaryButtonOptions={{ text: 'secondary', disabled: false }}
+      subButtonOptions={{ text: 'sub', disabled: false }}
+      buttonDirection={props.buttonDirection}
     />
   </HStack>
 );
