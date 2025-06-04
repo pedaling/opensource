@@ -9,6 +9,7 @@ type FieldLayoutProps = {
   state?: 'default' | 'error' | 'success';
   kind?: 'default' | 'inline' | 'outline';
   label?: string;
+  required?: boolean;
   helperText?: string;
   disabled?: boolean;
   focused?: boolean;
@@ -89,7 +90,7 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
         helperTextColor: 'onView2',
       },
       error: {
-        labelColor: 'onViewError',
+        labelColor: 'onView2',
         helperTextColor: 'onViewError',
       },
       success: {
@@ -185,6 +186,28 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
   propVariant({
     props: [
       {
+        name: 'kind',
+        default: 'default' as const,
+        keep: true,
+      },
+      {
+        name: 'size',
+        default: 'lg',
+        responsive: true,
+        keep: true,
+      },
+      {
+        name: 'label',
+        keep: true,
+      },
+    ],
+    variants: ({ kind, size, label }) => ({
+      useFixedLabel: kind !== 'outline' && (size === 'md' || size === 'sm') && Boolean(label),
+    }),
+  }),
+  propVariant({
+    props: [
+      {
         name: 'prefixText',
         keep: true,
       },
@@ -241,27 +264,27 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     variants: ({ shrink, size, hasPrefixComponent, hasSuffixComponent, showLabelInBox }) => {
       if (size === 'md') {
         return {
-          labelTop: shrink ? 3 : 9,
-          labelTypography: showLabelInBox ? (shrink ? 'body6' : 'body2') : 'body3',
-          labelLeft: hasPrefixComponent ? 8 : 9,
-          labelRight: hasSuffixComponent ? 8 : 9,
+          labelTop: showLabelInBox ? 4 : shrink ? 3 : 9,
+          labelTypography: showLabelInBox ? 'body2' : 'body3',
+          labelLeft: showLabelInBox ? 10 : hasPrefixComponent ? 8 : 10,
+          labelRight: showLabelInBox ? 4 : hasSuffixComponent ? 8 : 4,
         } as const;
       }
 
       if (size === 'sm') {
         return {
-          labelTop: shrink ? 0 : 6,
-          labelTypography: showLabelInBox ? (shrink ? 'body6' : 'body4') : 'body4',
-          labelLeft: hasPrefixComponent ? 6 : 7,
-          labelRight: hasSuffixComponent ? 6 : 7,
+          labelTop: showLabelInBox ? 2 : shrink ? 0 : 6,
+          labelTypography: showLabelInBox ? 'body5' : 'body4',
+          labelLeft: showLabelInBox ? 10 : hasPrefixComponent ? 6 : 10,
+          labelRight: showLabelInBox ? 4 : hasSuffixComponent ? 6 : 4,
         } as const;
       }
 
       return {
-        labelTop: shrink ? 7 : 15,
+        labelTop: shrink ? 9 : 16,
         labelTypography: showLabelInBox ? (shrink ? 'body6' : 'body2') : 'body3',
-        labelLeft: hasPrefixComponent ? 12 : 15,
-        labelRight: hasSuffixComponent ? 12 : 15,
+        labelLeft: hasPrefixComponent ? 16 : 16,
+        labelRight: hasSuffixComponent ? 16 : 16,
       } as const;
     },
   }),
@@ -303,19 +326,19 @@ export const withFieldLayoutVariation = withVariation<FieldLayoutProps>('FieldLa
     }) => {
       if (size === 'md') {
         return {
-          pt: showLabelInBox ? 15 : 9,
-          pl: hasPrefixText ? 2 : hasPrefixComponent ? 8 : 9,
-          pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 8 : 9,
-          pb: showLabelInBox ? 3 : 9,
+          pt: 10,
+          pl: showLabelInBox ? 10 : hasPrefixText ? 2 : hasPrefixComponent ? 8 : 10,
+          pr: showLabelInBox ? 10 : hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 8 : 10,
+          pb: 10,
         };
       }
 
       if (size === 'sm') {
         return {
-          pt: showLabelInBox ? 12 : 6,
-          pl: hasPrefixText ? 2 : hasPrefixComponent ? 6 : 7,
-          pr: hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 6 : 7,
-          pb: showLabelInBox ? 0 : 6,
+          pt: 6,
+          pl: showLabelInBox ? 7 : hasPrefixText ? 2 : hasPrefixComponent ? 6 : 7,
+          pr: showLabelInBox ? 7 : hasSuffixText ? 2 : hasSuffixComponent || showClearButton ? 6 : 7,
+          pb: 6,
         };
       }
 

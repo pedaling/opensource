@@ -11,6 +11,7 @@ export const TextField = withTextFieldVariation(
     kind,
     state,
     label,
+    required,
     placeholder,
     helperText,
     disabled,
@@ -55,6 +56,7 @@ export const TextField = withTextFieldVariation(
         size={size}
         kind={kind}
         label={label}
+        required={required}
         helperText={helperText}
         state={state}
         focused={isFocused}

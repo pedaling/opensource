@@ -18,6 +18,7 @@ export type TextFieldProps = BaseInputProps<string> &
     state?: 'default' | 'error';
     kind?: 'default' | 'inline' | 'outline';
     label?: string;
+    required?: boolean;
     placeholder?: string;
     helperText?: string;
     autoFocus?: boolean;
