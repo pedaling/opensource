@@ -340,12 +340,13 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                     {isDefined(primaryButtonOptions) && isDefined(secondaryButtonOptions) && (
                       <VStack>
                         <Stack
-                          direction={buttonDirection}
                           px={[20, 32]}
                           mt={[20, 24]}
                           flexShrink={0}
                           width="100%"
                           spacing={8}
+                          direction={buttonDirection}
+                          reverse={buttonDirection === 'horizontal' ? true : false}
                         >
                           <ContainedButton
                             kind={primaryButtonOptions.kind ?? 'primary'}

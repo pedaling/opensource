@@ -277,6 +277,7 @@ export const ModalBottomSheet = withModalBottomSheetVariation(
                       width="100%"
                       spacing={8}
                       direction={buttonDirection}
+                      reverse={buttonDirection === 'horizontal' ? true : false}
                     >
                       <ContainedButton
                         kind={primaryButtonOptions.kind ?? 'primary'}
