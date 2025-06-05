@@ -3,10 +3,10 @@ import { withVariation } from '@vibrant-ui/core';
 import type { ViewPagerTabGroupItemProps } from './ViewPagerTabGroupItem';
 
 export type ViewPagerTabGroupProps = {
-  children: ReactElement<ViewPagerTabGroupItemProps> | ReactElement<ViewPagerTabGroupItemProps>[];
+  children: (ReactElement<ViewPagerTabGroupItemProps> | undefined)[] | ReactElement<ViewPagerTabGroupItemProps>;
   tabSpacing?: number;
   tabId?: string;
-  onTabChange?: () => void;
+  onTabChange?: (tabId?: string) => void;
   testId?: string;
   native_swipeEnabled?: boolean;
 };

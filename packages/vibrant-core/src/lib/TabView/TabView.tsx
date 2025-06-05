@@ -23,7 +23,7 @@ export const TabView = withTabViewVariation(
 
       setCurrentIndex(index);
 
-      onTabChange?.();
+      onTabChange?.(currentTab?.props.tabId);
     };
 
     const changeTabById = useCallbackRef((tabId?: string) => {

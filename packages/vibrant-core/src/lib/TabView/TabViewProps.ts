@@ -8,7 +8,7 @@ type TabViewProps = {
   children: ReactElement<TabViewItemProps> | ReactElement<TabViewItemProps>[];
   renderTobBarItem: (_: { title: string; isSelected: boolean; onClick: () => void; tabId: string }) => ReactElement;
   renderTobBarContainer: (props: ReactElementChildren) => ReactElement;
-  onTabChange?: () => void;
+  onTabChange?: (tabId?: string) => void;
   testId?: string;
   native_swipeEnabled?: boolean;
 };

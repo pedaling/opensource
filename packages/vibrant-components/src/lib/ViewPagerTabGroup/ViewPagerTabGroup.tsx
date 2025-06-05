@@ -1,3 +1,4 @@
+import { Children, isValidElement } from 'react';
 import type { ComponentWithRef } from '@vibrant-ui/core';
 import { TabView } from '@vibrant-ui/core';
 import { HStack } from '../HStack';
@@ -11,29 +12,33 @@ import type { ViewPagerTabGroupProps } from './ViewPagerTabGroupProps';
 import { withViewPagerTabGroupVariation } from './ViewPagerTabGroupProps';
 
 export const ViewPagerTabGroup = withViewPagerTabGroupVariation(
-  ({ children, tabId, testId, onTabChange, tabSpacing, native_swipeEnabled = true }) => (
-    <TabView
-      tabId={tabId}
-      testId={testId}
-      renderTobBarContainer={props => (
-        <HStack px={[20, 20, 0]} spacing={tabSpacing} data-testid="top-bar-container">
-          {props}
-        </HStack>
-      )}
-      renderTobBarItem={({ isSelected, onClick, title, tabId }) => (
-        <VStack key={title} spacing={8}>
-          <Pressable onClick={onClick} data-testid={`top-bar-${tabId}`}>
-            <Title level={5}>{title}</Title>
-          </Pressable>
-          {isSelected && <Paper borderColor="onView1" borderStyle="solid" borderWidth={1} />}
-        </VStack>
-      )}
-      onTabChange={onTabChange}
-      native_swipeEnabled={native_swipeEnabled}
-    >
-      {children}
-    </TabView>
-  )
+  ({ children, tabId, testId, onTabChange, tabSpacing, native_swipeEnabled = true }) => {
+    const validChildren = Children.toArray(children).filter(isValidElement<ViewPagerTabGroupItemProps>);
+
+    return (
+      <TabView
+        tabId={tabId}
+        testId={testId}
+        renderTobBarContainer={props => (
+          <HStack px={[20, 20, 0]} spacing={tabSpacing} data-testid="top-bar-container">
+            {props}
+          </HStack>
+        )}
+        renderTobBarItem={({ isSelected, onClick, title, tabId }) => (
+          <VStack key={title} spacing={8}>
+            <Pressable onClick={onClick} data-testid={`top-bar-${tabId}`}>
+              <Title level={5}>{title}</Title>
+            </Pressable>
+            {isSelected && <Paper borderColor="onView1" borderStyle="solid" borderWidth={1} />}
+          </VStack>
+        )}
+        onTabChange={onTabChange}
+        native_swipeEnabled={native_swipeEnabled}
+      >
+        {validChildren}
+      </TabView>
+    );
+  }
 ) as ComponentWithRef<ViewPagerTabGroupProps> & {
   Item: ComponentWithRef<ViewPagerTabGroupItemProps>;
 };
