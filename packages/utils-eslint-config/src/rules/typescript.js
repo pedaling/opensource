@@ -76,7 +76,7 @@ const typescriptRules = {
       selector: ['default', 'variable', 'typeLike', 'typeProperty'],
       format: null,
       filter: {
-        regex: '(VStack|HStack|ZStack|CSS|Pretendard|HTML|ZIndex|JSON)',
+        regex: '(VStack|HStack|ZStack|CSS|Pretendard|HTML|ZIndex|JSON|GraphQL|graphQLErrors)',
         match: true,
       },
     },
