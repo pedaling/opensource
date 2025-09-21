@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.91.37](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.91.36...utils-eslint-config-0.91.37) (2025-09-21)
+
+
+### Bug Fixes
+
+* graphql을 예외처리한다 ([#1043](https://github.com/pedaling/opensource/issues/1043)) ([1eea00c](https://github.com/pedaling/opensource/commit/1eea00c92d509287578456299fc8a75e87257aa6))
+
 ## [0.91.36](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.91.35...utils-eslint-config-0.91.36) (2025-05-22)
 
 ## [0.91.35](https://github.com/pedaling/opensource/compare/utils-eslint-config-0.91.34...utils-eslint-config-0.91.35) (2025-05-19)
